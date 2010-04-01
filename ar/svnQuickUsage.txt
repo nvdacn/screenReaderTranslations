@@ -1,0 +1,83 @@
+Instructions for subversion (svn) for short
+
+The information below is for common day to day usage.
+svn provides many commands, but i havent included all of them here.
+
+before these actions, you need to be in the right place i.e.
+go to the directory screenReaderTranslations and while ar is selected, from the file menu choose git bash here.
+when it opens, and if you listen to the path, you should hear ar at the end.
+
+
+= to check current status =
+
+svn status
+
+If you get nothing, then svn didnt detect any changes.
+
+If you got any output, then it is probably one of the following:
+? file1.txt # means that svn does not know about file.txt, and it has not been asked to look after this file, and therefore will not be transmitted.
+a file2.txt # svn didnt know about this file, but it has now been added, and will be transmitted when committing.
+d file3.txt # we have told svn to stop looking after file3.txt.
+! file4.txt # the file has been removed, and svn does not know why, file will be restored if we do svn update
+m file5.txt # the file has been modified and the changes will be transmitted when we commit.
+
+
+= to update =
+
+svn update
+
+it should say updated to revision 166 as an example.
+
+it will show a list of files that have been effected.
+
+a file1.txt # meens that file.txt has been added to svn, and you are getting your copy.
+u file2.txt # means that test.txt has been updated
+d file3.txt # means that someone removed the file and svn is also removing your copy of the file.
+g file4.txt # means that you have changed the file , and it was also changed by someone else, but svn was happy merging the changes.
+c file5.txt # means that you have modified the file and it has been  modified by someone else, but svn could not automatically merge, this causes a problem, so ask for help if you get it.
+
+
+= seeing what will be commited before committing =
+
+svn diff >work.txt
+
+will create a difference file, and save it to work.txt
+review work.txt using your editor, if all is well then go ahead and commit.
+otherwise, go to the file(s) that you have modified, and revise your modifications.
+after new modifications, delete work.txt and execute the command again to get a new difference file.
+
+
+= unintended modification to file =
+
+svn revert filename
+
+for example, when working on an arabic file, and reading english file along side, and a modification was made to the english unintentionally, and it now shows as modified when doing svn status, but the change should not be commited, then we use the revert command as above.
+
+
+= viewing commit messages =
+
+svn log >log.txt
+
+will create a log.txt file, and put all the commit messages in the file
+
+If we are intrested in just the log messages for a particular file then:
+
+svn log changes-ar.txt >log.txt
+
+will only include the log messages that involve changes-ar.txt, again storing the messages in log.txt
+
+
+= committing =
+
+svn commit -m "informative message"
+
+Will commit all your modifications to the svn server.
+Please make sure the message is informative, because it makes it easier to see what has changed from revision to revision.
+see also  svn status and svn diff
+
+
+= help =
+
+As always, if something is unclear or anything needs explaining, dont hesitate to ask.
+
+Mesar
