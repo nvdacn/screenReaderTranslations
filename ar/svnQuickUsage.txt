@@ -22,7 +22,7 @@ d file3.txt # we have told svn to stop looking after file3.txt.
 m file5.txt # the file has been modified and the changes will be transmitted when we commit.
 
 
-= to update = (to dowload the changes from the server)
+= to update = (to download the changes from the server)
 
 svn update
 
@@ -46,6 +46,16 @@ review work.txt using your editor, if all is well then go ahead and commit.
 otherwise, go to the file(s) that you have modified, and revise your modifications.
 after new modifications, delete work.txt and execute the command again to get a new difference file.
 
+If you have modified several files, and you want to just look at the diff for one file:
+
+svn diff todo.txt >work.txt
+
+
+= seeing what changed between revisions =
+
+svn diff -r 189:190 >work.txt
+
+will show the diffrence between revision 189 and 190, printing the diffrence to work.txt
 
 = unintended modification to file =
 
