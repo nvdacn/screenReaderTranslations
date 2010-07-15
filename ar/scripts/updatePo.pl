@@ -11,7 +11,8 @@ my $cmd;
 my $pwd;
 
 if ($url !~ /^http.*?\.pot$/ ) {
-print "We didn't find the url.\n";
+$msg="updatePo.pl: could not find url for nvda.po.\n.";
+$cmd=`echo -e "$msg" | mail -s "updatePo.pl: regarding nvda.po file" mesar.hameed@gmail.com`;
 exit;
 }
 
@@ -43,7 +44,8 @@ if ($bmsg eq $amsg) {
 # revert because comments in po file might have changed.
 #
 $cmd = `git checkout ../nvda.po`;
-print "nvda.po file is up to date, nothing to do.\n";
+$msg = "updatePo.pl: nvda.po file is up to date, nothing to do.\n";
+$cmd=`echo -e "$msg" | mail -s "updatePo.pl: regarding nvda.po file" mesar.hameed@gmail.com`;
 } else {
 # need to commit, because before and after are diffrent.
 #
