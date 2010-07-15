@@ -51,5 +51,5 @@ $cmd=`echo -e "$msg" | mail -s "updatePo.pl: regarding nvda.po file" mesar.hamee
 #
 my $commitMsg = "Automatic commit for nvda.po\n\n" .
 "before: " . $bmsg . "\nNow: " . $amsg . "\n";
-$cmd=`git commit -m "$commitMsg" ../nvda.po; git svn dcommit`;
+$cmd=`git commit -m "$commitMsg" ../nvda.po; ./commit.sh`;
 }
