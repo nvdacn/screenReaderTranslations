@@ -53,7 +53,8 @@ if ($bmsg eq $amsg) {
 #
 $cmd = `git checkout ../nvda.po`;
 $msg = "updatePo.pl: nvda.po file is up to date, nothing to do.\n";
-$cmd=`echo -e "$msg" | mail -s "updatePo.pl: regarding nvda.po file" 'mesar.hameed\@gmail.com'`;
+print $msg;
+# $cmd=`echo -e "$msg" | mail -s "updatePo.pl: regarding nvda.po file" 'mesar.hameed\@gmail.com'`;
 } else {
 # need to commit, because before and after are diffrent.
 #
