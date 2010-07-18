@@ -23,6 +23,7 @@ function convt2t {
     $ICONV -f "utf-16" -t "utf-8" <${infile} >iconvOut.t2t
     $TXT2TAGS -t html iconvOut.t2t
     mv iconvOut.html $outfile
+    git add $outfile
     rm iconvOut.t2t
     popd >/dev/null 2>&1
     echo "done."
@@ -33,7 +34,13 @@ absPath=`readlink -f -n $0`
 absPath=`dirname $absPath`
 pushd ${absPath} >/dev/null 2>&1
 
+git svn rebase
+
 convt2t userGuide_ar.t2t
 convt2t changes_ar.t2t
+msgfile=/tmp/convertT2t.msg
+git status -s -uno >${msgfile}
+git commit -F ${msgfile}
+./commit.sh
 
 popd >/dev/null 2>&1
