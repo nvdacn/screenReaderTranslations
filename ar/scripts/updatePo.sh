@@ -58,7 +58,6 @@ bmsg="$bfuzzy fuzzy messages, and $buntranslated untranslated messages."
 #
 echo "updating po from pot."
 $MSGMERGE -U nvda.po /tmp/nvda.pot
-echo "done."
 
 # finding statistics after updating against pot file.
 #
