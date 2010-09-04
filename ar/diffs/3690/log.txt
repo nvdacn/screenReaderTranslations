@@ -1,0 +1,15 @@
+------------------------------------------------------------
+revno: 3690
+committer: Michael Curran <mick@kulgan.net>
+branch nick: main
+timestamp: Fri 2010-08-06 19:12:39 +1000
+message:
+  Disable saving configuration, and changing of particular sensitive options, when running in secure mode (on the Logon/UAC screens). Instead, provide a button in the General Settings dialog which will copy the user's currently saved NVDA settings over to the configuration for the Logon/UAC screens, which requires administrative privilages.
+  Specific changes:
+  *In secure mode, in General Settings: hide the language combo box (as it requires save), the start after logon checkbox, and the start at Windows Logon checkbox.
+  *In secure mode, hide the Save configuration menu item, plus  make the nvda+control+c (save config script) alert the user its secure mode and not actually save, and also for safety make config.save return with out saving.
+  *In secure mode: hide the default dictionary and voice dictionary dialogs from the speech dictionary submenu (the temporary dictionary is still shown).
+  *NVDA service: when starting NVDA on a secure desktop, and serviceDebug is not enabled (--secure is provided to NVDA), instruct NVDA to use the systemConfig directory located in NVDA's installation directory to be used as its configuration directory.
+  *nvda service's executeProcess function: use subprocess.list2cmdline, rather than just " ".join when converting the list of arguments in to a string, as this better handles arguments with spaces.
+  *config module: add a setSystemConfigToCurrentConfig function, which instructs NVDA slave to copy the contents of the currently running NVDA's config path, to the NVDA system config dir, so the configuration can be used on the Logon/UAC screens.
+   *Update the user guide and changes files.

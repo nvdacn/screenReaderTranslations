@@ -1,0 +1,265 @@
+
+-{-- ../../../srt-svn/ar/userGuide_en.t2t}-
+
++{++ userGuide.t2t}+
+	2010-08-28 
+-{10:47:57.000000000}-
+ 
++{10:48:02.000000000}+
+ +0100
+@@ -129,9 +129,9 @@ | Pass next key through | NVDA+f2 | Tell
++ Navigating with NVDA +
+
+++ Navigating with the System Focus ++
+
+
+
+The Most common way of navigating around Windows with 
+-{NVDA,}-
+ 
++{NVDA}+
+ is to 
+-{just}-
+ 
++{simply}+
+ move around with 
+-{normal}-
+ 
++{standard Windows}+
+ keyboard commands, such as 
++{pressing}+
+ tab and 
+-{shift tab}-
+ 
++{shift+tab}+
+ to move forward and back between controls, pressing alt to get to the menu bar and then using the arrows to navigate menus, 
++{and}+
+ using alt+tab to move between running applications.
+
++{This moves the system focus; i.e. the object which receives keys typed on the keyboard.}+
+
+As you do this, NVDA will 
+-{announce what has focus.
+
+When NVDA announces an object (e.g. when it receives the System focus), it will usually say}-
+ 
++{report information about}+
+ the 
+-{object's}-
+ 
++{object with focus, such as its}+
+ name, type, 
+-{state,}-
+ value, 
++{state,}+
+ description, keyboard 
+-{shortcut,}-
+ 
++{shortcut}+
+ and positional information. 
+-{This is quite similar to other screen readers; however the types of objects may be a little different.}-
+
+
+There are some key commands that are useful when moving with the System focus:
+%kc:beginInclude
+@@ -142,7 +142,7 @@ | Read active window | NVDA+b | reads al
+%kc:endInclude
+
+++ Navigating with the System Caret ++
+
+When the focus is on an object that has an edit cursor 
+-{(system}-
+ 
++{(also known as the system}+
+ caret), you can arrow around and edit like you normally would. NVDA will announce as you move by character, 
+-{word,}-
+ 
++{word and}+
+ line, and will also announce selecting and unselecting text.
+
+NVDA provides the following key commands in relation to the system caret:
+%kc:beginInclude
+@@ -161,15 +161,15 @@  | Move to next row | control+alt+downAr
+%kc:endInclude
+
+++ Object Navigation ++
+
+
+
+
+
+
+
+
+
+If you wish to 
+-{navigate around}-
+ 
++{explore}+
+ the current application or the Operating System 
+-{a bit, but with out}-
+ 
++{without}+
+ moving the focus, you can use NVDA's object navigation.
+This allows you to move 
+-{from object to object in a tree like structure.
+
+The tree structure of}-
+ 
++{between and obtain information about individual}+
+ objects 
+-{starts at}-
+ 
++{such as text, buttons, checkboxes, sliders, lists and editable text fields.
+When you move to an object, NVDA will report it similarly to}+
+ the 
+-{desktop window,}-
+ 
++{way it reports}+
+ the 
+-{root of}-
+ 
++{system focus.
+
+Rather than having to move back and forth between every single object on}+
+ the 
+-{tree. The first branches of}-
+ 
++{system,}+
+ the 
+-{tree}-
+ 
++{objects}+
+ are 
++{grouped hierarchically.
+This means that you must move inside some objects to access}+
+ the 
+-{currently running applications, and of course these applications have their own branches (objects), representing various parts}-
+ 
++{objects they contain.
+For example, instead}+
+ of 
+-{the application.
+
+The tree structure can get quite large, but it does allow}-
+ 
++{moving through all list items when a list is encountered,}+
+ you 
+-{to}-
+ 
++{must move inside the list (i.e.}+
+ navigate 
++{to its first child object)}+
+ in 
+-{a logical order, so that you}-
+ 
++{order to access its items.
+You}+
+ can 
+-{quickly find}-
+ 
++{move out of}+
+ the 
+-{information you need.
+
+This structure has nothing}-
+ 
++{list (navigate}+
+ to 
+-{do with how the objects are laid out on}-
+ the 
+-{screen, but how they are related logically. This may take a little bit of time}-
+ 
++{parent object)}+
+ to 
+-{get used to, but once}-
+ 
++{continue past the list.
+Similarly, if}+
+ you 
+-{grasp this,}-
+ 
++{encounter a toolbar,}+
+ you 
+-{should be able to}-
+ 
++{must}+
+ move 
+-{around quite easily.
+
+Not all applications have a perfect tree structure, but this is up to}-
+ 
++{inside}+
+ the 
+-{developer of that particular application. Most seem}-
+ 
++{toolbar (navigate}+
+ to 
+-{be ok; certainly most Dialog boxes and highly structured applications seem}-
+ 
++{its first child)}+
+ to 
+-{have gotten it right.}-
+ 
++{access the controls in the toolbar.}+
+
+
+By default, the navigator object moves along with the System focus, though this behaviour can be toggled on and off.
+
+@@ -191,9 +191,11 @@ | Report navigator object dimensions | N
+note: numpad keys require numlock key to be turned off to work properly
+
+++ Reviewing the Text in the Current Object ++
+
+
+
+NVDA allows you to read the contents of the current navigator 
+-{object,}-
+ 
++{object}+
+ by character, word or line.
+This is mostly useful in 
+-{Dos}-
+ 
++{Windows command}+
+ console 
+-{windows,}-
+ 
++{windows}+
+ and other places where there is a limited or non-existant system caret.
+When moving the review cursor, the System caret does not follow along, 
+-{therefore}-
+ 
++{so}+
+ you can review text with out loosing your 
+-{actual}-
+ editing position.
+
+-{However}-
+
+
++{However,}+
+ by 
+-{default}-
+ 
++{default,}+
+ when the System caret moves, the review cursor follows along.
+This can be toggled on and off.
+
+The following key commands are available for reviewing text: 
+%kc:beginInclude
+@@ -219,6 +221,12 @@ | Copy to review cursor | NVDA+f10 | NVD
+
+note: numpad keys require numlock key to be turned off to work properly
+
+
++{To help you remember these commands, note that the basic text review commands are organised in a grid of three by three, with top to bottom being line, word and character and left to right being previous, current and next.
+The layout is illustrated as follows:
+| Previous line | Current line | Next line |
+| Previous word | Current word | Next word |
+| Previous character | Current character | Next character |}+
+
+
+++ Flat Review ++
+As well as reviewing the content of a single object, NVDA allows you to review the entire content of a document or the text of the screen.
+This is called flat review.
