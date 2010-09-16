@@ -36,7 +36,6 @@ if [ "$exist" != "pot" ]; then
     exit
 fi
 
-potFile=${url##*/}
 $CURL -s -o /tmp/nvda.pot $url
 
 # navigate to the ar dir.
@@ -77,10 +76,13 @@ if [ "$bmsg" == "$amsg" ]; then
 else
     # need to commit, because before and after are diffrent.
     #
-    commitMsg="Automatic commit for nvda.po\n\n
-    before: ${bmsg}\n
-    Now: ${amsg}\n"
-    git commit -m "$commitMsg" nvda.po
+    rev=${url##*/}
+    rev=`echo "$rev" | grep -o -P "[0-9]+"`
+    commitMsg="Merging in messages from rev${rev} into nvda.po:
+
+    before: ${bmsg}
+    now: ${amsg}"
+   git commit -m "$commitMsg" nvda.po
     ./scripts/commit.sh
     echo "$0: nvda.po has been updated from pot."
 fi

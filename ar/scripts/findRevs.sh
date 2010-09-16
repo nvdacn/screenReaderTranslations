@@ -55,12 +55,16 @@ if [ "$status" != "0" ]; then
 echo -e "\nrev$i: diffrences found."
 getAbsPath ../../../../${DIFFSDIR}/$i
 rel=$absPath
+if [ "$newRevs" == ""]; then
+newRevs="$i"
+else
+newRevs="$newRevs $i"
+fi
+
 if [ "$rel" == "" ]; then
 echo "rel is empty, cant continue."
 exit
 fi
-#echo "rel is $rel."
-#exit
 
 mkdir $rel
 $DIFF -F "[=|+]" -u $targetFile $origFile >${rel}/diff.txt
@@ -103,12 +107,13 @@ exit
 fi
 
 function helper() {
+newRevs=""
 startRev=`ls -1 ../../../../$DIFFSDIR/ | tail -n 1`
 echo "my startRev is: $startRev"
 findRevs
 count=`git status 2>/dev/null | grep $DIFFSDIR | wc -l`
 count=$(($count/4))
-git commit -m "$count new revision(s) in $DIFFSDIR"
+git commit -m "$count new revision(s) in $DIFFSDIR: ($newrevs)"
 }
 
 origFile=changes.t2t

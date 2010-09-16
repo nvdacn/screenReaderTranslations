@@ -38,9 +38,8 @@ git svn rebase
 
 convt2t userGuide_ar.t2t
 convt2t changes_ar.t2t
-msgfile=/tmp/convertT2t.msg
-git status -s -uno >${msgfile}
-git commit -F ${msgfile}
+msg=`git status -s -uno *.html | awk '{printf(" %s", $2)}'`
+git commit -m "Updated $msg from t2t."
 ./commit.sh
 
 popd >/dev/null 2>&1
