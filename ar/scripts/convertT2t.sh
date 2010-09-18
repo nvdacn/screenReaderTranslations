@@ -39,7 +39,9 @@ git svn rebase
 convt2t userGuide_ar.t2t
 convt2t changes_ar.t2t
 msg=`git status -s -uno *.html | awk '{printf(" %s", $2)}'`
-git commit -m "Updated $msg from t2t."
+msg="Updated $msg from t2t."
+echo "$msg"
+git commit -m "$msg"
 ./commit.sh
 
 popd >/dev/null 2>&1
