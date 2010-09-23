@@ -55,7 +55,7 @@ if [ "$status" != "0" ]; then
 echo -e "\nrev$i: diffrences found."
 getAbsPath ../../../../${DIFFSDIR}/$i
 rel=$absPath
-if [ "$newRevs" == ""]; then
+if [ "$newRevs" == "" ]; then
 newRevs="$i"
 else
 newRevs="$newRevs $i"
