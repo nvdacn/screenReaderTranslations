@@ -58,7 +58,7 @@ rel=$absPath
 if [ "$newRevs" == "" ]; then
 newRevs="$i"
 else
-newRevs="$newRevs $i"
+newRevs="${newRevs}, $i"
 fi
 
 if [ "$rel" == "" ]; then
@@ -113,7 +113,7 @@ echo "my startRev is: $startRev"
 findRevs
 count=`git status 2>/dev/null | grep $DIFFSDIR | wc -l`
 count=$(($count/4))
-git commit -m "$count new revision(s) in $DIFFSDIR: ($newrevs)"
+git commit -m "$count new revision(s) in $DIFFSDIR: ($newRevs)"
 }
 
 origFile=changes.t2t
