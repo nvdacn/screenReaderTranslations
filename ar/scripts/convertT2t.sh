@@ -1,47 +1,45 @@
 #!/bin/bash
-# MMH, 18 Jul, 2010.
+# MMH, 30 Sep, 2010.
 #
 # Convert our arabic t2t files to html.
-TXT2TAGS=`which txt2tags`
+
 ICONV=`which iconv`
+PYTHON27=`which python2.7`
 
-
-if [ "$TXT2TAGS" == "" ]; then
-    echo "unable to find txt2tags, can not continue."
-    exit;
-elif [ "$ICONV" == "" ]; then
+if [ "$ICONV" == "" ]; then
     echo "unable to find iconv, can not continue."
-    exit;
+    exit
+elif [ "$PYTHON27" == "" ]; then
+    echo "could not locate python 2.7, can not continue."
+    exit
 fi
 
-function convt2t {
-    infile=$1; shift;
-    outfile="${infile%.*}.html"
-    echo "processing $infile"
-
-    pushd ../ >/dev/null 2>&1
-    $ICONV -f "utf-16" -t "utf-8" <${infile} >iconvOut.t2t
-    $TXT2TAGS -t html iconvOut.t2t
-    mv iconvOut.html $outfile
-    git add $outfile
-    rm iconvOut.t2t
-    popd >/dev/null 2>&1
-    echo "done."
-}
+git svn rebase
 
 # navigate to the ar/scripts dir.
 absPath=`readlink -f -n $0`
 absPath=`dirname $absPath`
 pushd ${absPath} >/dev/null 2>&1
 
-git svn rebase
+cd  ..
+for f in *_ar.t2t; do
+echo "Converting $f to utf8."; 
+$ICONV -f utf16 -t utf8 <${f} >tmp.t2t
+mv tmp.t2t ${f}
+done
 
-convt2t userGuide_ar.t2t
-convt2t changes_ar.t2t
-msg=`git status -s -uno *.html | awk '{printf(" %s", $2)}'`
-msg="Updated $msg from t2t."
+$PYTHON27 ./scripts/generate.py
+
+for f in *_ar.t2t; do
+git checkout ${f}
+done
+
+mfiles=`git status -s -uno | grep -i ".html$" | awk '{printf(" %s", $2)}'`
+git add $mfiles
+msg="Updated $mfiles from t2t."
 echo "$msg"
 git commit -m "$msg"
+
+cd scripts
 ./commit.sh
 
-popd >/dev/null 2>&1
