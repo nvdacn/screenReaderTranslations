@@ -35,11 +35,12 @@ git checkout ${f}
 done
 
 mfiles=`git status -s -uno | grep -i ".html$" | awk '{printf(" %s", $2)}'`
+if [ "$mfiles" != "" ]; then
 git add $mfiles
 msg="Updated $mfiles from t2t."
 echo "$msg"
 git commit -m "$msg"
-
 cd scripts
 ./commit.sh
+fi
 
