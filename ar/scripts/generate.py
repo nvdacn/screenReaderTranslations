@@ -65,6 +65,14 @@ def main():
 		txt2tags.exec_command_line([f])
 	#print
 
+	files = glob(r"*_en.t2t")
+	# Using txt2tags as a module to handle files is a bit weird.
+	# It seems simplest to pretend we're running from the command line.
+	for f in files:
+		print f
+		txt2tags.exec_command_line([f])
+	#print
+
 	#print "Key Commands documentation:"
 	files = glob(r"./userGuide_ar.t2t")
 	for f in files:
