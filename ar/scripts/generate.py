@@ -57,7 +57,7 @@ def main():
 	#print
 
 	#print "HTML documentation (except Key Commands):"
-	files = glob(r"*_ar.t2t")
+	files = glob(r"*_{ar,en}.t2t")
 	# Using txt2tags as a module to handle files is a bit weird.
 	# It seems simplest to pretend we're running from the command line.
 	for f in files:
