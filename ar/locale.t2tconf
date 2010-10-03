@@ -1,3 +1,23 @@
 %!PostProc(html): ^<HTML>$ <HTML LANG='AR' DIR='RTL'>
 %!PostProc(html): TEXT="black">$  TEXT='black' STYLE='font-family: Simplified Arabic'>
-%!PostProc: NVDA_AR NVDA
+%!PostProc(html): NVDA_AR NVDA
+
+% reverse the numbering, to be displayed correctly in arabic.
+%!PostProc(html): >([0-9]+)\.([0-9]+)\.([0-9]+)\.  > .\3.\2.\1
+%!PostProc(html): >([0-9]+)\.([0-9]+)\. > .\2.\1
+%!PostProc(html): >([0-9]+)\. > .\1
+
+% now replace Arabic numerals with indian once.
+% 10 11, ... etc should go before signle digits, otherwise they will interfear
+% and not produce the correct output.
+%!PostProc(html): \.10 ١٠.
+%!PostProc(html): \.0 ٠.
+%!PostProc(html): \.1 ١.
+%!PostProc(html): \.2 ٢.
+%!PostProc(html): \.3 ٣.
+%!PostProc(html): \.4 ٤.
+%!PostProc(html): \.5 ٥.
+%!PostProc(html): \.6 ٦.
+%!PostProc(html): \.7 ٧.
+%!PostProc(html): \.8 ٨.
+%!PostProc(html): \.9 ٩.
