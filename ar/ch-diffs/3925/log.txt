@@ -1,0 +1,7 @@
+------------------------------------------------------------
+revno: 3925
+committer: James Teh <jamie@jantrid.net>
+branch nick: main
+timestamp: Fri 2010-11-05 21:45:18 +1000
+message:
+  adobeAcrobat vbuf backend: Some nodes seem to report FontInfo_MixedInfo for IPDDomNode::GetFontInfo() but then report 0 for child count, which causes us to render the node as empty since there are no child nodes to render. One example is the links in the table of contents of the iPhone IOS 4.1 User Guide. To work around this, ignore FontInfo_MixedInfo in these cases and treat it like a node with no font info.
