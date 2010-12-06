@@ -1,0 +1,11 @@
+------------------------------------------------------------
+revno: 3966
+fixes bug(s): http://www.nvda-project.org/ticket/918
+committer: James Teh <jamie@jantrid.net>
+branch nick: main
+timestamp: Fri 2010-12-03 14:06:33 +1000
+message:
+  config: When executing a process with elevation, ensure that parameters containing spaces are quoted.
+  In particular, this is necessary for setSystemConfigToCurrentConfig, as the config path might contain spaces.
+  Fixes inability to set system config to current config when the username contains a space.
+  Note that execElevated() now takes params as a list.
