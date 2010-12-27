@@ -24,7 +24,7 @@ elif [ "$CURL" == "" ]; then
 fi
 
 
-snapUrl='http://www.nvda-project.org/wiki/Snapshots'
+snapUrl='http://nvda.sourceforge.net/snapshots/.index.html'
 url=`$ELINKS --dump $snapUrl | grep -i '.pot' | head -n 1 | awk '{ print \$2 }'`
 
 # if the content of the var end in pot then we have the url.
