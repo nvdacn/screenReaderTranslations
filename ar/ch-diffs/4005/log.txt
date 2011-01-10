@@ -1,0 +1,11 @@
+------------------------------------------------------------
+revno: 4005
+committer: James Teh <jamie@jantrid.net>
+branch nick: main
+timestamp: Fri 2011-01-07 15:34:55 +1000
+message:
+  braille: Move cursor management code (including blinking) into BrailleHandler.
+  Braille display drivers no longer handle the cursor at all.
+  This means that BrailleDisplayDriverWithCursor has been removed. Drivers that used it need only subclass BrailleDisplayDriver instead and rename their _display method to display.
+  All existing braille display drivers relied on NVDA to manage the cursor and we think all future drivers will as well, so there was no point in keeping this functionality separate. (The handyTech driver initially relied on the Handy Tech COM server to manage the cursor, but we found this to be very buggy/unreliable.)
+  This greatly simplifies the BrailleDisplayDriver class. Among other things, this should make it easier for developers writing new braille display drivers.
