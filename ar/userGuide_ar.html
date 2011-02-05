@@ -109,7 +109,11 @@
     <LI><A HREF="#toc70"> ٥.١١. الأسطر الإلكترونية من طراز Baumأو Humanwareأو APH</A>
     <LI><A HREF="#toc71"> ٦.١١. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc72"> ١٢. مزيد من المعلومات</A>
+  <LI><A HREF="#toc72"> ١٢. Advanced Topics</A>
+    <UL>
+    <LI><A HREF="#toc73"> ١.١٢. Remapping key assignments and Other Input Gestures</A>
+    </UL>
+  <LI><A HREF="#toc74"> ١.3 مزيد من المعلومات Further information</A>
   </UL>
 
 <P></P>
@@ -1894,6 +1898,7 @@ NVDA لا يقوم من تلقاء نفسه بحفظ أية إعدادات تق�
 <LI>APH: Refreshabraille
 </UL>
 
+<P></P>
 <P>
 يمكن عمل بعض الأسطر الإلكترونية الأخرى من طراز بوم ولكن لم يتم اختبارها بعد
 </P>
@@ -2003,7 +2008,76 @@ NVDA لا يقوم من تلقاء نفسه بحفظ أية إعدادات تق�
 </TABLE>
 
 <A NAME="toc72"></A>
-<H2> ١٢. مزيد من المعلومات</H2>
+<H2> ١٢. Advanced Topics</H2>
+<A NAME="toc73"></A>
+<H3> ١.١٢. Remapping key assignments and Other Input Gestures</H3>
+<P>
+Users are able to provide or override mappings of input gestures (such as key presses) to scripts in a special file 
+in the user's NVDA configuration directory.
+This file is called gestures.ini.
+</P>
+<P>
+This file uses standard ini syntax.
+Each section provides mappings for scripts in a particular Python module and class inside NVDA.
+The section name should be the Python module and class separated by a dot (.).
+</P>
+<P>
+The keys of each section are the names of the scripts you wish to bind to.
+The value of each key is a comma (,) separated list of gesture identifiers which represent the various input gestures that should be bound to that particular script.
+</P>
+<P>
+Multiple keys can be provided for each section, and multiple sections can be provided in the file.
+</P>
+<P>
+In order to find out gesture identifiers as well as the names of scripts and the class and module in which they are contained, you can turn on Input Help, activate the gesture (press the key) and, after turning off Input help, activate View log in the tools menu and examine the recent log entries.
+One of these should provide information about the input gesture you sent, including the module.class and script if it is bound to one.
+</P>
+<P>
+Following is an example of how you could bind NVDA+shift+t to the date time script.
+</P>
+<P>
+To find out the correct script name and module.class for date time, you would turn on Input Help and press NVDA+f12 (as this is the current gesture for the date time script).
+You would then turn off Input Help and examine the log viewer.
+</P>
+<P>
+Towards the bottom, you would see:
+</P>
+<PRE>
+  INFO - inputCore.InputManager._handleInputHelp (13:17:22):
+  Input help: gesture kb(desktop):nvda+f12, bound to script dateTime on globalCommands.GlobalCommands
+</PRE>
+<P></P>
+<P>
+From this, you can see that the script name is dateTime and the module.class is globalCommands.GlobalCommands.
+</P>
+<P>
+If the file does not yet exist, you would create a text file called gestures.ini in the user configuration directory and add the following content:
+</P>
+<PRE>
+  [globalCommands.GlobalCommands]
+  	dateTime = kb:NVDA+shift+t
+</PRE>
+<P></P>
+<P>
+This would bind the key press NVDA+shift+t (in any keyboard layout) to the dateTime script.
+</P>
+<P>
+You can also use the special script name of None to unbind an input gesture from whatever script it was bound to in that module and class.
+</P>
+<P>
+Gesture identifiers consist of a two leter device code (kb for keyboard and br for braille display), an optional sub-device or keyboard layout in brackets, a colon, and then one or more key names separated by a plus (+) sign.
+</P>
+<P>
+Pressing keys while in Input help and then viewing the log will enable you to discover the gesture identifiers to use.
+</P>
+<P>
+Although you are free to have scripts bound to any available key, it may be problematic to use the alt key on the keyboard.
+NVDA still sends modifier keys (such as shift, control and alt) to the Operating System, even if they eventuate in a script.
+Thus, if you do use alt in a gesture, pressing this key combination may activate the menu bar, as well as executing the script.
+Therefore, it is probably best to just use Shift, control and the NVDA modifier key as modifiers.
+</P>
+<A NAME="toc74"></A>
+<H2> ١.3 مزيد من المعلومات Further information</H2>
 <P>
 ولمزيد من المعلومات والمساعدة حول برنامج NVDA يمكنك زيارة موقع البرنامج العربي من خلال <A HREF="http://www.arabic-NVDA.org">www.arabic-NVDA.org</A> حيث يقدم الموقع دعما فنيا وتسجيلات وشروحات حول البرنامج باللغة العربية أو من خلال موقع NVDA <A HREF="http://www.NVDA-project.org">www.NVDA-project.org</A> 
 فهنا سوف تجد المزيد من الملفات عن البرنامج والدعم الفني ومصادر عن تجمعات المستخدمين. 
