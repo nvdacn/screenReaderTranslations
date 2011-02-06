@@ -1,0 +1,10 @@
+------------------------------------------------------------
+revno: 4080
+fixes bug(s): http://www.nvda-project.org/ticket/1352
+committer: James Teh <jamie@jantrid.net>
+branch nick: main
+timestamp: Fri 2011-02-04 08:58:36 +1000
+message:
+  appModuleHandler: Python 2.x can't handle unicode module names, so encode them using mbcs.
+  Most importantly, this stops exceptions when trying to load an app module for an executable containing non-ASCII characters. This was causing NVDA to fail to work at all with such applications.
+  On a system which is set to use the character set in question, an app module can even be loaded for such applications. However, if the character set is different (e.g. Russian executable name on an English system), an app module can't be loaded, as mbcs can't encode these characters and instead returns question marks. This issue will need to be addressed later if it becomes a problem.
