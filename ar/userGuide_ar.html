@@ -109,9 +109,9 @@
     <LI><A HREF="#toc70"> ٥.١١. الأسطر الإلكترونية من طراز Baumأو Humanwareأو APH</A>
     <LI><A HREF="#toc71"> ٦.١١. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc72"> ١٢. فقرات متقدمة</A>
+  <LI><A HREF="#toc72"> ١٢. مواضيع متقدمة</A>
     <UL>
-    <LI><A HREF="#toc73"> ١.١٢. Remapping key assignments and Other Input Gestures</A>
+    <LI><A HREF="#toc73"> ١.١٢. تغيير اختصارات البرنامج</A>
     </UL>
   <LI><A HREF="#toc74"> ١.3 مزيد من المعلومات Further information</A>
   </UL>
@@ -2008,39 +2008,37 @@ NVDA لا يقوم من تلقاء نفسه بحفظ أية إعدادات تق�
 </TABLE>
 
 <A NAME="toc72"></A>
-<H2> ١٢. فقرات متقدمة</H2>
+<H2> ١٢. مواضيع متقدمة</H2>
 <A NAME="toc73"></A>
-<H3> ١.١٢. Remapping key assignments and Other Input Gestures</H3>
+<H3> ١.١٢. تغيير اختصارات البرنامج</H3>
 <P>
-Users are able to provide or override mappings of input gestures (such as key presses) to scripts in a special file 
-بمجلد إعدادات مستخدم NVDA
-ويكون هذا الملف تحت اسم gestures.ini.
+يمكن للمستخدم إضافة أو تغيير اختصارات الوظائف الخاصة بالبرنامج وتوجد هذه الوظائف بملف معين 
+ويوجد هذا الملف بمجلد إعدادات مستخدم NVDA
+ويسمى gestures.ini
 </P>
 <P>
-This file uses standard ini syntax.
-Each section provides mappings for scripts in a particular Python module and class inside NVDA.
-The section name should be the Python module and class separated by a dot (.).
+ويكتب بطريقة ini
+الملف يحتوي على قسم أو أكثر والقسم يحتوي على مدخل أو أكثر
+كل قسم يتعلق ب pythong module و class يحتوي على الاختصارات الخاصة به
+اسم القسم يتكون من اسم ال python module واسم ال class ويتم الفصل بينهما بنقطة
 </P>
 <P>
-The keys of each section are the names of the scripts you wish to bind to.
-The value of each key is a comma (,) separated list of gesture identifiers which represent the various input gestures that should be bound to that particular script.
+المدخلات بداخل القسم تتكون من قسمين قسم جهة اليسار وقسم جهة اليمين وكلاهما يساوي الآخر
+القسم الأيسر هو اسم الوظيفة والقسم الأيمن يتكون من اختصار أو أكثر لتفعيل الوظيفة مفصول بينهم بفصلة 
 </P>
 <P>
-Multiple keys can be provided for each section, and multiple sections can be provided in the file.
+لمعرفة أسماء الوظائف وفي أي python module و class توجد وأسماء الاختصارات يمكنك تشغيل المساعدة الداخلية (input help), ثم قم بتشغيل الوظيفة (الضغط على المفتاح المنوط بتنفيذها) ثم بعد ذلك قم بتعطيل المساعدة الداخلية ثم قم بتنشيط ملف التقارير بقائمة أدوات ثم قم بقراءة آخر شيء قمت بتنفيذه في البرنامج
+ينبغي أن يحتوي أحد الأسطر بملف التقارير على معلومات عن الاختصار الذي قمت بضغطه بما في ذلك module.class والوظيفة المنوط بتنفيذها هذا الاختصار إذا كانت له وظيفة
 </P>
 <P>
-In order to find out gesture identifiers as well as the names of scripts and the class and module in which they are contained, you can turn on Input Help, activate the gesture (press the key) and, after turning off Input help, activate View log in the tools menu and examine the recent log entries.
-One of these should provide information about the input gesture you sent, including the module.class and script if it is bound to one.
+والمثال التالي يوضح كيفية إلحاق الاختصار NVDA+shift+t  بوظيفة الوقت والتاريخ	
 </P>
 <P>
-Following is an example of how you could bind NVDA+shift+t to the date time script.
+لمعرفة اسم الوظيفة الصحيح ومعرفة module.class للوقت والتاريخ قم بتشغيل المساعدة الداخلية ثم قم بالضغط على NVDA+f12  (حيث أنه المفتاح المنوط بتنفيذ هذه الوظيفة في الوقت الحالي) 
+ثم قم بتعطيل المساعدة الداخلية واقرأ ملف التقارير
 </P>
 <P>
-To find out the correct script name and module.class for date time, you would turn on Input Help and press NVDA+f12 (as this is the current gesture for the date time script).
-You would then turn off Input Help and examine the log viewer.
-</P>
-<P>
-Towards the bottom, you would see:
+سترى أسفل الملف ما يلي:
 </P>
 <PRE>
   INFO - inputCore.InputManager._handleInputHelp (13:17:22):
@@ -2048,10 +2046,10 @@ Towards the bottom, you would see:
 </PRE>
 <P></P>
 <P>
-From this, you can see that the script name is dateTime and the module.class is globalCommands.GlobalCommands.
+من هنا يمكنك معرفة أن اسم الوظيفة هو dateTime و module.class هي globalCommands.GlobalCommands. 
 </P>
 <P>
-If the file does not yet exist, you would create a text file called gestures.ini in the user configuration directory and add the following content:
+إذا كان الملف غير موجود بعد فيمكنك إنشاء ملف واحفظه باسم gestures.ini بمجلد إعدادات المستخدم وأضف إليه المحتوى التالي:
 </P>
 <PRE>
   [globalCommands.GlobalCommands]
@@ -2059,20 +2057,20 @@ If the file does not yet exist, you would create a text file called gestures.ini
 </PRE>
 <P></P>
 <P>
-This would bind the key press NVDA+shift+t (in any keyboard layout) to the dateTime script.
+وبهذا سيتم تغيير الاختصار الخاص بوالقت والتاريخ إلى NVDA+shift+t (بأي نمط من أنماط لوحة المفاتيح سواء أكان حاسوب مكتبي أو حاسوب محمول).
 </P>
 <P>
-You can also use the special script name of None to unbind an input gesture from whatever script it was bound to in that module and class.
+أما إذا أردت إلغاء اختصار وظيفة ما فيمكنك كتابة كلمة none مكان المفتاح
 </P>
 <P>
-Gesture identifiers consist of a two leter device code (kb for keyboard and br for braille display), an optional sub-device or keyboard layout in brackets, a colon, and then one or more key names separated by a plus (+) sign.
+ويتكون الاختصار من حرفين (kb للإشارة إلى أنه يتعلق بلوحة المفاتيح أو br للإشارة إلى أنه يتعلق بالسطر الإلكتروني) ثم بعد ذلك نتبعه بعلامة النقطتان : وإذا أردنا أن نحدد نمط لوحة المفاتيح التي سيعمل بها الاختصار فسنقوم بوضع النمط بين أقواس مربعة بمعنى إذا أردنا أن نجعل الاختصار يعمل مع نمط لوحة مفاتيح الحاسوب المكتبي فسنكتب [deskTop] أما إذا أردنا أن نجعل الاختصار يعمل مع لوحة مفاتيح الحاسوب المحمول فنكتب [lapTop]أما إذا أردنا تعميم الاختصار على جميع أنماط لوحة المفاتيح فلا نكتب شيء وبعد ذلك نقوم بوضع فصلة ثم كتابة المفتاح الذي نود منه تنفيذ الوظيفة فإذا كان الاختصار يتكن من أكثر من مفتاح فنفصل بين المفاتيح بعلامة +
 </P>
 <P>
-Pressing keys while in Input help and then viewing the log will enable you to discover the gesture identifiers to use.
+بالضغط على المفاتيح أثناء تشغيل المساعدة الداخلية ثم قراءة ملف التقارير ستتعرف على الأحرف المكونة للاختصار التي يجب عليك استخدامها
 </P>
 <P>
-على الرغم من أنه يمكنك استخدام أي مفتاح في عمل اختصار لملحق برمجي إلا أنك ستواجه بعض المشكلات عند استخدام مفتاح alt
-حيث أن NVDA ما زال يقوم بإرسال المفاتيح المصاحبة مثل (ctrl و shift و alt) إلى نظام التشغيل حتى إذا كان يتم استخدامهم في ملاحق برمجية 
+على الرغم من أنه يمكنك استخدام أي مفتاح في عمل اختصار لوظيفة إلا أنك ستواجه بعض المشكلات عند استخدام مفتاح alt
+حيث أن NVDA ما زال يقوم بإرسال المفاتيح المصاحبة مثل (ctrl و shift و alt) إلى نظام التشغيل حتى إذا كان يتم استخدامهم في وظائف
 لذا فإذا قمت باستخدام مفتاح alt في عمل مفتاح اختصار لأحد الملاحق البرمجية فإنك بضغط مفتاح الاختصار سيقوم مفتاح alt بتنفيذ مهمته مع نظام التشغيل وهي تنشيط شريط القوائم بالإضافة إلى تنفيذ وظيفته مع الملحق البرمجي
 لذا فمن المفضل استخدام مفتاح ctrl ومفتاح shift ومفتاح NVDA كمفاتيح مصاحبة
 </P>
