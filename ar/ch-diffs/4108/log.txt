@@ -1,0 +1,9 @@
+------------------------------------------------------------
+revno: 4108
+fixes bug(s): http://www.nvda-project.org/ticket/1359
+committer: James Teh <jamie@jantrid.net>
+branch nick: main
+timestamp: Thu 2011-02-10 15:02:39 +1000
+message:
+  core: API handlers might need to be pumped once to get the first focus event, so queue the setting of the initial focus. The focus is only forceably set if there hasn't yet been a focus event yet and there is no focus event pending.
+  Fixes double speaking of the initial focus on some controls.
