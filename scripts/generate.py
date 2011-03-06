@@ -57,15 +57,7 @@ def main():
 	#print
 
 	#print "HTML documentation (except Key Commands):"
-	files = glob(r"*_ar.t2t")
-	# Using txt2tags as a module to handle files is a bit weird.
-	# It seems simplest to pretend we're running from the command line.
-	for f in files:
-		print f
-		txt2tags.exec_command_line([f])
-	#print
-
-	files = glob(r"*_en.t2t")
+	files = glob(r"*.t2t")
 	# Using txt2tags as a module to handle files is a bit weird.
 	# It seems simplest to pretend we're running from the command line.
 	for f in files:
@@ -74,7 +66,7 @@ def main():
 	#print
 
 	#print "Key Commands documentation:"
-	files = glob(r"./userGuide_ar.t2t")
+	files = glob(r"./userGuide.t2t")
 	for f in files:
 		maker = keyCommandsDoc.KeyCommandsMaker(f)
 		print maker.kcFn
