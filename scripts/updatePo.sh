@@ -42,7 +42,7 @@ absPath=`readlink -f -n $0`
 absPath=`dirname $absPath`
 pushd ${absPath}/../ >/dev/null 2>&1
 langs=(ar)
-for lang in in ${langs[*]}; do
+for lang in ${langs[*]}; do
 
     cd $lang
 
