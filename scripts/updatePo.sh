@@ -29,7 +29,6 @@ url=`$ELINKS --dump $snapUrl | grep -i '.pot' | head -n 1 | awk '{ print \$2 }'`
 
 # if the content of the var end in pot then we have the url.
 #
-echo "i got so far."
 exist="${url##*.}"
 if [ "$exist" != "pot" ]; then
     echo "$0: Could not find po file on website."
@@ -38,53 +37,58 @@ fi
 
 $CURL -s -o /tmp/nvda.pot $url
 
-# navigate to the ar dir.
+# Navigate to the base of the svn repo.
 absPath=`readlink -f -n $0`
 absPath=`dirname $absPath`
 pushd ${absPath}/../ >/dev/null 2>&1
+langs=(ar)
+for lang in in ${langs[*]}; do
 
-# restore nvda.po in case of modifications and pull from server.
-#
-git checkout nvda.po; git svn rebase
+    cd $lang
 
-# finding statistics before updating against pot file.
-#
-bfuzzy=`$POCOUNT nvda.po | grep -i fuzzy | awk '{print \$2}'`
-buntranslated=`$POCOUNT nvda.po | grep -i untranslated | awk '{print \$2}'`
-bmsg="$bfuzzy fuzzy messages, and $buntranslated untranslated messages."
-
-# update po file from downloaded pot
-#
-echo "updating po from pot."
-$MSGMERGE -U nvda.po /tmp/nvda.pot
-
-# finding statistics after updating against pot file.
-#
-afuzzy=`$POCOUNT nvda.po | grep -i fuzzy | awk '{print \$2}'`
-auntranslated=`$POCOUNT nvda.po | grep -i untranslated | awk '{print \$2}'`
-amsg="$afuzzy fuzzy messages, and $auntranslated untranslated messages."
-
-
-# checking if we need to do anything
-#
-if [ "$bmsg" == "$amsg" ]; then
-    # nothing has changed, dont need to action.
-    # revert because comments in po file might have changed.
+    # restore nvda.po in case of modifications and pull from server.
     #
-    git checkout nvda.po
-    echo "$0: nvda.po file is up to date, nothing to do."
-else
-    # need to commit, because before and after are diffrent.
-    #
-    rev=${url##*/}
-    rev=`echo "$rev" | grep -o -P "[0-9]+"`
-    commitMsg="Merging in messages from rev${rev} into nvda.po:
+    git checkout -f nvda.po; git svn rebase
 
-    before: ${bmsg}
-    now: ${amsg}"
-   git commit -m "$commitMsg" nvda.po
-    ./scripts/commit.sh
-    echo "$0: nvda.po has been updated from pot."
-fi
+    # finding statistics before updating against pot file.
+    #
+    bfuzzy=`$POCOUNT nvda.po | grep -i fuzzy | awk '{print \$2}'`
+    buntranslated=`$POCOUNT nvda.po | grep -i untranslated | awk '{print \$2}'`
+    bmsg="$bfuzzy fuzzy messages, and $buntranslated untranslated messages."
+
+    # update po file from downloaded pot
+    #
+    echo "updating po from pot."
+    $MSGMERGE -U nvda.po /tmp/nvda.pot
+
+    # finding statistics after updating against pot file.
+    #
+    afuzzy=`$POCOUNT nvda.po | grep -i fuzzy | awk '{print \$2}'`
+    auntranslated=`$POCOUNT nvda.po | grep -i untranslated | awk '{print \$2}'`
+    amsg="$afuzzy fuzzy messages, and $auntranslated untranslated messages."
+
+    # checking if we need to do anything
+    #
+    if [ "$bmsg" == "$amsg" ]; then
+        # nothing has changed, dont need to action.
+        # revert because comments in po file might have changed.
+        #
+        git checkout -f nvda.po
+        echo "$0: nvda.po file is up to date, nothing to do."
+    else
+        # need to commit, because before and after are diffrent.
+        #
+        rev=${url##*/}
+        rev=`echo "$rev" | grep -o -P "[0-9]+"`
+        commitMsg="${lang}: Merging in messages from rev${rev} into nvda.po:
+
+        before: ${bmsg}
+        now: ${amsg}"
+       git commit -m "$commitMsg" nvda.po
+        ../scripts/commit.sh
+        echo "$0 ${lang}: nvda.po has been updated from pot."
+    fi
+    cd ..
+done
 
 popd >/dev/null 2>&1 
