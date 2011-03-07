@@ -1,0 +1,11 @@
+------------------------------------------------------------
+revno: 4128
+fixes bug(s): http://www.nvda-project.org/ticket/1289
+committer: James Teh <jamie@jantrid.net>
+branch nick: main
+timestamp: Thu 2011-02-24 16:54:29 +1000
+message:
+  nvdaHelper remote: injection_winEventCallback: If the process is exiting, just return immediately, as doing anything will probably cause a crash.
+  At this point, the CRT could be terminated, data structures could be in an undefined state due to ExitProcess terminating our manager thread, etc.
+  To do this, we set a flag in DllMain when it informs us that the process is terminating.
+  Fixes crashes when exiting Malwarebytes' Anti-Malware in Windows XP.
