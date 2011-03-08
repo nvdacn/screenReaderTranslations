@@ -31,7 +31,7 @@ absPath=`readlink -f -n $1`
 function findRevs() {
 lang=$1
 # use the file at the given startRev as a starting point.
-targetFile=/tmp/tmpfile.t2t
+targetFile=`mktemp`
 $BZR update -r $startRev >/dev/null 2>&1
 if [ ! -e $origFile ]; then
     echo "could not find $origFile"
