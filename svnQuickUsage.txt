@@ -1,14 +1,27 @@
 Instructions for subversion (svn) for short
 
 The information below is for common day to day usage.
-svn provides many commands, but i havent included all of them here.
+svn provides many commands, but i haven't included all of them here.
 
-before these actions, you need to be in the right place i.e.
-go to the directory screenReaderTranslations and while ar is selected, from the file menu choose git bash here.
-when it opens, and if you listen to the path, you should hear ar at the end.
-
-= to checkout =(to download the files we are working on)
+= to checkout for the first time =(to download the files we are working on)
 svn checkout http://subversion.assembla.com/svn/screenReaderTranslations
+
+When you have just installed svn+git, and dont have a copy of the 
+repository, go to somewhere easy to get to on your hard disk, and from 
+the file menu choose git bash here.
+
+It will take a few seconds and then you will see a command terminal.
+Use the above command to get your copy of the current files.
+
+---
+
+before the following actions, you need to be in the right place i.e. go 
+to the directory screenReaderTranslations and while the language is 
+selected, from the file menu choose git bash here.
+
+when it opens, and if you listen to the path, you should hear the 
+language code (ar for arabic, sv for swedish) at the end.
+
 
 = to check current status = (to see which files have been modified)
 
@@ -39,7 +52,7 @@ g file4.txt # means that you have changed the file , and it was also changed by 
 c file5.txt # means that you have modified the file and it has been  modified by someone else, but svn could not automatically merge, this causes a problem, so ask for help if you get it.
 
 
-= seeing what will be commited before committing = (to see the changes inside the files)
+= seeing what will be committed before committing = (to see the changes inside the files)
 
 svn diff >work.txt
 
@@ -48,7 +61,8 @@ review work.txt using your editor, if all is well then go ahead and commit.
 otherwise, go to the file(s) that you have modified, and revise your modifications.
 after new modifications, delete work.txt and execute the command again to get a new difference file.
 
-If you have modified several files, and you want to just look at the diff for one file:
+If you have modified several files, and you want to just look at the 
+diff for one file:
 
 svn diff todo.txt >work.txt
 
@@ -63,7 +77,10 @@ will show the diffrence between revision 189 and 190, printing the diffrence to 
 
 svn revert filename
 
-for example, when working on an arabic file, and reading english file along side, and a modification was made to the english unintentionally, and it now shows as modified when doing svn status, but the change should not be commited, then we use the revert command as above.
+for example, when working on an arabic file, and reading english file 
+along side, and a modification was made to the english unintentionally, 
+and it now shows as modified when doing svn status, but the change 
+should not be committed, then we use the revert command as above.
 
 
 = viewing commit messages =
@@ -90,6 +107,7 @@ see also  svn status and svn diff
 
 = help =
 
-As always, if something is unclear or anything needs explaining, dont hesitate to ask.
+As always, if something is unclear or anything needs explaining, dont 
+hesitate to ask.
 
 Mesar
