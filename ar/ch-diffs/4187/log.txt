@@ -1,0 +1,12 @@
+------------------------------------------------------------
+revno: 4187
+fixes bug(s): http://www.nvda-project.org/ticket/1347
+committer: James Teh <jamie@jantrid.net>
+branch nick: main
+timestamp: Sat 2011-04-23 11:33:21 +1000
+message:
+  synthDriverHandler: When setting the synth to one which does not yet have any configuration, make sure the config spec is applied when the synth has no voice setting.
+  Previously, changeVoice() applied the config spec, but it was only called if there was a voice setting.
+  Without a config spec, numeric synth settings were left as strings, causing synth drivers such as audiologic to fail to load.
+  Now, changeVoice() is called even for synths that have no voice setting.
+  config.updateSynthConfig() has also been removed, as much of its code duplicated changeVoice() anyway.
