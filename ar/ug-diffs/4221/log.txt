@@ -1,0 +1,10 @@
+------------------------------------------------------------
+revno: 4221
+committer: Michael Curran <mick@kulgan.net>
+branch nick: main
+timestamp: Sun 2011-05-08 15:06:01 +1000
+message:
+  Get rid of the lag that occured when moving the mouse around the screen with both play audio coordinates and brightness controls volume checkboxes in Mouse settings checked while Windows Aero was enabled. Specific changes:
+  	* add winGDI.py which contains some useful constants and structures for windows GDI.
+  	* Add screenBitmap.py which provides an object that can capture a bitmap from the screen at any location. For reasons of speed, an instance of this object can only use one size for its bitmaps, thus the captureImage method will stretch/shrink the requested screen content to fit the bitmap. 
+  	* mouseHandler: make use of screenBitmap to fetch  the pixels around the mouse, squashed down to one pixel which can be used to calculate brightness. The major imporvement in speed is due to the fact that screenBitmap gets Windows itself to fetch all the pixels in one go, and also shrink them itself.
