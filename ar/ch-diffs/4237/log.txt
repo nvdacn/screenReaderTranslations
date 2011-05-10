@@ -1,0 +1,7 @@
+------------------------------------------------------------
+revno: 4237
+committer: Michael Curran <mick@kulgan.net>
+branch nick: main
+timestamp: Tue 2011-05-10 09:59:59 +1000
+message:
+  Appropriately honour aria-selected in Internet Explorer and other MSHTML documents. This gets around a bug in MSHTML where it would state in MSAA that an object was selected just because it had the focus, even if aria-selected was false. The same as if aria-selected was true and the object did not have the focus, it would not state as being selected. Now NVDA looks at aria-selected itself and rectifies this situation. The MSHTML VBufBackend now exports aria-selected if it exists. the MSHTML virtualBuffer's normalizecontrolField  adds state selected if ariaSelected is "true" and takes it away if its "false", and just leaves it as is if not specified. The MSHTML NVDAObject's states property also employs the same logic, though obviously fetching ariaSelected from the MSHTML node itsself.
