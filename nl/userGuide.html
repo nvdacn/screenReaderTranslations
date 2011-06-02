@@ -47,7 +47,7 @@
     <LI><A HREF="#toc26">6.5. Flat Review (Volledig overzicht)</A>
     <LI><A HREF="#toc27">6.6. Navigeren met de muis</A>
     </UL>
-  <LI><A HREF="#toc28">7. Virtuele buffers</A>
+  <LI><A HREF="#toc28">7. Bladermodus</A>
     <UL>
     <LI><A HREF="#toc29">7.1. Lettertoetsnavigatie</A>
     <LI><A HREF="#toc30">7.2. De lijst met elementen</A>
@@ -66,35 +66,36 @@
       <LI><A HREF="#toc40">8.1.7. Muisinstellingen(NVDA+control+m)</A>
       <LI><A HREF="#toc41">8.1.8. Instellingen review cursor (leescursor)</A>
       <LI><A HREF="#toc42">8.1.9. Objectweergave-instellingen(NVDA+control+o)</A>
-      <LI><A HREF="#toc43">8.1.10. Instellingen virtuele buffers(NVDA+control+b)</A>
+      <LI><A HREF="#toc43">8.1.10. Instellingen bladermodus(NVDA+control+b)</A>
       <LI><A HREF="#DocumentFormattingSettings">8.1.11. Documentopmaakinstellingen(NVDA+control+d)</A>
       <LI><A HREF="#toc45">8.1.12. Uitspraakwoordenboeken</A>
+      <LI><A HREF="#toc46">8.1.13. Uitspraak van interpunctie/symbolen</A>
       </UL>
-    <LI><A HREF="#toc46">8.2. De configuratie opslaan en opnieuw ladenn</A>
-    <LI><A HREF="#toc47">8.3. Configuratiebestanden en gebruikersprofielen</A>
+    <LI><A HREF="#toc47">8.2. De configuratie opslaan en opnieuw ladenn</A>
+    <LI><A HREF="#toc48">8.3. Configuratiebestanden en gebruikersprofielen</A>
     </UL>
-  <LI><A HREF="#toc48">9. Het menu Extra</A>
+  <LI><A HREF="#toc49">9. Het menu Extra</A>
     <UL>
-    <LI><A HREF="#toc49">9.1. Logboek weergeven</A>
-    <LI><A HREF="#toc50">9.2. Speech Viewer (schermweergave gesproken tekst)</A>
-    <LI><A HREF="#toc51">9.3. Python Console</A>
+    <LI><A HREF="#toc50">9.1. Logboek weergeven</A>
+    <LI><A HREF="#toc51">9.2. Speech Viewer (schermweergave gesproken tekst)</A>
+    <LI><A HREF="#toc52">9.3. Python Console</A>
     </UL>
-  <LI><A HREF="#toc52">10. Verdere informatie</A>
+  <LI><A HREF="#toc53">10. Verdere informatie</A>
   <LI><A HREF="#SupportedSpeechSynths">11. Ondersteunde spraaksynthesizers</A>
     <UL>
-    <LI><A HREF="#toc54">11.1. eSpeak</A>
-    <LI><A HREF="#toc55">11.2. Microsoft Spraak API versie 4 (SAPI 4)</A>
-    <LI><A HREF="#toc56">11.3. Microsoft Spraak API versie 5 (SAPI 5)</A>
-    <LI><A HREF="#toc57">11.4. Audiologic Tts3</A>
-    <LI><A HREF="#toc58">11.5. Newfon</A>
+    <LI><A HREF="#toc55">11.1. eSpeak</A>
+    <LI><A HREF="#toc56">11.2. Microsoft Spraak API versie 4 (SAPI 4)</A>
+    <LI><A HREF="#toc57">11.3. Microsoft Spraak API versie 5 (SAPI 5)</A>
+    <LI><A HREF="#toc58">11.4. Audiologic Tts3</A>
+    <LI><A HREF="#toc59">11.5. Newfon</A>
     </UL>
   <LI><A HREF="#SupportedBrailleDisplays">12. Ondersteunde Braille-leesregels</A>
     <UL>
-    <LI><A HREF="#toc60">12.1. Freedom Scientific Focus/PAC Mate Series</A>
-    <LI><A HREF="#toc61">12.2. Optelec ALVA BC640/680</A>
-    <LI><A HREF="#toc62">12.3. Handy Tech Displays</A>
-    <LI><A HREF="#toc63">12.4. MDV Lilli</A>
-    <LI><A HREF="#toc64">12.5. BRLTTY</A>
+    <LI><A HREF="#toc61">12.1. Freedom Scientific Focus/PAC Mate Series</A>
+    <LI><A HREF="#toc62">12.2. Optelec ALVA BC640/680</A>
+    <LI><A HREF="#toc63">12.3. Handy Tech Displays</A>
+    <LI><A HREF="#toc64">12.4. MDV Lilli</A>
+    <LI><A HREF="#toc65">12.5. BRLTTY</A>
     </UL>
   </UL>
 
@@ -485,9 +486,10 @@ Voor objectnavigatie zijn de volgende toetscombinaties beschikbaar:
 <TD>Hiermee wordt het huidige navigator object geactiveerd(hetzelfde effect als klikken met de muis of het indrukken van de spatiebalk bij gefocuseerd object)</TD>
 </TR>
 <TR>
-<TD>Systeemfocus naar huidig navigator object verplaatsen| NVDA+shift+numeriekminteken</TD>
+<TD>Verplaats de systeem focus of cursor naar de huidige review positie</TD>
+<TD>NVDA+shift+numeriekminteken</TD>
 <TD>NVDA+shift+backspace</TD>
-<TD>Hiermee wordt de systeemfocus naar huidg navigator object verplaatst als dat mogelijk is|</TD>
+<TD>Een maal drukken verplaatst de focus naar het huidige navigator object, twee maal drukken verplaatst de systeem cursor naar de review cursor</TD>
 </TR>
 <TR>
 <TD>Afmetingen van navigator object weergeven| NVDA+numeriekDel</TD>
@@ -527,7 +529,7 @@ Voor het nalezen van tekst kunt u de volgende toetscombinaties gebruiken:
 </TR>
 <TR>
 <TD>Huidige regel van leescursor weergeven| numeriek8| NVDA+i</TD>
-<TD>Zegt in welke regel van de tekst de leescursor zich bevindt.Bij tweemaal drukken wordt de regel gespeld.</TD>
+<TD>Zegt in welke regel van de tekst de leescursor zich bevindt.Bij tweemaal drukken wordt de regel gespeld. Bij drie maal drukken wordt de regel gespeld met symboolomschrijvingen.</TD>
 </TR>
 <TR>
 <TD>In de leesmodus naar de volgende regel gaan| numeriek9| NVDA+o</TD>
@@ -543,7 +545,7 @@ Voor het nalezen van tekst kunt u de volgende toetscombinaties gebruiken:
 <TD>De leescursor wordt naar het vorige woord in de tekst verplaatst|</TD>
 </TR>
 <TR>
-<TD>Het woord waar de leescursor zich bevindt weergeven| numeriek5| NVDA+k |Vertelt op welk woord in de tekst de leescursor nu staat.Bij tweemaal drukken wordt het woord gespeld.</TD>
+<TD>Het woord waar de leescursor zich bevindt weergeven| numeriek5| NVDA+k |Vertelt op welk woord in de tekst de leescursor nu staat.Bij tweemaal drukken wordt het woord gespeld. Bij drie maal drukken wordt het woord gespeld met symboolomschrijvingen.</TD>
 </TR>
 <TR>
 <TD>In de leesmodus naar het volgende woord gaan| numeriek6| NVDA+l</TD>
@@ -559,7 +561,7 @@ Voor het nalezen van tekst kunt u de volgende toetscombinaties gebruiken:
 <TD>De leescursor wordt naar het vorige karakter in de huidige tekstregel verplaatst|</TD>
 </TR>
 <TR>
-<TD>Huidige karakter onder de leescursor weergeven| numeriek2| NVDA+komma |Noemt het huidige karakter in de tekstregel waar de leescursor zich bevindt. Tweemaal drukken geeft de numrieke waarde in decimalen en hexadecimalen.</TD>
+<TD>Huidige karakter onder de leescursor weergeven| numeriek2| NVDA+komma |Noemt het huidige karakter in de tekstregel waar de leescursor zich bevindt. Tweemaal drukken geeft een omschrijving of voorbeeld van het karakter. Drie maal drukken geeft de numrieke waarde in decimalen en hexadecimalen.</TD>
 </TR>
 <TR>
 <TD>In de leesmodus naar het volgende karakter gaan| numeriek3| NVDA+punt</TD>
@@ -575,11 +577,6 @@ Voor het nalezen van tekst kunt u de volgende toetscombinaties gebruiken:
 <TD>Leest vanaf de huidige positie van de leescursor waarbij de leescursor zi|</TD>
 </TR>
 <TR>
-<TD>Systeemcursor naar leescursor verplaatsen| control+numeriekMin</TD>
-<TD>NVDA+control+backspace</TD>
-<TD>Brengt de systeemcursor naar de positie van de leescursor|</TD>
-</TR>
-<TR>
 <TD>Vanaf de leescursor kopiëren| NVDA+f9</TD>
 <TD>NVDA+f9 |Er wordt tekst gekopieerd vanaf de huidige leescursorpositie. Het feitelijke kopiëren gebeurt pas nadat hebt aangegeven waarheen gekopieerd moet worden</TD>
 </TR>
@@ -590,7 +587,7 @@ Voor het nalezen van tekst kunt u de volgende toetscombinaties gebruiken:
 </TABLE>
 
 <P>
-Let op:voor een goede werking van de numerieke toetsen moet NumLoxk worden uitgeschakeld.
+Let op:voor een goede werking van de numerieke toetsen moet NumLock worden uitgeschakeld.
 </P>
 <P>
 Om deze commando’s beter te kunnen onthouden zou u zich een tabel kunnen voorstellen met drie kolommen en drie rijen. Van boven naar beneden: regel, woord en karakter, en van links naar rechts; vorig, huidig en volgend. 
@@ -690,16 +687,13 @@ Hoewel u voor het navigeren met de muis een fysieke muis of een muispad moet geb
 </TABLE>
 
 <A NAME="toc28"></A>
-<H2>7. Virtuele buffers</H2>
+<H2>7. Bladermodus</H2>
 <P>
-Complexe alleen-lezen documenten zoals webpagina’s worden door NVDA weergegeven in een virtuele buffer.
-</P>
-<P>
-De inhoud van een virtuele buffer zoals een webpagina wordt weergegeven als platte tekst waarbinnen u kunt navigeren met de pijltjestoetsen.
+In bladermodus worden complexe documenten zoals een webpagina weergegeven als platte tekst waarbinnen u kunt navigeren met de pijltjestoetsen.
 U hoort dan de tekst maar daarbij wordt ook aangegeven of het om links, headings (koppen), etc. gaat.
 </P>
 <P>
-U kunt op twee manieren omgaan met de inhoud van een virtuele buffer.
+U kunt op twee manieren omgaan met de inhoud in bladermodus.
 In de bladermodus  kunt u door de hele tekst gaanmet behulp van een virtuele  cursor, zoiets als de systeemcursor.
 In deze modus kunnen alle systeemcursorcommando’s  worden gebruikt (bij voorbeeld, alles lezen, opmaakinformatie geven, tabelnavigatie, etc).
 In de focusmodus kunt u bewerkingen uitvoeren op knoppen, combo-boxen, tekstvelden, etc. met de toetsen die u daarvoor gewend bent te gebruiken.
@@ -727,8 +721,8 @@ In dit geval moet de bladermodus handmatig worden ingeschakeld.
 <TD>Naar de bladermodus teruggaan vanuit de automatisch ingeschakelde focusmodus|</TD>
 </TR>
 <TR>
-<TD>Virtuele buffer vernieuwen| NVDA+f5</TD>
-<TD>Virtuele buffer wordt opnieuw geladen(nuttig als er iets lijkt te ontbreken op de pagina)</TD>
+<TD>Document vernieuwen| NVDA+f5</TD>
+<TD>Het document wordt opnieuw geladen(nuttig als er iets lijkt te ontbreken op de pagina)</TD>
 </TR>
 <TR>
 <TD>Zoeken</TD>
@@ -746,12 +740,12 @@ In dit geval moet de bladermodus handmatig worden ingeschakeld.
 </TABLE>
 
 <P>
-NVDA gebruikt momenteel virtuele buffers om documenten te lezen in Mozilla Firefox, Microsoft Internet Explorer, Google Chrome, Adobe Reader, and Adobe Flash.
+NVDA gebruikt momenteel bladermodus om documenten te lezen in Mozilla Firefox, Microsoft Internet Explorer, Google Chrome, Adobe Reader, and Adobe Flash.
 </P>
 <A NAME="toc29"></A>
 <H3>7.1. Lettertoetsnavigatie</H3>
 <P>
-Om in de bladermodus snel te kunnen navigeren, kunt u een lettertoets gebruiken om naar bepaalde velden te springen in een virtuele buffer.
+Om in de bladermodus snel te kunnen navigeren, kunt u een lettertoets gebruiken om naar bepaalde velden te springen in een document.
 </P>
 <P>
 Om naar het eerstvolgende element te springen gebruikt u uitsluitend één van de hierna genoemde toetsen, terwijl u in combinatie met de shifttoets naar een vorig element springt:
@@ -796,8 +790,9 @@ Als u uw keuze eenmaal gemaakt hebt, kunt u met de aanwezige knoppen in het dial
 <TH>Beschrijving|</TH>
 </TR>
 <TR>
-<TD>Lijst met elementen in virtuele buffer| NVDA+f7</TD>
-<TD>Hiermee roept u de lijst met links, koppen en oriëntatiepunten op die zich in de huidige buffer bevinden.|</TD>
+<TD>Lijst met elementen</TD>
+<TD>NVDA+f7</TD>
+<TD>Hiermee roept u de lijst met links, koppen en oriëntatiepunten op die zich in het huidige document bevinden.|</TD>
 </TR>
 </TABLE>
 
@@ -805,7 +800,7 @@ Als u uw keuze eenmaal gemaakt hebt, kunt u met de aanwezige knoppen in het dial
 <H3>7.3. Ingevoegde objecten</H3>
 <P>
 De inhoud van pagina’s kan toepassingen zoals Adobe Flash of Sun Java bevatten.
-Wanneer u iets dergelijks tegenkomt in een virtuele buffer zal NVDA dit melden als “Ingevoegd (Embedded) Object”.
+Wanneer u iets dergelijks tegenkomt in bladermodus zal NVDA dit melden als “Ingevoegd (Embedded) Object”.
 Door op Enter te drukken wordt interactie met zulke objecten mogelijk.
 Als het object toegankelijk is, kunt u het met de TAB-toets verkennen en bewerkingen uitvoeren zoals u dat ook in andere toepassingen gewend bent.
 Er is een toetscombinatie beschikbaar om weer terug te gaan naar de oorspronkelijke pagina waarop zich het object bevindt. 
@@ -815,8 +810,9 @@ Er is een toetscombinatie beschikbaar om weer terug te gaan naar de oorspronkeli
 <TH>Naam| Toets| Beschrijving|</TH>
 </TR>
 <TR>
-<TD>Terug naar inhoud van virtuele buffer| NVDA+control+spatiebalk</TD>
-<TD>Verplaatst de focus van het huidige ingevoegde object naar de virtuele buffer waarin het zich bevindt|</TD>
+<TD>Terug naar inhoud van document</TD>
+<TD>NVDA+control+spatiebalk</TD>
+<TD>Verplaatst de focus van het huidige ingevoegde object naar de document waarin het zich bevindt|</TD>
 </TR>
 </TABLE>
 
@@ -1118,6 +1114,7 @@ Als het selectievakje is aangekruist laat NVDA pieptonen horen bij het verplaats
 <H5>Volume van audio-coördinatie</H5>
 <P>
 Als het selectievakje “geluidscoördinatie gebruiken bij verplaatsen muis” is aangevinkt, dan zal het aankruisen van dit selectievakje ervoor zorgen dat het volume van de pieptonen wordt bepaald door de schermhelderheid onder de muis.
+Deze functies staan standaard uit.
 </P>
 <A NAME="toc41"></A>
 <H4>8.1.8. Instellingen review cursor (leescursor)</H4>
@@ -1217,27 +1214,27 @@ Als dit selectievakje is aangekruist blijft NVDA veranderingen in een voortschri
 Als u een venster met een voortschrijdingsbalk minimaliseert of naar een ander venster overschakelt, zal NVDA de veranderingen in de voortschrijdingsbalk toch bijhouden terwijl u met iets anders bezig bent. 
 </P>
 <A NAME="toc43"></A>
-<H4>8.1.10. Instellingen virtuele buffers(NVDA+control+b)</H4>
+<H4>8.1.10. Instellingen bladermodus(NVDA+control+b)</H4>
 <P>
-Voor het dialoogvenster Virtuele buffers gaat u naar Opties in het NVDA-menu en selecteert u Virtuele buffers.
+Voor het dialoogvenster Bladermodus gaat u naar Opties in het NVDA-menu en selecteert u Bladermodus.
 </P>
 <P>
 De volgende keuzemogelijkheden zijn beschikbaar:
 </P>
 <H5>Maximale aantal karakters per regel</H5>
 <P>
-In het invoerveld kunt u het aantal karakters per regel instellen dat  een virtuele buffer mag bevatten.
+In het invoerveld kunt u het aantal karakters per regel instellen dat  een document in bladermodus mag bevatten.
 </P>
 <H5>Maximaal aantal regels per pagina</H5>
 <P>
-Hoewel er in virtuele buffers eigenlijk geen echte paginaindeling bestaat, kunt u hier het aantal regels invoeren dat opschuift als u Page Up (pagina omhoog) of Page Down (pagina omlaag) indrukt terwijl u zich in een virtuele buffer bevindt.
+Hoewel er in bladermodus eigenlijk geen echte paginaindeling bestaat, kunt u hier het aantal regels invoeren dat opschuift als u Page Up (pagina omhoog) of Page Down (pagina omlaag) indrukt terwijl u zich in een document in bladsermodus bevindt.
 </P>
 <H5>Schermlayout gebruiken</H5>
 <P>
 Toets: NVDA+v
 </P>
 <P>
-Hiermee kunt u bepalen hoe de inhoud van een virtuele buffer moet worden weer gegeven. Wilt u dat inhoud zoals links en andere velden op een aparte regel komen te staan of moet alles blijven zoals het wordt getoond. Als het selectievakje is aangekruist blijft alles staan zoals weergegeven. Als u het vinkje weghaalt, worden de velden op aparte regels getoond.
+Hiermee kunt u bepalen hoe de inhoud van een document in bladermodus moet worden weergegeven. Wilt u dat inhoud zoals links en andere velden op een aparte regel komen te staan of moet alles blijven zoals het wordt getoond. Als het selectievakje is aangekruist blijft alles staan zoals weergegeven. Als u het vinkje weghaalt, worden de velden op aparte regels getoond.
 </P>
 <H5>Layouttabellen weergeven</H5>
 <P>
@@ -1245,9 +1242,9 @@ Als het selectievakje niet is aangekruist zal NVDA alleen dan tabelinformatie ge
 </P>
 <H5>Het melden van velden zoals links en koppen instellen</H5>
 <P>
-In eerdere versies van NVDA kon u in het dialoogvenster Virtuele buffers instellen of u de vermelding van de verschillende veldtypes wilde horen die u tegenkwam bij het lezen van webpagina’s.
+In eerdere versies van NVDA kon u in het dialoogvenster Bladermodus instellen of u de vermelding van de verschillende veldtypes wilde horen die u tegenkwam bij het lezen van webpagina’s.
 Links, headings (koppen), tabellen en lijsten zijn hiervan voorbeelden. Er zijn nieuwe instelmogelijkheden die u vindt  in het <A HREF="#DocumentFormattingSettings">dialoogvenster Documentopmaak</A>.
-De geboden opties hebben niet langer alleen betrekking op virtuele buffers maar op alle documenten waarin veldtypes voorkomen die u wilt laten uitspreken.
+De geboden opties hebben niet langer alleen betrekking op bladermodus maar op alle documenten waarin veldtypes voorkomen die u wilt laten uitspreken.
 </P>
 <H5>Automatische focusmodus bij focuswijzigingen</H5>
 <P>
@@ -1261,7 +1258,7 @@ Als u bij voorbeeld met de pijltjestoetsen door een webpagina bladert en u in ee
 </P>
 <H5>Audiomarkering voor focus- en surfmodus</H5>
 <P>
-Als het selectievakje is aangekruist, hoort u een bepaald geluid als gewisseld wordt tussen de focus- en surfmodus in een virtuele buffer. Dit komt dan in de plaats van een uitgesproken wijziging van de focus. 
+Als het selectievakje is aangekruist, hoort u een bepaald geluid als gewisseld wordt tussen de focus- en bladermodus in een document. Dit komt dan in de plaats van een uitgesproken wijziging van de focus. 
 </P>
 <A NAME="DocumentFormattingSettings"></A>
 <H4>8.1.11. Documentopmaakinstellingen(NVDA+control+d)</H4>
@@ -1340,6 +1337,19 @@ Een regular expression is een reeks waarin speciale tekens worden gebruikt om aa
 In deze handleiding wordt niet verder ingegaan op “regular expressions”, maar op het internet zijn allerlei tutorials te vinden die meer informatie geven.  
 </P>
 <A NAME="toc46"></A>
+<H4>8.1.13. Uitspraak van interpunctie/symbolen</H4>
+<P>
+In dit dialoogvenster kan de manier waarop interpunctie en symbolen worden gemeld worden aangepast, alsmede het interpunctieniveau waarop deze worden uitgesproken.
+</P>
+<P>
+Selecteer een symbool uit de symbolenlijst om het aan te passen.
+Het vervangen door veld stelt je in staat om de uitspraak van het symbool aan te passen.
+Het niveau veld bepaalt het minimumniveau waarop dit symbool wordt uitgesproken.
+</P>
+<P>
+Als je klaar bent kunnen de wijzigingen met de OK knop worden opgeslagen, of door middel van de Annuleren knop worden teruggedraaid.
+</P>
+<A NAME="toc47"></A>
 <H3>8.2. De configuratie opslaan en opnieuw ladenn</H3>
 <P>
 Als wijzigingen worden aangebracht in de instellingen van NVDA worden deze niet automatisch opgeslagen. Als u NVDA afsluit en later weer opstart zal NVDA de oorspronkelijke instellingen gebruiken en zijn eventueel aangebrachte wijzigingen verloren gegaan.
@@ -1374,7 +1384,7 @@ Configuratie opslaan| NVDA+control+c | NVDA+control+c | Hiermee worden de huidig
 </TR>
 </TABLE>
 
-<A NAME="toc47"></A>
+<A NAME="toc48"></A>
 <H3>8.3. Configuratiebestanden en gebruikersprofielen</H3>
 <P>
 Als u een portable versie van NVDA hebt, worden alle instellingen, app-modules en drivers die door gebruikers zelf worden aan- of toegepast opgeslagen in een sub-map genaamd user config in de NVDA hoofdmap.
@@ -1389,9 +1399,9 @@ De NVDA-instellingen voor inlog- en UAC-schermen zijn opgeslagen in de systemCon
 In het algemeen moet u niets veranderen aan deze configuratie.
 Om de instellingen van NVDA voor het inlogscherm of de UAC-schermen (gebruikersaccountbeheer) aan te passen, brengt u de gewenste wijzigingen aan terwijl u bij Windows bent ingelogd. Vervolgens kopieert u de configuratie naar het inlogscherm door in het dialoogvenster Algemene Instellingen op de daarvoor bestemde knop te drukken.
 </P>
-<A NAME="toc48"></A>
-<H2>9. Het menu Extra</H2>
 <A NAME="toc49"></A>
+<H2>9. Het menu Extra</H2>
+<A NAME="toc50"></A>
 <H3>9.1. Logboek weergeven</H3>
 <P>
 Door Logboek weergeven te kiezen in het NVDA-menu onder Extra kunt u alles bekijken wat er in het logboek is vastgelegd vanaf het moment dat u NVDA de laatste keer startte tot het moment van openen van het logboek.
@@ -1400,7 +1410,7 @@ Door Logboek weergeven te kiezen in het NVDA-menu onder Extra kunt u alles bekij
 U kunt niet alleen de inhoud van het logbestand lezen, maar er ook een kopie van opslaan of de inhoud van het scherm vernieuwen zodat ook de gegevens worden getoond die werden vastgelegd na openen van het logbestand.
 Dit kunt u doen via het Logboek-menu (alt+l).
 </P>
-<A NAME="toc50"></A>
+<A NAME="toc51"></A>
 <H3>9.2. Speech Viewer (schermweergave gesproken tekst)</H3>
 <P>
 Goed-ziende software-ontwikkelaars of mensen die NVDA demonstreren voor een goed-ziend publiek is er een zwevend kader waarin alles op het scherm wirdt getoond wat NVDA bezig is voor te lezen.
@@ -1413,13 +1423,13 @@ Haal dit vinkje weg om de speech viewer uit te schakelen.
 Als de speech viewer ingeschakeld is, wordt de getoonde tekst voortdurend vernieuwd om het voorlezen bij te houden.
 Maar klikt u in of verplaatst u de focus naar het viewer venster, dan wordt het verversen van de tekst tijdelijk gestopt. U kunt zo gemakkelijk de getoonde tekst selecteren en kopiëren.
 </P>
-<A NAME="toc51"></A>
+<A NAME="toc52"></A>
 <H3>9.3. Python Console</H3>
 <P>
 Met de Python console die u vindt onder Extra in het NVDA-menu kunnen fouten in de programma-code worden opgespoord en hersteld, algemene inspecties van de programmatuur worden uitgevoerd of om de mate van toegankelijkheid van een toepassing te controleren.
 Zie voor meer informatie het artikel op de website van NVDA  <A HREF="http://www.nvda-project.org/wiki/PythonConsole">the Python Console article on the NVDA web site</A>.
 </P>
-<A NAME="toc52"></A>
+<A NAME="toc53"></A>
 <H2>10. Verdere informatie</H2>
 <P>
 Voor nadere informatie over NVDA of voor hulp kunt u terecht op de website <A HREF="http://www.nvda-project.org/">http://www.nvda-project.org/</A>.
@@ -1431,7 +1441,7 @@ U vindt er ook informatie over de nieuwste ontwikkelingen en verbeteringen van h
 <P>
 In deze rubriek vindt u informatie over spraaksynthesizers die door NVDA worden ondersteund.
 </P>
-<A NAME="toc54"></A>
+<A NAME="toc55"></A>
 <H3>11.1. eSpeak</H3>
 <P>
 De <A HREF="http://espeak.sourceforge.net/">eSpeak</A> synthesizer is in NVDA ingebouwd en hiervoor hoeven geen drivers of andere componenten te worden geïnstalleerd.
@@ -1443,7 +1453,7 @@ Voor elk van de stemmen die in eSpeak is opgenomen, is een andere taal beschikba
 Er worden meer dan 20 talen door eSpeak ondersteund.
 De klank van de stemmen kan worden aangepast.
 </P>
-<A NAME="toc55"></A>
+<A NAME="toc56"></A>
 <H3>11.2. Microsoft Spraak API versie 4 (SAPI 4)</H3>
 <P>
 Sapi 4 is een oudere Microsoft standaard voor softwarematige spraaksynthesizers.
@@ -1453,21 +1463,21 @@ Als hiervan gebruik wordt gemaakt in NVDA dan treft u alle geïnstalleerde spraa
 <P>
 Als u Sapi 4 stemmen hebt geïnstalleerd maar de synthesizer hiervoor komt niet voor in de lijst  van beschikbare synthesizers van NVDA, kunt u de SAPI 4.0 runtime binaries installeren die te vinden zijn op <A HREF="http://activex.microsoft.com/activex/controls/sapi/spchapi.exe">http://activex.microsoft.com/activex/controls/sapi/spchapi.exe</A>.
 </P>
-<A NAME="toc56"></A>
+<A NAME="toc57"></A>
 <H3>11.3. Microsoft Spraak API versie 5 (SAPI 5)</H3>
 <P>
 Sapi 5 is een Microsoft standaard voor softwarematige spraaksynthesizers.
 Op het internet zijn veel spraaksynthesizers te koop of gratis te downloaden die compatibel zijn met deze standaard. Waarschijnlijk is er op uw computer al minstens 1 SAPI 5 stem geïnstalleerd.
 Als hiervan gebruik wordt gemaakt in NVDA dan treft u alle geïnstalleerde spraakgenerators met de beschikbare stemmen aan onder Stem in het NVDA-menu <A HREF="#VoiceSettings">Voice Settings dialog</A> of in <A HREF="#SynthSettingsRing">Synth Settins Ring</A>.
 </P>
-<A NAME="toc57"></A>
+<A NAME="toc58"></A>
 <H3>11.4. Audiologic Tts3</H3>
 <P>
 Dit is een commerciële spraaksynthesizer die speciaal ontwikkeld is voor het Italiaans.
 U moet de synthesizer op uw pc installeren als u deze voor NVDA wilt gebruiken.
 Meer informatie is te vinden op <A HREF="http://www.audiologic.it">www.audiologic.it</A>, de website van Audiologic.
 </P>
-<A NAME="toc58"></A>
+<A NAME="toc59"></A>
 <H3>11.5. Newfon</H3>
 <P>
 NewFon is een gratis, commerciële synthesizer die ontwikkeld is door Shishmintzev voor het Russisch en het Oekraïnsch. 
@@ -1478,7 +1488,7 @@ U kunt deze synthesizer downloaden op <A HREF="http://ru.nvda-community.org/?pag
 <P>
 In deze rubriek treft u informatie aan over de braille-leesregels die door NVDA worden ondersteund.
 </P>
-<A NAME="toc60"></A>
+<A NAME="toc61"></A>
 <H3>12.1. Freedom Scientific Focus/PAC Mate Series</H3>
 <P>
 Alle Focus en PAC Mate leesregels van <A HREF="http://www.freedomscientific.com/">Freedom Scientific</A> worden ondersteund.
@@ -1486,28 +1496,28 @@ De drivers voor de braille-leesregels van Freedom Scientific moeten op uw comput
 Zonodig kunt u de drivers downloaden van <A HREF="http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp">http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp</A>.
 Hoewel op deze pagina alleen de Focus 40 wordt genoemd, ondersteunt deze driver alle leesregels van Freedom Scientific.
 </P>
-<A NAME="toc61"></A>
+<A NAME="toc62"></A>
 <H3>12.2. Optelec ALVA BC640/680</H3>
 <P>
 Zowel de ALVA BC640 als de BC680 leesregel van <A HREF="http://www.optelec.com/">Optelec</A> worden ondersteund.
 U hoeft geen specifieke drivers te installeren om deze leesregels te gebruiken.
 Sluit de leesregel aan en pas de configuratie van NVDA aan voor het gebruik van deze leesregels.
 </P>
-<A NAME="toc62"></A>
+<A NAME="toc63"></A>
 <H3>12.3. Handy Tech Displays</H3>
 <P>
 NVDA ondersteunt alle leesregels van <A HREF="http://www.handytech.de/">Handy Tech</A>.
 Voor sommige USB-leesregels moet de USB-drivers van Handy Tech op uw computer worden geïnstalleerd.
 Bovendien moet u de universele driver van Handy Tech installeren. Deze vindt u op <A HREF="ftp://ftp.handytech.de/public/Software/BrailleDriver/bsd1206a.exe">ftp://ftp.handytech.de/public/Software/BrailleDriver/bsd1206a.exe</A>
 </P>
-<A NAME="toc63"></A>
+<A NAME="toc64"></A>
 <H3>12.4. MDV Lilli</H3>
 <P>
 De Lilli braille-leesregel die verkrijgbaar is op <A HREF="http://www.mdvbologna.it/">MDV</A> wordt ondersteund.
 U hoeft geen specifieke drivers te installeren om deze leesregel te gebruiken.
 Sluit de leesregel aan en pas de configuratie van NVDA aan voor het gebruik van deze leesregel.
 </P>
-<A NAME="toc64"></A>
+<A NAME="toc65"></A>
 <H3>12.5. BRLTTY</H3>
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A> is een apart programma dat gebruikt kan worden voor de ondersteuning van veel andere leesregels.
