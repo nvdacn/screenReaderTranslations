@@ -112,7 +112,7 @@ if [ "$endRev" == "" ]; then
     exit
 fi
 
-langs=(ar)
+langs=(ar nl)
 for lang in ${langs[*]}; do
     origFile=changes.t2t
     DIFFSDIR=ch-diffs
