@@ -46,4 +46,5 @@ for lang in ${langs[*]}; do
         git commit -m "$msg"
         ../scripts/commit.sh
     fi
+    cd ..
 done
