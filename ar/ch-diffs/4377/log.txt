@@ -1,0 +1,10 @@
+------------------------------------------------------------
+revno: 4377
+committer: James Teh <jamie@jantrid.net>
+branch nick: main
+timestamp: Thu 2011-06-02 21:20:56 +1000
+message:
+  gui: Code cleanup:
+  	* Remove our custom external execute event code (including gui.execute) and instead just use wx.CallAfter.
+  	* Remove scriptUI. The code is very old and was designed for the time when the GUI ran in a separate thread. Also, we use custom dialogs in many places already anyway.
+  	* Add gui.runScriptModalDialog to simplify using modal dialogs from scripts.

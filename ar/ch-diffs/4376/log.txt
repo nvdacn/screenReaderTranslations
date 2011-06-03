@@ -1,0 +1,11 @@
+------------------------------------------------------------
+revno: 4376
+fixes bug(s): http://www.nvda-project.org/ticket/1451
+committer: James Teh <jamie@jantrid.net>
+branch nick: main
+timestamp: Thu 2011-06-02 14:47:23 +1000
+message:
+  Don't allow NVDA settings dialogs to be shown while a message dialog is being shown.
+  Previously, you could open the settings dialog, but it would be frozen until the message dialog was dismissed, which was impossible in some configurations.
+  To do this (and to clean up the code somewhat), introduce gui.messageBox, which should be used for all message dialogs.
+  Also removed gui.scriptUI.MessageDialog, as it was only used in a couple of places and the eventual aim is to get rid of (or at least majorly refactor) scriptUI.
