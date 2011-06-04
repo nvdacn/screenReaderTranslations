@@ -1,0 +1,13 @@
+------------------------------------------------------------
+revno: 4384
+fixes bug(s): http://www.nvda-project.org/ticket/760
+committer: James Teh <jamie@jantrid.net>
+branch nick: main
+timestamp: Fri 2011-06-03 14:48:42 +1000
+message:
+  Excel NVDAObjects:
+  	* Move duplicate code used to fire a focus event on the active selection into ExcelBase.
+  	* ExcelBase.getCellAddress: Don't use a regexp to strip the dollar signs. Instead, just request non-absolute references from Excel.
+  	* Implement equality check for ExcelWorksheet and fix equality check for ExcelCell so that these objects are correctly identified as being unequal if the sheet is different.
+  	* Bind control+pageUp/pageDown to changeSelection script so that changing sheets is reported.
+  	* Remove doc string from changeSelection script, as it is an application provided command and the text didn't cover all cases in which it is used.
