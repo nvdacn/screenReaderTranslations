@@ -23,6 +23,7 @@ pushd ${absPath}/../ >/dev/null 2>&1
 
 langs=(ar nl)
 for lang in ${langs[*]}; do
+    echo "processing $lang"
     cd $lang
     for f in *.t2t; do
         if [ "$lang" == "ar" ]; then

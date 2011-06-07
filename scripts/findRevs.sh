@@ -114,6 +114,7 @@ fi
 
 langs=(ar nl)
 for lang in ${langs[*]}; do
+    echo "processing $lang"
     origFile=changes.t2t
     DIFFSDIR=ch-diffs
     helper $lang

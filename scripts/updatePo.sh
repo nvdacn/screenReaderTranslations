@@ -43,7 +43,7 @@ absPath=`dirname $absPath`
 pushd ${absPath}/../ >/dev/null 2>&1
 langs=(ar nl sv)
 for lang in ${langs[*]}; do
-
+    echo "processing $lang"
     cd $lang
 
     # restore nvda.po in case of modifications and pull from server.
