@@ -1,0 +1,9 @@
+------------------------------------------------------------
+revno: 4397
+committer: James Teh <jamie@jantrid.net>
+branch nick: main
+timestamp: Mon 2011-06-06 21:06:50 +1000
+message:
+  braille: Handle the case where an update causes a region to shrink or disappear entirely so that the start position of the window no longer exists.
+  BrailleBuffer.restoreWindow() no longer takes an ignoreErrors option and will never leave the window in a broken state. To facilitate this, regionPosToBufferPos() takes an allowNearest option to return the nearest position if the requested position does not exist.
+  Also fixed a bug in regionPosToBufferPos() so that allowNearest can work. :)
