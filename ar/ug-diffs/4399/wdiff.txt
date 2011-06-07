@@ -1,0 +1,320 @@
+
+-{-- /tmp/tmp.8E4CZta1uA	2011-06-07 23:54:04.782515304}-
+
++{++ userGuide.t2t	2011-06-08 00:01:40.088222000}+
+ +0100
+@@ -185,10 +185,17 @@ | Report clipboard text | NVDA+c | Repor
+%kc:endInclude
+
++ Navigating with NVDA +
+
++{NVDA allows you to explore and navigate the system in several ways, including both normal interaction and review.
+
+
+
+
+++ Objects ++[Objects]
+Each Application and the operating system itself consist of many objects.
+An object is a single item such as a piece of text, button, checkbox, slider, list or editable text field.}+
+
+
+++ Navigating with the System Focus 
+-{++}-
+ 
++{++[SystemFocus]
+The system focus, also known simply as the focus, is the [object #Objects] which receives keys typed on the keyboard.
+For example, if you are typing into an editable text field, the editable text field has the focus.}+
+
+
+The Most common way of navigating around Windows with NVDA is to simply move 
+-{around with}-
+ 
++{the system focus using}+
+ standard Windows keyboard commands, such as pressing tab and shift+tab to move forward and back between controls, pressing alt to get to the menu bar and then using the arrows to navigate menus, and using alt+tab to move between running applications.
+
+-{This moves the system focus; i.e. the object which receives keys typed on the keyboard.}-
+
+As you do this, NVDA will report information about the object with focus, such as its name, type, value, state, description, keyboard shortcut and positional information.
+
+There are some key commands that are useful when moving with the System focus:
+@@ -200,9 +207,12 @@ | Read active window | NVDA+b | reads al
+| Report Status Bar | NVDA+end | Reports the Status Bar if NVDA finds one. It also moves the navigator object to this location |
+%kc:endInclude
+
+
+
+
+++ Navigating with the System Caret 
+-{++}-
+ 
++{++[SystemCaret]
+When an [object #Objects] that allows navigation and/or editing of text is [focused #SystemFocus], you can move through the text using the system caret, also known as the edit cursor.}+
+
+
+When the focus is on an object that has 
+-{an edit cursor (also known as}-
+ the system 
+-{caret),}-
+ 
++{caret,}+
+ you can 
++{use the}+
+ arrow 
+-{around and edit like you normally would.}-
+ 
++{keys, page up, page down, home, end, etc. to move through the text.
+You can also change the text if the control supports editing.}+
+
+NVDA will announce as you move by character, word and line, and will also announce 
+-{selecting}-
+ 
++{as you select}+
+ and 
+-{unselecting}-
+ 
++{unselect}+
+ text.
+
+NVDA provides the following key commands in relation to the system caret:
+%kc:beginInclude
+@@ -221,9 +231,13 @@ | Move to next row | control+alt+downArr
+%kc:endInclude
+
+++ Object Navigation ++
+
+-{If}-
+
+
+
+
++{Sometimes,}+
+ you 
++{may}+
+ wish to explore the current application or the Operating System without moving the 
+-{focus,}-
+ 
++{[focus #SystemFocus].
+You may also wish to work with [objects #Objects] that cannot be accessed normally using the keyboard.
+In these cases,}+
+ you can use 
+-{NVDA's}-
+ object navigation.
+
+-{This}-
+
+
+
++{Object navigation}+
+ allows you to move between and obtain information about individual 
+-{objects such as text, buttons, checkboxes, sliders, lists and editable text fields.}-
+ 
++{objects.}+
+
+When you move to an object, NVDA will report it similarly to the way it reports the system focus.
+
++{For a way to review all text as it appears on the screen, you can instead use [flat review #FlatReview].}+
+
+
+Rather than having to move back and forth between every single object on the system, the objects are grouped hierarchically.
+This means that you must move inside some objects to access the objects they contain.
+@@ -231,6 +245,8 @@ ++ Object Navigation ++
+You can move out of the list (navigate to the parent object) to continue past the list.
+Similarly, if you encounter a toolbar, you must move inside the toolbar (navigate to its first child) to access the controls in the toolbar.
+
+
++{The object currently being reviewed is called the navigator object.
+Once you navigate to an object, you can review it using the [text review commands #ReviewingText].}+
+
+By default, the navigator object moves along with the System focus, though this behaviour can be toggled on and off.
+
+To navigate by object, use the following keys:
+@@ -250,10 +266,11 @@ | Report navigator object dimensions | N
+
+note: numpad keys require numlock key to be turned off to work properly.
+
+
+
+
+
+++ Reviewing 
+-{the}-
+ Text 
+-{in the Current Object ++}-
+ 
++{++[ReviewingText]}+
+
+NVDA allows you to read the contents of the current 
+-{navigator}-
+ 
++{[navigator}+
+ object 
++{#ObjectNavigation] (including [flat review #FlatReview])}+
+ by character, word or line.
+This is mostly useful in Windows command console windows and other places where there is a limited or non-existant 
+-{system caret.}-
+ 
++{[system caret #SystemCaret].}+
+
+
+When moving the review cursor, the System caret does not follow along, so you can review text with out 
+-{loosing}-
+ 
++{losing}+
+ your editing position.
+However, by default, when the System caret moves, the review cursor follows along.
+This can be toggled on and off.
+
+@@ -286,9 +303,12 @@ | Previous line | Current line | Next li
+| Previous word | Current word | Next word |
+| Previous character | Current character | Next character |
+
+
+
+++ Flat Review 
+-{++}-
+ 
++{++[FlatReview]}+
+
+As well as reviewing the content of a single 
+-{object,}-
+ 
++{[object #Objects],}+
+ NVDA allows you to review the entire content of a document or the text of the 
+-{screen.}-
+ 
++{screen as it appears visually.}+
+
+This is called flat review.
+
++{This is similar to the screen review or mouse cursor functionality in many other Windows screen readers.
+
+Once you have switched to flat review, you can review the text using the [text review commands #ReviewingText].}+
+
+
+The following two commands are used for switching to/from flat review:
+%kc:beginInclude
+@@ -298,16 +318,18 @@ | Move to object from flat review | NVDA
+%kc:endInclude
+
+++ Navigating with the Mouse ++
+
+
+When you move the Mouse, NVDA by default reports the text that is directly under the mouse 
+-{pointer,}-
+ 
++{pointer}+
+ as 
+-{it}-
+ 
++{the pointer}+
+ moves over it.
+Where supported, NVDA will read 
+-{a paragraph's worth}-
+ 
++{the surrounding paragraph}+
+ of text, though some controls may only read by line.
+
+
+NVDA can 
+-{also}-
+ be configured to also announce the type of 
+-{control or object}-
+ 
++{[object #Objects] under}+
+ the mouse 
+-{is currently over}-
+ as it moves (e.g. list, 
+-{button etc), which}-
+ 
++{button, etc.).
+This}+
+ may be useful for totally blind 
+-{users}-
+ 
++{users,}+
+ as 
+-{sometimes}-
+ 
++{sometimes,}+
+ the text isn't enough.
+
+
+NVDA provides a way for users to understand where the mouse is 
+-{in regards}-
+ 
++{located relative}+
+ to the dimensions of the 
+-{screen,}-
+ 
++{screen}+
+ by playing the current mouse coordinates as audio beeps.
+The higher the mouse is on the screen, the higher the pitch of the beeps.
+
+The 
+-{more}-
+ 
++{further}+
+ left or right the mouse is 
++{located}+
+ on the screen, the 
+-{more}-
+ 
++{further}+
+ left or right the sound will 
+-{seem to come from}-
+ 
++{be played}+
+ (assuming the user has stereo 
+-{speakers).}-
+ 
++{speakers or headphones).}+
+
+
+
+These extra mouse features are not turned on by default in 
+-{NVDA, but if}-
+ 
++{NVDA.
+If}+
+ you wish to take advantage of them, you can configure them from the 
+-{Mouse}-
+ 
++{[Mouse}+
+ settings 
++{#MouseSettings]}+
+ dialog, found in the 
+-{Preferences menu on the}-
+ NVDA 
++{Preferences}+
+ menu.
+
+Although a physical mouse or trackpad should be used to navigate with the mouse, NVDA has a few key commands related to the mouse:
+%kc:beginInclude
+@@ -325,7 +347,7 @@ + Browse Mode +
+This includes documents in Mozilla Firefox, Microsoft Internet Explorer, Google Chrome, Adobe Reader and Adobe Flash.
+
+In browse mode, the content of the document is made available in a flat representation that can be navigated with the cursor keys as if it were a normal text document.
+
+All of NVDA's 
+-{system}-
+ 
++{[system}+
+ caret 
++{#SystemCaret]}+
+ key commands will work in this mode; e.g. say all, report formatting, table navigation commands, etc.
+Information such as whether text is a link, heading, etc. is announced along with the text as you move.
+
+Sometimes, you will need to interact directly with controls in these documents.
+@@ -588,7 +610,7 @@ Key: NVDA+4
+
+When enabled, NVDA will announce all non-character keys you type on the keyboard. This includes key combinations such as control plus another letter.
+
+
++++ Mouse Settings (NVDA+control+m) 
+-{+++}-
+ 
++{+++[MouseSettings]}+
+
+The Mouse Settings dialog is found in the Preferences Menu, under "Mouse settings...".
+It contains the following options:
+
