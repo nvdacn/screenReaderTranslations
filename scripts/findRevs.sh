@@ -1,6 +1,7 @@
 #!/bin/bash
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+msg=""
 
 # apps that we need.
 
@@ -90,9 +91,11 @@ startRev=`ls -1 ../../../../${lang}/$DIFFSDIR/ | tail -n 1`
 
 echo "my startRev is: $startRev"
 findRevs $lang
-count=`git status 2>/dev/null | grep $DIFFSDIR | wc -l`
+count=`git status 2>/dev/null | grep "$lang/$DIFFSDIR" | wc -l`
 count=$(($count/4))
-git commit -m "$lang: $count new revision(s) in $DIFFSDIR ($newRevs)"
+if [ "$count" != "0" ]; then
+msg="${msg}$lang: $count new revision(s) in $DIFFSDIR ($newRevs)\n"
+fi
 }
 
 
@@ -125,5 +128,6 @@ for lang in ${langs[*]}; do
 done
 
 popd >/dev/null
+echo -e "new revisions to be translated\n\n$msg" | git commit -F -
 
 ./commit.sh
