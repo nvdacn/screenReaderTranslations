@@ -26,6 +26,7 @@ fi
 
 snapUrl='http://nvda.sourceforge.net/snapshots/.index.html'
 url=`$ELINKS --dump $snapUrl | grep -i '.pot' | head -n 1 | awk '{ print \$2 }'`
+commitMsg=""
 
 # if the content of the var end in pot then we have the url.
 #
@@ -78,17 +79,22 @@ for lang in ${langs[*]}; do
     else
         # need to commit, because before and after are diffrent.
         #
-        rev=${url##*/}
-        rev=`echo "$rev" | grep -o -P "[0-9]+"`
-        commitMsg="${lang}: Merging in messages from rev${rev} into nvda.po:
+        commitMsg="${commitMsg}${lang}: 
+    before: ${bmsg}
+    now: ${amsg}
 
-        before: ${bmsg}
-        now: ${amsg}"
-       git commit -m "$commitMsg" nvda.po
-        ../scripts/commit.sh
+"
+       git add nvda.po
         echo "$0 ${lang}: nvda.po has been updated from pot."
     fi
     cd ..
 done
 
 popd >/dev/null 2>&1 
+
+rev=${url##*/}
+rev=`echo "$rev" | grep -o -P "[0-9]+"`
+git commit -m "Merging in messages from rev${rev} into nvda.po
+
+$commitMsg"
+./commit.sh
