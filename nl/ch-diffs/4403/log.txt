@@ -1,8 +1,0 @@
-------------------------------------------------------------
-revno: 4403
-committer: Michael Curran <mick@kulgan.net>
-branch nick: main
-timestamp: Tue 2011-06-07 15:46:18 +1000
-message:
-  UIAHandler.UIAHandler.isNativeUIAElement: improve logic to handle the situation where the element has been reparented in to a window that does not natively support UIA (i.e. controls in the IE9 downloads window). 
-  Specifically: if the UIA element definitly has a window handle, then check that window handle to see if the window supports native UIA, and if so then its a native element. We used to use nearest window handle if the element itself did not have a window handle, but the issue was that the nearest window handle may not be native UIA when clearly the element itself was.  If it does not have a window handle, instead look at its providerDescription property to see if its an MSAA proxy, and only treet the element as native if its not. Note that although we cannot detect the element's real window handle, its 99% sure that if the IAccessible it proxies fires an event, that event will come from the real (not reparented) window, and therefore  IAccessibleHandler will filter out the event as it saw that window supported UIA natively.  Fixes #1280.

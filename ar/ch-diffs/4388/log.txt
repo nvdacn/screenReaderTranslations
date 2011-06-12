@@ -1,9 +1,0 @@
-------------------------------------------------------------
-revno: 4388
-committer: James Teh <jamie@jantrid.net>
-branch nick: main
-timestamp: Fri 2011-06-03 21:16:33 +1000
-message:
-  service: Fix cases where handles were closed twice and some where handles weren't closed at all.
-  The former caused the service to crash intermittently, while the latter probably caused a slight memory leak.
-  To make this easier (and to avoid similar mistakes in future), create an AutoHANDLE class which closes the handle automatically when the object is no longer in use.

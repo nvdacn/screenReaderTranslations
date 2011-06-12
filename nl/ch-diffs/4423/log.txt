@@ -1,7 +1,0 @@
-------------------------------------------------------------
-revno: 4423
-committer: Michael Curran <mick@kulgan.net>
-branch nick: main
-timestamp: Thu 2011-06-09 18:35:22 +1000
-message:
-  Outlook Express appModule: make sure the NVDAObject overlay class for supporting message rule checkboxes is only used for SysListview32 controls. It was previously not checking the window class and therefore was also being used for the ListBox control found in the Apply now dialog in the message rules dialog. This change means that NVDA will no longer class the rule list items in the apply now dialog as checkboxes. Thus, you can now just listen to their selected/not selected state to tell if they're active or not. The other checkboxes in the message rules dialog should continue to work appropriately. Completely fixes #576
