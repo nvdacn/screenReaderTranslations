@@ -1,0 +1,7 @@
+------------------------------------------------------------
+revno: 4470
+committer: Michael Curran <mick@kulgan.net>
+branch nick: main
+timestamp: Fri 2011-06-17 11:11:29 +1000
+message:
+  colors.RGB.name: once finding the closest color, do not cache  it in the RGBToNames dictionary, instead cache it in a separate dictionary spcific for caching. Previously the more colors that NVDA found, the more inaccurate it was becoming as the closest color was in many cases a color that was previously found to be close to another. also rewrite the algorithm to possibly read a bit better by using a for loop rather than sort and a lambda etc.
