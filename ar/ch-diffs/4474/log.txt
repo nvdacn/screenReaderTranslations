@@ -1,0 +1,11 @@
+------------------------------------------------------------
+revno: 4474
+committer: Michael Curran <mick@kulgan.net>
+branch nick: main
+timestamp: Fri 2011-06-17 23:49:37 +1000
+message:
+  Gecko vbufBackend: implement a replacement AccessibleObjectFromEvent that actually works when called from within a 64 bit process. Technically, AccessibleObjectFromWindow is the actual function with the bug, though AccessibleObjectFromEvent calls it.
+  The new AccessibleObjectFromEvent_fixed only uses custom code where absolutely necessary. It in fact is a macro that only on 64 bit is defined as the custom function, otherwise its just AccessibleObjectFromEvent. Plus, the custom function only does the custom code if the current thread and the thread for the window are the same, otherwise it calls the original AccessibleObjectFromEvent.
+  The custom code just does the standard wm_getobject, ObjectFromLResult, tries accChild. Pretty much exactly what its clear AccessibleObjectFromEvent/AccessibleObjectFromWindow does. I have no idea why AccessibleObjectFromWindow fails.
+  In short all this means that virtualBuffers are no longer blank in 64 bit builds of Mozilla Gecko applications.
+  Fixes #1454.
