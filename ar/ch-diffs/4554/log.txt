@@ -1,9 +1,0 @@
-------------------------------------------------------------
-revno: 4554
-committer: Michael Curran <mick@kulgan.net>
-branch nick: main
-timestamp: Fri 2011-07-08 15:53:47 +1000
-message:
-  Fix for #1285 (focus tracking in Outlook 2010 message list): 
-  	* Add the 'SUPERGRID' window class to the list of BAD UIA implementations. We must resort to MSAA for the Outlook 2010 message list as  it 1. does not fire a UIA focus event on each item, and 2. does not set the focused state on the focused item.
-  	* Create a new overlay class in the outlook appModule to handle the client of SUPERGRID, and override its isDuplicateIAccessibleEvent method, always returning false. This is because when the focus moves from message to message, the same focus winEvent is fired, on the client (OBJID_CLIENT,0), but that particular MSAA object keeps mutating itself. Therefore we can not filter out duplicate events.
