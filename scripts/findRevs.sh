@@ -33,21 +33,24 @@ function findRevs() {
 lang=$1
 # use the file at the given startRev as a starting point.
 targetFile=`mktemp`
-$BZR update -r $startRev >/dev/null 2>&1
+tempFile=`mktemp`
+
 if [ ! -e $origFile ]; then
     echo "could not find $origFile"
     exit
 fi
+$BZR cat -r $startRev $origFile >$tempFile
+cp $tempFile $targetFile
 
-cp $origFile $targetFile
 echo "checking for updates to $origFile, starting at $startRev"
 
 i=$(($startRev+1))
 stop=$(($endRev+1))
 while [ "$i" != "$stop" ]; do
 echo -n "."
-$BZR update -r $i >/dev/null 2>&1
-$DIFF -q $targetFile $origFile >/dev/null  2>&1
+$BZR cat -r $i $origFile >$tempFile
+
+$DIFF -q $targetFile $tempFile >/dev/null 2>&1
 status=$?
 if [ "$status" != "0" ]; then
 echo -e "\nrev$i: diffrences found."
@@ -65,15 +68,15 @@ exit
 fi
 
 mkdir $rel
-$DIFF -F "[=|+]" -u $targetFile $origFile >${rel}/diff.txt
-$DIFF -F "[=|+]" -u $targetFile $origFile | 
+$DIFF -F "[=|+]" -u $targetFile $tempFile >${rel}/diff.txt
+$DIFF -F "[=|+]" -u $targetFile $tempFile | 
 $WDIFF -w '-{' -x '}-' -y '+{' -z '}+' -d |
 sed \
 -e 's/-{/\n-{/g' -e 's/}-/}-\n/g' \
 -e 's/+{/\n+{/g' -e 's/}+/}+\n/g' >${rel}/wdiff.txt
 $BZR log -r $i >${rel}/log.txt
-cp $origFile ${rel}/
-cp $origFile $targetFile
+cp $tempFile $targetFile
+cp $targetFile ${rel}/$origFile
 git add $rel
 fi
 i=$(($i+1))
