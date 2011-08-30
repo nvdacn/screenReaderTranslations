@@ -1,0 +1,10 @@
+------------------------------------------------------------
+revno: 4597
+committer: Michael Curran <mick@kulgan.net>
+branch nick: main
+timestamp: Tue 2011-08-30 13:41:26 +1000
+message:
+  Support for SAPI 5.4 voices. Fixes #1735.
+  Specifically:
+  	* sapi5 synth driver: move the COM_class constant from module level to class level.
+  	* add sapi5_4.py which implements a SynthDriver which subclasses the sapi5 one, but overrides COM_class to point to speech.spVoice rather than sapi.spVoice.
