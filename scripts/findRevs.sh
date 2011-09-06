@@ -118,7 +118,7 @@ if [ "$endRev" == "" ]; then
     exit
 fi
 
-langs=(ar nl)
+langs=(ar fi nl)
 for lang in ${langs[*]}; do
     echo "processing $lang"
     origFile=changes.t2t
