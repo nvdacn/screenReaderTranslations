@@ -92,7 +92,7 @@ lang=$1
 newRevs=""
 startRev=`ls -1 ../../../../${lang}/$DIFFSDIR/ | tail -n 1`
 if [ "$startRev" == "disabled" ]; then
-exit
+return
 fi
 
 echo "my startRev is: $startRev"
