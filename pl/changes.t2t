@@ -4,7 +4,10 @@
 %!includeconf: ../changes.t2tconf
 
 = 2011.3 =
+
+
 == Nowe Funkcje ==
+
 - W trakcie czytania dokumentu pdf, nvda może zmieniać język syntezatora e-speak w locie. Oznacza to, że gdy czytany dokument napisano np. w języku angielskim i zostało to odpowiednio zadeklarowane przez twórcę tego dokumentu, nvda przełączy się na angielski głos syntezatora e-speak. Funkcja ta może zostać wyłączona lub włączona na rządanie, przy użyciu odpowiednich pól wyboru w oknie ustawienia głosu. (#845)
 - Poziomy nagłówków w dokumentach gecko np. firefox, są odczytywane także przez nawigację obiektową.
 - Informacje o formatowaniu tekstu są dostępne również w trybie przeglądania. Dotyczy to programów Mozilla Firefox, Thunderbird). (#394)
@@ -14,10 +17,11 @@
 - Program zgłasza liczbę stron i linii podczas ruchów kursora w IBM Lotus Symphony. (#1632)
 - W oknie 'ustawienia głosu' dodano pole, w którym użytkownik może określić stopień zmiany wysokości głosu dla wielkich liter. Opcja ta zastępuje pole wyboru 'wyższy głos dla wielkich liter'. Aby wyłączyć tę funkcjonalność, wpisz 0.
 
+
 == Zmiany ==
 - NVDA restartuje się samodzielnie, gdy wykryje swoje zawieszenie.
 - Skrócono niektóre informacje pokazywane w braille'u. (#1288)
-- Udoskonalono komendę odczytu zawartości aktywnego okna (NVDA+b). Nie powinna już odczytywać nie potrzebnej zawartości okien i czytanie powinno być łatwiejsze do przerwania. (1499).
+- Udoskonalono komendę odczytu zawartości aktywnego okna (NVDA+b). Nie powinna już odczytywać nie potrzebnej zawartości okien i czytanie powinno być łatwiejsze do przerwania. (#1499).
 - Automatyczny odczyt całej zawartości stron w trybie przeglądania jest teraz opcjonalny i konfigurowalny z zakładki 'ustawienia trybu przeglądania'. (#414).
 
 
@@ -38,20 +42,43 @@
 - NVDA nie odmawia renderowania tekstu w trybie przeglądania Mozilla Firefox w pewnych specyficznych sytuacjach. (#1373)
 
 
-
-= 2011.2=
+= 2011.2 =
+Najważniejsze zmiany dotyczą obsłógi znaków interpunkcyjnych i innych symboli. Użytkownik może skonfigurować próg odczytywania znaków interpunkcyjnych. Dodano możliwość tworzenia własnych etykiet symboli, obsłógę alfabetu fonetycznego. Poprawiono komendę czytaj wszystko, wsparcie dla aria w Internet Explorer, leprza obsłóga dokumentów pdf. NVDA jest w stanie odczytać tekst wypisywany na ekran w większej ilości aplikacji, włączając w to informacje formatowania.
 
 == nowe funkcje ==
 - Zaimplementowano do programu możliwość fonetycznego przeliterowania konkretnego znaku przez dwukrotne wciśnięcie klawisza odczytu znaku. W przypadku języka angielskiego jest to alfabet fonetyczny. Możliwe jest także przeliterowanie konkretnego słowa lób linii, przez trzykrotne wciśnięcie odpowiednich klawiszy poleceń NVDA. (#55)
 - W poziomie przeglądu można odczytać więcej tekstu, zwłaszcza w aplikacjach wypisujących go na ekran bezpośrednio.
 - Użytkownik programu może ustawić najniższy próg odczytu znaków interpunkcyjnych i innych symboli. (#332)
 - Gdy znaki interpunkcyjne lób inne symbole wystąpią jednocześnie więcej niż 4 razy, odczytywana jest ich liczba. (#43)
-- Dodano tabelę dla Norweskiego ośmiopunktowego brajla komputerowego. (#1456)
+- Dodano tabele brajlowskie dla języków: Norweski ośmiopunktowy brajl komputerowy, etiopski I stopień, Słoweński I stopień, Serbski I stopień. (#1456)
+- Mowa nie przerywa się już nienatóralnie na końcu każdej linii gdy używamy komendy czytaj wszystko. (#149)
+- NVDA zgłasza uporządkowanie elementów zgodnie z odpowiednią właściwością ARIA w przeglądarkach internetowych. (#1500)
+- Wzorce brajlowskie we formacie unicode są wyświetlane prawidłowo. (#1505)
+- Leprza obsługa właściwości ARIA na stronach internetowych.
+- Użytkownicy mogą zmieniać wymowę znaków interpunkcyjnych i innych znaków, i ustawić najniższy próg ich odczytywania. (#271, #1516)
+- Odczytywana jest nazwa aktywnego arkusza w Microsoft Excel, gdy przełączamy się między nimi wciskając ctrl+page up, ctrl+page down. (#760)
+- PPrzy nawigacji po tabeli w Microsoft Word, NVDA odczytuje aktywną komórkę.
+- Odczyt współżędnych komórki tabeli jest teraz konfigórowalny z okna formatowanie dokumentów. (#719)
+- NVDA potrafi odczytać info o formatowaniu oraz kolorze tekstu wypisywanego na ekran.
+- W outlook Express, Windows Mailu i Windows Live Mailu, NVDA zgłasza, że wiadomość została, lub nie została przeczytana, oraz czy wątek został rozwinięty lub zwinięty. (#868)
+- E-speak posiada funkcję "podkręć prętkość", która wielokrotnie podnosi szybkość mówienia.
+- Dodano wsparcie dla kontrolki kalendarza na zegarze systemowym w Windows 7. (#1637)
+- Dodano nowe skróty klawiszowe dla monitora MDV Lilli. (#241)
+- Przetłumaczono program na Albański i Bułgarski.
 
 == Zmiany ==
 - Aby przesunąć karetkę systemową do kursora przeglądu, od teraz należy wcisnąć dwukrotnie: w przypadku komputera PC NVDa+shift+minus numeryczny, w przypadku laptopa NVDA+shift+backspace. Zwalnia to nieco miejsca na klawiatórze. (#837)
 - Aby usłyszeć wartości dziesiętne i szesnastkowe dla znaku, wciśnij trzykrotnie komendę odczytu znaku. Dwukrotne jej wciśnięcie od teraz literuje znak.
 - Zaktualizowano syntezator mowy espeak do wersji 1.45.03. (#1465).
+- Układ tabel nie jest już przedstawiany w dokumentach gecko przy przesówaniu punktu uwagi poza dokumentem.
+- Dokumenty będące aplikacjami ARIA, czytane są prawidłowo gdy korzystamy z Internet Explorer. (1452)
+- Zaktualizowano liblouis do 2.3.0.
+- Paski postępu, są zgłaszane w trybie przeglądania.
+- Interfejs programu, a także jego dokumentacja dotychczasowy termin wirtualny bufor zastępują nowym określeniem tryb przeglądania, jako że pojęcie wirtualnego bufora nie znaczy zbyt wiele dla zwykłych użytkowników. (#1509)
+- Gdy użytkownik będzie chciał skopiować swoje ustawienia do profilu systemowego w celu użycia ich na ekranie logowania i innych bezpiecznych ekranach Windows, a w katalogu ustawień zostaną wykryte wtyczki, pojawi się ostrzeżenie, że mogą one stanowić zagrożenie dla bezpieczeństwa systemu. (#1426)
+- Pod windows XP i Windows Vista, NVDA nie używa technologii UI automation, nawet gdy jest dostępna. Użycie UI automation może przyczynić się co prawda do poleprzenia dostępności niektórych nowoczesnych aplikacji, jednak powoduje zbyt wiele problemów ze stabilnością screenreadera pracującego pod kontrolą tych systemów. (#1437)
+- W aplikacjach Mozilla Gecko, zawartość dokumentów takich jak strony internetowe może być przeglądana przez użytkownika, zanim zostanie wczytana w całości
+
 
 == Poprawki ==
 Rozwijanie pul kombo w wirtualnych buforach zostało wymuszone przy pomocy skrótu nvda+spacja. Program w takim polu nie powruci automatycznie do trybu przeglądania. (#1386)
