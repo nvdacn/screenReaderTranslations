@@ -20,11 +20,13 @@
 <LI>Dodano wsparcie dla syntezatorów działających pod Microsoft Speech Platworm. (<A HREF="http://www.nvda-project.org/ticket/1735">#1735</A>)
 <LI>Program zgłasza liczbę stron i linii podczas ruchów kursora w IBM Lotus Symphony. (<A HREF="http://www.nvda-project.org/ticket/1632">#1632</A>)
 <LI>W oknie 'ustawienia głosu' dodano pole, w którym użytkownik może określić stopień zmiany wysokości głosu dla wielkich liter. Opcja ta zastępuje pole wyboru 'wyższy głos dla wielkich liter'. Aby wyłączyć tę funkcjonalność, wpisz 0.
-<P></P>
-== Zmiany ==
+</UL>
+
+<H3>Zmiany</H3>
+<UL>
 <LI>NVDA restartuje się samodzielnie, gdy wykryje swoje zawieszenie.
 <LI>Skrócono niektóre informacje pokazywane w braille'u. (<A HREF="http://www.nvda-project.org/ticket/1288">#1288</A>)
-<LI>Udoskonalono komendę odczytu zawartości aktywnego okna (NVDA+b). Nie powinna już odczytywać nie potrzebnej zawartości okien i czytanie powinno być łatwiejsze do przerwania. (1499).
+<LI>Udoskonalono komendę odczytu zawartości aktywnego okna (NVDA+b). Nie powinna już odczytywać nie potrzebnej zawartości okien i czytanie powinno być łatwiejsze do przerwania. (<A HREF="http://www.nvda-project.org/ticket/1499">#1499</A>).
 <LI>Automatyczny odczyt całej zawartości stron w trybie przeglądania jest teraz opcjonalny i konfigurowalny z zakładki 'ustawienia trybu przeglądania'. (<A HREF="http://www.nvda-project.org/ticket/414">#414</A>).
 </UL>
 
@@ -47,21 +49,50 @@
 </UL>
 
 <H2>2011.2</H2>
+<P>
+Najważniejsze zmiany dotyczą obsłógi znaków interpunkcyjnych i innych symboli. Użytkownik może skonfigurować próg odczytywania znaków interpunkcyjnych. Dodano możliwość tworzenia własnych etykiet symboli, obsłógę alfabetu fonetycznego. Poprawiono komendę czytaj wszystko, wsparcie dla aria w Internet Explorer, leprza obsłóga dokumentów pdf. NVDA jest w stanie odczytać tekst wypisywany na ekran w większej ilości aplikacji, włączając w to informacje formatowania.
+</P>
 <H3>nowe funkcje</H3>
 <UL>
 <LI>Zaimplementowano do programu możliwość fonetycznego przeliterowania konkretnego znaku przez dwukrotne wciśnięcie klawisza odczytu znaku. W przypadku języka angielskiego jest to alfabet fonetyczny. Możliwe jest także przeliterowanie konkretnego słowa lób linii, przez trzykrotne wciśnięcie odpowiednich klawiszy poleceń NVDA. (<A HREF="http://www.nvda-project.org/ticket/55">#55</A>)
 <LI>W poziomie przeglądu można odczytać więcej tekstu, zwłaszcza w aplikacjach wypisujących go na ekran bezpośrednio.
 <LI>Użytkownik programu może ustawić najniższy próg odczytu znaków interpunkcyjnych i innych symboli. (<A HREF="http://www.nvda-project.org/ticket/332">#332</A>)
 <LI>Gdy znaki interpunkcyjne lób inne symbole wystąpią jednocześnie więcej niż 4 razy, odczytywana jest ich liczba. (<A HREF="http://www.nvda-project.org/ticket/43">#43</A>)
-<LI>Dodano tabelę dla Norweskiego ośmiopunktowego brajla komputerowego. (<A HREF="http://www.nvda-project.org/ticket/1456">#1456</A>)
+<LI>Dodano tabele brajlowskie dla języków: Norweski ośmiopunktowy brajl komputerowy, etiopski I stopień, Słoweński I stopień, Serbski I stopień. (<A HREF="http://www.nvda-project.org/ticket/1456">#1456</A>)
+<LI>Mowa nie przerywa się już nienatóralnie na końcu każdej linii gdy używamy komendy czytaj wszystko. (<A HREF="http://www.nvda-project.org/ticket/149">#149</A>)
+<LI>NVDA zgłasza uporządkowanie elementów zgodnie z odpowiednią właściwością ARIA w przeglądarkach internetowych. (<A HREF="http://www.nvda-project.org/ticket/1500">#1500</A>)
+<LI>Wzorce brajlowskie we formacie unicode są wyświetlane prawidłowo. (<A HREF="http://www.nvda-project.org/ticket/1505">#1505</A>)
+<LI>Leprza obsługa właściwości ARIA na stronach internetowych.
+<LI>Użytkownicy mogą zmieniać wymowę znaków interpunkcyjnych i innych znaków, i ustawić najniższy próg ich odczytywania. (<A HREF="http://www.nvda-project.org/ticket/271">#271</A>, <A HREF="http://www.nvda-project.org/ticket/1516">#1516</A>)
+<LI>Odczytywana jest nazwa aktywnego arkusza w Microsoft Excel, gdy przełączamy się między nimi wciskając ctrl+page up, ctrl+page down. (<A HREF="http://www.nvda-project.org/ticket/760">#760</A>)
+<LI>PPrzy nawigacji po tabeli w Microsoft Word, NVDA odczytuje aktywną komórkę.
+<LI>Odczyt współżędnych komórki tabeli jest teraz konfigórowalny z okna formatowanie dokumentów. (<A HREF="http://www.nvda-project.org/ticket/719">#719</A>)
+<LI>NVDA potrafi odczytać info o formatowaniu oraz kolorze tekstu wypisywanego na ekran.
+<LI>W outlook Express, Windows Mailu i Windows Live Mailu, NVDA zgłasza, że wiadomość została, lub nie została przeczytana, oraz czy wątek został rozwinięty lub zwinięty. (<A HREF="http://www.nvda-project.org/ticket/868">#868</A>)
+<LI>E-speak posiada funkcję "podkręć prętkość", która wielokrotnie podnosi szybkość mówienia.
+<LI>Dodano wsparcie dla kontrolki kalendarza na zegarze systemowym w Windows 7. (<A HREF="http://www.nvda-project.org/ticket/1637">#1637</A>)
+<LI>Dodano nowe skróty klawiszowe dla monitora MDV Lilli. (<A HREF="http://www.nvda-project.org/ticket/241">#241</A>)
+<LI>Przetłumaczono program na Albański i Bułgarski.
 <P></P>
 == Zmiany ==
 <LI>Aby przesunąć karetkę systemową do kursora przeglądu, od teraz należy wcisnąć dwukrotnie: w przypadku komputera PC NVDa+shift+minus numeryczny, w przypadku laptopa NVDA+shift+backspace. Zwalnia to nieco miejsca na klawiatórze. (<A HREF="http://www.nvda-project.org/ticket/837">#837</A>)
 <LI>Aby usłyszeć wartości dziesiętne i szesnastkowe dla znaku, wciśnij trzykrotnie komendę odczytu znaku. Dwukrotne jej wciśnięcie od teraz literuje znak.
 <LI>Zaktualizowano syntezator mowy espeak do wersji 1.45.03. (<A HREF="http://www.nvda-project.org/ticket/1465">#1465</A>).
-<P></P>
-== Poprawki ==
+<LI>Układ tabel nie jest już przedstawiany w dokumentach gecko przy przesówaniu punktu uwagi poza dokumentem.
+<LI>Dokumenty będące aplikacjami ARIA, czytane są prawidłowo gdy korzystamy z Internet Explorer. (1452)
+<LI>Zaktualizowano liblouis do 2.3.0.
+<LI>Paski postępu, są zgłaszane w trybie przeglądania.
+<LI>Interfejs programu, a także jego dokumentacja dotychczasowy termin wirtualny bufor zastępują nowym określeniem tryb przeglądania, jako że pojęcie wirtualnego bufora nie znaczy zbyt wiele dla zwykłych użytkowników. (<A HREF="http://www.nvda-project.org/ticket/1509">#1509</A>)
+<LI>Gdy użytkownik będzie chciał skopiować swoje ustawienia do profilu systemowego w celu użycia ich na ekranie logowania i innych bezpiecznych ekranach Windows, a w katalogu ustawień zostaną wykryte wtyczki, pojawi się ostrzeżenie, że mogą one stanowić zagrożenie dla bezpieczeństwa systemu. (<A HREF="http://www.nvda-project.org/ticket/1426">#1426</A>)
+<LI>Pod windows XP i Windows Vista, NVDA nie używa technologii UI automation, nawet gdy jest dostępna. Użycie UI automation może przyczynić się co prawda do poleprzenia dostępności niektórych nowoczesnych aplikacji, jednak powoduje zbyt wiele problemów ze stabilnością screenreadera pracującego pod kontrolą tych systemów. (<A HREF="http://www.nvda-project.org/ticket/1437">#1437</A>)
+<LI>W aplikacjach Mozilla Gecko, zawartość dokumentów takich jak strony internetowe może być przeglądana przez użytkownika, zanim zostanie wczytana w całości
+</UL>
+
+<H3>Poprawki</H3>
+<P>
 Rozwijanie pul kombo w wirtualnych buforach zostało wymuszone przy pomocy skrótu nvda+spacja. Program w takim polu nie powruci automatycznie do trybu przeglądania. (<A HREF="http://www.nvda-project.org/ticket/1386">#1386</A>)
+</P>
+<UL>
 <LI>W dokumentach gecko i mshtml program renderuje poprawnie teksty jednowierszowe, które do tej pory były umieszczane w dwuch oddzielnych liniach. (<A HREF="http://www.nvda-project.org/ticket/1378">#1378</A>)
 <LI>Gdy brajl jest związany z kursorem przeglądu, i gdy obiekt w hierarchii nawigacji przenosi się do wirtualnego bufora jak strona www, wiadomość w programie pocztowym, dokument pdf czy to ręcznie, czy to przez zmianę punktu uwagi, zawartość bufora jest już wyświetlana na monitorze brajlowskim. (<A HREF="http://www.nvda-project.org/ticket/1306">#1306</A>, <A HREF="http://www.nvda-project.org/ticket/1307">#1307</A>)
 <LI>Niektóre znaki interpunkcyjne nie będą już odczytywane przez pewne syntezatory  gdy ich odczyt zostanie wyłączony. (<A HREF="http://www.nvda-project.org/ticket/332">#332</A>)
