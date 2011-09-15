@@ -1,0 +1,13 @@
+------------------------------------------------------------
+revno: 4678
+committer: Michael Curran <mick@kulgan.net>
+branch nick: main
+timestamp: Wed 2011-09-14 14:39:21 +1000
+message:
+  When reading with say all in browse mode documents, NVDA will now pause at the end of headings and other block-level elements, rather than running the text together with the next lot of text as one long sentence. No pausing at the end of lines in say all is still enabled, but this just fixes the issue where a yheading did not end with a sentence ending and therefore ran together with the next lot of text.
+  specific changes:
+  	* Add speech.Breakcommand, which is used to convey a forced sentence ending for use by speech.speakWithoutPauses.
+  	* speech.speakWithoutPauses: scan the given speech sequence for Break commands, and call speakWithoutPauses again internally on each section of the original sequence broken by break commands. Also call speakWithoutPauses(None) to flush the buffer at the end of each sub-sequence.
+  	* VBufStorage: add an 'isBlock' attribute to each node's XML output so that NVDa is able to detect if a node is a block node or not.
+  	* speech.speakTextInfo: When scanning through old controlFields we're no longer in at the start of speakTextInfo, find out if any of them are block nodes, and if at least one is, add a BreakCommand to the speech sequence if the reason is say all, so that speakWithoutPauses speech is forcefully broken in say all when leaving one or more block elements.
+  Note that for now we only need to insert the BreakCommand hear, and not on any of the other controlEnds as say all always uses a chunk unit of line, and browse mode documents always cause a line break at the beginning and end of block elements.
