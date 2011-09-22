@@ -42,7 +42,7 @@ $CURL -s -o /tmp/nvda.pot $url
 absPath=`readlink -f -n $0`
 absPath=`dirname $absPath`
 pushd ${absPath}/../ >/dev/null 2>&1
-langs=(ar fi ja nl pl sv ta tr)
+langs=(ar fi it ja nl pl sv ta tr)
 for lang in ${langs[*]}; do
     echo "processing $lang"
     cd $lang
