@@ -39,11 +39,15 @@ for lang in ${langs[*]}; do
         git checkout ${f}
     done
 
+    python ../scripts/stats.py
+
     mfiles=`git status -s -uno | grep -i ".html$" | awk '{printf(" %s", $2)}'`
+    mstats=`git status -s -uno | grep -i "\-stats.txt$" | awk '{printf(" %s", $2)}'`
+
     if [ "$mfiles" != "" ]; then
         git add $mfiles
-        msg="${lang}: updated $mfiles from t2t."
-        echo "$msg"
+        git add $mstats
+        msg="${lang}: updated $mfiles $mstats from t2t."
         git commit -m "$msg"
         ../scripts/commit.sh
     fi

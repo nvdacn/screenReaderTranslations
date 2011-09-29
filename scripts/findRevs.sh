@@ -77,6 +77,16 @@ sed \
 $BZR log -r $i >${rel}/log.txt
 cp $tempFile $targetFile
 cp $targetFile ${rel}/$origFile
+#### add stats file for userGuide
+if [ "$origFile" == "userGuide.t2t" ]; then
+pushd $rel >dev/null 2>&1
+cp userGuide.t2t userGuide.t2t.bak
+sed -i -e 's/%!includeconf:/% %!includeconf:/g'
+../../../scripts/txt2tags.py -t html userGuide.t2t
+python ../../../scripts/stats.py
+mv userGuide.t2t.bak userGuide.t2t
+popd >/dev/null 2>&1
+fi
 git add $rel
 fi
 i=$(($i+1))
@@ -98,7 +108,7 @@ fi
 echo "my startRev is: $startRev"
 findRevs $lang
 count=`git status 2>/dev/null | grep "$lang/$DIFFSDIR" | wc -l`
-count=$(($count/4))
+count=$(($count/5))
 if [ "$count" != "0" ]; then
 msg="${msg}$lang: $count new revision(s) in $DIFFSDIR ($newRevs)\n"
 fi
