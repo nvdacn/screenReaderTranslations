@@ -25,9 +25,14 @@ for line in lines:
             pars = 0; tables = 0; lists = 0
         id = PnewSec.groupdict()['id']
 
+# make sure to add the last section info.
+if id:
+    info.append((id, pars, tables, lists))
+    pars = 0; tables = 0; lists = 0
+
 f = open('userGuide-stats.txt', 'w')
 for i in info:
-    f.write("%s paragraphs:%d, tables:%d, lists:%d\n" %(i[0],i[1], i[2], i[3] ))
+    f.write("%s paragraphs:%d, tables:%d, lists:%d\n\n" %(i[0],i[1], i[2], i[3] ))
 f.close()
 
 
