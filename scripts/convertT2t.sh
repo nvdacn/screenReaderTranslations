@@ -25,19 +25,8 @@ langs=(ar de fi it ja nl pl ta tr)
 for lang in ${langs[*]}; do
     echo "processing $lang"
     cd $lang
-    for f in *.t2t; do
-        if [ "$lang" == "ar" ]; then
-            echo "Converting $f to utf8."; 
-            $ICONV -f utf16 -t utf8 <${f} >tmp.t2t
-            mv tmp.t2t ${f}
-        fi
-    done
 
     $PYTHON27 ../scripts/generate.py
-
-    for f in *.t2t; do
-        git checkout ${f}
-    done
 
     python ../scripts/stats.py
 
