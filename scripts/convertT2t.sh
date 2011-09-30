@@ -3,13 +3,9 @@
 #
 # Convert our t2t files to html.
 
-ICONV=`which iconv`
 PYTHON27=`which python2.7`
 
-if [ "$ICONV" == "" ]; then
-    echo "unable to find iconv, can not continue."
-    exit
-elif [ "$PYTHON27" == "" ]; then
+if [ "$PYTHON27" == "" ]; then
     echo "could not locate python 2.7, can not continue."
     exit
 fi
@@ -30,12 +26,16 @@ for lang in ${langs[*]}; do
 
     python ../scripts/stats.py
 
+    lastRev=`ls -1 ug-diffs/ | tail -n 1`
+    diff  --unchanged-line-format='' --old-line-format='en %L' --new-line-format="$lang %L" \
+    ug-diffs/$lastRev/ug-stats.txt  ug-stats.txt |
+    sed -e "s/$lang $//g" -e "s/^en $//g" >ug-stats-diff.txt
     mfiles=`git status -s -uno | grep -i ".html$" | awk '{printf(" %s", $2)}'`
-    mstats=`git status -s -uno | grep -i "\-stats.txt$" | awk '{printf(" %s", $2)}'`
+    mstats=`git status -s -uno | grep -i "ug\-stats\-diff.txt$" | awk '{printf(" %s", $2)}'`
 
     if [ "$mfiles" != "" ]; then
         git add $mfiles
-        git add $mstats
+        if [ "$mstats" != "" ]; then git add $mstats ug-stats.txt; fi
         msg="${lang}: updated $mfiles $mstats from t2t."
         git commit -m "$msg"
         ../scripts/commit.sh
