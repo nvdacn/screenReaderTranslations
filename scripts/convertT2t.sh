@@ -21,10 +21,11 @@ langs=(ar de fi it ja nl pl ta tr)
 for lang in ${langs[*]}; do
     echo "processing $lang"
     cd $lang
-
-    $PYTHON27 ../scripts/generate.py
-
+    sed -i -e 's/^%!includeconf:/% %!includeconf:/g' userGuide.t2t
+    ../scripts/txt2tags.py -t html userGuide.t2t
     python ../scripts/stats.py
+    git checkout -f userGuide.t2t UserGuide.html
+    $PYTHON27 ../scripts/generate.py
 
     lastRev=`ls -1 ug-diffs/ | tail -n 1`
     diff  --unchanged-line-format='' --old-line-format='en %L' --new-line-format="$lang %L" \
