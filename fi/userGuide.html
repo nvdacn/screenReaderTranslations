@@ -234,7 +234,7 @@ Jos uudelleenkäynnistyskehotusta ei tullut, Valmis-painikkeen painaminen sulkee
 <H3>4.2. Massamuistiversio</H3>
 <P>
 Riittää, että tiedoston kohdalla painetaan Enteriä tai kaksoisnapsautetaan sitä ja seurataan näyttöön tulevia kehotteita.
-Ohjelma kysyy, mihin tiedostot sijoitetaan.
+Ohjelma kysyy, minne tiedostot puretaan.
 </P>
 <A NAME="toc13"></A>
 <H4>4.2.1. Käyttäminen USB-muistitikulta</H4>
@@ -249,10 +249,6 @@ Jos USB-muistitikun asemakirjain on esimerkiksi E:\, voidaan kirjoittaa E:\nvda,
 </P>
 <P>
 HUOM: Vaikka tämä tarkoittaakin, että NVDA:ta ja sen asetuksia voidaan kuljettaa mukana missä tahansa, pelkkä muistitikun koneeseen kytkeminen ei käynnistä NVDA:ta automaattisesti, vaan se on käynnistettävä käsin joko Windowsin Resurssienhallinnasta tai Suorita-valintaikkunasta.
-</P>
-<P>
-USB-muistitikkujen ja käyttöjärjestelmien tietoturva-asetusten erojen vuoksi  voi olla useampia vaiheita, jotka on tehtävä automaattisen käynnistyksen sallimiseksi.
-Saattaa myös olla, että Windows ja/tai käytettävä muistitikku eivät tue lainkaan tätä ominaisuutta.
 </P>
 <P>
 Saadaksesi tietoja NVDA:n automaattisesta käynnistyksestä USB-muistitikulta, katso tätä artikkelia::
@@ -424,7 +420,7 @@ Objekti on yksittäinen kohde, kuten tekstikatkelma, painike, valintaruutu, liuk
 <A NAME="Jarjestelmakohdistus"></A>
 <H3>6.2. Järjestelmäkohdistuksella navigoiminen</H3>
 <P>
-Järjestelmäkohdistus, tunnetaan myös yksinkertaisesti kohdistuksena, on <A HREF="#Objektit">objekti</A>, joka vastaanottaa näppäimistön näppäinpainallukset.
+Järjestelmäkohdistus, tunnetaan myös yksinkertaisesti kohdistuksena, on <A HREF="#Objektit">objekti</A>, joka vastaanottaa näppäimistöltä painetut näppäimet.
 Jos esimerkiksi kirjoitetaan muokattavaan tekstikenttään, kohdistus on kyseisessä kentässä.
 </P>
 <P>
@@ -543,7 +539,8 @@ Tällaisissa tapauksissa voidaan käyttää objektinavigointia.
 <P>
 Objektinavigoinnin avulla on mahdollista liikkua yksittäisten objektien välillä ja saada niistä tietoja.
 Kun objektiin siirrytään, NVDA lukee sen samalla tavalla kuin järjestelmäkohdistuksenkin.
-Kaiken tekstin tarkastelemiseen sellaisena kuin se näkyy ruudulla voidaan käyttää objektinavigoinnin asemesta <A HREF="#Kokonaistarkastelu">kokonaistarkastelua</A>.
+Tekstiä voidaan myös tarkastella sellaisena kuin se näkyy ruudulla.
+Tähän käytetään objektinavigoinnin asemesta <A HREF="#Kokonaistarkastelu">kokonaistarkastelua</A>.
 </P>
 <P>
 Objektit on ryhmitelty hierarkisesti sen sijaan, että niiden välillä liikuttaisiin edestakaisin.
@@ -732,12 +729,6 @@ tekstin lukemiseen voidaan käyttää seuraavia näppäinkomentoja:
 <TD>Lukee tarkastelukohdistimen nykyisestä kohdasta lähtien siirtäen samalla sitä</TD>
 </TR>
 <TR>
-<TD>Siirrä järjestelmäkohdistin tarkastelukohdistimen kohdalle</TD>
-<TD>Ctrl+numeroryhmän miinus</TD>
-<TD>NVDA+Ctrl+askelpalautin</TD>
-<TD>Siirtää järjestelmäkohdistimen tarkastelukohdistimen kohdalle</TD>
-</TR>
-<TR>
 <TD>Merkitse kopioitavan tekstin alkukohta</TD>
 <TD>NVDA+f9</TD>
 <TD>NVDA+f9</TD>
@@ -785,7 +776,7 @@ Asettelua kuvataan seuraavasti:
 <H3>6.6. Kokonaistarkastelu</H3>
 <P>
 Vaikka yleensä voidaan tarkastella vain yksittäisen <A HREF="#Objektit">objektin</A> sisältöä, jotkin objektit mahdollistavat myös niiden sisällä olevien objektien tarkastelemisen.
-Monimutkaiset dokumentit mahdollistavat niiden koko sisällön tarkastelemisen ja sovellusikkunat mahdollistavat  ruudulla olevan tekstin tarkastelemisen sellaisena kuin se näytetään visuaalisesti.
+Monimutkaiset dokumentit mahdollistavat niiden koko sisällön tarkastelemisen ja sovellusikkunat mahdollistavat  tekstin tarkastelemisen sellaisena kuin se näkyy ruudulla.
 Tätä kutsutaan kokonaistarkasteluksi.
 Se muistuttaa monien muiden Windows-ruudunlukijoiden ruuduntarkastelu- tai hiirikohdistintoimintoa.
 </P>
@@ -823,8 +814,8 @@ Kahta seuraavaa komentoa käytetään kokonaistarkasteluun tai siitä pois siirt
 <A NAME="toc29"></A>
 <H3>6.7. Hiirellä navigoiminen</H3>
 <P>
-Kun hiirtä liikutetaan, NVDA lukee oletusarvoisesti suoraan sen osoittimen alla olevan tekstin.
-NVDA lukee myös osoitinta ympäröivän tekstikappaleen mikäli mahdollista.
+Kun hiirtä liikutetaan, NVDA lukee oletusarvoisesti suoraan sen alla olevan tekstin.
+NVDA lukee myös hiirikohdistinta ympäröivän tekstikappaleen mikäli mahdollista.
 Joissakin säätimissä lukeminen on tosin mahdollista vain rivi kerrallaan.
 </P>
 <P>
@@ -903,7 +894,7 @@ Toisinaan on tarvetta olla suorassa vuorovaikutuksessa näissä dokumenteisssa o
 Tämä tehdään siirtymällä vuorovaikutustilaan, jossa kaikki näppäilyt välitetään kyseessä olevalle säätimelle.
 NVDA siirtyy oletusarvoisesti selaustilasta vuorovaikutustilaan automaattisesti liikuttaessa tätä tilaa edellyttävän objektin kohdalle sarkaimella tai napsautettaessa sitä hiirellä.
 Vastaavasti sarkaimella siirtyminen tai sellaisen säätimen napsauttaminen, joka ei edellytä vuorovaikutustilaa, siirtää takaisin selaustilaan.
-Enterin tai välilyönnin painaminen tällaisten säädinten kohdalla siirtää myös vuorovaikutustilaan.
+Vuorovaikutustilaan voidaan siirtyä myös painamalla sitä edellyttävien säädinten kohdalla Enteriä tai välilyöntiä.
 Takaisin selaustilaan siirrytään painamalla Escape-näppäintä.
 Vuorovaikutustila voidaan lisäksi pakottaa käyttöön manuaalisesti, jolloin se pysyy toiminnassa siihen asti kunnes se poistetaan käytöstä.
 </P>
@@ -984,7 +975,7 @@ Sellaisinaan nämä komennot siirtävät seuraavan, ja Shift-näppäimen kanssa 
 Elementtilista mahdollistaa pääsyn dokumentissa oleviin linkkeihin, otsikoihin tai ARIA-maamerkkeihin.
 Valintapainikkeilla voidaan valita näiden kolmen näytettävän elementtityypin väliltä.
 Valintaikkunassa on myös muokkauskenttä, jonka avulla listaa voidaan suodattaa jonkin tietyn kohteen etsimiseksi dokumentista.
-Kun haluttu kohde on valittu, sen kohdalle voidaan siirtyä tai se voidaan avata käyttämällä valintaikkunan painikkeita.
+Kun haluttu kohde on valittu, sen kohdalle voidaan siirtyä tai se voidaan avata käyttämällä valintaikkunassa olevia painikkeita.
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -1142,13 +1133,13 @@ Arvot 0 - 100 ovat mahdollisia (0=hiljaisin ja 100=voimakkain).
 Tällä liukusäätimellä voidaan muuttaa puhesyntetisaattorin äänensävyä (korkeuden nousuja ja laskuja).
 ESpeak on tällä hetkellä ainoa syntetisaattori, joka tukee tätä asetusta.
 </P>
-<H5>Automaattinen kielen vaihtaminen</H5>
+<H5>Vaihda kieltä automaattisesti</H5>
 <P>
 Tällä valintaruudulla voidaan vaikuttaa siihen, vaihtaako NVDA puhesyntetisaattorin kieltä lennossa, mikäli luettavassa tekstissä on kieli määritelty.
 Tämä asetus on oletusarvoisesti käytössä.
 Tällä hetkellä vain eSpeak-syntetisaattori tukee automaattista kielen vaihtamista.
 </P>
-<H5>Automaattinen murteen vaihtaminen</H5>
+<H5>Vaihda murretta automaattisesti</H5>
 <P>
 Jos automaattinen kielen vaihtaminen on käytössä, Tällä valintaruudulla voidaan määrittää, vaihdetaanko murretta pelkän kielen sijasta.
 Jos esim. amerikanenglantia puhuvalla äänellä luetaan  dokumenttia, jonka mukaan osa tekstistä on englanninenglantia, niin silloin tämän asetuksen ollessa käytössä syntetisaattori vaihtaa aksenttiaan.
@@ -1320,7 +1311,7 @@ Key: NVDA+4
 </P>
 <P>
 Kun tämä valintaruutu on valittuna, NVDA puhuu kaikki painetut näppäimet, jotka eivät ole merkkejä.
-Tähän sisältyvät sellaiset näppäinyhdistelmät kuin Ctrl+jokin muu kirjain.
+Näitä ovat sellaiset näppäinyhdistelmät kuin Ctrl+jokin muu kirjain.
 </P>
 <A NAME="Hiiriasetukset"></A>
 <H4>8.1.7. Hiiriasetukset (NVDA+Ctrl+m)</H4>
@@ -1502,7 +1493,7 @@ Jos asetus on käytössä, kentät jätetään sellaisiksi kuin ne ruudulla näy
 </P>
 <H5>Lue sivu automaattisesti sen avauduttua</H5>
 <P>
-Tällä asetuksella määritetään, luetaanko sivu selaustilassa automaattisesti sen avauduttua.
+Tämä asetus määrittää, luetaanko sivu selaustilassa automaattisesti sen avauduttua.
 Asetus on oletusarvoisesti käytössä.
 </P>
 <H5>Lue sijoittelutaulukot</H5>
@@ -1681,7 +1672,7 @@ Muuttaaksesi sitä, miten NVDA on määritelty kirjautumis- ja käyttäjätilien
 Näytä loki -toiminnolla, joka löytyy NVDA-valikon Työkalut-alavalikosta, voidaan tutkia kaikkia NVDA:n viime käynnistyksen jälkeen tulleita lokimerkintöjä.
 </P>
 <P>
-Lokin sisällön lukemisen lisäksi se voidaan myös tallentaa tiedostoon tai päivittää sisällön, jotta uusimmat lokin avaamisen jälkeen tulleet merkinnät näytetään.
+Loki voidaan myös tallentaa tiedostoon tai päivittää ikkunan sisältö, jotta uusimmat lokin avaamisen jälkeen tulleet merkinnät näytetään.
 Nämä toiminnot ovat käytettävissä Näytä loki -sovelluksen Tiedosto-valikossa.
 </P>
 <A NAME="toc53"></A>
@@ -2176,7 +2167,7 @@ Tiedosto käyttää standardinmukaista ini-syntaksia.
 Tiedostossa voi olla useita lohkoja ja kussakin lohkossa voi olla yksi tai useampia avainsanoja.
 </P>
 <P>
-Kussakin lohkossa on määrittelyt tiettyyn NVDA:n Python-moduulissa ja luokassa oleviin skripteihin.
+Jokaisessa lohkossa on määrittelyt tiettyyn NVDA:n Python-moduulissa ja luokassa oleviin skripteihin.
 Lohkon nimi koostuu Python-moduulista ja -luokasta, jotka erotetaan toisistaan pisteellä.
 </P>
 <UL>
@@ -2250,19 +2241,19 @@ Tämän vuoksi toimintonäppäimissä on parasta käyttää vain Shift-, Ctrl- j
 <H3>12.2. edistynyt symbolien lausumisen mukauttaminen</H3>
 <P>
 Välimerkkien ja muiden symbolien lausumista voidaan mukauttaa enemmänkin kuin mitä <A HREF="#Symbolienlausuminen">Välimerkkien ja symbolien lausuminen</A> -valintaikkunassa on mahdollista.
-Voidaan esimerkiksi määrittää, lähetetäänkö symboli syntetisaattorille sellaisenaan (esim. tauon tai äänensävyn muutoksen aikaansaamiseksi) sekä lisätä omia symboleita.
+Voidaan esimerkiksi määrittää, lähetetäänkö symboli syntetisaattorille sellaisenaan (esim. tauon tai äänensävyn muutoksen aikaansaamiseksi) ja lisätä omia symboleita.
 </P>
 <P>
 Tämä tehdään muokkaamalla NVDA:n käyttäjän asetushakemistossa olevaa symbolitiedostoa.
 Tiedosto on nimeltään symbols-xx.dic, jossa xx on kielikoodi.
-Sen muoto on dokumentoitu Symboleiden lausuminen -kappaleessa kehittäjän oppaassa, joka on luettavissa <A HREF="http://www.nvda-project.org/wiki/Development">NVDA:n web-sivuston Development-osiossa</A>.
-Käyttäjät eivät voi kuitenkaan määritellä monimutkaisia symboleita.
+Tiedoston muoto on dokumentoitu Symboleiden lausuminen -kappaleessa kehittäjän oppaassa, joka on luettavissa <A HREF="http://www.nvda-project.org/wiki/Development">NVDA:n web-sivuston Development-osiossa</A>.
+Monimutkaisten symbolien määrittäminen ei ole kuitenkaan mahdollista.
 </P>
 <A NAME="toc73"></A>
 <H2>13. Lisätietoja</H2>
 <P>
 Mikäli tarvitset lisätietoja tai neuvoja NVDA:han liittyen, käy  sen web-sivustolla osoitteessa <A HREF="http://www.nvda-project.org/">http://www.nvda-project.org/</A>.
-Täältä löydät lisäohjeita sekä teknistä tukea ja yhteisöresursseja.
+Löydät sieltä lisäohjeita sekä teknistä tukea ja yhteisöresursseja.
 Sivustolla on myös NVDA:n kehitykseen liittyvää tietoa.
 </P>
 
