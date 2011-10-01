@@ -49,7 +49,7 @@ for lang in ${langs[*]}; do
 
     # restore nvda.po in case of modifications and pull from server.
     #
-    git checkout -f nvda.po; git svn rebase
+    git checkout -f nvda.po
 
     # finding statistics before updating against pot file.
     #
@@ -60,7 +60,7 @@ for lang in ${langs[*]}; do
     # update po file from downloaded pot
     #
     echo "updating po from pot."
-    $MSGMERGE -U nvda.po /tmp/nvda.pot
+    $MSGMERGE -q -U nvda.po /tmp/nvda.pot
 
     # finding statistics after updating against pot file.
     #
@@ -94,7 +94,7 @@ popd >/dev/null 2>&1
 
 rev=${url##*/}
 rev=`echo "$rev" | grep -o -P "[0-9]+"`
-git commit -m "Merging in messages from rev${rev} into nvda.po
+git commit -q -m "Merging in messages from rev${rev} into nvda.po
 
 $commitMsg"
 ./commit.sh

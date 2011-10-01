@@ -22,9 +22,9 @@ for lang in ${langs[*]}; do
     echo "processing $lang"
     cd $lang
     sed -i -e 's/^%!includeconf:/% %!includeconf:/g' userGuide.t2t
-    ../scripts/txt2tags.py -t html userGuide.t2t
+    ../scripts/txt2tags.py -q -t html userGuide.t2t
     python ../scripts/stats.py
-    git checkout -f userGuide.t2t UserGuide.html
+    git checkout -f userGuide.t2t userGuide.html
     $PYTHON27 ../scripts/generate.py
 
     lastRev=`ls -1 ug-diffs/ | tail -n 1`
@@ -38,7 +38,7 @@ for lang in ${langs[*]}; do
         git add $mfiles
         if [ "$mstats" != "" ]; then git add $mstats ug-stats.txt; fi
         msg="${lang}: updated $mfiles $mstats from t2t."
-        git commit -m "$msg"
+        git commit -q -m "$msg"
         ../scripts/commit.sh
     fi
     cd ..
