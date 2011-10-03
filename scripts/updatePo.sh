@@ -59,7 +59,7 @@ for lang in ${langs[*]}; do
 
     # update po file from downloaded pot
     #
-    echo "updating po from pot."
+    #echo "updating po from pot."
     $MSGMERGE -q -U nvda.po /tmp/nvda.pot
 
     # finding statistics after updating against pot file.
@@ -75,7 +75,7 @@ for lang in ${langs[*]}; do
         # revert because comments in po file might have changed.
         #
         git checkout -f nvda.po
-        echo "$0: nvda.po file is up to date, nothing to do."
+        #echo "nvda.po file is up to date, nothing to do."
     else
         # need to commit, because before and after are diffrent.
         #
@@ -85,7 +85,7 @@ for lang in ${langs[*]}; do
 
 "
        git add nvda.po
-        echo "$0 ${lang}: nvda.po has been updated from pot."
+        #echo "$0 ${lang}: nvda.po has been updated from pot."
     fi
     cd ..
 done
