@@ -33,7 +33,7 @@ for lang in ${langs[*]}; do
 
     if [ "$mfiles" != "" ]; then git add $mfiles; fi
     if [ "$mstats" != "" ]; then git add $mstats ug-stats.txt; fi
-    if [ "$mfiles" != "$mfiles" ]; then
+    if [ "$mfiles" != "$mstats" ]; then
         msg="${lang}: updated $mfiles $mstats from t2t."
         git commit -q -m "$msg"
         ../scripts/commit.sh
