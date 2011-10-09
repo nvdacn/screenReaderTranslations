@@ -1,40 +1,65 @@
 #!/usr/bin/python
 import re
+import sys
+import txt2tags
 
-f = open('userGuide.html')
+# regexps for matching t2t section headings
+nheader = re.compile(r'(\++)(.*?)(\++.*)')
+unheader = re.compile(r'(\=+)(.*?)(\=+.*)')
+
+f = open('userGuide.t2t')
 lines = f.readlines()
 f.close()
 
+## line endings, make sure we dont include any configs
+# give headings line numbers.
+for i in range(len(lines)):
+    lines[i] = lines[i].rstrip()
+    if lines[i].startswith("%!include"):
+        lines[i] = "% " + lines[i]; continue
+    m = nheader.match(lines[i])
+    if m: bits = m.groups(); lines[i] = bits[0] + " %d" %(i+1) + bits[1] + bits[2]; continue
+    n = unheader.match(lines[i])
+    if n: bits = n.groups(); lines[i] = bits[0] + " %d" %(i+1) + bits[1] + bits[2]; continue
+
+## convert our lines to html
+config = txt2tags.ConfigMaster()._get_defaults()
+config['target'] = 'html'
+rlines, toc = txt2tags.convert(lines, config)
+
+## get the stats
 info = []
-newSec = re.compile('\<H[0-9]>(?P<id>([0-9]+\.)+)')
+newSec = re.compile('\<H[0-9]>(?P<id>([0-9]+\.)+)\s+(?P<ln>([0-9]+))')
 pars = 0
 tables = 0
 lists = 0
 id = ''
-i = 0
-for i in range(len(lines)):
-    if lines[i].startswith("<P>"):
+ln = 0
+for i in range(len(rlines)):
+    if rlines[i].startswith("<P>"):
         pars +=1; continue
-    if lines[i].startswith("<TABLE "):
+    if rlines[i].startswith("<TABLE "):
         tables +=1; continue
-    if lines[i].startswith("<OL>") or lines[i].startswith("<UL>"):
+    if rlines[i].startswith("<OL>") or rlines[i].startswith("<UL>"):
         lists +=1; continue
-    PnewSec = newSec.match(lines[i])
+    PnewSec = newSec.match(rlines[i])
     if PnewSec:
         if id:
-            info.append((id, i+1, pars, tables, lists))
+            info.append((id, ln, pars, tables, lists))
         pars = 0; tables = 0; lists = 0
         id = PnewSec.groupdict()['id']
+        ln = PnewSec.groupdict()['ln']
 
 # make sure to add the last section info.
 if id:
-    info.append((id, i+1, pars, tables, lists))
+    info.append((id, ln, pars, tables, lists))
     pars = 0; tables = 0; lists = 0
 
+# store the stats.
 f = open('ug-stats.txt', 'w')
 f.write("# section number, section starts at line, paragraphs in this section, tables in this section, tables in this section.\n")
 for i in info:
-    f.write("%s sectionStart:%d paragraphs:%d, tables:%d, lists:%d\n\n" %(i[0],i[1], i[2], i[3], i[4] ))
+    f.write("%s sectionStart:%s paragraphs:%d, tables:%d, lists:%d\n\n" %(i[0],i[1], i[2], i[3], i[4] ))
 f.close()
 
 

@@ -21,10 +21,7 @@ langs=(ar de fi it ja nl pl ta tr)
 for lang in ${langs[*]}; do
     echo "processing $lang"
     cd $lang
-    sed -i -e 's/^%!includeconf:/% %!includeconf:/g' userGuide.t2t
-    ../scripts/txt2tags.py -q -t html userGuide.t2t
     python ../scripts/stats.py
-    git checkout -f userGuide.t2t userGuide.html
     $PYTHON27 ../scripts/generate.py
 
     lastRev=`ls -1 ug-diffs/ | tail -n 1`
@@ -34,9 +31,9 @@ for lang in ${langs[*]}; do
     mfiles=`git status -s -uno | grep -i ".html$" | awk '{printf(" %s", $2)}'`
     mstats=`git status -s -uno | grep -i "ug\-stats\-diff.txt$" | awk '{printf(" %s", $2)}'`
 
-    if [ "$mfiles" != "" ]; then
-        git add $mfiles
-        if [ "$mstats" != "" ]; then git add $mstats ug-stats.txt; fi
+    if [ "$mfiles" != "" ]; then git add $mfiles; fi
+    if [ "$mstats" != "" ]; then git add $mstats ug-stats.txt; fi
+    if [ "$mfiles" != "$mfiles" ]; then
         msg="${lang}: updated $mfiles $mstats from t2t."
         git commit -q -m "$msg"
         ../scripts/commit.sh
