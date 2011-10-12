@@ -92,24 +92,25 @@
     <UL>
     <LI><A HREF="#toc58">10.1. eSpeak</A>
     <LI><A HREF="#toc59">10.2. Microsoft Speech API version 4 (SAPI 4)</A>
-    <LI><A HREF="#toc60">10.3. Microsoft Speech Platform</A>
-    <LI><A HREF="#toc61">10.4. Audiologic Tts3</A>
-    <LI><A HREF="#toc62">10.5. Newfon</A>
+    <LI><A HREF="#toc60">10.3. Microsoft Speech API version 5 (SAPI 5)</A>
+    <LI><A HREF="#toc61">10.4. Microsoft Speech Platform</A>
+    <LI><A HREF="#toc62">10.5. Audiologic Tts3</A>
+    <LI><A HREF="#toc63">10.6. Newfon</A>
     </UL>
   <LI><A HREF="#SupportedBrailleDisplays">11. サポートされている点字ディスプレー</A>
     <UL>
-    <LI><A HREF="#toc64">11.1. Freedom Scientific社のFocus/PAC Mateシリーズ</A>
-    <LI><A HREF="#toc65">11.2. Optelec社製 ALVA BC640/680</A>
-    <LI><A HREF="#toc66">11.3. Handy Tech社製ディスプレー</A>
-    <LI><A HREF="#toc67">11.4. MDV Lilli</A>
-    <LI><A HREF="#toc68">11.5. Baum社/Humanware社/APH社製点字ディスプレー</A>
-    <LI><A HREF="#toc69">11.6. BRLTTY</A>
+    <LI><A HREF="#toc65">11.1. Freedom Scientific社のFocus/PAC Mateシリーズ</A>
+    <LI><A HREF="#toc66">11.2. Optelec社製 ALVA BC640/680</A>
+    <LI><A HREF="#toc67">11.3. Handy Tech社製ディスプレー</A>
+    <LI><A HREF="#toc68">11.4. MDV Lilli</A>
+    <LI><A HREF="#toc69">11.5. Baum社/Humanware社/APH社製点字ディスプレー</A>
+    <LI><A HREF="#toc70">11.6. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc70">12. コードなトピック</A>
+  <LI><A HREF="#toc71">12. コードなトピック</A>
     <UL>
-    <LI><A HREF="#toc71">12.1. 記号の読み上げの高度なカスタマイズ</A>
+    <LI><A HREF="#toc72">12.1. 記号の読み上げの高度なカスタマイズ</A>
     </UL>
-  <LI><A HREF="#toc72">13. さらに詳細な情報</A>
+  <LI><A HREF="#toc73">13. さらに詳細な情報</A>
   </UL>
 
 <P></P>
@@ -324,7 +325,7 @@ NVDAメニューでは、NVDAの設定変更、ヘルプへのアクセス、設
 </P>
 <P>
 NVDA実行中に、Windowsの任意の状態からNVDAメニューを開くには、NVDA+Nを押します。
-また、NVDAメニューには、Windowsのシステムと例にあるNVDAアイコンからもアクセスできます。
+また、NVDAメニューには、WindowsのシステムトレイにあるNVDAアイコンからもアクセスできます。
 アイコンをマウスで右クリックする方法と、Windowsキー+Bを押してシステムトレイに移動し、カーソルキーでNVDAアイコンを選択してアプリケーションキーを押す方法のどちらも利用できます。
 メニューが開いたら、カーソルキーでメニュー項目間を移動し、Enterキーで項目を開くことができます。
 </P>
@@ -494,11 +495,11 @@ NVDAには、以下のシステムキャレットに関するコマンドがあ�
 <P>
 また、テーブル内では以下のキーコマンドが利用可能です。
 </P>
-<TABLE ALIGN="center" BORDER="1" CELLPADDING="4">
+<TABLE BORDER="1" CELLPADDING="4">
 <TR>
-<TD>名称</TD>
-<TD>キー</TD>
-<TD>説明</TD>
+<TH>名称</TH>
+<TH>キー</TH>
+<TH>説明</TH>
 </TR>
 <TR>
 <TD>前の列に移動</TD>
@@ -742,7 +743,7 @@ NVDAでは、コンテンツの現在の<A HREF="#ObjectNavigation">ナビゲー
 注意: テンキー操作を実行するには、NumLockキーがOffになっている必要があります。
 </P>
 <P>
-これらのコマンドを覚える場合、基本的なテキストレビュー用のコマンドは3×3のグリッドで表現されており、上から下に向かって、行、タンゴ、文字の順に並んでおり、左から右に向かって、前、現在、次の順に並んでいます。
+これらのコマンドを覚える場合、基本的なテキストレビュー用のコマンドは3×3のグリッドで表現されており、上から下に向かって、行、単語、文字の順に並んでおり、左から右に向かって、前、現在、次の順に並んでいます。
 レイアウトは、次のように表現できます。
 </P>
 <TABLE BORDER="1" CELLPADDING="4">
@@ -776,7 +777,7 @@ NVDAでは、コンテンツの現在の<A HREF="#ObjectNavigation">ナビゲー
 まだオブジェクトナビゲーションを使用したことがない場合、これはたいてい<A HREF="#SystemFocus">フォーカス</A>のあるオブジェクトになります。
 例えば、ナビゲーターオブジェクトがボタンであった場合、フラットレビューではボタンのテキストに移動します。
 その後は<A HREF="#ReviewingText">テキストのレビューコマンド</A>を使ってテキストをレビューできます。
-You can also navigate directly to the object encompassing the current position of the review cursor, allowing you to use <A HREF="#ObjectNavigation">object navigation</A> from there.
+また、レビューカーソルの現在位置を網羅するオブジェクトに直接移動して、そこから<A HREF="#ObjectNavigation">オブジェクトナビゲーション</A>を使用することもできます。
 </P>
 <P>
 以下のふたつのコマンドは、フラットレビューから、またはフラットレビューへの切り替えに使用されます。
@@ -798,7 +799,7 @@ You can also navigate directly to the object encompassing the current position o
 <TD>フラットレビューからオブジェクトに移動</TD>
 <TD>NVDA+テンキー1</TD>
 <TD>NVDA+pageDown</TD>
-<TD>navigates to the object represented by the text at the current position of the review cursor in flat review</TD>
+<TD>フラットレビュー内の現在のレビューカーソル位置のテキストで表わされたオブジェクトに移動</TD>
 </TR>
 </TABLE>
 
@@ -865,7 +866,7 @@ NVDAは、ビープ音の変化によってマウスポインターが画面上�
 <TD>マウス位置のオブジェクトに移動</TD>
 <TD>NVDA+テンキーアスタリスク</TD>
 <TD>NVDA+Shift+F10</TD>
-<TD>ナビゲーターオブジェクトをマウス一のオブジェクトにセットします。</TD>
+<TD>ナビゲーターオブジェクトをマウス位置のオブジェクトにセットします。</TD>
 </TR>
 </TABLE>
 
@@ -1142,8 +1143,8 @@ NVDAに同梱されているeSpeakでは、このコンボボックスで声色�
 もし「すべて」が選択されていれば、すべての記号が単語として読み上げられます。
 このオプションは現在使用中の音声エンジンだけでなく、すべての音声エンジンに対して有効です。
 </P>
+<H5>大文字のピッチ変更率</H5>
 <P>
-==== 大文字のピッチ変更率 ==
 このエディットフィールドでは大文字を読み上げる際の高さの変化率を指定します。
 値はパーセントで指定し、負の値を指定すると大文字の高さは小文字よりも低くなりますし、正の値を指定すると高くなります。
 高さを変更したくない場合は、０を指定してください。
@@ -1161,7 +1162,7 @@ NVDAに同梱されているeSpeakでは、このコンボボックスで声色�
 <A NAME="VoiceSpellingFunctionality"></A>
 <H5>サポートされている場合スペル読み機能を使用する</H5>
 <P>
-1文字で構成されているような単語がありますが、その発音は文字自身が個々の文字として発音されるか、タンゴとして発音されるかによって異なります。
+1文字で構成されているような単語がありますが、その発音は文字自身が個々の文字として発音されるか、単語として発音されるかによって異なります。
 例えば英語では、"a"は文字でもあり単語でもあります。
 このオプションにより、もし音声エンジンがサポートしている場合は、これらのふたつの場合を区別することができます。
 ほとんどの音声エンジンでこの機能はサポートされています。
@@ -1712,16 +1713,15 @@ NVDAでこのシンセサイザーを使用する場合、利用可能な音声�
 <P>
 もしSAPI4用の音声をインストールしているにも関わらず、音声エンジンがNVDAの出力先ダイアログに表示されない場合は、<A HREF="http://activex.microsoft.com/activex/controls/sapi/spchapi.exe">SAPI 4.0 runtime binaries</A>をインストールしてください。
 </P>
-	<BLOCKQUOTE>
-	++ Microsoft Speech API version 5 (SAPI 5) ++
-	</BLOCKQUOTE>
+<A NAME="toc60"></A>
+<H3>10.3. Microsoft Speech API version 5 (SAPI 5)</H3>
 <P>
 SAPI 5はMicrosoftの音声エンジン向けの標準規格です。
 この規格に対応した多くの音声エンジンは、複数のメーカーやWebサイトから購入もしくは無料で入手できる他、少なくとも一つ以上の音声がすでにシステムにプリインストールされています。
 NVDAでこのシンセサイザーを使用する場合、利用可能な音声（<A HREF="#VoiceSettings">音声設定</A>や<A HREF="#SynthSettingsRing">簡単音声設定</A>からアクセスできます）には、システムにインストールされていて利用可能なすべてのSAPI 5用の音声が含まれています。
 </P>
-<A NAME="toc60"></A>
-<H3>10.3. Microsoft Speech Platform</H3>
+<A NAME="toc61"></A>
+<H3>10.4. Microsoft Speech Platform</H3>
 <P>
 Microsoft Speech Platformでは、通常はサーバーベースの読み上げアプリケーション開発に使用されるような多くの原語の音声を提供します。
 これらの音声がNVDAでも使用できます。
@@ -1735,8 +1735,8 @@ Microsoft Speech Platformでは、通常はサーバーベースの読み上げ�
 </UL>
 
 <P></P>
-<A NAME="toc61"></A>
-<H3>10.4. Audiologic Tts3</H3>
+<A NAME="toc62"></A>
+<H3>10.5. Audiologic Tts3</H3>
 <P>
 これは、イタリア語向けの商用音声エンジンです。
 この音声エンジンをNVDAで使用するには、それをシステムにインストールする必要があります。
@@ -1745,8 +1745,8 @@ Microsoft Speech Platformでは、通常はサーバーベースの読み上げ�
 <P>
 この音声エンジンは、<A HREF="#VoiceSpellingFunctionality">スペル読み機能</A>をサポートしていません。
 </P>
-<A NAME="toc62"></A>
-<H3>10.5. Newfon</H3>
+<A NAME="toc63"></A>
+<H3>10.6. Newfon</H3>
 <P>
 NewfonはSergey Shishmintzev氏作の無料の商用音声エンジンで、ロシア語とウクライナ語をサポートしています。
 この音声エンジンをダウンロードするには、ロシア語向けのNVDAコミュニティーサイトのダウンロードセクション、<A HREF="http://ru.nvda-community.org/?page_id=10">http://ru.nvda-community.org/?page_id=10</A>を参照してください。
@@ -1759,7 +1759,7 @@ NewfonはSergey Shishmintzev氏作の無料の商用音声エンジンで、ロ�
 <P>
 この章では、NVDAでサポートされている点字ディスプレーについて述べます。
 </P>
-<A NAME="toc64"></A>
+<A NAME="toc65"></A>
 <H3>11.1. Freedom Scientific社のFocus/PAC Mateシリーズ</H3>
 <P>
 NVDAは、USBまたはbluetooth接続されたすべての<A HREF="http://www.freedomscientific.com/">Freedom Scientific</A>社製のFocus及びPAC Mateディスプレーをサポートしています。
@@ -1806,7 +1806,7 @@ NVDAは、USBまたはbluetooth接続されたすべての<A HREF="http://www.fr
 </TR>
 </TABLE>
 
-<A NAME="toc65"></A>
+<A NAME="toc66"></A>
 <H3>11.2. Optelec社製 ALVA BC640/680</H3>
 <P>
 NVDAは、USBまたはbluetooth接続されている<A HREF="http://www.optelec.com/">Optelec</A>社製のALVA BC640及びBC680ディスプレーの両方をサポートします。
@@ -1896,7 +1896,7 @@ NVDAは、USBまたはbluetooth接続されている<A HREF="http://www.optelec.
 </TR>
 </TABLE>
 
-<A NAME="toc66"></A>
+<A NAME="toc67"></A>
 <H3>11.3. Handy Tech社製ディスプレー</H3>
 <P>
 NVDAは、すべてのUSBまたはbluetooth接続された<A HREF="http://www.handytech.de/">Handy Tech</A> 社製ディスプレーをサポートしています。
@@ -1969,7 +1969,7 @@ NVDAは、すべてのUSBまたはbluetooth接続された<A HREF="http://www.ha
 </TR>
 </TABLE>
 
-<A NAME="toc67"></A>
+<A NAME="toc68"></A>
 <H3>11.4. MDV Lilli</H3>
 <P>
 NVDAは、<A HREF="http://www.mdvbologna.it/">MDV</A>社製のLilliディスプレーをサポートしています。
@@ -2023,7 +2023,7 @@ NVDAは、<A HREF="http://www.mdvbologna.it/">MDV</A>社製のLilliディスプ�
 </TR>
 </TABLE>
 
-<A NAME="toc68"></A>
+<A NAME="toc69"></A>
 <H3>11.5. Baum社/Humanware社/APH社製点字ディスプレー</H3>
 <P>
  NVDAは、USBまたはbluetooth接続されたいくつかの<A HREF="http://www.baum.de/cms/en/">Baum</A>社、<A HREF="http://www.humanware.com/">HumanWare</A>社及び<A HREF="http://www.aph.org/">APH</A>製のディスプレーをサポートしています。
@@ -2106,7 +2106,7 @@ APH製のRefreshabrailleを使用する場合、USBモードをシリアルに�
 </TR>
 </TABLE>
 
-<A NAME="toc69"></A>
+<A NAME="toc70"></A>
 <H3>11.6. BRLTTY</H3>
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A>は別のプログラムで、より多くの点字ディスプレーをサポートしています。
@@ -2145,7 +2145,7 @@ APH製のRefreshabrailleを使用する場合、USBモードをシリアルに�
 </TR>
 </TABLE>
 
-<A NAME="toc70"></A>
+<A NAME="toc71"></A>
 <H2>12. コードなトピック</H2>
 <P>
 ++ キーマップの再割り当て及びその他の入力用ジェスチャー +
@@ -2228,7 +2228,7 @@ NVDAは、たとえ（Shift、Control及びAltキーのような）代替キー�
 ゆえに、もしAltキーをジェスチャーに使用した場合、スクリプトを実行するだけでなく、メニューバーを開いてしまう可能性があります。
 そこで、おそらくShift、Control及びNVDAキーを代替キーとして指定した方が良いと考えられます。
 </P>
-<A NAME="toc71"></A>
+<A NAME="toc72"></A>
 <H3>12.1. 記号の読み上げの高度なカスタマイズ</H3>
 <P>
 句読点などの記号の読み方を、<A HREF="#SymbolPronunciation">句読点/記号の読み方</A>ダイアログを使用することなくカスタマイズすることができます。
@@ -2240,7 +2240,7 @@ NVDAは、たとえ（Shift、Control及びAltキーのような）代替キー�
 このファイルの書式は、NVDAの開発者向けガイドの記号の読み上げセクションにあり、<A HREF="http://www.nvda-project.org/wiki/Development">the Development section of the NVDA web site</A>から参照できます。
 しかし、利用者は複雑な記号を定義することはできません。
 </P>
-<A NAME="toc72"></A>
+<A NAME="toc73"></A>
 <H2>13. さらに詳細な情報</H2>
 <P>
 NVDAに関して、さらに詳細な情報や助けが必要な場合は、NVDAのサイト、<A HREF="http://www.nvda-project.org/">http://www.nvda-project.org/</A>を参照してください。
