@@ -27,7 +27,7 @@ for lang in ${langs[*]}; do
     lastRev=`ls -1 ug-diffs/ | tail -n 1`
     diff  --unchanged-line-format='' --old-line-format='en %L' --new-line-format="$lang %L" \
     ug-diffs/$lastRev/ug-stats.txt  ug-stats.txt |
-    sed -e "s/$lang $//g" -e "s/^en $//g" >ug-stats-diff.txt
+    sed -e "s/$lang $//g" -e "s/^en $//g" | sort -V -s -k 2,2 >ug-stats-diff.txt
     mfiles=`git status -s -uno | grep -i ".html$" | awk '{printf(" %s", $2)}'`
     mstats=`git status -s -uno | grep -i "ug\-stats\-diff.txt$" | awk '{printf(" %s", $2)}'`
 
