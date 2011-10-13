@@ -108,7 +108,9 @@ fi
 echo "my startRev is: $startRev"
 findRevs $lang
 count=`git status 2>/dev/null | grep "$lang/$DIFFSDIR" | wc -l`
-count=$(($count/5))
+divisor=4
+if [ "$DIFFSDIR" == "ug-diffs" ]; then divisor=5; fi
+count=$(($count/$divisor))
 if [ "$count" != "0" ]; then
 msg="${msg}$lang: $count new revision(s) in $DIFFSDIR ($newRevs)\n"
 fi
