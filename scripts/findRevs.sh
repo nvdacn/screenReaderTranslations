@@ -81,6 +81,12 @@ cp $targetFile ${rel}/$origFile
 if [ "$origFile" == "userGuide.t2t" ]; then
 pushd $rel >/dev/null 2>&1
 python ../../../scripts/stats.py
+# update ug-stats-diff at the same time
+diff  --unchanged-line-format='' --old-line-format='en %L' --new-line-format="$lang %L" \
+ug-stats.txt ../../ug-stats.txt |
+sed -e "s/$lang $//g" -e "s/^en $//g" | sort -V -s -k 2,2 | 
+sed '/^\s*$/d' >../../ug-stats-diff.txt
+git add ../../ug-stats-diff.txt
 popd >/dev/null 2>&1
 fi
 git add $rel
