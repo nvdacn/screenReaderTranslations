@@ -74,7 +74,7 @@
       <LI><A HREF="#toc44">8.1.8. Tarkastelukohdistimen asetukset</A>
       <LI><A HREF="#toc45">8.1.9. Objektien lukuasetukset (NVDA+Ctrl+o)</A>
       <LI><A HREF="#toc46">8.1.10. Selaustilan asetukset (NVDA+Ctrl+b)</A>
-      <LI><A HREF="#Asiakirjojenmuotoiluasetukset">8.1.11. Asiakirjojen muotoiluasetukset (NVDA+Ctrl+d)</A>
+      <LI><A HREF="#Dokumenttienmuotoiluasetukset">8.1.11. Dokumenttien muotoiluasetukset (NVDA+Ctrl+d)</A>
       <LI><A HREF="#toc48">8.1.12. Puhesanastot</A>
       <LI><A HREF="#Symbolienlausuminen">8.1.13. Välimerkkien ja symbolien lausuminen</A>
       </UL>
@@ -141,7 +141,7 @@ Tärkeimpiä ominaisuuksia ovat:
 <LI>Käännökset useille eri kielille
 <LI>Tuki nykyaikaisille Windows-käyttöjärjestelmille, mukaan lukien sekä 32- että 64-bittiset versiot
 <LI>Mahdollisuus käyttää Windowsin kirjautumis- ja muissa suojatuissa ruuduissa
-<LI>Tuki yleisille esteettömyysrajapinnoille, kuten Microsoft Active Accessibility, Java Access Bridge, IAccessible2 sekä UI Automation
+<LI>Tuki yleisille esteettömyysrajapinnoille, kuten Microsoft Active Accessibility, Java Access Bridge, IAccessible2 sekä UI Automation (tuki UI Automationille vain Windows 7:ssä ja uudemmissa)
 <LI>Tuki Windowsin komentokehotteelle ja konsolisovelluksille
 </UL>
 
@@ -452,9 +452,9 @@ Joitakin hyödyllisiä näppäinkomentoja kohdistuksella navigoitaessa:
 <TD>Lukee kaikki aktiivisen ikkunan säätimet (hyödyllinen valintaikkunoissa)</TD>
 </TR>
 <TR>
-<TD>Lue tilapalkki</TD>
+<TD>Lue tilarivi</TD>
 <TD>NVDA+End</TD>
-<TD>Lukee tilapalkin, mikäli NVDA löytää sen, ja siirtää lisäksi navigointiobjektin sen kohdalle</TD>
+<TD>Lukee tilarivin, mikäli NVDA löytää sen, ja siirtää lisäksi navigointiobjektin sen kohdalle</TD>
 </TR>
 </TABLE>
 
@@ -797,7 +797,7 @@ Kahta seuraavaa komentoa käytetään kokonaistarkasteluun tai siitä pois siirt
 <TD>Siirry kokonaistarkasteluun</TD>
 <TD>NVDA+numeroryhmän 7</TD>
 <TD>NVDA+Page up</TD>
-<TD>Siirtää kokonaistarkasteluun tarkastelukohdistimen nykyisessä kohdassa. Tämä mahdollistaa koko ruudun tai asiakirjan sisällön lukemisen tekstinlukukomennoilla.</TD>
+<TD>Siirtää kokonaistarkasteluun tarkastelukohdistimen nykyisessä kohdassa. Tämä mahdollistaa koko ruudun tai dokumentin sisällön lukemisen tekstinlukukomennoilla.</TD>
 </TR>
 <TR>
 <TD>Siirrä objektiin</TD>
@@ -877,7 +877,7 @@ Vaikka hiiren avulla liikkumiseen tulisikin käyttää fyysistä hiirtä tai kos
 <A NAME="toc31"></A>
 <H2>7. Selaustila</H2>
 <P>
-Monimutkaiset, ei-muokattavat asiakirjat kuten web-sivut, näytetään NVDA:ssa selaustilassa.
+Monimutkaiset, ei-muokattavat dokumentit kuten web-sivut, näytetään NVDA:ssa selaustilassa.
 Näihin kuuluvat Mozilla Firefox-, Internet Explorer-, Google Chrome- ja Adobe Reader- dokumentit sekä Flash-sisältö.
 </P>
 <P>
@@ -1138,7 +1138,7 @@ Tällä hetkellä vain eSpeak-syntetisaattori tukee automaattista kielen vaihtam
 <H5>Vaihda murretta automaattisesti</H5>
 <P>
 Jos automaattinen kielen vaihtaminen on käytössä, Tällä valintaruudulla voidaan määrittää, vaihdetaanko murretta pelkän kielen sijasta.
-Jos esim. amerikanenglantia puhuvalla äänellä luetaan  dokumenttia, jonka mukaan osa tekstistä on englanninenglantia, niin silloin tämän asetuksen ollessa käytössä syntetisaattori vaihtaa aksenttiaan.
+Jos esim. amerikanenglantia puhuvalla äänellä luetaan  dokumenttia, jonka kielimäärityksen mukaan osa tekstistä on englanninenglantia, niin silloin tämän asetuksen ollessa käytössä syntetisaattori vaihtaa aksenttiaan.
 Asetus ei ole oletusarvoisesti käytössä.
 </P>
 <H5>Välimerkki- ja symbolitaso</H5>
@@ -1409,7 +1409,7 @@ Kuplailmoitukset ovat työkaluvihjeiden kaltaisia, mutta ovat yleensä suurempia
 <H5>Lue objektien pikanäppäimet</H5>
 <P>
 Kun tämä valintaruutu on valittuna, NVDA kertoo objektiin tai säätimeen liitetyn pikanäppäimen.
-Valikkopalkin Tiedosto-valikolla voi esimerkiksi olla pikanäppäin Alt+t.
+Valikkorivin Tiedosto-valikolla voi esimerkiksi olla pikanäppäin Alt+t.
 </P>
 <H5>Lue objektien sijaintitiedot</H5>
 <P>
@@ -1501,7 +1501,7 @@ Jos asetus on käytössä, NVDA lukee myös taulukot, joita käytetään puhtaas
 </P>
 <H5>Kenttien, kuten linkkien ja otsikoiden, lukemisen määrittäminen</H5>
 <P>
-Katso <A HREF="#Asiakirjojenmuotoiluasetukset">Asiakirjojen muotoiluasetukset -valintaikkunassa</A> asetuksia määrittääksesi kentät, jotka puhutaan, kuten linkit, otsikot ja taulukot.
+Katso <A HREF="#Dokumenttienmuotoiluasetukset">Dokumenttien muotoiluasetukset -valintaikkunassa</A> asetuksia määrittääksesi luettavat kentät, kuten linkit, otsikot ja taulukot.
 </P>
 <H5>Automaattinen vuorovaikutustila kohdistuksen muuttuessa</H5>
 <P>
@@ -1514,17 +1514,17 @@ Kun tämä asetus on käytössä, NVDA siirtyy automaattisesti vuorovaikutustila
 Jos esim. web-sivua nuolinäppäimillä selatessa tullaan muokkauskentän kohdalle, NVDA ottaa vuorovaikutustilan käyttöön automaattisesti.
 Jos kentästä siirrytään pois nuolinäppäimillä, NVDA vaihtaa takaisin selaustilaan.
 </P>
-<H5>Ilmaise vuorovaikutus- ja selaustilat äänimerkeillä</H5>
+<H5>Ilmaise vuorovaikutus- ja selaustilat äänimerkillä</H5>
 <P>
 Jos tämä asetus on käytössä, NVDA soittaa äänimerkin vaihtaessaan selaus- ja vuorovaikutustilojen välillä sen sijaan, että siitä ilmoitettaisiin puheena.
 </P>
-<A NAME="Asiakirjojenmuotoiluasetukset"></A>
-<H4>8.1.11. Asiakirjojen muotoiluasetukset (NVDA+Ctrl+d)</H4>
+<A NAME="Dokumenttienmuotoiluasetukset"></A>
+<H4>8.1.11. Dokumenttien muotoiluasetukset (NVDA+Ctrl+d)</H4>
 <P>
-Tämä valintaikkuna löytyy Asetukset-valikon "Asiakirjojen muotoilu..." -kohdasta.
+Tämä valintaikkuna löytyy Asetukset-valikon "Dokumenttien muotoilu..." -kohdasta.
 </P>
 <P>
-Useimmilla tämän valintaikkunan valintaruuduilla voidaan määrittää, minkä tyyppisiä muotoilutietoja halutaan kuulla automaattisesti liikutettaessa kohdistinta asiakirjoissa.
+Useimmilla tämän valintaikkunan valintaruuduilla voidaan määrittää, minkä tyyppisiä muotoilutietoja halutaan kuulla automaattisesti liikutettaessa kohdistinta dokumenteissa.
 Jos esimerkiksi valitaan Lue fontti -valintaruutu, joka kerta, kun liikutaan nuolinäppäimillä tekstin kohdalle, jonka fontti eroaa aikaisemmasta, NVDA kertoo fontin nimen.
 </P>
 <P>
@@ -1559,7 +1559,7 @@ Jos tämä asetus on käytössä, NVDA yrittää havaita kaikki rivillä olevat 
 NVDA havaitsee oletusarvoisesti järjestelmä- ja tarkastelukohdistimen kohdalla olevat muotoilut, ja joissakin tapauksissa lopunkin rivin, mutta vain, jos se ei aiheuta suorituskyvyn heikkenemistä.
 </P>
 <P>
-Tämä asetus kannattaa ottaa käyttöön oikoluettaessa asiakirjoja sellaisissa sovelluksissa kuin Microsoft Word, kun muotoilut ovat tärkeitä.
+Tämä asetus kannattaa ottaa käyttöön oikoluettaessa dokumentteja sellaisissa sovelluksissa kuin Microsoft Word, kun muotoilut ovat tärkeitä.
 </P>
 <A NAME="toc48"></A>
 <H4>8.1.12. Puhesanastot</H4>
