@@ -1,7 +1,7 @@
 ﻿NVDA NVDA_VERSION Handbuch für Entwickler
 
 
-%!includeconf: ../userGuide.t2tconf
+%!includeconf: user_docs/userGuide.t2tconf
 
 % Remove double spacing from the beginning of each line as txt2tags seems to indent preformatted text by two spaces
 %!PostProc(html): '^  ' ''
@@ -545,7 +545,7 @@ Mit f6 können sie zwischen Ein- und Ausgabefenster wechseln.
 durch Schließen des Fensters wird die Sitzung lediglich verborgen. Dies macht es möglich, zur Konsole zurückzukehren und alle bisherigen Eingaben und Variablen beizubehalten
 
 
-++ namensraum ++
+++ namensraum ++[PythonConsoleNamespace]
 
 +++ automatische Importe +++
 der einfachheit halber werden die folgenden Module und Variablen automatisch importiert:
@@ -561,6 +561,24 @@ Diese Variablen sind:
 - nav: das aktuelle Navigatorobjekt
 - mouse: das Objekt, auf dem sich der Mauszeiger befindet
 - brlRegions: die Braille-Regionen des aktiven Braille-Puffers
+-
+
++ die Remote-Python-Konsole +
+für Situationen, in denen Fehler in nvda über ein Netzwerk hinweg aus der Ferne korrigiert werden müssen, ist eine Remote-Python-Konsole verfügbar. 
+Diese funktioniert ähnlich wie die weiter oben beschriebene [lokale Python-Konsole #PythonConsole], der Zugriff erfolgt jedoch über TCP.
+
+Bitte bedenken Sie, dass dies ein hohes Sicherheitsrisiko darstellt. 
+Sie sollten die remote-Python-Konsole nur dann aktivieren, wenn sie mit vertrauenswürdigen Netzwerken wie etwa vpns verbunden sind.
+
+++ Verwendung ++
+um die remote-Python-Konsole zu aktivieren, verwenden sie die lokale Python-Konsole und importieren sie remotePythonConsole. Rufen Sie anschließend remotePythonConsole.initialize() auf.
+Jetzt können Verbindungen über den typ-Port 6832 aufgebaut werden.
+Die eingabeaufzeichnungsliste für zuvor eingegebene Befehle wird nicht unterstützt.
+Der Namensbereich ist identisch mit dem  [Namensbereich der lokalen Python-Konsole #PythonConsoleNamespace].
+
+Es gibt jedoch einige weitere spezielle Funktionen:
+- snap(): erstellt einen Schnappschuss des aktuellen Zustandes vbon nvda und speichert diesen in den [Schnappschuss-Variablen #PythonConsoleSnapshotVariables].
+- rmSnap(): entfernt alle Schnappschuss-Variablen.
 -
 
 Ende des Dokuments.
