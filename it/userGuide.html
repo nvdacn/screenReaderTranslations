@@ -7,7 +7,7 @@
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
 <H2>﻿NVDA 2011.3 Manuale Utente</H2>
-<FONT SIZE="4"><I>Ultimo Aggiornamento del manuale originale: 24 giugno 2011</I></FONT><BR>
+<FONT SIZE="4"><I>Ultimo Aggiornamento del manuale originale: 8 novembre 2011</I></FONT><BR>
 <FONT SIZE="4">traduzione a cura di Simone Dal Maso e Gianluca Casalino</FONT>
 </CENTER>
 
@@ -96,25 +96,26 @@
     <LI><A HREF="#toc56">10.1. Espeak</A>
     <LI><A HREF="#toc57">10.2. Microsoft Speech API versione 4 (SAPI 4)</A>
     <LI><A HREF="#toc58">10.3. Microsoft Speech API versione 5 (SAPI 5)</A>
-    <LI><A HREF="#toc59">10.4. Audiologic Tts3</A>
-    <LI><A HREF="#toc60">10.5. Newfon</A>
+    <LI><A HREF="#toc59">10.4. Microsoft Speech Platform</A>
+    <LI><A HREF="#toc60">10.5. Audiologic Tts3</A>
+    <LI><A HREF="#toc61">10.6. Newfon</A>
     </UL>
   <LI><A HREF="#SupportedBrailleDisplays">11. Display braille supportati</A>
     <UL>
-    <LI><A HREF="#toc62">11.1. Freedom Scientific Serie Focus/PAC Mate</A>
-    <LI><A HREF="#toc63">11.2. Optelec ALVA BC640/680</A>
-    <LI><A HREF="#toc64">11.3. Modelli Handy Tech</A>
-    <LI><A HREF="#toc65">11.4. MDV Lilli</A>
-    <LI><A HREF="#toc66">11.5. Display Braille Baum/Humanware/APH</A>
-    <LI><A HREF="#toc67">11.6. altri drivers non ufficiali</A>
-    <LI><A HREF="#toc68">11.7. BRLTTY</A>
+    <LI><A HREF="#toc63">11.1. Freedom Scientific Serie Focus/PAC Mate</A>
+    <LI><A HREF="#toc64">11.2. Optelec ALVA BC640/680</A>
+    <LI><A HREF="#toc65">11.3. Modelli Handy Tech</A>
+    <LI><A HREF="#toc66">11.4. MDV Lilli</A>
+    <LI><A HREF="#toc67">11.5. Display Braille Baum/Humanware/APH</A>
+    <LI><A HREF="#toc68">11.6. altri drivers non ufficiali</A>
+    <LI><A HREF="#toc69">11.7. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc69">12. Argomenti avanzati</A>
+  <LI><A HREF="#toc70">12. Argomenti avanzati</A>
     <UL>
-    <LI><A HREF="#toc70">12.1. Riassegnamento di tasti e note sull'immissione di gesture</A>
-    <LI><A HREF="#toc71">12.2. Personalizzazione avanzata dei simboli di punteggiatura</A>
+    <LI><A HREF="#toc71">12.1. Riassegnamento di tasti e note sull'immissione di gesture</A>
+    <LI><A HREF="#toc72">12.2. Personalizzazione avanzata dei simboli di punteggiatura</A>
     </UL>
-  <LI><A HREF="#toc72">13. Ulteriori Informazioni</A>
+  <LI><A HREF="#toc73">13. Ulteriori Informazioni</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -1166,6 +1167,21 @@ Un controllo che va da 0 a 100, (0 indica il volume più basso, 100 il più alto
 Un controllo che permette di selezionare con quanta inflessione (aumento e decadimento del pitch) la sintesi vocale debba parlare.  Al momento soltanto Espeak fornisce questa funzionalità.
 </P>
 
+<H5>Cambio automatico della lingua</H5>
+
+<P>
+Questa casella di controllo permette di stabilire se NVDA debba cambiare al volo la lingua con cui parla, nel caso all'interno del testo che si sta leggendo siano presenti i marcatori appositi.
+Questa opzione risulta abilitata di default.
+Inoltre, si ricorda che soltanto Espeak al momento supporta questa funzionalità.
+</P>
+
+<H5>Cambio automatico dialetto</H5>
+
+<P>
+Se l'impostazione cambio automatico della lingua è attiva, questa casella di controllo farà in modo che NVDA modifichi anche il dialetto della lingua in uso. Ad esempio, potrebbe essere possibile passare da un "american English" ad un "british English".
+L'impostazione è disabilitata di default.
+</P>
+
 <H5>Livello di punteggiatura/simboli</H5>
 
 <P>
@@ -1822,7 +1838,23 @@ Quando si utilizzano queste sintesi vocali con NVDA, le scelte disponibili (a cu
 </P>
 
 <A NAME="toc59"></A>
-<H3>10.4. Audiologic Tts3</H3>
+<H3>10.4. Microsoft Speech Platform</H3>
+
+<P>
+La piattaforma Microsoft Speech fornisce supporto per diverse lingue, e generalmente è utilizzata nello sviluppo di applicazioni lato server.
+Queste voci possono essere utilizzate anche con NVDA.
+</P>
+<P>
+Per usare queste voci, è necessaria l'installazione di due componenti:
+</P>
+
+<UL>
+<LI>Microsoft Speech Platform - Server Runtime (Version 10.2): <A HREF="http://www.microsoft.com/download/en/details.aspx?id=10208">http://www.microsoft.com/download/en/details.aspx?id=10208</A>
+<LI>Microsoft Speech Platform - Server Runtime Languages (Version 10.2): <A HREF="http://www.microsoft.com/download/en/details.aspx?id=21924">http://www.microsoft.com/download/en/details.aspx?id=21924</A>
+</UL>
+
+<A NAME="toc60"></A>
+<H3>10.5. Audiologic Tts3</H3>
 
 <P>
 Si tratta di una sintesi vocale commerciale espressamente rivolta al mercato italiano. Per farla funzionare bisogna possedere una regolare licenza installata sul proprio pc.
@@ -1832,8 +1864,8 @@ Per maggiori informazioni si veda il sito <A HREF="http://www.audiologic.it">www
 Questo sintetizzatore non supporta <A HREF="#VoiceSpellingFunctionality">funzionalità spelling</A>.
 </P>
 
-<A NAME="toc60"></A>
-<H3>10.5. Newfon</H3>
+<A NAME="toc61"></A>
+<H3>10.6. Newfon</H3>
 
 <P>
 Newfon è una sintesi vocale gratuita commerciale sviluppata da Sergey Shishmintzev in grado di supportare le lingue russo e ucraino.
@@ -1849,7 +1881,7 @@ Questo sintetizzatore non supporta <A HREF="#VoiceSpellingFunctionality">funzion
 Questa sezione contiene informazioni sulle barre braille supportate da NVDA.
 </P>
 
-<A NAME="toc62"></A>
+<A NAME="toc63"></A>
 <H3>11.1. Freedom Scientific Serie Focus/PAC Mate</H3>
 
 <P>
@@ -1898,7 +1930,7 @@ Si prega di consultare la documentazione della propria barra braille per avere i
 </TR>
 </TABLE>
 
-<A NAME="toc63"></A>
+<A NAME="toc64"></A>
 <H3>11.2. Optelec ALVA BC640/680</H3>
 
 <P>
@@ -1988,7 +2020,7 @@ Si prega di consultare la documentazione della propria barra braille per avere i
 </TR>
 </TABLE>
 
-<A NAME="toc64"></A>
+<A NAME="toc65"></A>
 <H3>11.3. Modelli Handy Tech</H3>
 
 <P>
@@ -2060,7 +2092,7 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 </TR>
 </TABLE>
 
-<A NAME="toc65"></A>
+<A NAME="toc66"></A>
 <H3>11.4. MDV Lilli</H3>
 
 <P>
@@ -2112,7 +2144,7 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 </TR>
 </TABLE>
 
-<A NAME="toc66"></A>
+<A NAME="toc67"></A>
 <H3>11.5. Display Braille Baum/Humanware/APH</H3>
 
 <P>
@@ -2192,7 +2224,7 @@ Per i modelli che possiedono un Joystick:
 </TR>
 </TABLE>
 
-<A NAME="toc67"></A>
+<A NAME="toc68"></A>
 <H3>11.6. altri drivers non ufficiali</H3>
 
 <P>
@@ -2200,7 +2232,7 @@ Sul sito della comunità italiana di NVDA sono presenti, alla voce download, dri
   Pertanto, Il lavoro di riscrittura dei Driver per i Display Braille Papenmeier verrà fatto soltanto se qualche utente si dimostrerà interessato.
 </P>
 
-<A NAME="toc68"></A>
+<A NAME="toc69"></A>
 <H3>11.7. BRLTTY</H3>
 
 <P>
@@ -2237,10 +2269,10 @@ Si legga la <A HREF="http://mielke.cc/brltty/doc/drivers/">tabella dei tasti di 
 </TR>
 </TABLE>
 
-<A NAME="toc69"></A>
+<A NAME="toc70"></A>
 <H2>12. Argomenti avanzati</H2>
 
-<A NAME="toc70"></A>
+<A NAME="toc71"></A>
 <H3>12.1. Riassegnamento di tasti e note sull'immissione di gesture</H3>
 
 <P>
@@ -2327,7 +2359,7 @@ Quindi, se si utilizza il tasto Alt in una gesture, la pressione della combinazi
 Comunque, si consiglia di servirsi dei tasti Shift, Control e NVDA come tasti speciali.
 </P>
 
-<A NAME="toc71"></A>
+<A NAME="toc72"></A>
 <H3>12.2. Personalizzazione avanzata dei simboli di punteggiatura</H3>
 
 <P>
@@ -2341,7 +2373,7 @@ Il formato di tale file è documentato nella guida per gli sviluppatori, sezione
 Comunque, non è possibile per gli utenti definire simboli troppo complessi.
 </P>
 
-<A NAME="toc72"></A>
+<A NAME="toc73"></A>
 <H2>13. Ulteriori Informazioni</H2>
 
 <P>
