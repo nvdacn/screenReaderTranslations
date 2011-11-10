@@ -26,7 +26,7 @@ Le caratteristiche principali possono essere riassunte nei seguenti punti:
 - Tradotto in moltissime lingue
 - Supporto ai sistemi operativi più moderni, comprese le edizioni a 32 e 64 bit
 - Gestione delle videate di logon e quelle relative alla sicurezza
-- Supporto alle più comuni interfacce per l'accessibilità, come Microsoft Active Accessibility, Java Access Bridge, IAccessible2 e UI Automation
+- Supporto alle più comuni interfacce per l'accessibilità, come Microsoft Active Accessibility, Java Access Bridge, IAccessible2 e UI Automation (quest'ultima viene supportata a partire da Windows7 e successivi).
 -
   
 ++ Internazionalizzazione ++
@@ -479,7 +479,7 @@ Questa opzione permette di stabilire la quantità di punteggiatura e di altri si
 Ad esempio, se impostata su tutto, tutti i simboli verranno annunciati in parole.
 Questa impostazione viene applicata a tutti i sintetizzatori, non soltanto a quello usato al momento.
   
-==== Percentuale di modifica pitch per lettere maiuscole ====
+==== Percentuale di cambio tono  per lettere maiuscole ====
 Questo campo editazione permette di digitare un numero che sarà equivalente alla variazione di altezza (pitch) effettuato dalla sintesi vocale in presenza di lettere maiuscole.
 Questo valore lavora in percentuale, perciò un valore negativo abbasserà il pitch, mentre uno positivo lo alzerà.
 Per non effettuare alcuna modifica, digitare 0.
@@ -815,7 +815,7 @@ Vi sono anche numerose varianti che possono essere usate per modificare il timbr
 ++ Microsoft Speech API versione 4 (SAPI 4) ++
 Sapi4 è una vecchia tecnologia Microsoft da usare nei programmi di sintesi vocale.
 Molti di questi sintetizzatori possono essere acquistati o scaricati liberamente da varie aziende o siti web.
-Quando si utilizzano queste sintesi vocali con NVDA, le scelte disponibili (a cui si accede attraverso la [finestra impostazioni voce #VoiceSettings] o modificando le [impostazioni al volo del sintetizzatore #SynthSettingsRing]) conterranno tutte le voci di tutte le tecnologie Sapi4 installate nel sistema.
+Quando si utilizzano queste sintesi vocali con NVDA le scelte disponibili (a cui si accede attraverso la [finestra impostazioni voce #VoiceSettings] o modificando le [impostazioni al volo del sintetizzatore #SynthSettingsRing]) conterranno tutte le voci di tutte le tecnologie Sapi4 installate nel sistema.
 
 Se si possiedono delle voci Sapi4 installate ma non appaiono nell'elenco di sintetizzatori di NVDA, si prega di installare Sapi4.0 RunTime binaries, scaricabili da http://activex.microsoft.com/activex/controls/sapi/spchapi.exe.
 
@@ -1006,6 +1006,9 @@ Gli identificatori di gesture terminanti con una virgola devonoessere racchiusi 
 -
 
 Gli identificatori di gesture consistono in un codice di due lettere che si riferiscono al dispositivo in questione (kb per la tastiera e br per i display braille), di un dispositivo secondario opzionale o un layout tastiera tra parentesi tonde, il segno dei DuePunti,  ed infine uno o più nomi di tasti separati dal segno più (+).
+Per le gesture tastiera, la parte tra parentesi è il layout tastiera e comunque risulta opzionale.
+Se non specificato, le gesture si applicheranno a tutti i layout tastiera.
+Per le gesture braille, la parte tra parentesi rappresenta il Display Braille specifico ed è obbligatoria.
 
 Per scoprire gli identificatori di gesture, i nomi di script e classe e modulo a cui appartengono, fare come segue:
 + Attivare l'aiuto Immissione dati, conosciuto anche come aiuto tastiera.
