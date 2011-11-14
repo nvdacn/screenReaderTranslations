@@ -13,13 +13,13 @@
 <H2>2011.3</H2>
 
 <P>
-このリリースにおけるハイライトには、適切な言語設定が行われているドキュメントを読み上げる際に自動的に言語を切り替える機能;64ビット版Java Runtime Environmentsのサポート; Mozillaアプリケーションのブラウズモードにおける書式情報の通知; アプリケーションのフリーズやクラッシュのより良い処理; 及びWindows8の初期の修正を含んでいます。
+このリリースにおけるハイライトには、適切な言語設定が行われているドキュメントを読み上げる際に自動的に言語を切り替える機能;64ビット版Java Runtime Environmentsのサポート; Mozillaアプリケーションのブラウズモードにおける書式情報の通知; アプリケーションのフリーズやクラッシュへのより良い対応; 及びWindows8への初期対応が含まれています。
 </P>
 
 <H3>新機能</H3>
 
 <UL>
-<LI>NVDAは、いくつかのWeb/PDFドキュメントのうち、言語設定情報が適切に指定されたものを読み上げる際、eSpeak音声エンジンの言語を自動的に変更できるようになりました。自動言語/方言切り替えは、音声設定ダイアログでオンとオフを切り替えられます。 (<A HREF="http://www.nvda-project.org/ticket/845">#845</A>) 
+<LI>Web/PDFドキュメントのうち、言語設定情報が適切に指定されたものを読み上げる際、eSpeak音声エンジンの言語を自動的に変更できるようになりました。自動言語/方言切り替えは、音声設定ダイアログで行うことができます。 (<A HREF="http://www.nvda-project.org/ticket/845">#845</A>) 
 <LI>64ビットのJava Runtime Environmentを含む、Java Access Bridge 2.0.2をサポートしました。
 <LI>Mozilla Gecko (例えばFirefox)において、オブジェクトナビゲーション使用時に見出しレベルが通知されるようになりました。
 <LI>Mozilla Geckoのブラウズモード (例えばFirefox及びThunderbird)において、テキストの書式を通知できるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/394">#394</A>)
@@ -27,7 +27,7 @@
 <LI>Adobe Readerのブラウズモードにおいて、テーブル行及び列の数が通知できるようになりました。
 <LI>Microsoft Speech Platform synthesizerへのサポートを追加しました。 (<A HREF="http://www.nvda-project.org/ticket/1735">#1735</A>)
 <LI>IBM Lotus Symphonyのキャレットにおいて、ページ番号及び行番号が通知できるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/1632">#1632</A>)
-<LI>大文字を読み上げる時の高さの変化率が、音声設定ダイアログから変更できるようになりました。しかしながら、これに伴い大文字のピッチを上げるチェックボックスは置き換えられました (したがって、この機能を無効化するには値を0にしてください) 。 (<A HREF="http://www.nvda-project.org/ticket/255">#255</A>)
+<LI>大文字を読み上げる時の高さの変化率が、音声設定ダイアログから変更できるようになりました。これにより、大文字のピッチを上げるチェックボックスが置き換えられました (したがって、この機能を無効化するには値を0にしてください) 。 (<A HREF="http://www.nvda-project.org/ticket/255">#255</A>)
 <LI>テキスト及び背景色が、Microsoft Excelのセルの書式の通知に含まれるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/1655">#1655</A>)
 <LI>Java Access Bridgeを使用しているアプリケーションにおいて、適切なコントロールで現在のナビゲーターオブジェクトを有効化できるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/1744">#1744</A>)
 <LI>Design Science MathPlayerの基本的なサポートを行いました。
@@ -36,45 +36,43 @@
 <H3>変更点</H3>
 
 <UL>
-<LI>NVDAは、NVDA自身がクラッシュしてしまった場合に自動的に再起動します。
- <UL>
- <LI>いくつかの情報が点字で短縮表示されるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/1288">#1288</A>)
- </UL>
-<LI>the Read active window script (NVDA+b) has been improved to filter out unuseful controls   and also is now much more easy to silence. (<A HREF="http://www.nvda-project.org/ticket/1499">#1499</A>)
-<LI>Automatic say all when a browse mode document loads is now optional via a setting in the Browse Mode settings dialog. (<A HREF="http://www.nvda-project.org/ticket/414">#414</A>)  
-<LI>When trying to read the status bar (Desktop NVDA+end), If a real status bar object cannot be located, NVDA will instead resort to using the bottom line of text written to the display for the active application. (<A HREF="http://www.nvda-project.org/ticket/649">#649</A>)
-<LI>When reading with say all in browse mode documents, NVDA will now pause at the end of headings and other block-level elements, rather than speaking the text together with the next lot of text as one long sentence.
-<LI>In browse mode, pressing enter or space on a tab now activates it instead of switching to focus mode. (<A HREF="http://www.nvda-project.org/ticket/1760">#1760</A>)
-<LI>Updated eSpeak speech synthesizer to 1.45.46.
+<LI>NVDA自身がクラッシュしてしまった場合に自動的に再起動するようになりました。
+<LI>一部の情報が点字で短縮表示されるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/1288">#1288</A>)
+<LI>アクティブウィンドウの読み上げスクリプト (NVDA+B)が改良され、不要なコントロールを除外できるようになり、より簡単に読み上げを停止できるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/1499">#1499</A>)
+<LI>ブラウズモード使用時に、読みこまれたドキュメントを自動的に読み上げる挙動がオプションとなり、ブラウズモード設定ダイアログから設定できるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/414">#414</A>)  
+<LI>(デスクトップキーレイアウトではNVDA+end)でステータスバーを読もうとしているとき、もしステータスバーそのものが存在しない場合、NVDAは代わりに表示されているアクティブなアプリケーションの際家業を使用するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/649">#649</A>)
+<LI>ブラウズモード内ですべて読み上げを実行中に、テキストを次のテキストと一緒に長い文章としてまとめて読むのでなく、見出しやその他のブロック要素の末尾で音声を一時的に停止しするようになりました。
+<LI>ブラウズモード内でスペースまたはEnterキーを押すと、フォーカスモードに入る代わりにタブを有効化するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/1760">#1760</A>)
+<LI>eSpeak音声エンジンを1.45.46にアップデートしました。
 </UL>
 
 <H3>バグ修正</H3>
 
 <UL>
-<LI>NVDA  no longer shows bullets or numbering for lists in Internet Explorer and other MSHTML controls when the author has indicated that these should not be shown (i.e. the list style is "none"). (<A HREF="http://www.nvda-project.org/ticket/1671">#1671</A>)
-<LI>Restarting NVDA when it has frozen (e.g. by pressing control+alt+n) no longer exits the previous copy without starting a new one.
-<LI>Pressing backspace or arrow keys in a Windows command console no longer causes strange results in some cases. (<A HREF="http://www.nvda-project.org/ticket/1612">#1612</A>)
-<LI>The selected item in WPF combo boxes (and possibly some other combo boxes exposed using UI Automation) which do not allow text editing is now reported correctly.
-<LI>In browse mode in Adobe Reader, it is now always possible to move to the next row from the header row and vice versa using the move to next row and move to previous row commands. Also, the header row is no longer reported as row 0. (<A HREF="http://www.nvda-project.org/ticket/1731">#1731</A>)
-<LI>In browse mode in Adobe Reader, it is now possible to move to (and therefore past) empty cells in a table.
-<LI>Pointless position information (e.g. 0 of 0 level 0) is no longer reported in braille.
-<LI>When braille is tethered to review, it is now able to show  content in flat review. (<A HREF="http://www.nvda-project.org/ticket/1711">#1711</A>)
-<LI>A text control's text is no longer presented twice on a braille display in some cases, e.g. scrolling back from the start of Wordpad documents.
-<LI>In browse mode in Internet Explorer, pressing enter on a file upload button now correctly presents the dialog to choose a file to upload instead of switching to focus mode. (<A HREF="http://www.nvda-project.org/ticket/1720">#1720</A>)
-<LI>Dynamic content changes such as in Dos consoles are no longer announced if  sleep mode for that application is currently on. (<A HREF="http://www.nvda-project.org/ticket/1662">#1662</A>)
-<LI>In browse mode, the behaviour of alt+upArrow and alt+downArrow to collapse and expand combo boxes has been improved. (<A HREF="http://www.nvda-project.org/ticket/1630">#1630</A>)
-<LI>NVDA now recovers from many more situations such as applications that stop responding which previously caused it to freeze completely. (<A HREF="http://www.nvda-project.org/ticket/1408">#1408</A>)
-<LI>For Mozilla Gecko (Firefox etc) browse mode documents NVDA will no longer fail to render text in a very specific situation where an element is styled as display:table. (<A HREF="http://www.nvda-project.org/ticket/1373">#1373</A>)
-<LI>NVDA will no longer announce label controls when focus moves inside of them. Stops double announcements of labels for some form fields in Firefox (Gecko) and Internet Explorer (MSHTML). (<A HREF="http://www.nvda-project.org/ticket/1650">#1650</A>)
-<LI>NVDA no longer fails to read a cell in Microsoft Excel after pasting in to it with control+v. (<A HREF="http://www.nvda-project.org/ticket/1781">#1781</A>)
-<LI>In Adobe Reader, extraneous information about the document is no longer announced when moving to a control on a different page in focus mode. (<A HREF="http://www.nvda-project.org/ticket/1659">#1659</A>)
-<LI>In browse mode in Mozilla Gecko applications (e.g. Firefox), toggle buttons are now detected and reported correctly. (<A HREF="http://www.nvda-project.org/ticket/1757">#1757</A>)
-<LI>NVDA can now   correctly read the Windows Explorer Address Bar in Windows 8 developer preview.
-<LI>NVDA will no longer crash apps such as winver and wordpad in Windows 8 developer preview due to bad glyph translations.
-<LI>In browse mode in applications using Mozilla Gecko 10 and later (e.g. Firefox 10), the cursor is more often positioned correctly when loading a page with a target anchor. (<A HREF="http://www.nvda-project.org/ticket/360">#360</A>)
-<LI>In browse mode in Mozilla Gecko applications (e.g. Firefox), labels for image maps are now rendered.
-<LI>With mouse tracking enabled, moving the mouse over certain editable text fields (such as in Synaptics Pointing Device Settings and SpeechLab SpeakText) no longer causes the application to crash. (<A HREF="http://www.nvda-project.org/ticket/672">#672</A>)
-<LI>NVDA now functions correctly in several about dialogs in applications distributed with Windows XP, including the About dialog in Notepad and the About Windows dialog. (<A HREF="http://www.nvda-project.org/ticket/1853">#1853</A>, <A HREF="http://www.nvda-project.org/ticket/1855">#1855</A>)
+<LI>Internet Explorer及びその他のMSHTMLのコントロールにおいて、制作者が非表示にしようとしているリストのバレットや番号(例えばリストのスタイルが"none"のような物)を読み上げ内容になりました。 (<A HREF="http://www.nvda-project.org/ticket/1671">#1671</A>)
+<LI>NVDAがフリーズしたために (例えばCtrl+Alt+Nを押して)  再起動するとき、新しいNVDAが起動するまでは先に起動していたNVDAを終了しないようにしました。
+<LI>Windowsコンソールにおいて、バックスペースやカーソルキーを押した場合に奇妙な結果が出てしまういくつかのケースに対応しました。  (<A HREF="http://www.nvda-project.org/ticket/1612">#1612</A>)
+<LI>WPFコンボボックス内の選択された項目 (及び、おそらくUIオートメーションによって出力されたコンボボックスの一部) でテキストの編集ができないものが正しく通知されるようになりました。
+<LI>Adobe Readerのブラウズモードにおいて、次の行へ移動、および前の行に移動するコマンドで、見出し行から次の行に移動、もしくはその逆が常に可能になりました。また、見出し行が0行目と通知されることがなくなりました。 (<A HREF="http://www.nvda-project.org/ticket/1731">#1731</A>)
+<LI>Adobe Readerのブラウズモードにおいて、テーブル内の空白セルに移動することができる（したがって通過することもできる）ようになりました。
+<LI>意味のない位置情報 (例えば0の0 レベル0のような)を点字表示しないようになりました。
+<LI>点字でレビューを表示させた場合、コンテンツをフラットレビューで表示できるようになりました。  (<A HREF="http://www.nvda-project.org/ticket/1711">#1711</A>)
+<LI>例えば、Wordpadドキュメントの先頭から前にスクロールするような場合において、テキスト制御文字が2度表示されるような問題を解消しました。
+<LI>Internet Explorerのブラウズモードにおいて、ファイルアップロードのボタン上でEnterキーを押した際に、フォーカスモードに切り替わるのではなく、アップロードするファイルを選択するダイアログを表示するという正しい挙動になりました。 (<A HREF="http://www.nvda-project.org/ticket/1720">#1720</A>)
+<LI>アプリケーションのスリープモードが有効な場合、DOSコンソールのような動的なコンテンツの変更が通知されなくなりました。 (<A HREF="http://www.nvda-project.org/ticket/1630">#1630</A>)
+<LI>ブラウズモードにおいて、コンボボックスを折り畳み及び展開するための、Alt+上矢印及びAlt+下矢印の挙動が改善しました。 (<A HREF="http://www.nvda-project.org/ticket/1630">#1630</A>)
+<LI>以前は確実にフリーズを引き起こした、応答なしのアプリケーションのような状況など、より多くの状況から復旧できるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/1408">#1408</A>)
+<LI>(Firefoxほか) Mozilla Geckoのブラウズモードでの文書において、要素がdisplay:tableとしてスタイル指定されているという非常に特別な状況でテキストのレンダリングに失敗する問題を解消しました。 (<A HREF="http://www.nvda-project.org/ticket/1373">#1373</A>)
+<LI>ラベルコントロールの中にフォーカスが移動した際に読み上げないようになりました。Firefox (Gecko) とInternet Explorer (MSHTML) におけるいくつかのフォームフィールドでラベルの二重読み上げを解消しました。 (<A HREF="http://www.nvda-project.org/ticket/1650">#1650</A>)
+<LI>Microsoft Excelで、Ctrl+Vで貼り付けをおこなったあとにセルを読めない問題を解消しました。 (<A HREF="http://www.nvda-project.org/ticket/1781">#1781</A>)
+<LI>Adobe Readerにおいて、フォーカスモードで別ページのコントロールに移動した際、文書に関する外部情報を読み上げないようになりました。 (<A HREF="http://www.nvda-project.org/ticket/1659">#1659</A>)
+<LI>(Firefoxなど) Mozilla Geckoアプリケーションのブラウザモードにおいて、トグルボタンが正しく検出され、通知されるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/1757">#1757</A>)
+<LI>Windows 8デベロッパープレビュー版で、Windowsエクスプローラーのアドレスバーを正しく読めるようになりました。
+<LI>Windows 8デベロッパープレビュー版で、グリフ変換の問題により、winverやワードパッドのようなアプリケーションがクラッシュしないようになりました。
+<LI>(Firefox 10など) Mozilla Gecko 10以降を利用するアプリケーションのブラウザモードにおいて、ターゲットにアンカーを含むページを読み込んだ際に、カーソルがより正しい位置に配置されるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/360">#360</A>)
+<LI>(Firefoxなど) Mozilla Geckoアプリケーションのブラウザモードにおいて、イメージマップのラベルがレンダリングされるようになりました。
+<LI>マウス追跡有効時に、マウスを (Synapticeのポインティングデバイス設定やSpeechLabのSpeakTextのような) 特定の編集可能なテキストフィールド上で動かすことでアプリケーションがクラッシュしないようになりました。 (<A HREF="http://www.nvda-project.org/ticket/672">#672</A>)
+<LI>Windows XPに付属する、メモ帳のバージョン情報、Windowsのバージョン情報を含む、いくつかのアプリケーションのダイアログについて正しく動作するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/1853">#1853</A>, <A HREF="http://www.nvda-project.org/ticket/1855">#1855</A>)
 </UL>
 
 <H3>開発者向けの変更</H3>
@@ -449,8 +447,8 @@ Notable features of this release include greatly simplified object navigation; v
 <H3>バグ修正</H3>
 
 <UL>
-<LI>In µTorrent, the focused item in the torrents list no longer reports repeatedly or steals focus when a menu is open.
-<LI>In µTorrent, the names of the files in the Torrent Contents list are now reported.
+<LI>In μTorrent, the focused item in the torrents list no longer reports repeatedly or steals focus when a menu is open.
+<LI>In μTorrent, the names of the files in the Torrent Contents list are now reported.
 <LI>In Mozilla applications, focus is now correctly detected when it lands on an empty table or tree.
 <LI>In Mozilla applications, "not checked" is now correctly reported for checkable controls such as checkable table cells. (<A HREF="http://www.nvda-project.org/ticket/571">#571</A>)
 <LI>In Mozilla applications, the text of correctly implemented ARIA dialogs is no longer ignored and will now be reported when the dialog appears. (<A HREF="http://www.nvda-project.org/ticket/630">#630</A>)
