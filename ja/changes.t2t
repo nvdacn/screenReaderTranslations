@@ -4,10 +4,10 @@
 %!includeconf: ../changes.t2tconf
 
 = 2011.3 =
-このリリースにおけるハイライトには、適切な言語設定が行われているドキュメントを読み上げる際に自動的に言語を切り替える機能;64ビット版Java Runtime Environmentsのサポート; Mozillaアプリケーションのブラウズモードにおける書式情報の通知; アプリケーションのフリーズやクラッシュのより良い処理; 及びWindows8の初期の修正を含んでいます。
+このリリースにおけるハイライトには、適切な言語設定が行われているドキュメントを読み上げる際に自動的に言語を切り替える機能;64ビット版Java Runtime Environmentsのサポート; Mozillaアプリケーションのブラウズモードにおける書式情報の通知; アプリケーションのフリーズやクラッシュへのより良い対応; 及びWindows8への初期対応が含まれています。
 
 == 新機能 ==
-- NVDAは、いくつかのWeb/PDFドキュメントのうち、言語設定情報が適切に指定されたものを読み上げる際、eSpeak音声エンジンの言語を自動的に変更できるようになりました。自動言語/方言切り替えは、音声設定ダイアログでオンとオフを切り替えられます。 (#845) 
+- Web/PDFドキュメントのうち、言語設定情報が適切に指定されたものを読み上げる際、eSpeak音声エンジンの言語を自動的に変更できるようになりました。自動言語/方言切り替えは、音声設定ダイアログで行うことができます。 (#845) 
 - 64ビットのJava Runtime Environmentを含む、Java Access Bridge 2.0.2をサポートしました。
 - Mozilla Gecko (例えばFirefox)において、オブジェクトナビゲーション使用時に見出しレベルが通知されるようになりました。
 - Mozilla Geckoのブラウズモード (例えばFirefox及びThunderbird)において、テキストの書式を通知できるようになりました。 (#394)
@@ -15,48 +15,48 @@
 - Adobe Readerのブラウズモードにおいて、テーブル行及び列の数が通知できるようになりました。
 - Microsoft Speech Platform synthesizerへのサポートを追加しました。 (#1735)
 - IBM Lotus Symphonyのキャレットにおいて、ページ番号及び行番号が通知できるようになりました。 (#1632)
-- 大文字を読み上げる時の高さの変化率が、音声設定ダイアログから変更できるようになりました。しかしながら、これに伴い大文字のピッチを上げるチェックボックスは置き換えられました (したがって、この機能を無効化するには値を0にしてください) 。 (#255)
+- 大文字を読み上げる時の高さの変化率が、音声設定ダイアログから変更できるようになりました。これにより、大文字のピッチを上げるチェックボックスが置き換えられました (したがって、この機能を無効化するには値を0にしてください) 。 (#255)
 - テキスト及び背景色が、Microsoft Excelのセルの書式の通知に含まれるようになりました。 (#1655)
 - Java Access Bridgeを使用しているアプリケーションにおいて、適切なコントロールで現在のナビゲーターオブジェクトを有効化できるようになりました。 (#1744)
 - Design Science MathPlayerの基本的なサポートを行いました。
 
 
 == 変更点 ==
-- NVDAは、NVDA自身がクラッシュしてしまった場合に自動的に再起動します。
- - いくつかの情報が点字で短縮表示されるようになりました。 (#1288)
-- the Read active window script (NVDA+b) has been improved to filter out unuseful controls   and also is now much more easy to silence. (#1499)
-- Automatic say all when a browse mode document loads is now optional via a setting in the Browse Mode settings dialog. (#414)  
-- When trying to read the status bar (Desktop NVDA+end), If a real status bar object cannot be located, NVDA will instead resort to using the bottom line of text written to the display for the active application. (#649)
-- When reading with say all in browse mode documents, NVDA will now pause at the end of headings and other block-level elements, rather than speaking the text together with the next lot of text as one long sentence.
-- In browse mode, pressing enter or space on a tab now activates it instead of switching to focus mode. (#1760)
-- Updated eSpeak speech synthesizer to 1.45.46.
+- NVDA自身がクラッシュしてしまった場合に自動的に再起動するようになりました。
+- 一部の情報が点字で短縮表示されるようになりました。 (#1288)
+- アクティブウィンドウの読み上げスクリプト (NVDA+B)が改良され、不要なコントロールを除外できるようになり、より簡単に読み上げを停止できるようになりました。 (#1499)
+- ブラウズモード使用時に、読みこまれたドキュメントを自動的に読み上げる挙動がオプションとなり、ブラウズモード設定ダイアログから設定できるようになりました。 (#414)  
+- (デスクトップキーレイアウトではNVDA+end)でステータスバーを読もうとしているとき、もしステータスバーそのものが存在しない場合、NVDAは代わりに表示されているアクティブなアプリケーションの際家業を使用するようになりました。 (#649)
+- ブラウズモード内ですべて読み上げを実行中に、テキストを次のテキストと一緒に長い文章としてまとめて読むのでなく、見出しやその他のブロック要素の末尾で音声を一時的に停止しするようになりました。
+- ブラウズモード内でスペースまたはEnterキーを押すと、フォーカスモードに入る代わりにタブを有効化するようになりました。 (#1760)
+- eSpeak音声エンジンを1.45.46にアップデートしました。
 
 
 == バグ修正 ==
-- NVDA  no longer shows bullets or numbering for lists in Internet Explorer and other MSHTML controls when the author has indicated that these should not be shown (i.e. the list style is "none"). (#1671)
-- Restarting NVDA when it has frozen (e.g. by pressing control+alt+n) no longer exits the previous copy without starting a new one.
-- Pressing backspace or arrow keys in a Windows command console no longer causes strange results in some cases. (#1612)
-- The selected item in WPF combo boxes (and possibly some other combo boxes exposed using UI Automation) which do not allow text editing is now reported correctly.
-- In browse mode in Adobe Reader, it is now always possible to move to the next row from the header row and vice versa using the move to next row and move to previous row commands. Also, the header row is no longer reported as row 0. (#1731)
-- In browse mode in Adobe Reader, it is now possible to move to (and therefore past) empty cells in a table.
-- Pointless position information (e.g. 0 of 0 level 0) is no longer reported in braille.
-- When braille is tethered to review, it is now able to show  content in flat review. (#1711)
-- A text control's text is no longer presented twice on a braille display in some cases, e.g. scrolling back from the start of Wordpad documents.
-- In browse mode in Internet Explorer, pressing enter on a file upload button now correctly presents the dialog to choose a file to upload instead of switching to focus mode. (#1720)
-- Dynamic content changes such as in Dos consoles are no longer announced if  sleep mode for that application is currently on. (#1662)
-- In browse mode, the behaviour of alt+upArrow and alt+downArrow to collapse and expand combo boxes has been improved. (#1630)
-- NVDA now recovers from many more situations such as applications that stop responding which previously caused it to freeze completely. (#1408)
-- For Mozilla Gecko (Firefox etc) browse mode documents NVDA will no longer fail to render text in a very specific situation where an element is styled as display:table. (#1373)
-- NVDA will no longer announce label controls when focus moves inside of them. Stops double announcements of labels for some form fields in Firefox (Gecko) and Internet Explorer (MSHTML). (#1650)
-- NVDA no longer fails to read a cell in Microsoft Excel after pasting in to it with control+v. (#1781)
-- In Adobe Reader, extraneous information about the document is no longer announced when moving to a control on a different page in focus mode. (#1659)
-- In browse mode in Mozilla Gecko applications (e.g. Firefox), toggle buttons are now detected and reported correctly. (#1757)
-- NVDA can now   correctly read the Windows Explorer Address Bar in Windows 8 developer preview.
-- NVDA will no longer crash apps such as winver and wordpad in Windows 8 developer preview due to bad glyph translations.
-- In browse mode in applications using Mozilla Gecko 10 and later (e.g. Firefox 10), the cursor is more often positioned correctly when loading a page with a target anchor. (#360)
-- In browse mode in Mozilla Gecko applications (e.g. Firefox), labels for image maps are now rendered.
-- With mouse tracking enabled, moving the mouse over certain editable text fields (such as in Synaptics Pointing Device Settings and SpeechLab SpeakText) no longer causes the application to crash. (#672)
-- NVDA now functions correctly in several about dialogs in applications distributed with Windows XP, including the About dialog in Notepad and the About Windows dialog. (#1853, #1855)
+- Internet Explorer及びその他のMSHTMLのコントロールにおいて、制作者が非表示にしようとしているリストのバレットや番号(例えばリストのスタイルが"none"のような物)を読み上げ内容になりました。 (#1671)
+- NVDAがフリーズしたために (例えばCtrl+Alt+Nを押して)  再起動するとき、新しいNVDAが起動するまでは先に起動していたNVDAを終了しないようにしました。
+- Windowsコンソールにおいて、バックスペースやカーソルキーを押した場合に奇妙な結果が出てしまういくつかのケースに対応しました。  (#1612)
+- WPFコンボボックス内の選択された項目 (及び、おそらくUIオートメーションによって出力されたコンボボックスの一部) でテキストの編集ができないものが正しく通知されるようになりました。
+- Adobe Readerのブラウズモードにおいて、次の行へ移動、および前の行に移動するコマンドで、見出し行から次の行に移動、もしくはその逆が常に可能になりました。また、見出し行が0行目と通知されることがなくなりました。 (#1731)
+- Adobe Readerのブラウズモードにおいて、テーブル内の空白セルに移動することができる（したがって通過することもできる）ようになりました。
+- 意味のない位置情報 (例えば0の0 レベル0のような)を点字表示しないようになりました。
+- 点字でレビューを表示させた場合、コンテンツをフラットレビューで表示できるようになりました。  (#1711)
+- 例えば、Wordpadドキュメントの先頭から前にスクロールするような場合において、テキスト制御文字が2度表示されるような問題を解消しました。
+- Internet Explorerのブラウズモードにおいて、ファイルアップロードのボタン上でEnterキーを押した際に、フォーカスモードに切り替わるのではなく、アップロードするファイルを選択するダイアログを表示するという正しい挙動になりました。 (#1720)
+- アプリケーションのスリープモードが有効な場合、DOSコンソールのような動的なコンテンツの変更が通知されなくなりました。 (#1630)
+- ブラウズモードにおいて、コンボボックスを折り畳み及び展開するための、Alt+上矢印及びAlt+下矢印の挙動が改善しました。 (#1630)
+- 以前は確実にフリーズを引き起こした、応答なしのアプリケーションのような状況など、より多くの状況から復旧できるようになりました。 (#1408)
+- (Firefoxほか) Mozilla Geckoのブラウズモードでの文書において、要素がdisplay:tableとしてスタイル指定されているという非常に特別な状況でテキストのレンダリングに失敗する問題を解消しました。 (#1373)
+- ラベルコントロールの中にフォーカスが移動した際に読み上げないようになりました。Firefox (Gecko) とInternet Explorer (MSHTML) におけるいくつかのフォームフィールドでラベルの二重読み上げを解消しました。 (#1650)
+- Microsoft Excelで、Ctrl+Vで貼り付けをおこなったあとにセルを読めない問題を解消しました。 (#1781)
+- Adobe Readerにおいて、フォーカスモードで別ページのコントロールに移動した際、文書に関する外部情報を読み上げないようになりました。 (#1659)
+- (Firefoxなど) Mozilla Geckoアプリケーションのブラウザモードにおいて、トグルボタンが正しく検出され、通知されるようになりました。 (#1757)
+- Windows 8デベロッパープレビュー版で、Windowsエクスプローラーのアドレスバーを正しく読めるようになりました。
+- Windows 8デベロッパープレビュー版で、グリフ変換の問題により、winverやワードパッドのようなアプリケーションがクラッシュしないようになりました。
+- (Firefox 10など) Mozilla Gecko 10以降を利用するアプリケーションのブラウザモードにおいて、ターゲットにアンカーを含むページを読み込んだ際に、カーソルがより正しい位置に配置されるようになりました。 (#360)
+- (Firefoxなど) Mozilla Geckoアプリケーションのブラウザモードにおいて、イメージマップのラベルがレンダリングされるようになりました。
+- マウス追跡有効時に、マウスを (Synapticeのポインティングデバイス設定やSpeechLabのSpeakTextのような) 特定の編集可能なテキストフィールド上で動かすことでアプリケーションがクラッシュしないようになりました。 (#672)
+- Windows XPに付属する、メモ帳のバージョン情報、Windowsのバージョン情報を含む、いくつかのアプリケーションのダイアログについて正しく動作するようになりました。 (#1853, #1855)
 
 
 == 開発者向けの変更 ==
@@ -365,8 +365,8 @@ Notable features of this release include greatly simplified object navigation; v
 
 
 == バグ修正 ==
-- In µTorrent, the focused item in the torrents list no longer reports repeatedly or steals focus when a menu is open.
-- In µTorrent, the names of the files in the Torrent Contents list are now reported.
+- In μTorrent, the focused item in the torrents list no longer reports repeatedly or steals focus when a menu is open.
+- In μTorrent, the names of the files in the Torrent Contents list are now reported.
 - In Mozilla applications, focus is now correctly detected when it lands on an empty table or tree.
 - In Mozilla applications, "not checked" is now correctly reported for checkable controls such as checkable table cells. (#571)
 - In Mozilla applications, the text of correctly implemented ARIA dialogs is no longer ignored and will now be reported when the dialog appears. (#630)
