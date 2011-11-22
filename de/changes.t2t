@@ -3,6 +3,37 @@
 
 %!includeconf: ../changes.t2tconf
 
+= 2012.1 =
+
+== neue Funktionen ==
+- Nvda kann nun die Anzahl führender Tabs und Leerzeichen in der aktuellen Zeile in der Reihenfolge angeben, in der sie eingegeben wurden. Dies kann in den einstellungen zur Dokumentformatierung mit der Option "Zeileneinrückungen ansagen" eingestellt werden. (#373)
+- NVDA kann nun Tastendrücke erkennen, die mittels Eingabeemulationen wie etwa bildschirmtastaturen oder Spracherkennungssoftware erzeugt wurden.
+- Farben in Konsolenanwendungen werden nun korrekt erkannt.
+- Wenn Text fett, unterstrichen oder kursiv formatiert ist, wird er nun in Braille mit Hilfe von Zeichen dargestellt, die zur aktuell eingestellten Übersetzungstabelle passen. (#538)
+- Markierter Text wird nun in Braille durch Unterstreichen mit den Punkten 7 und 8 angezeigt. (#889)
+- in Braille werden nun Steuerelemente innerhalb eines Textes als solche dargestellt (wie z.B. Links, Überschriften oder Schalter. (#202)
+- Unterstützung für die hedo ProfiLine USB. (#1863)
+- NVDA verhindert nun den Wortumbruch in Braille (#1890)
+- Nun können Sie zwischen zeilen- und absatzweiser Navigation/Anzeige in Braille umschalten. Dies erlaubt ein flüssigeres Lesen großer Textmengen. Die Einstellung kann über die Option "absatzweise lesen" in den Braille-Einstellungen konfiguriert werden. (#1891)
+- im lesemodus können Sie nun dur einmaliges Drücken einer Routingtasten der Braillezeile das Objekt unter dem Cursor aktivieren. Dies bedeutet, dass Sie die Routingtaste zweimal drücken müssen, falls sich der Cursor noch nicht auf dem Objekt befinden sollte. (#1893)
+
+
+== Änderungen ==
+- Die Befehle zum Beschreiben des aktuellen Zeichens Bzw. zum Buchstabieren der aktuellen Zeile und des aktuellen Wortes berücksichtigen die im Dokument hinterlegte Sprache, falls der automatische sprachenwechsel aktiviert ist.
+
+
+== Fehlerkorrekturen ==
+- In windows 8 wird der Fokus nun nicht mehr unerwartet aus dem Suchfeld springen. Dieser Fehler machte es unmöglich, mit nvda mit dem windows-suchfeld zu arbeiten.
+- Für Flash-Inhalte, die im Vollbildmodus dargestellt werden, wird nun der Lesemodus benutzt.
+ 
+
+== Änderungen für Entwickler ==
+- Es gibt nun eine Remote-Python-Konsole. Diese ist für Situationen gedacht, in denen es sinvoll ist, nvda über ein Netzwerk hinweg aus der Ferne zu warten. Weitere Informationen hierzu finden Sie im nvda-Entwicklerhandbuch.
+- Aus Gründen der besseren lesbarkeit wird beim Zurückverfolgen von Fehlern in den protokollen der Basispfad aus Dateireferenzen gestrichen. (#1880)
+- TextInfo-Objekte haben nun eine Methode namens Activate(), die das Aktivieren der von textinfo zurückgegebenen Position erlaubt.
+ - Dies erlaubt das Aktivieren unter Verwendung der Routingtasten einer Braillezeile. Hierfür könnte es jedoch in Zukunft andere Methoden geben.
+
+
 = 2011.3 =
 Die wichtigsten neuerungen sind u.a. das automatische Wechseln der Synthesizersprache passend zur Dokumentsprache; Unterstützung für 64-Bit-Java-Laufzeitumgebungen; Angabe von Textformatierungen im Lesemodus in Mozilla-Gecko-Anwendungen; Bessere Behandlung von Programmabstürzen; sowie anfängliche Unterstützung für Windows 8.
 
