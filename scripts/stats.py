@@ -57,7 +57,7 @@ if id:
 
 # store the stats.
 f = open('ug-stats.txt', 'w')
-f.write("# section number, section starts at line, paragraphs in this section, tables in this section, tables in this section.\n")
+f.write("# section number, section starts at line, paragraphs in this section, tables in this section, lists in this section.\n")
 for i in info:
     f.write("%s start:%s paragraphs:%d, tables:%d, lists:%d\n\n" %(i[0],i[1], i[2], i[3], i[4] ))
 f.close()
