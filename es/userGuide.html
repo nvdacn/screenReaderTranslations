@@ -107,14 +107,15 @@
     <LI><A HREF="#toc67">11.3. Líneas Handy Tech</A>
     <LI><A HREF="#toc68">11.4. MDV Lilli</A>
     <LI><A HREF="#toc69">11.5. Líneas braille Baum/Humanware/APH</A>
-    <LI><A HREF="#toc70">11.6. BRLTTY</A>
+    <LI><A HREF="#toc70">11.6. hedo ProfiLine USB</A>
+    <LI><A HREF="#toc71">11.7. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc71">12. Temas Avanzados</A>
+  <LI><A HREF="#toc72">12. Temas Avanzados</A>
     <UL>
-    <LI><A HREF="#toc72">12.1. Remapeando Asignaciones de Teclas y otros Gestos de Entrada</A>
-    <LI><A HREF="#toc73">12.2. Personalización Avanzada de Pronunciación de Símbolos</A>
+    <LI><A HREF="#toc73">12.1. Remapeando Asignaciones de Teclas y otros Gestos de Entrada</A>
+    <LI><A HREF="#toc74">12.2. Personalización Avanzada de Pronunciación de Símbolos</A>
     </UL>
-  <LI><A HREF="#toc74">13. Información Adicional</A>
+  <LI><A HREF="#toc75">13. Información Adicional</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -1386,6 +1387,16 @@ Tecla: NVDA+control+t
 Esta opción te permite elegir si la línea braille seguirá al foco del sistema, o si seguirá al navegador de objetos / cursor de revisión.
 </P>
 
+<H5>Leer por Párrafo</H5>
+
+<P>
+Si está activado, el braille se mostrará por párrafos en lugar de por líneas.
+También, las órdenes de línea siguiente y anterior moverán por párrafos en concordancia.
+Esto significa que no tienes desplazamiento de la línea braille al final de cada línea incluso cuándo haya más texto del que cabe en la línea braille.
+Esto podría permitir una lectura más fluida de grandes cantidades de texto.
+Esto está desactivado de forma predeterminada.
+</P>
+
 <A NAME="toc42"></A>
 <H4>8.1.6. Opciones de Teclado (NVDA+control+k)</H4>
 
@@ -2370,7 +2381,54 @@ Para líneas que tengan un joystick:
 </TABLE>
 
 <A NAME="toc70"></A>
-<H3>11.6. BRLTTY</H3>
+<H3>11.6. hedo ProfiLine USB</H3>
+
+<P>
+La hedo ProfiLine USB de <A HREF="http://www.hedo.de/">hedo Reha-Technik</A> está soportada.
+Primero debes instalar los controladores USB proporcionados por el fabricante.
+</P>
+<P>
+Seguidamente van las asignaciones de teclas para esta línea con NVDA.
+Por favor mira la documentación de la línea para descripciones de dónde se pueden encontrar estas teclas.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nombre</TH>
+<TH>Tecla</TH>
+</TR>
+<TR>
+<TD>Desplazar línea braille atrás</TD>
+<TD>K1</TD>
+</TR>
+<TR>
+<TD>Desplazar línea braille hacia adelante</TD>
+<TD>K3</TD>
+</TR>
+<TR>
+<TD>Mover línea braille a línea anterior</TD>
+<TD>B2</TD>
+</TR>
+<TR>
+<TD>Mover línea braille a siguiente línea</TD>
+<TD>B5</TD>
+</TR>
+<TR>
+<TD>Enrutar a la celda braille</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>Conmutar seguimiento braille</TD>
+<TD>K2</TD>
+</TR>
+<TR>
+<TD>Leer todo</TD>
+<TD>B6</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc71"></A>
+<H3>11.7. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A> es un programa por separado que puede utilizarse para soportar muchas líneas braille.
@@ -2410,10 +2468,10 @@ Por favor mira <A HREF="http://mielke.cc/brltty/doc/drivers/">la documentación 
 </TR>
 </TABLE>
 
-<A NAME="toc71"></A>
+<A NAME="toc72"></A>
 <H2>12. Temas Avanzados</H2>
 
-<A NAME="toc72"></A>
+<A NAME="toc73"></A>
 <H3>12.1. Remapeando Asignaciones de Teclas y otros Gestos de Entrada</H3>
 
 <P>
@@ -2502,21 +2560,21 @@ De esta manera, si utilizas alt en un gesto, pulsando esta tecla la combinación
 Por lo tanto, probablemente es mejor sólo utilizar Shift, control y la tecla modificadora NVDA como modificadores.
 </P>
 
-<A NAME="toc73"></A>
+<A NAME="toc74"></A>
 <H3>12.2. Personalización Avanzada de Pronunciación de Símbolos</H3>
 
 <P>
-Es posible personalizar la pronunciación de la puntuación y otros símbolos beyond what can be done using the <A HREF="#SymbolPronunciation">Punctuation/symbol pronunciation</A> dialog.
-For example, you can specify whether the raw symbol should be sent to the synthesizer (e.g. to cause a pause or change in inflection) and you can add custom symbols.
+Es posible personalizar la pronunciación de la puntuación y otros símbolos más allá de lo que puede hacerse utilizando el <A HREF="#SymbolPronunciation">diálogo Pronunciación de Puntuación y símbolos</A>.
+Por ejemplo, puedes especificar si el símbolo dibujado debería enviarse al sintetizador (ej. para causar una pausa o cambio en la entonación) y puedes añadir símbolos personalizados. 
 </P>
 <P>
-To do this, you must edit the symbol pronunciation information file in your NVDA user configuration directory.
-The file is called symbols-xx.dic, where xx is the language code.
-The format of this file is documented in the Symbol Pronunciation section of the NVDA Developer Guide, which is available from <A HREF="http://www.nvda-project.org/wiki/Development">the Development section of the NVDA web site</A>.
-However, it is not possible for users to define complex symbols.
+Para hacer esto, debes editar el fichero de información de pronunciación de símbolos en tu directorio de configuración de usuario de NVDA.
+El fichero se llama symbols-xx.dic, donde xx es el código de idioma.
+El formato de este fichero se documentó en la sección Symbol Pronunciation de la Guía de Desarrollo de NVDA, que está disponible desde <A HREF="http://www.nvda-project.org/wiki/Development">La sección del desarrollador del sitio Web de NVDA</A>.
+Por lo tanto, no es posible para los usuarios definir símbolos complejos. 
 </P>
 
-<A NAME="toc74"></A>
+<A NAME="toc75"></A>
 <H2>13. Información Adicional</H2>
 
 <P>
