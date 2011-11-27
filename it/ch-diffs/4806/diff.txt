@@ -1,0 +1,41 @@
+--- ../../../fi/ch-diffs/4783/changes.t2t	2011-11-18 15:34:25.555782437 +0000
++++ changes.t2t	2011-11-26 19:59:38.067857000 +0000
+@@ -3,6 +3,38 @@
+ 
+ %!includeconf: ../changes.t2tconf
+ 
++= 2012.1 =
++
++== New Features ==
++- NVDA can announce the number of leading tabs and spaces of the current line in the order that they are entered. This can be enabled by selecting report line indentation in the document formatting dialogue. (#373)
++- NVDA can now detect key presses generated from alternative keyboard input emulation such as on-screen keyboards and speech recognition software.
++- NVDA can now detect colors in Windows command consoles.
++- Bold, italic and underline are now indicated in braille using signs appropriate to the configured translation table. (#538)
++- Braille now indicates selected text using dots 7 and 8. (#889)
++- Braille now reports information about controls within documents such as links, buttons and headings. (#202)
++- Support for the hedo ProfiLine USB braille display. (#1863)
++- NVDA now avoids splitting words in braille when possible. (#1890)
++- It is now possible to have braille displayed by paragraphs instead of lines, which may allow for more fluent reading of large amounts of text. This is configurable using the Read by paragraphs option in the Braille Settings dialog. (#1891)
++- In browse mode, you can activate the object under the cursor using a braille display. This is done by pressing the cursor routing key where the cursor is located (which means pressing it twice if the cursor is not already there). (#1893)
++
++
++== Changes ==
++- Commands to describe the current character or to spell the current word or line now  will spell in the appropriate language according to the text, if auto language switching is turned on and the appropriate language information is available.
++
++
++== Bug Fixes ==
++- In Windows 8, focus is no longer incorrectly moved away from the Windows Explorer search field, which was  not allowing NVDA to   interact with it.
++- Browse mode is now used for full screen Adobe Flash content.
++- Fixed poor audio quality in some cases when using Microsoft Speech API version 5 voices with the audio output device set to something other than the default (Microsoft Sound Mapper). (#749)
++
++
++== Changes for Developers ==
++- There is now a remote Python console for situations where remote debugging is useful. See the Developer Guide for details.
++- The base path of NVDA's code is now stripped from tracebacks in the log to improve readability. (#1880)
++- TextInfo objects now have an activate() method to activate the position represented by the TextInfo.
++ - This is used by braille to activate the position using cursor routing keys on a braille display. However, there may be other callers in future.
++
++
+ = 2011.3 =
+ Highlights of this release include automatic speech language switching when reading documents with appropriate language information; support for 64 bit Java Runtime Environments; reporting of text formatting in browse mode in Mozilla applications; better handling of application crashes and freezes; and initial fixes for Windows 8.
+ 
