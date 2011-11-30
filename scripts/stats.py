@@ -25,7 +25,13 @@ for i in range(len(lines)):
 ## convert our lines to html
 config = txt2tags.ConfigMaster()._get_defaults()
 config['target'] = 'html'
-rlines, toc = txt2tags.convert(lines, config)
+tmplines, toc = txt2tags.convert(lines, config)
+
+# Sometimes lines are returned with \n in them, so make sure each list
+# item is one exact line.
+rlines = []
+for i in tmplines:
+    rlines.extend(i.split('\n'))
 
 ## get the stats
 info = []
