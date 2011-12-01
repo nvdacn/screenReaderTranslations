@@ -25,7 +25,15 @@
 - In Windows8, il focus non viene più spostato erroneamente al di fuori del campo di ricerca in Windows Explorer, il che non permetteva a NVDA di interagire con esso.
 - La modalità navigazione è utilizzata ora anche nei contenuti  flash a tutto schermo.
 - Risolto un problema che faceva ascoltare le voci Microsoft Speech Api Versione 5 con audio scadente, nel caso fosse selezionata una periferica audio diversa da sound mapper. (#749)
+- NVDA ora funziona nuovamente con i display braille, anche se la sintesi vocale è impostata su Nessun Sintetizzatore. (#1963)
+- I comandi per la navigazione ad oggetti non annunceranno più  nessun oggetto genitore/figlio, ma utilizzeranno gli stessi termini della documentazione.
 
+
+== Cambiamenti per sviluppatori ==
+- E' disponibile una console remota python da usarsi in quelle situazioni dove il debug da remoto risulta utile. Si veda la guida per sviluppatori per maggiori informazioni.
+- Il percorso di base del codice di NVDA viene catturato dal traceback nei log, per migliorarne la lettura. (#1880)
+- Gli oggetti TextInfo  ora possiedono il metodo activate() per attivare la posizione rappresentata da Textinfo.
+- Questo viene usato dai display braille per attivare la posizione con i cursor routing, ma vi saranno altre chiamate in futuro.
 
 = 2011.3 =
 == Novità ==
