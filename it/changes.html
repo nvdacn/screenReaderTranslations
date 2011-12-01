@@ -39,13 +39,20 @@
 <LI>In Windows8, il focus non viene più spostato erroneamente al di fuori del campo di ricerca in Windows Explorer, il che non permetteva a NVDA di interagire con esso.
 <LI>La modalità navigazione è utilizzata ora anche nei contenuti  flash a tutto schermo.
 <LI>Risolto un problema che faceva ascoltare le voci Microsoft Speech Api Versione 5 con audio scadente, nel caso fosse selezionata una periferica audio diversa da sound mapper. (<A HREF="http://www.nvda-project.org/ticket/749">#749</A>)
+<LI>NVDA ora funziona nuovamente con i display braille, anche se la sintesi vocale è impostata su Nessun Sintetizzatore. (<A HREF="http://www.nvda-project.org/ticket/1963">#1963</A>)
+<LI>I comandi per la navigazione ad oggetti non annunceranno più  nessun oggetto genitore/figlio, ma utilizzeranno gli stessi termini della documentazione.
 </UL>
 
-<H2>2011.3</H2>
-
-<H3>Novità</H3>
+<H3>Cambiamenti per sviluppatori</H3>
 
 <UL>
+<LI>E' disponibile una console remota python da usarsi in quelle situazioni dove il debug da remoto risulta utile. Si veda la guida per sviluppatori per maggiori informazioni.
+<LI>Il percorso di base del codice di NVDA viene catturato dal traceback nei log, per migliorarne la lettura. (<A HREF="http://www.nvda-project.org/ticket/1880">#1880</A>)
+<LI>Gli oggetti TextInfo  ora possiedono il metodo activate() per attivare la posizione rappresentata da Textinfo.
+<LI>Questo viene usato dai display braille per attivare la posizione con i cursor routing, ma vi saranno altre chiamate in futuro.
+<P></P>
+= 2011.3 =
+== Novità ==
 <LI>NVDA ora è in grado di modificare la lingua di Espeak al volo, quando vengono letti documenti pdf oppure pagine web, purché essi contengano informazioni appropriate per la lingua. Le opzioni sul cambio automatico della lingua/dialetto possono essere modificate nelle impostazioni voce. (<A HREF="http://www.nvda-project.org/ticket/845">#845</A>)
 <LI>Viene supportato Java Access Bridge 2.0.2, che include il supporto per RunTime Java a 64 bit.
 <LI>Nelle applicazioni Mozilla Gecko (ad esempio Firefox), vengono annunciati i livelli di intestazione anche nella navigazione ad oggetti.
