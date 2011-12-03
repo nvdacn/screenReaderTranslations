@@ -231,11 +231,12 @@ Taulukoissa ovat käytettävissä lisäksi seuraavat näppäinkomennot:
 %kc:endInclude
 
 ++ Objektinavigointi ++[Objektinavigointi]
-Toisinaan voi olla tarpeen tutkia nykyistä sovellusta tai käyttöjärjestelmää siirtämättä [kohdistusta #Jarjestelmakohdistus].
+Sovelluksia käytetään enimmäkseen komennoilla, jotka siirtävät [kohdistusta #Jarjestelmakohdistus] ja [kohdistinta #Jarjestelmakohdistin].
+Toisinaan voi kuitenkin olla tarpeen tutkia nykyistä sovellusta tai käyttöjärjestelmää ilman, että kohdistus tai kohdistin liikkuu.
 Saatat myös haluta siirtyä [objekteihin #Objektit], joihin ei pääse normaalisti näppäimistöllä.
   Tällaisissa tapauksissa voidaan käyttää objektinavigointia.
 
-Objektinavigoinnin avulla on mahdollista liikkua yksittäisten objektien välillä ja saada niistä tietoja.
+Objektinavigoinnin avulla on mahdollista liikkua yksittäisten [objektien #Objektit] välillä ja saada niistä tietoja.
 Kun objektiin siirrytään, NVDA lukee sen samalla tavalla kuin järjestelmäkohdistuksenkin.
 Tekstiä voidaan myös tarkastella sellaisena kuin se näkyy ruudulla.
 Tähän käytetään objektinavigoinnin asemesta [kokonaistarkastelua #Kokonaistarkastelu].
@@ -243,8 +244,10 @@ Tähän käytetään objektinavigoinnin asemesta [kokonaistarkastelua #Kokonaist
 Objektit on ryhmitelty hierarkisesti sen sijaan, että niiden välillä liikuttaisiin edestakaisin.
 Tämä tarkoittaa, että jotkin objektit sisältävät muita objekteja, ja että on siirryttävä niiden sisään, jotta päästäisiin niiden sisältämiin objekteihin.
 Lista esimerkiksi sisältää listakohteita, joten niihin pääsemiseksi on siirryttävä listan sisään.
-Jos on siirrytty listan kohteeseen, takaisin listaan päästään siirtymällä objektiin joka sisältää kyseisen listakohteen, ja jatkaa sitten haluttaessa siitä eteenpäin.
-Jos vastaavasti ollaan työkalupalkin kohdalla, on sen säätimiin pääsemiseksi siirryttävä kyseisen työkalupalkin sisään.
+Jos on siirrytty listan kohteeseen, seuraavaan ja edelliseen objektiin siirtyminen siirtää saman listan muihin kohteisiin.
+Listakohteen säilöobjektiin siirtyminen siirtää takaisin listan kohdalle.
+Tämän jälkeen voidaan siirtyä siitä pois, mikäli halutaan päästä muihin objekteihin.
+Samoin työkalupalkkikin sisältää säätimiä, joten on siirryttävä kyseisen työkalupalkin sisään sen sisältämiin säätimiin pääsemiseksi.
 
 Nykyistä tarkasteltavaa objektia kutsutaan navigointiobjektiksi.
 Kun objektiin siirrytään, sitä voidaan tarkastella [tekstinlukukomennoilla #Tekstinlukeminen].
@@ -267,8 +270,9 @@ Seuraavia näppäimiä käytetään objekteittain navigoimiseen:
 Huomautus: Numlockin on oltava pois päältä, jotta numeroryhmän näppäimet toimisivat oikein.
 
 ++ Tekstin lukeminen ++[Tekstinlukeminen]
-NVDA:lla voidaan lukea nykyisen [navigointiobjektin #Objektinavigointi] sisältö ([kokonaistarkastelu #Kokonaistarkastelu] mukaan lukien) merkeittäin, sanoittain tai riveittäin.
-Tästä on eniten hyötyä Windowsin komentokehotteessa ja muissa paikoissa, joissa on rajoitettu [järjestelmäkohdistin #Jarjestelmakohdistin] tai sitä ei ole lainkaan.
+NVDA:lla on mahdollista lukea nykyisen [navigointiobjektin #Objektinavigointi] sisältöä ([kokonaistarkastelu #Kokonaistarkastelu] mukaan lukien) merkeittäin, sanoittain tai riveittäin.
+Tästä on eniten hyötyä paikoissa, joissa ei ole [järjestelmäkohdistinta #Jarjestelmakohdistin] (Windowsin komentokehote mukaan lukien).
+Tätä voidaan käyttää esimerkiksi valintaikkunassa olevan ilmoituksen lukemiseen.
 
 Kun tarkastelukohdistinta siirretään, järjestelmäkohdistin ei seuraa mukana, joten tekstin lukeminen onnistuu muokkauskohtaa menettämättä.
 Kun järjestelmäkohdistin liikkuu, tarkastelukohdistin seuraa kuitenkin oletusarvoisesti mukana.
@@ -356,8 +360,9 @@ Selaustilassa dokumentin sisältö on käytettävissä kokonaisesityksenä, joss
 Kaikki NVDA:n [järjestelmäkohdistimen #Jarjestelmakohdistin] näppäinkomennot, kuten esim. lue kaikki, lue muotoilutiedot, taulukoissa liikkumiseen käytettävät komennot jne, toimivat tässä tilassa.
 Dokumentissa liikuttaessa luetaan siinä olevan tekstin lisäksi myös muita tietoja, kuten onko kohdalla oleva teksti linkki, otsikko tms.
 
-Toisinaan on tarvetta olla suorassa vuorovaikutuksessa näissä dokumenteisssa olevien säädinten kanssa.
-Tämä tehdään siirtymällä vuorovaikutustilaan, jossa kaikki näppäilyt välitetään kyseessä olevalle säätimelle.
+Toisinaan on tarvetta olla suorassa vuorovaikutuksessa tällaisissa dokumenteisssa olevien säädinten kanssa.
+Tämä on tarpeen esimerkiksi muokattavissa tekstikentissä ja listoissa, jotta voidaan syöttää merkkejä ja käyttää nuolinäppäimiä säätimessä liikkumiseen.
+Tämä tehdään siirtymällä vuorovaikutustilaan, jossa lähes kaikki näppäilyt välitetään kyseessä olevalle säätimelle.
 NVDA siirtyy oletusarvoisesti selaustilasta vuorovaikutustilaan automaattisesti liikuttaessa tätä tilaa edellyttävän objektin kohdalle sarkaimella tai napsautettaessa sitä hiirellä.
 Vastaavasti sarkaimella siirtyminen tai sellaisen säätimen napsauttaminen, joka ei edellytä vuorovaikutustilaa, siirtää takaisin selaustilaan.
 Vuorovaikutustilaan voidaan siirtyä myös painamalla sitä edellyttävien säädinten kohdalla Enteriä tai välilyöntiä.
