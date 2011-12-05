@@ -231,7 +231,8 @@ Tablolarda aşağıdaki tuşlar da kullanılabilir:
 %kc:endInclude
 
 ++ Nesne Dolaşımı ++
-Bazen aktif uygulamayı veya işletim sistemini [odağı #SystemFocus] değiştirmeden gezmek isteyebilirsiniz. 
+Çoğu zaman, [odağı #SystemFocus] ve [düzenleme imlecini #SystemCaret]hareket ettiren uygulamalarla çalışırsınız.
+Öte yandan, Bazen aktif uygulamayı veya işletim sistemini odağı ya da düzenleme imlecinin konumunu değiştirmeden gezmek isteyebilirsiniz. 
 Aynı zamanda, normal şartlarda klavye ile ulaşamayacağınız [nesnelerle #Objects] çalışmak isteyebilirsiniz.
 İşte bu tür durumlar için, NVDA'nın nesne dolaşımını kullanabilirsiniz.
 
@@ -241,9 +242,11 @@ Metni ekranda göründüğü şekliyle incelemek isterseniz, nesne sunucusunu ku
 
 Ekrandaki tüm nesneler arasında tek tek dolaşmak yerine, hiyerarşik olarak gruplanmış nesneler arasında dolaşım olanağı sunulmaktadır.
 Yani, bir nesnenin içinde bulunan diğer nesnelere ulaşmak için o nesne içine girip  dolaşmanız gerekmektedir.
-Örneğin, bir listeyle karşılaşıldığında, tüm liste öğeleri arasında dolaşmak yerine, bir liste öğesinin altındaki diğer öğeleri görmek için, bu liste öğesinin yavru nesnesi ya da nesnelerine giderek bu liste öğesi içinde dolaşmanız gerekecektir.
-Bu liste öğesi dışındaki diğer öğeler arasında dolaşabilmeniz için, ilgili liste öğesinin ana nesnesine gidebilirsiniz.
-Benzer biçimde, bir araç çubuğuyla karşılaştıysanız, bu araç çubuğundaki kontrollere erişebilmek için, araç çubuğunun ilk yavru nesnesine giderek, içindeki nesneler arasında dolaşabilirsiniz.
+Örneğin, bir listeyle karşılaşıldığında, tüm liste öğeleri arasında dolaşmak yerine, bir liste öğesinin altındaki diğer öğeleri görmek için, bu liste öğesinin alt nesnesi ya da nesnelerine giderek bu liste öğesi içinde dolaşmanız gerekecektir.
+Bir liste öğesi ile aynı liste içinde bulunan diğer liste öğeleri arasında önceki nesne ve sonraki nesne komutlarıyla dolaşabilirsiniz.
+Önceki nesne komutuyla da bu öğeleri kapsayan liste nesnesine gidebilirsiniz.
+Bu şekilde, incelemekte olduğunuz uygulamanın liste öğeleri dışındaki kısmında bulunan nesnelere de kolayca ulaşabilirsiniz.
+Benzer biçimde, bir araç çubuğu da çeşitli kontrolleri kapsar ve  bu kontrollere erişebilmek için, araç çubuğu nesnesinin içine girmelisiniz.
 
 İncelenmekte olan nesneye dolaşım nesnesi denir. 
 Nesne sunucusuyla  Bir nesne üzerine geldikten sonra, nesneyi [metin inceleme komutlarını #ReviewingText] kullanarak inceleyebilirsiniz.
@@ -269,6 +272,7 @@ Not: Numara pedindeki tuşların düzgün çalışabilmesi için, numara kilidi 
 ++Metin inceleme ++[ReviewingText]
 NVDA üzerinde bulunduğunuz [nesnenin #ObjectNavigation] içeriğini ya da [ekran inceleme kipiyle #FlatReview] aktif ekranı, karakter karakter, sözcük sözcük, ya da satır satır incelemenize imkan vermektedir.
 Bu, windows komut konsolu ve sistem imlecinin çok kısıtlı olduğu veya hiç bulunmadığı pencereler gibi yerler için oldukça yararlıdır.
+Örneğin, bir iletişim kutusundaki uzun bir bilgi metnini incelemek için kullanabilirsiniz.
 
 İnceleme imlecini hareket ettirirken, sistem imleci bunu takip etmeyeceğinden, klavye odağını değiştirmeden ekranda görüntülenen metni inceleyebilirsiniz.
 Ancak, varsayılan olarak, sistem odağı hareket ettikçe, inceleme imleci de onu takip etmektedir.
@@ -353,11 +357,12 @@ Web sayfaları gibi kompleks salt okunur belgeler, NVDA'da tarama kipinde göste
  Bu, Mozilla Firefox, Microsoft Internet Explorer, Google Chrome, Adobe Reader ve Adobe Flash ile açılan belgeler için geçerlidir.
 
 Tarama kipi, web sayfası gibi bir içeriğin değişmez biçimde gösterildiği bir inceleme alanıdır ve içerik içinde yön tuşlarıyla dolaşılabilir.
-NVDA'nın [sistem düzeltme imleci  #SystemCaret] için geçerli olan hepsini okuma, tablo inceleme, yazı biçimini raporlama gibi komutlar bu kip için de geçerlidir.
+NVDA'nın [sistem düzenleme imleci  #SystemCaret] için geçerli olan hepsini okuma, tablo inceleme, yazı biçimini raporlama gibi komutlar bu kip için de geçerlidir.
 Metin içinde hareket ettikçe, metnin bir bağlantı veya başlık olup olmadığı gibi bilgiler de belirtilir.
 
 Bazen, belge içindeki kontrollerle doğrudan etkileşim içinde olmanız gerekebilir.
-Bunu tuşların doğrudan ilgili kontrollere aktarıldığı odak kipine geçerek yapabilirsiniz.
+Örneğin, yazılabilir alanlar ve listelerde giriş yapabilmeniz ya da imleci hareket ettirerek liste öğeleri arasında seçim yapabilmeniz için       kontrolle etkileşim içinde olmanız gerekir.
+Bunu hemen hemen tüm tuşların doğrudan ilgili kontrollere aktarıldığı odak kipine geçerek yapabilirsiniz.
 Tarama kipindeyken, tab ile veya tıklayarak odak kipinin gerektirdiği bir kontrole gelindiğinde, NVDA otomatik olarak odak kipini açar.
 Bu kipin gerektirdiği kontrol üzerinde giriş veya boşluk çubuğuna basılarak da odak kipine geçilebildiğini lütfen not edin.
 NVDA otomatik olarak odak kipine geçtiğinde, tab ile veya tıklayarak odak kipine ihtiyaç olmayan bir yere geçildiğinde, NVDA otomatik olarak gözatma kipine geri döner.
@@ -599,6 +604,13 @@ Klavye Komutu: NVDA+kontrol+t
 
 Bu seçenek Braille ekranın sistem imlecini mi yoksa nesne sunucusu/inceleme imlecini mi izleyeceğini seçmenizi sağlar.
 
+==== Paragraf Paragraf Oku ====
+Etkinleştirilirse, braille yazı satır yerine paragraf bazında görüntülenir.
+Aynı zamanda, önceki satır ve sonraki satır komutları da bu ayar uyarınca önceki ya da sonraki paragrafa gider.
+Bu, braille ekranı, daha fazla metin sığması için sürekli kaydırmak zorunda olmayacağınız anlamına gelir.
+Sayesinde, uzun metinleri daha akıcı olarak okuyabilirsiniz.
+Varsayılan olarak, bu ayar etkinleştirilmemiştir.
+
 +++ Klavye Ayarları (NVDA+kontrol+k) +++
 Bu iletişim kutusu tercihler menüsü içindeki "Klavye Ayarları..." altında bulunur.
 içinde aşağıdaki seçenekler mevcuttur:
@@ -796,6 +808,7 @@ Buradaki birçok onay kutusu belge içinde imleci hareket ettirirken hangi tür 
 - yazım hataları
 - sayfa numaraları
 - satır numaraları
+- satır girintisi
 - tablolar
 - tablo satır/sütun başlıkları
 - tablo hücre koordinatları
@@ -1074,6 +1087,24 @@ Kumanda kolu olan ekranlar için:
 | sağ Yön Tuşu | sağ |
 | Enter tuşu | seç |
 %kc:endInclude
+
+++ hedo ProfiLine USB ++
+Hedo ProfiLine USB,  [hedo Reha-Technik  http://www.hedo.de/] desteklenmektedir.
+Öncelikle üretici tarafından sağlanan USB sürücülerini kurmalısınız.
+
+Aşağıda braille ekranı NVDA ile hangi tuşlarla kullanabileceğiniz i bulabilirsiniz.
+Tuşların yeri ve tarifi için Braille ekranın dokümantasyonunu inceleyin.
+%kc:beginInclude
+|| Name | Key |
+| Braille geri kaydır | K1 |
+| Braille ileri kaydır | K3 |
+| Braille Önceki satır | B2 |
+| Braille Sonraki satır | B5 |
+| Braille konumuna taşı | routing |
+| braille imlecin neyi takip edeceğini değiştir | K2 |
+| Hepsini oku | B6 |
+%kc:endInclude
+
 
 ++ BRLTTY ++
 [BRLTTY http://mielke.cc/brltty/] çok daha fazla farklı braille ekranı destekleyebilmek için kullanılan ayrı bir programdır.
