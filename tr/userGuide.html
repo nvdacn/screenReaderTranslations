@@ -107,14 +107,15 @@
     <LI><A HREF="#toc67">11.3. Handy Tech Displays</A>
     <LI><A HREF="#toc68">11.4. MDV Lilli</A>
     <LI><A HREF="#toc69">11.5. Baum/Humanware/APH Braille Ekranlar</A>
-    <LI><A HREF="#toc70">11.6. BRLTTY</A>
+    <LI><A HREF="#toc70">11.6. hedo ProfiLine USB</A>
+    <LI><A HREF="#toc71">11.7. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc71">12. İleri Düzey Konular</A>
+  <LI><A HREF="#toc72">12. İleri Düzey Konular</A>
     <UL>
-    <LI><A HREF="#toc72">12.1. Tuş kombinasyonlarını Değiştirme ve Diğer Girdi Hareketleri</A>
-    <LI><A HREF="#toc73">12.2. Noktalama/imla Seslendirmesiyle İlgili İleri Düzey Ayarlamalar</A>
+    <LI><A HREF="#toc73">12.1. Tuş kombinasyonlarını Değiştirme ve Diğer Girdi Hareketleri</A>
+    <LI><A HREF="#toc74">12.2. Noktalama/imla Seslendirmesiyle İlgili İleri Düzey Ayarlamalar</A>
     </UL>
-  <LI><A HREF="#toc74">13. Daha Detaylı Bilgi</A>
+  <LI><A HREF="#toc75">13. Daha Detaylı Bilgi</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -579,7 +580,8 @@ Tablolarda aşağıdaki tuşlar da kullanılabilir:
 <H3>6.4. Nesne Dolaşımı</H3>
 
 <P>
-Bazen aktif uygulamayı veya işletim sistemini <A HREF="#SystemFocus">odağı</A> değiştirmeden gezmek isteyebilirsiniz. 
+Çoğu zaman, <A HREF="#SystemFocus">odağı</A> ve <A HREF="#SystemCaret">düzenleme imlecini</A>hareket ettiren uygulamalarla çalışırsınız.
+Öte yandan, Bazen aktif uygulamayı veya işletim sistemini odağı ya da düzenleme imlecinin konumunu değiştirmeden gezmek isteyebilirsiniz. 
 Aynı zamanda, normal şartlarda klavye ile ulaşamayacağınız <A HREF="#Objects">nesnelerle</A> çalışmak isteyebilirsiniz.
 İşte bu tür durumlar için, NVDA'nın nesne dolaşımını kullanabilirsiniz.
 </P>
@@ -591,9 +593,11 @@ Metni ekranda göründüğü şekliyle incelemek isterseniz, nesne sunucusunu ku
 <P>
 Ekrandaki tüm nesneler arasında tek tek dolaşmak yerine, hiyerarşik olarak gruplanmış nesneler arasında dolaşım olanağı sunulmaktadır.
 Yani, bir nesnenin içinde bulunan diğer nesnelere ulaşmak için o nesne içine girip  dolaşmanız gerekmektedir.
-Örneğin, bir listeyle karşılaşıldığında, tüm liste öğeleri arasında dolaşmak yerine, bir liste öğesinin altındaki diğer öğeleri görmek için, bu liste öğesinin yavru nesnesi ya da nesnelerine giderek bu liste öğesi içinde dolaşmanız gerekecektir.
-Bu liste öğesi dışındaki diğer öğeler arasında dolaşabilmeniz için, ilgili liste öğesinin ana nesnesine gidebilirsiniz.
-Benzer biçimde, bir araç çubuğuyla karşılaştıysanız, bu araç çubuğundaki kontrollere erişebilmek için, araç çubuğunun ilk yavru nesnesine giderek, içindeki nesneler arasında dolaşabilirsiniz.
+Örneğin, bir listeyle karşılaşıldığında, tüm liste öğeleri arasında dolaşmak yerine, bir liste öğesinin altındaki diğer öğeleri görmek için, bu liste öğesinin alt nesnesi ya da nesnelerine giderek bu liste öğesi içinde dolaşmanız gerekecektir.
+Bir liste öğesi ile aynı liste içinde bulunan diğer liste öğeleri arasında önceki nesne ve sonraki nesne komutlarıyla dolaşabilirsiniz.
+Önceki nesne komutuyla da bu öğeleri kapsayan liste nesnesine gidebilirsiniz.
+Bu şekilde, incelemekte olduğunuz uygulamanın liste öğeleri dışındaki kısmında bulunan nesnelere de kolayca ulaşabilirsiniz.
+Benzer biçimde, bir araç çubuğu da çeşitli kontrolleri kapsar ve  bu kontrollere erişebilmek için, araç çubuğu nesnesinin içine girmelisiniz.
 </P>
 <P>
 İncelenmekte olan nesneye dolaşım nesnesi denir. 
@@ -677,6 +681,7 @@ Not: Numara pedindeki tuşların düzgün çalışabilmesi için, numara kilidi 
 <P>
 NVDA üzerinde bulunduğunuz <A HREF="#ObjectNavigation">nesnenin</A> içeriğini ya da <A HREF="#FlatReview">ekran inceleme kipiyle</A> aktif ekranı, karakter karakter, sözcük sözcük, ya da satır satır incelemenize imkan vermektedir.
 Bu, windows komut konsolu ve sistem imlecinin çok kısıtlı olduğu veya hiç bulunmadığı pencereler gibi yerler için oldukça yararlıdır.
+Örneğin, bir iletişim kutusundaki uzun bir bilgi metnini incelemek için kullanabilirsiniz.
 </P>
 <P>
 İnceleme imlecini hareket ettirirken, sistem imleci bunu takip etmeyeceğinden, klavye odağını değiştirmeden ekranda görüntülenen metni inceleyebilirsiniz.
@@ -942,12 +947,13 @@ Web sayfaları gibi kompleks salt okunur belgeler, NVDA'da tarama kipinde göste
 </P>
 <P>
 Tarama kipi, web sayfası gibi bir içeriğin değişmez biçimde gösterildiği bir inceleme alanıdır ve içerik içinde yön tuşlarıyla dolaşılabilir.
-NVDA'nın <A HREF="#SystemCaret">sistem düzeltme imleci</A> için geçerli olan hepsini okuma, tablo inceleme, yazı biçimini raporlama gibi komutlar bu kip için de geçerlidir.
+NVDA'nın <A HREF="#SystemCaret">sistem düzenleme imleci</A> için geçerli olan hepsini okuma, tablo inceleme, yazı biçimini raporlama gibi komutlar bu kip için de geçerlidir.
 Metin içinde hareket ettikçe, metnin bir bağlantı veya başlık olup olmadığı gibi bilgiler de belirtilir.
 </P>
 <P>
 Bazen, belge içindeki kontrollerle doğrudan etkileşim içinde olmanız gerekebilir.
-Bunu tuşların doğrudan ilgili kontrollere aktarıldığı odak kipine geçerek yapabilirsiniz.
+Örneğin, yazılabilir alanlar ve listelerde giriş yapabilmeniz ya da imleci hareket ettirerek liste öğeleri arasında seçim yapabilmeniz için       kontrolle etkileşim içinde olmanız gerekir.
+Bunu hemen hemen tüm tuşların doğrudan ilgili kontrollere aktarıldığı odak kipine geçerek yapabilirsiniz.
 Tarama kipindeyken, tab ile veya tıklayarak odak kipinin gerektirdiği bir kontrole gelindiğinde, NVDA otomatik olarak odak kipini açar.
 Bu kipin gerektirdiği kontrol üzerinde giriş veya boşluk çubuğuna basılarak da odak kipine geçilebildiğini lütfen not edin.
 NVDA otomatik olarak odak kipine geçtiğinde, tab ile veya tıklayarak odak kipine ihtiyaç olmayan bir yere geçildiğinde, NVDA otomatik olarak gözatma kipine geri döner.
@@ -1391,6 +1397,16 @@ Klavye Komutu: NVDA+kontrol+t
 Bu seçenek Braille ekranın sistem imlecini mi yoksa nesne sunucusu/inceleme imlecini mi izleyeceğini seçmenizi sağlar.
 </P>
 
+<H5>Paragraf Paragraf Oku</H5>
+
+<P>
+Etkinleştirilirse, braille yazı satır yerine paragraf bazında görüntülenir.
+Aynı zamanda, önceki satır ve sonraki satır komutları da bu ayar uyarınca önceki ya da sonraki paragrafa gider.
+Bu, braille ekranı, daha fazla metin sığması için sürekli kaydırmak zorunda olmayacağınız anlamına gelir.
+Sayesinde, uzun metinleri daha akıcı olarak okuyabilirsiniz.
+Varsayılan olarak, bu ayar etkinleştirilmemiştir.
+</P>
+
 <A NAME="toc42"></A>
 <H4>8.1.6. Klavye Ayarları (NVDA+kontrol+k)</H4>
 
@@ -1750,6 +1766,7 @@ Buradaki birçok onay kutusu belge içinde imleci hareket ettirirken hangi tür 
 <LI>yazım hataları
 <LI>sayfa numaraları
 <LI>satır numaraları
+<LI>satır girintisi
 <LI>tablolar
 <LI>tablo satır/sütun başlıkları
 <LI>tablo hücre koordinatları
@@ -2373,7 +2390,54 @@ Kumanda kolu olan ekranlar için:
 </TABLE>
 
 <A NAME="toc70"></A>
-<H3>11.6. BRLTTY</H3>
+<H3>11.6. hedo ProfiLine USB</H3>
+
+<P>
+Hedo ProfiLine USB,  <A HREF="http://www.hedo.de/">hedo Reha-Technik</A> desteklenmektedir.
+Öncelikle üretici tarafından sağlanan USB sürücülerini kurmalısınız.
+</P>
+<P>
+Aşağıda braille ekranı NVDA ile hangi tuşlarla kullanabileceğiniz i bulabilirsiniz.
+Tuşların yeri ve tarifi için Braille ekranın dokümantasyonunu inceleyin.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Key</TH>
+</TR>
+<TR>
+<TD>Braille geri kaydır</TD>
+<TD>K1</TD>
+</TR>
+<TR>
+<TD>Braille ileri kaydır</TD>
+<TD>K3</TD>
+</TR>
+<TR>
+<TD>Braille Önceki satır</TD>
+<TD>B2</TD>
+</TR>
+<TR>
+<TD>Braille Sonraki satır</TD>
+<TD>B5</TD>
+</TR>
+<TR>
+<TD>Braille konumuna taşı</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>braille imlecin neyi takip edeceğini değiştir</TD>
+<TD>K2</TD>
+</TR>
+<TR>
+<TD>Hepsini oku</TD>
+<TD>B6</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc71"></A>
+<H3>11.7. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A> çok daha fazla farklı braille ekranı destekleyebilmek için kullanılan ayrı bir programdır.
@@ -2413,10 +2477,10 @@ Lütfen <A HREF="http://mielke.cc/brltty/doc/drivers/">BRLTTY tuş tabloları ya
 </TR>
 </TABLE>
 
-<A NAME="toc71"></A>
+<A NAME="toc72"></A>
 <H2>12. İleri Düzey Konular</H2>
 
-<A NAME="toc72"></A>
+<A NAME="toc73"></A>
 <H3>12.1. Tuş kombinasyonlarını Değiştirme ve Diğer Girdi Hareketleri</H3>
 
 <P>
@@ -2506,7 +2570,7 @@ Bu nedenle, Alt tuşunu bir girdi hareketinde kullanırsanız, bu tuşa basmak s
 Yani, Kontrol, Şift veya NVDA tuşlarını scriptlerde değişken tuş olarak kullanmak daha faydalı olacaktır.
 </P>
 
-<A NAME="toc73"></A>
+<A NAME="toc74"></A>
 <H3>12.2. Noktalama/imla Seslendirmesiyle İlgili İleri Düzey Ayarlamalar</H3>
 
 <P>
@@ -2520,7 +2584,7 @@ Bu dosyanın nasıl düzenlenmesi gerektiği, <A HREF="http://www.nvda-project.o
 Öte yandan, kullanıcıların karmaşık semboller için giriş yapabilmesi olanaklı değildir.
 </P>
 
-<A NAME="toc74"></A>
+<A NAME="toc75"></A>
 <H2>13. Daha Detaylı Bilgi</H2>
 
 <P>
