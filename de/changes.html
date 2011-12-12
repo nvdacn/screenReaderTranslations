@@ -19,12 +19,17 @@
 <LI>NVDA kann nun Tastendrücke erkennen, die mittels Eingabeemulationen wie etwa bildschirmtastaturen oder Spracherkennungssoftware erzeugt wurden.
 <LI>Farben in Konsolenanwendungen werden nun korrekt erkannt.
 <LI>Wenn Text fett, unterstrichen oder kursiv formatiert ist, wird er nun in Braille mit Hilfe von Zeichen dargestellt, die zur aktuell eingestellten Übersetzungstabelle passen. (<A HREF="http://www.nvda-project.org/ticket/538">#538</A>)
+**- Much more information is now reported in Microsoft Word documents, including:
+** - Inline information such as footnote and endnote numbers, heading levels, the existance of comments, table nesting levels, links, and text color;
+** - Reporting when entering document sections such as the comments story, footnotes and endnotes stories, and header and footer stories.
 <LI>Markierter Text wird nun in Braille durch Unterstreichen mit den Punkten 7 und 8 angezeigt. (<A HREF="http://www.nvda-project.org/ticket/889">#889</A>)
 <LI>in Braille werden nun Steuerelemente innerhalb eines Textes als solche dargestellt (wie z.B. Links, Überschriften oder Schalter. (<A HREF="http://www.nvda-project.org/ticket/202">#202</A>)
 <LI>Unterstützung für die hedo ProfiLine und MobilLine USB Braillezeilen. (<A HREF="http://www.nvda-project.org/ticket/1863">#1863</A>, <A HREF="http://www.nvda-project.org/ticket/1897">#1897</A>)
 <LI>Wenn möglich verhindert NVDA nun den Wortumbruch in Braille. (<A HREF="http://www.nvda-project.org/ticket/1890">#1890</A>)
 <LI>Text kann auf der Braillezeile Absatzweise anstatt Zeilenweise angezeigt werden. Dies erlaubt ein flüssigeres Lesen großer Textmengen. Die Einstellung kann über die Option "absatzweise lesen" in den Braille-Einstellungen konfiguriert werden. (<A HREF="http://www.nvda-project.org/ticket/1891">#1891</A>)
 <LI>im lesemodus können Sie nun durch einmaliges Drücken einer Routingtaste der Braillezeile das Objekt unter dem Cursor aktivieren. Dies bedeutet, dass Sie die Routingtaste zweimal drücken müssen, falls sich der Cursor noch nicht auf dem Objekt befindet. (<A HREF="http://www.nvda-project.org/ticket/1893">#1893</A>)
+**- Grundlegende Unterstützung für Internet-Bereiche wie z. B. der Shop. Andere Anwendungen, welche auf WebKit 1 beruhen, werden möglicherweise ebenfals unterstützt. (<A HREF="http://www.nvda-project.org/ticket/734">#734</A>)
+**- In books in Adobe Digital Editions 1.8.1 and later, pages are now turned automatically when using say all. (<A HREF="http://www.nvda-project.org/ticket/1978">#1978</A>)
 </UL>
 
 <H3>Änderungen</H3>
@@ -37,10 +42,12 @@
 
 <UL>
 <LI>In windows 8 wird der Fokus nun nicht mehr unerwartet aus dem Suchfeld springen. Dieser Fehler machte es unmöglich, mit nvda mit dem windows-suchfeld zu arbeiten.
+**- Major performance  improvements when reading and navigating Microsoft word documents while automatic reporting of formatting is enabled, thus now making it quite comfortable to proof read formatting etc. Performance may be also improved over all for some users.
 <LI>Für Flash-Inhalte, die im Vollbildmodus dargestellt werden, wird nun der Lesemodus benutzt.
-<LI>Schlechte Audioqualität bei SAPI-5-Stimmen in einigen Fällen behoben, wenn ein anderes Ausgabegerät als Microsoft Soundmapper verwendet wird. (<A HREF="http://www.nvda-project.org/ticket/749">#749</A>)
+<LI>Probleme mit der Klangqualität in einigen Fällen behoben, in denen als Ausgabegerät etwas anderes eingestellt ist als "Microsoft Sound Mapper". Dies betrifft vor allem Microsoft Sapi Version 5. (<A HREF="http://www.nvda-project.org/ticket/749">#749</A>)
 <LI>Die Auswahl von "keine Sprache" im Sprachausgabendialog ist jetzt wieder möglich. Das ist nützlich, falls nvda nur mit einer Braillezeile oder dem Sprachbetrachter als Ausgabemedium betrieben wird. (<A HREF="http://www.nvda-project.org/ticket/1963">#1963</A>)
 <LI>Die Befehle zur Objektnavigation geben nun nicht mehr "keine Kinder" bzw. "keine Eltern" aus. Die Meldungen wurden der Dokumentation angepasst. Dies gilt für die englische Benutzeroberfläche!
+<LI>Wenn in NVDA eine andere Sprache als englisch eingestellt wurde, wird der Name der Tabulator-Taste nun in der richtigen Sprache angesagt. 
 </UL>
 
 <H3>Änderungen für Entwickler</H3>
@@ -51,6 +58,7 @@
 <LI>TextInfo-Objekte haben nun eine Methode namens Activate(), die das Aktivieren der von textinfo zurückgegebenen Position erlaubt.
  <UL>
  <LI>Dies erlaubt das Aktivieren unter Verwendung der Routingtasten einer Braillezeile. Hierfür könnte es jedoch in Zukunft andere Methoden geben.
+**- TreeInterceptors and NVDAObjects which only expose one page of text at a time can support automatic page turns during say all by using the textInfos.DocumentWithPageTurns mix-in. (<A HREF="http://www.nvda-project.org/ticket/1978">#1978</A>)
  </UL>
 </UL>
 
