@@ -49,11 +49,15 @@
 <LI><A HREF="#toc24">4. die Python-Konsole von nvda</A>
   <UL>
   <LI><A HREF="#toc25">4.1. Verwendung</A>
-  <LI><A HREF="#toc26">4.2. namensraum</A>
+  <LI><A HREF="#PythonConsoleNamespace">4.2. namensraum</A>
     <UL>
     <LI><A HREF="#toc27">4.2.1. automatische Importe</A>
     <LI><A HREF="#PythonConsoleSnapshotVariables">4.2.2. Schnappschuss-Variablen</A>
     </UL>
+  </UL>
+<LI><A HREF="#toc29">5. die Remote-Python-Konsole</A>
+  <UL>
+  <LI><A HREF="#toc30">5.1. Verwendung</A>
   </UL>
 </UL>
 
@@ -824,7 +828,7 @@ Mit f6 können sie zwischen Ein- und Ausgabefenster wechseln.
 durch Schließen des Fensters wird die Sitzung lediglich verborgen. Dies macht es möglich, zur Konsole zurückzukehren und alle bisherigen Eingaben und Variablen beizubehalten
 </P>
 
-<A NAME="toc26"></A>
+<A NAME="PythonConsoleNamespace"></A>
 <H3>4.2. namensraum</H3>
 
 <A NAME="toc27"></A>
@@ -851,6 +855,36 @@ Diese Variablen sind:
 <LI>nav: das aktuelle Navigatorobjekt
 <LI>mouse: das Objekt, auf dem sich der Mauszeiger befindet
 <LI>brlRegions: die Braille-Regionen des aktiven Braille-Puffers
+</UL>
+
+<A NAME="toc29"></A>
+<H2>5. die Remote-Python-Konsole</H2>
+
+<P>
+für Situationen, in denen Fehler in nvda über ein Netzwerk hinweg aus der Ferne korrigiert werden müssen, ist eine Remote-Python-Konsole verfügbar. 
+Diese funktioniert ähnlich wie die weiter oben beschriebene <A HREF="#PythonConsole">lokale Python-Konsole</A>, der Zugriff erfolgt jedoch über TCP.
+</P>
+<P>
+Bitte bedenken Sie, dass dies ein hohes Sicherheitsrisiko darstellt. 
+Sie sollten die remote-Python-Konsole nur dann aktivieren, wenn sie mit vertrauenswürdigen Netzwerken wie etwa vpns verbunden sind.
+</P>
+
+<A NAME="toc30"></A>
+<H3>5.1. Verwendung</H3>
+
+<P>
+um die remote-Python-Konsole zu aktivieren, verwenden sie die lokale Python-Konsole und importieren sie remotePythonConsole. Rufen Sie anschließend remotePythonConsole.initialize() auf.
+Jetzt können Verbindungen über den typ-Port 6832 aufgebaut werden.
+Die eingabeaufzeichnungsliste für zuvor eingegebene Befehle wird nicht unterstützt.
+Der Namensbereich ist identisch mit dem  <A HREF="#PythonConsoleNamespace">Namensbereich der lokalen Python-Konsole</A>.
+</P>
+<P>
+Es gibt jedoch einige weitere spezielle Funktionen:
+</P>
+
+<UL>
+<LI>snap(): erstellt einen Schnappschuss des aktuellen Zustandes vbon nvda und speichert diesen in den <A HREF="#PythonConsoleSnapshotVariables">Schnappschuss-Variablen</A>.
+<LI>rmSnap(): entfernt alle Schnappschuss-Variablen.
 </UL>
 
 <P>
