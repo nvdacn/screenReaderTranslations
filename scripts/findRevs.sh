@@ -120,6 +120,8 @@ if [ "$DIFFSDIR" == "ug-diffs" ]; then divisor=5; fi
 count=$(($count/$divisor))
 if [ "$count" != "0" ]; then
 helperMsg="$count in $DIFFSDIR ($newRevs)"
+else
+helperMsg=''
 fi
 }
 
@@ -141,7 +143,9 @@ if [ "$endRev" == "" ]; then
 fi
 
 declare -A twitAddr
-twitAddr[ar]="@mesarhameed @nvdauser"
+twitAddr[ar]="@nvdauser"
+twitAddr[de]="@bdorer1"
+twitAddr[sk]="@pvagner"
 
 langs=(ar de es fi fr gl it ja nl pl pt_BR sk ta tr)
 for lang in ${langs[*]}; do
