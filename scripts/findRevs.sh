@@ -8,6 +8,7 @@ msg=""
 BZR=`which bzr`
 DIFF=`which diff`
 WDIFF=`which wdiff`
+TWIDGE=`which twidge`
 
 if [ "$BZR" == "" ]; then
     echo "bzr not installed."
@@ -17,6 +18,9 @@ elif [ "$WDIFF" == "" ]; then
     exit
 elif [ "$DIFF" == "" ]; then
     echo "diff not installed."
+    exit
+elif [ "$TWIDGE" == "" ]; then
+    echo "twidge not installed."
     exit
 fi
 
@@ -114,7 +118,9 @@ divisor=4
 if [ "$DIFFSDIR" == "ug-diffs" ]; then divisor=5; fi
 count=$(($count/$divisor))
 if [ "$count" != "0" ]; then
-msg="${msg}$lang: $count new revision(s) in $DIFFSDIR ($newRevs)\n"
+newMsg="$lang: $count new revision(s) in $DIFFSDIR ($newRevs)"
+msg="${msg}\n${newMsg}"
+twidge update "${twitAddr[$lang]} ${newMsg} need translating."
 fi
 }
 
@@ -134,6 +140,9 @@ if [ "$endRev" == "" ]; then
     echo "could not find end revision, quitting."
     exit
 fi
+
+declare -A twitAddr
+twitAddr[ar]="@mesarhameed"
 
 langs=(ar de es fi fr gl it ja nl pl pt_BR sk ta tr)
 for lang in ${langs[*]}; do
