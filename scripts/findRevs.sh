@@ -2,6 +2,7 @@
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 msg=""
+helperMsg=""
 
 # apps that we need.
 
@@ -118,9 +119,7 @@ divisor=4
 if [ "$DIFFSDIR" == "ug-diffs" ]; then divisor=5; fi
 count=$(($count/$divisor))
 if [ "$count" != "0" ]; then
-newMsg="$lang: $count new revision(s) in $DIFFSDIR ($newRevs)"
-msg="${msg}\n${newMsg}"
-twidge update "${twitAddr[$lang]} ${newMsg} need translating."
+helperMsg="$count in $DIFFSDIR ($newRevs)"
 fi
 }
 
@@ -142,7 +141,7 @@ if [ "$endRev" == "" ]; then
 fi
 
 declare -A twitAddr
-twitAddr[ar]="@mesarhameed"
+twitAddr[ar]="@mesarhameed @nvdauser"
 
 langs=(ar de es fi fr gl it ja nl pl pt_BR sk ta tr)
 for lang in ${langs[*]}; do
@@ -150,10 +149,24 @@ for lang in ${langs[*]}; do
     origFile=changes.t2t
     DIFFSDIR=ch-diffs
     helper $lang
-
+    msgP1="$helperMsg"
     origFile=userGuide.t2t
     DIFFSDIR=ug-diffs
     helper $lang
+    msgP2="$helperMsg"
+    # make sure the format looks nice.
+    newMsg=''
+    if [ "$msgP1" != '' ] && [ "$msgP2" != '' ]; then
+        newMsg="$msgP1; $msgP2"
+    elif [ "$msgP1" != '' ]; then
+        newMsg="$msgP1"
+    elif [ "$msgP2" != '' ]; then
+        newMsg="$msgP2"
+    fi
+    if [ "$newMsg" != "" ]; then
+        twidge update "${twitAddr[$lang]} $lang: new revision(s) for translation: $newMsg"
+        msg="${msg}${lang}: new revision(s): ${newMsg}\n"
+    fi
 done
 
 popd >/dev/null
