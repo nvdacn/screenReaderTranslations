@@ -9,12 +9,19 @@
 - NVDA è in grado di rilevare la pressione dei tasti proveniente da tastiere alternative che lavorano in emulazione come tastiere a schermo o programmi di riconoscimento vocale.
 - NVDA è in grado di rilevare i colori nelle finestre console, come prompt dei comandi.
 - Vengono indicati in braille i simboli di sottolineato, grassetto e corsivo, utilizzando i segni della tabella braille selezionata. (#538)
+- Vengono annunciate molte più informazioni nei documenti Microsoft word, che comprendono:
+- Informazioni in linea come note a piè di pagina e note a fine testo, numerazioni, livello intestazioni, l'esistenza di commenti, livello di annidamento delle tabelle, link e colori del testo;
+- Annuncio di quando si raggiungono sezioni del documento come l'elenco dei commenti, delle note a piè di pagina o note a fine testo, e delle intestazioni e piè di pagina.
 - In braille, i puntini 7 e 8 indicano la selezione del testo. (#889)
 - Vengono riportate in braille informazioni sui controlli contenuti nei documenti, come link, intestazioni e pulsanti. (#202)
-- Supporto per  i display Braille hedo ProfiLine e MobilLine USB. (#1863)
+- Supporto per  i display Braille hedo ProfiLine e MobilLine USB. (#1863, #1897)
 - Quando possibile, NVDA cerca di non spezzare più le parole in braille. (#1890)
+- NVDA ora cerca di evitare di spezzare le parole in braille di default. Questo può venir disattivato nelle impostazioni braille. (#1890, #1946)
 - E' ora possibile usufruire in braille della lettura per paragrafi, oltre che per righe, che dovrebbe offrire una consultazione più comoda in grandi porzioni di testo. Tale opzione è selezionabile dalle impostazioni Braille, voce lettura per paragrafi. (#1891)
 - In modalità navigazione, è possibile attivare un oggetto direttamente utilizzando una barra braille. Sarà sufficiente fare doppio click con il cursor routing corrispondente, oppure, nel caso il cursore sia già alla posizione desiderata, basterà un click solo. (#1893)
+- Introdotto un supporto di base nelle aree web di Itunes, come lo store. Possono essere supportate anche altre applicazioni che utilizzino WebKit 1. (#734)
+- Nei libri in Adobe Digital Edition 1.8.1 e versioni successive, le pagine verranno girate automaticamente anche utilizzando l'opzione dire tutto. (#1978)
+
 
 
 == Cambiamenti ==
@@ -23,10 +30,12 @@
 
 == Bug corretti ==
 - In Windows8, il focus non viene più spostato erroneamente al di fuori del campo di ricerca in Windows Explorer, il che non permetteva a NVDA di interagire con esso.
+- Notevole aumento delle prestazioni durante la lettura e l'esplorazione di documenti word quando l'opzione annuncio automatico  formattazione è attiva, il che consente la correzione dei documenti in maniera più confortevole. Aumento in generale delle prestazioni in Microsoft Word.
 - La modalità navigazione è utilizzata ora anche nei contenuti  flash a tutto schermo.
 - Risolto un problema che faceva ascoltare le voci Microsoft Speech Api Versione 5 con audio scadente, nel caso fosse selezionata una periferica audio diversa da sound mapper. (#749)
 - NVDA ora funziona nuovamente con i display braille, anche se la sintesi vocale è impostata su Nessun Sintetizzatore. (#1963)
 - I comandi per la navigazione ad oggetti non annunceranno più  nessun oggetto genitore/figlio, ma utilizzeranno gli stessi termini della documentazione.
+- Quando NVDA viene configurato nell'utilizzare una lingua diversa dall'inglese, il nome del tasto tab viene annunciato nella lingua corretta.
 
 
 == Cambiamenti per sviluppatori ==
