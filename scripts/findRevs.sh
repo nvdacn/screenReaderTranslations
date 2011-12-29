@@ -102,7 +102,7 @@ twitAddr[ar]="@nvdauser"
 twitAddr[de]="@bdorer1"
 twitAddr[sk]="@pvagner"
 
-langs=(ar de es fi fr gl it ja nl pl pt_BR sk ta tr)
+langs=(ar de es fi fr gl it ja nl pl pt_BR pt_PT sk ta tr)
 for lang in ${langs[*]}; do
     echo "processing $lang"
     findRevs $lang user_docs/en/ ch-diffs changes.t2t
