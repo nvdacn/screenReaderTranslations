@@ -310,8 +310,7 @@ La disposition se présente ainsi :
 
 ++ Revue à Plat ++[FlatReview]
 Bien qu'en général on ne puisse explorer que le contenu d'un seul [objet #Objects], certains objets permettent d'explorer les objets qu'ils contiennent.
-Les documents complexes vous permettent d'explorer tout leur contenu
-et les fenêtres d'applications vous permettent d'explorer le texte tel qu'il apparaît visuellement.
+Les documents complexes vous permettent d'explorer tout leur contenu et les fenêtres d'applications vous permettent d'explorer le texte tel qu'il apparaît visuellement.
 Cela s'appelle la revue à plat.
 C'est similaire aux fonctions revue d''écran ou curseur souris de beaucoup d'autres revues d'écran pour Windows.
 
@@ -332,7 +331,8 @@ les deux commandes suivantes sont utilisées pour la revue à plat :
 Lorsqu'on déplace la souris, NVDA annonce par défaut le texte se trouvant directement sous le pointeur de la souris. 
 Quand c'est possible, NVDA lira un paragraphe, cependant certains contrôles ne peuvent être lus que par ligne.
 
-NVDA peut également être configuré de manière à annoncer aussi le type de contrôle ou l'objet sur lequel se trouve la souris (ex : liste, bouton etc). Cela peut être utile pour les personnes complètement aveugles car le texte n'est pas toujours suffisant.
+NVDA peut également être configuré de manière à annoncer aussi le type de contrôle ou l'objet sur lequel se trouve la souris (ex : liste, bouton etc). 
+Cela peut être utile pour les personnes complètement aveugles car le texte n'est pas toujours suffisant.
 
 NVDA offre à l'utilisateur un moyen d'évaluer la position de la souris sur l'écran en émettant des bips audio représentant les coordonnées de la souris. 
 Plus la souris est haut sur l'écran, plus les bips sont aigus. 
@@ -356,12 +356,19 @@ Bien qu'une souris physique devrait être utilisée pour naviguer à la souris, 
 Les documents complexes, tels que les pages web, sont représentés sous NVDA en utilisant le Mode Navigation.
 Cela concerne les documents sous Mozilla Firefox, Microsoft Internet Explorer, Google Chrome, Adobe Reader et Adobe Flash.
 
-Le mode navigation offre une représentation platement textuelle du document dans laquelle on peut se déplacer avec les flèches de navigation. Des informations indiquant si le texte est un lien, un titre etc sont annoncées avec le texte pendant que vous vous déplacez.
+Le mode navigation offre une représentation platement textuelle du document dans laquelle on peut se déplacer avec les flèches de navigation. 
+Dans ce mode, toutes les touches de commande du [mode curseur #SystemCaret] fonctionneront (ex : dire tout, annonce du formatage, touches de navigation dans les tableaux etc).
+Des informations indiquant si le texte est un lien, un titre etc sont annoncées avec le texte pendant que vous vous déplacez.
 
 Parfois, vous devrez interagir directement avec les contrôles contenus dans ces documents.
 Par exemple, vous devrez le faire pour les zones d'éditions et les listes pour pouvoir entrer du texte ou utiliser le curseur pour travailler avec les contrôles.
 Cela se fait en passant en mode formulaire, mode dans lequel presque toutes les touches sont passées directement au contrôle.
-En mode navigation, par défaut, NVDA passera automatiquement en mode formulaire si vous tabulez ou cliquez sur un champ qui le requiert. Notez que presser la barre d'espace ou la touche entrée passera également NVDA en mode formulaire si le champ le permet. Vous pouvez aussi passer manuellement NVDA en mode formulaire par la combinaison de touches NVDA+Espace. Si NVDA passe automatiquement en mode formulaire suite à un clic, une pression de la touche Tab, Espace, ou Entrée, Il repassera en mode navigation si vous tabulez ou cliquez sur un champ qui le requiert, ou si vous appuyez sur la touche Echap. Cependant, si vous passez manuellement en mode formulaire par la combinaison NVDA+Espace, NVDA restera en mode formulaire jusqu'à ce que vous retourniez manuellement en mode navigation.
+En mode navigation, par défaut, NVDA passera automatiquement en mode formulaire si vous tabulez ou cliquez sur un champ qui le requiert. 
+Inversement, tabuler ou cliquer sur un contrôle qui ne requiert pas le mode formulaire rebasculera NVDA en mode navigation.
+Presser la barre d'espace ou la touche entrée passera également NVDA en mode formulaire si le champ le permet. 
+Presser la touche échap repassera NVDA en mode navigation.
+De plus, vous pouvez aussi passer manuellement NVDA en mode formulaire, après quoi il y restera jusqu'à ce que vous cnoisissiez de le désactiver. 
+
 %kc:beginInclude
 || Nom | Touche | Description |
 | Bascule entre mode formulaire et mode navigation | NVDA+espace | Bascule entre le mode formulaire et le mode navigation |
@@ -371,6 +378,7 @@ En mode navigation, par défaut, NVDA passera automatiquement en mode formulaire
 | Rechercher suivant | NVDA+f3 | Recherche l'occurrence suivante du texte que vous avez préalablement recherché dans le document |
 | Rechercher précédent | NVDA+maj+f3 | Recherche l'occurrence précédente du texte que vous avez préalablement recherché dans le document |
 %kc:endInclude
+
 
 ++ Les touches de navigation rapide ++
 En mode navigation, pour une navigation plus rapide, NVDA dispose de raccourcis clavier où l'appui d'une seule touche amène à certains champs  dans le document.
@@ -402,14 +410,21 @@ Les touches suivantes permettent d'aller à l'élément suivant, en les combinan
 %kc:endInclude
 
 ++ La Liste d'éléments ++
-La liste d'éléments vous donne accès à une liste de liens, titres, ou repères dans la page. Des boutons radio vous permettent de choisir entre ces trois types d'informations. Une zone d'édition est également présente dans le dialogue, elle vous permet de filtrer la liste pour faciliter la recherche d'un élément particulier dans la page. Quand vous avez choisi un élément, des boutons vous permettent de vous y rendre ou de l'activer.
+La liste d'éléments vous donne accès à une liste de liens, titres, ou repères dans la page. 
+Des boutons radio vous permettent de choisir entre ces trois types d'informations. 
+Une zone d'édition est également présente dans le dialogue, elle vous permet de filtrer la liste pour faciliter la recherche d'un élément particulier dans la page. 
+Quand vous avez choisi un élément, des boutons vous permettent de vous y rendre ou de l'activer.
 %kc:beginInclude
 || Nom | Touche | Description |
 | Liste d'éléments du document | NVDA+f7 | Affiche une liste d'éléments contenant les liens, titres et repères du document courant |
 %kc:endInclude
 
 ++ Les Objets Embarqués ++
-Certaines pages peuvent  inclure du contenu riche utilisant des technologies comme Adobe Flash ou Sun Java. Quand il en rencontre dans un document NVDA annonce "objet embarqué". Vous pouvez presser "entrer" sur ces objets pour interagir avec eux. Si l'objet est accessible, vous pourrez interagir avec lui comme n'importe quelle autre application. Une touche de commande permet de retourner à la page contenant l'objet embarqué.
+Certaines pages peuvent  inclure du contenu riche utilisant des technologies comme Adobe Flash ou Sun Java. 
+Quand il en rencontre dans un document NVDA annonce "objet embarqué". 
+Vous pouvez presser "entrer" sur ces objets pour interagir avec eux. 
+Si l'objet est accessible, vous pourrez interagir avec lui comme n'importe quelle autre application. 
+Une touche de commande permet de retourner à la page contenant l'objet embarqué.
 %kc:beginInclude
 || Nom | Touche | Description |
 | Aller au document contenant l'objet | NVDA+control+espace | Retire le focus à l'objet embarqué en cours et le rend au document contenant l'objet |
