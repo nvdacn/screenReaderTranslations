@@ -40,7 +40,7 @@ commitMsg=""
 #fi
 #$CURL -s -o /tmp/nvda.pot $url
 
-BZRDIR=scripts/code
+BZRDIR=scripts/code/source
 
 # Navigate to the base of the svn repo.
 absPath=`readlink -f -n $0`
@@ -51,12 +51,13 @@ pushd $BZRDIR 2>&1 # >/dev/null 2>&1
 
 bzr pull
 rev=`bzr log -l 1 | head -n 2 | tail -n 1 | awk '{print $2}'`
-popd # >/dev/null 2>&1
 
 xgettext -c -s --copyright-holder="NVDA Contributers" \
 --package-name="NVDA" --package-version="main:$ver" \
 --msgid-bugs-address="nvda-translations@freelists.org" \
--o /tmp/nvda.pot ${BZRDIR}/{,*/,*/*/}*.py
+-o /tmp/nvda.pot {,*/,*/*/}*.py
+
+popd # >/dev/null 2>&1
 
 langs=(ar bg de es fi fr gl it ja nl pl pt_BR pt_PT sk sv ta tr)
 for lang in ${langs[*]}; do
