@@ -12,19 +12,19 @@ XGETTEXT=`which xgettext`
 
 if [ "$ELINKS" == "" ]; then
     echo "Can't find elinks."
-    exit(1)
+    exit 1
 elif [ "$POCOUNT" == "" ]; then
     echo "Can't find pocount."
-    exit(1)
+    exit 1
 elif [ "$MSGMERGE" == "" ]; then
     echo "Can't find msgmerge."
-    exit(1)
+    exit 1
 elif [ "$CURL" == "" ]; then
     echo "Can't find curl."
-    exit(1)
+    exit 1
 elif [ "$XGETTEXT" == "" ]; then
     echo "Can't find xgettext."
-    exit(1)
+    exit 1
 fi
 
 
@@ -47,8 +47,11 @@ absPath=`readlink -f -n $0`
 absPath=`dirname $absPath`
 pushd ${absPath}/../ >/dev/null 2>&1
 
-bzr pull $BZRDIR
-rev=`bzr log -l 1 $BZRDIR | head -n 2 | tail -n 1 | awk '{print $2}'`
+pushd $BZRDIR 2>&1 # >/dev/null 2>&1
+
+bzr pull
+rev=`bzr log -l 1 | head -n 2 | tail -n 1 | awk '{print $2}'`
+popd # >/dev/null 2>&1
 
 xgettext -c -s --copyright-holder="NVDA Contributers" \
 --package-name="NVDA" --package-version="main:$ver" \
@@ -105,8 +108,8 @@ done
 
 popd >/dev/null 2>&1 
 
-rev=${url##*/}
-rev=`echo "$rev" | grep -o -P "[0-9]+"`
+#rev=${url##*/}
+#rev=`echo "$rev" | grep -o -P "[0-9]+"`
 git commit -q -m "Merging in messages from rev${rev} into nvda.po
 
 $commitMsg"
