@@ -8,40 +8,53 @@ ELINKS=`which elinks`
 POCOUNT=`which pocount`
 MSGMERGE=`which msgmerge`
 CURL=`which curl`
+XGETTEXT=`which xgettext`
 
 if [ "$ELINKS" == "" ]; then
     echo "Can't find elinks."
-    exit
+    exit(1)
 elif [ "$POCOUNT" == "" ]; then
     echo "Can't find pocount."
-    exit
+    exit(1)
 elif [ "$MSGMERGE" == "" ]; then
     echo "Can't find msgmerge."
-    exit
+    exit(1)
 elif [ "$CURL" == "" ]; then
     echo "Can't find curl."
-    exit
+    exit(1)
+elif [ "$XGETTEXT" == "" ]; then
+    echo "Can't find xgettext."
+    exit(1)
 fi
 
 
-snapUrl='http://nvda.sourceforge.net/snapshots/.index.html'
-url=`$ELINKS --dump $snapUrl | grep -i '.pot' | head -n 1 | awk '{ print \$2 }'`
 commitMsg=""
 
-# if the content of the var end in pot then we have the url.
-#
-exist="${url##*.}"
-if [ "$exist" != "pot" ]; then
-    echo "$0: Could not find po file on website."
-    exit
-fi
+#snapUrl='http://nvda.sourceforge.net/snapshots/.index.html'
+#url=`$ELINKS --dump $snapUrl | grep -i '.pot' | head -n 1 | awk '{ print \$2 }'`
+## if the content of the var end in pot then we have the url.
+#exist="${url##*.}"
+#if [ "$exist" != "pot" ]; then
+#    echo "$0: Could not find po file on website."
+#    exit
+#fi
+#$CURL -s -o /tmp/nvda.pot $url
 
-$CURL -s -o /tmp/nvda.pot $url
+BZRDIR=scripts/code
 
 # Navigate to the base of the svn repo.
 absPath=`readlink -f -n $0`
 absPath=`dirname $absPath`
 pushd ${absPath}/../ >/dev/null 2>&1
+
+bzr pull $BZRDIR
+rev=`bzr log -l 1 $BZRDIR | head -n 2 | tail -n 1 | awk '{print $2}'`
+
+xgettext -c -s --copyright-holder="NVDA Contributers" \
+--package-name="NVDA" --package-version="main:$ver" \
+--msgid-bugs-address="nvda-translations@freelists.org" \
+-o /tmp/nvda.pot ${BZRDIR}/{,*/,*/*/}*.py
+
 langs=(ar bg de es fi fr gl it ja nl pl pt_BR pt_PT sk sv ta tr)
 for lang in ${langs[*]}; do
     echo "processing $lang"
