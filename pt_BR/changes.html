@@ -31,6 +31,7 @@ Traduzido por Marlin Rodrigues da Silva
 <LI>Suporte básico para áreas da web  em iTunes, tais como na loja. Outros aplicativos que usam WebKit 1 também podem ser suportados. (<A HREF="http://www.nvda-project.org/ticket/734">#734</A>)
 <LI>Em edições digitais de livros da Adobe nas versões 1.8.1 e superiores, as páginas agora são passadas automaticamente quando é feita uma leitura contínua. (<A HREF="http://www.nvda-project.org/ticket/1978">#1978</A>)
 <LI>Nova tabela de tradução braile: português grau 2. (<A HREF="http://www.nvda-project.org/ticket/2014">#2014</A>)
+<LI>Você agora pode configurar o anúncio de frames nos documentos através do Diálogo de Formatação de Documentos. (<A HREF="http://www.nvda-project.org/ticket/1900">#1900</A>)
 </UL>
 
 <H3>Alterações</H3>
@@ -51,16 +52,23 @@ Traduzido por Marlin Rodrigues da Silva
 <LI>é novamente possível usar o NVDA sem fala a fim de valer-se apenas do braille ou do exibidor de fala. (<A HREF="http://www.nvda-project.org/ticket/1963">#1963</A>)
 Os comandos da navegação de objetos já não anunciam "sem filhos" e "sem pais", e em lugar disso, anunciam mensagens em concordância com a documentação. Nota: (Isto foi feito apenas no idioma original, visto que estamos habituados a tais expressões e optamos por mantê-las.)
 <LI>Quando o NVDA está configurado para usar outro idioma diferente do inglês, o nome da tecla tab agora é anunciado no idioma correto.
-</UL>
-
-<H3>Alterações para  Desenvolvedores</H3>
-
-<UL>
+<LI>No modo de navegação, o comando de mover o mouse para o objeto de navegação atual agora desloca-o para o centro do objeto sob o cursor de exploração, em lugar de ir para a parte esquerda do topo, tornando-o mais eficaz em alguns casos. (
+<A HREF="http://www.nvda-project.org/ticket/2029">#2029</A>
+)
+<P></P>
+== Alterações para  Desenvolvedores ==
 <LI>Agora existe um console Python remoto para situações onde seja necessária uma depuração remota. Consulte o Guia do Desenvolvedor para mais detalhes.
 <LI>The base path of NVDA's code is now stripped from tracebacks in the log to improve readability. (<A HREF="http://www.nvda-project.org/ticket/1880">#1880</A>)
 <LI>TextInfo objects now have an activate() method to activate the position represented by the TextInfo.
  <UL>
  <LI>Isto é usado pelo braille para ativar a posição usando a tecla sensor em linhas braille. Todavia, podem existir outras formas de entrada futuramente.
+ </UL>
+<LI>TreeInterceptors and NVDAObjects which only expose one page of text at a time can support automatic page turns during say all by using the textInfos.DocumentWithPageTurns mix-in. (<A HREF="http://www.nvda-project.org/ticket/1978">#1978</A>)
+Several control and output constants have been renamed or moved. (<A HREF="http://www.nvda-project.org/ticket/228">#228</A>)
+<P></P>
+speech.REASON_* constants have been moved to controlTypes.
+ <UL>
+ <LI>In controlTypes, speechRoleLabels and speechStateLabels have been renamed to just roleLabels and stateLabels, respectively.
  </UL>
 </UL>
 
