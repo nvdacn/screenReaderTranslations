@@ -33,6 +33,7 @@
 <LI>Soporte básico para áreas web en iTunes tal como en la Store. Otras aplicaciones que utilicen WebKit 1 también podrían soportarse. (<A HREF="http://www.nvda-project.org/ticket/734">#734</A>)
 <LI>En libros en Adobe Digital Editions 1.8.1 y posteriores, ahora las páginas se pasan automáticamente cuando se utiliza leer todo.  (<A HREF="http://www.nvda-project.org/ticket/1978">#1978</A>)
 <LI>Nueva tabla de transcripción braille: Portugués grado 2. (<A HREF="http://www.nvda-project.org/ticket/2014">#2014</A>)
+<LI>Ahora puedes configurar si se anuncian los marcos en documentos desde el diálogo de preferencias de Formato de Documentos. (<A HREF="http://www.nvda-project.org/ticket/1900">#1900</A>)
 </UL>
 
 <H3>Cambios</H3>
@@ -53,13 +54,23 @@
 <LI>Se permite de nuevo a NVDA utilizar el sintetizador "no speech", confiando únicamente en el braille o en elVisualizador de Voz. (<A HREF="http://www.nvda-project.org/ticket/1963">#1963</A>)
 <LI>Las órdenes de navegación de objetos ya no anuncian "Sin hijos" y "Sin padres", pero en cambio anuncian mensajes consistentes con la documentación.
 <LI>Cuando NVDA se configuró para utilizar otro idioma que el Inglés, el nombre de la tecla tab ahora se anuncia en el idioma adecuado. 
-<P></P>
-== Cambios para desarrolladores ==
-<LI>There is now a remote Python console for situations where remote debugging is useful. See the Developer Guide for details.
-<LI>The base path of NVDA's code is now stripped from tracebacks in the log to improve readability. (<A HREF="http://www.nvda-project.org/ticket/1880">#1880</A>)
+<LI>En Mozilla Gecko (ej.: Firefox), NVDA ya no cambia intermitentemente a modo navegación mientras se navega por menús en documentos. (<A HREF="http://www.nvda-project.org/ticket/2025">#2025</A>)
+<LI>En la Calculadora, la tecla retroceso ahora anuncia el resultado actualizado en lugar de no anunciar nada. (<A HREF="http://www.nvda-project.org/ticket/2030">#2030</A>)
+<LI>En modo navegación, la orden mover el ratón al navegador de objetos actual ahora se mueve al centro del objeto en el cursor de revisión en lugar de a la esquina izquierda superior, haciéndolo más preciso en algunos casos. (<A HREF="http://www.nvda-project.org/ticket/2029">#2029</A>)
+<LI>En modo navegación con el modo foco automático para cambios del foco activado, el enfocado de una barra de herramientas ahora cambiará a modo foco. (<A HREF="http://www.nvda-project.org/ticket/1339">#1339</A>)
+</UL>
+
+<H3>Cambios para desarrolladores</H3>
+
+<UL>
+<LI>Ahora hay una Consola Python remota para situaciones donde la depuración remota es útil. Mira la Developer Guide para detalles.
+<LI>La ruta base del código de NVDA is now stripped from tracebacks in the log to improve readability. (<A HREF="http://www.nvda-project.org/ticket/1880">#1880</A>)
 <LI>TextInfo objects now have an activate() method to activate the position represented by the TextInfo.
 <LI>This is used by braille to activate the position using cursor routing keys on a braille display. However, there may be other callers in future.
 <LI>TreeInterceptors and NVDAObjects which only expose one page of text at a time can support automatic page turns during say all by using the textInfos.DocumentWithPageTurns mix-in. (<A HREF="http://www.nvda-project.org/ticket/1978">#1978</A>)
+<LI>Several control and output constants have been renamed or moved. (<A HREF="http://www.nvda-project.org/ticket/228">#228</A>)
+<LI>speech.REASON_* constants have been moved to controlTypes.
+<LI>In controlTypes, speechRoleLabels and speechStateLabels have been renamed to just roleLabels and stateLabels, respectively.
 </UL>
 
 <H2>2011.3</H2>
