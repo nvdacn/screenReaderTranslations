@@ -22,6 +22,7 @@
 - Soporte básico para áreas web en iTunes tal como en la Store. Otras aplicaciones que utilicen WebKit 1 también podrían soportarse. (#734)
 - En libros en Adobe Digital Editions 1.8.1 y posteriores, ahora las páginas se pasan automáticamente cuando se utiliza leer todo.  (#1978)
 - Nueva tabla de transcripción braille: Portugués grado 2. (#2014)
+- Ahora puedes configurar si se anuncian los marcos en documentos desde el diálogo de preferencias de Formato de Documentos. (#1900)
 
 
 == Cambios ==
@@ -38,14 +39,22 @@
 - Se permite de nuevo a NVDA utilizar el sintetizador "no speech", confiando únicamente en el braille o en elVisualizador de Voz. (#1963)
 - Las órdenes de navegación de objetos ya no anuncian "Sin hijos" y "Sin padres", pero en cambio anuncian mensajes consistentes con la documentación.
 - Cuando NVDA se configuró para utilizar otro idioma que el Inglés, el nombre de la tecla tab ahora se anuncia en el idioma adecuado. 
+- En Mozilla Gecko (ej.: Firefox), NVDA ya no cambia intermitentemente a modo navegación mientras se navega por menús en documentos. (#2025)
+- En la Calculadora, la tecla retroceso ahora anuncia el resultado actualizado en lugar de no anunciar nada. (#2030)
+- En modo navegación, la orden mover el ratón al navegador de objetos actual ahora se mueve al centro del objeto en el cursor de revisión en lugar de a la esquina izquierda superior, haciéndolo más preciso en algunos casos. (#2029)
+- En modo navegación con el modo foco automático para cambios del foco activado, el enfocado de una barra de herramientas ahora cambiará a modo foco. (#1339)
+
 
 == Cambios para desarrolladores ==
-- There is now a remote Python console for situations where remote debugging is useful. See the Developer Guide for details.
-- The base path of NVDA's code is now stripped from tracebacks in the log to improve readability. (#1880)
+- Ahora hay una Consola Python remota para situaciones donde la depuración remota es útil. Mira la Developer Guide para detalles.
+- La ruta base del código de NVDA is now stripped from tracebacks in the log to improve readability. (#1880)
 - TextInfo objects now have an activate() method to activate the position represented by the TextInfo.
 - This is used by braille to activate the position using cursor routing keys on a braille display. However, there may be other callers in future.
 - TreeInterceptors and NVDAObjects which only expose one page of text at a time can support automatic page turns during say all by using the textInfos.DocumentWithPageTurns mix-in. (#1978)
- 
+- Several control and output constants have been renamed or moved. (#228)
+- speech.REASON_* constants have been moved to controlTypes.
+- In controlTypes, speechRoleLabels and speechStateLabels have been renamed to just roleLabels and stateLabels, respectively.
+
 
 
 = 2011.3 =

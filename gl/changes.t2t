@@ -22,6 +22,7 @@
 - Soporte básico para áreas web en iTunes coma na Store. Outras aplicacións que utilicen WebKit 1 tamén poderían soportarse. (#734)
 - Nos libros en Adobe Digital Editions 1.8.1 e posteriores, agora as páxinas vóltanse automáticamente cando se utiliza ler todo.  (#1978)
 - Nova táboa de transcripción braille: Portugués grao 2. (#2014)
+- Agora podes configurar se se anuncian os marcos nos documentos dende o diálogo de preferencias de Formato de Documentos. (#1900)
 
 
 == Cambios ==
@@ -37,7 +38,11 @@
 - Correxida a mala calidade do audio nalgúns casos cando se usan voces do Microsoft Speech API versión 5 co dispositivo de saída de audio configurado a algún outro co predeterminado (Microsoft Sound Mapper). (#749)
 - Permítese novamente a NVDA utilizarse co sintetizador "no speech", confiando únicamente no braille ou no visualizador de voz. (#1963)
 - As ordes de navegación de obxectos xa non anuncian "Sen fillos" e "Sen pais", pero nembargantes anuncian mensaxes consistentes ca documentación.
-- Cando NVDA configurouse para utilizar outra lingua que o Inglés, o nome da tecla tab agora anúnciase na lingua adecuada. 
+- Cando NVDA se configurou para utilizar outra lingua que o Inglés, o nome da tecla tab agora anúnciase na lingua adecuada. 
+- En Mozilla Gecko (ex.: Firefox), NVDA xa non cambia intermitentemente a modo navegación mentres se navega por menús en documentos. (#2025)
+- Na Calculadora, a tecla retroceso agora anuncia o resultado actualizado en lugar de non anunciar nada. (#2030)
+- No modo navegación, a orde mover o rato ó navegador de obxectos actual agora móvese ó centro do obxecto no cursor de revisión en lugar de á esquina esquerda superior, facéndoo máis preciso en algúns casos. (#2029)
+- No modo navegación co modo foco automático para cambios do foco activado, o enfocado dunha barra de ferramentas agora cambiará a modo foco. (#1339)
 
 
 == Cambios para Desenrroladores ==
@@ -46,6 +51,9 @@
 - TextInfo objects now have an activate() method to activate the position represented by the TextInfo.
  - This is used by braille to activate the position using cursor routing keys on a braille display. However, there may be other callers in future.
 - TreeInterceptors and NVDAObjects which only expose one page of text at a time can support automatic page turns during say all by using the textInfos.DocumentWithPageTurns mix-in. (#1978)
+- Several control and output constants have been renamed or moved. (#228)
+- speech.REASON_* constants have been moved to controlTypes.
+- In controlTypes, speechRoleLabels and speechStateLabels have been renamed to just roleLabels and stateLabels, respectively.
 
 
 = 2011.3 =
