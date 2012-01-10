@@ -51,11 +51,12 @@ pushd $BZRDIR 2>&1 # >/dev/null 2>&1
 
 bzr pull
 rev=`bzr log -l 1 | head -n 2 | tail -n 1 | awk '{print $2}'`
-
+fromdos {,*/,*/*/}*.py
 xgettext -c -s --copyright-holder="NVDA Contributers" \
 --package-name="NVDA" --package-version="main:$ver" \
 --msgid-bugs-address="nvda-translations@freelists.org" \
 -o /tmp/nvda.pot {,*/,*/*/}*.py
+bzr revert
 
 popd # >/dev/null 2>&1
 
