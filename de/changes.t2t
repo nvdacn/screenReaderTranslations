@@ -22,6 +22,7 @@
 - Grundlegende Unterstützung für Internet-Bereiche in Itunes wie z. B. der Store. Andere Anwendungen, welche auf WebKit 1 beruhen, werden möglicherweise ebenfalls unterstützt. (#734)
 - In büchern in Adobe Digital Editions 1.8.1 und höher erfolgt nun ein automatischer Seitenwechsel, wenn Sie die Funktion «alles lesen» verwenden. (#1978)
 - neue Braille-Übersetzungstabelle: Portugiesische Kurzschrift. (#2014)
+- In den Einstellungen für Dokumentformatierungen kann nun eingestellt werden, ob Rahmen in Dokumenten angesagt werden sollen. (#1900)
 
 
 == Änderungen ==
@@ -38,6 +39,11 @@
 - Die Auswahl von "keine Sprache" im Sprachausgabendialog ist jetzt wieder möglich. Das ist nützlich, falls nvda nur mit einer Braillezeile oder dem Sprachbetrachter als Ausgabemedium betrieben wird. (#1963)
 - Die Befehle zur Objektnavigation geben nun nicht mehr "keine Kinder" bzw. "keine Eltern" aus. Die Meldungen wurden der Dokumentation angepasst. Dies gilt für die englische Benutzeroberfläche!
 - Wenn in NVDA eine andere Sprache als englisch eingestellt wurde, wird der Name der Tabulator-Taste nun in der richtigen Sprache angesagt. 
+- In Gecko-Anwendungen wie Mozilla Firefox wird nun nicht mehr in den Lesemodus gewechselt, wenn Sie innerhalb von Dokumenten in Menüs navigieren. (#2025)
+- Wenn im Rechner die Rücktaste gedrückt wird, wird nun der aktualisierte Inhalt der Anzeige angesagt und angezeigt. (#2030)
+- Wenn im Lesemodus die Maus zum Navigator-Objekt gezogen wird, wird der mauszeiger nun in die Mitte des Objekts bewegt, was in manchen Fällen bessere Ergebnisse liefert. (#2029)
+- Wenn im Lesemodus mit automatischem Wechsel in den Fokusmodus eine Symbolleiste den Fokus erhält, so wird der Lesemodus automatisch verlassen. (#1339)
+- der Befehl zum Ausgeben der Titelleiste funktioniert im Acrobat Reader wieder.
 
 
 == Änderungen für Entwickler ==
@@ -46,6 +52,9 @@
 - TextInfo-Objekte haben nun eine Methode namens Activate(), die das Aktivieren der von textinfo zurückgegebenen Position erlaubt.
  - Dies erlaubt das Aktivieren unter Verwendung der Routingtasten einer Braillezeile. Hierfür könnte es jedoch in Zukunft andere Methoden geben.
 - TreeInterceptors und NVDAObjects, welche nur eine Seite beinhalten, können automatischen Seitenwechsel während alles lesen unterstützen, wenn sie textInfos.DocumentWithPageTurns verwenden.
+- Einige Konstanten für Steuerelemente und ausgaben wurden umbenannt Bzw. verschoben. (#228)
+ - speech.REASON_*-Konstanten wurden in die Steuerelemente verschoben.
+ - Bei den Steuerelementen wurden speechRoleLabels und speechStateLabe
 
 
 = 2011.3 =
