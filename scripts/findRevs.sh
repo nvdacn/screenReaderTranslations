@@ -74,6 +74,7 @@ popd >/dev/null
 fi
 git add $lang/$diffsDir/$rev
 revCounter=$(($revCounter+1))
+prevRev=$rev
 done
 if [ "$revCounter" != "0" ]; then
 helperMsg="$revCounter in $diffsDir (${newRevs[*]})"
