@@ -32,13 +32,18 @@
 <LI>ブラウズモード使用中に、カーソル位置のオブジェクトを点字ディスプレイから有効化できるようになりました。カーソルがオブジェクト上にある時にタッチカーソルを押してください (カーソルがまだそこにない場合は2度押してください）。 (<A HREF="http://www.nvda-project.org/ticket/1893">#1893</A>)
 <LI>iTunes Storeなどで使用されている、iTunesのWeb領域のサポートを開始しました。WebKit 1を使用している他のアプリケーションもサポートできるかもしれません。 (<A HREF="http://www.nvda-project.org/ticket/734">#734</A>)
 <LI>Adobe Digital Editions 1.8.1以降において、すべて読み上げを使用中の場合、自動的にページをめくれるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/1978">#1978</A>)
+<LI>新しい点字の変換テーブル: ポルトガル語2級を追加しました。 (<A HREF="http://www.nvda-project.org/ticket/2014">#2014</A>)
+<LI>ドキュメント内のフレームを通知するかどうかを書式設定ダイアログから変更できるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/1900">#1900</A>)
+<LI>OpenBookを使用する際、自動的にスリープモードを有効化するようにしました。 (<A HREF="http://www.nvda-project.org/ticket/1209">#1209</A>)
 </UL>
 
 <H3>変更点</H3>
 
 <UL>
+<LI>eSpeak音声エンジンを1.46.02に更新しました。
 <LI>現在文字の説明や現在の単語や行のスペル読みにおいて、自動言語切り換えが有効で、適切な言語情報が提供されている場合、適切な言語が使用できるようになりました。
 <LI>画像及びリンクURLから推測されたとても長い名前（30文字以上）を無効なものとして除外するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/1989">#1989</A>)
+<LI>いくつかの点字で表示される情報が短縮されました。 (<A HREF="http://www.nvda-project.org/ticket/1955">#1955</A>)
 </UL>
 
 <H3>バグ修正</H3>
@@ -51,7 +56,17 @@
 <LI>点字のみまたはスピーチビューアー使用時であっても、「音声なし」音声エンジンが使用できるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/1963">#1963</A>)
 <LI>オブジェクトナビゲーションコマンドでは、「子オブジェクトなし」または「親オブジェクトなし」という通知はなくなり、ドキュメントで一貫したメッセージを通知するようになりました。
 <LI>NVDAを英語以外の言語で使用しているとき、Tabキーの名称がその言語で正しく通知されるようになりました。
+<LI>Mozilla Gecko (例えばFirefox) において、ドキュメント内のメニューを移動中に断続的にブラウズモードに切り替わらないようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2025">#2025</A>)
+<LI>計算機内でバックスペースキーを押した場合、何も読み上げないのでなく、更新された結果を読み上げるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2030">#2030</A>)
+<LI>ブラウズモード内のマウスポインターを現在のナビゲーターオブジェクトに移動コマンドが、いくつかの状況でより正確にレビューカーソルを移動するために、オブジェクトの左上に移動する代わりに、中心に移動するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2029">#2029</A>)
+<LI>ブラウズモードのフォーカスの変化を追跡する自動フォーカスモードが有効でツールバーにフォーカスした場合、フォーカスモードに変更されるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/1339">#1339</A>)
+<LI>Adobe Reader上で、タイトルの通知コマンドが正しく動作するように改善しました。
 </UL>
+
+<P>
+ %- speech.REASON_* constants have been moved to controlTypes.
+ %- In controlTypes, speechRoleLabels and speechStateLabels have been renamed to just roleLabels and stateLabels, respectively.
+</P>
 
 <H2>2011.3</H2>
 
@@ -124,13 +139,17 @@
 <H2>2011.2</H2>
 
 <P>
-Highlights of this release include major improvements concerning punctuation and symbols, including configurable levels, custom labelling and character descriptions; no pauses at the end of lines during say all; improved support for ARIA in Internet Explorer; better support for XFA/LiveCycle PDF documents in Adobe Reader; access to text written to the screen in more applications; and access to formatting and color information for text written to the screen.
+このリリースにおけるハイライトには、変更可能な読み上げレベルや読み方のカスタマイズ、文字の説明読みを含む句読点及び記号読み上げの強化、すべて読み上げ中の行末の無音の抑制、Internet ExplorerにおけるARIA対応の強化、Adobe Reader内のXFA/LiveCycleのサポート強化、より多くのアプリケーションで書かれたテキストへのアクセス、画面上のテキストの書式情報へのアクセスが含まれています。
 </P>
 
 <H3>新機能</H3>
 
+<P>
+- 
+It is now possible to hear the description for any given character by pressing the review current character script twice in quick succession.  For English characters this is the standard English phonetic alphabet. For pictagraphic languages such as traditional Chinese, one or more example phraises using the given symbol are provided. Also pressing review current word or review current line three times will spell the word/line using the first of these descriptions. (<A HREF="http://www.nvda-project.org/ticket/55">#55</A>)
+</P>
+
 <UL>
-<LI>It is now possible to hear the description for any given character by pressing the review current character script twice in quick succession.  For English characters this is the standard English phonetic alphabet. For pictagraphic languages such as traditional Chinese, one or more example phraises using the given symbol are provided. Also pressing review current word or review current line three times will spell the word/line using the first of these descriptions. (<A HREF="http://www.nvda-project.org/ticket/55">#55</A>)
 <LI>More text can be seen in flat review for applications such as Mozilla Thunderbird that write their text directly to the display as glyphs.
 <LI>It is now possible to choose from several levels of punctuation and symbol announcement. (<A HREF="http://www.nvda-project.org/ticket/332">#332</A>)
 <LI>When punctuation or other symbols are repeated more than four times, the number of repetitions is now announced instead of speaking the repeated symbols. (<A HREF="http://www.nvda-project.org/ticket/43">#43</A>)
