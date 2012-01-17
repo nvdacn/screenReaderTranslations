@@ -17,7 +17,7 @@ absPath=`readlink -f -n $0`
 absPath=`dirname $absPath`
 pushd ${absPath}/../ >/dev/null 2>&1
 
-langs=(ar de es fi fr gl hu it ja nl pl pt_BR pt_PT sk ta tr)
+langs=(ar de es fi fr gl hu it ja nl no pl pt_BR pt_PT sk ta tr)
 for lang in ${langs[*]}; do
     echo "processing $lang"
     cd $lang
