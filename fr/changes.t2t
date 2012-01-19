@@ -26,27 +26,27 @@ Quoi de Neuf dans NVDA
 
 
 == Changements ==
-- Commands to describe the current character or to spell the current word or line now  will spell in the appropriate language according to the text, if auto language switching is turned on and the appropriate language information is available.
-- NVDA will now filter out extremely long (30 characters or greater) names guessed from graphic and link URLs as they are most likely garbage that gets in the way of reading. (#1989)
-- Some information displayed in braille has been abbreviated. (#1955)
+- Les commandes permettant de décrire le caractère courant ou d'épeler le mot ou la ligne en cours épellent maintenant dans la langue appropriée au texte si le changement automatique de langue est activé et si les informations relatives à la langue sont disponibles.
+- NVDA filtre maintenant les noms très longs (plus de 30 caractères) devinés dans les graphiques et les liens URLs car ils nuisent souvent à la lecture. (#1989)
+- Certaines informations affichées en Braille ont été abrégées. (#1955)
 
 
 == Corrections de Bogues ==
-- In Windows 8, focus is no longer incorrectly moved away from the Windows Explorer search field, which was  not allowing NVDA to   interact with it.
-- Major performance  improvements when reading and navigating Microsoft word documents while automatic reporting of formatting is enabled, thus now making it quite comfortable to proof read formatting etc. Performance may be also improved over all for some users.
-- Browse mode is now used for full screen Adobe Flash content.
-- Fixed poor audio quality in some cases when using Microsoft Speech API version 5 voices with the audio output device set to something other than the default (Microsoft Sound Mapper). (#749)
-- Again allow NVDA to be used with the "no speech" synthesizer, relying purely   on braille or the speech viewer. (#1963)
-- Object navigation commands no longer report "No children" and "No parents", but instead report messages consistent with the documentation.
-- When NVDA is configured to use a language other than English, the name of the tab key is now reported in the correct language.
+- Sous Windows 8, le focus n'est plus retiré intempestivement de la zone de recherche de l'explorateur ce qui empêchait NVDA d'interagir avec elle.
+- importantes améliorations de performances durant la lecture d'un document Microsoft Word quand l'annonce automatique des changements de format du document est activée ce qui rend plus confortable la vérification du format d'un texte. Les performances générales peuvent aussi être améliorées pour certains utilisateurs.
+- Le mode navigation est maintenant utilisé pour les contenus Adobe Flash.
+- Correction de la qualité audio parfois pauvre quand on utilise Microsoft Speech API version5 avec la sortie audio réglée sur autre chose que le mappeur Microsoft utilisé par défaut. (#749)
+- NVDA peut de nouveau être utilisé avec le synthétiseur "pas de parole", en s'appuyant uniquement sur le Braille ou la visionneuse de parole.
+- Les commandes de navigation par objet n'annoncent plus "pas d'enfant" ou "pas de parent" mais un texte correspondant à la documentation.
+- Quand NVDA est configuré dans une langue autre que l'anglais, le nom de la touche de tabulation est maintenant annoncé dans la langue appropriée.
 
 
-== Changes for Developers ==
-- There is now a remote Python console for situations where remote debugging is useful. See the Developer Guide for details.
-- The base path of NVDA's code is now stripped from tracebacks in the log to improve readability. (#1880)
-- TextInfo objects now have an activate() method to activate the position represented by the TextInfo.
- - This is used by braille to activate the position using cursor routing keys on a braille display. However, there may be other callers in future.
-- TreeInterceptors and NVDAObjects which only expose one page of text at a time can support automatic page turns during say all by using the textInfos.DocumentWithPageTurns mix-in. (#1978)
+== Changements pour les Développeurs ==
+- Il y a maintenant une console Python à distance pour les situations ou le débogage à distance est utile. Consultez le guide de développement pour les détails.
+- Le chemin de base du code NVDA est maintenant supprimé dans le log pour améliorer la lisibilité. (#1880)
+- Les objets Textinfo ont maintenant une méthode activate() pour activer la position représentée par le Textinfo.
+ - Ceci est utilisé par le Braille pour activer la position en utilisant les curseur routines sur les afficheurs braille. Cependant, il pourrait y avoir d'autres utilisations dans le futur.
+- TreeInterceptors et NVDAObjects qui n'exposent qu'une page de texte à la fois peuvent prendre en compte le défilement automatique des pages en mode "dire tout" en utilisant le mix-in textInfos.DocumentWithPageTurns. (#1978)
 
 
 = 2011.3 =
