@@ -271,7 +271,8 @@ Let op: voor een goede werking van de numerieke toetsen moet NumLock uitgeschake
 
 ++ Nalezen van tekst ++[ReviewingText]
 Met NVDA kunt u de inhoud van het huidige [navigator object #ObjectNavigation], inclusief [flat review #FlatReview],  per karakter, per woord of regel nalezen.
-Dit is vooral handig in Windows-opdrachtvensters en taken of andere plaatsen waar de [tekstcursor #SystemCaret] niet of slechts beperkt beschikbaar is.
+Dit is vooral handig in Windows-opdrachtvensters of andere plaatsen waar de [tekstcursor #SystemCaret] niet of slechts beperkt beschikbaar is.
+U kunt dit bijvoorbeeld gebruiken voor het lezen van een lang, informatief bericht in een dialoogvenster
 
 Bij het verplaatsen van de leescursor (review cursor) volgt de tekstcursor niet maar deze blijft op de huidige invoegpositie staan, zodat u tekst kun bekijken zonder de systeemcursor te verplaatsen.
 Standaard wordt de leescursor echter gelijktijdig verplaatst wanneer de tekstcursor verplaatst wordt. 
@@ -302,7 +303,6 @@ Voor het nalezen van tekst kunt u de volgende toetscombinaties gebruiken:
 Let op: voor een goede werking van de numerieke toetsen moet NumLock worden uitgeschakeld.
 
 Om deze commando’s beter te kunnen onthouden zou u zich een tabel kunnen voorstellen met drie kolommen en drie rijen. Van boven naar beneden: regel, woord en karakter, en van links naar rechts; vorig, huidig en volgend. 
-
 Dit ziet er dan als volgt uit:
 | Vorige regel | Huidige regel | Volgende regel |
 | Vorig woord | Huidig woord | Volgend woord |
@@ -353,23 +353,21 @@ Hoewel u voor het navigeren met de muis een fysieke muis of een muispad moet geb
 %kc:endInclude
 
 + Bladermodus +
+In NVDA worden complexe alleen-lezen documenten zoals een webpagina weergegeven in bladermodus.
+Het gaat om documenten in Mozilla Firefox, Microsoft Internet Explorer, Google Chrome, Adobe Reader en Adobe Flash.
 
-In bladermodus worden complexe documenten zoals een webpagina weergegeven als platte tekst waarbinnen u kunt navigeren met de pijltjestoetsen.
+In bladermodus wordt de inhoud van het document weergegeven als platte tekst waar u met de pijltoetsen doorheen kunt lopen alsof het een tekst-document is.
+Alle NVDA commando's voor de [systeemcursor #SystemCaret] werken in bladermodus. Denk hierbij aan opmaak-informatie, alles lezen, tabel-navigatie etc.
+Informatie over de tekst, of het bijvoorbeeld een link of kop betreft, wordt gemeld als u door de tekst navigeert.
 
-U kunt op twee manieren omgaan met de inhoud in bladermodus.
-In de bladermodus  kunt u door de hele tekst gaanmet behulp van een virtuele  cursor, zoiets als de systeemcursor.
-In deze modus kunnen alle [systeemcursorcommando’s  #SystemCaret] worden gebruikt (bij voorbeeld, alles lezen, opmaakinformatie geven, tabelnavigatie, etc).
-U hoort dan de tekst maar daarbij wordt ook aangegeven of het om links, headings (koppen), etc. gaat.
-
-In de focusmodus kunt u bewerkingen uitvoeren op knoppen, combo-boxen, tekstvelden, etc. met de toetsen die u daarvoor gewend bent te gebruiken.
-Wanneer u in de bladermodus bent, zal NVDA automatisch naar de focusmodus omschakelen als u met de Tab-toets naar een element gaat waarvoor deze modus nodig is.
-Door er met de muis op te klikken gebeurt hetzelfde.
-NVDA zal vanzelf naar de bladermodus teruggaan wanneer u met de Tab-toets naar een object zoals een link of een tekstgedeelte gaat waarvoor focusmodus niet vereist is.
-Door met de muis te klikken zal dit ook gebeuren.
-U kunt de focusmodus ook verlaten en teruggaan naar de bladermodus door op de Escape-toets te drukken.
-U kunt ook handmatig schakelen tussen blader- en focusmodus.
-Als u handmatig schakelt naar de focusmodus wordt deze vergrendeld en zal NVDA niet langer automatisch terugschakelen nar de bladermodus.
-In dit geval moet de bladermodus handmatig worden ingeschakeld.
+Soms is het nodig om direct te werken met de onderdelen van een document in bladermodus.
+Dit geldt bijvoorbeeld voor het typen van tekst in tekstvakken of het gebruik van de pijltoetsen om een item in een lijst te selecteren.
+Dit doet u door naar focusmodus te wisselen, hierdoor worden vrijwel alle toetsen doorgegeven aan het onderliggende besturingselement.
+Standaard zal NVDA naar focusmodus wisselen als door middel van de tab-toets een besturingselement de focus krijgt, of als er geklikt wordt op een besturignselement dat focusmodus vereist.
+Bij het klikken op, of focussen van een besturingselement dat geen focusmodus vereist zal NVDA automatisch terugschakelen naar de bladermodus.
+U kunt ook op spatie of enter drukken om focusmodus in te schakelen zodra u zich op een besturingselement bevind dat focusmodus vereist.
+Het drukken van escape brengt u terug naar de bladermodus.
+Het is ook mogelijk om handmatig de focusmodus in te schakelen, deze zal dan actief blijven tot u deze weer handmatig uitschakelt.
 
 %kc:beginInclude
 || Naam | Toets | Beschrijving |
@@ -381,7 +379,6 @@ In dit geval moet de bladermodus handmatig worden ingeschakeld.
 | Vorige zoeken | NVDA+shift+f3 | Hiermee kunt u nagaan of de gezochte tekst eerder in het document voorkomt |
 %kc:endInclude
 
-NVDA gebruikt momenteel bladermodus om documenten te lezen in Mozilla Firefox, Microsoft Internet Explorer, Google Chrome, Adobe Reader, and Adobe Flash.
 
 ++ Lettertoetsnavigatie++
 Om in de bladermodus snel te kunnen navigeren, kunt u een lettertoets gebruiken om naar bepaalde velden te springen in een document.
@@ -415,7 +412,7 @@ Om naar het eerstvolgende element te springen gebruikt u uitsluitend één van d
 ++ De lijst met elementen++
 Via deze lijst krijgt u toegang tot de links, koppen of ARIA-oriëntatiepunten op de pagina. (ARIA = Accessible Rich Internet Applications)
 Met keuzerondjes kunt u aangeven welk type informatie u nodig hebt.
-In het dialoogvenster treft u ook een invoerveld aan waarmee u de lijst kunt filterenzodat u gerichter naar iets kunt zoeken op de pagina.
+In het dialoogvenster treft u ook een invoerveld aan waarmee u de lijst kunt filteren zodat u gerichter naar iets kunt zoeken op de pagina.
 Als u uw keuze eenmaal gemaakt hebt, kunt u met de aanwezige knoppen in het dialoogvenster naar dat onderdeel springen of het activeren.
 %kc:beginInclude
 || Naam | Toets | Beschrijving |
@@ -423,7 +420,7 @@ Als u uw keuze eenmaal gemaakt hebt, kunt u met de aanwezige knoppen in het dial
 %kc:endInclude
 
 ++ Ingevoegde objecten++
-De inhoud van pagina’s kan toepassingen zoals Adobe Flash of Sun Java bevatten.
+De inhoud van pagina’s kan toepassingen zoals Adobe Flash of Oracle Java bevatten.
 Wanneer u iets dergelijks tegenkomt in bladermodus zal NVDA dit melden als “Ingevoegd (Embedded) Object”.
 Door op Enter te drukken wordt interactie met zulke objecten mogelijk.
 Als het object toegankelijk is, kunt u het met de TAB-toets verkennen en bewerkingen uitvoeren zoals u dat ook in andere toepassingen gewend bent.
