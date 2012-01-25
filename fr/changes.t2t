@@ -4,6 +4,7 @@ Quoi de Neuf dans NVDA
 %!includeconf: ../changes.t2tconf
 
 = 2012.1 =
+Les apports majeurs de cette version incluent des fonctionnalités pour une lecture plus fluide du Braille; des indications de mise en forme des documents en Braille; l'accès à beaucoup plus d'informations de mise en forme ainsi qu'une amélioration de performances sous Microsoft Word et le support du magasin Itune. 
 
 == Nouvelles Fonctionnalités ==
 - NVDA peut annoncer le nombre de tabulations et d'espaces en début de ligne dans l'ordre où ils apparaissent.
@@ -20,15 +21,20 @@ Quoi de Neuf dans NVDA
 - Il est maintenant possible d'afficher le Braille par paragraphe plutôt que par ligne, ce qui peut permettre une lecture plus fluide de grandes portions de texte.  Ceci peut être configuré en utilisant l'option "Lire par paragraphe" du dialogue "Paramètres Braille". (#1891)
 - En mode navigation, on peut activer l'objet sous le curseur à partir du terminal braille. Ca se fait en pressant la touche de routage curseur correspondant à la position du curseur. Si le curseur n'est pas encore à la position souhaitée, il faut presser deux fois la touche. (#1893)
 - Support de base des zones web telles que le magasin dans Itune. 
-- Basic support for web areas in iTunes such as the Store. D'autres applications utilisant Webkit 1 sont peut-être supportées. (#734)
 - Dans les livres sous Adobe Digital Editions 1.8.1 et au-delà, les pages sont maintenant tournées automatiquement en mode dire tout.
 - Nouvelle table de conversion braille : Portugais grade 2. (#2014)
+- L'annonce des cadres dans les documents peut maintenant être configurée dans le dialogue de mise en forme des documents. (#1900)
+- Le mode veille est automatiquement activé quand on utilise Openbook. (#1209)
+- Sous Poedit, les traducteurs peuvent maintenant lire les commentaires ajoutés par les traducteurs ou extraits automatiquement. Les messages non traduits ou confus sont marqués par une étoile et on entend un bip quand on passe dessus. (#1811)
+- Support des terminaux braille HumanWare Brailliant Bi & B. (#1990)
 
 
 == Changements ==
 - Les commandes permettant de décrire le caractère courant ou d'épeler le mot ou la ligne en cours épellent maintenant dans la langue appropriée au texte si le changement automatique de langue est activé et si les informations relatives à la langue sont disponibles.
+- Mise à jour du synthétiseur eSpeak à la version 1.46.02.
 - NVDA filtre maintenant les noms très longs (plus de 30 caractères) devinés dans les graphiques et les liens URLs car ils nuisent souvent à la lecture. (#1989)
 - Certaines informations affichées en Braille ont été abrégées. (#1955)
+- Quand le curseur de revue ou le curseur système se déplacent, le braille défile maintenant de la même manière que par le défilement manuel. Ceci est plus cohérent quand le Braille est configuré pour une lecture par paragraphe ou pour éviter la coupure de mots. (#1996)
 
 
 == Corrections de Bogues ==
@@ -39,6 +45,13 @@ Quoi de Neuf dans NVDA
 - NVDA peut de nouveau être utilisé avec le synthétiseur "pas de parole", en s'appuyant uniquement sur le Braille ou la visionneuse de parole.
 - Les commandes de navigation par objet n'annoncent plus "pas d'enfant" ou "pas de parent" mais un texte correspondant à la documentation.
 - Quand NVDA est configuré dans une langue autre que l'anglais, le nom de la touche de tabulation est maintenant annoncé dans la langue appropriée.
+- Sous Mozilla Gecko (ex : Firefox), NVDA ne passe plus en mode navigation de manière intermittente quand on parcourt les menus dans un document. (#2025)
+- Dans la calculatrice, la touche retour arrière annonce maintenant le résultat au lieu de ne rien annoncer. (#2030)
+- En mode navigation, la commande de déplacement de la souris vers l'objet de navigation courant amène au centre de l'objet sous le curseur de revue plutôt qu'en haut à gauche ce qui améliore le fonctionnement dans certains cas. (#2029)
+- En mode navigation, quand le passage automatique en mode formulaire au changement de focus est activé, la mise en focus d'une barre d'outils activera maintenant le mode formulaire. (#1339)
+- La commande d'annonce du titre fonctionne à nouveau correctement sous Adobe Reader.
+- Quand le passage automatique en mode formulaire au changement de focus est activé, le mode formulaire est activé pour les cellules de tableau en focus (ex : grilles arias). (#1763)
+- Sous Itune, l'information de position est maintenant annoncée correctement dans certaines listes.
 
 
 == Changements pour les Développeurs ==
