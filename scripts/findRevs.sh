@@ -1,29 +1,10 @@
 #!/bin/bash
 
+source checkProgs.sh
+
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 msg=""
 helperMsg=""
-
-# apps that we need.
-
-BZR=`which bzr`
-DIFF=`which diff`
-WDIFF=`which wdiff`
-TWIDGE=`which twidge`
-
-if [ "$BZR" == "" ]; then
-    echo "bzr not installed."
-    exit
-elif [ "$WDIFF" == "" ]; then
-    echo "wdiff not installed."
-    exit
-elif [ "$DIFF" == "" ]; then
-    echo "diff not installed."
-    exit
-elif [ "$TWIDGE" == "" ]; then
-    echo "twidge not installed."
-    exit
-fi
 
 # convert relative to absolute paths
 # store in global var $absPath

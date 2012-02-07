@@ -2,31 +2,7 @@
 # MMH, 18 Jul, 2010.
 #
 
-# checking for the existance of needed programs
-#
-ELINKS=`which elinks`
-POCOUNT=`which pocount`
-MSGMERGE=`which msgmerge`
-CURL=`which curl`
-XGETTEXT=`which xgettext`
-
-if [ "$ELINKS" == "" ]; then
-    echo "Can't find elinks."
-    exit 1
-elif [ "$POCOUNT" == "" ]; then
-    echo "Can't find pocount."
-    exit 1
-elif [ "$MSGMERGE" == "" ]; then
-    echo "Can't find msgmerge."
-    exit 1
-elif [ "$CURL" == "" ]; then
-    echo "Can't find curl."
-    exit 1
-elif [ "$XGETTEXT" == "" ]; then
-    echo "Can't find xgettext."
-    exit 1
-fi
-
+source checkProgs.sh
 
 commitMsg=""
 

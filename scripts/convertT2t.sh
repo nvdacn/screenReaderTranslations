@@ -3,12 +3,7 @@
 #
 # Convert our t2t files to html.
 
-PYTHON27=`which python2.7`
-
-if [ "$PYTHON27" == "" ]; then
-    echo "could not locate python 2.7, can not continue."
-    exit
-fi
+source checkProgs.sh
 
 git svn rebase
 
