@@ -91,6 +91,9 @@ for lang in ${langs[*]}; do
     msgP1="$helperMsg"
     findRevs $lang user_docs/en/ ug-diffs userGuide.t2t
     msgP2="$helperMsg"
+    findRevs $lang source/locale/en/ sy-diffs symbols.dic
+    msgP3="$helperMsg"
+
     # make sure the format looks nice.
     newMsg=''
     if [ "$msgP1" != '' ] && [ "$msgP2" != '' ]; then
@@ -99,6 +102,8 @@ for lang in ${langs[*]}; do
         newMsg="$msgP1"
     elif [ "$msgP2" != '' ]; then
         newMsg="$msgP2"
+    elif [ "$msgP3" != '' ]; then
+        newMsg="$msgP3"
     fi
     if [ "$newMsg" != "" ]; then
         twidge update "${twitAddr[$lang]} $lang: new revision(s) for translation: $newMsg"
