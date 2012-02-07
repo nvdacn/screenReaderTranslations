@@ -39,8 +39,9 @@
 <LI>neue Braille-Übersetzungstabelle: Portugiesische Kurzschrift. (<A HREF="http://www.nvda-project.org/ticket/2014">#2014</A>)
 <LI>In den Einstellungen für Dokumentformatierungen kann nun eingestellt werden, ob Rahmen in Dokumenten angesagt werden sollen. (<A HREF="http://www.nvda-project.org/ticket/1900">#1900</A>)
 <LI>Bei der Verwendung von Openbook wird automatisch der Schlafmodus aktiviert. (<A HREF="http://www.nvda-project.org/ticket/1209">#1209</A>)
-**- In Poedit können Übersetzer nun vom Übersetzer selbst erstellte Kommentare sowie automatisch eingefügte Kommentare lesen. Automatisch übersetzte oder noch nicht übersetzte Meldungen werden mit einem Stern markiert. Zudem wird ein Signalton ausgegeben, wenn Sie darauf navigieren. (<A HREF="http://www.nvda-project.org/ticket/1811">#1811</A>)
-**- Unterstützung für die HumanWare Brailliant Serien BI und B Braillezeilen. (<A HREF="http://www.nvda-project.org/ticket/1990">#1990</A>)
+<LI>In Poedit können Übersetzer nun vom Übersetzer selbst erstellte Kommentare sowie automatisch eingefügte Kommentare lesen. Automatisch übersetzte oder noch nicht übersetzte Meldungen werden mit einem Stern markiert. Zudem wird ein Signalton ausgegeben, wenn Sie darauf navigieren. (<A HREF="http://www.nvda-project.org/ticket/1811">#1811</A>)
+<LI>Unterstützung für die HumanWare Brailliant Serien BI und B Braillezeilen. (<A HREF="http://www.nvda-project.org/ticket/1990">#1990</A>)
+**- Neue Sprache: Norwegian Bokmål.
 </UL>
 
 <H3>Änderungen</H3>
@@ -48,9 +49,11 @@
 <UL>
 <LI>Die Befehle zum Beschreiben des aktuellen Zeichens Bzw. zum Buchstabieren der aktuellen Zeile und des aktuellen Wortes berücksichtigen die im Dokument hinterlegte Sprache, falls der automatische sprachenwechsel aktiviert ist.
 <LI>Sprachausgabe eSpeak auf 1.46.02 aktualisiert.
-<LI>Wenn bei der Darstellung von Links und Grafiken der Name aus der Adresse ermittelt werden muss, werden Namen ausgefiltert, die länger als 30 zeichen sind. Derart lange Namen enthalten meist nutzlose Informationen. (<A HREF="http://www.nvda-project.org/ticket/1989">#1989</A>)
+<LI>Wenn bei der Darstellung von Links und Grafiken der Name aus der Adresse ermittelt werden muss, werden Namen abgekürzt, die länger als 30 zeichen sind. Derart lange Namen enthalten meist nutzlose Informationen. (<A HREF="http://www.nvda-project.org/ticket/1989">#1989</A>)
 <LI>einige neue verkürzte Klassennamen in Braille hinzugefügt (<A HREF="http://www.nvda-project.org/ticket/1955">#1955</A>, <A HREF="http://www.nvda-project.org/ticket/2043">#2043</A>)
 **- Wenn der Systemcursor oder der nvda-Cursor bewegt wird, wird die Braillezeile so mitbewegt, wie wenn man die Braillezeile manuell weiterbewegen würde. Dies erleichtert das lesen, wenn die Einstellungen Absatzweise lesen und/oder Umbrechen von Wörtern verhindern aktiviert ist. (<A HREF="http://www.nvda-project.org/ticket/1996">#1996</A>)
+<LI>Braille-Übersetzungstabelle für spanische Vollschrift aktualisiert.
+<LI>liblouis braille-Übersetzer auf 2.4.0 aktualisiert.
 </UL>
 
 <H3>Fehlerkorrekturen</H3>
@@ -70,6 +73,12 @@
 <LI>der Befehl zum Ausgeben der Titelleiste funktioniert im Acrobat Reader wieder.
 **- Wenn die Option Bei Änderungen des Fokuses automatisch den Fokusmodus einschalten aktiviert ist, wird der Fokus-Modus korrekt für fokusierte Tabellenzeilen z.B. in ARIA Gittern verwendet. (<A HREF="http://www.nvda-project.org/ticket/1763">#1763</A>)
 <LI>In Adobe Reader werden einige Links nicht mehr fälschlicherweise als Nur-Lesen-Eingabefelder erkannt.
+<LI>Beim lesen von dialogfeldern werden nun keine Beschriftungen für Eingabefelder mehr einbezogen (<A HREF="http://www.nvda-project.org/ticket/1960">#1960</A>)
+<LI>Wenn die Ansage von Objektbeschreibungen aktiviert ist, werden nun auch Beschreibungen von Gruppenfeldern ausgelesen.
+<LI>in den laufwerkseigenschaften im Explorer wird nun auch die gerundete laufwerksgröße korrekt ausgelesen.
+<LI>die doppelte Ansage von Texten auf Registerkarten wird in einigen Fällen vermieden. (<A HREF="http://www.nvda-project.org/ticket/218">#218</A>)
+**- Improved tracking of the caret in editable text fields which rely on text written to the screen. In particular, this improves editing in the Microsoft Excel cell editor and the Eudora message editor. (<A HREF="http://www.nvda-project.org/ticket/1658">#1658</A>)
+**- In Firefox 11, the move to containing virtual buffer command (NVDA+control+space) now works as it should to escape embedded objects such as Flash content.
 </UL>
 
 <H3>Änderungen für Entwickler</H3>
@@ -81,11 +90,11 @@
  <UL>
  <LI>Dies erlaubt das Aktivieren unter Verwendung der Routingtasten einer Braillezeile. Hierfür könnte es jedoch in Zukunft andere Methoden geben.
  </UL>
-<LI>TreeInterceptors und NVDAObjects, welche nur eine Seite beinhalten, können automatischen Seitenwechsel während alles lesen unterstützen, wenn sie textInfos.DocumentWithPageTurns verwenden.
+<LI>TreeInterceptors und NVDAObjects, welche nur eine Seite beinhalten, können automatischen Seitenwechsel während alles lesen unterstützen, wenn sie textInfos.DocumentWithPageTurns verwenden. (<A HREF="http://www.nvda-project.org/ticket/1978">#1978</A>)
 <LI>Einige Konstanten für Steuerelemente und ausgaben wurden umbenannt Bzw. verschoben. (<A HREF="http://www.nvda-project.org/ticket/228">#228</A>)
  <UL>
  <LI>speech.REASON_*-Konstanten wurden in die Steuerelemente verschoben.
- <LI>Bei den Steuerelementen wurden speechRoleLabels und speechStateLabe
+ <LI>Bei den Steuerelementen wurden speechRoleLabels und speechStateLabel in roleLabels  bzw. stateLabels,  umbenannt.
  </UL>
 </UL>
 
@@ -179,7 +188,7 @@ Die wichtigsten Neuerungen in dieser Version beinhalten große Verbesserungen im
 <LI>In Anwendungen wie Mozilla Thunderbird, die ihre Ausgaben direkt auf den Bildschirm schreiben, wird nun im Anzeigebereich mehr Text angezeigt.
 <LI>Sie können nun zwischen mehreren Ausführlichkeitsstufen für Satzzeichen und Sonderzeichen wählen. (<A HREF="http://www.nvda-project.org/ticket/332">#332</A>)
 <LI>Wenn ein Satzzeichen oder Symbol öfter als viermal auftaucht, wird die Anzahl der Zeichen angegeben, anstatt die Zeichen zu wiederholen. (<A HREF="http://www.nvda-project.org/ticket/43">#43</A>)
-<LI>Neue Braille-übersetzungstabellen: Norwegisches 8-Punkt-Braille, Ethiopische Vollschrift, Slovenische Vollschrift, Serbische Vollschrift. (<A HREF="http://www.nvda-project.org/ticket/1456">#1456</A>)
+<LI>Neue Braille-Übersetzungstabellen: Norwegisches 8-Punkt-Braille, Ethiopische Vollschrift, Slovenische Vollschrift, Serbische Vollschrift. (<A HREF="http://www.nvda-project.org/ticket/1456">#1456</A>)
 <LI>Bei der Verwendung des Befehls "Alles lesen" macht die Sprachausgabe keine unnatürlichen Pausen mehr. (<A HREF="http://www.nvda-project.org/ticket/149">#149</A>)
 <LI>NVDA sagt nun an, wenn ettwas sortiert wurde (gemäß der "aria-sort-Richtlinie) in Internetbrowsern. (<A HREF="http://www.nvda-project.org/ticket/1500">#1500</A>)
 <LI>Braillezeichen im Unicode-Format werden jetzt auf der Braillezeile richtig angezeigt. (<A HREF="http://www.nvda-project.org/ticket/1505">#1505</A>)
@@ -206,7 +215,7 @@ Die wichtigsten Neuerungen in dieser Version beinhalten große Verbesserungen im
 <LI>eSpeak auf 1.45.03 aktualisiert. (<A HREF="http://www.nvda-project.org/ticket/1465">#1465</A>)
 <LI>Layout-Tabellen werden im Mozilla Gecko-Anwendungen nicht mehr angesagt, während man sich im Fokus-Modus befindet und den Fokus bewegt, bzw. außerhalb eines Dokuments.
 <LI>in Internet-explorer und anderen mshtml-Dokumenten funktioniert der Browder-modus nun auch innerhalb von Aria-Anwendungen. (<A HREF="http://www.nvda-project.org/ticket/1452">#1452</A>)
-<LI>Liblouis Braille-Übersetzung auf 2.3.0 aktualisiert.
+<LI>Liblouis Braille-Übersetzer auf 2.3.0 aktualisiert.
 <LI>Wenn sie bei aktiviertem Browser-Modus mit Hilfe der Schnellnavigation zu einem Steuerelement wechseln, wird dessen Beschreibung ausgegeben, falls vorhanden.
 <LI>Ansage der Fortschrittsbalken im Lesemodus.
 <LI>alle Elemente, die in Internet Explorer oder anderen mshtml-Dokumenten mit dem Aria-Attribut presentation gekennzeichnet sind, werden nun beim Navigieren im vereinfachten Modus oder im Fokusmodus ausgefiltert.
@@ -320,7 +329,7 @@ Dieses Release behebt wichtige Fehler und Sicherheitsprobleme, welche in NVDA 20
 <P></P>
 == Neue Funktionen ==
 Zu den wichtigsten Neuerungen gehören das Anzeigen von Farben,  sowie die automatische Anzeige von neu erscheinendem Text in  mIRC, PuTTY, Tera Term und SecureCRT;
-Unterstützung globaler Erweiterungen; die korrekte Anzeige von Aufzählungen und Numerierungen in Microsoft Word; zusätzliche Tastenzuweisungen für Braillezeilen, einschl. Tasten zum Bewegen zur nächsten/vorigen Zeile; sowie Unterstützung von Braillezeilen von Baum, HumanWare und APH.
+Unterstützung globaler Erweiterungen; die korrekte Anzeige von Aufzählungen und Numerierungen in Microsoft Word; zusätzliche Tastenzuweisungen für Braillezeilen, einschließlich Tasten zum Bewegen zur nächsten/vorigen Zeile; sowie Unterstützung von Braillezeilen von Baum, HumanWare und APH.
 <P></P>
 <LI>Nun kann in virtuellen Ansichten seitenweise (Umschalt+Seite nach oben/Seite nach unten) oder absatzweise (Umschalt+STRG+Pfeil nach oben/Pfeil nach unten) markiert werden. (<A HREF="http://www.nvda-project.org/ticket/639">#639</A>)
 <LI>NVDA zeigt nun neu erscheinenden Text in Terminalfenstern korrekt an. Dies betrifft u. a. mIRC, PuTTY, Tera Term und SecureCRT. (<A HREF="http://www.nvda-project.org/ticket/936">#936</A>)
@@ -406,7 +415,7 @@ Verwenden der Methode "ScriptableObject.bindGesture()" gehören zur Instanz der 
 <LI>Die Klasse "synthDriverHandler.VoiceInfo" akzeptiert nun einen optionalen Parameter namens "language", der die Sprache der Stimme angibt.
 <LI>Die "SynthDriver"-Objekte stellen nun ein zusätzliches Attribut language zur Verfügung, das die Sprache der aktuellen Stimme angibt.
 <LI>Die Basisimplementierung verwendet die Sprache, die im "VoiceInfo"-Objekt bei availablevoices angegeben ist. Dies trifft für alle Synthesizer zu, die eine Sprache pro Stimme bereitstellen.
-<LI>Treiber für Braillezeilen wurden so erweitert, dass Tasten, Rädchen und andere Steuerelemente an NVDA-Skripte zugewiesen werden können:
+<LI>Braillezeilentreiber wurden so erweitert, dass Tasten, Rädchen und andere Steuerelemente an NVDA-Skripte zugewiesen werden können:
  <UL>
  <LI>Treiber können eine globale Eingabemethodenzuweisung bereitstellen, um Zuweisungen für Skripte an beliebiger Stelle inNVDA hinzuzufügen.
  <LI>Die Treiber können auch ihre eigenen Skripte bereitstellen, um Zeilenspezifische Funktionen auszuführen.
@@ -414,7 +423,8 @@ Verwenden der Methode "ScriptableObject.bindGesture()" gehören zur Instanz der 
  </UL>
 <LI>Die Eigenschaft "selfvoicing" der Klassen für Anwendungsmodule wurde in "sleepmode" umbenannt.
 <LI>Um die Namenskonventionen in Anwendungsmodulen und im Tree-interceptor einheitlich zu halten, wurden die Ereignisse "event_appLoseFocus" und "event_appGainFocus" in "event_appModule_loseFocus" bzw. "event_appModule_gainFocus" umbenannt.
-<LI>Alle Treiber von Braillezeilen sollten nun "braille.BrailleDisplayDriver" anstelle von  "braille.BrailleDisplayDriverWithCursor" verwenden.
+<LI>Alle Treiber von 
+zeilen sollten nun "braille.BrailleDisplayDriver" anstelle von  "braille.BrailleDisplayDriverWithCursor" verwenden.
  <UL>
  <LI>Der Cursor wird nun außerhalb des Treibers verwaltet.
  <LI>In bereits vorhandenen Treibern muss nur noch die Klassendefinition entsprechend angepasst und die Methode "_display" in "display" umbenannt werden.
@@ -445,7 +455,7 @@ Unterstützung von IBM Lotus Symphony-Dokumenten; Ansage der Reihen- und Spalten
 <LI>Unterstützung für den Code-Editor in Visual Studio 2005 und 2008, erfordert mindestens Visual Studio Standard, funktioniert nicht mit Visual Studio express (<A HREF="http://www.nvda-project.org/ticket/457">#457</A>)
 <LI>Unterstützung für IBM Lotus Symphony-Dokumente.
 <LI>frühe, experimentelle Unterstützung von Google Crome. Bitte bedenken Sie, dass Google Cromes Unterstützung für Bildschirmleser noch in der Entwicklungsphase steckt. Auch NVDA-seitig ist noch Arbeit nötig, um Google Crome zu unterstützen. Sie benötigen die neueste Entwicklerversion von Google chrome. 
-<LI>Den Status der Tasten Capslock (Dauergroßschreibtaste), Nummernblock und Scroll Lock werden beim Betätigen nun in Braille angezeigt. (<A HREF="http://www.nvda-project.org/ticket/620">#620</A>)
+<LI>Der Status der Tasten Capslock (Dauergroßschreibtaste), Nummernblock und Scroll Lock werden beim Betätigen nun in Braille angezeigt. (<A HREF="http://www.nvda-project.org/ticket/620">#620</A>)
 <LI>Hilfesprechblasen werden beim Erscheinen nun in Braille angezeigt. (<A HREF="http://www.nvda-project.org/ticket/652">#652</A>)
 <LI>Der Treiber für die Braillezeile MDV Lilli wurde hinzugefügt. (<A HREF="http://www.nvda-project.org/ticket/241">#241</A>)
 <LI>Beim Auswählen ganzer Zeilen bzw. Spalten in Microsoft Excel mit Umschalt+Leertaste und STRG+Leertaste wird nun die neue Auswahl wiedergegeben. (<A HREF="http://www.nvda-project.org/ticket/759">#759</A>)
@@ -557,7 +567,7 @@ Diese Version enthält überwiegend Fehlerbehebungen und Verbesserungen
 <LI>Blitzmeldungen verschwinden nun von der Braillezeile, wenn Sie eine Taste drücken, die eine Änderung des Fokuses zur Folge hat. Bisher blieben die Meldungen grundsätzlich für die konfigurierte Zeitspanne angezeigt.
 <LI>Die Kopplung der Braillezeile (NVDA+STRG+T) kann nun auch in den Braille-einstellung eingestellt werden. Diese Einstellung wird nun auch in der benutzerspezifischen Konfiguration gespeichert.
 <LI>Sprachausgabe eSpeak auf Version 1.43 aktualisiert.
-<LI>Den Braille-Übersetzer von Liblouis auf Version 1.8.0 aktualisiert.
+<LI>Den Braille-Übersetzer Liblouis auf Version 1.8.0 aktualisiert.
 <LI>In Virtuellen Ansichten wurde die wort- und zeichenweise Navigation enorm verbessert. Zuvor hatte sie sich stark von der zeilenweisen Navigation unterschieden. (<A HREF="http://www.nvda-project.org/ticket/490">#490</A>)
 <LI>Die Taste STRG hält nun die Sprache an, so wie alle anderen Tasten auch, anstatt sie nur zu unterbrechen. Um die Sprache zu unterbrechen, drücken sie Umschalttaste.
 <LI>Bei Änderungen des Fokuses wird die Anzahl von  Spalten und Zeilen nicht mehr angezeigt, da diese Informationen nicht sinnvoll sind.
@@ -600,7 +610,7 @@ Diese Version enthält überwiegend Fehlerbehebungen und Verbesserungen
 <H2>2009.1</H2>
 
 <P>
-die wichtigsten Neuerungen dieser version sind u.a. die Unterstützung von 64-bit-Versionen von Windows; verbesserte Unterstützung von Internet Explorer und Adobe Reader-Dokumenten; Unterstützung von windows 7; das Auslesen von windows-Anmeldung und Benutzrkontensteuerung; sowie die Unterstützung von Java- und Flash-Anwendungen. There have also been einige grundlegende Verbesserungen und Problembehebungen hinsichtlich der Stabilität wurden ebenfalls implementiert.
+die wichtigsten Neuerungen dieser version sind u.a. die Unterstützung von 64-bit-Versionen von Windows; verbesserte Unterstützung von Internet Explorer und Adobe Reader-Dokumenten; Unterstützung von windows 7; das Auslesen von windows-Anmeldung und Benutzerkontensteuerung; sowie die Unterstützung von Java- und Flash-Anwendungen. Einige grundlegende Verbesserungen und Problembehebungen hinsichtlich der Stabilität wurden ebenfalls implementiert.
 </P>
 
 <H3>Neuerungen</H3>
@@ -610,9 +620,9 @@ die wichtigsten Neuerungen dieser version sind u.a. die Unterstützung von 64-bi
 <LI>Unterstützung für den neuen Newfon-Sprachsynthesizer hinzugefügt. Bedenken sie, dass dies eine spezielle Version von newfon erfordert (<A HREF="http://www.nvda-project.org/ticket/206">#206</A>)
 <LI>Fokus- und Browsermodus werden nun durch Klänge anstelle gesprochener meldungen angekündigt. Dies ist standardmäßig aktiviert. Die Funktion kann jedoch im Dialog "Browser-Modus" konfiguriert werden. (<A HREF="http://www.nvda-project.org/ticket/244">#244</A>)
 <LI>NVDA unterbricht nun nicht mehr die Sprache, wenn Sie die Tasten zur lautstärkeregelung drücken. Dies erlaubt Ihnen, die lautstärke einzustellen und das eigentliche Ergebnis zu hören. (<A HREF="http://www.nvda-project.org/ticket/287">#287</A>)
-<LI>Die Unterstützung für Internet Explorer und Adobe reader-Dokumente wurde komplett erneuert. Diese Unterstützung wurde mit der Unterstützung für Mozilla Gecko vereinheitlicht. Auf diese weise werden Leistungsmerkmale wie die schnelle Verarbeitung des Dokuments, Schnellnavigation, die Linkliste, das Markieren von Text, automatischer Fokusmodus und Braille-untestützung in solchen Dokumenten verfügbar.
-<LI>verbesserte Unterstützung für das Steuerelement zur Datumsauswahl im Dialog Datum/Uhreit unter Windows Vista.
-<LI>verbesserte Unterstützug für das moderne Startmenü von Windows xp und Windows Vista. Speziell im Untermenü "alle Programme2 wird nun ach die Baumebene mi angegeben.
+<LI>Die Unterstützung für Internet Explorer und Adobe reader-Dokumente wurde komplett erneuert. Diese Unterstützung wurde mit der Unterstützung für Mozilla Gecko vereinheitlicht. Auf diese weise werden Leistungsmerkmale wie die schnelle Verarbeitung des Dokuments, Schnellnavigation, die Linkliste, das Markieren von Text, automatischer Fokusmodus und Braille-Unterstützung in solchen Dokumenten verfügbar.
+<LI>verbesserte Unterstützung für das Steuerelement zur Datumsauswahl im Dialog Datum/Uhrzeit unter Windows Vista.
+<LI>verbesserte Unterstützung für das moderne Startmenü von Windows xp und Windows Vista. Speziell im Untermenü "alle Programme2 wird nun ach die Baumebene mi angegeben.
 <LI>Die Menge an Text, die beim Bewegen der Maus angegeben werden soll, kann in den Mauseinstellungen konfiguriert werden. Hier kann zwischen Zeichen, Wort, Zeile oder Absatz ausgewählt werden.
 <LI>In Microsoft Word werden Rechtschreibfehler korrekt erkannt.
 <LI>Unterstützung der Rechtschreibprüfung in Microsoft Word 2007. In früheren Versionen von Microsoft Word wird sie ebenfalls teilweise unterstützt.
@@ -620,10 +630,10 @@ die wichtigsten Neuerungen dieser version sind u.a. die Unterstützung von 64-bi
 <LI>Wenn sie sich im Windows Vista auf einem sicheren Desktop befinden (wie z.B. die Benutzerkontensteuerung oder wenn Sie strg+alt+entf drücken), wird nvda dies nun melden.
 <LI>in Dos-Boxen kann nvda nun den Text unter dem Mauszeiger ansagen.
 <LI>Unterstützung von UI automation in windows 7
-<LI>NVDA kann nun so konfiguriert werden, dass er nach der Anmeldung automatisch startet. Die entsprechende Option befindet sich im Dialog "allgemeine Einstellungen".
+<LI>NVDA kann nun so konfiguriert werden, dass es nach der Anmeldung automatisch startet. Die entsprechende Option befindet sich im Dialog "allgemeine Einstellungen".
 <LI>Nvda kann nun auch sichere Desktops auslesen (Anmeldebildschirm, Benutzerkontensteuerung usw). Die Optionen zum Aktivieren von NVDA für die Anmeldung sind im Dialog "allgemeine Einstellungen" zu finden. (<A HREF="http://www.nvda-project.org/ticket/97">#97</A>)
 <LI>Treiber für Optelec ALVA BC6 Braillezeilen hinzugefügt.
-<LI>When browsing web documents, you can now press n and shift+n to skip forward and backward past blocks of links, respectively.
+<LI>Auf Internetseiten kann nun mit n und Umschalt+n vor bzw. hinter einen Block aus Links gesprungen werden.
 <LI>In Dokumenten kann nun mit d und umschalt+d vorwärts Bzw. rückwärts zwischen Aria-Sprungmarken navigiert werden. (<A HREF="http://www.nvda-project.org/ticket/192">#192</A>)
 <LI>Die Linkliste wurde in eine Elementliste geändert. Hiermit können Links, sprungmarken und Überschriften aufgelistet werden. Überschriften und Sprungmarken werden hierarchisch aufgelistet. (<A HREF="http://www.nvda-project.org/ticket/363">#363</A>)
 <LI>der neue dialog "Elementliste" enthält ein Eingabefeld "Filtern nach", mit dem Elemente ausgefiltert werden können, die einen angegebenen Text enthalten. (<A HREF="http://www.nvda-project.org/ticket/173">#173</A>)
