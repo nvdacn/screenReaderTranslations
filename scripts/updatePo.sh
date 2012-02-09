@@ -74,7 +74,6 @@ for lang in ${langs[*]}; do
         # need to commit, because before and after are diffrent.
         #
         commitMsg="${commitMsg}${lang}: before: ${bmsg}, now: ${amsg}
-
 "
        git add nvda.po
         #echo "$0 ${lang}: nvda.po has been updated from pot."
