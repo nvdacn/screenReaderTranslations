@@ -49,7 +49,7 @@ for lang in ${langs[*]}; do
     #
     bfuzzy=`$POCOUNT nvda.po | grep -i fuzzy | awk '{print \$2}'`
     buntranslated=`$POCOUNT nvda.po | grep -i untranslated | awk '{print \$2}'`
-    bmsg="$bfuzzy fuzzy messages, and $buntranslated untranslated messages."
+    bmsg="$bfuzzy fuzzy & $buntranslated untranslated"
 
     # update po file from downloaded pot
     #
@@ -60,7 +60,7 @@ for lang in ${langs[*]}; do
     #
     afuzzy=`$POCOUNT nvda.po | grep -i fuzzy | awk '{print \$2}'`
     auntranslated=`$POCOUNT nvda.po | grep -i untranslated | awk '{print \$2}'`
-    amsg="$afuzzy fuzzy messages, and $auntranslated untranslated messages."
+    amsg="$afuzzy fuzzy & $auntranslated untranslated"
 
     # checking if we need to do anything
     #
@@ -73,9 +73,7 @@ for lang in ${langs[*]}; do
     else
         # need to commit, because before and after are diffrent.
         #
-        commitMsg="${commitMsg}${lang}: 
-    before: ${bmsg}
-    now: ${amsg}
+        commitMsg="${commitMsg}${lang}: before: ${bmsg}, now: ${amsg}
 
 "
        git add nvda.po
