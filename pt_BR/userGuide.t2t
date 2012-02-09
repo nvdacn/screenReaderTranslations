@@ -126,7 +126,7 @@ A caixa de diálogo contém também duas caixas de seleção. A primeira permite
 ++ Sobre os Comandos De Teclado Do NVDA ++
 
 +++ A Tecla Modificadora do NVDA +++
-Maior parte dos comandos de teclado próprios   deste leitor de telas consiste normalmente no pressionamento de sua tecla modificadora em conjunto com uma ou mais teclas.
+ A maior parte dos comandos de teclado próprios   deste leitor de telas consiste normalmente no pressionamento de sua tecla modificadora em conjunto com uma ou mais teclas.
 Uma exceção a isso são os comandos de revisão de texto que utilizam somente o bloco numérico.
 
 O NVDA pode ser configurado para que o Insert do bloco numérico, Insert extendida ou a tecla Caps Lock possam ser utilizados como suas teclas modificadoras. 
@@ -246,6 +246,9 @@ Uma vez que tenha navegado para um objeto, pode revisá-lo com os comandos de [r
 
 Por padrão, a navegação de objetos acompanha o foco do sistema, embora esse comportamento possa ser ativado e desativado. 
 
+Note que o braille não acompanha a navegação de objetos e a revisão de texto por padrão, mas sim o [foco #SystemFocus] e o [cursor do sistema #SystemCaret].
+ Caso queira que em lugar disso, o braille acompanhe a navegação de objetos e a revisão de texto, você deve [configurar o braille para ser vinculado a #BrailleTether] exploração.
+
 Para navegar pelos objetos utilize as seguintes teclas de atalho: 
 %kc:beginInclude
 || Nome | Tecla de Desktop | Tecla de Laptop | Descrição |
@@ -268,6 +271,9 @@ O NVDA permite-lhe ler o conteúdo do atual [objeto de navegação #ObjectNaviga
 Quando o cursor de exploração é movido, o cursor do Sistema não o acompanha, assim pode analisar o texto sem perder a posição de edição.
 No entanto, por padrão, quando se move o cursor do Sistema, o cursor de exploração o acompanha.
 Esta opção pode ser ativada ou desativada.
+
+Note que o braille não acompanha a navegação de objetos e a revisão de texto por padrão, mas sim o [foco #SystemFocus] e o [cursor do sistema #SystemCaret].
+ Caso queira que em lugar disso, o braille acompanhe a navegação de objetos e a revisão de texto, você deve [configurar o braille para ser vinculado a #BrailleTether] exploração.
 
 As seguintes teclas de atalho estão disponíveis para a revisão de texto: 
 %kc:beginInclude
@@ -305,11 +311,14 @@ Documentos complexos oferecem-lhe a possibilidade de revisar seu conteúdo por c
  Dá-se a isso o nome de revisão plana.
 É algo semelhante à revisão de tela ou à funcionalidade de cursor do mouse existente  em muitos outros leitores de telas.
 
-Quando alterna para a revisão plana, você é posicionado na localização do atual [objeto de navegação #ObjectNavegation].
+Ao ativar a revisão plana, você é posicionado na localização do atual [objeto de navegação #ObjectNavegation].
 Se não estava usando a navegação de objetos, então esse será o objeto que tem o [foco #SystemFocus].
 Por exemplo, se o objeto de navegação for um botão, você normalmente será posicionado sobre o texto do botão dentro da revisão plana.
 Você poderá, então, rever o texto com os comandos de [revisão de texto #ReviewingText].
 Poderá também navegar diretamente para o objeto que abrange a posição atual do cursor de revisão, permitindo que a partir daí use a [navegação de objetos #ObjectNavigation.
+
+Note que o braille não acompanha a navegação de objetos e a revisão de texto por padrão, mas sim o [foco #SystemFocus] e o [cursor do sistema #SystemCaret].
+ Caso queira que em lugar disso, o braille acompanhe a navegação de objetos e a revisão de texto, você deve [configurar o braille para ser vinculado a #BrailleTether] exploração.
 
 Os seguintes dois comandos são utilizados para alternar para e a partir da revisão plana:
 
@@ -441,7 +450,7 @@ Existem diversos idiomas, porém a opção padrão é "User Default, Windows".
 Esta definição informa ao software para utilizar o idioma que o Windows tem definido. 
 
 Atente por favor que o NVDA precisa ser reiniciado quando alterar o idioma.
-Este leitor de tela questionará se pretende reiniciar para que faça a alteração.
+Este leitor de telas questionará se pretende reiniciar para que a alteração seja feita.
 Pressione OK e o NVDA irá reiniciar. 
 
 ==== Salvar Configuração ao Sair ====
@@ -596,7 +605,7 @@ Esta opção é um campo numérico que lhe permite alterar a velocidade de inter
 Esta opção é um campo numérico que controla durante quanto tempo são apresentadas as mensagens do sistema na linha Braille.
 
 %kc:setting
-==== Braille Vinculado a ====
+==== Braille Vinculado a ====[BrailleTether]
 Tecla: NVDA+control+t
 
 Esta opção permite-lhe escolher se a linha Braille seguirá o cursor do sistema, ou se segue o navegador de objetos / cursor de exploração.
