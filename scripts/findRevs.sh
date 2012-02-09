@@ -57,7 +57,7 @@ revCounter=$(($revCounter+1))
 prevRev=$rev
 done
 if [ "$revCounter" != "0" ]; then
-helperMsg="$revCounter in $diffsDir (${newRevs[*]})"
+helperMsg="$revCounter in $diffsDir (${newRevs[*]}); "
 else
 helperMsg=''
 fi
@@ -68,6 +68,7 @@ fi
 ## config
 
 # make sure we have the latest repo from assembla.
+git reset --hard HEAD
 git svn rebase
 
 # go to relative dir that has bzr code:
@@ -93,24 +94,14 @@ for lang in ${langs[*]}; do
     findRevs $lang source/locale/en/ sy-diffs symbols.dic
     msgP3="$helperMsg"
 
-    # make sure the format looks nice.
-    newMsg=''
-    if [ "$msgP1" != '' ] && [ "$msgP2" != '' ]; then
-        newMsg="$msgP1; $msgP2"
-    elif [ "$msgP1" != '' ]; then
-        newMsg="$msgP1"
-    elif [ "$msgP2" != '' ]; then
-        newMsg="$msgP2"
-    elif [ "$msgP3" != '' ]; then
-        newMsg="$msgP3"
-    fi
+    newMsg='$msgP1$msgP2$msgP3'
     if [ "$newMsg" != "" ]; then
-        twidge update "${twitAddr[$lang]} $lang: new revision(s) for translation: $newMsg"
-        msg="${msg}${lang}: new revision(s): ${newMsg}\n"
+        #twidge update "${twitAddr[$lang]} $lang: new revision(s) for translation: $newMsg"
+        msg="${msg}${lang}: ${newMsg}\n"
     fi
 done
 
 popd >/dev/null
-echo -e "new revisions to be translated\n\n$msg" | git commit -F -
+echo -e "New revs to translate\n\n$msg" | git commit -F -
 
 ./commit.sh
