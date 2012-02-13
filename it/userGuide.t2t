@@ -1,5 +1,5 @@
 ﻿NVDA NVDA_VERSION Manuale Utente
-Ultimo Aggiornamento del manuale originale: 8 novembre 2011, traduzione a cura di Simone Dal Maso e Gianluca Casalino
+Ultimo Aggiornamento del manuale originale: 13 febbraio 2012, traduzione a cura di Simone Dal Maso e Gianluca Casalino
 
 %!includeconf: ../userGuide.t2tconf
 %kc:title: NVDA NVDA_VERSION Comandi da tastiera Guida Rapida
@@ -252,9 +252,10 @@ Allo stesso modo, se si incontra una barra degli strumenti, bisogna entrare all'
 L'oggetto che attualmente viene esplorato è chiamato navigatore ad oggetti.
 Una volta che viene raggiunto un oggetto, è possibile esplorarlo utilizzando i [comandi di revisione #ReviewingText].
 Da impostazioni predefinite, il navigatore ad oggetti si sposta in concomitanza con il focus di sistema, tuttavia questo comportamento può essere modificato, attivando o disattivando la relativa opzione.
+Si noti che il display braille da impostazioni predefinite segue il [focus #SystemFocus] e il [Cursore di Sistema #SystemCaret], piuttosto che il Navigatore ad oggetti  o la Navigazione in linea.
+Se si desidera che il braille segua invece la navigazione ad oggetti o quella in linea, sarà necessario modificare l'opzione "Il Display Braille Segue", impostandola su "cursore di controllo".
 
 Per navigare ad oggetti, utilizzare i tasti seguenti:
-
 %kc:beginInclude
 || Nome | layout Desktop | layout Laptop | Descrizione |
 | Legge l'oggetto corrente | NVDA+5 del tastierino numerico | NVDA+control+i | Annuncia l'oggetto corrente. Premendolo due volte ne fa lo spelling, mentre premendolo tre volte copia il nome dell'oggetto ed il suo valore negli appunti |
@@ -278,6 +279,8 @@ Ad esempio, può venir buono nel leggere il contenuto di lunghi testi in una fin
 Quando si sposta il cursore di controllo, il cursore di sistema non lo segue, cosicché sarà possibile esplorare il testo senza perdere la propria posizione.
 Comunque, da impostazioni predefinite, quando il cursore di sistema si sposta, il cursore di controllo lo segue. 
 Tale impostazione può essere modificata attivandola o disattivandola.
+Si noti che il display braille da impostazioni predefinite segue il [focus #SystemFocus] e il [Cursore di Sistema #SystemCaret], piuttosto che il Navigatore ad oggetti  o la Navigazione in linea.
+Se si desidera che il braille segua invece la navigazione ad oggetti o quella in linea, sarà necessario modificare l'opzione "Il Display Braille Segue", impostandola su "cursore di controllo".
 
 Sono disponibili i seguenti tasti caldi per esplorare il testo:
 %kc:beginInclude
@@ -318,6 +321,8 @@ Quando si attiva la navigazione in linea, ci si troverà  alla posizione del [na
 Se non si ha mai utilizzato la navigazione ad oggetti, la posizione coincide solitamente con quella ove si trova il [focus #SystemFocus].
 Per esempio, se l'oggetto è costituito da un bottone, si verrà posizionati all'interno del testo del bottone stesso, nella navigazione in linea.
 Da qui sarà possibile esplorare il testo utilizzando i [comandi di revisione #ReviewingText].
+Si noti che il display braille da impostazioni predefinite segue il [focus #SystemFocus] e il [Cursore di Sistema #SystemCaret], piuttosto che il Navigatore ad oggetti  o la Navigazione in linea.
+Se si desidera che il braille segua invece la navigazione ad oggetti o quella in linea, sarà necessario modificare l'opzione "Il Display Braille Segue", impostandola su "cursore di controllo".
 
 I seguenti due comandi vengono utilizzati per attivare o meno la navigazione in linea:
 %kc:beginInclude
@@ -418,6 +423,29 @@ Le pagine web possono essere strutturate con diverse tecnologie al proprio inter
 || Nome | Tasto | Descrizione |
 | Ritornare alla modalità navigazione | NVDA+control+spazio | Sposta il focus dall'oggetto incorporato alla modalità navigazione |
 %kc:endInclude
+
++ Comandi specifici di NVDA per le applicazioni +
+NVDA fornisce alcuni comandi per certe applicazioni in modo da facilitare gli utenti nello svolgimento di operazioni che, altrimenti, risulterebbero molto complesse e poco accessibili.
+
+++ foobar	2000 ++
+%kc:beginInclude
+|| Nome | Tasto | Descrizione |
+| Annuncia tempo rimanente | control+shift+r | Annuncia il tempo restante della traccia attualmente in esecuzione, se ve n'è una. |
+%kc:endInclude
+
+++ Miranda IM ++
+%kc:beginInclude
+|| Nome | Tasto | Descrizione |
+| Annuncia messaggi recenti | NVDA+control+1-4 | Annuncia uno degli ultimi messaggi, a seconda del numero premuto; ad esempio NVDA+control+2 legge il secondo messaggio più recente. |
+%kc:endInclude
+
+++ Poedit ++
+%kc:beginInclude
+|| Nome | Tasto | Descrizione |
+| Annuncia finestra commenti | control+shift+c | Annuncia qualsiasi commento all'interno della finestra commenti. |
+| Annuncia finestra commenti automatici | control+shift+a | Annuncia ogni commento presente nella finestra commenti automatici. |
+%kc:endInclude
+
 
 + Configurare NVDA +
 
@@ -563,7 +591,7 @@ Si tratta di un campo numerico che permette di modificare la velocità di lampeg
 Si tratta di un campo numerico che controlla per quanto tempo i messaggi di sistema saranno mostrati sul Display Braille.
 
 %kc:setting
-==== Il display braille segue ====
+==== Il display braille segue ====[BrailleTether]
 Tasto: NVDA+control+t
 
 Questa impostazione permette di decidere se il display braille seguirà il focus di sistema oppure il navigatore ad oggetti (cursore di controllo).
