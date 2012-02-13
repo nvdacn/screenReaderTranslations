@@ -94,7 +94,7 @@ for lang in ${langs[*]}; do
     findRevs $lang source/locale/en/ sy-diffs symbols.dic
     msgP3="$helperMsg"
 
-    newMsg='$msgP1$msgP2$msgP3'
+    newMsg="${msgP1}${msgP2}${msgP3}"
     if [ "$newMsg" != "" ]; then
         #twidge update "${twitAddr[$lang]} $lang: new revision(s) for translation: $newMsg"
         msg="${msg}${lang}: ${newMsg}\n"
