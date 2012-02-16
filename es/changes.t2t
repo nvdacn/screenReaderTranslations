@@ -71,14 +71,14 @@ Lo subrayable de esta versión incluye características para una lectura más fl
 
 == Cambios para desarrolladores ==
 - Ahora hay una Consola Python remota para situaciones donde la depuración remota es útil. Mira la Developer Guide para detalles.
-- La ruta base del código de NVDA is now stripped from tracebacks in the log to improve readability. (#1880)
-- TextInfo objects now have an activate() method to activate the position represented by the TextInfo.
-- This is used by braille to activate the position using cursor routing keys on a braille display. However, there may be other callers in future.
+- La ruta base del código de NVDA ahora se stripped from tracebacks en el log para mejorar legibilidad. (#1880)
+- Los Objetos TextInfo ahora tienen un método activate() para activar la posición representada por el TextInfo.
+- Esto se utiliza por el braille para activar la posición utilizando teclas de guiado del cursor en una línea braille. No obstante, there may be other callers in future.
 - TreeInterceptors and NVDAObjects which only expose one page of text at a time can support automatic page turns during say all by using the textInfos.DocumentWithPageTurns mix-in. (#1978)
 - Several control and output constants have been renamed or moved. (#228)
 - speech.REASON_* constants have been moved to controlTypes.
 - In controlTypes, speechRoleLabels and speechStateLabels have been renamed to just roleLabels and stateLabels, respectively.
-
+- Braille output is now logged at level input/output. First, the untranslated text of all regions is logged, followed by the braille cells of the window being displayed. (#2102)
 
 
 = 2011.3 =
