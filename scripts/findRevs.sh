@@ -87,12 +87,13 @@ twitAddr[sk]="@pvagner"
 langs=(ar de es fi fr gl hu it ja nl nb_NO pl pt_BR pt_PT sk ta tr)
 for lang in ${langs[*]}; do
     echo "processing $lang"
+    helperMsg=""
     findRevs $lang user_docs/en/ ch-diffs changes.t2t
-    msgP1="$helperMsg"
+    msgP1="$helperMsg"; helperMsg=""
     findRevs $lang user_docs/en/ ug-diffs userGuide.t2t
-    msgP2="$helperMsg"
+    msgP2="$helperMsg"; helperMsg=""
     findRevs $lang source/locale/en/ sy-diffs symbols.dic
-    msgP3="$helperMsg"
+    msgP3="$helperMsg"; helperMsg=""
 
     newMsg="${msgP1}${msgP2}${msgP3}"
     if [ "$newMsg" != "" ]; then
