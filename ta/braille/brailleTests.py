@@ -23,17 +23,19 @@ u'பஸ்ரீ': "p`sr9",
 
 # dont know name:
 u' க்ஷ ': ' q ',
+# test it with a full stop at the end.
+u'க்ஷ்.': '`q4', 
 
 ## punctuation
 # left quote
-u'“': '6-236',
+u'“': ',8',
 # right quote
-u'”': '356-3',
+u'”': '0.',
 
 #left single quote
-u'‘': '236',
+u'‘': '8',
 #right single quote
-u'’': '356',
+u'’': '0',
 }
 
 # note: if the test fails saying it cant find tables then:
@@ -46,4 +48,4 @@ for test in testHarness.keys():
     if testHarness[test] == braille:
         print "ok"
     else:
-        print "failed for %s: got '%s' expected '%s'" %(test, braille, testHarness[test])
+        print "%s failed, got '%s' expected '%s'" %(test, braille, testHarness[test])
