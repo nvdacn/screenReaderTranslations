@@ -23,6 +23,17 @@ u'பஸ்ரீ': "p`sr9",
 
 # dont know name:
 u' க்ஷ ': ' q ',
+
+## punctuation
+# left quote
+u'“': '6-236',
+# right quote
+u'”': '356-3',
+
+#left single quote
+u'‘': '236',
+#right single quote
+u'’': '356',
 }
 
 # note: if the test fails saying it cant find tables then:
