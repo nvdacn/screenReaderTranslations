@@ -1,4 +1,4 @@
-﻿Was ist Neu in NVDA
+﻿	Was ist Neu in NVDA
 
 
 %!includeconf: ../changes.t2tconf
@@ -21,14 +21,14 @@
 - Wenn möglich verhindert NVDA nun standardmäßig den Wortumbruch in Braille. Dies kann in den Braille-Einstellungen ausgeschaltet werden. (#1890, #1946)
 - Text kann auf der Braillezeile Absatzweise anstatt Zeilenweise angezeigt werden. Dies erlaubt ein flüssigeres Lesen großer Textmengen. Die Einstellung kann über die Option "absatzweise lesen" in den Braille-Einstellungen konfiguriert werden. (#1891)
 - im lesemodus können Sie nun durch einmaliges Drücken einer Routingtaste der Braillezeile das Objekt unter dem Cursor aktivieren. Dies bedeutet, dass Sie die Routingtaste zweimal drücken müssen, falls sich der Cursor noch nicht auf dem Objekt befindet. (#1893)
-- Grundlegende Unterstützung für Internet-Bereiche in Itunes wie z. B. der Store. Andere Anwendungen, welche auf WebKit 1 beruhen, werden möglicherweise ebenfalls unterstützt. (#734)
+- Grundlegende Unterstützung für Internet-Bereiche in Itunes wie z.B. der Store. Andere Anwendungen, welche auf WebKit 1 beruhen, werden möglicherweise ebenfalls unterstützt. (#734)
 - In büchern in Adobe Digital Editions 1.8.1 und höher erfolgt nun ein automatischer Seitenwechsel, wenn Sie die Funktion «alles lesen» verwenden. (#1978)
-- neue Braille-Übersetzungstabelle: Portugiesische Kurzschrift. (#2014)
+- Neue Braillezeichensätze: portugisische Kurzschrift, Isländisches 8-Punkt-Computerbraille, tamilische Vollschrift. (#2014)
 - In den Einstellungen für Dokumentformatierungen kann nun eingestellt werden, ob Rahmen in Dokumenten angesagt werden sollen. (#1900)
 - Bei der Verwendung von Openbook wird automatisch der Schlafmodus aktiviert. (#1209)
 - In Poedit können Übersetzer nun vom Übersetzer selbst erstellte Kommentare sowie automatisch eingefügte Kommentare lesen. Automatisch übersetzte oder noch nicht übersetzte Meldungen werden mit einem Stern markiert. Zudem wird ein Signalton ausgegeben, wenn Sie darauf navigieren. (#1811)
 - Unterstützung für die HumanWare Brailliant Serien BI und B Braillezeilen. (#1990)
-**- Neue Sprache: Norwegian Bokmål.
+**- Neue Sprache: norwegisch Bokmål.
 
 
 == Änderungen ==
@@ -38,7 +38,7 @@
 - einige neue verkürzte Klassennamen in Braille hinzugefügt (#1955, #2043)
 **- Wenn der Systemcursor oder der nvda-Cursor bewegt wird, wird die Braillezeile so mitbewegt, wie wenn man die Braillezeile manuell weiterbewegen würde. Dies erleichtert das lesen, wenn die Einstellungen Absatzweise lesen und/oder Umbrechen von Wörtern verhindern aktiviert ist. (#1996)
 - Braille-Übersetzungstabelle für spanische Vollschrift aktualisiert.
-- liblouis braille-Übersetzer auf 2.4.0 aktualisiert.
+- liblouis braille-Übersetzer auf die Version 2.4.1 aktualisiert.
 
 
 == Fehlerkorrekturen ==
@@ -61,8 +61,14 @@
 - in den laufwerkseigenschaften im Explorer wird nun auch die gerundete laufwerksgröße korrekt ausgelesen.
 - die doppelte Ansage von Texten auf Registerkarten wird in einigen Fällen vermieden. (#218)
 **- Improved tracking of the caret in editable text fields which rely on text written to the screen. In particular, this improves editing in the Microsoft Excel cell editor and the Eudora message editor. (#1658)
-**- In Firefox 11, the move to containing virtual buffer command (NVDA+control+space) now works as it should to escape embedded objects such as Flash content.
-
+**- In Firefox 11 funktioniert der Befehl "Zum Inhalt des Lesemodus zurückkehren" (NVDA+Steuerung+Leertaste) nun ordnungsgemäß und verlässt eingebettete Objekte wie Flasch-Inhalte. 
+- NVDA startet sich nun korrekt neu, wenn z.B. die eingestellte Sprache geändert wird und NVDA in einen Ordner installiert wurde, welcher nicht--ASCII-Zeichen enthält. (#2079)
+**- Braille correctly respects the settings for reporting of object shortcut keys, position information and descriptions.
+- In Mozilla-Anwendungen ist das wechseln zwischen Fokus- und Lese-Modus nicht mehr so langsam, wenn die Braille-Ausgabe aktiviert ist. (#2095)
+**- Routing the cursor to the space at the end of the line/paragraph using braille cursor routing keys in some editable text fields now works correctly instead of routing to the start of the text. (#2096)
+- NVDA arbeitet nun wieder korrekt mit der Sprachausgabe Audioologic Tts3. (#2109)
+**- Microsoft-Word-dokumente werden korrekt als meerzeilige Eingabefelder behandelt. This causes braille to behave more appropriately when a document is focused.
+- In Microsoft Internetexplorer treten keine Fehler mehr auf, wenn bestimmte seltene Elemente fokusiert werden.(#2121)
 
 
 == Änderungen für Entwickler ==
@@ -74,6 +80,7 @@
 - Einige Konstanten für Steuerelemente und ausgaben wurden umbenannt Bzw. verschoben. (#228)
  - speech.REASON_*-Konstanten wurden in die Steuerelemente verschoben.
  - Bei den Steuerelementen wurden speechRoleLabels und speechStateLabel in roleLabels  bzw. stateLabels,  umbenannt.
+**- Der Text, welcher auf der Braillezeile angezeigt wird, wird ab der Protokollierungsstufe Ein- / Ausgabe protokolliert. First, the untranslated text of all regions is logged, followed by the braille cells of the window being displayed. (#2102)
 
 
 = 2011.3 =
@@ -297,10 +304,10 @@ Unterstützung globaler Erweiterungen; die korrekte Anzeige von Aufzählungen un
 
 
 == Änderungen ==
-- Standardmäßig werden Positionsinformationen nicht mehr angezeigt, weil sie in einigen Anwendungen normalerweise nicht korrekt sind; wie z. B. in den meisten Menüs, in der Symbolleiste "Ausgeführte Anwendungen", im Infobereich, etc. Sie können die Positionsangaben jedoch wieder mit Hilfe einer zusätzlichen Option im Dialog "Objektpräsentation" aktivieren.
+- Standardmäßig werden Positionsinformationen nicht mehr angezeigt, weil sie in einigen Anwendungen normalerweise nicht korrekt sind; wie z.B. in den meisten Menüs, in der Symbolleiste "Ausgeführte Anwendungen", im Infobereich, etc. Sie können die Positionsangaben jedoch wieder mit Hilfe einer zusätzlichen Option im Dialog "Objektpräsentation" aktivieren.
 - Die Tastaturhilfe wurde in "Eingabehilfe" umbenannt, um dem Umstand Rechnung zu tragen, dass nun auch Eingaben von anderen Quellen als der Tastatur verarbeitet werden.
 - Die Eingabehilfe  zeigt nun nicht mehr den Speicherort eines Skriptes mittels Sprache und Brailleausgabe an, da dieser für den Anwender kryptisch und irelevant ist. 	Der Speicherort wird dennoch für Entwickler und erfahrene Anwender mitprotokolliert.
-- Wenn NVDA erkennt, dass es "sich aufgehängt hat", werden weiterhin NVDA-Tasten verarbeitet, auch wenn alle anderen Tastenkombinationen an das System weitergereicht werden. Dies verhindert, dass der Anwender unabsichtlich z. B. die Dauergroßschreibung umschaltet. (#939)
+- Wenn NVDA erkennt, dass es "sich aufgehängt hat", werden weiterhin NVDA-Tasten verarbeitet, auch wenn alle anderen Tastenkombinationen an das System weitergereicht werden. Dies verhindert, dass der Anwender unabsichtlich z.B. die Dauergroßschreibung umschaltet. (#939)
 - Wenn nach der Verwendung des Kommandos "Nächste Taste durchreichen" eine Tastenkombination gedrückt gehalten wird, werden alle Tastendrücke (einschließlich Wiederholungen) an die Anwendung durchgereicht, bis die letzte Taste losgelassen wird.
 - Wenn ein NVDA-Modifikator zwei Mal gedrückt (und beim zweiten Mal gedrückt gehalten) wird, werden alle Tastenanschläge einschließlich Wiederholungen ebenfalls an die anwendung durchgereicht.
 - Die Tasten für die lautstärkeregelung und Stummschaltung werden nun in der Eingabehilfe erkannt. Dies könnte hilfreich sein, falls sich Anwender über die Funktionsweise dieser Tasten unsicher sind.
@@ -315,7 +322,7 @@ Unterstützung globaler Erweiterungen; die korrekte Anzeige von Aufzählungen un
 - Wenn ein NVDA-Modifikator zwei Mal schnell hintereinander gedrückt wird, jedoch eine andere Taste zwischendurch gedrückt wird, wird beim 2. Tastendruck des Modifikators nicht die eigendliche Funktion der Taste ausgeführt.
 - Satzzeichen werden bei der Eingabehilfe nun berücksichtigt, auch wenn die ansage von Satzzeichen deaktiviert ist. (#977)
 - In den Tastatureinstellungen werden die namen der Tastaturbelegungen nun in der eingestellten Sprache angezeigt. (#558)
-- Problem behoben, wonach einige Teile in Adobe Reader-Dokumenten als Leer angezeigt werden. Dies betrifft z. B. das Inhaltsverzeichnis im Apple iOS 4.1 Benutzerhandbuch
+- Problem behoben, wonach einige Teile in Adobe Reader-Dokumenten als Leer angezeigt werden. Dies betrifft z.B. das Inhaltsverzeichnis im Apple iOS 4.1 Benutzerhandbuch
 - Der Schalter "Aktuell gespeicherte Einstellungen im Anmeldebildschirm und bei Sicherheitsmeldungen verwenden (erfordert Administrationsberechtigungen!)" Der Dialog für die allgemeinen einstellungen funktioniert nun auch dann, wenn er gleich nach der NVDA-Installation, aber noch vor der anzeige eines Sicherheitshinweises benutzt wird.  Vorher zeigte nvda zwar an, das Kopieren der Einstellungen sei erfolgreich gewesen, tatsächlich hatte der Schalter jedoch keinerlei wirkung. (#1194)
 - Wenn Ihr Benutzername ein Leerzeichen enthält, tritt bei aktivierter Benutzerkontensteuerung nach dem Schließen des Dialogfensters keinen Fehler mehr auf, wenn Sie in den Allgemeinen Einstellungen von NVDA den schalter "Momentan gespeicherte Einstellungen für Anmeldedialoge und Sicherheitshinweise verwenden" drücken. (#918)
 - Anstatt leere Links anzuzeigen, benutzt NVDA im Internet Explorer und anderen MSHTML-Dokumenten nun die Zieladresse des Dokuments als Linkbeschriftung. (#633)
@@ -338,7 +345,7 @@ Unterstützung globaler Erweiterungen; die korrekte Anzeige von Aufzählungen un
 
 == Änderungen für Entwickler ==
 - SCons wird nun verwendet, um den Quellcode vorzubereiten und eine portable Version Bzw. ein Installationsprogramm zu erstellen. Weitere Informationen finden Sie in der Datei "Readme.txt" im Stammverzeichnis des Quellcodes.
-- Die Bezeichnung für Tasten(kombinationen) wurden logischer und benutzerfreundlicher gestaltet. z. B. "upArrow" anstelle von "extendedUp" und "numpadPageUp" anstelle von "prior". Eine Liste aller Tastenbezeichnungen finden Sie im Modul "vKCodes".
+- Die Bezeichnung für Tasten(kombinationen) wurden logischer und benutzerfreundlicher gestaltet. z.B. "upArrow" anstelle von "extendedUp" und "numpadPageUp" anstelle von "prior". Eine Liste aller Tastenbezeichnungen finden Sie im Modul "vKCodes".
 - Sämtliche Benutzereingaben werden nun durch eine Instanz namens "inputCore.InputGesture" repräsentiert. (#601)
 - Jede Eingabequelle bildet eine Unterklasse von "InputGesture". So werden beispielsweise Tastatureingaben von "keyboardHandler.KeyboardInputGesture" verarbeitet.
 - "Input gestures" sind beim "ScriptableObjects" angesiedelt.
@@ -346,9 +353,9 @@ Verwenden der Methode "ScriptableObject.bindGesture()" gehören zur Instanz der 
 - Anwendungsmodule besitzen keine Dateien für die Tastenzuweisungen mehr. Alle Zuweisungen der Eingabemethoden müssen in den Anwendungsmodulen selbst erfolgen.
 - Alle Skripte verarbeiten nun Instanzen von "imputgesture" anstelle von Tastendrücken.
 - Es können nun Tastendrücke an das Betriebssystem gesendet werden, in dem die Methode "send()" eines "gesture"-Objekts verwendet wird.
-- Um einen Tastendruck zu senden, müssen Sie zunächst ein Objekt vom Typ "keyboardinputgesture" erstellen. Verwenden Sie z. B. "keyboardinputgesture.fromname()". Benutzen Sie anschließend die Methode "send()" des erstellten Objekts.
+- Um einen Tastendruck zu senden, müssen Sie zunächst ein Objekt vom Typ "keyboardinputgesture" erstellen. Verwenden Sie z.B. "keyboardinputgesture.fromname()". Benutzen Sie anschließend die Methode "send()" des erstellten Objekts.
 - In den einzelnen Gebietsschemen können jetzt individuelle Zuweisungen der Eingabemethoden erstellt werden, die neue Eingabemethoden definieren oder vorhandene überschreiben können. Diese so erstelten Eingabemethodenzuweisungen sind überall in NVDA wirksam. (#810)
-- Sprachspezifische Zurordnungen der Eingabemethoden müssen im Ordner "locale\<Sprache>\gestures.ini" liegen, wobei <Sprache> der zweistellige Sprachcode ist (z. B. "en" für Englisch und "de" für Deutsch).
+- Sprachspezifische Zurordnungen der Eingabemethoden müssen im Ordner "locale\<Sprache>\gestures.ini" liegen, wobei <Sprache> der zweistellige Sprachcode ist (z.B. "en" für Englisch und "de" für Deutsch).
 - Lesen Sie im Abschnitt "inputCore.GlobalGestureMap" nach, um mehr über das Dateiformat zu erfahren.
 - Das neue "LiveText und Terminal NVDAObject" erleichtert das automatische Ansagen von neuen Texten. Lesen Sie im Abschnitt "NVDAObjects.behaviors" zu diesen Klassen für Details. (#936)
 - Die Overlay-Klasse "NVDAObjects.window.DisplayModelLiveText" kann für Objekte verwendet werden, die den anzuzeigenden Text direkt vom Bildschirm abfangen müssen.
@@ -406,7 +413,7 @@ Unterstützung von IBM Lotus Symphony-Dokumenten; Ansage der Reihen- und Spalten
 == Änderungen ==
 - Die Funktionen 'alle Objekte vorlesen' (NVDA+Nummernblocktaste), rekursiv zum nächsten Navigatorobjekt springen (NVDA+Umschalt+Nummerntaste 6) und rekursiv zum vorigen Objekt springen (NVDA+Umschalt+Nummerntaste 4) wurden entfernt, da sie fehlerhaft arbeiteten und um die Tastenkombinationen für andere Funktionen freizugeben.
 - Im Dialog "Sprachausgaben" wird nun lediglich noch der Anzeigename einer Sprachausgabe angezeigt. Bisher wurde ihm der Treibername vorangestellt, was jedoch nur intern relevant ist.
-- In eingebetteten Anwendungen oder Virtuellen Ansichten (z. B. Adobe Flash) können Sie jetzt NVDA+STRG+Leertaste drücken, um aus der eingebetteten Anwendung Bzw. der Virtuellen Ansicht in das übergeordnete Dokument zu wechseln. bisher wurde NVDA+Leertaste hierfür  verwende. Jetzt dient NVDA+Leertaste nur noch dazu, zwischen Fokus- und Browsermodus umzuschalten.
+- In eingebetteten Anwendungen oder Virtuellen Ansichten (z.B. Adobe Flash) können Sie jetzt NVDA+STRG+Leertaste drücken, um aus der eingebetteten Anwendung Bzw. der Virtuellen Ansicht in das übergeordnete Dokument zu wechseln. bisher wurde NVDA+Leertaste hierfür  verwende. Jetzt dient NVDA+Leertaste nur noch dazu, zwischen Fokus- und Browsermodus umzuschalten.
 - Wenn der Sprachbetrachter (aktiviert im Menü "Extras") den Fokus erhält, wird auf dem Bildschirm neu erscheinender Text im Fenster des Sprachbetrachters nicht angezeigt, bis er den Fokus wieder verliert. Dies erlaubt das einfachere Markieren von Text (um ihn beispielsweise anschließend zu kopieren).
 - Die Protokollansicht und die Python-Konsole werden beim Aufruf nun maximiert.
 - Wenn Sie in Microsoft Excel auf ein Arbeitsblatt wechseln, auf dem mehr als eine Zelle markiert ist, wird nun von NVDA der gesamte markierte Bereich angezeigt und nicht nur die aktive Zelle. (#763)
@@ -473,7 +480,7 @@ Diese Version enthält überwiegend Fehlerbehebungen und Verbesserungen
 - Es ist nun möglich, bei der Installation von NVDA die Erstellung der Desktop-Verknüpfung zu verhindern. (#518)
 - NVDA kann nun iAccessible2 auch auf 64-Bit-Systemen verwenden, sofern es dort verfügbar ist. (#479)
 - Unterstützung für Live-Regionen in Mozilla-Anwendungen erweitert. (#246)
-- Die NVDA-API wird nun bereitgestellt, was es Programmierern erlaubt, NVDA zu Steuern. Hierzu gehören z. B.: Das Sprechen von Text, das Stummschalten der Sprache, das Anzeigen von Blitzmeldungen, etc.
+- Die NVDA-API wird nun bereitgestellt, was es Programmierern erlaubt, NVDA zu Steuern. Hierzu gehören z.B.: Das Sprechen von Text, das Stummschalten der Sprache, das Anzeigen von Blitzmeldungen, etc.
 - In den Anmeldefenstern von Windows Vista und Windows 7 werden nun auch informationen und Fehlermeldungen ausgelesen. (#506)
 - In Adobe Reader werden nun auch interaktive Formulare ausgelesen, sofern sie mit Adobe LiveCycle erstellt wurden. (#475)
 - Wenn die Anzeige dynamischer Inhalte aktiviert ist, werden nun auch in Miranda IM neu eintreffende Nachrichten in Unterhaltungsfenstern angezeigt. Zudem können die drei letzten Nachrichten abgerufen werden (NVDA+STRG+Ziffer). (#546)
