@@ -23,7 +23,7 @@ Lo subrayable de esta versión incluye características para una lectura más fl
 - En modo navegación, puedes activar el objeto bajo el cursor utilizando una línea braille. Esto se hace pulsando la tecla de guiado de cursor donde se localice el cursor (lo cual significa pulsarlo dos veces si el cursor no está todavía allí). (#1893)
 - Soporte básico para áreas web en iTunes tal como en la Store. Otras aplicaciones que utilicen WebKit 1 también podrían soportarse. (#734)
 - En libros en Adobe Digital Editions 1.8.1 y posteriores, ahora las páginas se pasan automáticamente cuando se utiliza leer todo.  (#1978)
-- Nuevas tablas de transcripción braille: Portugués grado 2, braille islandés computerizado de 8 puntos, tamil grado 1. (#2014)
+- Nuevas tablas de transcripción braille: Portugués grado 2, braille islandés computerizado de 8 puntos, tamil grado 1, Braille español computerizado de 8 puntos, persa grado 1. (#2014)
 - Ahora puedes configurar si se anuncian los marcos en documentos desde el diálogo de preferencias de Formato de Documentos. (#1900)
 - El modo durmiente se activa automáticamente cuando se utiliza OpenBook. (#1209)
 - En Poedit, los traductores ahora pueden leer los comentarios añadidos y extraídos automáticamente para el traductor. Los mensajes que estén sin traducir o provisionales se marcan con un asterisco y se escucha un pitido cuando se navegue sobre ellos (#1811).
@@ -70,6 +70,7 @@ Lo subrayable de esta versión incluye características para una lectura más fl
 - NVDA funciona de nuevo correctamente con el sintetizador Audiologic Tts3. (#2109)
 - Los documentos de Microsoft Word se tratan correctamente como multi-línea. Esto causa que el braille se comporte de manera más adecuada cuando un documento se enfoque.
 - En Microsoft Internet Explorer, ya no ocurren errores cuando se enfoca sobre ciertos controles raros. (#2121)
+- Renombrar la puntuación y símbolos por el usuario ahora tendrá efecto inmediato, en lugar de requerir un reinicio de NVDA, o que se desactive el cambio automático de idioma.
 
 
 == Cambios para desarrolladores ==
@@ -82,6 +83,7 @@ Lo subrayable de esta versión incluye características para una lectura más fl
 - speech.REASON_* constants have been moved to controlTypes.
 - In controlTypes, speechRoleLabels and speechStateLabels have been renamed to just roleLabels and stateLabels, respectively.
 - Braille output is now logged at level input/output. First, the untranslated text of all regions is logged, followed by the braille cells of the window being displayed. (#2102)
+- subclasses of the sapi5 synthDriver can now override _getVoiceTokens and extend __init__ to support custom voice tokens such as with sapi.spObjectTokenCategory to get tokens from a custom registry location.
 
 
 = 2011.3 =
