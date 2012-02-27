@@ -34,7 +34,7 @@ Le principali novità di questa versione si concentrano su una lettura del brail
 <LI>In modalità navigazione, è possibile attivare un oggetto direttamente utilizzando una barra braille. Sarà sufficiente fare doppio click con il cursor routing corrispondente, oppure, nel caso il cursore sia già alla posizione desiderata, basterà un click solo. (<A HREF="http://www.nvda-project.org/ticket/1893">#1893</A>)
 <LI>Introdotto un supporto di base nelle aree web di Itunes, come lo store. Possono essere supportate anche altre applicazioni che utilizzino WebKit 1. (<A HREF="http://www.nvda-project.org/ticket/734">#734</A>)
 <LI>Nei libri in Adobe Digital Edition 1.8.1 e versioni successive, le pagine verranno girate automaticamente anche utilizzando l'opzione dire tutto. (<A HREF="http://www.nvda-project.org/ticket/1978">#1978</A>)
-<LI>Nuova tabella di traduzione Braille: Portoghese Grado 2. (<A HREF="http://www.nvda-project.org/ticket/2014">#2014</A>)
+<LI>Nuove tabelle di traduzione Braille: Portoghese Grado 2, Islandese 8 punti Braille Computer, Tamil Grado 1, Spagnolo 8 punti Braille Computer, Farsi Grado 1. (<A HREF="http://www.nvda-project.org/ticket/2014">#2014</A>)
 <LI>E' ora possibile configurare dalla finestra Formato documento se i frame debbano essere annunciati o meno, tramite l'opzione Leggi Frame. (<A HREF="http://www.nvda-project.org/ticket/1900">#1900</A>)
 <LI>Viene attivata automaticamente la modalità riposo per il programma Openbook. (<A HREF="http://www.nvda-project.org/ticket/1209">#1209</A>)
 <LI>In Poedit, ora i traduttori sono in grado di leggere automaticamente i commenti estratti e i commenti aggiunti nelle traduzioni. I messaggi che risultano non ancora tradotti o che sono incerti sono marcati con un asterisco e viene prodotto un beep quando li si raggiunge. (<A HREF="http://www.nvda-project.org/ticket/1811">#1811</A>)
@@ -51,7 +51,7 @@ Le principali novità di questa versione si concentrano su una lettura del brail
 <LI>Molte informazioni in braille sono state abbreviate. (<A HREF="http://www.nvda-project.org/ticket/1955">#1955</A>, <A HREF="http://www.nvda-project.org/ticket/2043">#2043</A>)
 <LI>Quando il cursore, oppure il cursore di controllo, viene spostato, il Braille lo seguirà correttamente come se avvenisse uno scorrimento manuale. Il risultato è una lettura più fluida quando l'opzione "lettura per paragrafi", o "evita di spezzare le parole", è attiva. (<A HREF="http://www.nvda-project.org/ticket/1996">#1996</A>)
 <LI>Aggiornamento alla nuova tabella Braille Spagnola Grado1
-<LI>Aggiornamento a libblouis braille translator 2.4.0.
+<LI>Aggiornamento a libblouis braille translator 2.4.1.
 </UL>
 
 <H3>Bug corretti</H3>
@@ -82,6 +82,9 @@ Le principali novità di questa versione si concentrano su una lettura del brail
 <LI>Il Braille ora rispetta correttamente le impostazioni che influenzano la rappresentazione dei tasti caldi  degli oggetti, informazioni sulla loro posizione e descrizione.
 <LI>Nelle applicazioni Mozilla, cambiare dalla modalità navigazione alla modalità focus ora funziona correttamente anche con il braille attivo. (<A HREF="http://www.nvda-project.org/ticket/2095">#2095</A>)
 <LI>Se si utilizza un tasto cursor routing per spostare il cursore all'ultimo carattere di una riga o di un paragrafo, e questo carattere è uno spazio bianco, NVDA eseguirà l'operazione correttamente invece di portare il cursore all'inizio del testo. (<A HREF="http://www.nvda-project.org/ticket/2096">#2096</A>)
+<LI>NVDA funziona di nuovo correttamente con la sintesi vocale Audiologic. (<A HREF="http://www.nvda-project.org/ticket/2109">#2109</A>)
+<LI>Vengono elaborati correttamente i documenti in Microsoft Word come multilinea, di modo che lo scorrimento con un display braille sia fluido e senza intoppi.
+<LI>In Microsoft Internet Explorer, non vengono più generati errori in caso il focus venga dato su alcuni controlli abbastanza rari. (<A HREF="http://www.nvda-project.org/ticket/2121">#2121</A>)
 </UL>
 
 <H3>Cambiamenti per sviluppatori</H3>
@@ -100,13 +103,10 @@ Le principali novità di questa versione si concentrano su una lettura del brail
   </UL>
  </UL>
 <LI>Implementato nelle funzioni di log anche l'output del braille. (<A HREF="http://www.nvda-project.org/ticket/2102">#2102</A>)
-</UL>
-
-<H2>2011.3</H2>
-
-<H3>Novità</H3>
-
-<UL>
+<LI>Le sottoclassi di Sapi5 Synthdrivers possono sovrascrivere _getVoiceTokens  e estendere <U>init</U> per supportare token di voce personalizzati come  con sapi.spObjectTokenCategory per ottenere token da una locazione di registro personalizzata.
+<P></P>
+= 2011.3 =
+== Novità ==
 <LI>NVDA ora è in grado di modificare la lingua di Espeak al volo, quando vengono letti documenti pdf oppure pagine web, purché essi contengano informazioni appropriate per la lingua. Le opzioni sul cambio automatico della lingua/dialetto possono essere modificate nelle impostazioni voce. (<A HREF="http://www.nvda-project.org/ticket/845">#845</A>)
 <LI>Viene supportato Java Access Bridge 2.0.2, che include il supporto per RunTime Java a 64 bit.
 <LI>Nelle applicazioni Mozilla Gecko (ad esempio Firefox), vengono annunciati i livelli di intestazione anche nella navigazione ad oggetti.
@@ -163,6 +163,7 @@ Le principali novità di questa versione si concentrano su una lettura del brail
 <LI>NVDA ora funzionerà in maniera nettamente migliore nelle finestre  di dialogo di alcune applicazioni distribuite con Windows Xp, come ad esempio la finestra informazioni in Notepad e la finestra informazioni in Windows. (<A HREF="http://www.nvda-project.org/ticket/1853">#1853</A>, <A HREF="http://www.nvda-project.org/ticket/1855">#1855</A>)
 <LI>Risolti gli errori della funzione "spostarsi parola per parola" nei controlli editazione di Windows. (<A HREF="http://www.nvda-project.org/ticket/1877">#1877</A>)
 <LI>Lo spostamento al di fuori di un campo editazione di testo servendosi della freccia sinistra, superiore o pagina su, mentre ci si trova in modalità focus, ora attiverà la modalità navigazione, se la funzione modalità focus automatica per i movimenti del cursore è attiva. (<A HREF="http://www.nvda-project.org/ticket/1733">#1733</A>)
+<LI>La rinominazione di simboli e della punteggiatura effettuata da un utente avrà effetto immediato, piuttosto che dopo un riavvio di NVDA o dover impostare l'opzione rilevamento lingue su disattivo.
 </UL>
 
 <H2>2011.2</H2>
