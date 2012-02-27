@@ -3,10 +3,10 @@
 <HEAD>
 <META NAME="generator" CONTENT="http://txt2tags.org">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE>Quoi de Neuf dans NVDA</TITLE>
+<TITLE>fQuoi de Neuf dans NVDA</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
-<H2>Quoi de Neuf dans NVDA</H2>
+<H2>fQuoi de Neuf dans NVDA</H2>
 </CENTER>
 
 
@@ -36,7 +36,7 @@ Les apports majeurs de cette version incluent des fonctionnalités pour une lect
 <LI>En mode navigation, on peut activer l'objet sous le curseur à partir du terminal braille. Ca se fait en pressant la touche de routage curseur correspondant à la position du curseur. Si le curseur n'est pas encore à la position souhaitée, il faut presser deux fois la touche. (<A HREF="http://www.nvda-project.org/ticket/1893">#1893</A>)
 <LI>Support de base des zones web telles que le magasin dans Itune. 
 <LI>Dans les livres sous Adobe Digital Editions 1.8.1 et au-delà, les pages sont maintenant tournées automatiquement en mode dire tout.
-<LI>Nouvelle table de conversion braille : Portugais grade 2. (<A HREF="http://www.nvda-project.org/ticket/2014">#2014</A>)
+<LI>Nouvelle table de conversion braille : Portugais grade 2, Islandais informatique 8 points, Tamoul grade 1, Espagnol informatique 8 points, Farsi grade 1. (<A HREF="http://www.nvda-project.org/ticket/2014">#2014</A>)
 <LI>L'annonce des cadres dans les documents peut maintenant être configurée dans le dialogue de mise en forme des documents. (<A HREF="http://www.nvda-project.org/ticket/1900">#1900</A>)
 <LI>Le mode veille est automatiquement activé quand on utilise Openbook. (<A HREF="http://www.nvda-project.org/ticket/1209">#1209</A>)
 <LI>Sous Poedit, les traducteurs peuvent maintenant lire les commentaires ajoutés par les traducteurs ou extraits automatiquement. Les messages non traduits ou confus sont marqués par une étoile et on entend un bip quand on passe dessus. (<A HREF="http://www.nvda-project.org/ticket/1811">#1811</A>)
@@ -54,11 +54,9 @@ Les apports majeurs de cette version incluent des fonctionnalités pour une lect
 <LI>Quand le curseur de revue ou le curseur système se déplacent, le braille défile maintenant de la même manière que par le défilement manuel. Ceci est plus cohérent quand le Braille est configuré pour une lecture par paragraphe ou pour éviter la coupure de mots. (<A HREF="http://www.nvda-project.org/ticket/1996">#1996</A>)
 <LI>Mise à jour de la table Espagnole Grade 1.
 <LI>Mise à jour du convertisseur braille Liblouis à la version 2.4.0.
-</UL>
-
-<H3>Corrections de Bogues</H3>
-
-<UL>
+<LI>Mise à jour du convertisseur braille Liblouis à la version 2.4.1.
+<P></P>
+== Corrections de Bogues ==
 <LI>Sous Windows 8, le focus n'est plus retiré intempestivement de la zone de recherche de l'explorateur ce qui empêchait NVDA d'interagir avec elle.
 <LI>importantes améliorations de performances durant la lecture d'un document Microsoft Word quand l'annonce automatique des changements de format du document est activée ce qui rend plus confortable la vérification du format d'un texte. Les performances générales peuvent aussi être améliorées pour certains utilisateurs.
 <LI>Le mode navigation est maintenant utilisé pour les contenus Adobe Flash.
@@ -84,6 +82,13 @@ Les apports majeurs de cette version incluent des fonctionnalités pour une lect
 <LI>Le Braille respecte correctement les réglages pour l'affichage des touches de raccourci des objets, de l'information de rang et des descriptions.
 <LI>Dans les applications Mozilla, le passage entre le mode formulaire et le mode navigation n'est plus ralenti quand le Braille est activé.
 <LI>Amener le curseur sur l'espace situé à la fin d'un paragraphe en utilisant les routines curseur Braille ne  ramène plus au début du texte. (<A HREF="http://www.nvda-project.org/ticket/2096">#2096</A>)
+<LI>NVDA fonctionne de nouveau correctement avec le synthétiseur Audiologic Tts3. (<A HREF="http://www.nvda-project.org/ticket/2109">#2109</A>)
+<LI>Les documents Microsoft Word sont correctement traités comme multilignes. Cela permet un comportement plus approprié du Braille quand le document est en focus.
+<LI>Sous Microsoft Internet Explorer, il n'y a plus d'erreur quand le focus se trouve sur certains contrôles rares (<A HREF="http://www.nvda-project.org/ticket/2121">#2121</A>)
+<LI>NVDA fonctionne maintenant correctement dans plusieurs dialogues "à propos" dans les applications distribuées avec Windows XP, parmi lesquelles le dialogues "à propos" du bloc-notes. (<A HREF="http://www.nvda-project.org/ticket/1855">#1855</A>) et celui de Windows.  
+<LI>Correction de la revue par mots dans les champs d'édition de Windows. (<A HREF="http://www.nvda-project.org/ticket/1877">#1877</A>)
+<LI>quitter un champ d'édition avec flèche-haut, flèche-gauche ou page-précédente quand on est en mode formulaire passe maintenant automatiquement en mode navigation quand le fode formulaire automatiquement au déplacement du curseur est activé. (<A HREF="http://www.nvda-project.org/ticket/1733">#1733</A>)
+<LI>L changement de nom d'une ponctuation ou d'un symbole prendra effet instantannément sans nécessiter un redémarrage de NVDA.
 </UL>
 
 <H3>Changements pour les Développeurs</H3>
@@ -96,6 +101,12 @@ Les apports majeurs de cette version incluent des fonctionnalités pour une lect
  <LI>Ceci est utilisé par le Braille pour activer la position en utilisant les curseur routines sur les afficheurs braille. Cependant, il pourrait y avoir d'autres utilisations dans le futur.
  </UL>
 <LI>TreeInterceptors et NVDAObjects qui n'exposent qu'une page de texte à la fois peuvent prendre en compte le défilement automatique des pages en mode "dire tout" en utilisant le mix-in textInfos.DocumentWithPageTurns. (<A HREF="http://www.nvda-project.org/ticket/1978">#1978</A>)
+<LI>Plusieurs contrôles et valeurs de constantes ont été renommés ou déplacés= (<A HREF="http://www.nvda-project.org/ticket/228">#228</A>)
+<LI>Les constantes speech.REASON_* ont été déplacées dans controlTypes.
+  <UL>
+  <LI>Dans controlTypes, speechRoleLabels et speechStateLabels ont été renommées respectivementen roleLabels and stateLabels.
+  </UL>
+<LI>L'affichage Braille est maintenant journalisé au niveau entrée/sortie. D'abord, le texte non converti de otutes les régions est journalisé suivi par les cellules braille de la fenêtre en cours d'affichage. (<A HREF="http://www.nvda-project.org/ticket/2102">#2102</A>)
 </UL>
 
 <H2>2011.3</H2>
@@ -173,7 +184,6 @@ Cela supprime la double annonce de l'étiquette pour certains champs de formulai
 <LI>En mode navigation dans les applications utilisant Mozilla Gecko 10 ou au-delà (comme Firefox 10), le curseur se positionne plus souvent correctement quand on charge une page avec une ancre cible. (<A HREF="http://www.nvda-project.org/ticket/360">#360</A>)
 <LI>En mode navigation dans les applications Mozilla Gecko (ex : Firefox), les étiquettes des images sont maintenant présentées.
 <LI>Avec le suivi de la souris activé, le passage de la souris sur certains champs d'édition n'entraîne plsu le plantage de l'application.
-<LI>NVDA fonctionne maintenant correctement dans certains dialogues "à propos" d'applications distribuées avec Windows XP telles que le dialogue "à propos" du bloc-notes ou le dialogue "à propos" de Windows. (<A HREF="http://www.nvda-project.org/ticket/1853">#1853</A>) (<A HREF="http://www.nvda-project.org/ticket/1855">#1855</A>)
 </UL>
 
 <H3>Changements pour les Développeurs</H3>
