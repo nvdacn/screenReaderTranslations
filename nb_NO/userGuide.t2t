@@ -164,7 +164,7 @@ Enten høyreklikk på NVDA ikonet i systemstatusfeltet, eller få tilgang til sy
 Når menyen kommer opp, kan du bruke piltastene til å navigere i menyen, og enter-tasten for å aktivere et element.
 
 ++ Grunnleggende tastekommandoer ++
-|| Name | Key | Description |
+%kc:beginInclude
 || Navn | Tast | Beskrivelse |
 | Stopp tale | Ctrl | Slutter øyeblikkelig å snakke |
 | Pause tale | Skift | Pauser øyeblikkelig tale. Ved å trykke den igjen vil fortsette å snakke der den slapp (hvis pause støttes av gjeldende synthesizer) |
@@ -313,3 +313,150 @@ Oppsettet er illustrert som følger:
 | Forrige linje | Gjeldende linje | Neste linje |
 | Forrige ord | Gjeldende ord | Neste ord |
 | Forrige tegn | Gjeldende tegn | Neste tegn |
+
+++ Flat lesing ++ [FlatReview]
+Normalt kan du vanligvis bare lese innholdet i et enkelt [Objekt #Objects], noen objekter lar deg lese innholdet til objekter inni.
+Komplekse dokumenter lar deg lese alt innholdet og programvinduer du kan se teksten på skjermen som det vises visuelt.
+Dette kalles flat lesing.
+Dette ligner på skjermlesing eller musepekerfunksjonalitet i mange andre Windows skjermlesere.
+
+Når du går til flat lesing, vil du bli plassert på plasseringen til den gjeldende [navigatsjonsobjekt #ObjectNavigation].
+Hvis du ikke har brukt objektnavigasjon, vil dette vanligvis være objektet som har [fokuset #SystemFocus].
+For eksempel, hvis navigasjonsobjektet er en knapp, vil du vanligvis bli plassert på teksten på knappen i flat lesing.
+Du kan deretter lese teksten ved hjelp av [tekstlesekommandoer #ReviewingText].
+Du kan også navigere direkte til objektet som har den aktuelle posisjonen til lesemarkøren, slik at du kan bruke [objekt navigasjon #ObjectNavigation] derfra.
+
+Merk at leselisten følger [fokuset #SystemFocus] og [markøren #SystemCaret] som standard, istedet for enn objekt navigasjon og tekstlesing.
+Hvis du vil at den skal følge objektnavigasjon og tekstlesing i stedet, må du [konfigurere leselisten til å bli bundet til #BrailleTether] lesing.
+
+Følgende to kommandoer brukes for å bytte til / fra flat lesing:
+%kc:beginInclude
+|| Navn | Stasjonærtast | Bærbartast | Beskrivelse |
+| Flytt til flat lesing | NVDA+NumPad7 | NVDA+PageUp | Flytter til flat lesing, plasserer deg ved posisjonen av gjeldende navigasjonsobjektet, slik at du kan se på skjermen (eller dokumentet hvis du er inne i et) med tekstenlesings kommandoer. |
+| Flytt til objektet fra flat lesing | NVDA+NumPad1 | NVDA+PageDown | Navigerer til objektet representert ved teksten på gjeldende posisjon av lesemarkøren i flat lesing |
+%kc:endInclude
+
+++ Navigere med musen ++
+Når du beveger musen, leser NVDA som standard den teksten som er under musepekeren når pekeren beveger seg over den.
+Når støttet, vil NVDA lese den omkringliggende tekstavsnitt, men enkelte kontroller kan bare leses på linje.
+
+NVDA kan konfigureres til også å lese den typen [objekt #Objects] under musen når den beveger seg (f.eks liste, knapp, etc.).
+Dette kan være nyttig for helt blinde brukere, som noen ganger, er teksten ikke nok.
+
+NVDA gir en måte for brukerne å forstå hvor musen er plassert i forhold til dimensjonene på skjermen ved å si musepekerens koordinater som lyd pip.
+Jo høyere musen er på skjermen, jo høyere er pipene.
+Den videre til venstre eller høyre musen er plassert på skjermen, vil ytterligere venstre eller høyre lyden skal spilles (forutsatt at brukeren har stereohøyttalere eller hodetelefoner).
+
+Disse ekstra mus funksjonene er ikke aktivert som standard i NVDA.
+Hvis du ønsker å dra nytte av dem, kan du konfigurere dem fra [Museinnstillinger #MouseSettings] dialogen, som finnes i NVDA Innstillinger.
+
+Selv om en fysisk mus eller styreflate bør brukes til å navigere med musen, har NVDA noen viktige kommandoer knyttet til mus:
+%kc:beginInclude
+|| Navn | Stasjonærtast | Bærbartast | Beskrivelse |
+| Venstre museknapp klikk | NumPad/ | NVDA+Pil Venstre | Klikker på venstre museknapp en gang. Dobbeltklikk kan utføres ved å trykke på denne tasten to ganger i rask rekkefølge |
+| Venstre museknapp lås | Skift+NumPad/ | NVDA+Skift+Pil Venstre | Låser venstre museknapp nede. Trykk igjen for å slippe den. Du drar musen, trykker du denne tasten for å låse den venstre knappen nede og deretter flytte musen enten fysisk eller bruke en av de andre muserouting kommandoene |
+| Høyre museknapp klikk | NumPad* | NVDA+Pil Høyre | Klikker på høyre museknapp en gang. |
+| Høyre museknapp lås | Skift+NumPad* | NVDA+Skift+Pil Høyre | Låser høyre museknapp nede. Trykk igjen for å slippe den. Du drar musen, trykker du denne tasten for å låse den høyre knappen nede og deretter flytte musen enten fysisk eller bruke en av de andre mus routing kommandoer |
+| Flytt musen til gjeldende navigasjonsobjekt | NVDA+Numpad/ | NVDA+Skift+F9 | Flytter musepekeren til plasseringen til det gjeldende navigasjonsobjektet og lesemarkøren |
+| Naviger til objektet under musen | NVDA+NumPad* | NVDA+Skift+F10 | Sett navigasjosnobjektet til objektet i posisjonen til musepekeren |
+%kc:endInclude
+
++ Bla Modus +
+Komplekse skrivebeskyttede dokumenter som web sider leses i NVDA med Bla lesing.
+Dette gjelder også dokumenter i Mozilla Firefox, Microsoft Internet Explorer, Google Chrome, Adobe Reader og Adobe Flash.
+
+I nettlesermodus er innholdet til dokumentet tilgjengelig i en flat representasjon som kan navigeres med piltastene som om det var et vanlig tekst dokument.
+Alle NVDAs [systemmarkør #SystemCaret] tastekommandoer vil fungere i denne modusen, f.eks si alle, les formatering, bord navigeringskommandoene osv.
+Informasjon som om teksten er en link, overskrift, osv. er lest sammen med teksten når du flytter.
+
+Noen ganger trenger du å kommunisere direkte med kontroller i disse dokumentene.
+For eksempel, må du gjøre dette for redigerbare tekstfelt og lister, slik at du kan skrive tegn og bruk piltastene til å arbeide med kontrollen.
+Dette gjør du ved å bytte til fokusmodus, hvor nesten alle tastene er sendt til kontrollen.
+Når i Bla modus, som standard, vil NVDA automatisk bytte til fokusmodus hvis du klikker på en bestemt kontroll som krever det.
+Motsatt vil tabbe seg til eller klikke på en kontroll som ikke krever Fokusmodusbryter tilbake til bla-modus.
+Du kan også trykke inn eller plass til å bytte til fokusere modus på kontroller som krever det.
+Ved å trykke escape byttes det tilbake til bla-modus.
+I tillegg kan du manuelt påtvinge fokusmodus, etter det vil den forbli i kraft inntil du velger å deaktivere den.
+
+%kc:beginInclude
+|| Navn | Tast | Beskrivelse |
+| Veksle mellom bla/fokusmoduser | NVDA+Space | Veksler mellom fokusmodus, og bla modus |
+| Avslutt fokusmodus | Escape | Bytter tilbake til bla modus hvis fokusmodus ble tidligere slått til automatisk |
+| Oppdater nettlesermodus modus dokument | NVDA+f5 | Oppdaterer gjeldende dokumentinnhold (nyttig hvis vist innhold synes å mangle i dokumentet) |
+| Finn | NVDA+Ctrl+F | Popper opp en dialogboks der du kan skrive inn tekst å finne i det gjeldende dokumentet |
+| Finn neste | NVDA+F3 | Finner neste forekomst av teksten i dokumentet som du tidligere søkte etter |
+| Finn forrige | NVDA+Skhift+F3 | Finner forrige forekomst av teksten i dokumentet du tidligere søkte etter |
+%kc:endInclude
+
+
+++ Enkeltbokstavnavigasjon ++
+Mens i nettlesermodus modus, for raskere navigasjon, gir NVDA også enkelt tegn-taster til å hoppe til bestemte felt i dokumentet.
+
+%kc:beginInclude
+Følgende taster hopper til neste tilgjengelige element, mens med Skift-tasten hopper til forrige element:
+- H: Overskrift
+- L: Liste
+- I: Listeelement
+- T: Tabell
+- K: Lenke
+- N: Tekst uten lenke
+- F: Skjemafelt
+- U: Ikke besøkt lenke
+- V: Besøkt lenke
+- E: Redigeringsfelt
+- B: Knapp
+- X: Avkrysningsboks
+- C: Kombinasjonsboks
+- R: Radioknapp
+- Q: Blokksitat
+- S: Separator
+- M: Ramme
+- G: Grafikk
+- D: ARIA landemerke
+- O: Innebygd objekt
+- 1 til 6: Overskriftene på nivå 1 til 6
+-
+%kc:endInclude
+
+++ Elementlisten ++
+Elementlisten gir tilgang til en liste over enten lenker, overskrifter eller ARIA landemerker i dokumentet.
+Radioknappene lar deg bytte mellom disse tre typer informasjon.
+Det er også et redigeringsfelt i dialogen som lar deg filtrere listen for å hjelpe deg å søke etter et bestemt element på siden.
+Når du har valgt et element, kan du bruke de medfølgende knappene i dialogboksen for å flytte til eller aktivere dette elementet.
+%kc:beginInclude
+|| Navn | Tast | Beskrivelse |
+| Bla modus elementliste | NVDA+F7 | Åpner Elementlisten som inneholder linker, overskrifter og landemerker i det gjeldende dokumentet |
+%kc:endInclude
+
+++ Innebuygde Objekter ++
+Sider kan inkludere rikt innhold ved hjelp av teknologier som Adobe Flash og Sun Java.
+Når disse finnes i nettlesermodus, vil NVDA lese "innebygd objekt".
+Du kan gå inn i disse objektene for å samhandle med dem.
+Hvis det er tilgjengelig, kan du deretter tabbe rundt i det og samhandle med det som alle andre programmer.
+En tastekommando gis for å gå tilbake til det opprinnelige siden som inneholder det innebygde objektet:
+%kc:beginInclude
+|| Navn | Tast | Beskrivelse |
+| Flytt til innehold i nettlesermodus dokument | NVDA+Ctrl+Mellomrom | Flytter fokus ut av det nåværende innebygde objektet, og inn i dokumentet som inneholder det |
+%kc:endInclude
+
++ Applikasjon Spesifike NVDA kommandoer +
+NVDA har sine egne ekstra kommandoer for enkelte programmer for å gjøre enkelte oppgaver enklere eller for å gi tilgang til funksjonalitet som ellers ikke er tilgjengelig for brukere med skjermleser.
+
+++ Foobar2000 ++
+%kc:beginInclude
+|| Navn | Tast | Beskrivelse |
+| Les gjenværende tid | Ctrl+Skift+R | Leser den gjenværende tiden av det gjeldende sporet, hvis noen. |
+%kc:endInclude
+
+++ Miranda IM ++
+%kc:beginInclude
+|| Navn | Tast | Beskrivelse |
+| Les siste melding | NVDA+Ctrl+1-4 | Leser en av de siste meldingene, avhengig av tallet trykket, f.eks NVDA+Ctrl+2 leser nest nyeste meldingen. |
+%kc:endInclude
+
+++ Poedit ++
+%kc:beginInclude
+|| Navn | Tast | Beskrivelse |
+| Les Kommentarer Vindu | Ctrl+Skift+C | Leser eventuelle kommentarer i kommentarfeltvinduet. |
+| Leser automatisk kommentarer vindu | Ctrl+Skift+A | Leser eventuelle kommentarer i det automatiske kommentarvinduet. |
+%kc:endInclude
