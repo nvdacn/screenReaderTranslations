@@ -1,0 +1,51 @@
+#!/usr/bin/env python
+import cgi
+from re import findall
+from subprocess import PIPE, Popen
+
+form = cgi.FieldStorage() # instantiate only once!
+
+print "Content-type: text/plain\n"
+
+
+author = form['author'].value if form.has_key('author') else 'pratchett'
+action = form['action'].value if form.has_key('action') else 'wrote'
+body = form['body'].value if form.has_key('body') else 'the colour of magic'
+title = form['title'].value if form.has_key('title') else 'disc world'
+subject = "%s %s %s" % (author, action, title)
+
+#declare email addresses for languages
+addresses = {
+    'all': ['mesar.hameed@gmail.com'],
+    'ar': ['fatma.mehanna@gmail.com'],
+    'bg': ['zahari.yurukov@gmail.com'],
+    'de': ['bernd_dorer@yahoo.de', 'xkill85@gmx.net'],
+    'es': ['quetzatl@eresmas.net'],
+    'fi': ['jani.kinnunen@wippies.fi'],
+    'fr': ['michel.such@free.fr'],
+    'gl': ['quetzatl@eresmas.net'],
+    'hu': ['oaron1@gmail.com'],
+    'it': ['simone.dalmaso@juvox.it'],
+    'ja': ['tsuji-katsutoshi@mitsue.co.jp'],
+    'nl': ['bram@bramd.nl'],
+    'nb_NO': ['balubathebrave@gmail.com', 'bjornar@seppola.net'],
+    'nn_NO': ['balubathebrave@gmail.com', 'bjornar@seppola.net'],
+    'pl': ['killer@tyflonet.com'],
+    'pt_BR': ['clever92000@yahoo.com.br', 'marlincgrodrigues@yahoo.com.br'],
+    'pt_PT': ['diogojoca@gmail.com'],
+    'ta': ['td.dinkar@gmail.com'],
+    'tr': ['cagrid@hotmail.com'],
+}
+
+
+
+rcpts = []
+for key in addresses.keys():
+    if findall(key+'/', body):
+        rcpts.extend(addresses[key])
+rcpts.extend(addresses['all'])
+
+p1 = Popen(['echo', '-e', body], stdout=PIPE)
+p2 = Popen(['mail', '-s', subject, ", ".join(rcpts)], stdin=p1.stdout)
+
+print "Notification sent."
