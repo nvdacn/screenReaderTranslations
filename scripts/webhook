@@ -48,4 +48,14 @@ rcpts.extend(addresses['all'])
 p1 = Popen(['echo', '-e', body], stdout=PIPE)
 p2 = Popen(['mail', '-s', subject, ", ".join(rcpts)], stdin=p1.stdout)
 
+f = open('/tmp/mail/webhook.log', 'a')
+f.write("--- start ---\n")
+f.write("rcpts: %s\n" % ", ".join(rcpts))
+f.write(subject: %s\n" % subject)
+f.write(body: %s\n" % body)
+f.write("-- raw data ---\n")
+for key in form.keys():
+    f.write("%s='%s'\n" % (key, form[key].value))
+f.write("--- end ---\n")
+f.close()
 print "Notification sent."
