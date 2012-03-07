@@ -57,7 +57,7 @@ revCounter=$(($revCounter+1))
 prevRev=$rev
 done
 if [ "$revCounter" != "0" ]; then
-helperMsg="$revCounter in $diffsDir (${newRevs[*]}); "
+helperMsg="$revCounter in $diffsDir (${newRevs[*]}), "
 else
 helperMsg=''
 fi
