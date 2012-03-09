@@ -22,8 +22,7 @@
 - ブラウズモード使用中に、カーソル位置のオブジェクトを点字ディスプレイから有効化できるようになりました。カーソルがオブジェクト上にある時にタッチカーソルを押してください (カーソルがまだそこにない場合は2度押してください）。 (#1893)
 - iTunes Storeなどで使用されている、iTunesのWeb領域のサポートを開始しました。WebKit 1を使用している他のアプリケーションもサポートできるかもしれません。 (#734)
 - Adobe Digital Editions 1.8.1以降において、すべて読み上げを使用中の場合、自動的にページをめくれるようになりました。 (#1978)
-- 新しい点字の変換テーブル、ポルトガル語2級、アイスランド語8点コンピューター点字及びタミル語1級を追加しました。
- (#2014)
+- 新しい点字の変換テーブル、ポルトガル語2級、アイスランド語8点コンピューター点字、タミル語1級、スペイン語8点コンピューター点字及びペルシャ語1級を追加しました。 (#2014)
 - ドキュメント内のフレームを通知するかどうかを書式設定ダイアログから変更できるようになりました。 (#1900)
 - OpenBookを使用する際、自動的にスリープモードを有効化するようにしました。 (#1209)	
 - Poeditにおいて、翻訳者によって追加されたコメント及び自動的に展開されたコメントをを読むことができます。み翻訳や翻訳があいまいなメッセージはアスタリスクでマークされ、そこに移動するとビープ音が聞こえます。 (#1811)
@@ -70,6 +69,8 @@
 - 再度Audiologic Tts3シンセサイザーが正常に動作するようになりました。 (#2109)
 - Microsoft Wordd文書が複数行として扱われるようになりました。これにより、文書にフォーカスがある際の点字表示がより適切に動作するようになりました。
 - Microsoft Internet Explorerにおいて、いくつかのレアなコントロールにフォーカスした時にエラーが発生しなくなりました。(#2121)
+- 句読点及び記号の発音のユーザーによる変更が、NVDAを再起動することなく、または自動言語変更を無効化することなくすぐに反映されるようになりました。
+- eSpeakを使用中で、NVDAログビューアーの名前をつけて保存のダイアログを開いた時に読み上げが停止しないようになりました。 (#2145)
 
 %== 開発者向けの変更 ==
 %- There is now a remote Python console for situations where remote debugging is useful. See the Developer Guide for details.
@@ -81,6 +82,7 @@
 %- speech.REASON_* constants have been moved to controlTypes.
 %- In controlTypes, speechRoleLabels and speechStateLabels have been renamed to just roleLabels and stateLabels, respectively.
 %- Braille output is now logged at level input/output. First, the untranslated text of all regions is logged, followed by the braille cells of the window being displayed. (#2102)
+%- subclasses of the sapi5 synthDriver can now override _getVoiceTokens and extend __init__ to support custom voice tokens such as with sapi.spObjectTokenCategory to get tokens from a custom registry location.
 
 
 = 2011.3 =
