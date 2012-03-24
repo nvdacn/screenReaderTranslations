@@ -2,6 +2,7 @@
 import cgi
 from re import findall
 from subprocess import PIPE, Popen
+from addresses import addresses
 
 form = cgi.FieldStorage() # instantiate only once!
 
@@ -14,35 +15,6 @@ body = form['body'].value if form.has_key('body') else 'the colour of magic'
 title = form['title'].value if form.has_key('title') else 'disc world'
 subject = "SRT %s" % title
 body = "%s %s %s\n\n%s" %(author, action, title, body)
-
-#declare email addresses for languages
-addresses = {
-    'all': ['mesar.hameed@gmail.com'],
-    'ar': ['fatma.mehanna@gmail.com'],
-    'bg': ['zahari.yurukov@gmail.com'],
-    'da': ['kontakt@nvda.dk'],
-    'de': ['bernd_dorer@yahoo.de', 'xkill85@gmx.net'],
-    'es': ['quetzatl@eresmas.net'],
-    'fi': ['jani.kinnunen@wippies.fi'],
-    'fr': ['michel.such@free.fr'],
-    'gl': ['quetzatl@eresmas.net'],
-    'hr': ['hrvojekatic@gmail.com', 'mario.percinic@gmail.com'],
-    'hu': ['oaron1@gmail.com'],
-    'it': ['simone.dalmaso@juvox.it'],
-    'ja': ['tsuji-katsutoshi@mitsue.co.jp', 'nakamura-kiyochika@mitsue.co.jp'],
-    'nl': ['bram@bramd.nl', 'sopthof@xs4all.nl'],
-    'nb_NO': ['balubathebrave@gmail.com', 'bjornar@seppola.net', 'mkroken@gmail.com'],
-    'nn_NO': ['balubathebrave@gmail.com', 'bjornar@seppola.net', 'mkroken@gmail.com'],
-    'pl': ['killer@tyflonet.com'],
-    'pt_BR': ['clever92000@yahoo.com.br', 'marlincgrodrigues@yahoo.com.br'],
-    'pt_PT': ['diogojoca@gmail.com'],
-    'ta': ['td.dinkar@gmail.com'],
-    'tr': ['cagrid@hotmail.com'],
-    'zh_CN': ['qt06.com@139.com'],
-    'zh_HK': ['ericycy@gmail.com'],
-    'zh_TW': ['wangjanli@gmail.com', 'maro.zhang@gmail.com'],
-}
-
 
 
 rcpts = []
