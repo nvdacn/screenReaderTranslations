@@ -2,7 +2,7 @@
 import cgi
 from re import findall
 from subprocess import PIPE, Popen
-from addresses import addresses
+from addresses import addresses, email
 
 form = cgi.FieldStorage() # instantiate only once!
 
@@ -21,10 +21,8 @@ rcpts = []
 for key in addresses.keys():
     if findall(key+'/', body):
         rcpts.extend(addresses[key]['email'])
-rcpts.extend(addresses['all']['email'])
 
-p1 = Popen(['echo', '-e', body], stdout=PIPE)
-p2 = Popen(['mail', '-s', subject, ", ".join(rcpts)], stdin=p1.stdout)
+email(rcpts, subject, body, reason='webhook')
 
 f = open('/tmp/webhook.log', 'a')
 f.write("--- start ---\n")
