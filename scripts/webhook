@@ -9,19 +9,19 @@ form = cgi.FieldStorage() # instantiate only once!
 print "Content-type: text/plain\n"
 
 
-author = form['author'].value if form.has_key('author') else 'pratchett'
-action = form['action'].value if form.has_key('action') else 'wrote'
-body = form['body'].value if form.has_key('body') else 'the colour of magic'
-title = form['title'].value if form.has_key('title') else 'disc world'
-subject = "SRT %s" % title
-body = "%s %s %s\n\n%s" %(author, action, title, body)
+svnAuthor = form['author'].value if form.has_key('author') else 'pratchett'
+svnAction = form['action'].value if form.has_key('action') else 'wrote'
+svnBody = form['body'].value if form.has_key('body') else 'the colour of magic'
+svnTitle = form['title'].value if form.has_key('title') else 'disc world'
+svnSubject = "SRT %s" % title
+body = "%s %s %s\n\n%s" %(svnAuthor, svnAction, svnTitle, svnBody)
 
 
 rcpts = []
 for key in addresses.keys():
     if findall(key+'/', body):
-        rcpts.extend(addresses[key])
-rcpts.extend(addresses['all'])
+        rcpts.extend(addresses[key]['email'])
+rcpts.extend(addresses['all']['email'])
 
 p1 = Popen(['echo', '-e', body], stdout=PIPE)
 p2 = Popen(['mail', '-s', subject, ", ".join(rcpts)], stdin=p1.stdout)
