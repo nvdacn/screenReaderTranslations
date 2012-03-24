@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 import sys
+from subprocess import PIPE, Popen
 
 addresses = {
     'all': {
         'lang': 'all',
-        'email': ['Mesar hameed <mesar.hameed+srt@gmail.com>'], 
+        'email': ['Mesar hameed <mesar.hameed@gmail.com>'], 
     },
     'ar': { 
         'lang':'Arabic',
@@ -102,7 +103,7 @@ addresses = {
 
 def email(rcpts, subject, body):
     rcpts.extend(addresses['all']['email'])
-    to = "\"" + "\" \"".join(rcpts) + "\""
+    to = ", ".join(rcpts)
     p1 = Popen(['echo', '-e', body], stdout=PIPE)
     p2 = Popen(['mail', '-s', subject, to], stdin=p1.stdout)
 
@@ -112,4 +113,4 @@ if __name__ == "__main__" and len(sys.argv) == 4:
     if not addresses.has_key(lang):
         print "unable to find language: %s" %lang
         sys.exit()
-    email(addresses[lang]['email'], sys.argv[2], sys.arv[3])  
+    email(addresses[lang]['email'], sys.argv[2], sys.argv[3])  
