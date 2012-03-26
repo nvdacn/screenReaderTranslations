@@ -9,12 +9,12 @@ form = cgi.FieldStorage() # instantiate only once!
 print "Content-type: text/plain\n"
 
 
-svnAuthor = form['author'].value if form.has_key('author') else 'pratchett'
-svnAction = form['action'].value if form.has_key('action') else 'wrote'
-svnBody = form['body'].value if form.has_key('body') else 'the colour of magic'
-svnTitle = form['title'].value if form.has_key('title') else 'disc world'
-svnSubject = "SRT %s" % title
-body = "%s %s %s\n\n%s" %(svnAuthor, svnAction, svnTitle, svnBody)
+author = form['author'].value if form.has_key('author') else 'pratchett'
+action = form['action'].value if form.has_key('action') else 'wrote'
+body = form['body'].value if form.has_key('body') else 'the colour of magic'
+title = form['title'].value if form.has_key('title') else 'disc world'
+subject = "SRT %s" % title
+body = "%s %s %s\n\n%s" %(author, action, title, body)
 
 
 rcpts = []
@@ -22,7 +22,7 @@ for key in addresses.keys():
     if findall(key+'/', body):
         rcpts.extend(addresses[key]['email'])
 
-email(rcpts, subject, body, reason='webhook')
+email(rcpts, subject, body)
 
 f = open('/tmp/webhook.log', 'a')
 f.write("--- start ---\n")
