@@ -23,6 +23,10 @@ addresses = {
         'lang':'German',
         'email': ['Bernd Dorer <bernd_dorer@yahoo.de>', 'David Parduhn <xkill85@gmx.net>'],
     },
+    'el': {
+        'lang': 'Greek',
+        'email': ['access@e-rhetor.com'],
+    },
     'es': {
         'lang': 'Spanish',
         'email': ['Juan C. buno <quetzatl@eresmas.net>'],
