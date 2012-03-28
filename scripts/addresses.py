@@ -57,7 +57,7 @@ addresses = {
     },
     'ja': {
         'lang':'Japanese',
-        'email': ['Katsutoshi Tsuji <tsuji-katsutoshi@mitsue.co.jp>'],
+        'email': ['Katsutoshi Tsuji <tsuji-katsutoshi@mitsue.co.jp>', 'Nakamura Kiyochika <nakamura-kiyochika@mitsue.co.jp>'],
     },
     'nb_NO': {
         'lang':'Norwegian bokmål',
