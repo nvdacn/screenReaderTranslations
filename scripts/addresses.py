@@ -45,11 +45,11 @@ addresses = {
     },
     'hr': {
         'lang': 'Croatian',
-        'email': ['Hrvoje Katić <hrvojekatic@gmail.com>', 'Mario Percinic <mario.percinic@gmail.com>'],
+        'email': ['Hrvoje Katic <hrvojekatic@gmail.com>', 'Mario Percinic <mario.percinic@gmail.com>'],
     },
     'hu': {
         'lang': 'Hungarian',
-        'email': ['Áron Ócsvári <oaron1@gmail.com>'],
+        'email': ['Aron OcsvAri <oaron1@gmail.com>'],
     },
     'it': {
         'lang':'Italian',
