@@ -61,7 +61,7 @@ addresses = {
     },
     'nb_NO': {
         'lang':'Norwegian bokmål',
-        'email': ['David Hole <balubathebrave@gmail.com>', 'Bjørnar Seppola <bjornar@seppola.net>'],
+        'email': ['David Hole <balubathebrave@gmail.com>', 'Bjornar Seppola <bjornar@seppola.net>'],
     },
     'nl': {
         'lang':'Duch',
@@ -93,7 +93,7 @@ addresses = {
     },
     'zh_CN': {
         'lang':'Simplified Chinese',
-        'email': ['杨永全 <qt06.com@139.com>'],
+        'email': ['qt06.com@139.com'],
     },
     'zh_HK': {
         'lang': 'Traditional Chinese Hong Kong',
