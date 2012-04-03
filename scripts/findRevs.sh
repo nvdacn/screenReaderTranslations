@@ -26,7 +26,7 @@ return
 fi
 startRev=$(($startRev+1))
 #echo "my startRev is: $startRev"
-newRevs=`bzr log -r${startRev}.. $BZRDIR/$fpath/$fname | grep -P "^revno: [0-9]+$" | sort | awk '{printf("%d ", $2)}'`
+newRevs=`bzr log -r${startRev}.. $BZRDIR/$fpath/$fname | grep -P "^revno: [0-9]+" | sort | awk '{printf("%d ", $2)}'`
 echo "revs to be processed: $newRevs"
 prevRev=$startRev
 revCounter=0
