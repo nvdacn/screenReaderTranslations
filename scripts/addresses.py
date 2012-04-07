@@ -79,6 +79,10 @@ addresses = {
         'lang': 'Portuguese',
         'email': ['Diogo Costa <diogojoca@gmail.com>'],
     },
+'sk': {
+        'lang':'Slovak',
+        'email': ['Ondrej Rosik <ondrej.rosik@gmail.com>', 'Peter Vagner <peter.v@datagate.sk>'],
+    },
     'sv': {
         'lang':'Swedish',
         'email': ['Mesar Hameed <mhameed@src.gnome.org>'],
