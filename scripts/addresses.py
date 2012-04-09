@@ -15,6 +15,10 @@ addresses = {
         'lang':'Bulgarian',
         'email': ['Zahari Yurukov <zahari.yurukov@gmail.com>'],
     },
+'cz': {
+        'lang': 'Czech',
+        'email': ['Radek zalud <radek.zalud@seznam.cz>'],
+    },
     'da': {
         'lang': 'Danish',
         'email': ['Daniel K. Gartmann <kontakt@nvda.dk>'],
