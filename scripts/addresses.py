@@ -15,7 +15,7 @@ addresses = {
         'lang':'Bulgarian',
         'email': ['Zahari Yurukov <zahari.yurukov@gmail.com>'],
     },
-'cz': {
+    'cs': {
         'lang': 'Czech',
         'email': ['Radek zalud <radek.zalud@seznam.cz>'],
     },
