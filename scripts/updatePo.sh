@@ -36,7 +36,7 @@ bzr revert
 
 popd # >/dev/null 2>&1
 
-langs=(ar bg da de es fi fr gl hr hu it ja nl nb_NO nn_NO pl pt_BR pt_PT sk sv ta tr zh_CN zh_HK zh_TW)
+langs=(ar bg da de el es fi fr gl hr hu it ja nl nb_NO nn_NO pl pt_BR pt_PT sk sv ta tr zh_CN zh_HK zh_TW)
 for lang in ${langs[*]}; do
     echo "processing $lang"
     cd $lang
@@ -49,7 +49,7 @@ for lang in ${langs[*]}; do
     #
     bfuzzy=`$POCOUNT nvda.po | grep -i fuzzy | awk '{print \$2}'`
     buntranslated=`$POCOUNT nvda.po | grep -i untranslated | awk '{print \$2}'`
-    bmsg="$bfuzzy fuzzy & $buntranslated untranslated"
+    bmsg="$bfuzzy fuzzy and $buntranslated untranslated"
 
     # update po file from downloaded pot
     #
@@ -60,7 +60,7 @@ for lang in ${langs[*]}; do
     #
     afuzzy=`$POCOUNT nvda.po | grep -i fuzzy | awk '{print \$2}'`
     auntranslated=`$POCOUNT nvda.po | grep -i untranslated | awk '{print \$2}'`
-    amsg="$afuzzy fuzzy & $auntranslated untranslated"
+    amsg="$afuzzy fuzzy and $auntranslated untranslated"
 
     # checking if we need to do anything
     #
