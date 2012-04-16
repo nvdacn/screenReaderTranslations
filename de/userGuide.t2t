@@ -71,7 +71,7 @@ Wenn Sie die soeben heruntergeladene Datei ausführen, wird eine temporäre Kopi
 Außerdem werden Sie gefragt, ob Sie NVDA installieren, eine portable Version erstellen oder einfach die ausführung der temporären Kopie fortsetzen wollen.
 
 Falls Sie vorhaben, NVDA auf diesem Computer dauerhaft einzusetzen, werden Sie es vermutlich installieren wollen.
-Eine solche fest installierte Version von NVDA hat gegenüber einer portablen Version Vorteile wie automatischer Start nach der Anmeldung, die Erstellung von Verknüpgungen auf dem Desktop im Startmenü, die Fähigkeit den Anmeldebildschirm und Sicherheitsdialoge auszulesen. Dies ist mit einer portablen oder temporären Version nicht möglich.
+Eine solche fest installierte Version von NVDA hat gegenüber einer portablen Version Vorteile wie der automatische Start nach der Anmeldung, die Erstellung von Verknüpgungen auf dem Desktop und im Startmenü, die Fähigkeit den Windows-Anmeldung und Windows Sicherheitsdialoge auszulesen. Dies ist mit einer portablen oder temporären Version nicht möglich.
 Mit Hilfe einer installierten Kopie können sie auch jederzeit eine portable Version erstellen.
 
 Falls Sie NVDA auf einem usb-Stick oder einem anderen transportablen Medium mitnehmen möchten, können Sie eine portable Version erstellen.
@@ -484,14 +484,7 @@ Für manche Anwendungen stellt NVDA zusätzliche Tastenkombinationen bereit - et
 | verbleibende Zeit ausgeben | strg+umschalt+r | Falls grade ein Titel abgespielt wird, wird die verbleibende Zeit ausgegeben. |
 %kc:endInclude
 
-Technischer Hinweis: NVDA gewinnt die angaben über die verbleibende Zeit aus der Statuszeile. Falls die Tastenkombination nicht funktionieren sollte, kontrollieren Sie in den Foobar-Einstellungen in der Kategorie "display/unser interface" im Eingabefeld "Status bar", ob die verstrichene Zeit sowie die Gesamtlänge des aktuell abgespielten Titels in der statuszeile angezeigt werden. Streng genommen müssen die folgenden Bedingungen erfüllt sein, damit die Tastenkombination strg+Umschalt+R funbktioniert:
-- die einzelnen Elemente der Statuszeile müssen in Gruppen unterteilt werden, wobei die Gruppen durch einen senkrechten Strich getrennt werden müssen.
-- Die Angaben über die verstrichene Zeit und die Gesamtlänge müssen in der fünften Gruppe stehen.
-- Die Zeitangaben müssen durch einen Schrägstrich getrennt sein.
-- Die Zeitangaben müssen in der Reihenfolge "verstrichene zeit / Gesamtlänge" aufgeführt sein.
-Das folgende Anzeigeformat ist in Foobar 1.1.10 die Standardeinstellung und  funktioniert ordnungsgemäß mit nvda:
-%codec% | %bitrate% kbps | %samplerate% Hz | %channels% | %playback_time%[ / %length%]
-Weitere Informationen über die möglichen Daten, die in der Statuszeile angezeigt werden können, erhalten Sie in den foobar-Einstellungen über den Link "syntax help".
+Hinweis: Der Befehl "verbleibende Zeit ausgeben" funktioniert nur, wenn die Standard-Einstellungen für die Statuszeile gewählt sind.
 
 ++ Miranda IM ++
 %kc:beginInclude
@@ -521,7 +514,6 @@ Die Allgemeinen Einstellungen finden Sie im NVDA-Menü unter "Einstellungen".
 Es enthält die folgenden Optionen:
 
 ==== Sprache ====
-
 In dieser Liste können Sie die Sprache festlegen, in der die Meldungen von NVDA ausgegeben werden soll. Standardmäßig ist die Option "Benutzerstandard, Windows" ausgewählt. NVDA enthält eine Vielzahl integrierter Sprachen.
 
 Bitte beachten Sie: Ein Neustart des Programms zum Übernehmen der Sprache ist erforderlich. Um den Vorgang fortzusetzen, klicken Sie einfach auf die Schaltfläche "OK".
@@ -542,19 +534,22 @@ Wenn Sie dieses Kontrollfeld aktiviert haben, wird NVDA gleich nach der Anmeldun
 Hinweise:
 - Diese Option ist nur in der installierten Version verfügbar!
 - Wenn Sie NVDA zusammen mit BRLTTY einsetzen, kann es unter Umständen vorkommen, dass die Braillezeile nicht von NVDA gefunden wird (auf der Zeile ist "No attachable console" zu lesen). Dies ist auf Probleme mit der Startreihenfolge zurückzuführen. Das Problem tritt immer dann auf, wenn NVDA *vor* BRLTTY gestartet wird und beim Ansteuern der Braillezeile "ins Leere greift". Diese Situation kann durch einen Neustart von NVDA gelöst werden, wenn der Rechner vollständig hochgefahren ist. Dies funktioniert allerdings nur dann zuverlässig, wenn die Konfiguration nach dem Einstellen von BRLTTY als Braillezeile einmal gespeichert wurde und die Option "Einstellungen beim beenden Speichern" *NICHT* aktiviert ist.
-
+-
 
 ==== NVDA für die Windows-Anmeldung verwenden (Administratorrechte sind erforderlich) ====
 Wenn Sie sich bei Windows mit Ihrem Benutzernamen und Ihrem Passwort anmelden, bewirkt dieses Kontrollfeld, dass NVDA automatisch bereits im Anmeldebildschirm gestartet wird.
 
 Hinweis: Diese Option ist nur in der installierten Version verfügbar!
 
-
 ==== Aktuell gespeicherte Einstellungen im Anmeldebildschirm und bei Sicherheitsmeldungen verwenden (erfordert Administrationsberechtigungen!) ====
 Wenn Sie diesen Schalter betätigen, wird Ihre benutzerdefinierte Konfiguration in das Verzeichnis der Systemkonfiguration von NVDA kopiert, die dann genutzt werden, wenn Sie sich zum Beispiel im Anmeldebildschirm von Windows befinden oder eine Sicherheitsmeldung von der Benutzerkontensteuerung angezeigt wird.
 Speichern Sie vorsichtshalber noch einmal zur Sicherheit Ihre Konfiguration,  um sicherzustellen, dass auch tatsächlich all Ihre Einstellungen übernommen wurden. Sie können dies im NVDA-Menü oder mit der Tastenkombination NVDA+STRG+C tun.
 
 Hinweis: Diese Option ist nur in der installierten Version verfügbar!
+
+==== Automatisch nach Aktualisierungen suchen ====
+Wenn diese Option aktiviert ist, sucht NVDA automatisch nach Aktualisierungen und informiert sie, wenn eine aktualsierte Version verfügbar ist.
+Sie können auch manuell auf Aktualisierungen prüfen, indem Sie "nach Aktualisierungen suchen " aus dem Hilfe-Menü wählen.
 
 
 +++ Auswahl der Sprachausgaben (NVDA+STRG+S) +++
