@@ -111,6 +111,10 @@ addresses = {
         'lang': 'Traditional Chinese Taiwan',
         'email': ['wangjanli@gmail.com', 'maro.zhang@gmail.com'],
     },
+    'promotion': {
+        'lang': '',
+        'email': ['james.homme@highmark.com'],
+    },
 }
 
 def email(rcpts, subject, body):
