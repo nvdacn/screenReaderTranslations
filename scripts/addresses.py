@@ -41,7 +41,7 @@ addresses = {
     }, 
     'fr': {
         'lang':'French',
-        'email': ['Michel such <michel.such@free.fr>'],
+        'email': ['Michel such <michel.such@free.fr>', 'Patrick ZAJDA <webmaster@gansta93.com>'],
     },
     'gl': {
         'lang': 'Galician',
