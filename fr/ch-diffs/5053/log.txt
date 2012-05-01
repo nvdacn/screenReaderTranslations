@@ -1,7 +1,0 @@
-------------------------------------------------------------
-revno: 5053
-committer: Michael Curran <mick@kulgan.net>
-branch nick: main
-timestamp: Fri 2012-03-23 15:08:34 +1000
-message:
-  Fix freezes in MS Word which would result when it took more than 2 seconds to fetch text from a document (extremely long lines or tables of contents). Fixes #2191. Specifically: use SendMessage instead of SendMessageTimeout in the rpc functions as even if the main thread took too long, simply timing out is more dangerous as it causes memory corruption and therefore possibly endless loops.
