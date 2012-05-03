@@ -1,0 +1,9 @@
+------------------------------------------------------------
+revno: 5157
+fixes bug(s): http://www.nvda-project.org/ticket/2287
+committer: James Teh <jamie@jantrid.net>
+branch nick: main
+timestamp: Thu 2012-05-03 11:06:02 +1000
+message:
+  In browse mode in applications using Mozilla Gecko 14 and later (e.g. Firefox 14), quick navigation now works for block quotes and embedded objects.
+  The problem was that in Gecko < 14, the value of the tag object attribute is upper case, whereas it is lower case in Gecko >= 14. The latter is more consistent with the rest of Gecko (and Chrome does this too), so the code considers Gecko < 14 to be the abnormal case, even though 14 hasn't been released yet.

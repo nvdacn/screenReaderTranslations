@@ -1,0 +1,9 @@
+------------------------------------------------------------
+revno: 5152
+fixes bug(s): http://www.nvda-project.org/ticket/2284
+committer: James Teh <jamie@jantrid.net>
+branch nick: main
+timestamp: Tue 2012-05-01 18:54:52 +1000
+message:
+  JABHandler.JABContext.getAccessibleTextRange: Return an empty unicode string when the text length is 0 instead of a non-unicode line feed. Fixes weirdness in braille caret/selection reporting.
+  NVDAObjects.JAB.JABTextInfo._getLineOffsets: JAB can return -1, so normalise this to 0. JAB can return strange characters when passed -1, so this change prevents this from happening.
