@@ -46,18 +46,35 @@
   <LI><A HREF="#toc22">3.13. Eigene NVDA-Objektklassen angeben</A>
   <LI><A HREF="#toc23">3.14. Beispiel 5: Das Eingabefeld im Editor beschriften, welches ein eigenes NVDA-Objekt verwendet</A>
   </UL>
-<LI><A HREF="#toc24">4. die Python-Konsole von nvda</A>
-  <UL>
-  <LI><A HREF="#toc25">4.1. Verwendung</A>
-  <LI><A HREF="#PythonConsoleNamespace">4.2. namensraum</A>
+<LI><A HREF="#toc24">4. Verpacken von Code als nvda-Erweiterungen</A>
     <UL>
-    <LI><A HREF="#toc27">4.2.1. automatische Importe</A>
-    <LI><A HREF="#PythonConsoleSnapshotVariables">4.2.2. Schnappschuss-Variablen</A>
+    <LI><A HREF="#toc25">4.0.1. Beispiel für eine Manifest-Datei</A>
+    </UL>
+<LI><A HREF="#toc26">4.1. Plug-ins und Treiber</A>
+  <UL>
+  <LI><A HREF="#toc27">4.2. zusätzlicher Code zur Installation / deinstallation</A>
+    <UL>
+    <LI><A HREF="#toc28">4.2.1. Die Funktion onInstall</A>
+    <LI><A HREF="#toc29">4.2.2. Die Funktion onUninstall</A>
+    </UL>
+  <LI><A HREF="#toc30">4.3. Erweiterungen lokalisieren</A>
+    <UL>
+    <LI><A HREF="#toc31">4.3.1. sprachspezifische Manifest-Dateien</A>
+    <LI><A HREF="#toc32">4.3.2. sprachspezifische Meldungen</A>
     </UL>
   </UL>
-<LI><A HREF="#toc29">5. die Remote-Python-Konsole</A>
+<LI><A HREF="#toc33">5. die Python-Konsole von nvda</A>
   <UL>
-  <LI><A HREF="#toc30">5.1. Verwendung</A>
+  <LI><A HREF="#toc34">5.1. Verwendung</A>
+  <LI><A HREF="#PythonConsoleNamespace">5.2. namensraum</A>
+    <UL>
+    <LI><A HREF="#toc36">5.2.1. automatische Importe</A>
+    <LI><A HREF="#PythonConsoleSnapshotVariables">5.2.2. Schnappschuss-Variablen</A>
+    </UL>
+  </UL>
+<LI><A HREF="#toc38">6. die Remote-Python-Konsole</A>
+  <UL>
+  <LI><A HREF="#toc39">6.1. Verwendung</A>
   </UL>
 </UL>
 
@@ -83,7 +100,7 @@ Die Dokumentationen und weitere Materialien sind einer oder mehreren der folgend
 <LI>ein sehr gutes Nachschlagewerk bietet außerdem das <A HREF="http://wiki.python.de/">deutsche Python-Wiki</A>
 <LI>mit Hilfe der Python-Konsole können weitere Informationen über ein bestimmtes Objekt gewonen werden. Wenn Sie den Navigator auf das fragliche Objekt gesetzt und die Python-Konsole aufgerufen haben, können Sie mit den folgenden Befehlen weitere Informationen über dieses Objekt gewinnen:
  <UL>
- <LI>Um die Code-Dokumentation und die Online-Hilfe zu dem aktuellen Navigator-Objekt anzuzeigen, verwenden Sie den folgenden Befehl: help(nav) Die ausgabe des Befehls kann sehr umfangreich sein, weil nicht nur Informationen ber das Navigator-Objekt selbst, sondern auch über alle seine Vorfahren angezeigt werden. Es ist daher zu empfehlen, sich den Inhalt des ausgabefensters in einer Textdatei zu speichern, um bei der weiteren Entwicklungsarbeit darauf zurückgreifen zu können.
+ <LI>Um die Code-Dokumentation und die Online-Hilfe zu dem aktuellen Navigator-Objekt anzuzeigen, verwenden Sie den folgenden Befehl: help(nav) Die ausgabe des Befehls kann sehr umfangreich sein, weil nicht nur Informationen über das Navigator-Objekt selbst, sondern auch über alle seine Vorfahren angezeigt werden. Es ist daher zu empfehlen, sich den Inhalt des ausgabefensters in einer Textdatei zu speichern, um bei der weiteren Entwicklungsarbeit darauf zurückgreifen zu können.
  <LI>Um alle Eigenschaften und Methoden des aktuellen Navigator-Objekts als Python-Wörterbuch anzuzeigen, verwenden Sie den folgenden Befehl: dir(nav)
  </UL>
 </UL>
@@ -801,7 +818,120 @@ class LabelledEditField(Window):
 </PRE>
 
 <A NAME="toc24"></A>
-<H2>4. die Python-Konsole von nvda</H2>
+<H2>4. Verpacken von Code als nvda-Erweiterungen</H2>
+
+<P>
+Um das Verteilen und die Installation von Plug-ins und Treibern zu erleichtern, können diese in einzelne Paketdateien verpackt werden, die dann mithilfe der funktion "Erweiterungen verwalten" installiert werden können. Diese funktion ist im menü Extras zu finden. 
+Ein Paket ist einfach eine datei im Zip-format mit der Erweiterung .nvda-addon, die folgende dateien und Verzeichnisse enthalten kann:
+</P>
+
+<UL>
+<LI>eine manifest-Datei mit grundlegenden Informationen über das Paket
+<LI>Ordner mit Plug-ins und Treibern, die in nvda installiert werden sollen
+<LI>zusätzlichen Code, der bei der Installation Bzw. der Deinstallation des Pakets ausgeführt werden soll.
+<LI>Übersetzungen der in ihren Plugins und Treibern verwendeten  Meldungen für unterschiedliche Srachräume
+<P></P>
+++ Manifest-dateien ++
+Jedes Paket muss eine Manifest-Datei namens manifest.ini enthalten.
+Diese Datei enthält Zeilen der Form "Name = Wert", die grundlegende Informationen über ein Paket bereitstellen wie z.B. den Namen, den Autor oder eine kurze Beschreibung.
+<P></P>
++++ verfügbare Felder +++
+Auch wenn empfohlen wird, alle Felder auszufüllen, müssen lediglich diejenigen Felder Daten enthalten, die in der nachfolgenden Übersicht als Pflichtfelder markiert sind.
+Anderenfalls wird das Paket nicht installiert.
+<LI>name: ein kurzer eindeutiger Name für die Erweiterung, dieser wird benutzt, um die Erweiterungen intern voneinander zu unterscheiden (Pflichtfeld)
+<LI>summary: eine kurze Beschreibung des Pakets im Telegrammstil, dies wird dem Anwender als Name angezeigt (Pflichtfeld).
+<LI>version: die Version der Erweiterung z.B. 2.0 (Pflichtfeld)
+<LI>author: der Autor des Pakets, vorzugsweise in der Form "voller Name &lt;E-Mail-Adresse&gt;" z.B. David Parduhn &lt;<A HREF="mailto:xkill85@gmx.net">xkill85@gmx.net</A>&gt; (Pflichtfeld)
+<LI>description: eine längere Beschreibung über den Sinn und Zweck der Erweiterung
+<LI>url: eine Internetadresse, unter der die Erweiterung, weitere Informationen oder Aktualisierungen zu finden sind
+</UL>
+
+<A NAME="toc25"></A>
+<H4>4.0.1. Beispiel für eine Manifest-Datei</H4>
+
+<PRE>
+--- start ---
+name = mentestpaket
+summary = coole erweiterung zum Testen
+version = 1.0
+description = eine Beispielerweiterung die zeigt, wie Erweiterungen erstellt werden
+author = Michael Curran &lt;mick@kulgan.net&gt;
+url = http://www.nvda-project.org/wiki/Development
+--- end ---
+</PRE>
+
+<A NAME="toc26"></A>
+<H3>4.1. Plug-ins und Treiber</H3>
+
+<P>
+die folgenden Plug-ins und Treiber können in einer Erweiterung enthalten sein:
+</P>
+
+<UL>
+<LI>Anwendungsmodule: Diese müssen in einem Ordner namens "appModules" innerhalb des Archivs liegen.
+<LI>Braillezeilentreiber: Diese müssen in einem Ordner namens "brailleDisplayDrivers" innerhalb des Archivs liegen.
+<LI>globale Plug-ins: Diese müssen in einem Ordner namens "globalPlugins" innerhalb des archivs liegen.
+<LI>Treiber für Sprachausgaben: diese müssen in einem Ordner namens "synthDrivers" innerhalb des Archivs liegen.
+</UL>
+
+<A NAME="toc27"></A>
+<H3>4.2. zusätzlicher Code zur Installation / deinstallation</H3>
+
+<P>
+Falls Sie während der Installation oder der Deinstallation des Pakets zusätzlichen Code ausführen möchten, um z.B. Lizenzinformationen zu prüfen oder Dateien an einen bentzerdefinierten Ort zu kopieren, können Sie in ihrem Paket eine Datei namens installTasks.py bereitstellen, die spezielle Funktionen enthält. Diese Funktionen werden immer dann aufgerufen, wenn die Erweiterung installiert/deinstalliert wird.
+Sie sollten unbedingt das unnötige Laden von Modulen vermeiden (Insbesondere Python-C-Erweiterungen oder dlls ihrer eigenen Erweiterung), weil des sonst die Deinstalation des Pakets verhindern könnte.
+Sollte dies jedoch vorkommen, so wird das Verzeichnis der Erweiterung umbenannt und erst beim nächsten Start von NVDA gelöscht.
+</P>
+
+<A NAME="toc28"></A>
+<H4>4.2.1. Die Funktion onInstall</H4>
+
+<P>
+Nachdem die Dateien der Erweiterung aus dem Paket entpackt und in nvda integriert wurden, wird NVDA die Datei installtasks.py nach einer Funktion namens onInstall durchsuchen und diese ausführen.
+Auch wenn die Erweiterung zu diesem Zeitpunkt bereits entpackt wurde, besitzt das Verzeichnis immer noch den Namenszusatz .pendinginstall. Dieser wird erst nach einem Neustart von NVDA entfernt und die Erweiterung wird zum ersten Mal geladen.
+Wenn die Funktion einen Ausnahmefehler auslöst, wird die Installation abgebrochen und das Verzeichnis gelöscht.
+</P>
+
+<A NAME="toc29"></A>
+<H4>4.2.2. Die Funktion onUninstall</H4>
+
+<P>
+Wenn NVDA nach der Deinstallation eines Pakets neu gestartet wird, wird die Datei InstallTasks.py nach einer Funktion onUninstall durchsucht und diese ausgeführt.
+Wurde diese Funktion erfolgreich ausgeführt, wird das Verzeichnis der Erweiterung automatisch entfernt.
+Da dies zu einem Zeitpunkt geschieht, noch bevor andere Komponenten von NVDA geladen wurden, kann die funktion keinerlei Eingaben vom Benutzer entgegennehmen.
+</P>
+
+<A NAME="toc30"></A>
+<H3>4.3. Erweiterungen lokalisieren</H3>
+
+<P>
+Sie können für ihre Erweiterung sprachspezifische Informationen hinterlegen.
+Diese werden im Ordner "locale" innerhalb des Archivs gespeichert.
+Der Ordner sollte Unterordner für jeden Sprachraum enthalten, für den Sie Meldungen hinterlegen wollen. Hierbei muss dasselbe Namensformat benutzt werden, wie bei den Kernkomponenten von NVDA so z.B.  en für Englisch oder de für deutsch.
+</P>
+
+<A NAME="toc31"></A>
+<H4>4.3.1. sprachspezifische Manifest-Dateien</H4>
+
+<P>
+Jedes Sprachenverzeichnis kann eine sprachspezifische Manifest.ini enthalten, die einige der oben beschriebenen Manifest-Felder in übersetzter Form bereitstellt.
+Dies sind die Felder Summary und Description.
+Alle anderen Felder werden ignoriert.
+</P>
+
+<A NAME="toc32"></A>
+<H4>4.3.2. sprachspezifische Meldungen</H4>
+
+<P>
+Jedes sprachverzeichnis kann auch Gettext-kompatible Kataloge mit Übersetzungen von Meldungen enthalten.
+Wie bei den nvda-Kernkomponenten auch, sollten Sie die Meldungsdatei in compilierter Form unter dem namen nvda.mo im Unterverzeichnis LC_MESSAGES des Sprachenverzeichnisses ablegen.
+Um ihren Plug-ins zu erlauben, mittels der Funktion _() auf gettext-Katalogdateien zuzugreifen, müssen Sie die Übersetzung am Beginn eines jeden Python-Moduls initialisieren. Rufen Sie hierzu die Funktion addonHandler.initTranslations() auf.
+Weitere Informationen über gettext und allgemeine Informationen über die Übersetzung von NVDA finden Sie in folgendem Artikel:
+<A HREF="http://www.nvda-project.org/wiki/TranslatingNVDA">http://www.nvda-project.org/wiki/TranslatingNVDA</A>
+</P>
+
+<A NAME="toc33"></A>
+<H2>5. die Python-Konsole von nvda</H2>
 
 	<BLOCKQUOTE>
 	Die Python-Konsole emuliert innerhalb von nvda den interaktiven Python-Interpreter.
@@ -810,8 +940,8 @@ class LabelledEditField(Window):
 Sie ist zur Fehlerbehebung oder zum Erkunden von nvda's Interna oder zum Erkunden von Zugänglichkeitsschnittstellen nützlich.
 </P>
 
-<A NAME="toc25"></A>
-<H3>4.1. Verwendung</H3>
+<A NAME="toc34"></A>
+<H3>5.1. Verwendung</H3>
 
 <P>
 Die Konsole kann auf zwei Arten aktiviert werden:
@@ -839,10 +969,10 @@ durch Schließen des Fensters wird die Sitzung lediglich verborgen. Dies macht e
 </P>
 
 <A NAME="PythonConsoleNamespace"></A>
-<H3>4.2. namensraum</H3>
+<H3>5.2. namensraum</H3>
 
-<A NAME="toc27"></A>
-<H4>4.2.1. automatische Importe</H4>
+<A NAME="toc36"></A>
+<H4>5.2.1. automatische Importe</H4>
 
 <P>
 der einfachheit halber werden die folgenden Module und Variablen automatisch importiert:
@@ -850,7 +980,7 @@ sys, os, wx, log (aus logHandler), api, queueHandler, speech, braille
 </P>
 
 <A NAME="PythonConsoleSnapshotVariables"></A>
-<H4>4.2.2. Schnappschuss-Variablen</H4>
+<H4>5.2.2. Schnappschuss-Variablen</H4>
 
 <P>
 Wann immer nvda+strg+z gedrückt wird, werden einige Variablen gesetzt, die eine Momentaufnahme von nvda darstellen.
@@ -867,8 +997,8 @@ Diese Variablen sind:
 <LI>brlRegions: die Braille-Regionen des aktiven Braille-Puffers
 </UL>
 
-<A NAME="toc29"></A>
-<H2>5. die Remote-Python-Konsole</H2>
+<A NAME="toc38"></A>
+<H2>6. die Remote-Python-Konsole</H2>
 
 <P>
 für Situationen, in denen Fehler in nvda über ein Netzwerk hinweg aus der Ferne korrigiert werden müssen, ist eine Remote-Python-Konsole verfügbar. 
@@ -879,8 +1009,8 @@ Bitte bedenken Sie, dass dies ein hohes Sicherheitsrisiko darstellt.
 Sie sollten die remote-Python-Konsole nur dann aktivieren, wenn sie mit vertrauenswürdigen Netzwerken wie etwa vpns verbunden sind.
 </P>
 
-<A NAME="toc30"></A>
-<H3>5.1. Verwendung</H3>
+<A NAME="toc39"></A>
+<H3>6.1. Verwendung</H3>
 
 <P>
 um die remote-Python-Konsole zu aktivieren, verwenden sie die lokale Python-Konsole und importieren sie remotePythonConsole. Rufen Sie anschließend remotePythonConsole.initialize() auf.
