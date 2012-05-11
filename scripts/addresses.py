@@ -25,7 +25,7 @@ addresses = {
     },
     'de': {
         'lang':'German',
-        'email': ['Bernd Dorer <bernd_dorer@yahoo.de>', 'David Parduhn <xkill85@gmx.net>'],
+        'email': ['Bernd Dorer <bernd_dorer@yahoo.de>', 'David Parduhn <xkill85@gmx.net>', 'Rene Linke <rene.linke@blindzeln.de>'],
     },
     'el': {
         'lang': 'Greek',
