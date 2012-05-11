@@ -85,9 +85,22 @@ Si vous avez déjà fermé cette boîte de dialogue, ou si vous vvoulez l'instal
 
 La boîte de dialogue d'installation qui s'affichera vous demandera de confirmer l'installation, et vous signalera s'il s'agit de la mise à jour d'une installation existante.
 Cliquer sur le bouton Continuer installera NVDA.
-Deux options sont disponibles dans ce dialogue, une pour créer un raccourci sur le bureau, et une pour lancer NVDA au démarrage.
+Deux options détaillées ci-dessous sont disponibles dans ce dialogue.
 Dès que l'installation est terminée, un message s'affichera vous signalant la fin de l'installation.
 Cliquer sur OK démarrera la version nouvellement installée.
+
++++ Utiliser NVDA sur l'écran de connexion à Windows +++
+Cette option vous permet de choisir si NVDA doit ou non démarrer automatiquement quand vous ête sur l'écran de connexion, avant que vous ayez saisi un mot de passe.
+Ceci inclu les contrôle UAC et les écran sécurisés.
+
++++ Créer une icône sur le bureau et le raccourci clavier (control+alt+n) +++
+Cette option vous permet de choisir si NVDA doit ou non créer un raccourci sur le bureau pour démarrer NVDA.
+Si créé, ce raccourci aura la touche de raccourci control+alt+n assigné pour démarrer NVDA de n'importe où.
+
++++ Copier la configuration portable dans le compte de l'utilisateur en cours +++
+Cette option permet de choisir si NVDA doit ou non copier la configuration utilisateur depuis la copie de NVDA en cour d'exécution vers la configuration de l'utilisateur courant, pour la version installée de NVDA.
+Cela ne copiera  la configuration ni pour un autre utilisateur du système, ni pour la configuration du système dans le cas de l'utilisation dans l'identification windows ou les autres écrans sécurisés.
+Cette option n'est disponible que lorsque vous installez NVDA depuis une version portable, pas quand vous installez depuis le paquet téléchargé du lançeur.
 
 ++ Créer une version portable ++
 Si vous voulez créer votre version depuis le package téléchargé, cliquez simplement sur le bouton Créer une version portable.
@@ -95,11 +108,18 @@ Si vous avez déjà fermé cette boîte de dialogue ou si vous êtes dans une ve
 
 La boîte de dialogue qui s'affiche vous permet de choisir où créer la copie portable.
 Ce peut être un répertoire de votre disque dure, un chemin sur une clé USB ou un autre média portable.
-
-Vous avez aussi la possibilité de créer un fichier autorun à la racine du lecteur (utile lorsque l'on cré une version portable sur une clé USB), et de copier la configuration de l'utilisateur ce qui inclu les paramètres et les plugins depuis la version courante de NVDA, dans la version portable.
+D'autres options détaillées ci-dessous sont disponibles.
 Cliquer sur continuer créera la version portable.
 Dès que la création est terminée, un message s'affiche.
 Cliquez sur OK pour fermer cette boîte de dialogue.
+
++++ Créer un fichier Autorun +++
+Cette option permet de choisir si NVDA doit ou non placer un fichier spécial autorun à la racine du lecteur ou la version portable est créée, ainsi NVDA devrait démarrer automatiquement lorsque le lecteur est connecté.
+Notez que le démarrage automatique depuis une clé USB n'est pas supporté par toutes les versions de Windows.
+
++++ Copier la configuration utilisateur courante +++
+Cette option vous permet de choisir si NVDA doit copier la configuration de l'utilisateur courrant pour l'utiliser avec la nouvelle version portable créée.
+Cette option n'est disponible que lorsque vous créez une version portable de NVDA depuis une version installée, pas quand vous créez une version portable depuis le paquet téléchargé du lançeur.
 
 + Prendre en main  NVDA +
 
@@ -943,6 +963,27 @@ Décochez l'élément de menu pour la désactiver.
 
 Pendant que la visionneuse de parole est active, elle se met constamment à jour vous permettant de voir les dernières paroles prononcées par NVDA. 
 Cependant, si vous cliquez ou mettez le focus sur la visionneuse,  NVDA arrêtera momentanément de mettre à jour le texte, vous pourrez ainsi sélectionner ou copier le contenu.
+
+++ Gestionnaire de greffons ++
+Le Gestionnaire de greffons, accessible en sélectionnant Gestion des greffons dans le menu Outils du menu NVDA, permet d'installer ou de désinstaller des paquets de greffon pour NVDA.
+Ces paquets sont fournis par la communauté et contiennent du code qui peut ajouter ou modifier des fonctionnalités dans NVDA ou proposer le support de plages brailles ou synthèses vocales suplémentaires.
+
+Le gestionnaire de greffons contient une liste affichant tous les greffons actuellement installés dans votre configuration utilisateur de NVDA.
+Un nom de paquet, la version et l'auteur sont affichés pour chaque greffon, et des informations suplémentaires telle qu'une description et une URL peuvent être affichées en sélectionnant le greffon et en activant le bouton À propos du greffon...
+
+Pour installer un greffon, activez le bouton Ajouter.
+Vous pourrez ainsi rechercher le paquet du greffon (fichier .nvda-addon) sur votre ordinateur ou un réseau.
+Après avoir cliquer sur Ouvrir, NVDA vous demandera si vous êtes sûr de vouloir installer le greffon.
+Comme les fonctionalités des greffons ne sont pas restraintes dans NVDA, ce qui implique en théorie qu'ils peuvent accéder à vos données ou à tout votre système pour une version installée, il est important de n'installer que des greffons venant d'une source fiable.
+Dès que le greffon est installé, NVDA doit redémarrer pour que le greffon puisse s'activer.
+Ce greffon aura l'état installer dans la liste jusqu'à ce que vous relanciez NVDA.
+
+Pour supprimer un greffon, sélectionnez-le dans la liste et cliquez sur le bouton Supprimer.
+NVDA vous demandera de confirmer la désinstallation.
+Comme pour l'installation, NVDA doit être relancé pour que le greffon soit complettement supprimé.
+Son statu dans la liste sera supprimer.
+Le gestionnaire a également un bouton Fermer pour fermer la boîte de dialogue.
+Si vous avez installé ou supprimé des greffons, NVDA vous demandera d'abord si vous voulez le redémarrer pour que vos changements prennent effet.
 
 ++ Console Python ++
 La console Python NVDA, située dans Outils du menu NVDA, est un outil de développement utile pour dépanner, inspecter le code ou inspecter la hiérarchie d'accessibilité d'une application.
