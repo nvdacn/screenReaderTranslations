@@ -22,7 +22,7 @@ Najvýznamnejšie prednosti programu:
 - Podpora množstva braillovských zobrazovačov
 - Možnosť spustenia programu z USB kľúča, alebo iného prenosného zariadenia, bez nutnosti inštalácie
 - Ozvučený inštalátor
-- Preložený do 36 jazykov
+- Preložený do 37 jazykov
 - Podpora pre moderné operačné systémy Windows, 32 aj 64 bitové verzie
 - Možnosť spúšťania na prihlasovacej obrazovke a iných zabezpečených obrazovkách Windows
 - Kompatibilita s rôznymi rozhraniami slúžiacimi na sprístupnenie aplikácií: Microsoft Active Accessibility, Java Access Bridge, IAccessible2 a UI Automation (UI Automation len vo Windows 7 a novších)
@@ -31,7 +31,7 @@ Najvýznamnejšie prednosti programu:
 
 ++ Medzinárodná podpora ++
 Je dôležité, aby ľudia na celom svete hovoriaci akýmkoľvek jazykom, mali kdekoľvek prístup k špeciálnym technológiám.
-NVDA bol dodnes okrem angličtiny lokalizovaný do týchto 36 jazykov: Afrikánčina, Albánčina, Arabčina, Brazílčina, Bulharčina, Čeština, Dánčina, Fínčina, Francúzština, Galícijčina, Gruzínčina, Hebrejčina,  Hindčina, Holandčina, Chorvátčina, Islandčina, Japončina, Maďarčina, Nemčina, Nórčina, Poľština, Portugalčina, Rumunčina, Ruština, Slovenčina, Srbčina, Španielčina, Švédčina, Taliančina, Tamilčina, Thajčina, Tradičná čínština, Turečtina, Ukrajinčina, Vietnamčina a Zjednodušená čínština.
+NVDA bol dodnes okrem angličtiny lokalizovaný do týchto 37 jazykov: Afrikánčina, Albánčina, Arabčina, Brazílčina, Bulharčina, Čeština, Dánčina, Fínčina, Francúzština, Galícijčina, Gréčtina, Gruzínčina, Hebrejčina,  Hindčina, Holandčina, Chorvátčina, Islandčina, Japončina, Maďarčina, Nemčina, Nórčina, Poľština, Portugalčina, Rumunčina, Ruština, Slovenčina, Srbčina, Španielčina, Švédčina, Taliančina, Tamilčina, Thajčina, Tradičná čínština, Turečtina, Ukrajinčina, Vietnamčina a Zjednodušená čínština.
 
 ++ Podpora hlasového výstupu ++
 Bez ohľadu na poskytovanie hlásení, a rozhraní v niekoľkých jazykoch, NVDA ponúka možnosť čítania textov v akomkoľvek jazyku, pokiaľ je dostupný hlasový výstup pre daný jazyk.
@@ -400,6 +400,11 @@ Za pomoci nasledujúcich klávesov sa môžete posúvať na nasledujúci prvok d
 - o: vnorený objekt
 - 1-6: nadpis príslušnej úrovne
 -
+Rýchly prechod na začiatok alebo koniec skupín prvkov, ako napríklad zoznamy a tabuľky:
+|| Názov | Klávesová skratka| popis |
+| Prejdi na začiatok skupiny prvkov | shift+, | Presunie fokus na začiatok skupiny prvkov (zoznam, tabuľka a podobne) podľa aktuálneho prvku |
+| prejdi za skupinu prvkov | shift+. | Presunie fokus za skupinu prvkov (zoznam, tabuľka a podobne) podľa aktuálneho prvku|
+ 
 %kc:endInclude
 
 ++ Zoznam prvkov ++
@@ -431,6 +436,8 @@ NVDA pre niektoré aplikácie implementuje svoje vlastné príkazy, čím buď u
 || Názov | Klávesová skratka | Popis |
 | Oznámiť zostávajúci čas | control+shift+r | V prípade, že je práve prehrávaná skladba, oznámi zostávajúci čas. |
 %kc:endInclude
+
+Všimnite si: Klávesová skratka pre oznámenie zostávajúceho času funguje len ak máte vo Foobare nastavené predvolené zobrazenie stavového riadka.
 
 ++ Miranda IM ++
 %kc:beginInclude
@@ -924,7 +931,30 @@ Deaktivovať ho môžete odčiarknutím tej istej položky.
 Zatiaľ, čo je zobrazovač reči aktívny, Jeho obsah sa neustále aktualizuje s práve čítaným textom.
 Pozastaviť zobrazovanie aktuálneho textu (napr. užitočné pre kopírovanie) je možné kliknutím alebo prepnutím fokusu do okna zobrazovač reči.
 
-++ Python konzola ++
+++ Správca doplnkov ++
+Správcu doplnkov nájdete v menu nástroje. Umožňuje vám inštalovať doplnky do programu NVDA.
+Tieto doplnky vytvárajú používatelia NVDA. Doplnky môžu meniť alebo dopĺňať funkcie NVDA a takisto dopĺňať podporu pre hlasové syntetizéry a brailovské riadky.
+
+V správcovy doplnkov sa nachádza zoznam s doplnkami, ktoré sú nainštalované v aktuálnej konfigurácii NVDA.
+okrem názvu sa zobrazí aj verzia a autor doplnku. Popis a URL adresu môžete zistiť tak, že doplnok vyberiete a aktivujete tlačidlo O doplnku.
+
+Aby ste nainštalovali nový doplnok, aktivujte tlačidlo pridať.
+otvorí sa okno, v ktorom môžete vybrať požadovaný súbor vo vašom počítači alebo na sieti (s príponou nvda-addon).
+Po aktivovaní tlačidla otvoriť sa vás NVDA opýta, či si skutočne želáte nainštalovať zvolený doplnok.
+Keďže funkcie doplnkov nie sú nijako obmedzované, doplnky teoreticky môžu mať prístup k vašim osobným dátam alebo k celému systému v prípade nainštalovanej verzie NVDA, mali by ste inštalovať doplnky zo zdrojov, ktorým dôverujete.
+Aby doplnok začal fungovať, je potrebné po inštalácii reštartovať NVDA.
+Kým NVDA nereštartujete, bude sa pri doplnku zobrazovať stav "Nainštalovať".
+
+Ak chcete odstrániť doplnok, vyberte ho v zozname a aktivujte tlačidlo Odstrániť.
+NVDA sa vás opýta, či skutočne chcete doplnok odinštalovať.
+Aby ste doplnok definitívne odstránili, je potrebné reštartovať NVDA.
+Kým NVDA nereštartujete, zobrazí sa pri doplnku stav "Odstrániť".
+
++Správcu doplnkov zatvoríte aktivovaním tlačidla Zatvoriť.
+Ak ste pridali alebo odstránili nejaké doplnky, NVDA sa vás opýta, či ho chcete reštartovať, aby boli uložené zmeny.
+
+
+ ++ Python konzola ++
 Python konzola programu NVDA, dostupná z menu nástroje, je nástroj pre vývojárov, ktorý umožňuje kontrolovať správnosť behu NVDA, zisťovať stav vnútorných premenných NVDA a tiež skúmať hierarchiu prístupnosti aplikácií.
 Viac informácií je dostupných v príručke pre vývojárov, ktorú nájdete na stránke NVDA v časti [vývoj (anglicky) NVDA_URLwiki/Development].
 
