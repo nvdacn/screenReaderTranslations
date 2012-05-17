@@ -73,9 +73,10 @@ Se si desidera utilizzare spesso NVDA su questo computer, è consigliabile scegl
 L'installazione comporta alcuni vantaggi, come la possibilità di avviarsi automaticamente dopo il login, la lettura delle finestre di Logon e le schermate generate dal controllo utente per la sicurezza (UAC), ed inoltre verrà creata  un'icona sul desktop e una voce sul menu avvio, tutte caratteristiche non presenti nella versione portable.
 Si ricorda che una volta installato NVDA, sarà sempre possibile creare una copia portable in qualsiasi momento.
 
-Se invece si desidera utilizzare NVDA in una chiavetta USB o su altri tipi di supporti rimovibili, allora è necessario selezionare di creare una copia portable.
+Se invece si desidera utilizzare NVDA in una chiavetta USB o su altri tipi di supporti scrivibili, allora è necessario selezionare di creare una copia portable.
 Questa versione portable potrà, in futuro, essere installata in un computer in qualsiasi momento.
-
+Comunque, se si desidera copiare NVDA in dispositivo di sola lettura come un CD, basterà copiare il pacchetto scaricato dalla rete. 
+L'esecuzione della versione portable su questo tipo di dispositivi non è supportata al momento.
 Infine, c'è la possibilità di avvalersi  della copia temporanea di NVDA appena lanciata, questa può essere una buona idea soprattutto  per dimostrazioni o rapidi test, tuttavia non è certo un'opzione da prendere in considerazione per l'utente che usa NVDA quotidianamente, in quanto i tempi di avvio risultano più lunghi.
 
 
@@ -108,19 +109,12 @@ Se invece si vuole creare una copia portable da una versione già installata di 
 
 La finestra di dialogo che apparirà richiede la selezione della cartella nella quale inserire la versione portable.
 Può trattarsi di una cartella presente nel disco fisso, oppure dell'unità di una penna USB o di un altro dispositivo rimovibile.
-Vi sono diverse altre opzioni, spiegate qui di seguito.
+Esiste un'altra opzione, che permette di stabilire se NVDA debba copiare o meno la configurazione dell'utente attualmente loggato nella nuova versione portable che si desidera creare.
+Questa opzione è disponibile solo quando si vuole creare una copia portable a partire da una versione installata, non quando la si crea dal pacchetto scaricato.
 La pressione del pulsante "Continua" darà inizio al processo di creazione della versione portable.
 Una volta terminata l'operazione, apparirà un messaggio di conferma.
 Premere a questo punto il pulsante OK per chiudere questa finestra.
   
-+++ Crea un file autorun +++
-Questa opzione permette di stabilire se NVDA debba creare o meno un file autorun, e posizionarlo nella cartella radice dell'unità in cui si vuole creare la copia portable, in modo che lo screen reader possa essere eseguito automaticamente non appena l'unità viene connessa al computer.
-Si noti che non tutte le versioni di Windows supportano l'avvio automatico di software da chiavette USB.
-
-+++ Copia la configurazione utente +++
-Questa opzione permette di stabilire se NVDA debba copiare o meno la configurazione dell'utente attualmente loggato nella nuova versione portable che si desidera creare.
-L'opzione è disponibile soltanto quando si vuole creare una copia portable da una versione già installata, non quindi se si installa direttamente dal pacchetto scaricato.
-
 + Iniziare con NVDA +
 
 ++ Avviare NVDA ++
@@ -430,7 +424,7 @@ I seguenti tasti premuti da soli portano al campo successivo, tenendo premuto Sh
 Per spostarsi all'inizio e alla fine degli elementi contenuti in elenchi e tabelle,:
 || Nome | Tasto | Descrizione |
 | Spostarsi all'inizio del contenitore | shift+, | Si sposta al primo elemento presente negli elenchi o nelle tabelle, e vi posiziona il cursore |
-| Spostarsi alla fine del contenitore | shift+; | Si sposta all'ultimo elemento presente negli elenchi o nelle tabelle, e vi posiziona il cursore |
+| Spostarsi alla fine del contenitore | , | Si sposta all'ultimo elemento presente negli elenchi o nelle tabelle, e vi posiziona il cursore |
 %kc:endInclude
 
 ++ Lista degli elementi ++
@@ -893,8 +887,6 @@ NVDA non salva automaticamente le impostazioni correnti, quindi se si esce e rie
 Si noti che comunque è possibile modificare questo comportamento tramite l'opzione presente nelle impostazioni generali del menu preferenze.
 Per salvare le impostazioni   scegliere la voce salva Configurazione dal menu di NVDA.
 
-Se NVDA è in un file system di sola lettura come ad esempio il cd, non sarà in grado di   salvare le impostazioni e lo notificherà.
-
 Se si è fatto un errore nelle impostazioni e si desidera tornare indietro alle impostazioni salvate in precedenza, scegliere la voce "torna alla configurazione salvata dal menu NVDA.
 
 I seguenti tasti rapidi risultano molto utili:
@@ -936,7 +928,7 @@ Essi vengono prodotti  dalla comunità internazionale di NVDA  e contengono codi
 Il gestore di componenti aggiuntivi contiene un elenco che visualizza tutti i pacchetti installati nella propria cartella di configurazione di NVDA.
 Per ciascun componente, vengono mostrati il nome del pacchetto, la versione e l'autore, ed inoltre altre informazioni come la descrizione o l'URL possono essere visualizzate selezionando tale componente e cliccando sul pulsante "informazioni su".
 
-Per installare un componente aggiuntivo, premere il pulsante Aggiungi.
+Per installare un componente aggiuntivo, premere il pulsante Installa.
 Si aprirà una finestra nella quale sarà possibile cercare, sia nel proprio pc o in una rete locale, il pacchetto con estensione nvda-addon da installare.
 Una volta selezionato il pulsante Apri, NVDA chiederà una conferma del fatto che si voglia installare quel componente aggiuntivo.
 Poiché le funzionalità dei componenti non sono soggette ad alcuna restrizione all'interno di NVDA, il che in teoria potrebbe comportare l'accesso ai propri dati personali o anche all'intero sistema se NVDA è stato installato nel pc, è molto importante installare pacchetti che provengono esclusivamente da una fonte sicura.
@@ -951,6 +943,10 @@ Fino a quando non verrà effettuata tale operazione, accanto al componente aggiu
 Il gestore dispone anche del pulsante chiudi, per chiudere la finestra di dialogo.
 Se sono stati installati o rimossi dei componenti, NVDA chiederà di potersi riavviare, in modo da rendere effettive le modifiche.
 
++++ Una nota sui vecchi plugin personalizzati +++
+In passato è stato possibile aumentare le funzionalità di NVDA copiando driver e plugin individuali nella propria cartella contenente le configurazioni utente. 
+Sebbene questa versione di NVDA sia ancora in grado di caricarli, essi non saranno visualizzati nel gestore componenti aggiuntivi. Si consiglia di rimuovere questi file dalla propria configurazione e installare il componente aggiuntivo corrispondente se disponibile. 
+
 ++ Console Python ++
 La Console Python di NVDA, situata nel menu strumenti, è uno strumento per sviluppatori che risulta utile in fase di debug, di diagnosi delle funzioni interne di NVDA o di analisi della gerarchia degli oggetti accessibili presenti in un'applicazione.
 Per ulteriori informazioni, si veda [l'articolo relativo alla Console di Python, in lingua inglese, nel sito web di NVDA NVDA_URLwiki/PythonConsole].
@@ -964,7 +960,9 @@ Per una panoramica esaustiva dei sintetizzatori compatibili, sia gratuiti che a 
 
 
 ++ Espeak ++
-La sintesi vocale [eSpeak http://espeak.sourceforge.net/]  è incorporata direttamente in NVDA, per cui non è necessario alcun driver o componente per farla funzionare. Da impostazioni predefinite NVDA si avvia utilizzando Espeak. Poiché questa sintesi è incorporata in NVDA, risulta molto comoda per utilizzare il prodotto da una chiavetta USB o da un cd in altri sistemi.
+La sintesi vocale [eSpeak http://espeak.sourceforge.net/]  è incorporata direttamente in NVDA, per cui non è necessario alcun driver o componente per farla funzionare. 
+Da impostazioni predefinite NVDA si avvia utilizzando Espeak. 
+Poiché questa sintesi è incorporata in NVDA, risulta molto comoda per utilizzare il prodotto da una chiavetta USB o in altri sistemi.
 
 Ciascuna voce presente in Espeak parla una lingua diversa.
 Sono oltre 43 le lingue supportate da questa sintesi vocale.
