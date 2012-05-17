@@ -91,6 +91,10 @@ addresses = {
         'lang':'Swedish',
         'email': ['Mesar Hameed <mhameed@src.gnome.org>'],
     },
+    'uk': {
+        'lang':'Ukrainian',
+        'email': ['vlodko@torba.com'],
+    },
     'ta': {
         'lang':'Tamil',
         'email': ['Dinakar T.D. <td.dinkar@gmail.com>'],
