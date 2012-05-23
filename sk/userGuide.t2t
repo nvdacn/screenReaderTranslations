@@ -504,9 +504,10 @@ Začiarkávacie políčko, ktoré ak začiarknete, bude NVDA pri ukončení auto
 
 ==== Potvrdzovať ukončenie NVDA ====
 Začiarkávacie políčko, ktorého začiarknutím sa bude NVDA pred ukončením pýtať, či ste si istí, že program NVDA chcete ukončiť.
+Ak je začiarknuté a rozhodnete sa ukončiť NVDA, NVDA vás vyzve, aby ste ukončenie potvrdili.
 
 ==== Úroveň záznamu ====
-Zoznamový rámik, ktorý umožňuje používateľovi zvoliť, aké množstvo dát má zaznamenať počas svojho vlastného behu.
+Zoznamový rámik, ktorý umožňuje používateľovi zvoliť, aké množstvo dát má NVDA  zaznamenať počas svojho vlastného behu.
 Všeobecne sa používateľ týmto nastavením nemusí zaoberať.
 No ak chcete tvorcom programu poskytnúť informácie o chybových hláseniach, je dobré nastaviť túto voľbu na vyššiu úroveň.
 
@@ -541,7 +542,7 @@ V tomto zozname vždy nájdete aj jednu špeciálnu položku bez reči, čo umo�
 Toto môže byť užitočné pre niekoho, kto chce používať NVDA len z braillovským výstupom alebo to môže byť užitočné vidiacim vývojárom, ktorí plánujú používať zobrazovač reči.
 
 ==== Výstupné zariadenie ====
-Toto nastavenie umožňuje vybrať zvukovú kartu, ktorú NVDA použije pri prehrávaní zvuku a inicializácii hlasových výstupov, ktoré to podporujú.
+Toto nastavenie umožňuje vybrať zvukovú kartu, cez ktorú bude rozprávať hlasový výstup.
 
 +++ Nastavenia hlasu (NVDA+control+v) +++
 Dialóg s nastaveniami hlasu v možnostiach programu obsahuje voľby, ktoré vám umožnia nastaviť parametre hlasu.
@@ -550,8 +551,9 @@ Pre rýchlejšiu alternatívu, ktorá umožňuje meniť parametre hlasu odkiaľk
 Toto dialógové okno obsahuje nasledujúce prvky:
 
 ==== Hlas ====
-Ide o zoznam obsahujúci všetky dostupné hlasy, aktuálneho hlasového výstupu.
+Ide o zoznam obsahujúci všetky dostupné hlasy aktuálneho hlasového výstupu.
 Za pomoci šípok môžete tento zoznam prehliadať a vypočuť si všetky hlasy.
+Hornou a ľavou šípkou sa presuniete na predchádzajúci hlas, dolnou a pravou šípkou sa môžete presunúť na nasledujúci hlas.
 
 ==== Variant ====
 Ak používate hlasový výstup eSpeak, toto je zoznamový rámik, ktorý nastavuje variant hlasu.
@@ -566,27 +568,28 @@ Nula znamená najpomalšie tempo reči a sto najrýchlejšie.
 Posuvník, ktorým nastavíte výšku od nula po sto.
 Nula je najnižší tón a sto najvyšší tón reči.
 
-==== Intonácia ====
-Posuvník, ktorého hodnota hovorí hlasovému výstupu do akej miery má byť intonácia uplatnená smerom na hor i smerom na dol.
-
 ==== Hlasitosť ====
 Posuvník, ktorým v rozmedzí od nula po sto nastavíte hlasitosť hlasu od najtichšieho po najhlasnejší.
 
+==== Intonácia ====
+Posuvník, ktorého hodnota hovorí hlasovému výstupu do akej miery má byť intonácia uplatnená smerom na hor i smerom na dol. V súčasnosti intonáciu podporuje len hlas eSpeak.
+
 ==== Automaticky prepínať jazyk ====
-Toto začiarkavacie políčko prepína možnosť automatického prepínania jazyka hlasového výstupu podľa jazyka aktuálne čítaného textu.
+Ak je začiarknuté, NVDA bude automaticky prepínať jazyk. Jazyk určí podľa jazykových značiek v texte.
 Predvolene je toto začiarknuté.
 Automatické prepínanie jazyka momentálne podporuje len hlasový výstup eSpeak.
 
 ==== Automaticky prepínať dialekt ====
-Ak je zaškrtnuté automaticky prepínať jazyk, toto umožňuje zmeny aj dialektu jazyka hlasového výstupu.
-Napríklad ak pri čítaní textu v jazyku en-us narazíte na text v jazyku en-uk, táto voľba umožní vybrať správny dialekt.
+Ak je začiarknuté automaticky prepínať jazyk, toto umožňuje zmeny aj dialektu jazyka hlasového výstupu. Napríklad ak pri čítaní textu v jazyku en-us narazíte na text v jazyku en-uk, táto voľba umožní vybrať správny dialekt.
 Predvolene toto nie je začiarknuté.
 
 %kc:setting
 ==== Úroveň interpunkcie ====
 Klávesová skratka: NVDA+p
 
+Môžete nastaviť, či má NVDA slovne  oznamovať interpunkčné znamienka a symboly.
 Ak je toto napríklad nastavené na všetko, všetky symboly budú vyslovované ako slová.
+Nastavenie interpunkcie ovplyvňuje prejav NVDA pre všetky hlasové výstupy.
 
 ==== Zmeniť výšku hlasu pri čítaní veľkých písmen v percentách ====
 Do tohoto editačného poľa je možné napísať hodnotu v percentách, ako sa zmení výška hlasu pri čítaní veľkých písmen.
@@ -598,19 +601,18 @@ Začiarkávacie políčko, ktoré nastaví NVDA tak, aby čítal slovo "veľké"
 NVDA normálne pri takomto písmene zvýši hlas, ale niektoré hlasové výstupy majú so zmenou výšky problém, a v takýchto prípadoch je užitočná táto voľba.
 
 ==== Pípať pred hláskovaním veľkých písmen ====
-Ak je toto začiarkávacie políčko začiarknuté, NVDA krátko zapípa vždy, keď sa v texte objaví veľké písmeno.
+Ak je toto začiarkávacie políčko začiarknuté, NVDA krátko zapípa vždy, keď sa pri hláskovaní objaví veľké písmeno.
 Tak ako voľba sprístupňujúca hovorenie veľké pri veľkých písmenách, je táto voľba dôležitá pri hlasoch, ktoré sami nemôžu meniť svoju výšku pri veľkých písmenách.
 
 ==== Hláskovanie riadi hlasový výstup (ak je podporované) ====[VoiceSpellingFunctionality]
-Existujú slová pozostávajúce len z jediného znaku.
-Výslovnosť tohoto znaku sa líši od kontextu, napr. pri vyslovovaní jediného znaku sa obyčajne znak hláskuje a pri čítaní slova sa len prečíta.
+Existujú slová pozostávajúce len z jediného znaku. Výslovnosť tohoto znaku sa líši od kontextu, napr. pri vyslovovaní jediného znaku sa obyčajne znak hláskuje a pri čítaní slova sa len prečíta.
 V slovenčine je príkladom takéhoto znaku písmeno k.
 Táto možnosť umožňuje na základe použitého hlasového výstupu rozlišovať medzi týmito dvoma možnosťami, ak to hlasový výstup podporuje.
 Väčšina hlasových výstupov to podporuje.
 
 Odporúča sa nechať túto možnosť zapnutú.
-Žiaľ niektoré hlasové výstupy Microsoft Speech API toto nastavenie nepodporujú a môžu sa správať divne, ak je to zaškrtnuté.
-Ak pozorujete problémy s vyslovovaním jednotlivých znakov, skúste túto voľbu odškrtnúť.
+Žiaľ niektoré hlasové výstupy Microsoft Speech API toto nastavenie nepodporujú a môžu sa správať zvláštne, ak je to začiarknuté.
+Ak pozorujete problémy s vyslovovaním jednotlivých znakov, skúste túto voľbu odčiarknuť.
 
 +++ Kruh nastavení hlasového výstupu +++[SynthSettingsRing]
 Ak chcete zmeniť niektoré vlastnosti reči bez nutnosti otvárať dialóg nastavenia hlasu, môžete použiť niektoré z klávesových skratiek dostupných kdekoľvek počas behu NVDA.
@@ -618,7 +620,7 @@ Ak chcete zmeniť niektoré vlastnosti reči bez nutnosti otvárať dialóg nast
 || Názov | Klávesová skratka pre desktop | Klávesová skratka pre laptop | Popis |
 | ďalšie nastavenie hlasového výstupu | NVDA+control+pravá šípka | NVDA+control+pravá šípka | Prejde na nasledujúce dostupné nastavenie hlasového výstupu. Z posledného nastavenia NVDA automaticky prejde na prvé. |
 | Predchádzajúce nastavenie hlasového výstupu | NVDA+control+ľavá šípka | NVDA+control+ľavá šípka | Prejde na predchádzajúce dostupné nastavenie hlasového výstupu. Z prvého NVDA automaticky prejde na posledné nastavenie. |
-| Zvýšiť hodnotu nastavenia hlasového výstupu | NVDA+control+šípka hore | NVDA+control+šípka hore | Zvýši hodnotu aktuálne zameraného nastavenia hlasového výstupu. napríklad zrýchli tempo, vyberie nasledujúci hlas, zosilní hlasitosť |
+| Zvýšiť hodnotu nastavenia hlasového výstupu | NVDA+control+šípka hore | NVDA+control+šípka hore | Zvýši hodnotu aktuálne zameraného nastavenia hlasového výstupu. Napríklad zrýchli tempo, vyberie nasledujúci hlas, zosilní hlasitosť |
 | Znížiť hodnotu nastavenia hlasu | NVDA+control+šípka dolu | NVDA+control+šípka dolu | Zníži hodnotu aktuálne zameraného nastavenia hlasového výstupu. Napríklad spomalí tempo, vyberie predchádzajúci hlas, stíši hlasitosť. |
 %kc:endInclude
 
@@ -639,10 +641,10 @@ Prosím, prečítajte si tiež [Podporované braillovské zobrazovače #Supporte
 Dostupné je množstvo tabuliek pre rôzne jazyky. Tú správnu si vyberiete listovaním kurzorovými klávesmi.
 
 ==== Slovo, kde sa nachádza kurzor zobraziť počítačovým braillom ====
-Toto zaškrtávacie políčko umožní zobrazovať aktuálne slovo v počítačovom braillovom písme, čo v mnohých jazykoch zodpovedá plnopisu. Je to užitočné, ak nechceme aplikovať pravidlá skratkopisu tabuľky vybratej v poli Prekladová tabuľka.
+Toto začiarkávacie políčko umožní zobrazovať aktuálne slovo v počítačovom braillovom písme, čo v mnohých jazykoch zodpovedá plnopisu. Je to užitočné, ak nechceme aplikovať pravidlá skratkopisu tabuľky vybratej v poli Prekladová tabuľka.
 
 ==== Rýchlosť blikania kurzora ====
-Jedná sa o numerickú hodnotu, ktorá určuje frekvenciu blikania kurzora braillovského zobrazovača v milisekundách.
+Ide o číselnú hodnotu, ktorá určuje frekvenciu blikania kurzora braillovského zobrazovača v milisekundách.
 
 ==== Zobrazovať správy (sek) ====
 Táto numerická hodnota určuje ako dlho majú na riadku byť zobrazované systémové správy.
@@ -662,17 +664,16 @@ Predvolene je to odčiarknuté.
 
 +++ Nastavenia klávesnice (NVDA+control+k) +++
 Toto nastavenie nájdeme v možnostiach programu NVDA, pod položkou nastavenia klávesnice.
-
 Obsahuje nasledujúce voľby:
 
-==== Rozloženie klávesnice ====N
+==== Rozloženie klávesnice ====
 Tento zoznamový rámik nám umožňuje vybrať, aký typ klávesnice chceme používať. Či pôjde o verziu pre desktop/stolné PC, alebo laptop/pre prenosné počítače/notebooky.
 
 ==== Používať Capslock ako kláves NVDA ====
 Ak je toto políčko začiarknuté, NVDA bude tento kláves využívať ako svoj modifikačný kláves, v kombinácii s ktorým sa zadávajú takmer všetky klávesové príkazy NVDA.
 
 ==== Používať insert ako kláves NVDA ====
-Ak je toto políčko začiarknuté, rozšírený insert nájdeme v blízkosti kláves home, End a kurzorových šípok. Taktiež môže byť využitý ako NVDA kláves.
+Ak je toto políčko začiarknuté, rozšírený insert Taktiež môže byť využitý ako NVDA kláves. Nájdete ho v blízkosti kláves home, End a kurzorových šípok.
 
 ==== Používať numerický insert ako kláves NVDA ====
 Ak je toto políčko začiarknuté, numerický Insert môže byť použitý ako NVDA kláves.
@@ -689,16 +690,16 @@ Klávesová skratka: NVDA+3
 
 Ak je zapnuté, NVDA bude čítať pri písaní text po slovách.
 
+==== Pípať pri písaní malých písmen ak je zapnutý capslock ====
+Ak je to zapnuté, pri písaní so zapnutým capslockom budete počuť upozornenie v podobe krátkeho pípnutia, ak je pridržaný aj kláves shift.
+Všeobecne sa písanie s preraďovačom pri zapnutom capslocku nepoužíva a vo väčšine prípadov to znamená, že Ste si neuvedomili, že je kláves capslock zapnutý.
+Je teda vhodné byť na túto skutočnosť upozornený.
+
 %kc:setting
 ==== Čítať príkazové skratky ====
 Klávesová skratka: NVDA+4
 
 Ak je zapnuté, NVDA bude čítať klávesové skratky použité ako príkazy, teda nie samotné znaky. Do tejto funkcie spadajú kombinácie znakov a klávesov napr. s klávesom Control.
-
-==== Pípať pri písaní malých písmen ak je zapnutý capslock ====
-Ak je to zapnuté, pri písaní so zapnutým capslockom budete počuť upozornenie v podobe krátkeho pípnutia, ak je pridržaný aj kláves shift.
-Všeobecne sa písanie s preraďovačom pri zapnutom capslocku nepoužíva a vo väčšine prípadov to znamená, že Ste si neuvedomili, že je kláves capslock zapnutý.
-Je teda vhodné byť na túto skutočnosť upozornený.
 
 +++ Nastavenia myši +++[MouseSettings]
 Toto dialógové okno nájdeme v možnostiach programu NVDA.
