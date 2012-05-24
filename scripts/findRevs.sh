@@ -84,7 +84,7 @@ twitAddr[ar]="@nvdauser"
 twitAddr[de]="@bdorer1"
 twitAddr[sk]="@pvagner"
 
-langs=(ar cs de es fi fr gl hu it ja nl nb_NO pl pt_BR pt_PT sk ta tr)
+langs=(ar cs de es fi fr gl hu it ja nl nb_NO pl pt_BR pt_PT sk ta tr zh_TW)
 for lang in ${langs[*]}; do
     echo "processing $lang"
     helperMsg=""

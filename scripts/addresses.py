@@ -113,7 +113,7 @@ addresses = {
     },
     'zh_TW': {
         'lang': 'Traditional Chinese Taiwan',
-        'email': ['wangjanli@gmail.com', 'maro.zhang@gmail.com'],
+        'email': ['wangjanli@gmail.com', 'maro.zhang@gmail.com', 'Aaron Wu <waaron2000@gmail.com>'],
     },
     'promotion': {
         'lang': '',
