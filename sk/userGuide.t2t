@@ -1169,8 +1169,25 @@ Pre zobrazovače, ktoré majú džojstik:
 | kláves enter | select |
 %kc:endInclude
 
-++ hedo ProfiLine a hedo MobilLine USB ++
-Hedo ProfiLine a hedo MobilLine USB od [hedo Reha-Technik http://www.hedo.de/] sú plne podporované.
+++ hedo ProfiLine USB ++
+Hedo ProfiLine USB od [hedo Reha-Technik http://www.hedo.de/] sú plne podporované.
+Pred použitím je potrebné nainštalovať USB ovládače od výrobcu.
+
+Nasleduje zoznam klávesových príkazov pre tento typ riadkov.
+Prosím, prečítajte si dokumentáciu dodanú spolu so zariadením na zistenie rozmiestnenia klávesov.
+%kc:beginInclude
+|| Názov | Klávesová skratka |
+| posunúť riadok späť | K1 |
+| posunúť riadok vpred | K3 |
+| Predchádzajúci riadok | B2 |
+| nasledujúci riadok | B5 |
+| Prejsť na znak v brailly | smerové tlačidlá |
+| Prepnúť nastavenie braillovský kurzor zviazaný s | K2 |
+| Plynulé čítanie | B6 |
+%kc:endInclude
+
+++ hedo MobilLine USB ++
+HedoMobilLine USB od [hedo Reha-Technik http://www.hedo.de/] sú plne podporované.
 Pred použitím je potrebné nainštalovať USB ovládače od výrobcu.
 
 Nasleduje zoznam klávesových príkazov pre tento typ riadkov.
@@ -1243,15 +1260,17 @@ Na zápis tohoto súboru sa používa štandardná syntaks zápisu ini súborov.
 Súbor môže obsahovať viacej sekcií z čoho každá sekcia môže obsahovať jednu alebo viac položiek.
 
 Každá sekcia obsahuje mapovanie vstupných príkazov na skripty v jednom Python module a triede NVDA.
-- Názov sekcie pozostáva z názvu Python modulu a názvu triedy oddelenými bodkou.
+- Názov sekcie pozostáva z názvu Python modulu a názvu triedy oddelenými bodkou (.).
 - Kľúčmi každej sekcie sú názvy skriptov, na ktoré si želáte namapovať vstupný príkaz.
 Je možné odstrániť mapovanie nejakého už použitého vstupného príkazu a na miesto názvu skriptu uviesť slovo None.
+Každý kľúč môžete napísať v jednej sekcii len raz, aj v prípade, ak použijete názov none.
 - Hodnotou každého kľúča je čiarkou (,) oddelený zoznam identifikátorov vstupných príkazov, ktoré majú byť namapované na skript uvedený v kľúči.
+Hodnota musí byť uzavretá v úvodzovkách "" alebo znakmi apostrof ''.
 - 
 
 Identifikátor vstupného príkazu pozostáva z dvoj znakového identifikátora zariadenia (kb pre klávesnicu, br pre braillovský riadok), nepovinného identifikátora subzariadenia, alebo rozloženia klávesov v zátvorke, dvojbodky a zoznamu identifikátorov klávesov oddelených znakom plus (+).
-Pre gestá z klávesnice časť v zátvorke znamená rozloženie klávesov a nie je povinná.
-Ak nie je zadaná, gesto sa použije pre všetky rozloženia klávesov.
+Pre gestá z klávesnice časť v zátvorke znamená rozloženie klávesnice a nie je povinná.
+Ak nie je zadaná, gesto sa použije pre všetky rozloženia klávesnice.
 Pre gestá braillských riadkov časť v zátvorke identifikuje špecifický ovládač zariadenia a je povinná.
 
 Na získanie identifikátorov vstupných príkazov, názvov modulov, tried a skriptov je možné:
@@ -1287,7 +1306,7 @@ Ak takýto súbor ešte neexistuje, vytvoríte v priečinku s používateľským
 Toto priradí klávesový príkaz NVDA+shift+t skriptu dateTime vo všetkých rozloženiach klávesnice.
 
 Všimnite si, že aj pôvodne priradený klávesový príkaz NVDA+F12 bude stále funkčný.
-Ak by ste chceli zrušiť jeho mapovanie, môžete pridať riadok
+Ak by ste chceli zrušiť jeho mapovanie, môžete pridať riadok:
 
 ```
 	None = kb:NVDA+f12
@@ -1299,10 +1318,8 @@ Ak teda použijete vo vstupnom príkaze kláves alt, jeho vyvolanie môže okrem
 Preto je ako modifikátory vhodné používať najmä klávesy NVDA, ctrl a shift.
 
 ++ Zmena vyslovovania symbolov pre pokročilých ++
-Pomocou dialógu [Výslovnosť interpunkčných a špeciálnych symbolov #SymbolPronunciation] je možné prispôsobiť vyslovovanie interpunkčných alebo iných špeciálnych znakov.
-Okrem toho je možné tabuľku symbolov upravovať ručne, čo prináša širšie možnosti.
-Napríklad je možné vybrať, či sa hlasovému výstupu bude posielať aj pôvodný symbol, či sa má vykonať pauza, alebo zmena v intonácii a podobne.
-Tiež je možné pridať ďalšie vlastné symboly.
+Pomocou dialógu [Výslovnosť interpunkčných a špeciálnych symbolov #SymbolPronunciation] je možné prispôsobiť vyslovovanie interpunkčných alebo iných špeciálnych znakov. Okrem toho je možné tabuľku symbolov upravovať ručne, čo prináša širšie možnosti.
+Napríklad je možné vybrať, či sa hlasovému výstupu bude posielať aj pôvodný symbol, či sa má vykonať pauza, alebo zmena v intonácii a podobne. Tiež je možné pridať ďalšie vlastné symboly.
 
 Tieto zmeny je potrebné zapisovať ručne do súboru s nastaveniami symbolov v priečinku s ostatnými súbormi nastavení NVDA.
 Súbor je nazvaný symbols-xx.dic, kde xx je kód jazyka.
@@ -1311,5 +1328,5 @@ Používatelia ale nemôžu pridávať vlastné komplexné symboly.
 
 + Ako získať viac informácií +
 Ak hľadáte ďalšie informácie o NVDA, o jeho vývoji, alebo hľadáte pomoc, navštívte stránku projektu na adrese NVDA_URL.
-Na tejto stránke môžete tiež nájsť prístup k emailovým konferenciám pojednávajúcich o NVDA a odkazy na ďalšie komunitné projekty a stránky o NVDA.
+Na tejto stránke môžete tiež nájsť e-mailové konferencie a odkazy na ďalšie komunitné projekty a stránky o NVDA.
 Môžete tu tiež nájsť informácie o vývoji, zdrojové kódy a iné súvisiace materiály.
