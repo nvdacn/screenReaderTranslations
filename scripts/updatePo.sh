@@ -4,6 +4,11 @@
 
 source checkProgs.sh
 
+force=""
+if [ "$1" == "--force" ]; then
+force="--force"
+fi
+
 commitMsg=""
 
 #snapUrl='http://nvda.sourceforge.net/snapshots/.index.html'
@@ -56,7 +61,7 @@ for lang in ${langs[*]}; do
     #
     #echo "updating po from pot."
     $MSGMERGE -q -U nvda.po /tmp/nvda.pot
-
+    sed -e "s/\(project-id-version: \)\(.*\)/\1NVDA bzr $branch:$rev\\\n\"/i" -i nvda.po
     # finding statistics after updating against pot file.
     #
     afuzzy=`$POCOUNT nvda.po | grep -i fuzzy | awk '{print \$2}'`
@@ -65,7 +70,7 @@ for lang in ${langs[*]}; do
 
     # checking if we need to do anything
     #
-    if [ "$bmsg" == "$amsg" ]; then
+    if [ "$bmsg" == "$amsg" ] && [ "$force" == "" ]; then
         # nothing has changed, dont need to action.
         # revert because comments in po file might have changed.
         #
