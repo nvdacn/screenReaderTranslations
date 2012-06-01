@@ -23,6 +23,7 @@ def processLang(lang):
         'nvda.po': { 
             'tPath': BZRDIR+ "source/locale/"+ lang + "/LC_MESSAGES/",
             'tName': "nvda.po",
+            'infoCmd': 'p=`pocount '+ lang+ "/nvda.po | grep -P '^translated' | awk '{print $3}'`; rev=`grep -i 'project-id-version' "+ lang +"/nvda.po | grep -o -P '[^ ]*:[0-9]+'`; echo $p of $rev"
         },
         'symbols.dic': { 
             'tPath': BZRDIR+ "source/locale/"+ lang+ "/",
@@ -31,23 +32,25 @@ def processLang(lang):
         'changes.t2t': {
             'tPath': BZRDIR+ "user_docs/"+ lang+ "/",
             'tName': "changes.t2t",
-            'infoCmd': 'ls -1 '+ lang+ '/ch-diffs/ | head -n 1'
+            'infoCmd': 'last=`ls -1 '+ lang+ '/ch-diffs/ | head -n 1`; echo $last'
         },
         'userGuide.t2t': {
             'tPath': BZRDIR+ "user_docs/"+ lang+ "/",
             'tName': "userGuide.t2t",
-            'infoCmd': 'ls -1 '+ lang+ '/ug-diffs/ | head -n 1'
+            'infoCmd': 'last=`ls -1 '+ lang+ '/ug-diffs/ | head -n 1`; echo $last'
         },
     }
 
 
     srcsFound, srcsMissing = makeFileList(srcsWanted.keys(), searchDirs=lang)
     installFiles = []
+    langFiles = []
     for file in srcsFound:
         tFullName = srcsWanted[file.name]['tPath'] + srcsWanted[file.name]['tName']
+        langFiles.append(tFullName)
         installFiles.append(env.InstallAs(tFullName, source=file))
     # find out what files bzr thinks have been changed.
-    cmd = "bzr status -SV "+ BZRDIR+ " | awk '{print $2}' | grep "+ lang
+    cmd = "bzr status -SV "+ " ".join(langFiles)+ " | awk '{print $2}' | grep "+ lang
     changedFiles = os.popen(cmd).read().split('\n')[:-1]
     if not changedFiles:
         return [installFiles, srcsMissing]
