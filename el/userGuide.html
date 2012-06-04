@@ -59,9 +59,20 @@
       <LI><A HREF="#toc28">7.1.1. Γενικές Ρυθμίσεις (NVDA+control+g)</A>
       <LI><A HREF="#toc29">7.1.2. Επιλογή Συνθέτη Ομιλίας (NVDA+control+s)</A>
       <LI><A HREF="#VoiceSettings">7.1.3. Ρυθμίσεις Φωνής (NVDA+control+v)</A>
+      <LI><A HREF="#SynthSettingsRing">7.1.4. Δακτύλιος Ρυθμίσεων Συνθέτη</A>
+      <LI><A HREF="#toc32">7.1.5. Ρυθμίσεις Πληκτρολογίου (NVDA+control+k)</A>
+      <LI><A HREF="#MouseSettings">7.1.6. Ρυθμίσεις ποντικιού (NVDA+control+m)</A>
+      <LI><A HREF="#toc34">7.1.7. Review Cursor Settings</A>
       </UL>
     </UL>
-  <LI><A HREF="#toc31">8. Λεξικό Όρων</A>
+  <LI><A HREF="#SupportedSpeechSynths">8. Υποστηριζόμενοι Συνθέτες Ομιλίας</A>
+    <UL>
+    <LI><A HREF="#toc36">8.1. eSpeak</A>
+    <LI><A HREF="#toc37">8.2. Microsoft Speech API έκδοση 4 (SAPI 4)</A>
+    <LI><A HREF="#toc38">8.3. Microsoft Speech API έκδοση 5 (SAPI 5)</A>
+    <LI><A HREF="#toc39">8.4. Microsoft Speech Platform</A>
+    </UL>
+  <LI><A HREF="#toc40">9. Λεξικό Όρων</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -73,7 +84,7 @@
 Το NVDA αναπτύσσεται από την <A HREF="http://www.nvaccess.org/">NV Access</A>, με τη συμμετοχή της κοινότητας.
 </P>
 <P>
-Η μετάφραση του NVDA στην Ελληνική γλώσσα αποτελεί μία δράση του <A HREF="http://www.stat.net.gr">Συλλόγου Τεχνολογικής Ανάπτυξης Τυφλών</A> και πραγματοποιείται από τον <A HREF="http://www.e-rhetor.com">Γεράσιμο Ξύδα</A>.
+Η μετάφραση του NVDA στην Ελληνική γλώσσα αποτελεί μία δράση του <A HREF="http://www.stat.net.gr">Συλλόγου Τεχνολογικής Ανάπτυξης Τυφλών</A> και πραγματοποιείται από τον Γεράσιμο Ξύδα και την <A HREF="http://www.e-rhetor.com">e-rhetor</A>.
 </P>
 
 <A NAME="toc3"></A>
@@ -1153,8 +1164,285 @@ Key: NVDA+p
 Αν έχετε προβλήματα με την προφορά ανεξάρτητων χαρακτήρων, δοκιμάστε να απενεργοποιήσετε αυτή την επιλογή.
 </P>
 
-<A NAME="toc31"></A>
-<H2>8. Λεξικό Όρων</H2>
+<A NAME="SynthSettingsRing"></A>
+<H4>7.1.4. Δακτύλιος Ρυθμίσεων Συνθέτη</H4>
+
+<P>
+Αν θέλετε να κάνετε γρήγορα αλλαγές στις ρυθμίσεις του συνθέτη χωρίς να πηγαίνεται στο διάλογο των Ρυθμίσεων Φωνής, υπάρχουν κάποιες εντολές πλήκτρων του NVDA που σας επιτρέπουν καθώς τρέχετε το NVDA να κινείστε από οπουδήποτε ανάμεσα στις πιο συνηθισμένες ρυθμίσεις:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Όνομα</TH>
+<TH>Πλήκτρο Υπολογιστή Γραφείου</TH>
+<TH>Πλήκτρο Υπολογιστή Laptop</TH>
+<TH>Περιγραφή</TH>
+</TR>
+<TR>
+<TD>Μετακίνηση στην επόμενη ρύθμιση συνθέτη</TD>
+<TD>NVDA+control+δεξίΒέλος</TD>
+<TD>NVDA+control+δεξίΒέλος</TD>
+<TD>Μετακινείται στην επόμενη μετά την τρέχουσα διαθέσιμη ρύθμιση της ομιλίας, κάνοντας κύκλο, αν τερματίσει, από την τελευταία ρύθμιση πάλι στην πρώτη.</TD>
+</TR>
+<TR>
+<TD>Μετακίνηση στην προηγούμενη ρύθμιση συνθέτη</TD>
+<TD>NVDA+control+αριστερόΒέλος</TD>
+<TD>NVDA+control+αριστερόΒέλος</TD>
+<TD>Μετακινείται στην προηγούμενη μετά την τρέχουσα διαθέσιμη ρύθμιση της ομιλίας, κάνοντας κύκλο, αν φτάσει στην αρχή, από την πρώτη ρύθμιση πίσω στην τελευταία.</TD>
+</TR>
+<TR>
+<TD>Αύξηση τρέχουσας ρύθμισης συνθέτη</TD>
+<TD>NVDA+control+πάνωΒέλος</TD>
+<TD>NVDA+control+πάνωΒέλος</TD>
+<TD>αυξάνει την τρέχουσα ρύθμιση ομιλίας στην οποία βρίσκεστε. Παράδειγμα, αυξάνει το ρυθμό, επιλέγει την επόμενη φωνή, αυξάνει την ένταση κλπ.</TD>
+</TR>
+<TR>
+<TD>Μείωση τρέχουσας ρύθμισης συνθέτη</TD>
+<TD>NVDA+control+κάτωΒέλος</TD>
+<TD>NVDA+control+κάτωΒέλος</TD>
+<TD>μειώνει την τρέχουσα ρύθμιση ομιλίας στην οποία βρίσκεστε. Παράδειγμα, μειώνει το ρυθμό, επιλέγει την επόμενη φωνή, αυξάνει την ένταση κλπ.</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc32"></A>
+<H4>7.1.5. Ρυθμίσεις Πληκτρολογίου (NVDA+control+k)</H4>
+
+<P>
+Αυτό το κουτί διαλόγου βρίσκεται στο μενού Προτιμήσεις, κάτω από το "Ρυθμίσεις πληκτρολογίου...".
+Περιέχει τις ακόλουθες επιλογές:
+</P>
+
+<H5>Διάταξη πληκτρολογίου</H5>
+
+<P>
+Αυτό το αναδυόμενο κουτί κειμένου σας επιτρέπει να επιλέξετε τον τύπο της διάταξης πληκτρολογίου που θα χρησιμοποιεί το NVDA. Προς το παρόν οι δύο διαθέσιμες επιλογές είναι Υπολογιστής Γραφείου (desktop) και Φορητός Υπολογιστής (laptop).
+</P>
+
+<H5>Χρήση του πλήκτρου Κλείδωμα Κεφαλαίων σαν το πλήκτρο τροποποιητή NVDA</H5>
+
+<P>
+Αν αυτό το κουτί επιλογής είναι τσεκαρισμένο, το πλήκτρο Κλείδωμα Κεφαλαίων θα χρησιμοποιείται σαν το πλήκτρο τροποποιητή NVDA.
+</P>
+
+<H5>Χρήση του Insert σαν το πλήκτρο τροποποιητή NVDA</H5>
+
+<P>
+Αν αυτό το κουτί επιλογής είναι τσεκαρισμένο, το πλήκτρο Insert (συνήθως βρίσκεται πάνω από τα πλήκτρα με τα βέλη, κοντά στο HOME και στο END) θα χρησιμοποιείται σαν το πλήκτρο τροποποιητή NVDA.
+</P>
+
+<H5>Χρήση του Insert του αριθμητικού πληκτρολογίου σαν το πλήκτρο τροποποιητή NVDA</H5>
+
+<P>
+Αν αυτό το κουτί επιλογής είναι τσεκαρισμένο, το πλήκτρο Insert του αριθμητικού πληκτρολογίου θα χρησιμοποιείται σαν το πλήκτρο τροποποιητή NVDA.
+</P>
+
+<H5>Εκφώνηση πληκτρολογούμενων χαρακτήρων</H5>
+
+<P>
+Key: NVDA+2
+</P>
+<P>
+Όταν είναι ενεργοποιημένο, το NVDA θα αναγγέλλει όλους τους χαρακτήρες που πατάτε στο πληκτρολόγιο.
+</P>
+
+<H5>Εκφώνηση πληκτρολογούμενων λέξεων</H5>
+
+<P>
+Key: NVDA+3
+</P>
+<P>
+Όταν είναι ενεργοποιημένο, το NVDA θα αναγγέλλει όλες τις λέξεις που γράφετε στο πληκτρολόγιο.
+</P>
+
+<H5>Ήχος μπιπ σε περίπτωση πληκτρολόγησης πεζών γραμμάτων όταν το πλήκτρο Κλείδωμα Κεφαλαίων είναι ενεργό</H5>
+
+<P>
+Όταν είναι ενεργοποιημένο, ένα προειδοποιητικός ήχος θα ακούγεται όταν πληκτρολογείτε ένα γράμμα μαζί με το πλήκτρο SHIFT όταν το πλήκτρο Κλείδωμα Κεφαλαίων είναι ενεργό.
+Γενικά, η πληκτρολόγηση γραμμάτων με το SHIFT όταν το Κλείδωμα Κεφαλαίων είναι ενεργό είναι μη-σκόπιμη και συνήθως οφείλεται στην παραμέληση απενεργοποίησης του πλήκτρου Κλειδώματος Κεφαλαίων.
+Έτσι, μπορεί να είναι χρήσιμο να προειδοποιείστε σχετικά με αυτό.
+</P>
+
+<H5>Εκφώνηση πλήκτρων εντολών</H5>
+
+<P>
+Key: NVDA+4
+</P>
+<P>
+Όταν είναι ενεργοποιημένο, το NVDA θα αναγγέλλει όλα τα πλήκτρα που πατάτε και που δεν είναι χαρακτήρες. Αυτά περιλαμβάνουν συνδυασμούς πλήκτρων όπως το CONTROL μαζί με κάποιο άλλο γράμμα.
+</P>
+
+<A NAME="MouseSettings"></A>
+<H4>7.1.6. Ρυθμίσεις ποντικιού (NVDA+control+m)</H4>
+
+<P>
+The Mouse Settings dialog is found in the Preferences Menu, under "Mouse settings...".
+It contains the following options:
+</P>
+
+<H5>Report Mouse Shape Changes</H5>
+
+<P>
+A checkbox, that when checked means that NVDA will announce the shape of the mouse pointer each time it changes.
+The mouse pointer in Windows changes shape to convey certain information such as when something is editable, or when something is loading etc.
+</P>
+
+<H5>Enable mouse tracking</H5>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>Desktop key</TD>
+<TD>NVDA+m</TD>
+</TR>
+<TR>
+<TD>Laptop key</TD>
+<TD>NVDA+shift+m</TD>
+</TR>
+</TABLE>
+
+<P>
+When enabled, NVDA will announce the text currently under the mouse pointer, as you move it around the screen. This allows you to find things on the screen, by physically moving the mouse, rather than trying to find them through object navigation.
+</P>
+
+<H5>Text unit resolution</H5>
+
+<P>
+If NVDA is set to announce the text under the mouse as you move it, this option allows you to choose exactly how much text will be spoken.
+The options are character, word, line and paragraph.
+</P>
+
+<H5>Report role when mouse enters object</H5>
+
+<P>
+If this checkbox is checked, NVDA will announce the role (type) of object as the mouse moves in side it.
+</P>
+
+<H5>Play audio coordinates when mouse moves</H5>
+
+<P>
+Checking this checkbox makes NVDA play beeps as the mouse moves, so that the user can work out where the mouse is in regards to the dimensions of the screen.
+</P>
+
+<H5>Brightness controls audio coordinates volume</H5>
+
+<P>
+If the "play audio coordinates when mouse moves" checkbox is checked, then checking this checkbox means that the volume of the audio coordinates beeps is controled by how bright the screen is under the mouse.
+This setting is unchecked by default.
+</P>
+
+<A NAME="toc34"></A>
+<H4>7.1.7. Review Cursor Settings</H4>
+
+<P>
+Found in the Preferences menu under "Review Cursor...".
+This dialog contains the following options:
+</P>
+
+<H5>Follow System Focus</H5>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>Desktop key</TD>
+<TD>NVDA+7</TD>
+</TR>
+<TR>
+<TD>Laptop key</TD>
+<TD>NVDA+control+7</TD>
+</TR>
+</TABLE>
+
+<P>
+When enabled, The review cursor will always be placed in the same object as the current system focus as it changes.
+</P>
+
+<H5>Follow System Caret</H5>
+
+<P>
+Key: NVDA+6
+</P>
+<P>
+When enabled, the review cursor will automatically be moved to the position of the System caret each time it moves.
+</P>
+
+<H5>Follow mouse</H5>
+
+<P>
+When enabled, the review cursor will follow the mouse as it moves.
+</P>
+
+<H5>Simple Review mode</H5>
+
+<P>
+When enabled, NVDA will filter the hierarchy of objects that can be navigated, to exclude any unusable objects.
+</P>
+
+<A NAME="SupportedSpeechSynths"></A>
+<H2>8. Υποστηριζόμενοι Συνθέτες Ομιλίας</H2>
+
+<P>
+Αυτό το κεφάλαιο περιέχει πληροφορίες σχετικές με τους συνθέτες ομιλίας που υποστηρίζει το NVDA.
+Για μία πιο πλήρη λίστα δωρεάν και εμπορικών συνθετών που μπορείτε να αγοράσετε και κατεβάσετε για να τους χρησιμοποιήσετε με το NVDA, παρακαλούμε δείτε τη σελίδα <A HREF="http://www.nvda-project.org/wiki/ExtraVoices">http://www.nvda-project.org/wiki/ExtraVoices</A>.
+</P>
+
+<A NAME="toc36"></A>
+<H3>8.1. eSpeak</H3>
+
+<P>
+Ο συνθέτης <A HREF="http://espeak.sourceforge.net/">eSpeak</A> είναι απευθείας ενσωματωμένος στο NVDA και δεν απαιτεί άλλους ειδικούς οδηγούς ή συστατικά για να εγκατασταθεί.
+Το NVDA εξ ορισμού χρησιμοποιεί τον eSpeak.
+Καθώς αυτός ο συνθέτης είναι ενσωματωμένος στο NVDA, αυτή είναι μία πολύ καλή επιλογή για όταν τρέχετε το NVDA από ένα USB δισκάκι σε άλλο σύστημα.
+</P>
+<P>
+Κάθε φωνή που έχει το eSpeak μιλάει μία διαφορετική γλώσσα.
+Υπάρχουν περισσότερες από 43 διαφορετικές γλώσσες που υποστηρίζονται από το eSpeak.
+</P>
+<P>
+Υπάρχουν επίσης πολλές παραλλαγές οι οποίες μεταβάλουν τον ήχο της φωνής.
+</P>
+
+<A NAME="toc37"></A>
+<H3>8.2. Microsoft Speech API έκδοση 4 (SAPI 4)</H3>
+
+<P>
+Το SAPI 4 είναι ένα παλαιότερο πρότυπο της Microsoft για συνθέτες ομιλίας.
+Πολλοί συνθέτες ομιλίας που συμμορφώνονται με αυτό το πρότυπο μπορούν να αγοραστούν ή να μεταφορτωθούν από διάφορες εταιρείες και ιστοσελίδες.
+Όταν χρησιμοποιείτε αυτό το συνθέτη με το NVDA, η λίστα των διαθέσιμων φωνών (προσβάσιμες από το <A HREF="#VoiceSettings">διάλογο Ρυθμίσεων Φωνής</A> ή από τον <A HREF="#SynthSettingsRing">Δακτύλιο Ρυθμίσεων Συνθέτη</A>) θα περιλαμβάνει όλες τις φωνές από όλες τις εγκατεστημένες μηχανές SAPI 4 στο σύστημα σας.
+</P>
+<P>
+Αν έχετε εγκαταστήσει φωνές SAPI 4 αλλά ο συνθέτης δεν εμφανίζεται στη λίστα των συνθετών του NVDA, παρακαλούμε να εγκαταστήσετε το αρχείο εκτέλεσης του SAPI 4, διαθέσιο από τη διεύθυνση [<A HREF="http://activex.microsoft.com/activex/controls/sapi/spchapi.exe">http://activex.microsoft.com/activex/controls/sapi/spchapi.exe</A>].
+</P>
+
+<A NAME="toc38"></A>
+<H3>8.3. Microsoft Speech API έκδοση 5 (SAPI 5)</H3>
+
+<P>
+Το SAPI 5 είναι ένα πρότυπο της Microsoft για συνθέτες ομιλίας.
+Πολλοί συνθέτες ομιλίας που συμμορφώνονται με αυτό το πρότυπο μπορούν να αγοραστούν ή να μεταφορτωθούν από διάφορες εταιρείες και ιστοσελίδες, αν και το σύστημα σας πιθανώς να έχει τουλάχιστον μία φωνή SAPI 5 προ-εγκατεστημένη. Σημείωση μεταφραστή: Αυτό δεν ισχύει για τα Ελληνικά.
+Όταν χρησιμοποιείτε αυτό το συνθέτη με το NVDA, η λίστα των διαθέσιμων φωνών (προσβάσιμες από το <A HREF="#VoiceSettings">διάλογο Ρυθμίσεων Φωνής</A> ή από τον <A HREF="#SynthSettingsRing">Δακτύλιο Ρυθμίσεων Συνθέτη</A>) θα περιλαμβάνει όλες τις φωνές από όλες τις εγκατεστημένες μηχανές SAPI 5 στο σύστημα σας.
+</P>
+
+<A NAME="toc39"></A>
+<H3>8.4. Microsoft Speech Platform</H3>
+
+<P>
+Η Microsoft Speech Platform παρέχει φωνές για πολλές γλώσσες (σημείωση μεταφραστή: όχι για τα Ελληνικά) που συνήθως χρησιμοποιούνται για την ανάπτυξη εφαρμογών ομιλίας που τρέχουν σε διακομιστές.
+Αυτές οι φωνές μπορούν επίσης να χρησιμοποιηθούν με το NVDA.
+</P>
+<P>
+Για να χρησιμοποιήσετε αυτές τις φωνές, χρειάζεται να εγκαταστήσετε δύο συστατικά:
+</P>
+
+<UL>
+<LI>Microsoft Speech Platform - Runtime (Version 11) , x86: <A HREF="http://www.microsoft.com/download/en/details.aspx?id=27225">http://www.microsoft.com/download/en/details.aspx?id=27225</A>
+<LI>Microsoft Speech Platform - Runtime Languages (Version 11): <A HREF="http://www.microsoft.com/download/en/details.aspx?id=27224">http://www.microsoft.com/download/en/details.aspx?id=27224</A>
+ <UL>
+ <LI>Αυτή η σελίδα περιλαμβάνει πολλά αρχεία τόσο για σύνθεση όσο και για αναγνώριση ομιλίας.
+ Επιλέξτες τα αρχεία που περιλαμβάνουν τα δεδομένα TTS για τις επιθυμητές γλώσσες/φωνές.
+ Για παράδειγμα, το αρχείο MSSpeech_TTS_en-US_ZiraPro.msi είναι μία φωνή για Αγγλικά Αμερικής.
+ </UL>
+</UL>
+
+<A NAME="toc40"></A>
+<H2>9. Λεξικό Όρων</H2>
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -1168,6 +1456,10 @@ Key: NVDA+p
 <TR>
 <TD>αντικείμενο πλοήγησης</TD>
 <TD>navigator object</TD>
+</TR>
+<TR>
+<TD>δακτύλιος ρυθμίσεων συνθέτη</TD>
+<TD>synth settings ring</TD>
 </TR>
 <TR>
 <TD>διέλευση</TD>
@@ -1218,6 +1510,10 @@ Key: NVDA+p
 <TD>status bar</TD>
 </TR>
 <TR>
+<TD>μεταφόρτωση</TD>
+<TD>download</TD>
+</TR>
+<TR>
 <TD>πεδίο επεξεργασίας</TD>
 <TD>edit field</TD>
 </TR>
@@ -1236,6 +1532,10 @@ Key: NVDA+p
 <TR>
 <TD>περιεχόμενο αντικείμενο</TD>
 <TD>contained object</TD>
+</TR>
+<TR>
+<TD>πλήκτρο τροποποιητή NVDA</TD>
+<TD>NVDA modifier key</TD>
 </TR>
 <TR>
 <TD>πλοήγηση</TD>
