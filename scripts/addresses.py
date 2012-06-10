@@ -71,6 +71,10 @@ addresses = {
         'lang':'Duch',
         'email': ['Bram Duvigneau <bram@bramd.nl>'],
     },
+    'nb_NO': {
+        'lang':'Norwegian bokmål',
+        'email': ['David Hole <balubathebrave@gmail.com>', 'Bjornar Seppola <bjornar@seppola.net>'],
+    },
     'pl': {
         'lang':'Polish',
         'email': ['Hubert Meyer <killer@tyflonet.com>'],
