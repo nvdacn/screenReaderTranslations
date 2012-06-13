@@ -3,8 +3,8 @@ import sys
 from subprocess import PIPE, Popen
 
 addresses = {
-    'all': {
-        'lang': 'all',
+    'default': {
+        'lang': '',
         'email': ['Mesar hameed <mesar.hameed@gmail.com>'], 
     },
     'ar': { 
@@ -125,8 +125,15 @@ addresses = {
     },
 }
 
+vocAddresses = []
+for key in addresses:
+    vocAddresses.extend(addresses[key]['email'])
+
+addresses['vocalizer'] = { 'lang': '', 'email': vocAddresses}
+
+
 def email(rcpts, subject, body):
-    rcpts.extend(addresses['all']['email'])
+    rcpts.extend(addresses['default']['email'])
     to = ", ".join(rcpts)
     p1 = Popen(['echo', '-e', body], stdout=PIPE)
     p2 = Popen(['mail', '-s', subject, to], stdin=p1.stdout)
