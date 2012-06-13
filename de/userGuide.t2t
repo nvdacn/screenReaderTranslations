@@ -818,7 +818,7 @@ Bei eingeschalteter Option wird automatisch bei Bewegung der Anzeige-Cursor zur 
 Wenn eingeschaltet, verfolgt der Anzeige-Cursor bei Bewegungen die Maus.
 
 ==== Einfacher Darstellungsmodus ====
-Bei eingeschaltetem Modus filtert NVDA die Hierarchie der navigierbaren Objekte, sodass nicht wichtige Objekte wie unsichtbare Objekte und Objekte, welche nur zu Gestaltungszwecken eingebaut wurden, heraus.
+Bei eingeschaltetem Modus filtert NVDA nicht wichtige Objekte aus Hierarchie der navigierbaren Objekte heraus. Dabei werden z.B. unsichtbare Objekte und Objekte, welche nur zu Gestaltungszwecken eingebaut wurden, übersprungen.
 
 +++ Einstellungen zur Objektdarstellung (NVDA+STRG+O) +++
 Die Einstellungen zur Objektdarstellung finden Sie im NVDA-Menü unter "Einstellungen".
@@ -1322,7 +1322,7 @@ Bitte sehen Sie in der Dokumentation der Braillezeile nach wo die entsprechenden
 | Braillezeile zur vorigen Zeile bewegen | auf |
 | Braillezeile zur nächsten Zeile bewegen | ab |
 | Cursor zum Braille-modul bewegen | routing |
-|Braillezeile koppeln an | auf+ab |
+| Braillezeile koppeln an | auf+ab |
 | Taste Pfeil nach oben | Leertaste+Punkt1 |
 | Taste Pfeil nach unten | Leertaste+Punkt4 |
 | Taste Pfeil nach links | Leertaste+Punkt3 |
@@ -1337,6 +1337,80 @@ Bitte sehen Sie in der Dokumentation der Braillezeile nach wo die entsprechenden
 | Windows-Taste | Leertaste+Punkt3+Punkt4 |
 | Alt+Tabulatortaste | Leertaste+Punkt2+Punkt3+Punkt4+Punkt5 (Leertaste+t) |
 | Alles lesen | c1+c2+c3+c4+c5+c6 |
+%kc:endInclude
+
+
+++ HIMS Braille Sense/Braille EDGE Serie ++
+NVDA unterstützt die Braillezeilenmodelle Braile Sense und Braille Edge von [Hims http://www.hims-inc.com/], wahlweise mit USB- oder Bluetooth-Anbindung. 
+Wenn Sie die Braillezeile per USB anschließen, müssen Sie noch den USB-Treiber von HIMS auf Ihrem System installieren.
+
+Folgende Tastenkombinationen sind im NVDA verfügbar:
+Bitte sehen Sie in der Dokumentation zur Braillezeile nach, wo sich die entsprechenden Tasten befinden.
+%kc:beginInclude
+|| Name | Taste |
+| Braillezeile zurückscrollen | Scroll unten auf der linken Seite |
+| Braillezeile vorwärtsscrollen | Scroll unten auf der rechten Seite |
+| zur vorigen Zeile bewegen | scroll oben auf der linken Seite |
+| zur nächsten Zeile bewegen | scroll oben auf der rechten Seite |
+| Cursor zum Braillemodul ziehen | routing |
+| Tastenkombination Umsahtlt+Tab | Punkt 1+Punkt 2+Leertaste |
+| Alt-Taste | Punkt 1+Punkt 3+Punkt 4+Leertaste |
+| Esc-Taste | Punkt 1+Punkt 5+Leertaste |
+| Tab-Taste | Punkt 4+Punkt 5+Leertaste |
+| Eingabetaste | Punkt8 |
+| Rücktaste | Punkt7 |
+| Pfeil auf | Punkt1+Leertaste |
+| Pfeil ab | Punkt 4+Leertaste |
+| Dauergroßschreibtaste | punkt1+Punkt3+Punkt6+Leertaste |
+| Umschalt+alt+tab | F2+F3+F1 |
+| alt+tab | F2+F3 |
+| Ende | Punkt4+Punkt6+Leertaste |
+| strg+Ende | Punkt4+Punkt5+Punkt6+Leertaste |
+| Pos1 | Punkt1+Punkt3+Leertaste |
+| strg+Pos1 | Punkt1+Punkt2+Punkt3+Leertaste |
+| Pfeil links | Punkt3+Leertaste |
+| strg+Umschalt+Pfeil links | Punkt2+Punkt8+Leertaste+F1 |
+| strg+Pfeil links | Punkt2+Leertaste |
+| Umschalt+alt+Pfeil links | Punkt2+Punkt7+F1 |
+| alt+Pfeil links | Punkt2+Punkt7 |
+| Pfeil rechts | Punkt6+Leertaste |
+| strg+umschalt+Pfeil rechts | punkt5+punkt8+Leertaste+F1 |
+| strg+Pfeil rechts | punkt5+Leertaste |
+| umschalt+alt+Pfeil rechts | punkt5+punkt7+F1 |
+| alt+Pfeil rechts | punkt5+punkt7 |
+| Seite auf | punkt1+punkt2+punkt6+Leertaste |
+| strg+Seite auf | punkt1+punkt2+punkt6+punkt8+Leertaste |
+| strg+Umschalt+Pfeil auf | punkt2+punkt3+punkt8+Leertaste+F1 |
+| strg+Pfeil auf | punkt2+punkt3+Leertaste |
+| Umschalt+alt+Pfeil auf | punkt2+punkt3+punkt7+F1 |
+| Alt+Pfeil auf | punkt2+punkt3+punkt7 |
+| Umschalt+Pfeil auf | Scroll unten auf der linken Seite + Leertaste |
+| Seite ab | punkt3+punkt4+punkt5+Leertaste |
+| strg+Seite ab | punkt3+punkt4+punkt5+punkt8+Leertaste |
+| strg+Umschalt+Pfeil ab | punkt5+punkt6+punkt8+Leertaste+F1 |
+| strg+Pfeil ab | punkt5+punkt6+Leertaste |
+| Umschalt+alt+Pfeil ab | punkt5+punkt6+punkt7+F1 |
+| alt+Pfeil ab | punkt5+punkt6+punkt7 |
+| Umschalt+Pfeil ab | scroll unten auf der rechten Seite + Leertaste |
+| entf | punkt1+punkt3+punkt5+Leertaste |
+| f1  | punkt1+punkt2+punkt5+Leertaste |
+| f3  | punkt1+punkt2+punkt4+punkt8 |
+| f4 | punkt7+F3 |
+| windows+b | punkt1+punkt2+F1 |
+| windows+d | punkt1+punkt4+punkt5+F1 |
+%kc:endInclude
+
+++ HIMS SyncBraille ++
+NVDA unterstützt das Braillezeilenmodell Braillesync von  [HIMS http://www.hims-inc.com/].
+Sie müssen den USB-treiber von HIMS installieren, damit diese Braillezeile funktioniert.
+
+Folgende Tastenkombinationen sind im NVDA verfügbar.
+Bitte sehen Sie in der Dokumentation zu Ihrer Braillezeile nach, wo die entsprechenden Tasten zu finden sind.
+%kc:beginInclude
+|| Name | Taste |
+| Braillezeile zurückscrollen | scroll unten auf der linken Seite |
+| Braillezeile vorwärtsscrollen | scroll unten auf der rechten Seite |
+| Cursor zum Braillemodul ziehen | routing |
 %kc:endInclude
 
 
