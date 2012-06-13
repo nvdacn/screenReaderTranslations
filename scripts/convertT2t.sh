@@ -16,7 +16,7 @@ langs=(ar bg cs de el es fi fr gl hu it ja nl nb_NO pl pt_BR pt_PT sk ta tr zh_T
 for lang in ${langs[*]}; do
     echo "processing $lang"
     cd $lang
-    encoding=`file *.t2t  | grep -vi "utf-8"`
+    encoding=`file *.t2t  | grep -viP "utf-8|empty|ascii"`
     if [ "$encoding" != "" ]; then
         python ../scripts/addresses.py $lang "File encoding problem" "Please save the following as unicode UTF-8: $encoding"
     else
