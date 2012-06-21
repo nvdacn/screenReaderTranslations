@@ -63,6 +63,10 @@ addresses = {
         'lang':'Japanese',
         'email': ['Takuya Nishimoto <nishimotz@gmail.com>'],
     },
+    'ko': {
+        'lang':'Korean',
+        'email': ['Joseph Lee <joseph.lee22590@gmail.com>'],
+    },
     'nb_NO': {
         'lang':'Norwegian bokmål',
         'email': ['David Hole <balubathebrave@gmail.com>', 'Bjornar Seppola <bjornar@seppola.net>'],
