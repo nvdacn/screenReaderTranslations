@@ -7,6 +7,10 @@ addresses = {
         'lang': '',
         'email': ['Mesar hameed <mesar.hameed@gmail.com>'], 
     },
+    'am': {
+        'lang':'Amharic',
+        'email': ['Dr. Tamru E. Belay <g.braille@sympatico.ca>'],
+    },
     'ar': { 
         'lang':'Arabic',
         'email': ['Fatma Mehanna <fatma.mehanna@gmail.com>'],
@@ -73,7 +77,7 @@ addresses = {
     },
     'nl': {
         'lang':'Duch',
-        'email': ['Bram Duvigneau <bram@bramd.nl>', 'Bart Simons <bart@bartsimons.be>'],
+        'email': ['Bram Duvigneau <bram@bramd.nl>', 'Bart Simons <bart@bartsimons.be>', 'Alwine Hardus <ahardus@xs4all.nl>'],
     },
     'nb_NO': {
         'lang':'Norwegian bokmål',

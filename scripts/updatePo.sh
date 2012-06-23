@@ -42,7 +42,7 @@ bzr revert
 
 popd # >/dev/null 2>&1
 
-langs=(ar bg cs da de el es fi fr gl hr hu it ja ko nl nb_NO nn_NO pl pt_BR pt_PT sk sv ta tr uk zh_CN zh_HK zh_TW)
+langs=(am ar bg cs da de el es fi fr gl hr hu it ja ko nl nb_NO nn_NO pl pt_BR pt_PT sk sv ta tr uk zh_CN zh_HK zh_TW)
 for lang in ${langs[*]}; do
     echo "processing $lang"
     cd $lang
