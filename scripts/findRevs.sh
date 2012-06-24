@@ -25,16 +25,14 @@ function findRevs() {
   diffsDir=$3
   fname=$4
 
-  # 
-  newRevs=""
   echo "processing $lang: $fname"
   startRev=`ls -1 ${lang}/$diffsDir/ | tail -n 1`
-  if [ "$startRev" == "disabled" ]; then
+  if [ "$startRev" == "disabled" ] || [ "$startRev" == "" ]; then
+    echo "skipped."
     return
   fi
-  startRev=$(($startRev+1))
   #echo "my startRev is: $startRev"
-  newRevs=`bzr log -r${startRev}.. $BZRDIR/$fpath/$fname | grep -P "^revno: [0-9]+" | sort | awk '{printf("%d ", $2)}'`
+  newRevs=`bzr log -r${startRev}.. $BZRDIR/$fpath/$fname | grep -P "^revno: [0-9]+" | sort | sed '1 d' | awk '{printf("%d ", $2)}'`
   echo "revs to be processed: $newRevs"
   prevRev=$startRev
   revCounter=0
