@@ -4,6 +4,7 @@
 # Convert our t2t files to html.
 
 source checkProgs.sh
+source languages.sh
 
 git svn rebase
 
@@ -12,8 +13,7 @@ absPath=`readlink -f -n $0`
 absPath=`dirname $absPath`
 pushd ${absPath}/../ >/dev/null 2>&1
 
-langs=(ar bg cs de el es fi fr gl hu it ja nl nb_NO pl pt_BR pt_PT sk ta tr zh_TW)
-for lang in ${langs[*]}; do
+for lang in ${convertLangs[*]}; do
     echo "processing $lang"
     cd $lang
     encoding=`file *.t2t  | grep -viP "utf-8|empty|ascii"`

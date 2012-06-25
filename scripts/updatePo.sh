@@ -3,6 +3,7 @@
 #
 
 source checkProgs.sh
+source languages.sh
 
 force=""
 if [ "$1" == "--force" ]; then
@@ -42,8 +43,7 @@ bzr revert
 
 popd # >/dev/null 2>&1
 
-langs=(am ar bg cs da de el es fi fr gl hr hu it ja nl nb_NO nn_NO pl pt_BR pt_PT sk sv ta tr uk zh_CN zh_HK zh_TW)
-for lang in ${langs[*]}; do
+for lang in ${updatePoLangs[*]}; do
     echo "processing $lang"
     cd $lang
 
