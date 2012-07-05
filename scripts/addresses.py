@@ -75,6 +75,10 @@ addresses = {
         'lang':'Norwegian bokmål',
         'email': ['David Hole <balubathebrave@gmail.com>', 'Bjornar Seppola <bjornar@seppola.net>'],
     },
+    'ne': {
+        'lang':'Nepali',
+        'email': ['him Prasad Gautam <drishtibachak@gmail.com>'],
+    },
     'nl': {
         'lang':'Duch',
         'email': ['Bram Duvigneau <bram@bramd.nl>', 'Bart Simons <bart@bartsimons.be>', 'Alwine Hardus <ahardus@xs4all.nl>', 'A Campen <a.campen@wxs.nl>'],
