@@ -25,7 +25,7 @@ Tärkeimpiä ominaisuuksia ovat:
 - Helppokäyttöinen puhuva asennusohjelma
 - Käännökset 37 kielelle
 - Tuki nykyaikaisille Windows-käyttöjärjestelmille, mukaan lukien sekä 32- että 64-bittiset versiot
-- Mahdollisuus käyttää Windowsin kirjautumis- ja muissa suojatuissa ruuduissa
+- Mahdollisuus käyttää Windowsin kirjautumisikkunassa ja muissa suojatuissa ruuduissa
 - Tuki yleisille esteettömyysrajapinnoille, kuten Microsoft Active Accessibility, Java Access Bridge, IAccessible2 sekä UI Automation (tuki UI Automationille vain Windows 7:ssä ja uudemmissa)
 - Tuki Windowsin komentokehotteelle ja konsolisovelluksille
 -
@@ -71,7 +71,7 @@ Ladatun tiedoston suorittaminen käynnistää NVDA:n väliaikaisversion.
 Seuraavaksi kysytään, halutaanko se asentaa, luoda massamuistiversio tai jatkaa väliaikaisversion käyttämistä.
 
 Kannattaa valita asennusvaihtoehto, jos NVDA:ta aiotaan käyttää aina samalla tietokoneella.
-Asentaminen mahdollistaa sellaiset lisätoiminnot kuin automaattinen käynnistys Windowsiin kirjautumisen jälkeen, kirjautumis- ja suojattujen ruutujen lukeminen (massamuisti- ja väliaikaisversioilla tämä ei ole mahdollista) ja pikakuvakkeen luomisen Käynnistä-valikkoon ja työpöydälle.
+Asentaminen mahdollistaa sellaiset lisätoiminnot kuin automaattinen käynnistys Windowsiin kirjautumisen jälkeen, kirjautumisikkunan ja suojattujen ruutujen lukeminen (massamuisti- ja väliaikaisversioilla tämä ei ole mahdollista) ja pikakuvakkeen luomisen Käynnistä-valikkoon ja työpöydälle.
 Asennetusta versiosta on mahdollista tehdä milloin tahansa myös massamuistiversio.
 
 Massamuistiversion luominen kannattaa valita, jos NVDA halutaan mukana kuljetettavaksi USB-muistitikulle tai muulle kirjoitettavalle tietovälineelle.
@@ -101,7 +101,7 @@ Mikäli kuvake luodaan, siihen liitetään myös pikanäppäin Ctrl+Alt+n, jolla
 
 +++ Kopioi massamuistiversion asetukset nykyiseen käyttäjätiliin +++
 Tällä asetuksella voidaaan valita, kopioidaanko käynnissä olevan NVDA:n asetukset asennettuun versioon nykyiselle kirjautuneelle käyttäjälle. 
-Asetuksia ei kopioida tietokoneen muille käyttäjille eikä Windowsin kirjautumis- tai muissa suojatuissa ruuduissa käytettäväksi.
+Asetuksia ei kopioida tietokoneen muille käyttäjille eikä Windowsin kirjautumisikkunassa tai muissa suojatuissa ruuduissa käytettäväksi.
 Tämä asetus on käytettävissä vain massamuistiversiosta asennettaessa, ei suoraan ladatusta käynnistyspaketista.
  
 ++ Massamuistiversion luominen ++
@@ -519,8 +519,8 @@ Asetus on käytettävissä vain NVDA:n asennetuissa versioissa.
 Jos Windowsiin kirjaudutaan käyttäjänimellä ja salasanalla, tämä asetus saa NVDA:n käynnistymään automaattisesti kirjautumisruudussa aina Windowsin käynnistyessä.
 Asetus on käytettävissä vain NVDA:n asennetuissa versioissa.
 
-==== Käytä nykyisiä tallennettuja asetuksia kirjautumis- ja muissa suojatuissa ruuduissa ====
-Tämän painikkeen painaminen kopioi nykyiset tallennetut asetukset NVDA:n järjestelmäasetusten hakemistoon, jotta niitä käytetään kirjautumis- ja käyttäjätilien valvonnan ja muissa suojatuissa ruuduissa.
+==== Käytä nykyisiä tallennettuja asetuksia kirjautumisikkunassa ja muissa suojatuissa ruuduissa ====
+Tämän painikkeen painaminen kopioi nykyiset tallennetut asetukset NVDA:n järjestelmäasetusten hakemistoon, jotta niitä käytetään kirjautumisikkunassa ja käyttäjätilien valvonnan sekä muissa suojatuissa ruuduissa.
 Asetusten siirtäminen voidaan varmistaa tallentamalla ne ensin painamalla Ctrl+NVDA+s tai valitsemalla NVDA-valikosta Tallenna asetukset.
 Tämä painike on käytettävissä vain NVDA:n asennetuissa versioissa.
 
@@ -936,16 +936,16 @@ Asennetut NVDA:n versiot tallentavat kaikki asetukset, käyttäjän omat sovellu
 Tämä tarkoittaa, että jokaisella järjestelmän käyttäjällä voi olla omat NVDA-asetuksensa.
 Asennetun NVDA:n asetushakemistoon päästään valitsemalla Käynnistä-valikosta Ohjelmat -> NVDA -> Selaa käyttäjän asetushakemistoa.
 
-Kirjautumis- ja käyttäjätilien valvonnan ruuduissa käytettävät asetukset tallennetaan NVDA:n asennushakemistossa olevaan systemConfig-hakemistoon.
+Kirjautumisikkunassa ja käyttäjätilien valvonnan ruuduissa käytettävät asetukset tallennetaan NVDA:n asennushakemistossa olevaan systemConfig-hakemistoon.
 Näihin ei tulisi yleensä koskea.
 Muuttaaksesi sitä, miten NVDA on määritelty kirjautumis- ja käyttäjätilien valvonnan ruuduissa, muuta ensin asetukset haluamiksesi kun olet kirjautuneena Windowsiin, ja kopioi ne sitten kirjautumisruudussa käytettäväksi painamalla Yleiset asetukset -valintaikkunassa olevaa painiketta.
 
 + Lisätyökalut +
 
 ++ Näytä loki ++
-Näytä loki -toiminnolla, joka löytyy NVDA-valikon Työkalut-alavalikosta, voidaan tutkia kaikkia NVDA:n viime käynnistyksen jälkeen tulleita lokimerkintöjä.
+Näytä loki -toiminnolla, joka löytyy NVDA-valikon Työkalut-alavalikosta, voidaan tutkia kaikkia NVDA:n edellisen käynnistyksen jälkeen tulleita lokimerkintöjä.
 
-Loki voidaan myös tallentaa tiedostoon tai päivittää ikkunan sisältö, jotta uusimmat lokin avaamisen jälkeen tulleet merkinnät näytetään.
+Loki voidaan myös tallentaa tiedostoon tai ikkunan sisältö päivittää, jotta uusimmat lokin avaamisen jälkeen tulleet merkinnät näytetään.
 Nämä toiminnot ovat käytettävissä Näytä loki -sovelluksen Tiedosto-valikossa.
 
 ++ Näytä puhe ++
@@ -959,15 +959,15 @@ Jos ikkunaa kuitenkin napsautetaan hiirellä tai kohdistus siirretään siihen, 
 
 ++ Lisäosien hallinta ++
 Lisäosien hallinnalla, johon päästään NVDA-valikosta Työkalut-valikon alta kohdasta Lisäosien hallinta, voidaan asentaa ja poistaa NVDA:n lisäosia.
-Lisäosat, joita toimittaa NVDA-yhteisö, saattavat lisätä tai muuttaa ominaisuuksia tai jopa tarjota tuen uusille pistenäytöille tai puhesyntetisaattoreille.
+NVDA-yhteisön toimittamat lisäosat saattavat lisätä tai muuttaa ominaisuuksia tai jopa tarjota tuen uusille pistenäytöille tai puhesyntetisaattoreille.
 
 Lisäosien hallinnassa on lista, jossa näkyvät kaikki nykyisen käyttäjän asentamat lisäosat.
-Jokaisesta lisäosasta näytetään paketin nimi, versio ja tekijä, ja lisätietoja kuten kuvaus ja URL-osoite voidaan tarkastella valitsemalla haluttu lisäosa ja painamalla Tietoja lisäosasta -painiketta.
+Jokaisesta lisäosasta näytetään paketin nimi, versio sekä tekijä, ja lisätietoja kuten kuvausta ja URL-osoitetta voidaan tarkastella valitsemalla haluttu lisäosa ja painamalla Tietoja lisäosasta -painiketta.
 
 Lisäosa asennetaan painamalla Asenna-painiketta.
-Tässä voidaan etsiä tietokoneelta tai verkosta haluttua lisäosapakettia (.nvda-addon-tiedostoa).
+Avautuvassa ikkunassa voidaan etsiä tietokoneelta tai verkosta haluttua lisäosapakettia (.nvda-addon-tiedostoa).
 Kun painetaan Avaa-painiketta, NVDA kysyy, halutaanko lisäosa varmasti asentaa.
-Koska lisäosien toiminnallisuus on NVDA:n sisällä rajoittamatonta, mikä saattaisi teoriassa tarkoittaa pääsyä henkilökohtaisiin tietoihin tai jopa koko järjestelmään, mikäli käytetään NVDA:n asennettua versiota, on erittäin tärkeää, että lisäosia asennetaan vain luotetuista lähteistä.
+Koska lisäosien toiminnallisuus on NVDA:n sisällä rajoittamatonta, mikä saattaisi teoriassa tarkoittaa pääsyä henkilökohtaisiin tietoihin tai asennettua versiota käytettäessä jopa koko järjestelmään, on erittäin tärkeää, että lisäosia asennetaan vain luotetuista lähteistä.
 NVDA on käynnistettävä uudelleen lisäosan asentamisen jälkeen, jotta se voidaan ottaa käyttöön.
 Uudelleenkäynnistykseen saakka listassa näkyy lisäosan tilana "asenna".
 
@@ -985,7 +985,7 @@ Nämä tiedostot on parasta poistaa ja asentaa tilalle asianmukainen lisäosa, m
 
 ++ Python-konsoli ++
 NVDA:n Python-konsoli, joka löytyy NVDA-valikon Työkalut-alavalikosta, on kehitystyökalu, joka on hyödyllinen virheiden etsinnässä, yleisessä NVDA:n sisäisen toiminnan tai sovelluksen esteettömyyshierarkian tutkimisessa.
-Katso lisätietoja kehittäjien oppaasta [NVDA:n web-sivuston Development-osiosta NVDA_URLwiki/Development].
+Katso lisätietoja kehittäjän oppaasta [NVDA:n web-sivuston Development-osiosta NVDA_URLwiki/Development].
 
 ++ Lataa liitännäiset uudelleen ++
 Tällä voidaan ladata uudelleen sovellusmoduulit ja yleisliitännäiset ilman NVDA:n uudelleenkäynnistystä, mistä voi olla hyötyä kehittäjille.
