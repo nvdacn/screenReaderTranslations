@@ -787,28 +787,177 @@ To move to the beginning or end of containing elements such as lists and tables:
 </TR>
 </TABLE>
 
-<H3>Saving and Reloading the configuration</H3>
+<H3>환경 설정 저장하기와 다시 불러 오기</H3>
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
-<TH>Name</TH>
-<TH>Desktop key</TH>
-<TH>Laptop key</TH>
-<TH>Description</TH>
+<TD>이름</TD>
+<TD>데스크탑 키</TD>
+<TD>노트북 키</TD>
+<TD>설명</TD>
 </TR>
 <TR>
-<TD>Save configuration</TD>
+<TD ALIGN="right">환경 설정 저장하기</TD>
 <TD>NVDA+control+c</TD>
 <TD>NVDA+control+c</TD>
-<TD>Saves your current configuration so that it is not lost when you exit NVDA</TD>
+<TD>NVDA를 종료해도 환경 설정 값을 잃지 않도록 현재 환경 설정을 저장합니다.</TD>
 </TR>
 <TR>
-<TD>Revert to saved configuration</TD>
+<TD>기존환경 설정으로 되돌아가기</TD>
 <TD>NVDA+control+r</TD>
 <TD>NVDA+control+r</TD>
-<TD>Restores NVDA to the settings that existed when you last saved NVDA's configuration</TD>
+<TD>최근에 저장했던 NVDA 설정값으로 NVDA를 복원합니다.</TD>
 </TR>
 </TABLE>
+
+<P>
+  %kc:endInclude
+</P>
+<P>
+Portable versions of NVDA store all settings, custom appModules and custom drivers in a directory called userConfig, found in the NVDA directory.
+</P>
+<P>
+Installed versions of NVDA store all settings, custom appModules and custom drivers in a special NVDA directory located in your Windows user profile.
+This means that each user on the system can have their own NVDA settings.
+To get to your settings directory for an installed version of NVDA, on the start menu you can go to programs -&gt; NVDA -&gt; explore user configuration directory.
+</P>
+<P>
+Settings for NVDA when running on the logon or UAC screens is stored in the systemConfig directory in NVDA's installation directory.
+Usually this configuration should not be touched.
+To change how NVDA is configured on the logon/UAC screens, configure NVDA to how you wish while logged into Windows, and then instruct NVDA to copy the configuration to the logon screen by using the button in the General settings dialog.
+</P>
+<P>
+The log viewer, found under Tools in the NVDA menu, allows you to view all the logging output that has occured up until now from when you last started NVDA.
+</P>
+<P>
+Apart from reading the content, you can also Save a copy of the log file, or refresh the viewer so that it shows the most recent output since the Log viewer was opened.
+These actions are available under the viewer's Log menu.
+</P>
+<P>
+For sighted software developers or people demoing NVDA to sighted audiences, a floating window is available that allows you to view all the text that NVDA is currently speaking.
+</P>
+<P>
+To enable the speech viewer, check the "Speech Viewer" menu item under Tools in the NVDA menu.
+Uncheck the menu item to disable it.
+</P>
+<P>
+While the speech viewer is enabled, it constantly updates to show you the most current text being spoken.
+However, if you click or focus inside the viewer, NVDA will temporarily stop updating the text, so that you are able to easily select or copy the existing content.
+</P>
+<P>
+The Add-ons Manager, accessed by selecting Manage add-ons under Tools in the NVDA menu, allows you to install and uninstall add-on packages for NVDA.
+These packages are provided by the community and contain custom code that may add or change features in NVDA or even provide support for extra Braille displays or speech synthesizers.
+</P>
+<P>
+The Add-ons Manager contains a list that displays all the add-ons currently installed in your NVDA user configuration.
+A package name, version and author are shown for each add-on, though further information such as a description and URL can be viewed by selecting the add-on and pressing the About add-on button.
+</P>
+<P>
+To install an Add-on, press the Install button.
+This will allow you to browse for an add-on package (.nvda-addon file) somewhere on your computer or on a network.
+Once you press Open, NVDA will ask if you really wish to install the add-on.
+As the functionality of add-ons is unrestricted inside NVDA, which in theory could include accessing your personal data or even the entire system if NVDA is an installed copy, it is very important to only install add-ons from sources you trust.
+Once the add-on is installed, NVDA must be restarted for the add-on to start running.
+Until you do, a status of "install" will show for that add-on in the list.
+</P>
+<P>
+To remove an add-on, select the add-on from the list and press the Remove button.
+NVDA will ask if you really wish to do this.
+As with installing, NVDA must be restarted for the add-on to be fully  removed.
+Until you do, a status of "remove" will be shown for that add-on in the list.
+</P>
+<P>
+The manager also has a Close button to close the dialog.
+If you have installed or removed add-ons, NVDA will first ask you if you wish to restart so that your changes can take effect.
+</P>
+<P>
+In the past it has been possible to extend NVDA's functionality by copying individual plugins and drivers in to your NVDA user Configuration directory.
+Although this version of NVDA  may still   load them, they will not be shown in the Add-on Manager.
+It is best to remove these files from your configuration and install  the appropriate add-on if one is available.
+</P>
+<P>
+The NVDA Python console, found under Tools in the NVDA menu, is a development tool which is useful for debugging, general inspection of NVDA internals or inspection of the accessibility hierarchy of an application.
+For more information, please see the Developer Guide available from <A HREF="http://www.nvda-project.org/wiki/Development">the Development section of the NVDA web site</A>.
+</P>
+<P>
+This item, once activated, reloads app modules and global plugins without restarting NVDA, which can be useful for developers.
+</P>
+<P>
+This section contains information about the speech synthesizers supported by NVDA.
+For an even more extensive list of  free and commercial synthesizers that you can purchase and download for use with NVDA, please see the page at <A HREF="http://www.nvda-project.org/wiki/ExtraVoices">http://www.nvda-project.org/wiki/ExtraVoices</A>.
+</P>
+<P>
+The <A HREF="http://espeak.sourceforge.net/">eSpeak</A> synthesizer is built directly into NVDA and does not require any other special drivers or components to be installed.
+NVDA starts using eSpeak by default.
+As this synthesizer is built into NVDA, this is a great choice for when running NVDA off a USB thumb drive on other systems.
+</P>
+<P>
+Each voice that comes with eSpeak speaks a different language.
+There are over 43 different languages supported by eSpeak.
+</P>
+<P>
+There are also many variants which can be chosen to alter the sound of the voice.
+</P>
+<P>
+SAPI 4 is an older Microsoft standard for software speech synthesizers.
+Many speech synthesizers that comply with this standard may be purchased or downloaded for free from various companies and websites.
+When using this synthesizer with NVDA, the available voices (accessed from the <A HREF="#VoiceSettings">Voice Settings dialog</A> or by the <A HREF="#SynthSettingsRing">Synth Settings Ring</A>) will contain all the voices from all the installed SAPI 4 engines found on your system.
+</P>
+<P>
+If you have SAPI 4 voices installed but the synthesizer does not appear in NVDA's list of synthesizers, please install the SAPI 4.0 runtime binaries, available at <A HREF="http://activex.microsoft.com/activex/controls/sapi/spchapi.exe">http://activex.microsoft.com/activex/controls/sapi/spchapi.exe</A>.
+</P>
+<P>
+SAPI 5 is a Microsoft standard for software speech synthesizers.
+Many speech synthesizers that comply with this standard may be purchased or downloaded for free from various companies and websites, though your system will probably already come with at least one SAPI 5 voice preinstalled.
+When using this synthesizer with NVDA, the available voices (accessed from the <A HREF="#VoiceSettings">Voice Settings dialog</A> or by the <A HREF="#SynthSettingsRing">Synth Settings Ring</A>) will contain all the voices from all the installed SAPI 5 engines found on your system.
+</P>
+<P>
+The Microsoft Speech Platform provides voices for many languages which are normally used in the development of server-based speech applications.
+These voices can also be used with NVDA.
+</P>
+<P>
+To use these voices, you will need to install two components:
+</P>
+
+<UL>
+<LI>Microsoft Speech Platform - Runtime (Version 11) , x86: <A HREF="http://www.microsoft.com/download/en/details.aspx?id=27225">http://www.microsoft.com/download/en/details.aspx?id=27225</A>
+<LI>Microsoft Speech Platform - Runtime Languages (Version 11): <A HREF="http://www.microsoft.com/download/en/details.aspx?id=27224">http://www.microsoft.com/download/en/details.aspx?id=27224</A>
+ <UL>
+ <LI>This page includes many files for both speech recognition and text-to-speech.
+ Choose the files containing the TTS data for the desired languages/voices.
+ For example, the file MSSpeech_TTS_en-US_ZiraPro.msi is a U.S. English voice.
+ </UL>
+</UL>
+
+<P>
+This is a commercial speech synthesizer specifically for the Italian language.
+You must have the synthesizer installed on your system in order for it to be used with NVDA.
+For more information, please visit the Audiologic website at <A HREF="http://www.audiologic.it">www.audiologic.it</A>.
+</P>
+<P>
+This synthesizer does not support <A HREF="#VoiceSpellingFunctionality">spelling functionality</A>.
+</P>
+<P>
+Newfon is a free commercial synthesizer by Sergey Shishmintzev which supports the Russian and Ukrainian languages.
+To download this synthesizer, please visit the downloads section of the Russian NVDA community site: <A HREF="http://ru.nvda-community.org/?page_id=10">http://ru.nvda-community.org/?page_id=10</A>
+</P>
+<P>
+This synthesizer does not support <A HREF="#VoiceSpellingFunctionality">spelling functionality</A>.
+</P>
+<P>
+This section contains information about the Braille displays supported by NVDA.
+</P>
+<P>
+All Focus and PAC Mate displays from <A HREF="http://www.freedomscientific.com/">Freedom Scientific</A> are supported when connected via USB or bluetooth.
+You will need the Freedom Scientific braille display drivers installed on your system.
+If you do not have them already, you can obtain them from <A HREF="http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp">http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp</A>.
+Although this page only mentions the Focus 40 Blue display, the drivers support all Freedom Scientific displays.
+If your system is running 64 bit Windows and the drivers were already installed by another screen reader, you will probably still need to install the drivers from this link, as the files required by NVDA were probably not installed by the other screen reader.
+</P>
+<P>
+Following are the key assignments for this display with NVDA.
+Please see the display's documentation for descriptions of where these keys can be found.
+</P>
 
 <A NAME="SupportedBrailleDisplays"></A>
 <H2>Supported Braille Displays</H2>
