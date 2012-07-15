@@ -73,7 +73,7 @@ addresses = {
     },
     'ko': {
         'lang':'Korean',
-        'email': ['Joseph Lee <joseph.lee22590@gmail.com>'],
+        'email': ['Joseph Lee <joseph.lee22590@gmail.com>', 'jch94@hanmail.net'],
     },
     'nb_NO': {
         'lang':'Norwegian bokmål',
