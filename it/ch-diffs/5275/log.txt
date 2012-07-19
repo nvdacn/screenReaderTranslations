@@ -1,0 +1,16 @@
+------------------------------------------------------------
+revno: 5275
+committer: Michael Curran <mick@kulgan.net>
+branch nick: main
+timestamp: Wed 2012-07-18 14:58:51 +1000
+message:
+  Improved support for the Microsoft Word spell checker. Allows more accurate guessing of the current miss-spelled word, better presentation in Office 2010 and allows it to work when NVDA is installed on Windows Vista and above (UIAccess).
+  Specifically:
+  	* Remove the winword appModule (it only contained Spell Checker support).
+  	* Implement a findWindowWithClassInThread function in NVDAHelperLocal which makes use of EnumThreadWindows and EnumChildWindows to locate a window with a particular class, in a particular thread.
+  	* Reimplement the Spell Checker field support in a new Winword IAccessible NVDAObject so that its available for both MS Word and MS Outlook ( / any other Office product that uss this Spell checker).
+  		* The new implementation uses displayModel to find the current error (by looking for bold text), rather than using the Word object model to find spelling errors (which was never correct).
+  		* Its WinwordWindowObject property uses findWindowWithClassInThread to locate a suitable _WwG Word Document window in which to fetch the native object model (the object's own _WwN Window does not support this, and GetActiveObject is broken when using UIAccess).
+  		* Only use the description as the name for Office < 2010 as 2010 much more suitably actually sets the name correctly.
+  
+  This support does also allow some improvements for Spell checker in Microsoft Outlook. The current error is automatically spoken now, but tracking of the caret/selection in that field cannot currently be supported due to deficiencies in the object model for Outlook.
