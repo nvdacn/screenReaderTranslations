@@ -9,7 +9,7 @@ addresses = {
     },
     'am': {
         'lang':'Amharic',
-        'email': ['Dr. Tamru E. Belay <g.braille@sympatico.ca>', 'Adanech Berehe <snderelae@yahoo.com>'],
+        'email': ['Dr. Tamru E. Belay <g.braille@sympatico.ca>'],
     },
     'ar': { 
         'lang':'Arabic',
