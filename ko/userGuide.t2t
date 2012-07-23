@@ -193,181 +193,182 @@ NVDA 메뉴가 열리면 방향키를 이용하여 메뉴를 탐색할 수 있�
 | 클립보드의 텍스트 확인 | NVDA+c | 클립보드안의 내용을 확인합니다. |
 %kc:endInclude
 
-+ Navigating with NVDA +
-NVDA allows you to explore and navigate the system in several ways, including both normal interaction and review.
++ NVDA로 탐색하기 +
+여러분은 NVDA를 이용하여 표준적인 조작(normal interaction)과 리뷰를 포함하여 몇가지 방식으로 시스템을 탐색하고 이동할 수 있습니다.
 
-++ Objects ++[Objects]
-Each Application and the operating system itself consist of many objects.
-An object is a single item such as a piece of text, button, checkbox, slider, list or editable text field.
+++ 객체 ++[Objects]
+각각의 애플리케이션과 운영체계 그 자체는 많은 객체들로 구성됩니다.
+객체란 단일 항목(single item )입니다. 예를 들면 글자 한 개, 버튼 한 개, 체크박스 한 개, 슬라이더 한 개, 목록 한 개 혹은 편집창 한 개 등입니다.
 
-++ Navigating with the System Focus ++[SystemFocus]
-The system focus, also known simply as the focus, is the [object #Objects] which receives keys typed on the keyboard.
-For example, if you are typing into an editable text field, the editable text field has the focus.
+++ 시스템 포커스로 탐색하기 ++[SystemFocus]
+포커스라고 불리는 시스템 포커스는 키보드에서 타이핑한 키를 받아들이는 [객체 #Objects]입니다.
+예를 들어 편집창에 글자를 타이핑하는 경우 그 편집창은 포커스를 갖습니다.
 
-The Most common way of navigating around Windows with NVDA is to simply move the system focus using standard Windows keyboard commands, such as pressing tab and shift+tab to move forward and back between controls, pressing alt to get to the menu bar and then using the arrows to navigate menus, and using alt+tab to move between running applications.
-As you do this, NVDA will report information about the object with focus, such as its name, type, value, state, description, keyboard shortcut and positional information.
+NVDA로 윈도우즈를 탐색하는 가장 일반적인 방법은 표준 윈도우즈 키보드 명령을 사용하여 간단하게 시스템 포커스를 이동시키는 것입니다. 예를 들어 탭이나 쉬프트+탭을 눌러서 시스템 포커스를 앞 컨트럴이나 뒤 컨트럴로 이동하기, 알트키를 눌러서 메뉴바를 불러내고 방향키를 이용하여 메뉴를 탐색하기, 알트+탭을 눌러서 실행 중인 애플리케이션 간 이동하기 등입니다.
+여러분이 이러한 키 조작을 한다면 NVDA는 포커스된 객체의 이름, 유형, 값, 상태, 설명, 단축키, 위치 등 다양한 정보를 알려 줄 것입니다.
 
-There are some key commands that are useful when moving with the System focus:
+시스템 포커스를 움직일 때 유용한 단축키는 다음과 같습니다.
 %kc:beginInclude
-|| Name | key | Description |
-| Report current focus | NVDA+tab | announces the current object or control that has the System focus. Pressing twice will spell the information |
-| Report title | NVDA+t | Reports the title of the currently active window. Pressing twice will spell the information. Pressing three times will copy it to the clipboard |
-| Read active window | NVDA+b | reads all the controls in the currently active window (useful for dialogs) |
-| Report Status Bar | NVDA+end | Reports the Status Bar if NVDA finds one. It also moves the navigator object to this location |
+|| 이름 | 키 | 설명 |
+| 현재 포커스 읽기 | NVDA+tab | 포커스된 현재 객체나 컨트럴을 알려줍니다. 두 번 누르면 정보를 글자 단위로 풀어 읽습니다. |
+| 제목 읽기 | NVDA+t | 현재 사용 중인 애플리케이션의 제목을 알려줍니다. 두 번 누르면 정보를 글자 단위로 풀어 읽고, 세 번 누르면 정보를 클립보드에 복사합니다. |
+| 사용 중인 윈도우 읽기 | NVDA+b | 
+현재 사용 중인 윈도우의 모든 컨트럴을 읽습니다.(대화상자에서 유용합니다) |
+| 상태 표시줄 읽기 | NVDA+end | NVDA가 상태 표시줄을 찾을 수 있다면 상태 표시줄의 정보를 읽고 탐색 객체를 그 위치로 이동시킵니다. |
+%kc:endInclude
+빈줄
+++ 시스템 Caret로 탐색하기 ++[SystemCaret]
+텍스트를 탐색하거나 편집할 수 있는 [객체 #Objects]가 [포커스된 #SystemFocus] 경우, 편집 커서라고 불리기도 하는 시스템 caret를 사용하여 텍스트 사이를 이동할 수 있습니다.
+
+포커스가 시스템 caret를 가진 객체에 있는 경우 방향키, 페이지 업키, 페이지 다운키, 홈키, 엔드키 등등을 사용하여 텍스트 사이를 이동할 수 있습니다.
+컨트럴이 편집을 지원한다면 텍스트를 편집할 수도 있습니다.
+NVDA는 글자 단위, 단어 단위, 줄 단위로 이동할 때마다 내용을 읽어주며, 텍스트를 선택하거나 선택해제하는 경우에도 읽어줍니다.
+
+NVDA는 시스템 caret와 관련하여 다음과 같은 단축키를 제공합니다.
+%kc:beginInclude
+|| 이름 | 키 | 설명 |
+| 모두 읽기 | NVDA+downArrow | 현재 케럿 위치부터 텍스트 끝까지 일거줍니다. 이때 케럿도 함께 움직입니다. |
+| 현재 줄 읽기 | NVDA+upArrow | 시스템 caret가 위치한 줄을 읽습니다. 두 번 누르면 그 줄을 글자 단위로 풀어 읽습니다. |
+| 현재 선택된 텍스트 읽기 | NVDA+Shift+upArrow | 현재 선택된 텍스트를 읽습니다. |
+
+
+시스템 caret가 표 안에 있는 경우, 다음의 단축키도 사용 가능합니다.
+|| 이름 | 키 | 설명 |
+| 이전 열로 이동 | control+alt+leftArrow | 시스템 caret를 이전의 열로 이동합니다. (행은 동일하게 유지됩니다) |
+| 다음 열로 이동 | control+alt+rightArrow | 시스템 caret를 다음의 열로 이동합니다. (행은 동일하게 유지됩니다) |
+| 이전 행으로 이동 | control+alt+upArrow | 시스템 caret를 이전의 행으로 이동합니다. (열은 동일하게 유지됩니다) |
+| 다음 행으로 이동 | control+alt+downArrow | 시스템 caret를 다음의 열로 이동합니다. (열은 동일하게 유지됩니다) |
 %kc:endInclude
 
-++ Navigating with the System Caret ++[SystemCaret]
-When an [object #Objects] that allows navigation and/or editing of text is [focused #SystemFocus], you can move through the text using the system caret, also known as the edit cursor.
+++ 객체 탐색 ++
+대부분의 경우 애플리케이션으로 작업할 때 [포커스 #SystemFocus] 및 [caret #SystemCaret]을 이동시키는 단축키를 사용합니다.
+그러나 가끔은 포커스나 caret의 이동 없이 현재 애플리케이션이나 운영 체계를 탐색하고 싶을 때도 있습니다.
+일반적으로 키보드를 이용하여 접근할 수 없는 [객체들 #Objects]를 가지고 작업해야 할 때도 있습니다.
+이런 경우에 객체 탐색을 사용할 수 있습니다.
 
-When the focus is on an object that has the system caret, you can use the arrow keys, page up, page down, home, end, etc. to move through the text.
-You can also change the text if the control supports editing.
-NVDA will announce as you move by character, word and line, and will also announce as you select and unselect text.
+객체 탐색은 개별적인 [객체들 #Objects] 간을 이동하면서 정보를 얻을 수 있습니다.
+만약 어떤 객체로 이동했다면 NVDA는 시스템 포커스를 알려주는 것과 마찬가지로 그 객체의 정보를 알려줍니다.
+텍스트가 화면에 나타날 때  모든 텍스트를 리뷰하고자 한다면 객체 탐색 대신에 [Flat 리뷰 #FlatReview]를 사용할 수 있습니다.
 
-NVDA provides the following key commands in relation to the system caret:
+시스템의 모든 단일 객체들 사이를 전/후로 이동해야 하지만 객체는 계층적으로 구성되어 있기도 합니다.
+이것은 다음을 의미합니다. 어떤 객체(상위 객체)는 다른 객체(하위 객체)를 포함하기 때문에 하위 객체에 액세스하려면 상위 객체 속으로 들어가야 합니다.
+예를 들면 목록은 목록 항목을 포함합니다. 그래서 목록 항목에 액세스하려면 먼저 리스트 속으로 들어가야 합니다.
+만약 목록 항목으로 이동한 경우 다음이나 이전으로 이동한다면 동일한 리스트 안의 다른 목록 항목으로 갈 수 있습니다.
+목록 항목의 상위 객체로 이동하면 리스트로 되돌아 갈 수 있습니다.
+그 밖에도 만약 다른 객체에 액세스하고 싶다면 건너 뛰어 이동할 수 있습니다.
+마찬가지로 툴바는 컨트럴들을 포함합니다. 그래서 툴바 속에 있는 컨트럴에 액세스하려면 반드시 툴바 속으로 들어가야 합니다.
+
+일반적으로 리뷰되고 있는 객체는 탐색 객체(navigator object)라고 불립니다.
+여러분이 어떤 객체를 탐색했을 때 [텍스트 리뷰 단축키 #ReviewingText]를 사용하여 그 객체를 리뷰할 수 있습니다.
+초기값으로 탐색 객체는 시스템 포커스를 따라서 이동합니다만 이러한 동작은 온/오프로 토글할 수 있습니다.
+
+다음을 주의하십시오. 점자는 초기값으로 객체 탐색이나 텍스트 리뷰를 따르지 않고 [포커스 #SystemFocus]와 [caret #SystemCaret]을 따릅니다.
+만약 점자가 포커스와 caret 대신 객체 탐색과 텍스트 리뷰를 따르게 하고 싶으면 [점자 표시 전환(braille to be tethered) #BrailleTether]을 리뷰로 설정하세요.
+
+객체 탐색을 하려면 다음의 단축키를 사용하세요.
+
 %kc:beginInclude
-|| Name | Key | Description |
-| Say all | NVDA+downArrow | Starts reading from the current position of the system caret, moving it along as it goes |
-| Read current line | NVDA+upArrow | Reads the line where the system caret is currently situated. Pressing twice spells the line. |
-| Read current text selection | NVDA+Shift+upArrow | Reads any currently selected text |
-
-
-When within a table, the following key commands are also available:
-|| Name | Key | Description |
-| Move to previous column | control+alt+leftArrow | Moves the system caret to the previous column (staying in the same row) |
-| Move to next column | control+alt+rightArrow | Moves the system caret to the next column (staying in the same row) |
-| Move to previous row | control+alt+upArrow | Moves the system caret to the previous row (staying in the same column) |
-| Move to next row | control+alt+downArrow | Moves the system caret to the next row (staying in the same column) |
+|| 이름 | 데스크탑 키 | 랩탑 키 | 설명 |
+| 현재 객체 읽기 | NVDA+numpad5 | NVDA+control+i | 현재 탐색 객체를 읽습니다. 두 번 누르면 글자단위로 풀어 읽고, 세 번 누르면 객체의 이름과 값을 클립보드로 복사합니다. |
+| 상위 객체로 이동 | NVDA+numpad8 | NVDA+shift+i | 현재 탐색 객체를 포함하는 상위 객체로 이동합니다. |
+| 이전 객체로 이동 | NVDA+numpad4 | NVDA+control+j | 현재 탐색 객체의 이전 객체로 이동합니다. |
+| 다음 객체로 이동 | NVDA+numpad6 | control+NVDA+l | 현재 탐색 객체의 다음 객체로 이동합니다. |
+| 첫 번째 하위 객체로 이동 | NVDA+numpad2 | NVDA+shift+comma | 현재 탐색 객체가 포함하는 첫 번째 하위 객체로 이동합니다. |
+| 포커스 객체로 이동 | NVDA+numpadMinus | NVDA+backspace | 현재 시스템 포커스된 객체로 이동합니다. 그리고 표시되어 있다면 리뷰 커서를 시스템 caret의 위치로 이동시킵니다. |
+| 현재 탐색 객체 활성화 | NVDA+numpadEnter | NVDA+enter | 현재 탐색 객체를 활성화합니다.(탐색 객체가 포커스 되었을 때 마우스로 클릭하거나 스페이스바를 누르는 것과 유사합니다.) |
+| 시스템 포커스나 caret를 현재 리뷰 위치로 이동 | NVDA+shift+numpadMinus | NVDA+shift+backspace | 한번 누르면 시스템 포커스를 현재 탐색 객체로 이동시키고, 두 번 누르면 시스템 caret를 리뷰 커서의 위치로 이동시킵니다. |
+| 탐색 객체의 디멘션 알림 | NVDA+numpadDelete | NVDA+delete | 화면에 있는 현재 탐색 객체의 디멘션을 백분율로 알려줍니다.(화면 좌상단부터의 거리와 객체의 가로 세로 수치를 포함) |
 %kc:endInclude
 
-++ Object Navigation ++
-Most of the time, you will work with applications using commands which move the [focus #SystemFocus] and the [caret #SystemCaret].
-However, sometimes, you may wish to explore the current application or the Operating System without moving the focus or caret.
-You may also wish to work with [objects #Objects] that cannot be accessed normally using the keyboard.
-In these cases, you can use object navigation.
+주의: numpad 키는 numlock키를  오프 시켜야 정확하게 동작합니다.
 
-Object navigation allows you to move between and obtain information about individual [objects #Objects].
-When you move to an object, NVDA will report it similarly to the way it reports the system focus.
-For a way to review all text as it appears on the screen, you can instead use [flat review #FlatReview].
+++ 텍스트 리뷰하기 ++[ReviewingText]
+NVDA는 ([Flat 리뷰 #FlatReview]를 포함하여)  현재 [탐색 객체 #ObjectNavigation]의 내용을 글자 단위, 단어 단위, 줄 단위로 읽어줍니다.
+이 기능은 (윈도우즈 명령 콘솔을 포함하여) [시스템 caret #SystemCaret]이 없는 곳에서 매우 유용합니다.
+예를 들면 여러분은 이 기능을 사용하여 대화상자에서 긴 메시지 정보의 텍스트를 리뷰할 수 있습니다.
 
-Rather than having to move back and forth between every single object on the system, the objects are organized hierarchically.
-This means that some objects contain other objects and you must move inside them to access the objects they contain.
-For example, a list contains list items, so you must move inside the list in order to access its items.
-If you have moved to a list item, moving next and previous will take you to other list items in the same list.
-Moving to a list item's containing object will take you back to the list.
-You can then move past the list if you wish to access other objects.
-Similarly, a toolbar contains controls, so you must move inside the toolbar to access the controls in the toolbar.
+리뷰 커서를 이동시키는 경우 시스템 caret는 리뷰 커서를 따라가지 않기 때문에 편집 위치를 잃지 않고서도 텍스트를 리뷰할 수 있습니다.
+그러나 초기값으로 시스템 caret를 이동시키는 경우 리뷰 커서는 시스템 caret를 따라 갑니다.
+이것은 온/오프로 토글할 수 있습니다.
 
-The object currently being reviewed is called the navigator object.
-Once you navigate to an object, you can review it using the [text review commands #ReviewingText].
-By default, the navigator object moves along with the System focus, though this behaviour can be toggled on and off.
+다음을 주의하십시오. 점자는 초기값으로 객체 탐색이나 텍스트 리뷰를 따르지 않고 [포커스 #SystemFocus]와 [caret #SystemCaret]을 따릅니다.
+만약 점자가 포커스와 caret 대신 객체 탐색과 텍스트 리뷰를 따르게 하고 싶으면 [점자 표시 전환(braille to be tethered) #BrailleTether]을 리뷰로 설정하세요.
 
-Note that braille follows the [focus #SystemFocus] and [caret #SystemCaret] by default, rather than object navigation and text review.
-If you want it to follow object navigation and text review instead, you need to [configure braille to be tethered to #BrailleTether] review.
-
-To navigate by object, use the following keys:
-
+다음 단축키는 텍스트 리뷰하기에서 사용할 수 있습니다.
 %kc:beginInclude
-|| Name | Desktop key | Laptop key | Description |
-| Report current object | NVDA+numpad5 | NVDA+control+i | Reports the current navigator object. Pressing twice spells the information, and pressing 3 times copies this object's name and value to the clipboard. |
-| Move to containing object | NVDA+numpad8 | NVDA+shift+i | Moves to the object containing the current navigator object |
-| Move to previous object | NVDA+numpad4 | NVDA+control+j | Moves to the object before the current navigator object |
-| Move to next object | NVDA+numpad6 | control+NVDA+l | Moves to the object after the current navigator object |
-| Move to first contained object | NVDA+numpad2 | NVDA+shift+comma | Moves to the first object contained by the current navigator object |
-| Move to focus object | NVDA+numpadMinus | NVDA+backspace | Moves to the object that currently has the system focus, and also places the review cursor at the position of the System caret, if it is showing |
-| Activate current navigator object | NVDA+numpadEnter | NVDA+enter | Activates the current navigator object (similar to clicking with the mouse or pressing space when it has the system focus) |
-| Move System focus or caret to current review position | NVDA+shift+numpadMinus | NVDA+shift+backspace | pressed once Moves the System focus to the current navigator object, pressed twice moves the system caret to the position of the review cursor |
-| Report navigator object dimensions | NVDA+numpadDelete | NVDA+delete | Reports the current navigator object's dimensions on screen in per centages (including distance from left and top of screen, and its width and height) |
+|| 이름 | 데스크탑 키 | 랩탑 키 | 설명 |
+| 리뷰에서 맨 윗 줄로 이동 | shift+numpad7 | NVDA+7 | 리뷰 커서를 텍스트의 맨 윗 줄로 이동시킵니다. |
+| 리뷰에서 이전 줄로 이동 | numpad7 | NVDA+u | 리뷰 커서를 텍스트의 이전 줄로 이동시킵니다. |
+| 리뷰에서 현재 줄 읽기 | numpad8 | NVDA+i | 리뷰 커서가 위치한 텍스트의 현재 줄을 읽습니다. 두 번 누르면 현 재 줄을 글자단위로 풀어 읽습니다. 세 번 누르면 글자 설명(character descriptions)를 사용하여 자세히 풀어 읽습니다. |
+| 리뷰에서 다음 줄로 이동 | numpad9 | NVDA+o | 리뷰 커서를 텍스트의 다음 줄로 이동시킵니다. |
+| 리뷰에서 맨 아래 줄로 이동 | shift+numpad9 | NVDA+9 | 리뷰 커서를 텍스트의 맨 아래 줄로 이동시킵니다. |
+| 리뷰에서 이전 단어로 이동 | numpad4 | NVDA+j | 리뷰 커서를 텍스트의 이전 단어로 이동시킵니다. |
+| 리뷰에서 현재 단어 읽기 | numpad5 | NVDA+k | 리뷰커서가 위치한 텍스트의 현재 단어를 읽습니다. 두 번 누르면 단어를 글자 단위로 풀어 읽습니다. 세 번 누르면 글자 설명(character descriptions)을 사용하여 자세히 풀어 읽습니다. |
+| 리뷰에서 다음 단어로 이동 | numpad6 | NVDA+l | 리뷰 커서를 텍스트의 다음 단어로 이동시킵니다. |
+| 리뷰에서 줄 맨 앞으로 이동 | shift+numpad1 | NVDA+shift+u | 리뷰 커서를 텍스트의 현재 줄 맨 앞으로 이동시킵니다. |
+| 리뷰에서 이전 글자로 이동 | numpad1 | NVDA+m | 리뷰 커서를 텍스트에서 현재 줄 앞 글자로 이동시킵니다. |
+| 리뷰에서 현재 글자 읽기 | numpad2 | NVDA+comma | 리뷰 커서가 위치한 텍스트의 줄에서 현재 글자를 읽습니다. 두 번 누르면 그 글자의 설명이나 용례를 읽습니다. 세 번 누르면 그 글자의 10진수 및 16진수의 값을 읽습니다. |
+| 리뷰에서 다음 글자로 이동 | numpad3 | NVDA+dot | 리뷰 커서를 텍스트에서 현재 줄의 다음 글자로 이동시킵니다. |
+| 리뷰에서 현재 줄 맨 뒤로 이동 | shift+numpad3 | NVDA+shift+o | 리뷰 커서를 텍스트의 현재 줄 맨 뒤로 이동시킵니다. |
+| 리뷰에서 전체 읽기 | numpadPlus | NVDA+shift+downArrow | 리뷰 커서의 현재 위치부터 모든 내용을 읽습니다. 점차 읽으면서 리뷰 커서도 따라 이동합니다. |
+| 리뷰 커서부터 복사 시작 | NVDA+f9 | NVDA+f9 | 리뷰 커서의 현재 위치부터 복사를 시작합니다. 어디까지 복사할 것인지 지정하기 전까지는 실제 복사는 수행되지 않습니다. |
+| 리뷰 커서까지 복사하기 | NVDA+f10 | NVDA+f10 | '리뷰 커서부터 복사 시작'에서 설정된 리뷰커서의 위치부터 리뷰 커서의 현재 위치까지 복사합니다. 이 단축키를 누르면 선택된 텍스트가 윈도우즈 클립보드로 복사됩니다. |
+| 글자 서식 알림 | NVDA+f | NVDA+f | 리뷰 커서가 현재 위치한 글자의 서실을 알려 줍니다. |
 %kc:endInclude
 
-Note: numpad keys require numlock key to be turned off to work properly.
+주의: numpad 키는 numlock키를  오프 시켜야 정확하게 동작합니다.
 
-++ Reviewing Text ++[ReviewingText]
-NVDA allows you to read the contents of the current [navigator object #ObjectNavigation] (including [flat review #FlatReview]) by character, word or line.
-This is mostly useful in places (including Windows command consoles) where there is no [system caret #SystemCaret].
-For example, you might use it to review the text of a long information message in a dialog.
+이 단축키를 쉽게 암기하려면 다음을 주목하세요. 기본적인 텍스트 리뷰 단축키는 가로 세 칸 세로 세 칸의 격자 모양으로 구성됩니다. 위에서 아래로는 각각 줄, 단어, 글자가 되고, 왼쪽에서 오른쪽으로는 이전, 현재, 다음이 됩니다.
+레이아웃을 도식화하면 다음과 같습니다.
+| 이전 줄 | 현재 줄 | 다음 줄 |
+| 이전 단어 | 현재 단어 | 다음 단어 |
+| 이전 글자 | 현재 글자 | 다음 글자 |
 
-When moving the review cursor, the System caret does not follow along, so you can review text without losing your editing position.
-However, by default, when the System caret moves, the review cursor follows along.
-This can be toggled on and off.
+++ Flat 리뷰 ++[FlatReview]
+일반적으로 단일 [객체 #Objects]의 내용만을 리뷰할 수 있지만 몇몇 객체들은 그 객체들이 포함하고 있는 하위 객체의 내용을 리뷰할 수도 있습니다.
+복합 문서는 전체 내용을 리뷰할 수 있고 애플리케이션 윈도우는 화면에 나타난 텍스트를 리뷰할 수 있습니다.
+이것을 flat 리뷰라고 합니다.
+이 기능은 다양한 다른 스크린 리더들의 화면 읽기 기능 및 마우스 커서 기능과 유사합니다.
 
-Note that braille follows the [focus #SystemFocus] and [caret #SystemCaret] by default, rather than object navigation and text review.
-If you want it to follow object navigation and text review instead, you need to [configure braille to be tethered to #BrailleTether] review.
+만약 flat 리뷰로 전환하면 여러분은 현재 [탐색 객체 #ObjectNavigation]의 위치에 있게 됩니다.
+객체 탐색을 사용하지 않은 경우 이것은 [포커스된 #SystemFocus] 객체에 있을 것입니다.
+예를 들면, 탐색 객체가 어떤 버튼에 있는 경우 여러분은 flat 리뷰에서 버튼의 글자 위에 위치하게 됩니다.
+그리고 나서 여러분은 텍스트를 리뷰하기 위하여 [텍스트 리뷰 단축키 #ReviewingText]를 사용할 것입니다.
+또한 리뷰 커서의 현재 위치를 포함하는 객체로 직접 이동할 수 있고, 그곳에서 [객체 탐색 #ObjectNavigation]을 사용할 수 있습니다.
 
-The following key commands are available for reviewing text:
+다음을 주의하십시오. 점자는 초기값으로 객체 탐색이나 텍스트 리뷰를 따르지 않고 [포커스 #SystemFocus]와 [caret #SystemCaret]을 따릅니다.
+만약 점자가 포커스와 caret 대신 객체 탐색과 텍스트 리뷰를 따르게 하고 싶으면 [점자 표시 전환(braille to be tethered) #BrailleTether]을 리뷰로 설정하세요.
+
+다음의 두 단축키는 flat 리뷰를 전환할 때 사용합니다.
 %kc:beginInclude
-|| Name | Desktop key | Laptop key | Description |
-| Move to top line in review | shift+numpad7 | NVDA+7 | Moves the review cursor to the top line of the text |
-| Move to previous line in review | numpad7 | NVDA+u | Moves the review cursor to the previous line of text |
-| Report current line in review | numpad8 | NVDA+i | Announces the current line of text where the review cursor is positioned. Pressing twice spells the line. Pressing three times spells the line using character descriptions. |
-| Move to next line in review | numpad9 | NVDA+o | Move the review cursor to the next line of text |
-| Move to bottom line in review | shift+numpad9 | NVDA+9 | Moves the review cursor to the bottom line of text |
-| Move to previous word in review | numpad4 | NVDA+j | Moves the review cursor to the previous word in the text |
-| Report current word in review | numpad5 | NVDA+k | Announces the current word in the text where the review cursor is positioned. Pressing twice spells the word. Pressing three times spells the word using character descriptions. |
-| Move to next word in review | numpad6 | NVDA+l | Move the review cursor to the next word in the text |
-| Move to start of line in review | shift+numpad1 | NVDA+shift+u | Moves the review cursor to the start of the current line in the text |
-| Move to previous character in review | numpad1 | NVDA+m | Moves the review cursor to the previous character on the current line in the text |
-| Report current character in review | numpad2 | NVDA+comma | Announces the current character on the line of text where the review cursor is positioned. Pressing twice reports a description or example of that character. Pressing three times reports the numeric value of the character in decimal and hexadecimal. |
-| Move to next character in review | numpad3 | NVDA+dot | Move the review cursor to the next character on the current line of text |
-| Move to end of line in review | shift+numpad3 | NVDA+shift+o | Moves the review cursor to the end of the current line of text |
-| Say all with review | numpadPlus | NVDA+shift+downArrow | Reads from the current position of the review cursor, moving it as it goes |
-| Copy from review cursor | NVDA+f9 | NVDA+f9 | starts copying text from the current position of the review cursor. The actual copy is not performed until you tell NVDA where to copy to |
-| Copy to review cursor | NVDA+f10 | NVDA+f10 | Copies from the position of the review cursor currently set with Copy from review cursor, to the review cursor's current position. After pressing this key, the text will be copied to the Windows clipboard |
-| Report text formatting | NVDA+f | NVDA+f | Reports the formatting of the text where the review cursor is currently situated |
+|| 이름 | 데스크탑 키 | 랩탑 키 | 설명 |
+| flat 리뷰로 전환 | NVDA+numpad7 | NVDA+pageUp | flat 리뷰로 전환합니다. 여러분은 현재 탐색 객체의 위치에 있게 되며 텍스트 리뷰 단축키를 가지고 스크린을 탐색할 수 있습니다.(만약 여러분이 문서 속에 있다면 문서를 탐색할 수도 있습니다.) |
+| flat 리뷰에서 객체로 돌아오기 | NVDA+numpad1 | NVDA+pageDown | flat 리뷰에서 리뷰 커서가 위치한 텍스트에 의해 표현된 객체로 이동합니다.|
 %kc:endInclude
 
-Note: numpad keys require numlock key to be turned off to work properly.
+++ 마우스 탐색하기 ++
+마우스를 움직이는 경우 NVDA는 초기값으로 마우스의 움직임에 따라 마우스 포인터 아래에 있는 텍스트를 곧바로 읽습니다.
+지원되는 곳에서 NVDA는 텍스트를 문단 단위로 읽을 수 있습니다. 그러나 몇몇 컨트럴들에서는 오직 줄 단위로만 읽을 수 있습니다.
 
-To help you remember these commands, note that the basic text review commands are organized in a grid of three by three, with top to bottom being line, word and character and left to right being previous, current and next.
-The layout is illustrated as follows:
-| Previous line | Current line | Next line |
-| Previous word | Current word | Next word |
-| Previous character | Current character | Next character |
+NVDA는 마우스의 움직임에 따라 마우스 포인터 아래에 있는 [객체 #Objects]의 타입을 알려주도록 설정할 수도 있습니다(예를 들어 리스트, 버튼, 등등).
+이 기능은 때때로 텍스트가 충분치 못할 때 전맹들에게 유용할 수 있습니다.
 
-++ Flat Review ++[FlatReview]
-While you can generally only review the content of a single [object #Objects], some objects allow you to review the content of objects inside them.
-Complex documents allow you to review their entire content and application windows allow you to review the text of the screen as it appears visually.
-This is called flat review.
-This is similar to the screen review or mouse cursor functionality in many other Windows screen readers.
+NVDA는 비프음의 변화로 마우스가 스크린의 어느 곳에 위치하는지를 이해할 수 있도록 하나의 방법을 제공합니다.
+마우스 포인터를 스크린의 위로 올리면 올릴수록 비프음의 음높이는 따라서 올라 갑니다.
+마우스 포인터를 스크린의 왼쪽이나 오른쪽으로 이동시키면 마우스 포인터의 위치에따라 비프음도 왼쪽 스피커와 오른쪽 스피커 사이에서 들립니다(사용자가 스테레오 스피커나 헤드셋을 가지고 있어야 합니다).
 
-When you move to flat review, you will be positioned at the location of the current [navigator object #ObjectNavigation].
-If you haven't used object navigation, this will usually be the object that has the [focus #SystemFocus].
-For example, if the navigator object was a button, you will usually be positioned on the text of the button in flat review.
-You can then review the text using the [text review commands #ReviewingText].
-You can also navigate directly to the object encompassing the current position of the review cursor, allowing you to use [object navigation #ObjectNavigation] from there.
+이러한 부가적인 마우스 기능은 초기값으로 설정되어 있지 않습니다.
+이 기능을 사용하려면 NVDA의 설정 메뉴에 있는 [마우스 설정 #MouseSettings] 대화상자에서 이 기능들을 설정하세요.
 
-Note that braille follows the [focus #SystemFocus] and [caret #SystemCaret] by default, rather than object navigation and text review.
-If you want it to follow object navigation and text review instead, you need to [configure braille to be tethered to #BrailleTether] review.
-
-The following two commands are used for switching to/from flat review:
+비록 물리적인 마우스나 트랙패드가 마우스 탐색에 사용되어야 하지만 NVDA는 마우스와 관련하여 몇가지 단축키를 가지고 있습니다.
 %kc:beginInclude
-|| Name | Desktop key | Laptop key | Description |
-| Move to flat review | NVDA+numpad7 | NVDA+pageUp | Moves to flat review, placing you at the position of the current navigator object, allowing you to review the screen (or document if you are currently inside one) with the text review commands. |
-| Move to object from flat review | NVDA+numpad1 | NVDA+pageDown | navigates to the object represented by the text at the current position of the review cursor in flat review |
-%kc:endInclude
-
-++ Navigating with the Mouse ++
-When you move the Mouse, NVDA by default reports the text that is directly under the mouse pointer as the pointer moves over it.
-Where supported, NVDA will read the surrounding paragraph of text, though some controls may only read by line.
-
-NVDA can be configured to also announce the type of [object #Objects] under the mouse as it moves (e.g. list, button, etc.).
-This may be useful for totally blind users, as sometimes, the text isn't enough.
-
-NVDA provides a way for users to understand where the mouse is located relative to the dimensions of the screen by playing the current mouse coordinates as audio beeps.
-The higher the mouse is on the screen, the higher the pitch of the beeps.
-The further left or right the mouse is located on the screen, the further left or right the sound will be played (assuming the user has stereo speakers or headphones).
-
-These extra mouse features are not turned on by default in NVDA.
-If you wish to take advantage of them, you can configure them from the [Mouse settings #MouseSettings] dialog, found in the NVDA Preferences menu.
-
-Although a physical mouse or trackpad should be used to navigate with the mouse, NVDA has a few key commands related to the mouse:
-%kc:beginInclude
-|| Name | Desktop key | Laptop key | Description |
-| Left mouse button click | numpadDivide | NVDA+leftArrow | clicks the left mouse button once. The common double click can be performed by pressing this key twice in quick succession |
-| Left mouse button lock | shift+numpadDivide | NVDA+shift+leftArrow | Locks the left mouse button down. Press again to release it. To drag the mouse, press this key to lock the left button down and then move the mouse either physically or use one of the other mouse routing commands |
-| Right mouse click | numpadMultiply | NVDA+rightArrow | Clicks the right mouse button once. |
-| Right mouse button lock | shift+numpadMultiply | NVDA+shift+rightArrow | Locks the right mouse button down. Press again to release it. To drag the mouse, press this key to lock the right button down and then move the mouse either physically or use one of the other mouse routing commands |
-| Move mouse to current navigator object | NVDA+numpadDivide | NVDA+shift+f9 | Moves the mouse to the location of the current navigator object and review cursor |
-| Navigate to the object under the mouse | NVDA+numpadMultiply | NVDA+shift+f10 | Set the navigator object to the object located at the position of the mouse |
+|| 이름 | 데스크탑 키 | 랩탑 키 | 설명 |
+| 왼쪽 마우스 버튼 클릭 | numpadDivide | NVDA+leftArrow | 왼쪽 마우스버튼을 한번 클릭합니다. 일반적인 더블 클릭은 이 키를 연속하여 재빨리 두 번 누르면 됩니다. |
+| 왼쪽 마우스버튼 잠금 | shift+numpadDivide | NVDA+shift+leftArrow | 왼쪽 마우스 버튼을 클릭한 상태로 유지합니다. 다시 한번 누르면 해제됩니다. 마우스를 드레그 하려면 이 키를 눌러서 왼쪽 마우스버튼을 클릭한 상태로 유지한 다음 마우스를 물리적으로 움직이거나 마우스 이동용 단축키를 사용하여 마우스를 이동합니다. |
+|오른쪽 마우스버튼 클릭 | numpadMultiply | NVDA+rightArrow | 오른쪽 마우스버튼을 한번 클릭합니다. |
+| 오른쪽 마우스버튼 잠금 | shift+numpadMultiply | NVDA+shift+rightArrow | 오른쪽 마우스 버튼을 클릭한 상태로 유지합니다. 다시 한번 누르면 해제됩니다. 마우스를 드레그 하려면 이 키를 눌러서 오른쪽 마우스버튼을 클릭한 상태로 유지한 다음 마우스를 물리적으로 움직이거나 마우스 이동용 단축키를 사용하여 마우스를 이동합니다. |
+| 마우스 포인터를 현재 탐색 객체로 이동 | NVDA+numpadDivide | NVDA+shift+f9 | 마우스 포인터를 현재 탐색 객체와 리뷰 커서의 위치로 이동시킵니다. |
+| 마우스 포인터 아래에 있는 객체로 이동 | NVDA+numpadMultiply | NVDA+shift+f10 | 탐색 객체를 마우스 포인터가 위치한 객체로 이동시킵니다. |
 %kc:endInclude
 
 + Browse Mode +
