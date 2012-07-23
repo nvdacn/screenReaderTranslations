@@ -370,86 +370,86 @@ NVDA는 비프음의 변화로 마우스가 스크린의 어느 곳에 위치하
 | 마우스 포인터 아래에 있는 객체로 이동 | NVDA+numpadMultiply | NVDA+shift+f10 | 탐색 객체를 마우스 포인터가 위치한 객체로 이동시킵니다. |
 %kc:endInclude
 
-+ Browse Mode +
-Complex read-only documents such as web pages are browsed in NVDA using browse mode.
-This includes documents in Mozilla Firefox, Microsoft Internet Explorer, Google Chrome, Adobe Reader and Adobe Flash.
++ 브라우즈 모드 +
+웹 페이지처럼 복잡한 읽기전용 문서는 NVDA에서 브라우즈 모드로 검색합니다.
+여기에는 모질라 파이어폭스, 마이크로소프트 인터넷 익스플로러, 구글 크롬, 어도비 리더, 어도비 플래시의  문서가 포함됩니다.
 
-In browse mode, the content of the document is made available in a flat representation that can be navigated with the cursor keys as if it were a normal text document.
-All of NVDA's [system caret #SystemCaret] key commands will work in this mode; e.g. say all, report formatting, table navigation commands, etc.
-Information such as whether text is a link, heading, etc. is reported along with the text as you move.
+브라우즈 모드에서 문서의 내용은 flat으로 표현되며 마치 그 표현(representation)이 평범한  텍스트 문서처럼 커서키로 탐색될 수 있습니다.
+NVDA의 [시스템 caret #SystemCaret]의 모든 단축키는 이 모드에서 유효합니다. 예를 들면 전체 읽기, 서식 알림, 표 탐색 단축키, 등등입니다.
+텍스트가 링크인지, 헤딩인지 등의 정보는 이동할 때마다 텍스트와 함께 알려집니다.
 
-Sometimes, you will need to interact directly with controls in these documents.
-For example, you will need to do this for editable text fields and lists so that you can type characters and use the cursor keys to work with the control.
-You do this by switching to focus mode, where almost all keys are passed to the control.
-When in Browse mode, by default, NVDA will automatically switch to focus mode if you tab to or click on a particular control that requires it.
-Conversely, tabbing to or clicking on a control that does not require focus mode will switch back to browse mode.
-You can also press enter or space to switch to focus mode on controls that require it.
-Pressing escape will switch back to browse mode.
-In addition, you can manually force focus mode, after which it will remain in effect until you choose to disable it.
+가끔씩은 이러한 문서에서 컨트럴들을 직접 조작할 필요가 있습니다.
+예를 들면 편집창이나 목록에서 글자를 입력하거나 커서키를 사용하여 작업하기 위해서는 컨트럴들을 직접 조작할 필요가 있습니다.
+이렇게 하려면 포커스 모드로 전환해야 합니다. 포커스 모드는 거의 모든 키를 컨트럴로 전달합니다.
+브라우즈 모드일 때 초기값으로 포커스 모드를 필요로 하는 특정 컨트럴을 탭하거나 클릭하는 경우 NVDA는 포커스모드로 자동 전환합니다.
+이와 반대로 포커스 모드를 필요로 하지 않는 컨트럴을 탭하거나 클릭하는 경우 브라우즈 모드로 되돌아 옵니다.
+포커스 모드를 필요로하는 컨트럴에서 엔터키나 스페이스바를 눌러도 포커스 모드로 전환할 수 있습니다.
+escape 키를 누른다면 브라우즈 모드로 되돌아 올 것입니다.
+그 밖에도 수동으로 포커스 모드에 강제 진입할 수 있습니다. 포커스 모드로 진입한 이후에 그것을 해제할 때까지 그 모드는 계속됩니다.
 
 %kc:beginInclude
-|| Name | Key | Description |
-| Toggle browse/focus modes | NVDA+space | Toggles between focus mode and browse mode |
-| Exit focus mode | escape | switches back to browse mode if focus mode was previously switched to automatically |
-| Refresh browse mode document | NVDA+f5 | Reloads the current document content (useful if certain content seems to be missing from the document) |
-| Find | NVDA+control+f | Pops up a dialog in which you can type some text to find in the current document |
-| Find next | NVDA+f3 | Finds the next occurrence of the text in the document that you previously searched for |
-| Find previous | NVDA+shift+f3 | Finds the previous occurrence of the text in the document you previously searched for |
+|| 이름 | 키 | 설명 |
+| 브라우즈/포커스 모드 토글 | NVDA+space | 포커스 모드와 브라우즈 모드를 토글합니다. |
+| 포커스 모드 끝내기 | escape | 이전에 포커스 모드가 자동으로 전환된 경우 브라우즈 모드로 돌아갑니다. |
+| 브라우즈 모드 문서 새로 고침 | NVDA+f5 | 현재 문서의 내용을 다시 불러 옵니다. (만약 특정 내용이 문서에서 빠진 것처럼 보이는 경우에 유용합니다.) |
+| 찾기 | NVDA+control+f | 현재 문서 내용을 검색하기 위하여 텍스트를 입력할 수 있는 대화상자를 팝업합니다. |
+| 다음 찾기 | NVDA+f3 | 문서에서 앞서 검색했던 텍스트의 다음 결과를 찾습니다. |
+| 이전 찾기 | NVDA+shift+f3 | 문서에서 앞서 검색했던 텍스트의 이전 결과를 찾습니다. |
 %kc:endInclude
 
 
-++ Single Letter Navigation ++
-While in browse mode, For quicker navigation, NVDA also provides single character keys to jump to certain fields in the document.
+++ 한 글자 탐색 ++
+브라우즈 모드에서 더욱 빠른 검색을 위하여 NVDA는 문서 안에서 특정 필드로 건너 뛸 수 있는 한 글자 키를 제공합니다.
 
 %kc:beginInclude
-The following keys by themselves jump to the next available element, while adding the shift key causes them to jump to the previous element:
-- h: heading
-- l: list
-- i: list item
-- t: table
-- k: link
-- n: nonLinked text
-- f: form field
-- u: unvisited link
-- v: visited link
-- e: edit field
-- b: button
-- x: checkbox
-- c: combo box
-- r: radio button
-- q: block quote
-- s: separator
-- m: frame
-- g: graphic
-- d: landmark
-- o: embedded object
-- 1 to 6: headings at levels 1 to 6 respectively
+다음의 키는 단독으로 유효한 다음 요소(element)로 점프합니다. 반면에 쉬프트 키와 함께 누르면 이전 요소(element)로 점프합니다.
+- h: 헤딩(heading)
+- l: 목록(list)
+- i: 목록 항목(list item)
+- t: 표(table)
+- k: 링크(link)
+- 링크 없는 텍스트(n: nonLinked text)
+- f: 폼필드(form field)
+- u: 방문하지 않은 링크(unvisited link)
+- v: 방문한 링크(visited link)
+- e: 편집창(edit field)
+- b: 버튼(button)
+- x: 체크박스(checkbox)
+- c: 콤보박스(combo box)
+- r: 라디오 버튼(radio button)
+- q: 인용(block quote)
+- s: 분리기호(separator)
+- m: 프레임(frame)
+- g: 그래픽(graphic)
+- d: 랜드마크(landmark)
+- o: 임베디드 객체(embedded object)
+- 1 to 6: 1~6 레벨의 각각의 헤딩
 -
-To move to the beginning or end of containing elements such as lists and tables:
-|| Name | Key | Description |
-| Move to start of container | shift+comma | Moves to the start of the container (list, table, etc.) where the caret is positioned |
-| Move past end of container | comma | Moves past the end of the container (list, table, etc.) where the caret is positioned |
+목록이나 표처럼 상위요소의 처음과 끝으로 이동하려면:
+|| 이름 | 키 | 설명 |
+| 상위 요소의 맨 앞으로 이동 | shift+comma | caret가 위치한 상위 요소(목록, 표 등등)의 맨 앞으로 이동합니다. |
+| 상위 요소의 맨 끝으로 이동 | comma | caret가 위치한 상위 요소(목록, 표 등등)의 맨 끝으로 이동합니다. |
 %kc:endInclude
 
-++ The Elements List ++
-The elements list provides access to a list of either links, headings or landmarks in the document.
-Radio buttons allow you to switch between these three types of information.
-An edit field is also provided in the dialog which allows you to filter the list to help you search for a particular item on the page.
-Once you have chosen an item, you can use the provided buttons in the dialog to move to or activate that item.
+++ The 요소 목록(Elements List) ++
+요소 목록(elements list)은 문서 내의 링크나 헤딩 혹은 랜드마크의 목록에 대한 액세스를 제공합니다.
+라디오버튼에서 정보의 이 세가지 타입을 선택할 수 있습니다.
+편집창은 항상 대화상자에서 제공됩니다. 여기에서 특정 항목을 찾는데 도움이 되도록 목록을 필터링 할 수 있습니다.
+하나의 아이콘을 선택하면 대화상자에서 제공된 버튼을 사용하여 그 아이템으로 이동하거나 활성화 할 수 있습니다.
 %kc:beginInclude
-|| Name | Key | Description |
-| Browse mode elements list | NVDA+f7 | Brings up the Elements list which contains links, headings and landmarks from the current document |
+|| 이름 | 키 | 설명 |
+| 브라우즈 모드 요소 목록 | NVDA+f7 | 현재 문서에서 링크, 헤딩, 랜드마크를 포함하는 요소 목록을 가져옵니다. |
 %kc:endInclude
 
-++ Embedded Objects ++
-Pages can include rich content using technologies such as Adobe Flash and Sun Java.
-Where these are encountered in browse mode, NVDA will report "embedded object".
-You can press enter on these objects to interact with them.
-If it is accessible, you can then tab around it and interact with it like any other application.
-A key command is provided to return to the original page containing the embedded object:
+++ 임베디드 객체 ++
+페이지는 Adobe Flash나 Sun Java 같은 기술을 사용한 리치 컨텐트(rich content)를 포함하는 경우도 있습니다.
+브라우즈 모드에서 이것들을 마주치면 NVDA는 "임베디드 객체"라고 알릴 것입니다.
+이러한 객체에서 엔터 키를 누르면 그것들을 조작할 수 있습니다.
+만약 임베디드 객체가 접근 가능하다면 다른 애플리케이션들처럼 탭으로 이동할 수 있고 조작할 수도 있습니다.
+임베디드 객체를 포함하는 원래의 페이지로 되돌아가려면 다음의 단축키를 이용하세요.
 %kc:beginInclude
-|| Name | Key | Description |
-| Move to containing browse mode document | NVDA+control+space | Moves the focus out of the current embedded object and into the document that contains it |
+|| 이름 | 키 | 설명 |
+| 상위 브라우즈 모드 문서로 이동 | NVDA+control+space | 포커스를 현재 임베디드 객체밖으로꺼내서 그 임베디드 객체를 포함하는 문서로 이동시킵니다. |
 %kc:endInclude
 
 + 응용프로그램별 특정 NVDA 기능키 +
