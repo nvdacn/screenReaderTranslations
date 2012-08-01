@@ -15,6 +15,10 @@ addresses = {
         'lang':'Arabic',
         'email': ['Fatma Mehanna <fatma.mehanna@gmail.com>'],
     },
+    'ar_SO': {
+        'lang':'Somalian Arabic',
+        'email': ['ahmed alasow <aalasow@talktalk.net>'],
+    },
     'bg': {
         'lang':'Bulgarian',
         'email': ['Zahari Yurukov <zahari.yurukov@gmail.com>'],
