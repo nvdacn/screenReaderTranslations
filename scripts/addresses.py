@@ -17,7 +17,7 @@ addresses = {
     },
     'ar_SO': {
         'lang':'Somalian Arabic',
-        'email': ['ahmed alasow <aalasow@talktalk.net>'],
+        'email': ['ahmed alasow <aalasow@talktalk.net>', 'osman <othman82@hotmail.com>'],
     },
     'bg': {
         'lang':'Bulgarian',
