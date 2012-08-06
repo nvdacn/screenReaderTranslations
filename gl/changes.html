@@ -34,6 +34,7 @@
 <UL>
 <LI>No diálogo Preferencias do Cursor de Revisión de NVDA, a opción Seguer foco do teclado foi renomeada a Seguer ó foco do sistema para consistencia ca terminoloxía utilizada noutras partes no NVDA.
 <LI>Cando o braille estea seguindo á revisión e o cursor estea sobre un obxecto que non sexa un obxecto de texto (ex.: un campo de texto editable), as teclas dos sensores do cursor agora activarán o obxecto. (<A HREF="http://www.nvda-project.org/ticket/2386">#2386</A>)
+<LI>Cando se actualiza unha copia do NVDA instalada anteriormente, a tecla de atallo do escritorio xa non se forza a control+alt+n se foi cambiada manualmente a algunha outra diferente polo usuario. (<A HREF="http://www.nvda-project.org/ticket/2572">#2572</A>)
 </UL>
 
 <H3>Corrección de Fallos</H3>
@@ -57,12 +58,15 @@
 <LI>A configuración para o anunciado de barras de progreso agora recoñécese para barras de progreso indeterminadas amosadas por NVDA cando se está a instalar, a crear unha copia portable, etc. (<A HREF="http://www.nvda-project.org/ticket/2574">#2574</A>)
 <LI>As ordes de NVDA xa non poden executarse dende unha liña braille mentres unha pantalla segura de Windows (como a pantalla de desbloqueo) estea activa. (<A HREF="http://www.nvda-project.org/ticket/2449">#2449</A>)
 <LI>No modo navegación, o braille agora actualízase se o texto que se está a desplazar cambia. (<A HREF="http://www.nvda-project.org/ticket/2074">#2074</A>)
+<LI>Cando se está en pantallas seguras de  Windows como a pantalla de desbloqueo as mensaxes das aplicacións que están a falar ou a amosar braille directamente a través do NVDA agora ignóranse.
+<LI>No modo navegación, xa non é posible sobrepasar a parte inferior do documento ca tecla flecha dereitha cando se está no carácter final, ou saltando o fin dun contedor cando ese contedor é o derradeiro elemento do documento. (<A HREF="http://www.nvda-project.org/ticket/2463">#2463</A>)
 </UL>
 
 <H3>Cambios para Desenroladores</H3>
 
 <UL>
-<LI>Previous log file is now copied to nvda-old.log on NVDA initialization. Therefore, if NVDA crashes or is restarted, logging information from that session is still accessible for inspection. (<A HREF="http://www.nvda-project.org/ticket/916">#916</A>)
+<LI>O ficheiro log anterior agora cópiase en nvda-old.log na inicialización do NVDA. Polo tanto, se NVDA se bloquea ou se reinicia, o rexistro de información  de esa sesión aínda é accesible para a súa inspección. (<A HREF="http://www.nvda-project.org/ticket/916">#916</A>)
+<LI>A obtención da propiedade de rol en chooseNVDAObjectOverlayClasses xa non causa que o rol sexa incorrecto e polo tanto non se anuncie en foco para certos obxectos como consolas de ordes de Windows e controis de Scintilla. (<A HREF="http://www.nvda-project.org/ticket/2569">#2569</A>)
 </UL>
 
 <H2>2012.2.1</H2>
@@ -112,7 +116,7 @@ O subliñable desta versión inclúe unha característica que integra o instalad
 <H3>Cambios para Desenroladores</H3>
 
 <UL>
-<LI>Due to the replacement of the previous NSIS installer for NVDA with a built-in installer in Python, it is no longer necessary for translaters to maintain a langstrings.txt file for the installer. All localization strings are now managed by gettext po files.
+<LI>Debido á substitución do instalador anterior NSIS para o NVDA por un compilado en Python, xa non é necesario para os traductores manter un ficheiro langstrings.txt para o instalador. Todas as cadeas de localización agora adminístranse con ficheiros po de gettext.
 </UL>
 
 <H2>2012.1</H2>
@@ -199,18 +203,18 @@ O subliñable desta versión inclúe características para unha lectura máis fl
 <H3>Cambios para Desenrroladores</H3>
 
 <UL>
-<LI>There is now a remote Python console for situations where remote debugging is useful. See the Developer Guide for details.
-<LI>The base path of NVDA's code is now stripped from tracebacks in the log to improve readability. (<A HREF="http://www.nvda-project.org/ticket/1880">#1880</A>)
-<LI>TextInfo objects now have an activate() method to activate the position represented by the TextInfo.
+<LI>Agora hai unha Consola Python remota para situacións onde a depuración remota é útil. Mira a Developer Guide para detalles.
+<LI>A ruta base do código de NVDA agora quitouse dos tracebacks no log para mellorar lexibilidade. (<A HREF="http://www.nvda-project.org/ticket/1880">#1880</A>)
+<LI>Os obxectos TextInfo agora teñen un método activate() para activar a posición representada polo TextInfo.
  <UL>
- <LI>This is used by braille to activate the position using cursor routing keys on a braille display. However, there may be other callers in future.
+ <LI>Esto utilízase polo braille para activar a posición utilizando teclas de guiado do cursor nunha liña braille. Nembargantes, podería haber outras chamadas no futuro.
  </UL>
-<LI>TreeInterceptors and NVDAObjects which only expose one page of text at a time can support automatic page turns during say all by using the textInfos.DocumentWithPageTurns mix-in. (<A HREF="http://www.nvda-project.org/ticket/1978">#1978</A>)
-<LI>Several control and output constants have been renamed or moved. (<A HREF="http://www.nvda-project.org/ticket/228">#228</A>)
-<LI>speech.REASON_* constants have been moved to controlTypes.
-<LI>In controlTypes, speechRoleLabels and speechStateLabels have been renamed to just roleLabels and stateLabels, respectively.
-<LI>Braille output is now logged at level input/output. First, the untranslated text of all regions is logged, followed by the braille cells of the window being displayed. (<A HREF="http://www.nvda-project.org/ticket/2102">#2102</A>)
-<LI>subclasses of the sapi5 synthDriver can now override _getVoiceTokens and extend <U>init</U> to support custom voice tokens such as with sapi.spObjectTokenCategory to get tokens from a custom registry location.
+<LI>Os treeInterceptors e os NVDAObjects que só expoñen unha páxina de texto á vez poden soportar o cambio automático de páxina durante ler todo utilizando o textInfos.DocumentWithPageTurns misturado. (<A HREF="http://www.nvda-project.org/ticket/1978">#1978</A>)
+<LI>Movéronse ou cambiáronse os nomes de varios controis e constantes de saída. (<A HREF="http://www.nvda-project.org/ticket/228">#228</A>)
+<LI>As constantes speech.REASON_* movéronse a controlTypes.
+<LI>Renomeáronse controlTypes, speechRoleLabels e speechStateLabels só a roleLabels and stateLabels, respectivamente.
+<LI>Agora a saída braille rexístrase no nivel input/output. Primeiro, o texto sen transcribir de todas as rexións rexístrase, seguido polas celdas braille da ventá que se están a amosar. (<A HREF="http://www.nvda-project.org/ticket/2102">#2102</A>)
+<LI>As subclasses do synthDriver sapi5  agora poden sobreescribirse _getVoiceTokens e extender <U>init</U> para soportaren fichas de voces personalizadas como con sapi.spObjectTokenCategory para obter fichas dun rexistro personalizado.
 </UL>
 
 <H2>2011.3</H2>
