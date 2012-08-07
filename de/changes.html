@@ -32,6 +32,7 @@
 <LI>Im Dialog für die NVDA-Cursor-Einstellungen wurde die Einstellung "Tastaturfokus verfolgen" in "Systemfokus verfolgen" umbenannt, um mit anderen Teilen von NVDA zu harmonieren, in denen diese Namensgebung verwendet wird.
 <LI>Wenn die Braillezeile an den Navigator gekoppelt ist und gerade ein objekt angezeigt wird, das kein Textobjekt ist (wie z. B. ein Eingabefeld), kann das objekt durch Drücken der Cursorroutingtasten aktiviert werden. (<A HREF="http://www.nvda-project.org/ticket/2386">#2386</A>)
 <LI>Die Option "Einstellungen beim Beenden speichern" ist bei neuen Konfigurationen nun standardmäßig aktiviert.
+<LI>Beim Aktualisieren von NVDA wird die Tastenkombination der Desktopverknüpfung nun nicht mehr auf strg+alt+n zurückgesetzt, wenn der Anwender diese manuell geändert haben sollte. (<A HREF="http://www.nvda-project.org/ticket/2572">#2572</A>)
 <P></P>
 == Fehlerbehebungen ==
 <LI>In Blio wird nun der Inhalt von Büchern in Braille angezeigt. (<A HREF="http://www.nvda-project.org/ticket/2139">#2139</A>)
@@ -52,9 +53,15 @@
 <LI>Die Einstellungen für die Ausgabe von Frtschrittsbalken werden nun auch während der Installation von NVDA oder während der Erstellung einer portablen Kopie berücksichtigt. (<A HREF="http://www.nvda-project.org/ticket/2574">#2574</A>)
 <LI>wenn ein sicherer Desktop (wie etwa ein Sperrbildschirm) angezeigt wird, können nun keine NVDA-Befehle mehr mit einer Braillezeile ausgeführt werden. (<A HREF="http://www.nvda-project.org/ticket/2449">#2449</A>)
 <LI>Die Braille-Anzeige wird nun im Lesemodus korrekt aktualisiert, wenn sich der anzuzeigende Text geändert hat. (<A HREF="http://www.nvda-project.org/ticket/2074">#2074</A>)
-<P></P>
-== Änderungen für Entwickler ==
+<LI>In Sicheren Desktops wie etwa in der Benutzerkontensteuerung  werden nun Meldungen ignoriert, die über den nvda-Controller gesprochen werden oder in Braille angezeigt werden.
+<LI>Sie können im Lesemodus nun nicht mehr über das Ende des Dokumentes hinas springen (z.B. wenn Sie sich am Ende eines Dokumentes befinden und Pfeil Rechts drücken, oder wenn sie sich aus einem Container herausbewegen wollen, der sich am Ende eines Dokumentes befindet. (<A HREF="http://www.nvda-project.org/ticket/2463">#2463</A>)
+</UL>
+
+<H3>Änderungen für Entwickler</H3>
+
+<UL>
 <LI>Beim Start von NVDA wird nun das vorherige Protokoll nach nvda-old.log kopiert. Sollte NVDA also einmal abstürzen oder neu gestartet werden müssen, steht das Protokoll der vorigen NVDA-Sitzung zu Inspektionszwecken zur Verfügung. (<A HREF="http://www.nvda-project.org/ticket/916">#916</A>)
+<LI>Wenn Sie innerhalb einer Methode chooseNVDAObjectOverlayClasses den Objekttyp abrufen wollen, wird dieser nun nicht mehr falsch zurückgegeben, wen Objekte wie Eingabeaufforderungen oder Scintilla-Steuerelemente den Fokus haben. 
 </UL>
 
 <H2>2012.2.1</H2>
