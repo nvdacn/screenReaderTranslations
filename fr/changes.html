@@ -27,6 +27,9 @@
 <LI>Deux nouvelles variantes de voix Espeak : Gene, Gene2. (<A HREF="http://www.nvda-project.org/ticket/2512">#2512</A>)
 <LI>Dans Adobe Reader, les numérots de pages peuvent maintenant être rapportés. (<A HREF="http://www.nvda-project.org/ticket/2534">#2534</A>)
 <LI>Il est maintenant possible de réinitialiser la configuration de NVDA à celle par défaut en appuyant trois fois sur NVDA+Ctrl+r, ou en choisissant Réinitialiser la configuration aux paramètres par défaut dans le menu de NVDA. (<A HREF="http://www.nvda-project.org/ticket/2086">#2086</A>)
+<LI>Support des afficheurs braille Seika Version 3, 4 et 5 et Seika80 de Nippon Telesoft. (<A HREF="http://www.nvda-project.org/ticket/2452">#2452</A>)
+<LI>les premiers et derniers curseurs routines des afficheurs braille Pacmate et Focus de Freedom Scientific peuvent maintenant être utilisés pour défiler vers l'avant ou vers l'arrière. (<A HREF="http://www.nvda-project.org/ticket/2556">#2556</A>)
+<LI>Plus de possibilités sont supportées pour les afficheurs brailles Focus de Freedom Scientific comme les bares pour avancer, les bares de basculement et certaines combinaisons de points pour des actions communes. (<A HREF="http://www.nvda-project.org/ticket/2516">#2516</A>)
 </UL>
 
 <H3>Changements</H3>
@@ -35,6 +38,9 @@
 <LI>Dans la boîte de dialogue de préférences du curseur de revue de NVDA, l'option suivre le focus clavier a été renomée en Suivre le focus système pour être cohérant avec les terminologies utilisées ailleur dans NVDA.
 <LI>Quand le braille suit la revue et que le curseur est dans un objet qui n'est pas un objet texte (P.EX. une zone d'édition), les touches routines activent maintenant l'objet. (<A HREF="http://www.nvda-project.org/ticket/2386">#2386</A>)
 <LI>L'option Sauvegarder la configuration en quittant est activée par défaut pour les nouvelles configurations.
+<LI>Lorsque l'on met à jours une copie installée de NVDA, le raccourci clavier du bureau n'est plus remis à control+alt+n s'il a été changé manuellement par l'utilisateur. (<A HREF="http://www.nvda-project.org/ticket/2572">#2572</A>)
+<LI>La liste des modules complémentaires dans le gestionnaire de modules complémentaires affiche le nom du paquet avant son état. (<A HREF="http://www.nvda-project.org/ticket/2548">#2548</A>)
+<LI>Lorsqu'on installe la même version ou une autre d'un module complémentaire actuellement installé, NVDA proposera d'abord de désinstaller la version actuelle plutôt qu'afficher un message d'erreur et abandonner. (<A HREF="http://www.nvda-project.org/ticket/2501">#2501</A>)
 </UL>
 
 <H3>Corrections de Bogues</H3>
@@ -58,12 +64,17 @@
 <LI>La configuration du rapport des barres de progression est maintenant prise en compte pour les barres de progression non déterminables affichées par NVDA lors de l'installation, de la création d'une version portable etc. (<A HREF="http://www.nvda-project.org/ticket/2574">#2574</A>)
 <LI>Les commandes de NVDA ne peuvent plus être exécutées depuis un afficheur Braille tant qu'un écran sécurisé de Windows (comme l'écran de verrouillage de l'ordinateur) est actif. (<A HREF="http://www.nvda-project.org/ticket/2449">#2449</A>)
 <LI>En mode navigation, le braille est mis à jour si le texte affiché change. (<A HREF="http://www.nvda-project.org/ticket/2074">#2074</A>)
+<LI>Lorsque l'on est dans un écran sécurisé tel que la fenêtre d'ordinateur verrouillé, les messages des applications annonçant ou affichant du braille directement via NVDA sont maintenant ignorés.
+<LI>En mode navigation, il est maintenant impossible de passer le bas du document avec la flèche droite en étant sur le dernier caractère, ou en sautant à la fin d'un conteneur quand celui-ci est le dernier élément du document. (<A HREF="http://www.nvda-project.org/ticket/2463">#2463</A>)
+<LI>Les contenus extérieurs ne sont plus incorrectement inclus lors du rapport du texte des dialogues dans les applications web (spécifiquement, les dialogues ARIA sans attribut aria-describedby). (<A HREF="http://www.nvda-project.org/ticket/2390">#2390</A>)
+<LI>NVDA ne rapporte ou ne situ plus incorrectement certains champs d'édition dans les documents MSHTML (Ex : Internet Explorer), spécifiquement où un rôle ARIA explicite a été défini par l'auteur de la page web. (<A HREF="http://www.nvda-project.org/ticket/2435">#2435</A>)
 </UL>
 
 <H3>Changements pour les développeurs</H3>
 
 <UL>
 <LI>Le fichier journal précédant est maintenant renomé en nvda-old.log à l'initialisation de NVDA. Par conséquent, si NVDA plente ou est redémarré, les informations journalisées de cette session sont toujours accessibles pour inspection. (<A HREF="http://www.nvda-project.org/ticket/916">#916</A>)
+<LI>Accéder à la propriété role dans chooseNVDAObjectOverlayClasses ne la rend plus incorrecte et pas rapporté lors du focus pour certains objets tel que les fenêtres d'invites de commandes et les contrôles Scintilla. (<A HREF="http://www.nvda-project.org/ticket/2569">#2569</A>)
 </UL>
 
 <H2>2012.2.1</H2>
