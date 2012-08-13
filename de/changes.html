@@ -27,9 +27,10 @@
 <LI>neue Espeak-Varianten: Gene, Gene2. (<A HREF="http://www.nvda-project.org/ticket/2512">#2512</A>)
 <LI>in Adobe Reader werden Seitenzahlen nun korrekt ausgegeben. (<A HREF="http://www.nvda-project.org/ticket/2534">#2534</A>)
 <LI>Es ist nun möglich, die Werkseinstellungen von NVDA wiederherzustellen. Dies kann entweder durch dreimaliges Drücken von NVDA+strg+r oder durch Wählen von "Werkseinstellungen wiederherstellen" im nvda-Menü geschehen. (<A HREF="http://www.nvda-project.org/ticket/2086">#2086</A>)
-<LI>** Unterstützung der Braillezeilen Seika Version 3, 4 and 5 and Seika80 von Nippon Telesoft. (<A HREF="http://www.nvda-project.org/ticket/2452">#2452</A>)
-<LI>** The first and last top routing buttons on Freedom Scientific PAC Mate and Focus Braille displays can now be used to scroll  backward and forward. (<A HREF="http://www.nvda-project.org/ticket/2556">#2556</A>)
+<LI>Unterstützung der Braillezeilen Seika Version 3, 4 and 5 and Seika80 von Nippon Telesoft. (<A HREF="http://www.nvda-project.org/ticket/2452">#2452</A>)
+<LI>Bei Freedom Scientific Pac Mate und Focus-Braillezeilen können die Routingtasten über dem ersten Bzw. letzten Modul nun zum Rückwärts- Bzw. Vorwärtsscrollen verwendet werden (<A HREF="http://www.nvda-project.org/ticket/2556">#2556</A>)
 <LI>** Viele weitere Features der Braillezeilen Focus von Freedom Scientific erweiterte bars, rocker bars und bestimmte Punktkombinationen für allgemeine Funktionen werden unterstützt. (<A HREF="http://www.nvda-project.org/ticket/2516">#2516</A>)
+<LI>In Anwendungen, die Accessible2 verwenden (wie z.B. Mozilla-anwendungen) werden nun Spalten- und Zeilenüberschriften auch außerhalb des Lesemodus angezeigt. (<A HREF="http://www.nvda-project.org/ticket/926">#926</A>)
 </UL>
 
 <H3>Änderungen</H3>
@@ -40,12 +41,10 @@
 <LI>Die Option "Einstellungen beim Beenden speichern" ist bei neuen Konfigurationen nun standardmäßig aktiviert.
 <LI>Beim Aktualisieren von NVDA wird die Tastenkombination der Desktopverknüpfung nun nicht mehr auf strg+alt+n zurückgesetzt, wenn der Anwender diese manuell geändert haben sollte. (<A HREF="http://www.nvda-project.org/ticket/2572">#2572</A>)
 <LI>Die Liste der Erweiterungen im Dialog "erweiterungen verwalten" zeigt nun den Namen der Erweiterung vor dessen Status an. (<A HREF="http://www.nvda-project.org/ticket/2548">#2548</A>)
-<LI>** Wenn sie die gleiche Version bzw. eine andere Version einer bereits installierten Erweiterung installieren, werden Sie nun gefragt, ob die alte Version zuehrst entfernt werden soll. Zuvor wurde schlicht eine Fehlermeldung angezeigt und die Installation abgebrochen. (<A HREF="http://www.nvda-project.org/ticket/2501">#2501</A>)
-</UL>
-
-<H3>Fehlerbehebungen</H3>
-
-<UL>
+<LI>Wenn sie die gleiche Version bzw. eine andere Version einer bereits installierten Erweiterung installieren, werden Sie nun gefragt, ob die alte Version zuehrst entfernt werden soll. Zuvor wurde einfach eine Fehlermeldung angezeigt und die Installation abgebrochen. (<A HREF="http://www.nvda-project.org/ticket/2501">#2501</A>)
+<LI>Die Befehle zur objektweisen navigation (bis auf den Befehl zur ausgabe des aktuellen objekts) sind nun weniger ausführlich. Sie können aber dennoch weitere Informationen über ein objekt abrufen, indem Sie den Befehl zur Ausgabe des aktuellen Objekts verwenden. (<A HREF="http://www.nvda-project.org/ticket/2560">#2560</A>)
+<P></P>
+== Fehlerbehebungen ==
 <LI>In Blio wird nun der Inhalt von Büchern in Braille angezeigt. (<A HREF="http://www.nvda-project.org/ticket/2139">#2139</A>)
 <LI>Wurde der Computer in Windows Vista und neuer mit Win+L gesperrt und wieder entsperrt, so bleibt die Windows-Taste nun nicht mehr fälschlicherweise hängen. (<A HREF="http://www.nvda-project.org/ticket/1856">#1856</A>)
 <LI>In Adobe Reader werden Zeilenüberschriften nun richtig als Zellen in einer Tabelle erkannt, so dass z. B. die Zellkoordinaten angesagt werden und durch die Tabellennavigation angesteuert werden können. (<A HREF="http://www.nvda-project.org/ticket/2444">#2444</A>)
@@ -66,8 +65,9 @@
 <LI>Die Braille-Ausgabe wird nun im Lesemodus korrekt aktualisiert, wenn sich der anzuzeigende Text geändert hat. (<A HREF="http://www.nvda-project.org/ticket/2074">#2074</A>)
 <LI>In Sicheren Desktops wie etwa in der Benutzerkontensteuerung  werden nun Meldungen ignoriert, die über den nvda-Controller gesprochen werden oder in Braille angezeigt werden.
 <LI>Sie können im Lesemodus nun nicht mehr über das Ende des Dokumentes hinaus springen, wenn Sie  (z.B. am Ende eines Dokumentes Pfeil Rechts drücken, oder wenn sie sich aus einem Container herausbewegen wollen, der sich am Ende eines Dokumentes befindet. (<A HREF="http://www.nvda-project.org/ticket/2463">#2463</A>)
-<LI>** Extraneous content is no longer incorrectly included when reporting the text of dialogs in web applications (specifically, ARIA dialogs with no aria-describedby attribute). (<A HREF="http://www.nvda-project.org/ticket/2390">#2390</A>)
-<LI>** NVDA no longer incorrectly reports or locates certain edit fields in MSHTML documents (e.g. Internet Explorer), specifically where an explicit ARIA role has been used by the web page author. (<A HREF="http://www.nvda-project.org/ticket/2435">#2435</A>)
+<LI>in Web-Anwendungen (speziell in solchen, die Aria-Dialoge ohne das Attribut aria-describedby verwenden) wird nun keine belanglose Information mehr angezeigt. (<A HREF="http://www.nvda-project.org/ticket/2390">#2390</A>)
+<LI>Wenn der Autor einer Webseite ausdrücklich per Aria eine Fensterklasse angegeben hat, werden in mshtml-Dokumenten wie z.B. Internet Explorer keine Steerelemente mehr falsch positioniert Bzw. falsch ausgegeben. (<A HREF="http://www.nvda-project.org/ticket/2435">#2435</A>)
+<LI>Wennin Konsolenanwendungen das Sprechen eingegebener Wörter aktiviert ist, wird nun die Rücktaste korrekt verarbeitet. (<A HREF="http://www.nvda-project.org/ticket/2586">#2586</A>)
 </UL>
 
 <H3>Änderungen für Entwickler</H3>
