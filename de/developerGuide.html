@@ -44,37 +44,39 @@
   <LI><A HREF="#toc20">3.11. Die Schlafmodus-Variablen der Anwendungsmodule</A>
   <LI><A HREF="#toc21">3.12. Beispiel 4: Ein Schlafmodus-Anwendungsmodul</A>
   <LI><A HREF="#toc22">3.13. Eigene NVDA-Objektklassen angeben</A>
-  <LI><A HREF="#toc23">3.14. Beispiel 5: Das Eingabefeld im Editor beschriften, welches ein eigenes NVDA-Objekt verwendet</A>
+  <LI><A HREF="#toc23">3.14. Beispiel 5: ein Befehl zum Abrufen der Textlänge in einem Eingabefeld unter Verwendung einer eigenen NVDA-Objektklasse</A>
+  <LI><A HREF="#toc24">3.15. Vornehmen einfacher Änderungen an NVDA-Objekten in Anwendungsmodulen</A>
+  <LI><A HREF="#toc25">3.16. Beispiel 6: Das Eingabefeld im Editor beschriften, welches ein eigenes NVDA-Objekt verwendet</A>
   </UL>
-<LI><A HREF="#toc24">4. Verpacken von Code als NVDA-Erweiterungen</A>
+<LI><A HREF="#toc26">4. Verpacken von Code als NVDA-Erweiterungen</A>
     <UL>
-    <LI><A HREF="#toc25">4.0.1. Beispiel für eine Manifest-Datei</A>
+    <LI><A HREF="#toc27">4.0.1. Beispiel für eine Manifest-Datei</A>
     </UL>
-<LI><A HREF="#toc26">4.1. Plugins und Treiber</A>
+<LI><A HREF="#toc28">4.1. Plugins und Treiber</A>
   <UL>
-  <LI><A HREF="#toc27">4.2. Zusätzlicher Code zur Installation / deinstallation</A>
+  <LI><A HREF="#toc29">4.2. Zusätzlicher Code zur Installation / deinstallation</A>
     <UL>
-    <LI><A HREF="#toc28">4.2.1. Die Funktion onInstall</A>
-    <LI><A HREF="#toc29">4.2.2. Die Funktion onUninstall</A>
+    <LI><A HREF="#toc30">4.2.1. Die Funktion onInstall</A>
+    <LI><A HREF="#toc31">4.2.2. Die Funktion onUninstall</A>
     </UL>
-  <LI><A HREF="#toc30">4.3. Erweiterungen lokalisieren</A>
+  <LI><A HREF="#toc32">4.3. Erweiterungen lokalisieren</A>
     <UL>
-    <LI><A HREF="#toc31">4.3.1. Sprachspezifische Manifest-Dateien</A>
-    <LI><A HREF="#toc32">4.3.2. Sprachspezifische Meldungen</A>
+    <LI><A HREF="#toc33">4.3.1. Sprachspezifische Manifest-Dateien</A>
+    <LI><A HREF="#toc34">4.3.2. Sprachspezifische Meldungen</A>
     </UL>
   </UL>
-<LI><A HREF="#toc33">5. Die Python-Konsole von NVDA</A>
+<LI><A HREF="#toc35">5. Die Python-Konsole von NVDA</A>
   <UL>
-  <LI><A HREF="#toc34">5.1. Verwendung</A>
+  <LI><A HREF="#toc36">5.1. Verwendung</A>
   <LI><A HREF="#PythonConsoleNamespace">5.2. Namensraum</A>
     <UL>
-    <LI><A HREF="#toc36">5.2.1. Automatische Importe</A>
+    <LI><A HREF="#toc38">5.2.1. Automatische Importe</A>
     <LI><A HREF="#PythonConsoleSnapshotVariables">5.2.2. Schnappschuss-Variablen</A>
     </UL>
   </UL>
-<LI><A HREF="#toc38">6. Die Remote-Python-Konsole</A>
+<LI><A HREF="#toc40">6. Die Remote-Python-Konsole</A>
   <UL>
-  <LI><A HREF="#toc39">6.1. Verwendung</A>
+  <LI><A HREF="#toc41">6.1. Verwendung</A>
   </UL>
 </UL>
 
@@ -772,7 +774,7 @@ die definition einer eigenen Objektklasse erfolgt in zwei Schritten:
 Wenn Sie eigene NVDA-Objektklassen definieren, haben Sie viele NVDA-Objekt-basisklassen zur Auswahl.
 Diese Basisklassen enthalten die grundlegene Unterstützung von Betriebssystem- oder Zugänglichkeitsschnittstellen wie win32, MSAA oder Java Access Bridge.
 Sie sollten in der benutzerdefinierten Objektklasse üblicherweise die höchste Basisklasse erben.
-Wenn Sie beispielsweise eine benutzerdefinierte Fensterklasse bei einem Steuerelement verwenden wollen, dessen Fensterklasse "edit" ist und dessen Steuerelement-ID 15 ist, werden Sie vermutlich von der Klasse "NVDAObjects.Window.Window" erben wollen, weil es sich bei dem besagten Objekt um ein Fenster handelt.
+Wenn Sie beispielsweise eine benutzerdefinierte Fensterklasse bei einem Steuerelement verwenden wollen, dessen Fensterklasse "edit" ist und dessen Steuerelement-ID 15 ist, werden Sie vermutlich von der Klasse "NVDAObjects.Window.Window" ableiten wollen, weil es sich bei dem besagten Objekt um ein Fenster handelt.
 so ähnlich werden Sie Ihr Objekt von der Klasse "NVDAObjects.IAccessible.IAccessible" ableiten, wenn Sie nach der Eigenschaft "accrole" suchen wollen.
 Außerdem sollten Sie genau wissen, welche Eigenschaften Sie bei Ihrer benutzerdefinierten Klasse überschreiben wollen.
 Wenn Sie beispielsweise eine iAccessible-spezifische Eigenschaft wie "shouldAllowIAccessibleFocusEvent" überschreiben wollen, müssen Sie Ihr Objekt von  "NVDAObjects.IAccessible.IAccessible" ableiten.
@@ -789,12 +791,70 @@ Dabei verarbeitet sie drei Argumente:
 </OL>
 
 <P>
-Innerhalb dieser Methode sollten Sie entscheiden, welche benutzerdefinierten Objektklasse(n) das objekt verwenden soll, indem Sie dessen Eigenschaften prüfen.
+Innerhalb dieser Methode sollten Sie entscheiden, welche benutzerdefinierte(n) Objektklasse(n) das objekt verwenden soll, indem Sie dessen Eigenschaften prüfen.
 Wenn eine benutzerdefinierte Klasse verwendet werden soll, können Sie sie in die Klassenliste (üblicherweise vorn) einfügen. Sie können auch von NVDA ausgewählte Klassen aus der Liste entfernen, dies ist jedoch selten erforderlich.
 </P>
 
 <A NAME="toc23"></A>
-<H3>3.14. Beispiel 5: Das Eingabefeld im Editor beschriften, welches ein eigenes NVDA-Objekt verwendet</H3>
+<H3>3.14. Beispiel 5: ein Befehl zum Abrufen der Textlänge in einem Eingabefeld unter Verwendung einer eigenen NVDA-Objektklasse</H3>
+
+<P>
+Dieses Anwendungsmodul für den Editor stellt einen Befehl bereit, mit dem die Anzahl der Zeichen in einem Eingabefeld abgerufen werden kann.
+Dieser kann mit nvda+l aufgerufen werden.
+Dieser Befehl ist nur in Eingabefeldern innerhalb des Editors verfügbar.
+</P>
+<P>
+Speichern Sie den folgenden Code in einer Datei mit dem Namen notepad.py in ihrem nvda-Konfigurationsverzeichnis.
+</P>
+
+<PRE>
+--- Beginn ---
+import appModuleHandler
+from NVDAObjects.IAccessible import IAccessible
+import controlTypes
+import ui
+
+class AppModule(appModuleHandler.AppModule):
+
+	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
+		if obj.windowClassName == "Edit" and obj.role == controlTypes.ROLE_EDITABLETEXT:
+			clsList.insert(0, EnhancedEditField)
+
+class EnhancedEditField(IAccessible):
+
+	def script_reportLength(self, gesture):
+		ui.message("%d" % len(self.value))
+
+	__gestures = {
+		"kb:NVDA+l": "reportLength",
+	}
+
+--- Ende ---
+</PRE>
+
+<A NAME="toc24"></A>
+<H3>3.15. Vornehmen einfacher Änderungen an NVDA-Objekten in Anwendungsmodulen</H3>
+
+<P>
+Manchmal möchten Sie vielleicht nur kleine Änderungen an NVDA-Objekten vornehmen wie etwa den namen oder den Typ mit Festwerten überschreiben.
+In these cases, you don't need the full power of a custom NVDA Object class.
+In einem solchen Fall müssen sie nicht die Benutzerdefinierten NVDA-Objektklassen in vollem Umfang nutzen, sondern können stattdessen das Ereignis event_nvdaobject_init nutzen. 
+</P>
+<P>
+Die Methode  event_NVDAObject_init verarbeitet zwei Argumente:
+</P>
+
+<OL>
+<LI>self: die aufrufende Instanz des Anwendungsmoduls.
+<LI>obj: das NVDA-Objekt, das grade initialisiert wird.
+</OL>
+
+<P>
+Innerhalb dieser Methode können Sie prüfen, ob es sich bei "obj" um ein relevantes objekt handelt und im Efolgsfall seine Eigenschaften entsprechend überschreiben.
+</P>
+
+<A NAME="toc25"></A>
+<H3>3.16. Beispiel 6: Das Eingabefeld im Editor beschriften, welches ein eigenes NVDA-Objekt verwendet</H3>
 
 <P>
 Dieses Anwendungsmodul bringt NVDA dazu, das Haupt-eingabefeld des Editors mit "Inhalt" zu benennen.
@@ -811,18 +871,13 @@ from NVDAObjects.window import Window
 
 class AppModule(appModuleHandler.AppModule):
 
-	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
+	def event_NVDAObject_init(self, obj):
 		if isinstance(obj, Window) and obj.windowClassName == "Edit" and obj.windowControlID == 15:
-			clsList.insert(0, LabelledEditField)
-
-class LabelledEditField(Window):
-
-	name = "Inhalt"
-
+			obj.name = "Content"
 --- Ende ---
 </PRE>
 
-<A NAME="toc24"></A>
+<A NAME="toc26"></A>
 <H2>4. Verpacken von Code als NVDA-Erweiterungen</H2>
 
 <P>
@@ -860,7 +915,7 @@ Anderenfalls wird das Paket nicht installiert.
 <LI>url: Eine Internetadresse, unter der die Erweiterung, weitere Informationen oder Aktualisierungen zu finden sind.
 </UL>
 
-<A NAME="toc25"></A>
+<A NAME="toc27"></A>
 <H4>4.0.1. Beispiel für eine Manifest-Datei</H4>
 
 <PRE>
@@ -874,7 +929,7 @@ url = http://www.nvda-project.org/wiki/Development
 --- end ---
 </PRE>
 
-<A NAME="toc26"></A>
+<A NAME="toc28"></A>
 <H3>4.1. Plugins und Treiber</H3>
 
 <P>
@@ -888,7 +943,7 @@ Die folgenden Plugins und Treiber können in einer Erweiterung enthalten sein:
 <LI>Treiber für Sprachausgaben: Diese müssen in einem Ordner namens "synthDrivers" innerhalb des Archivs liegen.
 </UL>
 
-<A NAME="toc27"></A>
+<A NAME="toc29"></A>
 <H3>4.2. Zusätzlicher Code zur Installation / deinstallation</H3>
 
 <P>
@@ -897,7 +952,7 @@ Sie sollten unbedingt das unnötige Laden von Modulen vermeiden (Insbesondere Py
 Sollte dies jedoch vorkommen, so wird das Verzeichnis der Erweiterung umbenannt und erst beim nächsten Start von NVDA gelöscht.
 </P>
 
-<A NAME="toc28"></A>
+<A NAME="toc30"></A>
 <H4>4.2.1. Die Funktion onInstall</H4>
 
 <P>
@@ -906,7 +961,7 @@ Auch wenn die Erweiterung zu diesem Zeitpunkt bereits entpackt wurde, besitzt da
 Wenn die Funktion einen Ausnahmefehler auslöst, wird die Installation abgebrochen und das Verzeichnis gelöscht.
 </P>
 
-<A NAME="toc29"></A>
+<A NAME="toc31"></A>
 <H4>4.2.2. Die Funktion onUninstall</H4>
 
 <P>
@@ -915,7 +970,7 @@ Wurde diese Funktion erfolgreich ausgeführt, wird das Verzeichnis der Erweiteru
 Da dies zu einem Zeitpunkt geschieht, noch bevor andere Komponenten von NVDA geladen wurden, kann die funktion keinerlei Eingaben vom Benutzer entgegennehmen.
 </P>
 
-<A NAME="toc30"></A>
+<A NAME="toc32"></A>
 <H3>4.3. Erweiterungen lokalisieren</H3>
 
 <P>
@@ -924,7 +979,7 @@ Diese werden im Ordner "locale" innerhalb des Archivs gespeichert.
 Der Ordner sollte Unterordner für jeden Sprachraum enthalten, für den Sie Meldungen hinterlegen wollen. Hierbei muss dasselbe Namensformat benutzt werden, wie bei den Kernkomponenten von NVDA so z. B. "en" für Englisch oder "de" für deutsch.
 </P>
 
-<A NAME="toc31"></A>
+<A NAME="toc33"></A>
 <H4>4.3.1. Sprachspezifische Manifest-Dateien</H4>
 
 <P>
@@ -933,7 +988,7 @@ Dies sind die Felder Summary und Description.
 Alle anderen Felder werden ignoriert.
 </P>
 
-<A NAME="toc32"></A>
+<A NAME="toc34"></A>
 <H4>4.3.2. Sprachspezifische Meldungen</H4>
 
 <P>
@@ -944,7 +999,7 @@ Weitere Informationen über gettext und allgemeine Informationen über die Über
 <A HREF="http://www.nvda-project.org/wiki/TranslatingNVDA">http://www.nvda-project.org/wiki/TranslatingNVDA</A>
 </P>
 
-<A NAME="toc33"></A>
+<A NAME="toc35"></A>
 <H2>5. Die Python-Konsole von NVDA</H2>
 
 <P>
@@ -952,7 +1007,7 @@ Die Python-Konsole emuliert innerhalb von NVDA den interaktiven Python-Interpret
 Sie ist zur Fehlerbehebung oder zum Erkunden von NVDA's Interna oder zum Erkunden von Zugänglichkeitsschnittstellen nützlich.
 </P>
 
-<A NAME="toc34"></A>
+<A NAME="toc36"></A>
 <H3>5.1. Verwendung</H3>
 
 <P>
@@ -983,7 +1038,7 @@ durch Schließen des Fensters wird die Sitzung lediglich verborgen. Dies macht e
 <A NAME="PythonConsoleNamespace"></A>
 <H3>5.2. Namensraum</H3>
 
-<A NAME="toc36"></A>
+<A NAME="toc38"></A>
 <H4>5.2.1. Automatische Importe</H4>
 
 <P>
@@ -1009,7 +1064,7 @@ Diese Variablen sind:
 <LI>brlRegions: Die Braille-Regionen des aktiven Braille-Puffers.
 </UL>
 
-<A NAME="toc38"></A>
+<A NAME="toc40"></A>
 <H2>6. Die Remote-Python-Konsole</H2>
 
 <P>
@@ -1021,7 +1076,7 @@ Bitte bedenken Sie, dass dies ein hohes Sicherheitsrisiko darstellt!
 Sie sollten die Remote-Python-Konsole nur dann aktivieren, wenn Sie mit vertrauenswürdigen Netzwerken wie etwa VPNs verbunden sind.
 </P>
 
-<A NAME="toc39"></A>
+<A NAME="toc41"></A>
 <H3>6.1. Verwendung</H3>
 
 <P>
