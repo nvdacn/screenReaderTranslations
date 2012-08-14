@@ -491,7 +491,7 @@ die definition einer eigenen Objektklasse erfolgt in zwei Schritten:
 Wenn Sie eigene NVDA-Objektklassen definieren, haben Sie viele NVDA-Objekt-basisklassen zur Auswahl.
 Diese Basisklassen enthalten die grundlegene Unterstützung von Betriebssystem- oder Zugänglichkeitsschnittstellen wie win32, MSAA oder Java Access Bridge.
 Sie sollten in der benutzerdefinierten Objektklasse üblicherweise die höchste Basisklasse erben.
-Wenn Sie beispielsweise eine benutzerdefinierte Fensterklasse bei einem Steuerelement verwenden wollen, dessen Fensterklasse "edit" ist und dessen Steuerelement-ID 15 ist, werden Sie vermutlich von der Klasse "NVDAObjects.Window.Window" erben wollen, weil es sich bei dem besagten Objekt um ein Fenster handelt.
+Wenn Sie beispielsweise eine benutzerdefinierte Fensterklasse bei einem Steuerelement verwenden wollen, dessen Fensterklasse "edit" ist und dessen Steuerelement-ID 15 ist, werden Sie vermutlich von der Klasse "NVDAObjects.Window.Window" ableiten wollen, weil es sich bei dem besagten Objekt um ein Fenster handelt.
 so ähnlich werden Sie Ihr Objekt von der Klasse "NVDAObjects.IAccessible.IAccessible" ableiten, wenn Sie nach der Eigenschaft "accrole" suchen wollen.
 Außerdem sollten Sie genau wissen, welche Eigenschaften Sie bei Ihrer benutzerdefinierten Klasse überschreiben wollen.
 Wenn Sie beispielsweise eine iAccessible-spezifische Eigenschaft wie "shouldAllowIAccessibleFocusEvent" überschreiben wollen, müssen Sie Ihr Objekt von  "NVDAObjects.IAccessible.IAccessible" ableiten.
@@ -503,10 +503,54 @@ Dabei verarbeitet sie drei Argumente:
 + clsList: Eine Python-Liste mit Klassen, die für das Objekt benutzt werden sollen.
 +
 
-Innerhalb dieser Methode sollten Sie entscheiden, welche benutzerdefinierten Objektklasse(n) das objekt verwenden soll, indem Sie dessen Eigenschaften prüfen.
+Innerhalb dieser Methode sollten Sie entscheiden, welche benutzerdefinierte(n) Objektklasse(n) das objekt verwenden soll, indem Sie dessen Eigenschaften prüfen.
 Wenn eine benutzerdefinierte Klasse verwendet werden soll, können Sie sie in die Klassenliste (üblicherweise vorn) einfügen. Sie können auch von NVDA ausgewählte Klassen aus der Liste entfernen, dies ist jedoch selten erforderlich.
 
-++ Beispiel 5: Das Eingabefeld im Editor beschriften, welches ein eigenes NVDA-Objekt verwendet ++
+++ Beispiel 5: ein Befehl zum Abrufen der Textlänge in einem Eingabefeld unter Verwendung einer eigenen NVDA-Objektklasse ++
+Dieses Anwendungsmodul für den Editor stellt einen Befehl bereit, mit dem die Anzahl der Zeichen in einem Eingabefeld abgerufen werden kann.
+Dieser kann mit nvda+l aufgerufen werden.
+Dieser Befehl ist nur in Eingabefeldern innerhalb des Editors verfügbar.
+
+Speichern Sie den folgenden Code in einer Datei mit dem Namen notepad.py in ihrem nvda-Konfigurationsverzeichnis.
+
+```
+--- Beginn ---
+import appModuleHandler
+from NVDAObjects.IAccessible import IAccessible
+import controlTypes
+import ui
+
+class AppModule(appModuleHandler.AppModule):
+
+	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
+		if obj.windowClassName == "Edit" and obj.role == controlTypes.ROLE_EDITABLETEXT:
+			clsList.insert(0, EnhancedEditField)
+
+class EnhancedEditField(IAccessible):
+
+	def script_reportLength(self, gesture):
+		ui.message("%d" % len(self.value))
+
+	__gestures = {
+		"kb:NVDA+l": "reportLength",
+	}
+
+--- Ende ---
+```
+
+++ Vornehmen einfacher Änderungen an NVDA-Objekten in Anwendungsmodulen ++
+Manchmal möchten Sie vielleicht nur kleine Änderungen an NVDA-Objekten vornehmen wie etwa den namen oder den Typ mit Festwerten überschreiben.
+In these cases, you don't need the full power of a custom NVDA Object class.
+In einem solchen Fall müssen sie nicht die Benutzerdefinierten NVDA-Objektklassen in vollem Umfang nutzen, sondern können stattdessen das Ereignis event_nvdaobject_init nutzen. 
+
+Die Methode  event_NVDAObject_init verarbeitet zwei Argumente:
++ self: die aufrufende Instanz des Anwendungsmoduls.
++ obj: das NVDA-Objekt, das grade initialisiert wird.
++
+
+Innerhalb dieser Methode können Sie prüfen, ob es sich bei "obj" um ein relevantes objekt handelt und im Efolgsfall seine Eigenschaften entsprechend überschreiben.
+
+++ Beispiel 6: Das Eingabefeld im Editor beschriften, welches ein eigenes NVDA-Objekt verwendet ++
 Dieses Anwendungsmodul bringt NVDA dazu, das Haupt-eingabefeld des Editors mit "Inhalt" zu benennen.
 Das bedeutet, dass NVDA "Inhalt Eingabefeld" sagen wird, sobald das Editorfenster den Fokus erhält.
 
@@ -520,14 +564,9 @@ from NVDAObjects.window import Window
 
 class AppModule(appModuleHandler.AppModule):
 
-	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
+	def event_NVDAObject_init(self, obj):
 		if isinstance(obj, Window) and obj.windowClassName == "Edit" and obj.windowControlID == 15:
-			clsList.insert(0, LabelledEditField)
-
-class LabelledEditField(Window):
-
-	name = "Inhalt"
-
+			obj.name = "Content"
 --- Ende ---
 ```
 
