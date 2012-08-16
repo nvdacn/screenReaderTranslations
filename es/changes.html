@@ -77,6 +77,7 @@
 <UL>
 <LI>El anterior fichero log ahora se copia en nvda-old.log en la inicialización de NVDA. Por lo tanto, si NVDA se bloquea o se reinicia, el registro de información  de esa sesión todavía es accesible para su inspección. (<A HREF="http://www.nvda-project.org/ticket/916">#916</A>)
 <LI>La obtención de la propiedad de rol en chooseNVDAObjectOverlayClasses ya no causa que el rol sea incorrecto y por lo tanto no se anuncie en foco para ciertos objetos tales como consolas de órdenes de Windows y controles de Scintilla. (<A HREF="http://www.nvda-project.org/ticket/2569">#2569</A>)
+<LI>Los menús de NVDA Preferencias, Herramientas y Ayuda ahora son accesibles como atributos en gui.mainFrame.sysTrayIcon llamándose preferencesMenu, toolsMenu y helpMenu, respectivamente. Esto permite a los plugins añadir elementos mucho más fácilmente a estos menús.
 </UL>
 
 <H2>2012.2.1</H2>
@@ -302,10 +303,10 @@ Lo subrayable en esta versión incluye el cambio automático de idioma de la voz
 <H3>Ccambios para Desarrolladores</H3>
 
 <UL>
-<LI>NVDA can now instruct speech synthesizers to switch languages for particular sections of speech.
+<LI>NVDA ahora puede instruir a los sintetizadores de voz para cambiar los idiomas para secciones en particular de voz.
  <UL>
- <LI>To support this, drivers must handle speech.LangChangeCommand in sequences past to SynthDriver.speak().
- <LI>SynthDriver objects should also provide the language argument to VoiceInfo objects (or override the language attribute to retrieve the current language). Otherwise, NVDA's user interface language will be used.
+ <LI>Para soportar esto, los controladores deben manejar speech.LangChangeCommand en secuencias pasadas a SynthDriver.speak().
+ <LI>Los objetos SynthDriver también deberían proporcionar el argumento de idioma a objetos VoiceInfo (o sobreescribir el atributo de idioma para capturar el idioma actual). de otro modo, el idioma de la interface de usuario de NVDA será utilizado.
  </UL>
 </UL>
 
@@ -435,20 +436,20 @@ Lo subrayable en esta revisión incluye mejoras mayores concernientes a la puntu
 
 <UL>
 <LI>La documentación de desarrolladores ahora puede generarse utilizando SCons. mira readme.txt en la raíz de la distribución fuente para detalles, incluyendo dependencias asociadas.
-<LI>Los Locales ahora pueden proporcionar descripciones para carácteres. Mira la sección Character Descriptions de la Developer Guide para detalles. (<A HREF="http://www.nvda-project.org/ticket/55">#55</A>)
-<LI>Los Locales ahora pueden proporcionar información acerca de la pronunciación de puntuación específica y otros símbolos. Mira la sección Symbol Pronunciation de la Developer Guide para detalles. (<A HREF="http://www.nvda-project.org/ticket/332">#332</A>)
-<LI>Synth drivers are now passed a sequence of text and speech commands to speak, instead of just text and an index.
+<LI>Las Localizaciones ahora pueden proporcionar descripciones para carácteres. Mira la sección Character Descriptions de la Developer Guide para detalles. (<A HREF="http://www.nvda-project.org/ticket/55">#55</A>)
+<LI>Las Localizaciones ahora pueden proporcionar información acerca de la pronunciación de puntuación específica y otros símbolos. Mira la sección Symbol Pronunciation de la Developer Guide para detalles. (<A HREF="http://www.nvda-project.org/ticket/332">#332</A>)
+<LI>Los controladores de síntesis ahora se pasan como una secuencia de texto y órdenes de voz a verbalizar, en lugar de sólo texto y un índice.
  <UL>
- <LI>This allows for embedded indexes, parameter changes, etc.
- <LI>Drivers should implement SynthDriver.speak() instead of SynthDriver.speakText() and SynthDriver.speakCharacter().
- <LI>The old methods will be used if SynthDriver.speak() is not implemented, but they are deprecated and will be removed in a future release.
+ <LI>Esto permite índices integrados, cambios de parámetros, etc.
+ <LI>Los controladores deberían implementar SynthDriver.speak() en lugar de SynthDriver.speakText() y SynthDriver.speakCharacter().
+ <LI>Los métodos antiguos se utilizarán si SynthDriver.speak() no se implementó, pero han quedado en desuso y se eliminarán en una versión futura.
  </UL>
-<LI>gui.execute() has been removed. wx.CallAfter() should be used instead.
-<LI>gui.scriptUI has been removed.
+<LI>Se ha eliminado gui.execute(). Debería utilizarse wx.CallAfter() en su lugar.
+<LI>Ha sido eliminado gui.scriptUI .
  <UL>
- <LI>For message dialogs, use wx.CallAfter(gui.messageBox, ...).
- <LI>For all other dialogs, real wx dialogs should be used instead.
- <LI>A new gui.runScriptModalDialog() function simplifies using modal dialogs from scripts.
+ <LI>Para diálogos de mensaje, utiliza wx.CallAfter(gui.messageBox, ...).
+ <LI>Para todos los demás diálogos, deberían utilizarse los diálogos propios de wx en su lugar.
+ <LI>Una nueva función gui.runScriptModalDialog() simplifica la utilización de diálogos modales de scripts.
  </UL>
 </UL>
 
@@ -463,11 +464,11 @@ Esta versión corrige varios problemas de seguridad y otros importantes encontra
 <UL>
 <LI>El elemento Donar en el menú NVDA ahora se desactiva cuando se ejecuta en la autentificación, bloqueo, UAC y otras Ventanas de pantallas seguras, ya que esto es un riesgo de seguridad. (<A HREF="http://www.nvda-project.org/ticket/1419">#1419</A>)
 <LI>Ahora es imposible copiar o pegar dentro de la ventana de interface del usuario de NVDA mientras se está en escritorios seguros (Pantalla bloqueada, pantalla del UAC y autentificación de windows) ya que esto es un riesgo de seguridad. (<A HREF="http://www.nvda-project.org/ticket/1421">#1421</A>)
-<LI>En Firefox 4, la orden mover al contenido del modo virtual (NVDA+control+space) ahora funciona como debería escapar de objetos empotrados tales como contenido Flash. (<A HREF="http://www.nvda-project.org/ticket/1429">#1429</A>)
+<LI>En Firefox 4, la orden mover al contenido del modo virtual (NVDA+control+espacio) ahora funciona como debería escapar de objetos empotrados tales como contenido Flash. (<A HREF="http://www.nvda-project.org/ticket/1429">#1429</A>)
 <LI>Cuando verbalizar teclas de órdenes esté activado, los caracteres mayusculados ya no se verbalizan incorrectamente como teclas de órdenes. (<A HREF="http://www.nvda-project.org/ticket/1422">#1422</A>)
 <LI>Cuando verbalizar teclas de órdenes esté activado,, presionando espacio con otros modificadores que shift (tales como control y alt) ahora se anuncian como una tecla de órdenes. (<A HREF="http://www.nvda-project.org/ticket/1424">#1424</A>)
 <LI>El Logging ahora se desactiva completamente cuando se ejecute desde la autentificación, bloqueo, UAC y otras ventanas seguras, ya que esto es un riesgo de seguridad. (<A HREF="http://www.nvda-project.org/ticket/1435">#1435</A>)
-<LI>En el modo de ayuda de entrada, los gestos ahora logged even if they are not bound to a script (in accordance with the user guide). (<A HREF="http://www.nvda-project.org/ticket/1425">#1425</A>)
+<LI>En el modo de ayuda de entrada, los gestos ahora se conectan aun si no están vinculados a un script (de acuerdo con la guía del usuario. (<A HREF="http://www.nvda-project.org/ticket/1425">#1425</A>)
 </UL>
 
 <H2>2011.1</H2>
@@ -560,16 +561,15 @@ Lo subrayable en esta versión incluye el anunciado de colores para algunos cont
 <H3>Cambios para Desarrolladores</H3>
 
 <UL>
-<LI>Esta sección se deja sin traducir de momento por ser de poca utilidad al usuario normal ya que es demasiado técnico.
-<LI>SCons is now used to prepare the source tree and create binary builds, portable archives, installers, etc. See readme.txt at the root of the source distribution for details.
-<LI>The key names used by NVDA (including key maps) have been made more friendly/logical; e.g. upArrow instead of extendedUp and numpadPageUp instead of prior. See the vkCodes module for a list.
-<LI>All input from the user is now represented by an inputCore.InputGesture instance. (<A HREF="http://www.nvda-project.org/ticket/601">#601</A>)
+<LI>SCons ahora se utiliza para preparar el árbol fuente y crear compilaciones binarias, archivos portables, instaladores, etc. Mira readme.txt en la raíz de la distribución fuente para detalles.
+<LI>Los nonbres de teclas utilizados por NVDA (incluyendo mapas de teclas) han sido hechos más amigables/lógicos; ej.: upArrow en lugar de extendedUp y numpadPageUp en lugar de prior. Mira el módulo vkCodes para una lista.
+<LI>Toda la salida del usuario ahora se representa por una instancia inputCore.InputGesture. (<A HREF="http://www.nvda-project.org/ticket/601">#601</A>)
  <UL>
- <LI>Each source of input subclasses the base InputGesture class.
- <LI>Key presses on the system keyboard are encompassed by the keyboardHandler.KeyboardInputGesture class.
- <LI>Presses of buttons, wheels and other controls on a braille display are encompassed by subclasses of the braille.BrailleDisplayGesture class. These subclasses are provided by each braille display driver.
+ <LI>Cada fuente de la entrada es una subclase de la clase base InputGesture.
+ <LI>La pulsación de teclas en el teclado del sistema se incluye en la clase keyboardHandler.KeyboardInputGesture.
+ <LI>La pulsación de botones, ruedas y otros controles en una línea braille se incluye en las subclases de la clase braille.BrailleDisplayGesture . Estas subclases se proporcionan por cada controlador de línea braille.
  </UL>
-<LI>Input gestures are bound to ScriptableObjects using the ScriptableObject.bindGesture() method on an instance or an __gestures dict on the class which maps gesture identifiers to script names. See baseObject.ScriptableObject for details.
+<LI>Los gestos de entrada se vinculan a ScriptableObjects utilizando el método ScriptableObject.bindGesture() en una instancia o un diccionario __gestures en la clase cuyos identificadores de mapas de gestos a nombres de scripts. Mira baseObject.ScriptableObject para detalles.
 <LI>App modules no longer have key map files. All input gesture bindings must be done in the app module itself.
 <LI>All scripts now take an InputGesture instance instead of a key press.
  <UL>
