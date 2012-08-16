@@ -24,7 +24,7 @@
 - V dialógu Prehliadací kurzor a objektová navigácia upravená položka sledovať systémový fokus. Týka sa len anglickej lokalizácie NVDA, keďže boli rozdieli v popise prvku a používateľskej dokumentácii.
 - Ak je brailovský kurzor zviazaný s prehliadacím kurzorom a kurzor nie je na textovom objekte (napríklad editačnom poli), kláves route automaticky aktivuje objekt. (#2386)
 - Možnosť "Uložiť nastavenia pri ukončení" je predvolene začiarknutá.
-
+- pri aktualizácii NVDA sa nezmení skratka NVDA na ctrl+alt+n, ak ju užívateľ pred aktualizáciou zmenil. (#2572)
 
 == opravy ==
 - Obsah elektronických kníh v aplikácii Blio je možné čítať aj pomocou brailovských riadkov. (#2139)
@@ -45,10 +45,12 @@
 - Pri inštalácii, vytváraní prenosnej verzie a podobne sa použije aktuálne nastavenie pre oznamovanie aktualizácie priebehu. (#2574)zamknutí systému). (#2449)
 - príkazy NVDA sa nedajú používať z brailovského riadka, ak je zobrazená zabezpečená obrazovka (napríklad pri zamknutí systému). (#2449)
 - Ak sa zmení text v režime prehliadania, zmena sa správne zobrazí na brailovskom riadku. (#2074)
-
+- Na zabezpečených obrazovkách NVDA ignoruje správy, ktoré sú posielané priamo z externých aplikácii.
+- V režime prehliadania kurzor nepreskakuje na začiatok dokumentu, ak užívateľ stlačí na poslednom znaku pravú šípku, alebo ak sa pokúsi prejsť za skupinu prvkov, ktorá je na konci dokumentu. (#2463)
 
 == Zmeny pre vývojárov ==
 - Pri štarte NVDA sa log z predošlého spustenia ukladá do súboru nvda-old.log. Takto je možné po reštarte alebo zamrznutí NVDA zistiť chybu z predchádzajúceho logu. (#916)
+- Získanie stavu funkcie v triede chooseNVDAObjectOverlayClasses nevráti nesprávnu hodnotu, čo spôsobovalo problémy so získaním fokusu v konzolových aplikáciách Windows alebo Scintilla prvkoch. (#2569)
 
 
 = 2012.2.1 =
