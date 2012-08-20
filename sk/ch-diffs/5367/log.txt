@@ -1,0 +1,10 @@
+------------------------------------------------------------
+revno: 5367
+committer: Michael Curran <mick@kulgan.net>
+branch nick: main
+timestamp: Mon 2012-08-20 12:54:50 +1000
+message:
+  Support cell coords text in braille (importantly this again shows the cuurent cell coordinate in Microsoft Excell on the braille display). 
+  Specifically:
+  	* NVDAObject.cellCordsText: return None if there's no text, rather than raising NotImplementedError. Its easier to handle.
+  	* Braille's NVDAObject region: pass cellCoordsText to getBrailleTextForProperties if reportTableCellCoords is on. getBrailleTextForProprties already supported cellCordsText internally it seems.
