@@ -143,17 +143,7 @@ addresses = {
         'lang': 'Traditional Chinese Taiwan',
         'email': ['wangjanli@gmail.com', 'maro.zhang@gmail.com', 'Aaron Wu <waaron2000@gmail.com>'],
     },
-    'promotion': {
-        'lang': '',
-        'email': ['james.homme@highmark.com'],
-    },
 }
-
-vocAddresses = []
-for key in addresses:
-    vocAddresses.extend(addresses[key]['email'])
-
-addresses['vocalizer'] = { 'lang': '', 'email': vocAddresses}
 
 
 def email(rcpts, subject, body):
