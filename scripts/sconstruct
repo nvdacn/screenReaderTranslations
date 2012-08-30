@@ -23,7 +23,7 @@ def processLang(lang):
         'nvda.po': { 
             'tPath': BZRDIR+ "source/locale/"+ lang + "/LC_MESSAGES/",
             'tName': "nvda.po",
-            'infoCmd': 'p=`pocount '+ lang+ "/nvda.po | grep -P '^translated' | awk '{print $3}'`; rev=`grep -i 'project-id-version' "+ lang +"/nvda.po | grep -o -P '[^ ]*:[0-9]+'`; echo $p of $rev"
+            'infoCmd': 'p=`pocount '+ lang+ "/nvda.po | grep -P '^translated' | grep -oP '[0-9]+\%'`; rev=`grep -i 'project-id-version' "+ lang +"/nvda.po | grep -o -P '[^ ]*:[0-9]+'`; echo $p of $rev"
         },
         'symbols.dic': { 
             'tPath': BZRDIR+ "source/locale/"+ lang+ "/",
