@@ -77,7 +77,7 @@ addresses = {
     },
     'ko': {
         'lang':'Korean',
-        'email': ['Joseph Lee <joseph.lee22590@gmail.com>', 'jch94@hanmail.net'],
+        'email': ['Joseph Lee <joseph.lee22590@gmail.com>', 'Chang-Hoan Jang <462356@gmail.com>'],
     },
     'nb_NO': {
         'lang':'Norwegian bokmål',
