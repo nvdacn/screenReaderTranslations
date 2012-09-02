@@ -15,6 +15,14 @@
 <H3>新機能</H3>
 
 <UL>
+<LI>NVDA は IME とテキストサービスによるアジア言語の文字入力を、全てのアプリケーションでサポートします。具体的な機能は以下です：
+ <UL>
+ <LI>候補項目の通知とナビゲーション
+  <UL>
+  <LI>コンポジション文字列の通知とナビゲーション
+  <LI>未変換の通知
+  </UL>
+ </UL>
 <LI>Adobe Reader のドキュメントにおいて、アンダーラインや打ち消し線があることを通知するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2410">#2410</A>)
 <LI>Windows の固定キー機能が有効なとき、NVDA 制御キーも他の補助キーと同じように動作するようになりました。これによってNVDA制御キーを押し続けないで他のキーを押せるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/230">#230</A>)
 <LI>HIMS 製の点字ディスプレイ Braille Sense, Braille EDGE および SyncBraille に対応しました。 (<A HREF="http://www.nvda-project.org/ticket/1266">#1266</A>, <A HREF="http://www.nvda-project.org/ticket/1267">#1267</A>)
@@ -27,6 +35,12 @@
 <LI>新しい eSpeak の音声 Gene および Gene2 が追加されました。 (<A HREF="http://www.nvda-project.org/ticket/2512">#2512</A>)
 <LI>Adobe Readerにおいて、ページ番号を通知するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2534">#2534</A>)
 <LI>NVDA+コントロール+R をすばやく3回押すか、NVDA メニューの"設定をリセットして初期値に戻す"を選ぶことで、NVDA の設定を初期化できるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2086">#2086</A>)
+<LI>日本テレソフトの点字ディスプレイ清華バージョン3,4,5および清華80に対応しました。 (<A HREF="http://www.nvda-project.org/ticket/2452">#2452</A>)
+<LI>Freedom Scientific の PAC Mate と Focus Braille 点字ディスプレイで前後へのスクロールができるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2556">#2556</A>)
+<LI>Freedom Scientific の Focus Braille 点字ディスプレイに対応する機能が追加されました。例えば、拡張バー、ロッカーバー、特定のドットの組み合わせによる共通の操作への対応などです。 (<A HREF="http://www.nvda-project.org/ticket/2516">#2516</A>)
+<LI>Mozilla アプリケーションなど IAccessible2 を使うアプリケーションにおいて、ブラウズモードでないときにもテーブルの行と列の見出しが通知されるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/926">#926</A>)
+<LI>Microsoft Word 2013 のドキュメントコントロールに予備的な対応をしました。 (<A HREF="http://www.nvda-project.org/ticket/2543">#2543</A>)
+<LI>Mozilla アプリケーションなど IAccessible2 を使うアプリケーションにおいて、テキストの配置を通知できるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2612">#2612</A>)
 </UL>
 
 <H3>変更点</H3>
@@ -35,6 +49,10 @@
 <LI>NVDA レビューカーソルの設定ダイアログ「キーボードフォーカスを追跡」が「システムフォーカスを追跡」に変更されました。これはNVDAの他の箇所と用語を統一するためです。
 <LI>点字ディスプレイのタッチカーソルでレビュー位置を移動し、テキストではないオブジェクト(編集可能なテキストフィールド)にカーソルを移す場合に、タッチカーソルがオブジェクトをアクティブ化するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2386">#2386</A>)
 <LI>設定を新規作成するときのデフォルトで"終了時に設定を保存"オプションが有効になりました。
+<LI>すでにNVDAがインストールされていて、コントロール+ALT+Nで起動するショートカットの設定をユーザーが変更している場合に、NVDAのアップデート処理でNVDAのショートカットを作り直さないようになりました。(<A HREF="http://www.nvda-project.org/ticket/2572">#2572</A>)
+<LI>アドオン マネージャー のアドオン一覧で状態の前にパッケージ名を表示するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2548">#2548</A>)
+<LI>アドオンのインストールで、すでに同じバージョンまたは異なるバージョンの同じアドオンがインストールされていたときに、エラーを表示して中断するのではなく、インストールされたアドオンを削除するかどうか確認するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2501">#2501</A>)
+<LI>オブジェクトナビゲーションの操作において(現在のオブジェクトの通知を除いて)冗長な通知を減らしました。現在のオブジェクトの通知を使えば詳細な情報が得られます。 (<A HREF="http://www.nvda-project.org/ticket/2560">#2560</A>)
 </UL>
 
 <H3>バグ修正</H3>
@@ -58,8 +76,15 @@
 <LI>NVDAのインストールやポータブル版作成などで使われる、進捗の度合いが不確定なプログレスバーにおいて、プログレスバーの通知設定に応じた通知が行われるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2574">#2574</A>)
 <LI>セキュアな Windows 画面(ロック画面など)がアクティブな状態で、点字ディスプレイからNVDAのコマンドを実行できないように修正しました。 (<A HREF="http://www.nvda-project.org/ticket/2449">#2449</A>)
 <LI>ブラウズモードにおいて、表示されているテキストが更新されたときに点字ディスプレイを更新するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2074">#2074</A>)
-<LI>スリープモードにおいて、アプリケーションが NVDA の音声出力や点字出力の機能を呼び出して行うメッセージ出力を抑止するようになりました。
+<LI>ロック画面などセキュリティ保護された Windows 画面において、NVDA はアプリケーションの音声出力や点字出力を無視します。
 <LI>ブラウズモードにおいて、ドキュメントの最後の文字で右矢印キーを押したとき、あるいは、ドキュメントの末尾がコンテナの最後の要素である状況でコンテナの末尾にジャンプしたとき、キャレットの位置が不適切になる問題を解決しました。 (<A HREF="http://www.nvda-project.org/ticket/2463">#2463</A>)
+<LI>Webアプリケーションでダイアログの文字を通知するときに、不適切に余分な文字が出力されないようになりました。(具体的には ARIA ダイアログで aria-describedby 属性がない場合の現象です。) (<A HREF="http://www.nvda-project.org/ticket/2390">#2390</A>)
+<LI>NVDA は MSHTML ドキュメント(Internet Explorerなど)において、不適切にエディットフィールドの通知や位置判定をしなくなりました。(具体的には ARIA ロールがWebページの作成者によって明示された場合の現象です。) (<A HREF="http://www.nvda-project.org/ticket/2435">#2435</A>)
+<LI>Windows コマンドプロンプトでバックスペースキーが押されたときに、入力単語の読み上げが正しく動作するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2586">#2586</A>)
+<LI>Microsoft Excel のセル座標がふたたび点字で表示できるようになりました。
+<LI>Microsoft Word において、リストのバレットや番号で左矢印キーやコントロール+左矢印キーを押したときに、その段落から抜け出せなくなる不具合を修正しました。 (<A HREF="http://www.nvda-project.org/ticket/2402">#2402</A>)
+<LI>Mozilla アプリケーションのブラウズモードにおいて、特定のリストボックスの項目が不適切に解釈される問題を解決しました。(具体的には ARIA リストボックスです)
+<LI>Webブラウザにおいて、スクリーンリーダーから隠すと指定されたコンテンツを隠すようになりました。(具体的には aria-hidden 属性が使われた場合です) (<A HREF="http://www.nvda-project.org/ticket/2117">#2117</A>)
 </UL>
 
 <H3>開発者向けの変更</H3>
@@ -67,6 +92,7 @@
 <UL>
 <LI>NVDAの初期化において過去のログファイルを nvda-old.log にコピーするようになりました。これによりNVDAが不正終了して再起動したときに、そのセッションのログを確認できるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/916">#916</A>)
 <LI>chooseNVDAObjectOverlayClasses にて role プロパティを取得したときに、Windows コマンドコントロールや Scintilla コントロールなどの role が不適切な値になり、オブジェクトのフォーカス状態を通知できない問題を解決しました。 (<A HREF="http://www.nvda-project.org/ticket/2569">#2569</A>)
+<LI>NVDA の設定、ツール、ヘルプのメニューが gui.mainFrame.sysTrayIcon のアトリビュート preferenceMenu, toolsMenu, helpMenu としてアクセスできるようになりました。これによりプラグインがメニュー項目を追加できます。
 </UL>
 
 <H2>2012.2.1</H2>
