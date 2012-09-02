@@ -107,6 +107,10 @@ addresses = {
         'lang': 'Portuguese',
         'email': ['Diogo Costa <diogojoca@gmail.com>', 'Rui Batista <ruiandrebatista@gmail.com>'],
     },
+    'si': {
+        'lang': 'Sinhala',
+        'email': ['Asoka Bandula <asokabandula@gmail.com>'],
+    },
     'sk': {
         'lang':'Slovak',
         'email': ['Ondrej Rosik <ondrej.rosik@gmail.com>', 'Peter Vagner <peter.v@datagate.sk>'],
