@@ -879,6 +879,19 @@ Wenn dieses Kontrollfeld aktiviert ist, hält NVDA Sie über den Fortgang der Ak
 Tastenkombination: NVDA+5
 
 Schaltet die Ansage von neuen Inhalten in bestimmten Programmen wie Terminals und Chatprogramme ein bzw. aus.
+**
++++ Einstellungen für Eingabemethoden +++
+Mit diesem Dialog können Sie steuern, wie nvda Zeichen asiatischer sprachen wiedergibt, wenn Sie sie eingaben. dies betrifft sowohl IME als auch die Textdienste.
+
+==== automatisch verfügbare Kandidaten angeben ====
+Diese option, die standardmäßig aktiviert ist, legt fest, ob automatisch eine Liste aller sichtbaren Kandidaten wiedergegeben wird.
+Das Aktivieren dieser Option st z.B. für die Eingabe piktographischer zeichen wie ChangJie oder Boshiami sinnvoll, weil sie ein Zeichen nebst seiner zugehörigen Numer angezeigt bekommen.
+Bei phonetischen Eingabemethoden ist es jedoch sinvoll, die Option abzuschalten, weil Sie das passende Zeichen ohnehin mit den Pfeiltasten auswählen müssen, um es einzufügen.
+
+==== Report changes to the reading string ====
+Some input methods such as Chinese New Phonetic and New ChangJie have a reading string (sometimes known as a precomposition string).
+You can choose whether or not NVDA should announce new characters being typed into this reading string with this option.
+This option is on by default.
 
 +++ Einstellungen für den Lesemodus (NVDA+STRG+B) +++
 Die Einstellungen für den Lesemodus finden Sie im Einstellungsmenü unter "Lesemodus...".
@@ -1203,7 +1216,7 @@ Bitte lesen Sie in der Dokumentation der Braillezeile für weitere Details.
 | win+d (alle Anwendungen minimieren) | Leertaste+Punkt1+Punkt2+Punkt3+Punkt4+Punkt5+Punkt6 |
 | aktuelle Zeile ausgeben | Leertaste+Punkt1+Punkt4 |
 | NVDA-Menü anzeigen | Leertaste+Punkt1+Punkt3+Punkt4+Punkt5 |
-
+**
 For newer Focus models that contain rocker bar keys (focus 40, focus 80 and focus blue):
 || Name | Tastenkombination |
 | Braillezeile zur vorigen Zeile bewegen | leftRockerBarUp, rightRockerBarUp |
@@ -1576,11 +1589,27 @@ Hinweis: Es ist Anwendern jedoch nicht möglich, komplexe Symbole zu definieren.
 
 
 ++ Hinweise zu Java auf 64-Bit-Plattformen ++
-Da es sich bei NVDA um eine 32-Bit-Anwendung handelt, müssen auch 32-Bit-Versionen der Java-Laufzeitumgebung (Java Runtime Enviroment) sowie der Java-Zugänglichkeitsschnittstellen (Java Access Bridge) installiert werden. Es dürfen *keinerlei* 64-Bit-Versionen von Java oder Java Access-Bridge installiert sein, ansonsten findet NVDA bei der Suche nach geeigneten Java-Bibliotheken nichts. Die folgende kurze Anleitung geht deshalb davon aus, dass noch kein Java-Laufzeitumgebung oder keine Java Access Bridge installiert ist.
+Da es sich bei NVDA um eine 32-Bit-Anwendung handelt, müssen auch 32-Bit-Versionen der Java-Laufzeitumgebung (Java Runtime Enviroment) installiert werden. Seit Java 7 Update 6 ist die Zugänglichkeitsschnittstelle (access Bridge) fester Bestandteil von Java und muss lediglich aktiviert haben, nachdem die Installation von Java abgeschlossen ist.
 1. Installieren Sie zuerst die 32-Bit-Version der Java-Laufzeitumgebung.
-2. Installieren Sie dann die 32-Bit-Version der Java-Zugänglichkeitsschnittstelle (Java Access Bridge) von http://dl.dropbox.com/u/67471/java_access_bridge_x86.exe - (inoffizieller selbst zusammen gebauter Installer; Achtung! Benutzung auf eigene Gefahr!).
+2. aktivieren Sie die Java-Zugänglichkeitsschnittstelle wie unten beschrieben.
 3. Starten Sie anschließend NVDA neu, damit diese neuen Bibliotheken geladen werden.
 4. Um zu testen, ob Java und Java Access Bridge funktionieren, können Sie die Java-Systemsteuerung unter dem Eintrag Java (32-Bit) in der Systemsteuerung aufrufen. Wenn jetzt alle Dialogelemente richtig angezeigt werden, sind Java und Java Access Bridge korrekt installiert.
+
++++ aktivieren der Java-Zugänglichkeitsschnittstelle unter Windows xp +++
+Unter windows xp müssen Sie die Kommandozeile verwenden, um die Zugänglichkeitsschnittstelle für Java zu aktivieren. Öffnen Sie dazu eine eingabeaufforderung (cmd), navigieren sie in das Verzeichnis, in dem sie Java installiert haben überlcherweise programme\java\jre7\bin und geben Sie den folgenden Befehl ein:
+___
+jabswitch -enable
+___
+Wenn Sie eine Meldung wie "The Java Access Bridge has been enabled" erhalten haben, wurde die Zugänglichkeitsschnittstelle erfolgreich aktiviert. Wiederholen Sie die Ausführung dieses Befehls für jeden Benutzer Ihres Rechners, der die Zugänglichkeitsschnittstellen benötigt.
+
++++ Aktivieren der Zugänglichkeitsschnittstellen unter Windows Vista und neuer +++
+Unter Windows vista und neuer können sie das Center für erleichterte Bedienung verwenden, um die java-Zugänglichkeitsschnittstellen zu aktivieren. gehen Sie dazu folgendermaßen vor:
++ Drücken Sie win+u, um das Center für erleichterte Bedienung zu öffnen.
++ Wählen Sie den Link "Computer ohne einen Bildschirm verwenden".
++ Aktivieren Sie im Abschnitt "andere programme" das kontrollkästchen "Oracle Java access Bridge" und schließen sie das Dialogfeld mit OK.
++ Schließen Sie das Fenster des Centers für erleichterte Bedienung.
+
+Wiederholen Sie die obigen Schritte für jeden Benutzer, der die Java-Zugänglichkeitsschnittstellen benötigt.
 
 
 + Weitere Informationen +
