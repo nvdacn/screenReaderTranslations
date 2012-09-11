@@ -569,6 +569,98 @@ class AppModule(appModuleHandler.AppModule):
 			obj.name = "Content"
 --- Ende ---
 ```
+++ Hervorhebungsfarben setzen mit Textinfo-Objekten ++
+
+Manchmal können Sie NVDA-Objekte nicht anhand von Eigenschaften (wie etwa Name, Steuerelementnummer etc) ermitteln; z.b. wenn diese eigenschaften beim Navigieren innerhalb der Anwendung dynamisch erzeugt werden und eine eindeutige identifizierung eines objekts unmöglich wird. In einem solchen Fall können Sie versuchen, das hervorgehobene Objekt anhand von Textattributen (wie etwa Text- oder Hintergrundfarbe, Unterstreichungen etc). zu ermitteln. Zu diesem Zweck können Sie Textinfo-Objekte verwenden, die mittels der Funktion makeTextInfo() von NVDA-Objekten abgeleitet werden können.  
+
+++ Beispiel 7: Verwenden von Textinfo-Objekten zum Ermitteln des hervorgehobenen Objekts ++
+Das folgende Anwendungsmodul für Tuneup System Control 2012 zeigt, wie anhand von Vorder- und Hintergrundfarbe versucht wird, das hervorgehobene Objekt in der Navigationsleiste von Tuneup System control zu ermitteln. Speichern Sie den Quelltext in einer Datei systemcontrol.py im benutzerspezifischen Konfigurationsverzeichnis.
+___
+--- Beginn ---
+#appModules/systemcontrol.py#A part of NonVisual Desktop Access (NVDA)#Copyright (C) 2006-2012 NVDA Contributors#This file is covered by the GNU General Public License.#See the file COPYING for more details.import appModuleHandlerimport textInfos
+import controlTypes
+import apiimport ui
+class AppModule(appModuleHandler.AppModule):	def event_gainFocus(self, obj, nextHandler):
+		# wenn wir es mit einem Eintrag der Navigationsleiste zu tun haben
+		if obj.role == controlTypes.ROLE_UNKNOWN:
+			# die Navigationsleiste aufsuchen
+			navbar = obj.parent.parent.parent
+			# ein textinfo-Objekt mit dem gesamten Objektinhalt erzeugen
+			info = navbar.makeTextInfo(textInfos.POSITION_ALL)
+			# den Objektinhalt zeilenweise in Felder aufteilen
+			fields=info.getTextWithFields()
+			# in der Liste fields wechseln sich die einzelnen Zeilen der Navigationsleiste mit fieldcommand-Objekten ab, die Informationen ueber das jeweils folgende Objekt enthaelt. fields[1] enthaelt beispielsweise Informationen ueber die Textzeile, die in fields[2] hinterlegt ist
+			# Anfangswerte entsprechend setzen
+			i=1
+			focus=2
+			# gesamte navigationsleiste durchlaufen
+			while i <= len(fields):
+				# Da beim Durchlaufen der Liste Ausnahmefehler auftreten koennen, muessen diese abgefangen werden. Daher ...
+				try:
+					# Fieldcommand-Objekte enthalten ein Woerterbuch namens field, dessen Eintraege Informationen ueber Textformatierungen wie Farbe, Schriftschnitt, Schriftart usw. enthalten koennen, sofern nvda diese abrufen kann. Wenn nach einem Eintrag gesucht wird, den es nicht gibt, wird der Ausnahmefehler "keyerror" ausgeloest. In unserem Fall wird die Hintergrundfarbe (also der eintrag background-color ausgewertet.
+					# Der Eintrag background-color ist ein touple, dessen Werte die Rot-, Gruen- und Blauanteile der Hintergrundfarbe darstellen. Der Wertebereicht umfasst die Werte 0 bis 255.
+					if (fields[i].field['background-color'][0] == 255 and fields[i].field['background-color'][1] == 255 and fields[i].field['background-color'][2] == 255):
+						# wurde ein passender Wert gefunden, den Index fuer die zugehoerige Zeile entsprechend setzen
+						focus = i+1;
+						# und die Schleife verlassen
+						break
+				# Tritt beim durchlauf ein Ausnahmefehler auf (z.B. wegen nicht existenter Formatierungsinformationen (siehe oben)
+				except:
+					# so wird dieser ignoriert
+					pass
+				# Zaehler weiterschalten
+				i = i + 2
+				# und den Schleifendurchlauf fortsetzen
+				continue
+			# den gefundenen Eintrag als Blitzmeldung ausgeben
+			ui.message(fields[focus])
+		# und die geerbte Ereignisbehandlungsroutine aufrufen, um die Bedienung des restlichen Programms nicht zu gefaehrden
+		nextHandler()
+--- Ende ---
+___
+
+++ Verwenden von Dialog- und Meldungsfenstern zur Interaktion mit Anwendungsmodulen und globalen Plug-ins ++
+Wenn Sie anwendungsmodule oder globale plug-ins schreiben, kann es manchmal sinnvoll sein, mit dem anwendungsmodul zu interagieren. Zu diesem Zweck können sie die in wxpython mitgelieferten Dialoge und Meldungsfenster verwenden. Den einfachsten Fall stellt hier die Funktion messagebox dar, mit der Sie Informations- und Bestätigungsdialoge in Ihre Plug-ins integrieren können. Die Funktion ist Teil des Moduls gui und erwartet folgende Parameter:
+- message: der Text, der im Dialogfeld angezeigt werden soll.
+- caption: Der titel des Dialogfensters, Standardwert ist 'Message'.
+- style: definiert Charakteristika des Meldungsfensters, wie z.B. die anzuzeigenden Schaltflächen, die Symbole in der Titelzeile etc. Der Parameter Style ist eine Kombination von Konstanten, die im Modul wx definiert sind und beim Aufruf von MessageBox durch senkrechte Striche getrennt angegeben werden. Folgende konstanten sind verfügbar:
+ - YES: Das meldungsfenster enthält die Schaltfläche "ja"
+ - NO: das meldungsfenster enthält die Schaltfläche "nein".
+ - OK: das meldungsfenster enthält die Schaltfläche "ok"
+ - CANCEL: Das meldungsfenster enthält die Schaltfläche "abbrechen".
+ - ICON_ERROR: Das Meldungsfenster wird als Fehlermeldung angezeigt (und ein entsprechender im System hinterlegter Klang abgespielt).
+ - ICON_WARNING: Die meldung wird als Warnung angezeigt
+ - ICON_INFORMATION: Die Meldung wird als informationsfenster angezeigt (Standard)
+Hinweis: Die Konstanten, die die angezeigten Schaltflächen angeben, können auch benutzt werden, um zu prüfen, welche Schaltfläche der Anwender gedrückt hat, um das Meldungsfenster zu schließen.
+
+++ Beispiel 8: ein globales Plug-in, das beim Drücken von nvda+umschalt+r nach  dem Anzeigen eines Bestätigungsdialogs die Konfiguration auf die Werkseinstellungen zurücksetzt ++
+Das folgende Beispiel zeigt, wie Sie die im Python-Modul gui  mitgelieferte Funktion messageBox verwenden können, um einen Bestätigungsdialog anzuzeigen. gleichzeitig wird die Verwendung der Funktion CallAfter() aus dem Modul wx demonstriert, die nötig ist, um zu verhindern, dass sich NVDA während der Anzeige des Bestätigungsdialogs aufhängt. Kopieren sie den folgenden Quelltext in eine Datei beliebigen namens in ihr benutzerspezifisches Verzeichnis für globale Plug-ins.
+
+___
+--- Beginn ---
+import globalPluginHandler
+import wx
+import config
+import gui
+import core
+class GlobalPlugin(globalPluginHandler.GlobalPlugin):
+	__gestures = {
+		'kb:nvda+shift+r': 'resetconfig'
+	}
+	def script_resetconfig(self, gestures):
+		wx.CallAfter(self.resetconfig)
+	def resetconfig(self):
+		if gui.messageBox(caption='Konfiguration zuruecksetzen', message='wollen Sie wirklich die Konfiguration auf die Werkseinstellungen zuruecksetzen und NVDA danach neu starten?', style=wx.YES|wx.NO)==wx.YES:
+			config.load(True)
+			core.restart()
+--- Ende ---
+___
+
++++ Hinweise zur Funktion wx.CallAfter +++
+- Problem: Technisch sind Eingabemethoden wie tastaturanschläge nichts anderes als Ereignisse, auf die innerhalb von NVDA mit Hilfe von Scripts reagiert wird. Es kann immer nur ein Ereignis zur selben Zeit abgearbeitet werden. Dies bedeutet, dass NVDA z.B. nicht auf Tastendrücke oder Braillezeilen-Aktionen reagieren kann, wenn ein an ein Ereignis gekoppeltes Script stehen bleibt, weil es auf eine Benutzereingabe wartet. 
+- Lösung: Mit Hilfe der in wx enthaltenen Funktion CallAfter kann (wie der Name verrät) Code ausgeführt werden, nachdem die Ereignisbehandlung abgearbeitet wurde. Die ausführung des mit CallAfter angegebenen codes wird gewissermaßen "vorgemerkt" und unmittelbar nach Abschluss der Ereignisbehandlungsroutine ausgeführt. Hierdurch ist es NVDA möglich, auf Braillezeilen-Navigationstasten zu reagieren, wenn der Anwender versucht, ein meldungsfenster auszulesen, das in ein Skript eingebunden war.
+
+Die Funktion CallAfter akzeptiert den namen der "vorzumerkenden" Funktion und eine beliebige Anzahl von Argumenten als Parameter, die an diese Funktion übergeben werden. Die Parameter können benannt oder unbenannt angegeben werden.
 
 + Verpacken von Code als NVDA-Erweiterungen +
 Um das Verteilen und die Installation von Plug-ins und Treibern zu erleichtern, können diese in einzelne Paketdateien verpackt werden, die dann mit Hilfe der Funktion "Erweiterungen verwalten" installiert werden können. Diese Funktion ist im Menü "Extras" zu finden. 
