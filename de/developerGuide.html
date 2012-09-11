@@ -47,36 +47,37 @@
   <LI><A HREF="#toc23">3.14. Beispiel 5: ein Befehl zum Abrufen der Textlänge in einem Eingabefeld unter Verwendung einer eigenen NVDA-Objektklasse</A>
   <LI><A HREF="#toc24">3.15. Vornehmen einfacher Änderungen an NVDA-Objekten in Anwendungsmodulen</A>
   <LI><A HREF="#toc25">3.16. Beispiel 6: Das Eingabefeld im Editor beschriften, welches ein eigenes NVDA-Objekt verwendet</A>
-  </UL>
-<LI><A HREF="#toc26">4. Verpacken von Code als NVDA-Erweiterungen</A>
+  <LI><A HREF="#toc26">3.17. Hervorhebungsfarben setzen mit Textinfo-Objekten</A>
+  <LI><A HREF="#toc27">3.18. Beispiel 7: Verwenden von Textinfo-Objekten zum Ermitteln des hervorgehobenen Objekts</A>
+  <LI><A HREF="#toc28">3.19. Verwenden von Dialog- und Meldungsfenstern zur Interaktion mit Anwendungsmodulen und globalen Plug-ins</A>
     <UL>
-    <LI><A HREF="#toc27">4.0.1. Beispiel für eine Manifest-Datei</A>
+    <LI><A HREF="#toc29">3.19.1. Hinweise zur Funktion wx.CallAfter</A>
+    <LI><A HREF="#toc30">3.19.2. Beispiel für eine Manifest-Datei</A>
     </UL>
-<LI><A HREF="#toc28">4.1. Plugins und Treiber</A>
-  <UL>
-  <LI><A HREF="#toc29">4.2. Zusätzlicher Code zur Installation / deinstallation</A>
+  <LI><A HREF="#toc31">3.20. Plugins und Treiber</A>
+  <LI><A HREF="#toc32">3.21. Zusätzlicher Code zur Installation / deinstallation</A>
     <UL>
-    <LI><A HREF="#toc30">4.2.1. Die Funktion onInstall</A>
-    <LI><A HREF="#toc31">4.2.2. Die Funktion onUninstall</A>
+    <LI><A HREF="#toc33">3.21.1. Die Funktion onInstall</A>
+    <LI><A HREF="#toc34">3.21.2. Die Funktion onUninstall</A>
     </UL>
-  <LI><A HREF="#toc32">4.3. Erweiterungen lokalisieren</A>
+  <LI><A HREF="#toc35">3.22. Erweiterungen lokalisieren</A>
     <UL>
-    <LI><A HREF="#toc33">4.3.1. Sprachspezifische Manifest-Dateien</A>
-    <LI><A HREF="#toc34">4.3.2. Sprachspezifische Meldungen</A>
-    </UL>
-  </UL>
-<LI><A HREF="#toc35">5. Die Python-Konsole von NVDA</A>
-  <UL>
-  <LI><A HREF="#toc36">5.1. Verwendung</A>
-  <LI><A HREF="#PythonConsoleNamespace">5.2. Namensraum</A>
-    <UL>
-    <LI><A HREF="#toc38">5.2.1. Automatische Importe</A>
-    <LI><A HREF="#PythonConsoleSnapshotVariables">5.2.2. Schnappschuss-Variablen</A>
+    <LI><A HREF="#toc36">3.22.1. Sprachspezifische Manifest-Dateien</A>
+    <LI><A HREF="#toc37">3.22.2. Sprachspezifische Meldungen</A>
     </UL>
   </UL>
-<LI><A HREF="#toc40">6. Die Remote-Python-Konsole</A>
+<LI><A HREF="#toc38">4. Die Python-Konsole von NVDA</A>
   <UL>
-  <LI><A HREF="#toc41">6.1. Verwendung</A>
+  <LI><A HREF="#toc39">4.1. Verwendung</A>
+  <LI><A HREF="#PythonConsoleNamespace">4.2. Namensraum</A>
+    <UL>
+    <LI><A HREF="#toc41">4.2.1. Automatische Importe</A>
+    <LI><A HREF="#PythonConsoleSnapshotVariables">4.2.2. Schnappschuss-Variablen</A>
+    </UL>
+  </UL>
+<LI><A HREF="#toc43">5. Die Remote-Python-Konsole</A>
+  <UL>
+  <LI><A HREF="#toc44">5.1. Verwendung</A>
   </UL>
 </UL>
 
@@ -878,13 +879,154 @@ class AppModule(appModuleHandler.AppModule):
 </PRE>
 
 <A NAME="toc26"></A>
-<H2>4. Verpacken von Code als NVDA-Erweiterungen</H2>
+<H3>3.17. Hervorhebungsfarben setzen mit Textinfo-Objekten</H3>
 
 <P>
+Manchmal können Sie NVDA-Objekte nicht anhand von Eigenschaften (wie etwa Name, Steuerelementnummer etc) ermitteln; z.b. wenn diese eigenschaften beim Navigieren innerhalb der Anwendung dynamisch erzeugt werden und eine eindeutige identifizierung eines objekts unmöglich wird. In einem solchen Fall können Sie versuchen, das hervorgehobene Objekt anhand von Textattributen (wie etwa Text- oder Hintergrundfarbe, Unterstreichungen etc). zu ermitteln. Zu diesem Zweck können Sie Textinfo-Objekte verwenden, die mittels der Funktion makeTextInfo() von NVDA-Objekten abgeleitet werden können.  
+</P>
+
+<A NAME="toc27"></A>
+<H3>3.18. Beispiel 7: Verwenden von Textinfo-Objekten zum Ermitteln des hervorgehobenen Objekts</H3>
+
+<P>
+Das folgende Anwendungsmodul für Tuneup System Control 2012 zeigt, wie anhand von Vorder- und Hintergrundfarbe versucht wird, das hervorgehobene Objekt in der Navigationsleiste von Tuneup System control zu ermitteln. Speichern Sie den Quelltext in einer Datei systemcontrol.py im benutzerspezifischen Konfigurationsverzeichnis.
+___
+<S>- Beginn -</S>
+#appModules/systemcontrol.py#A part of NonVisual Desktop Access (NVDA)#Copyright (C) 2006-2012 NVDA Contributors#This file is covered by the GNU General Public License.#See the file COPYING for more details.import appModuleHandlerimport textInfos
+import controlTypes
+import apiimport ui
+class AppModule(appModuleHandler.AppModule):	def event_gainFocus(self, obj, nextHandler):
+</P>
+	<BLOCKQUOTE>
+		<BLOCKQUOTE>
+		# wenn wir es mit einem Eintrag der Navigationsleiste zu tun haben
+		if obj.role == controlTypes.ROLE_UNKNOWN:
+			<BLOCKQUOTE>
+			# die Navigationsleiste aufsuchen
+			navbar = obj.parent.parent.parent
+			# ein textinfo-Objekt mit dem gesamten Objektinhalt erzeugen
+			info = navbar.makeTextInfo(textInfos.POSITION_ALL)
+			# den Objektinhalt zeilenweise in Felder aufteilen
+			fields=info.getTextWithFields()
+			# in der Liste fields wechseln sich die einzelnen Zeilen der Navigationsleiste mit fieldcommand-Objekten ab, die Informationen ueber das jeweils folgende Objekt enthaelt. fields[1] enthaelt beispielsweise Informationen ueber die Textzeile, die in fields[2] hinterlegt ist
+			# Anfangswerte entsprechend setzen
+			i=1
+			focus=2
+			# gesamte navigationsleiste durchlaufen
+			while i &lt;= len(fields):
+				<BLOCKQUOTE>
+				# Da beim Durchlaufen der Liste Ausnahmefehler auftreten koennen, muessen diese abgefangen werden. Daher ...
+				try:
+					<BLOCKQUOTE>
+					# Fieldcommand-Objekte enthalten ein Woerterbuch namens field, dessen Eintraege Informationen ueber Textformatierungen wie Farbe, Schriftschnitt, Schriftart usw. enthalten koennen, sofern nvda diese abrufen kann. Wenn nach einem Eintrag gesucht wird, den es nicht gibt, wird der Ausnahmefehler "keyerror" ausgeloest. In unserem Fall wird die Hintergrundfarbe (also der eintrag background-color ausgewertet.
+					# Der Eintrag background-color ist ein touple, dessen Werte die Rot-, Gruen- und Blauanteile der Hintergrundfarbe darstellen. Der Wertebereicht umfasst die Werte 0 bis 255.
+					if (fields[i].field['background-color'][0] == 255 and fields[i].field['background-color'][1] == 255 and fields[i].field['background-color'][2] == 255):
+						<BLOCKQUOTE>
+						# wurde ein passender Wert gefunden, den Index fuer die zugehoerige Zeile entsprechend setzen
+						focus = i+1;
+						# und die Schleife verlassen
+						break
+						</BLOCKQUOTE>
+					</BLOCKQUOTE>
+				# Tritt beim durchlauf ein Ausnahmefehler auf (z.B. wegen nicht existenter Formatierungsinformationen (siehe oben)
+				except:
+					<BLOCKQUOTE>
+					# so wird dieser ignoriert
+					pass
+					</BLOCKQUOTE>
+				# Zaehler weiterschalten
+				i = i + 2
+				# und den Schleifendurchlauf fortsetzen
+				continue
+				</BLOCKQUOTE>
+			# den gefundenen Eintrag als Blitzmeldung ausgeben
+			ui.message(fields[focus])
+			</BLOCKQUOTE>
+		# und die geerbte Ereignisbehandlungsroutine aufrufen, um die Bedienung des restlichen Programms nicht zu gefaehrden
+		nextHandler()
+		</BLOCKQUOTE>
+	</BLOCKQUOTE>
+<P>
+<S>- Ende -</S>
+___
+</P>
+
+<A NAME="toc28"></A>
+<H3>3.19. Verwenden von Dialog- und Meldungsfenstern zur Interaktion mit Anwendungsmodulen und globalen Plug-ins</H3>
+
+<P>
+Wenn Sie anwendungsmodule oder globale plug-ins schreiben, kann es manchmal sinnvoll sein, mit dem anwendungsmodul zu interagieren. Zu diesem Zweck können sie die in wxpython mitgelieferten Dialoge und Meldungsfenster verwenden. Den einfachsten Fall stellt hier die Funktion messagebox dar, mit der Sie Informations- und Bestätigungsdialoge in Ihre Plug-ins integrieren können. Die Funktion ist Teil des Moduls gui und erwartet folgende Parameter:
+</P>
+
+<UL>
+<LI>message: der Text, der im Dialogfeld angezeigt werden soll.
+<LI>caption: Der titel des Dialogfensters, Standardwert ist 'Message'.
+<LI>style: definiert Charakteristika des Meldungsfensters, wie z.B. die anzuzeigenden Schaltflächen, die Symbole in der Titelzeile etc. Der Parameter Style ist eine Kombination von Konstanten, die im Modul wx definiert sind und beim Aufruf von MessageBox durch senkrechte Striche getrennt angegeben werden. Folgende konstanten sind verfügbar:
+ <UL>
+ <LI>YES: Das meldungsfenster enthält die Schaltfläche "ja"
+ <LI>NO: das meldungsfenster enthält die Schaltfläche "nein".
+ <LI>OK: das meldungsfenster enthält die Schaltfläche "ok"
+ <LI>CANCEL: Das meldungsfenster enthält die Schaltfläche "abbrechen".
+ <LI>ICON_ERROR: Das Meldungsfenster wird als Fehlermeldung angezeigt (und ein entsprechender im System hinterlegter Klang abgespielt).
+ <LI>ICON_WARNING: Die meldung wird als Warnung angezeigt
+ <LI>ICON_INFORMATION: Die Meldung wird als informationsfenster angezeigt (Standard)
+Hinweis: Die Konstanten, die die angezeigten Schaltflächen angeben, können auch benutzt werden, um zu prüfen, welche Schaltfläche der Anwender gedrückt hat, um das Meldungsfenster zu schließen.
+ <P></P>
+++ Beispiel 8: ein globales Plug-in, das beim Drücken von nvda+umschalt+r nach  dem Anzeigen eines Bestätigungsdialogs die Konfiguration auf die Werkseinstellungen zurücksetzt ++
+Das folgende Beispiel zeigt, wie Sie die im Python-Modul gui  mitgelieferte Funktion messageBox verwenden können, um einen Bestätigungsdialog anzuzeigen. gleichzeitig wird die Verwendung der Funktion CallAfter() aus dem Modul wx demonstriert, die nötig ist, um zu verhindern, dass sich NVDA während der Anzeige des Bestätigungsdialogs aufhängt. Kopieren sie den folgenden Quelltext in eine Datei beliebigen namens in ihr benutzerspezifisches Verzeichnis für globale Plug-ins.
+ <P></P>
+___
+<S>- Beginn -</S>
+import globalPluginHandler
+import wx
+import config
+import gui
+import core
+class GlobalPlugin(globalPluginHandler.GlobalPlugin):
+ </UL>
+</UL>
+
+	<BLOCKQUOTE>
+	__gestures = {
+		<BLOCKQUOTE>
+		'kb:nvda+shift+r': 'resetconfig'
+		</BLOCKQUOTE>
+	}
+	def script_resetconfig(self, gestures):
+		<BLOCKQUOTE>
+		wx.CallAfter(self.resetconfig)
+		</BLOCKQUOTE>
+	def resetconfig(self):
+		<BLOCKQUOTE>
+		if gui.messageBox(caption='Konfiguration zuruecksetzen', message='wollen Sie wirklich die Konfiguration auf die Werkseinstellungen zuruecksetzen und NVDA danach neu starten?', style=wx.YES|wx.NO)==wx.YES:
+			<BLOCKQUOTE>
+			config.load(True)
+			core.restart()
+			</BLOCKQUOTE>
+		</BLOCKQUOTE>
+	</BLOCKQUOTE>
+<P>
+<S>- Ende -</S>
+___
+</P>
+
+<A NAME="toc29"></A>
+<H4>3.19.1. Hinweise zur Funktion wx.CallAfter</H4>
+
+<UL>
+<LI>Problem: Technisch sind Eingabemethoden wie tastaturanschläge nichts anderes als Ereignisse, auf die innerhalb von NVDA mit Hilfe von Scripts reagiert wird. Es kann immer nur ein Ereignis zur selben Zeit abgearbeitet werden. Dies bedeutet, dass NVDA z.B. nicht auf Tastendrücke oder Braillezeilen-Aktionen reagieren kann, wenn ein an ein Ereignis gekoppeltes Script stehen bleibt, weil es auf eine Benutzereingabe wartet. 
+<LI>Lösung: Mit Hilfe der in wx enthaltenen Funktion CallAfter kann (wie der Name verrät) Code ausgeführt werden, nachdem die Ereignisbehandlung abgearbeitet wurde. Die ausführung des mit CallAfter angegebenen codes wird gewissermaßen "vorgemerkt" und unmittelbar nach Abschluss der Ereignisbehandlungsroutine ausgeführt. Hierdurch ist es NVDA möglich, auf Braillezeilen-Navigationstasten zu reagieren, wenn der Anwender versucht, ein meldungsfenster auszulesen, das in ein Skript eingebunden war.
+<P></P>
+Die Funktion CallAfter akzeptiert den namen der "vorzumerkenden" Funktion und eine beliebige Anzahl von Argumenten als Parameter, die an diese Funktion übergeben werden. Die Parameter können benannt oder unbenannt angegeben werden.
+<P></P>
+</UL>
+
+<OL>
+<LI>Verpacken von Code als NVDA-Erweiterungen +
 Um das Verteilen und die Installation von Plug-ins und Treibern zu erleichtern, können diese in einzelne Paketdateien verpackt werden, die dann mit Hilfe der Funktion "Erweiterungen verwalten" installiert werden können. Diese Funktion ist im Menü "Extras" zu finden. 
 Erweiterungspakete werden nur von NVDA 2012.2 und neuer unterstützt.
 Ein Paket ist einfach eine Datei im Zip-Format mit der Erweiterung .nvda-addon, die folgende Dateien und Verzeichnisse enthalten kann:
-</P>
+</OL>
 
 <UL>
 <LI>Eine Manifest-Datei mit grundlegenden Informationen über das Paket.
@@ -915,8 +1057,8 @@ Anderenfalls wird das Paket nicht installiert.
 <LI>url: Eine Internetadresse, unter der die Erweiterung, weitere Informationen oder Aktualisierungen zu finden sind.
 </UL>
 
-<A NAME="toc27"></A>
-<H4>4.0.1. Beispiel für eine Manifest-Datei</H4>
+<A NAME="toc30"></A>
+<H4>3.19.2. Beispiel für eine Manifest-Datei</H4>
 
 <PRE>
 --- start ---
@@ -929,8 +1071,8 @@ url = http://www.nvda-project.org/wiki/Development
 --- end ---
 </PRE>
 
-<A NAME="toc28"></A>
-<H3>4.1. Plugins und Treiber</H3>
+<A NAME="toc31"></A>
+<H3>3.20. Plugins und Treiber</H3>
 
 <P>
 Die folgenden Plugins und Treiber können in einer Erweiterung enthalten sein:
@@ -943,8 +1085,8 @@ Die folgenden Plugins und Treiber können in einer Erweiterung enthalten sein:
 <LI>Treiber für Sprachausgaben: Diese müssen in einem Ordner namens "synthDrivers" innerhalb des Archivs liegen.
 </UL>
 
-<A NAME="toc29"></A>
-<H3>4.2. Zusätzlicher Code zur Installation / deinstallation</H3>
+<A NAME="toc32"></A>
+<H3>3.21. Zusätzlicher Code zur Installation / deinstallation</H3>
 
 <P>
 Falls Sie während der Installation oder der Deinstallation des Pakets zusätzlichen Code ausführen möchten, um z. B. Lizenzinformationen zu prüfen oder Dateien an einen benutzerdefinierten Ort zu kopieren, können Sie in ihrem Paket eine Datei namens installTasks.py bereitstellen, die spezielle Funktionen enthält. Diese Funktionen werden immer dann aufgerufen, wenn die Erweiterung installiert/deinstalliert wird.
@@ -952,8 +1094,8 @@ Sie sollten unbedingt das unnötige Laden von Modulen vermeiden (Insbesondere Py
 Sollte dies jedoch vorkommen, so wird das Verzeichnis der Erweiterung umbenannt und erst beim nächsten Start von NVDA gelöscht.
 </P>
 
-<A NAME="toc30"></A>
-<H4>4.2.1. Die Funktion onInstall</H4>
+<A NAME="toc33"></A>
+<H4>3.21.1. Die Funktion onInstall</H4>
 
 <P>
 Nachdem die Dateien der Erweiterung aus dem Paket entpackt und in NVDA integriert wurden, wird NVDA die Datei installtasks.py nach einer Funktion namens onInstall durchsuchen und diese ausführen.
@@ -961,8 +1103,8 @@ Auch wenn die Erweiterung zu diesem Zeitpunkt bereits entpackt wurde, besitzt da
 Wenn die Funktion einen Ausnahmefehler auslöst, wird die Installation abgebrochen und das Verzeichnis gelöscht.
 </P>
 
-<A NAME="toc31"></A>
-<H4>4.2.2. Die Funktion onUninstall</H4>
+<A NAME="toc34"></A>
+<H4>3.21.2. Die Funktion onUninstall</H4>
 
 <P>
 Wenn NVDA nach der Deinstallation eines Pakets neu gestartet wird, wird die Datei InstallTasks.py nach einer Funktion onUninstall durchsucht und diese ausgeführt.
@@ -970,8 +1112,8 @@ Wurde diese Funktion erfolgreich ausgeführt, wird das Verzeichnis der Erweiteru
 Da dies zu einem Zeitpunkt geschieht, noch bevor andere Komponenten von NVDA geladen wurden, kann die funktion keinerlei Eingaben vom Benutzer entgegennehmen.
 </P>
 
-<A NAME="toc32"></A>
-<H3>4.3. Erweiterungen lokalisieren</H3>
+<A NAME="toc35"></A>
+<H3>3.22. Erweiterungen lokalisieren</H3>
 
 <P>
 Sie können für Ihre Erweiterung sprachspezifische Informationen hinterlegen.
@@ -979,8 +1121,8 @@ Diese werden im Ordner "locale" innerhalb des Archivs gespeichert.
 Der Ordner sollte Unterordner für jeden Sprachraum enthalten, für den Sie Meldungen hinterlegen wollen. Hierbei muss dasselbe Namensformat benutzt werden, wie bei den Kernkomponenten von NVDA so z. B. "en" für Englisch oder "de" für deutsch.
 </P>
 
-<A NAME="toc33"></A>
-<H4>4.3.1. Sprachspezifische Manifest-Dateien</H4>
+<A NAME="toc36"></A>
+<H4>3.22.1. Sprachspezifische Manifest-Dateien</H4>
 
 <P>
 Jedes Sprachenverzeichnis kann eine sprachspezifische Manifest.ini enthalten, die einige der oben beschriebenen Manifest-Felder in übersetzter Form bereitstellt.
@@ -988,8 +1130,8 @@ Dies sind die Felder Summary und Description.
 Alle anderen Felder werden ignoriert.
 </P>
 
-<A NAME="toc34"></A>
-<H4>4.3.2. Sprachspezifische Meldungen</H4>
+<A NAME="toc37"></A>
+<H4>3.22.2. Sprachspezifische Meldungen</H4>
 
 <P>
 Jedes sprachverzeichnis kann auch GetText-kompatible Kataloge mit Übersetzungen von Meldungen enthalten.
@@ -999,16 +1141,16 @@ Weitere Informationen über gettext und allgemeine Informationen über die Über
 <A HREF="http://www.nvda-project.org/wiki/TranslatingNVDA">http://www.nvda-project.org/wiki/TranslatingNVDA</A>
 </P>
 
-<A NAME="toc35"></A>
-<H2>5. Die Python-Konsole von NVDA</H2>
+<A NAME="toc38"></A>
+<H2>4. Die Python-Konsole von NVDA</H2>
 
 <P>
 Die Python-Konsole emuliert innerhalb von NVDA den interaktiven Python-Interpreter.
 Sie ist zur Fehlerbehebung oder zum Erkunden von NVDA's Interna oder zum Erkunden von Zugänglichkeitsschnittstellen nützlich.
 </P>
 
-<A NAME="toc36"></A>
-<H3>5.1. Verwendung</H3>
+<A NAME="toc39"></A>
+<H3>4.1. Verwendung</H3>
 
 <P>
 Die Konsole kann auf zwei Arten aktiviert werden:
@@ -1036,10 +1178,10 @@ durch Schließen des Fensters wird die Sitzung lediglich verborgen. Dies macht e
 </P>
 
 <A NAME="PythonConsoleNamespace"></A>
-<H3>5.2. Namensraum</H3>
+<H3>4.2. Namensraum</H3>
 
-<A NAME="toc38"></A>
-<H4>5.2.1. Automatische Importe</H4>
+<A NAME="toc41"></A>
+<H4>4.2.1. Automatische Importe</H4>
 
 <P>
 Der Einfachheit halber werden die folgenden Module und Variablen automatisch importiert:
@@ -1047,7 +1189,7 @@ sys, os, wx, log (aus logHandler), api, queueHandler, speech, braille
 </P>
 
 <A NAME="PythonConsoleSnapshotVariables"></A>
-<H4>5.2.2. Schnappschuss-Variablen</H4>
+<H4>4.2.2. Schnappschuss-Variablen</H4>
 
 <P>
 Wann immer NVDA+Steuerung+Z gedrückt wird, werden einige Variablen gesetzt, die eine Momentaufnahme von NVDA darstellen.
@@ -1064,8 +1206,8 @@ Diese Variablen sind:
 <LI>brlRegions: Die Braille-Regionen des aktiven Braille-Puffers.
 </UL>
 
-<A NAME="toc40"></A>
-<H2>6. Die Remote-Python-Konsole</H2>
+<A NAME="toc43"></A>
+<H2>5. Die Remote-Python-Konsole</H2>
 
 <P>
 Für Situationen, in denen Fehler in NVDA über ein Netzwerk hinweg aus der Ferne korrigiert werden müssen, ist eine Remote-Python-Konsole verfügbar. 
@@ -1076,8 +1218,8 @@ Bitte bedenken Sie, dass dies ein hohes Sicherheitsrisiko darstellt!
 Sie sollten die Remote-Python-Konsole nur dann aktivieren, wenn Sie mit vertrauenswürdigen Netzwerken wie etwa VPNs verbunden sind.
 </P>
 
-<A NAME="toc41"></A>
-<H3>6.1. Verwendung</H3>
+<A NAME="toc44"></A>
+<H3>5.1. Verwendung</H3>
 
 <P>
 Um die Remote-Python-Konsole zu aktivieren, verwenden Sie die lokale Python-Konsole und importieren Sie remotePythonConsole. Rufen Sie anschließend remotePythonConsole.initialize() auf.
