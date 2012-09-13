@@ -45,6 +45,7 @@
 <LI>Soporte preliminar para el control de documento en Microsoft Word 2013. (<A HREF="http://www.nvda-project.org/ticket/2543">#2543</A>)
 <LI>La alineación de texto ahora puede anunciarse en aplicaciones que utilizan IAccessible2 tales como aplicaciones de Mozilla. (<A HREF="http://www.nvda-project.org/ticket/2612">#2612</A>)
 <LI>Cuando se enfoca una fila de tabla o un control estándar vista en lista de Windows con múltiples columnas, ahora puedes utilizar las órdenes de navegación por tablas para acceder a las celdas individuales. (<A HREF="http://www.nvda-project.org/ticket/828">#828</A>)
+<LI>Nuevas tablas de transcripción braille: Estonio grado 0, braille computerizado Portugués de 8 puntos. (<A HREF="http://www.nvda-project.org/ticket/2139">#2139</A>)
 </UL>
 
 <H3>Cambios</H3>
@@ -56,6 +57,8 @@
 <LI>La lista de complementos en el Administrador de Complementos ahora muestra el nombre del paquete antes de su estado. (<A HREF="http://www.nvda-project.org/ticket/2548">#2548</A>)
 <LI>Al instalar la misma u otra versión de un complemento instalado actualmente, NVDA te preguntará si deseas eliminar el complemento antiguo primero, en lugar de mostrar un error y abortar la instalación. (<A HREF="http://www.nvda-project.org/ticket/2501">#2501</A>)
 <LI>Las órdenes de navegación de objetos (excepto la orden anunciar objeto actual) ahora anuncian con menos verbosidad. Todavía puedes obtener la información extra utilizando la orden de anunciar objeto actual. (<A HREF="http://www.nvda-project.org/ticket/2560">#2560</A>)
+<LI>Actualizado el transcriptor braille liblouis a 2.5.0.
+<LI>El documento Referencia Rápida de Órdenes de teclado de NVDA ha sido renombrado a Referencia Rápida de Órdenes, así ahora incluye tanto órdenes táctiles como órdenes de teclado.
 </UL>
 
 <H3>Corrección de Fallos</H3>
@@ -84,7 +87,7 @@
 <LI>Ya no se incluye incorrectamente contenido extraño cuando se anuncia el texto de diálogos en aplicaciones web (específicamente, diálogos ARIA sin el atributo aria-describedby). (<A HREF="http://www.nvda-project.org/ticket/2390">#2390</A>)
 <LI>NVDA ya no localiza o anuncia incorrectamente ciertos campos de edición en documentos MSHTML (ej.: Internet Explorer), específicamente donde se haya utilizado un rol ARIA explícito por el autor de la página web. (<A HREF="http://www.nvda-project.org/ticket/2435">#2435</A>)
 <LI>La tecla retroceso ahora se maneja correctamente cuando se verbalizan palabras al escribir en consolas de órdenes de Windows. (<A HREF="http://www.nvda-project.org/ticket/2586">#2586</A>)
-<LI>Las coordenadas de las celdas ahora se muestran de nuevo en Braille en Microsoft Excell.
+<LI>Las coordenadas de las celdas ahora se muestran de nuevo en Braille en Microsoft Excel.
 <LI>En Microsoft Word, NVDA ya no te deja enganchado en un párrafo con formato de lista cuando tratas de navegar por una viñeta o número con flecha izquierda o control + flecha izquierda. (<A HREF="http://www.nvda-project.org/ticket/2402">#2402</A>)
 <LI>En modo navegación en aplicaciones de Mozilla, los elementos en ciertos cuadros de lista (específicamente, cuadros de lista de ARIA) ya no se procesan incorrectamente.
 <LI>En navegadores web, NVDA ahora oculta contenido que se marcó como oculto para lectores de pantalla (específicamente, utilizando el atributo aria-hidden). (<A HREF="http://www.nvda-project.org/ticket/2117">#2117</A>)
@@ -92,6 +95,8 @@
 <LI>Durante leer todo, NVDA ya no regresará incorrectamente a al idioma predeterminado si una línea no finaliza una frase. (<A HREF="http://www.nvda-project.org/ticket/2630">#2630</A>)
 <LI>Ahora se detecta correctamente la información de fuente en Adobe Reader 10.1 y posteriores. (<A HREF="http://www.nvda-project.org/ticket/2175">#2175</A>)
 <LI>En Adobe Reader, si se proporciona texto alternativo, sólo se procesará ese texto. Anteriormente, algunas veces se incluía texto extraño. (<A HREF="http://www.nvda-project.org/ticket/2174">#2174</A>)
+<LI>Cuando un documento contiene una aplicación, el contenido de la aplicación ya no se incluye en modo navegación. Esto previene de movimientos inesperados dentro de la aplicación cuando se navega. Puedes interactuar con la aplicación del mismo modo que para los objetos integrados. (<A HREF="http://www.nvda-project.org/ticket/990">#990</A>)
+<LI>En aplicaciones de Mozilla, el valor de los botones de flecha ahora se anuncia correctamente cuando cambian. (<A HREF="http://www.nvda-project.org/ticket/2653">#2653</A>)
 </UL>
 
 <H3>Cambios para Desarrolladores</H3>
@@ -100,6 +105,14 @@
 <LI>El anterior fichero log ahora se copia en nvda-old.log en la inicialización de NVDA. Por lo tanto, si NVDA se bloquea o se reinicia, el registro de información  de esa sesión todavía es accesible para su inspección. (<A HREF="http://www.nvda-project.org/ticket/916">#916</A>)
 <LI>La obtención de la propiedad de rol en chooseNVDAObjectOverlayClasses ya no causa que el rol sea incorrecto y por lo tanto no se anuncie en foco para ciertos objetos tales como consolas de órdenes de Windows y controles de Scintilla. (<A HREF="http://www.nvda-project.org/ticket/2569">#2569</A>)
 <LI>Los menús de NVDA Preferencias, Herramientas y Ayuda ahora son accesibles como atributos en gui.mainFrame.sysTrayIcon llamándose preferencesMenu, toolsMenu y helpMenu, respectivamente. Esto permite a los plugins añadir elementos mucho más fácilmente a estos menús.
+<LI>Ahora se soportan los mensajes contextuales de Gettext. Esto permite que sean definidas múltiples traducciones para un solo mensaje en Inglés dependiendo del contexto. (<A HREF="http://www.nvda-project.org/ticket/1524">#1524</A>)
+ <UL>
+ <LI>Esto se hace utilizando la función pgettext(context, message).
+ <LI>Esto se soporta tanto para NVDA mismo como para los complementos.
+ <LI>Deben utilizarse xgettext y msgfmt de GNU gettext para crear cualquier fichero PO y MO. Las herramientas de Python no soportan mensajes contextuales.
+ <LI>Para xgettext, pasa el argumento de línea de órdenes --keyword=pgettext:1c,2 para habilitar la inclusión de mensajes contextuales.
+ <LI>Mira <A HREF="http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts">http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts</A> para más información.
+ </UL>
 </UL>
 
 <H2>2012.2.1</H2>
