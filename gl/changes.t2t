@@ -32,6 +32,7 @@ Que hai de Novo no NVDA
 - Soporte preliminario para o control de documento no Microsoft Word 2013. (#2543)
 - O alineamento de texto agora pode se anunciar nas aplicacións que utilicen IAccessible2 como aplicacións de Mozilla. (#2612)
 - Cando se enfoca unha fila de táboa ou un control estándar vista en lista de Windows con múltiples columnas, agora podes utilizar as ordes de navegación por táboas para acceder ás celdas individuais. (#828)
+- Novas táboas de transcripción braille: Estonio grado 0, braille computerizado Portugués de 8 pontos. (#2139)
 
 
 == Cambios ==
@@ -41,6 +42,8 @@ Que hai de Novo no NVDA
 - A lista de complementos no Administrador de Complementos agora amosa o nome do paquete antes do seu estado. (#2548)
 - Ó instalar a mesma ou outra versión dun complemento instalado actualmente, NVDA preguntarache se desexas eliminar o complemento antigo primeiro, en lugares de amosar un erro e abortar a instalación. (#2501)
 - As ordes de navegación de obxectos (excepto a orde anunciar obxecto actual) agora anuncian con menos verbosidade. Aínda podes obter a información extra utilizando a orde de anunciar obxecto actual. (#2560)
+- Actualizado o transcriptor braille liblouis a 2.5.0.
+- O documento Referencia Rápida de Ordes de teclado de NVDA foi renomeado a Referencia Rápida de Ordes, así agora inclúe tanto ordes tactiles coma ordes de teclado.
 
 
 == Corrección de Fallos ==
@@ -67,7 +70,7 @@ Que hai de Novo no NVDA
 - Xa non se inclúe incorrectamente contido extrano cando se anuncia o texto de diálogos en aplicaciones web (específicamente, diálogos ARIA sen o atributo aria-describedby). (#2390)
 - NVDA xa non localiza ou anuncia incorrectamente certos campos de edición nos documentos MSHTML (ex.: Internet Explorer), específicamente onde se utilizara un rol ARIA explícito polo autor da páxina web. (#2435)
 - A tecla retroceso agora manéllase correctamente cando se falan palabras ó se escribir nas consolas de ordes de Windows. (#2586)
-- As coordinadas das celdas agora amósanse de novo en Braille en Microsoft Excell.
+- As coordinadas das celdas agora amósanse de novo en Braille en Microsoft Excel.
 - No Microsoft Word, NVDA xa non te deixa enganchado nun parágrafo con formato de lista cando tentas navegar por unha viñeta ou número con flecha esquerda ou control + flecha esquerda. (#2402)
 - No modo navegación en aplicacións de Mozilla, os elementos en certos cadros de lista (específicamente, cadros de lista de ARIA) xa non se procesan incorrectamente.
 - Nos navegadores web, NVDA agora agacha contido que se marcou como oculto para lectores de pantalla (específicamente, utilizando o atributo aria-hidden). (#2117)
@@ -75,12 +78,20 @@ Que hai de Novo no NVDA
 - Durante ler todo, NVDA xa non voltará incorrectamente a á lingua predeterminada se unha liña non remata unha frase. (#2630)
 - Agora detéctase correctamente a información de fonte en Adobe Reader 10.1 e posteriores. (#2175)
 - No Adobe Reader, se se proporciona texto alternativo, só se procesará ese texto. Anteriormente, algunhas veces incluíase texto extrano. (#2174)
+- Cando un documento contén unha aplicación, o contido da aplicación xa non se inclúe no modo navegación. Esto prevén de movementos inesperados dentro da aplicación cando se navega. Podes interactuar ca aplicación do mesmo modo que para os obxectos integrados. (#990)
+- En aplicacións de Mozilla, o valor dos botóns de flecha agora anúnciase correctamente cando cambian. (#2653)
 
 
 == Cambios para Desenroladores ==
 - O ficheiro log anterior agora cópiase en nvda-old.log na inicialización do NVDA. Polo tanto, se NVDA se bloquea ou se reinicia, o rexistro de información  de esa sesión aínda é accesible para a súa inspección. (#916)
 - A obtención da propiedade de rol en chooseNVDAObjectOverlayClasses xa non causa que o rol sexa incorrecto e polo tanto non se anuncie en foco para certos obxectos como consolas de ordes de Windows e controis de Scintilla. (#2569)
 - Os menús do NVDA Preferencias, Ferramentas e Axuda agora son accesibles como atributos en gui.mainFrame.sysTrayIcon chamándose preferencesMenu, toolsMenu e helpMenu, respectivamente. Esto permite ós plugins engadir elementos moito máis sinxelamente a estos menús.
+- Agora sopórtanse as mensaxes contextuais de Gettext. Esto permite que sexan definidas múltiples traduccións para unha soa mensaxe en Inglés dependendo do contexto. (#1524)
+ - Esto faise utilizando a función pgettext(context, message).
+ - Esto sopórtase tanto para NVDA mesmo como para os complementos.
+ - Deben utilizarse xgettext e msgfmt de GNU gettext para criar calquera ficheiro PO e MO. As ferramentas de Python non soportan mensaxes contextuais.
+ - Para xgettext, pasa o argumento de liña de órdenes --keyword=pgettext:1c,2 para habilitar a inclusión de mensaxes contextuais.
+ - Mira http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts para máis información.
 
 
 = 2012.2.1 =
