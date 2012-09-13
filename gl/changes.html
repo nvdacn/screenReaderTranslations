@@ -45,6 +45,7 @@
 <LI>Soporte preliminario para o control de documento no Microsoft Word 2013. (<A HREF="http://www.nvda-project.org/ticket/2543">#2543</A>)
 <LI>O alineamento de texto agora pode se anunciar nas aplicacións que utilicen IAccessible2 como aplicacións de Mozilla. (<A HREF="http://www.nvda-project.org/ticket/2612">#2612</A>)
 <LI>Cando se enfoca unha fila de táboa ou un control estándar vista en lista de Windows con múltiples columnas, agora podes utilizar as ordes de navegación por táboas para acceder ás celdas individuais. (<A HREF="http://www.nvda-project.org/ticket/828">#828</A>)
+<LI>Novas táboas de transcripción braille: Estonio grado 0, braille computerizado Portugués de 8 pontos. (<A HREF="http://www.nvda-project.org/ticket/2139">#2139</A>)
 </UL>
 
 <H3>Cambios</H3>
@@ -56,6 +57,8 @@
 <LI>A lista de complementos no Administrador de Complementos agora amosa o nome do paquete antes do seu estado. (<A HREF="http://www.nvda-project.org/ticket/2548">#2548</A>)
 <LI>Ó instalar a mesma ou outra versión dun complemento instalado actualmente, NVDA preguntarache se desexas eliminar o complemento antigo primeiro, en lugares de amosar un erro e abortar a instalación. (<A HREF="http://www.nvda-project.org/ticket/2501">#2501</A>)
 <LI>As ordes de navegación de obxectos (excepto a orde anunciar obxecto actual) agora anuncian con menos verbosidade. Aínda podes obter a información extra utilizando a orde de anunciar obxecto actual. (<A HREF="http://www.nvda-project.org/ticket/2560">#2560</A>)
+<LI>Actualizado o transcriptor braille liblouis a 2.5.0.
+<LI>O documento Referencia Rápida de Ordes de teclado de NVDA foi renomeado a Referencia Rápida de Ordes, así agora inclúe tanto ordes tactiles coma ordes de teclado.
 </UL>
 
 <H3>Corrección de Fallos</H3>
@@ -84,7 +87,7 @@
 <LI>Xa non se inclúe incorrectamente contido extrano cando se anuncia o texto de diálogos en aplicaciones web (específicamente, diálogos ARIA sen o atributo aria-describedby). (<A HREF="http://www.nvda-project.org/ticket/2390">#2390</A>)
 <LI>NVDA xa non localiza ou anuncia incorrectamente certos campos de edición nos documentos MSHTML (ex.: Internet Explorer), específicamente onde se utilizara un rol ARIA explícito polo autor da páxina web. (<A HREF="http://www.nvda-project.org/ticket/2435">#2435</A>)
 <LI>A tecla retroceso agora manéllase correctamente cando se falan palabras ó se escribir nas consolas de ordes de Windows. (<A HREF="http://www.nvda-project.org/ticket/2586">#2586</A>)
-<LI>As coordinadas das celdas agora amósanse de novo en Braille en Microsoft Excell.
+<LI>As coordinadas das celdas agora amósanse de novo en Braille en Microsoft Excel.
 <LI>No Microsoft Word, NVDA xa non te deixa enganchado nun parágrafo con formato de lista cando tentas navegar por unha viñeta ou número con flecha esquerda ou control + flecha esquerda. (<A HREF="http://www.nvda-project.org/ticket/2402">#2402</A>)
 <LI>No modo navegación en aplicacións de Mozilla, os elementos en certos cadros de lista (específicamente, cadros de lista de ARIA) xa non se procesan incorrectamente.
 <LI>Nos navegadores web, NVDA agora agacha contido que se marcou como oculto para lectores de pantalla (específicamente, utilizando o atributo aria-hidden). (<A HREF="http://www.nvda-project.org/ticket/2117">#2117</A>)
@@ -92,6 +95,8 @@
 <LI>Durante ler todo, NVDA xa non voltará incorrectamente a á lingua predeterminada se unha liña non remata unha frase. (<A HREF="http://www.nvda-project.org/ticket/2630">#2630</A>)
 <LI>Agora detéctase correctamente a información de fonte en Adobe Reader 10.1 e posteriores. (<A HREF="http://www.nvda-project.org/ticket/2175">#2175</A>)
 <LI>No Adobe Reader, se se proporciona texto alternativo, só se procesará ese texto. Anteriormente, algunhas veces incluíase texto extrano. (<A HREF="http://www.nvda-project.org/ticket/2174">#2174</A>)
+<LI>Cando un documento contén unha aplicación, o contido da aplicación xa non se inclúe no modo navegación. Esto prevén de movementos inesperados dentro da aplicación cando se navega. Podes interactuar ca aplicación do mesmo modo que para os obxectos integrados. (<A HREF="http://www.nvda-project.org/ticket/990">#990</A>)
+<LI>En aplicacións de Mozilla, o valor dos botóns de flecha agora anúnciase correctamente cando cambian. (<A HREF="http://www.nvda-project.org/ticket/2653">#2653</A>)
 </UL>
 
 <H3>Cambios para Desenroladores</H3>
@@ -100,6 +105,14 @@
 <LI>O ficheiro log anterior agora cópiase en nvda-old.log na inicialización do NVDA. Polo tanto, se NVDA se bloquea ou se reinicia, o rexistro de información  de esa sesión aínda é accesible para a súa inspección. (<A HREF="http://www.nvda-project.org/ticket/916">#916</A>)
 <LI>A obtención da propiedade de rol en chooseNVDAObjectOverlayClasses xa non causa que o rol sexa incorrecto e polo tanto non se anuncie en foco para certos obxectos como consolas de ordes de Windows e controis de Scintilla. (<A HREF="http://www.nvda-project.org/ticket/2569">#2569</A>)
 <LI>Os menús do NVDA Preferencias, Ferramentas e Axuda agora son accesibles como atributos en gui.mainFrame.sysTrayIcon chamándose preferencesMenu, toolsMenu e helpMenu, respectivamente. Esto permite ós plugins engadir elementos moito máis sinxelamente a estos menús.
+<LI>Agora sopórtanse as mensaxes contextuais de Gettext. Esto permite que sexan definidas múltiples traduccións para unha soa mensaxe en Inglés dependendo do contexto. (<A HREF="http://www.nvda-project.org/ticket/1524">#1524</A>)
+ <UL>
+ <LI>Esto faise utilizando a función pgettext(context, message).
+ <LI>Esto sopórtase tanto para NVDA mesmo como para os complementos.
+ <LI>Deben utilizarse xgettext e msgfmt de GNU gettext para criar calquera ficheiro PO e MO. As ferramentas de Python non soportan mensaxes contextuais.
+ <LI>Para xgettext, pasa o argumento de liña de órdenes --keyword=pgettext:1c,2 para habilitar a inclusión de mensaxes contextuais.
+ <LI>Mira <A HREF="http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts">http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts</A> para máis información.
+ </UL>
 </UL>
 
 <H2>2012.2.1</H2>
