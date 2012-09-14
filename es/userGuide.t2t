@@ -13,7 +13,7 @@ Proporcionando retroalimentación a través de voz sintética y Braille, posibil
 NVDA está desarrollado por [NV Access http://www.nvaccess.org/], con  colaboraciones de la comunidad.
 
 ++ Características generales ++
-Proporcionando un apoyo de voz sintética, NVDA permite a personas ciegas y deficientes visuales acceder e interactuar con el Sistema Operativo Windows y muchas aplicaciones de terceros. 
+NVDA permite a personas ciegas y deficientes visuales acceder e interactuar con el Sistema Operativo Windows y muchas aplicaciones de terceros. 
 
 Lo más reseñable incluye: 
 - Soporte para aplicaciones populares incluyendo navegadores web, clientes de correo, programas de chat en internet y suites de oficina
@@ -110,20 +110,12 @@ Si ya has cerrado este diálogo o estás ejecutando una copia instalada de NVDA,
 
 El diálogo que aparece te permite elegir dónde debería crearse la copia portable.
 Esto puede ser un directorio en tu disco duro, o un lugar en un lápiz USB u otro medio portátil.
-
-También hay otras varias opciones explicadas más abajo.
-Pulsando Continuar se creará la copia portable.
-Una vez la creación se complete aparecerá un mensaje diciéndote que fue satisfactoria.
+También hay una opción para elegir si NVDA debería copiar la sesión de configuración actual del usuario de NVDA para utilizarla con la nueva copia portable creada.
+Esta opción sólo está disponible cuando se crea una copia portable desde una copia instalada, no cuando se crea desde el paquete descargado.
+Pulsando Continuar crearás la copia portable.
+Una vez la creación esté completada, aparecerá un mensaje diciéndote que fue exitosa.
 Pulsa Aceptar para cerrar este diálogo.
 
-+++ Crear un Fichero AutoRun +++
-Esta opción te permite elegir si NVDA debería colocar un fichero especial autorun en la raíz de la unidad donde va a ser creada la copia portable, por lo que NVDA podrá iniciarse automáticamente cuando la unidad se conecte.
-Ten en cuenta que el arranque automático desde una unidad de memoria USB no está soportado en todos los Sistemas Operativos Windows.
-
-+++ Copiar Configuración del Usuario +++
-Esta Opción te permite elegir si NVDA debería copiar la configuración de la sesión del usuario actual de NVDA para utilizarla con la copia portable recientemente creada.
- Esta opción sólo está disponible cuando se crea una copia portable desde una copia instalada, no cuando se crea desde el paquete Lanzador descargado.
- 
 + Comenzando con NVDA +
 
 ++ Lanzando NVDA ++
@@ -986,8 +978,6 @@ De forma predeterminada NVDA guardará automáticamente tus opciones al salir.
 Ten en cuenta, no obstante, que esta opción predeterminada puede ser cambiada bajo las opciones generales en el menú preferencias. 
 Para guardar las opciones manualmente en cualquier ocasión, elige el elemento Guardar configuración en el menú NVDA.
 
-Si NVDA está en un sistema de ficheros de sólo lectura, tal como un CD, no será posible guardar tus opciones, y te lo dirá.
-
 Si te equivocas con tus opciones y necesitas volver a las opciones guardadas, puedes elegir el elemento "volver a la configuración guardada" en el menú NVDA.
 También puedes reiniciar tus opciones a sus valores predeterminados de fábrica originales eligiendo Reiniciar Configuración a los Valores Predeterminados de Fábrica, que también se encuentra en el menú NVDA.
 
@@ -1048,7 +1038,6 @@ Hasta que lo hagas, un estado de "eliminar" se mostrará para ese complemento en
 El administrador también tiene un botón Cerrar para cerrar el diálogo.
 Si has instalado o eliminado complementos, NVDA primero te preguntará si deseas reiniciar para que los cambios puedan llevarse a cabo.
 
-+++ Una nota acerca de los Plugins Personales Antiguos +++
 En el pasado ha sido posible extender la funcionalidad de NVDA copiando plugins y controladores individuales en tu directorio de configuración del usuario de NVDA.
 Aunque esta versión de NVDA todavía podrá cargarlos, No se mostrarán en el Administrador de Complementos.
 Es mejor eliminar estos ficheros de tu configuración e instalar el complemento apropiado si hay uno disponible.
@@ -1093,9 +1082,10 @@ Estas voces también pueden utilizarse con NVDA.
 Para utilizar estas voces, necesitarás instalar dos componentes:
 - Microsoft Speech Platform - Runtime (Versión 11) , x86: http://www.microsoft.com/download/en/details.aspx?id=27225
 - Microsoft Speech Platform - Runtime Languages (Versión 11): http://www.microsoft.com/download/en/details.aspx?id=27224
-- Esta página incluye muchos ficheros tanto de reconocimiento como de texto a voz.
-Elige los ficheros que contengan los datos TTS para los idiomas/voces deseados.
-Por ejemplo, el fichero MSSpeech_TTS_en-US_ZiraPro.msi es una voz inglesa U.S..
+ - Esta página incluye muchos ficheros tanto de reconocimiento como de texto a voz.
+ Elige los ficheros que contengan los datos TTS para los idiomas/voces deseados.
+ Por ejemplo, el fichero MSSpeech_TTS_en-US_ZiraPro.msi es una voz inglesa U.S..
+ -
 -
 
 ++ Audiologic Tts3 ++
@@ -1292,6 +1282,23 @@ Por favor mira la documentación de la línea para descripciones de dónde se pu
 | Leer todo | B6 |
 %kc:endInclude
 
+++ hedo MobilLine USB ++
+Se soporta la hedo MobilLine USB de [hedo Reha-Technik http://www.hedo.de/].
+Primero debes instalar los controladores USB proporcionados por el fabricante.
+
+Seguidamente van las asignaciones de teclas para esta línea con NVDA.
+Por favor mira la documentación de la línea para descripciones de dónde pueden encontrarse estas teclas.
+%kc:beginInclude
+|| Nombre | Tecla |
+| Desplazar línea braille atrás | K1 |
+| Desplazar línea braille adelante | K3 |
+| Mover línea braille a línea anterior | B2 |
+| Mover línea braille a siguiente línea | B5 |
+| Ir a celda braille | sensores |
+| Conmutar seguimiento de braille | K2 |
+| Leer todo | B6 |
+%kc:endInclude
+
 ++ HumanWare Brailliant Series BI/B ++
 Las líneas braille Brailliant series BI y B de [HumanWare http://www.humanware.com/], incluyendo BI 32, BI 40 y B 80, están soportadas cuando se conectan a través del USB o bluetooth.
 Si la conectas a través de USB, primero debes instalar los controladores USB proporcionados por el fabricante.
@@ -1445,22 +1452,25 @@ El fichero podrá contener múltiples secciones y cada sección podrá tener una
 
 Cada sección proporciona mapeados para scripts en un módulo particular python y clase dentro de NVDA.
 - El nombre de sección debería ser el módulo Python y clase separados por un punto (.).
-- Las teclas de cada sección son los nombres de los scripts con los que deseas concordar.
- Alternativamente, puedes utilizar None para desvincular gestos de entrada de un script al que estaban vinculados anteriormente.
+- La tecla de cada entrada es el nombre del script con el que deseas que los gestos deberían concordar.
+Alternativamente, puedes utilizar None para desvincular gestos de entrada de un script al que estaban vinculados anteriormente.
 Cada entrada de tecla sólo puede listarse una vez por sección, incluyendo None.
- - El valor de cada tecla es una lista separada con coma (,) de  identificadores del gesto los cuales representan los distintos gestos de entrada que deberían vincularse con ese script en particular.
+- El valor de cada tecla es una lista separada con coma (,) de  identificadores del gesto los cuales representan los distintos gestos de entrada que deberían vincularse con ese script en particular.
 Los identificadores de gesto que terminan en una coma deben encerrarse entre comillas (" o ').
- -
+-
 
-Los identificadores de gesto consisten en un código de dispositivo de dos letras (kb para teclado, br para línea braille y ts para pantalla táctil), un subdispositivo opcional o distribución de teclado entre paréntesis, unos dos puntos, y después un tipo específico de cadena identifycando uno o más teclados o teclas braille, o un gesto táctil.
-Para gestos de teclado, la parte entre llaves es la distribución de teclado y es opcional.
+Los identificadores de gesto consisten en un código de dispositivo de dos letras; un sub-dispositivo, distribución o modo entre paréntesis; unos dos puntos; y luego un tipo específico de cadena identifycando la entrada actual, tal como nombres de gestos de tecla o táctiles.
+- Para gestos de teclado, el código de dispositivo es kb.
+La parte entre paréntesis es la distribución de teclado y es opcional.
 Si no se especificó, el gesto se aplicará a todas las distribuciones de teclado.
 La cadena después de los dos puntos es uno o más nombres de teclas separados por un signo más (+).
-Para gestos de la línea braille, la parte entre paréntesis identifica la línea braille específica y es obligatoria.
-
+- Para gestos de líneas braille, el código de dispositivo es br.
+La parte entre paréntesis identifica la línea braille específica y es obligatoria.
 La cadena después de los dos puntos es uno o más nombres de tecla separados por un signo más (+).
-Para gestos táctiles, la parte entre paréntesis es el modo táctil y es opcional.
+- Para gestos táctiles, el código de dispositivo es ts.
+La parte entre paréntesis es el modo táctil y es opcional.
 La cadena después de los dos puntos es un gesto táctil tal como double_tap, 2fingerflickUp, o 3finger_tap como en los ejemplos.
+-
 
 De cara a encontrar los identificadores de gesto así como los nombres de scripts y la clase y el módulo en el cual están contenidos puedes:
 + Activar la Ayuda de entrada.

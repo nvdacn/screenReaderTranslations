@@ -110,19 +110,11 @@ Se xa pechaches este diálogo ou estás executando unha copia instalada do NVDA,
 
 O diálogo que aparece permíteche escoller onde debería criarse a copia portable.
 Esto pode ser un directorio no teu disco duro, ou un lugar nun lapis USB ou outro medio portátil.
-
-Tamén hai outras varias opcións explicadas más abaixo.
-Premendo Continuar criarase a copia portable.
-Unha vez a criación se complete aparecerá una mensaxe dicíndoche que foi satisfactoria.
+Tamén hai unha opción para escoller se NVDA debería copiar a sesión de configuración actual do usuario do NVDA para utilizala ca nova copia portable criada.
+Esta opción só está dispoñible cando se cria unha copia portable dende unha copia instalada, non cando se cría dende o paquete descargado.
+Premendo Continuar criarás a copia portable.
+Unha vez a criación estea compretada, aparecerá unha mensaxe dicíndoche que foi exitosa.
 Preme Aceptar para pechar este diálogo.
-
-+++ Criar un Ficheiro AutoRun +++
-Esta opción permíteche escoller se NVDA debería colocar un ficheiro especial autorun na raíz da unidade onde vai a ser criada a copia portable, polo que NVDA poderá iniciarse automáticamente cando a unidade se conecte.
-Ten en conta que o arranque automático dende unha unidade de memoria USB non está soportado en todos os Sistemas Operativos Windows.
-
-+++ Copiar Configuración do Usuario +++
-Esta Opción permíteche escoller se NVDA debería copiar a configuración da sesión do usuario actual do NVDA para utilizala ca copia portable recentemente criada.
- Esta opción só está dispoñible cando se cría unha copia portable dende unha copia instalada, non cando se cría dende o paquete Lanzador descargado.
 
 + Comezando co NVDA +
 
@@ -986,8 +978,6 @@ De xeito predeterminado NVDA gardará automáticamente as túas opcións ó saí
 Ten en conta, non obstante, que esta opción predeterminada pode ser cambiada baixo as opcións xerais no menú preferencias. 
 Para gardar as opcións manualmente en calquera ocasión, escolle o elemento Gardar configuración no menú NVDA.
 
-Se NVDA está nun sistema de ficheiros de só lectura, tal como un CD, non será posible gardar as túas opcións, e diracho.
-
 Se te trucas cas túas opcións e necesitas voltar ás opcións gardadas, podes escoller o elemento "voltar á configuración gardada" no menú NVDA.
 Tamén podes reiniciar as túas opcións ós seus valores predeterminados de fábrica orixinais escollendo Reiniciar Configuración ós Valores Predeterminados de Fábrica, que tamén se atopa no menú NVDA.
 
@@ -1048,7 +1038,6 @@ Ata que o fagas, un estado de "eliminar" amosarase para ese complemento na lista
 O administrador tamén ten un botón Pechar para pechar o diálogo.
 Se instalaches ou eliminaches complementos, NVDA primeiro preguntarache se desexas reiniciar para que os cambios podan levarse a cabo.
 
-+++ Unha nota acerca dos Plugins Persoais vellos +++
 No pasado foi posible extender a funcionalidade do NVDA copiando plugins e controladores individuais no teu directorio de configuración do usuario do NVDA.
 Aíndaque esta versión do NVDA aínda poderá cargalos, Non se amosarán no Administrador de Complementos.
 É mellor eliminar estos ficheiros da túa configuración e instalar o complemento apropriado se hai un dispoñible.
@@ -1093,9 +1082,10 @@ Estas voces tamén poden utilizarse co NVDA.
 Para utilizar estas voces, necesitarás instalar dous compoñentes:
 - Microsoft Speech Platform - Runtime (Versión 11) , x86: http://www.microsoft.com/download/en/details.aspx?id=27225
 - Microsoft Speech Platform - Runtime Languages (Versión 11): http://www.microsoft.com/download/en/details.aspx?id=27224
-- Esta páxina inclúe moitos ficheiros tanto de recoñecemento coma de texto a voz.
-Escolle os ficheiros que conteñan os datos TTS para as linguas/voces desexadas.
-Por exemplo, o ficheiro MSSpeech_TTS_en-US_ZiraPro.msi é unha voz inglesa U.S..
+ - Esta páxina inclúe moitos ficheiros tanto de recoñecemento coma de texto a voz.
+ Escolle os ficheiros que conteñan os datos TTS para as linguas/voces desexadas.
+ Por exemplo, o ficheiro MSSpeech_TTS_en-US_ZiraPro.msi é unha voz inglesa U.S..
+ -
 -
 
 ++ Audiologic Tts3 ++
@@ -1292,6 +1282,23 @@ Por favor mira a documentación da liña para descripcións de onde poden atopar
 | Ler todo | B6 |
 %kc:endInclude
 
+++ hedo MobilLine USB ++
+Sopórtase a hedo MobilLine USB de [hedo Reha-Technik http://www.hedo.de/].
+Primeiro debes instalar os controladores USB proporcionados polo fabricante.
+
+Seguidamente van as asignacións de teclas para esta liña co NVDA.
+Por favor mira a documentación da liña para descripcións de onde poden atoparse estas teclas.
+%kc:beginInclude
+|| Nome | Tecla |
+| Desprazar liña braille atrás | K1 |
+| Desprazar liña braille adiante | K3 |
+| Mover liña braille a liña anterior | B2 |
+| Mover liña braille a seguinte liña | B5 |
+| Ir a celda braille | sensores |
+| Conmutar seguemento de braille | K2 |
+| Ler todo | B6 |
+%kc:endInclude
+
 ++ HumanWare Brailliant Series BI/B ++
 As liñas braille Brailliant series BI e B de [HumanWare http://www.humanware.com/], incluíndo BI 32, BI 40 e B 80, están soportadas cando se conectan a través do USB ou bluetooth.
 Se a conectas a través de USB, primeiro debes instalar os controladores USB proporcionados polo fabricante.
@@ -1445,22 +1452,25 @@ O ficheiro poderá conter múltiples seccións e cada sección poderá ter unha 
 
 Cada sección proporciona mapeados para scripts nun módulo particular python e clase dentro do NVDA.
 - O nome de sección debería ser o módulo Python e clase separados por un punto (.).
- - As teclas de cada sección son os nomes dos scripts cos que desexas concordar.
-  Alternativamente, podes utilizar None para desvincular xestos de entrada dun script ó que estaban vinculados anteriormente.
+- A tecla de cada entrada é o nome do script co que desexas que o xesto debería concordar.
+Alternativamente, podes utilizar None para desvincular xestos de entrada dun script ó que estaban vinculados anteriormente.
 Cada entrada de tecla só pode listarse unha vez por sección, incluindo None.
-  - O valor de cada tecla é unha lista separada con coma (,) de  identificadores do xesto os que representan os distintos xestos de entrada que deberían concordar con ese script en particular.
+- O valor de cada tecla é unha lista separada con coma (,) de  identificadores do xesto os que representan os distintos xestos de entrada que deberían concordar con ese script en particular.
 Os identificadores de xesto que rematan nunha coma deben pecharse entre comiñas (" ou ').
-  -
+-
 
-Os identificadores de xesto consisten nun código de dispositivo de dúas letras (kb para teclado br para liña braille e ts para pantalla tactil), un subdispositivo opcional ou distribución de teclado entre paréntesis, uns dous pontos, e despois un tipo específico de cadea identifycando un ou máis teclados ou teclas braille, ou un xesto tactil.
-Para xestos de teclado, a parte entre chaves é a distribución de teclado e é opcional.
+Os identificadores de xesto consisten nun código de dispositivo de dúas letras; un sub-dispositivo, distribución ou modo entre parénteses; uns dous pontos; e logo un tipo específico de cadea identifycando a entrada actual, como nomes de xestos de tecla ou tactiles.
+- Para xestos de teclado, o código de dispositivo é kb.
+A parte entre parénteses é a distribución de teclado e é opcional.
 Se non se especificou, o xesto aplicarase a todas as distribucións de teclado.
 A cadea despois dos dous pontos é un ou máis nomes de teclas separados por un signo máis (+).
-Para xestos da liña braille, a parte entre chaves identifica a liña braille específica e é obrigatoria.
-
+- Para xestos de liñas braille, o código de dispositivo é br.
+A parte entre parénteses identifica a liña braille específica e é obrigatoria.
 A cadea despois dos dous pontos é un ou máis nomes de tecla separados por un signo máis (+).
-Para xestos tactiles, a parte entre parénteses é o modo tactil e é opcional.
+- Para xestos tactiles, o código de dispositivo é ts.
+A parte entre parénteses é o modo tactil e é opcional.
 A cadea despois dos dous pontos é un xesto tactil tal como double_tap, 2fingerflickUp, ou 3finger_tap como nos exemplos.
+-
 
 De cara a atopar os identificadores de xesto así coma os nomes de scripts e a clase e o módulo no cal están contidos, podes:
 + activar a Axuda de entrada
