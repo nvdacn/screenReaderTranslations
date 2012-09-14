@@ -47,7 +47,9 @@
 <LI>Em aplicativos que usam IAccessible2 tais como os da Mozilla, os cabeçalhos de linhas e colunas das tabelas agora podem ser anunciados fora do modo de navegação. (<A HREF="http://www.nvda-project.org/ticket/926">#926</A>)
 <LI>Suporte primário para o controle de documentos no Microsoft Word 2013. (<A HREF="http://www.nvda-project.org/ticket/2543">#2543</A>)
 <LI>O alinhamento dos textos agora pode ser anunciado em aplicativos que usam IAccessible2 tais como aplicativos da Mozilla. (<A HREF="http://www.nvda-project.org/ticket/2612">#2612</A>)
-<LI>Quando uma linha de uma tabela ou um controle de visualização de lista  padrão do Windows que possua  múltiplas colunas recebe foco, você agora pode usar os comandos para navegação de tabelas para acessar individualmente as células. (<A HREF="http://www.nvda-project.org/ticket/828">#828</A>)
+<LI>Quando uma linha de uma tabela ou um controle de visualização de lista  padrão do Windows que possua  múltiplas colunas recebe foco, você agora pode acessar individualmente as células usando os comandos para navegação de tabelas. (<A HREF="http://www.nvda-project.org/ticket/828">#828</A>)
+<LI>Novas tabelas de tradução braille: Estoniano grau 0, braille de 8 pontos Português para computador, braille de 6 pontos italiano para computador. (<A HREF="http://www.nvda-project.org/ticket/2139">#2139</A>, <A HREF="http://www.nvda-project.org/ticket/2662">#2662</A>)
+<LI>Caso o NVDA esteja instalado no computador, ao abrir diretamente um pacote de complemento (isto é, a partir do Windows Explorer ou depois de baixá-lo por um navegador web) instala-lo-á no NVDA. (<A HREF="http://www.nvda-project.org/ticket/2306">#2306</A>) 
 </UL>
 
 <H3>Alterações</H3>
@@ -60,6 +62,8 @@
 <LI>A lista do gestor de complementos agora mostra o nome do pacote antes de seu status. (<A HREF="http://www.nvda-project.org/ticket/2548">#2548</A>)
 <LI>caso esteja instalando a mesma  ou outra versão de um complemento atualmente instalado, o NVDA irá perguntar se você deseja remover antes o antigo ao invés de simplesmente exibir uma mensagem de erro e abortar a instalação. (<A HREF="http://www.nvda-project.org/ticket/2501">#2501</A>)
 <LI>Os comandos da navegação de objetos (exceto o comando anunciar o objeto atual) agora o anuncia com menos verbosidade. Você ainda pode obter informação extra usando o comando anunciar o objeto atual. (<A HREF="http://www.nvda-project.org/ticket/2560">#2560</A>)
+<LI>Atualizado o transcritor braille liblouis para a versão 2.5.0.
+<LI>O documento Referência Rápida de Teclas de Comando foi renomeado para Referência Rápida de Comandos, pois agora inclui tanto comandos para touch screen como de teclado.
 </UL>
 
 <H3>Correção de Falhas</H3>
@@ -96,6 +100,8 @@
 <LI>O NVDA já não retorna incorretamente ao idioma padrão durante uma leitura contínua onde uma linha não termina uma sentença. (<A HREF="http://www.nvda-project.org/ticket/2630">#2630</A>)
 <LI>A informação da fonte agora é detectada corretamente no Adobe Reader 10.1 e posteriores. (<A HREF="http://www.nvda-project.org/ticket/2175">#2175</A>)
 <LI>No Adobe Reader, caso haja um texto de descrição, somente aquele texto será exibido. Anteriormente, algumas vezes, textos estranhos eram inclusos. (<A HREF="http://www.nvda-project.org/ticket/2174">#2174</A>)
+<LI>Onde um documento contém uma aplicação, o conteúdo da mesma já não é incluido no modo de navegação. Isso evita que você se mova por dentro da aplicação ao navegar. É possível interagir com a aplicação da mesma forma utilizada com os objetos embutidos. (<A HREF="http://www.nvda-project.org/ticket/990">#990</A>)
+<LI>Em aplicativos da Mozilla, os valores dos botões de rotação agora são anunciados corretamente quando alterados. (<A HREF="http://www.nvda-project.org/ticket/2653">#2653</A>)
 </UL>
 
 <H3>Alterações Específicas para Desenvolvedores</H3>
@@ -108,6 +114,14 @@ Alguns itens ou termos desta seção não serão traduzidos, uma vez que são de
 <LI>O arquivo do log anterior agora é copiado para nvda-old.log a quando da inicialização do NVDA. Com efeito, caso ele trave ou seja reiniciado, as informações do log daquela sessão continuarão acessíveis para inspeção. (<A HREF="http://www.nvda-project.org/ticket/916">#916</A>)
 <LI>Fetching the role property in chooseNVDAObjectOverlayClasses no longer causes the role to be incorrect and thus not reported on focus for certain objects such as Windows command consoles and Scintilla controls. (<A HREF="http://www.nvda-project.org/ticket/2569">#2569</A>)
 <LI>Os menus Preferências, Ferramentas e Ajuda são agora acessíveis como atributos em gui.mainFrame.sysTrayIcon com as respectivas denominações de preferencesMenu, toolsMenu e helpMenu. Isso permite que plugins adicionem itens mais ´facilmente a esses menus.
+<LI>Gettext message contexts are now supported. This allows multiple translations to be defined for a single English message depending on the context. (<A HREF="http://www.nvda-project.org/ticket/1524">#1524</A>) 
+ <UL>
+ <LI>This is done using the pgettext(context, message) function. 
+ - Recurso suportado tanto pelo próprio NVDA como por seus complementos. 
+ <LI>xgettext and msgfmt from GNU gettext must be used to create any PO and MO files. The Python tools do not support message contexts. 
+ - For xgettext, pass the --keyword=pgettext:1c,2 command line argument to enable inclusion of message contexts. 
+ - Consulte <A HREF="http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts">http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts</A> para mais informações. 
+ </UL>
 </UL>
 
 <H2>2012.2.1</H2>
