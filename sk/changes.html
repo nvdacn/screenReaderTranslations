@@ -23,6 +23,9 @@
 <LI>Ak je zapnutá funkcia jedným prstom, kláves NVDA sa bude správať ako iné modifikačné klávesy (Ctrl, Alt, Windows). Toto vám umožňuje používať kláves NVDA bez toho, aby ste ho museli držať súčasne s inými klávesmi. (<A HREF="http://www.nvda-project.org/ticket/230">#230</A>)
 <LI>Podpora brailovských riadkov Braille Sense, Braille EDGE a SyncBraille od spoločnosti HIMS. (<A HREF="http://www.nvda-project.org/ticket/1266">#1266</A>, <A HREF="http://www.nvda-project.org/ticket/1267">#1267</A>)
 <LI>Podpora pre notifikačné oznamy tzv. toast notifications v systéme Windows 8. Pri zobrazení takéhoto upozornenia NVDA prečíta obsah a nastaví na oznámenie navigačný objekt. (<A HREF="http://www.nvda-project.org/ticket/2143">#2143</A>)
+<LI>experimentálna podpora pre dotykové ovládanie v systémoch Windows 8 zahŕňa:
+<LI>Čítanie textu pri pohybe prstom po obrazovke
+<LI>Gestá pre objektovú navigáciu, plošné prezeranie a iné príkazy NVDA.
 <LI>Aplikačný modul pre program VIP Mud. (<A HREF="http://www.nvda-project.org/ticket/1728">#1728</A>)
 <LI>Ak má tabuľka v dokumente programu Adobe Reader súhrn, NVDA ho prečíta. (<A HREF="http://www.nvda-project.org/ticket/2465">#2465</A>)
 <LI>NVDA oznamuje čísla riadkov a hlavičky stĺpcov v programe Adobe Reader. (<A HREF="http://www.nvda-project.org/ticket/2193">#2193</A>, <A HREF="http://www.nvda-project.org/ticket/2527">#2527</A>, <A HREF="http://www.nvda-project.org/ticket/2528">#2528</A>)
@@ -37,6 +40,8 @@
 <LI>V aplikáciách, ktoré využívajú IAccessible2 (napríklad Mozilla Firefox, Thunderbird...) hlavičky riadkov / stĺpcov tabuľky sú oznamované aj mimo režimu prehliadania. (<A HREF="http://www.nvda-project.org/ticket/926">#926</A>)
 <LI>Základná podpora pre MS Word 2013. (<A HREF="http://www.nvda-project.org/ticket/2543">#2543</A>)
 <LI>NVDA dokáže oznámiť zarovnanie textu v aplikáciách využívajúcich IAccessible2, funguje napríklad v Mozilla aplikáciách. (<A HREF="http://www.nvda-project.org/ticket/2612">#2612</A>)
+<LI>Ak sa nachádzate v riadku tabuľky alebo v štandartnom zozname s viacerými stĺpcami, na pohyb po stĺpcoch môžete použiť príkazy pre navigáciu v tabuľkách. (<A HREF="http://www.nvda-project.org/ticket/828">#828</A>)
+<LI>Nové brailovské tabuľky: Estónska grade 0, Portugalská 8-bodová sada. (<A HREF="http://www.nvda-project.org/ticket/2139">#2139</A>)
 </UL>
 
 <H3>Zmeny</H3>
@@ -49,6 +54,8 @@
 <LI>V správcovy doplnkov sa najprv zobrazuje názov doplnku a potom jeho stav. (<A HREF="http://www.nvda-project.org/ticket/2548">#2548</A>)
 <LI>Pri inštalácii tej istej alebo novej verzie doplnku sa NVDA opýta, či chcete vymazať doteraz nainštalovaný doplnok. Pri aktualizovaní doplnkov NVDA nezobrazí chybu a nezatvorí okno s inštaláciou doplnku. (<A HREF="http://www.nvda-project.org/ticket/2501">#2501</A>)
 <LI>Príkazy objektovej navigácie podávajú stručnejšiu informáciu o objekte. Podrobnejšiu informáciu získate prečítaním aktuálneho objektu. (<A HREF="http://www.nvda-project.org/ticket/2560">#2560</A>)
+<LI>aktualizovaný balík liblouis na verziu 2.5.0.
+<LI>Dokument "zoznam klávesových príkazov" bol premenovaný na "Zoznam príkazov", lebo obsahuje aj dotykové gestá.
 </UL>
 
 <H3>opravy</H3>
@@ -81,9 +88,12 @@
 <LI>NVDA sa nezasekne v odseku so zoznamom v MS Worde pri pokuse opustiť odrážku ľavou šípkou alebo ctrl+ľavá šípka. (<A HREF="http://www.nvda-project.org/ticket/2402">#2402</A>)
 <LI>V režime prehliadania v Mozilla aplikáciách nie sú viac nesprávne zobrazované položky v zoznamových rámikoch (najčastejšie zoznamové rámiky typu ARIA).
 <LI>NVDA odteraz v internetových prehliadačoch nezobrazuje obsah, ktorý má byť skrytý pre čítače obrazovky (ak sa použije atribút aria-hidden). (<A HREF="http://www.nvda-project.org/ticket/2117">#2117</A>)
-<LI>Záporné peňažné hodnoty, ako napríklad -$123, sú vždy oznamované ako záporné, bez ohľadu na nastavenie úrovne 
-interpunkcie.  (<A HREF="http://www.nvda-project.org/ticket/2625">#2625</A>)
+<LI>Záporné peňažné hodnoty, ako napríklad -$123, sú vždy oznamované ako záporné, bez ohľadu na nastavenie úrovne interpunkcie.  (<A HREF="http://www.nvda-project.org/ticket/2625">#2625</A>)
 <LI>Počas plynulého čítania sa NVDA nevráti do pôvodného jazyka, ak veta pokračuje na nasledujúcom riadku. (<A HREF="http://www.nvda-project.org/ticket/2630">#2630</A>)
+<LI>Informácie o type písma sú správne detegované v Adobe Readeri 10.1 a novších (<A HREF="http://www.nvda-project.org/ticket/2175">#2175</A>)
+<LI>Ak je v dokumente programu Adobe reader dostupný alternatívny text, bude použitý len tento text. Doteraz NVDA čítal nadbytočný text. (<A HREF="http://www.nvda-project.org/ticket/2174">#2174</A>)
+<LI>Ak dokument obsahuje aplikáciu, obsah aplikácie sa nezobrazí v režime prehliadania. Toto zabraňuje nechcenému vstupu do aplikácie počas čítania dokumentu. S aplikáciou môžete komunikovať rovnako, ako s vnorenými objektmi. (<A HREF="http://www.nvda-project.org/ticket/990">#990</A>)
+<LI>NVDA správne oznamuje zmenu hodnoty prepínacích tlačidiel v Mozilla aplikáciách. (<A HREF="http://www.nvda-project.org/ticket/2653">#2653</A>)
 </UL>
 
 <H2>2012.2.1</H2>
