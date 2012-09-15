@@ -38,6 +38,7 @@ fromdos {,*/,*/*/}*.py
 xgettext -c -s --copyright-holder="NVDA Contributers" \
 --package-name="NVDA" --package-version="$branch:$rev" \
 --msgid-bugs-address="nvda-translations@freelists.org" \
+--keyword=pgettext:1c,2 \
 -o /tmp/nvda.pot {,*/,*/*/}*.py
 bzr revert
 
