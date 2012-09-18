@@ -45,6 +45,9 @@
 <LI>Vorläufige Unterstützung für die Dokumentsteuerung in Microsoft Word 2013. (<A HREF="http://www.nvda-project.org/ticket/2543">#2543</A>)
 <LI>Die Ausrichtung von Text kann nun in Anwendungen, die IAccessible2 verwenden ausgegeben werden. Hierzu gehören bspw. Anwendungen von Mozilla. (<A HREF="http://www.nvda-project.org/ticket/2612">#2612</A>)
 <LI>Wenn eine Liste mehrere Spalten besitzt, können Sie nun die Navigationstasten für Tabellen benutzen, um auf einzelne Spalten zuzugreifen. (<A HREF="http://www.nvda-project.org/ticket/828">#828</A>)
+<LI>neue Braille-Übersetzungstabellen: estnische Basisschrift, portugiesisches 8-Punkt-Computerbraille, Italienisches 6-Punkt-Computerbraille. (<A HREF="http://www.nvda-project.org/ticket/2139">#2139</A>, <A HREF="http://www.nvda-project.org/ticket/2662">#2662</A>)
+<LI>Wenn NVDA fest installiert ist, kann eine Erweiterung direkt geöffnet werden; entweder vom Explorer aus oder über eine entsprechende Funktion im Browser beim Herunterladen. (<A HREF="http://www.nvda-project.org/ticket/2306">#2306</A>)
+<LI>Unterstützung für neuere papenmeier-Brailex-Zeilen (<A HREF="http://www.nvda-project.org/ticket/1265">#1265</A>)
 </UL>
 
 <H3>Änderungen</H3>
@@ -57,6 +60,8 @@
 <LI>Die Liste der Erweiterungen im Dialog "erweiterungen verwalten" zeigt nun den Namen der Erweiterung vor dessen Status an. (<A HREF="http://www.nvda-project.org/ticket/2548">#2548</A>)
 <LI>Wenn Sie die gleiche Version bzw. eine andere Version einer bereits installierten Erweiterung installieren, werden Sie nun gefragt, ob die alte Version zuerst entfernt werden soll. Zuvor wurde einfach eine Fehlermeldung angezeigt und die Installation abgebrochen. (<A HREF="http://www.nvda-project.org/ticket/2501">#2501</A>)
 <LI>Die Befehle zur Objektnavigation (bis auf den Befehl zur ausgabe des aktuellen objekts) sind nun weniger ausführlich. Sie können aber dennoch weitere Informationen über ein objekt abrufen, indem Sie den Befehl zur Ausgabe des aktuellen Objekts verwenden. (<A HREF="http://www.nvda-project.org/ticket/2560">#2560</A>)
+<LI>Liblouis-Braille-Übersetzung auf 2.5.0 aktualisiert.
+<LI>Da die NVDA-Kurztasten- undBefehlsreferenz nun auch Gesten für Touchscreens enthält, wurde sie in "Befehlsreferenz" umbenannt.
 </UL>
 
 <H3>Fehlerbehebungen</H3>
@@ -93,6 +98,8 @@
 <LI>Beim Lesen eines Dokuments wird nun nicht mehr unerwartet auf die Standardsprache gewechselt. (<A HREF="http://www.nvda-project.org/ticket/2630">#2630</A>)
 <LI>Die Schriftarteninformationen werden nun in Adobe Reader 10.1 und höher korrekt erkannt. (<A HREF="http://www.nvda-project.org/ticket/2175">#2175</A>)
 <LI>Stellt ein Dokument Alternativtexte zur verführung, so werden diese nun ausschleißlich verwendet. Bisher wurden manchmal nutzlose Informationen angezeigt. (<A HREF="http://www.nvda-project.org/ticket/2174">#2174</A>)
+<LI>Wenn ein Dokument eine Anwendung enthält, wird bei der Navigation im Lesemodus nicht mehr unerwartet in die anwendung gewechselt. Sie können dennoch mit der Anwendung arbeiten. Dies geschieht auf die gleiche Weise wie bei eingebetteten Objekten. (<A HREF="http://www.nvda-project.org/ticket/990">#990</A>)
+<LI>In Mozilla-Anwendungen wird nun der Wert eines Drehreglers korrekt erkannt, sobald er sich ändert. (<A HREF="http://www.nvda-project.org/ticket/2653">#2653</A>)
 </UL>
 
 <H3>Änderungen für Entwickler</H3>
@@ -101,10 +108,21 @@
 <LI>Beim Start von NVDA wird nun das vorherige Protokoll nach "nvda-old.log" kopiert. Sollte NVDA also einmal abstürzen oder neu gestartet werden müssen, steht das Protokoll der vorigen NVDA-Sitzung zu Inspektionszwecken zur Verfügung. (<A HREF="http://www.nvda-project.org/ticket/916">#916</A>)
 <LI>Wenn Sie innerhalb einer Methode chooseNVDAObjectOverlayClasses den Objekttyp abrufen wollen, wird dieser nun nicht mehr falsch zurückgegeben, wenn Objekte wie Eingabeaufforderungen oder Scintilla-Steuerelemente den Fokus haben. (<A HREF="http://www.nvda-project.org/ticket/2569">#2569</A>)
 <LI>Die Untermenüs des NVDA-Menüs sind nun als Attribute von gui.mainFrame.sysTrayIcon verfügbar. Sie heißen preferencesMenu, toolsMenu und helpMenu. Hierdurch ist es für globale Plug-ins einfacher, Einträge in diese Menüs einzufügen.
-<P></P>
-= 2012.2.1 =
-Diese Version behebt einige potenzielle Sicherheitsprobleme (in dem Python auf die Version 2.7.3 aktualisiert wurde).
+<LI>Unterstützung für Gettext-Meldungskontexte hinzugefügt. Dies erlaubt mehrere Übersetzungen für eine englische Meldung abhängig vom Kontext. (<A HREF="http://www.nvda-project.org/ticket/1524">#1524</A>)
+ <UL>
+ <LI>Dies wird durch den Funktionsaufruf  pgettext(Kontext, Meldung) realisiert.
+ <LI>Dies wird sowohl von NVDA selbst als auch von Erweiterungen unterstützt.
+ <LI>Sie müssen xgettext und msgfmt aus GNU gettext verwenden, um Mo- und po-dateien zu erstellen. Die Python-Werkzeuge unterstützen Meldungskontexte jedoch nicht.
+ <LI>Bei der Verwendung von xgettext müssen Sie den Kommandozeilenparameter --keyword=pgettext:1c,2 verwenden, um Meldungskontexte zu berücksichtigen.
+ <LI>Weitere Informationen zu Meldungskontexten finden Sie unter  <A HREF="http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts">http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts</A>
+ </UL>
 </UL>
+
+<H2>2012.2.1</H2>
+
+<P>
+Diese Version behebt einige potenzielle Sicherheitsprobleme (in dem Python auf die Version 2.7.3 aktualisiert wurde).
+</P>
 
 <H2>2012.2</H2>
 
