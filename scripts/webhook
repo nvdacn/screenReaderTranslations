@@ -35,3 +35,10 @@ for key in form.keys():
 f.write("--- end ---\n")
 f.close()
 print "Notification sent."
+
+
+print "running website post-commit hook."
+pc = '/var/www/testing.mesarhameed.info/post-commit'
+#p1 = Popen([pc])
+os.system(pc)
+print "finnished website post-commit hook."
