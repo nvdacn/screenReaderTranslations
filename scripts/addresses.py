@@ -107,6 +107,10 @@ addresses = {
         'lang': 'Portuguese',
         'email': ['Diogo Costa <diogojoca@gmail.com>', 'Rui Batista <ruiandrebatista@gmail.com>'],
     },
+    'ru': {
+        'lang': 'Russian',
+        'email': ['beqa <beqaprogger@gmail.com>'],
+    },
     'si': {
         'lang': 'Sinhala',
         'email': ['Asoka Bandula <asokabandula@gmail.com>'],
