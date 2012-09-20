@@ -12,12 +12,19 @@
 
 <H2>2012.3</H2>
 
+<P>
+Les apports majeurs de cette version incluent le support de la saisie des caractèrs asiatiques ; le support expérimental des écrans tactiles sous Windows 8 ; l'annonce des numéro de page et le support amélioré des tableaux dans Adobe Reader ; et le support de la naviation entre les cellules des liste multi-colones ou en tableau.
+</P>
+
 <H3>Nouvelles Fonctionnalités</H3>
 
 <UL>
 <LI>NVDA supporte maintenant la saisie des caractères asiatiques en utilisant les méthodes IME et les services de saisie de texte dans toutes les applications, incluant :
-<LI>Le rapport et navigation dans les listes de suggestions
-<LI>Lecture des chaînes lues.
+ <UL>
+ <LI>Le rapport et navigation dans les listes de suggestions;
+ <LI>Rapport et navigation dans les chaînes de composition ; et
+ <LI>Lecture des chaînes lues.
+ </UL>
 <LI>La présence de soulignements et de superpositions est maintenant rapportée dans les documents Adobe Reader. (<A HREF="http://www.nvda-project.org/ticket/2410">#2410</A>)
 <LI>Quand la fonction touche rémanentes de Windows est activée, la touche NVDA se comportera comme les autre touches de combinaisons. Cela vous permet de l'utiliser sans la maintenire enfoncée pendant que vous pressez d'autre touches. (<A HREF="http://www.nvda-project.org/ticket/230">#230</A>)
 <LI>Support pour les afficheurs braille HIMS Braille Sense, Braille EDGE et SyncBraille. (<A HREF="http://www.nvda-project.org/ticket/1266">#1266</A>, <A HREF="http://www.nvda-project.org/ticket/1267">#1267</A>)
@@ -39,7 +46,10 @@
 <LI>Dans les applications utilisant IAccessible2 comme les applications Mozilla, les entêtes de lignes et collones des tableaux peuvent être rapportées même en n'étant pas en mode navigation. (<A HREF="http://www.nvda-project.org/ticket/926">#926</A>)
 <LI>Support préliminaire des contrôle de documents de Microsoft Word 2013. (<A HREF="http://www.nvda-project.org/ticket/2543">#2543</A>)
 <LI>L'alignement du texte peut maintenant être rapporté dans les applications utilisant IAccessible2 comme les applications Mozilla. (<A HREF="http://www.nvda-project.org/ticket/2612">#2612</A>)
-<LI>Lorsqu'une ligne de tableau ou un élément d'une liste multi-colonnes a le focus, il est possible d'utiliser les commande de navigation de tableau pour passer de cellule en cellule. (<A HREF="http://www.nvda-project.org/ticket/828">#828</A>)
+<LI>Lorsqu'une ligne de tableau ou un élément d'une liste multi-colonnes standard Windows a le focus, il est possible d'utiliser les commande de navigation de tableau pour passer de cellule en cellule. (<A HREF="http://www.nvda-project.org/ticket/828">#828</A>)
+<LI>Nouvelles tables Brailles : Estonien Grade 0, Portugais Braille informatique 8 points, et Braille informatique Italien six points. (<A HREF="http://www.nvda-project.org/ticket/2139">#2139</A>, <A HREF="http://www.nvda-project.org/ticket/2662">#2662</A>)
+<LI>Si NVDA est installé, ouvrire un paquet de module complémentaire NVDA (par exemple depuis l'explorateur ou après l'avoir téléchargé) proposera l'installation de celui-ci.  (<A HREF="http://www.nvda-project.org/ticket/2306">#2306</A>)
+<LI>Support des modèles plus récents de plages Braille Papenmeier BRAILLEX. (<A HREF="http://www.nvda-project.org/ticket/1265">#1265</A>)
 </UL>
 
 <H3>Changements</H3>
@@ -50,8 +60,10 @@
 <LI>L'option Sauvegarder la configuration en quittant est activée par défaut pour les nouvelles configurations.
 <LI>Lorsque l'on met à jours une copie installée de NVDA, le raccourci clavier du bureau n'est plus remis à control+alt+n s'il a été changé manuellement par l'utilisateur. (<A HREF="http://www.nvda-project.org/ticket/2572">#2572</A>)
 <LI>La liste des modules complémentaires dans le gestionnaire de modules complémentaires affiche le nom du paquet avant son état. (<A HREF="http://www.nvda-project.org/ticket/2548">#2548</A>)
-<LI>Lorsqu'on installe la même version ou une autre d'un module complémentaire actuellement installé, NVDA proposera d'abord de désinstaller la version actuelle plutôt qu'afficher un message d'erreur et abandonner. (<A HREF="http://www.nvda-project.org/ticket/2501">#2501</A>)
+<LI>Lorsqu'on installe la même version ou une autre d'un module complémentaire actuellement installé, NVDA proposera de mettre à jour le module complémentaire plutôt qu'afficher un message d'erreur et abandonner. (<A HREF="http://www.nvda-project.org/ticket/2501">#2501</A>)
 <LI>Les commandes de navigation par objets (excepté la commande rapporter l'objet courrant) rapporte maintenant moins d'informations. Vous pouvez toujours obtenire les autres informations en utilisant la commande Rapporter l'objet courrant. (<A HREF="http://www.nvda-project.org/ticket/2560">#2560</A>)
+<LI>Mise à jour de liblouis vers la version 2.5.0.
+<LI>Le document Références Rapides des touches de Raccourcis a été renomé en résumé des touches de commandes puisqu'il inclue maintenant les commandes tactiles et les commandes clavier.
 </UL>
 
 <H3>Corrections de Bogues</H3>
@@ -98,6 +110,14 @@
 <LI>Le fichier journal précédant est maintenant renomé en nvda-old.log à l'initialisation de NVDA. Par conséquent, si NVDA plente ou est redémarré, les informations journalisées de cette session sont toujours accessibles pour inspection. (<A HREF="http://www.nvda-project.org/ticket/916">#916</A>)
 <LI>Accéder à la propriété role dans chooseNVDAObjectOverlayClasses ne la rend plus incorrecte et pas rapporté lors du focus pour certains objets tel que les fenêtres d'invites de commandes et les contrôles Scintilla. (<A HREF="http://www.nvda-project.org/ticket/2569">#2569</A>)
 <LI>Les menus Préférences, Outils et Aide de NVDA sont maintenant accessibles comme des attributs de gui.mainFrame.sysTrayIcon només respectivement preferencesMenu, toolsMenu et helpMenu. Cela permet aux plugins de pouvoir plus facilement ajouter des éléments à ces menus.
+<LI>Les messages de contexte Gettext sont maintenant supportés. Cela permet de pouvoir définir plusieurs traductions pour un message en Anglais selon le contecte. (<A HREF="http://www.nvda-project.org/ticket/1524">#1524</A>)
+ <UL>
+ <LI>Cela se fait en utilisant la fonction pgettext(context, message).
+ <LI>Ceci est supporté aussi bien pour NVDA que pour les modules complémentaires.
+ <LI>xgettext et msgfmt de GNU Gettext doivent être utiliser pour créer tout fichier po ou mo. Les outils Python ne supportent pas les messages de contextes.
+ <LI>Pour xgettext, passez le paramètre de ligne de commande --keyword=pgettext:1c,2 pour activer l'inclusion des messages de contextes.
+ <LI>Visitez <A HREF="http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts">http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts</A> pour plus d'informations.
+ </UL>
 </UL>
 
 <H2>2012.2.1</H2>
