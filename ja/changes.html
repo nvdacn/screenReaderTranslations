@@ -12,6 +12,10 @@
 
 <H2>2012.3</H2>
 
+<P>
+このリリースのハイライトは、アジア言語の文字入力サポート、Windows 8 タッチ画面の実験的サポート、Adobe Readerにおけるページ番号の通知や表のサポートの改善、フォーカスされたテーブルの列および Windows リストビューコントロールでのテーブルナビゲーション対応などです。
+</P>
+
 <H3>新機能</H3>
 
 <UL>
@@ -25,6 +29,11 @@
 <LI>Windows の固定キー機能が有効なとき、NVDA 制御キーも他の補助キーと同じように動作するようになりました。これによってNVDA制御キーを押し続けないで他のキーを押せるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/230">#230</A>)
 <LI>HIMS 製の点字ディスプレイ Braille Sense, Braille EDGE および SyncBraille に対応しました。 (<A HREF="http://www.nvda-project.org/ticket/1266">#1266</A>, <A HREF="http://www.nvda-project.org/ticket/1267">#1267</A>)
 <LI>Windows 8 でトーストが表示されたときに、NVDAはこれを通知してナビゲーターオブジェクトを移動するようになりました。これによってその後の操作がしやすくなります。 (<A HREF="http://www.nvda-project.org/ticket/2143">#2143</A>)
+<LI>Windows 8 タッチスクリーンに実験的に対応しました。具体的な内容：
+ <UL>
+ <LI>指を動かしたときにその場所の文字を直接読むことができます。
+ <LI>多くのジェスチャーで、オブジェクトナビゲーション、文字レビュー、その他の NVDA コマンドを実行できます。
+ </UL>
 <LI>VIP Mud アプリケーションに対応しました。 (<A HREF="http://www.nvda-project.org/ticket/1728">#1728</A>)
 <LI>Adobe Readerにおいて、テーブルにサマリーがある場合に通知するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2465">#2465</A>)
 <LI>Adobe Readerにおいて、テーブルの行見出しおよび列見出しを通知するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2193">#2193</A>, <A HREF="http://www.nvda-project.org/ticket/2527">#2527</A>, <A HREF="http://www.nvda-project.org/ticket/2528">#2528</A>)
@@ -39,6 +48,10 @@
 <LI>Mozilla アプリケーションなど IAccessible2 を使うアプリケーションにおいて、ブラウズモードでないときにもテーブルの行と列の見出しが通知されるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/926">#926</A>)
 <LI>Microsoft Word 2013 のドキュメントコントロールに予備的な対応をしました。 (<A HREF="http://www.nvda-project.org/ticket/2543">#2543</A>)
 <LI>Mozilla アプリケーションなど IAccessible2 を使うアプリケーションにおいて、テキストの配置を通知できるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2612">#2612</A>)
+<LI>テーブルの列または複数の列をもつ Windows 標準リストビューコントロールにフォーカスしたときに、テーブルナビゲーションのコマンドで各セルにアクセスできるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/828">#828</A>)
+<LI>点字出力テーブルが追加されました：エストニア語0級、ポルトガル語8点コンピューター点字、イタリア語6点コンピューター点字。 (<A HREF="http://www.nvda-project.org/ticket/2139">#2139</A>, <A HREF="http://www.nvda-project.org/ticket/2662">#2662</A>)
+<LI>すでに NVDA がシステムにインストールされている場合に、NVDAのアドオンパッケージを開いたとき(Windowsのエクスプローラーの表示、またはウェブブラウザーのダウンロードから)、そのアドオンをNVDAにインストールするようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2306">#2306</A>)
+<LI>Papenmeier ブレイレックス点字ディスプレイの新型機種をサポートしました。 (<A HREF="http://www.nvda-project.org/ticket/1265">#1265</A>)
 </UL>
 
 <H3>変更点</H3>
@@ -49,8 +62,10 @@
 <LI>設定を新規作成するときのデフォルトで"終了時に設定を保存"オプションが有効になりました。
 <LI>すでにNVDAがインストールされていて、コントロール+ALT+Nで起動するショートカットの設定をユーザーが変更している場合に、NVDAのアップデート処理でNVDAのショートカットを作り直さないようになりました。(<A HREF="http://www.nvda-project.org/ticket/2572">#2572</A>)
 <LI>アドオン マネージャー のアドオン一覧で状態の前にパッケージ名を表示するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2548">#2548</A>)
-<LI>アドオンのインストールで、すでに同じバージョンまたは異なるバージョンの同じアドオンがインストールされていたときに、エラーを表示して中断するのではなく、インストールされたアドオンを削除するかどうか確認するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2501">#2501</A>)
+<LI>アドオンのインストールで、すでに同じバージョンまたは異なるバージョンの同じアドオンがインストールされていたときに、エラーを表示して中断するのではなく、インストールされたアドオンを更新するかどうか確認するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2501">#2501</A>)
 <LI>オブジェクトナビゲーションの操作において(現在のオブジェクトの通知を除いて)冗長な通知を減らしました。現在のオブジェクトの通知を使えば詳細な情報が得られます。 (<A HREF="http://www.nvda-project.org/ticket/2560">#2560</A>)
+<LI>liblouis 点訳エンジンを 2.5.0 に更新しました。
+<LI>NVDAキーコマンドクイックリファレンスはコマンドクイックリファレンスに名前が変わりました。キーボードだけでなくタッチ操作のコマンドも含まれるようになったためです。
 </UL>
 
 <H3>バグ修正</H3>
@@ -84,7 +99,11 @@
 <LI>Mozilla アプリケーションのブラウズモードにおいて、特定のリストボックスの項目が不適切に解釈される問題を解決しました。(具体的には ARIA リストボックスです)
 <LI>Webブラウザにおいて、スクリーンリーダーから隠すと指定されたコンテンツを隠すようになりました。(具体的には aria-hidden 属性が使われた場合です) (<A HREF="http://www.nvda-project.org/ticket/2117">#2117</A>)
 <LI>ドル通貨記号を使う負の値(例えば -$123)が記号読み上げレベルにかかわらず負の数字として読み上げられるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2625">#2625</A>)
-<LI>「すべて読み上げ」機能において文の終わりではない行末で既定の言語に不適切に戻ってしまう問題を解決しました。 (<A HREF="http://www.nvda-project.org/ticket/2630">#2630</A>)
+<LI>「すべて読み上げ」機能において、文の終わりではない行末で既定の言語に不適切に戻ってしまう問題を解決しました。 (<A HREF="http://www.nvda-project.org/ticket/2630">#2630</A>)
+<LI>Adobe Reader 10.1 以降で、フォント情報が正しく検出できるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2175">#2175</A>)
+<LI>Adobe Reader において、代替テキストが提供されているときに、そのテキストだけを通知するようになりました。これまでは冗長なテキストを含むことがありました。 (<A HREF="http://www.nvda-project.org/ticket/2174">#2174</A>)
+<LI>文書がアプリケーションを含んでいるときに、アプリケーションの内側の要素はブラウズモードで除外されるようになりました。これによってナビゲーションのときに意図せずアプリケーションの内側に移動することが防げます。アプリケーションは埋め込みオブジェクトと同じように操作できます。 (<A HREF="http://www.nvda-project.org/ticket/990">#990</A>)
+<LI>Mozilla アプリケーションにおいて、スピンボタンの値が変更されたときに正しく通知されるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2653">#2653</A>)
 </UL>
 
 <H3>開発者向けの変更</H3>
@@ -92,7 +111,15 @@
 <UL>
 <LI>NVDAの初期化において過去のログファイルを nvda-old.log にコピーするようになりました。これによりNVDAが不正終了して再起動したときに、そのセッションのログを確認できるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/916">#916</A>)
 <LI>chooseNVDAObjectOverlayClasses にて role プロパティを取得したときに、Windows コマンドコントロールや Scintilla コントロールなどの role が不適切な値になり、オブジェクトのフォーカス状態を通知できない問題を解決しました。 (<A HREF="http://www.nvda-project.org/ticket/2569">#2569</A>)
-<LI>NVDA の設定、ツール、ヘルプのメニューが gui.mainFrame.sysTrayIcon のアトリビュート preferenceMenu, toolsMenu, helpMenu としてアクセスできるようになりました。これによりプラグインがメニュー項目を追加できます。
+<LI>NVDAメニューの設定、ツール、ヘルプが gui.mainFrame.sysTrayIcon のアトリビュート preferenceMenu, toolsMenu, helpMenu としてアクセスできるようになりました。これによりプラグインがメニュー項目を追加できます。
+<LI>Gettext メッセージのコンテクストに対応しました。1種類の英語のメッセージに対して、コンテクストに応じて、複数の対訳をあたえられるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/1524">#1524</A>)
+ <UL>
+ <LI>この処理は pgettext(context, message) 関数で行われます。
+ <LI>この処理は NVDA 自身およびアドオンでサポートされます。
+ <LI>GNU gettext の中の xgettext および msgfmt が PO および MO ファイル作成に必要です。Pythonのツールはメッセージのコンテクストに対応していません。
+ <LI>xgettext において --keyword=ppgettext:1c,2 コマンドライン引数をあたえることで、メッセージのコンテキストが含まれるようになります。
+ <LI>詳細は <A HREF="http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts">http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts</A> を参照してください。
+ </UL>
 </UL>
 
 <H2>2012.2.1</H2>
