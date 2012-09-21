@@ -1435,7 +1435,7 @@ Se BrxCom è installato, NVDA lo utilizzerà.
 BrxCom è un utility che permette di gestire la scrittura tramite i tasti braille indipendentemente dallo screen reader in uso.
 Verrà realizzata presto da Papenmeier una nuova versione di BrXcom che funzioni con NVDA 
 
-La maggior parte dei dispositivi è dotata di una barra di accesso facile (EAB) che permette di svolgere le operazioni in una modalità molto più rapida ed intuitiva..
+La maggior parte dei dispositivi è dotata di una barra di navigazione facilitata (EAB) che permette di svolgere le operazioni in una modalità molto più rapida ed intuitiva..
 Questa barra può essere spostata in quattro direzioni e ciascuna direzione ha due posizioni.
 la serie C è l'unica eccezione alla regola.
 
@@ -1498,7 +1498,6 @@ Si legga la [tabella dei tasti di Brltty http://mielke.cc/brltty/doc/drivers/] p
 + Argomenti avanzati +
 
 ++ Riassegnamento di tasti e note sull'immissione di gesti ++
-
 Gli utenti hanno la possibilità di inserire o sovrascrivere i gesti (ad esempio la pressione di un tasto) in unos peciale file di scripts nella cartella che contiene le configurazioni di NVDA per l'utente.
 Questo file si chiama gestures.ini.
 
@@ -1514,10 +1513,18 @@ Ciascun tasto può venir elencato solo una volta per sezione, inclusa la parola 
 Gli identificatori di gesture terminanti con una virgola devonoessere racchiusi tra virgolette o apostrofi (" o ' ).
 -
 
-Gli identificatori di gesture consistono in un codice di due lettere che si riferiscono al dispositivo in questione (kb per la tastiera, br per i display braille e ts per i dispositivi a tocco), di un dispositivo secondario opzionale o un layout tastiera tra parentesi tonde, il segno dei DuePunti,  ed infine uno o più nomi di tasti separati dal segno più (+).
-Per le gesture tastiera, la parte tra parentesi è il layout tastiera e comunque risulta opzionale.
+Gli identificatori di gesture consistono in un codice di due lettere che si riferiscono al dispositivo in questione (kb per la tastiera, br per i display braille e ts per i dispositivi a tocco), di un dispositivo secondario opzionale o un layout tastiera tra parentesi tonde, il segno dei DuePunti, ed infine uno o più nomi di tasti separati dal segno più (+).
+- Per le gesture tastiera, il codice del dispositivo è kb.
+la parte tra parentesi è il layout tastiera e comunque risulta opzionale.
 Se non specificato, le gesture si applicheranno a tutti i layout tastiera.
-Per le gesture braille, la parte tra parentesi rappresenta il Display Braille specifico ed è obbligatoria.
+La stringa dopo i duepunti è costituita da uno o più tasti separati da un (+)
+- Per le gesture braille, il codice del dispositivo è br.
+la parte tra parentesi rappresenta il Display Braille specifico ed è obbligatoria.
+La stringa dopo i due punti è costituita da uno o più nomi di tasti separati dal segno più (+).
+- Per le gesture a tocco, il codice del dispositivo è ts.
+la parte tra parentesi rappresenta la modalità di tocco ed è opzionale.
+La stringa dopo i due punti è costituita da un gesto a tocco; ad esempio double_tap, 2fingerflickUp o 3finger_tap.
+-
 
 Per scoprire gli identificatori di gesture, i nomi di script e classe e modulo a cui appartengono, fare come segue:
 + Attivare l'aiuto Immissione dati, conosciuto anche come aiuto tastiera.
@@ -1563,7 +1570,6 @@ Infatti, NVDA invia ancora i tasti speciali (come Shift, Control e Alt) al siste
 Quindi, se si utilizza il tasto Alt in una gesture, la pressione della combinazione di tasti può attivare la barra dei menu, o anche eseguire lo script.
 Comunque, si consiglia di servirsi dei tasti Shift, Control e NVDA come tasti speciali.
 
- 
 ++ Personalizzazione avanzata dei simboli di punteggiatura ++
 in aggiunta a ciò che abbiamo visto nella [Finestra di dialogo Pronuncia Punteggiatura/Simboli #SymbolPronunciation], è possibile personalizzare la punteggiatura ed altri simboli in maniera diversa.
 Per esempio, è possibile specificare se inviare o meno un simbolo non processato al sintetizzatore, per modificare parametri come l'inflessione o provocare una pausa.
@@ -1573,13 +1579,7 @@ Il file si chiama symbols-xx.dic, dove xx costituisce il codice della lingua.
 Il formato di tale file è documentato nella guida per gli sviluppatori, sezione pronuncia/simboli, che si può leggere sul [sito internazionale di NVDA NVDA_URLwiki/Development].
 Comunque, non è possibile per gli utenti definire simboli troppo complessi.
  
- 
- + Ulteriori Informazioni +
++ Ulteriori Informazioni +
 Se si vogliono trovare maggiori informazioni o richiedere assistenza riguardo NVDA, si prega di visitare o il sito internazionale in lingua inglese su NVDA_URL, oppure quello relativo alla comunità italiana all'indirizzo www.nvda.it.
-In entrambe i siti web sarà possibile reperire documentazione aggiuntiva, supporto tecnico e risorse varie come forum o mailing list. In particolare, per quanto concerne il sito italiano, esiste una lista di discussione alla quale chiunque può iscriversi mandando un messaggio a:
-nvda-request@spazioausili.net
-e nell'oggetto del messaggio scrivere la parola "subscribe" senza le virgolette. Rispondere poi al messaggio di conferma.
-I messaggi che transitano nella mailing list sono tutti consultabili anche dal forum dedicato che si aggiorna in tempo reale, e che permette naturalmente anche di rispondere e di creare nuovi argomenti. Si trova all'indirizzo:
-http://www.spazioausili.net/forum/ausili/screen_reader/nvda
-
-
+In entrambe i siti web sarà possibile reperire documentazione aggiuntiva, supporto tecnico e risorse varie come forum o mailing list. In particolare, per quanto concerne il sito italiano, esiste una lista di discussione alla quale chiunque può iscriversi mandando un messaggio a: nvda-request@spazioausili.net e nell'oggetto del messaggio scrivere la parola "subscribe" senza le virgolette. Rispondere poi al messaggio di conferma.
+I messaggi che transitano nella mailing list sono tutti consultabili anche dal forum dedicato che si aggiorna in tempo reale, e che permette naturalmente anche di rispondere e di creare nuovi argomenti. Si trova all'indirizzo: http://www.spazioausili.net/forum/ausili/screen_reader/nvda 
