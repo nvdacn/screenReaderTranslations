@@ -128,14 +128,15 @@
     <LI><A HREF="#toc84">11.9. Series de la HIMS Braille Sense/Braille EDGE</A>
     <LI><A HREF="#toc85">11.10. HIMS SyncBraille</A>
     <LI><A HREF="#toc86">11.11. Líneas Braille Seika</A>
-    <LI><A HREF="#toc87">11.12. BRLTTY</A>
+    <LI><A HREF="#toc87">11.12. Modelos más recientes de Papenmeier BRAILLEX</A>
+    <LI><A HREF="#toc88">11.13. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc88">12. Temas Avanzados</A>
+  <LI><A HREF="#toc89">12. Temas Avanzados</A>
     <UL>
-    <LI><A HREF="#toc89">12.1. Remapeando Asignaciones de Teclas y otros Gestos de Entrada</A>
-    <LI><A HREF="#toc90">12.2. Personalización Avanzada de Pronunciación de Símbolos</A>
+    <LI><A HREF="#toc90">12.1. Remapeando Asignaciones de Teclas y otros Gestos de Entrada</A>
+    <LI><A HREF="#toc91">12.2. Personalización Avanzada de Pronunciación de Símbolos</A>
     </UL>
-  <LI><A HREF="#toc91">13. Información Adicional</A>
+  <LI><A HREF="#toc92">13. Información Adicional</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -3352,7 +3353,165 @@ Por favor mira la documentación de la línea para descripciones de dónde se en
 </TABLE>
 
 <A NAME="toc87"></A>
-<H3>11.12. BRLTTY</H3>
+<H3>11.12. Modelos más recientes de Papenmeier BRAILLEX</H3>
+
+<P>
+Se soportan las siguientes líneas Braille: 
+</P>
+
+<UL>
+<LI>BRAILLEX EL 40c, EL 80c, EL 20c, EL 60c (USB)
+<LI>BRAILLEX EL 40s, EL 80s, EL 2d80s, EL 70s, EL 66s (USB)
+<LI>BRAILLEX Trio (USB y bluetooth)
+</UL>
+
+<P>
+Si está instalado BrxCom, NVDA utilizará BrxCom.
+BrxCom es una herramienta que te permite utilizar la entrada Braille independientemente de un lector de pantalla.
+Papenmeier liberará pronto una versión nueva de BrxCom que funcione con NVDA.  
+</P>
+<P>
+La mayoría de los dispositivos tienen una Barra de Acceso Fácil (EAB) que permite operar rápida e intuitivamente.
+La EAB puede moverse en cuatro direcciones donde en general cada dirección tiene dos posiciones.
+La serie c es la única excepción a esta regla.
+</P>
+<P>
+La serie c y algunas otras líneas tienen dos filas de sensores por lo que la fila superior se utiliza para anunciar información de formato.
+Manteniendo pulsada una de las teclas superiores y pulsando la EAB en los dispositivos de la serie c se emula la segunda posición.
+Pulsando y manteniendo las teclas arriba, abajo, derecha e izquierda (o la EAB) se causa que la acción correspondiente se repita. 
+</P>
+<P>
+Generalmente, las siguientes teclas están disponibles en estas líneas braille:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nombre</TH>
+<TH>Tecla</TH>
+</TR>
+<TR>
+<TD>l1</TD>
+<TD>Tecla izquierda frontal</TD>
+</TR>
+<TR>
+<TD>l2</TD>
+<TD>Tecla izquierda trasera</TD>
+</TR>
+<TR>
+<TD>r1</TD>
+<TD>Tecla derecha frontal</TD>
+</TR>
+<TR>
+<TD>r2</TD>
+<TD>Tecla derecha trasera</TD>
+</TR>
+<TR>
+<TD>arriba</TD>
+<TD>1 paso arriba</TD>
+</TR>
+<TR>
+<TD>arriba2</TD>
+<TD>2 pasos arriba</TD>
+</TR>
+<TR>
+<TD>izquierda</TD>
+<TD>1 paso a la izquierda</TD>
+</TR>
+<TR>
+<TD>izquierda2</TD>
+<TD>2 pasos a la izquierda</TD>
+</TR>
+<TR>
+<TD>derecha</TD>
+<TD>1 paso a la derecha</TD>
+</TR>
+<TR>
+<TD>derecha2</TD>
+<TD>2 pasos a la derecha</TD>
+</TR>
+<TR>
+<TD>dn</TD>
+<TD>1 paso abajo</TD>
+</TR>
+<TR>
+<TD>dn2</TD>
+<TD>2 pasos abajo</TD>
+</TR>
+</TABLE>
+
+<P>
+Seguidamente van las asignaciones de órdenes de la Papenmeier para NVDA:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nombre</TH>
+<TH>Tecla</TH>
+</TR>
+<TR>
+<TD>Desplazar línea braille atrás</TD>
+<TD>izquierda</TD>
+</TR>
+<TR>
+<TD>Desplazar línea braille adelante</TD>
+<TD>derecha</TD>
+</TR>
+<TR>
+<TD>Mover línea braille a la línea anterior</TD>
+<TD>arriba</TD>
+</TR>
+<TR>
+<TD>Mover línea braille a la línea siguiente</TD>
+<TD>dn</TD>
+</TR>
+<TR>
+<TD>Ir a la celda braille</TD>
+<TD>sensores</TD>
+</TR>
+<TR>
+<TD>Anunciar carácter actual en revisión</TD>
+<TD>l1</TD>
+</TR>
+<TR>
+<TD>Activar actual navegador de objetos</TD>
+<TD>l2</TD>
+</TR>
+<TR>
+<TD>Mover a revisión plana/foco</TD>
+<TD>r1</TD>
+</TR>
+<TR>
+<TD>Anunciar título</TD>
+<TD>l1+arriba</TD>
+</TR>
+<TR>
+<TD>Anunciar barra de estado</TD>
+<TD>l2+abajo</TD>
+</TR>
+<TR>
+<TD>Mover al objeto contenido</TD>
+<TD>arriba2</TD>
+</TR>
+<TR>
+<TD>Mover al primer objeto contenido</TD>
+<TD>dn2</TD>
+</TR>
+<TR>
+<TD>Mover al objeto anterior</TD>
+<TD>left2</TD>
+</TR>
+<TR>
+<TD>Mover al siguiente objeto</TD>
+<TD>derecha2</TD>
+</TR>
+<TR>
+<TD>Anunciar formato de texto</TD>
+<TD>fila de sensores superior</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc88"></A>
+<H3>11.13. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A> es un programa por separado que puede utilizarse para soportar muchas líneas braille.
@@ -3392,10 +3551,10 @@ Por favor mira <A HREF="http://mielke.cc/brltty/doc/drivers/">la documentación 
 </TR>
 </TABLE>
 
-<A NAME="toc88"></A>
+<A NAME="toc89"></A>
 <H2>12. Temas Avanzados</H2>
 
-<A NAME="toc89"></A>
+<A NAME="toc90"></A>
 <H3>12.1. Remapeando Asignaciones de Teclas y otros Gestos de Entrada</H3>
 
 <P>
@@ -3496,7 +3655,7 @@ De esta manera, si utilizas alt en un gesto, pulsando esta tecla la combinación
 Por lo tanto, probablemente es mejor sólo utilizar Shift, control y la tecla modificadora NVDA como modificadores.
 </P>
 
-<A NAME="toc90"></A>
+<A NAME="toc91"></A>
 <H3>12.2. Personalización Avanzada de Pronunciación de Símbolos</H3>
 
 <P>
@@ -3510,7 +3669,7 @@ El formato de este fichero se documentó en la sección Symbol Pronunciation de 
 Por lo tanto, no es posible para los usuarios definir símbolos complejos. 
 </P>
 
-<A NAME="toc91"></A>
+<A NAME="toc92"></A>
 <H2>13. Información Adicional</H2>
 
 <P>
