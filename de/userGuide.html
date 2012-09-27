@@ -709,7 +709,7 @@ Für die Navigation in Tabellen stehen folgende Tastenkombinationen zur Verfügu
 
 <P>
 Üblicherweise arbeiten Sie mit Programmen, indem Sie mittels Tastenkürzeln den <A HREF="#SystemFocus">Fokus</A> bzw. den Systemcursor #SystemCaret] bewegen.
-Manchmal möchten Sie jedoch mit den Objekten einer Anwendung oder des Betriebssystems umgehen, ohne den Fokus oder den Systemcursor zu bewegen.
+Manchmal möchten Sie jedoch mit den Objekten einer Anwendung oder des Betriebssystems arbeiten, ohne den Fokus oder den Systemcursor zu bewegen.
 Oder sie wollen mit <A HREF="#Objects">Objekten</A> umgehen, die nicht mit den Standard-Tastenkombinationen erreichbar sind (etwa, weil sie nicht in der Tab-Reihenfolge stehen).
 In solchen Fällen können Sie die objektorientierte Navigation verwenden.
 </P>
@@ -724,13 +724,11 @@ Dies bedeutet, dass sie in manche Objekte "absteigen" müssen, um deren Inhalt z
 Eine Liste enthält beispielsweise Objekte, die die einzelnen Einträge darstellen; Sie müssen also in die Liste "absteigen", um die Einträge zu sehen.
 Wenn Sie sich auf einem Listeneintrag befinden, können Sie sich zum nächsten/vorherigen Objekt auf der selben Ebene bewegen, um die anderen Einträge zu sehen.
 Um von einem Listeneintrag wieder zur Liste zurückzukehren, müssen Sie wieder eine Ebene "aufsteigen".
-</P>
-<P>
 Nun können Sie sich über die Liste hinaus bewegen, um andere Objekte zu sehen.
 so ähnlich enthält eine Symbolleiste ebenfalls Steuerelemente und Sie müssen in die Symbolleiste "absteigen", um die einzelnen Elemente zu sehen.
 </P>
 <P>
-Das Objekt, das momentan angezeigt wird, wird als Navigatorobjekt bezeichnet.
+Das Objekt, das momentan angezeigt wird, wird als Navigator-Objekt bezeichnet.
 Wenn Sie sich zu einem Objekt bewegt haben, können Sie es sich mit den <A HREF="#ReviewingText">Befehlen zum Betrachten von Text</A> anschauen.
 Standardmäßig folgt der Navigator dem Systemfokus, diese Kopplung kann jedoch ein- und ausgeschaltet werden.
 </P>
@@ -969,7 +967,7 @@ Die folgenden Tastenkombinationen zur Textanzeige sind verfügbar:
 </TABLE>
 
 <P>
-Hinweis: Um die Tasten auf dem Nummernblock benutzen zu können, muss dieser deaktiviert sein.
+Hinweis: Um die Tasten des Nummernblocks benutzen zu können, muss dieser deaktiviert sein.
 </P>
 <P>
 Um sich auf hilfreiche Weise die Tastenkombinationen merken zu können, wird dieses Textraster grundsätzlich in drei Mal drei "Felder" angeordnet; von oben nach unten, von links nach rechts sowie zum vorherigen, aktuellen und nächsten.
@@ -1001,8 +999,6 @@ Das Layout ist wie folgt aufgebaut:
 Während sie sich normalerweise nur den Inhalt einzelner <A HREF="#Objects">Objekte</A> betrachten können, erlauben manche Objekte jedoch das Betrachten des gesamten Inhaltes (also einschließlich aller untergeordneten Objekte).
 Bei komplexen Dokumenten ist es so beispielsweise möglich, deren gesamten Inhalt zu erfassen. Anwendungsfenster können so ausgelesen werden, wie die darin enthaltenen Elemente visuell angeordnet sind.
 Dies wird als Flächenmodus bezeichnet.
-</P>
-<P>
 Dies funktioniert ähnlich eines Bildschirmbetrachters bzw. einer Maus-Emulation vieler kommerzieller Screenreader.
 </P>
 <P>
@@ -1013,7 +1009,8 @@ Jetzt können Sie den Inhalt mit den <A HREF="#ReviewingText">Befehlen zum Betra
 Umgekehrt können Sie von einer beliebigen Position im Flächenmodus aus den Navigator auf das zugrundeliegende Objekt setzen und von dort aus die  <A HREF="#ObjectNavigation">Objektnavigation</A> verwenden.
 </P>
 <P>
-uM die Anzeigen des Flächenmodus auch in Braille zu erhalten, müssen Sie die <A HREF="#BrailleTether">Kopplung der Braillezeile konfigurieren</A>.
+Bedenken Sie, dass die Braillezeile standardmäßig den  <A HREF="#SystemFocus">Fokus</A> und den  <A HREF="#SystemCaret">Systemcursor</A> verfolgt, nicht jedoch den Navigator oder den nvda-Cursor.
+Um die Anzeigen des Flächenmodus auch in Braille zu erhalten, müssen Sie die <A HREF="#BrailleTether">Kopplung der Braillezeile konfigurieren</A>.
 </P>
 <P>
 Die folgenden zwei Tastenkombinationen werden zum Umschalten für den Flächenmodus verwendet:
@@ -2035,7 +2032,7 @@ Schaltet die Ansage von neuen Inhalten in bestimmten Programmen wie Terminals un
 Mit diesem Dialog können Sie steuern, wie nvda Zeichen asiatischer sprachen wiedergibt, wenn Sie sie eingaben. dies betrifft sowohl IME als auch die Textdienste.
 </P>
 
-<H5>automatisch verfügbare Kandidaten angeben</H5>
+<H5>automatisch alle verfügbare Kandidaten ausgeben</H5>
 
 <P>
 Diese option, die standardmäßig aktiviert ist, legt fest, ob automatisch eine Liste aller sichtbaren Kandidaten wiedergegeben wird.
@@ -2043,11 +2040,36 @@ Das Aktivieren dieser Option st z.B. für die Eingabe piktographischer zeichen w
 Bei phonetischen Eingabemethoden ist es jedoch sinvoll, die Option abzuschalten, weil Sie das passende Zeichen ohnehin mit den Pfeiltasten auswählen müssen, um es einzufügen.
 </P>
 
+<H5>Announce Selected Candidate</H5>
+
+<P>
+This option, which is on by default, allows you to choose whether NVDA should announce the selected candidate when a candidate list appears or when the selection is changed.
+For input methods where the selection can be changed with the arrow keys  (such as Chinese New Phonetic) this is necessary, but for some input methods it may be more efficient typing with this option turned off.
+Note that even with this option off, the review cursor will still be placed on the selected candidate allowing you to use object navigation / review to manually read this or other candidates.
+</P>
+
+<H5>Always include short character descriptions for candidates</H5>
+
+<P>
+This option, which is on by default, allows you to choose whether or not NVDA should provide a short description for each character in a candidate, either when its selected or when its automatically read when the candidate list appears.
+Note that for locales such as Chinese, the announcement of extra character descriptions for the selected candidate is not affected by this option.
+This option may be useful for Korean and japanese input methods.
+</P>
+
 <H5>Report changes to the reading string</H5>
 
 <P>
 Some input methods such as Chinese New Phonetic and New ChangJie have a reading string (sometimes known as a precomposition string).
 You can choose whether or not NVDA should announce new characters being typed into this reading string with this option.
+This option is on by default.
+Note some older input methods such as Chinese ChangJie may not use the reading string to hold precomposition characters, but instead use the composition string directly. Please see the next option for configuring reporting of the composition string.
+</P>
+
+<H5>Report changes to the composition string</H5>
+
+<P>
+After reading or precomposition data has been combined into a valid pictographic symbol, most input methods place this symbol into a composition string for temporary storage along with other combined symbols before they are finally inserted into the document.
+This option allows you to choose whether or not NVDA should report new symbols as they appear  in the composition string.
 This option is on by default.
 </P>
 
@@ -3698,7 +3720,7 @@ Folgende Tastenkombinationen sind bei Papenmeier-Braillezeilen verfügbar:
 <TD>rechts2</TD>
 </TR>
 <TR>
-<TD>Liest Formatierungsinformationen für an der Cursorposition in einen Dokument vor</TD>
+<TD>Liest Formatierungsinformationen an der Cursorposition in einen Dokument vor</TD>
 <TD>Obere Routingreihe</TD>
 </TR>
 </TABLE>
