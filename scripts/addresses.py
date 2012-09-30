@@ -109,7 +109,7 @@ addresses = {
     },
     'ru': {
         'lang': 'Russian',
-        'email': ['beqa <beqaprogger@gmail.com>'],
+        'email': ['Beqa Gozalishvili <beqaprogger@gmail.com>'],
     },
     'si': {
         'lang': 'Sinhala',
