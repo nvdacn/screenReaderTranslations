@@ -84,12 +84,13 @@ Lo subrayable de esta versión incluye el soporte para la entrada de caracteres 
 - En Adobe Reader, si se proporciona texto alternativo, sólo se procesará ese texto. Anteriormente, algunas veces se incluía texto extraño. (#2174)
 - Cuando un documento contiene una aplicación, el contenido de la aplicación ya no se incluye en modo navegación. Esto previene de movimientos inesperados dentro de la aplicación cuando se navega. Puedes interactuar con la aplicación del mismo modo que para los objetos integrados. (#990)
 - En aplicaciones de Mozilla, el valor de los botones de flecha ahora se anuncia correctamente cuando cambian. (#2653)
-
+- Actualizado el soporte de Adobe Digital Editions para que funcione en la versión 2.0. (#2688)
 
 == Cambios para Desarrolladores ==
 - El anterior fichero log ahora se copia en nvda-old.log en la inicialización de NVDA. Por lo tanto, si NVDA se bloquea o se reinicia, el registro de información  de esa sesión todavía es accesible para su inspección. (#916)
 - La obtención de la propiedad de rol en chooseNVDAObjectOverlayClasses ya no causa que el rol sea incorrecto y por lo tanto no se anuncie en foco para ciertos objetos tales como consolas de órdenes de Windows y controles de Scintilla. (#2569)
 - Los menús de NVDA Preferencias, Herramientas y Ayuda ahora son accesibles como atributos en gui.mainFrame.sysTrayIcon llamándose preferencesMenu, toolsMenu y helpMenu, respectivamente. Esto permite a los plugins añadir elementos mucho más fácilmente a estos menús.
+- El script navigatorObject_doDefaultAction en globalCommands ha sido renombrado a review_activate.
 - Ahora se soportan los mensajes contextuales de Gettext. Esto permite que sean definidas múltiples traducciones para un solo mensaje en Inglés dependiendo del contexto. (#1524)
  - Esto se hace utilizando la función pgettext(context, message).
  - Esto se soporta tanto para NVDA mismo como para los complementos.
