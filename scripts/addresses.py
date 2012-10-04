@@ -61,7 +61,7 @@ addresses = {
     },
     'hu': {
         'lang': 'Hungarian',
-        'email': ['Aron OcsvAri <oaron1@gmail.com>'],
+        'email': ['Aron OcsvAri <oaron@nvda.hu>'],
     },
     'id': {
         'lang':'Indonesian',
