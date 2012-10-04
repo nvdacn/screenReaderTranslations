@@ -84,12 +84,15 @@ Schwerpunkte in dieser Version sind: Unterstützung für asiatische Eingabemetod
 - Stellt ein Dokument Alternativtexte zur verfügung, so werden diese nun ausschließlich verwendet. Bisher wurden manchmal nutzlose Informationen angezeigt. (#2174)
 - Wenn ein Dokument eine Anwendung enthält, wird bei der Navigation im Lesemodus nicht mehr unerwartet in die anwendung gewechselt. Sie können dennoch mit der Anwendung arbeiten. Dies geschieht auf die gleiche Weise wie bei eingebetteten Objekten. (#990)
 - In Mozilla-Anwendungen wird nun der Wert eines Drehreglers korrekt erkannt, sobald er sich ändert. (#2653)
+- verbesserte Unterstützung für Adobe Digital Editions funktioniert jetzt auch mit version 2.0. (#2688)
+- Wenn in Kombinationsfeldern im Internet Explorer nvda+Pfeil auf gedrückt wird, wird nun korrekterweise deraktuelle Eintrag gelesen, bisher wurden irrtümlich alle Einträge gelesen. (#2337)
 
 
 == Änderungen für Entwickler ==
 - Beim Start von NVDA wird nun das vorherige Protokoll nach "nvda-old.log" kopiert. Sollte NVDA also einmal abstürzen oder neu gestartet werden müssen, steht das Protokoll der vorigen NVDA-Sitzung zu Inspektionszwecken zur Verfügung. (#916)
 - Wenn Sie innerhalb einer Methode chooseNVDAObjectOverlayClasses den Objekttyp abrufen wollen, wird dieser nun nicht mehr falsch zurückgegeben, wenn Objekte wie Eingabeaufforderungen oder Scintilla-Steuerelemente den Fokus haben. (#2569)
 - Die Untermenüs des NVDA-Menüs sind nun als Attribute von gui.mainFrame.sysTrayIcon verfügbar. Sie heißen preferencesMenu, toolsMenu und helpMenu. Hierdurch ist es für globale Plug-ins einfacher, Einträge in diese Menüs einzufügen.
+- das Script navigatorObject_doDefaultAction aus  globalCommands wurde in review_activate umbenannt.
 - Unterstützung für Gettext-Meldungskontexte hinzugefügt. Dies erlaubt mehrere Übersetzungen für eine englische Meldung abhängig vom Kontext. (#1524)
  - Dies wird durch den Funktionsaufruf  pgettext(Kontext, Meldung) realisiert.
  - Dies wird sowohl von NVDA selbst als auch von Erweiterungen unterstützt.
