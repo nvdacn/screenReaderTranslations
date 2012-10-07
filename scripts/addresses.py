@@ -141,7 +141,7 @@ addresses = {
     },
     'zh_CN': {
         'lang':'Simplified Chinese',
-        'email': ['qt06.com@139.com'],
+        'email': ['vgjh2005@gmail.com'],
     },
     'zh_HK': {
         'lang': 'Traditional Chinese Hong Kong',
