@@ -52,11 +52,9 @@ Schwerpunkte in dieser Version sind: Unterstützung für asiatische Eingabemetod
 <LI>neue Braille-Übersetzungstabellen: estnische Basisschrift, portugiesisches 8-Punkt-Computerbraille, Italienisches 6-Punkt-Computerbraille. (<A HREF="http://www.nvda-project.org/ticket/2319">#2319</A>, <A HREF="http://www.nvda-project.org/ticket/2662">#2662</A>)
 <LI>Wenn NVDA fest installiert ist, kann eine Erweiterung direkt geöffnet werden; entweder vom Explorer aus oder über eine entsprechende Funktion im Browser beim Herunterladen. (<A HREF="http://www.nvda-project.org/ticket/2306">#2306</A>)
 <LI>Unterstützung für neuere papenmeier-Brailex-Zeilen (<A HREF="http://www.nvda-project.org/ticket/1265">#1265</A>)
-</UL>
-
-<H3>Änderungen</H3>
-
-<UL>
+<LI>Positionsinformationen (z.B. 1 von 4) in Windows 7 und höher in Windows explorer werden nun korrekt angegeben. Dies betrifft auch UIAutomation-Steuerelemente, die die benutzerdefinierten Eigenschaften itemIndex und itemCount unterstützen. (<A HREF="http://www.nvda-project.org/ticket/2643">#2643</A>)
+<P></P>
+== Änderungen ==
 <LI>Im Dialog für die NVDA-Cursor-Einstellungen wurde die Einstellung "Tastaturfokus verfolgen" in "Systemfokus verfolgen" umbenannt, um mit anderen Teilen von NVDA zu harmonieren, in denen diese Namensgebung verwendet wird.
 <LI>Wenn die Braillezeile an den Navigator gekoppelt ist und gerade ein objekt angezeigt wird, das kein Textobjekt ist (wie z. B. ein Eingabefeld), kann das objekt durch Drücken der Cursorroutingtasten aktiviert werden. (<A HREF="http://www.nvda-project.org/ticket/2386">#2386</A>)
 <LI>Die Option "Einstellungen beim Beenden speichern" ist bei neuen Konfigurationen nun standardmäßig aktiviert.
@@ -66,11 +64,9 @@ Schwerpunkte in dieser Version sind: Unterstützung für asiatische Eingabemetod
 <LI>Die Befehle zur Objektnavigation (bis auf den Befehl zur ausgabe des aktuellen objekts) sind nun weniger ausführlich. Sie können aber dennoch weitere Informationen über ein objekt abrufen, indem Sie den Befehl zur Ausgabe des aktuellen Objekts verwenden. (<A HREF="http://www.nvda-project.org/ticket/2560">#2560</A>)
 <LI>Liblouis-Braille-Übersetzung auf 2.5.1 aktualisiert.
 <LI>Da die NVDA-Kurztasten- und Befehlsreferenz nun auch Gesten für Touchscreens enthält, wurde sie in "Befehlsreferenz" umbenannt.
-</UL>
-
-<H3>Fehlerbehebungen</H3>
-
-<UL>
+<LI>In der Elementliste merkt sich NVDA nun den eingestellten Elementtyp (z.B. Links, überschriften), solange Sie NVDA nicht neu starten. (<A HREF="http://www.nvda-project.org/ticket/365">#365</A>)
+<P></P>
+== Fehlerbehebungen ==
 <LI>In Blio wird nun der Inhalt von Büchern in Braille angezeigt. (<A HREF="http://www.nvda-project.org/ticket/2139">#2139</A>)
 <LI>Wurde der Computer in Windows Vista und neuer mit Win+L gesperrt und wieder entsperrt, so bleibt die Windows-Taste nun nicht mehr fälschlicherweise hängen. (<A HREF="http://www.nvda-project.org/ticket/1856">#1856</A>)
 <LI>In Adobe Reader werden Zeilenüberschriften nun richtig als Zellen in einer Tabelle erkannt, so dass z. B. die Zellkoordinaten angesagt werden und durch die Tabellennavigation angesteuert werden können. (<A HREF="http://www.nvda-project.org/ticket/2444">#2444</A>)
@@ -106,11 +102,9 @@ Schwerpunkte in dieser Version sind: Unterstützung für asiatische Eingabemetod
 <LI>In Mozilla-Anwendungen wird nun der Wert eines Drehreglers korrekt erkannt, sobald er sich ändert. (<A HREF="http://www.nvda-project.org/ticket/2653">#2653</A>)
 <LI>verbesserte Unterstützung für Adobe Digital Editions funktioniert jetzt auch mit version 2.0. (<A HREF="http://www.nvda-project.org/ticket/2688">#2688</A>)
 <LI>Wenn in Kombinationsfeldern im Internet Explorer nvda+Pfeil auf gedrückt wird, wird nun korrekterweise deraktuelle Eintrag gelesen, bisher wurden irrtümlich alle Einträge gelesen. (<A HREF="http://www.nvda-project.org/ticket/2337">#2337</A>)
-</UL>
-
-<H3>Änderungen für Entwickler</H3>
-
-<UL>
+<LI>die Aussprachewörterbücher werden korrekt gespeichert, wenn Sie im Feld "Muster" oder "ersetzen durch" eine Raute "#" verwenden. (<A HREF="http://www.nvda-project.org/ticket/961">#961</A>)
+<P></P>
+== Änderungen für Entwickler ==
 <LI>Beim Start von NVDA wird nun das vorherige Protokoll nach "nvda-old.log" kopiert. Sollte NVDA also einmal abstürzen oder neu gestartet werden müssen, steht das Protokoll der vorigen NVDA-Sitzung zu Inspektionszwecken zur Verfügung. (<A HREF="http://www.nvda-project.org/ticket/916">#916</A>)
 <LI>Wenn Sie innerhalb einer Methode chooseNVDAObjectOverlayClasses den Objekttyp abrufen wollen, wird dieser nun nicht mehr falsch zurückgegeben, wenn Objekte wie Eingabeaufforderungen oder Scintilla-Steuerelemente den Fokus haben. (<A HREF="http://www.nvda-project.org/ticket/2569">#2569</A>)
 <LI>Die Untermenüs des NVDA-Menüs sind nun als Attribute von gui.mainFrame.sysTrayIcon verfügbar. Sie heißen preferencesMenu, toolsMenu und helpMenu. Hierdurch ist es für globale Plug-ins einfacher, Einträge in diese Menüs einzufügen.
