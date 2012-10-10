@@ -36,6 +36,7 @@ Les apports majeurs de cette version incluent le support de la saisie des caract
 - Nouvelles tables Brailles : Estonien Grade 0, Portugais Braille informatique 8 points, et Braille informatique Italien six points. (#2139, #2662)
 - Si NVDA est installé, ouvrire un paquet de module complémentaire NVDA (par exemple depuis l'explorateur ou après l'avoir téléchargé) proposera l'installation de celui-ci.  (#2306)
 - Support des modèles plus récents de plages Braille Papenmeier BRAILLEX. (#1265)
+- L'information de position (Ex : 1 sur 4) est maintenant rapportée dans les éléments des listes de l'explorateur Windows dans Windows 7 et supérieur. Cela inclus également les éléments UIAutomation qui supportent les propriétés itemIndex et et itemCount. (#2643)
 
 
 == Changements ==
@@ -48,6 +49,7 @@ Les apports majeurs de cette version incluent le support de la saisie des caract
 - Les commandes de navigation par objets (excepté la commande rapporter l'objet courrant) rapporte maintenant moins d'informations. Vous pouvez toujours obtenire les autres informations en utilisant la commande Rapporter l'objet courrant. (#2560)
 - Mise à jour de liblouis vers la version 2.5.1. (#2319, #2480, #2662, #2672)
 - Le document Références Rapides des touches de Raccourcis a été renomé en résumé des touches de commandes puisqu'il inclue maintenant les commandes tactiles et les commandes clavier.
+- La liste d'éléments en mode Navigation se souviendra maintenant du type d'élément à afficher (Ex : les liens, les entêtes ou les repaires) chaque fois que ce dialogue est appelé dans la même session de NVDA. (#365)
 
 
 == Corrections de Bogues ==
@@ -85,6 +87,8 @@ Les apports majeurs de cette version incluent le support de la saisie des caract
 - Lorsqu'un document contient une application, le contenu de l'application n'est plus inclus dans le mode navigation. Cela permet d'éviter de se déplacer dans l'application de manière inattendue. On peut se déplacer dans l'application de la même manière que pour un objet inclus. (#990)
 - Dans les applications Mozilla, les valeurs des boutons rotatifs sont correctement rapportées lorsuqu'elles changent. (#2653)
 - Mise à jour du support d'Adobe Digital Editions pour qu'il fonctionne avec la version 2.0. (#2688)
+- Appuyer sur NVDA+FlècheHaute lorsqu'on est dans une zone de liste dans Internet explorer et autres documents MSHTML ne lira plus tous les éléments. Seul l'élément actif sera lu. (#2337)
+- Les dictionnaires de paroles se sauvegarderont bien quand on utilise un dièse (#) dans le champ Mort réel et Remplacement. (#961)
 
 
 == Changements pour les développeurs ==
