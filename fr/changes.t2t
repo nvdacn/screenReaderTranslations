@@ -13,6 +13,7 @@ Les apports majeurs de cette version incluent le support de la saisie des caract
  - Lecture des chaînes lues.
 - La présence de soulignements et de superpositions est maintenant rapportée dans les documents Adobe Reader. (#2410)
 - Quand la fonction touche rémanentes de Windows est activée, la touche NVDA se comportera comme les autre touches de combinaisons. Cela vous permet de l'utiliser sans la maintenire enfoncée pendant que vous pressez d'autre touches. (#230)
+- L'annonce de titre des lignes et colonnes de tableaux est maintenant supportée dans Microsoft Excel. Appuyez sur NVDA+maj+c pour définir la ligne contenant le titre des colonnes, et NVDA+maj+r pour la colonne contenant le titre des lignes. Appuyer deux fois rapidement l'une de ces combinaison efface le paramètre. (#1519)
 - Support pour les afficheurs braille HIMS Braille Sense, Braille EDGE et SyncBraille. (#1266, #1267)
 - Lorsque les notifications Toast Windows 8 apparaissent, NVDA les annonce et déplace le navigateur d'objet dessus pour plus d'interaction. (#2143)
 - Support expérimentale des écrans tactiles sous Windows 8, incluant :
@@ -53,7 +54,6 @@ Les apports majeurs de cette version incluent le support de la saisie des caract
 
 
 == Corrections de Bogues ==
-- Dans Blio, le contenu des livres peut maintenant être lu en braille. (#2139)
 - Sous Windows Vista et supérieur, NVDA ne traite plus la touche Windows comme étant gardée appuyée lors du déverrouillage après l'avoir verrouillé en appuyant Windows+L. (#1856)
 - Dans Adobe Reader, les entêtes de colonnes sont maintenant bien reconnues comme des cellules ; P.Ex. les coordonnées sont annoncées et sont accessibles avec les touches de navigation pour les tableaux. (#2444)
 - Dans Adobe Reader, les cellules sur plusieurs colonnes sont correctement traitées. (#2437, #2438, #2450)
@@ -89,6 +89,8 @@ Les apports majeurs de cette version incluent le support de la saisie des caract
 - Mise à jour du support d'Adobe Digital Editions pour qu'il fonctionne avec la version 2.0. (#2688)
 - Appuyer sur NVDA+FlècheHaute lorsqu'on est dans une zone de liste dans Internet explorer et autres documents MSHTML ne lira plus tous les éléments. Seul l'élément actif sera lu. (#2337)
 - Les dictionnaires de paroles se sauvegarderont bien quand on utilise un dièse (#) dans le champ Mort réel et Remplacement. (#961)
+- Le mode navigation dans les documents MSHTML (ex : Internet Explorer) affiche maintenant le contenu visible contene dans du contenu invisible. Spécifiquement : les éléments ayant un style visibility:visible contenu dans un élément avec le style visibility:hidden. (#2097)
+- Les liens du centre de sécurité de Windows XP ne rapportent plus de texte superflu après leur nom. (#1331)
 
 
 == Changements pour les développeurs ==
