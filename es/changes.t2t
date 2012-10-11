@@ -13,6 +13,7 @@ Lo subrayable de esta versión incluye el soporte para la entrada de caracteres 
  - Anunciado de lectura de cadenas.
 - La presencia de subrayados y tachados ahora se anuncia en documentos de Adobe Reader. (#2410)
 - Cuando la función Windows Sticky Keys está activada, la tecla modificadora de NVDA ahora se comportará como las otras teclas modificadoras. Esto te permite utilizar la tecla modificadora de NVDA sin la necesidad de mantener pulsada mientras pulsas otras teclas. (#230)
+- Ahora se soporta el anunciado automático de encabezados de columna y de fila en Microsoft Excel. Pulsa NVDA+shift+c para configurar la fila que contenga encabezados de columna, y NVDA+shift+r para la columna que contenga encabezados de fila. Pulsa el script dos veces en sucesión rápida para limpiar la opción. (#1519)
 - Soporte para las líneas braille HIMS Braille Sense, Braille EDGE y SyncBraille. (#1266, #1267)
 - Cuando las Notificaciones de Windows 8 aparezcan, NVDA las anunciará y moverá el navegador de objetos allí para una mayor interacción. (#2143)
 - Soporte experimental para pantallas Táctiles en Windows 8, incluyendo:
@@ -53,7 +54,6 @@ Lo subrayable de esta versión incluye el soporte para la entrada de caracteres 
 
 
 == Corrección de Fallos ==
-- En Blio, el contenido de los libros ahora puede leerse en braille. (#2139)
 - En Windows Vista y posterior, NVDA ya no trata incorrectamente la tecla Windows como es al mantenerla pulsada cuando se desbloquea Windows después de bloquearla pulsando Windows+l. (#1856)
 - En Adobe Reader, los encabezados de fila ahora se reconocen correctamente como celdas de tabla; es decir, las coordenadas se anuncian y se pueden acceder utilizando órdenes de navegación de tabla. (#2444)
 - En Adobe Reader, las celdas de tabla que abarcan más de una columna y/o fila ahora se manejan correctamente. (#2437)
@@ -89,6 +89,8 @@ Lo subrayable de esta versión incluye el soporte para la entrada de caracteres 
 - Actualizado el soporte de Adobe Digital Editions para que funcione en la versión 2.0. (#2688)
 - Pulsando NVDA+flecha arriba mientras se esté en un cuadro combinado en Internet Explorer y otros documentos MSHTML ya no se leerán incorrectamente todos los elementos. Por lo contrario, sólo se leerá el elemento activo. (#2337)
 - Los diccionarios del habla ahora se guardarán apropiadamente cuando se utilice un signo de número (#) dentro de los campos de edición patrón o reemplazar. (#961)
+- El modo navegación para documentos MSHTML (ej.: Internet Explorer) ahora muestra correctamente el contenido visible que hay dentro del contenido oculto. Específicamente: elementos con un estilo visibility:visible en un elemento con estilo visibility:hidden. (#2097)
+- Los enlaces en el Centro de Seguridad de Windows XP ya no anuncian basura aleatoriamente después de sus nombres. (#1331)
 
 
 == Cambios para Desarrolladores ==
