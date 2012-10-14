@@ -3,7 +3,6 @@
 #
 
 source checkProgs.sh
-source languages.sh
 
 force=""
 if [ "$1" == "--force" ]; then

@@ -47,3 +47,5 @@ elif [ "$XGETTEXT" == "" ]; then
     exit 1
 fi
 
+source systemData.sh
+

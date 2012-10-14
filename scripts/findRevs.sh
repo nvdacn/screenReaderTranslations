@@ -2,7 +2,6 @@
 
 # make sure that the programs that we need are available
 source checkProgs.sh
-source languages.sh
 
 # variables which will be used later
 # to construct a complete commit message for the svn.

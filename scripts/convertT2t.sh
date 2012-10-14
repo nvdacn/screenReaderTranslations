@@ -4,7 +4,6 @@
 # Convert our t2t files to html.
 
 source checkProgs.sh
-source languages.sh
 
 git svn rebase
 
