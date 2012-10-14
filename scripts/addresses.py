@@ -25,7 +25,7 @@ addresses = {
     },
     'cs': {
         'lang': 'Czech',
-        'email': ['Radek zalud <radek.zalud@seznam.cz>'],
+        'email': ['Radek zalud <radek.zalud@seznam.cz>', 'Martina Letochova <letochova@seznam.cz>'],
     },
     'da': {
         'lang': 'Danish',
