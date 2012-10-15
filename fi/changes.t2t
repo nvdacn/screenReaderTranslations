@@ -4,7 +4,7 @@
 %!includeconf: ../changes.t2tconf
 
 = 2012.3 =
-Tämän version uusia ominaisuuksia ovat mm. tuki aasialaisten kielten merkkien syöttämiselle, kokeellinen tuki kosketusnäytöille Windows 8:ssa, sivunumeroiden lukeminen ja paranneltu taulukoiden tuki Adobe Readerissa, taulukkokomennot aktiivisille taulukon riveille ja Windowsin listanäkymäsäätimille sekä tuki usealle uudelle pistenäytölle.
+Tämän version uusia ominaisuuksia ovat mm. tuki aasialaisten kielten merkkien syöttämiselle, kokeellinen tuki kosketusnäytöille Windows 8:ssa, sivunumeroiden lukeminen ja paranneltu taulukoiden tuki Adobe Readerissa, taulukkokomennot aktiivisille taulukon riveille ja Windowsin listanäkymäsäätimille, tuki usealle uudelle pistenäytölle sekä rivien ja sarakkeiden ylätunnisteiden lukeminen Microsoft Excelissä.
 
 == Uudet ominaisuudet ==
 - NVDA tukee nyt aasialaisten kielten merkkien kirjoittamista IME- ja Tekstipalvelu-syöttömenetelmillä kaikissa sovelluksissa. Lisäksi on mahdollista:
@@ -15,7 +15,7 @@ Tämän version uusia ominaisuuksia ovat mm. tuki aasialaisten kielten merkkien 
 - NVDA-näppäin toimii nyt kuin muutkin toimintonäppäimet Windowsin alasjäävien näppäinten ollessa käytössä. Tämä mahdollistaa NVDA-näppäimen käytön tarvitsematta pitää sitä alhaalla painettaessa samaan aikaan muita näppäimiä. (#230)
 - Sarakkeiden ja rivien ylätunnisteiden automaattista lukemista tuetaan nyt Microsoft Excelissä. Sarakkeiden ylätunnisteet sisältävä rivi määritetään painamalla NVDA+Shift+C ja rivien ylätunnisteet sisältävä sarake painamalla NVDA+Shift+R. Asetukset nollataan painamalla näitä komentoja kahdesti. (#1519)
 - Tuki HIMS Braille Sense-, Braille EDGE- ja SyncBraille -pistenäytöille. (#1266, #1267)
-- Kun Toast-ilmoitukset tulevat näkyviin Windows 8:ssa, NVDA lukee ne ja siirtää navigointiobjektin niiden kohdalle lisävuorovaikutuksen mahdollistamiseksi. (#2143)
+- NVDA lukee Windows 8:n Toast-ilmoitukset niiden tullessa näkyviin, jos kuplailmoitusten lukeminen on käytössä. (#2143)
 - Kokeellinen tuki kosketusnäytöille Windows 8:ssa, mukaan lukien:
  - Sormen alla olevan tekstin lukeminen sitä liikutettaessa
  - Useita objektinavigointiin, tekstin lukemiseen ja muihin NVDA-komentoihin tarkoitettuja eleitä.
@@ -90,7 +90,10 @@ Tämän version uusia ominaisuuksia ovat mm. tuki aasialaisten kielten merkkien 
 - yhdistelmäruudussa oltaessa ei enää lueta virheellisesti sen kaikkia kohteita NVDA+alanuoli-näppäimiä painettaessa Internet Explorerissa ja muissa MSHTML-dokumenteissa. Nyt vain aktiivinen kohde luetaan. (#2337)
 - Puhesanastot tallentuvat nyt oikein käytettäessä Korvattava- ja Korvaava-kentissä #-merkkiä. (#961)
 - Piilotetussa sisällössä oleva näkyvä sisältö näytetään nyt oikein selaustilassa MSHTML-dokumenteissa (esim. Internet Explorerissa). Erityisesti elementit, joissa on tyylinä visibility:visible sellaisen elementin sisässä, jossa on tyylinä visibility:hidden. (#2097)
-- Windows XP:n Tietoturvakeskuksen linkkien kohdalla ei enää niiden nimien jälkeen lueta satunnaista roskaa. (#1331)
+- Windows XP:n tietoturvakeskuksen linkkien kohdalla ei enää niiden nimien jälkeen lueta satunnaista roskaa. (#1331)
+- UI Automation -tekstisäätimet (esim. Windows 7:n Käynnistä-valikon hakukenttä) luetaan nyt oikein siirrettäessä hiiri niiden päälle.
+- Näppäimistöasettelun vaihtumisia ei enää ilmoiteta lue kaikki -toiminnon aikana, mikä oli erityisen ongelmallista monikielisissä asiakirjoissa, mukaan lukien arabialainen teksti. (#1676)
+- Joidenkin muokattavien UI Automation -tekstisäädinten  (esim. Windows 7:n/8:n Käynnistä-valikon hakuruutu) koko sisältöä ei enää lueta joka kerta sen muuttuessa.
 
 
 = 2012.2.1 =
