@@ -1,0 +1,7 @@
+------------------------------------------------------------
+revno: 5540
+committer: Michael Curran <mick@kulgan.net>
+branch nick: main
+timestamp: Fri 2012-10-12 15:53:40 +1000
+message:
+  When trying to instanciate a UIATextInfo by screen coordinates, make sure to raise NotImplementedError so that the UIA object itself is still announced if moving the mouse over it, rather than throwing an error and staying silent. IUIAutomationTextPattern::rangeFromPoint should really be used hear, but it seems to freeze the UI Automation client library.
