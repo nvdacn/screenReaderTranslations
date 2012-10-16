@@ -4,7 +4,7 @@ Quoi de Neuf dans NVDA
 %!includeconf: ../changes.t2tconf
 
 = 2012.3 =
-Les apports majeurs de cette version incluent le support de la saisie des caractèrs asiatiques ; le support expérimental des écrans tactiles sous Windows 8 ; l'annonce des numéro de page et le support amélioré des tableaux dans Adobe Reader ; le support de la naviation entre les cellules des liste multi-colones ou en tableau ; et le support de plusieurs nouveaux afficheurs Braille.
+Les apports majeurs de cette version incluent le support de la saisie des caractèrs asiatiques ; le support expérimental des écrans tactiles sous Windows 8 ; l'annonce des numéro de page et le support amélioré des tableaux dans Adobe Reader ; le support de la naviation entre les cellules des liste multi-colones ou en tableau ; le support de plusieurs nouveaux afficheurs Braille ; et l'annonce des entêtes de lignes et colonnes dans les tableaux Microsoft Excel.
 
 == Nouvelles Fonctionnalités ==
 - NVDA supporte maintenant la saisie des caractères asiatiques en utilisant les méthodes IME et les services de saisie de texte dans toutes les applications, incluant :
@@ -15,7 +15,7 @@ Les apports majeurs de cette version incluent le support de la saisie des caract
 - Quand la fonction touche rémanentes de Windows est activée, la touche NVDA se comportera comme les autre touches de combinaisons. Cela vous permet de l'utiliser sans la maintenire enfoncée pendant que vous pressez d'autre touches. (#230)
 - L'annonce de titre des lignes et colonnes de tableaux est maintenant supportée dans Microsoft Excel. Appuyez sur NVDA+maj+c pour définir la ligne contenant le titre des colonnes, et NVDA+maj+r pour la colonne contenant le titre des lignes. Appuyer deux fois rapidement l'une de ces combinaison efface le paramètre. (#1519)
 - Support pour les afficheurs braille HIMS Braille Sense, Braille EDGE et SyncBraille. (#1266, #1267)
-- Lorsque les notifications Toast Windows 8 apparaissent, NVDA les annonce et déplace le navigateur d'objet dessus pour plus d'interaction. (#2143)
+- Lorsque les notifications Toast Windows 8 apparaissent, NVDA les annonce si l'annonce des infobulles est activée. (#2143)
 - Support expérimentale des écrans tactiles sous Windows 8, incluant :
 - Lecture du texte sous le doigt lorsqu'on le bouge autour
 - Beaucoup de gestes pour naviguer entre les objets, le curseur de revue, et d'autres commandes de NVDA.
@@ -91,6 +91,9 @@ Les apports majeurs de cette version incluent le support de la saisie des caract
 - Les dictionnaires de paroles se sauvegarderont bien quand on utilise un dièse (#) dans le champ Mort réel et Remplacement. (#961)
 - Le mode navigation dans les documents MSHTML (ex : Internet Explorer) affiche maintenant le contenu visible contene dans du contenu invisible. Spécifiquement : les éléments ayant un style visibility:visible contenu dans un élément avec le style visibility:hidden. (#2097)
 - Les liens du centre de sécurité de Windows XP ne rapportent plus de texte superflu après leur nom. (#1331)
+- Les champs de texte UI Automation (Ex : la zone de recherche du menu démarrer de Windows 7) sont dèsormais correctement annoncés lorsqu'on déplace la souris autour au lieux de ne rien dire.
+- Les changements de disposition de clavier ne sont plus annoncés pendant dire tout, ce qui était particulièrement problémathique dans les documents multi-lingues incluant du texte en Arabe. (#1676)
+- Le contenu entier de certains champs de texte UI Automation (ex : le champ de recherche dans le menu démarrer de Windows 7/8) n'est plus annoncé à chaque changement.
 
 
 == Changements pour les développeurs ==
@@ -104,6 +107,7 @@ Les apports majeurs de cette version incluent le support de la saisie des caract
  - xgettext et msgfmt de GNU Gettext doivent être utiliser pour créer tout fichier po ou mo. Les outils Python ne supportent pas les messages de contextes.
  - Pour xgettext, passez le paramètre de ligne de commande --keyword=pgettext:1c,2 pour activer l'inclusion des messages de contextes.
  - Visitez http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts pour plus d'informations.
+- Il est maintenant possible d'accéder aux modules intégrés de NVDA afin d'en étendre les fonctionnalités. Reportez-vous au module nvdaBuiltin pour plus de détails.
 
 
 = 2012.2.1 =
