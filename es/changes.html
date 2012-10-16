@@ -13,7 +13,8 @@
 <H2>2012.3</H2>
 
 <P>
-Lo subrayable de esta versión incluye el soporte para la entrada de caracteres asiáticos; soporte experimental para pantallas táctiles en Windows 8; anunciado de números de página y soporte mejorado para tablas en Adobe Reader; órdenes de navegación de tabla en filas de tabla enfocadas y controles de vista en lista de Windows; y soporte para algunas líneas braille más.
+Lo subrayable de esta versión incluye el soporte para la entrada de caracteres asiáticos; soporte experimental para pantallas táctiles en Windows 8; anunciado de números de página y soporte mejorado para tablas en Adobe Reader; órdenes de navegación de tabla en filas de tabla enfocadas y controles de vista en lista de Windows; soporte para algunas líneas braille más; y encabezados de columna en Microsoft Excel.
+.
 </P>
 
 <H3>Nuevas Características</H3>
@@ -27,9 +28,9 @@ Lo subrayable de esta versión incluye el soporte para la entrada de caracteres 
  </UL>
 <LI>La presencia de subrayados y tachados ahora se anuncia en documentos de Adobe Reader. (<A HREF="http://www.nvda-project.org/ticket/2410">#2410</A>)
 <LI>Cuando la función Windows Sticky Keys está activada, la tecla modificadora de NVDA ahora se comportará como las otras teclas modificadoras. Esto te permite utilizar la tecla modificadora de NVDA sin la necesidad de mantener pulsada mientras pulsas otras teclas. (<A HREF="http://www.nvda-project.org/ticket/230">#230</A>)
-<LI>Ahora se soporta el anunciado automático de encabezados de columna y de fila en Microsoft Excel. Pulsa NVDA+shift+c para configurar la fila que contenga encabezados de columna, y NVDA+shift+r para la columna que contenga encabezados de fila. Pulsa el script dos veces en sucesión rápida para limpiar la opción. (<A HREF="http://www.nvda-project.org/ticket/1519">#1519</A>)
+<LI>Ahora se soporta el anunciado automático de encabezados de columna y de fila en Microsoft Excel. Pulsa NVDA+shift+c para configurar la fila que contenga encabezados de columna y NVDA+shift+r para la columna que contenga encabezados de fila. Pulsa el script dos veces en sucesión rápida para limpiar la opción. (<A HREF="http://www.nvda-project.org/ticket/1519">#1519</A>)
 <LI>Soporte para las líneas braille HIMS Braille Sense, Braille EDGE y SyncBraille. (<A HREF="http://www.nvda-project.org/ticket/1266">#1266</A>, <A HREF="http://www.nvda-project.org/ticket/1267">#1267</A>)
-<LI>Cuando las Notificaciones de Windows 8 aparezcan, NVDA las anunciará y moverá el navegador de objetos allí para una mayor interacción. (<A HREF="http://www.nvda-project.org/ticket/2143">#2143</A>)
+<LI>Cuando las Notificaciones de Windows 8 aparezcan, NVDA las anunciará si el anunciado de globos de ayuda está habilitado. (<A HREF="http://www.nvda-project.org/ticket/2143">#2143</A>)
 <LI>Soporte experimental para pantallas Táctiles en Windows 8, incluyendo:
  <UL>
  <LI>Lectura de texto directamente bajo tu dedo mientras lo mueves
@@ -111,6 +112,9 @@ Lo subrayable de esta versión incluye el soporte para la entrada de caracteres 
 <LI>Los diccionarios del habla ahora se guardarán apropiadamente cuando se utilice un signo de número (#) dentro de los campos de edición patrón o reemplazar. (<A HREF="http://www.nvda-project.org/ticket/961">#961</A>)
 <LI>El modo navegación para documentos MSHTML (ej.: Internet Explorer) ahora muestra correctamente el contenido visible que hay dentro del contenido oculto. Específicamente: elementos con un estilo visibility:visible en un elemento con estilo visibility:hidden. (<A HREF="http://www.nvda-project.org/ticket/2097">#2097</A>)
 <LI>Los enlaces en el Centro de Seguridad de Windows XP ya no anuncian basura aleatoriamente después de sus nombres. (<A HREF="http://www.nvda-project.org/ticket/1331">#1331</A>)
+<LI>Los controles de texto UI Automation ej.:  el campo de búsqueda en el menú de inicio de Windows 7 ahora se anuncian correctamente cuando se mueva el ratón sobre ellos en lugar de permanecer en silencio.
+<LI>Los cambios de distribución del teclado ya no se anuncian durante leer todo, lo cual era especialmente problemático para documentos multilingües incluyendo texto árabe. (<A HREF="http://www.nvda-project.org/ticket/1676">#1676</A>)
+<LI>Todo el contenido de algunos controles de texto editable UI Automation (ej.: el cuadro de búsqueda en el menú de inicio de Windows 7/8) ya no se anuncia cada vez que cambie.
 </UL>
 
 <H3>Cambios para Desarrolladores</H3>
@@ -128,6 +132,7 @@ Lo subrayable de esta versión incluye el soporte para la entrada de caracteres 
  <LI>Para xgettext, pasa el argumento de línea de órdenes --keyword=pgettext:1c,2 para habilitar la inclusión de mensajes contextuales.
  <LI>Mira <A HREF="http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts">http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts</A> para más información.
  </UL>
+<LI>Ahora es posible acceder a los módulos compilados de NVDA donde hayan sido sobreescritos por módulos de terceros. Mira el módulo nvdaBuiltin para detalles.
 </UL>
 
 <H2>2012.2.1</H2>
