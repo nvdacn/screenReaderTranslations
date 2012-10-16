@@ -4,7 +4,7 @@ Que hai de Novo no NVDA
 %!includeconf: ../changes.t2tconf
 
 = 2012.3 =
-O subliñable desta versión inclúe o soporte para a entrada de caracteres asiáticos; soporte experimental para pantallas tactiles en Windows 8; anunciado de números de páxina e soporte mellorado para táboas en Adobe Reader; ordes de navegación de táboa en filas de tabla enfocadas e controis de vista en lista de Windows; e o soporte para algunhas liñas braille máis.
+O subliñable desta versión inclúe o soporte para a entrada de caracteres asiáticos; soporte experimental para pantallas tactiles en Windows 8; anunciado de números de páxina e soporte mellorado para táboas en Adobe Reader; ordes de navegación de táboa en filas de táboa enfocadas e controis de vista en lista de Windows; o soporte para algunhas liñas braille máis; e cabeceiras de columna no Microsoft Excel.
 
 == Novas Características ==
 - NVDA agora pode soportar entrada de caracteres asiáticos utilizando IME e métodos de servicio de entrada de texto en todas as aplicacións, incluindo:
@@ -13,9 +13,9 @@ O subliñable desta versión inclúe o soporte para a entrada de caracteres asi�
  - Anunciado de lectura de cadeas.
 - A presenza de subliñados e tachados agora anúnciase nos documentos de Adobe Reader. (#2410)
 - Cando a función Windows Sticky Keys está activada, a tecla modificadora de NVDA agora comportarase como as outras teclas modificadoras. Esto permíteche utilizar a tecla modificadora do NVDA sen a necesidade de manter premeda mentres premes outras teclas. (#230)
-- Agora sopórtase o anunciado automático de cabeceiras de columna e de fila no Microsoft Excel. Preme NVDA+shift+c para configurar a fila que conteña cabeceiras de columna, e NVDA+shift+r para a columna que conteña cabeceiras de fila. Preme o script dúas veces en sucesión rápida para limpiar a opción. (#1519)
+- Agora sopórtase o anunciado automático de cabeceiras de columna e de fila no Microsoft Excel. Preme NVDA+shift+c para configurar a fila que conteña cabeceiras de columna e NVDA+shift+r para a columna que conteña cabeceiras de fila. Preme o script dúas veces en sucesión rápida para limpiar a opción. (#1519)
 - Soporte para as liñas braille HIMS Braille Sense, Braille EDGE y SyncBraille. (#1266, #1267)
-- Cando as Notificacións de Windows 8 aparezan, NVDA anunciaráas e moverá o navegador de obxectos alí para unha maior interacción. (#2143)
+- Cando as Notificacións de Windows 8 aparezan, NVDA anunciaráas se os globos de axuda están habilitados. (#2143)
 - Soporte experimental para pantallas Tactiles no Windows 8, incluíndo:
  - Lectura de texto directamente baixo o teu dedo mentres o moves
  - Moitos xestos para levar a cabo a navegación por obxectos, revisión de texto, e outras ordes de NVDA.
@@ -91,6 +91,9 @@ O subliñable desta versión inclúe o soporte para a entrada de caracteres asi�
 - Os diccionarios da fala agora gardaranse apropriadamente cando se utilice un signo de número (#) dentro dos campos de edición patrón ou reemprazar. (#961)
 - O modo navegación para documentos MSHTML (ex.: Internet Explorer) agora amosa correctamente o contido visible que hai dentro do contido oculto. Específicamente: elementos cun estilo visibility:visible nun elemento con estilo visibility:hidden. (#2097)
 - As ligas no Centro de Seguridade de Windows XP xa non anuncian lixo aleatoriamente despois dos seus nomes. (#1331)
+- Os controis de texto UI Automation ex.:  o campo de procura no menú de inicio do Windows 7 agora anúncianse correctamente cando se move o rato sobor deles en lugar de quedar en silenzo.
+- Os cambios de distribución do teclado xa non se anuncian durante ler todo, o que era especialmente problemático para documentos multilingües incluíndo texto árabe. (#1676)
+- Todo o contido dalgúns controis de texto editable UI Automation (ex.: o cadro de procura no menú de inicio do Windows 7/8) xa non se anuncia cada vez que cambie.
 
 
 == Cambios para Desenroladores ==
@@ -104,6 +107,7 @@ O subliñable desta versión inclúe o soporte para a entrada de caracteres asi�
  - Deben utilizarse xgettext e msgfmt de GNU gettext para criar calquera ficheiro PO e MO. As ferramentas de Python non soportan mensaxes contextuais.
  - Para xgettext, pasa o argumento de liña de órdenes --keyword=pgettext:1c,2 para habilitar a inclusión de mensaxes contextuais.
  - Mira http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts para máis información.
+- Agora é posible acceder ós módulos compilados de NVDA onde foran sobreescribidos por módulos de terceiros. Olla o módulo nvdaBuiltin para detalles.
 
 
 = 2012.2.1 =
