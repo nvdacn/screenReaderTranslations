@@ -5,7 +5,6 @@ Qué hay de Nuevo en NVDA
 
 = 2012.3 =
 Lo subrayable de esta versión incluye el soporte para la entrada de caracteres asiáticos; soporte experimental para pantallas táctiles en Windows 8; anunciado de números de página y soporte mejorado para tablas en Adobe Reader; órdenes de navegación de tabla en filas de tabla enfocadas y controles de vista en lista de Windows; soporte para algunas líneas braille más; y encabezados de columna en Microsoft Excel.
-.
 
 == Nuevas Características ==
 - NVDA ahora puede soportar entrada de caracteres asiáticos utilizando IME y métodos de servicio de entrada de texto en todas las aplicaciones, incluyendo:
@@ -85,7 +84,7 @@ Lo subrayable de esta versión incluye el soporte para la entrada de caracteres 
 - Durante leer todo, NVDA ya no regresará incorrectamente a al idioma predeterminado si una línea no finaliza una frase. (#2630)
 - Ahora se detecta correctamente la información de fuente en Adobe Reader 10.1 y posteriores. (#2175)
 - En Adobe Reader, si se proporciona texto alternativo, sólo se procesará ese texto. Anteriormente, algunas veces se incluía texto extraño. (#2174)
-- Cuando un documento contiene una aplicación, el contenido de la aplicación ya no se incluye en modo navegación. Esto previene de movimientos inesperados dentro de la aplicación cuando se navega. Puedes interactuar con la aplicación del mismo modo que para los objetos integrados. (#990)
+- Donde un documento contenga una aplicación, el contenido de la aplicación ya no se incluye en modo navegación. Esto previene de movimientos inesperados dentro de la aplicación cuando se navega. Puedes interactuar con la aplicación del mismo modo que para los objetos integrados. (#990)
 - En aplicaciones de Mozilla, el valor de los botones de flecha ahora se anuncia correctamente cuando cambian. (#2653)
 - Actualizado el soporte de Adobe Digital Editions para que funcione en la versión 2.0. (#2688)
 - Pulsando NVDA+flecha arriba mientras se esté en un cuadro combinado en Internet Explorer y otros documentos MSHTML ya no se leerán incorrectamente todos los elementos. Por lo contrario, sólo se leerá el elemento activo. (#2337)
@@ -95,6 +94,8 @@ Lo subrayable de esta versión incluye el soporte para la entrada de caracteres 
 - Los controles de texto UI Automation ej.:  el campo de búsqueda en el menú de inicio de Windows 7 ahora se anuncian correctamente cuando se mueva el ratón sobre ellos en lugar de permanecer en silencio.
 - Los cambios de distribución del teclado ya no se anuncian durante leer todo, lo cual era especialmente problemático para documentos multilingües incluyendo texto árabe. (#1676)
 - Todo el contenido de algunos controles de texto editable UI Automation (ej.: el cuadro de búsqueda en el menú de inicio de Windows 7/8) ya no se anuncia cada vez que cambie.
+- Cuando te muevas entre grupos en la pantalla de inicio de Windows 8, ya no se anunciará el nombre del primer mosaico como el nombre del grupo, lo que puede acelerar la navegación. (#2658)
+- Al abrir la pantalla de inicio de Windows 8, el foco se coloca correctamente sobre el primer mosaico en lugar de saltar a la raíz de la pantalla de inicio, lo cual puede confundir en la navegación. (#2720)
 
 
 == Cambios para Desarrolladores ==
@@ -109,6 +110,7 @@ Lo subrayable de esta versión incluye el soporte para la entrada de caracteres 
  - Para xgettext, pasa el argumento de línea de órdenes --keyword=pgettext:1c,2 para habilitar la inclusión de mensajes contextuales.
  - Mira http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts para más información.
 - Ahora es posible acceder a los módulos compilados de NVDA donde hayan sido sobreescritos por módulos de terceros. Mira el módulo nvdaBuiltin para detalles.
+- Ahora puede utilizarse el soporte de traducción de complementos dentro del módulo installTasks del complemento. (#2715)
 
 
 = 2012.2.1 =
@@ -528,11 +530,11 @@ Lo subrayable en esta versión incluye el anunciado de colores para algunos cont
  - La pulsación de teclas en el teclado del sistema se incluye en la clase keyboardHandler.KeyboardInputGesture.
  - La pulsación de botones, ruedas y otros controles en una línea braille se incluye en las subclases de la clase braille.BrailleDisplayGesture . Estas subclases se proporcionan por cada controlador de línea braille.
 - Los gestos de entrada se vinculan a ScriptableObjects utilizando el método ScriptableObject.bindGesture() en una instancia o un diccionario __gestures en la clase cuyos identificadores de mapas de gestos a nombres de scripts. Mira baseObject.ScriptableObject para detalles.
-- Los módulos de aplicación ya no tienen fichero de mapa de teclas. All input gesture bindings must be done in the app module itself.
-- All scripts now take an InputGesture instance instead of a key press.
- - KeyboardInputGestures can be sent on to the OS using the send() method of the gesture.
-- To send an arbitrary key press, you must now create a KeyboardInputGesture using KeyboardInputGesture.fromName() and then use its send() method.
-- Locales may now provide an input gesture map file to add new bindings or override existing bindings for scripts anywhere in NVDA. (#810)
+- Los módulos de aplicación ya no tienen fichero de mapa de teclas. Todos los vínculos de entrada de gestos deben hacerse en el appModule mismo.
+- Todos los scripts ahora toman una sentencia InputGesture en lugar de una pulsación de tecla.
+ - Pueden enviarse keyboardInputGestures al OS utilizando el método send() del gesto.
+- Para enviar una pulsación de tecla arbitrariamente, ahora debes crear un KeyboardInputGesture utilizando KeyboardInputGesture.fromName() y luego utilizar su método send().
+- Las localizaciones ahora podrán proporcionar un fichero de mapa de gesto de entrada para añadir nuevos vínculos o sobreescribir los vínculos existentes para los scripts en cualquier sitio de NVDA. (#810)
  - Locale gesture maps should be placed in locale\LANG\gestures.ini, where LANG is the language code.
  - See inputCore.GlobalGestureMap for details of the file format.
 - The new LiveText and Terminal NVDAObject behaviors facilitate automatic reporting of new text. See those classes in NVDAObjects.behaviors for details. (#936)
