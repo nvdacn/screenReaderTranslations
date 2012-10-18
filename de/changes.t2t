@@ -92,6 +92,9 @@ Schwerpunkte in dieser Version sind: Unterstützung für asiatische Eingabemetod
 - UI Automation-Texteingabefelder wie z.B. das Suchfeld im Windows-7-Startmenü werden nun korrekt erkannt, wenn Sie die Maus darüberbewegen.
 - der Wechsel des Tastaturschemas wird nun nicht mehr während des Lesens von Dokumenten gemeldet. Dies war bei mehrsprachigen Texten bisher problematisch. (#1676)
 - bei UI Automation-Texteingabefeldern wird nun nicht mehr fälschlicherweise der gesamte Inhalt ausgegeben (z.B. beim Suchfeld im Windows 7/8-startmenü).
+- Beim Navigieren zwischen Gruppen im Windows 8-Startbildschirm wird die Navigation beschleunigt, indem der Titel des ersten Eintrags nicht mehr als Gruppenname angegeben wird. (#2658)
+- Wenn Sie im Windows 8 den Startbildschirm aufrufen, wird der Fokus korrekt auf den ersten Eintrag gesetzt; nicht mehr auf das Stammobjekt, was die Navigation beeinträchtigt hat.  (#2720)
+- nvda wird nun nicht mehr abstürzen, wenn der Ordnername des Benutzerprofils Multibyte-Zeichen enthält. (#2729)
 
 == Änderungen für Entwickler ==
 - Beim Start von NVDA wird nun das vorherige Protokoll nach "nvda-old.log" kopiert. Sollte NVDA also einmal abstürzen oder neu gestartet werden müssen, steht das Protokoll der vorigen NVDA-Sitzung zu Inspektionszwecken zur Verfügung. (#916)
@@ -105,7 +108,7 @@ Schwerpunkte in dieser Version sind: Unterstützung für asiatische Eingabemetod
  - Bei der Verwendung von xgettext müssen Sie den Kommandozeilenparameter --keyword=pgettext:1c,2 verwenden, um Meldungskontexte zu berücksichtigen.
  - Weitere Informationen zu Meldungskontexten finden Sie unter  http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts
 - Es ist nun möglich, af NVDA-interne Module zuzugreifen, wenn diese von Drittanbietern überschrieben wurden. Sehen Sie sich das Modul nvdaBuiltin für weitere Informationen an.
-
+- Die Übersetzung von Erweiterungen funktioniert nun auch innerhalb des Moduls für Installationsaufgaben. (#2715)
 
 = 2012.2.1 =
 Diese Version behebt einige potenzielle Sicherheitsprobleme (in dem Python auf die Version 2.7.3 aktualisiert wurde).
