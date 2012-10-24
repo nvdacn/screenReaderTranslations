@@ -679,18 +679,21 @@ Diese Version enthält überwiegend Fehlerbehebungen und Verbesserungen
 - Im Synthesizer-Einstellungsring und im Dialog Stimmeneinstellungen werden nun fehlerhaft installierte SAPI5-Stimmen von der Auswahl ausgeschlossen. Vormals konnte der SAPI5-Treiber nicht geladen werden, wenn auch nur eine Stimme fehlerhaft installiert war.
 - Die Einstellung "Tastenkombinationen anzeigen" greift nun auch in virtuellen Ansichten. (#486)
 - Wenn die Ankündigung von Tabellen deaktiviert ist, werden Zeilen- und Spaltenkoordinaten nun nicht mehr irrtümlich angezeigt.
+- In virtuellen Puffern werden die Koordinaten von Reihen und Spalten nun korrekt angezeigt, wenn Sie aus einer Tabelle heraus, und wieder hineinspringen, ohne zuvor innerhalb der Tabelle navigiert zu haben (z.B. wenn Sie in der ersten Zeile einer Tabelle Pfeil auf und anschließend wieder Pfeil ab drücken (#378).
 - In Microsoft Word und in mehrzeiligen Eingabefeldern in HTML werden jetzt auch Leerzeilen korrekt angezeigt. Bisher wurde immer der aktuelle Satz und nicht die aktuelle Zeile angezeigt. (#420)
 - Mehrere Sicherheitsprobleme beim Ausführen von NVDA in Anmeldefenstern oder sicheren Desktops behoben. (#515)
 - Wenn Sie sich in Eingabefeldern oder in Microft Word das gesamte Dokument vorlesen lassen, wird nun die Cursorposition richtig aktualisiert, wenn sich der Cursor über den Bildschirmrand hinaus bewegt. (#418)
 - Wenn in einem virtuellen Dokument innerhalb von Links oder klickbaren Elementen Grafiken existieren, die als für Bildschirmleser irrelevant markiert wurden, wird nun kein Text mehr angezeigt. (#423)
 - Korrekturen am Laptop-Tastaturschema. (#517)
-- Wenn die Braillezeile an die Anzaige (den Navigator) gekoppelt wird, kann nun auch innerhalb von Konsolenanwendungen korrekt navigiert werden.
+- Wenn die Braillezeile an die Anzeige (den Navigator) gekoppelt wird, kann nun auch innerhalb von Konsolenanwendungen korrekt navigiert werden.
 - In Teamtalk 3 und Teamtalk 4 Classic wird die Aussteuerungsanzeige nun nicht mehr irrtümlich aktualisiert. Ebenso werden jetzt Sonderzeichen in Unterhaltungsfenstern korrekt angezeigt.
 - Einträge im Windows-7-Startmenü werden nun nicht mehr doppelt angesagt. (#474)
 - Wenn Sie in Firefox 3.6 Links aktivieren, deren Ziel sich auf der selben Seite befindet (z.B. Links zum Überspringen von Navigationsleisten), platziert NVDA nun den Cursor an die richtige Stelle im virtuellen Dokument.
 - Problem behoben, wonach in manchen PDF-Dokumenten der Text nicht richtig aufbereitet wurde.
+- Zahlen, die durch einen Bindestrich getrennt sind, werden nun nicht mehr fals ausgesprochen z.B.  500-1000. (#547) 
 - Wenn Sie in Windows Update unter Windows XP Kontrollkästchen aktivieren, bleibt NVDA nun nicht mehr hängen. (#477)
 - Problem behoben, wonach es auf manchen Systemen zu Abstürzen kam, wenn sich Sprache und Signaltöne überlagerten. Dies war am ehesten zu merken, wenn Sie eSpeak verwendeten und beispielsweise im Windows Explorer viele Dateien kopieren. 
+- NVDA sagt nun nicht mehr an, wenn firefox beschäftigt ist  (z. B. wenn eine Seite oder der Browser aktualisiert wird) während sich das betreffende Dokument im Hintergrund befindet. Dies bewirkte eine irrtümliche Ansage der Statuszeile der aktiven Anwendung.
 - Wenn Sie mit Alt+Umschalt bzw. Strg+Umschalt das Tastaturschema ändern, zeigt nvda das neu eingestellte schema nun auch in Braille an. Bisher wurde das Schema nur angesagt.
 - Wenn die Ansage von Tabellen deaktiviert ist, werden Tabelleninformationen nicht mehr angesagt, wenn sich der Fokus ändert.
 - Einige Baumstrukturen in 64-Bit-Anwendungen wie z. B. das Inhaltsverzeichnis in Microsoft HTML Help) sind nun zugänglich. (#473)
@@ -788,7 +791,7 @@ die wichtigsten Neuerungen dieser version sind u.a. die Unterstützung von 64-bi
 - Wenn möglich werden nun Rechtschreibfehler ausgegeben. Dies kann in den Einstellungen zur Dokumentformatierung konfiguriert werden.
 - NVDA kann nun so konfiguriert werden, dass entweder alle oder nur sichtbare Fortschrittsanzeigen durch Signaltöne angezeigt werden. Alternativ kann auch eingestellt werden, dass der Fortschritt alle 10% angesagt wird.
 - In Richedit-steuerelementen können nun auch Links erkannt werden.
-- Die Maus kann nun auch Zeichenweise in Eingabefeldern bewegt werden. 
+- Die maus kann nun auf das Zeichen unter dem nvda-Cursor bewegt werden. Zuvor konnte die Maus lediglich in die Mitte eines Objekts bewegt werden.
 - In virtuellen Puffern bezieht sich nun die NVDA-Corsor-Navigation auf den Inhalt des virtuellen Puffers und nicht mehr auf den Inhalt des aktuellen Navigatorobjekts. Das bedeutet, dass Sie die Tasten(Konbinationen) zur Navigation innerhalb eines Objekts auch innerhalb virtueller Dokumente benutzen können.
 - Einige neue Zustände von Java-Steuerelementen werden nun erkannt.
 - Wird der Befehl "Titel ansagen" NVDA+T zweimal ausgeführt, wird der Titel buchstabiert. Wird er dreimal ausgeführt, wird der Titel in die Zwischenablage kopiert.
@@ -983,7 +986,7 @@ die wichtigsten Neuerungen dieser version sind u.a. die Unterstützung von 64-bi
 == Tastaturbefehle ==
 - NVDA+Umschalt+Nummernblock6 und NVDA+Umschalt+Nummernblock4 bewegen den Navigator rekursiv zum nächsten/vorigen Objekt. Dies macht es möglich, allein mit diesen zwei Tastaturbefehlen eine Anwendung zu erkunden, ohne in der Objekthierarchie auf- und abzusteigen. 
 - Sie können die Stimmeneinstellungen nun ändern, ohne den Dialog öffnen zu müssen. Hierzu dient der Synthesizer-Einstellungsring. mit NVDA+Strg+Pfeil links/rechts können Sie zwischen den Einstellungen wechseln. Die Einstellungen werden mit NVDA+Strg+Pfeil auf/ab geändert.
-- Befehl zm Ansagen des markierten Textes in Eingabefeldern (NVDA+Umschalt+Pfeil auf) hinzugefügt
+- Befehl zum Ansagen des markierten Textes in Eingabefeldern (NVDA+Umschalt+Pfeil auf) hinzugefügt
 - Einige Befehle, die Text sprechen, können nun zweimal ausgeführt werden, um den entsprechenden Text zu buchstabieren.
 - Die Dauergroßschreibtaste, die Einfügetaste der erweiterten Tastatur sowie die Einfügetaste des Nummernblocks können jetzt als NVDA-Tasten eingestellt werden. Wenn eine dieser Tasten zweimal gedrückt wird, wird der Tastendruck an das Betriebssystem weitergereicht, sodass die Taste ihre normale Funktion ausführt. Die NVDA-Taste kann im Dialog für Tastatureinstellungen geändert werden.
 
