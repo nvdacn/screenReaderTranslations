@@ -4,7 +4,7 @@ Quoi de Neuf dans NVDA
 %!includeconf: ../changes.t2tconf
 
 = 2012.3 =
-Les apports majeurs de cette version incluent le support de la saisie des caractèrs asiatiques ; le support expérimental des écrans tactiles sous Windows 8 ; l'annonce des numéro de page et le support amélioré des tableaux dans Adobe Reader ; le support de la naviation entre les cellules des liste multi-colones ou en tableau ; le support de plusieurs nouveaux afficheurs Braille ; et l'annonce des entêtes de lignes et colonnes dans les tableaux Microsoft Excel.
+Les apports majeurs de cette version incluent le support de la saisie des caractèrs asiatiques ; le support expérimental des écrans tactiles sous Windows 8 ; l'annonce des numéro de page et le support amélioré des tableaux dans Adobe Reader ; le support de la navigation entre les cellules des liste multi-colones ou en tableau ; le support de plusieurs nouveaux afficheurs Braille ; et l'annonce des entêtes de lignes et colonnes dans les tableaux Microsoft Excel.
 
 == Nouvelles Fonctionnalités ==
 - NVDA supporte maintenant la saisie des caractères asiatiques en utilisant les méthodes IME et les services de saisie de texte dans toutes les applications, incluant :
@@ -85,22 +85,22 @@ Les apports majeurs de cette version incluent le support de la saisie des caract
 - Les informations de mise en forme sont correctement détectées dans Adobe Reader 10.1 et plus récent. (#2175)
 - Dans Adobe Reader, si un texte alternatif est fourni, seulement ce texte sera rendu. Précédamment, du texte en trop était lu. (#2174)
 - Lorsqu'un document contient une application, le contenu de l'application n'est plus inclus dans le mode navigation. Cela permet d'éviter de se déplacer dans l'application de manière inattendue. On peut se déplacer dans l'application de la même manière que pour un objet inclus. (#990)
-- Dans les applications Mozilla, les valeurs des boutons rotatifs sont correctement rapportées lorsuqu'elles changent. (#2653)
+- Dans les applications Mozilla, les valeurs des boutons rotatifs sont correctement rapportées lorsqu'elles changent. (#2653)
 - Mise à jour du support d'Adobe Digital Editions pour qu'il fonctionne avec la version 2.0. (#2688)
 - Appuyer sur NVDA+FlècheHaute lorsqu'on est dans une zone de liste dans Internet explorer et autres documents MSHTML ne lira plus tous les éléments. Seul l'élément actif sera lu. (#2337)
-- Les dictionnaires de paroles se sauvegarderont bien quand on utilise un dièse (#) dans le champ Mort réel et Remplacement. (#961)
-- Le mode navigation dans les documents MSHTML (ex : Internet Explorer) affiche maintenant le contenu visible contene dans du contenu invisible. Spécifiquement : les éléments ayant un style visibility:visible contenu dans un élément avec le style visibility:hidden. (#2097)
+- Les dictionnaires de paroles se sauvegarderont bien quand on utilise un dièse (#) dans le champ Mot réel et Remplacement. (#961)
+- Le mode navigation dans les documents MSHTML (ex : Internet Explorer) affiche maintenant le contenu visible contenu dans du contenu invisible. Spécifiquement : les éléments ayant un style visibility:visible contenu dans un élément avec le style visibility:hidden. (#2097)
 - Les liens du centre de sécurité de Windows XP ne rapportent plus de texte superflu après leur nom. (#1331)
 - Les champs de texte UI Automation (Ex : la zone de recherche du menu démarrer de Windows 7) sont dèsormais correctement annoncés lorsqu'on déplace la souris autour au lieux de ne rien dire.
 - Les changements de disposition de clavier ne sont plus annoncés pendant dire tout, ce qui était particulièrement problémathique dans les documents multi-lingues incluant du texte en Arabe. (#1676)
 - Le contenu entier de certains champs de texte UI Automation (ex : le champ de recherche dans le menu démarrer de Windows 7/8) n'est plus annoncé à chaque changement.
 - Lorsqu'on navigue entre les groupes dans l'écran d'accueil de Windows 8, le nom de la première mosaïque ne sera plus pris comme le nom du groupe, ce qui peut accélérer la navigation. (#2658)
 - Lorsqu'on ouvre l'écran d'accueil de Windows 8, le focus est correctement placé sur le premier élément, au lieux de sauter au début de l'écran ce qui peut causer des confusions dans la navigation. (#2720)
-- NVDA ne plentera plus au démarrage lorsque le répertoire du profile de l'utilisateur contient des caractères multibyte. (#2729)
+- NVDA ne plantera plus au démarrage lorsque le répertoire du profile de l'utilisateur contient des caractères multibyte. (#2729)
 
 
 == Changements pour les développeurs ==
-- Le fichier journal précédant est maintenant renomé en nvda-old.log à l'initialisation de NVDA. Par conséquent, si NVDA plente ou est redémarré, les informations journalisées de cette session sont toujours accessibles pour inspection. (#916)
+- Le fichier journal précédent est maintenant renommé en nvda-old.log à l'initialisation de NVDA. Par conséquent, si NVDA plante ou est redémarré, les informations journalisées de cette session sont toujours accessibles pour inspection. (#916)
 - Accéder à la propriété role dans chooseNVDAObjectOverlayClasses ne la rend plus incorrecte et pas rapporté lors du focus pour certains objets tel que les fenêtres d'invites de commandes et les contrôles Scintilla. (#2569)
 - Les menus Préférences, Outils et Aide de NVDA sont maintenant accessibles comme des attributs de gui.mainFrame.sysTrayIcon només respectivement preferencesMenu, toolsMenu et helpMenu. Cela permet aux plugins de pouvoir plus facilement ajouter des éléments à ces menus.
 - Le script navigatorObject_doDefaultAction dans globalCommands a été renomé en review_activate.
