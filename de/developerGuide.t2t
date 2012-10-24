@@ -21,11 +21,18 @@ Die Dokumentationen und weitere Materialien sind einer oder mehreren der folgend
 - Ein sehr gutes Nachschlagewerk bietet außerdem das [deutsche Python-Wiki http://wiki.python.de/]
 - Mit Hilfe der Python-Konsole können weitere Informationen über ein bestimmtes Objekt gewonnen werden. Wenn Sie den Navigator auf das fragliche Objekt gesetzt und die Python-Konsole aufgerufen haben, können Sie mit den folgenden Befehlen weitere Informationen über dieses Objekt erhalten:
  - Um die Code-Dokumentation und die Online-Hilfe zu dem aktuellen Navigator-Objekt anzuzeigen, verwenden Sie den folgenden Befehl: help(nav) Die ausgabe des Befehls kann sehr umfangreich sein, weil nicht nur Informationen über das Navigator-Objekt selbst, sondern auch über alle seine Vorfahren angezeigt werden. Es ist daher zu empfehlen, sich den Inhalt des ausgabefensters in einer Textdatei zu speichern, um bei der weiteren Entwicklungsarbeit darauf zurückgreifen zu können.
- - Um alle Eigenschaften und Methoden des aktuellen Navigator-Objekts als Python-Wörterbuch anzuzeigen, verwenden Sie den folgenden Befehl: dir(nav)
-
+ - Um alle Eigenschaften und Methoden des aktuellen Navigator-Objekts als Python-Liste anzuzeigen, verwenden Sie den folgenden Befehl: dir(nav)
+ - Um alle Eigenschaften des aktuellen Navigator-Objekts mitsamt ihren Werten als Python-Wörterbuch angezeigt zu bekommen, verwenden Sie den folgenden Befehl: print nav.__dict__
+ - Um sich eine Liste aller zur Laufzeit geladenen Module und Variablen angezeigt zu bekommen, verwenden Sie den folgenden Befehl: dir()
+ - Um sich eine Liste aller Module anzeigen zu lassen, die mit NVDA mitgeliefert werden, gehen Sie folgendermaßen vor:
+  + importieren Sie zunächst das Modul nvdaBuiltin durch die Eingabe des folgenden Befehls: import nvdaBuiltin
+  + Rufen Sie die Hilfe zum Modul nvdaBuiltin durch die eingabe des folgenden Befehls ab: help(nvdaBuiltin)
 
 + Übersetzung +
 Damit NVDA mehrere Sprachen bzw. Sprachräume unterstützt, muss es übersetzt und sprachspezifische Daten müssen zur Verfügung gestellt werden.
+Dieser Abschnitt stellt lediglich Informationen über NVDA-Eigene Dateiformate bereit, die für Übersetzungen verwendet werden. 
+Andere Teile von NVDA wie z. B. die Benutzeroberfläche oder die Dokumentation verwenden Standarddateiformate.
+Weitere Information über die Übersetzung von NVDA finden sie unter http://www.nvda-project.org/wiki/TranslatingNVDA
 
 ++ Beschreibungen der Sonderzeichen ++
 Manchmal kann es schwierig bis unmöglich sein, zwei Zeichen voneinander zu unterscheiden. 
@@ -308,10 +315,10 @@ hervorhebbar, hervorgehoben, ausgewählt, auswählbar, erweitert, reduziert und 
 Das Übergeordnete Objekt eines Listeneintrags ist beispielsweise die Liste, die ihn enthält.
 - next: Das nächste Objekt in der logischen Reihenfolge
 - previous: Das vorherige Objekt in der logischen Reihenfolge
-- firstChild: Der erste direkte Nachkomme eines Objekts.
-Der erste Nachkomme einer Liste ist beispielsweise deren erster Eintrag.
-- lastChild: Der letzte Nachkomme eines Objekts.
-  - children: Eine Liste aller Nachkommen eines Objekts (beispielsweise alle Einträge eines Menüs).
+- firstChild: Das erste direkt untergeordnete Objekt.
+das erste untergeordnete Objekt einer Liste ist beispielsweise deren erster Eintrag.
+- lastChild: Das letzte untergeordnete Objekt  eines Objekts.
+- children: Eine Liste aller untergeordneten Objekte eines Objekts (beispielsweise alle Einträge eines Menüs).
 -
 
 Es gibt auch noch Eigenschaften, die sich auf die vereinfachte Navigation beziehen wie "simpleParent", "simpleNext", "simpleFirstChild" und "simpleLastChild".
@@ -479,7 +486,7 @@ class AppModule(appModuleHandler.AppModule):
 --- Ende ---
 ```
  
-++ Eigene NVDA-Objektklassen angeben ++
+++ Eigene NVDA-Objektklassen erstellen ++
 Um die Zugänglichkeit von anwendungen mit NVDA zu verbessern, ist das Definieren von eigenen NVDA-Objektklassen der effektivste Weg.
 Dies erlaubt Ihnen, die gesamte für ein Steuerelement relevante Logik an einer einzigen Stelle zusammenzufassen, anstatt sie auf verschiedene Plugin-Ereignisse aufzuteilen.
 
@@ -569,13 +576,13 @@ class AppModule(appModuleHandler.AppModule):
 			obj.name = "Content"
 --- Ende ---
 ```
-++ Hervorhebungsfarben setzen mit Textinfo-Objekten ++
 
+++ Hervorhebungsfarben setzen mit Textinfo-Objekten ++
 Manchmal können Sie NVDA-Objekte nicht anhand von Eigenschaften (wie etwa Name, Steuerelementnummer etc) ermitteln; z.b. wenn diese eigenschaften beim Navigieren innerhalb der Anwendung dynamisch erzeugt werden und eine eindeutige identifizierung eines objekts unmöglich wird. In einem solchen Fall können Sie versuchen, das hervorgehobene Objekt anhand von Textattributen (wie etwa Text- oder Hintergrundfarbe, Unterstreichungen etc). zu ermitteln. Zu diesem Zweck können Sie Textinfo-Objekte verwenden, die mittels der Funktion makeTextInfo() von NVDA-Objekten abgeleitet werden können.  
 
 ++ Beispiel 7: Verwenden von Textinfo-Objekten zum Ermitteln des hervorgehobenen Objekts ++
 Das folgende Anwendungsmodul für Tuneup System Control 2012 zeigt, wie anhand von Vorder- und Hintergrundfarbe versucht wird, das hervorgehobene Objekt in der Navigationsleiste von Tuneup System control zu ermitteln. Speichern Sie den Quelltext in einer Datei systemcontrol.py im benutzerspezifischen Konfigurationsverzeichnis.
-___
+```
 --- Beginn ---
 #appModules/systemcontrol.py#A part of NonVisual Desktop Access (NVDA)#Copyright (C) 2006-2012 NVDA Contributors#This file is covered by the GNU General Public License.#See the file COPYING for more details.import appModuleHandlerimport textInfos
 import controlTypes
@@ -617,7 +624,7 @@ class AppModule(appModuleHandler.AppModule):	def event_gainFocus(self, obj, next
 		# und die geerbte Ereignisbehandlungsroutine aufrufen, um die Bedienung des restlichen Programms nicht zu gefaehrden
 		nextHandler()
 --- Ende ---
-___
+```
 
 ++ Verwenden von Dialog- und Meldungsfenstern zur Interaktion mit Anwendungsmodulen und globalen Plug-ins ++
 Wenn Sie anwendungsmodule oder globale plug-ins schreiben, kann es manchmal sinnvoll sein, mit dem anwendungsmodul zu interagieren. Zu diesem Zweck können sie die in wxpython mitgelieferten Dialoge und Meldungsfenster verwenden. Den einfachsten Fall stellt hier die Funktion messagebox dar, mit der Sie Informations- und Bestätigungsdialoge in Ihre Plug-ins integrieren können. Die Funktion ist Teil des Moduls gui und erwartet folgende Parameter:
@@ -636,7 +643,7 @@ Hinweis: Die Konstanten, die die angezeigten Schaltflächen angeben, können auc
 ++ Beispiel 8: ein globales Plug-in, das beim Drücken von nvda+umschalt+r nach  dem Anzeigen eines Bestätigungsdialogs die Konfiguration auf die Werkseinstellungen zurücksetzt ++
 Das folgende Beispiel zeigt, wie Sie die im Python-Modul gui  mitgelieferte Funktion messageBox verwenden können, um einen Bestätigungsdialog anzuzeigen. gleichzeitig wird die Verwendung der Funktion CallAfter() aus dem Modul wx demonstriert, die nötig ist, um zu verhindern, dass sich NVDA während der Anzeige des Bestätigungsdialogs aufhängt. Kopieren sie den folgenden Quelltext in eine Datei beliebigen namens in ihr benutzerspezifisches Verzeichnis für globale Plug-ins.
 
-___
+```
 --- Beginn ---
 import globalPluginHandler
 import wx
@@ -654,7 +661,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			config.load(True)
 			core.restart()
 --- Ende ---
-___
+```
 
 +++ Hinweise zur Funktion wx.CallAfter +++
 - Problem: Technisch sind Eingabemethoden wie tastaturanschläge nichts anderes als Ereignisse, auf die innerhalb von NVDA mit Hilfe von Scripts reagiert wird. Es kann immer nur ein Ereignis zur selben Zeit abgearbeitet werden. Dies bedeutet, dass NVDA z.B. nicht auf Tastendrücke oder Braillezeilen-Aktionen reagieren kann, wenn ein an ein Ereignis gekoppeltes Script stehen bleibt, weil es auf eine Benutzereingabe wartet. 
