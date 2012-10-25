@@ -69,6 +69,7 @@ Schwerpunkte in dieser Version sind: Unterstützung für asiatische Eingabemetod
 <LI>Liblouis-Braille-Übersetzung auf 2.5.1 aktualisiert (<A HREF="http://www.nvda-project.org/ticket/2319">#2319</A>, <A HREF="http://www.nvda-project.org/ticket/2480">#2480</A>, <A HREF="http://www.nvda-project.org/ticket/2662">#2662</A>, <A HREF="http://www.nvda-project.org/ticket/2672">#2672</A>).
 <LI>Da die NVDA-Kurztasten- und Befehlsreferenz nun auch Gesten für Touchscreens enthält, wurde sie in "Befehlsreferenz" umbenannt.
 <LI>In der Elementliste merkt sich NVDA nun den eingestellten Elementtyp (z.B. Links, überschriften), solange Sie NVDA nicht neu starten. (<A HREF="http://www.nvda-project.org/ticket/365">#365</A>)
+<LI>In den meisten Metro-Anwendungen in Windows 8 (wie z. B. Mail oder im Kalender) wird nun nicht mehr der Lesemodus für die gesamte Anwendung aktiviert.
 </UL>
 
 <H3>Fehlerbehebungen</H3>
@@ -79,7 +80,7 @@ Schwerpunkte in dieser Version sind: Unterstützung für asiatische Eingabemetod
 <LI>In Adobe Reader werden Zellen, die sich über mehr als eine Spalte und/oder Reihe erstrecken, richtig behandelt. (<A HREF="http://www.nvda-project.org/ticket/2437">#2437</A>, <A HREF="http://www.nvda-project.org/ticket/2438">#2438</A>, <A HREF="http://www.nvda-project.org/ticket/2450">#2450</A>)
 <LI>Vor der Ausführung des NVDA-Installationspakets wird nun dessen Integrität geprüft. (<A HREF="http://www.nvda-project.org/ticket/2475">#2475</A>)
 <LI>Wenn das Herunterladen der temporären Kopie von NVDA während einer Aktualisierung fehlschlägt, wird die temporäre Kopie entfernt. (<A HREF="http://www.nvda-project.org/ticket/2477">#2477</A>)
-<LI>Wenn die Benutzerkonfiguration zur Systemkonfiguration (Anmeldebildschirm und andere Sicherheitsbildschirme) kopiert, bleibt NVDA unter Windows XP nicht mehr hängen.  (<A HREF="http://www.nvda-project.org/ticket/2485">#2485</A>)
+<LI>Wird NVDA mit Administratorrechten ausgeführt, kommt es beim Kopieren der Benutzerkonfiguration zur Systemkonfiguration nun nicht mehr zu Abstürzen. (<A HREF="http://www.nvda-project.org/ticket/2485">#2485</A>)
 <LI>Im Windows 8-Startbildschirm werden die Kacheln nun weniger ausführlich dargestellt  (der Name der Kachel wird nicht mehr doppelt ausgegeben, der Status "nicht ausgewählt" wird nicht mehr ausgegeben). Desweiteren werden Statusinformationen als Beschreibung ausgegeben (wie z.B. die aktuelle Temperatur in der Wetter-App).
 <LI>In Microsoft Outlook und anderen eingabefeldern, die als geschützt gekennzeichnet sind, werden die Kennwörter nun nicht mehr im Klartext ausgegeben. (<A HREF="http://www.nvda-project.org/ticket/2021">#2021</A>)
 <LI>Im Adobe Reader wirken sich Änderungen an formularfeldern nun auch im Lesemodus korrekt aus. (<A HREF="http://www.nvda-project.org/ticket/2529">#2529</A>)
@@ -117,11 +118,9 @@ Schwerpunkte in dieser Version sind: Unterstützung für asiatische Eingabemetod
 <LI>Beim Navigieren zwischen Gruppen im Windows 8-Startbildschirm wird die Navigation beschleunigt, indem der Titel des ersten Eintrags nicht mehr als Gruppenname angegeben wird. (<A HREF="http://www.nvda-project.org/ticket/2658">#2658</A>)
 <LI>Wenn Sie im Windows 8 den Startbildschirm aufrufen, wird der Fokus korrekt auf den ersten Eintrag gesetzt; nicht mehr auf das Stammobjekt, was die Navigation beeinträchtigt hat.  (<A HREF="http://www.nvda-project.org/ticket/2720">#2720</A>)
 <LI>nvda wird nun nicht mehr abstürzen, wenn der Ordnername des Benutzerprofils Multibyte-Zeichen enthält. (<A HREF="http://www.nvda-project.org/ticket/2729">#2729</A>)
-</UL>
-
-<H3>Änderungen für Entwickler</H3>
-
-<UL>
+<LI>Im Lesemodus in Google Chrome wird Text innerhalb von Registerkarten nun korrekt angezeigt.
+<P></P>
+== Änderungen für Entwickler ==
 <LI>Beim Start von NVDA wird nun das vorherige Protokoll nach "nvda-old.log" kopiert. Sollte NVDA also einmal abstürzen oder neu gestartet werden müssen, steht das Protokoll der vorigen NVDA-Sitzung zu Inspektionszwecken zur Verfügung. (<A HREF="http://www.nvda-project.org/ticket/916">#916</A>)
 <LI>Wenn Sie innerhalb einer Methode chooseNVDAObjectOverlayClasses den Objekttyp abrufen wollen, wird dieser nun nicht mehr falsch zurückgegeben, wenn Objekte wie Eingabeaufforderungen oder Scintilla-Steuerelemente den Fokus haben. (<A HREF="http://www.nvda-project.org/ticket/2569">#2569</A>)
 <LI>Die Untermenüs des NVDA-Menüs sind nun als Attribute von gui.mainFrame.sysTrayIcon verfügbar. Sie heißen preferencesMenu, toolsMenu und helpMenu. Hierdurch ist es für globale Plug-ins einfacher, Einträge in diese Menüs einzufügen.
