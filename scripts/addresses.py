@@ -105,7 +105,7 @@ addresses = {
     },
     'pt_PT': {
         'lang': 'Portuguese',
-        'email': ['Diogo Costa <diogojoca@gmail.com>', 'Rui Batista <ruiandrebatista@gmail.com>'],
+        'email': ['Diogo Costa <diogojoca@gmail.com>', 'Rui Batista <ruiandrebatista@gmail.com>', 'Rui Fontes <rui.fontes@tiflotecnia.com>'],
     },
     'ru': {
         'lang': 'Russian',
