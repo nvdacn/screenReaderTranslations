@@ -2,30 +2,25 @@
 #A part of NonVisual Desktop Access (NVDA)
 #Copyright (c) 2011 NV Access Inc
 #This file is covered by the GNU General Public License.
-complexSymbols:
-# identifier	regexp
-# Sentence endings.
-. mondatvégi	(?<=[^\s.])\.(?=[\"'”’)\s]|$)
-! mondatvégi	(?<=[^\s!])\!(?=[\"'”’)\s]|$)
-? mondatvégi	(?<=[^\s?])\?(?=[\"'”’)\s]|$)
-# Phrase endings.
-; mondatrész végi	(?<=[^\s;]);(?=\s|$)
-: mondatrész végi	(?<=[^\s:]):(?=\s|$)
-# Others
 
-tizedes vessző	(?<=\d)\.(?=\d)
-szóban lévő '	(?<=[^\W_])['’]
-negatív szám	(?<!\w)-(?=[$£€¥]?\d)
+
+# please remove these, and correct regular expression names further down.
+# --cut--
+# Others
+#tizedes vessző	(?<=\d)\.(?=\d)
+#szóban lévő '	(?<=[^\W_])['’]
+#negatív szám	(?<!\w)-(?=[$£€¥]?\d)
+# -- end cut --
 
 symbols:
 # identifier	replacement[[	level][	preserve]][	# display name]
 
 # Complex symbols
-. mondatvégi	pont	all	always
-! mondatvégi	felkiáltójel	all	always
-? mondatvégi	kérdőjel	all	always
-; mondatrész végi	pontosvessző	most	always
-: mondatrész végi	kettőspont	most	always
+. sentence ending	pont	all	always
+! sentence ending	felkiáltójel	all	always
+? sentence ending	kérdőjel	all	always
+; phrase ending	pontosvessző	most	always
+: phrase ending	kettőspont	most	always
 tizedes vessző		none	always
 szóban lévő '	aposztrof	all	norep
 negatív szám	minusz	none	norep
