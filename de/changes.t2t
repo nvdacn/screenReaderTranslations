@@ -26,6 +26,7 @@ Schwerpunkte in dieser Version sind: Unterstützung für asiatische Eingabemetod
 - Bei der Eingabe von E-Mail-Adressen in Outlook 2007 werden Vorschläge zur automatischen Vervollständigung korrekt ausgegeben. (#689)
 - Neue eSpeak-Varianten: Gene, Gene2. (#2512)
 - In Adobe Reader werden Seitenzahlen nun korrekt ausgegeben. (#2534)
+ - In Adobe Reader XI werden nun Seitenbeschriftungen ausgegeben, falls vorhanden, um abweichende Seitennumerierungen für unterschiedliche Abschnitte kenntlich zu machen. Dies ist in früheren Versionen von Adobe Reader nicht möglich; Dort werden nur fortlafende Seitenzahlen ausgegeben.
 - Es ist nun möglich, die Werkseinstellungen von NVDA wiederherzustellen. Dies kann entweder durch dreimaliges Drücken von NVDA+Strg+R oder durch Wählen von "Werkseinstellungen wiederherstellen" im NVDA-Menü geschehen. (#2086)
 - Unterstützung der Braillezeilen SEIKA Version 3, 4 und 5 sowie Seika80 von Nippon Telesoft. (#2452)
 - Bei FreedomScientific PAC Mate und Focus-Braillezeilen können die Routingtasten über dem ersten Bzw. letzten Modul nun zum Rückwärts- Bzw. Vorwärtsscrollen verwendet werden (#2556)
@@ -38,6 +39,7 @@ Schwerpunkte in dieser Version sind: Unterstützung für asiatische Eingabemetod
 - Wenn NVDA fest installiert ist, kann eine Erweiterung direkt geöffnet werden; entweder vom Explorer aus oder über eine entsprechende Funktion im Browser beim Herunterladen. (#2306)
 - Unterstützung für neuere papenmeier-Brailex-Zeilen (#1265)
 - Positionsinformationen (z.B. 1 von 4) in Windows 7 und höher in Windows explorer werden nun korrekt angegeben. Dies betrifft auch UIAutomation-Steuerelemente, die die benutzerdefinierten Eigenschaften itemIndex und itemCount unterstützen. (#2643)
+
 
 
 == Änderungen ==
@@ -95,10 +97,11 @@ Schwerpunkte in dieser Version sind: Unterstützung für asiatische Eingabemetod
 - UI Automation-Texteingabefelder wie z.B. das Suchfeld im Windows-7-Startmenü werden nun korrekt erkannt, wenn Sie die Maus darüberbewegen.
 - der Wechsel des Tastaturschemas wird nun nicht mehr während des Lesens von Dokumenten gemeldet. Dies war bei mehrsprachigen Texten bisher problematisch. (#1676)
 - bei UI Automation-Texteingabefeldern wird nun nicht mehr fälschlicherweise der gesamte Inhalt ausgegeben (z.B. beim Suchfeld im Windows 7/8-startmenü).
-- Beim Navigieren zwischen Gruppen im Windows 8-Startbildschirm wird die Navigation beschleunigt, indem der Titel des ersten Eintrags nicht mehr als Gruppenname angegeben wird. (#2658)
+- Beim Navigieren zwischen Gruppen im Windows 8-Startbildschirm wird die Navigation beschleunigt, indem bei unbeschrifteten Gruppen der Titel des ersten Eintrags nicht mehr als Gruppenname angegeben wird. (#2658)
 - Wenn Sie im Windows 8 den Startbildschirm aufrufen, wird der Fokus korrekt auf den ersten Eintrag gesetzt; nicht mehr auf das Stammobjekt, was die Navigation beeinträchtigt hat.  (#2720)
 - nvda wird nun nicht mehr abstürzen, wenn der Ordnername des Benutzerprofils Multibyte-Zeichen enthält. (#2729)
 - Im Lesemodus in Google Chrome wird Text innerhalb von Registerkarten nun korrekt angezeigt.
+- Die Kurztasten aller Einträge des NVDA-Mnüs sowie aller Dialogelemente sind nun kollisionsfrei d.h. Sie können den hervorgehobenen Buchstaben eines Menüeintrags Bzw. Dialogelements eingeben, um das entsprechende Element aufzurufen.
 
 == Änderungen für Entwickler ==
 - Beim Start von NVDA wird nun das vorherige Protokoll nach "nvda-old.log" kopiert. Sollte NVDA also einmal abstürzen oder neu gestartet werden müssen, steht das Protokoll der vorigen NVDA-Sitzung zu Inspektionszwecken zur Verfügung. (#916)
