@@ -13,7 +13,7 @@
 <H2>2012.3</H2>
 
 <P>
-このリリースのハイライトは、アジア言語の文字入力サポート、Windows 8 タッチ画面の実験的サポート、Adobe Readerにおけるページ番号の通知や表のサポートの改善、フォーカスされたテーブルの列および Windows リストビューコントロールでのテーブルナビゲーション対応、そして点字ディスプレイ対応の追加です。
+このリリースのハイライトは、アジア言語の文字入力サポート、Windows 8 タッチ画面の実験的サポート、Adobe Readerにおけるページ番号の通知や表のサポートの改善、フォーカスされたテーブルの列および Windows リストビューコントロールでのテーブルナビゲーション対応、点字ディスプレイ対応の追加、Microsoft Excelの列見出しと行見出しの通知です。
 </P>
 
 <H3>新機能</H3>
@@ -27,8 +27,9 @@
  </UL>
 <LI>Adobe Reader のドキュメントにおいて、アンダーラインや打ち消し線があることを通知するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2410">#2410</A>)
 <LI>Windows の固定キー機能が有効なとき、NVDA 制御キーも他の補助キーと同じように動作するようになりました。これによってNVDA制御キーを押し続けないで他のキーを押せるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/230">#230</A>)
+<LI>Microsoft Excel で列見出しと行見出しの自動通知が可能になりました。NVDA+shift+C で列見出しを含む行の設定、NVDA+shift+R で行見出しを含む列の設定です。これらのキーをすばやく2回押すと設定をクリアします。 (<A HREF="http://www.nvda-project.org/ticket/1519">#1519</A>)
 <LI>HIMS 製の点字ディスプレイ Braille Sense, Braille EDGE および SyncBraille に対応しました。 (<A HREF="http://www.nvda-project.org/ticket/1266">#1266</A>, <A HREF="http://www.nvda-project.org/ticket/1267">#1267</A>)
-<LI>Windows 8 でトーストが表示されたときに、NVDAはこれを通知してナビゲーターオブジェクトを移動するようになりました。これによってその後の操作がしやすくなります。 (<A HREF="http://www.nvda-project.org/ticket/2143">#2143</A>)
+<LI>Windows 8 でトーストが表示されたときに、ヘルプバルーンの通知が有効であれば、NVDAはトーストを通知します。 (<A HREF="http://www.nvda-project.org/ticket/2143">#2143</A>)
 <LI>Windows 8 タッチスクリーンに実験的に対応しました。具体的な内容：
  <UL>
  <LI>指を動かしたときにその場所の文字を直接読むことができます。
@@ -41,6 +42,7 @@
 <LI>Microsoft Outlook 2007 のメールアドレス入力で、自動補完候補をNVDAが通知するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/689">#689</A>)
 <LI>新しい eSpeak の音声 Gene および Gene2 が追加されました。 (<A HREF="http://www.nvda-project.org/ticket/2512">#2512</A>)
 <LI>Adobe Readerにおいて、ページ番号を通知するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2534">#2534</A>)
+<LI>Reader XI において、ページのラベルが存在すれば、セクションごとにページ番号のつけかたが変わっていても、通知されるようになりました。過去のバージョンでは、連続的なページ番号しか通知できませんでした。
 <LI>NVDA+コントロール+R をすばやく3回押すか、NVDA メニューの"設定をリセットして初期値に戻す"を選ぶことで、NVDA の設定を初期化できるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2086">#2086</A>)
 <LI>日本テレソフトの点字ディスプレイ清華バージョン3,4,5および清華80に対応しました。 (<A HREF="http://www.nvda-project.org/ticket/2452">#2452</A>)
 <LI>Freedom Scientific の PAC Mate と Focus Braille 点字ディスプレイで前後へのスクロールができるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2556">#2556</A>)
@@ -68,6 +70,7 @@
 <LI>liblouis 点訳エンジンを 2.5.1 に更新しました。(<A HREF="http://www.nvda-project.org/ticket/2319">#2319</A>, <A HREF="http://www.nvda-project.org/ticket/2480">#2480</A>, <A HREF="http://www.nvda-project.org/ticket/2662">#2662</A>, <A HREF="http://www.nvda-project.org/ticket/2672">#2672</A>)
 <LI>NVDAキーコマンドクイックリファレンスはコマンドクイックリファレンスに名前が変わりました。キーボードだけでなくタッチ操作のコマンドも含まれるようになったためです。
 <LI>ブラウズモードの要素リストのダイアログで、 NVDA を終了しないかぎり前回選択された要素の種類(リンク、見出し、ランドマーク)が再び選択されるようになりました。(<A HREF="http://www.nvda-project.org/ticket/365">#365</A>)
+<LI>Windows 8 の Metro アプリ(メール、カレンダーなど)で、アプリケーション全体がブラウズモードで動作しないようになりました。
 </UL>
 
 <H3>バグ修正</H3>
@@ -78,7 +81,7 @@
 <LI>Adobe Readerにおいて、テーブルの複数の行および(または)列を結合したセルが正しく扱えるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2437">#2437</A>, <A HREF="http://www.nvda-project.org/ticket/2438">#2438</A>, <A HREF="http://www.nvda-project.org/ticket/2450">#2450</A>)
 <LI>NVDAの配布パッケージは実行前に完全性の確認を行うようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2475">#2475</A>)
 <LI>NVDAの更新をダウンロードできなかった場合に一時ファイルを削除するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2477">#2477</A>)
-<LI>ユーザー環境設定をシステム設定にコピーする機能(Windowsログオンなどセキュアスクリーンで使用します)で、NVDA が Windows XP をフリーズしないように改善しました。(<A HREF="http://www.nvda-project.org/ticket/2485">#2485</A>)
+<LI>ユーザー環境設定を管理者権限でシステム設定にコピーする機能(Windowsログオンなどセキュアスクリーンで使用します)で、NVDA がフリーズしないようになりました。(<A HREF="http://www.nvda-project.org/ticket/2485">#2485</A>)
 <LI>Windows 8 スタートスクリーンのタイルの音声および点字による説明を改善しました。 タイルの名前を繰り返さないようになり、「選択なし」の通知をやめました。また、ライブステータスの情報をタイルの説明として通知します。(例えば「天気」のタイルでは現在の気温を通知します)
 <LI>Microsoft Outlook のパスワード入力と、その他の保護されたエディットコントロールにおいて、パスワードの通知を抑止するようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2021">#2021</A>)
 <LI>Adobe Readerにおいて、フォームのフィールドにおける変更が正しくブラウズモードに反映されるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2529">#2529</A>)
@@ -110,6 +113,13 @@
 <LI>読み上げ辞書でパターンや置換にシャープ(#)が含まれていても正しく保存されるようになりました。(<A HREF="http://www.nvda-project.org/ticket/961">#961</A>)
 <LI>MSHTML ドキュメント(Internet Explorer など)のブラウズモードで非表示コンテンツの内側の表示コンテンツが正しく扱われるようになりました。具体的には visibility:visible スタイルの要素が visibility:hidden スタイルの要素の内側にある場合です。(<A HREF="http://www.nvda-project.org/ticket/2097">#2097</A>)
 <LI>Windows XP セキュリティセンターのリンクの名前のあとでランダムな無意味情報を通知しなくなりました。(<A HREF="http://www.nvda-project.org/ticket/1331">#1331</A>)
+<LI>Windows 7 スタートメニューの検索ボックスのような UI オートメーション対応のテキストコントロールで、マウスオーバーしたときに無音ではなく正しく通知が行われるようになりました。
+<LI>キーボードレイアウトの通知を「すべて読み上げ」の途中でおこなわないようになりました。これはアラビア語を含む多言語ドキュメントで特に問題になっていました。(<A HREF="http://www.nvda-project.org/ticket/1676">#1676</A>)
+<LI>Windows 7/8 のスタートメニューにおける検索ボックスなど、UI オートメーション対応の編集可能テキストコントロールの一部において、内容が更新されるたびにすべての内容を読み上げていた問題に対応しました。
+<LI>Windows 8 スタートスクリーンのグループをまたぐ移動で、ラベルなしグループの名前として最初のタイルの名前が通知されないようになりました。これによってナビゲーションがすばやく行えます。(<A HREF="http://www.nvda-project.org/ticket/2658">#2658</A>)
+<LI>Windows 8 スタートスクリーンを開いたときに、フォーカスがスタートスクリーンのルートではなく、最初のタイルに適切に移動するようになり、操作が容易になりました。(<A HREF="http://www.nvda-project.org/ticket/2720">#2720</A>)
+<LI>ユーザープロファイルのパスに特定のマルチバイト文字が含まれていたときにNVDAが起動できない問題を解決しました。(<A HREF="http://www.nvda-project.org/ticket/2729">#2729</A>)
+<LI>Google Chrome のブラウズモードにおいて、タブのテキストが正しくレンダリングされるようになりました。
 </UL>
 
 <H3>開発者向けの変更</H3>
@@ -127,6 +137,8 @@
  <LI>xgettext において --keyword=ppgettext:1c,2 コマンドライン引数をあたえることで、メッセージのコンテキストが含まれるようになります。
  <LI>詳細は <A HREF="http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts">http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts</A> を参照してください。
  </UL>
+<LI>ビルトインのNVDAモジュールがサードパーティのモジュールによってオーバーライドされたときに、ビルトインのモジュールにアクセスできるようになりました。nvdaBuiltin モジュールを参照してください。
+<LI>アドオンの翻訳サポートがアドオンの installTasks モジュールで使われるようになりました。
 </UL>
 
 <H2>2012.2.1</H2>
