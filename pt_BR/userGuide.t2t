@@ -706,7 +706,7 @@ Esta opção permite-lhe escolher se a linha Braille seguirá o cursor do sistem
 ==== Ler por Parágrafo ====
 Caso seja ativada, o braille será exibido por parágrafos em lugar de linhas.
 Além disso, os comandos de mover para a linha anterior e para a próxima linha irão mover respectivamente por parágrafos.
-Isso significa que você não terá que deslocar a linha braille ao fim de cada linha ainda quando um maior texto for ajustado na mesma.
+Isso significa que você não terá que mover linha braille ao fim de cada linha ainda quando um maior texto for ajustado na mesma.
   Isso pode permitir uma leitura mais fluente   em textos muito extensos.
 Esta opção está desativada por padrão.
 
@@ -1143,13 +1143,50 @@ Por favor consulte a documentação da mesma para descrições de onde essas tec
 
 %kc:beginInclude
 || Nome | Tecla |
-| Alternar ação da roda esquerda | pressionar roda esquerda |
-| Mover-se para trás utilizando ação da roda esquerda | roda esquerda para cima |
-| Mover-se para a frente utilizando ação da roda esquerda | roda esquerda para baixo |
-| Alternar ação da roda direita | pressionar roda direita |
-| Mover-se para trás utilizando ação da roda direita | roda direita para cima |
-| Mover-se para a frente utilizando ação da roda direita | roda direita para baixo |
-| Guiar para a cela braille | sensor |
+| Mover linha braille para trás | topRouting1 (primeira célula da linha) |
+| Mover linha braille para a frente | topRouting20/40/80 (ýltima célula da linha) |
+| Mover linha braille para trás | leftAdvanceBar |
+| Mover linha braille para a frente | rightAdvanceBar |
+| Alternar "vínculo do Braille" | leftGDFButton+rightGDFButton |
+| Alternar a ação da roda esquerda | pressionar a roda esquerda |
+| Mover-se para trás usando  a ação da roda esquerda | roda esquerda para cima |
+| Mover-se para a frente usando  a ação da roda esquerda | roda esquerda para baixo |
+| Alternar a ação da roda direita | pressionar a roda direita |
+| Mover-se para Trás usando a ação da roda direita | roda direita para cima |
+| Mover-se para a frente usando a ação da roda Direita | roda direita para baixo |
+| Guiar para a célula braille | routing |
+| Tecla backspace | ponto 7 |
+| Tecla enter | ponto 8 |
+| Tecla shift+tab | brailleSpaceBar+ponto 1+ponto 2 |
+| Tecla tab | brailleSpaceBar+ponto 4+ponto 5 |
+| Tecla seta cima | brailleSpaceBar+ponto 1 |
+| Tecla seta baixo | brailleSpaceBar+ponto 4 |
+| Tecla control+seta a esquerda | brailleSpaceBar+ponto 2 |
+| Tecla control+seta direita | brailleSpaceBar+ponto 5 |
+| Tecla seta esquerda | brailleSpaceBar+ponto 3 |
+| Tecla seta direita | brailleSpaceBar+ponto 6 |
+| Tecla home | brailleSpaceBar+ponto 1+ponto 3 |
+| tecla end | brailleSpaceBar+ponto 4+ponto 6 |
+| Tecla control+home | brailleSpaceBar+ponto 1+ponto 2+dot3 |
+| Tecla control+end | brailleSpaceBar+ponto 4+ponto 5+ponto 6 |
+| Tecla alt | brailleSpaceBar+ponto 1+ponto 3+ponto 4 |
+| Tecla alt+tab | brailleSpaceBar+ponto 2+ponto 3+ponto 4+ponto 5 |
+| Tecla escape | brailleSpaceBar+ponto 1+ponto 5 |
+| Tecla windows | brailleSpaceBar+ponto 2+ponto 4+ponto 5+ponto 6 |
+| Tecla espaço | brailleSpaceBar |
+| Tecla windows+d (minimizar todas as aplicações) | brailleSpaceBar+ponto 1+ponto 2+ponto 3+ponto 4+ponto 5+ponto 6 |
+| Anunciar a linha atual | brailleSpaceBar+ponto 1+ponto 4 |
+| Menu do NVDA | brailleSpaceBar+ponto 1ponto 3+ponto 4+ponto 5 |
+
+Para modelos mais recentes da Focus que possuam teclas "rocker bar" (focus 40, focus 80 e focus blue):
+|| Nome | Tecla |
+| Mover linha braille para a linha anterior | leftRockerBarUp, rightRockerBarUp |
+| Mover linha braille para a linha seguinte | leftRockerBarDown, rightRockerBarDown |
+
+Apenas para a Focus 80:
+|| Nome | Tecla |
+| Mover linha braille para trás | leftBumperBarUp, rightBumperBarUp |
+| Mover linha braille para a frente | leftBumperBarDown, rightBumperBarDown |
 %kc:endInclude
 
 ++ Optelec ALVA BC640/680 ++
@@ -1157,7 +1194,7 @@ Ambas as linhas ALVA BC640 e BC680 da [Optelec http://www.optelec.com/] são sup
 Não é necessário instalar qualquer driver específico para utilizá-las.
 Para tanto, basta Conectar o terminal e configurar o NVDA para a utilizar.
 
-A seguir estão as teclas de comando dessa linha para o NVDA.
+A seguir estão as teclas de comando desta linha para o NVDA.
 Por favor consulte a documentação da mesma para descrições de onde essas teclas se encontram.
 
 %kc:beginInclude
@@ -1165,7 +1202,7 @@ Por favor consulte a documentação da mesma para descrições de onde essas tec
 | Mover linha braille para trás | t1 |
 | Mover linha braille para a linha anterior | t2 |
 | Mover linha braille para a linha seguinte | t4 |
-| Mover a linha braille para a frente | t5 |
+| Mover linha braille para a frente | t5 |
 |Guiar para a cela braille  | sensor |
 | tecla shift+tab | sp1 |
 | tecla alt | sp2 |
@@ -1230,7 +1267,7 @@ Por favor consulte a documentação da linha para obter descrições de onde ess
 
 Várias linhas braille da [Baum http://www.baum.de/cms/en/], [HumanWare http://www.humanware.com/] and [APH http://www.aph.org/] são suportadas quando conectadas via USB ou bluetooth.
 
-Estão entre estas:
+ Entre elas estão:
 - Baum: SuperVario, PocketVario
 - HumanWare: Brailliant, BrailleConnect
 - APH: Refreshabraille
@@ -1255,7 +1292,7 @@ Por favor consulte a documentação da mesma para informações sobre onde essas
 Para linhas que tenham joystick:
 || Nome | Tecla |
 | tecla seta acima | acima |
-| tecla seta abaixo | abaixo |
+| tecla seta abaixo | baixo |
 | tecla seta a esquerda | esquerda |
 | tecla seta a direita | direita |
 | tecla enter | selecionar |
@@ -1273,7 +1310,7 @@ Por favor consulte a documentação da linha para obter descrições de onde ess
 | Mover Linha Braille para Trás | K1 |
 | Mover Linha Braille para a Frente | K3 |
 | Mover Linha Braille para a Linha Anterior | B2 |
-| Mover Linha Braille para a Próxima Linha | B5 |
+| Mover linha braille para a linha seguinte | B5 |
 | Guiar para a Cela Braille | sensor |
 | Alternar Vínculo do Braille | K2 |
 | Leitura Contínua | B6 |
@@ -1290,7 +1327,7 @@ Por favor consulte a documentação da linha para obter descrições de onde ess
 | Mover Linha Braille para Trás | K1 |
 | Mover Linha Braille para a Frente | K3 |
 | Mover Linha Braille para a Linha Anterior | B2 |
-| Mover Linha Braille para a Próxima Linha | B5 |
+| Mover linha braille para a linha seguinte | B5 |
 | Guiar para a Cela Braille | sensor |
 | Alternar Vínculo do Braille | K2 |
 | Leitura Contínua | B6 |
