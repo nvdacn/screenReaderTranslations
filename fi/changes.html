@@ -75,6 +75,7 @@ Tämän version uusia ominaisuuksia ovat mm. tuki aasialaisten kielten merkkien 
 <LI>NVDA:n näppäinkomentojen pikaopas -dokumentti on nimetty uudelleen komentojen pikaoppaaksi, sillä se sisältää nyt sekä kosketus- että näppäinkomentoja.
 <LI>Selaustilan Elementtilista muistaa nyt viimeksi näytetyn elementtityypin (esim. linkit, otsikot tai maamerkit) samassa NVDA-istunnossa jokaisella valintaikkunan näyttökerralla. (<A HREF="http://www.nvda-project.org/ticket/365">#365</A>)
 <LI>Useimmat Windows 8:n Metro-sovellukset (esim. Sähköposti tai Kalenteri) eivät enää aktivoi selaustilaa sovelluksen kaikissa osissa, vaan pelkästään niissä, joissa sitä tarvitaan.
+<LI>Handy Techin pistenäyttöajurin COM-palvelin päivitetty versioksi 1.4.2.0.
 </UL>
 
 <H3>Korjatut ohjelmavirheet</H3>
@@ -101,13 +102,16 @@ Tämän version uusia ominaisuuksia ovat mm. tuki aasialaisten kielten merkkien 
 <LI>Suoraan NVDA:n kautta puhuvien tai pistenäytöllä tekstiä näyttävien sovellusten viestit ohitetaan oltaessa Windowsin suojatussa ruudussa, kuten lukitusnäytössä.
 <LI>Selaustilassa ei ole enää mahdollista siirtyä pois dokumentin lopusta oikealla nuolinäppäimellä oltaessa viimeisen merkin kohdalla tai siirtymällä säilöelementin loppuun sen ollessa viimeinen kohde kyseisessä dokumentissa. (<A HREF="http://www.nvda-project.org/ticket/2463">#2463</A>)
 <LI>Ylimääräistä sisältöä ei enää virheellisesti puhuta luettaessa valintaikkunoiden tekstiä verkkosovelluksissa (erityisesti ARIA-valintaikkunoissa, joissa ei ole aria-describedby-määrettä). (<A HREF="http://www.nvda-project.org/ticket/2390">#2390</A>)
-<LI>NVDA ei enää virheellisesti lue tai paikanna tiettyjä muokkauskenttiä MSHTML-dokumenteissa (esim. Internet Explorerissa), mikäli verkkosivun tekijä on käyttänyt ARIA-roolia. (<A HREF="http://www.nvda-project.org/ticket/2435">#2435</A>)
+<LI>NVDA ei enää virheellisesti lue tai paikanna tiettyjä muokkauskenttiä MSHTML-dokumenteissa (esim. Internet Explorerissa), jos verkkosivun tekijä on käyttänyt ARIA-roolia. (<A HREF="http://www.nvda-project.org/ticket/2435">#2435</A>)
 <LI>Askelpalautin-näppäin käsitellään nyt oikein Windowsin komentokehotteessa kirjoitettuja sanoja luettaessa. (<A HREF="http://www.nvda-project.org/ticket/2586">#2586</A>)
 <LI>Solujen koordinaatit näytetään taas pistenäytöllä Microsoft Excelissä.
 <LI>NVDA ei jää enää Microsoft Wordissa jumiin luettelomuotoiluja sisältävään kappaleeseen yritettäessä liikkua vasemmalla nuolinäppäimellä tai Ctrl+vasen nuoli -yhdistelmällä luettelomerkin tai numeron päälle. (<A HREF="http://www.nvda-project.org/ticket/2402">#2402</A>)
 <LI>Tiettyjen listaruutujen (erityisesti ARIA-tyyppisten) kohteita ei näytetä enää virheellisesti selaustilassa Mozilla-sovelluksissa.
+<LI>Sellaiset säätimet, jotka näytettiin virheellisillä nimillä tai vain tyhjänä tilana, näytetään nyt asianmukaisilla nimillä selaustilassa Mozilla-sovelluksissa.
+<LI>Tyhjää tilaa jätetty jonkin verran huomiotta selaustilassa Mozilla-sovelluksissa.
+<LI>Sellaiset kuvat, jotka on selkeästi merkitty esityksellisiksi alt=""-määreellä, ohitetaan nyt asianmukaisesti selaustilassa verkkoselaimissa.
 <LI>NVDA piilottaa nyt verkkoselaimissa sisällön, joka on merkitty ruudunlukuohjelmilta piilotetuksi (erityisesti aria-hidden-määrettä käytettäessä). (<A HREF="http://www.nvda-project.org/ticket/2117">#2117</A>)
-<LI>Negatiiviset rahasummat (esim. -123$) luetaan nyt oikein miinusmerkkisinä symbolitasosta riippumatta. (<A HREF="http://www.nvda-project.org/ticket/2625">#2625</A>)
+<LI>Negatiiviset rahasummat (esim. -123 $) luetaan nyt oikein miinusmerkkisinä symbolitasosta riippumatta. (<A HREF="http://www.nvda-project.org/ticket/2625">#2625</A>)
 <LI>NVDA ei enää ala Lue kaikki -toiminnon aikana käyttämään oletuskieltä tilanteissa, joissa lause ei pääty pisteeseen. (<A HREF="http://www.nvda-project.org/ticket/2630">#2630</A>)
 <LI>Fontin tiedot tunnistetaan nyt oikein Adobe Reader 10.1:ssä ja uudemmissa. (<A HREF="http://www.nvda-project.org/ticket/2175">#2175</A>)
 <LI>Jos Adobe Readerissa on vaihtoehtoinen teksti saatavilla, vain se näytetään. Aiemmin näytettiin toisinaan ylimääräistä tekstiä. (<A HREF="http://www.nvda-project.org/ticket/2174">#2174</A>)
@@ -125,6 +129,9 @@ Tämän version uusia ominaisuuksia ovat mm. tuki aasialaisten kielten merkkien 
 <LI>Kohdistus sijoitetaan Windows 8:n aloitusnäyttöä avattaessa asianmukaisesti ensimmäisen ruudun kohdalle aloitusnäytön juureen siirtämisen sijasta, mikä voi sekoittaa navigointia. (<A HREF="http://www.nvda-project.org/ticket/2720">#2720</A>)
 <LI>NVDA käynnistyy nyt oikein, kun käyttäjäprofiilin hakemistopolku sisältää tiettyjä ASCII-merkistöön kuulumattomia merkkejä. (<A HREF="http://www.nvda-project.org/ticket/2729">#2729</A>)
 <LI>Välilehtien teksti näytetään nyt oikein selaustilassa Google Chromessa.
+<LI>Valikkopainikkeet luetaan nyt oikein selaustilassa.
+<LI>Laskentataulukon solujen lukeminen toimii nyt oikein OpenOffice.org/LibreOffice Calcissa. (<A HREF="http://www.nvda-project.org/ticket/2765">#2765</A>)
+<LI>NVDA toimii taas Yahoo! Mailin viestilistassa Internet Explorerista käytettäessä. (<A HREF="http://www.nvda-project.org/ticket/2780">#2780</A>)
 </UL>
 
 <H2>2012.2.1</H2>
