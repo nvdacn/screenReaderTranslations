@@ -109,7 +109,7 @@ addresses = {
     },
     'ru': {
         'lang': 'Russian',
-        'email': ['Beqa Gozalishvili <beqaprogger@gmail.com>'],
+        'email': ['Beqa Gozalishvili <beqaprogger@gmail.com>', 'ruslan <ru2020slan@yandex.ru>'],
     },
     'si': {
         'lang': 'Sinhala',
@@ -130,6 +130,10 @@ addresses = {
     'uk': {
         'lang':'Ukrainian',
         'email': ['vlodko@torba.com'],
+    },
+    'ur': {
+        'lang':'Urdu',
+        'email': ['Rana Ayaz <rana.ayaz1@gmail.com>'],
     },
     'ta': {
         'lang':'Tamil',
