@@ -20,7 +20,13 @@ for lang in ${convertLangs[*]}; do
         python ../scripts/addresses.py $lang "File encoding problem" "Please save the following as unicode UTF-8: $encoding"
     else
         python ../scripts/stats.py
-        $PYTHON27 ../scripts/generate.py
+        $PYTHON27 ../scripts/keyCommandsDoc.py
+
+        # process each t2t file individually to make it easier to spot errors in output.
+        ls -1 *.t2t | while read file; do
+            echo processing $file
+            txt2tags -q $file
+        done
 
         lastRev=`ls -1 ug-diffs/ | tail -n 1`
         diff  --unchanged-line-format='' --old-line-format='en %L' --new-line-format="$lang %L" \
