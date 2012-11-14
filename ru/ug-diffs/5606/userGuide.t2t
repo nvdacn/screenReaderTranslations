@@ -23,7 +23,7 @@ Major highlights include:
 - Support for many refreshable braille displays
 - Ability to run entirely from a USB stick or other portable media without the need for installation
 - Easy to use talking installer
-- Translated into 40 languages
+- Translated into 41 languages
 - Support for modern Windows Operating Systems including both 32 and 64 bit variants
 - Ability to run on Windows logon and other secure screens
 - Support for common accessibility interfaces such as Microsoft Active Accessibility, Java Access Bridge, IAccessible2 and UI Automation (UI Automation only supported in Windows 7 and later)
@@ -32,7 +32,7 @@ Major highlights include:
 
 ++ Internationalization ++
 It is important that people anywhere in the world, no matter what language they speak, get equal access to technology.
-Besides English, NVDA has been translated into 40 languages including: Afrikaans, Albanian, Amharic, Arabic, Brazilian Portuguese, Bulgarian, Croatian, Czech, Danish, Dutch, Finnish, French, Galician, Greek, Georgian, German, Hebrew, Hindi, Hungarian, Icelandic, Italian, Japanese, Korean, Nepali, Norwegian, Polish, Portuguese, Romanian, Russian, Serbian, Slovak, Spanish, Swedish, Tamil, Thai, Traditional and Simplified Chinese, Turkish, Ukrainian and Vietnamese.
+Besides English, NVDA has been translated into 41 languages including: Afrikaans, Albanian, Amharic, Arabic, Brazilian Portuguese, Bulgarian, Croatian, Czech, Danish, Dutch, Finnish, French, Galician, Greek, Georgian, German, Hebrew, Hindi, Hungarian, Icelandic, Italian, Japanese, Korean, Nepali, Norwegian, Polish, Portuguese, Romanian, Russian, Serbian, Slovak, Slovenian, Spanish, Swedish, Tamil, Thai, Traditional and Simplified Chinese, Turkish, Ukrainian and Vietnamese.
 
 ++ Speech Synthesizer Support ++
 Apart from providing its messages and interface in several languages, NVDA can also enable the user to read content in any language, as long as they have a speech synthesizer that can speak that language.
@@ -440,6 +440,7 @@ In addition, you can manually force focus mode, after which it will remain in ef
 | Find | NVDA+control+f | Pops up a dialog in which you can type some text to find in the current document |
 | Find next | NVDA+f3 | Finds the next occurrence of the text in the document that you previously searched for |
 | Find previous | NVDA+shift+f3 | Finds the previous occurrence of the text in the document you previously searched for |
+| open long description | NVDA+d | Opens a new window containing a long description for the element you are on if it has one. | 
 %kc:endInclude
 
 
@@ -499,6 +500,13 @@ A key command is provided to return to the original page containing the embedded
 
 + Application Specific NVDA Commands +
 NVDA provides its own extra commands for some applications to make certain tasks easier or to provide access to functionality which is not otherwise accessible to screen reader users.
+
+++ Microsoft Excel ++
+%kc:beginInclude
+|| Name | Key | Description |
+| Set column headers | NVDA+shift+c | Pressing this once tells NVDA this is the row that contains column headers, which should be automatically announced when moving between columns below this row. Pressing twice will clear the setting. | 
+| Set row headers | NVDA+shift+r | Pressing this once tells NVDA this is the column that contains row headers, which should be automatically announced when moving between rows after  this column. Pressing twice will clear the setting. | 
+%kc:endInclude
 
 ++ foobar2000 ++
 %kc:beginInclude
@@ -851,15 +859,32 @@ Toggles the announcement of new content in particular objects such as terminals 
 +++ Input Composition Settings +++
 The Input Composition Settings dialog can be found under the Preferences menu.
 This dialog allows you to control how NVDA reports the input of Asian characters, such as with IME or Text Service input methods.
-
+Note that due to the fact that input methods vary greatly by available features and by how they convey information, it will most likely be necessary to configure these options differently for each input method to get the most efficient typing experience.
+ 
 ==== Automatically report all available candidates ====
 This option, which is on by default,  allows you to choose whether or not all visible candidates should be reported automatically when a candidate list appears or its page is changed.
 Having this option on for pictographic input methods such as chinese New ChangJie or Boshiami is useful, as you can automatically hear all symbols and their numbers and you can choose one right away.
 However, for phonetic input methods such as chinese New Phonetic, it may be more useful to turn this option off, as all the symbols will sound the same and you will have to use the arrow keys to navigate the list items individually to gain more information  from the character descriptions for each candidate.
 
+==== Announce Selected Candidate ====
+This option, which is on by default, allows you to choose whether NVDA should announce the selected candidate when a candidate list appears or when the selection is changed.
+For input methods where the selection can be changed with the arrow keys  (such as Chinese New Phonetic) this is necessary, but for some input methods it may be more efficient typing with this option turned off.
+Note that even with this option off, the review cursor will still be placed on the selected candidate allowing you to use object navigation / review to manually read this or other candidates.
+
+==== Always include short character descriptions for candidates ====
+This option, which is on by default, allows you to choose whether or not NVDA should provide a short description for each character in a candidate, either when its selected or when its automatically read when the candidate list appears.
+Note that for locales such as Chinese, the announcement of extra character descriptions for the selected candidate is not affected by this option.
+This option may be useful for Korean and japanese input methods.
+ 
 ==== Report changes to the reading string ====
 Some input methods such as Chinese New Phonetic and New ChangJie have a reading string (sometimes known as a precomposition string).
 You can choose whether or not NVDA should announce new characters being typed into this reading string with this option.
+This option is on by default.
+Note some older input methods such as Chinese ChangJie may not use the reading string to hold precomposition characters, but instead use the composition string directly. Please see the next option for configuring reporting of the composition string.
+
+==== Report changes to the composition string ====
+After reading or precomposition data has been combined into a valid pictographic symbol, most input methods place this symbol into a composition string for temporary storage along with other combined symbols before they are finally inserted into the document.
+This option allows you to choose whether or not NVDA should report new symbols as they appear  in the composition string.
 This option is on by default.
 
 +++ Browse Mode Settings (NVDA+control+b) +++
@@ -1422,6 +1447,60 @@ Please see the display's documentation for descriptions of where these keys can 
 | alt+tab | b1+b2 |
 | NVDA Menu | left+right |
 | Route to braille cell | routing |
+%kc:endInclude
+
+++ Papenmeier BRAILLEX Newer Models ++
+The following Braille displays are supported: 
+- BRAILLEX EL 40c, EL 80c, EL 20c, EL 60c (USB)
+- BRAILLEX EL 40s, EL 80s, EL 2d80s, EL 70s, EL 66s (USB)
+- BRAILLEX Trio (USB and bluetooth)
+-
+
+If BrxCom is installed, NVDA will use BrxCom.
+BrxCom is a tool that allows you to use the Braille input independently from a screen reader.
+A new version of BrxCom which works with NVDA will be released by Papenmeier soon.  
+
+Most devices have an Easy Access Bar (EAB) that allows intuitive and fast operation.
+The EAB can be moved in four directions where generally each direction has two switches.
+The c-series is the only exception to this rule.
+
+The c-series and some other displays have two routing rows whereby the upper row is used to report formatting information.
+Holding one of the upper routing keys and pressing the EAB on c-series devices emulates the second switch state.
+Pressing and holding the up, down, right and left keys (or EAB) causes the corresponding action to be repeated.
+
+Generally, the following keys are available on these braille displays:
+|| Name | Key |
+| l1 | Left front key |
+| l2 | Left rear key |
+| r1 | Right front key |
+| r2 | Right rear key |
+| up | 1 Step up |
+| up2 | 2 Steps up |
+| left | 1 Step left |
+| left2 | 2 Steps left |
+| right | 1 Step right |
+| right2 | 2 Steps right |
+| dn | 1 Step down |
+| dn2 | 2 Steps down |
+
+Following are the Papenmeier command assignments for NVDA:
+%kc:beginInclude
+|| Name | Key |
+| Scroll braille display back | left |
+| Scroll braille display forward | right |
+| Move braille display to previous line | up |
+| Move braille display to next line | dn |
+| Route to braille cell | routing |
+| Report current character in review | l1 |
+| Activate current navigator object | l2 |
+| Move to flat review/focus | r1 |
+| Report title | l1+up |
+| Report Status Bar | l2+down |
+| Move to containing object | up2 |
+| Move to first contained object | dn2 |
+| Move to previous object | left2 |
+| Move to next object | right2 |
+| Report text formatting | upper routing row |
 %kc:endInclude
 
 ++ BRLTTY ++
