@@ -11,6 +11,10 @@ addresses = {
         'lang':'Amharic',
         'email': ['Dr. Tamru E. Belay <g.braille@sympatico.ca>'],
     },
+    'an': {
+        'lang':'Aragonese',
+        'email': ['Jorge <jorgtum@gmail.com>'],
+    },
     'ar': { 
         'lang':'Arabic',
         'email': ['Fatma Mehanna <fatma.mehanna@gmail.com>'],
