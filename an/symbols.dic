@@ -2,99 +2,127 @@
 #A part of NonVisual Desktop Access (NVDA)
 #Copyright (c) 2012 NVDA Contributors
 #This file is covered by the GNU General Public License.
+# Traduciu por Jorgtum
+# Softaragonés
+
+symbols:
+# identifier	replacement[[	level][	preserve]][	# display name]
+
+complexSymbols:
+# identifier	regexp
+# Sentence endings.
+. sentence ending	(?<=[^\s.])\.(?=[\"'”’)\s]|$)
+! sentence ending	(?<=[^\s!])\!(?=[\"'”’)\s]|$)
+? sentence ending	(?<=[^\s?])\?(?=[\"'”’)\s]|$)
+... sentence ending	(?<=[^\s.])(\s\.|\.)\.\.(?=[\"'”’)\s]|$)
+… sentence ending	(?<=[^\s.])\…(?=[\"'”’)\s]|$)
+# Phrase endings.
+; phrase ending	(?<=[^\s;]);(?=\s|$)
+: phrase ending	(?<=[^\s:]):(?=\s|$)
+
+# Others
+decimal point	(?<=\d)\.(?=\d)
+in-word -	(?<=[^\W_])[-]
+negative number	(?<!\w)-(?=[$£€¥]?\d)
+dates /	((?<=\b\d\d)\/(?=\d\d/(\d{2}|\d{4})\b))|((?<=\b\d\d/\d\d)\/(?=(\d{2}|\d{4})\b))
 
 symbols:
 # identifier	replacement[[	level][	preserve]][	# display name]
 
 # Complex symbols
-. sentence ending	dot
-! sentence ending	bang
-? sentence ending	question
-; phrase ending	semi
-: phrase ending	colon
-decimal point	
-in-word '	tick
-negative number	minus
+. sentence ending	punto	all	always
+! sentence ending	zarrar exclamación	all	always
+? sentence ending	zarrar interrogación	all	always
+... sentence ending	elipsis	all	always	
+… sentence ending	elipsis	all	always	
+; phrase ending	punto y coma	most	always
+: phrase ending	dos puntos	most	always
+decimal point		none	always
+in-word '	apóstrofo	all	norep
+in-word -	guión	all	norep
+negative number	menos	none	norep
+dates /	 	all	always
 
 # Whitespace
-\0	blank
+\0	en blanco	char
 \t	tab
-\n	line feed
-\f	page break
-\r	carriage return
- 	space
- 	space
+\n	linia nueva	char
+\f	blinco de pachina	none
+\r	retorno de carro	char
+ 	espacio	char
+ 	espacio	char	# no-break space
 
 # Standard punctuation/symbols
-!	bang
-"	quote
-\#	number
-$	dollar
-£	pound
-€	euro
-¢	Cents
-¥	Yen
-%	percent
-&	and
-'	tick
-(	left paren
-)	right paren
-*	star
-+	plus
-,	comma
--	dash
-.	dot
-/	slash
-:	colon
-;	semi
-<	less
->	greater
-=	equals
-?	question
-@	at
-[	left bracket
-]	right bracket
-\\	backslash
-^	caret
-_	line
-`	graav
-{	left brace
-}	right brace
-|	bar
-~	tilda
+!	zarrar esclamación	all
+"	cometas	most
+\#	siñal de numero	most
+$	dólar	all	norep
+£	libras	all	norep
+€	euros	all	norep
+¢	Centavos	all	norep
+¥	Yen	all	norep
+%	porciento	some
+&	anpersán	some
+'	apóstrofo	all
+(	ubrir parentesi	most
+)	zarrar parentesi	most
+*	asterisco	most
++	más	most
+,	coma	all	always
+-	guión	most
+.	punto	some
+/	barra 	some
+:	dos puntos	most	norep
+;	punto y coma	most
+<	menor que	most
+>	mayor que	most
+=	igual	most
+?	zarrar interrogación	all
+@	arroba	some
+[	ubrir gafet	most
+]	zarrar gafet	most
+\\	barra inversa	most
+^	circunflexo	most
+_	barra baixa	most
+`	grieu	most
+{	ubrir clau	most
+}	zarrar clau	most
+|	barra vertical	most
+~	tilde	most
+¿	ubrir interrogación	all
+¡	ubrir esclamación	all
 
 # Other characters
-•	bullet
-…	dot dot dot
-...	dot dot dot
-	bullet
-“	left quote
-”	right quote
-‘	left tick
-’	right tick
-–	en dash
-—	em dash
-●	circle
-¨	diaeresis
-‎	left to right mark
-‏	right to left mark
-■	black square
-➔	right arrow
-§	section
-°	degrees
-«	double left pointing angle bracket
-»	double right pointing angle bracket
-µ	micro
-¹	superscript 1
-²	superscript 2
-³	superscript 3
-®	registered
-™	Trademark
-©	Copyright
-±	Plus or Minus
-×	times
-÷	divide by
-→	right arrow
-✓	check
-✔	check
-
+•	viñeta	some
+…	elipsis	all	always
+...	elipsis	all	always
+	viñeta	some
+“	ubrir cometas	most
+”	zarrar cometas	most
+‘	apóstrofo	most
+’	apóstrofo	most
+–	guión curto	most
+—	guión largo	most
+●	circlo	most
+¨	dieresi	most
+‎	marca de cucha a dreita	char
+‏	marca de dreita a cucha	char
+■	Barra vertical cortada	some
+➔	flecha ta la dreita	some
+§	Sección	most
+°	graus	some
+«	ubrir Cometas angulars
+»	zarrar cometas angulars
+µ	micro	some
+¹	1 sobreescrito	some
+²	ta o cuadrau	some
+³	ta o cubo	some
+®	rechistrau	some
+™	Marca rechistrada	some
+©	copyright	some	norep
+±	Más o menos	most
+×	multiplicáu por	most
+÷	dividíu por	most
+→	Flecha dreita	some
+✓	Marcáu	some
+✔	Marcáu	some
