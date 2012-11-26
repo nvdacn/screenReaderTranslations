@@ -33,7 +33,7 @@ addresses = {
     },
     'da': {
         'lang': 'Danish',
-        'email': ['Daniel K. Gartmann <kontakt@nvda.dk>'],
+        'email': ['Daniel K. Gartmann <kontakt@nvda.dk>', 'Nicolai Svendsen <chojiro1990@gmail.com>'],
     },
     'de': {
         'lang':'German',
@@ -137,7 +137,7 @@ addresses = {
     },
     'ur': {
         'lang':'Urdu',
-        'email': ['Rana Ayaz <rana.ayaz1@gmail.com>'],
+        'email': ['Rana Ayaz <rana.ayaz1@gmail.com>', 'him Prasad Gautam <drishtibachak@gmail.com>'],
     },
     'ta': {
         'lang':'Tamil',
