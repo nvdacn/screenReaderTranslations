@@ -58,10 +58,10 @@
     <UL>
     <LI><A HREF="#Objects">5.1. Objekter</A>
     <LI><A HREF="#SystemFocus">5.2. Navigering med systemfokus</A>
-    <LI><A HREF="#toc31">5.3. Navigering med systemmarkøren (System Caret</A>
+    <LI><A HREF="#SystemCaret">5.3. Navigering med systemmarkøren</A>
     <LI><A HREF="#toc32">5.4. Objektbaseret navigering</A>
-    <LI><A HREF="#toc33">5.5. Gennemse teksten i det aktuelle objekt</A>
-    <LI><A HREF="#toc34">5.6. Flad visning</A>
+    <LI><A HREF="#ReviewingText">5.5. Gennemse teksten i det aktuelle objekt</A>
+    <LI><A HREF="#FlatReview">5.6. Flad Visning</A>
     <LI><A HREF="#toc35">5.7. Navigering ved brug af musen</A>
     </UL>
   <LI><A HREF="#toc36">6. Virtuelle Buffers</A>
@@ -359,7 +359,7 @@ Dette betyder, at handlinger der kan udføres normalt uden NVDA vil ikke virke.
 <P>
 Den mest grundlæggende handling du kan udføre er at  få annonceret kontrollen eller teksten på skærmen uanset hvor elementet befinder sig.
 For at gøre dette, skal du placere en finger hvor som helst på skærmen.
-Du kan også beholde din finger på skærmen, og derefter bevæge den ehnover skærmen for at få tekst og kontroller oplæst.
+Du kan også beholde din finger på skærmen, og derefter bevæge den henover skærmen for at få tekst og kontroller oplæst.
 </P>
 
 <A NAME="toc22"></A>
@@ -583,18 +583,19 @@ Der er nogle nyttige kommandoer,, når du flytter fokus rundt i systemet:
 </TR>
 </TABLE>
 
-<A NAME="toc31"></A>
-<H3>5.3. Navigering med systemmarkøren (System Caret</H3>
+<A NAME="SystemCaret"></A>
+<H3>5.3. Navigering med systemmarkøren</H3>
 
 <P>
 Når et <A HREF="#Objects">objekt</A> der tillader navigation og/eller redigering af tekst har <A HREF="#SystemFocus">fokus</A>, kan du bevæge dig gennem teksten med systemmarkøren.
 </P>
 <P>
 Når fokus er på et objekt der har en systemmarkør kan du bruge  piletasterne, side op, side ned, hjem, end, osv.
+Du kan også ændre teksten hvis kontrollen understøtter redigering.
 NVDA vil annoncere mens du bevæger dig imellem tegn, ord og linie, og vilogså annoncere markeret og fra valgt tekst.
 </P>
 <P>
-Følgende taste kommandoer kan bruges i forbindelse med markøren:
+Følgende taste kommandoer kan bruges i forbindelse med systemmarkøren:
 </P>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -605,50 +606,21 @@ Følgende taste kommandoer kan bruges i forbindelse med markøren:
 </TR>
 <TR>
 <TD>Læs alt</TD>
-<TD>NVDA + pil ned</TD>
-<TD>Starter læsningen fra markørens nuværende position</TD>
+<TD>NVDA+pil ned</TD>
+<TD>Starter læsningen fra markørens nuværende position og flytter markøren med ned i teksten</TD>
 </TR>
-</TABLE>
-
-<P>
-og flytter markøren med ned i teksten |
-</P>
-
-<TABLE CELLPADDING="4">
 <TR>
 <TD>Læs den nuværende linje</TD>
-<TD>NVDA + pil op</TD>
-<TD>Læser den linje, hvor markøren for øjeblikket</TD>
+<TD>NVDA+pil op</TD>
+<TD>Læser den linje, hvor markøren for øjeblikket befinder sig. Ved at trykke to gange vil linien blive stavet.</TD>
 </TR>
-</TABLE>
-
-<P>
-befinder sig. Ved at trykke to gange vil linien blive stavet. |
-</P>
-
-<TABLE CELLPADDING="4">
 <TR>
 <TD>Læs nuværende tekstmarkering</TD>
-<TD>NVDA + Skift + pil op</TD>
-<TD>Læser den tekst der pt. er</TD>
+<TD>NVDA+Skift+pil op</TD>
+<TD>Læser den tekst der pt. er markeret</TD>
 </TR>
 </TABLE>
 
-<P>
-markeret |
-</P>
-
-<TABLE CELLPADDING="4">
-<TR>
-<TD>Annoncer tekstformatering</TD>
-<TD>NVDA + f</TD>
-<TD>annoncerer formateringen af teksten</TD>
-</TR>
-</TABLE>
-
-<P>
-hvor markøren i øjeblikket befinder sig |
-</P>
 <P>
 Når man er i en tabel, er følgende kommandoer også tilgængelige:
 </P>
@@ -661,80 +633,59 @@ Når man er i en tabel, er følgende kommandoer også tilgængelige:
 </TR>
 <TR>
 <TD>Flyt til forrige kolonne</TD>
-<TD>Ctrl + Alt + venstre pil</TD>
-<TD>Flytter markøren til den forrige</TD>
+<TD>Ctrl+Alt+venstre pil</TD>
+<TD>Flytter markøren til den forrige kolonne (i samme række)</TD>
 </TR>
-</TABLE>
-
-<P>
-kolonne (i samme række) |
-</P>
-
-<TABLE CELLPADDING="4">
 <TR>
 <TD>Flyt til næste kolonne</TD>
-<TD>Ctrl + Alt + højre pilw</TD>
-<TD>Flytter markøren</TD>
+<TD>Ctrl+Alt+højre pilw</TD>
+<TD>Flytter markøren  til den næste kolonne (i samme række)</TD>
 </TR>
-</TABLE>
-
-<P>
-til den næste kolonne (i samme række) |
-</P>
-
-<TABLE CELLPADDING="4">
 <TR>
 <TD>Flyt til forrige række</TD>
-<TD>Ctrl + Alt + pil op</TD>
-<TD>Flytter markøren til</TD>
+<TD>Ctrl+Alt+pil op</TD>
+<TD>Flytter markøren til den forrige række (i den samme kolonne)</TD>
 </TR>
-</TABLE>
-
-<P>
-den forrige række (i den samme kolonne) |
-</P>
-
-<TABLE CELLPADDING="4">
 <TR>
 <TD>Flyt til næste række</TD>
-<TD>Ctrl + Alt + pil ned</TD>
-<TD>Flytter markøren til</TD>
+<TD>Ctrl+Alt+pil ned</TD>
+<TD>Flytter markøren til næste række (i den samme kolonne)</TD>
 </TR>
 </TABLE>
-
-<P>
-næste række (i den samme kolonne) |
-</P>
 
 <A NAME="toc32"></A>
 <H3>5.4. Objektbaseret navigering</H3>
 
 <P>
-Hvis du ønsker at udforske det aktuelle program eller operativsystemet
-uden at flytte fokus, kan du bruge NVDA's ubegrænsede markør.
-Dette giver dig mulighed for at flytte imellem og få oplysninger om de enkelte
-objekter som tekst, knapper, afkrydsningsfelter, skydere, lister og redigerbar
-tekstfelter.
+For det meste vil du arbejde med kommandoer der benytter <A HREF="#SystemFocus">fokus</A> og <A HREF="#SystemCaret">systemmarkøren</A>.
+Du kan arbejde med <A HREF="#Objects">objekter</A> der nomalt ikke kan benyttes af tastaturet.
+I disse situationer kan du bruge objektBASERET navigation.
+</P>
+<P>
+Objektbaseret navigation lader dig bevæge dig mellem og skaffe information om de individuelle <A HREF="#Objects">objekter</A>.
 Når du flytter til et objekt, vil NVDA rapportere det på samme måde som ved systemfokus.
+Du kan også benytte  <A HREF="#FlatReview">flad visning</A> til at læse teksten præcis som den vises på skærmen.
 </P>
 <P>
-I stedet for at at skulle flytte frem og tilbage mellem hvert enkelt objekt i 
-systemet, er objekterne grupperet hierarkisk.
-Dette betyder, at du skal åbne objekterne for at få adgang til objekter
-inde i det pågældende objekt.
-For eksempel, i stedet for at flytte gennem alle listeelementer, når du støder på en listboks, skal du flytte ind i listboksen (dvs. gå til dens første
-barneobjekt) for at få adgang til dens elementer.
-Du kan flytte ud af listen (navigere til det overordnede objekt) for at fortsætte
-forbi listboksen.
-På samme måde forholder det sig, hvis du støder på en værktøjslinje, skal du flytte ind i værktøjslinjen
-(Gå til dens første barn) for at få adgang til kontrollerne i værktøjslinjen.
+I stedet for at skulle flytte frem og tilbage mellem hvert enkelt objekt i systemet, er objekterne grupperet hierarkisk.
+Dette betyder, at du skal åbne objekterne for at få adgang til objekter inde i det pågældende objekt.
+For eksempel, i stedet for at flytte gennem alle listeelementer, når du støder på en listboks, skal du flytte ind i listboksen for at få adgang til dens elementer.
+Befinder du dig indeni listboksen og flytter mellem det forrige og næste element, vil du kun bevæge dig rundt i listen.
+Du kan flytte ud af listen ved at navigere til det overordnede objekt.
+Derefter kan du bevæge dig forbi listen, hvis du ønsker, at udforske andre objekter.
+På samme måde forholder det sig, hvis du støder på en værktøjslinje, og du skal ligeledes flytte ind i værktøjslinjen
 </P>
 <P>
-Som standard, flytter navigator objektet sammen med System fokus,
-Men denne adfærd kan slås til og fra.
+Det objekt, du er i gang med at gennemse, kaldes for navigatorobjektet.
+Når du navigerer til et objekt, kan du gennemse det ved at benytte <A HREF="#ReviewingText">kommandoer til gennemsyn af tekst</A>.
+Som standard, flytter navigator objektet sammen med System fokus, men denne adfærd kan slås til og fra.
 </P>
 <P>
-For at navigere imellem objekter, skal du bruge følgende taster:
+Bemærk, at punkt følger <A HREF="#SystemFocus">fokus</A> og <A HREF="#SystemCaret">systemmarkør</A> som standardindstilling, i stedet for objekt navigation og tekstgennemsyn.
+Hvis du derimod ønsker at punkt skal følge objekt navigation og tekstgennemsyn, skal du <A HREF="#BrailleTether">konfigurere punkt til at være tøjret til</A> genemsyn.
+</P>
+<P>
+For at navigere imellem objekter, skal du benytte følgende kommandoer:
 </P>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -742,139 +693,94 @@ For at navigere imellem objekter, skal du bruge følgende taster:
 <TD>| Navn</TD>
 <TD>Desktop Tast</TD>
 <TD>Laptop tast</TD>
+<TD>Bevægelse</TD>
 <TD>Beskrivelse</TD>
 </TR>
 <TR>
 <TD>Annoncer det aktuelle objekt</TD>
-<TD>NVDA + numpad5</TD>
-<TD>NVDA + kontrol + i</TD>
-<TD>Rapporterer</TD>
+<TD>NVDA+numpad5</TD>
+<TD>NVDA+kontrol+i</TD>
+<TD>Ingen</TD>
+<TD>Rapporterer det nuværende navigator objekt. Ved at Trykke to gange bliver oplysningerne stavet.</TD>
 </TR>
-</TABLE>
-
-<P>
-det nuværende navigator objekt. Ved at Trykke to gange bliver oplysningerne stavet. |
-</P>
-
-<TABLE CELLPADDING="4">
 <TR>
 <TD>Naviger til overordnede objekt</TD>
-<TD>NVDA + numpad8</TD>
-<TD>NVDA + shift + i</TD>
-<TD>Navigerer til</TD>
+<TD>NVDA+numpad8</TD>
+<TD>NVDA+skift+i</TD>
+<TD>ingen</TD>
+<TD>Navigerer til det overordnede (container) objekt i forhold til det aktuelle navigator objekt</TD>
 </TR>
-</TABLE>
-
-<P>
-det overordnede (container) objekt i forhold til det aktuelle navigator objekt |
-</P>
-
-<TABLE BORDER="1" CELLPADDING="4">
 <TR>
 <TD>Naviger til forrige objekt</TD>
-<TD>NVDA + numpad4</TD>
-<TD>NVDA + kontrol + j</TD>
+<TD>NVDA+numpad4</TD>
+<TD>NVDA+kontrol+j</TD>
+<TD>Svirp til venstre</TD>
+<TD>Navigerer til objektet lige før det nuværende navigator objekt</TD>
 </TR>
-</TABLE>
-
-<P>
-Navigerer til objektet lige før det nuværende navigator objekt |
-</P>
-
-<TABLE CELLPADDING="4">
 <TR>
 <TD>Naviger til næste objekt</TD>
-<TD>NVDA + numpad6</TD>
-<TD>kontrol + NVDA + l</TD>
-<TD>Navigerer til</TD>
+<TD>NVDA+numpad6</TD>
+<TD>kontrol+NVDA+l</TD>
+<TD>Svirp til højre</TD>
+<TD>Navigerer til det objekt der findes efter det nuværende navigator objekt</TD>
 </TR>
-</TABLE>
-
-<P>
-Det objekt der findes efter det nuværende navigator objekt |
-</P>
-
-<TABLE BORDER="1" CELLPADDING="4">
 <TR>
 <TD>Gå til første barneobjekt</TD>
-<TD>NVDA + numpad2</TD>
-<TD>NVDA + shift + komma</TD>
+<TD>NVDA+numpad2</TD>
+<TD>NVDA+skift +komma</TD>
+<TD>svirp ned (teksttilstand)</TD>
+<TD>Navigerer til det første barn der indgår i det nuværende navigator objekt</TD>
 </TR>
-</TABLE>
-
-<P>
-Navigerer til det første barn der indgår i det nuværende navigator objekt |
-</P>
-
-<TABLE BORDER="1" CELLPADDING="4">
 <TR>
 <TD>Naviger til det objekt der er i fokus</TD>
-<TD>NVDA + numpadMinus</TD>
-<TD>NVDA + Backspace</TD>
+<TD>NVDA+numpadMinus</TD>
+<TD>NVDA+Backspace</TD>
+<TD>ingen</TD>
+<TD>Navigerer til det objekt, der i øjeblikket er i fokus, og placere den ubegrænsede markør ved systemets markør, hvis den er synlig</TD>
 </TR>
-</TABLE>
-
-<P>
-Navigerer til det objekt, der i øjeblikket er i fokus, og 
-placere den ubegrænsede markør ved systemets markør, hvis den er synlig |
-</P>
-
-<TABLE BORDER="1" CELLPADDING="4">
 <TR>
 <TD>Aktiver nuværende navigator objekt</TD>
-<TD>NVDA + numpadEnter</TD>
-<TD>NVDA + ind</TD>
+<TD>NVDA+numpadEnter</TD>
+<TD>NVDA+enter</TD>
+<TD>dobbelttryk</TD>
+<TD>Aktiverer det nuværende navigator objekt (svarende til at klikke med musen eller trykke på mellemrums tasten, når det er i fokus)</TD>
 </TR>
-</TABLE>
-
-<P>
-Aktiverer det nuværende navigator objekt (svarende til at klikke med
-musen eller trykke på mellemrums tasten, når det er i fokus) |
-</P>
-
-<TABLE CELLPADDING="4">
 <TR>
 <TD>Flyt System fokus til det nuværende navigator objekt</TD>
-<TD>NVDA + shift + numpadMinus</TD>
+<TD>NVDA+skift+numpadMinus</TD>
+<TD>NVDA+skift+Backspace</TD>
+<TD>ingen</TD>
+<TD>Flytter System fokus til det nuværende navigator objekt, hvis det er muligt</TD>
 </TR>
-<TR>
-<TD>NVDA + shift + Backspace</TD>
-<TD>Flytter System fokus til det nuværende navigator</TD>
-</TR>
-</TABLE>
-
-<P>
-objekt, hvis det er muligt |
-</P>
-
-<TABLE BORDER="1" CELLPADDING="4">
 <TR>
 <TD>Annoncer navigator objektets dimensioner</TD>
-<TD>NVDA + numpadSlet</TD>
-<TD>NVDA + slette</TD>
+<TD>NVDA+numpadSlet</TD>
+<TD>NVDA+slet</TD>
+<TD>ingen</TD>
+<TD>Annoncerer det nuværende navigator objekts dimensioner på skærmen i procent (herunder afstand fra venstre og toppen af skærmen, og dens bredde og højde)</TD>
 </TR>
 </TABLE>
 
-<P>
-Annoncerer det nuværende navigator objekts dimensioner på skærmen i procent (herunder afstand fra venstre og toppen af skærmen, og dens bredde
-og højde) |
-</P>
 <P>
 Bemærk: for at få numpad tasterne til at fungere korrekt, kræver det at det numeriske tastatur er slået fra.
 </P>
 
-<A NAME="toc33"></A>
+<A NAME="ReviewingText"></A>
 <H3>5.5. Gennemse teksten i det aktuelle objekt</H3>
 
 <P>
-NVDA giver dig mulighed for at læse indholdet af det aktuelle navigator objekt ved 
-enten at flytte imellem tegn, ord eller linjer.
-Dette er for det meste nyttigt i Windows kommando konsol vinduer og andre
-steder, hvor der er en begrænset eller ikke-eksisterende system markør.
-Når man bevæger sig rundt med den ubegrænsede markør flytter systemets markør ikke med,
-så du kan gennemse teksten på skærmen uden at flytte systemets markør.
+NVDA giver dig mulighed for at læse indholdet af det aktuelle <A HREF="#ObjectNavigation">navigator objekt</A> (herunder <A HREF="#FlatReview">flad visning</A>) ved  enten at flytte imellem tegn, ord eller linjer.
+Dette er for det meste nyttigt i Windows kommando konsol vinduer og andre steder, hvor der er en begrænset eller ikke-eksisterende system markør.
+For eksempel, du kan bruge denne markør til at gennemse en lang besked i en dialog.
+</P>
+<P>
+Når man bevæger sig rundt med den ubegrænsede markør flytter systemets markør ikke med, så du kan gennemse teksten på skærmen uden at flytte systemets markør.
 Men når du flytter rundt med systemets markør, følger den ubegrænsede markør som standard med.
 Dette kan slåes til og fra.
+</P>
+<P>
+Bemærk, at punkt følger <A HREF="#SystemFocus">fokus</A> og <A HREF="#SystemCaret">systemmarkør</A> som standardindstilling, i stedet for objekt navigation og tekstgennemsyn.
+Hvis du derimod ønsker at punkt skal følge objekt navigation og tekstgennemsyn, skal du <A HREF="#BrailleTether">konfigurere punkt til at være tøjret til</A> genemsyn.
 </P>
 <P>
 Følgende tastekommandoer er tilgængelige for gennemgang af tekst:
@@ -885,236 +791,136 @@ Følgende tastekommandoer er tilgængelige for gennemgang af tekst:
 <TH>Navn</TH>
 <TH>Desktoptast</TH>
 <TH>Laptoptast</TH>
+<TH>Bevægelse</TH>
 <TH>Beskrivelse</TH>
 </TR>
 <TR>
 <TD>flyt den ubegrænsede markør til øverste linje</TD>
-<TD>shift+numpad7</TD>
+<TD>skift+numpad7</TD>
 <TD>NVDA+7</TD>
+<TD>ingen</TD>
 <TD>Flytter den ubegrænsede markør til den første linje i teksten</TD>
 </TR>
 <TR>
 <TD>flyt den ubegrænsede markør til forrige linje</TD>
 <TD>numpad7</TD>
 <TD>NVDA+u</TD>
+<TD>Svirp op (teksttilstand)</TD>
 <TD>Flytter den ubegrænsede markør til den forrige linje i teksten</TD>
 </TR>
 <TR>
 <TD>oplæs nuværende linje hvor den ubegrænset markør er placeret</TD>
 <TD>numpad8</TD>
-<TD>NVDA + i</TD>
+<TD>NVDA+i</TD>
+<TD>Ingen</TD>
+<TD>Annoncerer den linje i teksten, hvor den ubegrænsede markør er placeret. Ved at trykke to gange vil teksten blive stavet</TD>
 </TR>
-</TABLE>
-
-<P>
-annoncerer
-den linje i teksten, hvor den ubegrænsede markør er placeret. Ved at trykke
-to gange vil teksten blive stavet |
-</P>
-
-<TABLE CELLPADDING="4">
 <TR>
 <TD>Flyt den ubegrænsede markør til næste linje i teksten</TD>
 <TD>numpad9</TD>
-<TD>NVDA + o</TD>
-<TD>Flytter den</TD>
+<TD>NVDA+o</TD>
+<TD>Svirp ned (teksttilstand)</TD>
+<TD>Flytter den den ubegrænsede markør til næste linje med tekst</TD>
 </TR>
-</TABLE>
-
-<P>
-den ubegrænsede markør til næste linje med tekst |
-</P>
-
-<TABLE BORDER="1" CELLPADDING="4">
 <TR>
 <TD>Flyt den ubegrænsede markør til den sidste linie i teksten</TD>
-<TD>shift + numpad9</TD>
-<TD>NVDA 9</TD>
+<TD>skift+numpad9</TD>
+<TD>NVDA+9</TD>
+<TD>ingen</TD>
+<TD>Flytter den ubegrænsede markør til den nederste linje i teksten</TD>
 </TR>
-</TABLE>
-
-<P>
-Flytter
-den ubegrænsede markør til den nederste linje i teksten |
-</P>
-
-<TABLE CELLPADDING="4">
 <TR>
 <TD>Flyt den ubegrænsede markør til det forrige ord i teksten</TD>
 <TD>numpad4</TD>
-<TD>NVDA + j</TD>
-<TD>Flytter</TD>
+<TD>NVDA+j</TD>
+<TD>Svirp til venstre med to fingre</TD>
+<TD>Flytter den ubegrænsede markør til det forrige ord i teksten</TD>
 </TR>
-</TABLE>
-
-<P>
-den ubegrænsede 
-markør til det forrige ord i teksten |
-</P>
-
-<TABLE BORDER="1" CELLPADDING="4">
 <TR>
 <TD>oplæs det aktuelle ord hvor den ubegrænsede markør er placeret</TD>
 <TD>numpad5</TD>
-<TD>NVDA + k</TD>
+<TD>NVDA+k</TD>
+<TD>ingen</TD>
+<TD>annoncerer nuværende ord i teksten, hvor den ubegrænsede markør er placeret. Ved at trykke to gange bliver ordet stavet.</TD>
 </TR>
-</TABLE>
-
-<P>
-annoncerer
-nuværende ord i teksten, hvor den ubegrænsede markør er placeret.
-Ved at trykke to gange bliver ordet stavet. |
-</P>
-
-<TABLE CELLPADDING="4">
 <TR>
 <TD>Flyt den ubegrænsede markør til næste ord i teksten</TD>
 <TD>numpad6</TD>
-<TD>NVDA + l</TD>
-<TD>Flyt den</TD>
+<TD>NVDA+l</TD>
+<TD>Svirp til højre med to fingre (teksttilstand)</TD>
+<TD>Flyt den ubegrænsede markør til det næste ord i teksten</TD>
 </TR>
-</TABLE>
-
-<P>
-ubegrænsede 
-markør til det næste ord i teksten |
-</P>
-
-<TABLE BORDER="1" CELLPADDING="4">
 <TR>
 <TD>Gå til starten af linjen i teksten</TD>
-<TD>shift + numpad1</TD>
-<TD>NVDA + shift + u</TD>
+<TD>skift+numpad1</TD>
+<TD>NVDA+skift+u</TD>
+<TD>ingen</TD>
+<TD>Flytter den ubegrænsede markør til starten af den aktuelle linje i teksten</TD>
 </TR>
-</TABLE>
-
-<P>
-Flytter den ubegrænsede markør til starten af den aktuelle linje i teksten |
-</P>
-
-<TABLE CELLPADDING="4">
 <TR>
 <TD>Flyt den ubegrænsede markør til forrige tegn i teksten</TD>
 <TD>numpad1</TD>
-<TD>NVDA + m</TD>
-<TD>Flytter</TD>
+<TD>NVDA+m</TD>
+<TD>Svirp til venstre (teksttilstand)</TD>
+<TD>Flytter den ubegrænsede markør til det forrige tegn på den aktuelle linje i teksten</TD>
 </TR>
-</TABLE>
-
-<P>
-den ubegrænsede markør til det forrige tegn på den aktuelle linje i teksten |
-</P>
-
-<TABLE BORDER="1" CELLPADDING="4">
 <TR>
 <TD>oplæs det aktuelle tegn hvor den ubegrænsede markør er placeret</TD>
 <TD>numpad2</TD>
-<TD>NVDA + komma</TD>
+<TD>NVDA+komma</TD>
+<TD>ingen</TD>
+<TD>Annoncerer det aktuelle tegn på den tekstlinje, hvor den ubegrænsede markør er placeret. Ved at trykke to gange bliver tegnet oplæst som en numerisk værdi og hexadecimalt.</TD>
 </TR>
-</TABLE>
-
-<P>
-annoncerer
-det aktuelle tegn på den tekstlinje, hvor den ubegrænsede markør er
-placeret. Ved at trykke to gange bliver tegnet oplæst som en numerisk værdi og 
-</P>
-<P>
-hexadecimalt. |
-</P>
-
-<TABLE CELLPADDING="4">
 <TR>
 <TD>Flyt den ubegrænsede markør til næste tegn i teksten</TD>
 <TD>numpad3</TD>
-<TD>NVDA + prik</TD>
-<TD>Flyt</TD>
+<TD>NVDA+prik</TD>
+<TD>Svirp til højre (teksttilstand)</TD>
+<TD>Flyt den ubegrænsede markør til det næste tegn på den aktuelle linie med tekst</TD>
 </TR>
-</TABLE>
-
-<P>
-den ubegrænsede markør til det næste tegn på den aktuelle linie med tekst |
-</P>
-
-<TABLE CELLPADDING="4">
 <TR>
 <TD>Flyt den ubegrænsede markør til slutningen af linjen i teksten</TD>
-<TD>shift + numpad3</TD>
-<TD>NVDA +</TD>
+<TD>skift+numpad3</TD>
+<TD>NVDA+skift+o</TD>
+<TD>Ingen</TD>
+<TD>Flytter den ubegrænsede markør til slutningen af den aktuelle linje med tekst</TD>
 </TR>
-</TABLE>
-
-<P>
-shift + o | Flytter
-den ubegrænsede markør til slutningen af den aktuelle linje med tekst |
-</P>
-
-<TABLE CELLPADDING="4">
 <TR>
 <TD>oplæs alt tekst fra den ubegrænsede markørs position</TD>
 <TD>numpadPlus</TD>
-<TD>NVDA + shift + pil ned</TD>
+<TD>NVDA+skift+pil ned</TD>
+<TD>Svirp ned med tre fingre (teksttilstand)</TD>
+<TD>Læser fra den ubegrænsede markørs aktuelle position, samtidig med at den ubegrænsede markør flytter med</TD>
 </TR>
-</TABLE>
-
-<TABLE CELLPADDING="4">
-<TR>
-<TD>Læser fra</TD>
-</TR>
-</TABLE>
-
-<P>
-den ubegrænsede markørs aktuelle position, samtidig med at den ubegrænsede markør flytter med 
-</P>
-<P>
-|
-</P>
-
-<TABLE BORDER="1" CELLPADDING="4">
-<TR>
-<TD>Flyt markøren til den ubegrænsede markør</TD>
-<TD>kontrol + numpadMinus</TD>
-</TR>
-</TABLE>
-
-<P>
-NVDA + kontrol + Backspace | Flytter System markøren til placeringen af
-den ubegrænsede markør |
-</P>
-
-<TABLE CELLPADDING="4">
 <TR>
 <TD>Kopier fra den ubegrænsede markør</TD>
-<TD>NVDA + f9</TD>
-<TD>NVDA + f9</TD>
-<TD>begynder at kopiere tekst fra</TD>
+<TD>NVDA+f9</TD>
+<TD>NVDA+f9</TD>
+<TD>ingen</TD>
+<TD>Begynder at kopiere tekst fra den ubegrænsede markørs position. Den faktiske kopiering får ikke virkning, før du fortæller NVDA hvor du skal kopiere til</TD>
 </TR>
-</TABLE>
-
-<P>
-den ubegrænsede markørs position. Den faktiske kopiering får ikke
-virkning, før du fortæller NVDA hvor du skal kopiere til |
-</P>
-
-<TABLE CELLPADDING="4">
 <TR>
 <TD>Kopier til den ubegrænset markør</TD>
-<TD>NVDA + F10</TD>
-<TD>NVDA + F10</TD>
-<TD>Kopierer fra den position</TD>
+<TD>NVDA+F10</TD>
+<TD>NVDA+F10</TD>
+<TD>ingen</TD>
+<TD>Kopierer fra den position hvor du før startede kopieringen fra den ubegrænsede markør med NVDA + f9   og så til den nuværende position af den ubegrænsede markør. Efter der er trykket på denne tast, vil teksten blive kopieret til Windows Udklipsholder</TD>
+</TR>
+<TR>
+<TD>Annoncér tekstformatering</TD>
+<TD>NVDA+f</TD>
+<TD>NVDA+f</TD>
+<TD>ingen</TD>
+<TD>Annoncerer formateringsoplysninger af den tekst hvor den ubegrænsede markør har fokus</TD>
 </TR>
 </TABLE>
 
-<P>
-hvor du før startede kopieringen fra den ubegrænsede markør med NVDA + f9   og så til den 
-</P>
-<P>
-nuværende position af den ubegrænsede markør. Efter der er trykket på denne tast, vil teksten blive kopieret til Windows Udklipsholder |
-</P>
 <P>
 Bemærk: for at kunne bruge numpad tasterne kræver det at numlock tasten er slået fra.
 </P>
 <P>
-For at hjælpe dig med at huske disse kommandoer, er de grundlæggende læsekommandoer organiseret i et gitter af tre x tre, fra øverst til nederst. Placeringen er sådan, at linje er i det øverste lag, dernæst kommer ord og til sidst tegn i nederste lag. Tasterne i venstre side bruges til at flytte tilbage til forrige linje, ord og tegn, søjlen i midten bruges til aktuelle linje, ord og tegn, og den højre søjle af taster henviser til næste linje, ord og tegn, hvis man  tæller fra oven på det numeriske tastatur:
+For at hjælpe dig med at huske disse kommandoer, er de grundlæggende læsekommandoer organiseret i et gitter af tre x tre, fra øverst til nederst, hvor øverst til nederst er ord og bogstav, og venstre mod højre er forrige, aktuel og næste.
+Layoutet er således illustreret:
 </P>
 
 <TABLE BORDER="1" CELLPADDING="4">
@@ -1135,13 +941,25 @@ For at hjælpe dig med at huske disse kommandoer, er de grundlæggende læsekomm
 </TR>
 </TABLE>
 
-<A NAME="toc34"></A>
-<H3>5.6. Flad visning</H3>
+<A NAME="FlatReview"></A>
+<H3>5.6. Flad Visning</H3>
 
 <P>
-ligesom ved at gennemgå indholdet af et enkelt objekt, giver NVDA dig mulighed for at
-gennemgå hele indholdet af et dokument eller teksten på skærmen.
+Mens du generelt kun kan gennemse indeholdet af et eneste <A HREF="#Objects">objekt</A>, giver nogle objekter mulighed for at gennemse indeholdet af objekter indeni objekterne.
+Komplekse dokumenter giver dig mulighed for, at gennemse hele dokkumentet, og programvinduer giver dig mulighed for at gennemgå hele skærmen, som den vises visuelt.
 Dette kaldes flad visning.
+Dette er lignende andre metoder som andre skærmlæsere benytter for at gennemse hele skærmen.
+</P>
+<P>
+Når du flytter til flad visning, bliver du automatisk placeret på det aktuelle <A HREF="#ObjectNavigation">navigatorobjekt</A>.
+Hvis du ikke endnu har brugt objekt navigation, vil dette typisk være objektet der har <A HREF="#SystemFocus">fokus</A>.
+For eksempel ville du blive placeret på teksten af knappen i flad visning, hvis navigatorobjektet var en knap.
+Derefter kan du gennemse tekste ved brug af <A HREF="#ReviewingText">kommandoerne til gennemsyn af tekst</A>.
+Desuden kan du også gå direkte til objektet der omfatter den aktuelle position af den ubegrænsede markør, hvilket giver dig mulighed for at bruge <A HREF="#ObjectNavigation">objekt navigation</A> derfra.
+</P>
+<P>
+Bemærk, at punkt følger <A HREF="#SystemFocus">fokus</A> og <A HREF="#SystemCaret">systemmarkør</A> som standardindstilling, i stedet for objekt navigation og tekstgennemsyn.
+Hvis du derimod ønsker at punkt skal følge objekt navigation og tekstgennemsyn, skal du <A HREF="#BrailleTether">konfigurere punkt til at være tøjret til</A> genemsyn.
 </P>
 <P>
 De følgende to kommandoer bruges til at skifte til / fra flad visning:
