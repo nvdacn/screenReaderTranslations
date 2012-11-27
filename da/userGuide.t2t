@@ -165,7 +165,7 @@ Dette betyder, at handlinger der kan udføres normalt uden NVDA vil ikke virke.
 +++ Udforsk skærmen +++
 Den mest grundlæggende handling du kan udføre er at  få annonceret kontrollen eller teksten på skærmen uanset hvor elementet befinder sig.
 For at gøre dette, skal du placere en finger hvor som helst på skærmen.
-Du kan også beholde din finger på skærmen, og derefter bevæge den ehnover skærmen for at få tekst og kontroller oplæst.
+Du kan også beholde din finger på skærmen, og derefter bevæge den henover skærmen for at få tekst og kontroller oplæst.
 
 +++ Touch-bevægelser +++
 Når NVDA-kommandoer er beskrevet senere i denne brugermanual, kan de indeholde information om hvordan man benytter touchscreen til at udføre den kommando.
@@ -261,180 +261,126 @@ Der er nogle nyttige kommandoer,, når du flytter fokus rundt i systemet:
 | Annoncer statuslinje | NVDA+end | Annoncerer statuslinjen hvis NVDA finder den. Dette flytter også navigatorobjektet til denne position |
 %kc:endInclude
 
-++ Navigering med systemmarkøren (System Caret ++
+++ Navigering med systemmarkøren ++[SystemCaret]
 Når et [objekt #Objects] der tillader navigation og/eller redigering af tekst har [fokus #SystemFocus], kan du bevæge dig gennem teksten med systemmarkøren.
 
 Når fokus er på et objekt der har en systemmarkør kan du bruge  piletasterne, side op, side ned, hjem, end, osv.
+Du kan også ændre teksten hvis kontrollen understøtter redigering.
 NVDA vil annoncere mens du bevæger dig imellem tegn, ord og linie, og vilogså annoncere markeret og fra valgt tekst.
 
-Følgende taste kommandoer kan bruges i forbindelse med markøren:
+Følgende taste kommandoer kan bruges i forbindelse med systemmarkøren:
 %kc:beginInclude
 | | Navn | Tast | Beskrivelse |
-| Læs alt | NVDA + pil ned | Starter læsningen fra markørens nuværende position
-og flytter markøren med ned i teksten |
-| Læs den nuværende linje | NVDA + pil op | Læser den linje, hvor markøren for øjeblikket 
+| Læs alt | NVDA+pil ned | Starter læsningen fra markørens nuværende position og flytter markøren med ned i teksten |
+| Læs den nuværende linje | NVDA+pil op | Læser den linje, hvor markøren for øjeblikket befinder sig. Ved at trykke to gange vil linien blive stavet. |
+| Læs nuværende tekstmarkering | NVDA+Skift+pil op | Læser den tekst der pt. er markeret |
 
-befinder sig. Ved at trykke to gange vil linien blive stavet. |
-| Læs nuværende tekstmarkering | NVDA + Skift + pil op | Læser den tekst der pt. er 
-
-markeret |
-| Annoncer tekstformatering | NVDA + f | annoncerer formateringen af teksten
-hvor markøren i øjeblikket befinder sig |
 
 Når man er i en tabel, er følgende kommandoer også tilgængelige:
 | | Navn | tast | Beskrivelse |
-| Flyt til forrige kolonne | Ctrl + Alt + venstre pil | Flytter markøren til den forrige 
-
-kolonne (i samme række) |
-| Flyt til næste kolonne | Ctrl + Alt + højre pilw | Flytter markøren 
-til den næste kolonne (i samme række) |
-| Flyt til forrige række | Ctrl + Alt + pil op | Flytter markøren til
-den forrige række (i den samme kolonne) |
-| Flyt til næste række | Ctrl + Alt + pil ned | Flytter markøren til
-næste række (i den samme kolonne) |
+| Flyt til forrige kolonne | Ctrl+Alt+venstre pil | Flytter markøren til den forrige kolonne (i samme række) |
+| Flyt til næste kolonne | Ctrl+Alt+højre pilw | Flytter markøren  til den næste kolonne (i samme række) |
+| Flyt til forrige række | Ctrl+Alt+pil op | Flytter markøren til den forrige række (i den samme kolonne) |
+| Flyt til næste række | Ctrl+Alt+pil ned | Flytter markøren til næste række (i den samme kolonne) |
 %kc:endInclude
 
 ++ Objektbaseret navigering  ++
-Hvis du ønsker at udforske det aktuelle program eller operativsystemet
-uden at flytte fokus, kan du bruge NVDA's ubegrænsede markør.
-Dette giver dig mulighed for at flytte imellem og få oplysninger om de enkelte
-objekter som tekst, knapper, afkrydsningsfelter, skydere, lister og redigerbar
-tekstfelter.
+For det meste vil du arbejde med kommandoer der benytter [fokus #SystemFocus] og [systemmarkøren #SystemCaret].
+Du kan arbejde med [objekter #Objects] der nomalt ikke kan benyttes af tastaturet.
+I disse situationer kan du bruge objektBASERET navigation.
+
+Objektbaseret navigation lader dig bevæge dig mellem og skaffe information om de individuelle [objekter #Objects].
 Når du flytter til et objekt, vil NVDA rapportere det på samme måde som ved systemfokus.
+Du kan også benytte  [flad visning #FlatReview] til at læse teksten præcis som den vises på skærmen.
 
-I stedet for at at skulle flytte frem og tilbage mellem hvert enkelt objekt i 
-systemet, er objekterne grupperet hierarkisk.
-Dette betyder, at du skal åbne objekterne for at få adgang til objekter
-inde i det pågældende objekt.
-For eksempel, i stedet for at flytte gennem alle listeelementer, når du støder på en listboks, skal du flytte ind i listboksen (dvs. gå til dens første
-barneobjekt) for at få adgang til dens elementer.
-Du kan flytte ud af listen (navigere til det overordnede objekt) for at fortsætte
-forbi listboksen.
-På samme måde forholder det sig, hvis du støder på en værktøjslinje, skal du flytte ind i værktøjslinjen
-(Gå til dens første barn) for at få adgang til kontrollerne i værktøjslinjen.
+I stedet for at skulle flytte frem og tilbage mellem hvert enkelt objekt i systemet, er objekterne grupperet hierarkisk.
+Dette betyder, at du skal åbne objekterne for at få adgang til objekter inde i det pågældende objekt.
+For eksempel, i stedet for at flytte gennem alle listeelementer, når du støder på en listboks, skal du flytte ind i listboksen for at få adgang til dens elementer.
+Befinder du dig indeni listboksen og flytter mellem det forrige og næste element, vil du kun bevæge dig rundt i listen.
+Du kan flytte ud af listen ved at navigere til det overordnede objekt.
+Derefter kan du bevæge dig forbi listen, hvis du ønsker, at udforske andre objekter.
+På samme måde forholder det sig, hvis du støder på en værktøjslinje, og du skal ligeledes flytte ind i værktøjslinjen
 
-Som standard, flytter navigator objektet sammen med System fokus,
-Men denne adfærd kan slås til og fra.
+Det objekt, du er i gang med at gennemse, kaldes for navigatorobjektet.
+Når du navigerer til et objekt, kan du gennemse det ved at benytte [kommandoer til gennemsyn af tekst #ReviewingText].
+Som standard, flytter navigator objektet sammen med System fokus, men denne adfærd kan slås til og fra.
  
-For at navigere imellem objekter, skal du bruge følgende taster:
+Bemærk, at punkt følger [fokus #SystemFocus] og [systemmarkør #SystemCaret] som standardindstilling, i stedet for objekt navigation og tekstgennemsyn.
+Hvis du derimod ønsker at punkt skal følge objekt navigation og tekstgennemsyn, skal du [konfigurere punkt til at være tøjret til #BrailleTether] genemsyn.
+
+For at navigere imellem objekter, skal du benytte følgende kommandoer:
 
 %kc:beginInclude
-| | Navn | Desktop Tast | Laptop tast | Beskrivelse |
-| Annoncer det aktuelle objekt | NVDA + numpad5 | NVDA + kontrol + i | Rapporterer
-det nuværende navigator objekt. Ved at Trykke to gange bliver oplysningerne stavet. |
-| Naviger til overordnede objekt | NVDA + numpad8 | NVDA + shift + i | Navigerer til
-det overordnede (container) objekt i forhold til det aktuelle navigator objekt |
-| Naviger til forrige objekt | NVDA + numpad4 | NVDA + kontrol + j |
-Navigerer til objektet lige før det nuværende navigator objekt |
-| Naviger til næste objekt | NVDA + numpad6 | kontrol + NVDA + l | Navigerer til
-Det objekt der findes efter det nuværende navigator objekt |
-| Gå til første barneobjekt | NVDA + numpad2 | NVDA + shift + komma |
-Navigerer til det første barn der indgår i det nuværende navigator objekt |
-| Naviger til det objekt der er i fokus  | NVDA + numpadMinus | NVDA + Backspace |
-Navigerer til det objekt, der i øjeblikket er i fokus, og 
-placere den ubegrænsede markør ved systemets markør, hvis den er synlig |
-| Aktiver nuværende navigator objekt | NVDA + numpadEnter | NVDA + ind |
-Aktiverer det nuværende navigator objekt (svarende til at klikke med
-musen eller trykke på mellemrums tasten, når det er i fokus) |
-| Flyt System fokus til det nuværende navigator objekt | NVDA + shift + numpadMinus
-| NVDA + shift + Backspace | Flytter System fokus til det nuværende navigator
-objekt, hvis det er muligt |
-| Annoncer navigator objektets dimensioner | NVDA + numpadSlet | NVDA + slette |
-Annoncerer det nuværende navigator objekts dimensioner på skærmen i procent (herunder afstand fra venstre og toppen af skærmen, og dens bredde
-og højde) |
+| | Navn | Desktop Tast | Laptop tast | Bevægelse | Beskrivelse |
+| Annoncer det aktuelle objekt | NVDA+numpad5 | NVDA+kontrol+i | Ingen | Rapporterer det nuværende navigator objekt. Ved at Trykke to gange bliver oplysningerne stavet. |
+| Naviger til overordnede objekt | NVDA+numpad8 | NVDA+skift+i | ingen | Navigerer til det overordnede (container) objekt i forhold til det aktuelle navigator objekt |
+| Naviger til forrige objekt | NVDA+numpad4 | NVDA+kontrol+j | Svirp til venstre | Navigerer til objektet lige før det nuværende navigator objekt |
+| Naviger til næste objekt | NVDA+numpad6 | kontrol+NVDA+l | Svirp til højre | Navigerer til det objekt der findes efter det nuværende navigator objekt |
+| Gå til første barneobjekt | NVDA+numpad2 | NVDA+skift +komma | svirp ned (teksttilstand) | Navigerer til det første barn der indgår i det nuværende navigator objekt |
+| Naviger til det objekt der er i fokus | NVDA+numpadMinus | NVDA+Backspace | ingen | Navigerer til det objekt, der i øjeblikket er i fokus, og placere den ubegrænsede markør ved systemets markør, hvis den er synlig |
+| Aktiver nuværende navigator objekt | NVDA+numpadEnter | NVDA+enter | dobbelttryk | Aktiverer det nuværende navigator objekt (svarende til at klikke med musen eller trykke på mellemrums tasten, når det er i fokus) |
+| Flyt System fokus til det nuværende navigator objekt | NVDA+skift+numpadMinus | NVDA+skift+Backspace | ingen | Flytter System fokus til det nuværende navigator objekt, hvis det er muligt |
+| Annoncer navigator objektets dimensioner | NVDA+numpadSlet | NVDA+slet | ingen | Annoncerer det nuværende navigator objekts dimensioner på skærmen i procent (herunder afstand fra venstre og toppen af skærmen, og dens bredde og højde) |
 %kc:endInclude
 
 Bemærk: for at få numpad tasterne til at fungere korrekt, kræver det at det numeriske tastatur er slået fra.
 
-++ Gennemse teksten i det aktuelle objekt  ++
-NVDA giver dig mulighed for at læse indholdet af det aktuelle navigator objekt ved 
-enten at flytte imellem tegn, ord eller linjer.
-Dette er for det meste nyttigt i Windows kommando konsol vinduer og andre
-steder, hvor der er en begrænset eller ikke-eksisterende system markør.
-Når man bevæger sig rundt med den ubegrænsede markør flytter systemets markør ikke med,
-så du kan gennemse teksten på skærmen uden at flytte systemets markør.
+++ Gennemse teksten i det aktuelle objekt  ++[ReviewingText]
+NVDA giver dig mulighed for at læse indholdet af det aktuelle [navigator objekt #ObjectNavigation] (herunder [flad visning #FlatReview]) ved  enten at flytte imellem tegn, ord eller linjer.
+Dette er for det meste nyttigt i Windows kommando konsol vinduer og andre steder, hvor der er en begrænset eller ikke-eksisterende system markør.
+For eksempel, du kan bruge denne markør til at gennemse en lang besked i en dialog.
+
+Når man bevæger sig rundt med den ubegrænsede markør flytter systemets markør ikke med, så du kan gennemse teksten på skærmen uden at flytte systemets markør.
 Men når du flytter rundt med systemets markør, følger den ubegrænsede markør som standard med.
 Dette kan slåes til og fra.
 
+Bemærk, at punkt følger [fokus #SystemFocus] og [systemmarkør #SystemCaret] som standardindstilling, i stedet for objekt navigation og tekstgennemsyn.
+Hvis du derimod ønsker at punkt skal følge objekt navigation og tekstgennemsyn, skal du [konfigurere punkt til at være tøjret til #BrailleTether] genemsyn.
+
 Følgende tastekommandoer er tilgængelige for gennemgang af tekst:
 %kc:beginInclude
-|| Navn | Desktoptast | Laptoptast | Beskrivelse |
-| flyt den ubegrænsede markør til øverste linje   | shift+numpad7 | NVDA+7 | Flytter den ubegrænsede markør til den første linje i teksten |
-| flyt den ubegrænsede markør til forrige linje   | numpad7 | NVDA+u | Flytter den ubegrænsede markør til den forrige linje i teksten |
-| oplæs nuværende linje hvor den ubegrænset markør er placeret | numpad8 | NVDA + i | 
-
-annoncerer
-den linje i teksten, hvor den ubegrænsede markør er placeret. Ved at trykke
-to gange vil teksten blive stavet |
-| Flyt den ubegrænsede markør til næste linje i teksten | numpad9 | NVDA + o | Flytter den 
-
-den ubegrænsede markør til næste linje med tekst |
-| Flyt den ubegrænsede markør til den sidste linie i teksten | shift + numpad9 | NVDA 9 | 
-
-Flytter
-den ubegrænsede markør til den nederste linje i teksten |
-| Flyt den ubegrænsede markør til det forrige ord i teksten | numpad4 | NVDA + j | Flytter 
-
-den ubegrænsede 
-markør til det forrige ord i teksten |
-| oplæs det aktuelle ord hvor den ubegrænsede markør er placeret | numpad5 | NVDA + k | 
-
-annoncerer
-nuværende ord i teksten, hvor den ubegrænsede markør er placeret.
-Ved at trykke to gange bliver ordet stavet. |
-| Flyt den ubegrænsede markør til næste ord i teksten | numpad6 | NVDA + l | Flyt den 
-
-ubegrænsede 
-markør til det næste ord i teksten |
-| Gå til starten af linjen i teksten | shift + numpad1 | NVDA + shift + u |
-Flytter den ubegrænsede markør til starten af den aktuelle linje i teksten |
-| Flyt den ubegrænsede markør til forrige tegn i teksten | numpad1 | NVDA + m | Flytter
-den ubegrænsede markør til det forrige tegn på den aktuelle linje i teksten |
-| oplæs det aktuelle tegn hvor den ubegrænsede markør er placeret | numpad2 | NVDA + komma | 
-
-annoncerer
-det aktuelle tegn på den tekstlinje, hvor den ubegrænsede markør er
-placeret. Ved at trykke to gange bliver tegnet oplæst som en numerisk værdi og 
-
-hexadecimalt. |
-| Flyt den ubegrænsede markør til næste tegn i teksten | numpad3 | NVDA + prik | Flyt
-den ubegrænsede markør til det næste tegn på den aktuelle linie med tekst |
-| Flyt den ubegrænsede markør til slutningen af linjen i teksten | shift + numpad3 | NVDA + 
-
-shift + o | Flytter
-den ubegrænsede markør til slutningen af den aktuelle linje med tekst |
-| oplæs alt tekst fra den ubegrænsede markørs position | numpadPlus | NVDA + shift + pil ned 
-
-| Læser fra
-den ubegrænsede markørs aktuelle position, samtidig med at den ubegrænsede markør flytter med 
-
-|
-| Flyt markøren til den ubegrænsede markør | kontrol + numpadMinus |
-NVDA + kontrol + Backspace | Flytter System markøren til placeringen af
-den ubegrænsede markør |
-| Kopier fra den ubegrænsede markør | NVDA + f9 | NVDA + f9 | begynder at kopiere tekst fra
-den ubegrænsede markørs position. Den faktiske kopiering får ikke
-virkning, før du fortæller NVDA hvor du skal kopiere til |
-| Kopier til den ubegrænset markør | NVDA + F10 | NVDA + F10 | Kopierer fra den position
-hvor du før startede kopieringen fra den ubegrænsede markør med NVDA + f9   og så til den 
-
-nuværende position af den ubegrænsede markør. Efter der er trykket på denne tast, vil teksten blive kopieret til Windows Udklipsholder |
+|| Navn | Desktoptast | Laptoptast | Bevægelse | Beskrivelse |
+| flyt den ubegrænsede markør til øverste linje   | skift+numpad7 | NVDA+7 | ingen | Flytter den ubegrænsede markør til den første linje i teksten |
+| flyt den ubegrænsede markør til forrige linje   | numpad7 | NVDA+u | Svirp op (teksttilstand) | Flytter den ubegrænsede markør til den forrige linje i teksten |
+| oplæs nuværende linje hvor den ubegrænset markør er placeret | numpad8 | NVDA+i | Ingen | Annoncerer den linje i teksten, hvor den ubegrænsede markør er placeret. Ved at trykke to gange vil teksten blive stavet |
+| Flyt den ubegrænsede markør til næste linje i teksten | numpad9 | NVDA+o | Svirp ned (teksttilstand) | Flytter den den ubegrænsede markør til næste linje med tekst |
+| Flyt den ubegrænsede markør til den sidste linie i teksten | skift+numpad9 | NVDA+9 | ingen | Flytter den ubegrænsede markør til den nederste linje i teksten |
+| Flyt den ubegrænsede markør til det forrige ord i teksten | numpad4 | NVDA+j | Svirp til venstre med to fingre | Flytter den ubegrænsede markør til det forrige ord i teksten |
+| oplæs det aktuelle ord hvor den ubegrænsede markør er placeret | numpad5 | NVDA+k | ingen | annoncerer nuværende ord i teksten, hvor den ubegrænsede markør er placeret. Ved at trykke to gange bliver ordet stavet. |
+| Flyt den ubegrænsede markør til næste ord i teksten | numpad6 | NVDA+l | Svirp til højre med to fingre (teksttilstand) | Flyt den ubegrænsede markør til det næste ord i teksten |
+| Gå til starten af linjen i teksten | skift+numpad1 | NVDA+skift+u | ingen | Flytter den ubegrænsede markør til starten af den aktuelle linje i teksten |
+| Flyt den ubegrænsede markør til forrige tegn i teksten | numpad1 | NVDA+m | Svirp til venstre (teksttilstand) | Flytter den ubegrænsede markør til det forrige tegn på den aktuelle linje i teksten |
+| oplæs det aktuelle tegn hvor den ubegrænsede markør er placeret | numpad2 | NVDA+komma | ingen | Annoncerer det aktuelle tegn på den tekstlinje, hvor den ubegrænsede markør er placeret. Ved at trykke to gange bliver tegnet oplæst som en numerisk værdi og hexadecimalt. |
+| Flyt den ubegrænsede markør til næste tegn i teksten | numpad3 | NVDA+prik | Svirp til højre (teksttilstand) | Flyt den ubegrænsede markør til det næste tegn på den aktuelle linie med tekst |
+| Flyt den ubegrænsede markør til slutningen af linjen i teksten | skift+numpad3 | NVDA+skift+o | Ingen | Flytter den ubegrænsede markør til slutningen af den aktuelle linje med tekst |
+| oplæs alt tekst fra den ubegrænsede markørs position | numpadPlus | NVDA+skift+pil ned | Svirp ned med tre fingre (teksttilstand) | Læser fra den ubegrænsede markørs aktuelle position, samtidig med at den ubegrænsede markør flytter med |
+| Kopier fra den ubegrænsede markør | NVDA+f9 | NVDA+f9 | ingen | Begynder at kopiere tekst fra den ubegrænsede markørs position. Den faktiske kopiering får ikke virkning, før du fortæller NVDA hvor du skal kopiere til |
+| Kopier til den ubegrænset markør | NVDA+F10 | NVDA+F10 | ingen | Kopierer fra den position hvor du før startede kopieringen fra den ubegrænsede markør med NVDA + f9   og så til den nuværende position af den ubegrænsede markør. Efter der er trykket på denne tast, vil teksten blive kopieret til Windows Udklipsholder |
+| Annoncér tekstformatering | NVDA+f | NVDA+f | ingen | Annoncerer formateringsoplysninger af den tekst hvor den ubegrænsede markør har fokus |
 %kc:endInclude
-
-
 
 Bemærk: for at kunne bruge numpad tasterne kræver det at numlock tasten er slået fra.
 
-For at hjælpe dig med at huske disse kommandoer, er de grundlæggende læsekommandoer organiseret i et gitter af tre x tre, fra øverst til nederst. Placeringen er sådan, at linje er i det øverste lag, dernæst kommer ord og til sidst tegn i nederste lag. Tasterne i venstre side bruges til at flytte tilbage til forrige linje, ord og tegn, søjlen i midten bruges til aktuelle linje, ord og tegn, og den højre søjle af taster henviser til næste linje, ord og tegn, hvis man  tæller fra oven på det numeriske tastatur:
+For at hjælpe dig med at huske disse kommandoer, er de grundlæggende læsekommandoer organiseret i et gitter af tre x tre, fra øverst til nederst, hvor øverst til nederst er ord og bogstav, og venstre mod højre er forrige, aktuel og næste.
+Layoutet er således illustreret:
 | Forrige linie | Nuværende linie | Næste linje |
 | Forrige ord | Nuværende ord | Næste ord |
 | Forrige tegn | Nuværende tegn | Næste tegn |
 
-++ Flad visning  ++
-
-ligesom ved at gennemgå indholdet af et enkelt objekt, giver NVDA dig mulighed for at
-gennemgå hele indholdet af et dokument eller teksten på skærmen.
+++ Flad Visning ++[FlatReview]
+Mens du generelt kun kan gennemse indeholdet af et eneste [objekt #Objects], giver nogle objekter mulighed for at gennemse indeholdet af objekter indeni objekterne.
+Komplekse dokumenter giver dig mulighed for, at gennemse hele dokkumentet, og programvinduer giver dig mulighed for at gennemgå hele skærmen, som den vises visuelt.
 Dette kaldes flad visning.
+Dette er lignende andre metoder som andre skærmlæsere benytter for at gennemse hele skærmen.
+
+Når du flytter til flad visning, bliver du automatisk placeret på det aktuelle [navigatorobjekt #ObjectNavigation].
+Hvis du ikke endnu har brugt objekt navigation, vil dette typisk være objektet der har [fokus #SystemFocus].
+For eksempel ville du blive placeret på teksten af knappen i flad visning, hvis navigatorobjektet var en knap.
+Derefter kan du gennemse tekste ved brug af [kommandoerne til gennemsyn af tekst #ReviewingText].
+Desuden kan du også gå direkte til objektet der omfatter den aktuelle position af den ubegrænsede markør, hvilket giver dig mulighed for at bruge [objekt navigation #ObjectNavigation] derfra.
+
+Bemærk, at punkt følger [fokus #SystemFocus] og [systemmarkør #SystemCaret] som standardindstilling, i stedet for objekt navigation og tekstgennemsyn.
+Hvis du derimod ønsker at punkt skal følge objekt navigation og tekstgennemsyn, skal du [konfigurere punkt til at være tøjret til #BrailleTether] genemsyn.
 
 De følgende to kommandoer bruges til at skifte til / fra flad visning:
 %kc:beginInclude
