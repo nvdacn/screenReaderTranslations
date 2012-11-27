@@ -201,13 +201,13 @@ Hvis kommandoen ikke har en tilstand knyttet til den, virker den uafhængigt af 
 For at skifte touch-tilstande, udfør et tryk med tre fingre.
 %kc:endInclude
 
-+++ Tastaturhjælp +++
+++ Inputhjælp ++
 Mange vigtige kommandoer er nævnt i resten af denne brugervejledning, men en nem måde at udforske alle de forskellige tastekommandoer er ved at starte  tastaturhjælpen.
 
 For At gøre dette, skal du trykke på NVDA +1.
 For At slå NVDA-hjælpen fra igen, tryk på NVDA + 1.
-Når tastatur hjælp er slået til, vil tryk på en tast annoncere, hvad den gør 
-Tasterne vil ikke rent faktisk udfører deres funktion, mens tastatur hjælpen er slåët til, så du kan blot trykke på de taster du vil.
+Når inputhjælp er slået til, vil tryk på en tast eller en udført touch-bevægelse annoncere, hvad den gør.
+Tasterne vil ikke udfører deres funktion, mens tastatur hjælpen er slåët til.
 
 ++ NVDA-menuen ++
 I NVDA-menuen kan du styre NVDA indstillingerne, få adgang til hjælp, gemme / fortryde din konfiguration, Ændre tale ordbøger, få adgang til yderligere værktøjer og afslutte NVDA.
@@ -219,53 +219,53 @@ Når menuen kommer op, kan du bruge piletasterne til at navigere rundt i menuen,
 
 ++ Grundlæggende tastaturkommandoer ++
 %kc:beginInclude
-| | Navn | Tast | Beskrivelse |
-| Stop tale | Kontrol | stopper talen med det samme |
-| Pause Tale | Shift | pauser straks tale. ved Tryk på den igen vil talen fortsætte, hvor den slap (hvis pause er understøttet af nuværende talesyntese) |
-| NVDA Menu | NVDA + n | Fremkalder NVDA menuen, så du får adgang
-til indstillinger, værktøjer og hjælp osv. |
-| Skift Tastatur Hjælp tilstand | NVDA +1 | Hvis du trykker på en tast i denne tilstand
-vil tasten blive oplæst, sammen med den eventuelle NVDA kommando der er tilknyttet tasten |
-| Afslut NVDA | NVDA + q | Afslutter NVDA |
-| Annoncer dato / tid | NVDA + F12 | Ved et tryk,  rapporteres det aktuelle tidspunkt,
-ved 2 tryk rapporteres datoen |
-| Slip næste tast igennem | NVDA + F2 | Fortæller NVDA at den næste tast
-slippes lige igennem til den aktive applikation, selv om det normalt er 
-en NVDA kommando |
+| | Navn | Tast | Bevægelse | Beskrivelse |
+| Stop tale | Kontrol | enkelt tryk med to fingre | stopper talen med det samme |
+| Pause Tale | Shift | Ingen | pauser straks tale. ved Tryk på den igen vil talen fortsætte, hvor den slap (hvis pause er understøttet af nuværende talesyntese) |
+| NVDA Menu | NVDA+n | Dobbelttryk med to fingre | Fremkalder NVDA menuen, så du får adgang til indstillinger, værktøjer og hjælp osv. |
+| Skift Tale Tilstand | NVDA+s | ingen | Skifter tale tilstand mellem tale, bip og slår tale fra. |
+| Skift Tastatur Hjælp tilstand | NVDA+1 | ingen | Hvis du trykker på en tast i denne tilstand vil tasten blive oplæst, sammen med den eventuelle NVDA kommando der er tilknyttet tasten |
+| Afslut NVDA | NVDA+q | ingen | Afslutter NVDA |
+| Slip næste tast igennem | NVDA+F2 | ingen | Fortæller NVDA at den næste tast slippes lige igennem til den aktive applikation, selv om det normalt er en NVDA kommando |
+| Slå dvaletilstand til og fra | NVDA+skift+s | ingen | Dvaletilstand deaktivere alle NVDA-kommandoer og tale/punkt output i den aktive applikation. Dette er mest brugbart når du benytter et program der gør brug af egne skærmlæsefunktioner. Tryk kommandoen en gang til for at aktivere dvaletilstand. |
 %kc:endInclude
 
+++ Rapportering af Systeminformationer ++
+%kc:beginInclude
+|| Navn | tast | Beskrivelse |
+| Rapportér dato/tid | NVDA+f12 | Tryk en gang for at få tiden rapporteret, to gange for dato |
+| Rapportér batteristatus | NVDA+skift+b | Rapporterer batteristatus f.eks. om AC strømforsyning er tilsluttet eller om batteriet aflader. |
+| Rapportér tekst i udklipsholderen | NVDA+c | Rapporterer tekst i udklipsholderen hvis udklipsholderen indeholder tekst. |
+%kc:endInclude
 
 + Navigering med NVDA  +
+NVDA lader brugeren udforske og navigerer systemet på flere forskellige måder, heriblandt normal interaktion og med en ubegrænset markør.
 
-++ Navigering med systemfokus  ++
-Den mest almindelige måde at navigere rundt med NVDA i Windows er simpelthen
-ved at bevæge sig rundt med de almindelige Windows-tastatur kommandoer, såsom at trykke på
-Tab og Skift + TAB for at flytte frem og tilbage mellem kontrol elementerne og trykke
-ALT for at komme til menulinjen og derefter bruge pilene til at navigere i menuer,
-og ved hjælp af ALT + TAB for at flytte mellem kørende programmer.
-Dette flytter systemfokus dvs. det objekt, der tager imod det, du indtaster på tastaturet. 
-Mens du gør dette, vil NVDA informere dig om oplysninger om objektet som har fokus såsom dets navn, type, værdi, tilstand, beskrivelse, tastatur
-genvej og positionelle oplysninger.
+++ Objekter ++[Objects]
+Hvert program og selve operativsystemet består af mange objekter.
+Et objekt er et enkelt emne såsom et stykke tekst, en knap, afkrydsningsfelt, skyder, liste eller redigerbart tekstfelt.
+
+++ Navigering med systemfokus  ++[SystemFocus]
+Systemfokus, også bare kendt som fokus, er [objektet #Objects] der modtager tasterne indtastet ved brug af tastaturet.
+For eksempel, hvis du skriver i et redigerbart teksfelt har tekstfeltet fokus.
+
+Den mest almindelige måde at navigere rundt med NVDA i Windows er simpelthen ved at bevæge sig rundt med de almindelige Windows-tastatur kommandoer, såsom at trykke på Tab og Skift + TAB for at flytte frem og tilbage mellem kontrol elementerne og trykke ALT for at komme til menulinjen og derefter bruge pilene til at navigere i menuer, og ved hjælp af ALT + TAB for at flytte mellem kørende programmer.
+Dette flytter systemfokus dvs. det objekt, der tager imod det, du indtaster på tastaturet. Mens du gør dette, vil NVDA informere dig om oplysninger om objektet som har fokus såsom dets navn, type, værdi, tilstand, beskrivelse, tastatur genvej og positionelle oplysninger. 
 
 Der er nogle nyttige kommandoer,, når du flytter fokus rundt i systemet:
 %kc:beginInclude
 | | Navn | Tast | Beskrivelse |
-| Annoncer aktuelt fokus | NVDA + Tab | annoncerer det aktuelle objekt eller
-kontrol, der er i fokus. ved at Trykke to gange vil oplysningerne blive stavet |
-| Annoncer titel | NVDA + t | annoncerer titlen på det aktuelle aktive
-vindue. Ved at trykke to gange vil oplysningerne blive stavet. Ved at trykke tre gange vil
-oplysningerne blive kopieret til udklips holderen |
-| Læs aktiv vindue | NVDA + b | læser alle kontrolelementerne i det aktive vindue (nyttigt 
-i dialogbokse) |
+| Annoncer aktuelt fokus | NVDA+Tab | annoncerer det aktuelle objekt eller kontrol, der er i fokus. ved at Trykke to gange vil oplysningerne blive stavet |
+| Annoncer titel | NVDA+t | annoncerer titlen på det aktuelle aktive vindue. Ved at trykke to gange vil oplysningerne blive stavet. Ved at trykke tre gange vil oplysningerne blive kopieret til udklips holderen |
+| Læs aktiv vindue | NVDA+b | læser alle kontrolelementerne i det aktive vindue (nyttigt  i dialogbokse) |
+| Annoncer statuslinje | NVDA+end | Annoncerer statuslinjen hvis NVDA finder den. Dette flytter også navigatorobjektet til denne position |
 %kc:endInclude
 
-
 ++ Navigering med systemmarkøren (System Caret ++
-Når fokus er på et objekt, der har en markør (på engelsk: system caret), kan du med piletasterne  flytte markøren 
+Når et [objekt #Objects] der tillader navigation og/eller redigering af tekst har [fokus #SystemFocus], kan du bevæge dig gennem teksten med systemmarkøren.
 
-rundt og redigere som du normalt ville.
-NVDA vil annoncere mens du bevæger dig imellem tegn, ord og linie, og vil
-også annoncere markeret og fra valgt tekst.
+Når fokus er på et objekt der har en systemmarkør kan du bruge  piletasterne, side op, side ned, hjem, end, osv.
+NVDA vil annoncere mens du bevæger dig imellem tegn, ord og linie, og vilogså annoncere markeret og fra valgt tekst.
 
 Følgende taste kommandoer kan bruges i forbindelse med markøren:
 %kc:beginInclude
