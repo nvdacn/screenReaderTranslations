@@ -385,13 +385,9 @@ Hvis du derimod ønsker at punkt skal følge objekt navigation og tekstgennemsyn
 
 De følgende to kommandoer bruges til at skifte til / fra flad visning:
 %kc:beginInclude
-| | Navn | Desktop tast | Laptop tast | Beskrivelse |
-| Skift til flad visning | NVDA + numpad7 | NVDA + ALT +7 | Flytter til flad
-visning, hvilket placerer dig i det aktuelle navigator objekt,
-så du kan gennemgå skærmen (eller dokumentet, hvis du for øjeblikket befinder dig i et dokument), med kommandoerne til den ubegrænset markør.
-| Flyt til objektet fra flad visning | NVDA + numpad1 | NVDA + Alt + J |
-navigerer til objektet der er repræsenteret af teksten på den aktuelle position
-af den ubegrænset markør i flad visning |
+| | Navn | Desktop tast | Laptop tast | Bevægelse | Beskrivelse |
+| Skift til flad visning | NVDA+numpad7 | NVDA+ALT+7 | Svirp op med to fingre | Flytter til flad visning, hvilket placerer dig i det aktuelle navigator objekt, så du kan gennemgå skærmen (eller dokumentet, hvis du for øjeblikket befinder dig i et dokument), med kommandoerne til den ubegrænset markør.
+| Flyt til objektet fra flad visning | NVDA+numpad1 | NVDA+Alt+J | Svirp ned med to fingre | Navigerer til objektet der er repræsenteret af teksten på den aktuelle position af den ubegrænset markør i flad visning |
 %kc:endInclude
 
 ++ Navigering ved brug af musen ++
@@ -449,11 +445,10 @@ Derudover kan du også manuelt tvinge fokustilstand, hvorefter tilstanden vil fo
 
 
 ++ Enkelttegns navigering ++
-For hurtigere at kunne navigere når du er i browse-tilstand,   giver NVDA også mulighed for  ved hjælp af et enkelt bogstav at springe til bestemte områder i den virtuelle buffer.
+For hurtigere at kunne navigere når du er i gennemsynstilstand,   giver NVDA også mulighed for  ved hjælp af et enkelt bogstav at springe til bestemte områder i dokumentet.
 
 %kc:beginInclude
-Følgende taster flytter til det næste element,
-ved at tilføje skift-tasten flyttes til det forrige element:
+Følgende taster flytter til det næste element, ved at tilføje skift-tasten flyttes til det forrige element:
 - H: overskrift
 - L: liste
 - I: listeelement
@@ -476,37 +471,63 @@ ved at tilføje skift-tasten flyttes til det forrige element:
 - O: indlejret objekt
 - 1 til 6: overskrifter på niveau 1 til 6 
 -
+For at flytte til begyndelse eller slutningen  på elementer der indeholder yderligere information, såsom lister og tabeller:
+|| Navn | Tast | Beskrivelse |
+| Flyt til begyndelse af indholdselement | Skift+komma | Flytter til begyndelsen af indholdselementet (liste, tabel, osv.) hvor markøren er placeret |
+| Flyt forbi slutningen af indholdselementet | komma | Flytter forbi slutningen af indholdselementet (liste, tabel, osv.) hvor markøren er placeret |
 %kc:endInclude
 
 ++ Elementlisten  ++
-Element Listen giver adgang til en liste med enten links, overskrifter eller
-landmærker på siden.
+Elementlisten giver adgang til en liste med enten links, overskrifter eller landmærker på siden.
 Radioknapper tillader dig at skifte mellem disse tre typer af information.
-Du kan via Et tekst felt filtrere
-listen,  så du kan søge efter et bestemt element på siden.
-Når du har valgt et element, kan du bruge knapperne i
-Dialogen til at flytte til, eller aktivere det pågældende element.
-% Kc: beginInclude
+Du kan via Et tekst felt filtrere listen,  så du kan søge efter et bestemt element på siden.
+Når du har valgt et element, kan du bruge knapperne i dialogen til at flytte til, eller aktivere det pågældende element.
+%kc:beginInclude
 | | Navn | Tast | Beskrivelse |
-| Virtual buffer element liste | NVDA + F7 | Giver Element listen
-som indeholder links, overskrifter og landmærker fra den nuværende virtuelle
-buffer |
-% Kc: endInclude
+| Gennemsynstilstand elementliste | NVDA+F7 | Giver Element listen som indeholder links, overskrifter og landmærker fra det nuværende dokument |
+%Kc:endInclude
 
 + + Indlejrede objekter+ +
-Sider kan ved hjælp af teknologier som Adobe Flash
-og Sun Java bringes til at vise forskellige former for indhold. Når man støder på disse objekter i  i en virtuel buffer, vil NVDA annoncere
-"Indlejret objekt".
+Sider kan ved hjælp af teknologier som Adobe Flash og Sun Java omfatte meget rigt indhold, såsom applikationer og dialoger.
+Når man støder på disse objekter i  i et dokument, vil NVDA henholdsvist annoncere "Indlejret objekt", "applikation" og "dialog".
 Du kan trykke på retur tasten på disse objekter for at aktivere dem.
-Hvis objektet er tilgængeligt, kan du derefter tabbe rundt indenfor den og interagere med det
-som ethvert andet program
-Man kan med et tastetryk vende tilbage til den oprindelige side, der indeholder
-det indlejrede objekt:
-% Kc: beginInclude
+Hvis objektet er tilgængeligt, kan du derefter tabbe rundt indenfor den og interagere med det som ethvert andet program
+Man kan med et tastetryk vende tilbage til den oprindelige side, der indeholder det indlejrede objekt:
+%Kc:beginInclude
 | | Navn | Tast | Beskrivelse |
-| Flyt til indholdet af den overordnede virtuelle buffer | NVDA + kontrol + mellemrum | Flytter
-fokus ud af det aktuelle indlejrede objekt og ind i den virtuelle buffer |
-% Kc: endInclude
+| Flyt til indholdet af det overordnede dokument | NVDA+kontrol+mellemrum | Flytter fokus ud af det aktuelle indlejrede objekt og ind i dokumentet |
+%Kc:endInclude
+
++ Programspecifikke NVDA Kommandoer +
+NVDA har sine egne ekstra kommandoer for nogle programmer. Dette er for at gøre nogle opgaver lettere, eller for at give adgang til funktionalitet som ellers ikke er tilgængeligt for brugere af skærmlæsere.
+
+++ Microsoft Excel ++
+%kc:beginInclude
+|| Navn | Tast | Beskrivelse |
+| Indstil kolonneoverskrifter | NVDA+skift+c | Hvis du udføre denne kommando en gang, fortæller du NVDA at denne række indeholder overskrifter. Kolonneoverskrifter vil herefter blive annonceret automatisk når du bevægger dig mellem kolonner nedenunder denne række. Trykker du denne tast igen nulstiller du denne indstilling. | 
+| Indstil rækkeoverskrifter | NVDA+skift+r | Hvis du udføre denne kommando en gang, fortæller du NVDA at denne kolonne indeholder rækkeoverskrifter. Rækkeoverskrifter vil herefter blive annonceret automatisk når du bevægger dig mellem rækker efter denne kolonne. Trykker du denne tast igen nulstiller du denne indstilling. | 
+%kc:endInclude
+
+++ foobar2000 ++
+%kc:beginInclude
+|| Navn | Tast | Beskrivelse |
+| Annoncér resterende tid | kontrol+skift+r | Annoncere resterende tid af det aktuelle spor, hvis et spor afspilles |
+%kc:endInclude
+
+Bemærk: Denne genvej virker kun hvis du beholder standardformateringen af strengen tilknyttet Foobars statuslinje.
+
+++ Miranda IM ++
+%kc:beginInclude
+|| Navn | Tast | Beskrivelse |
+| Annoncér seneste besked | NVDA+kontrol+1-4 | Annoncere en af de seneste beskeder afhængigt af det benyttede tal; f.eks. NVDA+kontrol+2 læser den anden seneste besked. |
+%kc:endInclude
+
+++ Poedit ++
+%kc:beginInclude
+|| Navn | Tast | Beskrivelse |
+| Rapportér kommentarvindue | control+shift+c | Rapportere kommentarerne i kommentarvinduet. |
+| Annoncér det automatiske kommentarvindue | control+shift+a | Rapporterer kommentarerne i det automatiske kommentarvindue. |
+%kc:endInclude
 
 + Konfigurering af NVDA +
 
