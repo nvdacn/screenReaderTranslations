@@ -753,7 +753,7 @@ Tast: NVDA+4
 
 Nårdenne funktion er slået til, oplæser NVDA alle taster på tastaturet, der ikke er bogstaver, når du trykker på dem. Dette omfatter ligeledes tastekombinationer som control plus et bogstav.
 
-+++ Indstillinger for musen (NVDA+control+m) +++
++++ Indstillinger for musen (NVDA+control+m) +++[MouseSettings]
 Dialogen med indstillinger for musen findes i menuen "Indstillinger", under "Muse-indstillinger".
 Den indeholder følgende valgmuligheder:
 
@@ -763,7 +763,7 @@ I Windows ændrer musemarkøren form for at videregive visse typer af informatio
 
 %kc:setting
 ==== Slå musefølgning til  ====
-| Desktop key | NVDA+m |
+| Desktop Tast | NVDA+m |
 | Laptop key | NVDA+shift+m |
 
 Når denne funktion er slået til, oplæser NVDA den tekst, der i øjeblikket befinder sig under musemarkøren i takt med, at musemarkøren flyttes rundt på skærmen. Det giver mulighed for at finde ting på skærmen ved fysisk at bevæge musen, i stedet for at lede efter dem ved hjælp af objektnavigation.
@@ -780,6 +780,7 @@ Hvis denne tjekboks er afkrydset, bipper NVDA under flytning af musen. Derved ka
 
 ==== Lysstyrke kontrollerer lydstyrke for lydkoordinater   ====
 Hvis tjekboksen    'afspil lydkoordinater under flytning af mus' er slået til, bevirker afkrydsning af denne tjekboks, at lydstyrken på biptonen ved  lydkoordinaterne bestemmes af, hvor lys skærmbilledet under musen er. Dette kan medføre forringelse i ydeevnen under Windows Vista, så den er som standard ikke afkrydset.
+Som standard er denne indstilling fravalgt.
 
 +++ Indstillinger for den ubegrænsede markør  +++
 Findes i menuen Indstillinger under Ubegrænset Markør.
@@ -788,7 +789,7 @@ Denne dialogboks indeholder følgende valgmuligheder :
 %kc:setting
 ==== Følg systemfokus  ====
 | Desktop tast | NVDA+7 |
-| Laptop tast | NVDA+control+7 |
+| Laptop tast | NVDA+kontrol+7 |
 
 Når denne funktion er slået til, placeres den ubegrænsede markør altid i samme objekt som det aktuelle systemfokus, når det ændrer sig.
 
@@ -808,7 +809,7 @@ Hvis denne funktion er slået til, filtrerer NVDA objektshierarkiet, så alle ua
 Findes i menuen Indstillinger under "Objekt-præsentation...".
 Denne dialogboks indeholder følgende indstillinger:
 
-==== Oplæs værktøjstips  ====
+==== Oplæs værktøjstips ====
 Dette er en tjekboks der, når den er afkrydset, bevirker, at NVDA oplæser værktøjstips, når de fremkommer.
 En del vinduer og kontroller viser en lille meddelelse (eller værktøjstip), når musemarkøren flyttes hen over dem, eller i visse tilfælde  når fokus flyttes til dem.
 
@@ -823,6 +824,10 @@ Som eksempel kan nævnes filmenuen på en menulinje, der kan have genvejstasten 
 ==== Oplæs information om objekts placering  ====
 Denne indstilling giver dig mulighed for at vælge, om du ønsker at få et objekts position (dvs. 1 af 4) læst op, når du flytter til objektet med enten fokusnavigation eller objektnavigation.
 
+==== Gæt objekt positionsinformation når utilgængelig ====
+Hvis denne indstilling er valgt, gør den NVDA i stand til at gætte placeringen af et objekt, hvis denne information ellers er utilgængelig for en bestemt kontrol.
+
+Når denne indstilling er slåe ttil, vil NVDA rapportere positionsinformation for flere kontroller såsom menuer og værktøjslinjer, men denne information kan dog være en smule upræcis.
 
 ==== Oplæs objekts beskrivelse ====
 Afkryds denne tjekboks, hvis du ikke føler det nødvendigt at høre beskrivelsen af et objekt samtidig med selve objektet.
@@ -839,14 +844,51 @@ Der er følgende muligheder:
 - Tale: NVDA oplæser behandlingslinjen i procent. hver gang behandlingslinjen ændres, oplæser NVDA den nye værdi.
 - Bip: Denne mulighed får NVDA til at bippe hver gang behandlingslinjen ændrer sig. Jo højere biptonen 0er, desto nærmere er behandlingslinjen til at være fuldført. 
 - Bip og tal: Indstillingen får NVDA til både at tale og bippe, når en behandlingslinje ændrer sig.
-
+-
 
 ==== Oplæs baggrunds behandlingslinjer  ====
 Dette er en indstilling, der, når den er krydset af, får NVDA til at annoncere en behandlingslinje, selvom den ikke fysisk er i forgrunden.
 Hvis du minimerer et vindue eller skifter til et andet vindue end det, der indeholder behandlingslinjen, bliver NVDA ved med at overvåge den, hvilket gør det muligt for dig at lave andre ting samtidig med, at NVDA overvåger behandlingslinjen.
 
-+++ Indstillinger for virtuelle buffers (NVDA+control+b) +++
-dialogboksen med indstillingerne for virtuelle buffers findes under menupunktet "Indstillinger",  "Virtuelle Buffers...".
+%kc:setting
+==== Oplæs ændringer i dynamisk indhold ====
+Tast: NVDA+5
+
+Skifter indstillingen for annoncering af nyt indhold, især objekter som terminaler og historik-kontroller i chatprogrammer.
+
++++ Input Composition Settings +++
+Dialogen for input kompositionsindstillinger kan findes under menuen Indstillinger.
+Denne dialog lader dig styre, hvordan  NVDA rapporterer input af asiatiske tegn, såsom med IME or Text Service inputmetoder..
+Bemærk, at inputmetoder kan variere meget med hensyn til tilgængelige funktioner, samt hvordan de formidler information. Det vil højst sandsynligt være nødvendigt at konfigurere disse indstillinger for hver inputmetode, så du kan opnå den mest effektive oplevelse.
+ 
+==== Automatisk alle tilgængelige kandidater ====
+Denne indstilling, aktiveret som standard, giver dig mulighed for, on alle synlige kandidater automatisk skal blive rapporteret, når de vises eller dens list ændres.
+Denne indstilling  er nyttig for piktografiske inputmetoder, såsom Nykenesisk ChangJie eller Boshiami, eftersom du automatisk kan høre deres symboler og numre og derefter vælge med det samme.
+For fonetiske inputmetoder såsom Kinesisk Nyfonetisk, kan det dog være mere hensigtsmæssigt at slå denne indstilling fra, da alle symboler vil lyde ens. Du vil blive nød til at bruge piletasterne og navigere listeelementerne enkeltvis for, at få flere oplysninger fra bogstavets beskrivelse.
+
+==== Oplæs valgte kandidat ====
+Denne indstilling lader dig vælge, om NVDA automatisk skal annoncere den valgte kandidat, når en liste af kandidater vises eller listen ændre sig.
+Dette er nødvendigt når du bruger inputmetoder hvor den valgte kandidat kan ændres ved brug af piletasterne (såsom Kinesisk Nyfoneetisk), men for andre inputmetoder kan det være mere effektivt at skrive med denne indstilling slået fra.
+Bemærk, at den ubegrænsede markør stadig vil blive placeret på den valgte kandidat, hvis denne indstilling er slået fra. Dette giver dig mulighed for at oplæse den valgte kandidat ved hjælp af objekt navigation eller den ubegrænsede markør.
+
+==== Medtag altid kort tegnbeskrivelse ved oplæsning af kandidat ====
+Denne indstilling lader dig vælge, om NVDA automatisk skal oplæse em kort beskrivelse for hvert bogstav i en kandidat, hvis en kandidat er valgt eller når en list vises.
+Bemærk, at for lokaliteter som kinesisk, er annonceringen af ekstra tegnbeskrivelser for den valgte kandidat ikke påvirket af denne indstilling.
+Denne indstilling kan være nyttig for koreansk og japansk inputmetoder.
+ 
+==== Oplæs ændringer i oplæsningsstrengen ====
+Nogle inputmetoder,så som Kinesisk Nyfonetisk og Nyt ChangJie har en oplæsningsstreng (nogle gange kendt som en forsætningsstreng).
+Du kan vælge om NVDA skal annoncere nye tegn indtastet i denne oplæsningsstreng.
+Denne indstilling er som standard slået til.
+Bemærk, at nogle ældre inputmetoder såsom kinesisk ChangJie må ikke bruge oplæsningsstrengen til at holde kompositionstegn, men i stedet direkte bruge kompositionsstrengen. Se venligst den næste indstilling til konfiguration af rapportering af kompositionsstrengen.
+
+==== Oplæs ændringer i kompositionsstrengen ====
+Efter at oplæsning eller prekompositionsdata er blevet kombineret til et gyldigt billedskrifttegn, placere de fleste inputmetoder dette symbol i en kompositionsstreng sammen med andre kombinerede symboler for midlertidig opbevaring, indtil omsider disse symboler indsættes i dokumentet.
+Denne indstilling bestemmer om NVDA automatisk skal annoncere nye symboler efterhånden som de kommer til syne i kompositionsstrengen.
+Denne indstilling er som standard slået til.
+
++++ Indstillinger for gennemsynstilstand (NVDA+kontrol+b) +++
+dialogboksen med indstillingerne for gennemsynstilstand findes under 	menupunktet "Indstillinger",  "Gennemsynstilstand...".
 
 Dialogen rummer følgende indstillinger:
 
@@ -854,26 +896,24 @@ Dialogen rummer følgende indstillinger:
 Denne indstilling bestemmer længden på en linje i en virtuel buffer (antal tegn).
 
 ==== Antal linjer pr. side ====
-Selvom virtuelle buffers ikke består af egentlige sider, kan du med denne indstilling bestemme antallet af linjer, der skal flyttes ved tryk på PageUp eller PageDown, imens du er i en virtuel buffer.
+Selvom dokumenter i gennemsynstilstand ikke består af egentlige sider, kan du med denne indstilling bestemme antallet af linjer, der skal flyttes ved tryk på Side op eller side Ned, imens du er i en dokument med gennemsynstilstand.
 
 %kc:setting
 ==== Brug skærmlayout  ====
 Kommando: NVDA+v
 
-Denne indstilling giver dig mulighed for at bestemme, om indhold i den virtuelle buffer skal præsentere indhold som links og andre felter på en selvstændig linje, eller om indholdet skal beholdes i selve tekstens rækkefølge på samme måde, som det vises visuelt.
-Hvis indstillingen er slået til, vises indholdet som det vises visuelt. Hvis den derimod er slået fra, placeres hvert feldt på sin egen linje.
+Denne indstilling giver dig mulighed for at bestemme, om indhold i denne tilstand skal præsentere indhold som links og andre felter på en selvstændig linje, eller om indholdet skal beholdes i selve tekstens rækkefølge på samme måde, som det vises visuelt. Hvis indstillingen er slået til, vises indholdet som det vises visuelt. Hvis den derimod er slået fra, placeres hvert feldt på sin egen linje.
+
+==== Automatisk sig alt efter indlæsning af side ====
+Denne indstilling skifter automatisk læsning af en side i gennemsynstilstand
+Denne indstilling er som standard aktiveret.
 
 ==== Indiker layout-tabeller  ====
 Når denne indstilling er slået fra, bevirker den, at NVDA kun annoncerer tabeller med tabeldata, der giver mening for at informere om, at der er tale oom en tabel. 
 Men hvis den er slået til, bevirker det, at NVDA også annoncerer de tabeller, der er brugt udelukkende af hensyn til den visuelle præsentation.
 
 ==== Konfigurer indikering af felter  som  links og overskrifter  ====
-Tidligere versioner af NVDA gav mulighed for at bruge dialogboksen Virtuelle buffers til at bestemme, hvorvidt NVDA skulle indikere, hvilke typer af felter der skulle annonceres under læsning af webindhold. 
-Eksempler på felttyper er  links, overskrifter, tabeller og lister.
-Hvis du vil konfigurere disse indstillinger, skal du åbne dialogboksen  [Document Formatting Settings dialog #DocumentFormattingSettings] for at finde disse indstillinger.
-Nu har disse indstillinger imidlertid ikke kun betydning for virtuelle buffers men for alle typer af dokumenter, hvor disse felter kan blive annonceret.  
-
-
+Hvis du vil konfigurere disse indstillinger til rapportering af områder når du navigerer, så som links, overskrifter og tabeller, skal du åbne dialogboksen  [dialogen Dokument formatering #DocumentFormattingSettings] for at finde disse indstillinger.
 
 ==== Automatisk fokustilstand ved ændringer af fokus  ====
 Denne funktion gør det muligt automatisk at fremkalde fokustilstand, når fokus ændres.
@@ -884,10 +924,10 @@ Når denne indstilling er valgt, er det muligt at få NVDA til at skifte til og 
 Hvis du fx flytter ned over en webside med pil-ned og NVDA støder på et skrivefelt, skifter NVDA automatisk til fokustilstand. Når du med piletasterne bevæger dig ud af for skrivefeltet, skiftes automatisk tilbage til gennemsynstilstand.
 
 ==== Lydindikering af fokustilstand og gennemsynstilstand  ====
-Hvis denne indstilling er slået til, afspiller NVDA en særlig lyd i stedet for at læse ændringen af tilstand op i en virtuel buffer, når NVDA skifter imellem gennemsynstilstand og fokustilstand.
+Hvis denne indstilling er slået til, afspiller NVDA en særlig lyd i stedet for at oplæse ændringen.
 
-+++ Indstillinger for dokumentformatering  (NVDA+control+d) +++[DocumentFormattingSettings]
-Denne dialogboks findes i menuen Indstillinger under "Dokumentformatering...".
++++ Indstillinger for dokument formatering  (NVDA+control+d) +++[DocumentFormattingSettings]
+Denne dialogboks findes i menuen Indstillinger under "Dokument formatering...".
 
 De fleste tjekbokse i denne dialog bruges til at angive, hvilken type formatering, du automatisk ønsker oplæst, når du flytter markøren rundt inden i dokumenter.
 Hvis du fx afkrydser tjekboksen "oplæs skrifttypenavn", hører du navnet på skrifttypen, hver gang du med piletasterne bevæger dig hen over tekst med en anden skrifttype. 
@@ -896,22 +936,25 @@ Du kan tilpasse annoncering af:
 - navn på skrifttype 
 - størrelse på skrifttype 
 - Skrifttypes attributter 
-- typografi 
 - Tekstjustering 
+- Farver
 - Tekstens typografi 
+- stavefejl 
+- sidetal 
+- linjenumre
+- Linjeindrykning
 - tabeller
 - overskrifter på tabels række og kolonne 
-- sidetal 
-- linjenumre 
-- stavefejl 
+- Tabelcelle koordinater
 - links
 - overskrifter 
 - lister
 - blockquotes
 - Landmærker
+- Rammer
 -
 
-==== Annoncer ændringer i formatering efter cursoren  ====
+==== Annoncer ændringer i formatering efter markøren ====
 Hvis denne indstilling er slået til, betyder det at NVDA forsøger at spore alle ændringer i formateringen på en linje, når den læses op, selvom dette måtte sænke NVDAs hastighed.   
 
 NVDA vil som standard spore ændringer i formateringen på markørens eller den ubegrænsede markørs position og af og til også på resten af linjen, med mindre hastigheden derved reduceres.
@@ -942,25 +985,32 @@ Den nemmeste måde at gøre det på, er at skrive ordet fugl i dialogboksen Tilf
 NVDAs taleordbøger er imidlertid langt mere righoldige på muligheder end blot at kunne erstatte tekst.
 Dialogen Tilføj regel indeholder også en tjekboks til at bestemme, om du ønsker reglen skal være følsom for store og små bogstaver (altså om NVDA skal gøre forskel på, om bogstaverne står med stort eller lille.
 NVDA gør som standard ikke forskel på store og små bogstaver).
-
 Der findes en anden tjekboks, som giver dig mulighed for at indikere, hvorvidt din regel er et regulært udtryk.
 Et regulært udtryk er en række af specielle symboler, som sætter dig i stand til at søge på mere end et tegn ad gangen, at søge udelukkende på tal eller udelukkende på bogstaver for blot at nævne nogle få eksempler. .
 Regulære udtryk beskrives ikke nærmere i denne brugervejledning. Men der findes en mængde materiale om emnet på webben, hvor du kan finde yderligere oplysninger.
 
-++ Gemme og genindlæse  konfigurationen ++
-Som standard gemmer NVDA ikke dine indstillinger automatisk. Hvis du afslutter NVDA og derefter starter programmet igen, vil indstillingerne være sat til deres oprindelige værdier.
-Du skal dog være opmærksm på, at denne indstilling kan ændres under de generelle indstillinger i menuen Indstillinger.
-Gem derefter indstillingerne ved at aktivere "Gem konfiguration" i NVDAs hovedmenu.
++++ Udtale sætningstegn/symboler +++[SymbolPronunciation]
+Denne dialog giver dig mulighed for at bestemme, hvordan tegnsætning og andre symboler skal udtales, samt på hvilket niveau de skal udtales.
 
-Hvis NVDA kører på et skrivebeskyttet filsystem som f.eks. en cd, kan programmet ikke gemme dine indstillinger. Du bliver umiddelbart oplyst herom.
+For at ændre et symbol, skal du først vælge det i listen med symboler.
+Ved brug af feltet erstatning, kan du skrive den tekst du vil have læst i stedet for det oprindelige symbol.
+Ved at bruge boksen niveau, kan du justere det laveste niveau dette symbol skal udtales.
+
+Når du er færdig, skal du trykke på knappen OK for at gemme dine ændringer, eller Afbryd for at kassere dem.
+
+++ Gemme og genindlæse  konfigurationen ++
+Som standard gemmer NVDA dine indstillinger automatisk.
+Du skal dog være opmærksm på, at denne indstilling kan ændres under de generelle indstillinger i menuen Indstillinger.
+ Ved at aktivere "Gem konfiguration" i NVDAs hovedmenu, kan du altid gemme dine indstillinger manuelt.
 
 Hvis du laver fejl i dine indstillinger og ønsker at vende tilbage til de gemte indstillinger, vælger du "Vend tilbage til gemt konfiguration" i NVDAs hovedmenu.
+Du kan også nulstille dine indstillinger til de oprindelige fabriksindstillinger ved at vælge dette menupunkt under NVDA-menuen.
 
 Følgende NVDA-genvejstaster kan være nyttige:
 %kc:beginInclude
 || Navn | Desktop-tast | Laptop-tast | Beskrivelse  |
-| Gem konfiguration  | NVDA+control+c | NVDA+control+c |   Gemmer dine aktuelle indstillinger, så de ikke går tabt, når du afslutter NVDA  |
-| Vend tilbage til konfiguration  | NVDA+control+r | NVDA+control+r | Gendanner de indstillinger, som NVDA havde, da du senest gemte NVDAs konfiguration |
+| Gem konfiguration  | NVDA+kontrol+c | NVDA+kontrol+c |   Gemmer dine aktuelle indstillinger, så de ikke går tabt, når du afslutter NVDA  |
+| Vend tilbage til konfiguration  | NVDA+kontrol+r | NVDA+kontrol+r | Gendanner de indstillinger, som NVDA havde, da du senest gemte NVDAs konfiguration |
 %kc:endInclude
 
 ++ Konfigurationsfiler og brugerprofiler  ++
@@ -991,18 +1041,43 @@ Fjern krydset fra punktet for at slå det fra.
 Så længe talevisning er slået til, opdateres den konstant med den tekst, der netop nu læses op.
 Hvis der klikkes i viseren, eller hvis den får fokus, stoppes opdateringen dog midlertidigt, så det er muligt at markere eller kopiere det aktuelle indhold.
 
+++ Administrer add-ons ++
+
+Du kan administrere dine add-ons for NVDA ved at gå til "Administrer add-ons" under Værktøjer i NVDA-menuen. Dette værktøj giver dig mulighed for at installer tilføjelser til skærmlæseren, samt afinstallere tilføjelserne.
+Disse pakker kan indeholde tilpasset kode der kan ændre eller tilføje funktionalitet i NVDA, såsom understøttelse for bestemte talesynteser eller punktdisplays. Disse pakker er udgivet på betingelse af fællesskabet.
+
+Denne manager indeholder en liste over alle de tilføjelser, du har installeret på nuværende tidspunkt i din NVDA brugerkonfiguration.
+Navnen på pakken, versionen og forfatter er vist for hvert add-on, men du kan læse mere information om tilføjelsen ved at trykke på knappen "Om add-on".
+
+For at installere et add-on, tryk på knappen installer.
+Dette vil give dig mulighed for at gennemse din computer eller et netværk for filtypen .nvda-addon, som er en tilføjelsespakke.
+Når du trykker Åbn, vil NVDA spørge, om du virkelig ønsker at installere dette add-on.
+Eftersom funktionaliteten af add-ons er ubegrænset indeni NVDA, hvilket i teorien kunne omfatte adgang til dine personlige data eller endda hele dit system, er det vigtigt kun at installere add-ons fra kilder du har tillid til.
+Når dit add-on er installeret skal du genstarte NVDA for at køre dit add-on.
+Før du udfører denne handling, vil statusen af dit nyinstallerede add-on vise "Installer."
+
+For at slette et add-on, skal du trykke på knappen "Fjern".
+NvDA vil bekræfte, om du ønsker at fortsætte med denne handling.
+NVDA skal ligeledes genstarte før ændringen træder i kraft.
+Før du udfører denne handling, vil statusen af dit afinstallerede add-on vise "Fjern."
+
+Manageren har også en knap til at lukke dialogen.
+Hvis du har enten tilføjet eller fjernet add-ons, vil NVDA spørge om du ønsker at genstarte, så dine ændringer kan træde i kraft.
+
+Det har været muligt at udvide funktionaliteten af NVDA ved at kopiere plugins og drivere ind i mappen med brugerkonfigurationen til NVDA.
+Selv om denne version af NVDA kan indlæse dem, vil de ikke figurere i listen over add-ons.
+Det er bedst at slette disse filer, og derefter installere det hensigtsmæssige add-on hvis tilgængeligt.
+
 ++ Python konsollen ++
 NVDAs Python-konsol, der ligger under Værktøjer i NVDA-menuen, er et udviklerværktøj. Det er især velegnet til brug ved debugging, generel inspektion af interne processer i NVDA eller inspektion af tilgængelighedshierarkiet i en applikation.
 For yderligere oplysninger henvises til[artiklen om Python-konsollen på NVDAs netsted NVDA_URLwiki/PythonConsole].
 
-+ Yderligere oplysninger +
-Hvis du ønsker yderligere oplysninger eller hjælp til NVDA, er du velkommen til at besøge NVDAs netsted på NVDA_URL.
-her kan du finde supplerende dokumentation samt teknisk support og resourcer fra fællesskabet.
-Netstedet indeholder også informationer og henvisninger vedrørende NVDAs udvikling.
-  
+++ Indlæs plugins ++
+Denne indstilling vil genstarte alle app moduler og globale plugins uden at genstarte NVDA. Dette kan være nyttigt for udviklere.
 
-+ Understøttede talesynteser +[SupportedSpeechSynth]
++ Understøttede talesynteser +[SupportedSpeechSynth]	
 Dette afsnit indeholder informationer om de talesynteser, som NVDA understøtter.
+For en mere omfattende list af gratis og kommercielt tilgængelige synteser, som du kan bruge med NVDA, besøg venligst denne side [http://www.nvda-project.org/wiki/ExtraVoices http://www.nvda-project.org/wiki/ExtraVoices].
 
 ++ eSpeak ++
 Talesyntesen [eSpeak http://espeak.sourceforge.net/] er bygget direkte ind i NVDA og kræver ingen installation af særskilte drivere eller komponenter for at fungere.
@@ -1010,7 +1085,7 @@ NVDA bruger som standard eSpeak ved opstart.
 Eftersom denne talesyntese er bygget ind i NVDA, er den et godt valg til de situationer, hvor NVDA afvikles fra en USB-pen eller fra en cd på flere forskellige systemer.
 
 Der er et sprog tilknyttet enhver af de stmmer, som følger med eSpeak. 
-Der findes mere end 20 forskellige sprog i eSpeak.
+Der findes mere end 43 forskellige sprog i eSpeak.
 
 Der findes også mange forskellige varianter, der kan vælges for at ændre den enkelte stemmes tonehøjde. 
 
@@ -1024,24 +1099,35 @@ Hvis dine installerede SAPI 4 talesynteser ikke fremkommer i NVDAs liste med tal
 ++ Microsoft Speech API version 5 (SAPI 5) ++
 SAPI 5 er en standard fra Microsoft for software talesynteser.
 En lang række af de talesynteser, der overholder denne standard, kan enten købes eller hentes gratis fra forskellige firmaer og netsteder. Din computer har sandsynligvis allerede én SAPI 5 talesyntese præinstalleret.
-
 Når denne talesyntese vælges i NVDA, indeholder listen (som nås med [dialogboksen Stemmeindstillinger #VoiceSettings] eller via den cirkulære menu Talesyntese-indstillinger #SynthSettingsRing]) en oversigt over de tilgængelige stemmer fra samtlige SAPI 5 talesynteser, der er installeret på dit system.
 
+++ Microsoft Speech Platform ++
+Microsoft Speech Platform giver stemmer til mange sprog, men disse stemmer er normalt brugt i udvikling af serverbaserede applikationer.
+Disse stemmer kan blive brugt af NVDA.
 
+For a tbruge disse stemmer, er det nødvendigt at installere to komponenter:
+- Microsoft Speech Platform - Runtime (Version 11) , x86: http://www.microsoft.com/download/en/details.aspx?id=27225
+- Microsoft Speech Platform - Runtime Languages (Version 11): http://www.microsoft.com/download/en/details.aspx?id=27224
+ - Denne side indeholder mange filer for både talegenkendelse og tekst til tale.
+ Vælg filerne der indeholder det ønskede sprog/stemmer.
+  For eksempel er filen MSSpeech_TTS_en-US_ZiraPro.msI en U.S. English stemme.
+ -
+-
 
 ++ Audiologic Tts3 ++
-Dette er en kommerciel talesyntese, der er specielt produceret til italiensk.   
-
+Dette er en kommerciel talesyntese, der er specielt produceret til italiensk.
 Talesyntesen skal være installeret på dit system, før den kan bruges med NVDA.
-
 For yderligere oplysninger om talesyntesen henvises til Audiologics netsted på www.audiologic.it.
+
+Denne talesyntese understøtter ikke [stavefunktionalitet #VoiceSpellingFunctionality].
 
 ++ Newfon ++
 Newfon er en fri og kommerciel talesyntese, som er skrevet af Sergey Shishmintzev. Den understøtter russisk og ukrainsk. 
-
 Hvis du ønsker at hente denne talesyntese, henvises til NVDAs russiske fællesskab under sektionen for downloads: http://ru.nvda-community.org/?page_id=10
 
-+ Understøttede punktdisplays+[Understøttede punktdisplays]
+Denne talesyntese understøtter ikke [stavefunktionalitet #VoiceSpellingFunctionality].
+
++ Understøttede punktdisplays +[SupportedBrailleDisplays]
 Dette kapitel indeholder oplysninger om de punktdisplays, som NVDA understøtter.
 
 ++ Freedom Scientific Focus/PAC Mate Series ++
@@ -1049,6 +1135,7 @@ Der er undersøttelse for alle Focus og PAC Mate displays fra [Freedom Scientifi
 Brailledisplay-driverne fra Freedom Scientific skal vær installeret på dit system. 
 Hvis du ikke allerede har dem, kan du hente dem fra http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp.
 Selvom siden kun henviser til displayet Focus 40 Blue,understøtter driveren alle displays fra Freedom Scientific.
+Hvis dit system kører Windows 64 bit og de aktuelle drivere var installeret af en anden skærmlæser, skal du tilsyneladende installere driveren fra dette link alligevel, da filerne krævet af NVDA sikkert ikke var installeret af en anden skærmlæser.
 
 ++ Optelec ALVA BC640/680 ++
 Der er understøttelse for både ALVA BC640 og BC680 punktdisplays fra [Optelec http://www.optelec.com/].
