@@ -1130,7 +1130,7 @@ Denne talesyntese understøtter ikke [stavefunktionalitet #VoiceSpellingFunction
 Dette kapitel indeholder oplysninger om de punktdisplays, som NVDA understøtter.
 
 ++ Freedom Scientific Focus/PAC Mate Series ++
-Der er understøttelse for alle Focus og PAC Mate displays fra [Freedom Scientific http://www.freedomscientific.com/].
+Der er understøttelse for alle Focus og PAC Mate displays fra [Freedom Scientific http://www.freedomscientific.com/] når de kobles til med USB og Bluetooth.
 Punktdisplay-driverne fra Freedom Scientific skal vær installeret på dit system.
 Hvis du ikke allerede har dem, kan du hente dem fra http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp.
 Selvom siden kun henviser til displayet Focus 40 Blue,understøtter driveren alle displays fra Freedom Scientific.
@@ -1522,89 +1522,89 @@ Se venligst [BRLTTY dokumentationen for tastekombinationer http://mielke.cc/brlt
 
 + Avancerede emner +
 
-++ Remapping Tast Assignments and Other Input Gestures ++
-Users are able to provide or override mappings of input gestures (such as Tast presses) to scripts in a special file in the user's NVDA configuration directory.
-This file is called gestures.ini.
+++ Remapping af tastaturkommandoer og andre input-bevægelser ++
+Brugere er i stand til at oprette eller overskrive mappings af input-bevægelser (såsom tastetryk) til scripts i en særlig fil i brugerens NVDA konfigurationsmappe.
+Denne fil hedder gestures.ini.
 
-This file uses standard ini syntax.
-The file may contain multiple sections and each section may have one or more entries.
+Denne fil bruger standard ini syntax.
+Filen kan indeholde adskillige sektioner, og hver sektion kan ligeledes have en eller flere optegnelser.
 
-Each section provides mappings for scripts in a particular Python module and class inside NVDA.
-- The section Navn should be the Python module and class separated by a punkt (.).
-- The Tast of each entry is the Navn of the script to which input gestures should be bound.
-Alternatively, you can use None to unbind input gestures from a script to which they were previously bound.
-Each entry Tast can only be listed once per section, including None.
-- The entry value is a comma (,) separated list of gesture identifiers for the input gestures that should be bound.
-Gesture identifiers ending in a comma must be enclosed in quotes (" or ').
+Hver sektion består af mapninger for scripts i et særligt Python modul og klasse til NVDA.
+- Navnet på sektionen skal være Python-modulet og klassen adskilt af et punktum (.).
+- Tasten for hvert optegnelse er navnet på det script, som  input-bevægelserne skal tilknyttes til.
+Alternativt kan du bruge None til at fjerne  input-bevægelser fra et script, som du tidligere har tilknyttet kommandoer.
+Hver optegnelses nøgle kan kun benyttes en gang per sektion. Dette inkluderer også None.
+- optegnelsens værdi er et komma (,) adskilt liste af bevægelses-identifikatorer for de input-bevægelser, du ønsker at tilknytte.
+Bevægelses-identifikatorer, som slutter med et komma, skal omgives af anførselstegn (" eller ').
 -
 
-Gesture identifiers consist of a two letter device code; a sub-device, layout or mode in brackets; a colon; and then a type-specific string identifying the actual input, such as Tast or touch gesture names.
-- For keyboard gestures, the device code is kb.
-The part in brackets is the keyboard layout and is optional.
-If not specified, the gesture will apply to all keyboard layouts.
-The string after the colon is one or more Tast names separated by a plus (+) sign.
-- For braille display gestures, the device code is br.
-The part in brackets identifies the specific braille display and is mandatory.
-The string after the colon is one or more Tast names separated by a plus (+) sign.
-- For touch gestures, the device code is ts.
-The part in brackets is the touch mode and is optional.
-The string after the colon is a touch gesture; e.g. double_tap, 2fingerflickUp or 3finger_tap.
+Bevægelses-identifikatorer består af en device kode på to bogstaver; et sub-device, layout eller tilstand i parenteser; et kolon; og derefter en type-specifik streng, der identificerer det aktuelle input, såsom navnet på Tast eller touch-bevægelse.
+- For tastaturkommandoer er device koden kb.
+Det som er omgivet af parenteser er tastaturlayout og er valgfrit.
+Hvis dette ikke er inkluderet i parametrene, vil bevægelsen gælde alle tastaturlayouter.
+Strengen efter kolon er en eller flere Tastnavne adskilt af et plus (+) tegn.
+- For bevægelser der anvendes på et punktdisplay,  er device koden br.
+Den del af parametrene, der er omgivet af parenteser, er obligatorisk og angiver hvilket display der skal benyttes.
+Strengen efter kolon er en eller flere Tastnavne adskilt af et plus (+) tegn.
+- For touch-bevægelser er device koden ts.
+Den del der omgives af parenteser bestemmer hvilket touch-tilstand skal bruges til denne bevægelse, og er obligatorisk.
+Strengen efter kolon er en touch-bevægelse; f.eks double_tap, 2fingerflickUp eller 3finger_tap.
 -
 
-In order to discover gesture identifiers, script names and the class and module in which they are contained, you can:
-+ Turn on Input Help.
-+ Activate the gesture (press the Tast, touch the screen, etc.).
-+ Turn off input help.
-+ Activate View log in the NVDA Tools menu.
-+ Examine the recent log entries.
-One of these should provide information about the input gesture you sent, including the module.class and script if it is bound to one.
+For at kunne find ud af hvilke bevægelses-identifikatorer, script navne samt klassen og modulet de befinder sig i, kan du:
++ Slå inputhjælp til.
++ Aktiver bevægelsen (tryk tastekombinationen, rør skærmen, osv.).
++ Slå inputhjælp fra.
++ Aktiver "Vis log" i NVDA-menuen under Værktøjer.
++ Undersøg de seneste optegnelser i loggen.
+En af disse linjer burde indeholde den nødvendige information for den input-bevægelse du sendte, herunder module.class og scriptnavn, hvis bevægelsen er tilknyttet.
 +
 
-Following is an example of how you could bind NVDA+skift+t to the date time script.
+Nedenstående er et eksempel på, hvordan du kan tilknytte NVDA+skift+t til scriptet de rer ansvarligt for annoncering af tid og dato.
 
-To find out the correct script Navn and module.class for date time, you would turn on Input Help and press NVDA+f12 (as this is the current gesture for the date time script).
-You would then turn off Input Help and examine the log viewer.
+For at finde det korrekte scriptnavn og module.class for dato tid, skal du slå inputhjælp til og derefter trykke NVDA+f12 (eftersom dette er den aktuelle kommando til at aktivere scriptet).
+Derefter skal du slå inputhjælp fra igen og undersøge loggen.
 
-Towards the bottom, you would see:
+Når du nærmer dig slutningen på filen burde du se:
 
 ```
 INFO - inputCore.InputManager._handleInputHelp (13:17:22):
 Input help: gesture kb(desktop):NVDA+f12, bound to script dateTime on globalCommands.GlobalCommands
 ```
 
-From this, you can see that the script Navn is dateTime and the module.class is globalCommands.GlobalCommands.
+Fra dette output kan du se, at script navnet er dateTime og module.class er globalCommands.GlobalCommands.
 
-If the file does not yet exist, you would create a text file called gestures.ini in the user configuration directory and add the following content:
+Hvis filen dog ikke eksisterer, skal du oprette en tekstfil ved navn gestures.ini i user configuration mappen, og tilføjfe følgende indhold:
 
 ```
 [globalCommands.GlobalCommands]
 	dateTime = kb:NVDA+skift+t
 ```
 
-This would bind the Tast press NVDA+skift+t (in any keyboard layout) to the dateTime script.
+Dette vil tilknytte kommandoen tryk NVDA+skift+t (i ethvert tastaturlayout) til scriptet dateTime.
 
-Note that the original NVDA+f12 binding would still work.
-If you wanted to remove this binding, you would add the following line:
+Bemærk at den oprindelige kommando, som er NVDA+F12, fortsat vil udføre dens oprindelige handling.
+Hvis du ønsker at fjerne denne komando kan du tilføje følgende linje:
 
 ```
 	None = kb:NVDA+f12
 ```
 
-Although you are free to have scripts bound to any available Tast, it may be problematic to use the alt Tast on the keyboard.
-NVDA still sends modifier keys (such as skift, kontrol and alt) to the Operating System, even if they eventuate in a script.
-Thus, if you do use alt in a gesture, pressing this Tast combination may activate the menu bar, as well as executing the script.
-Therefore, it is probably best to just use skift, kontrol and the NVDA modifier Tast as modifiers.
+Selv om, at du kan tilknytte scripts til alle tilgængelige tastetryk og bevægelser, kan det blive problematisk at bruge ALT-tasten på tastaturet.
+NVDA fortsætter med at sende funktionstaster (såsom skift, kontrol og alt) til operativsystemet, uanset om de ender i et script.
+Således kan denne kommando aktivere menulinjen, men på samme tid eksekvere en kommando, hvis du altså har tilknyttet et script til denne tast.
+Af denne grund er det muligvis det bedste, hvis du fortsætter med at bruge skift, kontrol og NVDAs funktionstaste som funktionstaster.
 
-++ Advanced Customization of Symbol Pronunciation ++
-It is possible to customize the pronunciation of punctuation and other symbols beyond what can be done using the [Punctuation/symbol pronunciation #SymbolPronunciation] dialog.
-For example, you can specify whether the raw symbol should be sent to the synthesizer (e.g. to cause a pause or change in inflection) and you can add custom symbols.
+++ Avanceret tilpasning af udtalelse af symboler ++
+Det er muligt at tilpasse udtalelse af tegnsætning, samt andre symboler udover det som du kan opnå ved brug af dialogen [Udtalelse sætningstegn/symboler #SymbolPronunciation].
+Du kan for eksempel bestemme, om det rå symbol skal sendes til talesyntesen (f.eks. pause talen eller ændre tonefald) og du kan også tilføje brugerdefinerede.
 
-To do this, you must edit the symbol pronunciation information file in your NVDA user configuration directory.
-The file is called symbols-xx.dic, where xx is the language code.
-The format of this file is documented in the Symbol Pronunciation section of the NVDA Developer Guide, which is available from [the Development section of the NVDA web site NVDA_URLwiki/Development].
-However, it is not possible for users to define complex symbols.
+For at gøre dette, er det nødvendigt at ændre filen med udtalelser for symboler og tegnsætning. Den findes i den mappe, der indeholder brugerkonfigurationen af NVDA.
+Filen hedder symbols-xx.dic, hvor xx repræsentere sprogkoden.
+Formateringen af denne fil er dokumenteret  i kapitlet Symbol Pronunciation, fundet i NVDAs udviklingsvejledning [the Development section of the NVDA web site NVDA_URLwiki/Development].
+Bemærk at det ikke er muligt for brugere at definere komplekse symboler.
 
-+ Further Information +
-If you require further information or assistance regarding NVDA, please visit the NVDA web site at NVDA_URL.
-Here, you can find additional documentation, as well as technical support and community resources.
-This site also provides information and resources concerning NVDA development.
++ Yderligere information +
+Hvis du har brug for yderligere information eller hjælp til brugen af NVDA, besøg venligst NVDAs netsted NVDA_URL.
+Her kan du finde yderligere dokumentation, samt teknisk support og ressourcer.
+Denne side indeholder også information vedrørende udviklingen af NVDA.
