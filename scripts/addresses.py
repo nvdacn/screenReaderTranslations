@@ -13,7 +13,7 @@ addresses = {
     },
     'an': {
         'lang':'Aragonese',
-        'email': ['Jorge <jorgtum@gmail.com>'],
+        'email': ['Jorge Perez <jorgtum@gmail.com>'],
     },
     'ar': { 
         'lang':'Arabic',
@@ -58,6 +58,10 @@ addresses = {
     'gl': {
         'lang': 'Galician',
         'email': ['Juan C. buno <quetzatl@eresmas.net>'],
+    },
+    'hi': {
+        'lang': 'Hindi',
+        'email': ['dipendra.lists@gmail.com', 'ayeshameshaq@hotmail.com'],
     },
     'hr': {
         'lang': 'Croatian',
