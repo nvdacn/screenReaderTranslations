@@ -7,6 +7,6 @@ convertLangs=(am an ar bg cs da de el es fi fr gl hu it ja ko ne nl nb_NO pl pt_
 findRevLangs=(an ar cs da de es fi fr gl hu it ja ko ne nl nb_NO pl pt_BR pt_PT sk ta tr zh_TW)
 
 # languages to be processed by the updatePo.sh script.
-updatePoLangs=(am an ar bg cs da de el es fi fr gl hr hu it ja ko ne nl nb_NO nn_NO pl pt_BR pt_PT ru sk sv ta tr uk zh_CN zh_HK zh_TW)
+updatePoLangs=(am an ar bg cs da de el es fi fr gl hi hr hu it ja ko ne nl nb_NO nn_NO pl pt_BR pt_PT ru sk sv ta tr uk zh_CN zh_HK zh_TW)
 
 availableAddons=(dropbox systrayList vocalizer)
