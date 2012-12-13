@@ -21,18 +21,34 @@
 <LI>El anunciado automático de los encabezados de fila y columna ahora se soporta para documentos en modo navegación en Internet Explorer y otros controles MSHTML. (<A HREF="http://www.nvda-project.org/ticket/778">#778</A>)
 <LI>Nuevo idioma: Aragonés
 <LI>Nueva tabla de transcripción braille:  Danés grado 2.
+<LI>Soporte para líneas braille conectadas a través de bluetooth en un ordenador ejecutando el Bluetooth Stack for Windows de Toshiba. (<A HREF="http://www.nvda-project.org/ticket/2419">#2419</A>)
+<LI>Soporte para la selección de puerto cuando se utilicen líneas freedom Scientific (Automático, USB o Bluetooth).
+<LI>Soporte para la familia BrailleNote de anotadores electrónicos de Humanware cuando actúen como una terminal braille para un lector de pantalla. (<A HREF="http://www.nvda-project.org/ticket/2012">#2012</A>)
 </UL>
 
 <H3>Corrección de Fallos</H3>
 
 <UL>
-<LI>Las teclas de navegación rápida para saltar al siguiente o anterior separador en modo Navegación ahora funciona en Internet Explorer y otros controles MSHTML. (<A HREF="http://www.nvda-project.org/ticket/2781">#2781</A>)
+<LI>Las teclas de navegación rápida para saltar al siguiente o anterior separador en modo Navegación ahora funcionan en Internet Explorer y otros controles MSHTML. (<A HREF="http://www.nvda-project.org/ticket/2781">#2781</A>)
 <LI>Si NVDA regresa a eSpeak o no habla debido a un sintetizador de voz configurado que falla cuando NVDA se inicia, la configuración ya no se actualiza para  configurarse con el sintetizador al que se retornó como la elección configurada, lo que significa que ahora el sintetizador original se probará de nuevo la próxima vez que NVDA arranque. (<A HREF="http://www.nvda-project.org/ticket/2589">#2589</A>)
 <LI>En modo navegación en aplicaciones de Mozilla, las actualizaciones de las tablas ahora se procesan correctamente. Por ejemplo, en actualización de celdas, las coordenadas de fila y columna se anuncian y la navegación de la tabla funciona como debería. (<A HREF="http://www.nvda-project.org/ticket/2784">#2784</A>)
 <LI>En modo navegación en navegadores web, ciertos gráficos cliqueables no etiquetados que no se procesaban anteriormente ahora se procesan correctamente. (<A HREF="http://www.nvda-project.org/ticket/2838">#2838</A>)
 <LI>Las versiones anteriores y actuales T (tales como la 6.1.1) ahora se soportan. (<A HREF="http://www.nvda-project.org/ticket/2800">#2800</A>)
 <LI>Para métodos de entrada tales como Easy Dots IME bajo XP, la cadena de lectura ahora se anuncia correctamente.
 <LI>La lista de candidatos del método de entrada Chino Simplificado Microsoft Pinyin bajo Windows 7 ahora se lee correctamente cuando se cambian páginas con las flechas izquierda y derecha, y cuando se la abre primero con Inicio.
+<LI>Cuando se guarda la información de pronunciación personalizada de símbolos , el campo avanzado "preserve" ya no se elimina. (<A HREF="http://www.nvda-project.org/ticket/2852">#2852</A>)
+<LI>Cuando se desactiva la detección automática de actualizaciones, NVDA ya no ha de ser reiniciado para que todos los cambios tengan efecto.
+<LI>NVDA ya no falla al iniciarse si un complemento no se puede eliminar debido a que su directorio está siendo actualmente usado por otra aplicación. (<A HREF="http://www.nvda-project.org/ticket/2860">#2860</A>)
+</UL>
+
+<H3>Cambios para Desarrolladores</H3>
+
+<UL>
+<LI>Los controladores de línea Braille ahora pueden soportar la selección manual de puertos. (<A HREF="http://www.nvda-project.org/ticket/426">#426</A>)
+ <UL>
+ <LI>Esto es mayoritariamente útil para líneas braille que soporten conexión a través de un puerto serie.
+ <LI>Esto se hace utilizando el método de la clase getPossiblePorts en la clase BrailleDisplayDriver.
+ </UL>
 </UL>
 
 <H2>2012.3</H2>

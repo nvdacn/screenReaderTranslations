@@ -131,14 +131,15 @@
     <LI><A HREF="#toc87">11.10. HIMS SyncBraille</A>
     <LI><A HREF="#toc88">11.11. Líneas Braille Seika</A>
     <LI><A HREF="#toc89">11.12. Modelos más recientes de Papenmeier BRAILLEX</A>
-    <LI><A HREF="#toc90">11.13. BRLTTY</A>
+    <LI><A HREF="#toc90">11.13. HumanWare BrailleNote</A>
+    <LI><A HREF="#toc91">11.14. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc91">12. Temas Avanzados</A>
+  <LI><A HREF="#toc92">12. Temas Avanzados</A>
     <UL>
-    <LI><A HREF="#toc92">12.1. Remapeando Asignaciones de Teclas y otros Gestos de Entrada</A>
-    <LI><A HREF="#toc93">12.2. Personalización Avanzada de Pronunciación de Símbolos</A>
+    <LI><A HREF="#toc93">12.1. Remapeando Asignaciones de Teclas y otros Gestos de Entrada</A>
+    <LI><A HREF="#toc94">12.2. Personalización Avanzada de Pronunciación de Símbolos</A>
     </UL>
-  <LI><A HREF="#toc94">13. Información Adicional</A>
+  <LI><A HREF="#toc95">13. Información Adicional</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -1649,6 +1650,24 @@ Sin braille significa que no estás utilizando braille.
 Por favor mira la sección <A HREF="#SupportedBrailleDisplays">Líneas Braille Soportadas</A> para más información acerca de las líneas braille soportadas.
 </P>
 
+<H5>Puerto</H5>
+
+<P>
+Esta opción, si está disponible, te permite elegir qué puerto o tipo de conexión se utilizará para comunicar con la línea braille que tengas seleccionada.
+Es un cuadro combinado que contiene las opciones posibles para tu línea braille.
+</P>
+<P>
+Predeterminadamente, NVDA emplea la detección de puerto automática, lo cual significa que la conexión con el dispositivo braille se establecerá automáticamente escaneando los dispositivos USB y bluetooth disponibles en tu sistema.
+Por lo tanto, para algunas líneas braille, podrás elegir explícitamente qué puerto debería utilizarse.
+Opciones comunes son "Automático" (que dice a NVDA que emplee el procedimiento de selección de puerto predeterminado automático), "USB", "Bluetooth" y los puertos de comunicación serie si tu línea braille soportan este tipo de comunicación.
+</P>
+<P>
+Esta opción no estaría disponible si tu línea braille sólo soporta detección de puerto automática.
+</P>
+<P>
+Podrás consultar la documentación para tu línea braille en la sección <A HREF="#SupportedBrailleDisplays">Líneas Braille Soportadas</A> para informarte de más detalles sobre los tipos soportados de puertos y comunicación disponibles.
+</P>
+
 <H5>Tabla de Transcripción</H5>
 
 <P>
@@ -2419,6 +2438,11 @@ Necesitarás los controladores de líneas braille de Freedom Scientific instalad
 Si no los tienes todavía, puedes obtenerlos desde <A HREF="http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp">http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp</A>.
 Aunque esta página sólo menciona la línea Focus 40 Blue, el controlador soporta todas las líneas de Freedom Scientific.
 Si tu sistema ejecuta un Windows de 64 bit y los controladores ya se instalaron por otro lector de pantalla, posiblemente todavía necesitarás instalar los controladores desde este enlace, puesto que los ficheros que requiere NVDA posiblemente no fueron instalados por el otro lector de pantalla.
+</P>
+<P>
+Predeterminadamente, NVDA puede detectar automáticamente y conectarse a estas líneas tanto a través de USB como de bluetooth.
+No obstante, cuando se configura la línea, puedes seleccionar explícitamente los puertos "USB" o "Bluetooth" para restringir el tipo de conexión a utilizar.
+Esto podría ser útil si quieres conectar la línea focus a NVDA utilizando bluetooth, y todavía podrías cargarla utilizando la energía del USB desde tu ordenador.
 </P>
 <P>
 Seguidamente van las asociaciones de teclas para esta línea con NVDA.
@@ -3579,7 +3603,140 @@ Seguidamente van las asignaciones de órdenes de la Papenmeier para NVDA:
 </TABLE>
 
 <A NAME="toc90"></A>
-<H3>11.13. BRLTTY</H3>
+<H3>11.13. HumanWare BrailleNote</H3>
+
+<P>
+NVDA soporta los anotadores electrónicos BrailleNote de <A HREF="http://www.humanware.com">Humanware</A> cuando actúen como un terminal braille para un lector de pantalla.
+Se soportan los siguientes modelos:
+</P>
+
+<UL>
+<LI>BrailleNote Classic (sólo conexión serie)
+<LI>BrailleNote PK (Conexiones serie y bluetooth)
+<LI>BrailleNote MPower (Conexiones serie y bluetooth)
+<LI>BrailleNote Apex (Conexiones USB y Bluetooth)
+</UL>
+
+<P>
+Si tu dispositivo soporta más de un tipo de conexión, cuando conectes tu BrailleNote a NVDA, debes configurar el puerto de la terminal braille en las opciones de terminal braille.
+Por favor mira el manual del BrailleNote para detalles.
+En NVDA, también podrías necesitar configurar el puerto en el diálogo Opciones de Braille.
+Si te estás conectando a través de USB o bluetooth, puedes configurar el puerto a "Automático", "USB" o "Bluetooth", dependiendo de las opciones disponibles.
+Si te estás conectando utilizando un puerto serie (o un conversor de USB a serie) o si no aparece ninguna de las opciones anteriores, debes elegir explícitamente el puerto de comunicación a utilizarse desde la lista de puertos hardware.
+</P>
+<P>
+Antes de conectar tu BrailleNote Apex utilizando su cliente de interface USB, debes instalar los controladores proporcionados por HumanWare.
+</P>
+<P>
+Seguidamente van las asignaciones de órdenes del BrailleNote para NVDA.
+Por favor mira la documentación del BrailleNote para encontrar dónde se localizan estas teclas.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nombre</TH>
+<TH>Tecla</TH>
+</TR>
+<TR>
+<TD>Desplazar atrás línea braille</TD>
+<TD>retroceder</TD>
+</TR>
+<TR>
+<TD>Desplazar adelante línea braille</TD>
+<TD>avanzar</TD>
+</TR>
+<TR>
+<TD>Mover línea braille a la línea anterior</TD>
+<TD>anterior</TD>
+</TR>
+<TR>
+<TD>Mover línea braille a la línea siguiente</TD>
+<TD>siguiente</TD>
+</TR>
+<TR>
+<TD>Llevar a la celda braille</TD>
+<TD>sensores</TD>
+</TR>
+<TR>
+<TD>Activar y desactivar seguimiento de braille</TD>
+<TD>anterior+siguiente</TD>
+</TR>
+<TR>
+<TD>Tecla flecha arriba</TD>
+<TD>espacio+punto1</TD>
+</TR>
+<TR>
+<TD>Tecla flecha abajo</TD>
+<TD>espacio+punto4</TD>
+</TR>
+<TR>
+<TD>Tecla flecha izquierda</TD>
+<TD>espacio+punmto3</TD>
+</TR>
+<TR>
+<TD>Tecla flecha derecha</TD>
+<TD>espacio+punto6</TD>
+</TR>
+<TR>
+<TD>Tecla retroceso de página</TD>
+<TD>espacio+punto1+punto3</TD>
+</TR>
+<TR>
+<TD>Tecla avance de página</TD>
+<TD>espacio+punto4+punto6</TD>
+</TR>
+<TR>
+<TD>Tecla inicio</TD>
+<TD>espacio+punto1+punto2</TD>
+</TR>
+<TR>
+<TD>Tecla Fin</TD>
+<TD>espacio+punto4+punto5</TD>
+</TR>
+<TR>
+<TD>teclas Control+inicio</TD>
+<TD>espacio+punto1+punto2+punto3</TD>
+</TR>
+<TR>
+<TD>Teclas Control+fin</TD>
+<TD>espacio+punto4+punto5+punto6</TD>
+</TR>
+<TR>
+<TD>tecla espacio</TD>
+<TD>espacio</TD>
+</TR>
+<TR>
+<TD>Tecla intro</TD>
+<TD>espacio+punto8</TD>
+</TR>
+<TR>
+<TD>Tecla Retroceso</TD>
+<TD>espacio+punto7</TD>
+</TR>
+<TR>
+<TD>Tecla Tab</TD>
+<TD>espacio+punto2+punto3+punto4+punto5 (espacio+t)</TD>
+</TR>
+<TR>
+<TD>Teclas Shift+tab</TD>
+<TD>espacio+punto1+punto2punto5+punto6</TD>
+</TR>
+<TR>
+<TD>Tecla Windows</TD>
+<TD>espacio+punto2+punto4+punto5+punto6 (espacio+w)</TD>
+</TR>
+<TR>
+<TD>Tecla Alt</TD>
+<TD>espacio+punto1+punto3+punto4 (espacio+m)</TD>
+</TR>
+<TR>
+<TD>Activar y desactivar ayuda de entrada</TD>
+<TD>espacio+punto1+punto2+punto5 (espacio+h)</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc91"></A>
+<H3>11.14. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A> es un programa por separado que puede utilizarse para soportar muchas líneas braille.
@@ -3619,10 +3776,10 @@ Por favor mira <A HREF="http://mielke.cc/brltty/doc/drivers/">la documentación 
 </TR>
 </TABLE>
 
-<A NAME="toc91"></A>
+<A NAME="toc92"></A>
 <H2>12. Temas Avanzados</H2>
 
-<A NAME="toc92"></A>
+<A NAME="toc93"></A>
 <H3>12.1. Remapeando Asignaciones de Teclas y otros Gestos de Entrada</H3>
 
 <P>
@@ -3723,7 +3880,7 @@ De esta manera, si utilizas alt en un gesto, pulsando esta tecla la combinación
 Por lo tanto, probablemente es mejor sólo utilizar Shift, control y la tecla modificadora NVDA como modificadores.
 </P>
 
-<A NAME="toc93"></A>
+<A NAME="toc94"></A>
 <H3>12.2. Personalización Avanzada de Pronunciación de Símbolos</H3>
 
 <P>
@@ -3737,7 +3894,7 @@ El formato de este fichero se documentó en la sección Symbol Pronunciation de 
 Por lo tanto, no es posible para los usuarios definir símbolos complejos. 
 </P>
 
-<A NAME="toc94"></A>
+<A NAME="toc95"></A>
 <H2>13. Información Adicional</H2>
 
 <P>
