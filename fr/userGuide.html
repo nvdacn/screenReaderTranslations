@@ -131,14 +131,15 @@
     <LI><A HREF="#toc87">11.10. HIMS SyncBraille</A>
     <LI><A HREF="#toc88">11.11. Seika Braille Displays</A>
     <LI><A HREF="#toc89">11.12. Nouveaux modèles de Papenmeier BRAILLEX</A>
-    <LI><A HREF="#toc90">11.13. BRLTTY</A>
+    <LI><A HREF="#toc90">11.13. BrailleNote de HumanWare</A>
+    <LI><A HREF="#toc91">11.14. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc91">12. Fonctions Avancées</A>
+  <LI><A HREF="#toc92">12. Fonctions Avancées</A>
     <UL>
-    <LI><A HREF="#toc92">12.1. Redéfinir les Assignations de Touches et les Autres Gestes de Commande</A>
-    <LI><A HREF="#toc93">12.2. Personnalisation Avancée de la Prononciation des Symboles</A>
+    <LI><A HREF="#toc93">12.1. Redéfinir les Assignations de Touches et les Autres Gestes de Commande</A>
+    <LI><A HREF="#toc94">12.2. Personnalisation Avancée de la Prononciation des Symboles</A>
     </UL>
-  <LI><A HREF="#toc94">13. Informations supplémentaires</A>
+  <LI><A HREF="#toc95">13. Informations supplémentaires</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -1650,6 +1651,24 @@ Pas de Braille signifie que vous n'utilisez pas le Braille.
 Reportez-vous à la section <A HREF="#SupportedBrailleDisplays">Terminaux Braille pris en charge</A> pour les informations concernant les terminaux Braille.
 </P>
 
+<H5>Port</H5>
+
+<P>
+Cette option, si disponible, vous permet de choisir quel port ou type de connexion sera utilisé pour communiquer avec l'afficheur Braille sélectionné.
+C'est une liste déroulente contenant les choix possibles pour votre afficheur Braille.
+</P>
+<P>
+Par défaut, NVDA emploie la détection automatique, ce qui veut dire que la connexion avec le périphérique Braille sera établie automatiquement en recherchant les périphériques USB et Blue Tooth connectés à votre ordinateur.
+De plus, pour sertains afficheurs Braille, vous pourriez choisir explicitement quel port sera utilisé.
+Les options communes sont "automatique" (qui spécifit à NVDA d'employer la procédure par défaut), "USB", "Bluetooth" et port série si votre afficheur Braille supporte ce type de communication.
+</P>
+<P>
+Cette option ne sera pas disponible si votre afficheur Braille supporte seulement la détection automatique du port.
+</P>
+<P>
+Vous devriez consulter la documentation de votre afficheur Braille dans la section <A HREF="#SupportedBrailleDisplays">Afficheurs Braille supportés</A> pour plus de détailles sur les types de communications supportés et les ports disponibles.
+</P>
+
 <H5>Table de conversion</H5>
 
 <P>
@@ -2419,6 +2438,11 @@ Vous devrez installer les pilotes de terminaux Braille de Freedom Scientific sur
 Si vous ne les avez pas déjà, vous pourrez les obtenir sur <A HREF="http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp">http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp</A>.
 Bien que cette page ne mentionne que le terminal Focus 40 Blue, le pilote supporte tous les terminaux de Freedon Scientific.
 Si votre système est sous Windows 64 bits et que les pilotes ont déjà été installés par une autre revue d'écran, vous devrez probablement installer quand-même installer les pilotes car les fichiers nécessaires pour NVDA n'auront probablement été installés par l'autre revue d'écran.
+</P>
+<P>
+Par défaut, NVDA peut automatiquement détecter et se connecter à ces afficheurs via USB ou Bluetooth.
+Lorsque vous configurerez l'afficheur, vous pourrez sélectionner explicitement "USB" ou "Bluetooth" pour restraindre le type de connexion qui sera utilisé.
+Cela peut être utile si vous voulez connecter l'afficheur Focus à NVDA via le Bluetooth tout en le chargeant en utilisant l'USB.
 </P>
 <P>
 Voici les assignations de touches pour ces terminaux avec NVDA.
@@ -3579,7 +3603,136 @@ Voici les  commandes assignées pour les afficheurs Papenmeier dans NVDA :
 </TABLE>
 
 <A NAME="toc90"></A>
-<H3>11.13. BRLTTY</H3>
+<H3>11.13. BrailleNote de HumanWare</H3>
+
+<P>
+NVDA supporte les bloc-notes BrailleNote de <A HREF="http://www.humanware.com">HumanWare</A> lorsque celui-ci agi comme afficheur Braille pour un lecteur d'écran.
+Les modèles suivants sont supportés :
+</P>
+
+<UL>
+<LI>BrailleNote Classic (connexion série seulement)
+<LI>BrailleNote PK (connexion Série et Bluetooth)
+<LI>BrailleNote MPower (connexion Série et Bluetooth)
+<LI>BrailleNote Apex (connexion Bluetooth et USB)
+</UL>
+
+<P>
+Si votre périphérique supporte plusieurs types de connexion, en connectant votre BrailleNote à NVDA, vous devez définir le port dans les options de votre afficheur Braille.
+Lisez le manuel de votre BrailleNote pour plus de détailles.
+Dans NVDA, vous devriez également configurer le port dans les paramètres Brailles.
+Si vous le connectez via USB ou le Bluetooth, vous pouvez le configurer sur "Automatique", "USB" ou "Bluetooth selon ce qui est disponible.
+Si vous le connectez à un port série ou un convertisseur USB-Série ou si aucune de ces dernières option n'apparaît, vous devez choisir explicitement le port de communication à utiliser dans la liste des ports matériels.
+</P>
+<P>
+Avant de connecter votre BrailleNote Apex en utilisant son interface client USB, vous devez installer le pilote fourni par HumanWare.
+</P>
+<P>
+Voici les assignements de touches BrailleNote pour NVDA.
+Consultez la documentation de votre BrailleNote pour savoir où se trouvent ces touches.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nom</TH>
+<TH>touche</TH>
+</TR>
+<TR>
+<TD>Défilement affichage braille  arrière</TD>
+<TD>Arrière</TD>
+</TR>
+<TR>
+<TD>Défilement affichage braille  avant</TD>
+<TD>Avant</TD>
+</TR>
+<TR>
+<TD>Déplacer l'affichage Braille vers la ligne précédente</TD>
+<TD>Précédent</TD>
+</TR>
+<TR>
+<TD>Déplacer l'affichage Braille vers la ligne suivante</TD>
+<TD>Suivant</TD>
+</TR>
+<TR>
+<TD>Joindre à la célule Braille</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>Basculer le suivi de l'affichage Braille</TD>
+<TD>Précédent+Suivant</TD>
+</TR>
+<TR>
+<TD>Touche Flèche haute</TD>
+<TD>Espace+Point 1</TD>
+</TR>
+<TR>
+<TD>Touche Flèche bassee</TD>
+<TD>Espace+Point 4</TD>
+</TR>
+<TR>
+<TD>Touche Flèche gauche</TD>
+<TD>Espace+Point 3</TD>
+</TR>
+<TR>
+<TD>Touche Flèche droite</TD>
+<TD>Espace+Point 6</TD>
+</TR>
+<TR>
+<TD>Touche page précédente</TD>
+<TD>Espace+Point 1+Point 3</TD>
+</TR>
+<TR>
+<TD>Touche Page Suivante</TD>
+<TD>Espace+Point4+Point6</TD>
+</TR>
+<TR>
+<TD>Touche Origine</TD>
+<TD>Espace+Point1+Point2</TD>
+</TR>
+<TR>
+<TD>Touche fin</TD>
+<TD>Espace+Point4+Point5</TD>
+</TR>
+<TR>
+<TD>Control+Origine</TD>
+<TD>Espace+Point1+Point2+Point3</TD>
+</TR>
+<TR>
+<TD>Control+Fin</TD>
+<TD>Espace+Point4+Point5+Point6</TD>
+</TR>
+<TR>
+<TD>Entrée</TD>
+<TD>Espace+Point8</TD>
+</TR>
+<TR>
+<TD>Touche retour arrière</TD>
+<TD>Espace+Point7</TD>
+</TR>
+<TR>
+<TD>Touche Tab</TD>
+<TD>Espace+Point2+Point3+Point4+Point5 (Espace+t)</TD>
+</TR>
+<TR>
+<TD>Maj+Tab</TD>
+<TD>Espace+Point1+Point2+Point5+Point6</TD>
+</TR>
+<TR>
+<TD>Touche Windows</TD>
+<TD>Espace+Point2+Point4+Point5+Point6</TD>
+</TR>
+<TR>
+<TD>touche alt</TD>
+<TD>Espace+Point1+Point3+Point4 (Espace+m)</TD>
+</TR>
+<TR>
+<TD>Basculer aide à la saisie</TD>
+<TD>Espace+Point1+Point2+Point5 (Espace+h)</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc91"></A>
+<H3>11.14. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A> est un programme séparé qui permet de prendre en charge beaucoup plus de terminaux braille.
@@ -3619,10 +3772,10 @@ Veuillez consulter la <A HREF="http://mielke.cc/brltty/doc/drivers/">documentati
 </TR>
 </TABLE>
 
-<A NAME="toc91"></A>
+<A NAME="toc92"></A>
 <H2>12. Fonctions Avancées</H2>
 
-<A NAME="toc92"></A>
+<A NAME="toc93"></A>
 <H3>12.1. Redéfinir les Assignations de Touches et les Autres Gestes de Commande</H3>
 
 <P>
@@ -3723,7 +3876,7 @@ Ainsi, si vous utilisez la touche alt dans une combinaison, il se peut qu'elle o
 il est donc préférable de n'utiliser que maj, ctrl ou la touche NVDA.
 </P>
 
-<A NAME="toc93"></A>
+<A NAME="toc94"></A>
 <H3>12.2. Personnalisation Avancée de la Prononciation des Symboles</H3>
 
 <P>
@@ -3737,7 +3890,7 @@ Le format de ce fichier est documenté dans la section Prononciation des Symbole
 Cependant, l'utilisateur ne peut pas définir de symboles complexes.
 </P>
 
-<A NAME="toc94"></A>
+<A NAME="toc95"></A>
 <H2>13. Informations supplémentaires</H2>
 
 <P>
