@@ -696,6 +696,18 @@ Pas de Braille signifie que vous n'utilisez pas le Braille.
 
 Reportez-vous à la section [Terminaux Braille pris en charge #SupportedBrailleDisplays] pour les informations concernant les terminaux Braille.
 
+==== Port ====
+Cette option, si disponible, vous permet de choisir quel port ou type de connexion sera utilisé pour communiquer avec l'afficheur Braille sélectionné.
+C'est une liste déroulente contenant les choix possibles pour votre afficheur Braille.
+
+Par défaut, NVDA emploie la détection automatique, ce qui veut dire que la connexion avec le périphérique Braille sera établie automatiquement en recherchant les périphériques USB et Blue Tooth connectés à votre ordinateur.
+De plus, pour sertains afficheurs Braille, vous pourriez choisir explicitement quel port sera utilisé.
+Les options communes sont "automatique" (qui spécifit à NVDA d'employer la procédure par défaut), "USB", "Bluetooth" et port série si votre afficheur Braille supporte ce type de communication.
+
+Cette option ne sera pas disponible si votre afficheur Braille supporte seulement la détection automatique du port.
+
+Vous devriez consulter la documentation de votre afficheur Braille dans la section [Afficheurs Braille supportés #SupportedBrailleDisplays] pour plus de détailles sur les types de communications supportés et les ports disponibles.
+
 ==== Table de conversion ====
 L'option suivante est la liste déroulante des tables de conversion. 
 Dans cette liste, vous trouverez des tables braille pour différentes langues. Vous pouvez vous déplacer de table en table en utilisant les flèches.
@@ -1144,6 +1156,10 @@ Si vous ne les avez pas déjà, vous pourrez les obtenir sur http://www.freedoms
 Bien que cette page ne mentionne que le terminal Focus 40 Blue, le pilote supporte tous les terminaux de Freedon Scientific.
 Si votre système est sous Windows 64 bits et que les pilotes ont déjà été installés par une autre revue d'écran, vous devrez probablement installer quand-même installer les pilotes car les fichiers nécessaires pour NVDA n'auront probablement été installés par l'autre revue d'écran.
 
+Par défaut, NVDA peut automatiquement détecter et se connecter à ces afficheurs via USB ou Bluetooth.
+Lorsque vous configurerez l'afficheur, vous pourrez sélectionner explicitement "USB" ou "Bluetooth" pour restraindre le type de connexion qui sera utilisé.
+Cela peut être utile si vous voulez connecter l'afficheur Focus à NVDA via le Bluetooth tout en le chargeant en utilisant l'USB.
+
 Voici les assignations de touches pour ces terminaux avec NVDA.
 Veuillez consulter la documentation du terminal pour savoir où se situent ses touches.
 %kc:beginInclude
@@ -1509,6 +1525,53 @@ Voici les  commandes assignées pour les afficheurs Papenmeier dans NVDA :
 | Aller à l'objet précédent | left2 |
 | Aller à l'objet suivant | right2 |
 | Lire les informations de mise en forme | rangée de routines du haut |
+%kc:endInclude
+
+++ BrailleNote de HumanWare ++
+NVDA supporte les bloc-notes BrailleNote de [HumanWare http://www.humanware.com] lorsque celui-ci agi comme afficheur Braille pour un lecteur d'écran.
+Les modèles suivants sont supportés :
+- BrailleNote Classic (connexion série seulement)
+- BrailleNote PK (connexion Série et Bluetooth)
+- BrailleNote MPower (connexion Série et Bluetooth)
+- BrailleNote Apex (connexion Bluetooth et USB)
+-
+
+Si votre périphérique supporte plusieurs types de connexion, en connectant votre BrailleNote à NVDA, vous devez définir le port dans les options de votre afficheur Braille.
+Lisez le manuel de votre BrailleNote pour plus de détailles.
+Dans NVDA, vous devriez également configurer le port dans les paramètres Brailles.
+Si vous le connectez via USB ou le Bluetooth, vous pouvez le configurer sur "Automatique", "USB" ou "Bluetooth selon ce qui est disponible.
+Si vous le connectez à un port série ou un convertisseur USB-Série ou si aucune de ces dernières option n'apparaît, vous devez choisir explicitement le port de communication à utiliser dans la liste des ports matériels.
+
+Avant de connecter votre BrailleNote Apex en utilisant son interface client USB, vous devez installer le pilote fourni par HumanWare.
+
+Voici les assignements de touches BrailleNote pour NVDA.
+Consultez la documentation de votre BrailleNote pour savoir où se trouvent ces touches.
+
+%kc:beginInclude
+|| Nom | touche |
+| Défilement affichage braille  arrière | Arrière |
+| Défilement affichage braille  avant | Avant |
+| Déplacer l'affichage Braille vers la ligne précédente | Précédent |
+| Déplacer l'affichage Braille vers la ligne suivante | Suivant |
+| Joindre à la célule Braille | routing |
+| Basculer le suivi de l'affichage Braille | Précédent+Suivant |
+| Touche Flèche haute | Espace+Point 1 |
+| Touche Flèche bassee | Espace+Point 4 |
+| Touche Flèche gauche | Espace+Point 3 |
+| Touche Flèche droite | Espace+Point 6 |
+| Touche page précédente | Espace+Point 1+Point 3 |
+| Touche Page Suivante | Espace+Point4+Point6 |
+| Touche Origine | Espace+Point1+Point2 |
+| Touche fin | Espace+Point4+Point5 |
+| Control+Origine | Espace+Point1+Point2+Point3 |
+| Control+Fin | Espace+Point4+Point5+Point6 |
+| Entrée | Espace+Point8 |
+| Touche retour arrière | Espace+Point7 |
+| Touche Tab | Espace+Point2+Point3+Point4+Point5 (Espace+t) |
+| Maj+Tab | Espace+Point1+Point2+Point5+Point6 |
+| Touche Windows | Espace+Point2+Point4+Point5+Point6 |
+| touche alt | Espace+Point1+Point3+Point4 (Espace+m) |
+| Basculer aide à la saisie | Espace+Point1+Point2+Point5 (Espace+h) |
 %kc:endInclude
 
 ++ BRLTTY ++
