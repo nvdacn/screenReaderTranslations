@@ -131,14 +131,15 @@
     <LI><A HREF="#toc87">11.10. HIMS SyncBraille</A>
     <LI><A HREF="#toc88">11.11. Seika Braille Displays</A>
     <LI><A HREF="#toc89">11.12. Papenmeier BRAILLEX Nyere modeller</A>
-    <LI><A HREF="#toc90">11.13. BRLTTY</A>
+    <LI><A HREF="#toc90">11.13. HumanWare BrailleNote</A>
+    <LI><A HREF="#toc91">11.14. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc91">12. Avancerede emner</A>
+  <LI><A HREF="#toc92">12. Avancerede emner</A>
     <UL>
-    <LI><A HREF="#toc92">12.1. Remapping af tastaturkommandoer og andre input-bevægelser</A>
-    <LI><A HREF="#toc93">12.2. Avanceret tilpasning af udtalelse af symboler</A>
+    <LI><A HREF="#toc93">12.1. Remapping af tastaturkommandoer og andre input-bevægelser</A>
+    <LI><A HREF="#toc94">12.2. Avanceret tilpasning af udtalelse af symboler</A>
     </UL>
-  <LI><A HREF="#toc94">13. Yderligere information</A>
+  <LI><A HREF="#toc95">13. Yderligere information</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -1659,7 +1660,7 @@ Det er en kombobox der indeholder de mulige valgmuligheder for dit display.
 <P>
 Som standard søger NVDA automatisk efter den påkrævede port til dit punktdisplay ved brug af port detektion, hvilket betyder, at NVDA automatisk vil etablere forbindelse med din enhed ved at scanne computeren for alle tilgængelige USB og Bluetooth enheder koblet til dit system.
 For nogle punktdisplays er det dog muligt at bestemme hvilken port du vil bruge.
-Almindelige indstillinger er "Automatisk" (hvilket gør at NVDA anvender standardproceduren til valg af porte), "USB", "Bluetooth" og ældre serial  åprte til kommunikation hvis dit display understøtter denne forbindelsestype.
+Almindelige indstillinger er "Automatisk" (hvilket gør at NVDA anvender standardproceduren til valg af porte), "USB", "Bluetooth" og ældre seriel  åprte til kommunikation hvis dit display understøtter denne forbindelsestype.
 </P>
 <P>
 Denne indstilling er ikke tilgængelig, hvis dit display kun understøtter automatisk port detektion.
@@ -2872,7 +2873,7 @@ Nogle andre displays fremstillet by Baum kan også virke, men dette er ikke test
 </P>
 <P>
 Hvis du ønsker at koble displayet til ved brug af USB, skal du først installere driveren fra leverandøren.
-Bruger du APH Refreshabraille, skal USB-tilstanden ændres til serial.
+Bruger du APH Refreshabraille, skal USB-tilstanden ændres til seriel.
 </P>
 <P>
 Dette er tastekombinationerne til dette display til brug af NVDA.
@@ -3603,7 +3604,140 @@ Papenmeier kommandoer til NVDA er som følgende:
 </TABLE>
 
 <A NAME="toc90"></A>
-<H3>11.13. BRLTTY</H3>
+<H3>11.13. HumanWare BrailleNote</H3>
+
+<P>
+NVDA understøtter BrailleNote notatapparaterne fra <A HREF="http://www.humanware.com">Humanware</A> når de bruges som en displayterminal for en skærmlæser.
+Følgende modeller er understøttede:
+</P>
+
+<UL>
+<LI>BrailleNote Classic ( kun serielforbindelse)
+<LI>BrailleNote PK (seriel og bluetooth forbindelser)
+<LI>BrailleNote MPower (seriel og bluetooth forbindelser)
+<LI>BrailleNote Apex (USB og Bluetooth forbindelser)
+</UL>
+
+<P>
+Hvis din enhed understøtter mere end en forbindelsestype, skal du indstille punkt terminal porten i Punkt Terminal indstillinger.
+Læs venligst Braillenote manualen for detaljer.
+Det kan også være nødvendigt at indstille porten i Braille-indstillinger.
+hvis du kobler til via USB eller Bluetooth, kan du sætte indstillingen til "Automatisk", "USB" eller "Bleutooth", afhængigt af de tilgængelig valgmuligheder.
+Hvis du forbinder enheden gennem en ældre seriel port eller en USB til seriel adapter, eller hvis ingen af de forrige indstillinger er tilgængelige, skal du vælge hvilken port du ønsker at bruge fra listen.
+</P>
+<P>
+Før du forbinder din BrailleNote Apex ved brug af dens USB-client grænseflade, skal du installere de nødvendige drivere fra HumanWare.
+</P>
+<P>
+Dette er tastekombinationerne til BrailleNote til brug af NVDA.
+Se venligst dokumentationen til din BrailleNote for at finde ud af, hvor du kan finde knapperne.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Navn</TH>
+<TH>Tast</TH>
+</TR>
+<TR>
+<TD>Rul punktdisplay tilbage</TD>
+<TD>back</TD>
+</TR>
+<TR>
+<TD>Rul punktdisplay fremad</TD>
+<TD>advance</TD>
+</TR>
+<TR>
+<TD>Flyt punktdisplay til forrige linje</TD>
+<TD>previous</TD>
+</TR>
+<TR>
+<TD>Flyt punktdisplay til næste linje</TD>
+<TD>next</TD>
+</TR>
+<TR>
+<TD>Flyt til punktcelle</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>Skift punkt tøjret til</TD>
+<TD>previous+next</TD>
+</TR>
+<TR>
+<TD>Pil op key</TD>
+<TD>space+dot1</TD>
+</TR>
+<TR>
+<TD>Pil ned key</TD>
+<TD>space+dot4</TD>
+</TR>
+<TR>
+<TD>Venstre piletast</TD>
+<TD>space+dot3</TD>
+</TR>
+<TR>
+<TD>Højre piletast</TD>
+<TD>space+dot6</TD>
+</TR>
+<TR>
+<TD>Side op</TD>
+<TD>space+dot1+dot3</TD>
+</TR>
+<TR>
+<TD>side ned</TD>
+<TD>space+dot4+dot6</TD>
+</TR>
+<TR>
+<TD>Hjem tast</TD>
+<TD>space+dot1+dot2</TD>
+</TR>
+<TR>
+<TD>End tast</TD>
+<TD>space+dot4+dot5</TD>
+</TR>
+<TR>
+<TD>Kontrol+hjem</TD>
+<TD>space+dot1+dot2+dot3</TD>
+</TR>
+<TR>
+<TD>Kontrol+end</TD>
+<TD>space+dot4+dot5+dot6</TD>
+</TR>
+<TR>
+<TD>Mellemrumstast</TD>
+<TD>space</TD>
+</TR>
+<TR>
+<TD>Enter tast</TD>
+<TD>space+dot8</TD>
+</TR>
+<TR>
+<TD>Backspace tast</TD>
+<TD>space+dot7</TD>
+</TR>
+<TR>
+<TD>Tab tast</TD>
+<TD>space+dot2+dot3+dot4+dot5 (space+t)</TD>
+</TR>
+<TR>
+<TD>Shift+tab taster</TD>
+<TD>space+dot1+dot2+dot5+dot6</TD>
+</TR>
+<TR>
+<TD>Windows tast</TD>
+<TD>space+dot2+dot4+dot5+dot6 (space+w)</TD>
+</TR>
+<TR>
+<TD>Alt tast</TD>
+<TD>space+dot1+dot3+dot4 (space+m)</TD>
+</TR>
+<TR>
+<TD>Skift inputhjælp</TD>
+<TD>space+dot1+dot2+dot5 (space+h)</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc91"></A>
+<H3>11.14. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A> er et særskilt program, der understøtter yderligere en lang række punktdisplays.
@@ -3643,10 +3777,10 @@ Se venligst <A HREF="http://mielke.cc/brltty/doc/drivers/">BRLTTY dokumentatione
 </TR>
 </TABLE>
 
-<A NAME="toc91"></A>
+<A NAME="toc92"></A>
 <H2>12. Avancerede emner</H2>
 
-<A NAME="toc92"></A>
+<A NAME="toc93"></A>
 <H3>12.1. Remapping af tastaturkommandoer og andre input-bevægelser</H3>
 
 <P>
@@ -3747,7 +3881,7 @@ Således kan denne kommando aktivere menulinjen, men på samme tid eksekvere en 
 Af denne grund er det muligvis det bedste, hvis du fortsætter med at bruge skift, kontrol og NVDAs funktionstaste som funktionstaster.
 </P>
 
-<A NAME="toc93"></A>
+<A NAME="toc94"></A>
 <H3>12.2. Avanceret tilpasning af udtalelse af symboler</H3>
 
 <P>
@@ -3761,7 +3895,7 @@ Formateringen af denne fil er dokumenteret  i kapitlet Symbol Pronunciation, fun
 Bemærk at det ikke er muligt for brugere at definere komplekse symboler.
 </P>
 
-<A NAME="toc94"></A>
+<A NAME="toc95"></A>
 <H2>13. Yderligere information</H2>
 
 <P>
