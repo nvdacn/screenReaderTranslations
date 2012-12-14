@@ -21,6 +21,9 @@
 <LI>automatisches Ausgebe von Spalten- und Reihenüberschriften von Tabellen im Internet Explorer und anderen mshtml-Dokumenten wird unterstützt (<A HREF="http://www.nvda-project.org/ticket/778">#778</A>)
 <LI>neue Sprache: Aragonesisch
 <LI>neue Braille-Übersetzungstabelle: dänische Kurzschrift.
+<LI>Unterstützung für Bluetooth-Braillezeilen, die unter Verwendung des Bluetooth-Stacks von Toshiba mit dem Computer verbunden werden. (<A HREF="http://www.nvda-project.org/ticket/2419">#2419</A>)
+<LI>Unterstützung für die Auswahl des Anschlusses bei Freedom Scientific-Braillezeilen (automatisch, USB oder Bluetooth).
+<LI>Unterstützung für Humanware Braillenote (<A HREF="http://www.nvda-project.org/ticket/2012">#2012</A>)
 </UL>
 
 <H3>Fehlerbehebungen</H3>
@@ -31,11 +34,23 @@
 <LI>In Mozilla-Anwendungen werden Aktualisierungen in Tabellen korrekt verarbeitet. So werden beispielsweise Koordinaten von aktualisierten Zellen richtig angegeben; die Navigation sollte ebenfalls korrekt funktionieren. (<A HREF="http://www.nvda-project.org/ticket/2784">#2784</A>)
 <LI>im Lesemodus in Internet-Browsern werden anklickbare unbeschriftete Grafiken nun korrekt verarbeitet. (<A HREF="http://www.nvda-project.org/ticket/2838">#2838</A>)
 <LI>ältere und neuere Versionen von SecureCRT werden unterstützt. (<A HREF="http://www.nvda-project.org/ticket/2800">#2800</A>)
+<LI>For input  methods such as Easy Dots IME under XP, the reading string is now correctly reported.
+<LI>The candidate list in the Chinese Simplified Microsoft Pinyin input method under Windows 7 is now correctly read when changing pages with left and right arrow, and when first opening it with Home.
+<LI>beim Speichern der Aussprache benutzerdefinierter Symbole wird das Feld "beibehalten" nicht mehr entfernt. (<A HREF="http://www.nvda-project.org/ticket/2852">#2852</A>)
+<LI>Wird die automatische Prüfung auf Aktualisierungen deaktiviert, muss NVDA nicht mehr neu gestartet werden, damit die Änderung wirksam wird.
+<LI>NVDA wird nun nicht mehr abstürzen, wenn bei der Deinstallation einer Erweiterung deren Ordner nicht gelöscht werden kann, weil er von einem anderen Programm verwendet wird. (<A HREF="http://www.nvda-project.org/ticket/2860">#2860</A>)
 <P></P>
+== Änderungen für Entwickler ==
+<LI>Braillezeilentreiber unterstützen die Auswahl des Anschlusses (<A HREF="http://www.nvda-project.org/ticket/426">#426</A>)
+ <UL>
+ <LI>Dies für Braillezeilen sinnvoll, die an eine serielle Schnttstelle angeschlossen werden.
+ <LI>Hierfür können Sie die Klassenmethode getPossiblePorts aus der Klasse BrailleDisplayDriver verwenden.
+ <P></P>
 = 2012.3 =
 Schwerpunkte in dieser Version sind: Unterstützung für asiatische Eingabemetoden, experimentelle Unterstützung für Touchscreens unter Windows 8, Ansage der Seitenzahlen sowie verbesserte Unterstützung von Tabellen in Adobe Reader, Befehle zur Navigation in Tabellen und Listenansichten im Explorer sowie Unterstützung zahlreicher weiterer Braillezeilen und das Lesen von Zeilen- bzw. Spaltenüberschriften in Microsoft Excel.
-<P></P>
+ <P></P>
 == Neue Funktionen ==
+ </UL>
 <LI>NVDA unterstützt nun asiatische Zeichen eingabe mittels IME und Eingabemethoden im Textdienst in allen Anwendungen, einschließlich:
  <UL>
  <LI>Ansagen und Navigation der Kandidatenliste;
