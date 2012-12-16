@@ -694,7 +694,19 @@ Vaihtoehtojen välillä liikutaan nuolinäppäimillä.
 
 "Ei pistenäyttöä" tarkoittaa, että pistenäyttöä ei käytetä.
 
-[Tuetut pistenäytöt #Tuetutpistenaytot] -kappaleessa on lisätietoja tuetuista pistenäytöistä.
+Katso [Tuetut pistenäytöt #Tuetutpistenaytot] -kappaleesta lisätietoja tuetuista pistenäytöistä.
+
+==== Portti ====
+Tällä asetuksella voidaan, jos se on käytettävissä, valita, mitä porttia tai yhteystyyppiä käytetään valitun pistenäytön kanssa kommunikointiin.
+Se on yhdistelmäruutu, joka sisältää käytettävissä olevat vaihtoehdot käyttämällesi pistenäytölle.
+
+NVDA käyttää oletusarvoisesti automaattista portintunnistusta, mikä tarkoittaa, että pistenäyttöön muodostetaan yhteys automaattisesti järjestelmän käytettävissä olevia USB- ja bluetooth-laitteita tutkimalla.
+Joillekin pistenäytöille voidaan kuitenkin itse valita käytettävä portti.
+Vaihtoehtoina ovat "Automaattinen" (joka käskee NVDA:ta käyttämään oletusarvoista automaattista portintunnistusta), "USB", "Bluetooth" sekä sarjaportit, mikäli pistenäyttö tukee sarjaportin kautta liittämistä.
+
+Tämä vaihtoehto ei ole käytettävissä, mikäli pistenäyttö tukee vain automaattista portintunnistusta.
+
+Katso [Tuetut pistenäytöt #Tuetutpistenaytot] -kappaleesta lisätietoja pistenäyttösi tukemista kommunikointityypeistä ja käytettävissä olevista porteista.
 
 ==== Pistetaulukko ====
 Seuraavana tässä valintaikkunassa on "Pistetaulukko"-yhdistelmäruutu, jossa on pistetaulukkoja eri kielille.
@@ -1142,7 +1154,11 @@ Kaikkia [Freedom Scientificin http://www.freedomscientific.com/] Focus- ja PAC M
 Niiden käyttämiseksi on asennettava ajurit.
 Ne ovat ladattavissa osoitteesta http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp.
 Ajuri tukee kaikkia Freedom Scientificin pistenäyttöjä, vaikka sivulla mainitaankin vain Focus 40 Blue.
-Jos käytössä on 64-bittinen Windows ja ajurit on jo asennettu jonkin toisen ruudunlukuohjelman mukana, edellä mainitun linkin takaa löytyvät ajurit on silti asennettava, sillä muissa ei luultavasti ole NVDA:n tarvitsemia tiedostoja.
+Jos käytössä on 64-bittinen Windows ja ajurit on jo asennettu jonkin toisen ruudunlukuohjelman mukana, niin edellä mainitun linkin takaa löytyvät ajurit on silti asennettava, sillä muissa ohjelmistoissa ei välttämättä ole kaikkia NVDA:n tarvitsemia tiedostoja.
+
+NVDA tunnistaa oletusarvoisesti nämä pistenäytöt automaattisesti ja voi yhdistää niihin joko USB:n tai bluetoothin kautta.
+Yhteystyypin rajoittamiseksi voidaan kuitenkin myös itse valita USB- tai bluetooth-portti näytön asetuksia määritettäessä.
+Tästä voi olla hyötyä, jos Focus-näyttö halutaan yhdistää NVDA:han bluetoothilla ja silti ladata sitä tietokoneen USB-virralla.
 
 Seuraavassa on näiden pistenäyttöjen näppäinkomennot NVDA:ta käytettäessä.
 Katso näytön käyttöohjeesta kuvaukset näppäinten paikoista.
@@ -1509,6 +1525,54 @@ Seuraavassa on Papenmeierin näppäinmääritykset NVDA:lle:
 | Siirrä edelliseen objektiin | vasen2 |
 | Siirrä seuraavaan objektiin | oikea2 |
 | Lue tekstin muotoilutiedot | ylärivin kosketuskohdistinnäppäimet |
+%kc:endInclude
+
+++ HumanWare BrailleNote ++
+NVDA tukee [Humanwaren http://www.humanware.com] BrailleNote-muistiinpanolaitteita, kun ne toimivat ruudunlukuohjelman pistenäyttönä.
+Seuraavia malleja tuetaan:
+- BrailleNote Classic (vain sarjaporttiliitäntä)
+- BrailleNote PK (sarjaportti- ja bluetooth-liitännät)
+- BrailleNote MPower (sarjaportti- ja bluetooth-liitännät)
+- BrailleNote Apex (USB- ja bluetooth-liitännät)
+-
+
+Käytettävä portti on määritettävä pistenäytön asetuksista, jos laitteesi tukee useampaa kuin yhtä liitäntätyyppiä.
+Katso lisätietoja BrailleNoten käsikirjasta.
+Portin määrittäminen voi olla tarpeen myös NVDA:n Pistenäytön asetukset -valintaikkunassa.
+Mikäli laite on liitetty USB:llä tai bluetoothilla, voidaan portiksi määrittää käytettävissä olevista vaihtoehdoista riippuen "Automaattinen", "USB" tai "Bluetooth".
+Jos liitäntänä käytetään sarjaporttia (tai USB-sarjaporttimuuntajaa) tai jos mikään edellisistä vaihtoehdoista ei ole käytettävissä, on käytettävä kommunikointiportti valittava sarjaporttien listasta.
+
+HumanWaren toimittamat ajurit on asennettava ennen BrailleNote Apex:in liittämistä sen USB-asiakasliitännällä.
+
+Seuraavassa on BrailleNoten komentomääritykset NVDA:ta käytettäessä.
+Katso laitteen käyttöohjeesta tarkat kuvaukset näppäinten paikoista.
+
+%kc:beginInclude
+|| Nimi | Näppäin |
+| Vieritä pistenäyttöä taaksepäin | takaisin |
+| Vieritä pistenäyttöä eteenpäin | eteenpäin |
+| Siirrä pistenäyttö edelliselle riville | edellinen |
+| Siirrä pistenäyttö seuraavalle riville | seuraava |
+| Siirrä pistesoluun | kosketuskohdistinnäppäin |
+| Vaihda Pistenäyttö seuraa -asetusta | edellinen+seuraava |
+| Ylänuolinäppäin | välilyönti+piste1 |
+| Alanuolinäppäin | välilyönti+piste4 |
+| Vasen nuolinäppäin | välilyönti+piste3 |
+| Oikea nuolinäppäin | välilyönti+piste6 |
+| Page up -näppäin | välilyönti+piste1+piste3 |
+| Page down -näppäin | välilyönti+piste4+piste6 |
+| Home-näppäin | välilyönti+piste1+piste2 |
+| End-näppäin | välilyönti+piste4+piste5 |
+| Ctrl+Home-näppäimet | välilyönti+piste1+piste2+piste3 |
+| Ctrl+End-näppäimet | välilyönti+piste4+piste5+piste6 |
+| Välilyöntinäppäin | välilyönti |
+| Enter-näppäin | välilyönti+piste8 |
+| Askelpalautin-näppäin | välilyönti+piste7 |
+| Sarkain-näppäin | välilyönti+piste2+piste3+piste4+piste5 (välilyönti+t) |
+| Shift+sarkain-näppäimet | välilyönti+piste1+piste2+piste5+piste6 |
+| Windows-näppäin | välilyönti+piste2+piste4+piste5+piste6 (välilyönti+w) |
+| Alt-näppäin | välilyönti+piste1+piste3+piste4 (välilyönti+m) |
+| Ota syöteohje käyttöön tai poista se käytöstä | välilyönti+piste1+piste2+piste5 (välilyönti+h) |
 %kc:endInclude
 
 ++ BRLTTY ++
