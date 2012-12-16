@@ -131,14 +131,15 @@
     <LI><A HREF="#toc87">11.10. HIMS SyncBraille</A>
     <LI><A HREF="#toc88">11.11. Seika</A>
     <LI><A HREF="#toc89">11.12. Papenmeier BRAILLEX (uudemmat mallit)</A>
-    <LI><A HREF="#toc90">11.13. BRLTTY</A>
+    <LI><A HREF="#toc90">11.13. HumanWare BrailleNote</A>
+    <LI><A HREF="#toc91">11.14. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc91">12. Edistyneet aiheet</A>
+  <LI><A HREF="#toc92">12. Edistyneet aiheet</A>
     <UL>
-    <LI><A HREF="#toc92">12.1. Näppäinyhdistelmien ja muiden syötekomentojen uudelleenmäärittely</A>
-    <LI><A HREF="#toc93">12.2. edistynyt symboleiden lausumisen mukauttaminen</A>
+    <LI><A HREF="#toc93">12.1. Näppäinyhdistelmien ja muiden syötekomentojen uudelleenmäärittely</A>
+    <LI><A HREF="#toc94">12.2. edistynyt symboleiden lausumisen mukauttaminen</A>
     </UL>
-  <LI><A HREF="#toc94">13. Lisätietoja</A>
+  <LI><A HREF="#toc95">13. Lisätietoja</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -1648,7 +1649,25 @@ Vaihtoehtojen välillä liikutaan nuolinäppäimillä.
 "Ei pistenäyttöä" tarkoittaa, että pistenäyttöä ei käytetä.
 </P>
 <P>
-<A HREF="#Tuetutpistenaytot">Tuetut pistenäytöt</A> -kappaleessa on lisätietoja tuetuista pistenäytöistä.
+Katso <A HREF="#Tuetutpistenaytot">Tuetut pistenäytöt</A> -kappaleesta lisätietoja tuetuista pistenäytöistä.
+</P>
+
+<H5>Portti</H5>
+
+<P>
+Tällä asetuksella voidaan, jos se on käytettävissä, valita, mitä porttia tai yhteystyyppiä käytetään valitun pistenäytön kanssa kommunikointiin.
+Se on yhdistelmäruutu, joka sisältää käytettävissä olevat vaihtoehdot käyttämällesi pistenäytölle.
+</P>
+<P>
+NVDA käyttää oletusarvoisesti automaattista portintunnistusta, mikä tarkoittaa, että pistenäyttöön muodostetaan yhteys automaattisesti järjestelmän käytettävissä olevia USB- ja bluetooth-laitteita tutkimalla.
+Joillekin pistenäytöille voidaan kuitenkin itse valita käytettävä portti.
+Vaihtoehtoina ovat "Automaattinen" (joka käskee NVDA:ta käyttämään oletusarvoista automaattista portintunnistusta), "USB", "Bluetooth" sekä sarjaportit, mikäli pistenäyttö tukee sarjaportin kautta liittämistä.
+</P>
+<P>
+Tämä vaihtoehto ei ole käytettävissä, mikäli pistenäyttö tukee vain automaattista portintunnistusta.
+</P>
+<P>
+Katso <A HREF="#Tuetutpistenaytot">Tuetut pistenäytöt</A> -kappaleesta lisätietoja pistenäyttösi tukemista kommunikointityypeistä ja käytettävissä olevista porteista.
 </P>
 
 <H5>Pistetaulukko</H5>
@@ -2420,7 +2439,12 @@ Kaikkia <A HREF="http://www.freedomscientific.com/">Freedom Scientificin</A> Foc
 Niiden käyttämiseksi on asennettava ajurit.
 Ne ovat ladattavissa osoitteesta <A HREF="http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp">http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp</A>.
 Ajuri tukee kaikkia Freedom Scientificin pistenäyttöjä, vaikka sivulla mainitaankin vain Focus 40 Blue.
-Jos käytössä on 64-bittinen Windows ja ajurit on jo asennettu jonkin toisen ruudunlukuohjelman mukana, edellä mainitun linkin takaa löytyvät ajurit on silti asennettava, sillä muissa ei luultavasti ole NVDA:n tarvitsemia tiedostoja.
+Jos käytössä on 64-bittinen Windows ja ajurit on jo asennettu jonkin toisen ruudunlukuohjelman mukana, niin edellä mainitun linkin takaa löytyvät ajurit on silti asennettava, sillä muissa ohjelmistoissa ei välttämättä ole kaikkia NVDA:n tarvitsemia tiedostoja.
+</P>
+<P>
+NVDA tunnistaa oletusarvoisesti nämä pistenäytöt automaattisesti ja voi yhdistää niihin joko USB:n tai bluetoothin kautta.
+Yhteystyypin rajoittamiseksi voidaan kuitenkin myös itse valita USB- tai bluetooth-portti näytön asetuksia määritettäessä.
+Tästä voi olla hyötyä, jos Focus-näyttö halutaan yhdistää NVDA:han bluetoothilla ja silti ladata sitä tietokoneen USB-virralla.
 </P>
 <P>
 Seuraavassa on näiden pistenäyttöjen näppäinkomennot NVDA:ta käytettäessä.
@@ -3581,7 +3605,140 @@ Seuraavassa on Papenmeierin näppäinmääritykset NVDA:lle:
 </TABLE>
 
 <A NAME="toc90"></A>
-<H3>11.13. BRLTTY</H3>
+<H3>11.13. HumanWare BrailleNote</H3>
+
+<P>
+NVDA tukee <A HREF="http://www.humanware.com">Humanwaren</A> BrailleNote-muistiinpanolaitteita, kun ne toimivat ruudunlukuohjelman pistenäyttönä.
+Seuraavia malleja tuetaan:
+</P>
+
+<UL>
+<LI>BrailleNote Classic (vain sarjaporttiliitäntä)
+<LI>BrailleNote PK (sarjaportti- ja bluetooth-liitännät)
+<LI>BrailleNote MPower (sarjaportti- ja bluetooth-liitännät)
+<LI>BrailleNote Apex (USB- ja bluetooth-liitännät)
+</UL>
+
+<P>
+Käytettävä portti on määritettävä pistenäytön asetuksista, jos laitteesi tukee useampaa kuin yhtä liitäntätyyppiä.
+Katso lisätietoja BrailleNoten käsikirjasta.
+Portin määrittäminen voi olla tarpeen myös NVDA:n Pistenäytön asetukset -valintaikkunassa.
+Mikäli laite on liitetty USB:llä tai bluetoothilla, voidaan portiksi määrittää käytettävissä olevista vaihtoehdoista riippuen "Automaattinen", "USB" tai "Bluetooth".
+Jos liitäntänä käytetään sarjaporttia (tai USB-sarjaporttimuuntajaa) tai jos mikään edellisistä vaihtoehdoista ei ole käytettävissä, on käytettävä kommunikointiportti valittava sarjaporttien listasta.
+</P>
+<P>
+HumanWaren toimittamat ajurit on asennettava ennen BrailleNote Apex:in liittämistä sen USB-asiakasliitännällä.
+</P>
+<P>
+Seuraavassa on BrailleNoten komentomääritykset NVDA:ta käytettäessä.
+Katso laitteen käyttöohjeesta tarkat kuvaukset näppäinten paikoista.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nimi</TH>
+<TH>Näppäin</TH>
+</TR>
+<TR>
+<TD>Vieritä pistenäyttöä taaksepäin</TD>
+<TD>takaisin</TD>
+</TR>
+<TR>
+<TD>Vieritä pistenäyttöä eteenpäin</TD>
+<TD>eteenpäin</TD>
+</TR>
+<TR>
+<TD>Siirrä pistenäyttö edelliselle riville</TD>
+<TD>edellinen</TD>
+</TR>
+<TR>
+<TD>Siirrä pistenäyttö seuraavalle riville</TD>
+<TD>seuraava</TD>
+</TR>
+<TR>
+<TD>Siirrä pistesoluun</TD>
+<TD>kosketuskohdistinnäppäin</TD>
+</TR>
+<TR>
+<TD>Vaihda Pistenäyttö seuraa -asetusta</TD>
+<TD>edellinen+seuraava</TD>
+</TR>
+<TR>
+<TD>Ylänuolinäppäin</TD>
+<TD>välilyönti+piste1</TD>
+</TR>
+<TR>
+<TD>Alanuolinäppäin</TD>
+<TD>välilyönti+piste4</TD>
+</TR>
+<TR>
+<TD>Vasen nuolinäppäin</TD>
+<TD>välilyönti+piste3</TD>
+</TR>
+<TR>
+<TD>Oikea nuolinäppäin</TD>
+<TD>välilyönti+piste6</TD>
+</TR>
+<TR>
+<TD>Page up -näppäin</TD>
+<TD>välilyönti+piste1+piste3</TD>
+</TR>
+<TR>
+<TD>Page down -näppäin</TD>
+<TD>välilyönti+piste4+piste6</TD>
+</TR>
+<TR>
+<TD>Home-näppäin</TD>
+<TD>välilyönti+piste1+piste2</TD>
+</TR>
+<TR>
+<TD>End-näppäin</TD>
+<TD>välilyönti+piste4+piste5</TD>
+</TR>
+<TR>
+<TD>Ctrl+Home-näppäimet</TD>
+<TD>välilyönti+piste1+piste2+piste3</TD>
+</TR>
+<TR>
+<TD>Ctrl+End-näppäimet</TD>
+<TD>välilyönti+piste4+piste5+piste6</TD>
+</TR>
+<TR>
+<TD>Välilyöntinäppäin</TD>
+<TD>välilyönti</TD>
+</TR>
+<TR>
+<TD>Enter-näppäin</TD>
+<TD>välilyönti+piste8</TD>
+</TR>
+<TR>
+<TD>Askelpalautin-näppäin</TD>
+<TD>välilyönti+piste7</TD>
+</TR>
+<TR>
+<TD>Sarkain-näppäin</TD>
+<TD>välilyönti+piste2+piste3+piste4+piste5 (välilyönti+t)</TD>
+</TR>
+<TR>
+<TD>Shift+sarkain-näppäimet</TD>
+<TD>välilyönti+piste1+piste2+piste5+piste6</TD>
+</TR>
+<TR>
+<TD>Windows-näppäin</TD>
+<TD>välilyönti+piste2+piste4+piste5+piste6 (välilyönti+w)</TD>
+</TR>
+<TR>
+<TD>Alt-näppäin</TD>
+<TD>välilyönti+piste1+piste3+piste4 (välilyönti+m)</TD>
+</TR>
+<TR>
+<TD>Ota syöteohje käyttöön tai poista se käytöstä</TD>
+<TD>välilyönti+piste1+piste2+piste5 (välilyönti+h)</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc91"></A>
+<H3>11.14. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A> on erillinen ohjelma, jonka avulla voidaan käyttää entistä useampia pistenäyttöjä.
@@ -3621,10 +3778,10 @@ Katso <A HREF="http://mielke.cc/brltty/doc/drivers/">BRLTTY:n näppäintaulukoid
 </TR>
 </TABLE>
 
-<A NAME="toc91"></A>
+<A NAME="toc92"></A>
 <H2>12. Edistyneet aiheet</H2>
 
-<A NAME="toc92"></A>
+<A NAME="toc93"></A>
 <H3>12.1. Näppäinyhdistelmien ja muiden syötekomentojen uudelleenmäärittely</H3>
 
 <P>
@@ -3725,7 +3882,7 @@ Niinpä jos syötekomennossa käytetään Alt-näppäintä, kyseisen näppäinyh
 Tämän vuoksi toimintonäppäimissä on parasta käyttää vain Shift-, Ctrl- ja NVDA-näppäimiä.
 </P>
 
-<A NAME="toc93"></A>
+<A NAME="toc94"></A>
 <H3>12.2. edistynyt symboleiden lausumisen mukauttaminen</H3>
 
 <P>
@@ -3739,7 +3896,7 @@ Tiedoston muoto on dokumentoitu Symboleiden lausuminen -kappaleessa kehittäjän
 Monimutkaisten symboleiden määrittäminen ei ole kuitenkaan mahdollista.
 </P>
 
-<A NAME="toc94"></A>
+<A NAME="toc95"></A>
 <H2>13. Lisätietoja</H2>
 
 <P>
