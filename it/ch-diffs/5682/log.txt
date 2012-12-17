@@ -1,8 +1,0 @@
-------------------------------------------------------------
-revno: 5682
-committer: James Teh <jamie@jantrid.net>
-branch nick: main
-timestamp: Mon 2012-12-10 10:21:55 +1000
-message:
-  When disabling automatic checking for updates, NVDA no longer has to be restarted in order for the change to fully take effect.
-  Previously, updateCheck.terminate() tried to dispose of autoChecker, but the timer creates a circular reference, so it would still run for the next check. The timer needs to be explicitly discarded to prevent this.
