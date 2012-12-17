@@ -131,14 +131,15 @@
     <LI><A HREF="#toc87">11.10. HIMS SyncBraille</A>
     <LI><A HREF="#toc88">11.11. Brailovské riadky od spoločnosti Seika</A>
     <LI><A HREF="#toc89">11.12. Nové modely riadkov Papenmeier BRAILLEX</A>
-    <LI><A HREF="#toc90">11.13. BRLTTY</A>
+    <LI><A HREF="#toc90">11.13. HumanWare BrailleNote</A>
+    <LI><A HREF="#toc91">11.14. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc91">12. Pre pokročilých</A>
+  <LI><A HREF="#toc92">12. Pre pokročilých</A>
     <UL>
-    <LI><A HREF="#toc92">12.1. Ako prispôsobiť klávesové skratky a ostatné vstupné príkazy</A>
-    <LI><A HREF="#toc93">12.2. Zmena vyslovovania symbolov pre pokročilých</A>
+    <LI><A HREF="#toc93">12.1. Ako prispôsobiť klávesové skratky a ostatné vstupné príkazy</A>
+    <LI><A HREF="#toc94">12.2. Zmena vyslovovania symbolov pre pokročilých</A>
     </UL>
-  <LI><A HREF="#toc94">13. Ako získať viac informácií</A>
+  <LI><A HREF="#toc95">13. Ako získať viac informácií</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -1646,6 +1647,24 @@ Medzi jednotlivými voľbami je možné sa pohybovať použitím kurzorových kl
 Prosím, prečítajte si tiež <A HREF="#SupportedBrailleDisplays">Podporované braillovské zobrazovače</A> pre získanie viac informácií o podporovaných zariadeniach.
 </P>
 
+<H5>Port</H5>
+
+<P>
+Táto možnosť, ak je dostupná, určuje, aký port sa použije pri komunikácii s vybratým brailovským zobrazovačom.
+V zozname si môžete vybrať jednu z možností pre váš brailovský zobrazovač.
+</P>
+<P>
+NVDA predvolene automaticky určí, cez aký port bude komunikovať s vybratým zariadením. Znamená to, že skontroluje všetky pripojené Bluetooth a USB zariadenia.
+Pre niektoré brailovské riadky však môžete samy určiť port.
+Najčastejšie možnosti sú "automaticky" (kedy NVDA samo určuje typ pripojenia), "USB", "Bluetooth" a označenia sériových portov, ak brailovský riadok podporuje komunikáciu cez sériový port.
+</P>
+<P>
+Táto možnosť nie je dostupná, ak zvolený riadok podporuje len automatický výber komunikačného portu.
+</P>
+<P>
+Pre podrobnejšie informácie si pozrite časť <A HREF="#SupportedBrailleDisplays">Podporované brailovské zobrazovače</A>.
+</P>
+
 <H5>Prekladová tabuľka</H5>
 
 <P>
@@ -2416,6 +2435,11 @@ Pre správnu funkčnosť musíte mať v systéme nainštalované ovládače brai
 Ak ich ešte nemáte, môžete ich stiahnuť zo stránky: <A HREF="http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp">http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp</A>.
 Aj keď na stránke sa píše len o riadku Focus 40 Blue, ovládač spolupracuje so všetkými zobrazovačmi Freedom scientific.
 Ak máte nainštalovanú 64 bitovú edíciu Windows a používate aj iný čítač obrazovky, budete pravdepodobne musieť tiež nainštalovať ovládač, pretože potrebné súbory sa nemuseli nainštalovať počas inštalácie iného čítača.
+</P>
+<P>
+NVDA sa dokáže predvolene k týmto zobrazovačom pripojiť cez USB alebo Bluetooth rozhranie.
+Môžete však samy určiť typ pripojenia a obmedziť ho len na pripojenie cez "USB" alebo "bluetooth".
+Toto je užitočné, ak chcete nabiť riadok cez USb, ale chcete ho používať cez Bluetooth.
 </P>
 <P>
 Nasleduje zoznam klávesových príkazov pre tento typ riadku.
@@ -3576,7 +3600,138 @@ Nasleduje zoznam klávesových príkazov pre tieto typy riadkov:
 </TABLE>
 
 <A NAME="toc90"></A>
-<H3>11.13. BRLTTY</H3>
+<H3>11.13. HumanWare BrailleNote</H3>
+
+<P>
+NVDA podporuje zápisníky BrailleNote od <A HREF="http://www.humanware.com">Humanware</A>, ak sú nastavené do režimu pre príjem príkazov z čítača obrazovky.
+Podporované sú tieto typy:
+</P>
+
+<UL>
+<LI>BrailleNote Classic (len cez sériový port)
+<LI>BrailleNote PK (Sériový port a Bluetooth)
+<LI>BrailleNote MPower (Sériový port a Bluetooth)
+<LI>BrailleNote Apex (USB a Bluetooth)
+</UL>
+
+<P>
+Ak zariadenie podporuje viacero druhov pripojenia, je potrebné nastaviť druh pripojenia "braille terminal port" v nastaveniach "braille terminal".
+Podrobnosti nájdete v návode k Braillenote.
+Môžete tiež chcieť nastaviť port v nastaveniach braillu.
+Ak sa pripájate cez USb alebo Bluetooth, môžete si vybrať automatickú detekciu portu, "Bluetooth" alebo "USB", v závislosti od vybraného zariadenia.
+Ak sa pripájate cez niektorý zo sériových portov, alebo cez USB / seriový prevodník, alebo ak nie sú dostupné iné možnosti, musíte si vybrať niektorý z hardwarových komunikačných portov.
+</P>
+<P>
+Pred pripojením BrailleNote Apex cez USb je potrebné nainštalovať ovládaťč dodávaný od výrobcu.
+</P>
+<P>
+Nasleduje zoznam klávesových príkazov pre tento typ riadku.
+Prosím, prečítajte si dokumentáciu dodanú spolu so zariadením na zistenie rozmiestnenia klávesov.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Názov</TH>
+<TH>Klávesová skratka</TH>
+</TR>
+<TR>
+<TD>Posunúť riadok späť</TD>
+<TD>back</TD>
+</TR>
+<TR>
+<TD>Posunúť riadok vpred| advance</TD>
+</TR>
+<TR>
+<TD>Predchádzajúci riadok</TD>
+<TD>previous</TD>
+</TR>
+<TR>
+<TD>Nasledujúci riadok</TD>
+<TD>next</TD>
+</TR>
+<TR>
+<TD>Prejsť na znak v brailly</TD>
+<TD>smerové tlačidlá</TD>
+</TR>
+<TR>
+<TD>Prepnúť nastavenie braillovský kurzor zviazaný s</TD>
+<TD>previous+next</TD>
+</TR>
+<TR>
+<TD>Šípka hore</TD>
+<TD>medzera+bod1</TD>
+</TR>
+<TR>
+<TD>Šípka dole</TD>
+<TD>medzera+bod4</TD>
+</TR>
+<TR>
+<TD>Šípka vľavo</TD>
+<TD>space+bod3</TD>
+</TR>
+<TR>
+<TD>Šípka vpravo</TD>
+<TD>space+bod6</TD>
+</TR>
+<TR>
+<TD>Strana hore</TD>
+<TD>medzera+body 1,3</TD>
+</TR>
+<TR>
+<TD>Strana dole</TD>
+<TD>medzera+body 4,6</TD>
+</TR>
+<TR>
+<TD>Home</TD>
+<TD>medzera+body 1,2</TD>
+</TR>
+<TR>
+<TD>End</TD>
+<TD>medzera+body 4,5</TD>
+</TR>
+<TR>
+<TD>Control+home</TD>
+<TD>medzera+body 1,2,3</TD>
+</TR>
+<TR>
+<TD>Control+end</TD>
+<TD>medzera+body 4,5,6</TD>
+</TR>
+<TR>
+<TD>Medzera</TD>
+<TD>medzera</TD>
+</TR>
+<TR>
+<TD>Enter</TD>
+<TD>medzera+bod8</TD>
+</TR>
+<TR>
+<TD>Backspace</TD>
+<TD>medzera+bod7</TD>
+</TR>
+<TR>
+<TD>Tab</TD>
+<TD>medzera+body 2345 (medzera+t)</TD>
+</TR>
+<TR>
+<TD>Shift+tab</TD>
+<TD>medzera+body 1,2,5,6</TD>
+</TR>
+<TR>
+<TD>Windows</TD>
+<TD>medzera+body 2,4,5,6 (medzera+w)</TD>
+</TR>
+<TR>
+<TD>Alt</TD>
+<TD>medzera+body 1,3,4 (medzera+m)</TD>
+</TR>
+<TR>
+<TD>Nápoveda vstupu| medzera+body 1,2,5 (medzera+h)</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc91"></A>
+<H3>11.14. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A> je osobitný program, prostredníctvom ktorého je možné použiť množstvo ďalších braillovských zobrazovačov.
@@ -3616,10 +3771,10 @@ Prosím prečítajte si <A HREF="http://mielke.cc/brltty/doc/drivers/">dokument�
 </TR>
 </TABLE>
 
-<A NAME="toc91"></A>
+<A NAME="toc92"></A>
 <H2>12. Pre pokročilých</H2>
 
-<A NAME="toc92"></A>
+<A NAME="toc93"></A>
 <H3>12.1. Ako prispôsobiť klávesové skratky a ostatné vstupné príkazy</H3>
 
 <P>
@@ -3720,7 +3875,7 @@ Ak teda použijete vo vstupnom príkaze kláves alt, jeho vyvolanie môže okrem
 Preto je ako modifikátory vhodné používať najmä klávesy NVDA, ctrl a shift.
 </P>
 
-<A NAME="toc93"></A>
+<A NAME="toc94"></A>
 <H3>12.2. Zmena vyslovovania symbolov pre pokročilých</H3>
 
 <P>
@@ -3734,7 +3889,7 @@ Formát tohoto súboru je zdokumentovaný v príručke pre vývojárov, ktorú j
 Používatelia ale nemôžu pridávať vlastné komplexné symboly.
 </P>
 
-<A NAME="toc94"></A>
+<A NAME="toc95"></A>
 <H2>13. Ako získať viac informácií</H2>
 
 <P>
