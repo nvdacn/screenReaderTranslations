@@ -1,67 +1,89 @@
-==== Port ====
-Táto monos, ak je dostupná, urèuje, akı port sa pouije pri komunikácii s vybratım brailovskım zobrazovaom.
-V zozname si môete vybra jednu z moností pre váš brailovskı zobrazovaè.
-
-NVDA predvolene automaticky urèí, cez akı port bude komunikova s vybratım zariadením. Znamená to, e skontroluje všetky pripojené Bluetooth a USB zariadenia.
-Pre niektoré brailovské riadky však môete samy urèi port.
-Najèastejšie monosti sú "automaticky" (kedy NVDA samo urèuje typ pripojenia), "USB", "Bluetooth" a oznaèenia sériovıch portov, ak brailovskı riadok podporuje komunikáciu cez sériovı port.
-
-Táto monos nie je dostupná, ak zvolenı riadok podporuje len automatickı vıber komunikaèného portu.
-
-Pre podrobnejšie informácie si pozrite èas [Podporované brailovské zobrazovaèe #SupportedBrailleDisplays].
-
-NVDA sa dokáe predvolene k tımto zobrazovaèom pripoji cez USB alebo Bluetooth rozhranie.
-Môete však samy urèi typ pripojenia a obmedzi ho len na pripojenie cez "USB" alebo "bluetooth".
-Toto je uitoèné, ak chcete nabi riadok cez USb, ale chcete ho pouíva cez Bluetooth.
-
-
-
-
-++ HumanWare BrailleNote ++
-NVDA podporuje zápisníky BrailleNote od [Humanware http://www.humanware.com], ak sú nastavené do reimu pre príjem príkazov z èítaèa obrazovky.
-Podporované sú tieto typy:
-- BrailleNote Classic (len cez sériovı port)
-- BrailleNote PK (Sériovı port a Bluetooth)
-- BrailleNote MPower (Sériovı port a Bluetooth)
-- BrailleNote Apex (USB a Bluetooth)
--
-
-Ak zariadenie podporuje viacero druhov pripojenia, je potrebné nastavi druh pripojenia "braille terminal port" v nastaveniach "braille terminal".
-Podrobnosti nájdete v návode k Braillenote.
-Môete tie chcie nastavi port v nastaveniach braillu.
-Ak sa pripájate cez USb alebo Bluetooth, môete si vybra automatickú detekciu portu, "Bluetooth" alebo "USB", v závislosti od vybraného zariadenia.
-Ak sa pripájate cez niektorı zo sériovıch portov, alebo cez USB / seriovı prevodník, alebo ak nie sú dostupné iné monosti, musíte si vybra niektorı z hardwarovıch komunikaènıch portov.
-
-Pred pripojením BrailleNote Apex cez USb je potrebné nainštalova ovládaè dodávanı od vırobcu.
-
-Nasleduje zoznam klávesovıch príkazov pre tento typ riadku.
-Prosím, preèítajte si dokumentáciu dodanú spolu so zariadením na zistenie rozmiestnenia klávesov.
-
-%kc:beginInclude
-|| Názov | Klávesová skratka |
-| Posunú riadok spä | back |
-| Posunú riadok vpred| advance |
-| Predchádzajúci riadok | previous |
-| Nasledujúci riadok | next |
-| Prejs na znak v brailly | smerové tlaèidlá |
-| Prepnú nastavenie braillovskı kurzor zviazanı s | previous+next |
-| Šípka hore | medzera+bod1 |
-| Šípka dole | medzera+bod4 |
-| Šípka v¾avo | space+bod3 |
-| Šípka vpravo | space+bod6 |
-| Strana hore | medzera+body 1,3 |
-| Strana dole | medzera+body 4,6 |
-| Home | medzera+body 1,2 |
-| End | medzera+body 4,5 |
-| Control+home | medzera+body 1,2,3 |
-| Control+end | medzera+body 4,5,6 |
-| Medzera | medzera |
-| Enter | medzera+bod8 |
-| Backspace | medzera+bod7 |
-| Tab | medzera+body 2345 (medzera+t) |
-| Shift+tab | medzera+body 1,2,5,6 |
-| Windows | medzera+body 2,4,5,6 (medzera+w) |
-| Alt | medzera+body 1,3,4 (medzera+m) |
-| Nápoveda vstupu| medzera+body 1,2,5 (medzera+h) |
-%kc:endInclude
+=== modified file 'user_docs/en/userGuide.t2t'
+--- user_docs/en/userGuide.t2t	2012-12-03 09:49:39 +0000
++++ user_docs/en/userGuide.t2t	2012-12-05 22:40:50 +0000
+@@ -696,6 +696,18 @@
+ 
+ Please see the [Supported Braille Displays #SupportedBrailleDisplays] section for more information about supported braille displays.
+ 
++==== Port ====
++This option, if available, allows you to choose what port or type of connection will be used to communicate with the braille display you have selected.
++It is a combo box containing the possible choices for your braille display.
++
++By default, NVDA employes automatic port detection, which means the connection with the braille device will be established automatically by scanning for available USB and bluetooth devices on your system.
++However, for some braille displays, you may be able to explicitly choose what port should be used.
++Common options are "Automatic" (which tells NVDA to employ the default automatic port selection procedure), "USB", "Bluetooth" and legacy serial communication ports if your braille display supports this type of communication.
++
++This option won't be available if your braille display only supports automatic port detection.
++
++You may consult the documentation for your braille display in the section [Supported Braille Displays #SupportedBrailleDisplays] to check for more details on the supported types of communication and available ports.
++
+ ==== Translation Table ====
+ The next option you will come to in this dialog is the braille table combo box.
+ In this combo box, you will find braille tables for different languages. You can move from braille table to braille table in the list by using the arrow keys.
+@@ -1144,6 +1156,10 @@
+ Although this page only mentions the Focus 40 Blue display, the drivers support all Freedom Scientific displays.
+ If your system is running 64 bit Windows and the drivers were already installed by another screen reader, you will probably still need to install the drivers from this link, as the files required by NVDA were probably not installed by the other screen reader.
+ 
++By default, NVDA can automatically detect and connect to these displays either via USB or bluetooth.
++However, when configuring the display, you can explicitly select "USB" or "Bluetooth" ports to restrict the connection type to be used.
++This might be useful if you want to connect the focus display to NVDA using bluetooth, but still be able to charge it using USB power from your computer.
++
+ Following are the key assignments for this display with NVDA.
+ Please see the display's documentation for descriptions of where these keys can be found.
+ %kc:beginInclude
+@@ -1511,6 +1527,54 @@
+ | Report text formatting | upper routing row |
+ %kc:endInclude
+ 
++++ HumanWare BrailleNote ++
++NVDA supports the BrailleNote notetakers from [Humanware http://www.humanware.com] when acting as a display terminal for a screen reader.
++The following models are supported:
++- BrailleNote Classic (serial connection only)
++- BrailleNote PK (Serial and bluetooth connections)
++- BrailleNote MPower (Serial and bluetooth connections)
++- BrailleNote Apex (USB and Bluetooth connections)
++-
++
++If your device supports more than one type of connection, when connecting your BrailleNote to NVDA, you must set the braille terminal port in braille terminal options.
++Please check the BrailleNote manual for details.
++In NVDA, you may also need to set the port in the Braille Settings dialog.
++If you are connecting via USB or bluetooth, you can set the port to "Automatic", "USB" or "Bluetooth", depending on the available choices.
++If connecting using a legacy serial port (or a USB to serial converter) or if none of the previous options appear, you must explicitly choose the communication port to be used from the list of hardware ports.
++
++Before connecting your BrailleNote Apex using its USB client interface, you must install the drivers provided by HumanWare.
++
++Following are the BrailleNote command assignments for NVDA.
++Please check your BrailleNote's documentation to find where these keys are located.
++
++%kc:beginInclude
++|| Name | Key |
++| Scroll braille display back | back |
++| Scroll braille display forward | advance |
++| Move braille display to previous line | previous |
++| Move braille display to next line | next |
++| Route to braille cell | routing |
++| Toggle braille tethered to | previous+next |
++| Up arrow key | space+dot1 |
++| Down arrow key | space+dot4 |
++| Left Arrow key | space+dot3 |
++| Right arrow key | space+dot6 |
++| Page up key | space+dot1+dot3 |
++| Page down key | space+dot4+dot6 |
++| Home key | space+dot1+dot2 |
++| End key | space+dot4+dot5 |
++| Control+home keys | space+dot1+dot2+dot3 |
++| Control+end keys | space+dot4+dot5+dot6 |
++| Space key | space |
++| Enter key | space+dot8 |
++| Backspace key | space+dot7 |
++| Tab key | space+dot2+dot3+dot4+dot5 (space+t) |
++| Shift+tab keys | space+dot1+dot2+dot5+dot6 |
++| Windows key | space+dot2+dot4+dot5+dot6 (space+w) |
++| Alt key | space+dot1+dot3+dot4 (space+m) |
++| Toggle input help | space+dot1+dot2+dot5 (space+h) |
++%kc:endInclude
++
+ ++ BRLTTY ++
+ [BRLTTY http://mielke.cc/brltty/] is a separate program which can be used to support many more braille displays.
+ In order to use this, you need to install [BRLTTY for Windows http://brl.thefreecat.org/brltty/].
 
