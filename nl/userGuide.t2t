@@ -675,6 +675,18 @@ Geen braille betekent dat u braille niet gebruikt.
 
 Meer informatie over ondersteunde brailleleesregels vindt u onder [Supported Braille Displays #SupportedBrailleDisplays] .
 
+==== Poort ====
+Voor zover beschikbaar, kunt u met deze optie bepalen welke poort of welk type verbinding moet worden gebruikt om te communiceren met de geselecteerde brailleleesregel.
+In de keuzelijst treft u de mogelijkheden aan die voor de gebruikte leesregel beschikbaar zijn.
+
+Standaard wordt door NVDA een automatische poortdetectie uitgevoerd. Dit houdt in dat verbinding met het braille-apparaat automatisch tot stand wordt gebracht bij het zoeken naar beschikbare usb- of bluetooth-apparaten op uw systeem.
+Bij sommige brailleleesregels is het echter mogelijk expliciet te bepalen welke poort gebruikt moet worden.
+De normale procedure is dat opties "Automatisch" worden ingesteld (hetgeen  inhoudt dat NVDA standaard een automatische poortselectie zal uitvoeren) voor "USB", "Bluetooth" en legacy seriële communicatiepoorten, als het type communicatie door uw leesregel wordt ondersteund.
+
+Deze optie is niet beschikbaar als uw brailleleesregel alleen automatische poortdetectie ondersteunt. 
+
+Raadpleeg de documentatie van uw brailleleesregel in de rubriek [ondersteunde Brailleleesregels #SupportedBrailleDisplays] voor meer informatie over de ondersteunde communicatietypes en beschikbare poorten.
+ 
 ==== Talentabel ====
 De volgende optie die u in dit dialoogvenster tegen komt is het uitklapvenster voor de verschillende brailletabellen.
 U treft tabellen aan voor een aantal talen. Met de pijltjestoetsen kunt u de gewenste tabel in de lijst selecteren. 
@@ -1108,6 +1120,9 @@ Hoewel op deze pagina alleen de Focus 40 Blue wordt genoemd, ondersteunt deze dr
 
 Wanneer u met een 64-bit versie van Windows werkt, en de drivers door een ander schermleesprogramma reeds geïnstalleerd werden, is het waarschijnlijk toch nodig de drivers van bovenstaande link te installeren omdat de bestanden die NVDA nodig heeft, zeer waarschijnlijk niet door de andere schermlezer zijn geïnstalleerd. 
 
+De standaardinstelling is dat NVDA automatisch deze leesregels detecteert en via USB of bluetooth een verbinding tot stand brengt.
+U kunt evenwel bij het configureren van de leesregel expliciet kiezen voor een "USB-" of "Bluetooth-poort"  waarmee het te gebruiken verbindingstype wordt beperkt.
+Dit kan handig zijn als u de Focus leesregel met NVDA wilt verbinden via bluetooth en hem tegelijkertijd  wilt opladen via de usb-aansluiting op uwcomputer.
 Bij gebruik van deze leesregel met NVDA zijn de volgende toetscombinaties van toepassing:
 (Voor meer details kunt u de documentatie bij deze leesregel raadplegen.)
 %kc:beginInclude
@@ -1483,6 +1498,53 @@ Devolgende toetscommando's zijn voor Papenmeier-Brailleleesregels beschikbaar:
 | Navigatorobject naar voorafgaand object verplaatsen | rechts2 |
 | Documentopmaak weergeven | bovenste rij routingtoetsen ||
  %kc:endInclude
+
+++ HumanWare BrailleNote ++
+NVDA ondersteunt de BrailleNote notitieapparaten van [Humanware http://www.humanware.com] wanneer deze gebruikt worden als leesregel voor een schermlezer.
+De volgende modellen worden ondersteund:
+- BrailleNote Classic (uitsluitend seriële verbinding)
+- BrailleNote PK (Seriële en bluetooth verbinding)
+- BrailleNote MPower (Seriële en bluetooth verbinding)
+- BrailleNote Apex (USB en Bluetooth verbinding)
+-
+
+Als uw toestel meer dan één verbindingstype ondersteunt, moet u bij het koppelen van uw BrailleNote met NVDA de poort van het braille-uitvoerapparaat instellenn onder braille-terminal opties.
+Raadpleeg de BrailleNote-handleiding voor meer informatie.
+Het kan ook noodzakelijk zijn de poort in te stellen in het NVDA-menu in het dialoogvenster Braille dat u vindt onderopties.
+Als u een USB- of bluetooth-verbinding tot stand brengt, kunt u de poort instellen op "Automatisch", "USB" of "Bluetooth", afhankelijk van de beschikbare keuzemogelijkheden.
+Als u gebruik maakt van een legacy seriële poort (of van een USB-naar-serieel adapter), of als geen van de voornoemde opties beschikbaar is, moet u uit de lijst met hardware-poorten de te gebruiken communicatiepoortselecteren.
+
+Voor u de BrailleNote Apex met behulp van de USB gebruikersinterface verbindt, moet u de stuurprogramma's  installeren die HumanWare beschikbaar worden gesteld.
+
+Hieronder volgen de BrailleNote-toetscommando's voor NVDA.
+Raadpleeg de documentatie bij de  BrailleNote voor informatie over de positie van de toetsen.
+%kc:beginInclude
+|| Naam | Toets |
+| Leesregel terugscrollen  | terug |
+| Leesregel vooruitscrollen  | vooruit |
+| Leesregel naar vorige regel verplaatsen | vorige |
+| Leesregel naar volgende regel verplaatsen | volgende |
+| Naar braillecel springen | routing |
+| Braillevolgmodus wisselen | vorige+volgende |
+| Pijl omhoog | spatie+Punt1 |
+| Pijl omlaag | spatie+Punt4 |
+| Pijl links | spatie+Punt3 |
+| Pijl rechts | spatie+Punt6 |
+| Pagina omhoog | spatie+Punt1+punt3 |
+| Pagina omlaag | spatie+Punt4+punt6 |
+| Home | spatie+Punt1+punt2 |
+| End | spatie+Punt4+punt5 |
+| Control+home | spatie+punt1+punt2+punt3 |
+| Control+end | spatie+punt4+punt5+punt6 |
+| Spatiebalk | spatie |
+| Enter | spatie+punt8 |
+| Backspace | spatie+punt7 |
+| Tab | spatie+punt2+punt3+punt4+punt5 (space+t) |
+| Shift+tab | spatie+punt1+punt2+punt5+punt6 |
+| Windows-toets | spatie+punt2+punt4+punt5+punt6 (spatie+w) |
+| Alt | spatie+punt1+punt3+punt4 (spatie+m) |
+| Invoerhulp in-/uitschakelen | spatie+punt1+punt2+punt5 (spatie+h) |
+%kc:endInclude
 
 ++ BRLTTY ++
 [BRLTTY http://mielke.cc/brltty/] is een apart programma dat gebruikt kan worden voor de ondersteuning van veel andere leesregels.
