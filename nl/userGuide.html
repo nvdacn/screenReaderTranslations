@@ -106,14 +106,15 @@
     <LI><A HREF="#toc70">10.10. HIMS SyncBraille</A>
     <LI><A HREF="#toc71">10.11. Seika Brailleleesregels</A>
     <LI><A HREF="#toc72">10.12. Papenmeier Braillex Nieuwere Modellen</A>
-    <LI><A HREF="#toc73">10.13. BRLTTY</A>
+    <LI><A HREF="#toc73">10.13. HumanWare BrailleNote</A>
+    <LI><A HREF="#toc74">10.14. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc74">11. Geavanceerde Onderwerpen</A>
+  <LI><A HREF="#toc75">11. Geavanceerde Onderwerpen</A>
     <UL>
-    <LI><A HREF="#toc75">11.1. Toetscombinaties en andere invoermethodes opnieuw toewijzen</A>
-    <LI><A HREF="#toc76">11.2. Meer uitgebreide aanpassing van de uitspraak van leestekens en  symbolen</A>
+    <LI><A HREF="#toc76">11.1. Toetscombinaties en andere invoermethodes opnieuw toewijzen</A>
+    <LI><A HREF="#toc77">11.2. Meer uitgebreide aanpassing van de uitspraak van leestekens en  symbolen</A>
     </UL>
-  <LI><A HREF="#toc77">12. Verdere informatie</A>
+  <LI><A HREF="#toc78">12. Verdere informatie</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -1485,6 +1486,24 @@ Geen braille betekent dat u braille niet gebruikt.
 Meer informatie over ondersteunde brailleleesregels vindt u onder <A HREF="#SupportedBrailleDisplays">Supported Braille Displays</A> .
 </P>
 
+<H5>Poort</H5>
+
+<P>
+Voor zover beschikbaar, kunt u met deze optie bepalen welke poort of welk type verbinding moet worden gebruikt om te communiceren met de geselecteerde brailleleesregel.
+In de keuzelijst treft u de mogelijkheden aan die voor de gebruikte leesregel beschikbaar zijn.
+</P>
+<P>
+Standaard wordt door NVDA een automatische poortdetectie uitgevoerd. Dit houdt in dat verbinding met het braille-apparaat automatisch tot stand wordt gebracht bij het zoeken naar beschikbare usb- of bluetooth-apparaten op uw systeem.
+Bij sommige brailleleesregels is het echter mogelijk expliciet te bepalen welke poort gebruikt moet worden.
+De normale procedure is dat opties "Automatisch" worden ingesteld (hetgeen  inhoudt dat NVDA standaard een automatische poortselectie zal uitvoeren) voor "USB", "Bluetooth" en legacy seriële communicatiepoorten, als het type communicatie door uw leesregel wordt ondersteund.
+</P>
+<P>
+Deze optie is niet beschikbaar als uw brailleleesregel alleen automatische poortdetectie ondersteunt. 
+</P>
+<P>
+Raadpleeg de documentatie van uw brailleleesregel in de rubriek <A HREF="#SupportedBrailleDisplays">ondersteunde Brailleleesregels</A> voor meer informatie over de ondersteunde communicatietypes en beschikbare poorten.
+</P>
+
 <H5>Talentabel</H5>
 
 <P>
@@ -2243,6 +2262,9 @@ Hoewel op deze pagina alleen de Focus 40 Blue wordt genoemd, ondersteunt deze dr
 Wanneer u met een 64-bit versie van Windows werkt, en de drivers door een ander schermleesprogramma reeds geïnstalleerd werden, is het waarschijnlijk toch nodig de drivers van bovenstaande link te installeren omdat de bestanden die NVDA nodig heeft, zeer waarschijnlijk niet door de andere schermlezer zijn geïnstalleerd. 
 </P>
 <P>
+De standaardinstelling is dat NVDA automatisch deze leesregels detecteert en via USB of bluetooth een verbinding tot stand brengt.
+U kunt evenwel bij het configureren van de leesregel expliciet kiezen voor een "USB-" of "Bluetooth-poort"  waarmee het te gebruiken verbindingstype wordt beperkt.
+Dit kan handig zijn als u de Focus leesregel met NVDA wilt verbinden via bluetooth en hem tegelijkertijd  wilt opladen via de usb-aansluiting op uwcomputer.
 Bij gebruik van deze leesregel met NVDA zijn de volgende toetscombinaties van toepassing:
 (Voor meer details kunt u de documentatie bij deze leesregel raadplegen.)
 </P>
@@ -3403,7 +3425,140 @@ Devolgende toetscommando's zijn voor Papenmeier-Brailleleesregels beschikbaar:
 </P>
 
 <A NAME="toc73"></A>
-<H3>10.13. BRLTTY</H3>
+<H3>10.13. HumanWare BrailleNote</H3>
+
+<P>
+NVDA ondersteunt de BrailleNote notitieapparaten van <A HREF="http://www.humanware.com">Humanware</A> wanneer deze gebruikt worden als leesregel voor een schermlezer.
+De volgende modellen worden ondersteund:
+</P>
+
+<UL>
+<LI>BrailleNote Classic (uitsluitend seriële verbinding)
+<LI>BrailleNote PK (Seriële en bluetooth verbinding)
+<LI>BrailleNote MPower (Seriële en bluetooth verbinding)
+<LI>BrailleNote Apex (USB en Bluetooth verbinding)
+</UL>
+
+<P>
+Als uw toestel meer dan één verbindingstype ondersteunt, moet u bij het koppelen van uw BrailleNote met NVDA de poort van het braille-uitvoerapparaat instellenn onder braille-terminal opties.
+Raadpleeg de BrailleNote-handleiding voor meer informatie.
+Het kan ook noodzakelijk zijn de poort in te stellen in het NVDA-menu in het dialoogvenster Braille dat u vindt onderopties.
+Als u een USB- of bluetooth-verbinding tot stand brengt, kunt u de poort instellen op "Automatisch", "USB" of "Bluetooth", afhankelijk van de beschikbare keuzemogelijkheden.
+Als u gebruik maakt van een legacy seriële poort (of van een USB-naar-serieel adapter), of als geen van de voornoemde opties beschikbaar is, moet u uit de lijst met hardware-poorten de te gebruiken communicatiepoortselecteren.
+</P>
+<P>
+Voor u de BrailleNote Apex met behulp van de USB gebruikersinterface verbindt, moet u de stuurprogramma's  installeren die HumanWare beschikbaar worden gesteld.
+</P>
+<P>
+Hieronder volgen de BrailleNote-toetscommando's voor NVDA.
+Raadpleeg de documentatie bij de  BrailleNote voor informatie over de positie van de toetsen.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Naam</TH>
+<TH>Toets</TH>
+</TR>
+<TR>
+<TD>Leesregel terugscrollen</TD>
+<TD>terug</TD>
+</TR>
+<TR>
+<TD>Leesregel vooruitscrollen</TD>
+<TD>vooruit</TD>
+</TR>
+<TR>
+<TD>Leesregel naar vorige regel verplaatsen</TD>
+<TD>vorige</TD>
+</TR>
+<TR>
+<TD>Leesregel naar volgende regel verplaatsen</TD>
+<TD>volgende</TD>
+</TR>
+<TR>
+<TD>Naar braillecel springen</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>Braillevolgmodus wisselen</TD>
+<TD>vorige+volgende</TD>
+</TR>
+<TR>
+<TD>Pijl omhoog</TD>
+<TD>spatie+Punt1</TD>
+</TR>
+<TR>
+<TD>Pijl omlaag</TD>
+<TD>spatie+Punt4</TD>
+</TR>
+<TR>
+<TD>Pijl links</TD>
+<TD>spatie+Punt3</TD>
+</TR>
+<TR>
+<TD>Pijl rechts</TD>
+<TD>spatie+Punt6</TD>
+</TR>
+<TR>
+<TD>Pagina omhoog</TD>
+<TD>spatie+Punt1+punt3</TD>
+</TR>
+<TR>
+<TD>Pagina omlaag</TD>
+<TD>spatie+Punt4+punt6</TD>
+</TR>
+<TR>
+<TD>Home</TD>
+<TD>spatie+Punt1+punt2</TD>
+</TR>
+<TR>
+<TD>End</TD>
+<TD>spatie+Punt4+punt5</TD>
+</TR>
+<TR>
+<TD>Control+home</TD>
+<TD>spatie+punt1+punt2+punt3</TD>
+</TR>
+<TR>
+<TD>Control+end</TD>
+<TD>spatie+punt4+punt5+punt6</TD>
+</TR>
+<TR>
+<TD>Spatiebalk</TD>
+<TD>spatie</TD>
+</TR>
+<TR>
+<TD>Enter</TD>
+<TD>spatie+punt8</TD>
+</TR>
+<TR>
+<TD>Backspace</TD>
+<TD>spatie+punt7</TD>
+</TR>
+<TR>
+<TD>Tab</TD>
+<TD>spatie+punt2+punt3+punt4+punt5 (space+t)</TD>
+</TR>
+<TR>
+<TD>Shift+tab</TD>
+<TD>spatie+punt1+punt2+punt5+punt6</TD>
+</TR>
+<TR>
+<TD>Windows-toets</TD>
+<TD>spatie+punt2+punt4+punt5+punt6 (spatie+w)</TD>
+</TR>
+<TR>
+<TD>Alt</TD>
+<TD>spatie+punt1+punt3+punt4 (spatie+m)</TD>
+</TR>
+<TR>
+<TD>Invoerhulp in-/uitschakelen</TD>
+<TD>spatie+punt1+punt2+punt5 (spatie+h)</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc74"></A>
+<H3>10.14. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A> is een apart programma dat gebruikt kan worden voor de ondersteuning van veel andere leesregels.
@@ -3442,14 +3597,14 @@ Voor informatie over toetsenbordtabellen kunt u de  [BRLTTY-Documentatie op
 </TR>
 </TABLE>
 
-<A NAME="toc74"></A>
+<A NAME="toc75"></A>
 <H2>11. Geavanceerde Onderwerpen</H2>
 
 <P>
  
 </P>
 
-<A NAME="toc75"></A>
+<A NAME="toc76"></A>
 <H3>11.1. Toetscombinaties en andere invoermethodes opnieuw toewijzen</H3>
 
 <P>
@@ -3525,7 +3680,7 @@ Opmerking : De oorspronkelijke toetscombinatie NVDA+F12 voor het weergeven datum
 Hoewel het in principe mogelijk is elke beschikbare toets aan een bepaald script toe te wijzen, kan dit soms tot problemen leiden als de ALT-toets hierbij wordt ingesteld. Functies van modificerende toetsen zoals ALT worden door NVDA aan het besturinssysteem doorgegeven, ook als deze aan een script zijn toegewezen. Vandaar dat bij toepassing van de ALT-toets het kan voorkomen dat naast de uitvoering van het aan de toetscombinatie gekoppelde script, ook de menubalk wordt geactiveerd. Om eventuele problemen te voorkomen kunt u het beste alleen de Shift, Ctrl en NVDA-toets gebruiken als modificerende toetsen.
 </P>
 
-<A NAME="toc76"></A>
+<A NAME="toc77"></A>
 <H3>11.2. Meer uitgebreide aanpassing van de uitspraak van leestekens en  symbolen</H3>
 
 <P>
@@ -3535,7 +3690,7 @@ onbewerkt aan de synthesizer worden doorgegeven ( om een pauze in te lassen of h
 Hiertoe moet u  het bestand met de uitspraakdefinities voor symbolen bewerken. Het bestand met de naam  “symbols-xx.dic”, waar xx de gebruikte taalcode is, bevindt zich in de gebruikersconfiguratiemap. Informatie over de opmaak van dit bestand leest u in  de paragraaf over de Uitspraak vanInterpunktie/Symbolen  in de NVDA Handleiding voor Ontwikkelaars (alleen in het Engels). De handleiding vindt u <A HREF="http://www.nvda-project.org/wiki/Development">in de rubriek voor ontwikkelaars op de NVDA-Website</A>. Door gebruikers kunnen echter geen complexe symbolen worden gedefinieerd.
 </P>
 
-<A NAME="toc77"></A>
+<A NAME="toc78"></A>
 <H2>12. Verdere informatie</H2>
 
 <P>
