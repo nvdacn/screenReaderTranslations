@@ -63,7 +63,7 @@ Dieses kann sprachspezifisch in der im UTF-8 kodierten Datei namens "Symbols.dic
 Leerzeilen und Zeilen, die mit "#" beginnen, werden ignoriert.
 Alle Sprachräume übernehmen die Sonderzeichenaussprache des Englischen.
 
-Die Datei enthält dabei zwei Abschnitte.
+Die Datei enthält zwei Abschnitte.
 
 +++ Komplexe Symbole definieren +++
 Der erste Abschnitt ist optional und enthält Definitionen komplexer Symbole in Form regulärer Ausdrücke.
@@ -117,7 +117,7 @@ Dieses Feld kann die folgenden Werte enthalten:
 - always: das Symbol wird immer beibehalten.
 - norep: Das Symbol wird nur dann beibehalten, wenn es nicht ersetzt wird (z.B. wenn der Anwender die Satzzeichen- und Symbolebene niedriger eingestellt hat, als für das betreffende Symbol.
 - -: verwendet den Standardwert.
-Standardmäßig wird der Wert aus dem englischen Sprachraum verwendet. Ist in der dortigen Sprachdatei kein Wert angegeben, so wird der Wert "never" verwendet.
+Standardmäßig wird der Wert aus dem englischen Sprachraum verwendet. Ist in der dortigen Symboldefinitionsdatei kein Wert angegeben, so wird der Wert "never" verwendet.
 
 Am ende der Zeile kann schließlich noch ein Anzeigename für ein Symbol vergeben werden.
 Dieser Name wird Anwendern angezeigt, wenn sie die komplexen Symbole bearbeiten wollen. Er kann auch von übersetzern verwendet werden, um übersetzte Namen für die englischen komplexen Symbole bereitzustellen.
@@ -130,7 +130,7 @@ Dies bedeutet, dass das Zeichen "(" als "Runde Klammer auf" gesprochen werden so
 ```
 ,	Komma	all	always
 ```
-Dies bedeutet, dass das Zeichen "," als "Komma" gesprochen werden soll, wenn als Satzzeichen- und Symbolebene "all" eingestellt ist. Außerdem wird das Zeichen immer unverändert an die Sprachausgabe übergeben, um Sprechpausen korrekt zu setzen.
+Dies bedeutet, dass das Zeichen "," als "Komma" gesprochen werden soll, wenn als Satzzeichen- und Symbolebene "alle" eingestellt ist. Außerdem wird das Zeichen immer unverändert an die Sprachausgabe übergeben, um Sprechpausen korrekt zu setzen.
 ```
 . sentence ending	point	# . fin de phrase
 ```
@@ -141,11 +141,12 @@ Ein anzeigename wird ebenfalls angegeben, sodass französische nvda-Nutzer wisse
 
 Bitte sehen Sie sich die Datei locale\en\symbols.dic für die englischsprachigen Symboldefinitionen an.
 
+
 + Plugins +
 
 ++ Übersicht ++
 Mittels der Plugins erhalten Sie die Möglichkeit, das Verhalten global oder in bestimmten Anwendungen nach Ihren Wünschen anzupassen.
-Das sind unter anderem:
+Hierzu zählen z.B.:
 - Auf bestimmte Ereignisse reagieren, wenn sich zum Beispiel der Fokus verschiebt oder wenn sich die Eigenschaften eines Objekts ändern.
 - Befehle implementieren, die an bestimmte Tastendrücke oder andere Eingabemethoden gebunden werden können.
 - Das Verhalten bestimmter Steuerelemente beeinflussen oder weitere Funktionen hinzufügen.
@@ -155,7 +156,7 @@ Das sind unter anderem:
 Dieser Abschnitt enthält lediglich eine Einführung in die Entwicklung von Plug-ins. Schauen Sie sich die Code-Dokumentation für eine komplette Referenz an.
 
 ++ Typen von Plugins ++
-Es gibt zwei unterschiedliche Tpen von Plug-ins:
+Es gibt zwei unterschiedliche Typen von Plug-ins:
 - Anwendungsmodule: Enthalten speziellen Code für eine bestimmte Anwendung.
 Ein Anwendungsmodul nimmt Ereignisse für eine bestimmte Anwendung entgegen, auch wenn die Anwendung momentan nicht fokussiert ist.
 Wenn eine Anwendung fokussiert ist, kann der Nutzer sämtliche Befehle ausführen, die im Anwendungsmodul definiert und an Eingabemethoden zugewiesen wurden.
@@ -169,7 +170,7 @@ wenn Sie Im Gegensatz dazu vorhaben, globalen Code für NVDA zu entwickeln, der 
 Anwendungsmodule und allgemeine Plugins sind sehr ähnlich.
 Beides sind Python-Quelldateien (mit der Erweiterung .py), die eine spezielle Klasse definieren.
 Diese Klasse enthält sämtliche Ereignisse, Skripte und eingabemethodenzuweisungen.
-Außerdem können Sie eigene Klassen erstellen, um auf Steuerelemente, Textpassagen und komplexen Dokumenten zuzugreifen.
+Außerdem können Sie eigene Klassen erstellen, um auf Steuerelemente, Textpassagen und komplexe Dokumente zuzugreifen.
 
 
 Die folgenden Abschnitte beschreiben separat die Anwendungsmodule und die allgemeinen Plugins. Anschließend werden wieder allgemeinere Punkte erläutert.
@@ -188,11 +189,11 @@ Details hierzu lesen Sie weiter unten.
 Sobald NVDA erkennt, dass eine bestimmte Anwendung gestartet wird, wird das jeweilige Anwendungsmodul geladen.
 Wenn die betreffende Anwendung oder NVDA beendet wird, wird auch das Anwendungsmodul wieder aus dem Speicher entfernt.
 
-++ Beispiel 1: Ein Anwendungsmodul erzeugt Signaltön, wenn sich der Fokus verändert ++[Example1]
+++ Beispiel 1: Ein Anwendungsmodul erzeugt Signaltöne, wenn sich der Fokus verändert ++[Example1]
 Das folgende anwendungsmodul gibt jedes mal einen Signalton wieder, wenn sich innerhalb des Editors der Fokus ändert.
 Dieses Beispiel veranschaulicht den grundsätzlichen Aufbau eines Anwendungsmoduls.
 
-Fügen Sie den Folgenden Code zwischen den Start- und Endmarken (jedoch nicht die Marken selbst) in eine Datei mit dem Namen notepad.py und speichern Sie diese im Unterverzeichnis appmodules in ihrer benutzerspezifischen nvda-Konfiguration.
+Fügen Sie den Folgenden Code zwischen den Start- und Endmarken (jedoch nicht die Marken selbst) in eine Datei mit dem Namen notepad.py ein und speichern Sie diese im Unterverzeichnis appmodules in ihrer benutzerspezifischen nvda-Konfiguration.
 Übernehmen Sie hierbei auch alle Tab- und Leerzeichen.
 
 Starten Sie anschließend NVDA neu oder wählen Sie Plugins neu laden" aus dem Menü Extras, damit die Änderungen wirksam werden.
@@ -220,7 +221,7 @@ class AppModule(appModuleHandler.AppModule):
 
 Dieses Anwendungsmodul beginnt mit zwei Kommentarzeilen, die den Zweck des Anwendungsmoduls beschreiben.
 
-Anschließend wird das Modul "appmodule" importiert, welches die Basisklasse für Anwendungsmodule zur Verfügung stellt.
+Anschließend wird das Modul "appmoduleHandler" importiert, welches die Basisklasse für Anwendungsmodule zur Verfügung stellt.
 
 Als nächstes wird eine Klasse namens AppModule definiert, die von appModuleHandler.AppModule abgeleitet ist.
 
@@ -289,7 +290,7 @@ In diesem Beispiel enthält die Klasse ein Script, das die Versionsinformationen
 Die Details des Scripts und der Eingabemethodenzuweisung sind für dieses Beispiel jedoch nicht von Belang.
 Das wichtigste ist die Klasse selbst.
  
-Um das urspründliche Verhalten von NVDA wiederherzustellen, müssen Sie die globale Plugin-Datei löschen und NVDA anschließend neu starten oder die Plugins neu laden.
+Um das ursprüngliche Verhalten von NVDA wiederherzustellen, müssen Sie die globale Plugin-Datei löschen und NVDA anschließend neu starten oder die Plugins neu laden.
 
 ++ NVDA-Objekte ++
 NVDA stellt Steuerelemente und andere Bestandteile von Benutzeroberflächen in Form von NVDA-Objekten dar.
@@ -303,7 +304,7 @@ Der oben angesprochene Schalter "OK" könnte also beispielsweise ein Java-Objekt
 NVDA-Objekte haben viele Eigenschaften.
 einige der nützlichsten sind:
 - name: Die Beschriftung des Steuerelements
-- role: Der Typ des Steuerelements, repräsentiert durch eine der ROLE_*-Konstanten aus dem Anwendungsmodul controltypes
+- role: Der Typ des Steuerelements, repräsentiert durch eine der ROLE_*-Konstanten aus dem Modul controltypes
 Schaltfläche, Dialogfeld, Eingabefeld, Fenster und Kontrollkästchen sind nur einige Beispiele für Steuerelementtypen.
 - states: Status des Steuerelements, repräsentiert durch einen Satz von 0 oder mehr STATE_*-Konstanten aus dem Modul controltypes.
 hervorhebbar, hervorgehoben, ausgewählt, auswählbar, erweitert, reduziert und aktiviert sind nur einige Beispiele für den Status.
@@ -424,7 +425,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 ++ Ereignisse ++
 wenn NVDA ein Betriebssystemereignis erkennt, so wird dieses abstrahiert und ein eigenes Ereignis bei nvda-Objekten ausgelöst.
 
-Wenngleich die meisten Ereignisse zu bestimmten NVDA-Objekte gehören  (wie z. B. Umbenennungen, Fokuserhalt, Statusänderung, etc.), können sie auf unterschiedlichen Ebenen verarbeitet werden.
+Wenngleich die meisten Ereignisse zu bestimmten NVDA-Objekten gehören  (wie z. B. Umbenennungen, Fokuserhalt, Statusänderung, etc.), können sie auf unterschiedlichen Ebenen verarbeitet werden.
 Wird ein Ereignis behandelt, so wird es nicht mehr weitergereicht.
 Das Weiterreichen des Ereignsses kann jedoch durch Code innerhalb der Ereignisbehandlungsroutine erzwungen werden, falls nötig.
 
@@ -463,7 +464,7 @@ Es gibt zwar noch viel mehr, die oben aufgeführten Ereignisse sind jedoch die g
 
 Ein Beispiel für eine Ereignisbehandlungsroutine finden Sie im Beispiel 1.
 
-++ Die Schlafmodus-Variablen der Anwendungsmodule ++
+++ Die Schlafmodus-Variable ++
 Anwendungsmodule besitzen eine sehr nützliche Eigenschaft namens "sleepmode". Diese Eigenschaft deaktiviert, wenn sie auf True gesetzt wird, fast alle Funktionen von NVDA.
 Der Schlafmodus ist nützlich für anwendungen, die eigene Bildschirmlese-Funktionen besitzen oder für Spiele, bei denen man volle Kontrolle über die Tastatur benötigt.
 
@@ -472,7 +473,7 @@ Dies geschied einfach durch setzen der Eigenschaft sleepMode auf True in der Kla
 
 ++ Beispiel 4: Ein Schlafmodus-Anwendungsmodul ++
 Der folgende Code kann kopiert und im Anwendungsmodul-Verzeichnis in einer Datei für eine Anwendung gespeichert werden, für die Sie den Schlafmodus aktivieren möchten.
-Die Datei muss, wie immer, die Endung .py erhalten.
+Die Datei muss die Endung .py erhalten.
 
 ```
 --- Beginn ---
@@ -644,6 +645,7 @@ Wenn Sie anwendungsmodule oder globale plug-ins schreiben, kann es manchmal sinn
 
 Hinweis: Die Konstanten, die die angezeigten Schaltflächen angeben, können auch benutzt werden, um zu prüfen, welche Schaltfläche der Anwender gedrückt hat, um das Meldungsfenster zu schließen.
 
+
 ++ Beispiel 8: ein globales Plug-in, das beim Drücken von nvda+umschalt+r nach  dem Anzeigen eines Bestätigungsdialogs die Konfiguration auf die Werkseinstellungen zurücksetzt ++
 Das folgende Beispiel zeigt, wie Sie die im Python-Modul gui  mitgelieferte Funktion messageBox verwenden können, um einen Bestätigungsdialog anzuzeigen. gleichzeitig wird die Verwendung der Funktion CallAfter() aus dem Modul wx demonstriert, die nötig ist, um zu verhindern, dass sich NVDA während der Anzeige des Bestätigungsdialogs aufhängt. Kopieren sie den folgenden Quelltext in eine Datei beliebigen namens in ihr benutzerspezifisches Verzeichnis für globale Plug-ins.
 
@@ -682,13 +684,14 @@ Ein Paket ist einfach eine Datei im Zip-Format mit der Erweiterung .nvda-addon, 
 - Ordner mit Plugins und Treibern, die in NVDA installiert werden sollen.
 - Zusätzlichen Code, der bei der Installation bzw. der Deinstallation des Pakets ausgeführt werden soll.
 - Übersetzungen der in Ihren Plugins und Treibern verwendeten Meldungen für unterschiedliche Sprachräume.
-
+
 ++ Nicht-ASCII-Dateinamen in Zip-Archiven ++
 wenn Ihr Archiv Dateien enthält, in deren Namen Zeichen vorkommen, die nicht zum Ascii-Zeichensatz gehören, muss das Archiv so erstellt werden, dass die Dateinamen utf-8-codiert werden. 
 Dies ermöglicht ein Entpacken des Archivs unabhängig davon, für welche Sprache das Zielsystem ausgelegt ist.
 Unglücklicherweise unterstützen viele Archivierungsprogramme (einschließlich Windows-Explorer) diese Methode nicht.
 Generell muss die utf8-Codierung von Datinamen ausdrücklich aktiviert werden, auch wenn das Archivierungsprogramm dies von Hause aus unterstützt.
 In [[http://www.7-zip.org/ 7-zip]] können Sie die utf-8-Codierung von Dateinamen beispielsweise durch Angabe des Parameters "cu=on" beim Erstellen des Archivs einschalten.
+
 
 ++ Manifest-Dateien ++
 Jedes Paket muss eine Manifest-Datei namens "manifest.ini" enthalten.
@@ -809,7 +812,7 @@ Sie sollten die Remote-Python-Konsole nur dann aktivieren, wenn Sie mit vertraue
 
 ++ Verwendung ++
 Um die Remote-Python-Konsole zu aktivieren, verwenden Sie die lokale Python-Konsole und importieren Sie remotePythonConsole. Rufen Sie anschließend remotePythonConsole.initialize() auf.
-Jetzt können Verbindungen über den typ-Port 6832 aufgebaut werden.
+Jetzt können Verbindungen über den tcp-Port 6832 aufgebaut werden.
 Die Eingabeaufzeichnungsliste für zuvor eingegebene Befehle wird nicht unterstützt.
 Der Namensbereich ist identisch mit dem  [Namensbereich der lokalen Python-Konsole #PythonConsoleNamespace].
 
@@ -818,4 +821,4 @@ Es gibt jedoch einige weitere spezielle Funktionen:
 - rmSnap(): Entfernt alle Schnappschuss-Variablen.
 -
 
-Ende des Dokuments.
+
