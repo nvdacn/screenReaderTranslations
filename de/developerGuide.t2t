@@ -508,6 +508,7 @@ Dabei verarbeitet sie drei Argumente:
 - self: Die Instanz des anwendungsmoduls oder des globalen Plugins.
 - obj: Das Objekt, für das eine neue Klasse ausgewählt werden soll.
 - clsList: Eine Python-Liste mit Klassen, die für das Objekt benutzt werden sollen.
+-
 
 Innerhalb dieser Methode sollten Sie entscheiden, welche benutzerdefinierte(n) Objektklasse(n) das objekt verwenden soll, indem Sie dessen Eigenschaften prüfen.
 Wenn eine benutzerdefinierte Klasse verwendet werden soll, können Sie sie in die Klassenliste (üblicherweise vorn) einfügen. Sie können auch von NVDA ausgewählte Klassen aus der Liste entfernen, dies ist jedoch selten erforderlich.
@@ -642,6 +643,7 @@ Wenn Sie anwendungsmodule oder globale plug-ins schreiben, kann es manchmal sinn
  - ICON_ERROR: Das Meldungsfenster wird als Fehlermeldung angezeigt (und ein entsprechender im System hinterlegter Klang abgespielt).
  - ICON_WARNING: Die meldung wird als Warnung angezeigt
  - ICON_INFORMATION: Die Meldung wird als informationsfenster angezeigt (Standard)
+-
 
 Hinweis: Die Konstanten, die die angezeigten Schaltflächen angeben, können auch benutzt werden, um zu prüfen, welche Schaltfläche der Anwender gedrückt hat, um das Meldungsfenster zu schließen.
 
@@ -672,7 +674,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 +++ Hinweise zur Funktion wx.CallAfter +++
 - Problem: Technisch sind Eingabemethoden wie tastaturanschläge nichts anderes als Ereignisse, auf die innerhalb von NVDA mit Hilfe von Scripts reagiert wird. Es kann immer nur ein Ereignis zur selben Zeit abgearbeitet werden. Dies bedeutet, dass NVDA z.B. nicht auf Tastendrücke oder Braillezeilen-Aktionen reagieren kann, wenn ein an ein Ereignis gekoppeltes Script stehen bleibt, weil es auf eine Benutzereingabe wartet. 
 - Lösung: Mit Hilfe der in wx enthaltenen Funktion CallAfter kann (wie der Name verrät) Code ausgeführt werden, nachdem die Ereignisbehandlung abgearbeitet wurde. Die ausführung des mit CallAfter angegebenen codes wird gewissermaßen "vorgemerkt" und unmittelbar nach Abschluss der Ereignisbehandlungsroutine ausgeführt. Hierdurch ist es NVDA möglich, auf Braillezeilen-Navigationstasten zu reagieren, wenn der Anwender versucht, ein meldungsfenster auszulesen, das in ein Skript eingebunden war.
-
+-
 Die Funktion CallAfter akzeptiert den namen der "vorzumerkenden" Funktion und eine beliebige Anzahl von Argumenten als Parameter, die an diese Funktion übergeben werden. Die Parameter können benannt oder unbenannt angegeben werden.
 
 
@@ -684,6 +686,7 @@ Ein Paket ist einfach eine Datei im Zip-Format mit der Erweiterung .nvda-addon, 
 - Ordner mit Plugins und Treibern, die in NVDA installiert werden sollen.
 - Zusätzlichen Code, der bei der Installation bzw. der Deinstallation des Pakets ausgeführt werden soll.
 - Übersetzungen der in Ihren Plugins und Treibern verwendeten Meldungen für unterschiedliche Sprachräume.
+-
 
 ++ Nicht-ASCII-Dateinamen in Zip-Archiven ++
 wenn Ihr Archiv Dateien enthält, in deren Namen Zeichen vorkommen, die nicht zum Ascii-Zeichensatz gehören, muss das Archiv so erstellt werden, dass die Dateinamen utf-8-codiert werden. 
