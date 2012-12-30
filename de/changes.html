@@ -40,18 +40,27 @@
 <LI>Wird die automatische Prüfung auf Aktualisierungen deaktiviert, muss NVDA nicht mehr neu gestartet werden, damit die Änderung wirksam wird.
 <LI>NVDA wird nun nicht mehr abstürzen, wenn bei der Deinstallation einer Erweiterung deren Ordner nicht gelöscht werden kann, weil er von einem anderen Programm verwendet wird. (<A HREF="http://www.nvda-project.org/ticket/2860">#2860</A>)
 <LI>Die Beschriftungen im Einstellungsdialog von Dropbox werden nun auch im Flächenmodus angezeigt.
-<P></P>
-== Änderungen für Entwickler ==
+</UL>
+
+<H3>Änderungen für Entwickler</H3>
+
+<UL>
 <LI>Braillezeilentreiber unterstützen die Auswahl des Anschlusses (<A HREF="http://www.nvda-project.org/ticket/426">#426</A>)
  <UL>
  <LI>Dies ist für Braillezeilen sinnvoll, die an eine serielle Schnittstelle angeschlossen werden.
  <LI>Hierfür können Sie die Klassenmethode getPossiblePorts aus der Klasse BrailleDisplayDriver verwenden.
- <P></P>
-= 2012.3 =
-Schwerpunkte in dieser Version sind: Unterstützung für asiatische Eingabemetoden, experimentelle Unterstützung für Touchscreens unter Windows 8, Ansage der Seitenzahlen sowie verbesserte Unterstützung von Tabellen in Adobe Reader, Befehle zur Navigation in Tabellen und Listenansichten im Explorer sowie Unterstützung zahlreicher weiterer Braillezeilen und das Lesen von Zeilen- bzw. Spaltenüberschriften in Microsoft Excel.
- <P></P>
-== Neue Funktionen ==
  </UL>
+</UL>
+
+<H2>2012.3</H2>
+
+<P>
+Schwerpunkte in dieser Version sind: Unterstützung für asiatische Eingabemetoden, experimentelle Unterstützung für Touchscreens unter Windows 8, Ansage der Seitenzahlen sowie verbesserte Unterstützung von Tabellen in Adobe Reader, Befehle zur Navigation in Tabellen und Listenansichten im Explorer sowie Unterstützung zahlreicher weiterer Braillezeilen und das Lesen von Zeilen- bzw. Spaltenüberschriften in Microsoft Excel.
+</P>
+
+<H3>Neue Funktionen</H3>
+
+<UL>
 <LI>NVDA unterstützt nun asiatische Zeichen eingabe mittels IME und Eingabemethoden im Textdienst in allen Anwendungen, einschließlich:
  <UL>
  <LI>Ansagen und Navigation der Kandidatenliste;
@@ -70,7 +79,7 @@ Schwerpunkte in dieser Version sind: Unterstützung für asiatische Eingabemetod
  </UL>
 <LI>Unterstützung für VIP Mud. (<A HREF="http://www.nvda-project.org/ticket/1728">#1728</A>)
 <LI>Wenn in Adobe Reader einer Tabelle eine Zusammenfassung zugewiesen wurde, wird diese nun angezeigt. (<A HREF="http://www.nvda-project.org/ticket/2465">#2465</A>)
-<LI>In Adobe Reader können nun Reihen und Spaltenüberschriften ausgegeben werden. (<A HREF="http://www.nvda-project.org/ticket/2193">#2193</A>, <A HREF="http://www.nvda-project.org/ticket/2527">#2527</A>)
+<LI>In Adobe Reader können nun Reihen und Spaltenüberschriften ausgegeben werden. (<A HREF="http://www.nvda-project.org/ticket/2193">#2193</A>, <A HREF="http://www.nvda-project.org/ticket/2527">#2527</A>, <A HREF="http://www.nvda-project.org/ticket/2528">#2528</A>)
 <LI>Neue Sprachen: Nepalesisch, Koreanisch, Amharisch, slovenisch.
 <LI>Bei der Eingabe von E-Mail-Adressen in Outlook 2007 werden Vorschläge zur automatischen Vervollständigung korrekt ausgegeben. (<A HREF="http://www.nvda-project.org/ticket/689">#689</A>)
 <LI>Neue eSpeak-Varianten: Gene, Gene2. (<A HREF="http://www.nvda-project.org/ticket/2512">#2512</A>)
@@ -163,8 +172,11 @@ Schwerpunkte in dieser Version sind: Unterstützung für asiatische Eingabemetod
 <LI>In Calc  (OpenOffice.org sowie in LibreOffice) funktioniert das Lesen von Tabellen nun ordnungsgemäß. (<A HREF="http://www.nvda-project.org/ticket/2765">#2765</A>)
 <LI>NVDA funktioniert nun in der Listenansicht der Yahoo Mails ordnungsgemäß, wenn Sie mit dem Internetexplorer arbeiten. (<A HREF="http://www.nvda-project.org/ticket/2780">#2780</A>)
 <LI>Die Kurztasten aller Einträge des NVDA-Menüs sowie aller Dialogelemente sind nun kollisionsfrei d.h. Sie können den hervorgehobenen Buchstaben eines Menüeintrags Bzw. Dialogelements eingeben, um das entsprechende Element aufzurufen.
-<P></P>
-== Änderungen für Entwickler ==
+</UL>
+
+<H3>Änderungen für Entwickler</H3>
+
+<UL>
 <LI>Beim Start von NVDA wird nun das vorherige Protokoll nach "nvda-old.log" kopiert. Sollte NVDA also einmal abstürzen oder neu gestartet werden müssen, steht das Protokoll der vorigen NVDA-Sitzung zu Inspektionszwecken zur Verfügung. (<A HREF="http://www.nvda-project.org/ticket/916">#916</A>)
 <LI>Wenn Sie innerhalb einer Methode chooseNVDAObjectOverlayClasses den Objekttyp abrufen wollen, wird dieser nun nicht mehr falsch zurückgegeben, wenn Objekte wie Eingabeaufforderungen oder Scintilla-Steuerelemente den Fokus haben. (<A HREF="http://www.nvda-project.org/ticket/2569">#2569</A>)
 <LI>Die Untermenüs des NVDA-Menüs sind nun als Attribute von gui.mainFrame.sysTrayIcon verfügbar. Sie heißen preferencesMenu, toolsMenu und helpMenu. Hierdurch ist es für globale Plug-ins einfacher, Einträge in diese Menüs einzufügen.
@@ -557,11 +569,17 @@ Die wichtigsten Neuerungen in dieser Version beinhalten umfangreiche Verbesserun
  </UL>
 <LI>Sprachausgabentreiber unterstützen nun boolsche Eigenschaften.  Siehe  SynthDriverHandler.BooleanSynthSetting.
 <LI>Scons akzeptiert nun eine Variable namens certTimestampServer, die die Adresse eines Timestamping-Servers enthält, um authenticode-signatures mit einem Zeitstempel zu versehen. (<A HREF="http://www.nvda-project.org/ticket/1644">#1644</A>)
-<P></P>
-= 2011.1.1 =
+</UL>
+
+<H2>2011.1.1</H2>
+
+<P>
 Dieses Release behebt wichtige Fehler und Sicherheitsprobleme, welche in NVDA 2011.1 gefunden wurden.
-<P></P>
-== Fehlerkorrekturen ==
+</P>
+
+<H3>Fehlerkorrekturen</H3>
+
+<UL>
 <LI>Der Eintrag "Spenden" im Menü ist nun bei sonstigen Sicherheitshinweisen, im Windows Anmeldebildschirm sowie u. a. der Benutzerkontensteuerung ausgeblendet. Dies stellte ein Sicherheitsrisiko dar. (<A HREF="http://www.nvda-project.org/ticket/1419">#1419</A>)
 <LI>Es ist nun nicht länger möglich die benutzerdefinierte Konfiguration von NVDA während dieser Sicherheitsebenen zu kopieren oder einzufügen. Dies stellt ebenso ein Sicherheitsrisiko dar. (<A HREF="http://www.nvda-project.org/ticket/1421">#1421</A>)
 <LI>In Firefox 4 funktioniert nun der Befehl "NVDA+STRG+Leertaste" für die eingebetteten Inhalte in der Virtuellen Ansicht. (<A HREF="http://www.nvda-project.org/ticket/1429">#1429</A>)
@@ -569,12 +587,18 @@ Dieses Release behebt wichtige Fehler und Sicherheitsprobleme, welche in NVDA 20
 <LI>Wenn bei aktivierter Ansage der Funktionstasten die Leertaste mit der NVDA-Taste gedrückt wird, wird nun nicht mehr die Taste umgeschaltet, sondern dies auch mitgeteilt. (<A HREF="http://www.nvda-project.org/ticket/1424">#1424</A>)
 <LI>Die Protokollierungsfunktion wurde im Windows-Anmeldebildschirm und in sämtlichen Dialogen der Sicherheitshinweisen sowie der Benutzerkontensteuerung und im Dialog zur Sperrung des Computers komplett ausgeschaltet. Dies stellt jedoch ein Sicherheitsrisiko dar. (<A HREF="http://www.nvda-project.org/ticket/1435">#1435</A>)
 <LI>Bei aktivierter Eingabehilfe werden nun alle Engaben protokolliert, auch wenn sie nicht an ein Skript zugewiesen wurden. (<A HREF="http://www.nvda-project.org/ticket/1425">#1425</A>) 
-<P></P>
-= 2011.1 =
+</UL>
+
+<H2>2011.1</H2>
+
+<P>
 Zu den wichtigsten Neuerungen gehören das Anzeigen von Farben,  sowie die automatische Anzeige von neu erscheinendem Text in  mIRC, PuTTY, Tera Term und SecureCRT;
 Unterstützung globaler Erweiterungen; die korrekte Anzeige von Aufzählungen und Numerierungen in Microsoft Word; zusätzliche Tastenzuweisungen für Braillezeilen, einschließlich Tasten zum Bewegen zur nächsten/vorigen Zeile; sowie Unterstützung von Braillezeilen von Baum, HumanWare und APH.
-<P></P>
-== Neue Funktionen ==
+</P>
+
+<H3>Neue Funktionen</H3>
+
+<UL>
 <LI>Die Ausgabe von Farben bei der Angabe der Textformatierung wird nun unterstützt (sowohl automatisch, einstellbar in den Einstellungen zur Dokumentformatierung) als auch manuell (über die Tastenkombination nvda+f. Dies betrifft iaccesible-Eingabefelder (wie z.B. in Mozilla-Anwendungen), Richedit-Eingabefelder (wie z.B. in Wordpad) soie Eingabefelder in IBM Lotus Symphony.
 <LI>Nun kann in virtuellen Ansichten seitenweise (Umschalt+Seite nach oben/Seite nach unten) oder absatzweise (Umschalt+STRG+Pfeil nach oben/Pfeil nach unten) markiert werden. (<A HREF="http://www.nvda-project.org/ticket/639">#639</A>)
 <LI>NVDA zeigt nun neu erscheinenden Text in Terminalfenstern korrekt an. Dies betrifft u. a. mIRC, PuTTY, Tera Term und SecureCRT. (<A HREF="http://www.nvda-project.org/ticket/936">#936</A>)
@@ -678,8 +702,7 @@ Unterstützung globaler Erweiterungen; die korrekte Anzeige von Aufzählungen un
  </UL>
 <LI>Die Eigenschaft "selfvoicing" der Klassen für Anwendungsmodule wurde in "sleepmode" umbenannt.
 <LI>Um die Namenskonventionen in Anwendungsmodulen und im Tree-interceptor einheitlich zu halten, wurden die Ereignisse "event_appLoseFocus" und "event_appGainFocus" in "event_appModule_loseFocus" bzw. "event_appModule_gainFocus" umbenannt.
-<LI>Alle Treiber von 
-zeilen sollten nun "braille.BrailleDisplayDriver" anstelle von  "braille.BrailleDisplayDriverWithCursor" verwenden.
+<LI>Alle Treiber von zeilen sollten nun "braille.BrailleDisplayDriver" anstelle von  "braille.BrailleDisplayDriverWithCursor" verwenden.
  <UL>
  <LI>Der Cursor wird nun außerhalb des Treibers verwaltet.
  <LI>In bereits vorhandenen Treibern muss nur noch die Klassendefinition entsprechend angepasst und die Methode "_display" in "display" umbenannt werden.
@@ -773,9 +796,7 @@ Unterstützung von IBM Lotus Symphony-Dokumenten; Ansage der Reihen- und Spalten
 <LI>In LoudTalks ist nun die Kontaktliste zugänglich.
 <LI>Im Internet Explorer 8 und anderen MSHTML-Dokumenten wird nun die Adresse des Dokuments und "MSAAHTML Registered Handler" fälschlicherweise nicht mehr angezeigt. (<A HREF="http://www.nvda-project.org/ticket/811">#811</A>)
 <LI>In Baumstrukturen in Eclipse wird nun nicht mehr der vorher ausgewählte Eintrag angezeigt, wenn sich der Fokus auf einen neuen Eintrag bewegt.
-<LI>NVDA funktioniert nun im System korrekt, wo das Arbeitsverzeichnis des Suchpfades für Programmbibliotheken entfernt wurde ().
-(einzustellen im Registrierungseintrag "CWDIllegalInDllSearch" auf "0xFFFFFFFF").
-Beachten Sie, dass dies nicht für die meisten Nutzer relevant ist. (<A HREF="http://www.nvda-project.org/ticket/907">#907</A>)
+<LI>NVDA funktioniert nun im System korrekt, wo das Arbeitsverzeichnis des Suchpfades für Programmbibliotheken entfernt wurde (). (einzustellen im Registrierungseintrag "CWDIllegalInDllSearch" auf "0xFFFFFFFF"). Beachten Sie, dass dies nicht für die meisten Nutzer relevant ist. (<A HREF="http://www.nvda-project.org/ticket/907">#907</A>)
 <LI>Wenn Sie die Navigationsbefehle für Tabellen außerhalb von Tabellen in Microsoft Word verwenden, wird nun nicht mehr "Rand der Tabelle" angezeigt, nachdem bereits die Meldung "Nicht in einer Tabelle" erschienen ist. (<A HREF="http://www.nvda-project.org/ticket/921">#921</A>)
 <LI>Wenn die Befehle zur Tabellennavigation nicht ausgeführt werden können, weil sich der Cursor an einer Ecke der Tabelle in Microsoft Word befindet, sagt NVDA "Ecke der Tabelle" in der eingestellten Sprache und nicht mehr in englisch an. (<A HREF="http://www.nvda-project.org/ticket/921">#921</A>)
 <LI>In Outlook Express, Windows Mail und Windows Live Mail werden nun bei der Liste der Nachrichtenregeln der Status der Kontrollkästchen angesagt. (<A HREF="http://www.nvda-project.org/ticket/576">#576</A>)
@@ -946,10 +967,13 @@ die wichtigsten Neuerungen dieser version sind u.a. die Unterstützung von 64-bi
 <LI>Problem mit der Datums-/Uhrzeitanzeige behoben, wonach die Datumsanzeige auf manchen Systemen verkürzt wurde. (<A HREF="http://www.nvda-project.org/ticket/471">#471</A>)
 <LI>Problem behoben, wonach der System-indikator für bildschirmleser unvorhersehbar deaktiviert wurde, sobald ein sicherer Desktop geschlossen wirde. Dies führte in Anwendungen wie Skype, Adobe Reader und Jart zu Problemen, wenn Sie nach dem Systemindikator suchen wollten. (<A HREF="http://www.nvda-project.org/ticket/462">#462</A>)
 <LI>In Kombinationsfeldern im Internet Explorer 6 wird nun der aktuelle Eintrag korrekt ausgegeben, wenn Sie navigieren. (<A HREF="http://www.nvda-project.org/ticket/342">#342</A>)
-<P></P>
-= 0.6p3 =
-<P></P>
-== Neuerungen ==
+</UL>
+
+<H2>0.6p3</H2>
+
+<H3>Neuerungen</H3>
+
+<UL>
 <LI>Da die Formularleiste von Microsoft Excel unzugänglich ist, stellt NVDA einen eigenen Dialog zum Editieren von Zellinhalten bereit, wenn Sie F2 drücken.
 <LI>Unterstützung von Formatierungen in iAccessible2-Steuerelementen wie z.B. Mozilla-Anwendungen
 <LI>Wenn möglich werden nun Rechtschreibfehler ausgegeben. Dies kann in den Einstellungen zur Dokumentformatierung konfiguriert werden.
