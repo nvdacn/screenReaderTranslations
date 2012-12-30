@@ -233,8 +233,7 @@ Folgende Felder sind verfügbar:
 </P>
 
 <UL>
-<LI>Name: Der Name eines Symbols
-Meistens wird hier das zu verarbeitende Sonderzeichen oder der name eines komplexen Symbols angegeben. Einige Sonderzeichen können nicht eingegeben werden. Hierfür können die folgenden Sequenzen verwendet werden:
+<LI>Name: Der Name eines Symbols. Meistens wird hier das zu verarbeitende Sonderzeichen oder der name eines komplexen Symbols angegeben. Einige Sonderzeichen können nicht eingegeben werden. Hierfür können die folgenden Sequenzen verwendet werden:
  <UL>
  <LI>\0: Null
  <LI>\t: Tabulator
@@ -244,47 +243,54 @@ Meistens wird hier das zu verarbeitende Sonderzeichen oder der name eines komple
  <LI>\#: #-Zeichen (benötigt einen Backslash, da dieses #-Zeichen sonst als Kommentar angesehen wird)
  </UL>
 <LI>Ersatztext: der Text, der anstelle des Symbols ausgesprochen werden soll.
-<LI>Ebene: die Symbolebene, ab der das Symbol gesprochen werden soll. Die Symbolebene kann vom Anwender konfiguriert werden und gibt die Menge an auszusprechenden Sonderzeichen an. 
-Dieses Feld sollte einen der Werte  "none", "some", "most", "all" oder  "char" enthalten oder "-", um den Standardwert zu erzwingen.
-Die angabe "char" bedeutet, dass das Symbol nur bei der zeichenweisen Navigation verarbeitet wird. 
-Standardmäßig wird hier der Wert aus dem englischen Sprachraum verwendet. Ist in der Symboldefinitionsdatei für den englischen Sprachraum kein Wert angegeben, so wird der Wert "all" angenommen.
-<LI>Beibehalten: Dieses Feld muss immer dann belegt sein, wenn ein bestimmtes Symbol unverarbeitet an die Sprachausgabe weitergegeben werden soll, um eine korrekte Aussprache zu ermöglichen. 
-Beispiele hierfür sind Sonderzeichen, die Sprechpausen verursachen, wie z.B. der Punkt, das Komma etc.
-Dieses Feld kann die folgenden Werte enthalten:
-<LI>never: Das Symbol wird nie beibehalten.
-<LI>always: das Symbol wird immer beibehalten.
-<LI>norep: Das Symbol wird nur dann beibehalten, wenn es nicht ersetzt wird (z.B. wenn der Anwender die Satzzeichen- und Symbolebene niedriger eingestellt hat, als für das betreffende Symbol.
-<LI>-: verwendet den Standardwert.
+<LI>Ebene: die Symbolebene, ab der das Symbol gesprochen werden soll. Die Symbolebene kann vom Anwender konfiguriert werden und gibt die Menge an auszusprechenden Sonderzeichen an. Dieses Feld sollte einen der Werte  "none", "some", "most", "all" oder  "char" enthalten oder "-", um den Standardwert zu erzwingen. Die angabe "char" bedeutet, dass das Symbol nur bei der zeichenweisen Navigation verarbeitet wird. Standardmäßig wird hier der Wert aus dem englischen Sprachraum verwendet. Ist in der Symboldefinitionsdatei für den englischen Sprachraum kein Wert angegeben, so wird der Wert "all" angenommen.
+<LI>Beibehalten: Dieses Feld muss immer dann belegt sein, wenn ein bestimmtes Symbol unverarbeitet an die Sprachausgabe weitergegeben werden soll, um eine korrekte Aussprache zu ermöglichen. Beispiele hierfür sind Sonderzeichen, die Sprechpausen verursachen, wie z.B. der Punkt, das Komma etc. Dieses Feld kann die folgenden Werte enthalten:
+ <UL>
+ <LI>never: Das Symbol wird nie beibehalten.
+ <LI>always: das Symbol wird immer beibehalten.
+ <LI>norep: Das Symbol wird nur dann beibehalten, wenn es nicht ersetzt wird (z.B. wenn der Anwender die Satzzeichen- und Symbolebene niedriger eingestellt hat, als für das betreffende Symbol.
+ <LI>-: verwendet den Standardwert.
+ </UL>
 Standardmäßig wird der Wert aus dem englischen Sprachraum verwendet. Ist in der dortigen Symboldefinitionsdatei kein Wert angegeben, so wird der Wert "never" verwendet.
-<P></P>
+</UL>
+
+<P>
 Am ende der Zeile kann schließlich noch ein Anzeigename für ein Symbol vergeben werden.
 Dieser Name wird Anwendern angezeigt, wenn sie die komplexen Symbole bearbeiten wollen. Er kann auch von übersetzern verwendet werden, um übersetzte Namen für die englischen komplexen Symbole bereitzustellen.
-<P></P>
+</P>
+<P>
 Hierzu einige Beispiele:
+</P>
 
 <PRE>
 (	runde Klammer auf	most
 </PRE>
 
+<P>
 Dies bedeutet, dass das Zeichen "(" als "Runde Klammer auf" gesprochen werden soll, wenn der Anwender die Satzzeichen- und Symbolebene auf "meiste" oder "alle" eingestellt hat.
+</P>
 
 <PRE>
 ,	Komma	all	always
 </PRE>
 
+<P>
 Dies bedeutet, dass das Zeichen "," als "Komma" gesprochen werden soll, wenn als Satzzeichen- und Symbolebene "alle" eingestellt ist. Außerdem wird das Zeichen immer unverändert an die Sprachausgabe übergeben, um Sprechpausen korrekt zu setzen.
+</P>
 
 <PRE>
 . sentence ending	point	# . fin de phrase
 </PRE>
 
+<P>
 Diese Zeile stammt aus der französischen Datei symbols.dic.
 Sie besagt, dass das komplexe Symbol ". sentence ending" als "point" gesprochen werden soll..
 Ebene und Einstellung zum Beibehalten des Symbols sind hier nicht angegeben, werden also aus dem englischen Sprachraum übernommen.
 Ein anzeigename wird ebenfalls angegeben, sodass französische nvda-Nutzer wissen, was dieses Symbol bedeutet.
-<P></P>
+</P>
+<P>
 Bitte sehen Sie sich die Datei locale\en\symbols.dic für die englischsprachigen Symboldefinitionen an.
-</UL>
+</P>
 
 <A NAME="toc9"></A>
 <H2>3. Plugins</H2>
@@ -316,22 +322,20 @@ Es gibt zwei unterschiedliche Typen von Plug-ins:
 </P>
 
 <UL>
-<LI>Anwendungsmodule: Enthalten speziellen Code für eine bestimmte Anwendung.
-Ein Anwendungsmodul nimmt Ereignisse für eine bestimmte Anwendung entgegen, auch wenn die Anwendung momentan nicht fokussiert ist.
-Wenn eine Anwendung fokussiert ist, kann der Nutzer sämtliche Befehle ausführen, die im Anwendungsmodul definiert und an Eingabemethoden zugewiesen wurden.
-<LI>Allgemeine Plugins: enthalten Code, der in allen Anwendungen ausgeführt wird. 
-Dabei nehmen Sie alle Ereignisse von allen Elementen im Betriebssystem entgegen.
-Befehle, die in allgemeinen Plugins an Eingabemethoden zugewiesen wurden, können unabhängig davon ausgeführt werden, welche Anwendung grade aktiv ist.
-<P></P>
+<LI>Anwendungsmodule: Enthalten speziellen Code für eine bestimmte Anwendung. Ein Anwendungsmodul nimmt Ereignisse für eine bestimmte Anwendung entgegen, auch wenn die Anwendung momentan nicht fokussiert ist. Wenn eine Anwendung fokussiert ist, kann der Nutzer sämtliche Befehle ausführen, die im Anwendungsmodul definiert und an Eingabemethoden zugewiesen wurden.
+<LI>Allgemeine Plugins: enthalten Code, der in allen Anwendungen ausgeführt wird. Dabei nehmen Sie alle Ereignisse von allen Elementen im Betriebssystem entgegen. Befehle, die in allgemeinen Plugins an Eingabemethoden zugewiesen wurden, können unabhängig davon ausgeführt werden, welche Anwendung grade aktiv ist. 
+</UL>
+
+<P>
 Wenn Sie vorhaben, die Zugänglichkeit von NVDA für bestimmte Anwendungen zu verbessern, sind die Anwendungsmodule empfehlenswert.
 wenn Sie Im Gegensatz dazu vorhaben, globalen Code für NVDA zu entwickeln, der systemweit zugänglich sein soll, zum Beispiel um sich die Signalstärke von Funknetzwerken anzeigen zu lassen, ist ein allgemeines Plugin empfehlenswert.
-<P></P>
+</P>
+<P>
 Anwendungsmodule und allgemeine Plugins sind sehr ähnlich.
 Beides sind Python-Quelldateien (mit der Erweiterung .py), die eine spezielle Klasse definieren.
 Diese Klasse enthält sämtliche Ereignisse, Skripte und eingabemethodenzuweisungen.
 Außerdem können Sie eigene Klassen erstellen, um auf Steuerelemente, Textpassagen und komplexe Dokumente zuzugreifen.
-</UL>
-
+</P>
 <P>
 Die folgenden Abschnitte beschreiben separat die Anwendungsmodule und die allgemeinen Plugins. Anschließend werden wieder allgemeinere Punkte erläutert.
 </P>
@@ -515,19 +519,15 @@ einige der nützlichsten sind:
 
 <UL>
 <LI>name: Die Beschriftung des Steuerelements
-<LI>role: Der Typ des Steuerelements, repräsentiert durch eine der ROLE_*-Konstanten aus dem Modul controltypes
-Schaltfläche, Dialogfeld, Eingabefeld, Fenster und Kontrollkästchen sind nur einige Beispiele für Steuerelementtypen.
-<LI>states: Status des Steuerelements, repräsentiert durch einen Satz von 0 oder mehr STATE_*-Konstanten aus dem Modul controltypes.
-hervorhebbar, hervorgehoben, ausgewählt, auswählbar, erweitert, reduziert und aktiviert sind nur einige Beispiele für den Status.
+<LI>role: Der Typ des Steuerelements, repräsentiert durch eine der ROLE_*-Konstanten aus dem Modul controltypes; Schaltfläche, Dialogfeld, Eingabefeld, Fenster und Kontrollkästchen sind nur einige Beispiele für Steuerelementtypen.
+<LI>states: Status des Steuerelements, repräsentiert durch einen Satz von 0 oder mehr STATE_*-Konstanten aus dem Modul controltypes. hervorhebbar, hervorgehoben, ausgewählt, auswählbar, erweitert, reduziert und aktiviert sind nur einige Beispiele für den Status.
 <LI>value: Der Wert des Steuerelements z.B. der aktuelle Stand einer Fortschrittsanzeige oder der aktuelle gewählte Eintrag in einem Kombinationsfeld.
 <LI>description: Eine kurze Beschreibung, die den Zweck des Steuerelements erläutert (üblicherweise identisch mit der Minihilfe).
 <LI>location: Der Abstand eines Objektes von der oberen linken Ecke des Bildschirms sowie dessen Breite und Höhe in Form von Bildschirmkoordinaten.
-<LI>parent: Das übergeordnete Objekt
-Das Übergeordnete Objekt eines Listeneintrags ist beispielsweise die Liste, die ihn enthält.
+<LI>parent: Das übergeordnete Objekt; Das Übergeordnete Objekt eines Listeneintrags ist beispielsweise die Liste, die ihn enthält.
 <LI>next: Das nächste Objekt in der logischen Reihenfolge
 <LI>previous: Das vorherige Objekt in der logischen Reihenfolge
-<LI>firstChild: Das erste direkt untergeordnete Objekt.
-das erste untergeordnete Objekt einer Liste ist beispielsweise deren erster Eintrag.
+<LI>firstChild: Das erste direkt untergeordnete Objekt. das erste untergeordnete Objekt einer Liste ist beispielsweise deren erster Eintrag.
 <LI>lastChild: Das letzte untergeordnete Objekt  eines Objekts.
 <LI>children: Eine Liste aller untergeordneten Objekte eines Objekts (beispielsweise alle Einträge eines Menüs).
 </UL>
@@ -547,10 +547,8 @@ Es gibt drei Möglichkeiten, wie Plug-ins nvda-Objekte verwenden können:
 </P>
 
 <UL>
-<LI>Die meisten Ereignisse verarbeiten ein Argument, das dasjenige Objekt angibt, auf das sich das Ereignis bezieht.
-Das Ereignis event_gainfocus übernimmt beispielsweise dasjenige Objekt als Parameter, das soeben den Fokus bekommen hat.
-<LI>Skripte und Ereignisse können Objekte verarbeiten Wie z. B. das aktuell hervorgehobene Objekt, das aktuelle navigatorobjekt oder den Desktop.
-Anschließend könnte auf andere Objekte bezug genommen und Informationen von ihnen abgerufen werden.
+<LI>Die meisten Ereignisse verarbeiten ein Argument, das dasjenige Objekt angibt, auf das sich das Ereignis bezieht. Das Ereignis event_gainfocus übernimmt beispielsweise dasjenige Objekt als Parameter, das soeben den Fokus bekommen hat.
+<LI>Skripte und Ereignisse können Objekte verarbeiten Wie z. B. das aktuell hervorgehobene Objekt, das aktuelle navigatorobjekt oder den Desktop. Anschließend könnte auf andere Objekte bezug genommen und Informationen von ihnen abgerufen werden.
 <LI>Das Plug-in könnte auch eine eigene NVDA-Objektklasse definieren, um ein bestimmtes Steuerelement darin einzuschließen. Solche benutzerdefinierten NVDA-Objekte können einem NVDA-Objekt neue Fnktionalität geben, dessen Eigenschaften umwandeln, etc.
 </UL>
 
@@ -609,11 +607,17 @@ Aktuell werden folgende Eingabequellen unterstützt:
 <LI>kb: Tastatureingaben
 <LI>br: Tastendrücke und andere navigierende Eingaben an Braillezeilen
 <LI>ts: Aktionen an einem Touchscreen
-<P></P>
+</UL>
+
+<P>
 Wenn NVDA eine Tastatureingabe registriert, sucht es in einer bestimmten Reihenfolge nach einer entsprechenden Eingabemethoden-Zuweisung.
 Wurde eine Zuweisung gefunden, so wird das entsprechende Skript ausgeführt. Weder wird weiter nach Eingabemethoden-Zuweisungen gesucht, noch wird der Tastendruck ans Betriebssystem weitergereicht.
-<P></P>
+</P>
+<P>
 Folgende Reihenfolge wird bei der Suche nach Eingabemethodenzuweisungen verwendet:
+</P>
+
+<UL>
 <LI>Geladene globale Plugins
 <LI>Anwendungsmodul der aktiven Anwendung
 <LI>Der Interceptor des NVDA-Objekts, das den Fokus hat (wie beispielsweise ein virtueller Puffer).
@@ -967,11 +971,12 @@ Wenn Sie anwendungsmodule oder globale plug-ins schreiben, kann es manchmal sinn
  <LI>ICON_ERROR: Das Meldungsfenster wird als Fehlermeldung angezeigt (und ein entsprechender im System hinterlegter Klang abgespielt).
  <LI>ICON_WARNING: Die meldung wird als Warnung angezeigt
  <LI>ICON_INFORMATION: Die Meldung wird als informationsfenster angezeigt (Standard)
--
- <P></P>
-Hinweis: Die Konstanten, die die angezeigten Schaltflächen angeben, können auch benutzt werden, um zu prüfen, welche Schaltfläche der Anwender gedrückt hat, um das Meldungsfenster zu schließen.
  </UL>
 </UL>
+
+<P>
+Hinweis: Die Konstanten, die die angezeigten Schaltflächen angeben, können auch benutzt werden, um zu prüfen, welche Schaltfläche der Anwender gedrückt hat, um das Meldungsfenster zu schließen.
+</P>
 
 <A NAME="toc29"></A>
 <H3>3.20. Beispiel 8: ein globales Plug-in, das beim Drücken von nvda+umschalt+r nach  dem Anzeigen eines Bestätigungsdialogs die Konfiguration auf die Werkseinstellungen zurücksetzt</H3>
