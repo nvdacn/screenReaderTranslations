@@ -131,14 +131,15 @@
     <LI><A HREF="#toc87">11.10. HIMS SyncBraille</A>
     <LI><A HREF="#toc88">11.11. Seika Braille Displays</A>
     <LI><A HREF="#toc89">11.12. Papenmeier BRAILLEX Yeni Modelleri</A>
-    <LI><A HREF="#toc90">11.13. BRLTTY</A>
+    <LI><A HREF="#toc90">11.13. HumanWare BrailleNote</A>
+    <LI><A HREF="#toc91">11.14. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc91">12. İleri Düzey Konular</A>
+  <LI><A HREF="#toc92">12. İleri Düzey Konular</A>
     <UL>
-    <LI><A HREF="#toc92">12.1. Tuş kombinasyonlarını Değiştirme ve Diğer Girdi Hareketleri</A>
-    <LI><A HREF="#toc93">12.2. Noktalama/imla Seslendirmesiyle İlgili İleri Düzey Ayarlamalar</A>
+    <LI><A HREF="#toc93">12.1. Tuş kombinasyonlarını Değiştirme ve Diğer Girdi Hareketleri</A>
+    <LI><A HREF="#toc94">12.2. Noktalama/imla Seslendirmesiyle İlgili İleri Düzey Ayarlamalar</A>
     </UL>
-  <LI><A HREF="#toc94">13. Daha Detaylı Bilgi</A>
+  <LI><A HREF="#toc95">13. Daha Detaylı Bilgi</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -1656,6 +1657,24 @@ Bu seçenekler arasında yön tuşlarınızı kullanarak dolaşın.
 Lütfen desteklenen braille ekranlarla ilgili daha fazla bilgi için <A HREF="#SupportedBrailleDisplays">Desteklenen Braille Ekranlar</A> bölümüne bakın.
 </P>
 
+<H5>Port</H5>
+
+<P>
+Bu seçenek, eğer mevcutsa, seçtiğiniz kabartma ekranla hangi port ya da bağlantı tipini kullanarak bağlantı kuracağınızı belirlemenizi sağlar.
+Bu, kabartma ekranınız için mevcut seçeneklerin sunulduğu bir seçim kutusudur.
+</P>
+<P>
+Varsayılan olarak, NVDA otomatik  port belirlemeyi kullanır, yani  kabartma ekranla bağlantı mevcut USB     ve bluetooth araçları taranarak otomatik olarak belirlenir.
+Ancak, bazı kabartma ekranlar için, hangi bağlantıyı kullanacağınızı özel olarak belirleyebilmeniz de mümkündür.
+Genel seçenekler (NVDA'ya varsayılan otomatik  port  seçme prosedürünü kullanmasını söyleyen) "Otomatik", "USB", "Bluetooth" ve eğer kabartma ekranınız destekliyorsa seri bağlantı  portlarıdır.
+</P>
+<P>
+Bu bölüm  braille ekranınız  yalnızca otomatik port belirlemeyi destekliyorsa gösterilmez.
+</P>
+<P>
+Desteklenen bağlantı tipleri ve mevcut portlar için daha fazla detaya ulaşmak için <A HREF="#SupportedBrailleDisplays">desteklenen braille ekranlar</A> bölümünde Braille ekranınızın dokümantasyonuna baş vurabilirsiniz.
+</P>
+
 <H5>Çeviri Tablosu</H5>
 
 <P>
@@ -2423,6 +2442,11 @@ Freedom Scientific Braille Ekran sürücülerinin sisteminizde yüklü olması g
 Eğer henüz bu sürücüler elinizde yoksa, bunları <A HREF="http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp">http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp</A> . adresinden edinebilirsiniz.
 Bu sayfada Yalnızca Focus 40 Blue sürücülerinden bahsedilmesine karşın, bu sürücüler tüm Freedom Scientific ekranlarını desteklemektedir.
 Sisteminiz 64 bit Windows ise ve sürücüler başka bir ekran okuyucu tarafından yüklenmiş olsa bile, NVDA'nın ihtiyaç duyduğu dosyalar yüklenmiş olmayabileceği için muhtemelen bu bağlantıdaki sürücüleri ayrıca yüklemeniz gerekecektir..
+</P>
+<P>
+Varsayılan olarak, NVDA bu ekranları otomatik olarak bulup USB ya da bluetooth ile bağlanabilir.
+Öte yandan, ekranla ilgili ayarları yaparken, "USB" ya da  "Bluetooth" portlarını seçerek  bağlantı tipine kendiniz karar verebilirsiniz.
+Bu, örneğin ekranınıza bluetooth ile bağlanıp aynı zamanda USB üzerinden de cihazı şarj etmeye devam etmek istemeniz durumunda faydalı olabilir.
 </P>
 <P>
 Aşağıda bu ekranla kullanılabilecek tuş kombinasyonları yer almaktadır.
@@ -3582,7 +3606,140 @@ Following are the Papenmeier command assignments for NVDA:
 </TABLE>
 
 <A NAME="toc90"></A>
-<H3>11.13. BRLTTY</H3>
+<H3>11.13. HumanWare BrailleNote</H3>
+
+<P>
+NVDA supports the BrailleNote notetakers from <A HREF="http://www.humanware.com">Humanware</A> when acting as a display terminal for a screen reader.
+The following models are supported:
+</P>
+
+<UL>
+<LI>BrailleNote Classic (serial connection only)
+<LI>BrailleNote PK (Serial and bluetooth connections)
+<LI>BrailleNote MPower (Serial and bluetooth connections)
+<LI>BrailleNote Apex (USB and Bluetooth connections)
+</UL>
+
+<P>
+If your device supports more than one type of connection, when connecting your BrailleNote to NVDA, you must set the braille terminal port in braille terminal options.
+Please check the BrailleNote manual for details.
+In NVDA, you may also need to set the port in the Braille Settings dialog.
+If you are connecting via USB or bluetooth, you can set the port to "Automatic", "USB" or "Bluetooth", depending on the available choices.
+If connecting using a legacy serial port (or a USB to serial converter) or if none of the previous options appear, you must explicitly choose the communication port to be used from the list of hardware ports.
+</P>
+<P>
+Before connecting your BrailleNote Apex using its USB client interface, you must install the drivers provided by HumanWare.
+</P>
+<P>
+Following are the BrailleNote command assignments for NVDA.
+Please check your BrailleNote's documentation to find where these keys are located.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Key</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>back</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>advance</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>previous</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>next</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>previous+next</TD>
+</TR>
+<TR>
+<TD>Up arrow key</TD>
+<TD>space+dot1</TD>
+</TR>
+<TR>
+<TD>Down arrow key</TD>
+<TD>space+dot4</TD>
+</TR>
+<TR>
+<TD>Left Arrow key</TD>
+<TD>space+dot3</TD>
+</TR>
+<TR>
+<TD>Right arrow key</TD>
+<TD>space+dot6</TD>
+</TR>
+<TR>
+<TD>Page up key</TD>
+<TD>space+dot1+dot3</TD>
+</TR>
+<TR>
+<TD>Page down key</TD>
+<TD>space+dot4+dot6</TD>
+</TR>
+<TR>
+<TD>Home key</TD>
+<TD>space+dot1+dot2</TD>
+</TR>
+<TR>
+<TD>End key</TD>
+<TD>space+dot4+dot5</TD>
+</TR>
+<TR>
+<TD>Control+home keys</TD>
+<TD>space+dot1+dot2+dot3</TD>
+</TR>
+<TR>
+<TD>Control+end keys</TD>
+<TD>space+dot4+dot5+dot6</TD>
+</TR>
+<TR>
+<TD>Space key</TD>
+<TD>space</TD>
+</TR>
+<TR>
+<TD>Enter key</TD>
+<TD>space+dot8</TD>
+</TR>
+<TR>
+<TD>Backspace key</TD>
+<TD>space+dot7</TD>
+</TR>
+<TR>
+<TD>Tab key</TD>
+<TD>space+dot2+dot3+dot4+dot5 (space+t)</TD>
+</TR>
+<TR>
+<TD>Shift+tab keys</TD>
+<TD>space+dot1+dot2+dot5+dot6</TD>
+</TR>
+<TR>
+<TD>Windows key</TD>
+<TD>space+dot2+dot4+dot5+dot6 (space+w)</TD>
+</TR>
+<TR>
+<TD>Alt key</TD>
+<TD>space+dot1+dot3+dot4 (space+m)</TD>
+</TR>
+<TR>
+<TD>Toggle input help</TD>
+<TD>space+dot1+dot2+dot5 (space+h)</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc91"></A>
+<H3>11.14. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A> çok daha fazla farklı braille ekranı destekleyebilmek için kullanılan ayrı bir programdır.
@@ -3622,10 +3779,10 @@ Lütfen <A HREF="http://mielke.cc/brltty/doc/drivers/">BRLTTY tuş tabloları ya
 </TR>
 </TABLE>
 
-<A NAME="toc91"></A>
+<A NAME="toc92"></A>
 <H2>12. İleri Düzey Konular</H2>
 
-<A NAME="toc92"></A>
+<A NAME="toc93"></A>
 <H3>12.1. Tuş kombinasyonlarını Değiştirme ve Diğer Girdi Hareketleri</H3>
 
 <P>
@@ -3726,7 +3883,7 @@ Bu nedenle, Alt tuşunu bir girdi hareketinde kullanırsanız, bu tuşa basmak s
 Yani, Kontrol, Şift veya NVDA tuşlarını scriptlerde değişken tuş olarak kullanmak daha faydalı olacaktır.
 </P>
 
-<A NAME="toc93"></A>
+<A NAME="toc94"></A>
 <H3>12.2. Noktalama/imla Seslendirmesiyle İlgili İleri Düzey Ayarlamalar</H3>
 
 <P>
@@ -3740,7 +3897,7 @@ Bu dosyanın nasıl düzenlenmesi gerektiği, <A HREF="http://www.nvda-project.o
 Öte yandan, kullanıcıların karmaşık semboller için giriş yapabilmesi olanaklı değildir.
 </P>
 
-<A NAME="toc94"></A>
+<A NAME="toc95"></A>
 <H2>13. Daha Detaylı Bilgi</H2>
 
 <P>
