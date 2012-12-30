@@ -27,6 +27,9 @@ Die Dokumentationen und weitere Materialien sind in einer oder mehreren der folg
  - Um sich eine Liste aller Module anzeigen zu lassen, die mit NVDA mitgeliefert werden, gehen Sie folgendermaßen vor:
   + importieren Sie zunächst das Modul nvdaBuiltin durch die Eingabe des folgenden Befehls: import nvdaBuiltin
   + Rufen Sie die Hilfe zum Modul nvdaBuiltin durch die eingabe des folgenden Befehls ab: help(nvdaBuiltin)
+  +
+ -
+-
 
 
 + Übersetzung +
@@ -97,8 +100,7 @@ Die einzigen Pflichtfelder sind der Name des Symbols und der Ersatztext.
 Für leere Felder wird der Standardwert verwendet.
 
 Folgende Felder sind verfügbar:
-- Name: Der Name eines Symbols
-Meistens wird hier das zu verarbeitende Sonderzeichen oder der name eines komplexen Symbols angegeben. Einige Sonderzeichen können nicht eingegeben werden. Hierfür können die folgenden Sequenzen verwendet werden:
+- Name: Der Name eines Symbols. Meistens wird hier das zu verarbeitende Sonderzeichen oder der name eines komplexen Symbols angegeben. Einige Sonderzeichen können nicht eingegeben werden. Hierfür können die folgenden Sequenzen verwendet werden:
  - \0: Null
  - \t: Tabulator
  - \n: Zeilenumbruch
@@ -106,18 +108,15 @@ Meistens wird hier das zu verarbeitende Sonderzeichen oder der name eines komple
  - \f: Seitenvorschub
  - \#: #-Zeichen (benötigt einen Backslash, da dieses #-Zeichen sonst als Kommentar angesehen wird)
 - Ersatztext: der Text, der anstelle des Symbols ausgesprochen werden soll.
-- Ebene: die Symbolebene, ab der das Symbol gesprochen werden soll. Die Symbolebene kann vom Anwender konfiguriert werden und gibt die Menge an auszusprechenden Sonderzeichen an. 
-Dieses Feld sollte einen der Werte  "none", "some", "most", "all" oder  "char" enthalten oder "-", um den Standardwert zu erzwingen.
-Die angabe "char" bedeutet, dass das Symbol nur bei der zeichenweisen Navigation verarbeitet wird. 
-Standardmäßig wird hier der Wert aus dem englischen Sprachraum verwendet. Ist in der Symboldefinitionsdatei für den englischen Sprachraum kein Wert angegeben, so wird der Wert "all" angenommen.
-- Beibehalten: Dieses Feld muss immer dann belegt sein, wenn ein bestimmtes Symbol unverarbeitet an die Sprachausgabe weitergegeben werden soll, um eine korrekte Aussprache zu ermöglichen. 
-Beispiele hierfür sind Sonderzeichen, die Sprechpausen verursachen, wie z.B. der Punkt, das Komma etc.
-Dieses Feld kann die folgenden Werte enthalten:
-- never: Das Symbol wird nie beibehalten.
-- always: das Symbol wird immer beibehalten.
-- norep: Das Symbol wird nur dann beibehalten, wenn es nicht ersetzt wird (z.B. wenn der Anwender die Satzzeichen- und Symbolebene niedriger eingestellt hat, als für das betreffende Symbol.
-- -: verwendet den Standardwert.
+- Ebene: die Symbolebene, ab der das Symbol gesprochen werden soll. Die Symbolebene kann vom Anwender konfiguriert werden und gibt die Menge an auszusprechenden Sonderzeichen an. Dieses Feld sollte einen der Werte  "none", "some", "most", "all" oder  "char" enthalten oder "-", um den Standardwert zu erzwingen. Die angabe "char" bedeutet, dass das Symbol nur bei der zeichenweisen Navigation verarbeitet wird. Standardmäßig wird hier der Wert aus dem englischen Sprachraum verwendet. Ist in der Symboldefinitionsdatei für den englischen Sprachraum kein Wert angegeben, so wird der Wert "all" angenommen.
+- Beibehalten: Dieses Feld muss immer dann belegt sein, wenn ein bestimmtes Symbol unverarbeitet an die Sprachausgabe weitergegeben werden soll, um eine korrekte Aussprache zu ermöglichen. Beispiele hierfür sind Sonderzeichen, die Sprechpausen verursachen, wie z.B. der Punkt, das Komma etc. Dieses Feld kann die folgenden Werte enthalten:
+ - never: Das Symbol wird nie beibehalten.
+ - always: das Symbol wird immer beibehalten.
+ - norep: Das Symbol wird nur dann beibehalten, wenn es nicht ersetzt wird (z.B. wenn der Anwender die Satzzeichen- und Symbolebene niedriger eingestellt hat, als für das betreffende Symbol.
+ - -: verwendet den Standardwert.
+ -
 Standardmäßig wird der Wert aus dem englischen Sprachraum verwendet. Ist in der dortigen Symboldefinitionsdatei kein Wert angegeben, so wird der Wert "never" verwendet.
+-
 
 Am ende der Zeile kann schließlich noch ein Anzeigename für ein Symbol vergeben werden.
 Dieser Name wird Anwendern angezeigt, wenn sie die komplexen Symbole bearbeiten wollen. Er kann auch von übersetzern verwendet werden, um übersetzte Namen für die englischen komplexen Symbole bereitzustellen.
@@ -157,12 +156,9 @@ Dieser Abschnitt enthält lediglich eine Einführung in die Entwicklung von Plug
 
 ++ Typen von Plugins ++
 Es gibt zwei unterschiedliche Typen von Plug-ins:
-- Anwendungsmodule: Enthalten speziellen Code für eine bestimmte Anwendung.
-Ein Anwendungsmodul nimmt Ereignisse für eine bestimmte Anwendung entgegen, auch wenn die Anwendung momentan nicht fokussiert ist.
-Wenn eine Anwendung fokussiert ist, kann der Nutzer sämtliche Befehle ausführen, die im Anwendungsmodul definiert und an Eingabemethoden zugewiesen wurden.
-- Allgemeine Plugins: enthalten Code, der in allen Anwendungen ausgeführt wird. 
-Dabei nehmen Sie alle Ereignisse von allen Elementen im Betriebssystem entgegen.
-Befehle, die in allgemeinen Plugins an Eingabemethoden zugewiesen wurden, können unabhängig davon ausgeführt werden, welche Anwendung grade aktiv ist.
+- Anwendungsmodule: Enthalten speziellen Code für eine bestimmte Anwendung. Ein Anwendungsmodul nimmt Ereignisse für eine bestimmte Anwendung entgegen, auch wenn die Anwendung momentan nicht fokussiert ist. Wenn eine Anwendung fokussiert ist, kann der Nutzer sämtliche Befehle ausführen, die im Anwendungsmodul definiert und an Eingabemethoden zugewiesen wurden.
+- Allgemeine Plugins: enthalten Code, der in allen Anwendungen ausgeführt wird. Dabei nehmen Sie alle Ereignisse von allen Elementen im Betriebssystem entgegen. Befehle, die in allgemeinen Plugins an Eingabemethoden zugewiesen wurden, können unabhängig davon ausgeführt werden, welche Anwendung grade aktiv ist. 
+-
 
 Wenn Sie vorhaben, die Zugänglichkeit von NVDA für bestimmte Anwendungen zu verbessern, sind die Anwendungsmodule empfehlenswert.
 wenn Sie Im Gegensatz dazu vorhaben, globalen Code für NVDA zu entwickeln, der systemweit zugänglich sein soll, zum Beispiel um sich die Signalstärke von Funknetzwerken anzeigen zu lassen, ist ein allgemeines Plugin empfehlenswert.
@@ -304,19 +300,15 @@ Der oben angesprochene Schalter "OK" könnte also beispielsweise ein Java-Objekt
 NVDA-Objekte haben viele Eigenschaften.
 einige der nützlichsten sind:
 - name: Die Beschriftung des Steuerelements
-- role: Der Typ des Steuerelements, repräsentiert durch eine der ROLE_*-Konstanten aus dem Modul controltypes
-Schaltfläche, Dialogfeld, Eingabefeld, Fenster und Kontrollkästchen sind nur einige Beispiele für Steuerelementtypen.
-- states: Status des Steuerelements, repräsentiert durch einen Satz von 0 oder mehr STATE_*-Konstanten aus dem Modul controltypes.
-hervorhebbar, hervorgehoben, ausgewählt, auswählbar, erweitert, reduziert und aktiviert sind nur einige Beispiele für den Status.
+- role: Der Typ des Steuerelements, repräsentiert durch eine der ROLE_*-Konstanten aus dem Modul controltypes; Schaltfläche, Dialogfeld, Eingabefeld, Fenster und Kontrollkästchen sind nur einige Beispiele für Steuerelementtypen.
+- states: Status des Steuerelements, repräsentiert durch einen Satz von 0 oder mehr STATE_*-Konstanten aus dem Modul controltypes. hervorhebbar, hervorgehoben, ausgewählt, auswählbar, erweitert, reduziert und aktiviert sind nur einige Beispiele für den Status.
 - value: Der Wert des Steuerelements z.B. der aktuelle Stand einer Fortschrittsanzeige oder der aktuelle gewählte Eintrag in einem Kombinationsfeld.
 - description: Eine kurze Beschreibung, die den Zweck des Steuerelements erläutert (üblicherweise identisch mit der Minihilfe).
 - location: Der Abstand eines Objektes von der oberen linken Ecke des Bildschirms sowie dessen Breite und Höhe in Form von Bildschirmkoordinaten.
-- parent: Das übergeordnete Objekt
-Das Übergeordnete Objekt eines Listeneintrags ist beispielsweise die Liste, die ihn enthält.
+- parent: Das übergeordnete Objekt; Das Übergeordnete Objekt eines Listeneintrags ist beispielsweise die Liste, die ihn enthält.
 - next: Das nächste Objekt in der logischen Reihenfolge
 - previous: Das vorherige Objekt in der logischen Reihenfolge
-- firstChild: Das erste direkt untergeordnete Objekt.
-das erste untergeordnete Objekt einer Liste ist beispielsweise deren erster Eintrag.
+- firstChild: Das erste direkt untergeordnete Objekt. das erste untergeordnete Objekt einer Liste ist beispielsweise deren erster Eintrag.
 - lastChild: Das letzte untergeordnete Objekt  eines Objekts.
 - children: Eine Liste aller untergeordneten Objekte eines Objekts (beispielsweise alle Einträge eines Menüs).
 -
@@ -330,10 +322,8 @@ Wenn Sie NVDA-Plugins entwickeln, spielt es meistens keine Rolle, mit welchem Ko
 Wenn Plug-ins komplexer werden, kann es jedoch erforderlich werden tiefer in die Objekte abzusteigen, um Komponentenbausatz- oder zugänglichkeitsschnittstellen-spezifische Informationen zu erhalten.
 
 Es gibt drei Möglichkeiten, wie Plug-ins nvda-Objekte verwenden können:
-- Die meisten Ereignisse verarbeiten ein Argument, das dasjenige Objekt angibt, auf das sich das Ereignis bezieht.
-Das Ereignis event_gainfocus übernimmt beispielsweise dasjenige Objekt als Parameter, das soeben den Fokus bekommen hat.
-- Skripte und Ereignisse können Objekte verarbeiten Wie z. B. das aktuell hervorgehobene Objekt, das aktuelle navigatorobjekt oder den Desktop.
-Anschließend könnte auf andere Objekte bezug genommen und Informationen von ihnen abgerufen werden.
+- Die meisten Ereignisse verarbeiten ein Argument, das dasjenige Objekt angibt, auf das sich das Ereignis bezieht. Das Ereignis event_gainfocus übernimmt beispielsweise dasjenige Objekt als Parameter, das soeben den Fokus bekommen hat.
+- Skripte und Ereignisse können Objekte verarbeiten Wie z. B. das aktuell hervorgehobene Objekt, das aktuelle navigatorobjekt oder den Desktop. Anschließend könnte auf andere Objekte bezug genommen und Informationen von ihnen abgerufen werden.
 - Das Plug-in könnte auch eine eigene NVDA-Objektklasse definieren, um ein bestimmtes Steuerelement darin einzuschließen. Solche benutzerdefinierten NVDA-Objekte können einem NVDA-Objekt neue Fnktionalität geben, dessen Eigenschaften umwandeln, etc.
 -
 
@@ -370,6 +360,7 @@ Aktuell werden folgende Eingabequellen unterstützt:
 - kb: Tastatureingaben
 - br: Tastendrücke und andere navigierende Eingaben an Braillezeilen
 - ts: Aktionen an einem Touchscreen
+-
 
 Wenn NVDA eine Tastatureingabe registriert, sucht es in einer bestimmten Reihenfolge nach einer entsprechenden Eingabemethoden-Zuweisung.
 Wurde eine Zuweisung gefunden, so wird das entsprechende Skript ausgeführt. Weder wird weiter nach Eingabemethoden-Zuweisungen gesucht, noch wird der Tastendruck ans Betriebssystem weitergereicht.
@@ -643,6 +634,7 @@ Wenn Sie anwendungsmodule oder globale plug-ins schreiben, kann es manchmal sinn
  - ICON_ERROR: Das Meldungsfenster wird als Fehlermeldung angezeigt (und ein entsprechender im System hinterlegter Klang abgespielt).
  - ICON_WARNING: Die meldung wird als Warnung angezeigt
  - ICON_INFORMATION: Die Meldung wird als informationsfenster angezeigt (Standard)
+ -
 -
 
 Hinweis: Die Konstanten, die die angezeigten Schaltflächen angeben, können auch benutzt werden, um zu prüfen, welche Schaltfläche der Anwender gedrückt hat, um das Meldungsfenster zu schließen.
@@ -675,6 +667,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 - Problem: Technisch sind Eingabemethoden wie tastaturanschläge nichts anderes als Ereignisse, auf die innerhalb von NVDA mit Hilfe von Scripts reagiert wird. Es kann immer nur ein Ereignis zur selben Zeit abgearbeitet werden. Dies bedeutet, dass NVDA z.B. nicht auf Tastendrücke oder Braillezeilen-Aktionen reagieren kann, wenn ein an ein Ereignis gekoppeltes Script stehen bleibt, weil es auf eine Benutzereingabe wartet. 
 - Lösung: Mit Hilfe der in wx enthaltenen Funktion CallAfter kann (wie der Name verrät) Code ausgeführt werden, nachdem die Ereignisbehandlung abgearbeitet wurde. Die ausführung des mit CallAfter angegebenen codes wird gewissermaßen "vorgemerkt" und unmittelbar nach Abschluss der Ereignisbehandlungsroutine ausgeführt. Hierdurch ist es NVDA möglich, auf Braillezeilen-Navigationstasten zu reagieren, wenn der Anwender versucht, ein meldungsfenster auszulesen, das in ein Skript eingebunden war.
 -
+
 Die Funktion CallAfter akzeptiert den namen der "vorzumerkenden" Funktion und eine beliebige Anzahl von Argumenten als Parameter, die an diese Funktion übergeben werden. Die Parameter können benannt oder unbenannt angegeben werden.
 
 
