@@ -75,6 +75,10 @@ addresses = {
         'lang':'Indonesian',
         'email': ['Suratim Amd <suratim@gmail.com>'],
     },
+    'is': {
+        'lang':'Icelandic',
+        'email': ['Birkir R. Gunnarsson <birkir.gunnarsson@gmail.com>'],
+    },
     'it': {
         'lang':'Italian',
         'email': ['Simone Dal Maso <simone.dalmaso@juvox.it>'],
