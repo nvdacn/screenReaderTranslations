@@ -89,9 +89,9 @@ for lang in ${langs[*]}; do
             srcPo="${langOffset}/add-ons/${addon}/nvda.po"
             potFile="${addonOffset}/${addon}.pot"
             msgmerge -U "${srcPo}" "${potFile}"
-            srcIni="${addonOffset}/addon/manifest.ini"
-            targetIni="${langOffset}/add-ons/${addon}/manifest_en.ini"
-            cp "$srcIni" "$targetIni"
+            #srcIni="${addonOffset}/addon/manifest.ini"
+            #targetIni="${langOffset}/add-ons/${addon}/manifest_en.ini"
+            #cp "$srcIni" "$targetIni"
         fi
     done
 done
