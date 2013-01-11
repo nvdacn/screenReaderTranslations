@@ -1,8 +1,0 @@
-------------------------------------------------------------
-revno: 5735
-committer: James Teh <jamie@jantrid.net>
-branch nick: main
-timestamp: Tue 2013-01-08 18:43:59 +1000
-message:
-  If the input language is changed to something other than the default, NVDA now detects keys correctly for commands and input help mode.
-  When the input language is changed, it only happens for the input (focused) thread, so NVDA's hook thread is still using a different keyboard layout and MapVirtualKey/VkKeyScan use that. To fix this, we use MapVirtualKeyEx/VkKeyScanEx and pass the hkl of the input thread.
