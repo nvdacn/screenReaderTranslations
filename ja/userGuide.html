@@ -131,15 +131,16 @@
     <LI><A HREF="#toc87">11.10. HIMS製 SyncBraille</A>
     <LI><A HREF="#toc88">11.11. 清華 点字ディスプレイ</A>
     <LI><A HREF="#toc89">11.12. Papenmeier ブレイレックス新型機種</A>
-    <LI><A HREF="#toc90">11.13. HumanWare BrailleNote</A>
-    <LI><A HREF="#toc91">11.14. BRLTTY</A>
+    <LI><A HREF="#toc90">11.13. Papenmeier ブレイレックス旧機種</A>
+    <LI><A HREF="#toc91">11.14. HumanWare BrailleNote</A>
+    <LI><A HREF="#toc92">11.15. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc92">12. 高度なトピック</A>
+  <LI><A HREF="#toc93">12. 高度なトピック</A>
     <UL>
-    <LI><A HREF="#toc93">12.1. キーマップの再割り当て及びその他の入力用ジェスチャー</A>
-    <LI><A HREF="#toc94">12.2. 記号の読み上げの高度なカスタマイズ</A>
+    <LI><A HREF="#toc94">12.1. キーマップの再割り当て及びその他の入力用ジェスチャー</A>
+    <LI><A HREF="#toc95">12.2. 記号の読み上げの高度なカスタマイズ</A>
     </UL>
-  <LI><A HREF="#toc95">13. さらに詳細な情報</A>
+  <LI><A HREF="#toc96">13. さらに詳細な情報</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -3602,7 +3603,288 @@ Cシリーズおよび特定の機種には2列のタッチカーソルがあり
 </TABLE>
 
 <A NAME="toc90"></A>
-<H3>11.13. HumanWare BrailleNote</H3>
+<H3>11.13. Papenmeier ブレイレックス旧機種</H3>
+
+<P>
+次の点字ディスプレイをサポートしています：
+</P>
+
+<UL>
+<LI>ブレイレックス(BRAILLEX) EL 80, EL 2D-80, EL 40 P
+<LI>ブレイレックス Tiny, 2D Screen
+</UL>
+
+<P>
+これらのディスプレイの接続方法はシリアルポートだけです。
+したがって、点字設定ダイアログでこのドライバを選んでから、ディスプレイが接続されているポートを選択する必要があります。
+</P>
+<P>
+一部の機種には、直感的かつ高速な動作を可能にするイージーアクセスバー（EAB）が備わっています。
+EABは4方向に移動させることができ、一般的に各方向に2つのスイッチがあります。
+上下左右キー（またはEAB）を押したまま保持すると、対応するアクションが繰り返されます。
+旧式の機種はEABがありません。フロントキーが代わりに使用できます。
+</P>
+<P>
+これらの点字ディスプレイで一般的に使える操作は次のとおりです：
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名称</TH>
+<TH>キー</TH>
+</TR>
+<TR>
+<TD>l1</TD>
+<TD>左前面キー</TD>
+</TR>
+<TR>
+<TD>l2</TD>
+<TD>左背面キー</TD>
+</TR>
+<TR>
+<TD>r1</TD>
+<TD>右前面キー</TD>
+</TR>
+<TR>
+<TD>r2</TD>
+<TD>右背面キー</TD>
+</TR>
+<TR>
+<TD>up</TD>
+<TD>1ステップ上</TD>
+</TR>
+<TR>
+<TD>up2</TD>
+<TD>2ステップ上</TD>
+</TR>
+<TR>
+<TD>left</TD>
+<TD>1ステップ左</TD>
+</TR>
+<TR>
+<TD>left2</TD>
+<TD>2ステップ左</TD>
+</TR>
+<TR>
+<TD>right</TD>
+<TD>1ステップ右</TD>
+</TR>
+<TR>
+<TD>right2</TD>
+<TD>2ステップ右</TD>
+</TR>
+<TR>
+<TD>dn</TD>
+<TD>1ステップ下</TD>
+</TR>
+<TR>
+<TD>dn2</TD>
+<TD>2ステップ下</TD>
+</TR>
+</TABLE>
+
+<P>
+以下は NVDA のために割り当てられた Papenmeier のコマンドです：
+</P>
+<P>
+EABがある機種:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名称</TH>
+<TH>キー</TH>
+</TR>
+<TR>
+<TD>点字表示を後にスクロール</TD>
+<TD>left</TD>
+</TR>
+<TR>
+<TD>点字表示を前にスクロール</TD>
+<TD>right</TD>
+</TR>
+<TR>
+<TD>点字表示を前の行に移動</TD>
+<TD>up</TD>
+</TR>
+<TR>
+<TD>点字表示を次の行に移動</TD>
+<TD>dn</TD>
+</TR>
+<TR>
+<TD>点字セルに移動</TD>
+<TD>タッチカーソル</TD>
+</TR>
+<TR>
+<TD>レビューカーソルの現在の文字を通知</TD>
+<TD>l1</TD>
+</TR>
+<TR>
+<TD>現在のナビゲーターオブジェクトを選択</TD>
+<TD>l2</TD>
+</TR>
+<TR>
+<TD>フラットレビューまたはフォーカスに移動</TD>
+<TD>r1</TD>
+</TR>
+<TR>
+<TD>タイトルを通知</TD>
+<TD>l1up</TD>
+</TR>
+<TR>
+<TD>ステータスバーを通知</TD>
+<TD>l2down</TD>
+</TR>
+<TR>
+<TD>外側のオブジェクトに移動</TD>
+<TD>up2</TD>
+</TR>
+<TR>
+<TD>内側の最初のオブジェクトに移動</TD>
+<TD>dn2</TD>
+</TR>
+<TR>
+<TD>次のオブジェクトに移動</TD>
+<TD>left2</TD>
+</TR>
+<TR>
+<TD>前のオブジェクトに移動</TD>
+<TD>right2</TD>
+</TR>
+<TR>
+<TD>書式の通知</TD>
+<TD>上の列のタッチカーソル</TD>
+</TR>
+</TABLE>
+
+<P>
+BRAILLEX Tiny:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名称</TH>
+<TH>キー</TH>
+</TR>
+<TR>
+<TD>レビューカーソルの現在の文字を通知</TD>
+<TD>l1</TD>
+</TR>
+<TR>
+<TD>現在のナビゲーターオブジェクトを選択</TD>
+<TD>l2</TD>
+</TR>
+<TR>
+<TD>点字表示を後にスクロール</TD>
+<TD>left</TD>
+</TR>
+<TR>
+<TD>点字表示を前にスクロール</TD>
+<TD>right</TD>
+</TR>
+<TR>
+<TD>点字表示を前の行に移動</TD>
+<TD>up</TD>
+</TR>
+<TR>
+<TD>点字表示を次の行に移動</TD>
+<TD>dn</TD>
+</TR>
+<TR>
+<TD>タッチカーソルの切替</TD>
+<TD>r2</TD>
+</TR>
+<TR>
+<TD>フラットレビューまたはフォーカスに移動</TD>
+<TD>r1</TD>
+</TR>
+<TR>
+<TD>外側のオブジェクトに移動</TD>
+<TD>r1+up</TD>
+</TR>
+<TR>
+<TD>内側の最初のオブジェクトに移動</TD>
+<TD>r1+dn</TD>
+</TR>
+<TR>
+<TD>前のオブジェクトに移動</TD>
+<TD>r1+left</TD>
+</TR>
+<TR>
+<TD>次のオブジェクトに移動</TD>
+<TD>r1+right</TD>
+</TR>
+<TR>
+<TD>書式の通知</TD>
+<TD>reportf</TD>
+</TR>
+</TABLE>
+
+<P>
+BRAILLEX 2D Screen:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名称</TH>
+<TH>キー</TH>
+</TR>
+<TR>
+<TD>レビューカーソルの現在の文字を通知</TD>
+<TD>l1</TD>
+</TR>
+<TR>
+<TD>現在のナビゲーターオブジェクトを通知</TD>
+<TD>l2</TD>
+</TR>
+<TR>
+<TD>タッチカーソルの切替</TD>
+<TD>r2</TD>
+</TR>
+<TR>
+<TD>書式の通知</TD>
+<TD>reportf</TD>
+</TR>
+<TR>
+<TD>点字表示を前の行に移動</TD>
+<TD>up</TD>
+</TR>
+<TR>
+<TD>点字表示を後にスクロール</TD>
+<TD>left</TD>
+</TR>
+<TR>
+<TD>フラットレビューまたはフォーカスに移動</TD>
+<TD>r1</TD>
+</TR>
+<TR>
+<TD>点字表示を前にスクロール</TD>
+<TD>right</TD>
+</TR>
+<TR>
+<TD>点字表示を次の行に移動</TD>
+<TD>dn</TD>
+</TR>
+<TR>
+<TD>次のオブジェクトに移動</TD>
+<TD>left2</TD>
+</TR>
+<TR>
+<TD>外側のオブジェクトに移動</TD>
+<TD>up2</TD>
+</TR>
+<TR>
+<TD>内側の最初のオブジェクトに移動</TD>
+<TD>dn2</TD>
+</TR>
+<TR>
+<TD>前のオブジェクトに移動</TD>
+<TD>right2</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc91"></A>
+<H3>11.14. HumanWare BrailleNote</H3>
 
 <P>
 NVDA は <A HREF="http://www.humanware.com">Humanware</A> の BrailleNote ノートテイカーに対応しており、スクリーンリーダーのための点字ディスプレイ端末として使うことができます。
@@ -3734,8 +4016,8 @@ BrailleNote Apex を USB 接続するためには、あらかじめ HumanWare �
 </TR>
 </TABLE>
 
-<A NAME="toc91"></A>
-<H3>11.14. BRLTTY</H3>
+<A NAME="toc92"></A>
+<H3>11.15. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A>は別のプログラムで、より多くの点字ディスプレイをサポートしています。
@@ -3775,10 +4057,10 @@ BRLTTY用のコマンドが、ディスプレイのコントロールにどの�
 </TR>
 </TABLE>
 
-<A NAME="toc92"></A>
+<A NAME="toc93"></A>
 <H2>12. 高度なトピック</H2>
 
-<A NAME="toc93"></A>
+<A NAME="toc94"></A>
 <H3>12.1. キーマップの再割り当て及びその他の入力用ジェスチャー</H3>
 
 <P>
@@ -3879,7 +4161,7 @@ NVDAは、たとえ (Shift、Control及びAltキーのような) 修飾キーが
 そこで、おそらくShift、Control及びNVDAキーを代替キーとして指定した方が良いと考えられます。
 </P>
 
-<A NAME="toc94"></A>
+<A NAME="toc95"></A>
 <H3>12.2. 記号の読み上げの高度なカスタマイズ</H3>
 
 <P>
@@ -3893,7 +4175,7 @@ NVDAは、たとえ (Shift、Control及びAltキーのような) 修飾キーが
 しかし、利用者は複雑な記号を定義することはできません。
 </P>
 
-<A NAME="toc95"></A>
+<A NAME="toc96"></A>
 <H2>13. さらに詳細な情報</H2>
 
 <P>
