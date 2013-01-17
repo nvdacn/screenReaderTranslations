@@ -132,14 +132,15 @@
     <LI><A HREF="#toc87">11.10. Linha HIMS SyncBraille</A>
     <LI><A HREF="#toc88">11.11. Linhas Braille Seika</A>
     <LI><A HREF="#toc89">11.12. Papenmeier BRAILLEX Novos Modelos</A>
-    <LI><A HREF="#toc90">11.13. BRLTTY</A>
+    <LI><A HREF="#toc90">11.13. Papenmeier Braille BRAILLEX Modelos Antigos</A>
+    <LI><A HREF="#toc91">11.14. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc91">12. Tópicos Avançados</A>
+  <LI><A HREF="#toc92">12. Tópicos Avançados</A>
     <UL>
-    <LI><A HREF="#toc92">12.1. Remapeando Teclas de Comando e outros Gestos de Entrada</A>
-    <LI><A HREF="#toc93">12.2. Personalização avançada da Pronúncia de sinais</A>
+    <LI><A HREF="#toc93">12.1. Remapeando Teclas de Comando e outros Gestos de Entrada</A>
+    <LI><A HREF="#toc94">12.2. Personalização avançada da Pronúncia de sinais</A>
     </UL>
-  <LI><A HREF="#toc94">13. Informação Adicional</A>
+  <LI><A HREF="#toc95">13. Informação Adicional</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -1653,24 +1654,27 @@ Consiste numa caixa de combinação contendo as escolhas possíveis  para sua li
 <P>
 Por padrão, o NVDA utiliza-se da detecção automática de porta, o que significa que a conecção com a linha braille será estabelecida automaticamente, buscando por dispositivos USB e bluetooth em seu sistema.
 Todavia, para algumas linhas braille, você pode escolher explicitamente qual  porta deve ser usada.
-As opções Common são "Automática" (que diz ao NVDA para aplicar o procedimento padrão de seleção automática de porta), "USB", "Bluetooth" e legacy serial communication ports caso sua linha braille suporte esse tipo de conecção.
+As opções Comuns são "Automática" (que diz ao NVDA para aplicar o procedimento padrão de seleção automática de porta), "USB", "Bluetooth" e a comunicação por portas seriais, caso sua linha braille suporte esse tipo de conecção.
+</P>
+<P>
 Esta opção não estará disponível se sua linha braille suporta apenas a detecção automática de porta.
-You may consult the documentation for your braille display in the section 
-Supported Braille Displays
- to check for more details on the supported types of communication and available ports.
+</P>
+<P>
+Você pode consultar a documentação sobre sua linha braille na seção <A HREF="#SupportedBrailleDisplays">Linhas Braille Suportadas</A> com vistas a obter mais detalhes sobre os tipos de comunicação suportados e portas disponíveis.
 </P>
 
 <H5>Tabela de Tradução</H5>
 
 <P>
-A opção seguinte que se encontra neste diálogo é uma caixa de combinação para as tabelas Braille.
-Aqui encontrará diversas para vários idiomas. Pode-se mover de tabela Braille em tabela Braille na lista utilizando as Setas.
+A opção seguinte que se encontra neste diálogo é uma caixa de combinação referente às tabelas Braille.
+Aqui encontrará diversas para vários idiomas.
+Pode-se mover pela lista de tabelas braille utilizando as Setas.
 </P>
 
 <H5>Expandir Para Braille De Computador a Palavra Sobre O Cursor</H5>
 
 <P>
-Esta opção permite que a palavra que está sob o cursor apareça em Braille de computador não contraído.
+Esta opção permite que a palavra que está sob o cursor apareça para o caso específico do Braille de computador não contraído.
 </P>
 
 <H5>Velocidade de intermitência do Cursor (milésimos)</H5>
@@ -1682,7 +1686,7 @@ Esta opção é um campo numérico que lhe permite alterar a velocidade de inter
 <H5>Tempo limite de Mensagens (segundos)</H5>
 
 <P>
-Esta opção é um campo numérico que controla durante quanto tempo são apresentadas as mensagens do sistema na linha Braille.
+Esta opção é um campo numérico que permite controlar durante quanto tempo são apresentadas as mensagens do sistema na linha Braille.
 </P>
 
 <A NAME="BrailleTether"></A>
@@ -1692,7 +1696,7 @@ Esta opção é um campo numérico que controla durante quanto tempo são aprese
 Tecla: NVDA+control+t
 </P>
 <P>
-Esta opção permite-lhe escolher se a linha Braille seguirá o cursor do sistema, ou se segue o navegador de objetos / cursor de exploração.
+Esta opção permite-lhe escolher se a linha Braille seguirá o cursor do sistema, ou se irá seguir o navegador de objetos / cursor de exploração.
 </P>
 
 <H5>Ler por Parágrafo</H5>
@@ -1700,7 +1704,7 @@ Esta opção permite-lhe escolher se a linha Braille seguirá o cursor do sistem
 <P>
 Caso seja ativada, o braille será exibido por parágrafos em lugar de linhas.
 Além disso, os comandos de mover para a linha anterior e para a próxima linha irão mover respectivamente por parágrafos.
-Isso significa que você não terá que mover linha braille ao fim de cada linha ainda quando um maior texto for ajustado na mesma.
+Isso significa que você não terá que mover a linha braille ao fim de cada linha, mesmo quando um texto maior for exposto  na mesma.
   Isso pode permitir uma leitura mais fluente   em textos muito extensos.
 Esta opção está desativada por padrão.
 </P>
@@ -1713,7 +1717,7 @@ Esta caixa de diálogo encontra-se no menu Preferências, no item "Opções do t
 A mesma contém as seguintes opções: 
 </P>
 
-<H5>Layout de teclado</H5>
+<H5>Leiaute de teclado</H5>
 
 <P>
 Esta caixa de combinação permite-lhe escolher o leiaute de teclado que o NVDA utilizará. Atualmente, os dois que vêm com este leitor de tela são o Desktop para computadores de mesa e o Laptop para computadores portáteis. 
@@ -1728,13 +1732,13 @@ Se esta caixa de seleção estiver marcada, o Caps Lock poderá ser usado como u
 <H5>Usar Insert Extendida Como uma Tecla Modificadora do NVDA</H5>
 
 <P>
-Se esta caixa de seleção estiver marcada, a tecla Insert extendida (que encontra-se normalmente acima das setas, perto do Home e End) poderá ser usada como uma tecla modificadora do NVDA.
+Se esta caixa de seleção estiver marcada, a tecla Insert extendida (que encontra-se normalmente acima das setas, perto do Home e do End) poderá ser usada como uma tecla modificadora do NVDA.
 </P>
 
 <H5>Usar Insert do Teclado Numérico Como uma Tecla Modificadora do NVDA</H5>
 
 <P>
-Se esta caixa de seleção estiver marcada, o Insert do bloco numérico poderá ser utilizado como uma tecla modificadora do NVDA.
+Se esta caixa de seleção estiver marcada, o Insert do bloco numérico poderá também ser utilizado como uma tecla modificadora do NVDA.
 </P>
 
 <H5>Falar Caracteres Digitados</H5>
@@ -1752,7 +1756,7 @@ Uma caixa de seleção que quando marcada informa ao NVDA para anunciar todos os
 Tecla: NVDA+3
 </P>
 <P>
-Quando está selecionada faz com que o NVDA anuncie todas as palavras que introduzir através do teclado.
+Quando está selecionada faz com que o NVDA anuncie todas as palavras que você introduzir através do teclado.
 </P>
 
 <H5>Apita se digitar letras minúsculas com caps lock ligado</H5>
@@ -1769,7 +1773,7 @@ Portanto, é bastante útil ser alertado sobre isso.
 Tecla: NVDA+4
 </P>
 <P>
-Quando está marcada informa ao NVDA para anunciar todas as teclas que não são caracteres que pressionar através do teclado. Isto inclui combinações de teclas tais como o Control mais outra letra.
+Quando está marcada informa ao NVDA para anunciar todas as teclas que não são caracteres que você pressionar através do teclado. Isto inclui combinações de teclas tais como o Control mais outra letra.
 </P>
 
 <A NAME="toc54"></A>
@@ -1802,7 +1806,7 @@ O ponteiro do mouse altera a sua forma no Windows para fornecer determinada info
 
 <P>
 Uma caixa de seleção que quando marcada faz com que o NVDA anuncie o texto atual sobre o ponteiro do mouse, conforme se move pela tela.
-Isto permite que procure coisas no mesmo, através do movimento físico do mouse, antes que encontre através da navegação de objetos. 
+Isto permite que procure coisas no mesmo através do movimento físico do mouse, ao invés de tentar encontrar através da navegação de objetos. 
 </P>
 
 <H5>Unidade de Texto</H5>
@@ -2081,7 +2085,7 @@ Por exemplo, se for pressionando a Seta Abaixo numa página Web e encontrar uma 
 <H5>Indicação sonora de mudança entre modo de foco e navegação</H5>
 
 <P>
-Se esta opção estiver marcada, o NVDA reproduzirá sons especiais quando alternar entre os modos de navegação e foco, em vez de falar a alteração.
+Se esta opção estiver marcada, o NVDA reproduzirá sons especiais quando alternar entre os modos de navegação e foco, em vez de anunciar a alteração.
 </P>
 
 <A NAME="DocumentFormattingSettings"></A>
@@ -2091,7 +2095,7 @@ Se esta opção estiver marcada, o NVDA reproduzirá sons especiais quando alter
 Esta caixa de diálogo está no menu Preferências, mais propriamente no item "Formatação de Documentos...".
 </P>
 <P>
-Maior parte das caixas de seleção neste diálogo permitem-lhe configurar que tipo de formatação pretende ouvir automaticamente enquanto se move com o cursor pelos documentos.
+Maior parte das caixas de seleção neste diálogo lhe permitem configurar que tipo de formatação pretende ouvir automaticamente enquanto se move com o cursor pelos documentos.
 Por exemplo, se marcar a caixa de seleção para informar o nome da fonte a medida que avançar pelo texto com tipos de fonte diferentes, este será anunciado.
 </P>
 <P>
@@ -2108,7 +2112,7 @@ Pode configurar o anúncio de:
 <LI>Erros Ortográficos
 <LI>Número das Páginas
 <LI>Número das Linhas
-<LI>Identação das Linhas
+<LI>Indentação das Linhas
 <LI>Tabelas
 <LI>Cabeçalhos de Linhas e Colunas das Tabelas
 <LI>Coordenadas de Células em Tabelas
@@ -3454,8 +3458,8 @@ BrxCom é uma ferramenta que lhe permite usar a entrada Braille  independentemen
 Uma nova versão do BrxCom que funciona com o NVDA será lançada pela Papenmeier em pouco tempo.  
 </P>
 <P>
-Muitos dispositivos possuem uma Easy Access Bar (EAB) (barra de acesso rápido), que propicia uma operacionalidade intuitiva e rápida.
-A EAB pode ser movida em quatro direções, sendo que cada direção possui 2 modos.
+Muitos dispositivos possuem uma Easy Access Bar (EAB) (Barra de Acesso Fácil), que propicia uma operacionalidade intuitiva e rápida.
+A EAB pode ser movida em quatro direções, sendo que cada direção possui 2 estados.
 As série c- é a única excessão a esta regra.
 </P>
 <P>
@@ -3594,7 +3598,288 @@ Geralmente, encontram-se  disponíveis as seguintes teclas nestas linhas  braill
 </TABLE>
 
 <A NAME="toc90"></A>
-<H3>11.13. BRLTTY</H3>
+<H3>11.13. Papenmeier Braille BRAILLEX Modelos Antigos</H3>
+
+<P>
+As seguintes linhas braille são suportadas: 
+</P>
+
+<UL>
+<LI>BRAILLEX EL 80, EL 2D-80, EL 40 P
+<LI>BRAILLEX Tiny, 2D Screen
+</UL>
+
+<P>
+Tenha em conta que essas linhas só podem ser conectadas através de uma porta serial.
+Portanto, você deve selecionar a porta por meio da qual conectará a linha logo depois de escolher esse driver no Diálogo de Opções de Braille.
+</P>
+<P>
+Alguns desses dispositivos possuem uma Easy Access Bar (EAB) (Barra de Acesso Fácil),  que propicia uma operacionalidade intuitiva e rápida.
+A EAB pode ser movida em quatro direções, sendo que cada direção possui 2 modos.
+Ao pressionar e manter pressionada as teclas cima, baixo, direita e esquerda (ou EAB) faz com que a ação correspondente  seja repetida.
+</P>
+<P>
+ Certos dispositivos mais antigos não possuem uma EAB; as teclas frontais são usadas em seu lugar.
+</P>
+<P>
+Geralmente, as seguintes teclas estão disponíveis nestas linhas braille:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nome</TH>
+<TH>Tecla</TH>
+</TR>
+<TR>
+<TD>l1</TD>
+<TD>Tecla frontal esquerda</TD>
+</TR>
+<TR>
+<TD>l2</TD>
+<TD>Tecla traseira esquerda</TD>
+</TR>
+<TR>
+<TD>r1</TD>
+<TD>Tecla frontal direita</TD>
+</TR>
+<TR>
+<TD>r2</TD>
+<TD>Tecla traseira direita</TD>
+</TR>
+<TR>
+<TD>up</TD>
+<TD>1 passo acima</TD>
+</TR>
+<TR>
+<TD>up2</TD>
+<TD>2 passos acima</TD>
+</TR>
+<TR>
+<TD>left</TD>
+<TD>1 passo à esquerda</TD>
+</TR>
+<TR>
+<TD>left2</TD>
+<TD>2 passos à esquerda</TD>
+</TR>
+<TR>
+<TD>right</TD>
+<TD>1 passo à direita</TD>
+</TR>
+<TR>
+<TD>right2</TD>
+<TD>2 passos à direita</TD>
+</TR>
+<TR>
+<TD>dn</TD>
+<TD>1 passo abaixo</TD>
+</TR>
+<TR>
+<TD>dn2</TD>
+<TD>2 passos abaixo</TD>
+</TR>
+</TABLE>
+
+<P>
+ A seguir estão os comandos Papenmeier atribuidos  para o NVDA:
+Dispositivos que possuem EAB:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nome</TH>
+<TH>Tecla</TH>
+</TR>
+<TR>
+<TD>Mover linha braille para trás</TD>
+<TD>left</TD>
+</TR>
+<TR>
+<TD>Mover linha braille para a ffrente</TD>
+<TD>right</TD>
+</TR>
+<TR>
+<TD>Mover linha braille para a linha anterior</TD>
+<TD>up</TD>
+</TR>
+<TR>
+<TD>Mover linha braille para a linha seguinte</TD>
+<TD>dn</TD>
+</TR>
+<TR>
+<TD>Guiar para a cela braille</TD>
+<TD>sensor</TD>
+</TR>
+<TR>
+<TD>Anunciar o caractere atual em revisão</TD>
+<TD>l1</TD>
+</TR>
+<TR>
+<TD>Ativar o atual objeto de navegação</TD>
+<TD>l2</TD>
+</TR>
+<TR>
+<TD>Mover para a revisão plana/foco</TD>
+<TD>r1</TD>
+</TR>
+<TR>
+<TD>Anunciar título</TD>
+<TD>l1up</TD>
+</TR>
+<TR>
+<TD>Ler Barra de Status</TD>
+<TD>l2down</TD>
+</TR>
+<TR>
+<TD>Mover para o objeto pai</TD>
+<TD>up2</TD>
+</TR>
+<TR>
+<TD>Mover para o primeiro objeto filho</TD>
+<TD>dn2</TD>
+</TR>
+<TR>
+<TD>Mover para o objeto seguinte</TD>
+<TD>left2</TD>
+</TR>
+<TR>
+<TD>Mover para o objeto anterior</TD>
+<TD>right2</TD>
+</TR>
+<TR>
+<TD>Anunciar formatação de texto</TD>
+<TD>Upper routing strip</TD>
+</TR>
+</TABLE>
+
+<P>
+BRAILLEX Tiny:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nome</TH>
+<TH>Tecla</TH>
+</TR>
+<TR>
+<TD>Report current caractere in review</TD>
+<TD>l1</TD>
+</TR>
+<TR>
+<TD>Activate current navigator object</TD>
+<TD>l2</TD>
+</TR>
+<TR>
+<TD>Mover linha braille back</TD>
+<TD>left</TD>
+</TR>
+<TR>
+<TD>Mover linha braille forward</TD>
+<TD>right</TD>
+</TR>
+<TR>
+<TD>Mover linha braille to previous line</TD>
+<TD>up</TD>
+</TR>
+<TR>
+<TD>Mover linha braille to next line</TD>
+<TD>dn</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>r2</TD>
+</TR>
+<TR>
+<TD>Mover para flat review / focus</TD>
+<TD>r1</TD>
+</TR>
+<TR>
+<TD>Mover para containing object</TD>
+<TD>r1+up</TD>
+</TR>
+<TR>
+<TD>Mover para first contained object</TD>
+<TD>r1+dn</TD>
+</TR>
+<TR>
+<TD>Mover para previous object</TD>
+<TD>r1+left</TD>
+</TR>
+<TR>
+<TD>Mover para next object</TD>
+<TD>r1+right</TD>
+</TR>
+<TR>
+<TD>Report text formatting</TD>
+<TD>reportf</TD>
+</TR>
+</TABLE>
+
+<P>
+BRAILLEX 2D Screen:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nome</TH>
+<TH>Tecla</TH>
+</TR>
+<TR>
+<TD>Report current caractere in review</TD>
+<TD>l1</TD>
+</TR>
+<TR>
+<TD>Activate current navigator object</TD>
+<TD>l2</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>r2</TD>
+</TR>
+<TR>
+<TD>Report text formatting</TD>
+<TD>reportf</TD>
+</TR>
+<TR>
+<TD>Mover linha braille to previous line</TD>
+<TD>up</TD>
+</TR>
+<TR>
+<TD>Mover linha braille back</TD>
+<TD>left</TD>
+</TR>
+<TR>
+<TD>Mover para flat review / focus</TD>
+<TD>r1</TD>
+</TR>
+<TR>
+<TD>Mover linha braille forward</TD>
+<TD>right</TD>
+</TR>
+<TR>
+<TD>Mover linha braille to next line</TD>
+<TD>dn</TD>
+</TR>
+<TR>
+<TD>Mover para next object</TD>
+<TD>left2</TD>
+</TR>
+<TR>
+<TD>Mover para containing object</TD>
+<TD>up2</TD>
+</TR>
+<TR>
+<TD>Mover para first contained object</TD>
+<TD>dn2</TD>
+</TR>
+<TR>
+<TD>Mover para previous object</TD>
+<TD>right2</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc91"></A>
+<H3>11.14. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A> é um programa adicional que pode ser usado para suportar muito mais linhas Braille.
@@ -3634,10 +3919,10 @@ Por favor consulte as <A HREF="http://mielke.cc/brltty/doc/drivers/">tabelas de 
 </TR>
 </TABLE>
 
-<A NAME="toc91"></A>
+<A NAME="toc92"></A>
 <H2>12. Tópicos Avançados</H2>
 
-<A NAME="toc92"></A>
+<A NAME="toc93"></A>
 <H3>12.1. Remapeando Teclas de Comando e outros Gestos de Entrada</H3>
 
 <P>
@@ -3736,7 +4021,7 @@ Dessa forma, ao utilizar alt em un gesto, pressionando esta tecla a combinação
 Por isso, é recomendável usar apenas Shift, control e a tecla modificadora do NVDA como modificadores.
 </P>
 
-<A NAME="toc93"></A>
+<A NAME="toc94"></A>
 <H3>12.2. Personalização avançada da Pronúncia de sinais</H3>
 
 <P>
@@ -3750,7 +4035,7 @@ O formato desse arquivo está documentado na seção sobre Pronúncia de Sinais 
 Não é possível, todavia, definir sinais complexos.
 </P>
 
-<A NAME="toc94"></A>
+<A NAME="toc95"></A>
 <H2>13. Informação Adicional</H2>
 
 <P>
