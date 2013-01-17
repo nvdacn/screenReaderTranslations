@@ -368,7 +368,7 @@ O esquema é ilustrado como se segue:
 
 ++ A Revisão Plana ++[FlatReview]
 Enquanto geralmente você pode revisar o conteúdo de apenas um [objeto #Objects] individualmente, há alguns objetos nos quais é possível acessar o conteúdo dos objetos contidos neles.
-Documentos complexos oferecem-lhe a possibilidade de revisar seu conteúdo por completo e nas janelas de aplicações   pode-se rever todo  o texto da tela tal como aparece visualmente.
+Documentos complexos oferecem-lhe a possibilidade de revisar seu conteúdo por completo, assim como nas janelas de aplicações   pode-se rever todo  o texto da tela tal como aparece visualmente.
  Dá-se a isso o nome de revisão plana.
 É algo semelhante à revisão de tela ou à funcionalidade de cursor do mouse existente  em muitos outros leitores de telas.
 
@@ -1188,7 +1188,7 @@ Por favor consulte a documentação da mesma para descrições de onde essas tec
 | Tecla seta direita | brailleSpaceBar+ponto 6 |
 | Tecla home | brailleSpaceBar+ponto 1+ponto 3 |
 | tecla end | brailleSpaceBar+ponto 4+ponto 6 |
-| Tecla control+home | brailleSpaceBar+ponto 1+ponto 2+dot3 |
+| Tecla control+home | brailleSpaceBar+ponto 1+ponto 2ponto3 |
 | Tecla control+end | brailleSpaceBar+ponto 4+ponto 5+ponto 6 |
 | Tecla alt | brailleSpaceBar+ponto 1+ponto 3+ponto 4 |
 | Tecla alt+tab | brailleSpaceBar+ponto 2+ponto 3+ponto 4+ponto 5 |
@@ -1614,10 +1614,58 @@ BRAILLEX 2D Screen:
 | Mover para a revisão plana/foco | r1 |
 | Mover linha braille para a frente | right |
 | Mover linha braille para a linha seguinte | dn |
-| Mover para next object | left2 |
-| Mover para containing object | up2 |
-| Mover para first contained object | dn2 |
-| Mover para previous object | right2 |
+| Mover para o próximo objeto | left2 |
+| Mover para o objeto pai | up2 |
+| Mover para o primeiro objeto filho | dn2 |
+| Mover para o objeto anterior | right2 |
+%kc:endInclude
+
+++ HumanWare BrailleNote ++
+O NVDA suporta the BrailleNote notetakers from [Humanware http://www.humanware.com] when acting as a display terminal for a screen reader.
+Os seguintes modelos são suportados:
+- BrailleNote Clássico (conecção apenas por porta serial)
+- BrailleNote PK (conecção por porta serial e bluetooth)
+- BrailleNote MPower (conecção por porta serial e bluetooth)
+- BrailleNote Apex (conecção USB e Bluetooth )
+-
+
+Se seu dispositivo suporta mais de um tip de conecção, ao conectar seu BrailleNote para usar com o NVDA, você precisa  configurá-lo como porta de terminal braille   nas opções de terminal braille.
+ Por favor consulte o manual do BrailleNote  para mais detalhes.
+No NVDA, poderá também ser necessário configurar a porta no Diálogo das Opções de Braille.
+Caso esteja conectando via USB ou bluetooth, você pode configurar a porta para "Automático", "USB" ou "Bluetooth", dependendo das opções disponíveis.
+Caso conecte usando uma ligação por porta serial (ou um conversor de USB para serial) ou se nenhuma das opções anteriores aparece, você deve escolher explicitamente a porta de comunicação a ser usada na lista de portas de  hardware.
+
+ Antes de conectar seu BrailleNote Apex usando sua interface para cliente USB, você precisa instalar os drivers fornecidos pela HumanWare.
+
+ A seguir estão os comandos BrailleNote atribuidos para o NVDA.
+Por favor consulte a documentação de seu BrailleNote para informações sobre onde essas teclas se encontram.
+
+%kc:beginInclude
+|| Nome | Tecla |
+| Mover linha braille para trás | back |
+| Mover linha braille para a frente | advance |
+| Mover linha braille para a linha anterior | previous |
+| Mover linha braille para a linha seguinte | next |
+| Guiar para a cela braille | sensor |
+| Alternar vínculo do braille | previous+next |
+| Tecla seta acima | espaço+ponto1 |
+| Tecla seta abaixo | espaço+ponto4 |
+| Tecla seta a esquerda | espaço+ponto3 |
+| Tecla seta a direita | espaço+ponto6 |
+| Tecla page up | espaço+ponto1+ponto3 |
+| Tecla page down | espaço+ponto4+ponto6 |
+| Tecla home | espaço+ponto1+ponto2 |
+| Tecla end | espaço+ponto4+ponto5 |
+| Comando control+home | espaço+ponto1+ponto2+ponto3 |
+| Comando control+end | espaço+ponto4+ponto5+ponto6 |
+| Tecla espaço | espaço |
+| Tecla enter | espaço+ponto8 |
+| Tecla backspace | espaço+ponto7 |
+| Tecla tab | espaço+ponto2+ponto3+ponto4+ponto5 (espaço+t) |
+| Comando shift+tab | espaço+ponto1+ponto2+ponto5+ponto6 |
+| Tecla Windows  | espaço+ponto2+ponto4+ponto5+ponto6 (espaço+w) |
+| Tecla alt | espaço+ponto1+ponto3+ponto4 (espaço+m) |
+| Alternar ajuda de entrada | espaço+ponto1+ponto2+ponto5 (espaço+h) |
 %kc:endInclude
 
 ++ BRLTTY ++
@@ -1676,7 +1724,7 @@ Para encontrar os identificadores de gesto, assim como os nomes dos scripts e a 
 + Desativar a Ajuda de Entrada. 
 + Ativar o visualizador do log no menú ferramentas. 
 + examinar as entradas recentes do log.
-Uma destas proporciona informação sobre o gesto de entrada enviado, incluindo o módulo.classe e script si está vinculado a um.
+Uma destas proporciona informação sobre o gesto de entrada enviado, incluindo o módulo.classe e script si está vinculado a algum.
 
 
 Segue um exemplo de como vincular NVDA+shift+t ao script data/hora.
