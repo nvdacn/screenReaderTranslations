@@ -133,14 +133,15 @@
     <LI><A HREF="#toc88">11.11. Linhas Braille Seika</A>
     <LI><A HREF="#toc89">11.12. Papenmeier BRAILLEX Novos Modelos</A>
     <LI><A HREF="#toc90">11.13. Papenmeier Braille BRAILLEX Modelos Antigos</A>
-    <LI><A HREF="#toc91">11.14. BRLTTY</A>
+    <LI><A HREF="#toc91">11.14. HumanWare BrailleNote</A>
+    <LI><A HREF="#toc92">11.15. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc92">12. Tópicos Avançados</A>
+  <LI><A HREF="#toc93">12. Tópicos Avançados</A>
     <UL>
-    <LI><A HREF="#toc93">12.1. Remapeando Teclas de Comando e outros Gestos de Entrada</A>
-    <LI><A HREF="#toc94">12.2. Personalização avançada da Pronúncia de sinais</A>
+    <LI><A HREF="#toc94">12.1. Remapeando Teclas de Comando e outros Gestos de Entrada</A>
+    <LI><A HREF="#toc95">12.2. Personalização avançada da Pronúncia de sinais</A>
     </UL>
-  <LI><A HREF="#toc95">13. Informação Adicional</A>
+  <LI><A HREF="#toc96">13. Informação Adicional</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -988,7 +989,7 @@ O esquema é ilustrado como se segue:
 
 <P>
 Enquanto geralmente você pode revisar o conteúdo de apenas um <A HREF="#Objects">objeto</A> individualmente, há alguns objetos nos quais é possível acessar o conteúdo dos objetos contidos neles.
-Documentos complexos oferecem-lhe a possibilidade de revisar seu conteúdo por completo e nas janelas de aplicações   pode-se rever todo  o texto da tela tal como aparece visualmente.
+Documentos complexos oferecem-lhe a possibilidade de revisar seu conteúdo por completo, assim como nas janelas de aplicações   pode-se rever todo  o texto da tela tal como aparece visualmente.
  Dá-se a isso o nome de revisão plana.
 É algo semelhante à revisão de tela ou à funcionalidade de cursor do mouse existente  em muitos outros leitores de telas.
 </P>
@@ -2541,7 +2542,7 @@ Por favor consulte a documentação da mesma para descrições de onde essas tec
 </TR>
 <TR>
 <TD>Tecla control+home</TD>
-<TD>brailleSpaceBar+ponto 1+ponto 2+dot3</TD>
+<TD>brailleSpaceBar+ponto 1+ponto 2ponto3</TD>
 </TR>
 <TR>
 <TD>Tecla control+end</TD>
@@ -3861,25 +3862,158 @@ BRAILLEX 2D Screen:
 <TD>dn</TD>
 </TR>
 <TR>
-<TD>Mover para next object</TD>
+<TD>Mover para o próximo objeto</TD>
 <TD>left2</TD>
 </TR>
 <TR>
-<TD>Mover para containing object</TD>
+<TD>Mover para o objeto pai</TD>
 <TD>up2</TD>
 </TR>
 <TR>
-<TD>Mover para first contained object</TD>
+<TD>Mover para o primeiro objeto filho</TD>
 <TD>dn2</TD>
 </TR>
 <TR>
-<TD>Mover para previous object</TD>
+<TD>Mover para o objeto anterior</TD>
 <TD>right2</TD>
 </TR>
 </TABLE>
 
 <A NAME="toc91"></A>
-<H3>11.14. BRLTTY</H3>
+<H3>11.14. HumanWare BrailleNote</H3>
+
+<P>
+O NVDA suporta the BrailleNote notetakers from <A HREF="http://www.humanware.com">Humanware</A> when acting as a display terminal for a screen reader.
+Os seguintes modelos são suportados:
+</P>
+
+<UL>
+<LI>BrailleNote Clássico (conecção apenas por porta serial)
+<LI>BrailleNote PK (conecção por porta serial e bluetooth)
+<LI>BrailleNote MPower (conecção por porta serial e bluetooth)
+<LI>BrailleNote Apex (conecção USB e Bluetooth )
+</UL>
+
+<P>
+Se seu dispositivo suporta mais de um tip de conecção, ao conectar seu BrailleNote para usar com o NVDA, você precisa  configurá-lo como porta de terminal braille   nas opções de terminal braille.
+ Por favor consulte o manual do BrailleNote  para mais detalhes.
+No NVDA, poderá também ser necessário configurar a porta no Diálogo das Opções de Braille.
+Caso esteja conectando via USB ou bluetooth, você pode configurar a porta para "Automático", "USB" ou "Bluetooth", dependendo das opções disponíveis.
+Caso conecte usando uma ligação por porta serial (ou um conversor de USB para serial) ou se nenhuma das opções anteriores aparece, você deve escolher explicitamente a porta de comunicação a ser usada na lista de portas de  hardware.
+</P>
+<P>
+ Antes de conectar seu BrailleNote Apex usando sua interface para cliente USB, você precisa instalar os drivers fornecidos pela HumanWare.
+</P>
+<P>
+ A seguir estão os comandos BrailleNote atribuidos para o NVDA.
+Por favor consulte a documentação de seu BrailleNote para informações sobre onde essas teclas se encontram.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nome</TH>
+<TH>Tecla</TH>
+</TR>
+<TR>
+<TD>Mover linha braille para trás</TD>
+<TD>back</TD>
+</TR>
+<TR>
+<TD>Mover linha braille para a frente</TD>
+<TD>advance</TD>
+</TR>
+<TR>
+<TD>Mover linha braille para a linha anterior</TD>
+<TD>previous</TD>
+</TR>
+<TR>
+<TD>Mover linha braille para a linha seguinte</TD>
+<TD>next</TD>
+</TR>
+<TR>
+<TD>Guiar para a cela braille</TD>
+<TD>sensor</TD>
+</TR>
+<TR>
+<TD>Alternar vínculo do braille</TD>
+<TD>previous+next</TD>
+</TR>
+<TR>
+<TD>Tecla seta acima</TD>
+<TD>espaço+ponto1</TD>
+</TR>
+<TR>
+<TD>Tecla seta abaixo</TD>
+<TD>espaço+ponto4</TD>
+</TR>
+<TR>
+<TD>Tecla seta a esquerda</TD>
+<TD>espaço+ponto3</TD>
+</TR>
+<TR>
+<TD>Tecla seta a direita</TD>
+<TD>espaço+ponto6</TD>
+</TR>
+<TR>
+<TD>Tecla page up</TD>
+<TD>espaço+ponto1+ponto3</TD>
+</TR>
+<TR>
+<TD>Tecla page down</TD>
+<TD>espaço+ponto4+ponto6</TD>
+</TR>
+<TR>
+<TD>Tecla home</TD>
+<TD>espaço+ponto1+ponto2</TD>
+</TR>
+<TR>
+<TD>Tecla end</TD>
+<TD>espaço+ponto4+ponto5</TD>
+</TR>
+<TR>
+<TD>Comando control+home</TD>
+<TD>espaço+ponto1+ponto2+ponto3</TD>
+</TR>
+<TR>
+<TD>Comando control+end</TD>
+<TD>espaço+ponto4+ponto5+ponto6</TD>
+</TR>
+<TR>
+<TD>Tecla espaço</TD>
+<TD>espaço</TD>
+</TR>
+<TR>
+<TD>Tecla enter</TD>
+<TD>espaço+ponto8</TD>
+</TR>
+<TR>
+<TD>Tecla backspace</TD>
+<TD>espaço+ponto7</TD>
+</TR>
+<TR>
+<TD>Tecla tab</TD>
+<TD>espaço+ponto2+ponto3+ponto4+ponto5 (espaço+t)</TD>
+</TR>
+<TR>
+<TD>Comando shift+tab</TD>
+<TD>espaço+ponto1+ponto2+ponto5+ponto6</TD>
+</TR>
+<TR>
+<TD>Tecla Windows</TD>
+<TD>espaço+ponto2+ponto4+ponto5+ponto6 (espaço+w)</TD>
+</TR>
+<TR>
+<TD>Tecla alt</TD>
+<TD>espaço+ponto1+ponto3+ponto4 (espaço+m)</TD>
+</TR>
+<TR>
+<TD>Alternar ajuda de entrada</TD>
+<TD>espaço+ponto1+ponto2+ponto5 (espaço+h)</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc92"></A>
+<H3>11.15. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A> é um programa adicional que pode ser usado para suportar muito mais linhas Braille.
@@ -3919,10 +4053,10 @@ Por favor consulte as <A HREF="http://mielke.cc/brltty/doc/drivers/">tabelas de 
 </TR>
 </TABLE>
 
-<A NAME="toc92"></A>
+<A NAME="toc93"></A>
 <H2>12. Tópicos Avançados</H2>
 
-<A NAME="toc93"></A>
+<A NAME="toc94"></A>
 <H3>12.1. Remapeando Teclas de Comando e outros Gestos de Entrada</H3>
 
 <P>
@@ -3971,7 +4105,7 @@ Para encontrar os identificadores de gesto, assim como os nomes dos scripts e a 
 <LI>Desativar a Ajuda de Entrada. 
 <LI>Ativar o visualizador do log no menú ferramentas. 
 <LI>examinar as entradas recentes do log.
-Uma destas proporciona informação sobre o gesto de entrada enviado, incluindo o módulo.classe e script si está vinculado a um.
+Uma destas proporciona informação sobre o gesto de entrada enviado, incluindo o módulo.classe e script si está vinculado a algum.
 </OL>
 
 <P>
@@ -4021,7 +4155,7 @@ Dessa forma, ao utilizar alt em un gesto, pressionando esta tecla a combinação
 Por isso, é recomendável usar apenas Shift, control e a tecla modificadora do NVDA como modificadores.
 </P>
 
-<A NAME="toc94"></A>
+<A NAME="toc95"></A>
 <H3>12.2. Personalização avançada da Pronúncia de sinais</H3>
 
 <P>
@@ -4035,7 +4169,7 @@ O formato desse arquivo está documentado na seção sobre Pronúncia de Sinais 
 Não é possível, todavia, definir sinais complexos.
 </P>
 
-<A NAME="toc95"></A>
+<A NAME="toc96"></A>
 <H2>13. Informação Adicional</H2>
 
 <P>
