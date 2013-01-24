@@ -26,6 +26,40 @@
     </UL>
   <LI><A HREF="#toc8">2. Kerfiskröfur</A>
   <LI><A HREF="#toc9">3. Sækja og setja upp NVDA</A>
+    <UL>
+    <LI><A HREF="#toc10">3.1. Takmarkanir Flytjanlegu og Tímabundnu útgáfanna</A>
+    <LI><A HREF="#toc11">3.2. Uppsetning NVDA</A>
+      <UL>
+      <LI><A HREF="#toc12">3.2.1. Ræsing við Windows Innskráningu</A>
+      <LI><A HREF="#toc13">3.2.2. Búa til skjáborðs flýtivísi (ctrl+alt+n)</A>
+      <LI><A HREF="#toc14">3.2.3. Afrita Stillingar Flytjanlegu útgáfu til Notendareiknings</A>
+      </UL>
+    <LI><A HREF="#toc15">3.3. Framleiðsla Flytjanlegs Eintaks</A>
+    </UL>
+  <LI><A HREF="#toc16">4. Hafist handa með NVDA</A>
+    <UL>
+    <LI><A HREF="#toc17">4.1. Ræsing NVDA</A>
+    <LI><A HREF="#toc18">4.2. NVDA flýtilykla skipanir</A>
+      <UL>
+      <LI><A HREF="#toc19">4.2.1. The NVDA Breytilykilinn</A>
+      <LI><A HREF="#toc20">4.2.2. Lyklaborðs tilhögun</A>
+      </UL>
+    <LI><A HREF="#toc21">4.3. NVDA Snerti skipanir</A>
+      <UL>
+      <LI><A HREF="#toc22">4.3.1. Skjárinn kannaður</A>
+      <LI><A HREF="#toc23">4.3.2. Snerti skipanir</A>
+      <LI><A HREF="#toc24">4.3.3. Snertiviðmót</A>
+      </UL>
+    <LI><A HREF="#toc25">4.4. Innsláttar Hjálparviðmót</A>
+    <LI><A HREF="#toc26">4.5. NVDA valmyndin</A>
+    <LI><A HREF="#toc27">4.6. Grunnskipanir NVDA</A>
+    <LI><A HREF="#toc28">4.7. Tilkynning Kerfisupplýsinga</A>
+    </UL>
+  <LI><A HREF="#toc29">5. Vafrað með NVDA</A>
+    <UL>
+    <LI><A HREF="#Hlutir">5.1. Hlutir</A>
+    <LI><A HREF="#Kerfisbendill">5.2. Vafrað með Kerfisbendli</A>
+    </UL>
   </UL>
 
 <A NAME="toc2"></A>
@@ -132,8 +166,437 @@ Með því að ræsa skránni sem var halað niður er hægt að keyra NVDA.
 </P>
 <P>
 Ef þú ætlar alltaf að keyra NVDA á tölvunni þá er best að velja uppsetninguna á NVDA.
-Með því að setja upp NVDA á tölvunni er hægt að velja um hvort NVDA ræsi eftir innskráningu á stýrikerfinu, 
+Með því að setja upp NVDA á tölvunni er hægt að velja um hvort NVDA ræsi eftir innskráningu notanda inn á stýrikerfið, möguleikann á að lesa innskráningargluggann og Windows öryggisglugga (sem ekki er hægt án þess að setja NVDA upp á tölvunni) sem og einnig eru settir upp flýtivísar í Ræsa valmyndina og á skjáborðið. 
+Einnig er hægt að búa til flytjanlega útgáfu af NVDA hvenær sem er þegar búið er að setja upp forritið.
 </P>
+<P>
+Ef þú vilt flytja NVDA með þér á USB lykli eða öðrum lausum hörðum diski, þá þarf að búa til flytjanlega útgáfu.
+Flytjanlegu útgáfuna er einnig hægt að setja upp á annarri tölvu síðar, ef vill.
+Aftur á móti ef þú vilt afrita NVDA yfir á geisladisk, þá er best að brenna niðurhalspakkann sjálfan á þann miðil. 
+Eins og er styður NVDA ekki keyrslu á hugbúnaðinum frá geisladiski.
+</P>
+<P>
+Það er mögulegt að nota aðeins tímabundnu útgáfuna af NVDA (til dæmis ef á að sýna hugbúnaðinn), en það er tímafrekt að ræsa NVDA alltaf með þessum hætti.
+</P>
+
+<A NAME="toc10"></A>
+<H3>3.1. Takmarkanir Flytjanlegu og Tímabundnu útgáfanna</H3>
+
+<P>
+Fyrir utan að ekki sé hægt að láta NVDA ræsa sér sjálfkrafa meðan eða eftir innskráningu, þá hafa flytjanlegu og tímabundnu útgáfurnar einnig eftirfarandi takmarkanir:
+</P>
+
+<UL>
+<LI>Ómögulegt er að vinna með forrit sem gera kröfu um kerfisstjóraaðgang, nema ef NVDA sé einnig ræst með kerfisstjóra aðgangi (ekki mælt með þessu).
+<LI>Ómögulegt að lesa User Account Control (UAC) skjái þegar reynt er að ræsa forriti sem gerir kröfu um kerfisstjóra aðgang.
+<LI>Windows 8: ómögulegt að greina innslátt frá snertiskjáum.
+<LI>Windows 8: ómögulegt að bjóða upp á eiginleikana vafraham og lestur á skrifuðum stöfum í Windows Store forritum.
+</UL>
+
+<A NAME="toc11"></A>
+<H3>3.2. Uppsetning NVDA</H3>
+
+<P>
+Ef NVDA er sett upp með niðurhals skránni, veljið Setja upp NVDA hnappinn.
+Ef þú hefur þegar lokað þessum glugga og vilt heldur setja upp frá flytjanlegu eintaki, veljið Setja upp NVDA valkostinn undir Verkfæri í NVDA valmyndinni.
+</P>
+<P>
+Uppsetningarglugginn sem birtist staðfestir hvort þú vilt setja upp NVDA og mun einnig segja þér hvort þessi uppsetning mun uppfæra fyrri uppsetningu.
+Með því að velja Áfram hnappinn hefst uppsetningin á NVDA.
+Það eru einnig nokkrir valkostir í þessum glugga sem verða útskýrðir hér að neðan.
+Þegar uppsetningu er lokið, mun tilkynning birtast sem segir að uppsetningin hafi heppnast.
+Með því að velja OK hnappinn endurræsist þín nýja uppsetning á NVDA.
+</P>
+
+<A NAME="toc12"></A>
+<H4>3.2.1. Ræsing við Windows Innskráningu</H4>
+
+<P>
+Þessi valkostur segir til um hvort NVDA eigi að ræsast sjálfkrafa með Windows innskráningunni áður en þú hefur slegið inn lykilorðið.
+Valkosturinn á einnig við UAC stjórnun og aðra öryggisskjái.
+</P>
+
+<A NAME="toc13"></A>
+<H4>3.2.2. Búa til skjáborðs flýtivísi (ctrl+alt+n)</H4>
+
+<P>
+Þessi valkostur segir til um hvort NVDA eigi að búa til flýtivísi á skjáborðið sem gerir þér kleift að ræsa NVDA.
+Ef þessi flýtivísir er búinn til þá er honum einnig útnefndur flýtilykillinn control+alt+n sem gerir þér kleift að ræsa NVDA hvenær sem er með þessum lyklainnslætti.
+</P>
+
+<A NAME="toc14"></A>
+<H4>3.2.3. Afrita Stillingar Flytjanlegu útgáfu til Notendareiknings</H4>
+
+<P>
+Þessi valkostur segir til um hvort NVDA eigi að afrita notendastillingar frá NVDA eintakinu sem er í gangi til notendareikningsins sem er innskráður, og þá fyrir þá útgáfu af NVDA sem er sett upp.
+Þetta mun ekki afrita stillingar frá öðrum notendum tölvunnar né kerfisstillingar á innskráningarglugga tölvunnar eða öðrum öryggisgluggum.
+Þessi valkostur er aðeins í boði þegar sett er upp frá flytjanlegri útgáfu, ekki þegar NVDA er sett upp beint út niðurhalsskránni.
+</P>
+
+<A NAME="toc15"></A>
+<H3>3.3. Framleiðsla Flytjanlegs Eintaks</H3>
+
+<P>
+Ef búið er til flytjanlegt eintak beint frá NVDA niðurhalsskránni, veljið þá Útbúa Flytjanlegt Eintak hnappinn.
+Ef þú hefur þegar lokað þessum glugga og er að keyra uppsetta útgáfu af NVDA, veldu þá Útbúa Flytjanlegt Eintak valkostinn undir Verkfæri í NVDA valmyndinni.
+</P>
+<P>
+Glugginn sem birtist gerir þér kleift að velja hvar flytjanlega eintakið skal útbúið.
+Þetta getur verið skrá á harða diskinum, USB lykli eða öðrum lausum miðli.
+Það er einnig hægt að velja um hvort NVDA eigi að afrita stillingar notandans og flytja þær með framleiðslunni á flytjanlegu útgáfunni.
+Þessi valkostur er aðeins mögulegur þegar útbúin er flytjanleg útgáfa úr uppsettri útgáfu, en ekki þegar unnið er með niðurhalsskránna.
+Með því að velja Áfram hefst framleiðsla á flytjanlegu útgáfunni.
+Þegar því er lokið birtast skilaboð um að framleiðsla hafi heppnast.
+Veldu OK til að loka þessum skilaboðum.
+</P>
+
+<A NAME="toc16"></A>
+<H2>4. Hafist handa með NVDA</H2>
+
+<A NAME="toc17"></A>
+<H3>4.1. Ræsing NVDA</H3>
+
+<P>
+Ef NVDA hefur verið sett upp með uppsetningarálfinum, þá er einfaldast að ræsa NVDA með flýtilyklinum control+alt+n, eða með því að velja NVDA úr NVDA valmyndinni í Forrit í Ræsa valmyndinni.
+Einnig er hægt að skrifa NVDA inn í Keyra gluggann og styðja á færslulykilinn.
+</P>
+<P>
+Til að ræsa flytjanlegu útgáfunni, veljið þá möppuna þar sem NVDA var afpakkað og styðjið á enter eða tvísmellið á nvda.exe.
+</P>
+<P>
+Þegar NVDA ræsist, þá munu fyrst heyrast nokkrir tónar (til tilkynningar um að NVDA sé að ræsast).
+Það er svo háð tölvunni sjálfri, eða hvort þú ert að keyra NVDA af USB lykli eða öðrum hægum samskiptamiðli, hversu lengi það tekur að ræsa forritinu. 
+Ef það tekur lengri tíma en venjulega þá ætti NVDA að segja "Hleð inn NVDA. Vinsamlegast bíðið..."
+</P>
+<P>
+Ef ekkert af þessu heyrist, eða ef þú heyrir villuhljóð hjá Windows eða nokkra tóna, þá þýðir það að villa hefur komið upp hjá NVDA, og hugsanlega þarf að tilkynna villuna til hönnuða NVDA.
+Vinsamlegast lesið ykkur til um þetta á vefsíðu NVDA.
+</P>
+<P>
+Þegar NVDA ræsist í fyrsta skipti, á er þér mætt með glugga sem býður upp á nokkrar grunnupplýsingar um NVDA lykilinn og NVDA valmyndina.
+(Frekari upplýsingar um þetta í þessari handbók.)
+Glugginn inniheldur einnig tvo gátreiti.
+Sá fyrri segir til um hvort NVDA eigi að nota hástafalás sem NVDA breytilykilinn, og sá seinni segir til um hvort að Velkominn glugginn eigi að birtast í hvert skipti sem NVDA ræsist.
+</P>
+
+<A NAME="toc18"></A>
+<H3>4.2. NVDA flýtilykla skipanir</H3>
+
+<A NAME="toc19"></A>
+<H4>4.2.1. The NVDA Breytilykilinn</H4>
+
+<P>
+Flestar NVDA flýtilykla skipanir samanstanda venjulega af því að styðja á ákveðinn lykil sem er kallaður NVDA breytilykillinn, og svo styðja á einn eða fleiri lykla til.
+Undantekningin á þessu eru textalestur skipanir sem nota bara númerísku lyklana til að framkalla skipanir.
+</P>
+<P>
+Í NVDA er hægt velja milli þess að nota númerískt Insert, Insert eða hástafalás lykillinn sem NVDA breytilykilinn.
+</P>
+<P>
+Sjálfgefið val er að bæði númerískt Insert og Insert lyklarnir virki sem NVDA breytilykilinn.
+</P>
+<P>
+Ef þú vilt framkalla sömu skipun fyrir lyklana og þeir hafa þegar NVDA er ekki ræst, þá er stutt á þá tvisvar, hratt. (Til dæmis ef þú vilt virkja/afvirkja hástafalásinn þegar hann er notaður sem breytilykilinn.)
+</P>
+
+<A NAME="toc20"></A>
+<H4>4.2.2. Lyklaborðs tilhögun</H4>
+
+<P>
+NVDA inniheldur tvær gerðir af lyklaskipunum.
+Önnur fyrir borðtölvur og hin fyrir fartölvur.
+NVDA er sjálfkrafa stillt til að nota borðtölvu viðmótið, en þessu er hægt að breyta yfir í fartölvu viðmót, með því að fara í Lyklaborðs Stillingar, sem er staðsett undir Valkostir í NVDA valmyndinni.
+</P>
+<P>
+Borðtölvu viðmótið notar númeríska hluta lyklaborðsins talsvert (þegar slökkt er á talnalás). 
+Þrátt fyrir að margar fartölvur séu ekki með númerískt lyklaborð, þá eru til fartölvur sem líkja eftir númerísku lyklaborði með því að notandi haldi niðri FN lyklinum og styðji á bókstafi og tölur á hægri hlið lyklaborðsins (7 8 9 u i o j k l osfrv).
+Ef fartölvan þín býður ekki upp á þetta, eða gerir þér ekki kleift að slökkva á talnalásnum, þá gæti verið ráð að skipta yfir í Fartölvu viðmótið í staðinn.
+</P>
+
+<A NAME="toc21"></A>
+<H3>4.3. NVDA Snerti skipanir</H3>
+
+<P>
+Ef NVDA er keyrt á tölvu með snertiskjá sem keyrir Windows 8 eða nýrri útgáfur, þá er einnig hægt að stjórna NVDA með snertiskjánum.
+Meðan NVDA er í gangi, þá munu allar snertingar flytjast beint til NVDA. 
+Þar af leiðandi munu aðgerðir sem venjulega er hægt að framkvæma þegar NVDA er ekki í gangi, ekki virka.
+</P>
+
+<A NAME="toc22"></A>
+<H4>4.3.1. Skjárinn kannaður</H4>
+
+<P>
+Grunnaðgerðin sem hægt er að framkvæma með snertiskjá er að framkalla lestur á því atriði þar sem fingurinn snertir skjáinn.
+Til að gera þetta, staðsettu þá fingurinn hvar sem er á skjánum.
+Þú getur einnig látið fingurinn vera á skjánum og dregið hann til, til að fá atriði og texta lesinn meðan fingurinn færist yfir þau.
+</P>
+
+<A NAME="toc23"></A>
+<H4>4.3.2. Snerti skipanir</H4>
+
+<P>
+Þegar NVDA skipunum er líst síðar í þessari handbók, þá gætu þær sagt til um snerti skipun sem hægt er að nota til að virkja skipunina með snertiskjánum.
+Eftirfarandi eru nokkrar upplýsingar um hvernig skal framkvæma ýmsar snerti skipanir.
+</P>
+
+<H5>Smellir</H5>
+
+<P>
+Smella á skjáinn hratt með einum eða fleiri fingrum.
+</P>
+<P>
+Að smella einu sinni með einum fingri er kallað að smella.
+Að smella með 2 fingrum á sama tíma er kallað 2-fingra smellur, osfrv.
+</P>
+<P>
+Ef sami smellur er framkvæmdur einu sinni eða oftar með stuttu millibili, þá mun NVDA túlka það sem fjölda-smell aðgerð.
+Að smella tvisvar mun túlkast af NVDA sem tvöfaldur smellur.
+Að smella þrisvar mun túlkast af NVDA sem þrefaldur smellur, osfrv.
+Að sjálfsögðu munu þessir smellir einnig verða skilgreindir eftir því hversu margir fingur eru notaðir til að smella, þ.a.l. er að hægt að nýta aðgerðir eins og 2-fingra þrefaldan smell, 4-fingra smell, osfrv.
+</P>
+
+<H5>Flettingar</H5>
+
+<P>
+Strjúktu fingrinum snöggt yfir skjáinn.
+</P>
+<P>
+Það eru 4 mögulegar flettinga skipanir, fletta vinstri, fletta hægri, fletta upp og fletta niður.
+</P>
+<P>
+Eins og með smelli, þá er hægt að nota fleiri en einn fingur til að framkvæma flettingar. 
+Þess vegna er hægt að nota aðgerðir eins og 2-fingra flettingu upp og 4-fingra flettingu til vinstri, osfrv.
+</P>
+
+<A NAME="toc24"></A>
+<H4>4.3.3. Snertiviðmót</H4>
+
+<P>
+Þar sem það eru til umtalsvert fleiri NVDA skipanir en hægt er að framkvæma með snerti skipunum, þá býður NVDA upp á nokkur snertiviðmót sem hægt er að skipta yfir í til að veita aðgang að fleiri skipunum.
+Þau viðmót heita textaviðmót og hlutaviðmót
+Ákveðnar NVDA skipanir sem gefnar eru upp í þessari handbók gætu listað snertiviðmót í sviga á eftir snertiskipuninni.
+Sem dæmi, fletta upp (textaviðmót) þýðir að skipunin mun aðeins verða framkvæmd ef þú flettir upp, og aðeins þá ef þú ert í textaviðmóti.
+Ef skipunin listar ekki tiltekið viðmót, þá virkar hún í öllum viðmótum.
+</P>
+<P>
+Til að skipta milli viðmóta, framkvæmdu 3-fingra smell.
+</P>
+
+<A NAME="toc25"></A>
+<H3>4.4. Innsláttar Hjálparviðmót</H3>
+
+<P>
+Margar NVDA skipanir eru tilgreindar í þessari handbók, en einföld leið til að kynna sér þær er að virkja innsláttar hjálparviðmótið.
+</P>
+<P>
+Til að virkja innsláttar hjálparviðmótið, styddu á NVDA+1.
+Til að afvirkja, styddu aftur á NVDA+1.
+Þegar hjálparviðmótið er virkjað, þá munu allar aðgerðir sem eru framkvæmdar (svo sem að styðja á lykil eða framkvæma snertiskipun) verða tilkynntar af talgervlinum og útskýrt hvað þær gera (ef eitthvað).
+Skipanirnar sjálfar framkvæmast ekki í hjálparviðmótinu.
+</P>
+
+<A NAME="toc26"></A>
+<H3>4.5. NVDA valmyndin</H3>
+
+<P>
+NVDA valmyndin veitir þér aðgang að stillingum NVDA, hjálpinni, vista/endurvirkja stillingar, breyta raddorðabókum, fleiri verkfærum og afvirkjun NVDA.
+</P>
+<P>
+Til að kalla fram NVDA valmyndina hvaðan sem er í Windows meðan NVDA er í gangi, styddu á NVDA+n á lyklaborðinu eða framkvæmdu 2-fingra tvöfaldan smell á snertiskjáinn.
+Einnig er hægt að nálgast NVDA valmyndina í kerfisrein Windows.
+Annað hvort að hægri smella á NVDA táknið í kerfisreininni, eða flytja fókusinn í kerfisreinina með því að styðja á Windows+b, ÖrNiður að NVDA íkoninu og styðja á forritslykilinn sem er við hliðina á hægri control lyklinum á flestum lyklaborðum.
+Þegar valmyndin birtist er hægt að nota örva lyklana til að flakka um valmyndina og færslulykilinn til að virkja atriði.
+</P>
+
+<A NAME="toc27"></A>
+<H3>4.6. Grunnskipanir NVDA</H3>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nafn</TH>
+<TH>Lykill</TH>
+<TH>Snerting</TH>
+<TH>Lýsing</TH>
+</TR>
+<TR>
+<TD>Stöðva lestur</TD>
+<TD>Control</TD>
+<TD>2-fingra smellur</TD>
+<TD>Stöðvar lestur samstundis</TD>
+</TR>
+<TR>
+<TD>Pása Lestur</TD>
+<TD>Shift</TD>
+<TD>enginn</TD>
+<TD>Pásar lestur samstundis. Með því að styðja aftur þá hefst lestur þar sem frá var horfið (ef pásun er studd af talgervlinum sem þú notar)</TD>
+</TR>
+<TR>
+<TD>NVDA Valmynd</TD>
+<TD>NVDA+n</TD>
+<TD>2-fingra tvöfaldur smellur</TD>
+<TD>Kallar fram NVDA valmyndina sem veitir aðgang að stillingum, verkfærum, hjálp, osfrv</TD>
+</TR>
+<TR>
+<TD>Skipta milli Raddviðmóta</TD>
+<TD>NVDA+s</TD>
+<TD>enginn</TD>
+<TD>Skiptir milli lesturs, hljóðtilkynninga og slökkt.</TD>
+</TR>
+<TR>
+<TD>Skipta milli Innsláttar Hjálparviðmóts</TD>
+<TD>NVDA+1</TD>
+<TD>enginn</TD>
+<TD>Þeir lyklar sem stutt er á í þessu viðmóti verða tilkynntir, sem og lýsing á öllum NVDA flýtilykla skipunum sem eru tengdar við lyklana</TD>
+</TR>
+<TR>
+<TD>Hætta í NVDA</TD>
+<TD>NVDA+q</TD>
+<TD>enginn</TD>
+<TD>Slekkur á NVDA</TD>
+</TR>
+<TR>
+<TD>Hleypa næsta lykli í gegn</TD>
+<TD>NVDA+f2</TD>
+<TD>enginn</TD>
+<TD>Segir NVDA að sleppa næsta lykli í gegn í forritinu sem er virkt, þrátt fyrir að lykillinn sem stutt er á sé venjulega skilinn sem NVDA flýtilykill</TD>
+</TR>
+<TR>
+<TD>Skipta milli virkjunar eða afvirkjunar á svefnham forrits| NVDA+shift+s</TD>
+<TD>enginn</TD>
+<TD>svefnhamur afvirkjar allar NVDA flýtilykla skipanir og lestur/blindraletur fyrir það forrit sem er virkt. Þetta er mjög gagnlegt í forritum sem bjóða upp á eigin rödd eða skjálestrar eiginleika. Styddu á sömu lykla aftur til að afvirkja.</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc28"></A>
+<H3>4.7. Tilkynning Kerfisupplýsinga</H3>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nafn</TH>
+<TH>lykill</TH>
+<TH>Lýsing</TH>
+</TR>
+<TR>
+<TD>Tilkynna dagsetningu/tíma</TD>
+<TD>NVDA+f12</TD>
+<TD>Ef stutt er einu sinni á lyklasamsetninguna er sagt hvað klukkan er, ef stutt er tvisvar þá er dagsetningin tilkynnt</TD>
+</TR>
+<TR>
+<TD>Tilkynna stöðu batterís</TD>
+<TD>NVDA+shift+b</TD>
+<TD>Tilkynnir stöðu á batteríi, þ.e. hvort tölvan sé í hleðslu eða hver staða á hleðslu er.</TD>
+</TR>
+<TR>
+<TD>Tilkynna texta á klemmuspjaldi</TD>
+<TD>NVDA+c</TD>
+<TD>Les þann texta sem er á klemmuspjaldinu.</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc29"></A>
+<H2>5. Vafrað með NVDA</H2>
+
+<P>
+NVDA gerir þér kleift að skoða og vafra um stýrikerfið á nokkra vegu, þmt. með venjulegri skoðun og endurskoðun.
+</P>
+
+<A NAME="Hlutir"></A>
+<H3>5.1. Hlutir</H3>
+
+<P>
+Hvert forrit og stýrikerfið sjálft samanstanda af mörgum hlutum.
+Hlutur er hvert stakt atriði, svo sem hluti af texta, hnappur, gátreitur, stika, listi eða jafnvel ritsvæði.
+</P>
+<P>
+++ Vafrað með Kerfisfókus ++[Kerfisfókus]
+Kerfisfókusinn, yfirleitt kallaður bara, fókus, er sá [hlutur#Hlutir] sem tekur á móti lyklainnslætti frá lyklaborðinu.
+Sem dæmi, ef þú skrifar inn í ritsvæði, þá hefur ritsvæðið fókusinn.
+</P>
+<P>
+Algengasta aðferðin við að vafra um Windows með NVDA er með því að færa einfaldlega kerfisfókusinn með Windows lyklaborðs skipunum, eins og að styðja á tab og shift+tab til að fara áfram eða tilbaka milli stjórntækja, styðja á alt til að færa sig í valmyndareinina og nota örvalykla til að vafra í valmyndum, sem og að nota alt+tab til að skipta milli þeirra forrita sem eru í gangi.
+Þegar þetta er gert, þá mun NVDA tilkynna upplýsingar um hlutinn sem hefur fókus, svo sem nafn, gerð, gildi, stöðu, lýsingu, lyklaborðs flýtilykil og staðsetningar upplýsingar.
+</P>
+<P>
+Það eru nokkrar lyklaborðs skipanir sem eru ansi gagnlegar þegar unnið er með Kerfisfókus:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nafn</TH>
+<TH>lykill</TH>
+<TH>Lýsing</TH>
+</TR>
+<TR>
+<TD>Tilkynna stöðu fókus</TD>
+<TD>NVDA+tab</TD>
+<TD>tilkynnir hvaða hlutur hefur Kerfisfókus. Ef stutt er tvisvar þá eru upplýsingarnar stafaðar</TD>
+</TR>
+<TR>
+<TD>Tilkynna titil</TD>
+<TD>NVDA+t</TD>
+<TD>Tilkynnir titil virka gluggans. Ef stutt er tvisvar, þá eru upplýsingarnar stafaðar. Ef stutt er þrisvar þá afritast upplýsingarnar á klemmuspjaldið</TD>
+</TR>
+<TR>
+<TD>Lesa virka gluggann</TD>
+<TD>NVDA+b</TD>
+<TD>les allar upplýsingar í þeim glugga sem er virkur (gagnlegt í ýmsum gluggum sem birtast í stýrikerfinu)</TD>
+</TR>
+<TR>
+<TD>Tilkynna Stöðurein</TD>
+<TD>NVDA+end</TD>
+<TD>Tilkynnir stöðureinina ef hún fyrirfinnst. Flytur einnig hlut-fókus á þennan stað</TD>
+</TR>
+</TABLE>
+
+<A NAME="Kerfisbendill"></A>
+<H3>5.2. Vafrað með Kerfisbendli</H3>
+
+<P>
+Þegar <A HREF="#Hlutir">hlutur</A> sem bjóða upp á vöfrun og/eða ritun texta hafa [fókus #Kerfisfókus], þá er hægt að flytja sig um textann með kerfisbendlinum, einnig kallaður ritbendill.
+</P>
+<P>
+Þegar fókusinn er á hlut sem hefur virkjaðan kerfisbendilinn, þá er hægt að nota örvalyklana, síða upp, síða niður, heim, endir, osfrv. til að færa sig í gegnum textann.
+Þú getur einnig breytt textanum ef stjórntækið býður upp á ritskoðun.
+NVDA mun tilkynna þegar þú færir þig milli stafa, orða og lína, og mun einnig tilkynna þegar þú velur og afvelur texta.
+</P>
+<P>
+NVDA býður upp á eftirfarandi lyklaskipanir í samstarfi við kerfisbendilinn:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nafn</TH>
+<TH>Lykill</TH>
+<TH>Lýsing</TH>
+</TR>
+<TR>
+<TD>Lesa allt</TD>
+<TD>NVDA+örNiður</TD>
+<TD>Hefur lestur frá staðsetningu kerfisbendils, og flytur hann eftir því sem lestur heldur áfram</TD>
+</TR>
+<TR>
+<TD>Lesa línu</TD>
+<TD>NVDA+örUpp</TD>
+<TD>Les línuna þar sem kerfisbendillinn er staðsettur. Ef stutt er tvisvar þá er línan stöfuð.</TD>
+</TR>
+<TR>
+<TD>Lesa valinn texta</TD>
+<TD>NVDA+Shift+örUpp</TD>
+<TD>Les allan valinn texta</TD>
+</TR>
+</TABLE>
+
+<P>
+Þegar unnið er í töflu þá eru eftirfarandi lyklaskipanir einnig í boði:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nafn</TH>
+<TH>Lykill</TH>
+<TH>Lýsing</TH>
+</TR>
+</TABLE>
 
 <!-- html code generated by txt2tags 2.6 (http://txt2tags.org) -->
 <!-- cmdline: txt2tags -q userGuide.t2t -->
