@@ -370,4 +370,51 @@ Eftirfarandi skipanir eru til reiðu til að skoða texta:
 
 ATH: talnalás þarf að vera afvirkjaður til að númerískir lyklar virki sem NVDA flýtilyklar.
 
-Til að auðveldara sé að muna flýtilyklana, þá hefur flýtilyklar vegna textaskipana
+Til að auðveldara sé að muna flýtilyklana, þá hefur flýtilyklum fyrir textaskipanir verið raðað upp í töflusnið, þrír á móti þremur, listað að ofanverðu er það lína, orð og stafur og frá vinstri til hægri í töflunni er fyrri, núverandi og næsta staðsetning.
+Útlistunin er sem sagt eftirfarandi:
+| Fyrri lína | Núverandi lína | Næsta lína |
+| Fyrra orð | Núverandi orð | Næsta orð |
+| Fyrri bókstafur | Núverandi bókstafur | Næsti bókstafur |
+
+++ Flöt skoðun ++[FlötSkoðun]
+Þrátt fyrir að það sé yfirleitt þannig að aðeins sé hægt að skoða innihald eins hlutar [hlutur #Hlutir], þá bjóða sumir hlutir upp á þann möguleika að skoða hluti sem eru geymdir innan þeirra.
+Flókin skjöl gera þér kleift að skoða allt innihald þeirra og forritsgluggar gera kleift að skoða texta á skjánum eins og hann birtist myndrænt.
+Þetta er kallað flöt skoðun.
+Þetta er svipað og hugtökinn skjáskoðun eða músabendils virkni í mörgum öðrum Windows skjálesurum.
+
+Þegar er unnið er í flatri skoðun þá ertu staðsettur þar sem núverandi [leiðsöguhlutur #LeiðsöguHlutur] er.
+Ef þú hefur ekki notað hlutavöfrun, þá er þetta yfirleitt sú staðsetning sem hefur [fókus #Kerfisfókus].
+Sem dæmi, ef leiðsöguhluturinn er hnappur, þá muntu yfirleitt verða staðsettur á textanum í hnappnum þegar unnið er í flatri skoðun.
+Þú getur svo unnið með/lesið textann með því að nota [textaskoðunar skipanir #TextaSkoðun] þaðan.
+Þú getur einnig vafrað beint til þess hlutar sem inniheldur staðsetningu bendilsins, og þar með notað [hluta vöfrun #HlutaVöfrun] þaðan.
+
+Athugið að sjálfgefin stilling er að blindraletur eltir [fókus #KerfisFókus] og [bendil #KerfisBendil] í staðinn fyrir að elta hlutavöfrunina og textaskoðunina. 
+Ef þú vilt fremur að það elti hlutavöfrun og textaskoðunina, þá þarf að [stilla blindraletur til vefjast við #Blindraletursamofið].
+
+Eftirfarandi tvær skipanir virkja/afvirkja flötu skoðunina:
+%kc:beginInclude
+|| Nafn | Borðtölvu lykill | Fartölvu lykill | Snerting | Lýsing |
+| Fara í flata skoðun | NVDA+númerískt7 | NVDA+síðaUpp | 2-fingra fletta upp | Flytur í flata skoðun, staðsetur fókus við upphaf staðsetningu núverandi leiðsöguhlutar, gerir þér kleift að skoða skjáinn (eða skjal ef þú ert þegar inni í skjali) með textaskoðunar skipunum. |
+| Færa á hlut frá flatri skoðun | NVDA+númerískt1 | NVDA+síðaUpp | 2-fingra fletta niður | vafrar að hlutnum sem birtur er með texta á núverandi staðsetningu bendilsins í flatri skoðun |
+%kc:endInclude
+
+++ Vafrað með Músinni ++
+Þegar þú hreyfir músina, þá sjálfkrafa tilkynnir NVDA þann texta sem er undir músarbendlinum.
+Þar sem það er stutt, þá les NVDA alla málsgreinina sem músarbendillinn er staðsettur á, en stundum er þó bara línan lesin.
+
+NVDA er einnig hægt að stilla til að lesa tegund [hlutur #Hlutir] undir músarbendlinum (sb. lista, hnapp, osfrv.).
+Þetta getur verið gagnlegt fyrir blinda notendur, þar sem stundum eru textaupplýsingarnar ekki nægjanlegar.
+
+NVDA býður upp á aðferð fyrir notendur til að skilja hvar músin er staðsett í samhengi við umfang skjásins sem unnið er með, með því að tilkynna staðsetningu músarinnar með hljóðmerkjum.
+Því hærra sem músin er á skjánum, þeim mun bjartara er hljóðmerkið.
+Því lengra til vinstri eða hægri músin er á skjánum, þeim mun lengra til vinstri eða hægri mun hljóðið heyrast (að því gefnu að notuð sé heyrnartól eða hátalarar).
+
+Þessir eiginleikar músarinnar eru ekki sjálfkrafa virkjaðir í NVDA.
+Ef þú vilt nýta þá, þá er hægt að sérsníða þá í [Músar stillingar #MúsarStillingar] skilaboðaglugganum, í Stillingar valmynd NVDA.
+
+Þrátt fyrir að best sé að nota mús þegar vafrað er um með þessum hætti, þá inniheldur NVDA nokkra flýtilykla í tengslum við slíka vöfrun:
+%kc:beginInclude
+|| Nafn | Borðtölvu lykill | Fartölvu lykill | Lýsing |
+| Vinstri músarsmellur | númerísktDeiling | NVDA+örVinstri | einn vinstri músarsmellur. Hin algenga tvísmelli aðgerð er framkvæmd með því að styðja tvisvar sinnum snöggt á lykilinn |
+| Læsa niðri vinstri músarhnappi | shift+númerísktDeiling | NVDA+shift+örVinstri | Læsir vinstri músarhnappi niðri. Stutt aftur til að losa hann. Til að draga til músina, styddu á þennan lykil til að festa niðri vinstri músarsmell aðgerðina og hreyfðu svo músina til með fyrrgreindum músar flýtilyklum eða með músinni sjálfri |
+| Right mouse click | numpadMultiply | NVDA+rightArrow | Clicks the right mouse button once. |
