@@ -167,7 +167,7 @@ Tärkeimpiä ominaisuuksia ovat:
 <LI>Yli 43 kieltä tukeva sisäänrakennettu puhesyntetisaattori
 <LI>Automaattinen tekstin muotoilutietojen, kuten fontin nimen ja koon, tyylin sekä kirjoitusvirheiden, lukeminen aina kun mahdollista
 <LI>Automaattinen hiiren alla olevan tekstin lukeminen ja valinnainen hiiren sijainnin ilmaiseminen äänimerkeillä
-<LI>Tuki useille pistenäytöille
+<LI>Tuki useille pistenäytöille, mukaan lukien pistekirjoituksen syöttäminen tietokonemerkistöä käyttäen pistenäytöissä, joissa on pistenäppäimistö
 <LI>Mahdollisuus käyttää USB-muistitikulta tai muulta siirrettävältä tietovälineeltä ilman asennusta
 <LI>Helppokäyttöinen puhuva asennusohjelma
 <LI>Käännökset 42 kielelle
@@ -1671,11 +1671,26 @@ Tämä vaihtoehto ei ole käytettävissä, mikäli pistenäyttö tukee vain auto
 Katso <A HREF="#Tuetutpistenaytot">Tuetut pistenäytöt</A> -kappaleesta lisätietoja pistenäyttösi tukemista kommunikointityypeistä ja käytettävissä olevista porteista.
 </P>
 
-<H5>Pistetaulukko</H5>
+<H5>Tulostustaulukko</H5>
 
 <P>
-Seuraavana tässä valintaikkunassa on "Pistetaulukko"-yhdistelmäruutu, jossa on pistetaulukkoja eri kielille.
+Seuraavana tässä valintaikkunassa on "Tulostustaulukko"-yhdistelmäruutu.
+Se sisältää pistetaulukoita eri kielille ja pistekirjoitusstandardeille sekä -tasoille.
+Valittua taulukkoa käytetään tekstin kääntämiseen pistenäytöllä näytettäväksi pistekirjoitukseksi.
 Vaihtoehtojen välillä voidaan liikkua nuolinäppäimillä.
+</P>
+
+<H5>Syöttötaulukko</H5>
+
+<P>
+Edellistä vaihtoehtoa täydentää Syöttötaulukko-yhdistelmäruutu.
+Valittua taulukkoa käytetään pistenäytön Perkins-tyylisellä pistenäppäimistöllä syötetyn pistekirjoituksen kääntämiseen tekstiksi.
+NVDA tukee tällä hetkellä ainoastaan tietokonemerkistöllä syöttämistä, joten vain 8 pisteen tietokonemerkistön taulukot näytetään.
+Vaihtoehtojen välillä voidaan liikkua nuolinäppäimillä.
+</P>
+<P>
+Huomaa, että tästä vaihtoehdosta on hyötyä vain, jos pistenäytössä on Perkins-tyylinen -näppäimistö ja mikäli näytön ajuri tukee tätä ominaisuutta.
+Mikäli pistenäppäimistön sisältävä pistenäyttö ei tue syöttämistä, siitä huomautetaan <A HREF="#Tuetutpistenaytot">Tuetut pistenäytöt</A> -kappaleessa.
 </P>
 
 <H5>Laajenna kohdistimen kohdalla oleva sana</H5>
@@ -2642,6 +2657,10 @@ Niiden käyttämiseksi ei tarvitse asentaa ajureita.
 Riittää, että pistenäyttö kytketään tietokoneeseen ja määritetään NVDA käyttämään sitä.
 </P>
 <P>
+Vaikka näissä pistenäytöissä onkin pistenäppäimistö, ne huolehtivat itse pistekirjoituksen kääntämisestä tekstiksi.
+Tämän vuoksi NVDA:n pistesyöttötaulukkoasetuksella ei ole merkitystä.
+</P>
+<P>
 Seuraavassa on näiden pistenäyttöjen näppäinkomennot NVDA:ta käytettäessä.
 Katso näytön käyttöohjeesta kuvaukset näppäinten paikoista.
 </P>
@@ -2731,6 +2750,9 @@ Katso näytön käyttöohjeesta kuvaukset näppäinten paikoista.
 <P>
 NVDA tukee kaikkia <A HREF="http://www.handytech.de/">Handy Techin</A> pistenäyttöjä sekä USB-liitännällä että bluetooth-yhteydellä.
 Vanhempia USB-malleja varten tietokoneelle on asennettava Handy Techin USB-ajurit.
+</P>
+<P>
+Pistesyöttöä ei vielä tueta.
 </P>
 <P>
 Seuraavassa on lueteltu näiden pistenäyttöjen näppäinkomennot NVDA:ta käytettäessä.
@@ -3139,6 +3161,9 @@ Katso näytön käyttöohjeesta kuvaukset näppäinten paikoista.
 <P>
 NVDA tukee <A HREF="http://www.hims-inc.com/">HIMS:in</A> Braille Sense- ja Braille EDGE -pistenäyttöjä USB-liitännällä tai Bluetoothilla kytkettyinä.
 Mikäli käytetään USB-liitäntää, on tietokoneelle asennettava HIMS:in ajurit.
+</P>
+<P>
+Pistesyöttöä ei vielä tueta.
 </P>
 <P>
 Seuraavassa on näiden pistenäyttöjen näppäinkomennot NVDA:ta käytettäessä.
@@ -4027,6 +4052,10 @@ Katso laitteen käyttöohjeesta tarkat kuvaukset näppäinten paikoista.
 Sen käyttämiseksi on asennettava <A HREF="http://brl.thefreecat.org/brltty/">BRLTTY:n Windows-versio</A>.
 Siitä tulisi asentaa uusin versio, jonka tiedostonimi on esimerkiksi brltty-win-4.2-2.exe.
 Käytettävää pistenäyttöä ja porttia määritettäessä on syytä kiinnittää tarkasti huomiota ohjeisiin, erityisesti jos käytetään USB-pistenäyttöä ja mikäli valmistajan ajurit on jo asennettu.
+</P>
+<P>
+BRLTTY huolehtii tällä hetkellä itse pistesyötöstä näytöissä, joissa on pistenäppäimistö.
+Tämän vuoksi NVDA:n pistesyöttötaulukkoasetuksella ei ole merkitystä
 </P>
 <P>
 Seuraavassa on BRLTTY:n näppäinkomennot NVDA:ta käytettäessä.
