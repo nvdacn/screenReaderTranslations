@@ -167,7 +167,7 @@ En dikkat çeken özelliklere şunlar dahildir:
 <LI>43'den fazla dili destekleyen ve programla birlikte kurulan konuşma sentezleyicisi
 <LI>Mevcut olduğunda, yazıtipi adı ve boyutu, sitili, ve imla hataları gibi metin biçimlendirmelerinin bildirimi
 <LI>Fare altındaki metnin otomatik bildirimi ve fare hareketlerinin isteğe bağlı sesle gösterimi
-<LI>Birçok Braille (kabartma) ekrana destek
+<LI>Braille klavyesi bulunanlardan bilgisayar braille girişi yapılmasını da kapsayan Birçok Braille (kabartma) ekran için destek
 <LI>Kuruluma ihtiyaç duyulmaksızın bütün olarak USB bellek veya başka bir taşınabilir aygıttan çalışabilme yeteneği
 <LI>Kullanımı kolay konuşan kurulum aracı
 <LI>42 dile çevrilmiş oluşu
@@ -1676,11 +1676,26 @@ Bu bölüm  braille ekranınız  yalnızca otomatik port belirlemeyi destekliyor
 Desteklenen bağlantı tipleri ve mevcut portlar için daha fazla detaya ulaşmak için <A HREF="#SupportedBrailleDisplays">desteklenen braille ekranlar</A> bölümünde Braille ekranınızın dokümantasyonuna baş vurabilirsiniz.
 </P>
 
-<H5>Çeviri Tablosu</H5>
+<H5>Çıktı Tablosu</H5>
 
 <P>
-Bu iletişim kutusundaki bir sonraki seçenek bir braille tablo seçim kutusudur.
-Bu seçim kutusunda, farklı diller için braille tabloları bulacaksınız. Bir braille tablodan diğer braille tabloya yön tuşlarını kullanarak geçebilirsiniz.
+Bu iletişim kutusundaki bir sonraki seçenek braille çıktı tablosu seçim kutusudur.
+Bu seçim kutusunda, farklı diller için braille tabloları bulacaksınız.
+Seçilen tablo, kabartma ekranda metnin nasıl gösterileceğini belirler.
+Bir braille tablodan diğerine yön tuşlarını kullanarak geçebilirsiniz.
+</P>
+
+<H5>Girdi Tablosu</H5>
+
+<P>
+Önceki seçeneği bütünleyen bir özellik olarak, bulacağınız sonraki ayar braille girdi tablosu seçim kutusudur.
+Seçilen tablo kabartma ekranınızın klavyesinden braille olarak metin girişi yapmanız için kullanılır .
+NVDA şuanda yalnızca bilgisayar braille girişini destekler, dolayısıyla sadece 8 noktalı bilgisayar braille tabloları gösterilir.
+Bir braille tablodan diğerine yön tuşlarını kullanarak geçebilirsiniz.
+</P>
+<P>
+Bu işlev yalnızca, üzerinde klavye bulunan ve sürücüsü bu özelliği destekleyen braille ekranlar için geçerlidir.
+Üzerinde klavye bulunduğu halde kabartma  ekran bu özelliği desteklemiyorsa, bu  <A HREF="#SupportedBrailleDisplays">Desteklenen Kabartma Ekranlar</A> bölümünde belirtilir.
 </P>
 
 <H5>İmleç altındaki sözcüğü bilgisayar braille olarak Genişlet</H5>
@@ -2644,6 +2659,10 @@ Bu ekranları kullanmak için belirli bir sürücüye gereksiniminiz bulunmamakt
 Yalnızca ekranı takın ve kullanmak için NVDA'yı ayarlayın.
 </P>
 <P>
+Bu ekranların üzerinde braille klavye olmasının yanında, braille metin çevirisi de bu ekranlar tarafından yapılır.
+Dolayısıyla, NVDA'nın braille girdi tablo ayarı bu ekranları etkilemez.
+</P>
+<P>
 Aşağıda bu ekranla kullanılabilecek tuş kombinasyonları yer almaktadır.
 Lütfen bu tuşların nerede bulunacağıyla ilgili Braille ekran yardım belgelerine bakın.
 </P>
@@ -2731,7 +2750,11 @@ Lütfen bu tuşların nerede bulunacağıyla ilgili Braille ekran yardım belgel
 <H3>11.3. Handy Tech Displays</H3>
 
 <P>
-NVDA USB veya bluetooth ile bağlandıklarında <A HREF="http://www.handytech.de/">Handy Tech</A> tarafından üretilen tüm ekranları desteklemektedir. Bazı daha eski USB ekranlar için Handy Tech sürücülerini sisteminize yüklemeniz gerekecektir.
+NVDA USB veya bluetooth ile bağlandıklarında <A HREF="http://www.handytech.de/">Handy Tech</A> tarafından üretilen tüm ekranları desteklemektedir.
+Bazı daha eski USB ekranlar için Handy Tech sürücülerini sisteminize yüklemeniz gerekecektir.
+</P>
+<P>
+Braille girişi henüz desteklenmemektedir.
 </P>
 <P>
 Aşağıda bu ekranla kullanılabilecek tuş kombinasyonları yer almaktadır.
@@ -3140,6 +3163,9 @@ Tuşların yeri ve tarifi için Braille ekranın dokümantasyonunu inceleyin.
 <P>
 NVDA USB ya da bluetooth ile bağlandıklarında <A HREF="http://www.hims-inc.com/">Hims</A> tarafından üretilen Braille Sense ve Braille EDGE ekranlarını destekler. 
 USB üzerinden bağlıyorsanız, sisteminize HIMS tarafından dağıtılan USB sürücülerini kurmanız gerekir.
+</P>
+<P>
+Braille girişi henüz desteklenmemektedir.
 </P>
 <P>
 Aşağıda braille ekranı NVDA ile hangi tuşlarla kullanabileceğinizi bulabilirsiniz.
@@ -4028,6 +4054,10 @@ Please check your BrailleNote's documentation to find where these keys are locat
 bunu kullanabilmek için,<A HREF="http://brl.thefreecat.org/brltty/">BRLTTY for Windows</A> programını yüklemeniz gerekecektir.
 En son kurulum sürümünü indirip kurmalısınız. bunun adı şu biçimde olabilir: brltty-win-4.2-2.exe.
 Ekranı ve kullanılacak portu ayarlarken, özellikle USB sürücüleri kullanıyorsanız ve elinizde üreticilerin sürücüleri varsa, yönergeleri yakından takip ettiğinizden emin olun.
+</P>
+<P>
+Kabartma klavyesi bulunan ekranlar için, BRLTTY şuanda braille girişini kendisi yönetmektedir.
+Dolayısıyla, NVDA'nın braille girdi tablosu ayarı bu ekranları etkilemez.
 </P>
 <P>
 Aşağıda NVDA için BRLTTY tuş komutları bulunmaktadır.

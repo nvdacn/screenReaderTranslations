@@ -26,6 +26,7 @@
 <LI>Support for port selection when using freedom Scientific displays (Automatic, USB or Bluetooth).
 <LI>Support for the BrailleNote family of notetakers from Humanware when acting as a braille terminal for a screen reader. (<A HREF="http://www.nvda-project.org/ticket/2012">#2012</A>)
 <LI>Support for older models of Papenmeier BRAILLEX braille displays. (<A HREF="http://www.nvda-project.org/ticket/2679">#2679</A>)
+<LI>Support for input of computer braille for braille displays which have a braille keyboard. (<A HREF="http://www.nvda-project.org/ticket/808">#808</A>)
 </UL>
 
 <H3>Bug Fixes</H3>
@@ -55,6 +56,11 @@
  <UL>
  <LI>This is most useful for braille displays which support connection via a legacy serial port.
  <LI>This is done using the getPossiblePorts class method on the BrailleDisplayDriver class.
+ </UL>
+<LI>Braille input from braille keyboards is now supported. (<A HREF="http://www.nvda-project.org/ticket/808">#808</A>)
+ <UL>
+ <LI>Braille input is encompassed by the brailleInput.BrailleInputGesture class or a subclass thereof.
+ <LI>Subclasses of braille.BrailleDisplayGesture (as implemented in braille display drivers) can also inherit from brailleInput.BrailleInputGesture. This allows display commands and braille input to be handled by the same gesture class.
  </UL>
 </UL>
 
