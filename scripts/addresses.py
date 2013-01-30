@@ -33,7 +33,7 @@ addresses = {
     },
     'da': {
         'lang': 'Danish',
-        'email': ['Daniel K. Gartmann <kontakt@nvda.dk>', 'Nicolai Svendsen <chojiro1990@gmail.com>'],
+        'email': ['Daniel K. Gartmann <kontakt@nvda.dk>', 'Nicolai Svendsen <chojiro1990@gmail.com>', 'bue@vester-andersen.dk'],
     },
     'de': {
         'lang':'German',
