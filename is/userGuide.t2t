@@ -254,7 +254,7 @@ Hvert forrit og stýrikerfið sjálft samanstanda af mörgum hlutum.
 Hlutur er hvert stakt atriði, svo sem hluti af texta, hnappur, gátreitur, stika, listi eða jafnvel ritsvæði.
 
 ++ Vafrað með Kerfisfókus ++[SystemFocus]
-Kerfisfókusinn, yfirleitt kallaður bara, fókus, er sá [hlutur#Hlutir] sem tekur á móti lyklainnslætti frá lyklaborðinu.
+Kerfisfókusinn, yfirleitt kallaður bara, fókus, er sá [object #Objects] sem tekur á móti lyklainnslætti frá lyklaborðinu.
 Sem dæmi, ef þú skrifar inn í ritsvæði, þá hefur ritsvæðið fókusinn.
 
 Algengasta aðferðin við að vafra um Windows með NVDA er með því að færa einfaldlega kerfisfókusinn með Windows lyklaborðs skipunum, eins og að styðja á tab og shift+tab til að fara áfram eða tilbaka milli stjórntækja, styðja á alt til að færa sig í valmyndareinina og nota örvalykla til að vafra í valmyndum, sem og að nota alt+tab til að skipta milli þeirra forrita sem eru í gangi.
@@ -270,7 +270,7 @@ Algengasta aðferðin við að vafra um Windows með NVDA er með því að fær
 %kc:endInclude
 
 ++ Vafrað með Kerfisbendli ++[SystemCaret]
-Þegar [hlutur #Hlutir] sem bjóða upp á vöfrun og/eða ritun texta hafa [fókus #Kerfisfókus], þá er hægt að flytja sig um textann með kerfisbendlinum, einnig kallaður ritbendill.
+Þegar [object #Objects] sem bjóða upp á vöfrun og/eða ritun texta hafa [focused #SystemFocus], þá er hægt að flytja sig um textann með kerfisbendlinum, einnig kallaður ritbendill.
 
 Þegar fókusinn er á hlut sem hefur virkjaðan kerfisbendilinn, þá er hægt að nota örvalyklana, síða upp, síða niður, heim, endir, osfrv. til að færa sig í gegnum textann.
 Þú getur einnig breytt textanum ef stjórntækið býður upp á ritskoðun.
@@ -293,14 +293,14 @@ NVDA býður upp á eftirfarandi lyklaskipanir í samstarfi við kerfisbendilinn
 %kc:endInclude
 
 ++ Hlutavöfrun ++
-Yfirleitt, þegar unnið er með forrit, er notast við skipanir sem færa til [fókus #Kerfisfókus] og [bendil #Kerfisbendil].
+Yfirleitt, þegar unnið er með forrit, er notast við skipanir sem færa til [focus #SystemFocus] og [caret #SystemCaret].
 En það kemur fyrir að notandi vill skoða forritið eða stýrikerfið án þess að hreyfa fókusinn eða bendilinn.
-Þú gætir líka viljað vinna með [hlutur #Hlutir] sem eru ekki aðgengilegir með lyklaborðinu.
+Þú gætir líka viljað vinna með [objects #Objects] sem eru ekki aðgengilegir með lyklaborðinu.
 Í slíkum kringumstæðum er hægt að nota hlutavöfrun.
 
-Hlutavöfrun gerir þér kleift að vafra um og sækja upplýsingar um einstaka [hlutir #Hlutir]
+Hlutavöfrun gerir þér kleift að vafra um og sækja upplýsingar um einstaka [objects #Objects]
 Þegar þú vafrar til hlutar mun NVDA tilkynna hann á svipaðan hátt og kerfisfókusinn.
-Til að lesa texta sem birtist á skjánum, er í staðinn hægt að nota [flöt skoðun #Flötskoðun].
+Til að lesa texta sem birtist á skjánum, er í staðinn hægt að nota [flat review #FlatReview].
 
 Í staðinn fyrir að þurfa að vafra fram og tilbaka milli allra hluta í kerfinu, þá er hlutum raðað í stigveldi.
 Þetta þýðir að sumir hlutir innihalda aðra hluti og þú þarft að vafra inn í þá til að fá aðgang að þeim hlutum sem þeir innihalda.
@@ -311,11 +311,11 @@ Með því að færa þig upp í stigveldinu ferður aftur í listann sjálfan.
 Á sama hátt þá inniheldur verkfærastika, verkfæri, svo þú þarf að vafra innan stikunnar til að fá aðgang að verkfærum hennar.
 
 Sá hlutur sem verið er að skoða er kallaður leiðsögu-hluturinn.
-Þegar þú vafrar að hlut þá er hægt að skoða han með [textaskoðunar skipunum #Textaskoðun].
+Þegar þú vafrar að hlut þá er hægt að skoða han með [text review commands #ReviewingText].
 Það er sjálfgefin stilling að leiðsögu-hluturinn færist með kerfisbendlinum, en það er hægt að virkja og afvirkja þessa hegðun.
 
-Athugið, sjálfgefin stilling er að blindraletrið fylgir [fókus #Kerfisfókus] og [bendli #Kerfisbendli] í staðinn fyrir hlutavöfrun og textaskoðun. 
-Ef þú vilt fremur að það fylgi hlutavöfrun þá þarf að [stilla blindraletur til að vefjast við #Blindraletursamofið] skoðun.
+Athugið, sjálfgefin stilling er að blindraletrið fylgir [focus #SystemFocus] og [caret #SystemCaret] í staðinn fyrir hlutavöfrun og textaskoðun. 
+Ef þú vilt fremur að það fylgi hlutavöfrun þá þarf að [configure braille to be tethered to #BrailleTether] skoðun.
 
 Til að vafra eftir hlutum eru notaðar eftirfarandi skipanir:
 
@@ -335,16 +335,16 @@ Til að vafra eftir hlutum eru notaðar eftirfarandi skipanir:
 ATH: talnalásinn á lyklaborðinu þarf að vera óvirkur til að númerískir lyklar virki.
 
 ++ Texta skoðun ++[ReviewingText]
-NVDA gerir kleift að lesa innihald [leiðsögu hlutar #Hlutavöfrun] (þmt. [flöt skoðun #FlötSkoðun]) eftir bókstaf, orði eða línu.
-Þetta er helst gagnlegt á stöðum (þmt. Windows skipunarlinu gluggum) þar sem ekki fyrirfinnst [kerfisbendill #Kerfisbendill].
+NVDA gerir kleift að lesa innihald [navigator object #ObjectNavigation] (þmt. [flat review #FlatReview]) eftir bókstaf, orði eða línu.
+Þetta er helst gagnlegt á stöðum (þmt. Windows skipunarlinu gluggum) þar sem ekki fyrirfinnst [system caret #SystemCaret].
 Sem dæmi, þú gætir notað þetta til að lesa langan texta í skilaboðaglugga.
 
 Þegar þú færir til þennan bendil, þá fylgir ekki kerfisbendillinn með, sem þýðir að þú getur lesið textann í glugganum án þess að tapa fyrri staðsetningu.
 Aftur á móti, þá er það sjálfgefin stilling að hann fylgi með kerfisbendlinum. 
 Þetta er hægt að afvirkja ef vill.
 
-Athugið að blindraletrið fylgir [fókus #Kerfisfókus] og [bendill #Kerfisbendill] að sjálfgefnu, í staðinn fyrir hlutvöfruninni og texta skoðun.
-Ef þú vilt heldur að það fylgi hlutvöfrun og texta skoðun þá þarf að [stilla blindraletur til vefjast við #Blindraletursamofið] skoðun.
+Athugið að blindraletrið fylgir [focus #SystemFocus] og [caret #SystemCaret] að sjálfgefnu, í staðinn fyrir hlutvöfruninni og texta skoðun.
+Ef þú vilt heldur að það fylgi hlutvöfrun og texta skoðun þá þarf að [configure braille to be tethered to #BrailleTether] skoðun.
 
 Eftirfarandi skipanir eru til reiðu til að skoða texta:
 %kc:beginInclude
@@ -377,19 +377,19 @@ Til að auðveldara sé að muna flýtilyklana, þá hefur flýtilyklum fyrir te
 | Fyrri bókstafur | Núverandi bókstafur | Næsti bókstafur |
 
 ++ Flöt skoðun ++[FlatReview]
-Þrátt fyrir að það sé yfirleitt þannig að aðeins sé hægt að skoða innihald eins hlutar [hlutur #Hlutir], þá bjóða sumir hlutir upp á þann möguleika að skoða hluti sem eru geymdir innan þeirra.
+Þrátt fyrir að það sé yfirleitt þannig að aðeins sé hægt að skoða innihald eins hlutar [object #Objects], þá bjóða sumir hlutir upp á þann möguleika að skoða hluti sem eru geymdir innan þeirra.
 Flókin skjöl gera þér kleift að skoða allt innihald þeirra og forritsgluggar gera kleift að skoða texta á skjánum eins og hann birtist myndrænt.
 Þetta er kallað flöt skoðun.
 Þetta er svipað og hugtökinn skjáskoðun eða músabendils virkni í mörgum öðrum Windows skjálesurum.
 
-Þegar er unnið er í flatri skoðun þá ertu staðsettur þar sem núverandi [leiðsöguhlutur #LeiðsöguHlutur] er.
-Ef þú hefur ekki notað hlutavöfrun, þá er þetta yfirleitt sú staðsetning sem hefur [fókus #Kerfisfókus].
+Þegar er unnið er í flatri skoðun þá ertu staðsettur þar sem núverandi [navigator object #ObjectNavigation] er.
+Ef þú hefur ekki notað hlutavöfrun, þá er þetta yfirleitt sú staðsetning sem hefur [focus #SystemFocus].
 Sem dæmi, ef leiðsöguhluturinn er hnappur, þá muntu yfirleitt verða staðsettur á textanum í hnappnum þegar unnið er í flatri skoðun.
-Þú getur svo unnið með/lesið textann með því að nota [textaskoðunar skipanir #TextaSkoðun] þaðan.
-Þú getur einnig vafrað beint til þess hlutar sem inniheldur staðsetningu bendilsins, og þar með notað [hluta vöfrun #HlutaVöfrun] þaðan.
+Þú getur svo unnið með/lesið textann með því að nota [text review commands #ReviewingText] þaðan.
+Þú getur einnig vafrað beint til þess hlutar sem inniheldur staðsetningu bendilsins, og þar með notað [object navigation #ObjectNavigation] þaðan.
 
-Athugið að sjálfgefin stilling er að blindraletur eltir [fókus #KerfisFókus] og [bendil #KerfisBendil] í staðinn fyrir að elta hlutavöfrunina og textaskoðunina. 
-Ef þú vilt fremur að það elti hlutavöfrun og textaskoðunina, þá þarf að [stilla blindraletur til vefjast við #Blindraletursamofið].
+Athugið að sjálfgefin stilling er að blindraletur eltir [focus #SystemFocus] og [caret #SystemCaret] í staðinn fyrir að elta hlutavöfrunina og textaskoðunina. 
+Ef þú vilt fremur að það elti hlutavöfrun og textaskoðunina, þá þarf að [configure braille to be tethered to #BrailleTether].
 
 Eftirfarandi tvær skipanir virkja/afvirkja flötu skoðunina:
 %kc:beginInclude
@@ -410,7 +410,7 @@ NVDA býður upp á aðferð fyrir notendur til að skilja hvar músin er staðs
 Því lengra til vinstri eða hægri músin er á skjánum, þeim mun lengra til vinstri eða hægri mun hljóðið heyrast (að því gefnu að notuð sé heyrnartól eða hátalarar).
 
 Þessir eiginleikar músarinnar eru ekki sjálfkrafa virkjaðir í NVDA.
-Ef þú vilt nýta þá, þá er hægt að sérsníða þá í [Músar stillingar #MúsarStillingar] skilaboðaglugganum, í Stillingar valmynd NVDA.
+Ef þú vilt nýta þá, þá er hægt að sérsníða þá í [Mouse settings #MouseSettings] skilaboðaglugganum, í Stillingar valmynd NVDA.
 
 Þrátt fyrir að best sé að nota mús þegar vafrað er um með þessum hætti, þá inniheldur NVDA nokkra flýtilykla í tengslum við slíka vöfrun:
 %kc:beginInclude
@@ -428,7 +428,7 @@ Flókin skjöl sem eru aðeins til lesturs, eins og vefsíður, eru lesin í NVD
 Þmt. skjöl í Mozilla Firefox, Microsoft Internet Explorer, Google Chrome, Adobe Reader og Adobe Flash.
 
 Í vafraham þá er innihald skjalsins lesið í flatri framsetningu sem hægt er að vafra um með örvalyklunum eins og það væri venjulegt textaskjal.
-Allir flýtilyklar NVDA sem snúa að [kerfisbendli "KerfisBendill] munu virka í þessu viðmóti; sb. lesa allt, tilkynna stílsnið, töflu vafraskipanir, osfrv. 
+Allir flýtilyklar NVDA sem snúa að [system caret #SystemCaret] munu virka í þessu viðmóti; sb. lesa allt, tilkynna stílsnið, töflu vafraskipanir, osfrv. 
 Upplýsingar eins og hvort texti sé tengill, fyrirsögn, osfrv. eru tilkynntar í sama vetfangi og textinn þegar þú vafrar.
 
 Stundum þá þarf að vinna með stjórntæki í þessum skjölum.
