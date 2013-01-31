@@ -644,4 +644,65 @@ Ef sjálfvirk skipting á tungumáli er virk, þá mun þessi valkostur gera kle
 Þessi valkostur er sjálfkrafa ekki virkjaður.
 
 %kc:setting
-==== Greinarmerki/ ====
+==== Greinarmerkja/Tákna Stig ====
+Lykill: NVDA+p
+
+Þetta gerir þér kleift að velja það magn af greinarmerkjum og öðrum táknum sem skulu lesin sem orð.
+Sem dæmi, þegar valið er allt, þá munu öll tákn verða lesin sem orð.
+Þessi kostur gildir um alla talgervla, ekki bara þann talgervil sem er valinn núna.
+
+==== Hástafa tónhæð, prósentustig ====
+Þessi skrifreitur býður upp á að slá inn það magn sem tónhæð skal breytast um þegar lesnir eru hástafir.
+Þetta gildi er í prósentum, þar sem neikvætt gildi lækkar tónhæðina og jákvætt gildi hækkar hana.
+Til að engin breyting sé gerð er notaður tölustafurinn 0.
+
+==== Segja "hástaf" á undan háfstöfum ====
+Þessi stilling er gátreitur sem, þegar hakað er í hann, segir NVDA að segja orðið "hástaf" áður en hástafir eru lesnir sem sjálfstæðir bókstafir, til dæmis þegar orð eru stöfuð.
+Venjulega hækkar NVDA tónhæðina eilítið fyrir alla hástafi, en sumir talgervlar styðja þetta ekki vel, þar af leiðandi er ekki víst að þessi stilling sé gagnleg.
+
+==== Tónn fyrir hástafi ====
+Ef hakað er í þennan gátreit þá mun NVDA gefa frá sér smá tón í hvert skipti sem hástafur kemur fyrir í textanum.
+Eins og með "Segja hástaf á undan hástöfum" stillinguna, þá er þetta gagnlegt fyrir talgervla sem styðja ekki breytingu á tónhæð á undan hástöfum.
+
+==== Nota stafsetningar skoðun ef hún er studd ====[VoiceSpellingFunctionality]
+Sum orð samanstanda aðeins af einum staf, en framburðurinn er mismunandi eftir því hvort bókstafurinn er lesinn einn og sér (eins og þegar hann er stafaður) eða sem hluti af orði.
+Sem dæmi, í ensku þá er "a" bæði bókstafur og orð.
+Þessi valkostur gerir talgervlinum kleift að greina milli þess hvort stafurinn sé hluti af orði eða hvort hann stendur einn og sér, ef talgervillinn styður þessa virkni.
+Flestir talgervlar styðja þetta.
+
+Þessi valkostur ætti jafnan að vera virkjaður.
+Aftur á móti, þá eru nokkrir Microsoft Speech API talgervlar sem ekki vinna rétt með þessa stillingu og hegða sér einkennilega þegar hún er virkjuð.
+Ef þú átt í vandræðum með framburð á sjálfstæðum bókstöfum, á er ráð að afvirkja þennan möguleika.
+
++++ Talgervla stillinga hringurinn +++[SynthSettingsRing]
+Ef þú vilt með skjótum hætti breyta stillingum talgervilsins án þess að fara í Radd stillinga skilaboðagluggann, þá eru nokkrir flýtilyklar í NVDA sem gera kleift að fara milli flestra radd stillinga hvar sem þú ert staddur á meðan NVDA er í gangi:
+%kc:beginInclude
+|| Nafn | Borðtölvu lykill | Fartölvu lykill | Lýsing |
+| Fara í næstu talgervla stillingu | NVDA+kontrol+örHægri | NVDA+kontrol+örHægri | Fer í næstu radd stillingu, þetta er hringur þannig að á endanum ertu kominn í sömu stillingu |
+| Fara í fyrri talgervla stillingu | NVDA+kcontrol+örVinstri | NVDA+kontrol+örVinstri | Fer í fyrri radd stillingu, þetta er hringur þannig að á endanum ertu kominn aftur í fyrri stillingu |
+| Hækka valda talgervla stillingu | NVDA+kontrol+örUpp | NVDA+kontrol+örUpp | Hækkar gildi þeirrar radd stillingar sem er valin. Sb. eykur hraða, velur næstu rödd, eykur tónstyrk |
+| Lækka valda talgervla stillingu | NVDA+kontrol+örNiður | NVDA+kontrol+örNiður | Lækkar gildi þeirrar radd stillingar sem er valin. Sb. lækkar hraða, velur fyrri rödd, lækkar tónstyrk |
+%kc:endInclude
+
++++ Blindraleturs stillingar +++
+Skilaboðagluggann fyrir blindraleturs stillingar er hægt að kalla fram með því að fara í Valkostir valmyndina og þaðan í blindraleturs stillingar.
+
+==== Blindraleturs skjár ====
+Fyrsti valkosturinn sem þú hafnar í þegar komið er í skilaboðaglugga Blindraleturs er fjölvalsreitur sem heitir "Blindraletursskjár".
+Þér verða birtir nokkrir valkostir, eftir því hvaða reklar fyrir blindraletursskjái eru uppsettir í stýrikerfinu.
+Þú vafrar milli þessara valkosta með örvalyklunum.
+
+Ekkert blindraletur þýðir að þú ert ekki að nota blindraletur.
+
+Sjá [Supported Braille Displays #SupportedBrailleDisplays] fyrir frekari upplýsingar um þá blindraletursskjái sem eru studdir.
+
+==== Tengi ====
+Þessi valkostur, ef hann er í boði, gerir kleift að velja hvaða tengi eða tegund tengingar verður notuð til að eiga samskipti við blindraletursskjáinn sem þú hefur valið.
+Þetta er fjölvalsreitur sem inniheldur þá kosti sem eru í boði blindraletursskjáinn þinn.
+
+Sjálfgefin stilling er að NVDA noti sjálfvirka tengiskoðun, sem þýðir að tengingin við blindraleturstækið verður virkjuð sjálfkrafa með því að skima eftir mögulegum USB og Blátannar tækjum í stýrikerfinu.
+Aftur á móti þá er hægt á sumum blindraleturstækjum að velja nákvæmlega hvaða tengi verður notað.
+Algengir valkostir eru "Sjálfvirkt" (sem segir NVDA að nota sjálfvirka tengiskoðun), "USB", "Blátannar" og seríal samskiptatengi ef blindraletursskjárinn þinn styður slík samskipti.
+
+Þessi valkostur er ekki í boði ef skjárinn þinn styður aðeins sjálfvirka tengiskoðun.
+
