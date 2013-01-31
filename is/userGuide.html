@@ -85,6 +85,8 @@
       <LI><A HREF="#toc48">8.1.1. Grunn stillingar (NVDA+kontrol+g)</A>
       <LI><A HREF="#toc49">8.1.2. Talgervla valkostir (NVDA+kontrol+s)</A>
       <LI><A HREF="#VoiceSettings">8.1.3. Raddstillingar (NVDA+kontrol+v)</A>
+      <LI><A HREF="#SynthSettingsRing">8.1.4. Talgervla stillinga hringurinn</A>
+      <LI><A HREF="#toc52">8.1.5. Blindraleturs stillingar</A>
       </UL>
     </UL>
   </UL>
@@ -1488,7 +1490,129 @@ Ef sjálfvirk skipting á tungumáli er virk, þá mun þessi valkostur gera kle
 Þessi valkostur er sjálfkrafa ekki virkjaður.
 </P>
 
-<H5>Greinarmerki/</H5>
+<H5>Greinarmerkja/Tákna Stig</H5>
+
+<P>
+Lykill: NVDA+p
+</P>
+<P>
+Þetta gerir þér kleift að velja það magn af greinarmerkjum og öðrum táknum sem skulu lesin sem orð.
+Sem dæmi, þegar valið er allt, þá munu öll tákn verða lesin sem orð.
+Þessi kostur gildir um alla talgervla, ekki bara þann talgervil sem er valinn núna.
+</P>
+
+<H5>Hástafa tónhæð, prósentustig</H5>
+
+<P>
+Þessi skrifreitur býður upp á að slá inn það magn sem tónhæð skal breytast um þegar lesnir eru hástafir.
+Þetta gildi er í prósentum, þar sem neikvætt gildi lækkar tónhæðina og jákvætt gildi hækkar hana.
+Til að engin breyting sé gerð er notaður tölustafurinn 0.
+</P>
+
+<H5>Segja "hástaf" á undan háfstöfum</H5>
+
+<P>
+Þessi stilling er gátreitur sem, þegar hakað er í hann, segir NVDA að segja orðið "hástaf" áður en hástafir eru lesnir sem sjálfstæðir bókstafir, til dæmis þegar orð eru stöfuð.
+Venjulega hækkar NVDA tónhæðina eilítið fyrir alla hástafi, en sumir talgervlar styðja þetta ekki vel, þar af leiðandi er ekki víst að þessi stilling sé gagnleg.
+</P>
+
+<H5>Tónn fyrir hástafi</H5>
+
+<P>
+Ef hakað er í þennan gátreit þá mun NVDA gefa frá sér smá tón í hvert skipti sem hástafur kemur fyrir í textanum.
+Eins og með "Segja hástaf á undan hástöfum" stillinguna, þá er þetta gagnlegt fyrir talgervla sem styðja ekki breytingu á tónhæð á undan hástöfum.
+</P>
+
+<A NAME="VoiceSpellingFunctionality"></A>
+<H5>Nota stafsetningar skoðun ef hún er studd</H5>
+
+<P>
+Sum orð samanstanda aðeins af einum staf, en framburðurinn er mismunandi eftir því hvort bókstafurinn er lesinn einn og sér (eins og þegar hann er stafaður) eða sem hluti af orði.
+Sem dæmi, í ensku þá er "a" bæði bókstafur og orð.
+Þessi valkostur gerir talgervlinum kleift að greina milli þess hvort stafurinn sé hluti af orði eða hvort hann stendur einn og sér, ef talgervillinn styður þessa virkni.
+Flestir talgervlar styðja þetta.
+</P>
+<P>
+Þessi valkostur ætti jafnan að vera virkjaður.
+Aftur á móti, þá eru nokkrir Microsoft Speech API talgervlar sem ekki vinna rétt með þessa stillingu og hegða sér einkennilega þegar hún er virkjuð.
+Ef þú átt í vandræðum með framburð á sjálfstæðum bókstöfum, á er ráð að afvirkja þennan möguleika.
+</P>
+
+<A NAME="SynthSettingsRing"></A>
+<H4>8.1.4. Talgervla stillinga hringurinn</H4>
+
+<P>
+Ef þú vilt með skjótum hætti breyta stillingum talgervilsins án þess að fara í Radd stillinga skilaboðagluggann, þá eru nokkrir flýtilyklar í NVDA sem gera kleift að fara milli flestra radd stillinga hvar sem þú ert staddur á meðan NVDA er í gangi:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nafn</TH>
+<TH>Borðtölvu lykill</TH>
+<TH>Fartölvu lykill</TH>
+<TH>Lýsing</TH>
+</TR>
+<TR>
+<TD>Fara í næstu talgervla stillingu</TD>
+<TD>NVDA+kontrol+örHægri</TD>
+<TD>NVDA+kontrol+örHægri</TD>
+<TD>Fer í næstu radd stillingu, þetta er hringur þannig að á endanum ertu kominn í sömu stillingu</TD>
+</TR>
+<TR>
+<TD>Fara í fyrri talgervla stillingu</TD>
+<TD>NVDA+kcontrol+örVinstri</TD>
+<TD>NVDA+kontrol+örVinstri</TD>
+<TD>Fer í fyrri radd stillingu, þetta er hringur þannig að á endanum ertu kominn aftur í fyrri stillingu</TD>
+</TR>
+<TR>
+<TD>Hækka valda talgervla stillingu</TD>
+<TD>NVDA+kontrol+örUpp</TD>
+<TD>NVDA+kontrol+örUpp</TD>
+<TD>Hækkar gildi þeirrar radd stillingar sem er valin. Sb. eykur hraða, velur næstu rödd, eykur tónstyrk</TD>
+</TR>
+<TR>
+<TD>Lækka valda talgervla stillingu</TD>
+<TD>NVDA+kontrol+örNiður</TD>
+<TD>NVDA+kontrol+örNiður</TD>
+<TD>Lækkar gildi þeirrar radd stillingar sem er valin. Sb. lækkar hraða, velur fyrri rödd, lækkar tónstyrk</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc52"></A>
+<H4>8.1.5. Blindraleturs stillingar</H4>
+
+<P>
+Skilaboðagluggann fyrir blindraleturs stillingar er hægt að kalla fram með því að fara í Valkostir valmyndina og þaðan í blindraleturs stillingar.
+</P>
+
+<H5>Blindraleturs skjár</H5>
+
+<P>
+Fyrsti valkosturinn sem þú hafnar í þegar komið er í skilaboðaglugga Blindraleturs er fjölvalsreitur sem heitir "Blindraletursskjár".
+Þér verða birtir nokkrir valkostir, eftir því hvaða reklar fyrir blindraletursskjái eru uppsettir í stýrikerfinu.
+Þú vafrar milli þessara valkosta með örvalyklunum.
+</P>
+<P>
+Ekkert blindraletur þýðir að þú ert ekki að nota blindraletur.
+</P>
+<P>
+Sjá <A HREF="#SupportedBrailleDisplays">Supported Braille Displays</A> fyrir frekari upplýsingar um þá blindraletursskjái sem eru studdir.
+</P>
+
+<H5>Tengi</H5>
+
+<P>
+Þessi valkostur, ef hann er í boði, gerir kleift að velja hvaða tengi eða tegund tengingar verður notuð til að eiga samskipti við blindraletursskjáinn sem þú hefur valið.
+Þetta er fjölvalsreitur sem inniheldur þá kosti sem eru í boði blindraletursskjáinn þinn.
+</P>
+<P>
+Sjálfgefin stilling er að NVDA noti sjálfvirka tengiskoðun, sem þýðir að tengingin við blindraleturstækið verður virkjuð sjálfkrafa með því að skima eftir mögulegum USB og Blátannar tækjum í stýrikerfinu.
+Aftur á móti þá er hægt á sumum blindraleturstækjum að velja nákvæmlega hvaða tengi verður notað.
+Algengir valkostir eru "Sjálfvirkt" (sem segir NVDA að nota sjálfvirka tengiskoðun), "USB", "Blátannar" og seríal samskiptatengi ef blindraletursskjárinn þinn styður slík samskipti.
+</P>
+<P>
+Þessi valkostur er ekki í boði ef skjárinn þinn styður aðeins sjálfvirka tengiskoðun.
+</P>
 
 <!-- html code generated by txt2tags 2.6 (http://txt2tags.org) -->
 <!-- cmdline: txt2tags -q userGuide.t2t -->
