@@ -21,11 +21,19 @@
 <LI>Im Internet Explorer 9 und neuer werden Benachrichtigungen korrekt ausgegeben (wenn z. B. Inhalte oder herunterzuladene Dateien blockiert werden). (<A HREF="http://www.nvda-project.org/ticket/2343">#2343</A>)
 <LI>Automatisches Ausgebe von Spalten- und Reihenüberschriften von Tabellen im Internet Explorer und anderen mshtml-Dokumenten wird unterstützt (<A HREF="http://www.nvda-project.org/ticket/778">#778</A>)
 <LI>Neue Sprache: Aragonesisch
-<LI>Neue Braille-Übersetzungstabelle: Dänische Kurzschrift.
+<LI>neue Braille-Übersetzungstabellen: Dänische Kurzschrift, koreanische Vollschrift. (<A HREF="http://www.nvda-project.org/ticket/2737">#2737</A>)
 <LI>Unterstützung für Bluetooth-Braillezeilen, die unter Verwendung des Bluetooth-Stacks von Toshiba mit dem Computer verbunden werden. (<A HREF="http://www.nvda-project.org/ticket/2419">#2419</A>)
 <LI>Unterstützung für die Auswahl des Anschlusses bei FreedomScientific-Braillezeilen (automatisch, USB oder Bluetooth).
 <LI>Unterstützung für  Notizgeräte der Braillenote Familie von Humanware, wenn diese als Braillezeile für einen Bildschirmleser arbeiten. (<A HREF="http://www.nvda-project.org/ticket/2012">#2012</A>)
 <LI>Unterstützung für ältere Papenmeier-Braillezeilen (<A HREF="http://www.nvda-project.org/ticket/2679">#2679</A>)
+<LI>Unterstützung für die Eingabe von Braille-Zeichen über die Braille-Tastaturen mancher Braillezeilen. (<A HREF="http://www.nvda-project.org/ticket/808">#808</A>)
+<LI>neue Tastaturoptionen erlauben das Unterbrechen der Sprache beim Eingeben von Zeichen Bzw. beim Drücken der Eingabetaste. (<A HREF="http://www.nvda-project.org/ticket/698">#698</A>)
+</UL>
+
+<H3>Änderungen</H3>
+
+<UL>
+<LI>Liblouis Braille-Übersetzer auf 2.5.2 aktualisiert. (<A HREF="http://www.nvda-project.org/ticket/2737">#2737</A>)
 </UL>
 
 <H3>Fehlerbehebungen</H3>
@@ -46,6 +54,8 @@
 <LI>Für Sprachen wie z. B. deutsch, bei denen das Pluszeichen(+) eine einzelne Taste ist, ist es nun möglich, das Pluszeichen in Tastenkombinationen zu verwenden, in dem man das Wort "plus" verwendet. (<A HREF="http://www.nvda-project.org/ticket/2898">#2898</A>)
 <LI>In Internetexplorer und anderen MSHTML Elementen werden Zitate nun angesagt, wenn Sie auftauchen. (<A HREF="http://www.nvda-project.org/ticket/2888">#2888</A>)
 <LI>Der Braillezeilentreiber für die HumanWare Brailliant BI/B serie  kann nun ausgewählt werden, wenn die Braillezeile  mittels Bluetooth verbunden wurde, aber noch nie  über USB verbunden wurde.
+<LI>Wenn beim Eingeben eines Filterbegriffs in die Elementliste im lesemodus Großbuchstaben verwendet werden, wird nun ohne Berücksichtigung von Groß-/Kleinschreibung gefiltert (wie beim Eingeben von Kleinbuchstaben) (<A HREF="http://www.nvda-project.org/ticket/2951">#2951</A>)
+<LI>in Mozilla-Browsern kann nun wieder der Lesemodus verwendet werden, wenn Flash-Inhalte den Fokus haben. (<A HREF="http://www.nvda-project.org/ticket/2546">#2546</A>)
 </UL>
 
 <H3>Änderungen für Entwickler</H3>
@@ -56,6 +66,11 @@
  <LI>Dies ist für Braillezeilen sinnvoll, die an eine serielle Schnittstelle angeschlossen werden.
  <LI>Hierfür können Sie die Klassenmethode getPossiblePorts aus der Klasse BrailleDisplayDriver verwenden.
  </UL>
+<LI>Braille-Eingabe von Braille-Tastaturen wird nun unterstützt (<A HREF="http://www.nvda-project.org/ticket/808">#808</A>)
+  <UL>
+  <LI>Braille-eingaben werden in die Klasse  brailleInput.BrailleInputGesture oder eine abgeleitete Klasse eingeschlossen.
+  </UL>
+<LI>Unterklassen von  braille.BrailleDisplayGesture (wie sie z.B. in Braillezeilentreibern implementiert sind) können auch von  brailleInput.BrailleInputGesture ableiten. Dies ermöglicht die Verarbeitung von Braille-Navigationsbefehlen und Braille-Eingaben von ein und derselben Klasse.
 </UL>
 
 <H2>2012.3</H2>
