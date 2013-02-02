@@ -138,7 +138,9 @@
   <LI><A HREF="#toc93">12. Þróað Efni</A>
     <UL>
     <LI><A HREF="#toc94">12.1. Endurskilgreining á lyklum og aðrar Inntaks Bendingar</A>
+    <LI><A HREF="#toc95">12.2. Þróuð Sérsnið á Framburði Tákna</A>
     </UL>
+  <LI><A HREF="#toc96">13. Frekari Upplýsingar</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -4163,61 +4165,65 @@ Til að finna rétta forskriftarnafnið og module.class fyrir dagsetningu og tí
 <P>
 Neðarlega muntu finna:
 </P>
-<P>
-...
-INFO - inputCore.InputManager._handleInputHelp (13:17:22):
-Input help: gesture kb(desktop):NVDA+f12, bound to script dateTime on globalCommands.GlobalCommands
-</P>
 
 <PRE>
-  
-  Út frá þessu  er að hægt átta sig á að forskriftin heitir dateTime og module.class er globalCommands.GlobalCommands.
-  
-  Ef skráin er ekki nú þegar til, þá þarf að búa til textaskrá sem heitir gestures.ini og vista hana í notendastillingar möppunni og bæta við eftirfarandi innihaldi:
-  
+  INFO - inputCore.InputManager._handleInputHelp (13:17:22):
+  Input help: gesture kb(desktop):NVDA+f12, bound to script dateTime on globalCommands.GlobalCommands
 </PRE>
 
 <P>
-[globalCommands.GlobalCommands]
+Út frá þessu  er að hægt átta sig á að forskriftin heitir dateTime og module.class er globalCommands.GlobalCommands.
 </P>
-	<BLOCKQUOTE>
-	dateTime = kb:NVDA+shift+t
-	</BLOCKQUOTE>
+<P>
+Ef skráin er ekki nú þegar til, þá þarf að búa til textaskrá sem heitir gestures.ini og vista hana í notendastillingar möppunni og bæta við eftirfarandi innihaldi:
+</P>
 
 <PRE>
-  
-  Þetta mun binda lyklainnsláttinn NVDA+shift+t (í öllum útlitssniðum lyklaborða) við dateTime forskriftina.
-  
-  Þrátt fyrir þetta mun upphaflegi NVDA+f12 flýtilykilinn samt virka.
-  Ef þú vilt fjarlægja þessa bindingu, þá myndirðu bæta við eftirfarandi línu:
-  
+  [globalCommands.GlobalCommands]
+  	dateTime = kb:NVDA+shift+t
 </PRE>
 
-	<BLOCKQUOTE>
-	None = kb:NVDA+f12
-	</BLOCKQUOTE>
+<P>
+Þetta mun binda lyklainnsláttinn NVDA+shift+t (í öllum útlitssniðum lyklaborða) við dateTime forskriftina.
+</P>
+<P>
+Þrátt fyrir þetta mun upphaflegi NVDA+f12 flýtilykilinn samt virka.
+Ef þú vilt fjarlægja þessa bindingu, þá myndirðu bæta við eftirfarandi línu:
+</P>
 
 <PRE>
-  
-  Þrátt fyrir að hægt sé að láta forskriftir vera bundnar við hvaða lykil seem er, þá getur verið óheppilegt að nota alt lykilinn á lyklaborðinu.
-  NVDA sendir samt sem áður breytilykla (eins og shift, kontrol og alt) til stýrikerfisins, þrátt fyrir að þeir eigi að leiða til annarrar skipunar í forskrift.
-  Þar af leiðandi, ef þú notar alt í bendingu, þá gæti innsláttur á þessum lykli virkjað valmyndareinina og einnig forskriftina.
-  Þess vegna er líklega best að nota bara shift, kontrol og NVDA breytilykilinn sem breytilykla í forskriftum.
-  
-  ++ Þróuð Sérsnið á Framburði Tákna ++
-  Það er mögulegt að sérsníða framburð á greinarmerkjum og öðrum táknum, fram yfir það sem er hægt að gera með [Punctuation/symbol pronunciation #SymbolPronunciation] skilaboðaglugganum.
-  Sem dæmi, þú getur skilgreint hvort að táknið sé sent beint til talgervilsins (sb. til að framkalla pásu eða breytingu á ítónun) og þú getur einnig bætt við sérsniðnum táknum.
-  
-  Til að gera þetta, þá þarf að breyta tákna-framburður upplýsingaskránni sem er geymd í notenda stillingamöppunni í NVDA möppunni.
-  Skráin heitir symbols-xx.dic, þar sem xx er tungumálakóðinn.
-  Stílsniðið á þessari skrá er skilgreint betur í Symbol Pronunciation hlutanum í NVDA Developer Guide, sem hægt er að skoða á [the Development section of the NVDA web site http://www.nvda-project.org/wiki/Development].
-  Aftur á móti er ekki mögulegt fyrir notendur að skilgreina flókin tákn.
-  
-  + Frekari Upplýsingar +
-  Ef þig vantar frekari upplýsingar eða aðstoð vegna NVDA, vinsamlegast skoðið NVDA heimasíðuna http://www.nvda-project.org/.
-  Þar er hægt að finna frekari upplýsingar, sem og tæknilegan stuðning og efni frá samfélagi notenda.
-  Þessi vefur hefur einnig að geyma upplýsingar og efni sem varðar þróun NVDA hugbúnaðar.
+  	None = kb:NVDA+f12
 </PRE>
+
+<P>
+Þrátt fyrir að hægt sé að láta forskriftir vera bundnar við hvaða lykil seem er, þá getur verið óheppilegt að nota alt lykilinn á lyklaborðinu.
+NVDA sendir samt sem áður breytilykla (eins og shift, kontrol og alt) til stýrikerfisins, þrátt fyrir að þeir eigi að leiða til annarrar skipunar í forskrift.
+Þar af leiðandi, ef þú notar alt í bendingu, þá gæti innsláttur á þessum lykli virkjað valmyndareinina og einnig forskriftina.
+Þess vegna er líklega best að nota bara shift, kontrol og NVDA breytilykilinn sem breytilykla í forskriftum.
+</P>
+
+<A NAME="toc95"></A>
+<H3>12.2. Þróuð Sérsnið á Framburði Tákna</H3>
+
+<P>
+Það er mögulegt að sérsníða framburð á greinarmerkjum og öðrum táknum, fram yfir það sem er hægt að gera með <A HREF="#SymbolPronunciation">Punctuation/symbol pronunciation</A> skilaboðaglugganum.
+Sem dæmi, þú getur skilgreint hvort að táknið sé sent beint til talgervilsins (sb. til að framkalla pásu eða breytingu á ítónun) og þú getur einnig bætt við sérsniðnum táknum.
+</P>
+<P>
+Til að gera þetta, þá þarf að breyta tákna-framburður upplýsingaskránni sem er geymd í notenda stillingamöppunni í NVDA möppunni.
+Skráin heitir symbols-xx.dic, þar sem xx er tungumálakóðinn.
+Stílsniðið á þessari skrá er skilgreint betur í Symbol Pronunciation hlutanum í NVDA Developer Guide, sem hægt er að skoða á <A HREF="http://www.nvda-project.org/wiki/Development">the Development section of the NVDA web site</A>.
+Aftur á móti er ekki mögulegt fyrir notendur að skilgreina flókin tákn.
+</P>
+
+<A NAME="toc96"></A>
+<H2>13. Frekari Upplýsingar</H2>
+
+<P>
+Ef þig vantar frekari upplýsingar eða aðstoð vegna NVDA, vinsamlegast skoðið NVDA heimasíðuna <A HREF="http://www.nvda-project.org/">http://www.nvda-project.org/</A>.
+Þar er hægt að finna frekari upplýsingar, sem og tæknilegan stuðning og efni frá samfélagi notenda.
+Þessi vefur hefur einnig að geyma upplýsingar og efni sem varðar þróun NVDA hugbúnaðar.
+</P>
 
 <!-- html code generated by txt2tags 2.6 (http://txt2tags.org) -->
 <!-- cmdline: txt2tags -q userGuide.t2t -->
