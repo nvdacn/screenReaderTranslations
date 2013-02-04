@@ -32,7 +32,7 @@ Für weitere informationen sehen Sie in der  [Befehlsreferenz keyCommands.html] 
 - Unterstützung für die Auswahl des Anschlusses bei FreedomScientific-Braillezeilen (automatisch, USB oder Bluetooth).
 - Unterstützung für  Notizgeräte der Braillenote Familie von Humanware, wenn diese als Braillezeile für einen Bildschirmleser arbeiten. (#2012)
 - Unterstützung für ältere Papenmeier-Braillezeilen (#2679)
-- Unterstützung für die Eingabe von Braille-Zeichen über die Braille-Tastaturen mancher Braillezeilen. (#808)
+- Unterstützung für die Eingabe von Computer-Braille für Braillezeilen, die eine Braille-Tastatur besitzen. (#808)
 - neue Tastaturoptionen erlauben das Unterbrechen der Sprache beim Eingeben von Zeichen Bzw. beim Drücken der Eingabetaste. (#698)
 -
 
@@ -58,18 +58,17 @@ Für weitere informationen sehen Sie in der  [Befehlsreferenz keyCommands.html] 
 - Der Braillezeilentreiber für die HumanWare Brailliant BI/B serie  kann nun ausgewählt werden, wenn die Braillezeile  mittels Bluetooth verbunden wurde, aber noch nie  über USB verbunden wurde.
 - Wenn beim Eingeben eines Filterbegriffs in die Elementliste im lesemodus Großbuchstaben verwendet werden, wird nun ohne Berücksichtigung von Groß-/Kleinschreibung gefiltert (wie beim Eingeben von Kleinbuchstaben) (#2951)
 - in Mozilla-Browsern kann nun wieder der Lesemodus verwendet werden, wenn Flash-Inhalte den Fokus haben. (#2546)
-- Wenn Sie eine Kurzschrift-Übersetzungstabelle verwenden und die Option zum Ausschreiben des aktuellen Wortes in Computerbraille ist aktiviert, wird der Braille-Cursor nun korrekt gesetzt, wenn er hinter einem Wort steht, das ein Zeichen enthält, das durch mehrere Braille-Zellen dargestellt wird. (z.B.  Großbuchstaben, Zahlenzeichen usw.). (#2947)
+- Wenn Sie eine Kurzschrift-Übersetzungstabelle verwenden und die Option zum Ausschreiben des aktuellen Wortes in Computerbraille aktiviert ist, wird der Braille-Cursor nun korrekt gesetzt, wenn er hinter einem Wort steht, das ein Zeichen enthält, das durch mehrere Braille-Zeichen dargestellt wird. (z.B.  Großbuchstaben, Zahlenzeichen usw.). (#2947)
 - In Microsoft Word und in Internet Explorer wird markierter Text nun korrekt in Braille angezeigt.
 - Wenn Sie eine Braillezeile benutzen, können Sie nun wieder Text rückwärts markieren, wenn Sie sich in Microsoft Word befinden.
-- Wenn sie in Scintilla-Eingabefehldern die Befehle zum Betrachten von Text verwenden oder Zeichen löschen, wird nvda Multibyte-Zeichen korrekt angeben. (#2855)
-- Die Installation von NVDA wird nun nicht mehr fehlschlagen, wenn der Name des Benutzerprofilverzeichnisses bestimmte Zeichen enthält. (#2729)
+- Wenn sie in Scintilla-Eingabefeldern die Befehle zum Betrachten von Text verwenden oder Zeichen löschen, wird nvda Multibyte-Zeichen korrekt ausgeben. (#2855)
+- Die Installation von NVDA wird nun nicht mehr fehlschlagen, wenn der Name des Benutzerprofilverzeichnisses bestimmte Multibyte-Zeichen enthält. (#2729)
 -
 
 == Änderungen für Entwickler ==
 - Braillezeilentreiber unterstützen die Auswahl des Anschlusses (#426)
  - Dies ist für Braillezeilen sinnvoll, die an eine serielle Schnittstelle angeschlossen werden.
  - Hierfür können Sie die Klassenmethode getPossiblePorts aus der Klasse BrailleDisplayDriver verwenden.
- -
 - Braille-Eingabe von Braille-Tastaturen wird nun unterstützt (#808)
   - Braille-eingaben werden in die Klasse  brailleInput.BrailleInputGesture oder eine abgeleitete Klasse eingeschlossen.
  - Unterklassen von  braille.BrailleDisplayGesture (wie sie z.B. in Braillezeilentreibern implementiert sind) können auch von  brailleInput.BrailleInputGesture ableiten. Dies ermöglicht die Verarbeitung von Braille-Navigationsbefehlen und Braille-Eingaben von ein und derselben Klasse.
