@@ -1,0 +1,9 @@
+------------------------------------------------------------
+revno: 5813
+fixes bug: http://www.nvda-project.org/ticket/2947
+committer: James Teh <jamie@jantrid.net>
+branch nick: main
+timestamp: Fri 2013-02-01 09:48:01 +1000
+message:
+  When using a contracted braille table and expand to computer braille for the word at the cursor is enabled, the braille cursor is now positioned correctly when located after a word wherein a character is represented by multiple braille cells (e.g. capital sign, letter sign, number sign, etc.).
+  Specifically, we no longer rely on the output cursorPos provided by liblouis, instead calculating this based on rawToBraillePos, which is usually accurate.

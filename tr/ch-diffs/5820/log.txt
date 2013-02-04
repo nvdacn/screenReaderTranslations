@@ -1,0 +1,7 @@
+------------------------------------------------------------
+revno: 5820
+committer: Michael Curran <mick@kulgan.net>
+branch nick: main
+timestamp: Sat 2013-02-02 04:45:15 +1000
+message:
+  NVDA no longer fails to install if the user's profile path contains certain multibyte characters. Another fix for #2729. Instead of monkeypatching Python's tempfile module only in nvda.pyw, moe this code in to a new pythonMonkeyPatches module and import it (apply them) from both nvda.pyw and nvda_slave.pyw.
