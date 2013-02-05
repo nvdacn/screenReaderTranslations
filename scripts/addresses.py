@@ -81,7 +81,7 @@ addresses = {
     },
     'is': {
         'lang':'Icelandic',
-        'email': ['Birkir R. Gunnarsson <birkir.gunnarsson@gmail.com>', 'hm.hreinsson@gmail.com'],
+        'email': ['Birkir R. Gunnarsson <birkir.gunnarsson@gmail.com>', 'Hlynur Hreinsson <hm.hreinsson@gmail.com>'],
     },
     'it': {
         'lang':'Italian',
@@ -96,7 +96,7 @@ addresses = {
         'email': ['Joseph Lee <joseph.lee22590@gmail.com>', 'Chang-Hoan Jang <462356@gmail.com>'],
     },
     'nb_NO': {
-        'lang':'Norwegian bokmål',
+        'lang':'Norwegian bokmal',
         'email': ['David Hole <balubathebrave@gmail.com>', 'Bjornar Seppola <bjornar@seppola.net>'],
     },
     'ne': {
