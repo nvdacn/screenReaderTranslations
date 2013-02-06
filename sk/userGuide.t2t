@@ -20,7 +20,7 @@ Najvýznamnejšie prednosti programu:
 - Vstavaný hlasový výstup, ktorý podporuje viac než 43 jazykov
 - Oznamovanie informácií o formátovaní ako napríklad názov a veľkosť písma, štýl textu a pravopisné chyby
 - Automatické oznamovanie textu pod kurzorom myši a voliteľné akustické oznamovanie pozície kurzora myši
-- Podpora množstva braillovských zobrazovačov
+- Podpora množstva braillovských zobrazovačov vrátane písania na riadkoch, ktoré podporujú vstup pomocou 8-bodového počítačového kódu
 - Možnosť spustenia programu z USB kľúča, alebo iného prenosného zariadenia, bez nutnosti inštalácie
 - Ozvučený inštalátor
 - Preložený do 42 jazykov
@@ -708,9 +708,20 @@ Táto možnosť nie je dostupná, ak zvolený riadok podporuje len automatický 
 
 Pre podrobnejšie informácie si pozrite časť [Podporované brailovské zobrazovače #SupportedBrailleDisplays].
 
-==== Prekladová tabuľka ====
-Ďalšou voľbou je prekladová tabuľka.
-Dostupné je množstvo tabuliek pre rôzne jazyky. Tú správnu si vyberiete listovaním kurzorovými klávesmi.
+==== Výstupná prekladová tabuľka ====
+Ďalšou voľbou je výstupná prekladová tabuľka.
+Tu nájdete tabuľky pre rôzne jazyky a kodifikácie brailovho písma.
+Vybratá tabuľka sa použije na správne zobrazenie textu na brailovskom zobrazovači.
+Medzi tabuľkami sa môžete pohybovať šípkami.
+
+==== Vstupná prekladová tabuľka ====
+Podobne ako v prvom prípade, aj tu môžete vybrať prekladovú tabuľku.
+Táto však bude použitá na správne interpretovanie znakov, ktoré zadávate na brailovskom zobrazovači.
+NVDA v súčasnosti podporuje len 8-bodový počítačový kód, takže v zozname sú len tabuľky pre jazyky a kodifikácie pre tento kód.
+Konkrétnu tabuľku vyberte šípkami.
+
+Zdôrazňujeme, že táto možnosť je užitočná len ak váš riadok má brailovskú klávesnicu a ak je táto funkcia podporovaná ovládačom príslušného riadka.
+Ak má brailovský riadok klávesnicu, ale zadávanie textu nie je podporované, upozorňujeme na to v časti [Podporované brailovské zobrazovače #SupportedBrailleDisplays].
 
 ==== Slovo, kde sa nachádza kurzor zobraziť počítačovým braillom ====
 Toto začiarkavacie políčko umožní zobrazovať aktuálne slovo v počítačovom braillovom písme, čo v mnohých jazykoch zodpovedá plnopisu. Je to užitočné, ak nechceme aplikovať pravidlá skratkopisu tabuľky vybratej v poli Prekladová tabuľka.
@@ -1215,6 +1226,9 @@ Podporované sú oba zobrazovače od [Optelec http://www.optelec.com/] pripojen�
 Na ich používanie nie je potrebné inštalovať žiadne ovládače.
 Stačí zapojiť riadok a nastaviť NVDA na jeho používanie.
 
+Tieto riadky umožňujú písanie pomocou vstavanej brailovskej klávesnice, avšak používajú vlastné nastavenie vstupnej prekladovej tabuľky.
+Nastavenie výstupnej prekladovejtabuľky v NVDA preto nemá na nastavenie riadka vplyv.
+
 Nasleduje zoznam klávesových príkazov pre tento typ riadku.
 Prosím, prečítajte si dokumentáciu dodanú spolu so zariadením na zistenie rozmiestnenia klávesov.
 %kc:beginInclude
@@ -1242,6 +1256,8 @@ Prosím, prečítajte si dokumentáciu dodanú spolu so zariadením na zistenie 
 ++ Zobrazovače od spoločnosti Handy Tech ++
 NVDA podporuje všetky zobrazovače od spoločnosti [Handy Tech http://www.handytech.de/], ak sú pripojené k počítaču cez USB alebo bluetooth.
 Pre niektoré staršie USB riadky je potrebné do systému nainštalovať USB ovládače Handy Tech.
+
+Písanie na brailovskej klávesnici nie je v súčasnosti podporované.
 
 Nasleduje zoznam klávesových príkazov pre tento typ riadku.
 Prosím, prečítajte si dokumentáciu dodanú spolu so zariadením na zistenie rozmiestnenia klávesov.
@@ -1381,6 +1397,8 @@ Prosím, prečítajte si dokumentáciu dodanú spolu so zariadením na zistenie 
 ++ HIMS Braille Sense/Braille EDGE Series ++
 NVDA podporuje riadky Braille Sense a Braille EDGE od spoločnosti [Hims http://www.hims-inc.com/]. Je potrebné ich pripájať cez USB alebo bluetooth rozhranie.
 Ak máte riadok pripojený cez USB, je potrebné nainštalovať ovládač dodávaný HIMS.
+
+Písanie na brailovskej klávesnici nie je v súčasnosti podporované.
 
 Nasleduje zoznam klávesových príkazov pre tieto typy riadkov.
 Prosím, prečítajte si dokumentáciu dodanú spolu so zariadením  na zistenie rozmiestnenia klávesov.
@@ -1531,6 +1549,7 @@ Nasleduje zoznam klávesových príkazov pre tieto typy riadkov:
 Podporované sú tieto brailovské riadky:
 - BRAILLEX EL 80, EL 2D-80, EL 40 P
 - BRAILLEX Tiny, 2D Screen+-
+-
 
 tieto zariadenia môžu byť pripojené len cez sériový port.
 Môžete teda vybrať konkrétny port, na ktorom je zariadenie pripojené, ak ste zvolili príslušný ovládač v nastaveniach brailu.
@@ -1663,6 +1682,9 @@ Prosím, prečítajte si dokumentáciu dodanú spolu so zariadením na zistenie 
 Na používanie ovládača braillovských riadkov BRLTTY je potrebné nainštalovať [BRLTTY pre Windows http://brl.thefreecat.org/brltty/].
 Mali by ste si stiahnuť najnovšiu inštalačnú verziu, ktorá bude pomenovaná napríklad brltty-win-4.2-2.exe.
 Počas konfigurácie riadku a portu dávajte veľký pozor na presné dodržiavanie inštrukcií, hlavne ak pripájate riadok cez USB a už máte nainštalované ovládače od výrobcu.
+
+Riadky, ktoré podporujú písanie pomocou vstavanej klávesnice sa riadia nastavením BRLTTY.
+Nastavenie výstupnej prekladovejtabuľky v NVDA preto nemá na nastavenie riadka vplyv.
 
 Nasledujú brltty klávesové skratky pre NVDA.
 Prosím prečítajte si [dokumentáciu klávesov brltty http://mielke.cc/brltty/doc/drivers/] pre viac informácií o tom, ako sú príkazy brltty mapované na tlačidlá skutočných zobrazovačov.
