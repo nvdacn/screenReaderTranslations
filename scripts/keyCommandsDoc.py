@@ -102,7 +102,7 @@ class KeyCommandsMaker(object):
 		#: The number of layouts for settings in a settings section.
 		self._settingsNumLayouts = 0
 		#: The current line number being processed, used to present location of syntax errors
-		self._lineno = 0
+		self._lineNum = 0
 
 	def make(self):
 		"""Generate the Key Commands document.
@@ -129,7 +129,7 @@ class KeyCommandsMaker(object):
 
 	def _make(self):
 		for line in self._ug:
-			self._lineno += 1
+			self._lineNum += 1
 			line = line.rstrip()
 			m = self.RE_COMMAND.match(line)
 			if m:
@@ -148,17 +148,17 @@ class KeyCommandsMaker(object):
 		# Handle header commands.
 		if cmd == "title":
 			if self._kcSect > self.KCSECT_HEADER:
-				raise KeyCommandsError("%d, title command is not valid here" % self._lineno)
+				raise KeyCommandsError("%d, title command is not valid here" % self._lineNum)
 			# Write the title and two blank lines to complete the txt2tags header section.
 			self._kc.write(arg + LINE_END * 3)
 			self._kcSect = self.KCSECT_CONFIG
 			self._kc.write("%%!includeconf: ../global.t2tconf%s" % LINE_END)
 			return
 		elif self._kcSect == self.KCSECT_HEADER:
-			raise KeyCommandsError("%d, title must be the first command" % self._lineno)
+			raise KeyCommandsError("%d, title must be the first command" % self._lineNum)
 		elif cmd == "includeconf":
 			if self._kcSect > self.KCSECT_CONFIG:
-				raise KeyCommandsError("%d, includeconf command is not valid here" % self._lineno)
+				raise KeyCommandsError("%d, includeconf command is not valid here" % self._lineNum)
 			self._kc.write("%%!includeconf: %s%s" % (arg, LINE_END))
 			return
 		elif self._kcSect == self.KCSECT_CONFIG:
@@ -183,7 +183,7 @@ class KeyCommandsMaker(object):
 			self._handleSetting()
 
 		else:
-			raise KeyCommandsError("%d, Invalid command %s" % (self._lineno, cmd))
+			raise KeyCommandsError("%d, Invalid command %s" % (self._lineNum, cmd))
 
 	def _areHeadingsPending(self):
 		return self._kcLastHeadingLevel < len(self._headings) - 1
@@ -214,7 +214,7 @@ class KeyCommandsMaker(object):
 
 	def _handleSetting(self):
 		if not self._settingsHeaderRow:
-			raise KeyCommandsError("%d, setting command cannot be used before settingsSection command" % self._lineno)
+			raise KeyCommandsError("%d, setting command cannot be used before settingsSection command" % self._lineNum)
 
 		if self._areHeadingsPending():
 			# There are new headings to write.
@@ -226,10 +226,10 @@ class KeyCommandsMaker(object):
 
 		# The next line should be a heading which is the name of the setting.
 		line = next(self._ug)
-		self._lineno += 1
+		self._lineNum += 1
 		m = self.t2tRe["title"].match(line)
 		if not m:
-			raise KeyCommandsError("%d, setting command must be followed by heading" % self._lineno)
+			raise KeyCommandsError("%d, setting command must be followed by heading" % self._lineNum)
 		name = m.group("txt")
 
 		# The next few lines should be table rows for each layout.
@@ -237,12 +237,12 @@ class KeyCommandsMaker(object):
 		keys = []
 		for layout in xrange(self._settingsNumLayouts):
 			line = next(self._ug).strip()
-			self._lineno += 1
+			self._lineNum += 1
 			if ":" in line:
 				keys.append(line.split(":", 1)[1].strip())
 				break
 			elif not self.t2tRe["table"].match(line):
-				raise KeyCommandsError("%d, setting command: There must be one table row for each keyboard layout" % self._lineno)
+				raise KeyCommandsError("%d, setting command: There must be one table row for each keyboard layout" % self._lineNum)
 			# This is a table row.
 			# The key will be the second column.
 			# TODO: Error checking.
@@ -255,13 +255,13 @@ class KeyCommandsMaker(object):
 
 		# There should now be a blank line.
 		line = next(self._ug).strip()
-		self._lineno += 1
+		self._lineNum += 1
 		if line:
-			raise KeyCommandsError("%d, setting command: The keyboard shortcuts must be followed by a blank line. Multiple keys must be included in a table. Erroneous key: %s" % (self._lineno, key))
+			raise KeyCommandsError("%d, setting command: The keyboard shortcuts must be followed by a blank line. Multiple keys must be included in a table. Erroneous key: %s" % (self._lineNum, key))
 
 		# Finally, the next line should be the description.
 		desc = next(self._ug).strip()
-		self._lineno += 1
+		self._lineNum += 1
 
 		self._kc.write(u"| {name} | {keys} | {desc} |{lineEnd}".format(
 			name=name,
