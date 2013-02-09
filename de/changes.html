@@ -99,6 +99,8 @@ Für weitere informationen sehen Sie in der  <A HREF="keyCommands.html">Befehlsr
 <LI>Wenn Sie eine Braillezeile benutzen, können Sie nun wieder Text rückwärts markieren, wenn Sie sich in Microsoft Word befinden.
 <LI>Wenn sie in Scintilla-Eingabefeldern die Befehle zum Betrachten von Text verwenden oder Zeichen löschen, wird nvda Multibyte-Zeichen korrekt ausgeben. (<A HREF="http://www.nvda-project.org/ticket/2855">#2855</A>)
 <LI>Die Installation von NVDA wird nun nicht mehr fehlschlagen, wenn der Name des Benutzerprofilverzeichnisses bestimmte Multibyte-Zeichen enthält. (<A HREF="http://www.nvda-project.org/ticket/2729">#2729</A>)
+<LI>Bei der Angabe von Gruppen in Listen-Steuerelementen (syslistview32) in 64-Bit-Anwendungen kommt es nun nicht mehr zu einem Fehler.
+<LI>im Lesemodus von Mozilla-Anwendungen werden Textinhalte nun nicht mehr fälschlicherweise als deaktiviert angezeigt, auch wenn das selten der Fall ist. (<A HREF="http://www.nvda-project.org/ticket/2959">#2959</A>)
 </UL>
 
 <H3>Änderungen für Entwickler</H3>
@@ -110,21 +112,16 @@ Für weitere informationen sehen Sie in der  <A HREF="keyCommands.html">Befehlsr
  <LI>Hierfür können Sie die Klassenmethode getPossiblePorts aus der Klasse BrailleDisplayDriver verwenden.
  </UL>
 <LI>Braille-Eingabe von Braille-Tastaturen wird nun unterstützt (<A HREF="http://www.nvda-project.org/ticket/808">#808</A>)
-  <UL>
-  <LI>Braille-eingaben werden in die Klasse  brailleInput.BrailleInputGesture oder eine abgeleitete Klasse eingeschlossen.
-  </UL>
-<LI>Unterklassen von  braille.BrailleDisplayGesture (wie sie z.B. in Braillezeilentreibern implementiert sind) können auch von  brailleInput.BrailleInputGesture ableiten. Dies ermöglicht die Verarbeitung von Braille-Navigationsbefehlen und Braille-Eingaben von ein und derselben Klasse.
-</UL>
-
-<H2>2012.3</H2>
-
-<P>
+ <UL>
+ <LI>Braille-eingaben werden in die Klasse  brailleInput.BrailleInputGesture oder eine abgeleitete Klasse eingeschlossen.
+ <LI>Unterklassen von  braille.BrailleDisplayGesture (wie sie z.B. in Braillezeilentreibern implementiert sind) können auch von  brailleInput.BrailleInputGesture ableiten. Dies ermöglicht die Verarbeitung von Braille-Navigationsbefehlen und Braille-Eingaben von ein und derselben Klasse.
+-
+ <P></P>
+= 2012.3 =
 Schwerpunkte in dieser Version sind: Unterstützung für asiatische Eingabemetoden, experimentelle Unterstützung für Touchscreens unter Windows 8, Ansage der Seitenzahlen sowie verbesserte Unterstützung von Tabellen in Adobe Reader, Befehle zur Navigation in Tabellen und Listenansichten im Explorer sowie Unterstützung zahlreicher weiterer Braillezeilen und das Lesen von Zeilen- bzw. Spaltenüberschriften in Microsoft Excel.
-</P>
-
-<H3>Neue Funktionen</H3>
-
-<UL>
+ <P></P>
+== Neue Funktionen ==
+ </UL>
 <LI>NVDA unterstützt nun asiatische Zeichen eingabe mittels IME und Eingabemethoden im Textdienst in allen Anwendungen, einschließlich:
  <UL>
  <LI>Ansagen und Navigation der Kandidatenliste;
