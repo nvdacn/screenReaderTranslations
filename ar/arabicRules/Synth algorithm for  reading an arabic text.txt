@@ -1,0 +1,32 @@
+﻿Synth algorithm for  reading an arabic text
+1. If all vowels are written then synth should read all text.
+Subrules:
+a) If synth sees any word with the defininite article "الْ" after any word then synth shouldn't  read alif in this article. This case of the language is
+ called همزة الوصل - hamzatu-l-wasl.
+Example:
+هَمْزَةُ الْوَصْلِ - (alif shouldn't be read because the alif-lam is written after any word. there is a word hamzatu in this example. so, the synth should
+ read هَمْزَةُلْوَصْلِ together)
+Example:
+كِتَابُ الْوَلَدِ - (the same case - كِتَابُلْوَلَدِ together)
+مِنَ الْبَيْتِ - (the same case)
+b) If the word with the article alif-lam is the first word in the sentence
+ then synth should read alif with hamza.
+Example:
+الْقَلَمُ جَدِيدٌ. - (the word الْقَلَمُ is the first in this example. so,
+ synth should read this alif with the hamza as أَلْقَلَمُ) 
+الْبِنْتُ جَمِيلَةٌ. - (the same case - أَلْبِنْتُ)
+c) If synth sees after any word a period, comma, question sign, exclamation
+ sign or any punctuation, where the phrase is interrupted then the last vowel
+ shouldn't  be read with the synth.
+Example:
+قَرَأَ الْكِتَابَ. - (the last vowel fatha فَتْحَةٌ shouldn't be read with
+ the synth because of the period at the end of this example. so, الكِتَابْ
+ is read)
+Example:
+هَلْ عِنْدَهُ سَيَّارَةٌ قَدِيمَةٌ؟ - (the last ta-marbuta with the damma-tan
+ تَنْوِينُ الضَّمَّةِ فَوقِ التَّاءِ الْمَرْبُوطَةِ isn't read because of
+ question sign. so, the word قَدِيمَةٌ is read as قَدِيمَ)
+Example:
+أَهْلاً وَمَرْحَبًا! - (the same case but with alif at the and of sentence and
+ تَنْوِينُ الْفَتْحَةِ فَوْقِ الْأَلِفِ  because of the exclamation sign. so,
+ the word مَرْحَبًا is read مَرْحَبَا)
