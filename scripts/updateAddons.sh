@@ -12,7 +12,7 @@ function usage() {
     echo "    -a, (addons) process only the given addons"
 }
 
-langs=(am ar bg cs da de el es fi fr gl hr hu it is ja ko ne nl nb_NO nn_NO pl pt_BR pt_PT ru sk sv ta tr uk zh_CN zh_HK zh_TW)
+langs=(am an ar bg cs da de el es fi fr gl hr hu it is ja ko ne nl nb_NO nn_NO pl pt_BR pt_PT ru sk sv ta tr uk zh_CN zh_HK zh_TW)
 
 while getopts a:fhtl: OPT; do
     case "$OPT" in
