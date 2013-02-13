@@ -1,14 +1,19 @@
 ﻿Synth algorithm for  reading an arabic text
 1. If all vowels are written then synth should read all text.
 Subrules:
-a) If the synth sees any word with the defininite article "الْ" after any word then synth shouldn't  read alif in this article. This case of the language is
- called همزة الوصل - hamzatu-l-wasl.
+a) If the synth sees any word with the defininite article "الْ" after any word
+ then the synth shouldn't  read the alif in this article. This case of the
+ language is called همزة الوصل - hamzatu-l-wasl. however, this alif is read
+ with hamza at the beginning of the phrase or after the pause.
 Example:
 هَمْزَةُ الْوَصْلِ - (alif shouldn't be read because the alif-lam is written after any word. there is a word hamzatu in this example. so, the synth should
  read هَمْزَةُلْوَصْلِ together)
 Example:
 كِتَابُ الْوَلَدِ - (the same case - كِتَابُلْوَلَدِ together)
 مِنَ الْبَيْتِ - (the same case)
+Example:
+الْبَيْتُ جَمِيلٌ. (alif-lam is at the beginning of the phrase, so, it should
+ be read as أَلْبَيْتُ.)
 b) If the word with the article alif-lam is the first word in the sentence
  then synth should read alif with hamza.
 Example:
@@ -53,3 +58,20 @@ Example:
  الْأسْمَاءُ.
 As we see in the last example, the synth should read it without problems
  because there is a sign sokoon after lam in the article.
+e) If the synth sees a simple alif i.e. an alif without hamza then this alif
+ should be read like in the subrule a). so, this is more general rule for همزة
+ الوصل. Certainly, there no problems for the synth to read the fully vowelled
+ (with حركات written) text.
+example:
+اِقْرَأْ وَاكْتُبْ (the first simple alif should be read with hamza, but the
+ second shouldn't be read at all: إِقْرَأْ وَكْتُبْ.)
+اُكْتُبْ وَاقْرَأْ (the same case: أُكْتُبْ وَقْرَأْ.)
+اِجْلِسْ but قُلْتُ اجْلِسْ (if there is a pause between قُلْتُ and اجْلِسْ in
+ this phrase then it should be read as قُلْتْ اِجْلِسْ, otherwise,
+ قُلْتُ اجْلِسْ.)
+Example:
+هَذَا ابْنُ الْمُدِيرِ (the word اِبْنٌ is a one of the exceptions. But for
+ the synth there is no problem to read it because of the alif without hamza.
+ We will discuss these words later, while studying problem of reading
+ without vowels.)
+(to be continued)
