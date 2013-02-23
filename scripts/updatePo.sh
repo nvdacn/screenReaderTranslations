@@ -21,7 +21,7 @@ commitMsg=""
 #fi
 #$CURL -s -o /tmp/nvda.pot $url
 
-BZRDIR=scripts/code/source
+BZRDIR=../code/source
 
 # Navigate to the base of the svn repo.
 absPath=`readlink -f -n $0`
