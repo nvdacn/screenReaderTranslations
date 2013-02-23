@@ -7,7 +7,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 BZR=`which bzr`
 CURL=`which curl`
 DIFF=`which diff`
-ELINKS=`which elinks`
+#ELINKS=`which elinks`
 MSGMERGE=`which msgmerge`
 POCOUNT=`which pocount`
 PYTHON27=`which python2.7`
@@ -24,9 +24,9 @@ elif [ "$CURL" == "" ]; then
 elif [ "$DIFF" == "" ]; then
     echo "diff not installed."
     exit 1
-elif [ "$ELINKS" == "" ]; then
-    echo "Can't find elinks."
-    exit 1
+#elif [ "$ELINKS" == "" ]; then
+#    echo "Can't find elinks."
+#    exit 1
 elif [ "$MSGMERGE" == "" ]; then
     echo "Can't find msgmerge."
     exit 1
@@ -36,9 +36,9 @@ elif [ "$POCOUNT" == "" ]; then
 elif [ "$PYTHON27" == "" ]; then
     echo "could not locate python 2.7, can not continue."
     exit 1
-elif [ "$TWIDGE" == "" ]; then
-    echo "twidge not installed."
-    exit 1
+#elif [ "$TWIDGE" == "" ]; then
+#    echo "twidge not installed."
+#    exit 1
 elif [ "$WDIFF" == "" ]; then
     echo "wdiff not installed."
     exit 1
