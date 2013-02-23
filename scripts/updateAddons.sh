@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source checkProgs.sh
+# source checkProgs.sh
 
 function usage() {
     echo "`basename $0` [-h]"
