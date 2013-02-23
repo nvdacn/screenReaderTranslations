@@ -80,7 +80,7 @@ git svn rebase
 # go to relative dir that has bzr code:
 getAbsPath ../
 pushd $absPath 2>&1 >/dev/null
-BZRDIR=scripts/code
+BZRDIR=../code
 pushd $BZRDIR
 bzr pull
 popd
