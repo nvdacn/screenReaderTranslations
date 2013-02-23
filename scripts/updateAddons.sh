@@ -53,7 +53,7 @@ for lang in ${langs[*]}; do
     fi
 
     for addon in ${availableAddons[*]}; do
-        addonOffset="addons/${addon}"
+        addonOffset="../../addons/${addon}"
 
         eval process=\$${addon}
         if [ "$process" == "0" ]; then
