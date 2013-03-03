@@ -66,21 +66,12 @@ for lang in ${langs[*]}; do
         if [ "$fromTranslators" == "1" ]; then
             srcPo="${langOffset}/add-ons/${addon}/nvda.po"
             targetPo="${addonOffset}/addon/locale/${lang}/LC_MESSAGES/nvda.po"
-            srcIni="${langOffset}/add-ons/${addon}/manifest.ini"
-            targetIni="${addonOffset}/addon/locale/${lang}/manifest.ini"
 
             echo "  checking nvda.po:"
             msgfmt  -c -o /tmp/tmp.mo "$srcPo"
             echo "  copying across nvda.po"
             mkdir -p "${addonOffset}/addon/locale/${lang}/LC_MESSAGES"
             cp "$srcPo" "$targetPo"
-            file "$srcIni" | grep -iP "ascii|utf-8" >/dev/null
-            if [ "$?" == "0" ]; then
-                echo "  copying manifest.ini"
-                cp "$srcIni" "$targetIni"
-            else
-                echo "  warning: ini file not utf8 or ascii, skipping."
-            fi
         else
             echo "foo bar bas."
             pushd "$addonOffset" >/dev/null 2>&1
@@ -88,10 +79,15 @@ for lang in ${langs[*]}; do
             popd >/dev/null 2>&1
             srcPo="${langOffset}/add-ons/${addon}/nvda.po"
             potFile="${addonOffset}/${addon}.pot"
-            msgmerge -U "${srcPo}" "${potFile}"
-            #srcIni="${addonOffset}/addon/manifest.ini"
-            #targetIni="${langOffset}/add-ons/${addon}/manifest_en.ini"
-            #cp "$srcIni" "$targetIni"
+            mkdir -p "${langOffset}/add-ons/${addon}/"
+            if [ ! -e $srcPo ]; then
+                cp "${potFile}" "${srcPo}"
+                sed -i 's+"Content-Type: text/plain.*"+"Content-Type: text/plain; charset=UTF-8\\n"+g' "${srcPo}"
+                svn add "${langOffset}/add-ons/${addon}/"
+                svn add "${srcPo}"
+            else
+                msgmerge -U "${srcPo}" "${potFile}"
+            fi
         fi
     done
 done
