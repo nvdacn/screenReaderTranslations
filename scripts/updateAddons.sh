@@ -75,7 +75,7 @@ for lang in ${langs[*]}; do
         else
             echo "foo bar bas."
             pushd "$addonOffset" >/dev/null 2>&1
-            scons pot
+            scons mergePot
             popd >/dev/null 2>&1
             srcPo="${langOffset}/add-ons/${addon}/nvda.po"
             potFile="${addonOffset}/${addon}.pot"
