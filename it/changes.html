@@ -12,6 +12,10 @@
 
 <H2>2013.1</H2>
 
+<P>
+Le caratteristiche più importanti di questa versione comprendono un layout tastiera per i portatili più coerente e intuitivo; un supporto di base per Microsoft PowerPoint; la gestione degli attributi longdesc nei browser web e il supporto per l'immissione del Braille computer per i display braille che dispongono una tastiera braille.
+</P>
+
 <H3>Importante</H3>
 
 <H4>Nuovo layout tastiera laptop</H4>
@@ -68,15 +72,12 @@ Si prega di consultare il documento <A HREF="keyCommands.html">Comandi rapidi</A
 <LI>Supporto ai vecchi modelli Papenmeier utilizzati tramite porta seriale. (<A HREF="http://www.nvda-project.org/ticket/2679">#2679</A>)
 <LI>Supporto alla scrittura diretta tramite display braille con tastiera in stile perkins. (<A HREF="http://www.nvda-project.org/ticket/804">#804</A>)
 <LI>- Nuove impostazioni della tastiera che consentono di selezionare se NVDA debba interrompere il parlato per i caratteri digitati e o il tasto ENTER. ;(# 698)
-</UL>
-
-<H3>Cambiamenti</H3>
-
+<LI>Supporto per diversi browser basati su Google Chrome: Rockmelt, BlackHawk, Comodo Dragon e SRWare Iron. ;(# 2236, # 2813, # 2814, # 2815)
+<P></P>
+ == Cambiamenti ==
  <UL>
  <LI>Aggiornato liblouis Braille Translator alla versione 2.5.2. ;(# 2737)
  </UL>
-
-<UL>
 <LI>Il layout tastiera laptop è stato completamente riprogettato in modo da renderlo più intuitivo e coerente. ;(# 804)
 </UL>
 
@@ -105,11 +106,13 @@ Si prega di consultare il documento <A HREF="keyCommands.html">Comandi rapidi</A
 <LI>è di nuovo possibile selezionare il testo all'indietro in Microsoft Word quando il Braille è abilitato.
 <LI>Durante la revisione o la cancellazione del testo col tasto canc o backspace nei controlli scintilla, NVDA ora annuncia correttamente i caratteri multibyte. (<A HREF="http://www.nvda-project.org/ticket/2855">#2855</A>)
 <LI>NVDA non si rifiuterà più di installarsi quando il percorso del profilo utente contiene caratteri multibyte. (<A HREF="http://www.nvda-project.org/ticket/2729">#2729</A>)
-</UL>
-
-<H3>Cambiamenti per sviluppatori</H3>
-
-<UL>
+<LI>L'annuncio dei gruppi per i controlli visualizzazione ad elenco di tipo SysListview32) in applicazioni a 64 bit non causa più un errore.
+<LI>In modalità navigazione nelle applicazioni Mozilla, il contenuto del testo non è più considerato incorrettamente come modificabile in alcuni rari casi. ;(# 2959)
+<LI>In IBM Lotus Symphony e Openoffice, lo spostamento del cursore di sistema provoca anche lo spostamento del cursore di controllo se necessario.
+<LI>I contenuti di tipo Adobe Flash sono ora accessibili in Internet Explorer in Windows 8. ;(# 2454)
+<LI>Corretto il supporto Bluetooth per il display braille Trio della Papenmeier. (<A HREF="http://www.nvda-project.org/ticket/2995">#2995</A>)
+<P></P>
+== Cambiamenti per sviluppatori ==
 <LI>I driver dei display braille supportano la selezione manuale della porta. (<A HREF="http://www.nvda-project.org/ticket/426">#426</A>)
  <UL>
  <LI>Questo risulta molto utile per i display braille che supportano il collegamento tramite una porta seriale.
@@ -120,6 +123,7 @@ Si prega di consultare il documento <A HREF="keyCommands.html">Comandi rapidi</A
  <LI>L'immissione braille è gestita dalla classe brailleInput.BrailleInputGesture o una sottoclasse della stessa.
  <LI>Le sottoclassi braille.BrailleDisplayGesture (come implementate nei driver dei display braille) possono anche ereditare da brailleInput.BrailleInputGesture. Ciò permette la gestione dei comandi dei display braille e dell'immissione braille dalla stessa classe gesture.
  </UL>
+<LI>È ora possibile utilizzare comHelper.getActiveObject per ottenere un oggetto COM attivo da un processo normale quando NVDA è in esecuzione con privilegi uiAccess. ;(# 2483)
 </UL>
 
 <H2>2012.3</H2>
