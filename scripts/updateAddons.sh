@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# source checkProgs.sh
+source checkProgs.sh
 
 function usage() {
     echo "`basename $0` [-h]"
@@ -38,56 +38,67 @@ elif  [ "$fromTranslators" == "$toTranslators" -a "$fromTranslators" == "1" ]; t
     usage; exit 1
 fi
 
+# make sure we have somewhere where we can store our temporary files
+TMPDIR=/tmp/potfiles/
+if [ -e $TMPDIR ]; then
+    rm -rf $TMPDIR
+    if [ "$?" != "0" ]; then
+        echo "could not remove $TMPDIR, refuse to continue."
+        exit 1;
+    fi
+fi
+mkdir -p $TMPDIR
+
+addonOffset="../../addons/${addon}"
+# go through all addons and generate their pot files, place them in our temp dir.
+for addon in ${availableAddons[*]}; do
+    pushd "${addonOffset}/${addon}" >/dev/null 2>&1
+    pwd
+    scons pot mergePot
+    mv *.pot $TMPDIR
+    popd >/dev/null 2>&1
+done
 
 for lang in ${langs[*]}; do
-
     echo "processing $lang"
     # relative path from scripts directory to language directory.
     langOffset=../$lang
-
     if [ -e "${langOffset}/settings" ]; then
         source "${langOffset}/settings"
     else
         echo "warning: No settings file found, skipping."
         continue
     fi
-
     for addon in ${availableAddons[*]}; do
-        addonOffset="../../addons/${addon}"
-
         eval process=\$${addon}
         if [ "$process" == "0" ]; then
             echo "  skipping $addon"
             continue
         fi
-
         echo "  processing $addon"
-
         if [ "$fromTranslators" == "1" ]; then
             srcPo="${langOffset}/add-ons/${addon}/nvda.po"
             targetPo="${addonOffset}/addon/locale/${lang}/LC_MESSAGES/nvda.po"
-
             echo "  checking nvda.po:"
             msgfmt  -c -o /tmp/tmp.mo "$srcPo"
-            echo "  copying across nvda.po"
-            mkdir -p "${addonOffset}/addon/locale/${lang}/LC_MESSAGES"
-            cp "$srcPo" "$targetPo"
+            if [ "$?" == "0" ]; then
+                echo "  copying across nvda.po"
+                mkdir -p "${addonOffset}/addon/locale/${lang}/LC_MESSAGES"
+                cp "$srcPo" "$targetPo"
+            fi
         else
             echo "foo bar bas."
-            pushd "$addonOffset" >/dev/null 2>&1
-            scons mergePot
-            popd >/dev/null 2>&1
             srcPo="${langOffset}/add-ons/${addon}/nvda.po"
-            potFile="${addonOffset}/${addon}.pot"
+            potFile="${TMPDIR}/${addon}.pot"
+            mergePotFile="${TMPDIR}/${addon}-merge.pot"
             mkdir -p "${langOffset}/add-ons/${addon}/"
             if [ ! -e $srcPo ]; then
                 cp "${potFile}" "${srcPo}"
-                sed -i 's+"Content-Type: text/plain.*"+"Content-Type: text/plain; charset=UTF-8\\n"+g' "${srcPo}"
+                sed -i -e 's+"Content-Type: text/plain.*"+"Content-Type: text/plain; charset=UTF-8\\n"+g' \
+                -e "s/^\"Language:\ /\"Language:${lang}/g" "${srcPo}"
                 svn add "${langOffset}/add-ons/${addon}/"
-                svn add "${srcPo}"
-            else
-                msgmerge -U "${srcPo}" "${potFile}"
             fi
+            msgmerge -U "${srcPo}" "${mergePotFile}"
         fi
     done
 done
