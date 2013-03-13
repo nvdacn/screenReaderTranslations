@@ -49,18 +49,18 @@ if [ -e $TMPDIR ]; then
 fi
 mkdir -p $TMPDIR
 
-addonOffset="../../addons/${addon}"
+addonOffset="../../addons/"
 # go through all addons and generate their pot files, place them in our temp dir.
 for addon in ${availableAddons[*]}; do
     pushd "${addonOffset}/${addon}" >/dev/null 2>&1
     pwd
-    scons pot mergePot
+    scons -Q pot mergePot
     mv *.pot $TMPDIR
     popd >/dev/null 2>&1
 done
 
 for lang in ${langs[*]}; do
-    echo "processing $lang"
+    echo -ne "\nprocessing ${lang}:"
     # relative path from scripts directory to language directory.
     langOffset=../$lang
     if [ -e "${langOffset}/settings" ]; then
@@ -72,22 +72,21 @@ for lang in ${langs[*]}; do
     for addon in ${availableAddons[*]}; do
         eval process=\$${addon}
         if [ "$process" == "0" ]; then
-            echo "  skipping $addon"
+            echo -n " skipping:$addon"
             continue
         fi
-        echo "  processing $addon"
         if [ "$fromTranslators" == "1" ]; then
             srcPo="${langOffset}/add-ons/${addon}/nvda.po"
-            targetPo="${addonOffset}/addon/locale/${lang}/LC_MESSAGES/nvda.po"
-            echo "  checking nvda.po:"
+            targetPo="${addonOffset}/${addon}/addon/locale/${lang}/LC_MESSAGES/nvda.po"
+            #echo "  checking nvda.po:"
             msgfmt  -c -o /tmp/tmp.mo "$srcPo"
             if [ "$?" == "0" ]; then
-                echo "  copying across nvda.po"
-                mkdir -p "${addonOffset}/addon/locale/${lang}/LC_MESSAGES"
+                #echo "  copying across nvda.po"
+                mkdir -p "${addonOffset}/${addon}/addon/locale/${lang}/LC_MESSAGES"
                 cp "$srcPo" "$targetPo"
             fi
+            echo -n " ${addon}"
         else
-            echo "foo bar bas."
             srcPo="${langOffset}/add-ons/${addon}/nvda.po"
             potFile="${TMPDIR}/${addon}.pot"
             mergePotFile="${TMPDIR}/${addon}-merge.pot"
@@ -98,8 +97,9 @@ for lang in ${langs[*]}; do
                 -e "s/^\"Language:\ /\"Language:${lang}/g" "${srcPo}"
                 svn add "${langOffset}/add-ons/${addon}/"
             fi
-            msgmerge -U "${srcPo}" "${mergePotFile}"
+            msgmerge -qU "${srcPo}" "${mergePotFile}"
+            echo -n " ${addon}"
         fi
     done
 done
-echo "all done"
+echo -e "\nall done"
