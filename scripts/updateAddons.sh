@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+export PS4='$LINENO+ '
+set -eu
+
+function msgCount() {
+pocount  --csv  "$1" |
+awk -F, '{printf("untranslated:%d, fuzzy:%d\n",$7, $5)}' | tail -n 1
+}
 
 source checkProgs.sh
 
@@ -13,6 +20,8 @@ function usage() {
 }
 
 langs=(am an ar bg cs da de el es fi fr gl hr hu it is ja ko ne nl nb_NO nn_NO pl pt_BR pt_PT ru sk sl sv ta tr uk zh_CN zh_HK zh_TW)
+fromTranslators=""
+toTranslators=""
 
 while getopts a:fhtl: OPT; do
     case "$OPT" in
@@ -54,13 +63,14 @@ addonOffset="../../addons/"
 for addon in ${availableAddons[*]}; do
     pushd "${addonOffset}/${addon}" >/dev/null 2>&1
     pwd
+    git pull -q --ff-only
     scons -Q pot mergePot
     mv *.pot $TMPDIR
     popd >/dev/null 2>&1
 done
 
 for lang in ${langs[*]}; do
-    echo -ne "\nprocessing ${lang}:"
+    echo "processing ${lang}:"
     # relative path from scripts directory to language directory.
     langOffset=../$lang
     if [ -e "${langOffset}/settings" ]; then
@@ -72,7 +82,7 @@ for lang in ${langs[*]}; do
     for addon in ${availableAddons[*]}; do
         eval process=\$${addon}
         if [ "$process" == "0" ]; then
-            echo -n " skipping:$addon"
+            #echo -n " skipping:$addon"
             continue
         fi
         if [ "$fromTranslators" == "1" ]; then
@@ -85,7 +95,7 @@ for lang in ${langs[*]}; do
                 mkdir -p "${addonOffset}/${addon}/addon/locale/${lang}/LC_MESSAGES"
                 cp "$srcPo" "$targetPo"
             fi
-            echo -n " ${addon}"
+            #echo -n " ${addon}"
         else
             srcPo="${langOffset}/add-ons/${addon}/nvda.po"
             potFile="${TMPDIR}/${addon}.pot"
@@ -98,8 +108,8 @@ for lang in ${langs[*]}; do
                 svn add "${langOffset}/add-ons/${addon}/"
             fi
             msgmerge -qU "${srcPo}" "${mergePotFile}"
-            echo -n " ${addon}"
+            #echo -n " ${addon}"
         fi
     done
 done
-echo -e "\nall done"
+#echo -e "\nall done"
