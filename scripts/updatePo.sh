@@ -1,4 +1,7 @@
 #!/bin/bash
+export PS4='$LINENO+ '
+set -eu
+
 # MMH, 18 Jul, 2010.
 #
 
@@ -34,7 +37,7 @@ bzr pull
 rev=`bzr log -l 1 | head -n 2 | tail -n 1 | awk '{print $2}'`
 branch=`bzr info | grep "checkout of branch" | awk -F/ '{print $NF}'`
 fromdos {,*/,*/*/}*.py
-xgettext -c -s --copyright-holder="NVDA Contributers" \
+xgettext --no-location -c -s --copyright-holder="NVDA Contributers" \
 --package-name="NVDA" --package-version="$branch:$rev" \
 --msgid-bugs-address="nvda-translations@freelists.org" \
 --keyword=pgettext:1c,2 \
