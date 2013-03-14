@@ -8,7 +8,7 @@ set -eu
 source checkProgs.sh
 
 force=""
-if [ "$1" == "--force" ]; then
+if [ "$#" == "1" ] && [ "$1" == "--force" ]; then
 force="--force"
 fi
 
