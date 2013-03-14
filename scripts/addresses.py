@@ -181,9 +181,16 @@ def email(rcpts, subject, body):
     p2 = Popen(['mail', '-s', subject, to], stdin=p1.stdout)
 
 
-if __name__ == "__main__" and len(sys.argv) == 4:
+if __name__ == "__main__" and len(sys.argv) >= 2:
     lang = sys.argv[1]
     if not addresses.has_key(lang):
         print "unable to find language: %s" %lang
         sys.exit()
-    email(addresses[lang]['email'], sys.argv[2], sys.argv[3])  
+    # we were called from the webhook with lang, subject, body, so send email.
+    if len(sys.argv) == 4:
+        email(addresses[lang]['email'], sys.argv[2], sys.argv[3])  
+    # we were called by another script, with a lang code, spit out email addresses suitable for a commit message.
+    elif len(sys.argv) == 2:
+        print " \\\n".join([ "--author='%s'" %x for x in addresses[lang]['email']])
+    else:
+        print "dont know what to do."
