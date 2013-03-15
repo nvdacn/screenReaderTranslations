@@ -59,6 +59,7 @@ Por favor consulte o documento da <A HREF="keyCommands.html">Referência Rápida
 
 <UL>
 <LI>Suporte básico  para a edição e leitura de apresentações no Microsoft PowerPoint. (<A HREF="http://www.nvda-project.org/ticket/501">#501</A>)
+<LI>Suporte para a alternância automática  de idiomas durante a leitura de documentos no Microsoft Word. (<A HREF="http://www.nvda-project.org/ticket/2047">#2047</A>)
 <LI>Suporte básico para a leitura e escrita de mensagens no Lotus Notes 8.5. (<A HREF="http://www.nvda-project.org/ticket/543">#543</A>)
 <LI>No modo de navegação para o MSHTML (como o  Internet Explorer) e Gecko (Firefox), a existência de descrições longas agora é anunciada. Também é possível abrir a descrição longa numa nova janela pressionando NVDA+d. (<A HREF="http://www.nvda-project.org/ticket/809">#809</A>)
 <LI>Notificações no Internet Explorer 9 e posteriores (tais como bloqueio de conteúdos ou downloads de arquivos) agora são anunciadas. (<A HREF="http://www.nvda-project.org/ticket/2343">#2343</A>) 
@@ -69,6 +70,8 @@ Por favor consulte o documento da <A HREF="keyCommands.html">Referência Rápida
 <LI>Suporte para a família de notetakers BrailleNote da Humanware quando usados com função de terminal braille para leitores de telas. (<A HREF="http://www.nvda-project.org/ticket/2012">#2012</A>)
 <LI>Suporte para modelos antigos das linhas braille Papenmeier BRAILLEX. (<A HREF="http://www.nvda-project.org/ticket/2679">#2679</A>)
 <LI>Suporte para entrada de braille de computador em  linhas que possuam um teclado braille. (<A HREF="http://www.nvda-project.org/ticket/808">#808</A>)
+<LI>Suporte para vários navegadores  baseados no Google Chrome: Rockmelt, BlackHawk, Comodo Dragon e SRWare Iron. (<A HREF="http://www.nvda-project.org/ticket/2236">#2236</A>, <A HREF="http://www.nvda-project.org/ticket/2813">#2813</A>, <A HREF="http://www.nvda-project.org/ticket/2814">#2814</A>, <A HREF="http://www.nvda-project.org/ticket/2815">#2815</A>)
+<LI>Corrigido o suporte via Bluetooth  para a linha braille Papenmeier Braillex Trio. (<A HREF="http://www.nvda-project.org/ticket/2995">#2995</A>)
 </UL>
 
 <H3>Alterações</H3>
@@ -103,6 +106,7 @@ Por favor consulte o documento da <A HREF="keyCommands.html">Referência Rápida
 <LI>No modo de navegação em aplicativos da Mozilla, conteúdos de texto já não são tratados incorretamente como editáveis em alguns casos raros. (<A HREF="http://www.nvda-project.org/ticket/2959">#2959</A>) 
 <LI>No IBM Lotus Symphony e OpenOffice, ao mover-se o cursor do sistema agora move o cursor de revisão caso seja apropriado. 
 <LI>Conteúdos Flash agora são acessíveis com o Internet Explorer no Windows 8. (<A HREF="http://www.nvda-project.org/ticket/2454">#2454</A>) 
+<LI>Corrigido o suporte de Bluetooth para a linha braille Papenmeier Braillex Trio. (<A HREF="http://www.nvda-project.org/ticket/2995">#2995</A>)
 </UL>
 
 <H3>Alterações Específicas para Desenvolvedores</H3>
@@ -122,6 +126,7 @@ Por favor consulte o documento da <A HREF="keyCommands.html">Referência Rápida
  <LI>Braille input is encompassed by the brailleInput.BrailleInputGesture class or a subclass thereof. 
  <LI>Subclasses of braille.BrailleDisplayGesture (as implemented in braille display drivers) can also inherit from brailleInput.BrailleInputGesture. This allows display commands and braille input to be handled by the same gesture class. 
  </UL>
+<LI>You can now use comHelper.getActiveObject to get an active COM object from a normal process when NVDA is running with the UIAccess privilege. (<A HREF="http://www.nvda-project.org/ticket/2483">#2483</A>)
 </UL>
 
 <H2>2012.3</H2>
@@ -468,7 +473,7 @@ Os destaques desta versão incluem a mudança automática do idioma do sintetiza
 <H3>Correção de Falhas</H3>
 
 <UL>
-<LI>O NVDA já não mosta marcas ou numerações para listas no Internet Explorer e outros controles MSHTML onde o autor tiver indicado que estes não devem ser mostrados (isto é, o estilo da lista é "none"). (<A HREF="http://www.nvda-project.org/ticket/1671">#1671</A>)
+<LI>O NVDA já não mostra marcas ou numerações para listas no Internet Explorer e outros controles MSHTML onde o autor tiver indicado que estes não devem ser mostrados (isto é, o estilo da lista é "none"). (<A HREF="http://www.nvda-project.org/ticket/1671">#1671</A>)
 <LI>Ao reiniciar o NVDA quando este trava, (isto é, pressionando control+alt+n) já não encerra a cópia anterior sem iniciar uma nova logo em seguida.
 <LI>Pressionar backspace ou setas em um console de comando do Windows já não causa resultados estranhos em alguns casos. (<A HREF="http://www.nvda-project.org/ticket/1612">#1612</A>)
 <LI>O item selecionado em caixas de combinação WPF (e possivelmente algumas outras caixas de combinação expostas usando UI Automation) que não permitem edição de texto agora é anunciado corretamente.
