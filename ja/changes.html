@@ -12,6 +12,10 @@
 
 <H2>2013.1</H2>
 
+<P>
+このリリースの主な更新内容は、直観的で一貫性のあるラップトップ配列の採用、Microsoft PowerPointへの対応、ウェブブラウザでの詳細説明(longdesc)への対応、点字ディスプレイの文字入力用キーへの対応などです。
+</P>
+
 <H3>重要なお知らせ</H3>
 
 <H4>新しいラップトップのキーボード配列</H4>
@@ -57,6 +61,7 @@
 <UL>
 <LI>Microsoft PowerPoint の編集とスライド表示の基本的なサポート(<A HREF="http://www.nvda-project.org/ticket/501">#501</A>)
 <LI>Lotus Notes 8.5 のメッセージ読み上げと作成の基本的なサポート(<A HREF="http://www.nvda-project.org/ticket/543">#543</A>)
+<LI>Microsoft Wordで文書を読み上げるときに言語の自動切り替えが有効になりました(<A HREF="http://www.nvda-project.org/ticket/2047">#2047</A>) 
 <LI>MSHTML(Internet Explorer)およびGecko(Firefox)のブラウズモードで、詳細説明(long description)があるときに通知を行います。NVDA+Dを押すと新しいウィンドウで詳細説明を開きます。(<A HREF="http://www.nvda-project.org/ticket/809">#809</A>)
 <LI>Internet Explorer のバージョン9以降で、通知を読み上げるようになりました。（コンテンツのブロックやファイルのダウンロードなど）(<A HREF="http://www.nvda-project.org/ticket/2343">#2343</A>)
 <LI>Internet Explorerとその他のMSHTMLコンポーネントにおいて、ブラウズモードでのテーブルの行と列のヘッダーを自動的に通知するようになりました。(<A HREF="http://www.nvda-project.org/ticket/778">#778</A>)
@@ -68,6 +73,7 @@
 <LI>Papenmeier BRAILLEX（ブレイレックス）点字ディスプレイの旧式モデルに対応しました(<A HREF="http://www.nvda-project.org/ticket/2679">#2679</A>)
 <LI>点字入力キーを持つ点字ディスプレイから、コンピューター点字で文字を入力できるようになりました(<A HREF="http://www.nvda-project.org/ticket/808">#808</A>)
 <LI>キーボード設定で「Enterキーで読み上げを中断」「文字入力で読み上げを中断」が設定できるようになりました。(<A HREF="http://www.nvda-project.org/ticket/698">#698</A>)
+<LI>Google Chromeの技術に基づくウェブブラウザ Rockmelt, BlackHawk, Comodo Dragon, SRWare Iron に対応しました (<A HREF="http://www.nvda-project.org/ticket/2236">#2236</A>, <A HREF="http://www.nvda-project.org/ticket/2813">#2813</A>, <A HREF="http://www.nvda-project.org/ticket/2814">#2814</A>, <A HREF="http://www.nvda-project.org/ticket/2815">#2815</A>)
 </UL>
 
 <H3>変更点</H3>
@@ -103,8 +109,15 @@
 <LI>Scintilla のエディットコントロールでバックスペースやデリートによる文字削除をしたときに、マルチバイト文字が正しく通知されるようになりました(<A HREF="http://www.nvda-project.org/ticket/2855">#2855</A>)
 <LI>ユーザープロファイルのパスに特定のマルチバイト文字が含まれる場合に、NVDA のインストールが失敗する問題を修正しました(<A HREF="http://www.nvda-project.org/ticket/2729">#2729</A>)
 <LI>リストビューコントロール (SysListview32) でグループを通知するとき、64ビットのアプリケーションがエラーを起こさないようになりました。
-<P></P>
-== 開発者向けの変更 ==
+<LI>Mozilla アプリケーションのブラウズモードでテキストのコンテンツが誤って「編集可能」と通知されること場合がある不具合に対応しました。(<A HREF="http://www.nvda-project.org/ticket/2959">#2959</A>)
+<LI>IBM Lotus Symphony や OpenOffice においてキャレットの移動でレビューカーソルが適切に移動するようになりました。
+<LI>Adobe Flash コンテンツが Windows 8 の Internet Explorer で操作できるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2454">#2454</A>)
+<LI>Papenmeier Braillex Trioのブルートゥース対応を修正しました。 (<A HREF="http://www.nvda-project.org/ticket/2995">#2995</A>)
+</UL>
+
+<H3>開発者向けの変更</H3>
+
+<UL>
 <LI>点字ディスプレイドライバーは手動のポート選択をサポートします(<A HREF="http://www.nvda-project.org/ticket/426">#426</A>)
  <UL>
  <LI>レガシーなシリアルポートによる接続をサポートする点字ディスプレイにおいて特に有効です。
@@ -115,6 +128,7 @@
  <LI>点字キーからの文字入力は brailleInput.BrailleInputGesture クラスまたはそのサブクラスに含まれます。
  <LI>braille.BrailleDisplayGesture (実装はbrailleDisplayDriversで行います) のサブクラスがさらに brailleInput.BrailleInputGesture を継承できます。こうすることで、点字ディスプレイのコマンド入力と文字入力を、同じジェスチャークラスによって処理できます。
  </UL>
+<LI>NVDAが UIAccess 特権で動作しているときに comHelper.getActiveObject を使って通常のプロセスからアクティブな COM オブジェクトを取得できるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2483">#2483</A>)
 </UL>
 
 <H2>2012.3</H2>
