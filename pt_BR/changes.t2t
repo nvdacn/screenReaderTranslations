@@ -27,6 +27,7 @@ Por favor consulte o documento da [Referência Rápida de Comandos keyCommands.h
 
 == Novas Características ==
 - Suporte básico  para a edição e leitura de apresentações no Microsoft PowerPoint. (#501)
+- Suporte para a alternância automática  de idiomas durante a leitura de documentos no Microsoft Word. (#2047)
 - Suporte básico para a leitura e escrita de mensagens no Lotus Notes 8.5. (#543)
 - No modo de navegação para o MSHTML (como o  Internet Explorer) e Gecko (Firefox), a existência de descrições longas agora é anunciada. Também é possível abrir a descrição longa numa nova janela pressionando NVDA+d. (#809)
 - Notificações no Internet Explorer 9 e posteriores (tais como bloqueio de conteúdos ou downloads de arquivos) agora são anunciadas. (#2343) 
@@ -37,6 +38,8 @@ Por favor consulte o documento da [Referência Rápida de Comandos keyCommands.h
 - Suporte para a família de notetakers BrailleNote da Humanware quando usados com função de terminal braille para leitores de telas. (#2012)
 - Suporte para modelos antigos das linhas braille Papenmeier BRAILLEX. (#2679)
 - Suporte para entrada de braille de computador em  linhas que possuam um teclado braille. (#808)
+- Suporte para vários navegadores  baseados no Google Chrome: Rockmelt, BlackHawk, Comodo Dragon e SRWare Iron. (#2236, #2813, #2814, #2815)
+- Corrigido o suporte via Bluetooth  para a linha braille Papenmeier Braillex Trio. (#2995)
 
 
 == Alterações ==
@@ -67,7 +70,8 @@ Por favor consulte o documento da [Referência Rápida de Comandos keyCommands.h
 - No modo de navegação em aplicativos da Mozilla, conteúdos de texto já não são tratados incorretamente como editáveis em alguns casos raros. (#2959) 
 - No IBM Lotus Symphony e OpenOffice, ao mover-se o cursor do sistema agora move o cursor de revisão caso seja apropriado. 
 - Conteúdos Flash agora são acessíveis com o Internet Explorer no Windows 8. (#2454) 
-
+- Corrigido o suporte de Bluetooth para a linha braille Papenmeier Braillex Trio. (#2995)
+ 
  
  == Alterações Específicas para Desenvolvedores ==
  
@@ -79,6 +83,7 @@ Por favor consulte o documento da [Referência Rápida de Comandos keyCommands.h
 - A entrada de Braille a partir de teclados braille agora [e suportada. (#808) 
  - Braille input is encompassed by the brailleInput.BrailleInputGesture class or a subclass thereof. 
  - Subclasses of braille.BrailleDisplayGesture (as implemented in braille display drivers) can also inherit from brailleInput.BrailleInputGesture. This allows display commands and braille input to be handled by the same gesture class. 
+- You can now use comHelper.getActiveObject to get an active COM object from a normal process when NVDA is running with the UIAccess privilege. (#2483)
  
  
 = 2012.3 =
@@ -366,7 +371,7 @@ Os destaques desta versão incluem a mudança automática do idioma do sintetiza
 
 
 == Correção de Falhas ==
-- O NVDA já não mosta marcas ou numerações para listas no Internet Explorer e outros controles MSHTML onde o autor tiver indicado que estes não devem ser mostrados (isto é, o estilo da lista é "none"). (#1671)
+- O NVDA já não mostra marcas ou numerações para listas no Internet Explorer e outros controles MSHTML onde o autor tiver indicado que estes não devem ser mostrados (isto é, o estilo da lista é "none"). (#1671)
 - Ao reiniciar o NVDA quando este trava, (isto é, pressionando control+alt+n) já não encerra a cópia anterior sem iniciar uma nova logo em seguida.
 - Pressionar backspace ou setas em um console de comando do Windows já não causa resultados estranhos em alguns casos. (#1612)
 - O item selecionado em caixas de combinação WPF (e possivelmente algumas outras caixas de combinação expostas usando UI Automation) que não permitem edição de texto agora é anunciado corretamente.
