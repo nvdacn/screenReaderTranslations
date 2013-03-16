@@ -168,7 +168,7 @@ Suas características mais notáveis são:
 <LI>Sintetizador de voz integrado que suporta 43 idiomas;
 <LI>Anúncio da formatação do texto onde esteja disponível tal como nome e tamanho da fonte, estilo e erros ortográficos;
 <LI>Anúncio automático do texto sob o mouse e indicação opcional em áudio de sua posição;
-<LI>Suporte para diversas linhas braille;
+<LI>Suporte para diversas linhas braille, incluindo a entrada de braille para computador, no caso das linhas braille que possuam um teclado braille;
 <LI>Capacidade para  ser executado diretamente através de dispositivos USB e outros dispositivos portáteis sem necessitar de instalação;
 <LI>Instalação com voz e fácil de usar;
 <LI>Tradução para 42 idiomas;
@@ -1682,12 +1682,28 @@ Esta opção não estará disponível se sua linha braille suporta apenas a dete
 Você pode consultar a documentação sobre sua linha braille na seção <A HREF="#SupportedBrailleDisplays">Linhas Braille Suportadas</A> com vistas a obter mais detalhes sobre os tipos de comunicação suportados e portas disponíveis.
 </P>
 
-<H5>Tabela de Tradução</H5>
+<H5>Tabela Para Saída</H5>
 
 <P>
-A opção seguinte que se encontra neste diálogo é uma caixa de combinação referente às tabelas Braille.
-Aqui encontrará diversas para vários idiomas.
+A opção seguinte 	que se encontra neste diálogo é uma caixa de combinação referente às tabelas Braille.
+Aqui encontrará diversas para vários idiomas, padrões e graus.
+ A tabela escolhida será usada para converter os textos para braille e apresentá-los em sua linha braille. 
+</P>
+<P>
 Pode-se mover pela lista de tabelas braille utilizando as Setas.
+</P>
+
+<H5>Tabela para Entrada</H5>
+
+<P>
+Em complemento à opção anterior, a próxima definição que você encontrará consiste numa caixa de combinação contendo as tabelas braille para entrada.
+ A tabela escolhida será usada para converter o braille introduzido por meio do teclado braille Perkins de sua linha braille em texto.
+O NVDA atualmente suporta apenas a entrada de braille para computador, pelo que apenas as tabelas de braille para computador de 8 pontos serão mostradas.
+Pode-se mover pela lista de tabelas braille utilizando as Setas.
+</P>
+<P>
+Note que essa opção só é útil se sua linha braille possui um teclado Perkins e quando o referido recurso é suportado pelo driver da linha braille.
+Caso a entrada de braille não seja suportada por uma linha na qual haja um teclado braille, ser-lhe-á informado na seção <A HREF="#SupportedBrailleDisplays">Linhas Braille Suportadas</A>.
 </P>
 
 <H5>Expandir Para Braille De Computador a Palavra Sobre O Cursor</H5>
@@ -2628,6 +2644,10 @@ Não é necessário instalar qualquer driver específico para utilizá-las.
 Para tanto, basta Conectar o terminal e configurar o NVDA para a utilizar.
 </P>
 <P>
+ Além dessas linhas terem um teclado braille, as mesmas controlam a conversão de braille para texto autonomamente.
+Portanto, a configuração da tabela braille para entrada no NVDA não é relevante.
+</P>
+<P>
 A seguir estão as teclas de comando desta linha para o NVDA.
 Por favor consulte a documentação da mesma para descrições de onde essas teclas se encontram.
 </P>
@@ -2717,6 +2737,9 @@ Por favor consulte a documentação da mesma para descrições de onde essas tec
 <P>
 O NVDA suporta todas as linhas <A HREF="http://www.handytech.de/">Handy Tech</A> quando conectadas via USB ou bluetooth.
 Para algumas linhas USB mais antigas, será necessário instalar os drivers USB da Handy Tech em seu sistema.
+</P>
+<P>
+A entrada de braille ainda não é suportada.
 </P>
 <P>
 A seguir estão as teclas de comando dessa linha para o NVDA.
@@ -3452,7 +3475,8 @@ As seguintes linhas braille são suportadas:
 <P>
 Caso o BrxCom esteja instalado, o NVDA irá usá-lo.
 BrxCom é uma ferramenta que lhe permite usar a entrada Braille  independentemente de um leitor de telas.
-Uma nova versão do BrxCom que funciona com o NVDA será lançada pela Papenmeier em pouco tempo.  
+Uma nova versão do BrxCom que funciona com o NVDA será lançada pela Papenmeier em pouco tempo.
+Todavia, a entrada de braille é suportada pelo modelo Trio mesmo sem o BrxCom.
 </P>
 <P>
 Muitos dispositivos possuem uma Easy Access Bar (EAB) (Barra de Acesso Fácil), que propicia uma operacionalidade intuitiva e rápida.
@@ -4016,6 +4040,10 @@ Por favor consulte a documentação de seu BrailleNote para informações sobre 
 Para utilizá-lo, será necessário instalar o BRLTTY para o Windows.
 Você deverá baixar e instalar o último pacote de instalação, cuja denominação é algo como, brltty-win-4.2-2.exe.
 Quando configurar a linha e porta a utilizar, certifique-se de prestar muita atenção às instruções, especialmente se utiliza uma linha USB e já tem os drivers do fabricante instalados.
+</P>
+<P>
+Para as linhas que possuem um teclado braille, o BRLTTY atualmente controla por si próprio a entrada de braille.
+Portanto, a configuração da tabela braille para entrada no NVDA não é relevante.
 </P>
 <P>
 A seguir encontram-se os comandos do BRLTTY para o NVDA.
