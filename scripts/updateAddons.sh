@@ -2,12 +2,13 @@
 export PS4='$LINENO+ '
 set -eu
 
+source checkProgs.sh
+source lock.sh
+
 function msgCount() {
 pocount  --csv  "$1" |
 awk -F, '{printf("untranslated:%d, fuzzy:%d\n",$7, $5)}' | tail -n 1
 }
-
-source checkProgs.sh
 
 function usage() {
     echo "`basename $0` [-h]"
@@ -47,16 +48,16 @@ elif  [ "$fromTranslators" == "$toTranslators" -a "$fromTranslators" == "1" ]; t
     usage; exit 1
 fi
 
-# make sure we have somewhere where we can store our temporary files
-TMPDIR=/tmp/potfiles/
-if [ -e $TMPDIR ]; then
-    rm -rf $TMPDIR
-    if [ "$?" != "0" ]; then
-        echo "could not remove $TMPDIR, refuse to continue."
-        exit 1;
-    fi
-fi
-mkdir -p $TMPDIR
+reset() {
+    echo "Resetting to a clean state."
+    git reset --hard HEAD
+}
+
+grabLock
+
+# make sure we have the latest repo from assembla.
+git reset --hard HEAD
+git svn rebase
 
 addonOffset="../../addons/"
 # go through all addons and generate their pot files, place them in our temp dir.
@@ -65,7 +66,7 @@ for addon in ${availableAddons[*]}; do
     pwd
     git pull -q --ff-only
     scons -Q pot mergePot
-    mv *.pot $TMPDIR
+    mv *.pot $LOCKDIR
     popd >/dev/null 2>&1
 done
 
@@ -89,7 +90,7 @@ for lang in ${langs[*]}; do
             srcPo="${langOffset}/add-ons/${addon}/nvda.po"
             targetPo="${addonOffset}/${addon}/addon/locale/${lang}/LC_MESSAGES/nvda.po"
             #echo "  checking nvda.po:"
-            msgfmt  -c -o /tmp/tmp.mo "$srcPo"
+            msgfmt  -c -o $LOCKDIR/tmp.mo "$srcPo"
             if [ "$?" == "0" ]; then
                 #echo "  copying across nvda.po"
                 mkdir -p "${addonOffset}/${addon}/addon/locale/${lang}/LC_MESSAGES"
@@ -98,18 +99,21 @@ for lang in ${langs[*]}; do
             #echo -n " ${addon}"
         else
             srcPo="${langOffset}/add-ons/${addon}/nvda.po"
-            potFile="${TMPDIR}/${addon}.pot"
-            mergePotFile="${TMPDIR}/${addon}-merge.pot"
+            potFile="${LOCKDIR}/${addon}.pot"
+            mergePotFile="${LOCKDIR}/${addon}-merge.pot"
             mkdir -p "${langOffset}/add-ons/${addon}/"
             if [ ! -e $srcPo ]; then
                 cp "${potFile}" "${srcPo}"
                 sed -i -e 's+"Content-Type: text/plain.*"+"Content-Type: text/plain; charset=UTF-8\\n"+g' \
                 -e "s/^\"Language:\ /\"Language:${lang}/g" "${srcPo}"
-                svn add "${langOffset}/add-ons/${addon}/"
+                git add "${langOffset}/add-ons/${addon}/"
             fi
             msgmerge -qU "${srcPo}" "${mergePotFile}"
+            git add "${srcPo}"
             #echo -n " ${addon}"
         fi
     done
 done
 #echo -e "\nall done"
+git commit -m "updated addon po files."
+./commit.sh
