@@ -11,7 +11,8 @@ DIFF=`which diff`
 MSGMERGE=`which msgmerge`
 POCOUNT=`which pocount`
 PYTHON27=`which python2.7`
-TWIDGE=`which twidge`
+SCONS=`which scons`
+#TWIDGE=`which twidge`
 WDIFF=`which wdiff`
 XGETTEXT=`which xgettext`
 
@@ -35,6 +36,9 @@ elif [ "$POCOUNT" == "" ]; then
     exit 1
 elif [ "$PYTHON27" == "" ]; then
     echo "could not locate python 2.7, can not continue."
+    exit 1
+elif [ "$SCONS" == "" ]; then
+    echo "could not locate scons, can not continue."
     exit 1
 #elif [ "$TWIDGE" == "" ]; then
 #    echo "twidge not installed."
