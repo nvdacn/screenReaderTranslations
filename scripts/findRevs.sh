@@ -81,6 +81,7 @@ function findRevs() {
 
 
 ## config
+declare -A newRevs
 
 # make sure we have the latest repo from assembla.
 git reset --hard HEAD
