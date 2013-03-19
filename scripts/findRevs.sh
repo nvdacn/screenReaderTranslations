@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eu
+set -u
 
 # make sure that the programs that we need are available
 source checkProgs.sh
