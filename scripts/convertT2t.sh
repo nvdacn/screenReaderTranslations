@@ -1,9 +1,14 @@
 #!/bin/bash
-# MMH, 30 Sep, 2010.
-#
-# Convert our t2t files to html.
-
+set -u
 source checkProgs.sh
+source lock.sh
+
+reset() {
+    echo "Resetting to a clean state."
+    git reset --hard HEAD
+}
+
+grabLock
 
 git svn rebase
 
