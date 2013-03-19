@@ -2,9 +2,6 @@
 export PS4='$LINENO+ '
 set -eu
 
-# MMH, 18 Jul, 2010.
-#
-
 source checkProgs.sh
 source lock.sh
 

@@ -1,7 +1,16 @@
 #!/bin/bash
+set -eu
 
 # make sure that the programs that we need are available
 source checkProgs.sh
+source lock.sh
+
+reset() {
+    echo "Resetting to a clean state."
+    git reset --hard HEAD
+}
+
+grabLock
 
 # variables which will be used later
 # to construct a complete commit message for the svn.
@@ -80,9 +89,9 @@ git svn rebase
 # go to relative dir that has bzr code:
 getAbsPath ../
 pushd $absPath 2>&1 >/dev/null
-BZRDIR=../code
+BZRDIR=../code/translation
 pushd $BZRDIR
-bzr pull
+bzr pull -q
 popd
 
 declare -A twitAddr
