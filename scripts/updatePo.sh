@@ -6,6 +6,14 @@ set -eu
 #
 
 source checkProgs.sh
+source lock.sh
+
+reset() {
+    echo "Resetting to a clean state."
+    git reset --hard HEAD
+}
+
+grabLock
 
 force=""
 if [ "$#" == "1" ] && [ "$1" == "--force" ]; then
@@ -22,9 +30,9 @@ commitMsg=""
 #    echo "$0: Could not find po file on website."
 #    exit
 #fi
-#$CURL -s -o /tmp/nvda.pot $url
+#$CURL -s -o $LOCKDIR/nvda.pot $url
 
-BZRDIR=../code/source
+BZRDIR=../code/translation/source
 
 # Navigate to the base of the svn repo.
 absPath=`readlink -f -n $0`
@@ -41,7 +49,7 @@ xgettext --no-location -c -s --copyright-holder="NVDA Contributers" \
 --package-name="NVDA" --package-version="$branch:$rev" \
 --msgid-bugs-address="nvda-translations@freelists.org" \
 --keyword=pgettext:1c,2 \
--o /tmp/nvda.pot {,*/,*/*/}*.py
+-o $LOCKDIR/nvda.pot {,*/,*/*/}*.py
 bzr revert
 
 popd # >/dev/null 2>&1
@@ -63,7 +71,7 @@ for lang in ${updatePoLangs[*]}; do
     # update po file from downloaded pot
     #
     #echo "updating po from pot."
-    $MSGMERGE -q -U nvda.po /tmp/nvda.pot
+    $MSGMERGE -q -U nvda.po $LOCKDIR/nvda.pot
     sed -e "s/\(project-id-version: \)\(.*\)/\1NVDA bzr $branch:$rev\\\n\"/i" -i nvda.po
     # finding statistics after updating against pot file.
     #
