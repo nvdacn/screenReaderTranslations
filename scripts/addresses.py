@@ -59,6 +59,10 @@ addresses = {
         'lang':'French',
         'email': ['Michel such <michel.such@free.fr>', 'Patrick ZAJDA <patrick@zajda.fr>'],
     },
+    'ga': {
+        'lang': 'Gaeilge',
+        'email': ['Cearbhall OMeadhra <cearbhall.omeadhra@blbc.ie>'],
+    },
     'gl': {
         'lang': 'Galician',
         'email': ['Juan C. buno <quetzatl@eresmas.net>'],
