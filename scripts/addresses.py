@@ -149,7 +149,7 @@ addresses = {
     },
     'uk': {
         'lang':'Ukrainian',
-        'email': ['vlodko@torba.com'],
+        'email': ['Volodymyr Pyrig <vlodko@torba.com>'],
     },
     'ur': {
         'lang':'Urdu',
