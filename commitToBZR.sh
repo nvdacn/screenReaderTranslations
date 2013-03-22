@@ -1,5 +1,5 @@
 #!/bin/bash
-langs=(ar an cs da de el es gl fi fr hu is it ja ko nb_NO ne nl pl pt_BR pt_PT ru sk sl ta tr zh_CN zh_HK zh_TW)
+langs=(ar an cs da de el es gl fi fr hu hr is it ja ko nb_NO ne nl pl pt_BR pt_PT ru sk sl ta tr uk zh_CN zh_HK zh_TW)
 for lang in ${langs[*]}; do
 echo processing $lang
 # check if the directory has been modified since last commit.
