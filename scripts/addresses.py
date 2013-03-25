@@ -127,6 +127,10 @@ addresses = {
         'lang': 'Portuguese',
         'email': ['Diogo Costa <diogojoca@gmail.com>', 'Rui Batista <ruiandrebatista@gmail.com>', 'Rui Fontes <rui.fontes@tiflotecnia.com>'],
     },
+    'rhvoice': {
+        'lang': 'rhvoice',
+        'email': ['Beqa Gozalishvili <beqaprogger@gmail.com>'],
+    },
     'ru': {
         'lang': 'Russian',
         'email': ['Beqa Gozalishvili <beqaprogger@gmail.com>', 'ruslan <ru2020slan@yandex.ru>'],
