@@ -390,11 +390,10 @@ class SynthDriver(SynthDriver):
             result[voice]=VoiceInfo(voice,voice,self.__language)
         for language,voices in self.__voices_by_language.iteritems():
             if language!=self.__language:
-                if self.__lib.RHVoice_are_languages_compatible(self.__tts_engine,self.__language,language):
-                    for main_voice in primary_voices:
-                        for extra_voice in voices:
-                            voice="{}+{}".format(main_voice,extra_voice)
-                            result[voice]=VoiceInfo(voice,voice,self.__language)
+                for main_voice in primary_voices:
+                    for extra_voice in voices:
+                        voice="{}+{}".format(main_voice,extra_voice)
+                        result[voice]=VoiceInfo(voice,voice,self.__language)
         return result
 
     def _get_language(self):
