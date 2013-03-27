@@ -299,6 +299,7 @@ class SynthDriver(SynthDriver):
         self.__tts_queue=Queue.Queue()
         self.__tts_thread=TTSThread(self.__tts_queue)
         self.__tts_thread.start()
+        self.__language = 'en'
         log.info("Using RHVoice version {}".format(self.__lib.RHVoice_get_version()))
 
     def terminate(self):
@@ -376,7 +377,7 @@ class SynthDriver(SynthDriver):
         result=OrderedDict()
 
         for voice in self.allVoices:
-            result[voice]=VoiceInfo(voice,voice,self.__language)
+            result[voice]=VoiceInfo(voice, voice,self.__language)
         #for language,voices in self.__voices_by_language.iteritems():
         #    if language!=self.__language:
         #        for main_voice in primary_voices:
