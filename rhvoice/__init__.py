@@ -286,7 +286,10 @@ class SynthDriver(SynthDriver):
         if not self.__tts_engine:
             raise RuntimeError("RHVoice: initialization error")
         number_of_voices=self.__lib.RHVoice_get_number_of_voices(self.__tts_engine)
-        self.allVoices=self.__lib.RHVoice_get_voices(self.__tts_engine)
+        voices=self.__lib.RHVoice_get_voices(self.__tts_engine)
+        self.allVoices = []
+        for i in xrange(number_of_voices): 
+            self.allVoices.append(voices[i].name)
         if len(self.allVoices) != number_of_voices:
             log.warning("rhvoice: number of reported voices seems to be different from actual length of voices list.\n")
         self.__voice=self.allVoices[0]
