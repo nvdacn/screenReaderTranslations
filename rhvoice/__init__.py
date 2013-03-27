@@ -374,12 +374,6 @@ class SynthDriver(SynthDriver):
 
     def _get_availableVoices(self):
         result=OrderedDict()
-        #primary_voices=self.__voices_by_language[self.__language]
-	primary_voices = []
-	for lang in allLangs:
-		primary_voices.extend(self.__voices_by_language[lang])
-	log.info("primary voices for %s are: %s\n" %(self.__language, primary_voices))
-	log.info("voices_by_language.keys(): %s\n" % allLangs)
 
         #for voice in primary_voices:
         #    result[voice]=VoiceInfo(voice,voice,self.__language)
@@ -389,7 +383,7 @@ class SynthDriver(SynthDriver):
         #            for extra_voice in voices:
         #                voice="{}+{}".format(main_voice,extra_voice)
         #                result[voice]=VoiceInfo(voice,voice,self.__language)
-        return result
+        return self.allVoices
 
     def _get_language(self):
         return self.__language
