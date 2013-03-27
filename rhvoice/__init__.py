@@ -330,7 +330,7 @@ class SynthDriver(SynthDriver):
                 new_language=item.lang.split("_")[0]
                 #if new_language not in self.__voices_by_language:
                 #    continue
-                elif new_language==self.__language:
+                if new_language==self.__language:
                     continue
                 text_list.append(u'<voice xml:lang="{}">'.format(new_language))
                 language_changed=True
