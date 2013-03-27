@@ -286,18 +286,10 @@ class SynthDriver(SynthDriver):
         if not self.__tts_engine:
             raise RuntimeError("RHVoice: initialization error")
         number_of_voices=self.__lib.RHVoice_get_number_of_voices(self.__tts_engine)
-        voices=self.__lib.RHVoice_get_voices(self.__tts_engine)
-        self.__voices_by_language=defaultdict(list)
-        for i in xrange(number_of_voices):
-            voice=voices[i]
-            self.__voices_by_language[voice.language].append(voice.name)
-        nvda_language=languageHandler.getLanguage().split("_")[0]
-        if nvda_language in self.__voices_by_language:
-            self.__language=nvda_language
-        else:
-            self.__lib.RHVoice_delete_tts_engine(self.__tts_engine)
-            raise RuntimeError("RHVoice: unsupported language {}".format(nvda_language))
-        self.__voice=self.__voices_by_language[self.__language][0]
+        self.allVoices=self.__lib.RHVoice_get_voices(self.__tts_engine)
+        if len(self.allVoices) != number_of_voices:
+            log.warning("rhvoice: number of reported voices seems to be different from actual length of voices list.\n")
+        self.__voice=self.allVoices[0]
         self.__rate=50
         self.__pitch=50
         self.__volume=50
@@ -336,8 +328,8 @@ class SynthDriver(SynthDriver):
                 if not item.lang:
                     continue
                 new_language=item.lang.split("_")[0]
-                if new_language not in self.__voices_by_language:
-                    continue
+                #if new_language not in self.__voices_by_language:
+                #    continue
                 elif new_language==self.__language:
                     continue
                 text_list.append(u'<voice xml:lang="{}">'.format(new_language))
@@ -379,21 +371,21 @@ class SynthDriver(SynthDriver):
 
     def _get_availableVoices(self):
         result=OrderedDict()
-	allLangs = self.__voices_by_language.keys()
         #primary_voices=self.__voices_by_language[self.__language]
 	primary_voices = []
 	for lang in allLangs:
 		primary_voices.extend(self.__voices_by_language[lang])
 	log.info("primary voices for %s are: %s\n" %(self.__language, primary_voices))
 	log.info("voices_by_language.keys(): %s\n" % allLangs)
-        for voice in primary_voices:
-            result[voice]=VoiceInfo(voice,voice,self.__language)
-        for language,voices in self.__voices_by_language.iteritems():
-            if language!=self.__language:
-                for main_voice in primary_voices:
-                    for extra_voice in voices:
-                        voice="{}+{}".format(main_voice,extra_voice)
-                        result[voice]=VoiceInfo(voice,voice,self.__language)
+
+        #for voice in primary_voices:
+        #    result[voice]=VoiceInfo(voice,voice,self.__language)
+        #for language,voices in self.__voices_by_language.iteritems():
+        #    if language!=self.__language:
+        #        for main_voice in primary_voices:
+        #            for extra_voice in voices:
+        #                voice="{}+{}".format(main_voice,extra_voice)
+        #                result[voice]=VoiceInfo(voice,voice,self.__language)
         return result
 
     def _get_language(self):
