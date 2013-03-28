@@ -383,9 +383,10 @@ class SynthDriver(SynthDriver):
             result[voice]=VoiceInfo(voice, voice,self.__language)
         for language,voices in self.__voices_by_language.iteritems():
             for main_voice in self.allVoices:
+                if main_voice in voices: continue
                 for extra_voice in voices:
-                            voice="{}+{}".format(main_voice,extra_voice)
-                            result[voice]=VoiceInfo(voice,voice,self.__language)
+                    voice="{}+{}".format(main_voice,extra_voice)
+                    result[voice]=VoiceInfo(voice,voice,self.__language)
         return result
 
     def _get_language(self):
