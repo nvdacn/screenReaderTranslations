@@ -61,7 +61,7 @@ addresses = {
     },
     'ga': {
         'lang': 'Gaeilge',
-        'email': ['Cearbhall OMeadhra <cearbhall.omeadhra@blbc.ie>', 'Ronan McGuirk <ronan.p.mcguirk@gmail.com>'],
+        'email': ['Cearbhall OMeadhra <cearbhall.omeadhra@blbc.ie>', 'Ronan McGuirk <ronan.p.mcguirk@gmail.com>', 'Kevin Scannell <kscanne@gmail.com>'],
     },
     'gl': {
         'lang': 'Galician',
