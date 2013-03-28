@@ -382,11 +382,12 @@ class SynthDriver(SynthDriver):
         for voice in self.allVoices:
             result[voice]=VoiceInfo(voice, voice,self.__language)
         for language,voices in self.__voices_by_language.iteritems():
-            for main_voice in self.allVoices:
-                if main_voice in voices: continue
-                for extra_voice in voices:
-                    voice="{}+{}".format(main_voice,extra_voice)
-                    result[voice]=VoiceInfo(voice,voice,self.__language)
+            for language2,voices2 in self.__voices_by_language.iteritems():
+                if language == language2 or not self.__lib.RHVoice_are_languages_compatible(self.__tts_engine,language,language2): continue
+                for main_voice in voices2:
+                    for extra_voice in voices:
+                        voice="{}+{}".format(main_voice,extra_voice)
+                        result[voice]=VoiceInfo(voice,voice,self.__language)
         return result
 
     def _get_language(self):
