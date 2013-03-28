@@ -288,11 +288,13 @@ class SynthDriver(SynthDriver):
         number_of_voices=self.__lib.RHVoice_get_number_of_voices(self.__tts_engine)
         voices=self.__lib.RHVoice_get_voices(self.__tts_engine)
         self.allVoices = []
+        self.__voices = []
         self.__voices_by_language=defaultdict(list)
         for i in xrange(number_of_voices): 
             voice = voices[i]
             self.allVoices.append(voices[i].name)
             self.__voices_by_language[voice.language].append(voice.name)
+            self.__voices.append(voice)
         if len(self.allVoices) != number_of_voices:
             log.warning("rhvoice: number of reported voices seems to be different from actual length of voices list.\n")
         self.__voice=self.allVoices[0]
