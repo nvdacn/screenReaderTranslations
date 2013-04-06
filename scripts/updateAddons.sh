@@ -60,15 +60,17 @@ git reset --hard HEAD
 git svn rebase
 
 addonOffset="../../addons/"
-# go through all addons and generate their pot files, place them in our temp dir.
-for addon in ${availableAddons[*]}; do
-    pushd "${addonOffset}/${addon}" >/dev/null 2>&1
-    pwd
-    git pull -q --ff-only
-    scons -Q pot mergePot
-    mv *.pot $LOCKDIR
-    popd >/dev/null 2>&1
-done
+if [ "$toTranslators"  == "1" ]; then
+    # go through all addons and generate their pot files, place them in our temp dir.
+    for addon in ${availableAddons[*]}; do
+        pushd "${addonOffset}/${addon}" >/dev/null 2>&1
+        pwd
+        git pull -q --ff-only
+        scons -Q pot mergePot
+        mv *.pot $LOCKDIR
+        popd >/dev/null 2>&1
+    done
+fi
 
 for lang in ${langs[*]}; do
     echo "processing ${lang}:"
