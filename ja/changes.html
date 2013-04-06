@@ -65,7 +65,7 @@
 <LI>MSHTML(Internet Explorer)およびGecko(Firefox)のブラウズモードで、詳細説明(long description)があるときに通知を行います。NVDA+Dを押すと新しいウィンドウで詳細説明を開きます。(<A HREF="http://www.nvda-project.org/ticket/809">#809</A>)
 <LI>Internet Explorer のバージョン9以降で、通知を読み上げるようになりました。（コンテンツのブロックやファイルのダウンロードなど）(<A HREF="http://www.nvda-project.org/ticket/2343">#2343</A>)
 <LI>Internet Explorerとその他のMSHTMLコンポーネントにおいて、ブラウズモードでのテーブルの行と列のヘッダーを自動的に通知するようになりました。(<A HREF="http://www.nvda-project.org/ticket/778">#778</A>)
-<LI>新しい言語：アラゴン語
+<LI>新しい言語：アラゴン語、アイルランド語
 <LI>新しい点字テーブル：デンマーク語2級、韓国語1級(<A HREF="http://www.nvda-project.org/ticket/2737">#2737</A>)
 <LI>東芝のブルートゥーススタックが使われているときに、点字ディスプレイをブルートゥースで接続できるようになりました(<A HREF="http://www.nvda-project.org/ticket/2419">#2419</A>)
 <LI>Freedom Scientific社の点字ディスプレイでポートの選択をサポートしました（自動、USB、ブルートゥース）
@@ -81,13 +81,15 @@
 <UL>
 <LI>liblouis をバージョン2.5.2に更新しました(<A HREF="http://www.nvda-project.org/ticket/2737">#2737</A>)
 <LI>ラップトップのキーボード配列を直観的で一貫性のある新しい配列に変更しました。(<A HREF="http://www.nvda-project.org/ticket/804">#804</A>)
+<LI>sSpeak音声エンジンを1.47.04に更新しました(<A HREF="http://www.nvda-project.org/ticket/2680">#2680</A>)
 </UL>
 
 <H3>バグ修正</H3>
 
 <UL>
 <LI>ブラウズモードにおいて、前後の区切り線へ移動する一文字ナビゲーションが、Internet Explorer とその他のMSHTMLコントロールで使えるようになりました(<A HREF="http://www.nvda-project.org/ticket/2781">#2781</A>)
-<LI>NVDAの起動時に音声エンジンの初期化に失敗して eSpeak や「音声なし」になった場合に、これらの設定を設定ファイルに保存しないようになりました。次回にNVDAを起動したときに、同じエンジンの初期化をもう一度試みます(<A HREF="http://www.nvda-project.org/ticket/2589">#2589</A>)
+<LI>NVDAの起動時に音声エンジンの初期化に失敗して eSpeak や「音声なし」になった場合に、これらの設定を保存しないようになりました。次回にNVDAを起動したときに、同じエンジンの初期化をもう一度試みます(<A HREF="http://www.nvda-project.org/ticket/2589">#2589</A>)
+<LI>NVDAの起動時に点字ディスプレイの初期化に失敗して「点字なし」になった場合に、設定ファイルに保存しないようになりました。次回にNVDAを起動したときに、同じディスプレイの初期化をもう一度試みます(<A HREF="http://www.nvda-project.org/ticket/2264">#2264</A>)
 <LI>Mozilla アプリケーションのブラウズモードで、テーブルの更新を適切にレンダリングします。例えば、更新されたセルにおいて、行と列の座標の通知やテーブルナビゲーションが適切に機能します (<A HREF="http://www.nvda-project.org/ticket/2784">#2784</A>)
 <LI>ウェブブラウザーのブラウズモードで、ラベルのない画像で適切にレンダリングできていなかった一部のものが、正しく処理されるようになりました(<A HREF="http://www.nvda-project.org/ticket/2838">#2838</A>)
 <LI>SecureCRT の古いバージョンおよび新しいバージョンに対応しました(<A HREF="http://www.nvda-project.org/ticket/2800">#2800</A>)
@@ -113,6 +115,11 @@
 <LI>IBM Lotus Symphony や OpenOffice においてキャレットの移動でレビューカーソルが適切に移動するようになりました。
 <LI>Adobe Flash コンテンツが Windows 8 の Internet Explorer で操作できるようになりました。 (<A HREF="http://www.nvda-project.org/ticket/2454">#2454</A>)
 <LI>Papenmeier Braillex Trioのブルートゥース対応を修正しました。 (<A HREF="http://www.nvda-project.org/ticket/2995">#2995</A>)
+<LI>Microsoft SAPI5 で Koba Speech 2 など特定の音声が使えない不具合に対応しました(<A HREF="http://www.nvda-project.org/ticket/2629">#2629</A>)
+<LI>Java Access Bridge を使うアプリケーションにおいて、編集可能なテキストフィールドでキャレットが移動したときに点字ディスプレイが正しく更新されるようにしました(<A HREF="http://www.nvda-project.org/ticket/3107">#3107</A>)
+<LI>ランドマークをサポートするブラウズモードのドキュメントにおいて、フォームのランドマークに対応しました。(<A HREF="http://www.nvda-project.org/ticket/2997">#2997</A>)
+<LI>sSpeakドライバは文字ごとの読み上げをより適切に行います。具体的には、外国語の文字について文字の名前や値を通知します。(<A HREF="http://www.nvda-project.org/ticket/3106">#3106</A>)
+<LI>ユーザー設定の保存場所に非ASCII文字が含まれていても、ログオン画面やセキュアスクリーンで利用するためのユーザー設定のコピーが失敗しないようになりました(<A HREF="http://www.nvda-project.org/ticket/3092">#3092</A>)
 </UL>
 
 <H3>開発者向けの変更</H3>
