@@ -5,6 +5,10 @@ set -eu
 source checkProgs.sh
 source lock.sh
 
+function translatedMsgs () {
+pocount  --csv $1 | awk -F,   '{printf("%d\n", $2);}' | tail -n 1
+}
+
 function msgCount() {
 pocount  --csv  "$1" |
 awk -F, '{printf("untranslated:%d, fuzzy:%d\n",$7, $5)}' | tail -n 1
@@ -92,8 +96,9 @@ for lang in ${langs[*]}; do
             srcPo="${langOffset}/add-ons/${addon}/nvda.po"
             targetPo="${addonOffset}/${addon}/addon/locale/${lang}/LC_MESSAGES/nvda.po"
             #echo "  checking nvda.po:"
+            count=$(translatedMsgs "$srcPo")
             msgfmt  -c -o $LOCKDIR/tmp.mo "$srcPo"
-            if [ "$?" == "0" ]; then
+            if [ "$?" == "0" -a "$count" != "0" ]; then
                 #echo "  copying across nvda.po"
                 mkdir -p "${addonOffset}/${addon}/addon/locale/${lang}/LC_MESSAGES"
                 cp "$srcPo" "$targetPo"
