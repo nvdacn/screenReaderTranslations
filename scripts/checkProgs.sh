@@ -4,7 +4,6 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 # Checking for the existance of needed programs (sorted)
 
-BZR=`which bzr`
 CURL=`which curl`
 DIFF=`which diff`
 #ELINKS=`which elinks`
@@ -16,10 +15,7 @@ SCONS=`which scons`
 WDIFF=`which wdiff`
 XGETTEXT=`which xgettext`
 
-if [ "$BZR" == "" ]; then
-    echo "bzr not installed."
-    exit 1
-elif [ "$CURL" == "" ]; then
+if [ "$CURL" == "" ]; then
     echo "Can't find curl."
     exit 1
 elif [ "$DIFF" == "" ]; then
