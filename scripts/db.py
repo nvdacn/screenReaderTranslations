@@ -1,49 +1,61 @@
 #!/usr/bin/env python3
 import sys, json
 
-settingsFile = 'settings'
+class DB(dict):
 
-# if settings file is corrupt or doesnt exist, make sure we end up with an empty dict.
-f = open(settingsFile, 'r')
-try:
-    data = json.load(f)
-except ValueError:
-    data = {}
-f.close()
+    def __init__(self, fname='settings', *args):
+        super(DB, self).__init__(*args)
+        # if settings file is corrupt or doesnt exist, make sure we end up with an empty dict.
+        self.fname = fname
+        f = open(fname, 'r')
+        try:
+            self.update(json.load(f))
+        except ValueError:
+            pass
+        f.close()
 
-# user wants the value of a key, if not found return 0
-if sys.argv[1] == 'get':
-    try:
-        print(data[sys.argv[2]])
-    except:
-        print("key not found.")
-        print("0")
+    def __getitem__(self, key):
+        try:
+            return super(DB, self).__getitem__(key)
+        except:
+            return 0
+    def echo(self):
+        return ("hello world\n" +
+               "this is a test message." +
+               "this is the end.")
 
-# user wanted to store a key/value pair.
-elif sys.argv[1] == 'set':
-    if sys.argv[3] == '-': # user is giving us the data on stdin
-        data[sys.argv[2]] = sys.stdin.readlines()
+    def save(self):
+        ## prune keys that have no content.
+        rkeys = []
+        for key in self.keys():
+            if not self[key]: rkeys.append(key)
+        for key in rkeys:
+            del self[key]
+
+        ## write out the remaining keys to file.
+        f = open(self.fname, 'w')
+        json.dump(self, f, indent=2, ensure_ascii=False, sort_keys=True)
+        f.close()
+
+##############
+if __name__ == "__main__" and len(sys.argv) >= 1:
+    db = DB()
+    # user wanted to store a key/value pair.
+    if sys.argv[1] == 'get':
+        print(db[sys.argv[2]])
+    elif sys.argv[1] == 'set':
+        if sys.argv[3] == '-': # user is giving us the data on stdin
+            db[sys.argv[2]] = sys.stdin.readlines()
+        else:
+            db[sys.argv[2]] = sys.argv[3]
+    # user wishes to remove a key.
+    elif sys.argv[1] == 'del':
+        try:
+            del db[sys.argv[2]]
+        except KeyError:
+            pass
     else:
-        data[sys.argv[2]] = sys.argv[3]
+        print("dont know what to do.")
 
-# user wishes to remove a key.
-elif sys.argv[1] == 'del':
-    try:
-        del data[sys.argv[2]]
-    except KeyError:
-        pass
-else:
-    print("dont know what to do.")
-
-## prune keys that have no content.
-rkeys = []
-for key in data.keys():
-    if not data[key]: rkeys.append(key)
-for key in rkeys:
-    del data[key]
-
-## write out the remaining keys to file.
-f = open(settingsFile, 'w')
-json.dump(data, f, indent=2, ensure_ascii=False, sort_keys=True)
-f.close()
+    db.save()
 
