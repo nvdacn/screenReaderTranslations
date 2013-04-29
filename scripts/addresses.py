@@ -119,7 +119,7 @@ addresses = {
         'lang':'Polish',
         'email': ['Hubert Meyer <killer@tyflonet.com>'],
     },
-   'pt_BR': {
+    'pt_BR': {
         'lang': 'Brazilian Portuguese',
         'email': ['Cleverson Casarin Uliana <clever92000@yahoo.com.br>', 'Marlin Rodrigues <marlincgrodrigues@yahoo.com.br>'],
     },
