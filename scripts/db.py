@@ -59,12 +59,11 @@ if __name__ == "__main__" and len(sys.argv) >= 1:
             db[k] = sys.stdin.readlines()
         else:
             db[k] = v
-    print args
-    #elif args.delete:
-    #     try:
-    #         del db[args.delete]
-    #     except KeyError:
-    #         pass
+    elif args.delete:
+         try:
+             del db[args.delete]
+         except KeyError:
+             pass
 
     db.save()
 
