@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-import sys, json
+import argparse
+import sys
+import json
+
 
 class DB(dict):
 
@@ -39,23 +42,29 @@ class DB(dict):
 
 ##############
 if __name__ == "__main__" and len(sys.argv) >= 1:
-    db = DB()
-    # user wanted to store a key/value pair.
-    if sys.argv[1] == 'get':
-        print(db[sys.argv[2]])
-    elif sys.argv[1] == 'set':
-        if sys.argv[3] == '-': # user is giving us the data on stdin
-            db[sys.argv[2]] = sys.stdin.readlines()
+    parser = argparse.ArgumentParser(description='Json db interface.')
+    parser.add_argument('-f', '--file', default='settings', help='Use the given file as the database.')
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument('-s', '--set', nargs=2, help='insert or update key/value.')
+    group.add_argument('-g', '--get', help='name of key which should be looked up.')
+    group.add_argument('-d', '--delete', help='name of key which should be deleted.')
+    args = parser.parse_args()
+    
+    db = DB(args.file)
+    if args.get:
+        print(db[args.get])
+    elif args.set:
+        k, v = args.set
+        if v == '-': # user is giving us the data on stdin
+            db[k] = sys.stdin.readlines()
         else:
-            db[sys.argv[2]] = sys.argv[3]
-    # user wishes to remove a key.
-    elif sys.argv[1] == 'del':
-        try:
-            del db[sys.argv[2]]
-        except KeyError:
-            pass
-    else:
-        print("dont know what to do.")
+            db[k] = v
+    print args
+    #elif args.delete:
+    #     try:
+    #         del db[args.delete]
+    #     except KeyError:
+    #         pass
 
     db.save()
 
