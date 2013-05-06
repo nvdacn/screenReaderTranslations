@@ -33,16 +33,16 @@ for lang in ${convertLangs[*]}; do
             txt2tags -q $file
         done
 
-        lastRev=`ls -1 ug-diffs/ | tail -n 1`
+        lastRev=`ls -1 userGuide-diffs/ | tail -n 1`
         diff  --unchanged-line-format='' --old-line-format='en %L' --new-line-format="$lang %L" \
-        ug-diffs/$lastRev/ug-stats.txt  ug-stats.txt |
+        userGuide-diffs/$lastRev/userGuide-stats.txt  userGuide-stats.txt |
         sed -e "s/$lang $//g" -e "s/^en $//g" | sort -V -s -k 2,2 |
-        sed '/^\s*$/d' >ug-stats-diff.txt
+        sed '/^\s*$/d' >userGuide-stats-diff.txt
         mfiles=`git status -s -uno | grep -i ".html$" | awk '{printf(" %s", $2)}'`
-        mstats=`git status -s -uno | grep -i "ug\-stats\-diff.txt$" | awk '{printf(" %s", $2)}'`
+        mstats=`git status -s -uno | grep -i "userGuide\-stats\-diff.txt$" | awk '{printf(" %s", $2)}'`
 
         if [ "$mfiles" != "" ]; then git add $mfiles; fi
-        if [ "$mstats" != "" ]; then git add $mstats ug-stats.txt; fi
+        if [ "$mstats" != "" ]; then git add $mstats userGuide-stats.txt; fi
         if [ "$mfiles" != "$mstats" ]; then
             msg="${lang}: updated $mfiles $mstats from t2t."
             git commit -q -m "$msg"
