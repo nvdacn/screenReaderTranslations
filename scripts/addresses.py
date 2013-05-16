@@ -55,6 +55,10 @@ addresses = {
         'lang':'Finnish',
         'email': ['Jani Kinnunen <jani.kinnunen@wippies.fi>'],
     }, 
+    'fa': {
+        'lang':'Farsi',
+        'email': ['hamid rezaey <hamidrehzaey@gmail.com>'],
+    },
     'fr': {
         'lang':'French',
         'email': ['Michel such <michel.such@free.fr>', 'Patrick ZAJDA <patrick@zajda.fr>'],
