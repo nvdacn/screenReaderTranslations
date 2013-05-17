@@ -6,10 +6,11 @@ import json
 
 class DB(dict):
 
-    def __init__(self, fname='settings', *args):
-        super(DB, self).__init__(*args)
+    def __init__(self, fname='settings', autoSave=False, *args, **kwargs):
+        super(DB, self).__init__(*args, **kwargs)
         # if settings file is corrupt or doesnt exist, make sure we end up with an empty dict.
         self.fname = fname
+        self.autoSave = autoSave
         f = open(fname, 'r')
         try:
             self.update(json.load(f))
@@ -22,10 +23,16 @@ class DB(dict):
             return super(DB, self).__getitem__(key)
         except:
             return 0
-    def echo(self):
-        return ("hello world\n" +
-               "this is a test message." +
-               "this is the end.")
+
+    def __delitem__(self, key):
+        super(DB, self).__delitem__(key)
+        if self.autoSave:
+            self.save()
+
+    def __setitem__(self, key, value):
+        super(DB, self).__setitem__(key, value)
+        if self.autoSave:
+            self.save()
 
     def save(self):
         ## prune keys that have no content.
@@ -50,7 +57,7 @@ if __name__ == "__main__" and len(sys.argv) >= 1:
     group.add_argument('-d', '--delete', help='name of key which should be deleted.')
     args = parser.parse_args()
     
-    db = DB(args.file)
+    db = DB(args.file, autoSave=True)
     if args.get:
         print(db[args.get])
     elif args.set:
@@ -64,6 +71,3 @@ if __name__ == "__main__" and len(sys.argv) >= 1:
              del db[args.delete]
          except KeyError:
              pass
-
-    db.save()
-
