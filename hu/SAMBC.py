@@ -5,11 +5,8 @@ from NVDAObjects.IAccessible import sysListView32
 class AppModule(appModuleHandler.AppModule):
 
     def chooseNVDAObjectOverlayClasses(self, obj, clsList):
-        windowClassName=obj.windowClassName
-        windowControlID=obj.windowControlID
-        if windowClassName=="u'TVirtualSongTree'":
-            obj.role=controlTypes.ROLE_LISTITEM
-            clsList.insert(0, sysListView32.ListItem))
+        if obj.name == None and object.role == controlTypes.ROLE_UNKNOWN:
+            clsList.insert(0, Display)
 
 class Display(NVDAObjects.IAccessible.IAccessible):
 
