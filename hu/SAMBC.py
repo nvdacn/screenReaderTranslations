@@ -5,7 +5,7 @@ class AppModule(appModuleHandler.AppModule):
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
 		windowClassName=obj.windowClassName
 		windowControlID=obj.windowControlID
-		if (windowClassName=="u'TVirtualSongTree'"
+        if windowClassName=="u'TVirtualSongTree'":
 			clsList.insert(0, Display)
 
 class Display(NVDAObjects.IAccessible.IAccessible):
