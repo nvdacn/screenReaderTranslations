@@ -19,7 +19,7 @@ body = "%s %s %s\n\n%s" %(author, action, title, body)
 
 rcpts = []
 for key in addresses.keys():
-    if findall('(\s+%s/)|(\.%s\.po)' %(key, key), body):
+    if findall('(\s+/%s/)|(\.%s\.po)' %(key, key), body):
         rcpts.extend(addresses[key]['email'])
 
 email(rcpts, subject, body)
