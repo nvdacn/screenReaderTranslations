@@ -141,8 +141,10 @@ Por favor investiga en el sitio Web de NVDA para saber cómo hacer esto.
 
 Cuando NVDA arranque por primera vez, se te dará la bienvenida mediante un cuadro de diálogo que te proporciona alguna información básica acerca de la tecla modificadora de NVDA y del menú de NVDA. 
 (Mira por favor secciones subsiguientes acerca de estos temas). 
-El cuadro de diálogo también contiene dos casillas de verificación. 
-La primera te permite controlar si NVDA debería utilizar BloqMayus como una tecla modificadora de NVDA, y la segunda te permite controlar si este diálogo de bienvenida debería aparecer cada vez que NVDA arranque.
+El cuadro de diálogo también contiene tres casillas de verificación. 
+La primera te permite controlar si NVDA debería utilizar BloqMayus como una tecla modificadora de NVDA. 
+La segunda especifica si NVDA debería arrancar automáticamente después de autentificarte en Windows y sólo está disponible para copias instaladas de NVDA.
+La tercera te permite controlar si este cuadro de bienvenida debería aparecer cada vez que NVDA arranque.
 
 ++ Acerca de Órdenes de teclado de NVDA ++
 
@@ -516,6 +518,12 @@ NVDA proporciona sus propias órdenes extra para algunas aplicaciones para hacer
 | Configurar columna de encabezados de fila | NVDA+shift+r | Pulsando esto una vez  dice a NVDA que esta es la columna que contiene encabezados de fila, los que se deberían anunciar automáticamente  cuando te muevas entre filas después de esta columna. Pulsando dos veces limpiará la opción. | 
 %kc:endInclude
 
+++ Microsoft PowerPoint ++
+%kc:beginInclude
+|| Nombre | Tecla | Descripción |
+| conmutar lectura de notas del orador | control+shift+s | Cuando se está en una presentación en ejecución, esta orden conmutará entre las notas del orador para la diapositiva y el contenido de la diapositiva. Esto sólo afecta a lo que lee NVDA, no a lo que se muestra en la pantalla. | 
+%kc:endInclude
+
 ++ foobar2000 ++
 %kc:beginInclude
 || Nombre | Tecla | Descripción |
@@ -731,6 +739,7 @@ Esta opción es un campo numérico que te permite cambiar la velocidad de parpad
 
 ==== Duración del Mensaje (en seg) ====
 Esta opción es un campo numérico que controla durante cuánto tiempo se muestran los mensajes del sistema en la línea braille.
+Especifycando 0 se deshabilita el mostrado de estos mensajes completamente.
 
 %kc:setting
 ==== El Braille sigue a ====[BrailleTether]
@@ -1082,9 +1091,16 @@ Estos paquetes son proporcionados por la comunidad y contienen código personali
 El Administrador de Complementos contiene una lista que muestra todos los complementos instalados actualmente en tu configuración de usuario de NVDA. 
 Se muestra un nombre de paquete, versión y autor para cada complemento, aunque se puede ver más información tal como una descripción y una URL seleccionando el complemento y pulsando el botón Acerca del complemento.
 
-Para instalar un Complemento, pulsa el botón Instalar.
-Esto te permitirá examinar un paquete de complemento  (fichero .nvda-addon) en tu ordenador o en una red.
-Una vez que pulses Abrir, NVDA te preguntará  si realmente deseas instalar el complemento.
+Para examinar y descargar los complementos disponibles online, pulsa el botón Obtener Complementos.
+Este botón abre la [página de complementos de NVDA http://addons.nvda-project.org/].
+Si NVDA está instalado en tu sistema, puedes abrir directamente el complemento desde el examinador para comenzar el proceso de instalación como se describe a continuación.
+De lo contrario, guarda el paquete de complemento y sigue las instrucciones más abajo.
+
+Para instalar un complemento que obtuviste previamente, pulsa el botón Instalar.
+ Esto te permitirá buscar un paquete de complemento (fichero .nvda-addon) en algún lugar de tu ordenador o en una red.
+Una vez pulses Abrir, el proceso de instalación comenzará.
+
+Cuando un complemento se va a instalar, NVDA primero te pedirá que confirmes que realmente deseas instalarlo.
 Debido a que la funcionalidad de los complementos no tiene restricciones dentro de NVDA, lo cual en teoría podría incluir el acceso a tus datos personales o incluso a todo el sistema si NVDA es una copia instalada, es muy importante que instales sólo complementos desde fuentes fiables.
 Una vez que el complemento esté instalado, NVDA debe reiniciarse para que el complemento comience su ejecución. 
 Hasta que lo hagas, un estado de "instalar" se mostrará para ese complemento en la lista.
