@@ -141,8 +141,10 @@ Tarkista NVDA:n verkkosivustolta, miten ohjelmavirheistä raportoidaan.
 
 Kun NVDA käynnistyy ensimmäistä kertaa, näkyviin tulee valintaikkuna, jossa on joitakin perustietoja NVDA-näppäimestä ja -valikosta.
 (Katso edempänä olevia kappaleita saadaksesi tietoja näistä aiheista).
-Valintaikkunassa on myös kaksi valintaruutua.
-Ensimmäisen avulla voidaan säätää, käyttääkö NVDA Capslockia NVDA-näppäimenä, ja toisella voidaan määrittää, halutaanko Tervetuloa-valintaikkunan tulevan näkyviin joka kerta NVDA:n käynnistyessä.
+Valintaikkunassa on myös kolme valintaruutua.
+Ensimmäisen avulla voidaan valita, käytetäänkö Capslockia NVDA-näppäimenä.
+Toinen, joka on käytettävissä vain asennetuissa versioissa, määrittää, käynnistyykö NVDA automaattisesti Windowsiin kirjautumisen jälkeen.
+Kolmannella voidaan säätää, halutaanko tämän Tervetuloa-valintaikkunan tulevan näkyviin joka kerta NVDA:n käynnistyessä.
 
 ++ Tietoja näppäinkomennoista ++
 
@@ -516,6 +518,12 @@ NVDA:ssa on joillekin sovelluksille omia lisäkomentoja tiettyjen tehtävien hel
 | Määritä rivin otsikot | NVDA+Shift+R | Tämän komennon kerran painaminen kertoo NVDA:lle, että nykyinen sarake sisältää rivin otsikot, jotka luetaan automaattisesti liikuttaessa rivien välillä kyseisen sarakkeen jälkeen. Kahdesti painaminen nollaa tämän asetuksen. | 
 %kc:endInclude
 
+++ Microsoft PowerPoint ++
+%kc:beginInclude
+|| Nimi | Näppäinkomento | Kuvaus |
+| Muuta esittäjän muistiinpanojen lukemista | Ctrl+Shift+S | Tämä komento vaihtaa esittäjän muistiinpanojen ja dian sisällön lukemisen välillä meneillään olevassa diaesityksessä oltaessa. Asetus ei vaikuta siihen, mitä näytöllä näkyy, vaan pelkästään siihen, mitä NVDA lukee. | 
+%kc:endInclude
+
 ++ foobar2000 ++
 %kc:beginInclude
 || Nimi | Näppäinkomento | Kuvaus |
@@ -730,7 +738,8 @@ Kun tämä asetus on käytössä, kohdistimen alla oleva sana näytetääntavall
 Tällä asetuksella voidaan muuttaa kohdistimen vilkkumisnopeutta millisekunteina.
 
 ==== Ilmoitusten aikakatkaisu (sek) ====
-Tämä asetus säätää sitä, kuinka kauan järjestelmän ilmoitukset näytetään pistenäytöllä.
+Tämä asetus säätää sitä, kuinka kauan NVDA:n ilmoitukset näkyvät pistenäytöllä.
+Jos arvoksi määritetään 0, ilmoitusten näyttäminen poistetaan kokonaan käytöstä.
 
 %kc:setting
 ==== Pistenäyttö seuraa ====[Pistenayttoseuraa]
@@ -1082,9 +1091,16 @@ NVDA-yhteisön toimittamat lisäosat saattavat lisätä tai muuttaa ominaisuuksi
 Lisäosien hallinnassa on lista, jossa näkyvät kaikki nykyisen käyttäjän asentamat lisäosat.
 Jokaisesta lisäosasta näytetään nimi, versio sekä tekijä, ja lisätietoja kuten kuvausta ja URL-osoitetta voidaan tarkastella valitsemalla haluttu lisäosa ja painamalla Tietoja lisäosasta -painiketta.
 
-Lisäosa asennetaan painamalla Asenna-painiketta.
+Verkossa saatavilla olevia lisäosia voidaan selata ja ladata painamalla Hae lisäosia -painiketta.
+Tämä painike avaa [NVDA:n lisäosasivun http://addons.nvda-project.org/].
+Mikäli NVDA on asennettu tietokoneelle, lisäosan asennus voidaan aloittaa avaamalla se suoraan selaimesta, kuten alla on kuvailtu.
+Muussa tapauksessa lisäosa on tallennettava ja seurattava alla olevia ohjeita.
+
+Aiemmin haettu lisäosa asennetaan painamalla Asenna-painiketta.
 Avautuvassa ikkunassa voidaan etsiä tietokoneelta tai verkosta haluttu lisäosapaketti (.nvda-addon-tiedosto).
-Kun painetaan Avaa-painiketta, NVDA kysyy, halutaanko lisäosa varmasti asentaa.
+Asennus käynnistyy Avaa-painiketta painettaessa.
+
+NVDA kysyy ensin lisäosaa asennettaessa, halutaanko se varmasti asentaa.
 Koska lisäosien toiminnallisuus on NVDA:n sisällä rajoittamatonta, mikä saattaisi teoriassa tarkoittaa pääsyä henkilökohtaisiin tietoihin tai asennettua versiota käytettäessä jopa koko järjestelmään, on erittäin tärkeää, että lisäosia asennetaan vain luotetuista lähteistä.
 NVDA on käynnistettävä uudelleen lisäosan asentamisen jälkeen, jotta se voidaan ottaa käyttöön.
 Uudelleenkäynnistykseen saakka listassa näkyy lisäosan tilana "asenna".

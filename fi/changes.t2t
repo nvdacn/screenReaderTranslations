@@ -3,6 +3,41 @@
 
 %!includeconf: ../changes.t2tconf
 
+= 2013.2 =
+
+== Uudet ominaisuudet ==
+- Tuki sisäänrakennetulle Chromium-sovelluskehykselle, joka on useissa sovelluksissa käytettävä verkkoselainsäädin. (#3108)
+- Uusi eSpeakin puheäänimuunnelma: Iven3.
+- Uudet chattiviestit luetaan Skypessä automaattisesti keskustelun ollessa aktiivisena. (#2298)
+- Lisätty twitter-asiakasohjelma Tweenin tuki, johon sisältyy välilehtien nimien lukeminen ja vähemmän puheliaisuutta twiittejä luettaessa.
+- NVDA:n ilmoitusten näyttäminen pistenäytöllä voidaan poistaa nyt käytöstä määrittämällä Pistenäytön asetukset -valintaikkunassa ilmoitusten aikakatkaisun arvoksi 0. (#2482)
+- Lisäosien hallinnassa on nyt Hae lisäosia -painike, joka avaa verkkosivun, josta lisäosia on mahdollista selata ja ladata. (#3209)
+- Tervetuloa-valintaikkunassa, joka tulee näkyviin aina ensimmäisellä NVDA:n käynnistyksellä, voidaan nyt määrittää, käynnistyykö NVDA automaattisesti Windowsiin kirjautumisen jälkeen. (#2234)
+- Lepotila otetaan nyt automaattisesti käyttöön Dolphin Cicero -ohjelmistoa käytettäessä. (#2055)
+
+
+== Muutokset ==
+- Vasemmalle tai oikealle pyyhkäiseminen yhdellä sormella objektitilassa oltaessa siirtää nyt edelliseen tai seuraavaan objektinavigointihierarkian objektiin kokonaisnäkymässä. Alkuperäinen hierarkiseen tasoon rajoittunut edelliseen/seuraavaan objektiin siirtyminen suoritetaan pyyhkäisemällä vasemmalle tai oikealle kahdella sormella.
+
+
+== Korjatut ohjelmavirheet ==
+- Toiminto luetaan nyt objektia aktivoitaessa ennen aktivointia sen sijaan, että toiminto luettaisiin aktivoinnin jälkeen (esim. puunäkymää avattaessa ilmoitetaan "avaa" sen sijaan, että ilmoitettaisiin sulje). (#2982)
+- Eri syöttökenttien, kuten chatti- ja haku, tarkempi lukeminen ja kohdistimen seuranta Skypen uusimmissa versioissa. (#1601, #3036)
+- Uusien tapahtumien määrä luetaan nyt Skypen uusimpien keskustelujen listassa jokaiselle keskustelulle, mikäli tarpeen. (#1446)
+- Parannuksia kohdistimen seurantaan ja lukemisjärjestykseen ruudulla olevalle oikealta vasemmalle luettavalle tekstille, esim. muokattaessa arabialaista tekstiä Microsoft Excelissä. (#1601) 
+- Painikkeisiin ja lomakekenttiin pikanavigoiminen löytää nyt saavutettavuustarkoituksessa painikkeiksi merkityt linkit Internet Explorerissa. (#2750)
+- Puunäkymien sisältöä ei enää näytetä selaustilassa, sillä kokonaisesityksestä ei ole hyötyä. Puunäkymän kanssa voidaan olla vuorovaikutuksessa vuorovaikutustilassa painamalla Enteriä sen kohdalla. (#3023)
+- Alt+ala- tai ylänuolen painaminen vuorovaikutustilassa yhdistelmäruudun avaamiseksi ei enää vaihda virheellisesti selaustilaan. (#2340)
+- Taulukon solut eivät enää aktivoi Internet Explorer 10:ssä vuorovaikutustilaa, ellei verkkosivun tekijä ole nimenomaan tehnyt niistä aktivoitavia. (#3248)
+- NVDA:n käynnistäminen ei enää epäonnistu, mikäli järjestelmän päiväys tai kellonaika on aikaisempi kuin viimeisin päivitysten tarkistus. (#3260)
+- Mikäli pistenäytöllä näytetään edistymispalkki, näyttöä päivitetään palkin muuttuessa. (#3258)
+- Taulukon otsikoita ei enää näytetä kahdesti selaustilassa Mozilla-sovelluksissa. Lisäksi näytetään yhteenveto, mikäli taulukossa on otsikko. (#3196)
+- NVDA ilmoittaa nyt oikean kielen aiemmin käytössä olleen sijasta Windows 8:ssa syöttökieltä vaihdettaessa.
+- NVDA ilmoittaa nyt IME-muunnostilan vaihdokset Windows 8:ssa.
+- NVDA ei enää lue ylimääräistä työpöydällä Google Japanese tai Atok IME -syöttömenetelmiä käytettäessä. (#3234)
+- NVDA ei enää virheellisesti ilmoita puheentunnistusta tai kosketussyötettä näppäimistön kielen vaihdokseksi Windows 7:ssä ja uudemmissa.
+
+
 = 2013.1.1 =
 
 == Korjatut ohjelmavirheet ==
@@ -350,7 +385,7 @@ Tämän version tärkeimpiä uusia ominaisuuksia ovat automaattinen puhesyntetis
 - Dynaamisen sisällön muutoksia, kuten esim. DOS-konsoleissa, ei enää lueta, jos unitila on käytössä kyseisessä sovelluksessa. (#1662)
 - Alt+ylä- ja alt+alanuolten käyttäytymistä paranneltu selaustilassa yhdistelmäruutuja suljettaessa ja avattaessa. (#1630)
 - NVDA palautuu nyt paljon useammista tilanteista, kuten esim. vastaamasta lakanneista sovelluksista, jotka aiemmin aiheuttivat täydellisen jumiutumisen. (#1408)
-- NVDA lukee nyt Mozilla Geckon (Firefoxin jne) selaustiladokumenttien tietyt osat sellaisessa tilanteessa, jossa elementin tyyli on display:table. (#1373)
+- NVDA lukee nyt Mozilla Gecko -moottoria käyttävien sovellusten (esim. Firefoxin) selaustiladokumenttien tietyt osat sellaisessa tilanteessa, jossa elementin tyyli on display:table. (#1373)
 - NVDA ei enää lue nimisäätimiä kohdistuksen siirtyessä niiden sisään. Tämä saa loppumaan joidenkin lomakekenttien nimien kahteen kertaan lukemisen Firefoxissa (Gecko) ja Internet Explorerissa (MSHTML). (#1650)
 - NVDA lukee nyt Microsoft Excelissä solun, kun siihen  on liitetty tietoa Ctrl+v:llä. (#1781)
 - Adobe Readerissa ei enää lueta asiakirjasta epäolennaista tietoa siirryttäessä vuorovaikutustilassa eri sivulla olevaan säätimeen. (#1659)
@@ -429,7 +464,7 @@ Tämän version tärkeimpiä uusia ominaisuuksia ovat merkittävät välimerkkej
 - NVDA toimii nyt oikein selaustiladokumenteissa vain luku -tyyppiä olevissa muokattavissa tekstikentissä.
 - NVDA ei enää virheellisesti siirry pois vuorovaikutustilasta, kun aria-activedescendant-ominaisuus on asetettu, esim. täydennyslistan tullessa näkyviin joissakin automaattisen täydennyksen sisältävissä säätimissä.
 - Säädinten nimet ilmoitetaan nyt Adobe Readerissa kohdistusta siirrettäessä tai käytettäessä pikanavigointia selaustilassa.
-- Painikkeet ja linkit esitetään nyt oikein XFA PDF -asiakirjoissa Adobe Readerissa.
+- Painikkeet, linkit ja kuvat esitetään nyt oikein XFA PDF -asiakirjoissa Adobe Readerissa.
 - Kaikki elementit näytetään nyt omilla riveillään XFA PDF -asiakirjoissa Adobe Readerissa. Tämä muutos tehtiin, koska suuria osia (joskus jopa koko dokumentti) näytettiin ilman välejä yleisen rakenteen puutteen vuoksi.
 - Korjattu ongelmia siirrettäessä kohdistusta muokattaviin tekstikenttiin tai niistä pois XFA PDF -asiakirjoissa Adobe Readerissa.
 - Aktiivisen yhdistelmäruudun arvon muutokset ilmoitetaan nyt XFA PDF -asiakirjoissa Adobe Readerissa.
