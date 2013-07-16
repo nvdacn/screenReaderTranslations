@@ -23,12 +23,15 @@
 <LI>En el administrador de complementos, ahora hay un botón Obtener Complementos para abrir el sitio web de Complementos de NVDA donde puedes examinar y descargar los complementos disponibles. (<A HREF="http://www.nvda-project.org/ticket/3209">#3209</A>)
 <LI>En el diálogo de bienvenida de NVDA que siempre aparece la primera vez que  ejecutas NVDA, ahora puedes especificar si NVDA se inicia automáticamente después de autentificarte en Windows. (<A HREF="http://www.nvda-project.org/ticket/2234">#2234</A>)
 <LI>El modo silencioso se habilita automáticamente cuando se utilice Dolphin Cicero. (<A HREF="http://www.nvda-project.org/ticket/2055">#2055</A>)
+<LI>Ahora se soporta la versión Windows x64 de Miranda IM/Miranda NG. (<A HREF="http://www.nvda-project.org/ticket/3296">#3296</A>)
+<LI>Ahora se anuncian automáticamente las sugerencias de búsqueda en  la pantalla de inicio de  Windows 8.1. (<A HREF="http://www.nvda-project.org/ticket/3322">#3322</A>)
 </UL>
 
 <H3>Cambios</H3>
 
 <UL>
-<LI>Realizando un deslizamiento con un solo dedo a la izquierda o a la derecha cuando se esté en modo objeto ahora te mueves hacia atrás o adelante en  una vista plana de la jerarquía del navegador de objetos. Utiliza  un deslizamiento con 2 dedos a la izquierda o a la derecha para realizar el original anterior/siguiente objeto limitado al actual nivel  jerárquico.
+<LI>En una pantalla táctil, realizando un deslizamiento con un solo dedo a la izquierda o a la derecha cuando se esté en modo objeto, ahora te mueves hacia atrás o adelante por  todos los objetos y no sólo por aquellos que estén en el mismo contenedor. Utiliza  un deslizamiento con 2 dedos a la izquierda o a la derecha para realizar la acción original de anterior/siguiente objeto limitado al actual contenedor.
+<LI>La casilla de verificación Anunciar tablas de diseño que se encuentra en el diálogo Opciones de Modo Navegación  ahora se ha renombrado como Incluir Tablas de Diseño para reflejar que la navegación rápida no las localizará si la casilla está desmarcada. (<A HREF="http://www.nvda-project.org/ticket/3140">#3140</A>)
 </UL>
 
 <H3>Corrección de Fallos</H3>
@@ -49,6 +52,12 @@
 <LI>NVDA ahora anuncia cambios en el modo de conversión de IME en Windows 8.
 <LI>NVDA ya no anuncia basura en el escritorio cuando los métodos de entrada japoneses Google o IME ATOK están en uso. ;(# 3234)
 <LI>En Windows 7 y superiores, NVDA ya no anuncia indebidamente el reconocimiento de voz o la entrada táctil como un cambio de idioma del teclado.
+ <UL>
+ <LI>NVDA ya no anuncia un carácter especial (0x7f) cuando se pulse control+retroceso en algunos editores mientras Verbalizar Caracteres al Escribir esté habilitado. (<A HREF="http://www.nvda-project.org/ticket/3315">#3315</A>)
+ </UL>
+<LI>espeak ya no hace cambios inapropiados en el tono, volumen, etc. cuando NVDA lea texto que contenga ciertos caracteres de control o XML. (<A HREF="http://www.nvda-project.org/ticket/3334">#3334</A>) (regresión de <A HREF="http://www.nvda-project.org/ticket/437">#437</A>)
+<LI>En aplicaciones Java, los cambios en el nivel o en el valor del control enfocado ahora se anuncian automáticamente, y se reflejan con la subsiguiente salida del control. (<A HREF="http://www.nvda-project.org/ticket/3119">#3119</A>)
+<LI>En controles Scintilla, las líneas ahora se anuncian correctamente cuando el corte de palabras está habilitado. (<A HREF="http://www.nvda-project.org/ticket/885">#885</A>)
 </UL>
 
 <H3>Cambios para Desarrolladores</H3>
@@ -60,11 +69,16 @@
 
 <H2>2013.1.1</H2>
 
+<P>
+Esta versión corrige el problema donde NVDA se colgaba al iniciarse si se configuraba para utilizar el idioma irlandés, así como incluye actualizaciones para traducciones y algunas otras correcciones de errores.
+</P>
+
 <H3>Corrección de Errores</H3>
 
 <UL>
 <LI>Se producen caracteres correctos cuando se teclean en la propia interfaz de NVDA mientras se utiliza  un método de entrada Coreano o Japonés mientras sea el método predeterminado. (<A HREF="http://www.nvda-project.org/ticket/2909">#2909</A>)
 <LI>En Internet Explorer y otros controles MSHTML, los campos marcados como conteniendo una entrada inválida ahora se manejan correctamente. (<A HREF="http://www.nvda-project.org/ticket/3256">#3256</A>)
+<LI>NVDA ya no se cuelga cuando se inició si se configuró para utilizar el idioma irlandés.
 </UL>
 
 <H2>2013.1</H2>
