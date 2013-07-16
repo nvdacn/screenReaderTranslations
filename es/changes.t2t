@@ -14,10 +14,14 @@ Qué hay de Nuevo en NVDA
 - En el administrador de complementos, ahora hay un botón Obtener Complementos para abrir el sitio web de Complementos de NVDA donde puedes examinar y descargar los complementos disponibles. (#3209)
 - En el diálogo de bienvenida de NVDA que siempre aparece la primera vez que  ejecutas NVDA, ahora puedes especificar si NVDA se inicia automáticamente después de autentificarte en Windows. (#2234)
 - El modo silencioso se habilita automáticamente cuando se utilice Dolphin Cicero. (#2055)
+- Ahora se soporta la versión Windows x64 de Miranda IM/Miranda NG. (#3296)
+- Ahora se anuncian automáticamente las sugerencias de búsqueda en  la pantalla de inicio de  Windows 8.1. (#3322)
 
 
 == Cambios ==
-- Realizando un deslizamiento con un solo dedo a la izquierda o a la derecha cuando se esté en modo objeto ahora te mueves hacia atrás o adelante en  una vista plana de la jerarquía del navegador de objetos. Utiliza  un deslizamiento con 2 dedos a la izquierda o a la derecha para realizar el original anterior/siguiente objeto limitado al actual nivel  jerárquico.
+- En una pantalla táctil, realizando un deslizamiento con un solo dedo a la izquierda o a la derecha cuando se esté en modo objeto, ahora te mueves hacia atrás o adelante por  todos los objetos y no sólo por aquellos que estén en el mismo contenedor. Utiliza  un deslizamiento con 2 dedos a la izquierda o a la derecha para realizar la acción original de anterior/siguiente objeto limitado al actual contenedor.
+- La casilla de verificación Anunciar tablas de diseño que se encuentra en el diálogo Opciones de Modo Navegación  ahora se ha renombrado como Incluir Tablas de Diseño para reflejar que la navegación rápida no las localizará si la casilla está desmarcada. (#3140)
+
 
 
 == Corrección de Fallos ==
@@ -36,7 +40,11 @@ Qué hay de Nuevo en NVDA
 - NVDA ahora anuncia cambios en el modo de conversión de IME en Windows 8.
 - NVDA ya no anuncia basura en el escritorio cuando los métodos de entrada japoneses Google o IME ATOK están en uso. ;(# 3234)
 - En Windows 7 y superiores, NVDA ya no anuncia indebidamente el reconocimiento de voz o la entrada táctil como un cambio de idioma del teclado.
- 
+ - NVDA ya no anuncia un carácter especial (0x7f) cuando se pulse control+retroceso en algunos editores mientras Verbalizar Caracteres al Escribir esté habilitado. (#3315)
+- espeak ya no hace cambios inapropiados en el tono, volumen, etc. cuando NVDA lea texto que contenga ciertos caracteres de control o XML. (#3334) (regresión de #437)
+- En aplicaciones Java, los cambios en el nivel o en el valor del control enfocado ahora se anuncian automáticamente, y se reflejan con la subsiguiente salida del control. (#3119)
+- En controles Scintilla, las líneas ahora se anuncian correctamente cuando el corte de palabras está habilitado. (#885)
+
 
 == Cambios para Desarrolladores ==
 - Se ha añadido windowUtils.findDescendantWindow para buscar una ventana descendiente (HWND) localizando la visivilidad especificada, identificador del control y/o nombre de clase.
@@ -44,10 +52,12 @@ Qué hay de Nuevo en NVDA
 
 
 = 2013.1.1 =
+Esta versión corrige el problema donde NVDA se colgaba al iniciarse si se configuraba para utilizar el idioma irlandés, así como incluye actualizaciones para traducciones y algunas otras correcciones de errores.
 
 == Corrección de Errores ==
 - Se producen caracteres correctos cuando se teclean en la propia interfaz de NVDA mientras se utiliza  un método de entrada Coreano o Japonés mientras sea el método predeterminado. (#2909)
 - En Internet Explorer y otros controles MSHTML, los campos marcados como conteniendo una entrada inválida ahora se manejan correctamente. (#3256)
+- NVDA ya no se cuelga cuando se inició si se configuró para utilizar el idioma irlandés.
 
 
 = 2013.1 =
