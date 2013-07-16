@@ -9,11 +9,13 @@
 - Im Dialog "Erweiterungen verwalten" ibt es jetzt einen neuen Schalter "weitere Erweiterungen herunterladen", über den Sie die Webseite für NVDA-Erweiterungen öffnen können. (#3209)
 - Im Willkommensdialog gibt es ein neues Kontrollkästchen, mit dessen Hilfe Sie festlegen können, ob NVDA nach der Anmeldung automatisch geladen werden soll. (#2234)
 - Bei der Verwendung von Dolphin Cicero wird automatisch der Schlafmodus aktiviert. (#2055)
+- Unterstützung für die 64-Bit-Versionen für Miranda und Miranda NG. (#3296)
+- im Windows 8.1-Startbildschirm werden nun Suchvorschläge automatisch angezeigt. (#3322)
 
 
 == Änderungen ==
 - Wenn Sie im Objektmodus mit einem Finger nach rechts/links streichen, verwendet NVDA eine vereinfachte Darstellung beim Navigieren zum nächsten/vorigen Objekt. Streichen Sie mit 2 Fingern nach rechts/links, um unter Berücksichtigung der Objekthierarchie zum nächsten/vorigen Objekt zu navigieren.
-
+- die Option "layouttabellen ansagen" wurde in "Layouttabellen einschließen" umbenannt. Hierdurch wird verdeutlicht,  dass Layouttabellen nicht angesprungen werden, wenn Sie die Schnellnavigationstasten verwenden, während diese Option deaktiviert ist. (#3140)
 
 == Fehlerbehebungen ==
 - Beim Ausführen der Standardaktion mit einem Objekt wird der Name der Standardaktion (wie z. B. "erweitern" oder "reduzieren" bei Einträgen einer Baumstruktur) angegeben, noch bevor die Aktion ausgeführt wird. (#2982)
@@ -22,7 +24,19 @@
 - Verbesserte Cursorverfolgung für Sprachen mit Rechts-Links-Ausrichtung (wie z. B. Arabisch) in Microsoft Excel. (#1601)
 - Bei der Schnellnavigation für Formularfelder und Schalter werden nun auch Links angesprungen, die aus Gründen der Zugänglichkeit als Schalter ausgewiesen wurden. (#2750)
 - Im Lesemodus werden nun keine Baumstrukturen mehr verarbeitet, da dies nicht sinnvoll ist. Drücken Sie auf einer Baumstruktur die Eingabetaste, um in den Fokusmodus zu wechseln und mit der Baumstruktur umzugehen. (#3023)
-- Beim Drücken von alt+Pfeil auf bzw. Alt+Pfeil nach oben zum Erweitern zwischen Reduzieren von Kombinationsfeldern wird nun nicht mehr in den Lesemodus gewechselt. (#2340)
+- Beim Drücken von alt+Pfeil ab bzw. Alt+Pfeil auf zum Erweitern Bzw. Reduzieren von Kombinationsfeldern wird nun nicht mehr in den Lesemodus gewechselt. (#2340)
+- im Internet Explorer 10 wird beim Navigieren innerhalb von Tabellen nicht mehr automatisch in den Fokusmodus gewechselt, es sei denn, der Webentwickler hat bestimmte Zellen ausdrücklich als Fokussierbar gekennzeichnet. (#3248)
+- NVDA wird nun nicht mehr abstürzen, wenn die Systemzeit auf einen früheren Zeitpunkt eingestellt ist als der Zeitpunkt der letzten Prüfung auf Aktualisierungen. (#3260)
+- Wenn ein Fortschrittbalken auf der Braillezeile angezeigt wird, aktualisiert sich die Braille-Anzeige automatisch, wenn sich der Fortschrittsbalken ändert. (#3258)
+- in Mozilla-Anwendungen wird die Beschriftung von Tabellen nur noch einmal verarbeitet; außerdem wird die Zusammenfassung von Tabellen korrekt verarbeitet. (#3196)
+- Wenn sie in Windows 7 die Eingabesprache ändern, wird NVDA nun in der richtigen Sprache sprechen.
+- NVDA meldet nun eine Änderung des IME-Konvertierungsmodus in Windows 8, sobald Sie ihn ändern.
+- NVDA no longer announces garbage on the Desktop when the Google Japanese or Atok IME input methods are in use. (#3234)
+- In Windows 7 and above, NVDA no longer inappropriately announces speech recognition or touch input as a keyboard language change.
+- NVDA no longer announces a particular special character (0x7f) when pressing control+backspace in some editors when speak typed characters is enabled. (#3315)
+- espeak no longer inappropriately changes in pitch, volume, etc. when NVDA reads text containing certain control characters or XML. (#3334) (regression of #437)
+- In Java applications, changes to the label or value of the focused control are now announced automatically, and are reflected when subsequently querying the control. (#3119)
+- In Scintilla controls, lines are now reported correctly when word wrap is enabled. (#885)
 
 
 == Änderungen für Entwickler ==
