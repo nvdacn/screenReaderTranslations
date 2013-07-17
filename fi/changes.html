@@ -23,12 +23,15 @@
 <LI>Lisäosien hallinnassa on nyt Hae lisäosia -painike, joka avaa verkkosivun, josta lisäosia on mahdollista selata ja ladata. (<A HREF="http://www.nvda-project.org/ticket/3209">#3209</A>)
 <LI>Tervetuloa-valintaikkunassa, joka tulee näkyviin aina ensimmäisellä NVDA:n käynnistyksellä, voidaan nyt määrittää, käynnistyykö NVDA automaattisesti Windowsiin kirjautumisen jälkeen. (<A HREF="http://www.nvda-project.org/ticket/2234">#2234</A>)
 <LI>Lepotila otetaan nyt automaattisesti käyttöön Dolphin Cicero -ohjelmistoa käytettäessä. (<A HREF="http://www.nvda-project.org/ticket/2055">#2055</A>)
+<LI>Lisätty tuki Miranda IM:n/Miranda NG:n 64-bittiselle versiolle. (<A HREF="http://www.nvda-project.org/ticket/3296">#3296</A>)
+<LI>Haun ehdotukset luetaan nyt automaattisesti Windows 8.1:n aloitusnäytössä. (<A HREF="http://www.nvda-project.org/ticket/3322">#3322</A>)
 </UL>
 
 <H3>Muutokset</H3>
 
 <UL>
-<LI>Vasemmalle tai oikealle pyyhkäiseminen yhdellä sormella objektitilassa oltaessa siirtää nyt edelliseen tai seuraavaan objektinavigointihierarkian objektiin kokonaisnäkymässä. Alkuperäinen hierarkiseen tasoon rajoittunut edelliseen/seuraavaan objektiin siirtyminen suoritetaan pyyhkäisemällä vasemmalle tai oikealle kahdella sormella.
+<LI>Kosketusnäytöllä vasemmalle tai oikealle pyyhkäiseminen yhdellä sormella objektitilassa oltaessa siirtää nyt edelliseen tai seuraavaan kaikissa objekteissa, ei pelkästään nykyisessä säilössä. Alkuperäinen nykyisessä säilössä edelliseen tai seuraavaan objektiin siirtäminen suoritetaan pyyhkäisemällä vasemmalle tai oikealle kahdella sormella.
+<LI>Selaustilan asetukset -valintaikkunasta löytyvän Lue asettelutaulukot -valintaruudun uudeksi nimeksi on nyt muutettu Sisällytä asettelutaulukot, jotta se kuvastaisi sitä, että jos tämä valintaruutu ei ole valittuna, niin asettelutaulukoita ei löydy myöskään pikanavigointikomennoilla. (<A HREF="http://www.nvda-project.org/ticket/3140">#3140</A>)
 </UL>
 
 <H3>Korjatut ohjelmavirheet</H3>
@@ -37,7 +40,7 @@
 <LI>Toiminto luetaan nyt objektia aktivoitaessa ennen aktivointia sen sijaan, että toiminto luettaisiin aktivoinnin jälkeen (esim. puunäkymää avattaessa ilmoitetaan "avaa" sen sijaan, että ilmoitettaisiin sulje). (<A HREF="http://www.nvda-project.org/ticket/2982">#2982</A>)
 <LI>Eri syöttökenttien, kuten chatti- ja haku, tarkempi lukeminen ja kohdistimen seuranta Skypen uusimmissa versioissa. (<A HREF="http://www.nvda-project.org/ticket/1601">#1601</A>, <A HREF="http://www.nvda-project.org/ticket/3036">#3036</A>)
 <LI>Uusien tapahtumien määrä luetaan nyt Skypen uusimpien keskustelujen listassa jokaiselle keskustelulle, mikäli tarpeen. (<A HREF="http://www.nvda-project.org/ticket/1446">#1446</A>)
-<LI>Parannuksia kohdistimen seurantaan ja lukemisjärjestykseen ruudulla olevalle oikealta vasemmalle luettavalle tekstille, esim. muokattaessa arabialaista tekstiä Microsoft Excelissä. (<A HREF="http://www.nvda-project.org/ticket/1601">#1601</A>) 
+<LI>Parannuksia kohdistimen seurantaan ja lukemisjärjestykseen ruudulla olevalle oikealta vasemmalle luettavalle tekstille, esim. muokattaessa arabialaista tekstiä Microsoft Excelissä. (<A HREF="http://www.nvda-project.org/ticket/1601">#1601</A>)
 <LI>Painikkeisiin ja lomakekenttiin pikanavigoiminen löytää nyt saavutettavuustarkoituksessa painikkeiksi merkityt linkit Internet Explorerissa. (<A HREF="http://www.nvda-project.org/ticket/2750">#2750</A>)
 <LI>Puunäkymien sisältöä ei enää näytetä selaustilassa, sillä kokonaisesityksestä ei ole hyötyä. Puunäkymän kanssa voidaan olla vuorovaikutuksessa vuorovaikutustilassa painamalla Enteriä sen kohdalla. (<A HREF="http://www.nvda-project.org/ticket/3023">#3023</A>)
 <LI>Alt+ala- tai ylänuolen painaminen vuorovaikutustilassa yhdistelmäruudun avaamiseksi ei enää vaihda virheellisesti selaustilaan. (<A HREF="http://www.nvda-project.org/ticket/2340">#2340</A>)
@@ -48,16 +51,25 @@
 <LI>NVDA ilmoittaa nyt oikean kielen aiemmin käytössä olleen sijasta Windows 8:ssa syöttökieltä vaihdettaessa.
 <LI>NVDA ilmoittaa nyt IME-muunnostilan vaihdokset Windows 8:ssa.
 <LI>NVDA ei enää lue ylimääräistä työpöydällä Google Japanese tai Atok IME -syöttömenetelmiä käytettäessä. (<A HREF="http://www.nvda-project.org/ticket/3234">#3234</A>)
-<LI>NVDA ei enää virheellisesti ilmoita puheentunnistusta tai kosketussyötettä näppäimistön kielen vaihdokseksi Windows 7:ssä ja uudemmissa.
+<LI>NVDA ei enää ilmoita virheellisesti puheentunnistusta tai kosketussyötettä näppäimistön kielen vaihdokseksi Windows 7:ssä ja uudemmissa.
+<LI>NVDA ei enää lue tiettyä erikoismerkkiä (0x7f) painettaessa Ctrl+askelpalautin-näppäinyhdistelmää joissakin tekstieditoreissa lue kirjoitetut merkit -asetuksen ollessa käytössä. (<A HREF="http://www.nvda-project.org/ticket/3315">#3315</A>)
+<LI>espeak ei enää vaihda virheellisesti äänenkorkeuttaan, voimakkuuttaan jne NVDA:n lukiessa tiettyjä ohjausmerkkejä tai XML-koodia sisältävää tekstiä. (<A HREF="http://www.nvda-project.org/ticket/3334">#3334</A>) (<A HREF="http://www.nvda-project.org/ticket/437">#437</A>:n paluu)
+<LI>Aktiivisen säätimen nimen tai arvon muutokset luetaan nyt Java-sovelluksissa automaattisesti sekä hyödynnetään myöhemmin kyseistä säädintä kyseltäessä. (<A HREF="http://www.nvda-project.org/ticket/3119">#3119</A>)
+<LI>Rivit luetaan nyt oikein Scintilla-säätimissä automaattisen rivityksen ollessa käytössä. (<A HREF="http://www.nvda-project.org/ticket/885">#885</A>)
 </UL>
 
 <H2>2013.1.1</H2>
+
+<P>
+Tämä versio korjaa ongelman, joka aiheutti sen, että NVDA kaatui käynnistettäessä, mikäli käytettäväksi kieleksi oli määritetty iiri. Lisäksi tämä versio sisältää käännösten päivityksiä sekä joitakin muita ohjelmavirheiden korjauksia.
+</P>
 
 <H3>Korjatut ohjelmavirheet</H3>
 
 <UL>
 <LI>Nyt tuotetaan asianmukaisia merkkejä kirjoitettaessa NVDA:n omassa käyttöliittymässä käytettäessä korealaista tai japanilaista syöttömenetelmää jommankumman ollessa oletusmenetelmänä. (<A HREF="http://www.nvda-project.org/ticket/2909">#2909</A>)
 <LI>Kentät, jotka on merkitty virheellisen syötteen sisältäviksi, käsitellään nyt oikein Internet Explorerissa ja muissa MSHTML-säätimissä. (<A HREF="http://www.nvda-project.org/ticket/3256">#3256</A>)
+<LI>NVDA ei enää kaadu käynnistettäessä, mikäli käytettäväksi kieleksi on määritetty iiri.
 </UL>
 
 <H2>2013.1</H2>
