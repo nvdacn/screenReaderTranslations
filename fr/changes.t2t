@@ -14,10 +14,13 @@ Quoi de Neuf dans NVDA
 - Dans le gestionnaire de modules complémentaires, il y a maintenant un bouton Obtenire des modules complémentaires qui ouvre le site des modules complémentaires NVDA à fin d'en installer. (#3209)
 - Dans la boîte de dialogue de bienvenue qui se lance au premier démarrage de NVDA, vous pouvez maintenant définir si NVDA doit démarrer après l'ouverture de votre session. (#2234)
 - Le mode veille de NVDA est automatiquement activé lors de l'utilisation de Dolphin Cicero. (#2055)
+- La version Windows x64 de Miranda IM/Miranda NG est maintenant supportée. (#3296)
+- Les suggestions de recherche dans l'écran de démarrage de Windows 8.1  sont automatiquement annoncées. (#3322)
 
 
 == Changements ==
-- Glisser une fois le doigt vers la gauche ou la droite lorsque l'on est en mode objet passe au mode revue précédent/suivant de l'objet. Utilisez deux doigts pour l'enciène méthode.
+- Sur un écran tactile, glisser une fois le doigt vers la gauche ou la droite lorsque l'on est en mode objet passe au mode revue précédent/suivant de l'objet. Utilisez deux doigts pour l'enciène méthode.
+- La case à cocher Annoncer les tables de visualisation qui se trouve dans le dialogue Mode Navigation a été renomméeeno Inclure les tables de visualisation pour indiquer que la navigation rapide ne les trouvera pas si la case est décochée. (#3140)
 
 
 == Corrections de Bogues ==
@@ -28,14 +31,18 @@ Quoi de Neuf dans NVDA
 - La navigation rapide vers les boutons et champs de formulaires localisera maintenant les liens marqués comme des boutons pour l'accessibilité dans Internet Explorer. (#2750)
 - En mode navigation, le contenu dans les arborescences n'est plus rendu, vu qu'une présentation à plat n'est pas utile. Vous pouvez appuyer sur entrée dans une arborescence pour interagir avec lorsqu'elle a le focus. (#3023)
 - Apuyer sur Alt+Bas ou haute dans une zone de liste en mode focus ne repasse plus incorrectement en mode navigation. (#2340)
-- Dans Internet Explorer 10, les célules de tableau n'activent plus le mode focus même si marquées comme activables par le développeur. (#3248)
-- NVDA n'échou plus au démarrage si l'heure système est plus tôt que la dernière mise à jour. (#3260)
+- Dans Internet Explorer 10, les célules de tableau n'activent plus le mode focus sauf si marquées comme activables par le développeur. (#3248)
+- NVDA n'échoue plus au démarrage si l'heure système est antérieure à la dernière mise à jour. (#3260)
 - Si une barre de progression est affichée en braille, le braille est mis à jour avec la barre de progression. (#3258)
 - En mode navigation dans les applications Mozilla, les titre de tableau ne sont plus rendus deux fois. De plus, le résumé est aussi affiché s'il y a un titre. (#3196)
 - Lorsqu'on change de langue dans Windows 8, NVDA parle la bonne langue au lieux de ne pas en changer.
 - NVDA annonce les modes de convertion IME dans windows 8.
-- NVDA n'annonce plus du vide sur le bureau lorsque les méthode Google Japonnaise ou Atok est utilisée. (#3234)
-- Dans windows 7 et inférieur, NVDA n'annonce plus la reconnaissance vocale ou le tactile comme un changement de langue.
+- NVDA n'annonce plus du vide sur le bureau lorsque les méthodes Google Japonnaise ou Atok sont utilisées. (#3234)
+- Dans windows 7 et supérieur, NVDA n'annonce plus la reconnaissance vocale ou le tactile comme un changement de langue.
+- NVDA n'annonce plus un caractère spécial (0x7f) quand on presse control+retourArrière dans certains éditeurs quand l'écho caractères est activé. (#3315)
+- espeak ne change plus de hauteur, volume, etc. de manière inappropriée quand NVDA lit un texte contenant certain caractères de contrôle ou XML. (#3334) (régression de #437)
+- Dans les applications Java, les changements de l'étiquette ou de la valeur du contrôle en focus sont maintenant annoncés automatiquement,  et sont reflétés lors d'une interrogation ultérieure du contrôle. (#3119)
+- Dans les contrôles Scintilla, les lignes sont maintenant annoncées correctement quand le renvoi à la ligne automatique est activé. (#885)
 
 
 == Changements pour les développeurs ==
