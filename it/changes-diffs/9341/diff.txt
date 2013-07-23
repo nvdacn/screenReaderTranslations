@@ -1,0 +1,34 @@
+--- fi/changes-diffs/9312/changes.t2t	2013-07-16 04:35:37.218456059 +0200
++++ /tmp/revs/changes.t2t	2013-07-23 10:01:43.590571390 +0200
+@@ -21,6 +21,13 @@
+ == Changes ==
+ - On a touch screen, performing a single finger flick left or right when in object mode now moves previous or next through all objects, not just those in the current container. Use 2-finger flick left or right to perform the original action of moving to the previous or next object in the current container.
+ - the Report layout tables checkbox found in the Browse Mode settings dialog has now been renamed to Include layout tables to reflect that quick navigation also will not locate them if the checkbox is unchecked. (#3140)
++- Performing a single finger flick left or right when in object mode now moves previous or next through a flattened view of the object navigation hyrarchi. Use 2-finger flick left and right to perform the original previous/next object limited to the current hyrarchical level.
++- Flat review has been replaced with object, document and screen review modes. (#2996)
++ - Object review reviews text just within the navigator object, document review reviews all text in a browse mode document (if any) and screen review reviews text on the screen for the current application.
++ - The commands that previously move to/from flat review now toggle between these new review modes.
++ - The navigator object automatically follows the review cursor such that it remains the deepest object at the position of the review cursor when in document or screen review modes.
++ - After switching to screen review mode, NVDA will stay in this mode until you explicitly switch back to document or object review mode.
++ - When in document or object review mode, NVDA may automatically switch between these two modes depending on whether you are moving around a browse mode document or not.
+ 
+ 
+ == Bug Fixes ==
+@@ -43,11 +50,17 @@
+ - espeak no longer inappropriately changes in pitch, volume, etc. when NVDA reads text containing certain control characters or XML. (#3334) (regression of #437)
+ - In Java applications, changes to the label or value of the focused control are now announced automatically, and are reflected when subsequently querying the control. (#3119)
+ - In Scintilla controls, lines are now reported correctly when word wrap is enabled. (#885)
++- In Mozilla applications, the name of read-only list items is now correctly reported; e.g. when navigating tweets in focus mode on twitter.com. (#3327)
++- Confirmation dialogs in Microsoft Office 2013 now have their content automatically read when they appear. 
++- Performance improvements when navigating certain tables in Microsoft Word (#3326)
++- NVDA's table navigation commands (control+alt+arrows) function better in certain Microsoft Word tables where a cell spans multiple rows.
+ 
+ 
+ == Changes for Developers ==
+ - windowUtils.findDescendantWindow has been added to search for a descendant window (HWND) matching the specified visibility, control ID and/or class name.
+ - The remote Python console no longer times out after 10 seconds while waiting for input. (#3126)
++- Inclusion of the bisect module in binary builds is deprecated and may be removed in a future release. (#3368)
++ - Add-ons which depend on bisect (including the urllib2 module) should be updated to include this module.
+ 
+ 
+ = 2013.1.1 =
