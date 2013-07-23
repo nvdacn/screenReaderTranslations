@@ -32,6 +32,19 @@
 <UL>
 <LI>nunha pantalla tactil, realizando un deslizamento cun so dedo cara a esquerda ou cara a dereita cando se estea en modo obxecto, agora móveste cara atrás ou adiante por  todos os obxectos e non só por aqueles que estean no mesmo contedor. Utiliza  un deslizamento con 2 dedos cara a esquerda ou cara a dereita para realizar a acción orixinal de anterior/seguinte obxecto limitado ó actual contedor.
 <LI>A casiña de verificación Anunciar táboas de deseño que se atopa no diálogo Opcións do Modo Navegación  agora se renomeou como Incluir Táboas de Deseño para reflectir que a navegación rápida non as localizará se a casiña está desmarcada. (<A HREF="http://www.nvda-project.org/ticket/3140">#3140</A>)
+<LI>Realizando un deslizamento cara a esquerda ou cara a dereita cun so dedo cando se estea no modo obxecto agora móvese cara anterior ou seguinte nunha vista cha da navegación de obxectos. Utiliza un deslizamento con 2 dedos cara a esquerda ou cara a dereita para levar a cabo a orde orixinal de obxecto anterior/seguinte limitada ó nível  actual.
+<LI>A revisión cha foi reemplazada polos modos de revisión de obxectos, documentos e pantalla. (<A HREF="http://www.nvda-project.org/ticket/2996">#2996</A>)
+ <UL>
+ <LI>A revisión de obxectos revisa o texto só dentro do navegador de obxectos, a revisión de documentos revisa todo o texto nun documento en modo navegación (se hai algún) e a revisión de pantalla revisa o texto na pantalla para a aplicación actual.
+ </UL>
+<LI>As ordes que anteriormente movían cara ou dende revisión plana agora cambian entre estos novos modos de revisión.
+ <UL>
+ <LI>O navegador de obxectos segue automáticamente ó cursor de revisión de tal maneira que segue sendo o obxecto máis profundo na posición do cursor de revisión cando se está en modos de revisión de documentos ou de pantalla.
+ </UL>
+<LI>Despois de cambiar a modo revisión de pantalla, NVDA permanecerá neste modo hate que voltes explícitamente ós modos de revisión de documentos ou de obxectos.
+ <UL>
+ <LI>Cando se estea en modo de revisión de documentos ou de obxectos, NVDA poderá cambiar automáticamente entre estos dous modos dependendo de se estás movéndote por un documento do modo navegación ou non.
+ </UL>
 </UL>
 
 <H3>Corrección de Fallos</H3>
@@ -58,6 +71,10 @@
 <LI>espeak xa non fai cambios inapropriados no ton, volume, etc. cando NVDA lea texto que conteña certos caracteres de control ou XML. (<A HREF="http://www.nvda-project.org/ticket/3334">#3334</A>) (regresión de <A HREF="http://www.nvda-project.org/ticket/437">#437</A>)
 <LI>En aplicacións Java, os cambios no nível ou no valor do control enfocado agora anúncianse automáticamente, e reflíctense ca subsiguinte saída do control. (<A HREF="http://www.nvda-project.org/ticket/3119">#3119</A>)
 <LI>En controis Scintilla, as liñas agora anúncianse correctamente cando o corte de palabras está habilitado. (<A HREF="http://www.nvda-project.org/ticket/885">#885</A>)
+<LI>En aplicacións de Mozilla, o nome dos elementos de lista de só lectura agora anúnciase correctamente; ex.: cando se navega por twits no modo foco en twitter.com. (<A HREF="http://www.nvda-project.org/ticket/3327">#3327</A>)
+<LI>Nos diálogos de Confirmación en Microsoft Office 2013 agora lese o seu contido automáticamente cando aparezan. 
+<LI>Melloras no rendemento cando se navega por certas táboas en Microsoft Word. (<A HREF="http://www.nvda-project.org/ticket/3326">#3326</A>)
+<LI>As ordes de navegación de táboas de NVDA (control+alt+flechas) funcionan mellor nalgunhas táboas de Microsoft Word cando unha celda abrangue varias filas.
 </UL>
 
 <H3>Cambios para Desenvolvedores</H3>
@@ -65,6 +82,10 @@
 <UL>
 <LI>Engadiuse windowUtils.findDescendantWindow para procurar unha ventá descendente (HWND) localizando a visivilidade especificada, identificador do control e/ou nome da clase.
 <LI>A consola de python remota xa non espera despois de 10 segundos mentres agarda pola entrada. (<A HREF="http://www.nvda-project.org/ticket/3126">#3126</A>)
+<LI>A inclusión do módulo bisect en compilacións binarias está en desuso e poderá eliminarse nunha versión futura. (<A HREF="http://www.nvda-project.org/ticket/3368">#3368</A>)
+ <UL>
+ <LI>Os complementos que dependan de bisect (incluindo o módulo urllib2) deberían actualizarse para incluir este módulo.
+ </UL>
 </UL>
 
 <H2>2013.1.1</H2>
