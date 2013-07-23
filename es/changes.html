@@ -32,6 +32,19 @@
 <UL>
 <LI>En una pantalla táctil, realizando un deslizamiento con un solo dedo a la izquierda o a la derecha cuando se esté en modo objeto, ahora te mueves hacia atrás o adelante por  todos los objetos y no sólo por aquellos que estén en el mismo contenedor. Utiliza  un deslizamiento con 2 dedos a la izquierda o a la derecha para realizar la acción original de anterior/siguiente objeto limitado al actual contenedor.
 <LI>La casilla de verificación Anunciar tablas de diseño que se encuentra en el diálogo Opciones de Modo Navegación  ahora se ha renombrado como Incluir Tablas de Diseño para reflejar que la navegación rápida no las localizará si la casilla está desmarcada. (<A HREF="http://www.nvda-project.org/ticket/3140">#3140</A>)
+<LI>Realizando un deslizamiento a la izquierda o a la derecha con un solo dedo cuando se esté en modo objeto ahora se mueve a anterior o siguiente en una vista plana de la navegación de objetos. Utiliza un deslizamiento con 2 dedos a la izquierda o a la derecha para llevar a cabo la orden original de objeto anterior/siguiente limitada al nivel  actual.
+<LI>La revisión plana ha sido reemplazada por los modos de revisión de objetos, documentos y pantalla. (<A HREF="http://www.nvda-project.org/ticket/2996">#2996</A>)
+ <UL>
+ <LI>La revisión de objetos revisa el texto sólo dentro del navegador de objetos, la revisión de documentos revisa todo el texto en un documento en modo navegación (si hay alguno) y la revisión de pantalla revisa el texto en la pantalla para la aplicación actual.
+ </UL>
+<LI>Las órdenes que anteriormente movían a o desde revisión plana ahora cambian entre estos nuevos modos de revisión.
+ <UL>
+ <LI>El navegador de objetos sigue automáticamente al cursor de revisión de tal manera que sigue siendo el objeto más profundo en la posición del cursor de revisión cuando se está en modos de revisión de documentos o de pantalla.
+ </UL>
+<LI>Después de cambiar a modo revisión de pantalla, NVDA permanecerá en este modo hasta que vuelvas explícitamente a los modos de revisión de documentos o de objetos.
+ <UL>
+ <LI>Cuando se esté en modo de revisión de documentos o de objetos, NVDA podrá cambiar automáticamente entre estos dos modos dependiendo de si estás moviéndote por un documento del modo navegación o no.
+ </UL>
 </UL>
 
 <H3>Corrección de Fallos</H3>
@@ -58,6 +71,10 @@
 <LI>espeak ya no hace cambios inapropiados en el tono, volumen, etc. cuando NVDA lea texto que contenga ciertos caracteres de control o XML. (<A HREF="http://www.nvda-project.org/ticket/3334">#3334</A>) (regresión de <A HREF="http://www.nvda-project.org/ticket/437">#437</A>)
 <LI>En aplicaciones Java, los cambios en el nivel o en el valor del control enfocado ahora se anuncian automáticamente, y se reflejan con la subsiguiente salida del control. (<A HREF="http://www.nvda-project.org/ticket/3119">#3119</A>)
 <LI>En controles Scintilla, las líneas ahora se anuncian correctamente cuando el corte de palabras está habilitado. (<A HREF="http://www.nvda-project.org/ticket/885">#885</A>)
+<LI>En aplicaciones de Mozilla, el nombre de los elementos de lista de sólo lectura ahora se anuncia correctamente; ej.: cuando se navega por twits en modo foco en twitter.com. (<A HREF="http://www.nvda-project.org/ticket/3327">#3327</A>)
+<LI>En los diálogos de Confirmación en Microsoft Office 2013 ahora se lee su contenido automáticamente cuando aparezcan. 
+<LI>Mejoras en el rendimiento cuando se navega por ciertas tablas en Microsoft Word. (<A HREF="http://www.nvda-project.org/ticket/3326">#3326</A>)
+<LI>Las órdenes de navegación de tablas de NVDA (control+alt+flechas) funcionan mejor en algunas tablas de Microsoft Word cuando una celda abarca varias filas.
 </UL>
 
 <H3>Cambios para Desarrolladores</H3>
@@ -65,6 +82,10 @@
 <UL>
 <LI>Se ha añadido windowUtils.findDescendantWindow para buscar una ventana descendiente (HWND) localizando la visivilidad especificada, identificador del control y/o nombre de clase.
 <LI>La consola de python remota ya no espera después de 10 segundos mientras aguarda por la entrada. (<A HREF="http://www.nvda-project.org/ticket/3126">#3126</A>)
+<LI>La inclusión del módulo bisect en compilaciones binarias está en desuso y podrá eliminarse en una versión futura. (<A HREF="http://www.nvda-project.org/ticket/3368">#3368</A>)
+ <UL>
+ <LI>Los complementos que dependan de bisect (incluyendo el módulo urllib2) deberían actualizarse para incluir este módulo.
+ </UL>
 </UL>
 
 <H2>2013.1.1</H2>
