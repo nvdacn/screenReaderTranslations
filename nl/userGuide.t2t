@@ -289,7 +289,7 @@ In deze gevallen kan objectnavigatie handig zijn.
 
 Objectnavigatie stelt u in staat om te navigeren naar afzonderlijke objecten en informatie over deze objecten op te vragen.
 NVDA meldt informatie over een object waar u met objectnavigatie naar toe gaat op een soortgelijke manier als informatie over de systeemfocus.
-Om alle tekst zoals deze op het scherm verschijnt te lezen kunt u, in plaats van object navigatie, [flat review #FlatReview] gebruiken.
+Om alle tekst zoals deze op het scherm verschijnt te lezen kunt u, in plaats van object navigatie, [Screen review (schermoverzicht) #FlatReview] gebruiken.
 
 De objecten van het besturingssysteem en van de programma's zijn hiërarchisch  gegroepeerd (Vergelijk de boomstructuur van Windows Verkenner met mappen en submappen die op hun beurt weer submappen kunnen bevatten).
 Dit betekent dat u naar een bepaald object navigeert om na te gaan welke objecten er eventueel in zijn opgenomen.
@@ -299,8 +299,8 @@ Als u zich op een lijstitem bevind, kunt u terug naar het bovenliggend object om
 Nu kunt u verder gaan naar een ander object (op hetzelfde niveau).
 Iets dergelijks geldt voor bv. een werkbalk. U gaat de werkbalk in, (navigeert naar het eerste subniveau (first child) om toegang te krijgen tot de bijbehorende besturingselementen.
 
-Het object dat op dit moment bekeken wordt in objectnavigatie wordt het navigator object genoemd.
-U kunt de tekst in het navigator object bekijken met de [commando's voor tekstnavigatie (review cursor) #ReviewingText].
+Het object dat op een gegeven moment bekeken wordt in objectnavigatie wordt het navigator object genoemd.
+Wanneer u naar een object navigeert, kuntu de inhoud ervan bekijken met de [commando's voorhet Nalezen van Tekst #ReviewingText] terwijl u zich in de [objectoverzichtmodus #ObjectReview] bevindt.
 Standaard wordt in NVDA de object navigator tegelijk met de systeemfocus verplaatst, maar deze koppeling kan aan- en uitgezet worden.
 
 Braille volgt normaalgesproken de [focus #SystemFocus] en [systeemcursor #SystemCaret] en niet de objectnavigatie en de review cursor.
@@ -324,7 +324,7 @@ Voor objectnavigatie zijn de volgende toetscombinaties beschikbaar:
 Let op: voor een goede werking van de numerieke toetsen moet NumLock uitgeschakeld worden.
 
 ++ Nalezen van tekst ++[ReviewingText]
-Met NVDA kunt u de inhoud van het huidige [navigator object #ObjectNavigation], inclusief [flat review #FlatReview],  per karakter, per woord of regel nalezen.
+Met NVDA kunt u de inhoud van het [scherm (schermoverzicht) #ScreenReview], het huidige [document (documentoverzicht) #DocumentReview] of het huidige [object #ObjectReview] ,  per karakter, per woord of regel nalezen.
 Dit is vooral handig in Windows-opdrachtvensters of andere plaatsen waar de [tekstcursor #SystemCaret] niet of slechts beperkt beschikbaar is.
 U kunt dit bijvoorbeeld gebruiken voor het lezen van een lang, informatief bericht in een dialoogvenster
 
@@ -365,27 +365,35 @@ Dit ziet er dan als volgt uit:
 | Vorig woord | Huidig woord | Volgend woord |
 | Vorig karakter | Huidige karakter | Volgende karakter |
 
-++ Flat Review (Volledig overzicht) ++[FlatReview]
-Meestal kunt u alleen de inhoud van een enkel [object #Objects] bekijken, voor sommige objecten is het echter mogelijk om de inhoud van onderliggende objecten te bekijken.
-In complexe documenten kunt u de gehele inhoud van het document lezen en in applicatie vensters kunt u de tekst binnen het venster lezen zoals deze op het scherm wordt weergegeven.
-Dit heet “flat review”.
-Dit is vergelijkbaar met de mogelijkheden voor het verkennen van het scherm of mogelijkheden voor muisbesturing zoals u deze in andere schermlezers aantreft.
+++ Leesoverzichtmodi (Review Modes) ++
+Met behulp van de leesoverzichtcommando's van NVDA kan, afhankelijk van de geselecteerde leesoverzichtmodus, de inhoud van het huidige navigatorobject, het huidige document, of scherm worden nagelezen.
+De Leesoverzichtmodikomen in de plaats van wat eerder in NVDA  "Flat Revie"  (Volledig Overzicht) heette.
 
-U wordt op het [navigator object #ObjectNavigation] gepositioneerd wanneer flat review wordt ingeschakeld.
-Als u objectnavigatie nog niet gebruikt hebt, zal dit meestal het object met [focus #SystemFocus] zijn.
-Als het navigator object bijvoorbeeld een knop is, zal flat review de tekst van deze knop aangeven.
-U kunt vervolgens de tekst lezen met de [commando's voor tekstnavigatie #ReviewingText].
-U kunt ook direct naar het object op de huidige positie van de reviewcursor navigeren, zo kunt u [objectnavigatie #ObjectNavigation] vanaf daar gebruiken.
-
-Braille volgt normaalgesproken de [focus #SystemFocus] en [systeemcursor #SystemCaret] en niet de objectnavigatie en de review cursor.
-Als de braille uitvoer de objectnavigatie en tekst review moet volgen, [configureert u braille om de review cursor te volgen #BrailleTether].
-
-U kunt de volgende twee commando’s gebruiken om van en naar “flat review” te schakelen:
+U kunt de volgende commando’s gebruiken om van leesoverzichtmodus te wisselen:
 %kc:beginInclude
-|| Naam | Desktoptoets  | Laptoptoets | Beschrijving |
-| Overschakelen naar flat review | NVDA+numeriek7 |NVDA+PageUp | U gaat in de flat review modus navigator object en kunt het scherm(of het document als u zich daarin bevindt) met de leescursorcommando’s uitlezen. |
-| Terug naar object vanuit flat review modus | NVDA+numeriek1 | NVDA+pageDown | Hiermee navigeert u naar de positie van de leescursor in de tekst (“het object” genoemd) |
+ || Naam | Desktoptoets | Laptoptoets | Aanraakgebaar | Beschrijving |
+| Naar volgende leesoverzichtmodus schakelen | NVDA+numeriek7 | NVDA+pageUp | met 2 vinges omhoog vegenr | iermee wordt naar de modus geschakeld die boven de huidige modus ligt. | 
+| Naar vorige leesoverzichtmodus schakelen | NVDA+numeriek1 | NVDA+pageDown | met 2 vingers omlaag vegen | hiermee wordt naar de modus geschakeld die zich onder de huidige modus bevindt. |
 %kc:endInclude
+
++++ Objectoverzicht (Object Review) +++[ObjectReview]
+In de objectoverzichtmodus kan alleen de inhoud van het huidige [navigatorobject #ObjectNavigation] worden bekeken.
+Voor objecten zoals invoervelden of andere eenvoudige documentbewerkingen gaat het daarbij in het algemeen om tekst.
+Bij andere objecten kan het gaan om de naam en of de waarde van het object.
+
++++ Documentoverzicht (Document Review) +++[DocumentReview]
+Wanneer het [navigatorobject #ObjectNavigation] zich binnen een bladermodusdocument bevindt (een webpagina bij voorbeeld) of een ander complex documentdat veel objecten bevat  (bij voorbeeld  Lotus Symphony documenten),  kan naar de documentoverzichtmodus worden overgeschakeld.
+In de documentoverzichtmodus kan de tekst van het gehele document worden bekeken.
+Wanneer wordt overgeschakeld van de objectoverzicht- naar de documentoverzichtmodus, komt de leescursor in het document op de plaats vanhet  navigatroobject te staan.
+Wanneer het document met de daarvoor bestemde leesoverzichtcommando's wordt verkend, wordt de plaats van het navigatorobject automatisch geactualiseerd zodat deze overeenkomt met deplaats van het object waar de leescursor bij staat. 
+Merk op dat NVDA automatisch vanuit objectoverzicht overschakelt naar documentoverzicht  wanneer bladermodusdocumenten worden verkend.
+
++++ Schermoverzicht (Screen Review) +++[ScreenReview]
+In de  schermoverzichtmodus kunt u tekst in de actieve toepassing verkennen die op het scherm te zien is.
+Dit komt overeen metschermoverzichtopties of de muiscursorfuncties zoals die in veel andere schermleesprogramma's worden geboden.
+Wanneer naar de schermoverzichtmodus wordt overgeschakeld, gaat de leescursor naar de plaats op het scherm waar het huidige [navigatorobject #ObjectNavigation] zich bevindt.
+Wanneer het scherm met de daarvoor bestemde leesoverzichtcommando's wordt verkend, wordt de plaats van het navigatorobject automatisch geactualiseerd, dat wil zeggen bij het diepst gelegen  object op het scherm waar de leescursor zich bevindt.
+Merk op dat NVDA bij sommige recente toepassingen tekst die op het scherm verschijnt slechts gedeeltelijk of soms helemaal niet leest. Dit heeft te maken met nieuwe schermtechnologie die op dit moment nog niet ondersteund kan worden.
 
 ++ Navigeren met de muis ++
 Door de muis over het scherm te verplaatsen wordt tekst die zich onder de muisaanwijzer bevindt voorgelezen.
