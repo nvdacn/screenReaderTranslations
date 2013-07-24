@@ -21,6 +21,12 @@
 == Änderungen ==
 - Wenn Sie im Objektmodus mit einem Finger nach rechts/links streichen, verwendet NVDA eine vereinfachte Darstellung beim Navigieren zum nächsten/vorigen Objekt. Streichen Sie mit 2 Fingern nach rechts/links, um unter Berücksichtigung der Objekthierarchie zum nächsten/vorigen Objekt zu navigieren.
 - die Option "layouttabellen ansagen" wurde in "Layouttabellen einschließen" umbenannt. Hierdurch wird verdeutlicht,  dass Layouttabellen nicht angesprungen werden, wenn Sie die Schnellnavigationstasten verwenden, während diese Option deaktiviert ist. (#3140)
+- Der Flächenmodus wurde durch die Darstellungsmodi Objektdarstellung, Dokumentdarstellung und Bildschirmdarstellung ersetzt (#2996)
+ - Im Objektmodus können Sie sich den Inhalt des aktuellen Navigatorobjekts anzeigen lassen; im Dokumentmodus wird der Inhalt des gesamten Dokuments angezeigt; im Bildschirm-Darstellungsmodus wird der gesamte Bildschirminhalt der aktuellen Anwendung angezeigt
+ - Die Befehle zum Wechsel vom/in den Flächenmodus schalten nun zwischen den unterschiedlichen Darstellungsmodi um.
+ - Wenn Sie in die Modi Bildschirmdarstellung oder Dokumentdarstellung gewechselt haben nd die Befehle zum Betrachten von Text verwednen, wird der Navigator den NVDA-Cursor verfolgen und sich auf das am meisten untergeordnete Objekt setzen.
+ - Wenn Sie in den Modus Bildschirmdarstellung gewechselt haben, wird NVDA in diesem Modus bleiben, bis Sie zurück in den Modus Dokumentdarstellung oder Objektdarstellung wechseln.
+ - Wenn Sie sich im Dokument- oder Objektmodus befinden, wird NVDA zwischen den beiden Modi automatisch wechseln, abhängig davon, ob Sie sich im Lesemodus befinden oder nicht.
 
 == Fehlerbehebungen ==
 - Beim Ausführen der Standardaktion mit einem Objekt wird der Name der Standardaktion (wie z. B. "erweitern" oder "reduzieren" bei Einträgen einer Baumstruktur) angegeben, noch bevor die Aktion ausgeführt wird. (#2982)
@@ -41,13 +47,17 @@
 - Wenn die Ansage eingegebener Zeichen aktiviert ist und Sie drücken in bestimmten Eingabefeldern strg+Rücktaste, wird NVDA nicht mehr irrtümlich das Steuerzeichen 0x7f ansagen.
 - NVDA wird nun nicht mehr irrtümlich die Lautstärke, Tonhöhe oder die Sprechgeschwindigkeit ändern, wenn der zu sprechende Text bestimmte Steuerzeichen oder xml-Strukturen enthält. (#3334) (regression von #437)
 - in Java-Anwendungen wird eine Änderung der Beschriftung Bzw. des Wertes eines hervorgehobenen Steuerelements korrekt erkannt. (#3119)
-- Bei Scintilla-Steuerelemeten werden die einzelnen Zeilen nun korrekt angezeigt, wenn der Wortumbruch aktiviert ist. (#885)
-
+- Bei Scintilla-Steuerelementen werden die einzelnen Zeilen nun korrekt angezeigt, wenn der Wortumbruch aktiviert ist. (#885)
+- Wenn Sie sich mit Mozilla-Anwendungen auf Twitter.com im Fokusmodus durch die Meldungen bewegen, werden schreibgestützte Einträge nun korrekt erkannt. (#3327)
+- Bestätigungsdialoge in Office 2013 werden nun automatisch angezeigt.
+- Leistungsverbesserungen beim Navigieren in Tabellen in Microsoft Word (#3326)
+- Wenn sich in einer Microsoft-Word-Tabelle eine Zelle über mehrere Zeilen erstreckt, funktionieren nun die Tabellennavigationsbefehle (strg+alt+Pfeiltasten) korrekt.
 
 == Änderungen für Entwickler ==
 - Mit windowUtils.findDescendantWindow können Sie ein Objekt (angegeben durch seine Zugriffsnummer) nach einem untergeordneten Objekt mit bestimmten Kriterien absuchen (Sichtbarkeit, Steuerelementnummer und/oder Klassenname).
 - Die Remote-Python-Konsole beendet sich nun nicht mehr nach 10 Sekunden, wenn sie auf eine Eingabe wartet. (#3126)
-
+- Das Modul bisect ist veraltet und wird demnächst aus dem Binärpaket von NVDA entfernt. (#3368)
+ - Erweiterungen, die Bisect (einschließlich urllib2) benötigen, sollten diese Module mitliefern.
 
 = 2013.1.1 =
 Neben anderen Fehlerkorrekturen und aktualisierten Übersetzungen wird in dieser Version von NVDA ein Problem behoben, wonach NVDA abgestürzt ist, wenn irisch als Landessprache eingestellt war.
