@@ -150,7 +150,7 @@ Kolmannella voidaan säätää, halutaanko tämän Tervetuloa-valintaikkunan tul
 
 +++ NVDA-näppäin +++ 
 Useimmat NVDA:n näppäinkomennot koostuvat yleensä tietyn NVDA-näppäimeksi kutsutun näppäimen painamisesta yhdessä yhden tai useamman muun näppäimen kanssa.
-Poikkeuksena tähän ovat tekstinlukukomennot, jotka käyttävät pelkkiä numeroryhmän näppäimiä.
+Poikkeuksena tähän ovat tekstintarkastelukomennot, jotka käyttävät pelkkiä numeroryhmän näppäimiä.
 
 NVDA voidaan määrittää niin, että joko numeroryhmän Insert-, laajennettua Insert- tai Capslock-näppäintä käytetään NVDA-näppäimenä.
 
@@ -249,7 +249,7 @@ Kun valikko tulee näkyviin, siinä voidaan liikkua nuolinäppäimillä ja valit
 %kc:endInclude
 
 + NVDA:lla navigoiminen +
-NVDA:n avulla voidaan tutkia järjestelmää ja liikkua siinä useilla tavoilla mukaan lukien sekä normaali vuorovaikutus että tekstin lukeminen.
+NVDA:n avulla voidaan tutkia järjestelmää ja liikkua siinä useilla tavoilla sekä normaali vuorovaikutus että tekstin tarkastelu mukaan lukien.
 
 ++ Objektit ++[Objektit]
 Jokainen sovellus ja itse käyttöjärjestelmä koostuvat useista objekteista.
@@ -274,7 +274,7 @@ Joitakin hyödyllisiä näppäinkomentoja kohdistuksella navigoitaessa:
 ++ Järjestelmäkohdistimella navigoiminen ++[Jarjestelmakohdistin]
 Kun [kohdistus #Jarjestelmakohdistus] on navigoinnin ja/tai tekstin muokkaamisen mahdollistavassa [objektissa #Objektit], tekstissä voidaan liikkua järjestelmäkohdistinta käyttäen (tunnetaan myös muokkauskohdistimena).
 
-Kun kohdistus on objektissa, jossa on järjestelmäkohdistin, tekstissä liikkumiseen voidaan käyttää nuoli-, page up-, page down-, home- sekä end-näppäimiä jne.
+Kun kohdistus on järjestelmäkohdistimen sisältävässä objektissa, tekstissä liikkumiseen voidaan käyttää nuoli-, page up-, page down-, home- sekä end-näppäimiä jne.
 Tekstiä voidaan myös muokata, mikäli säädin tukee sitä.
 NVDA lukee kaiken merkki, sana ja rivi kerrallaan liikuttaessa ja ilmoittaa myös, kun tekstiä on tai ei ole valittu.
 
@@ -303,7 +303,7 @@ Saatat myös haluta siirtyä [objekteihin #Objektit], joihin ei pääse normaali
 Objektinavigoinnin avulla on mahdollista liikkua yksittäisten [objektien #Objektit] välillä ja saada niistä tietoja.
 Kun objektiin siirrytään, NVDA lukee sen samalla tavalla kuin järjestelmäkohdistuksenkin.
 Tekstiä voidaan myös tarkastella sellaisena kuin se näkyy ruudulla.
-Tähän käytetään objektinavigoinnin asemesta [kokonaistarkastelua #Kokonaistarkastelu].
+Tähän käytetään objektinavigoinnin asemesta [ruututarkastelua #Ruututarkastelu].
 
 Objektit on ryhmitelty hierarkisesti sen sijaan, että niiden välillä liikuttaisiin edestakaisin.
 Tämä tarkoittaa, että jotkin objektit sisältävät muita objekteja, ja että on siirryttävä niiden sisään, jotta päästäisiin edelleen niiden sisältämiin objekteihin.
@@ -314,11 +314,11 @@ Tämän jälkeen siitä voidaan siirtyä pois, mikäli halutaan päästä muihin
 Myös työkalupalkki sisältää säätimiä, joten niihin pääsemiseksi on siirryttävä kyseisen työkalupalkin sisään.
 
 Nykyistä tarkasteltavaa objektia kutsutaan navigointiobjektiksi.
-Kun objektiin siirrytään, sitä voidaan tarkastella [tekstinlukukomennoilla #Tekstinlukeminen].
+Kun objektiin siirrytään, sitä voidaan tarkastella [tekstintarkastelukomennoilla #Tekstintarkastelu] [objektintarkastelutilassa #Objektitarkastelu] oltaessa.
 Navigointiobjekti liikkuu oletusarvoisesti järjestelmäkohdistuksen mukana, mutta tämä asetus voidaan poistaa myös käytöstä.
 
-Huomaa, että pistenäyttö seuraa oletusarvoisesti [kohdistusta #Jarjestelmakohdistus] ja [kohdistinta #Jarjestelmakohdistin] objektinavigoinnin ja tekstinlukukohdan sijaan.
-Mikäli pistenäytön halutaan kuitenkin seuraavan viimeksi mainittuja, on se [määritettävä seuraamaan #Pistenayttoseuraa] tarkastelukohdistinta.
+Huomaa, että pistenäyttö seuraa oletusarvoisesti [kohdistusta #Jarjestelmakohdistus] ja [kohdistinta #Jarjestelmakohdistin] objektinavigoinnin ja tekstintarkastelukohdan sijaan.
+Mikäli pistenäytön halutaan kuitenkin seuraavan objektinavigointia tai tekstinlukukohtaa, on se [määritettävä seuraamaan #Pistenayttoseuraa] tarkastelukohdistinta.
 
 Seuraavia komentoja käytetään objekteittain navigoimiseen:
 %kc:beginInclude
@@ -336,19 +336,19 @@ Seuraavia komentoja käytetään objekteittain navigoimiseen:
 
 Huomautus: Numlockin on oltava pois päältä, jotta numeroryhmän näppäimet toimisivat oikein.
 
-++ Tekstin lukeminen ++[Tekstinlukeminen]
-NVDA:lla on mahdollista lukea nykyisen [navigointiobjektin #Objektinavigointi] sisältöä ([kokonaistarkastelu #Kokonaistarkastelu] mukaan lukien) merkeittäin, sanoittain tai riveittäin.
+++ Tekstin tarkastelu ++[Tekstintarkastelu]
+NVDA:lla on mahdollista lukea [ruutua #Ruututarkastelu], nykyistä [asiakirjaa #Asiakirjatarkastelu] tai nykyistä [objektia #Objektitarkastelu] merkeittäin, sanoittain tai riveittäin.
 Tästä on eniten hyötyä paikoissa, joissa ei ole [järjestelmäkohdistinta #Jarjestelmakohdistin] (Windowsin komentokehote mukaan lukien).
-Tätä voidaan käyttää esimerkiksi valintaikkunassa olevan ilmoituksen lukemiseen.
+Tätä voidaan käyttää esim. valintaikkunassa olevan ilmoituksen lukemiseen.
 
-Kun tarkastelukohdistinta siirretään, järjestelmäkohdistin ei seuraa mukana, joten tekstin lukeminen onnistuu muokkauskohtaa menettämättä.
+Kun tarkastelukohdistinta siirretään, järjestelmäkohdistin ei seuraa mukana, joten tekstin tarkastelu onnistuu muokkauskohtaa menettämättä.
 Kun järjestelmäkohdistin liikkuu, tarkastelukohdistin seuraa kuitenkin oletusarvoisesti mukana.
 Tätä asetusta voidaan myös muuttaa.
 
-Huomaa, että pistenäyttö seuraa oletusarvoisesti [kohdistusta #Jarjestelmakohdistus] ja [kohdistinta #Jarjestelmakohdistin] objektinavigoinnin ja tekstinlukukohdan sijaan.
-Mikäli pistenäytön halutaan kuitenkin seuraavan viimeksi mainittuja, on se [määritettävä seuraamaan #Pistenayttoseuraa] tarkastelukohdistinta.
+Huomaa, että pistenäyttö seuraa oletusarvoisesti [kohdistusta #Jarjestelmakohdistus] ja [kohdistinta #Jarjestelmakohdistin] objektinavigoinnin ja tekstintarkastelukohdan sijaan.
+Mikäli pistenäytön halutaan kuitenkin seuraavan objektinavigointia tai tekstintarkastelukohtaa, on se [määritettävä seuraamaan #Pistenayttoseuraa] tarkastelukohdistinta.
 
-Seuraavat tekstinlukukomennot ovat käytettävissä:
+Seuraavat tekstintarkastelukomennot ovat käytettävissä:
 %kc:beginInclude
 || Nimi | Näppäinkomento pöytäkoneissa | Näppäinkomento kannettavissa | Kosketusele | Kuvaus |
 | Siirrä ylimmälle riville | Shift+numeroryhmän 7 | NVDA+Ctrl+Home | none | Siirtää tarkastelukohdistimen tekstin ylimmälle riville. |
@@ -372,33 +372,45 @@ Seuraavat tekstinlukukomennot ovat käytettävissä:
 
 Huomautus: Numlockin on oltava pois päältä, jotta numeroryhmän näppäimet toimisivat oikein.
 
-Hyvä keino tekstin lukemisen peruskomentojen muistamiseen pöytäkoneen näppäimistöasettelua käytettäessä on ajatella  niitä  kolme kertaa kolme ruudukkona, jossa on ylhäältä alas rivi, sana ja merkki sekä vasemmalta oikealle edellinen, nykyinen ja seuraava.
+Hyvä keino tekstin tarkastelun peruskomentojen muistamiseen pöytäkoneen näppäimistöasettelua käytettäessä on ajatella  niitä  kolme kertaa kolme ruudukkona, jossa on ylhäältä alas rivi, sana ja merkki sekä vasemmalta oikealle edellinen, nykyinen ja seuraava.
 Asettelua kuvataan seuraavasti:
 | Edellinen rivi | Nykyinen rivi | Seuraava rivi |
 | Edellinen sana | Nykyinen sana | Seuraava sana |
 | Edellinen merkki | Nykyinen merkki | Seuraava merkki |
 
-++ Kokonaistarkastelu ++[Kokonaistarkastelu]
-Vaikka yleensä voidaan tarkastella vain yksittäisen [objektin #Objektit] sisältöä, jotkin objektit mahdollistavat myös niiden sisällä olevien objektien tarkastelemisen.
-Monimutkaiset asiakirjat mahdollistavat niiden koko sisällön tarkastelemisen ja sovellusikkunat mahdollistavat  tekstin tarkastelemisen sellaisena kuin se näkyy ruudulla.
-Tätä kutsutaan kokonaistarkasteluksi.
-Se muistuttaa muiden Windows-ruudunlukuohjelmien ruuduntarkastelu- tai hiirikohdistintoimintoa.
+++ Tarkastelutilat ++[Tarkastelutilat]
+NVDA:n [tekstintarkastelukomennot #Tekstintarkastelu] lukevat tekstiä nykyisessä navigointiobjektissa, asiakirjassa tai ruudussa valitusta tarkastelutilasta riippuen.
+Tarkastelutilat korvaavat aiemman kokonaistarkastelutoiminnon.
 
-Kun kokonaistarkastelu otetaan käyttöön, NVDA siirtyy nykyisen [navigointiobjektin #Objektinavigointi] sijaintiin.
-Se on yleensä objekti, jossa [kohdistus #Jarjestelmakohdistus] on.
-Esimerkiksi jos navigointiobjekti on painike, NVDA siirtyy kokonaistarkastelussa kyseisen painikkeen tekstin kohdalle.
-Tätä tekstiä voidaan tarkastella [tekstinlukukomennoilla #Tekstinlukeminen].
-Tarkastelukohdistimen nykyisen sijainnin sisältävään objektiin voidaan siirtyä myös suoraan, mikä mahdollistaa [objektinavigoinnin #Objektinavigointi] käytön sen sijainnista lähtien.
-
-Huomaa, että pistenäyttö seuraa oletusarvoisesti [kohdistusta #Jarjestelmakohdistus] ja [kohdistinta #Jarjestelmakohdistin] objektinavigoinnin ja tekstinlukukohdan sijaan.
-Mikäli pistenäytön halutaan kuitenkin seuraavan viimeksi mainittuja, on se [määritettävä seuraamaan #Pistenayttoseuraa] tarkastelukohdistinta.
-
-Kahta seuraavaa komentoa käytetään kokonaistarkasteluun tai siitä pois siirtymiseen:
+Seuraavat komennot vaihtavat tarkastelutilojen välillä:
 %kc:beginInclude
 || Nimi | Näppäinkomento pöytäkoneissa | Näppäinkomento kannettavissa | Kosketusele | Kuvaus |
-| Siirry kokonaistarkasteluun | NVDA+numeroryhmän 7 | NVDA+Page up | Pyyhkäisy ylös kahdella sormella | Siirtyy kokonaistarkasteluun tarkastelukohdistimen nykyisessä kohdassa. Tämä mahdollistaa koko ruudun tai asiakirjan sisällön lukemisen tekstinlukukomennoilla. |
-| Siirrä objektiin | NVDA+numeroryhmän 1 | NVDA+Page down | Pyyhkäisy alas kahdella sormella | Siirtää objektiin, jossa tarkastelukohdistimen kohdalla oleva teksti on kokonaistarkastelussa. |
+| Vaihda seuraavaan tarkastelutilaan | NVDA+numeroryhmän 7 | NVDA+Page up | Pyyhkäisy ylös kahdella sormella | Vaihtaa seuraavaan käytettävissä olevaan tarkastelutilaan. |
+| Vaihda edelliseen tarkastelutilaan | NVDA+numeroryhmän 1 | NVDA+Page down | Pyyhkäisy alas kahdella sormella | Vaihtaa edelliseen käytettävissä olevaan tarkastelutilaan. |
 %kc:endInclude
+ 
++++ Objektitarkastelu +++[Objektitarkastelu]
+Objektintarkastelutilassa voidaan tarkastella vain nykyisen [navigointiobjektin #Objektinavigointi] sisältöä.
+Sellaisissa objekteissa kuin muokattavat tekstikentät tai muut perustekstisäätimet se on yleensä niiden tekstisisältöä.
+Muissa objekteissa sisältöä voivat olla kyseisten objektien nimi ja/tai arvo.
+
++++ Asiakirjatarkastelu +++[Asiakirjatarkastelu]
+[Navigointiobjektin #Objektinavigointi] ollessa selaustiladokumentissa (esim. verkkosivulla) tai muussa monisisältöisessä dokumentissa (esim. Lotus Symphony -asiakirjassa) on mahdollista vaihtaa asiakirjan tarkastelutilaan.
+Tässä tilassa voidaan tarkastella koko asiakirjan sisältöä.
+
+Kun objektitarkastelusta vaihdetaan asiakirjatarkasteluun, tarkastelukohdistin sijoitetaan asiakirjassa navigointiobjektin kohdalle.
+Navigointiobjekti siirretään automaattisesti tarkastelukohdistimen nykyisessä kohdassa olevaan objektiin liikuttaessa asiakirjassa tarkastelukomennoilla.
+
+Huomaa, että NVDA vaihtaa automaattisesti objektitarkastelusta asiakirjatarkasteluun liikuttaessa selaustiladokumenteissa.
+
++++ Ruututarkastelu +++[Ruututarkastelu]
+Ruuduntarkastelutilan avulla on mahdollista tarkastella ruudulla olevaa tekstiä sellaisena kuin se näkyy visuaalisesti nykyisessä sovelluksessa.
+Tämä muistuttaa useiden muiden Windows-ruudunlukuohjelmien ruuduntarkastelu- tai hiirikohdistintoimintoa.
+
+Tarkastelukohdistin sijoitetaan ruuduntarkastelutilaan vaihdettaessa ruudulla nykyisen [navigointiobjektin #Objektinavigointi] kohdalle.
+Kun ruudulla liikutaan tarkastelukomennoilla, navigointiobjekti siirretään automaattisesti tarkastelukohdistimen kohdalla olevan syvimmän tason objektiin.
+
+Huomaa, että NVDA ei saata pystyä lukemaan kaikkea tai mitään ruudulla olevaa tekstiä joissakin uudemmissa sovelluksissa edistyneempien ruudunpiirtomenetelmien vuoksi, joita ei toistaiseksi tueta.
 
 ++ Hiirellä navigoiminen ++
 Kun hiirtä liikutetaan, NVDA lukee oletusarvoisesti suoraan sen alla olevan tekstin.
@@ -911,13 +923,13 @@ Foneettisille syöttömenetelmille, kuten uusi foneettinen kiina, saattaa kuiten
 
 ==== Lue valittu ehdotus ====
 Tällä asetuksella, joka on oletusarvoisesti käytössä, voidaan valita, lukeeko NVDA valitun ehdotuksen ehdotuslistan tullessa näkyviin tai valintaa muutettaessa.
-Tämä on tarpeen sellaisissa syöttömenetelmissä, joissa valintaa voidaan muuttaa nuolinäppäimillä (kuten esim. uusi foneettinen kiina), mutta joissakin kirjoittaminen saattaa olla tehokkaampaa, kun se on poistettu käytöstä.
-Huomaa, että vaikka tämä asetus ei ole käytössä, niin tarkastelukohdistin sijoitetaan silti valitun ehdotuksen kohdalle, mikä mahdollistaa objektinavigoinnin tai tekstinlukukomentojen käyttämisen kyseessä olevan tai muiden ehdotusten lukemiseen.
+Tämä on tarpeen sellaisissa syöttömenetelmissä, joissa valintaa voidaan muuttaa nuolinäppäimillä (kuten esim. uusi foneettinen kiina), mutta joissakin kirjoittaminen saattaa olla tehokkaampaa, kun asetus on poistettu käytöstä.
+Huomaa, että vaikka tämä asetus ei ole käytössä, niin tarkastelukohdistin sijoitetaan silti valitun ehdotuksen kohdalle, mikä mahdollistaa objektinavigoinnin tai tekstintarkastelukomentojen käyttämisen kyseessä olevan tai muiden ehdotusten lukemiseen.
 
-==== Ilmoita aina lyhyet merkkikuvaukset ehdotuksia luettaessa ====
+==== Ilmoita lyhyet merkkikuvaukset aina ehdotuksia luettaessa ====
 Tällä asetuksella, joka on oletusarvoisesti käytössä, voidaan valita, lukeeko NVDA lyhyen kuvauksen kustakin ehdotuksen merkistä joko ehdotusta valittaessa tai automaattisesti luettaessa ehdotuslistan tullessa näkyviin.
 Huomaa, että asetus ei vaikuta valitun ehdotuksen lisämerkkikuvausten lukemiseen sellaisissa kielissä kuin kiina.
-Tästä saattaa olla hyötyä korean ja japanin syöttömenetelmille.
+Tästä saattaa olla hyötyä korean ja japanin syöttömenetelmiä käytettäessä.
 
 ==== Ilmoita lukumerkkijonon muutokset ====
 Joillakin syöttömenetelmillä, kuten uudella foneettisella kiinalla ja uudella ChangJiella, on lukumerkkijono (tunnetaan joskus myös esiyhdistelmän merkkijonona).

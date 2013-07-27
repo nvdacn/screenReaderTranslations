@@ -21,6 +21,12 @@
 == Muutokset ==
 - Kosketusnäytöllä vasemmalle tai oikealle pyyhkäiseminen yhdellä sormella objektitilassa oltaessa siirtää nyt edelliseen tai seuraavaan kaikissa objekteissa, ei pelkästään nykyisessä säilössä. Alkuperäinen nykyisessä säilössä edelliseen tai seuraavaan objektiin siirtäminen suoritetaan pyyhkäisemällä vasemmalle tai oikealle kahdella sormella.
 - Selaustilan asetukset -valintaikkunasta löytyvän Lue asettelutaulukot -valintaruudun uudeksi nimeksi on nyt muutettu Sisällytä asettelutaulukot, jotta se kuvastaisi sitä, että jos tämä valintaruutu ei ole valittuna, niin asettelutaulukoita ei löydy myöskään pikanavigointikomennoilla. (#3140)
+- Kokonaistarkastelu on korvattu objekti-, asiakirja- ja ruututarkastelutiloilla. (#2996)
+ - Objektitarkastelu lukee vain navigointiobjektissa olevaa tekstiä, asiakirjatarkastelu kaikkea mahdollisesti selaustiladokumentissa olevaa tekstiä ja ruututarkastelu ruudulla olevaa tekstiä nykyisessä sovelluksessa.
+ - Aiemmin kokonaistarkasteluun ja siitä pois siirtäneet komennot vaihtavat nyt näiden uusien tarkastelutilojen välillä.
+ - Navigointiobjekti seuraa automaattisesti tarkastelukohdistinta niin, että se pysyy syvimpänä tarkastelukohdistimen kohdalla olevana objektina asiakirja- tai ruututarkastelutiloissa oltaessa.
+ - NVDA pysyy ruututarkastelutilassa siihen vaihtamisen jälkeen kunnes vaihdetaan takaisin asiakirja- tai objektitarkastelutilaan.
+ - NVDA voi vaihtaa automaattisesti asiakirja- tai objektitarkastelutilassa oltaessa näiden kahden tilan välillä riippuen siitä, liikutaanko selaustiladokumentissa vai ei.
 
 
 == Korjatut ohjelmavirheet ==
@@ -43,6 +49,10 @@
 - espeak ei enää vaihda virheellisesti äänenkorkeuttaan, voimakkuuttaan jne NVDA:n lukiessa tiettyjä ohjausmerkkejä tai XML-koodia sisältävää tekstiä. (#3334) (#437:n paluu)
 - Aktiivisen säätimen nimen tai arvon muutokset luetaan nyt Java-sovelluksissa automaattisesti sekä hyödynnetään myöhemmin kyseistä säädintä kyseltäessä. (#3119)
 - Rivit luetaan nyt oikein Scintilla-säätimissä automaattisen rivityksen ollessa käytössä. (#885)
+- Vain luku -listakohteiden nimi luetaan nyt oikein Mozilla-sovelluksissa, esim. liikuttaessa vuorovaikutustilassa twiiteissä twitter.com-sivulla. (#3327)
+- Microsoft Office 2013:n vahvistusvalintaikkunoiden sisältö luetaan nyt automaattisesti niiden tullessa näkyviin.
+- Suorituskyvyn parannuksia liikuttaessa tietyissä taulukoissa Microsoft Wordissa. (#3326)
+- NVDA:n taulukkonavigointikomennot (Ctrl+Alt+nuolet) toimivat paremmin sellaisissa Microsoft Word -taulukoissa, joissa solu jakaantuu usealle riville.
 
 
 = 2013.1.1 =
