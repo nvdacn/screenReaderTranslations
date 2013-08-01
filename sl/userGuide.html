@@ -62,7 +62,7 @@
     <LI><A HREF="#SystemCaret">5.3. Krmarjenje s Sistemsko Kazalko</A>
     <LI><A HREF="#toc33">5.4. Krmarjenje Predmetov</A>
     <LI><A HREF="#ReviewingText">5.5. Pregledovanje Besedila</A>
-    <LI><A HREF="#FlatReview">5.6. Nestrukturirani Pregled</A>
+    <LI><A HREF="#FlatReview">5.6. Nestrukturiran Pregled</A>
     <LI><A HREF="#toc36">5.7. Krmarjenje z Miško</A>
     </UL>
   <LI><A HREF="#toc37">6. Brskalniško Delovanje</A>
@@ -334,7 +334,7 @@ Torej akcije, ki se izvajajo normalno brez NVDA, ne bodo delovale.
 <P>
 Najbolj osnovna akcija, ki jo lahko izvedete z zaslonom na dotik, je naznanilo nadzora ali besedila na katerikoli točki zaslona.
 Če želite to narediti, postavite prst kamorkoli na zaslon.
-Lahko pa tudi obdržite prst na zaslonu in ga pomikate naokoli, da brebirate ostale možnosti nadzora ali besedilo , ki se nahaja pod prstom, ko se sprehajate nad njim.
+Lahko pa tudi obdržite prst na zaslonu in ga pomikate naokoli, da prebirate ostale možnosti nadzora ali besedilo , ki se nahaja pod prstom, ko se sprehajate nad njim.
 </P>
 
 <A NAME="toc23"></A>
@@ -436,7 +436,7 @@ Ko se meni dvigne, lahko uporabljate puščice za premikanje med elementi menija
 <TD>Začasno ustavi Govor</TD>
 <TD>shift</TD>
 <TD>shift</TD>
-<TD>none</TD>
+<TD>brez</TD>
 <TD>Takoj zzačasno zaustavi govorjenje. Ponovni pritisk bo sprožil pripovedovanje od mesta, kjer se je začasno ustavilo, če trenutna sinteza to podpira.</TD>
 </TR>
 <TR>
@@ -450,35 +450,35 @@ Ko se meni dvigne, lahko uporabljate puščice za premikanje med elementi menija
 <TD>Stikalo Delovanj Govora</TD>
 <TD>NVDA+s</TD>
 <TD>NVDA+s</TD>
-<TD>none</TD>
+<TD>brez</TD>
 <TD>Preklaplja med različnimi delovanji govora. To so govor, zvočni signali ali izključitev.</TD>
 </TR>
 <TR>
 <TD>Stikalo Delovanja Pomoči za Vnose</TD>
 <TD>NVDA+1</TD>
 <TD>NVDA+1</TD>
-<TD>none</TD>
+<TD>brez</TD>
 <TD>Pritisk katerekoli tipke v tem načinu delovanja bo sprožil poročanje o tem, katero tipko se je pritisnilo in opis kateregakoli NVDA ukaza, ki je povezan s tipko, ki ste jo pritisnili.</TD>
 </TR>
 <TR>
 <TD>Izhod iz NVDA</TD>
 <TD>NVDA+q</TD>
 <TD>NVDA+q</TD>
-<TD>none</TD>
+<TD>brez</TD>
 <TD>Zapre NVDA.</TD>
 </TR>
 <TR>
 <TD>Pusti naslednjo tipko skozi</TD>
 <TD>NVDA+f2</TD>
 <TD>NVDA+f2</TD>
-<TD>none</TD>
+<TD>brez</TD>
 <TD>Pove NVDA naj naslednji pritisk spusti skozi naravnost k aplikaciji, ki je sedaj odprta, čeprav se to običajno obravnava kot NVDA ukaz.</TD>
 </TR>
 <TR>
 <TD>Stikalo za vklop/izklop Delovanja Spanja Programa</TD>
 <TD>NVDA+shift+s</TD>
 <TD>NVDA+shift+z</TD>
-<TD>none</TD>
+<TD>brez</TD>
 <TD>Delovanje spanja onemogoči vse NVDA ukaze in podajanje sporočil v govoru ali brajici za sedanjo aplikacijo. To je zelo uporabno v aplikacijah, ki same oskrbijo govorne ali zmožnosti branja zaslona. Pritisnite ta ukaz znova, da onemogočite delovanje samostojnega glasu.</TD>
 </TR>
 </TABLE>
@@ -527,8 +527,57 @@ Predmet je samostojen element kot je del besedila, gumb, izbirnik, drsnik, sezna
 <A NAME="SystemFocus"></A>
 <H3>5.2. Krmarjenje s Sistemskim Žariščem</H3>
 
+<P>
+Sistemsko žarišče poznano tudi kot žarišče (fokus) je <A HREF="#Objects">predmet</A>, ki sprejema vnose iz tipkovnice.
+Na primer, če tipkate v vnosno polje za urejanje besedila, je to vnosno polje v žarišču.
+</P>
+<P>
+Najbolj običajne poti krmarjenja po oknih z NVDA je preprost premik sistemskega žarišča z uporabo standardnih tipkovničnih ukazov kot so tab in shift+ tab za premik naprej in nazaj med kontrolniki, pritisk tipke alt za postavitev v menijsko vrstico, puščice za premik v menijih in uporaba  alt+tab za premikanje med trenutnimi odprtimi aplikacijami. 
+Ko to izvajate, vam NVDA sporoča informacije o predmetu v žarišču, kot je njegovo ime, tip, vrednost, stanje, opis, bližnjična tipka in informacija o položaju.
+</P>
+<P>
+Tu je nekaj ukazov, ki so uporabni pri krmarjenju sistemskega žarišča:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Ime</TH>
+<TH>Običajna razporeditev</TH>
+<TH>razporeditev Prenosnik</TH>
+<TH>Opis</TH>
+</TR>
+<TR>
+<TD>Sporoči trenutni položaj žarišča</TD>
+<TD>NVDA+tab</TD>
+<TD>NVDA+tab</TD>
+<TD>naznani trenutni predmet ali kontrolnik, ki je v žarišču. Dvojni pritisk bo informacijo črkoval</TD>
+</TR>
+<TR>
+<TD>Sporoči naslov</TD>
+<TD>NVDA+t</TD>
+<TD>NVDA+t</TD>
+<TD>Poroča o naslovu trenutno aktivnega okna. Dvojni pritisk bo črkoval to informacijo. Trojni pritisk bo informacijo preslikal v odložišče</TD>
+</TR>
+<TR>
+<TD>Beri aktivno okno</TD>
+<TD>NVDA+b</TD>
+<TD>NVDA+b</TD>
+<TD>prebere kontrolnike v trenutno aktivnem oknu(uporabno pri obrazcih)</TD>
+</TR>
+<TR>
+<TD>Poročaj o Vrstici Stanja</TD>
+<TD>NVDA+end</TD>
+<TD>NVDA+shift+end</TD>
+<TD>Poroča o vrstici stanja, če jo NVDA najde. Ta ukaz tudi premakne predmet krmarjenja na ta položaj</TD>
+</TR>
+</TABLE>
+
 <A NAME="SystemCaret"></A>
 <H3>5.3. Krmarjenje s Sistemsko Kazalko</H3>
+
+<P>
+Ko je <A HREF="#Objects">predmet</A>, ki omogoča krmarjenje in/ali urejanje besedila, v <A HREF="#SystemFocus">žarišču</A>, 
+</P>
 
 <A NAME="toc33"></A>
 <H3>5.4. Krmarjenje Predmetov</H3>
@@ -537,7 +586,7 @@ Predmet je samostojen element kot je del besedila, gumb, izbirnik, drsnik, sezna
 <H3>5.5. Pregledovanje Besedila</H3>
 
 <A NAME="FlatReview"></A>
-<H3>5.6. Nestrukturirani Pregled</H3>
+<H3>5.6. Nestrukturiran Pregled</H3>
 
 <A NAME="toc36"></A>
 <H3>5.7. Krmarjenje z Miško</H3>
