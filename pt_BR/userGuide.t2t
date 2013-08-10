@@ -142,7 +142,10 @@ Se não ouvir nada disso, ou escutar um som de erro do Windows, ou um conjunto d
 Por favor acesse a Página do NVDA para saber como deve proceder. 
 Quando este leitor de telas iniciar pela primeira vez, ser-lhe-á apresentada uma caixa de diálogo que lhe fornece alguma informação básica sobre a tecla modificadora do NVDA e também sobre seu menu.
 (Por favor veja as seções seguintes sobre estes tópicos).
-A caixa de diálogo contém também duas caixas de seleção. A primeira permite-lhe controlar se o software utilizará o Caps Lock como uma de suas teclas modificadoras e a segunda permite configurar se este diálogo de boas vindas aparecerá sempre que o NVDA for iniciado.
+A caixa de diálogo contém também três caixas de seleção.
+A primeira permite-lhe controlar se o software utilizará o Caps Lock como uma de suas teclas modificadoras.
+A segunda especifica se o NVDA deve iniciar automaticamente após seu logon no Windows e está disponível apenas para cópias instaladas do NVDA.
+A terceira permite configurar se este diálogo de boas vindas aparecerá sempre que o NVDA for iniciado.
 
 ++ Sobre os Comandos De Teclado Do NVDA ++
 
@@ -508,6 +511,12 @@ O NVDA fornece seus próprios comandos adicionais para alguns aplicativos com vi
 | Selecionar os cabeçalhos das colunas | NVDA+shift+c | Pressionado uma vez, informa ao NVDA que esta é a linha que contém os cabeçalhos das colunas, os quais deverão ser anunciados automaticamente ao mover-se entre colunas abaixo dessa linha. Ao pressionar duas vezes, limpará configuração. |
 | Selecionar os cabeçalhos das linhas | NVDA+shift+r | Pressionando-se uma vez, informa ao NVDA que esta é a coluna que contém os cabeçalhos das linhas, os quais deverão ser anunciados  automaticamente ao mover-se entre linhas dentro desta coluna. Pressione duas vezes e limpará a configuração. |
 %kc:endInclude
+
+++ Microsoft PowerPoint ++
+%kc:beginInclude
+|| Nome | Tecla | Descrição |
+| Toggle speaker notes reading | control+shift+s | Estando num slide em execução, esse comando alternará entre as notas para o slide e o conteúdo do mesmo. Isso afeta somente o que o NVDA lê, não o que será mostrado na tela. |
++%kc:endInclude
 
 ++ foobar2000 ++
 
@@ -933,9 +942,12 @@ Esta opção permite definir se o conteúdo no modo de navegação deve posicion
 Essa caixa de seleção alterna a leitura automática das páginas depois que estas são carregadas no Modo de Navegação.
 Por padrão, essa opção está ativada.
 
-==== Anunciar Tabelas de Layout ====
-Quando se desmarca esta opção, o NVDA anuncia apenas as tabelas que contêm dados tabulares (o que indica que isso é uma tabela).
-Se a marcar, porém, o NVDA anunciará também tabelas usadas puramente para representação visual.
+==== Incluir Tabelas de Layout ====
+Essa opção afeta como o NVDA controla as tabelas usadas exclusivamente para propósitos de leiaute.
+Se ativada, este leitor as tratará como tabelas normais, anunciando-as baseado nas [Configurações de Formatação de Documentos #DocumentFormattingSettings] e localizando-as com os comandos de navegação rápida.
+Quando desativada, tais tabelas não serão anunciadas nem encontradas com a navegação rápida.
+Todavia, o conteúdo das tabelas continuará sendo incluído como texto normal.
+Por padrão, essa opção está desativada.
 
 ==== Configurar O Anúncio de Campos Tais Como Links E Títulos ====
 
