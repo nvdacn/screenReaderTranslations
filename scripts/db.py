@@ -11,12 +11,17 @@ class DB(dict):
         # if settings file is corrupt or doesnt exist, make sure we end up with an empty dict.
         self.fname = fname
         self.autoSave = autoSave
-        f = open(fname, 'r')
         try:
-            self.update(json.load(f))
-        except ValueError:
+            f = open(fname, 'r')
+        except IOError:
             pass
-        f.close()
+        else:
+            try:
+                self.update(json.load(f))
+            except ValueError:
+                raise
+            finally:
+                f.close()
 
     def __getitem__(self, key):
         try:
@@ -38,7 +43,8 @@ class DB(dict):
         ## prune keys that have no content.
         rkeys = []
         for key in self.keys():
-            if not self[key]: rkeys.append(key)
+            if not self[key]:
+                rkeys.append(key)
         for key in rkeys:
             del self[key]
 
@@ -56,18 +62,18 @@ if __name__ == "__main__" and len(sys.argv) >= 1:
     group.add_argument('-g', '--get', help='name of key which should be looked up.')
     group.add_argument('-d', '--delete', help='name of key which should be deleted.')
     args = parser.parse_args()
-    
+
     db = DB(args.file, autoSave=True)
     if args.get:
         print(db[args.get])
     elif args.set:
         k, v = args.set
-        if v == '-': # user is giving us the data on stdin
+        if v == '-':  # user is giving us the data on stdin
             db[k] = sys.stdin.readlines()
         else:
             db[k] = v
     elif args.delete:
-         try:
-             del db[args.delete]
-         except KeyError:
-             pass
+        try:
+            del db[args.delete]
+        except KeyError:
+            pass
