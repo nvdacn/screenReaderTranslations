@@ -331,8 +331,10 @@ Para navegar pelos objetos utilize as seguintes teclas de atalho:
 Nota: As teclas do bloco numérico requerem que o Num Lock esteja desativado para que possam desempenhar suas funções adequadamente. 
 
 ++ Revisando Texto ++[ReviewingText]
-O NVDA permite-lhe ler o conteúdo do atual [objeto de navegação #ObjectNavigation] (inclusive em [revisão plana #FlatReview]) por caracteres, palavras ou linhas.
+O NVDA permite-lhe ler o conteúdo da [tela #ScreenReview], do atual [documento #DocumentReview] ou do atual [objeto de navegação #ObjectNavigation] por caracteres, palavras ou linhas.
  Isto é muito útil no console do DOS do Windows e noutros locais onde há um [cursor do sistema #SystemCaret] limitado ou inexistente.
+Por exemplo, você pode usá-lo para revisar o texto de uma longa mensagem de informação contida num diálogo.
+
 Quando o cursor de exploração é movido, o cursor do Sistema não o acompanha, assim pode analisar o texto sem perder a posição de edição.
 No entanto, por padrão, quando se move o cursor do Sistema, o cursor de exploração o acompanha.
 Esta opção pode ser ativada ou desativada.
@@ -370,7 +372,34 @@ O esquema é ilustrado como se segue:
 | Palavra Anterior | Palavra Atual | Próxima Palavra |
 | Caractere Anterior | Caractere Atual | Próximo Caractere |
 
-++ A Revisão Plana ++[FlatReview]
+++ Modos de Exploração ++[ReviewModes]
+[Os comandos de revisão de texto #ReviewingText] do NVDA possibilitam revisar o conteúdo dentro do atual objeto de navegação, documento ou tela, dependendo do modo de exploração selecionado.
+Os modos de exploração vêm substituir o antigo conceito de revisão plana encontrado no NVDA.
+
+Os seguintes comandos alternam entre os modos de exploração.
+
+%kc:beginInclude
+|| Nome | Tecla de Desktop | Tecla de Laptop | Gesto de toque | Descrição |
+| Alternar para o modo de exploração seguinte | NVDA+7 do Teclado numérico | NVDA+pageUp | Varredura para cima com 2 dedos | Alterna para o modo de exploração disponível seguinte |
+| Alternar para o modo de exploração anterior | NVDA+1 do teclado numérico | NVDA+pageDown | Varredura para baixo com 2 dedos | Alterna para o modo de exploração disponível anterior |
+%kc:endInclude
+
++++ A exploração do Objeto +++[ObjectReview]
+Enquanto estiver no modo de exploração do objeto, você poderá revisar apenas o conteúdo do [objeto de navegação #ObjectNavigation] atual.
+Para objetos tais como campos de edição de texto ou outros controles de texto básicos, este será geralmente o conteúdo em texto do mesmo.
+Para outros objetos, este pode ser seu nome e/ou valor.
+
++++ Exploração do Documento +++[DocumentReview]
+When the [navigator object #ObjectNavigation] is within a browse mode document (e.g. web page) or other complex document (e.g. a Lotus Symphony document), it is possible to switch to the document review mode.
+The document review mode allows you to review the text of the entire document.
+
+When switching from object review to document review, the review cursor is placed in the document at the position of the navigator object.
+When moving around the document with review commands, the navigator object is automatically updated to the object found at the current review cursor position.
+
+Note that NVDA will switch to document review from object review automatically when moving around browse mode documents.
+
+
+++ A Exploração da Tela ++[ScreenReview]
 Enquanto geralmente você pode revisar o conteúdo de apenas um [objeto #Objects] individualmente, há alguns objetos nos quais é possível acessar o conteúdo dos objetos contidos neles.
 Documentos complexos oferecem-lhe a possibilidade de revisar seu conteúdo por completo, assim como nas janelas de aplicações   pode-se rever todo  o texto da tela tal como aparece visualmente.
  Dá-se a isso o nome de revisão plana.
@@ -385,13 +414,7 @@ Poderá também navegar diretamente para o objeto que abrange a posição atual 
 Note que o braille não acompanha a navegação de objetos e a revisão de texto por padrão, mas sim o [foco #SystemFocus] e o [cursor do sistema #SystemCaret].
  Caso queira que em lugar disso, o braille acompanhe a navegação de objetos e a revisão de texto, você deve [configurar o braille para ser vinculado a #BrailleTether] exploração.
 
-Os dois seguintes comandos são utilizados para alternar para e a partir da revisão plana:
-
-%kc:beginInclude
-|| Nome | Tecla de Desktop | Tecla de Laptop | Gesto de toque | Descrição |
-| Ativar a revisão plana | NVDA+7 do Teclado numérico | NVDA+pageUp | Varredura para cima com 2 dedos | Ativa a revisão plana, colocando-o na posição do objeto de navegação, permitindo que explore a tela (ou documento se estiver atualmente em algum) com os comandos de revisão de texto |
-| Mover para um objeto a partir da revisão plana | NVDA+1 do teclado numérico | NVDA+pageDown | Varredura para baixo com 2 dedos | Navega para o objeto representado pelo texto na atual posição do cursor de exploração dentro da revisão plana |
-%kc:endInclude
+Note que em alguns aplicativos mais recentes, o NVDA pode não ser capaz de acessar parte ou todo o texto exibido na tela, devido ao uso de novas tecnologias de dezenho de tela que são impossíveis de suportar até o momento.
 
 ++ Navegando com o Mouse ++
 Quando move o ponteiro do mouse, por padrão, o NVDA anuncia o texto sob a posição do ponteiro, enquanto se move por ele.
