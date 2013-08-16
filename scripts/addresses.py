@@ -5,7 +5,7 @@ from subprocess import PIPE, Popen
 addresses = {
     'default': {
         'lang': '',
-        'email': ['Mesar hameed <mesar.hameed@gmail.com>'], 
+        'email': ['Mesar hameed <mesar.hameed@gmail.com>'],
     },
     'am': {
         'lang':'Amharic',
@@ -15,7 +15,7 @@ addresses = {
         'lang':'Aragonese',
         'email': ['Jorge Perez <jorgtum@gmail.com>'],
     },
-    'ar': { 
+    'ar': {
         'lang':'Arabic',
         'email': ['Fatma Mehanna <fatma.mehanna@gmail.com>', 'Shaimaa Ibrahim <shamse1@gmail.com>', 'faraz <fawaz.ar94@gmail.com>'],
     },
@@ -54,10 +54,10 @@ addresses = {
     'fi': {
         'lang':'Finnish',
         'email': ['Jani Kinnunen <jani.kinnunen@wippies.fi>'],
-    }, 
+    },
     'fa': {
         'lang':'Farsi',
-        'email': ['hamid rezaey <hamidrehzaey@gmail.com>'],
+        'email': ['hamid rezaey <hamidrehzaey@gmail.com>', 'Ali Aslani <aslani.ali@gmail.com>'],
     },
     'fr': {
         'lang':'French',
@@ -121,7 +121,7 @@ addresses = {
     },
     'pl': {
         'lang':'Polish',
-        'email': ['Hubert Meyer <killer@tyflonet.com>'],
+        'email': ['Konrad <FOX20PL@aol.com>', 'Hubert Meyer <killer@tyflonet.com>'],
     },
     'pt_BR': {
         'lang': 'Brazilian Portuguese',
@@ -196,7 +196,7 @@ if __name__ == "__main__" and len(sys.argv) >= 2:
         sys.exit()
     # we were called from the webhook with lang, subject, body, so send email.
     if len(sys.argv) == 4:
-        email(addresses[lang]['email'], sys.argv[2], sys.argv[3])  
+        email(addresses[lang]['email'], sys.argv[2], sys.argv[3])
     # we were called by another script, with a lang code, spit out email addresses suitable for a commit message.
     elif len(sys.argv) == 2:
         print " \\\n".join([ "--author='%s'" %x for x in addresses[lang]['email']])
