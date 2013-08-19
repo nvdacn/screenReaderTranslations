@@ -298,7 +298,7 @@ Nesses casos, você pode usar a navegação de objetos.
 
 A navegação de objetos permite-lhe mover-se entre objetos individuais e obter informações sobre eles.
 Quando se move para um objeto, o NVDA o apresenta, de forma semelhante à maneira como ele dá informação do foco.
-Para uma forma de rever todo o texto tal como aparece na tela, você pode em lugar disso usar a [revisão plana #FlatReview].
+Para uma forma de rever todo o texto tal como aparece na tela, você pode em lugar disso usar a [exploração de tela #ScreenReview].
 
 Em vez de ter que se deslocar para trás e para frente entre todos os objetos no sistema, os objetos são organizados hierarquicamente.
 Isto significa que alguns objetos contêm outros e você deverá mover-se para dentro deles para acessar os objetos filhos.
@@ -307,7 +307,7 @@ Caso tenha movido para um iten da lista, pode mover-se para o objeto pai a fim d
 Da mesma forma, se encontrar uma barra de ferramentas, deve mover-se para dentro da mesma para acessar seus controles. 
 
 O objeto que atualmente está sendo revisado chama-se objeto de navegação.
-Uma vez que tenha navegado para um objeto, pode revisá-lo com os comandos de [revisão de texto #ReviewingText].
+Uma vez que tenha navegado para um objeto, pode revisá-lo com os comandos de [revisão de texto #ReviewingText], caso esteja no modo de [exploração de objeto #ObjectReview].
 
 Por padrão, a navegação de objetos acompanha o foco do sistema, embora esse comportamento possa ser ativado e desativado. 
 
@@ -384,7 +384,7 @@ Os seguintes comandos alternam entre os modos de exploração.
 | Alternar para o modo de exploração anterior | NVDA+1 do teclado numérico | NVDA+pageDown | Varredura para baixo com 2 dedos | Alterna para o modo de exploração disponível anterior |
 %kc:endInclude
 
-+++ A exploração do Objeto +++[ObjectReview]
++++ Exploração de Objeto +++[ObjectReview]
 Enquanto estiver no modo de exploração do objeto, você poderá revisar apenas o conteúdo do [objeto de navegação #ObjectNavigation] atual.
 Para objetos tais como campos de edição de texto ou outros controles de texto básicos, este será geralmente o conteúdo em texto do mesmo.
 Para outros objetos, este pode ser seu nome e/ou valor.
@@ -398,20 +398,13 @@ Ao mover-se pelo documento com os comandos de revisão, a navegação de objetos
 
 Note que o NVDA alternará automaticamente do modo de exploração do objeto para o modo de exploração do documento quando você mover para documentos do modo de navegação.
 
-++ A Exploração da Tela ++[ScreenReview]
-Enquanto geralmente você pode revisar o conteúdo de apenas um [objeto #Objects] individualmente, há alguns objetos nos quais é possível acessar o conteúdo dos objetos contidos neles.
-Documentos complexos oferecem-lhe a possibilidade de revisar seu conteúdo por completo, assim como nas janelas de aplicações   pode-se rever todo  o texto da tela tal como aparece visualmente.
- Dá-se a isso o nome de revisão plana.
+++ Exploração de Tela ++[ScreenReview]
+O modo de exploração de tela lhe permite revisar todo  o texto da tela tal como aparece visualmente dentro da aplicação atual.
+
 É algo semelhante à revisão de tela ou à funcionalidade de cursor do mouse existente  em muitos outros leitores de telas.
 
-Ao ativar a revisão plana, você é posicionado na localização do atual [objeto de navegação #ObjectNavegation].
-Se não estava usando a navegação de objetos, então esse será o objeto que tem o [foco #SystemFocus].
-Por exemplo, se o objeto de navegação for um botão, você normalmente será posicionado sobre o texto do botão dentro da revisão plana.
-Você poderá, então, rever o texto com os comandos de [revisão de texto #ReviewingText].
-Poderá também navegar diretamente para o objeto que abrange a posição atual do cursor de revisão, permitindo que a partir daí use a [navegação de objetos #ObjectNavigation.
-
-Note que o braille não acompanha a navegação de objetos e a revisão de texto por padrão, mas sim o [foco #SystemFocus] e o [cursor do sistema #SystemCaret].
- Caso queira que em lugar disso, o braille acompanhe a navegação de objetos e a revisão de texto, você deve [configurar o braille para ser vinculado a #BrailleTether] exploração.
+Ao alternar para a exploração de tela, o cursor de exploração é colocado no documento na posição do [objeto de navegação #ObjectNavigation].
+Ao mover-se pela tela com os comandos de revisão, a navegação de objetos é automaticamente atualizada para o objeto que se encontra na posição atual do cursor de exploração.
 
 Note que em alguns aplicativos mais recentes, o NVDA pode não ser capaz de acessar parte ou todo o texto exibido na tela, devido ao uso de novas tecnologias de dezenho de tela que são impossíveis de suportar até o momento.
 
