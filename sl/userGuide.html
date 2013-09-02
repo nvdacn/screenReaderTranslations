@@ -82,12 +82,16 @@
       <LI><A HREF="#toc47">7.4.2. Nastavitve Tipkovnice (NVDA+control+k)</A>
       <LI><A HREF="#MouseSettings">7.4.3. Nastavitve Miške (NVDA+control+m)</A>
       </UL>
-    <LI><A HREF="#toc49">7.5. Prikazovalnik Govora</A>
-    <LI><A HREF="#toc50">7.6. Upravitelj Dodatkov</A>
-    <LI><A HREF="#toc51">7.7. Python Konzola</A>
-    <LI><A HREF="#toc52">7.8. Ponovno Naloži vtičnike</A>
     </UL>
-  <LI><A HREF="#SupportedSpeechSynths">8. Podprte Govorne Sinteze</A>
+  <LI><A HREF="#toc49">8. Dodatna Orodja</A>
+    <UL>
+    <LI><A HREF="#toc50">8.1. Pregledovalnik Dnevnika</A>
+    <LI><A HREF="#toc51">8.2. Prikazovalnik Govora</A>
+    <LI><A HREF="#toc52">8.3. Upravitelj Dodatkov</A>
+    <LI><A HREF="#toc53">8.4. Python Konzola</A>
+    <LI><A HREF="#toc54">8.5. Ponovno Naloži vtičnike</A>
+    </UL>
+  <LI><A HREF="#SupportedSpeechSynths">9. Podprte Govorne Sinteze</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -600,8 +604,75 @@ Tu je nekaj ukazov, ki so uporabni pri krmarjenju sistemskega žarišča:
 <H3>5.3. Krmarjenje s Sistemsko Kazalko</H3>
 
 <P>
-Ko je <A HREF="#Objects">predmet</A>, ki omogoča krmarjenje in/ali urejanje besedila, v <A HREF="#SystemFocus">žarišču</A>, 
+Ko je <A HREF="#Objects">predmet</A>, ki omogoča krmarjenje in/ali urejanje besedila, v <A HREF="#SystemFocus">žarišču</A>, se lahko premikate po besedilu z uporabo sistemske kazalke poznano tudi kot urejevalno utripalko.
 </P>
+<P>
+Ko je žarišče na predmetu, ki vsebuje sistemsko kazalko, lahko uporabljate smerne tipke, stran gor, stran dol, (pgup/pgdn), home, end in druge možnosti za pomikanje po besedilu.
+Lahko tudi spreminjate besedilo, če kontrolnik podpira urejanje.
+NVDA bo sporočila, ko se boste premikali po besedilu znak po znak, besedo po besedo ali vrstico po vrstico. Sporočeno bo tudi, če je besedilo označeno ali ne.
+</P>
+<P>
+NVDA vas oskrbuje z naslednjimi ukazi glede na sistemsko kazalko:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Ime</TH>
+<TH>Običajna razporeditev</TH>
+<TH>razporeditev Prenosnik</TH>
+<TH>Opis</TH>
+</TR>
+<TR>
+<TD>Izgovori vse</TD>
+<TD>NVDA+downArrow</TD>
+<TD>NVDA+a</TD>
+<TD>Začne brati od trenutnega položaja sistemske kazalke, se premikajoč tako kot sistemska kazalka</TD>
+</TR>
+<TR>
+<TD>Preberi trenutno vrstico</TD>
+<TD>NVDA+upArrow</TD>
+<TD>NVDA+l</TD>
+<TD>Prebere vrstico, kjer je trenutno postavljena sistemska kazalka. Dvojni pritisk vrstico črkuje.</TD>
+</TR>
+<TR>
+<TD>Preberi trenutno besedilno označbo</TD>
+<TD>NVDA+Shift+upArrow</TD>
+<TD>NVDA+shift+s</TD>
+<TD>Prebere vsako besedilo, ki je trenutno označeno</TD>
+</TR>
+</TABLE>
+
+<P>
+Ko se nahajate v tabeli, so na voljo tudi sledeči ukazi:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Ime</TH>
+<TH>Tipka</TH>
+<TH>Opis</TH>
+</TR>
+<TR>
+<TD>Premik v predhodni stolpec</TD>
+<TD>control+alt+leftArrow</TD>
+<TD>Premakne sistemsko kazalko v predhodni stolpec (vrstica ostaja ista)</TD>
+</TR>
+<TR>
+<TD>Premik v naslednji stolpec</TD>
+<TD>control+alt+rightArrow</TD>
+<TD>Premakne sistemsko kazalko v naslednji stolpec (vrstica ostaja ista)</TD>
+</TR>
+<TR>
+<TD>Premik v predhodno vrstico</TD>
+<TD>control+alt+upArrow</TD>
+<TD>Premakne sistemsko kazalko v prejšnjo vrstico (stolpec ostaja isti)</TD>
+</TR>
+<TR>
+<TD>Premik v naslednjo vrstico</TD>
+<TD>control+alt+downArrow</TD>
+<TD>Premakne sistemsko kazalko v naslednjo vrstico (stolpec ostaja isti)</TD>
+</TR>
+</TABLE>
 
 <A NAME="toc33"></A>
 <H3>5.4. Krmarjenje Predmetov</H3>
@@ -789,7 +860,7 @@ Nastavitev tega polja na 0 onemogoči prikaz teh sporočil.
 </P>
 
 <A NAME="BrailleTether"></A>
-<H5>Omejitev Braja na</H5>
+<H5>Braj se Omeji na</H5>
 
 <P>
 Tipka: NVDA+control+t
@@ -812,32 +883,32 @@ Ta možnost je privzeto onemogočena.
 <H4>7.4.2. Nastavitve Tipkovnice (NVDA+control+k)</H4>
 
 <P>
-This dialog box is found in the Preferences menu, under "Keyboard settings...".
-It contains the following options:
+To pogovorno okno se nahaja v nastavitvah pod "Nastavitve tipkovnice...".
+Vsebuje naslednje možnosti:
 </P>
 
-<H5>Keyboard layout</H5>
+<H5>Razporeditev tipk</H5>
 
 <P>
-This combo box lets you choose what type of keyboard layout NVDA should use. Currently the two that come with NVDA are Desktop and Laptop.
+Na tem spustnem seznamu se nahajajo razporeditve tipk, po katerih mora delati NVDA. Izbirate lahko med večimi razporeditvami. Trenutno sta na voljo razporeditvi "Običajna" in Prenosnik.
 </P>
 
-<H5>Use capslock as an NVDA modifier key</H5>
+<H5>Uporabljaj capslock kot NVDA prikrojevalno tipko</H5>
 
 <P>
-If this checkbox is checked, capslock can be used as an NVDA modifier key.
+Če je ta izbirnik izbran, se lahko capslock uporablja kot NVDA prikrojevalna tipka.
 </P>
 
-<H5>Use extended insert as an NVDA modifier key</H5>
+<H5>Uporabljaj glavni insert kot prikrojevalno tipko NVDA</H5>
 
 <P>
-If this checkbox is checked, the extended insert key (usually found above the arrow keys, near home and end) can be used as an NVDA modifier key.
+Če je ta izbirnik izbran, je glavni insert (tipka, ki se nahaja nad puščicami, običajno zraven tipk  home in end) v službi kot NVDA prikrojevalna tipka.
 </P>
 
-<H5>Use numpad insert as an NVDA modifier key</H5>
+<H5>Uporabljaj številski insert kot prikrojevalno tipko NVDA</H5>
 
 <P>
-If this checkbox is checked, the insert key on the number pad can be used as an NVDA modifier key.
+Če je ta izbirnik izbran, se lahko insert na številskem delu tipkovnice uporablja kot NVDA prikrojevalna tipka.
 </P>
 
 <H5>Izgovori Natipkane Znake</H5>
@@ -846,7 +917,7 @@ If this checkbox is checked, the insert key on the number pad can be used as an 
 Tipka: NVDA+2
 </P>
 <P>
-When enabled, NVDA will announce all characters you type on the keyboard.
+Ko je ta zmožnost omogočena, bo NVDA naznanila vse znake, ki jih boste tipkali na tipkovnici.
 </P>
 
 <H5>Izgovori Natipkane Besede</H5>
@@ -855,43 +926,57 @@ When enabled, NVDA will announce all characters you type on the keyboard.
 Tipka: NVDA+3
 </P>
 <P>
-When enabled, NVDA will announce all words you type on the keyboard.
+Ko je ta zmožnost omogočena, bo NVDA naznanila vse besede, ki jih boste tipkali na tipkovnici.
 </P>
 
-<H5>Speech interrupt for typed characters</H5>
+<H5>Prekini govor ob pritisku znakov</H5>
 
 <P>
-If on, this option will cause speech to be interrupted each time a character is typed. This is on by default.
+Če je omogočeno, ta funkcionalnost povzroči prekinitev govora ob vsakem pritisku na znak. Privzeto je ta zmožnost vključena.
 </P>
 
-<H5>Speech interrupt for Enter key</H5>
+<H5>Prekini govor ob pritisku tipke Enter</H5>
 
 <P>
-If on, this option will cause speech to be interrupted each time the Enter key is pressed. This is on by default.
+Če je ta funkcionalnost vključena, se govor zaustavi, vsakič, ko pritisnete tipko Enter. Ta zmožnost je privzeto vključena.
 </P>
 
-<H5>Beep if Typing Lowercase Letters when Caps Lock is On</H5>
+<H5>Oddaj Zvočni Signal, ko se Pišejo Male Črke  in je Capslock Vključen</H5>
 
 <P>
-When enabled, a warning beep will be heard if a letter is typed with the shift key while caps lock is on.
-Generally, typing shifted letters with caps lock is unintentional and is usually due to not realising that caps lock is enabled.
-Therefore, it can be quite helpful to be warned about this.
+Če je to omogočeno, se bo zaslišal opozorilni zvočni signal, ko boste tipkali s Shiftom, ko bo Capslock vključen.
+V splošnem je tipkanje besed z veliko začetnico, ko je Capslock vključen, nenamerno in se običajno zgodi zaradi tega, ker se spregleda, da je Capslock vključen.
+Tako je velikokrat v pomoč, da smo glede tega opozorjeni.
 </P>
 
-<H5>Izgovarjaj Tipke za Ukaze</H5>
+<H5>Izgovarjaj Tipke ob Prožitvi Ukazov</H5>
 
 <P>
 Tipka: NVDA+4
 </P>
 <P>
-When enabled, NVDA will announce all non-character keys you type on the keyboard. This includes key combinations such as control plus another letter.
+Ko je to omogočeno, NVDA naznani vse pritiske na tipkovnici, ki niso nujno povezani s pisanjem črk. To vključuje pritiske kombinacij tipk na primer Control+črka.
 </P>
 
 <A NAME="MouseSettings"></A>
 <H4>7.4.3. Nastavitve Miške (NVDA+control+m)</H4>
 
 <A NAME="toc49"></A>
-<H3>7.5. Prikazovalnik Govora</H3>
+<H2>8. Dodatna Orodja</H2>
+
+<A NAME="toc50"></A>
+<H3>8.1. Pregledovalnik Dnevnika</H3>
+
+<P>
+Pregledovalnik dnevnika, ki se nahaja v Orodjih v meniju NVDA, vam omogoča ogled vseh zabeleženih dogodkov v dnevnik od zadnjega zagona NVDA pa do trenutka, ko ste začeli pregledovati dnevnik.
+</P>
+<P>
+Poleg branja vsebine, lahko kopijo dnevnika lahko tudi shranite ali osvežite dnevnik, tako da vam prikaže zadnje vnose od tedaj, ko ste dnevnik odprli.
+Ukazi so na voljo v meniju Pregledovalnika dnevnika.
+</P>
+
+<A NAME="toc51"></A>
+<H3>8.2. Prikazovalnik Govora</H3>
 
 <P>
 Za videče razvijalce ali za tiste, ki predstavljajo NVDA videči publiki, je na voljo plavajoče okno, ki vam omogoča spremljanje vsega besedila, ki ga NVDA trenutno izgovarja.
@@ -905,8 +990,8 @@ Ko je prikazovalnik govora omogočen, se stalno posodablja, da vam pokaže besed
 Kakorkoli, če kliknete ali postavite žarišče znotraj prikazovalnika, bo NVDA začasno prenehala posodabljati besedilo, tako da ga boste lažje izbrali ali preslikali.
 </P>
 
-<A NAME="toc50"></A>
-<H3>7.6. Upravitelj Dodatkov</H3>
+<A NAME="toc52"></A>
+<H3>8.3. Upravitelj Dodatkov</H3>
 
 <P>
 Upravitelj dodatkov dostopen preko izbire Orodij v meniju NVDA vam omogoča namestitev in odstranitev paketov z dodatki za NVDA.
@@ -916,23 +1001,23 @@ Te dodatke je oskrbela skupnost in vsebujejo prilagojeno kodo, ki lahko doda ali
 Upravitelj dodatkov vsebuje seznam, ki prikazuje vse dodatke trenutno nameščene v vaši NVDA uporabniški konfiguraciji.
 </P>
 
-<A NAME="toc51"></A>
-<H3>7.7. Python Konzola</H3>
+<A NAME="toc53"></A>
+<H3>8.4. Python Konzola</H3>
 
 <P>
 NVDA Python konzola, ki se nahaja v Orodjih menija NVDA, je orodje za razvijalce, ki je uporabno za razhroščevanje, splošno inšpekcijo NVDA notranjosti ali inšpekcijo hierarhije dostopnosti v programu.
 Za več informacij, prosimo, glejte Vodič za Razvijalce dostopen na <A HREF="http://community.nvda-project.org/wiki/Development">odseku za razvijalce na NVDA spletnem mestu</A>.
 </P>
 
-<A NAME="toc52"></A>
-<H3>7.8. Ponovno Naloži vtičnike</H3>
+<A NAME="toc54"></A>
+<H3>8.5. Ponovno Naloži vtičnike</H3>
 
 <P>
 Ta element, ko ga sprožite, ponovno naloži aplikacijske module in globalne vtičnike brez potrebe po ponovnem zagonu NVDA, kar je lahko uporabno za razvijalce.
 </P>
 
 <A NAME="SupportedSpeechSynths"></A>
-<H2>8. Podprte Govorne Sinteze</H2>
+<H2>9. Podprte Govorne Sinteze</H2>
 
 <!-- html code generated by txt2tags 2.6 (http://txt2tags.org) -->
 <!-- cmdline: txt2tags -q userGuide.t2t -->
