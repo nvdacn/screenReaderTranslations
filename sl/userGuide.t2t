@@ -20,7 +20,7 @@ Glavni poudarki so:
 - Vgrajena govorna sinteza, ki podpira več kot 43 jezikov
 - Poročanje o postavitvi besedila, kjer je to mogoče; na primer velikost in ime pisave, slogovne in črkovne nepravilnosti
 - Samodejno obvestilo o besedilu pod miško in zvočna indikacija o položaju miške, če to želite
-- Podpora za veliko brajevih vrstic vključno s podporo vnosa računalniške brajice za vrstice, ki vsebujejo brajevo tipkovnico
+- Podpora za precejšnje število brajevih vrstic vključno s podporo vnosa računalniške brajice za vrstice, ki vsebujejo brajevo tipkovnico
 - Možno uporabljati preko USB ključka ali drugega prenosljivega medija brez namestitve v računalnik
 - Govorna podpora ob namestitvi v sistem
 - Prevedeno v 43 jezikov
@@ -328,9 +328,9 @@ Za pomik po predmetih, uporabite naslednje ukaze:
 | Premakni se na predhodni predmet | NVDA+številski del4 | NVDA+shift+leftArrow | švig levo (delovanje predmeta) | Premik pred trenuten predmet krmarjenja |
 | Premakni se na naslednji predmet | NVDA+številski del6 | NVDA+shift+rightArrow | švig desno (delovanje predmeta) | Premik na predmet za  trenutnim predmetom krmarjenja |
 | Premakni se na prvi predmet z vsebino | NVDA+številski del2 | NVDA+shift+downArrow | švig dol (delovanje predmeta) | Premik na prvi predmet, ki je del vsebine trenutnega predmeta krmarjenja |
-| Premakni se na predmet v žarišču | NVDA+številski delMinus | NVDA+backspace | brez | Premik na predmet, ki vsebuje trenutno sistemsko žarišče ter postavi pregledno utripalko na položaj sistemske kazalke, če se prikazuje |
+| Premakni se na predmet v žarišču | NVDA+številski delMinus | NVDA+vračalka | brez | Premik na predmet, ki vsebuje trenutno sistemsko žarišče ter postavi pregledno utripalko na položaj sistemske kazalke, če se prikazuje |
 | Sproži trenutni predmet krmarjenja | NVDA+številski delEnter | NVDA+enter | dvojni tap | Sproži trenuten predmet krmarjenja (podobno kot pri klikih z miško ali pritisku pritisku preslednice, ko vsebuje sistemsko žarišče) |
-| Premakni Sistemsko žarišče ali kazalko na trenuten položaj pregleda | NVDA+shift+številski delMinus | NVDA+shift+backspace | brez | enojni pritisk Premakne Sistemsko žarišče na trenutni predmet krmarjenja, dvojni pritisk premakne sistemsko kazalko na položaj pregledne utripalke |
+| Premakni Sistemsko žarišče ali kazalko na trenuten položaj pregleda | NVDA+shift+številski delMinus | NVDA+shift+vračalka | brez | enojni pritisk Premakne Sistemsko žarišče na trenutni predmet krmarjenja, dvojni pritisk premakne sistemsko kazalko na položaj pregledne utripalke |
 | Sporoči dimenzijo predmeta krmarjenja | NVDA+številski delDelete | NVDA+delete | brez | Sporoča dimenzije trenutnega predmeta krmarjenja, ki jih zaseda na zaslonu v odstotkih, (vključno z razdaljo od levega in zgornjega roba zaslona ter njegovo višino in širino) |
 %kc:endInclude
 
@@ -426,87 +426,87 @@ Te dodatne značilnosti NVDA so privzeto izključene.
 %kc:endInclude
 
 + Brskalniško Delovanje +
+Kompleksne dokumente samo za branje, kot so spletne strani, v NVDA obravnavamo s pomočjo Brskalniškega delovanja.
+To vključuje dokumente v Mozilli Firefox, Microsoftovem Internet Explorerju, Google Chrome-u, Adobe Reader-ju in Adobe Flash-u.
 
+V brskalniškem delovanju je vsebina dokumenta na voljo v ravninski predstavitvi, tako da lahko uporabljate tipke za krmarjenje z utripalkopodobno, kot če bi bili v navadnem besedilnem dokumentu.
+Vsi NVDA ukazi za [sistemsko kazalko #SystemCaret] bodo delovali v tem delovanju; npr. izgovori vse, sporoči oblikovanje, ukazi za pomikanje po tabeli, in drugi.
+Informacija o tem, ali je besedilo povezava, naslov ali drugo se poda zraven ustreznega besedila, ko se pomikate preko njega.
 
+Včasih bo potrebno s kontrolniki v dokumentih neposredno upravljati.
+Na primer, to bo potrebno storiti v besedilnih poljih, kjer je možno urejati besedilo in seznamih. Tako lahko tipkate besedilo in uporabljate tipke za delo z utripalko, da lahko delate s tem kontrolnikom.
+To storite s preklopom v delovanje žarišča, kjer se več ali manj vse tipke pošljejo neposredno na kontrolnik.
+Ko ste v brskalniškem delovanju, NVDA privzeto samodejno preklopi v delovanje žarišča, če se premaknete na ali pa kliknete ustrezen kontrolnik, ki zahteva tako obravnavo.
+Enako velja tudi za kontrolnike, ki ne potrebujejo delovanja žarišča, kar pomeni, da bo NVDA samodejno preklopila v brskalniško delovanje, ko se boste premaknili na tak kontrolnik.
+Delovanje žarišča na kontrolnikih, ki tako delovanje potrebujejo, vključite lahko tudi s pritiskom preslednice ali tipke Enter.
+Pritisk tipke Escape bo preklopil nazaj v brskalniško delovanje.
+Vedno lahko vsilite delovanje žarišča, tako bo na voljo in učinkoval dokler ga ne izključite.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+%kc:beginInclude
+|| Ime | Tipka | Opis |
+| Stikalo za preklop med brskalniškim delovanjem in delovanjem žarišča | NVDA+preslednica | Preklaplja med brskalniškim delovanjem in delovanjem žarišča |
+| Izhod iz delovanja žarišča | escape | Preklopi nazaj v brskalniško delovanje, če se je prej samodejno vklopilo delovanje žarišča |
+| Osveži dokument v brskalniškem delovanju | NVDA+f5 | Ponovno naloži vsebino trenutnega dokumenta (uporabno, ko izgleda, da se del vsebine dokumenta ne prikazuje) |
+| Najdi | NVDA+control+f | Dvigne pogovorno okno v katerem lahko natipkate besedilo, ki ga želite najti v dokumentu |
+| Najdi naslednje | NVDA+f3 | Najde naslednji kos besedila v dokumentu, ki ste ga že iskali |
+| Najdi predhodno | NVDA+shift+f3 | Najde predhodni kos besedila v dokumentu, ki ste ga že iskali |
+| odpri daljši opis | NVDA+d | Odpre novo okno, ki vsebuje daljši opis elementa na katerem ste, če ga vsebuje. | 
+%kc:endInclude
 
 
 ++ Enočrkovno Krmarjenje ++
+Ko ste v brskalniškem delovanju, vas lahko NVDA oskrbi za hitrejše krmarjenje z enoznakovnimi ukazi za preskoke na različna polja v dokumentu.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+%kc:beginInclude
+Sledeče tipke samostojno preskakujejo na naslednji mogoč element, medtem, ko z dodatkom tipke Shift pritisk teh tipk povzroči preskok na predhodni mogoč element:
+- h: naslov
+- l: seznam
+- i: element seznama
+- t: tabela
+- k: povezava
+- n: besedilo brez Povezave
+- f: polje z obrazcem
+- u: še neobiskana povezava
+- v: že obiskana povezava
+- e: polje, kjer je možno urejati (besedilo in drugo)
+- b: gumb
+- x: izbirnik
+- c: spustni seznam
+- r: radio gumb
+- q: citatni blok (citat
+- s: ločnica
+- m: okvir
+- g: grafika
+- d: mejnik
+- o: vdelan predmet
+- 1 to 6: naslovi od 1 do 6 (vsak zase)
+-
+Za premik na začetek ali konec vsebinskih elementov, kot so seznami in tabele:
+|| Ime | Tipka | Opis |
+| Pomik na začetek vsebine | shift+comma | Pomakne se na začetek vsebine (tabela, seznam in drugo) z ozirom na to, kje je trenutni položaj kazalke |
+| Pomik na konec vsebine | comma | Premakne se na konec vsebine (seznam, tabela, in drugo.) z ozirom na to, kje je trenutni položaj kazalke |
+%kc:endInclude
 
 ++ Seznam Elementov ++
-
-
-
-
-
-
-
-
+Seznam elementov vam oskrbuje dostop do seznama recimo povezav, naslovov ali mejnikov v dokumentu.
+Radio gumbi vam omogočajo preklapljanje med temi tremi tipi informacij.
+Pogovorno okno je opremljeno tudi s poljem za urejanje, kar vam omogoča filtracijo elementov v seznamu, da lažje najdete željen element na strani.
+Ko enkrat najdete pravi element, lahko izbirate med gumboma v pogovornem oknu, s katerima se premaknete na izbran element ali pa ga sprožite, odvisno od izbire gumba.
+%kc:beginInclude
+|| Ime | Tipka | Opis |
+| seznam elementov v brskalniškem delovanju | NVDA+f7 | V ospredje postavi Seznam elementov, ki vsebuje povezave, naslove in mejnike trenutnega dokumenta |
+%kc:endInclude
 
 ++ Vdelani Predmeti ++
-
-
-
-
-
-
-
-
-
+Strani lahko vključujejo obogateno vsebino z uporabo tehnologij, kot sta Adobe Flash ali Sun Java, tako v aplikacijah kot v pogovornih oknih.
+Kjerkoli se z njimi srečate v brskalniškem delovanju, bo NVDA sporočila "vdelan predmet", oziroma "program" ali "pogovorno okno"
+Za interakcijo z njimi, nad njimi pritisnete Enter.
+Če je predmet dostopen (ga je možno upravljati tudi z bralcem zaslona), lahko zaookrožite po njem in z njim delate tako kot v vsaki drugi aplikaciji.
+Za vrnitev na stran, ki vsebuje ta predmet, je na voljo naslednji ukaz:
+%kc:beginInclude
+|| Ime | Tipka | Opis |
+| Pomik v dokument z brskalniškim delovanjem | NVDA+control+preslednica | Premakne žarišče iz predmeta v dokument, ki ga vsebuje |
+%kc:endInclude
 
 + Posebni NVDA Ukazi za Programe +
 
@@ -533,28 +533,28 @@ Te dodatne značilnosti NVDA so privzeto izključene.
 Opozorilo: Bližnjica poročaj o preostanku časa dela samo s privzetim oblikovanjem niza za foobar statusno vrstico.
 
 ++ Miranda IM ++
+%kc:beginInclude
+|| Ime | Tipka | Opis |
+| Sporoči zadnje sporočilo | NVDA+control+1-4 | Posreduje eno od zadnjih sporočil, odvisno od tega, katero številko pritisnete; npr. NVDA+control+2 prebere predzadnje sporočilo. |
+%kc:endInclude
 
+++ Poedit ++
+%kc:beginInclude
+|| Ime | Tipka | Opis |
+| Poročaj o vsebini okna z opombami | control+shift+c | Poroča o kateremkoli komentarju v oknu z opombami. |
+| Poročaj o vsebini okna s samodejnimi opombami | control+shift+a | Poroča o vsaki opombi v oknu s samodejnimi opombami. |
+%kc:endInclude
 
++ Nastavljanje NVDA +
 
+++ Nastavitve ++
+%kc:settingsSection: || Ime | Običajna razporeditev | razporeditev Prenosnik | Opis |
+Večino nastavitev v NVDA lahko spreminjate skozi pogovorna okna, do katerih dostopate preko Nastavitve "podmeni" menija NVDA.
+V vsakem pogovornem oknu za nastavitve pritisnite gumb V redu, da uveljavite spremembe, ki ste jih naredili.
+Za razveljavitev ali preklic narejenih sprememb pritisnite gumb Prekliči ali tipko Escape.
+Nekaj nastavitev lahko spreminjate preko bližnjičnih tipk. Ustrezne sledijo v sledečih razdelkih.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
++++ Splošne Nastavitve +++
 
 
 
