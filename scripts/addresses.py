@@ -71,6 +71,10 @@ addresses = {
         'lang': 'Galician',
         'email': ['Juan C. buno <quetzatl@eresmas.net>'],
     },
+    'gu': {
+        'lang': 'Gujarati',
+        'email': ['Ali Luhar <aliluhar08@gmail.com>', 'him Prasad Gautam <drishtibachak@gmail.com>'],
+    },
     'hi': {
         'lang': 'Hindi',
         'email': ['dipendra.lists@gmail.com', 'ayeshameshaq@hotmail.com'],
