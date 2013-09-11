@@ -103,6 +103,10 @@ addresses = {
         'lang':'Japanese',
         'email': ['Takuya Nishimoto <nishimotz@gmail.com>'],
     },
+    'ka': {
+        'lang': 'Georgian',
+        'email': ['Beqa Gozalishvili <beqaprogger@gmail.com>'],
+    },
     'ko': {
         'lang':'Korean',
         'email': ['Joseph Lee <joseph.lee22590@gmail.com>', 'Chang-Hoan Jang <462356@gmail.com>'],
