@@ -129,7 +129,7 @@ addresses = {
     },
     'pl': {
         'lang':'Polish',
-        'email': ['Konrad <FOX20PL@aol.com>', 'Hubert Meyer <killer@tyflonet.com>'],
+        'email': ['Konrad <FOX20PL@aol.com>', 'Hubert Meyer <killer@tyflonet.com>', 'Grzegorz Zlotowicz <grzezlo@wp.pl>'],
     },
     'pt_BR': {
         'lang': 'Brazilian Portuguese',
