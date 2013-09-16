@@ -97,7 +97,7 @@ addresses = {
     },
     'it': {
         'lang':'Italian',
-        'email': ['Simone Dal Maso <simone.dalmaso@juvox.it>'],
+        'email': ['Simone Dal Maso <simone.dalmaso@gmail.com>'],
     },
     'ja': {
         'lang':'Japanese',
