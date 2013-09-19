@@ -171,6 +171,10 @@ addresses = {
         'lang':'Tamil',
         'email': ['Dinakar T.D. <td.dinkar@gmail.com>'],
     },
+    'th': {
+        'lang':'Thai',
+        'email': ['Eakachai Charoenchaimonkon <eakachai@gmail.com>'],
+    },
     'tr': {
         'lang':'Turkish',
         'email': ['Cagri Dogan <cagrid@hotmail.com>'],
