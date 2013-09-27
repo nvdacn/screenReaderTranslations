@@ -1,7 +1,0 @@
-commit 4f0ebf2cad4fc3fbfffb7264790370ccd87227b1
-Author: Michael Curran <mick@nvaccess.org>
-Date:   Tue Jun 18 15:16:37 2013 +1000
-
-    In Windows 7 and later, no longer inappropriately announce  speech recognition and touch input as a keyboard language change.
-    
-    tsf.cpp: support ITfInputProcessorProfileActivationSink::OnActivated instead  of ITfActiveLanguageProfileNotifySink::OnActivated, making use of the extra arguments, which can clearly tell us if a profile is  keyboard or speech etc. Fall back to ITfActiveLanguageProfileNotifySink if ITfInputProcessorProfileActivationSink cannot be registered (this happens in XP).

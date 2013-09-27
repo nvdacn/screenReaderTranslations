@@ -1,8 +1,0 @@
-commit 49fcafb061709e1979b50ce4e2947874b5335c26
-Author: Michael Curran <mick@nvaccess.org>
-Date:   Fri Jul 12 14:39:41 2013 +1000
-
-    Outlook 2010 auto completes now work due to now using MSAA, not UIA in this situation. Fixes #2816
-    
-    Specifically: UIAHandler: treet a window with a class of NetUIHWND who's root window's class is Net UI Tool Window, as having a bad UIA implementation (we will fallback to IAccessible).
-    At the same time, slightly restructure UIAHandler.handler.isUIAWindow moving the choice logic in to a new _isUIAWindowHelper function, so as to not get confused by the outer cashing code.

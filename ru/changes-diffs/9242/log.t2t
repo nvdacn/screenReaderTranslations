@@ -1,7 +1,0 @@
-commit c7ba04d5e094d35790fa3d4634b4c69319ed4535
-Author: Michael Curran <mick@nvaccess.org>
-Date:   Tue May 28 14:20:45 2013 +1000
-
-    NVDAHelper IME support: only call hasValidIMEContext for specific IME window messages, rather than for all window messages. Fixes #2909
-    
-    This stops ImmLockIMC from being called for window messages such as wm_keydown which was causing some corruption of typed characters in certain situations such as when typing in NVDA's process with Korean or Japanese when it was the default IME.

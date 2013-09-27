@@ -1,8 +1,0 @@
-commit 195eb94bc79396138931d4151c59a466cea311d9
-Author: Michael Curran <mick@nvaccess.org>
-Date:   Thu Jun 13 11:53:04 2013 +1000
-
-    Improvements to IME handling in Windows 8: the correct language is announced when switching, and conversion modes are now announced when changed.
-    
-    * ime.cpp: no longer track a disableIMEConversionModeUpdateReporting variable for temporarily disabling conversion mode update announcements as disabling in inputLangChange and then re-enabling in TSF does not work on Win 8 as inputLangChange is sent *after* tsf change. Instead just delay reporting of conversion mode updates to the next message pump via a PostMessage.
-    * tsf.cpp: no longer make use of lastInputLangChange variable, instead always call GetKeyboardLayout(0). On Windows 8  lastInputLangChange when in a tsf change was always wrong as inputLangchange happens *after* tsf, not before.
