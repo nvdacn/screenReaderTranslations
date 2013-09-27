@@ -1,0 +1,61 @@
+diff --git a/user_docs/en/changes.t2t b/user_docs/en/changes.t2t
+index 8ea0300..87d982f 100644
+-{-- a/user_docs/en/changes.t2t}-
++{++ b/user_docs/en/changes.t2t}+
+@@ -3,6 +3,12 @@
+
+%!includeconf: ../changes.t2tconf
+
+= +{2013.2 =
+
+== Bug Fixes ==
+- Activating an object now announces the action before the activation, rather than the action after the activation (e.g. expand when expanding rather than collapse). (#2982)
+
+
+=}+ 2013.1 =
+Highlights of this release include a more intuitive and consistent laptop keyboard layout; basic support for Microsoft PowerPoint; support for long descriptions in web browsers; and support for input of computer braille for braille displays which have a braille keyboard.
+
+@@ -29,21 +35,20 @@ Please see the [Commands Quick Reference keyCommands.html] document for the new
+- In Browse mode for MSHTML (e.g. Internet Explorer) and Gecko (e.g. Firefox), the existance of long descriptions are now announced. It's also possible to open the long description in a new window by pressing NVDA+d. (#809)
+- Notifications in Internet Explorer 9 and above are now spoken (such as content blocking or file downloads). (#2343)
+- Automatic reporting of table row and column headers is now supported for browse mode documents in Internet Explorer and other MSHTML controls. (#778)
+
+- New language: -{Aragonese, Irish}- +{Aragonese}+
+- New braille translation tables: Danish grade 2, Korean grade 1. (#2737)
+- Support for braille displays connected via bluetooth on a computer running the Bluetooth Stack for Windows by Toshiba. (#2419)
+- Support for port selection when using Freedom Scientific displays (Automatic, USB or Bluetooth).
+- Support for the BrailleNote family of notetakers from HumanWare when acting as a braille terminal for a screen reader. (#2012)
+- Support for older models of Papenmeier BRAILLEX braille displays. (#2679)
+- Support for input of computer braille for braille displays which have a braille keyboard. (#808)
+
+- New keyboard settings that allow  the choice for whether NVDA should interrupt speech for typed characters -{and/or}- +{and or}+ the Enter key. (#698)
+- Support for several browsers based on Google Chrome: Rockmelt, BlackHawk, Comodo Dragon and SRWare Iron. (#2236, #2813, #2814, #2815)
+
+
+== Changes ==
+- Updated liblouis braille translator to 2.5.2. (#2737)
+- The laptop keyboard layout has been completely redesigned in order to make it more intuitive and consistent. (#804)
+-{- Updated eSpeak speech synthesizer to 1.47.09. (#2680, #3124, #3132, #3141, #3143, #3172)}-
+
+
+
+== Bug Fixes ==
+@@ -76,12 +81,6 @@ Please see the [Commands Quick Reference keyCommands.html] document for the new
+- Adobe Flash content is now accessible in Internet Explorer in Windows 8. (#2454)
+- Fixed Bluetooth support for Papenmeier Braillex Trio. (#2995)
+- Fixed inability to use certain Microsoft Speech API version 5 voices such as Koba Speech 2 voices. (#2629)
+-{- In applications using the Java Access Bridge, braille displays are now updated correctly when the caret moves in editable text fields . (#3107)
+- Support the form landmark in browse mode documents that support landmarks. (#2997) 
+- The eSpeak synthesizer driver now handles reading by character more appropriately (e.g. announcing a foreign letter's name or value rather than just its sound or generic name). (#3106)
+- NVDA no longer fails to copy user settings for use on logon and other secure screens when the user's profile path contains non-ASCII characters. (#3092)
+- NVDA no longer freezes when using Asian character input in some .NET applications. (#3005)
+- it is now possible to use browse mode for pages in Internet Explorer 10 when in standards mode; e.g. www.gmail.com login page. (#3151)}-
+
+
+
+
+
+
+
+
+== Changes for Developers ==

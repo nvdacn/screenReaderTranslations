@@ -1,0 +1,8 @@
+commit 1100a05def8a6a6f1123ef39db179697708e2806
+Author: James Teh <jamie@nvaccess.org>
+Date:   Wed Jul 10 11:15:29 2013 +1000
+
+    If the Add-ons Manager is already open, activating it again (either from the Tools menu or by opening an add-on file) no longer fails or makes it impossible to close the Add-ons Manager. Fixes #3351.
+    
+    AddonsDialog was already a singleton, but the constructor was being called even when there was already an instance, which was causing all sorts of breakage.
+    Re #3351.

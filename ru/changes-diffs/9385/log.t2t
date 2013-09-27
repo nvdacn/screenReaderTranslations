@@ -1,0 +1,9 @@
+commit 04b75bb783f9bf89c3348ae59fc30a0c2791f029
+Author: Michael Curran <mick@nvaccess.org>
+Date:   Thu Aug 8 09:42:21 2013 +1000
+
+    Correctly detect next selected slide when deleting a slide in PowerPoint's thumbnails view. Fixes #3415.
+    
+    Specifically:
+     * bind documentwindow's selectionChange script to delete and backspace.
+     * Slide NVDAObject's name property: catch COMError when fetching slideNumber (this was already done for title)

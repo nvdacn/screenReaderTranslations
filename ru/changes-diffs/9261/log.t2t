@@ -1,0 +1,9 @@
+commit c50b8f2bec2389aa3a0dae943bd0efd9a7156543
+Author: James Teh <jamie@nvaccess.org>
+Date:   Mon Jun 3 16:32:11 2013 +1000
+
+    NVDA no longer fails to start if the system time is earlier than the last check for an update.
+    
+    When this happens (e.g. to a CMOS battery change), the time since the last check could be a very large negative number, which in turn becomes a large positive number when calculating the time to the next check. If it's large enough, this will cause an overflow.
+    Therefore, restrict the time since the last check so it can never be earlier than now (must be >= 0).
+    Fixes #3260.
