@@ -1,0 +1,92 @@
+diff --git a/user_docs/en/userGuide.t2t b/user_docs/en/userGuide.t2t
+index fb0bc56..87db83c 100644
+--- a/user_docs/en/userGuide.t2t
++++ b/user_docs/en/userGuide.t2t
+@@ -149,8 +149,8 @@ The third lets you control if this Welcome dialog should appear each time NVDA s
+ ++ About NVDA keyboard commands ++
+ 
+ +++ The NVDA Modifier Key +++
+-Most NVDA-specific keyboard commands consist of pressing a particular key called the NVDA modifier key in conjunction with one or more other keys.
+-Notable exceptions to this are the text review commands for desktop keyboards which just use the numpad keys by themselves, but there are some other exceptions as well.
++Most NVDA-specific keyboard commands usually consist of pressing a particular key called the NVDA modifier key, in conjunction with one or more other keys.
++An exception to this are the text review commands which just use the numpad keys by themselves.
+ 
+ NVDA can be configured so that either the numpad Insert, Extended Insert, or capslock key can be used as the NVDA modifier key.
+ 
+@@ -633,7 +633,7 @@ The Voice Settings dialog box contains the following options:
+ ==== Voice ====
+ The first option that you land on in this dialog is a combo box listing all the voices of the current synthesizer that you have installed.
+ You can use the arrow keys to listen to all the various choices.
+-Left and Up arrow take you up in the list, while right and down arrow move you down in the list.
++Left and Up arrow take you up in the list, while right and down arrow moves you down in the list.
+ 
+ ==== Variant ====
+ If you are using the Espeak synthesizer that is packaged with NVDA, this is a combo box that lets you select the Variant the synthesizer should speak with.
+@@ -847,7 +847,7 @@ This dialog contains the following options:
+ ==== Follow System Focus ====
+ Key: NVDA+7
+ 
+-When enabled, The review cursor will always be placed in the same object as the current system focus whenever the focus changes.
++When enabled, The review cursor will always be placed in the same object as the current system focus as it changes.
+ 
+ %kc:setting
+ ==== Follow System Caret ====
+@@ -996,7 +996,6 @@ You can configure reporting of:
+ - Font attributes
+ - Text alignment
+ - Colors
+-- editor revisions
+ - Text style
+ - Spelling errors
+ - Page numbers
+@@ -1057,6 +1056,26 @@ Using the Level field, you can adjust the lowest symbol level at which this symb
+ 
+ When you are finished, press the OK button to save your changes or the Cancel button to discard them.
+ 
+++++ Input Gestures (NVDA+control+i) +++
++In this dialog, you can customize the input gestures (keys on the keyboard, buttons on a braille display, etc.) for NVDA commands.
++
++Only commands that are applicable immediately before the dialog is opened are shown.
++Therefore, you should generally open this dialog using its key command so that all commands applicable to what you were just doing are shown.
++For example, if you want to customize commands related to browse mode, you should press the key command to open the Input Gestures dialog while you are in browse mode.
++
++The tree in this dialog lists all of the applicable NVDA commands grouped by category.
++Any gestures associated with a command are listed beneath the command.
++
++To add an input gesture to a command, select the command and press the Add button.
++Then, perform the input gesture you wish to associate; e.g. press a key on the keyboard or a button on a braille display.
++Often, a gesture can be interpreted in more than one way.
++For example, if you pressed a key on the keyboard, you may wish it to be specific to the current keyboard layout (e.g. desktop or laptop) or you may wish it to apply for all layouts.
++In this case, a menu will appear allowing you to select the desired option.
++
++To remove a gesture from a command, select the gesture and press the Remove button.
++
++When you are finished making changes, press the OK button to save them or the Cancel button to discard them.
++
+ ++ Saving and Reloading the configuration ++
+ By default NVDA will automatically save your settings on exit.
+ Note, however, that this option can be changed under the general options in the preferences menu.
+@@ -1079,9 +1098,9 @@ Installed versions of NVDA store all settings, custom appModules and custom driv
+ This means that each user on the system can have their own NVDA settings.
+ To get to your settings directory for an installed version of NVDA, on the start menu you can go to programs -> NVDA -> explore user configuration directory.
+ 
+-Settings for NVDA when running on the logon or UAC screens are stored in the systemConfig directory in NVDA's installation directory.
+-Usually, this configuration should not be touched.
+-To change NVDA's configuration on the logon/UAC screens, configure NVDA as you wish while logged into Windows, save the configuration, and then press the "Use currently saved settings on the logon and other secure screens" button in the General Settings dialog.
++Settings for NVDA when running on the logon or UAC screens is stored in the systemConfig directory in NVDA's installation directory.
++Usually this configuration should not be touched.
++To change how NVDA is configured on the logon/UAC screens, configure NVDA to how you wish while logged into Windows, and then instruct NVDA to copy the configuration to the logon screen by using the button in the General settings dialog.
+ 
+ + Extra Tools +
+ 
+@@ -1834,6 +1853,10 @@ If you wanted to remove this binding, you would add the following line:
+ 	None = kb:NVDA+f12
+ ```
+ 
++Although you are free to have scripts bound to any available key, it may be problematic to use the alt key on the keyboard.
++NVDA still sends modifier keys (such as shift, control and alt) to the Operating System, even if they eventuate in a script.
++Thus, if you do use alt in a gesture, pressing this key combination may activate the menu bar, as well as executing the script.
++Therefore, it is probably best to just use Shift, control and the NVDA modifier key as modifiers.
+ 
+ ++ Advanced Customization of Symbol Pronunciation ++
+ It is possible to customize the pronunciation of punctuation and other symbols beyond what can be done using the [Punctuation/symbol pronunciation #SymbolPronunciation] dialog.

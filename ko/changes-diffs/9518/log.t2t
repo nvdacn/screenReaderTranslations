@@ -1,0 +1,10 @@
+commit 59a04dadcdc6f92f1e6bba35bffef57b84f9c592
+Author: James Teh <jamie@nvaccess.org>
+Date:   Mon Sep 16 01:24:00 2013 +1000
+
+    If an unknow command line argument is passed to the NVDA distribution package, NVDA no longer displays error message dialogs endlessly.
+    
+    This occurred because command line errors are signalled with exit code 2, but the same exit code was also being used to signal NVDA restarts to the launcher.
+    Now, restarts are signalled to the launcher using exit code 3.
+    Authors: Patrick ZAJDA <patrick@zajda.fr>, James Teh <jamie@nvaccess.org>
+    Fixes #3463.
