@@ -800,6 +800,9 @@ Si está activada, esta opción causará que la voz se interrumpa cada vez que s
 ==== Interrupción de Voz para la Tecla Intro ====
 Si está activada, esta opción causará que la voz se interrumpa cada vez que se pulse la tecla Intro. Esto está activado de manera predeterminada.
 
+==== Permitir lectura superficial en Verbalizar Todo ====
+Si está activada, ciertas órdenes de navegación (tales como la navegación rápida en modo navegación o el movimiento por líneas o por párrafos) no detienen  Verbalizar Todo, en su lugar Verbalizar Todo salta  a la nueva posición y continúa leyendo.
+
 ==== Pitar si se Teclean Letras Minúsculas Cuando BloqMayus está Activado ====
 Cuando está activada, se escuchará un pitido de aviso si se escribe una letra con la tecla shift mientras BloqMayus está activada.
 Generalmente, escribir letras en mayúsculas con BloqMayus es inintencionado y normalmente es debido a no revisar que el BloqMayus esté activado.
@@ -1056,6 +1059,25 @@ El campo Reemplazar te permite cambiar el texto que debería verbalizarse en lug
 Utilizando el campo Nivel, puedes ajustar el nivel más bajo del símbolo al cual este símbolo debería verbalizarse.
 
 Cuando termines, pulsa el botón Aceptar para guardar tus cambios o el botón Cancelar para descartarlos.
+
++++ Gestos de Entrada +++
+En este diálogo, puedes personalizar los gestos de entrada (teclas en el teclado, botones en la pantalla braille, etc.) para órdenes de NVDA.
+
+Sólo se muestran las órdenes que se apliquen inmediatamente antes de que el diálogo se abra.
+Por ejemplo, si quieres personalizar órdenes relacionadas con el modo navegación, deberías abrir el diálogo Gestos de entrada mientras estés en modo navegación.
+
+El árbol en este cuadro de diálogo muestra todas las órdenes de NVDA aplicables agrupadas por categoría.
+Cualquier gesto asociado con una orden se lista bajo la orden.
+
+Para añadir un gesto de entrada a una orden, selecciona la orden y pulsa el botón Añadir.
+A continuación, realiza el gesto de entrada que desees asociar, por ejemplo, pulsa una tecla del teclado o un botón en una pantalla Braille.
+A menudo, un gesto puede interpretarse de más de una manera.
+Por ejemplo, si has pulsado una tecla en el teclado, puede que desees que sea específica para la distribución de teclado actual (por ejemplo, de escritorio o portátil) o puede que desees que se aplique a todas las distribuciones.
+En este caso, aparecerá un menú que te permite seleccionar la opción deseada.
+
+Para borrar un gesto de una orden, selecciona el gesto y pulsa el botón Eliminar.
+
+Cuando hayas terminado de realizar cambios, pulsa el botón Aceptar para guardarlos o el botón Cancelar para descartarlos.
 
 ++ Guardando y Recargando la configuración ++
 De forma predeterminada NVDA guardará automáticamente tus opciones al salir.
@@ -1765,74 +1787,6 @@ Por favor mira [la documentación de tablas de teclas de BRLTTY http://mielke.cc
 %kc:endInclude
 
 + Temas Avanzados +
-
-++ Remapeando Asignaciones de Teclas y otros Gestos de Entrada ++
-Los usuarios podrán proporcionar o sobreescribir mapeados de los gestos de entrada (tales como pulsado de teclas) para scripts en un fichero especial en el directorio de configuración del usuario de NVDA.
-Este fichero se llama gestures.ini.
-
-Este fichero utiliza la sintaxis estándar de los ficheros ini.
-El fichero podrá contener múltiples secciones y cada sección podrá tener una o más entradas.
-
-Cada sección proporciona mapeados para scripts en un módulo particular python y clase dentro de NVDA.
-- El nombre de sección debería ser el módulo Python y clase separados por un punto (.).
-- La tecla de cada entrada es el nombre del script con el que deseas que los gestos deberían concordar.
-Alternativamente, puedes utilizar None para desvincular gestos de entrada de un script al que estaban vinculados anteriormente.
-Cada entrada de tecla sólo puede listarse una vez por sección, incluyendo None.
-- El valor de cada tecla es una lista separada con coma (,) de  identificadores del gesto los cuales representan los distintos gestos de entrada que deberían vincularse con ese script en particular.
-Los identificadores de gesto que terminan en una coma deben encerrarse entre comillas (" o ').
--
-
-Los identificadores de gesto consisten en un código de dispositivo de dos letras; un sub-dispositivo, distribución o modo entre paréntesis; unos dos puntos; y luego un tipo específico de cadena identifycando la entrada actual, tal como nombres de gestos de tecla o táctiles.
-- Para gestos de teclado, el código de dispositivo es kb.
-La parte entre paréntesis es la distribución de teclado y es opcional.
-Si no se especificó, el gesto se aplicará a todas las distribuciones de teclado.
-La cadena después de los dos puntos es uno o más nombres de teclas separados por un signo más (+).
-- Para gestos de pantallas braille, el código de dispositivo es br.
-La parte entre paréntesis identifica la pantalla braille específica y es obligatoria.
-La cadena después de los dos puntos es uno o más nombres de tecla separados por un signo más (+).
-- Para gestos táctiles, el código de dispositivo es ts.
-La parte entre paréntesis es el modo táctil y es opcional.
-La cadena después de los dos puntos es un gesto táctil tal como double_tap, 2fingerflickUp, o 3finger_tap como en los ejemplos.
--
-
-De cara a encontrar los identificadores de gesto así como los nombres de scripts y la clase y el módulo en el cual están contenidos puedes:
-+ Activar la Ayuda de entrada.
-+ Activar el gesto (pulsar la tecla, tocar la pantalla, etc.).
-+ Desactivar la Ayuda de Entrada.
-+ Activar Ver log en el menú herramientas.
-+ examinar las entradas recientes del log.
-Una de estas proporcionaría información acerca del gesto de entrada que enviaste, incluyendo el módulo.clase y script si está vinculado a uno.
-+
-
-Seguidamente va un ejemplo de cómo podrías vincular NVDA+shift+t al script fecha hora.
-
-Para encontrar el  nombre y módulo.clase y script correcto para fecha hora, activarías Ayuda de Entrada y pulsarías NVDA+f12 (puesto que esta es el gesto actual para el script fecha hora).
-Entonces apagarías Ayuda de Entrada y examinarías el visualizador del log.
-
-Hacia el fondo, podrías ver:
-
-```
-INFO - inputCore.InputManager._handleInputHelp (13:17:22):
-Input help: gesture kb(desktop):nvda+f12, bound to script dateTime on globalCommands.GlobalCommands
-```
-
-Con esto, puedes ver que el nombre del script es dateTime y el módulo.clase es globalCommands.GlobalCommands.
-
-Si el fichero no esiste aún, crearías un fichero de texto llamado gestures.ini en el directorio de configuración del usuario y añadirías el contenido siguiente:
-
-```
-[globalCommands.GlobalCommands]
-	dateTime = kb:NVDA+shift+t
-```
-
-Esto vincularía el pulsado de las teclas NVDA+shift+t (en cualquier distribución de teclado) al script dateTime.
-
-Ten en cuenta que la combinación original NVDA+f12 todavía funcionaría.
-Si quisieras eliminar esta combinación, añadirías la línea siguiente:
-
-```
-	None = kb:NVDA+f12
-```
 
 ++ Personalización Avanzada de Pronunciación de Símbolos ++
 Es posible personalizar la pronunciación de la puntuación y otros símbolos más allá de lo que puede hacerse utilizando el [diálogo Pronunciación de Puntuación y símbolos #SymbolPronunciation].
