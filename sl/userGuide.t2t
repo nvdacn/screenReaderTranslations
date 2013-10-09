@@ -302,7 +302,7 @@ V takih primerih lahko uporabite krmarjenje po predmetih.
 
 Krmarjenje po predmetih vam omogoča premikanje med in zajemanje informacij o posameznih [predmetih #Objects].
 Ko se premaknete na predmet, bo NVDA to poročala tako, kot to dela ob sistemskem žarišču.
-Ko želite pregledati vse besedilo, kako izgleda na zaslonu, takrat namesto tega uporabite[nestrukturiran pregled #FlatReview].
+Za pregled vsega besedila, kot izgleda na zaslonu, lahko namesto tega uporabite [pregled zaslona #ScreenReview].
 
 Vsakič, ko se premikate nazaj in naprej med predmeti, se pomikate med predmeti na istem nivoju, ker so predmeti v sistemu organizirani v hierarhiji.
 To pomeni, da nekateri predmeti vsebujejo druge predmete in tako morate vstopiti v prve predmete, da dobite dostop do drugih.
@@ -313,7 +313,7 @@ Tako se potem lahko pomikate po prejšnjem seznamu, če želite dostopiti do dru
 Podobno je z orodno vrstico, ki vsebuje kontrolnike. Tako morate vstopiti na orodno vrstico za dostop do kontrolnikov.
 
 Predmet, ki ga pravkar pregledujete nosi ime predmet krmarjenja.
-Ko enkrat pristanete na predmetu, ga lahko pregledate z uporabo [ukazov za pregled besedila #ReviewingText].
+Ko se enkrat premaknete na predmet, njegovo vsebino lahko pregledujete z uporabo [ukazov za pregled besedila #ReviewingText] medtem, ko ste v [Delovanju pregleda predmeta #ObjectReview].
 Privzeto vedenje je nastavljeno tako, da sistemsko žarišče potuje vzdolž predmeta krmarjenja, to stikalo pa lahko vključite ali izključite.
 
 Opozarjamo, da braj privzeto sledi [žarišču #SystemFocus] in [kazalki #SystemCaret], kakor pa predmetom krmarjenja in pregledu besedila.
@@ -337,7 +337,7 @@ Za pomik po predmetih, uporabite naslednje ukaze:
 Opozarjamo, da mora biti številski del izključen za pravilno delovanje tipk na tem delu.
 
 ++ Pregledovanje Besedila ++[ReviewingText]
-NVDA vam omogoča, da prebirate [predmet krmarjenja #ObjectNavigation] (vključno z [nestrukturiranim pregledom #FlatReview]) znak za znakom, besedo za besedo ali vrstico za vrstico.
+NVDA vam omogoča prebiranje vsebine [zaslona #ScreenReview], trenutnega [dokumenta #DocumentReview] ali trenutnega [predmeta #ObjectReview] znak po znak, besedo po besedo ali vrstico po vrstico.
 To je uporabno predvsem na prostorih (vključno z ukaznimi konzolami Oken) kjer ni na voljo [sistemska kazalka #SystemCaret].
 To lahko uporabljate na primer pri pregledu daljšega besedila v sporočilu z informacijami, ki ga prikaže pogovorno okno.
 
@@ -378,27 +378,35 @@ Dober način za pomnenje osnovnih ukazov za pomik po besedilu ob uporabi Običaj
 | Predhodna beseda | Trenutna beseda | Naslednja beseda |
 | Predhodni znak | Trenutni znak | Naslednji znak |
 
-++ Nestrukturiran Pregled ++[FlatReview]
+++ Delovanja Pregleda ++[ReviewModes]
+Z NVDA ukazi za pregled lahko pregledujete vsebino znotraj trenutnega predmeta krmarjenja, trenutnega dokumenta ali zaslona odvisno od tega, kateri pregled je trenutno izbran.
+Delovanja pregleda so zamenjava za starejši koncept nestrukturiranega pregleda obstajajočega v NVDA že prej.
 
+Sledeči ukazi preklapljajo med delovanji pregleda:
+%kc:beginInclude
+|| Ime | Običajna razporeditev | razporeditev Prenosnik | Dotik | Opis |
+| preklop na naslednje delovanje pregleda | NVDA+številski del7 | NVDA+stranGor | dvoprsti švig gor | preklopi na naslednje delovanje pregleda na voljo bolj splošno od trenutnega delovanja pregleda. | 
+| preklop na predhodno delovanje pregleda | NVDA+številski del1 | NVDA+stranDol | dvoprsti švig dol | preklopi na naslednje delovanje pregleda bolj globoko kot je trenutno delovanje.. |
+%kc:endInclude
 
++++ Pregled Predmeta +++[ObjectReview]
+Ko ste v delovanju pregledovanja predmetov, lahko pregledujete samo vsebino trenutnega  [predmeta krmarjenja #ObjectNavigation].
+Za predmete, kot so polja za urejanje ali drugi osnovni kontrolniki dokumenta, bo to običajno vsebina besedilo.
+Za druge predmete je to ime predmeta ali njegova vrednost.
 
++++ Pregled Dokumenta +++[DocumentReview]
+Ko je [predmet krmarjenja #ObjectNavigation] del dokumenta, ki se pregleduje skozi brskalniško delovanje (kot je spletna stran) ali drug zahtevnejši dokument, ki vsebuje več predmetov (kot so Lotus Symphony dokumenti), je mogoče preklopiti v delovanje pregleda dokumenta.
+Delovanje pregleda dokumenta vam omogoča pregled besedila znotraj celotnega dokumenta.
+Ko se preklaplja iz pregleda predmeta v pregled dokumenta, se pregledna utripalka postavi na položaj predmeta krmarjenja v dokumentu.
+Ko se premikate po dokumentu z uporabo ukazov za pregled, se predmet krmarjenja samodejno zlije s predmetom, ki je trenutno na položaju pregledne utripalke.
+Opozarjamo, da NVDA samodejno preklopi v pregled dokumenta iz pregleda predmeta, ko se pregledujejo dokumenti v brskalniškem delovanju.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
++++ Pregled Zaslona +++[ScreenReview]
+Delovanje pregleda zaslona vam omogoča pregled vidnega besedila na zaslonu v trenutnem programu.
+To je podobno pregledovanju zaslona ali funkciji miškine kazalke v mnogih drugih okenskih bralnikih zaslona.
+ Ko se preklaplja v delovanje pregleda zaslona, se pregledna utripalka postavi na zaslonski položaj trenutnega [predmeta krmarjenja #ObjectNavigation].
+Ko se premikate po zaslonu z uporabo ukazov za pregled, se predmet krmarjenja samodejno zlije z najglobjim predmetom, ki obstaja na zaslonskem položaju pregledne utripalke.
+Opozarjamo, da NVDA v nekaterih novejših programih mogoče ne bo videla nekaj ali pa celo celotnega besedila, ki je lahko na zaslonu, zaradi uporabe novejših tehnologij za izrisovanje po zaslonu, kar trenutno ni možno podpreti.
 
 ++ Krmarjenje z Miško ++
 Ko premikate miško, NVDA privzeto poroča o besedilu, ki je neposredno pod miškinim kazalcem, ko se kazalec pomika nad njim.
@@ -951,12 +959,9 @@ Ta možnost vam omogoča, da se odločite, ali naj se postavitev vsebine, kot so
 Ta možnost vklaplja samodejno branje, ko se stran naloži v brskalniško delovanje.
 Privzeto je ta možnost vključena.
 
-==== Vključi tabele namenjene oblikovanju ====
-Ta možnost določa, kako NVDA obravnava tabele, ki so tam izključno zaradi lažjega oblikovanja vsebine.
-Ko je možnost vključena, potem NVDA take tabele obravnava kot navadne tako, kot je določeno v [Nastavitvah Oblikovanja Dokumentov #DocumentFormattingSettings] in jih locira s hitrimi navigacijskimi ukazi.
-Ko je izključena, jih NVDA niti ne bo naznanjevala in jih bodo hitri ukazi preskočili.
-Vsebina tabel se bo kljub vsemu še vedno prikazovala kot običajno besedilo.
-Ta možnost je privzeto izključena.
+==== Poročaj o tabelah namenjenih oblikovanju ====
+Ko je ta možnost izključena, NVDA prikazuje samo tabele, kjer obstajajo signali, da je to tabela s podatki.
+Ampak, ko je ta možnost vključena, NVDA prikaže tudi tabele, ki so primarno namenjene vizualni predstavitvi.
 
 ==== Nastavljanje poročanja o poljih, kot so povezave in naslovi ====
 Prosimo, oglejte si možnosti v [pogovornem oknu Nastavitev Oblikovanja Dokumentov #DocumentFormattingSettings] za nastavljanje poročanja o elementih ob navigaciji, kot so povezave, naslovi in tabele.
