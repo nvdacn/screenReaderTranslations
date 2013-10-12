@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NVDA Community Addons website\n"
-"POT-Creation-Date: 2013-09-29 19:38+0200\n"
+"POT-Creation-Date: 2013-10-12 15:17+0200\n"
 "PO-Revision-Date: 2013-10-07 10:11+0100\n"
 "Last-Translator: Leonard de Ruijter <mail@leonardderuijter.nl>\n"
 "Language-Team: NL\n"
@@ -26,15 +26,33 @@ msgid "Authors: Noelia, Chris."
 msgstr "Auteur: Noelia, Chris."
 
 #. type: Bullet: '* '
-msgid "download [version 1.0][1]"
+#, fuzzy
+#| msgid "download [version 1.0][1]"
+msgid "download [stable version: 1.0][1]"
+msgstr "Download [versie 1.0][1]"
+
+#. type: Bullet: '* '
+#, fuzzy
+#| msgid "download [version 1.0][1]"
+msgid "download [development version: 2.0-dev][2]"
 msgstr "Download [versie 1.0][1]"
 
 #. type: Plain text
+#, fuzzy
+#| msgid ""
+#| "This addon is used for saving and searching specific text strings or "
+#| "bookmarks, on web pages or documents in NVDA's browse mode.  The plugin "
+#| "saves the specified strings and bookmarks to text and pickle files. The "
+#| "name of these files is based on the title and URL of the current document."
 msgid ""
 "This addon is used for saving and searching specific text strings or "
-"bookmarks, on web pages or documents in NVDA's browse mode.  The plugin "
-"saves the specified strings and bookmarks to text and pickle files. The name "
-"of these files is based on the title and URL of the current document."
+"bookmarks, on web pages or documents in NVDA's browse mode. It can also be "
+"used for saving or searching strings of text in multi-line controls; in this "
+"case, if it's not possible to update the caret, the corresponding string "
+"will be copied to the clipboard, so that it can be searched using other "
+"tools.  The plugin saves the specified strings and bookmarks to text and "
+"pickle files. The name of these files is based on the title and URL of the "
+"current document."
 msgstr ""
 "Deze addon dient om specifieke tekstdelen of bookmarks op te slaan en te "
 "zoeken, op webpagina's of documenten met de bladermodus van NVDA.  De plugin "
@@ -56,60 +74,17 @@ msgstr ""
 msgid "Key Commands:"
 msgstr "Belangrijke commando's:"
 
-#. type: Bullet: '*	'
+#. type: Plain text
+#, no-wrap
 msgid ""
-"control+shift+NVDA+s; Opens a dialog for saving a string of text that you "
-"may wish to find on the current document. By default it shows the text "
-"previously saved for this file. If this text is deleted, the text file "
-"containing the corresponding string will be also removed."
+"*\tcontrol+shift+NVDA+s; Opens a dialog that allows you to save a text string   you want to find in the current document. By default, the text previously saved for this file is shown. Delete this text and press Ok button if you wish to remove the text file corresponding to the saved search, or type new text to add another search.\n"
+"*\tcontrol+shift+NVDA+f; opens a dialog with a edit box that shows the last saved search; in this dialog you can also select the previously saved searches from a combo box and choose an action from the next combo box. If there is no available files for specific search in the current document, NVDA will warn you that it is not found any file for specific search.\n"
+"*\tcontrol+shift+NVDA+k; Saves the current position as a bookmark\n"
+"*\tcontrol+shift+NVDA+delete; Deletes the bookmark corresponding to this position.\n"
+"*\tcontrol+shift+k; Moves to the next bookmark.\n"
+"*\tshift+NVDA+k; Moves to the previous bookmark.\n"
+"*\tNVDA+k; Copies to clipboard the file name, without extension, where the place markers data will be saved.\n"
 msgstr ""
-"control+shift+NVDA+s; Opent een dialoogvenster om een tekstdeel op te slaan "
-"dat u misschien wil vinden in het huidige document. Standaard toont het de "
-"tekst die u eerder heeft opgeslagen voor dit bestand. Verwijdert u deze "
-"tekst, dan wordt ook het tekstbestand dat het tekstdeel bevat verwijderd."
-
-#. type: Bullet: '*	'
-msgid ""
-"control+shift+NVDA+f; If the current document has a text file for specific "
-"search, opens a dialog that shows the saved string of text. When you press "
-"OK, NVDA search for the text set on the dialog edit box. If no text file is "
-"found for this document, NVDA announces it without opening Specific Search "
-"dialog."
-msgstr ""
-"control+shift+NVDA+f; Als het huidige document een tekstbestand heeft voor "
-"de opgegeven zoekterm, opent er een dialoogvenster dat het opgeslagen "
-"tekstdeel toont. Als u OK drukt, zoekt NVDA naar tekst in het invoerveld. "
-"Als er geen tekstbestand gevonden is voor dit document, kondigt NVDA het aan "
-"zonder een zoekvenster te openen."
-
-#. type: Bullet: '*	'
-msgid "control+shift+NVDA+k; Saves the current position as a bookmark"
-msgstr "control+shift+NVDA+k; Slaat de huidige positie op als een bookmark"
-
-#. type: Bullet: '*	'
-msgid ""
-"control+shift+NVDA+delete; Deletes the bookmark corresponding to this "
-"position."
-msgstr ""
-"control+shift+NVDA+delete; Verwijdert de bookmark die met deze positie "
-"overeenkomt."
-
-#. type: Bullet: '*	'
-msgid "control+shift+k; Moves to the next bookmark."
-msgstr "control+shift+k; Gaat naar de volgende bookmark."
-
-#. type: Bullet: '*	'
-msgid "shift+NVDA+k; Moves to the previous bookmark."
-msgstr "shift+NVDA+k; Gaat naar de vorige bookmark."
-
-#. type: Bullet: '*	'
-msgid ""
-"NVDA+k; Copies to clipboard the file name, without extension, where could be "
-"saved place markers (positions or a string to search)."
-msgstr ""
-"NVDA+k; Kopieert de bestandsnaam zonder extensie naar het klembord, waar "
-"place markers kunnen worden opgeslagen (posities of een tekstdeel om te "
-"zoeken)."
 
 #. type: Title ##
 #, no-wrap
@@ -117,7 +92,10 @@ msgid "Place markers Submenu (NVDA+N)"
 msgstr "Place markers Submenu (NVDA+N)"
 
 #. type: Plain text
-msgid "Using Place markers submenu, under Preferences menu, you can access to"
+#, fuzzy
+#| msgid ""
+#| "Using Place markers submenu, under Preferences menu, you can access to"
+msgid "Using Place markers submenu, under Preferences menu, you can access:"
 msgstr ""
 "Via het Place markers submenu, onder het Instellingen menu, heeft u toegang "
 "tot"
@@ -130,7 +108,9 @@ msgstr ""
 "searches."
 
 #. type: Bullet: '*	'
-msgid "Bookmarks folder; opens a folder of the bookmarks saved."
+#, fuzzy
+#| msgid "Bookmarks folder; opens a folder of the bookmarks saved."
+msgid "Bookmarks folder; opens a folder of the saved bookmarks."
 msgstr "Bookmarks folder; opent een map met de opgeslagen bookmarks."
 
 #. type: Bullet: '*	'
@@ -139,9 +119,13 @@ msgstr ""
 "Copy placeMarkers folder; u kan een kopie maken van de map met bookmarks."
 
 #. type: Bullet: '*	'
+#, fuzzy
+#| msgid ""
+#| "Restore placeMarkers; you can restore your bookmarks from a placeMarkers "
+#| "folder previously saved."
 msgid ""
-"Restore placeMarkers; you can restore your bookmarks from a placeMarkers "
-"folder previously saved."
+"Restore placeMarkers; you can restore your bookmarks from a previously saved "
+"placeMarkers folder ."
 msgstr ""
 "Restore placeMarkers; u kan uw bookmarks herstellen vanuit een map met "
 "eerder opgeslagen placeMarkers."
@@ -155,14 +139,37 @@ msgstr ""
 "het Engels."
 
 #. type: Plain text
+#, fuzzy
+#| msgid ""
+#| "Note: The bookmark position is based on the number of characters; in "
+#| "pages with a dynamic content is better to use the specific search, and "
+#| "not the bookmarks to save a precise position."
 msgid ""
-"Note: The bookmark position is based on the number of characters; in pages "
-"with a dynamic content is better to use the specific search, and not the "
-"bookmarks to save a precise position."
+"Note: The bookmark position is based on the number of characters; and "
+"therefore in pages with a dynamic content is better to use the specific "
+"search, and not the bookmarks which save a precise position."
 msgstr ""
 "Noot: de bookmark positie is gebaseerd op het aantal tekens; in pagina's met "
 "dynamische inhoud kunt u beter de specific search gebruiken in plaats van de "
 "bookmarks om een specifieke positie op te slaan."
+
+#. type: Title ##
+#, fuzzy, no-wrap
+#| msgid "Changes for 1.0"
+msgid "Changes for 2.0"
+msgstr "Veranderingen voor 1.0"
+
+#. type: Bullet: '* '
+msgid "Added options to save and delete different searches for each file."
+msgstr ""
+
+#. type: Bullet: '* '
+msgid "Fixed bug which broke when paths contained non latin characters."
+msgstr ""
+
+#. type: Bullet: '* '
+msgid "Shortcuts can now be reassigned using the NVDA gesture input dialog."
+msgstr ""
 
 #. type: Title ##
 #, no-wrap
@@ -184,10 +191,64 @@ msgstr ""
 "Sloveens, Tamil."
 
 #. type: Plain text
-#, no-wrap
-msgid "[[!tag stable]]\n"
+#, fuzzy, no-wrap
+#| msgid "[[!tag stable]]\n"
+msgid "[[!tag dev stable]]\n"
 msgstr "[[!tag stable]]\n"
 
 #. type: Plain text
-msgid "[1]: http://addons.nvda-project.org/files/get.php?file=pm"
+#, fuzzy
+#| msgid "[1]: http://addons.nvda-project.org/files/get.php?file=pm"
+msgid ""
+"[1]: http://addons.nvda-project.org/files/get.php?file=pm [2]: http://addons."
+"nvda-project.org/files/get.php?file=pm-dev"
 msgstr "[1]: http://addons.nvda-project.org/files/get.php?file=pm"
+
+#~ msgid ""
+#~ "control+shift+NVDA+s; Opens a dialog for saving a string of text that you "
+#~ "may wish to find on the current document. By default it shows the text "
+#~ "previously saved for this file. If this text is deleted, the text file "
+#~ "containing the corresponding string will be also removed."
+#~ msgstr ""
+#~ "control+shift+NVDA+s; Opent een dialoogvenster om een tekstdeel op te "
+#~ "slaan dat u misschien wil vinden in het huidige document. Standaard toont "
+#~ "het de tekst die u eerder heeft opgeslagen voor dit bestand. Verwijdert u "
+#~ "deze tekst, dan wordt ook het tekstbestand dat het tekstdeel bevat "
+#~ "verwijderd."
+
+#~ msgid ""
+#~ "control+shift+NVDA+f; If the current document has a text file for "
+#~ "specific search, opens a dialog that shows the saved string of text. When "
+#~ "you press OK, NVDA search for the text set on the dialog edit box. If no "
+#~ "text file is found for this document, NVDA announces it without opening "
+#~ "Specific Search dialog."
+#~ msgstr ""
+#~ "control+shift+NVDA+f; Als het huidige document een tekstbestand heeft "
+#~ "voor de opgegeven zoekterm, opent er een dialoogvenster dat het "
+#~ "opgeslagen tekstdeel toont. Als u OK drukt, zoekt NVDA naar tekst in het "
+#~ "invoerveld. Als er geen tekstbestand gevonden is voor dit document, "
+#~ "kondigt NVDA het aan zonder een zoekvenster te openen."
+
+#~ msgid "control+shift+NVDA+k; Saves the current position as a bookmark"
+#~ msgstr "control+shift+NVDA+k; Slaat de huidige positie op als een bookmark"
+
+#~ msgid ""
+#~ "control+shift+NVDA+delete; Deletes the bookmark corresponding to this "
+#~ "position."
+#~ msgstr ""
+#~ "control+shift+NVDA+delete; Verwijdert de bookmark die met deze positie "
+#~ "overeenkomt."
+
+#~ msgid "control+shift+k; Moves to the next bookmark."
+#~ msgstr "control+shift+k; Gaat naar de volgende bookmark."
+
+#~ msgid "shift+NVDA+k; Moves to the previous bookmark."
+#~ msgstr "shift+NVDA+k; Gaat naar de vorige bookmark."
+
+#~ msgid ""
+#~ "NVDA+k; Copies to clipboard the file name, without extension, where could "
+#~ "be saved place markers (positions or a string to search)."
+#~ msgstr ""
+#~ "NVDA+k; Kopieert de bestandsnaam zonder extensie naar het klembord, waar "
+#~ "place markers kunnen worden opgeslagen (posities of een tekstdeel om te "
+#~ "zoeken)."
