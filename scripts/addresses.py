@@ -49,7 +49,7 @@ addresses = {
     },
     'es': {
         'lang': 'Spanish',
-        'email': ['Juan C. buno <quetzatl@eresmas.net>'],
+        'email': ['Juan C. buno <quetzatl@eresmas.net>', 'Nolia Martinez <nrm1977@gmail.com>'],
     },
     'fi': {
         'lang':'Finnish',
