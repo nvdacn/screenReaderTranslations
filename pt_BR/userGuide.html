@@ -145,10 +145,9 @@
     </UL>
   <LI><A HREF="#toc98">12. Tópicos Avançados</A>
     <UL>
-    <LI><A HREF="#toc99">12.1. Remapeando Teclas de Comando e outros Gestos de Entrada</A>
-    <LI><A HREF="#toc100">12.2. Personalização avançada da Pronúncia de sinais</A>
+    <LI><A HREF="#toc99">12.1. Personalização avançada da Pronúncia de sinais</A>
     </UL>
-  <LI><A HREF="#toc101">13. Informação Adicional</A>
+  <LI><A HREF="#toc100">13. Informação Adicional</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -2069,7 +2068,7 @@ Tenha em conta que mesmo esta opção estando desativada, o cursor de exploraç�
 </P>
 <P>
 ==== Sempre Incluir Descrições de Caracteres Curta para as Sugestões
- Esta opção, qe por padrão encontra-se ativada, permite que você escolha se o NVDA deve ou não fornecer uma curta descrição para cada caractere que compõe uma sugestão, tanto quando esta é selecionada como quando é automaticamente lida ao aparecer uma lista de sugestões.
+ Esta opção, que por padrão encontra-se ativada, permite que você escolha se o NVDA deve ou não fornecer uma curta descrição para cada caractere que compõe uma sugestão, tanto quando esta é selecionada como quando é automaticamente lida ao aparecer uma lista de sugestões.
  Vale salientar que em entradas tais como as Chinesas, o anúncio das descrições de caracteres extras para a sugestão selecionada não será afetado por esta opção.
  Isto pode ser útil para métodos de entrada coreanos e japoneses. 
 </P>
@@ -2184,6 +2183,7 @@ Pode configurar o anúncio de:
 <LI>Atributos da Fonte
 <LI>Alinhamento
 <LI>Cores
+<LI>Revisões de editores
 <LI>Estilo
 <LI>Erros Ortográficos
 <LI>Número das Páginas
@@ -4164,106 +4164,7 @@ Por favor consulte as <A HREF="http://mielke.cc/brltty/doc/drivers/">tabelas de 
 <H2>12. Tópicos Avançados</H2>
 
 <A NAME="toc99"></A>
-<H3>12.1. Remapeando Teclas de Comando e outros Gestos de Entrada</H3>
-
-<P>
-Os usuários agora poderão criar ou modificar mapas dos gestos de entrada (tais como pressionamento de teclas) para scripts en un arquivo especial na pasta de configurações do usuário do NVDA.
-Este arquivo é denominado gestures.ini.
-</P>
-<P>
-Este arquivo utiliza a sintaxi estândar dos arquivos ini.
-Cada seção proporciona mapas para scripts em un módulo particular python e classe dentro do NVDA. 
-</P>
-
-<UL>
-<LI>o nome de seção deve ser o módulo Python e classe separados por un ponto (.).
-<LI>As teclas de cada seção são os nomes dos scripts com os quais deseja concordar.
-Alternativamente, você pode usar None para desvincular gestos de entrada de um script a que estavam vinculados anteriormente.
-Cada tecla de entrada só pode ser listada uma vez por seção, incluindo none.
-<P></P>
-<LI>o valor de cada tecla é uma lista separada con vírgula (,) de identificadores do gesto os cuais representam os distintos gestos de entrada que devem vincularse con esse script em particular.
-Identificadores de gestos terminados com vírgula devem ser colocados entre aspas (") ou apóstrafo (').
-</UL>
-
-<P>
-os identificadores de gestos consistem num código de dispositivo de duas letras; um subdispositivo, esquema de teclado ou modo entre colchetes; um sinal de 2 pontos, e em seguida um código específico identificando a entrada atual, tal como teclas ou nomes de gestos de toque.
-</P>
-
-<UL>
-<LI>Para gestos de teclado, o código de dispositivo é kb.
-A parte entre couchetes representa o esquema de teclado e é opcional.
-Caso ela não seja especificada, o gesto será aplicado a todos os esquemas de teclado.
-O código após o sinal de 2 pontos consiste em um ou mais nomes de teclas separados por um sinal de (+).
-<LI>Para gestos de linhas braille, o código de dispositivo é br.
- A parte entre couchetes identifica a linha braille específica e é obrigatória.
-O código após o sinal de 2 pontos consiste em um ou mais nomes de teclas (da linha braille) separados por um sinal de (+).
-<LI>Para gestos de toques, o código de dispositivo é ts.
-A parte entre colchetes especifica o modo de toque e é opcional.
-O código após o sinal de 2 pontos consiste num gesto de toque; ex: double_tap, 2fingerflickUp or 3finger_tap.
-</UL>
-
-<P>
-Para encontrar os identificadores de gesto, assim como os nomes dos scripts e a classe e o módulo no qual estão contidos, você pode:
-</P>
-
-<OL>
-<LI>Ativar a Ajuda de entrada.
-<LI>Ativar o gesto (pressionar a tecla, tocar a tela, etc.).
-<LI>Desativar a Ajuda de Entrada. 
-<LI>Ativar o visualizador do log no menú ferramentas. 
-<LI>examinar as entradas recentes do log.
-Uma destas proporciona informação sobre o gesto de entrada enviado, incluindo o módulo.classe e script si está vinculado a algum.
-</OL>
-
-<P>
-Segue um exemplo de como vincular NVDA+shift+t ao script data/hora.
-</P>
-<P>
-Para encontrar o nome e módulo.classe e script correto para data/hora, ative a Ajuda de Entrada e pressione NVDA+f12 (visto que esse é o gesto atual para o script data/hora).
-Em seguida, desative a Ajuda de Entrada e examine o visualizador do log. 
-</P>
-<P>
-Ao fundo, poderá ver: 
-</P>
-
-<PRE>
-  INFO - inputCore.InputManager._handleInputHelp (13:17:22):
-  Input help: gesture kb(desktop):nvda+f12, bound to script dateTime on globalCommands.GlobalCommands
-</PRE>
-
-<P>
-Com isso, pode notar que o nome do script é dateTime e o módulo.classe é globalCommands.GlobalCommands. 
-</P>
-<P>
-Se o arquivo ainda não esiste, crie um arquivo de texto chamado gestures.ini na pasta de configurações do usuario e lhe adicione o seguinte conteúdo:
-</P>
-
-<PRE>
-  [globalCommands.GlobalCommands]
-  	dateTime = kb:NVDA+shift+t
-</PRE>
-
-<P>
-Isso vinculará o pressionamento das teclas NVDA+shift+t (em qualquer esquema de teclado) ao script dateTime. 
-</P>
-<P>
-Note que a combinação original NVDA+f12 continuará funcionando.
-Para eliminar esta combinação, adicione a linha seguinte:
-</P>
-
-<PRE>
-  	None = kb:NVDA+f12
-</PRE>
-
-<P>
-Mesmo sendo livre para vincular scripts  a cualquer tecla disponível, poderá ser problemático usar a tecla alt no teclado.
-O NVDA envia teclas modificadoras (tais como shift, control e alt) al Sistema Operacional, embora si encontrem em un script.
-Dessa forma, ao utilizar alt em un gesto, pressionando esta tecla a combinação poderá ativar a barra de menus, tanto quanto executar o script.
-Por isso, é recomendável usar apenas Shift, control e a tecla modificadora do NVDA como modificadores.
-</P>
-
-<A NAME="toc100"></A>
-<H3>12.2. Personalização avançada da Pronúncia de sinais</H3>
+<H3>12.1. Personalização avançada da Pronúncia de sinais</H3>
 
 <P>
 É possível personalizar a pronúncia da pontuação e de outros sinais para além do que pode ser feito usando o <A HREF="#SymbolPronunciation">Diálogo de Pronúncia de Pontuação e Sinais</A>.
@@ -4276,7 +4177,7 @@ O formato desse arquivo está documentado na seção sobre Pronúncia de Sinais 
 Não é possível, todavia, definir sinais complexos.
 </P>
 
-<A NAME="toc101"></A>
+<A NAME="toc100"></A>
 <H2>13. Informação Adicional</H2>
 
 <P>
