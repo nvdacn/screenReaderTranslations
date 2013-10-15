@@ -21,7 +21,7 @@ Traduzido por Marlin Rodrigues da Silva e Cleverson Casarin Uliana
 <LI>Campos de formulário agora são anunciados em documentos do Microsoft word. (<A HREF="http://community.nvda-project.org/ticket/2295">#2295</A>)
 <LI>O NVDA agora consegue anunciar informações de revisão no Microsoft Word quando monitorar alterações está abilitado. Note que Anunciar revisões de editores, no diálogo de opções de documento do NVDA (desligada por padrão), tem que também estar abilitada para que elas sejam anunciadas. (<A HREF="http://community.nvda-project.org/ticket/1670">#1670</A>)
 <LI>Listas suspensas no Microsoft Excel 2003 a 2010 são agora anunciadas quando abertas e se navega ao longo delas. (<A HREF="http://community.nvda-project.org/ticket/3382">#3382</A>)
-<LI>Uma nova opção no diálogo de opções de teclado, "Permitir leitura dinâmica durante o dizer tudo", possibilita navegar ao longo dum documento com os comandos de navegação rápida e linha / parágrafo em modo de navegação e manter-se em leitura contínua. Essa opção vem desligada por padrão. (<A HREF="http://community.nvda-project.org/ticket/2766">#2766</A>)
+<LI>Uma nova opção no diálogo de opções de teclado, "Permitir leitura dinâmica durante a leitura contínua", possibilita navegar ao longo dum documento com os comandos de navegação rápida e linha / parágrafo em modo de navegação e manter-se em leitura contínua. Essa opção vem desligada por padrão. (<A HREF="http://community.nvda-project.org/ticket/2766">#2766</A>)
 <LI>Existe agora um diálogo de gestos para entrada com o fim de possibilitar uma personalização mais simples dos gestos de entrada (tais como as teclas do teclado) para comandos do NVDA. (<A HREF="http://community.nvda-project.org/ticket/1532">#1532</A>)
 </UL>
 
@@ -31,8 +31,8 @@ Traduzido por Marlin Rodrigues da Silva e Cleverson Casarin Uliana
 <LI>O Zend Studio agora funciona igual ao Eclipse. (<A HREF="http://community.nvda-project.org/ticket/3420">#3420</A>)
 <LI>O estado alterado de certas caixas de seleção do diálogo de regras para mensagens do Microsoft Outlook 2010 agora é anunciado automaticamente. (<A HREF="http://community.nvda-project.org/ticket/3063">#3063</A>)
 <LI>O NVDA vai agora anunciar o estado "pregado" para controles pregados como as abas no Mozilla Firefox. (<A HREF="http://community.nvda-project.org/ticket/3372">#3372</A>)
-<LI>Agora é possível associar scripts a gestos de teclado que contenham Alt e/ou Windows como teclas modificadoras. Se isso fosse feito antes, executar o script faria com que fosse ativado o Menu Iniciar ou a barra de menus. (<A HREF="http://community.nvda-project.org/ticket/3472">#3472</A>)
-<LI>Selecionar texto em documentos em modo de navegação (usando por exemplo control+shift+end) não faz mais mudar a disposição de teclado em sistemas com várias disposições de teclado instaladas. (<A HREF="http://community.nvda-project.org/ticket/3472">#3472</A>)
+<LI>Agora é possível associar scripts a gestos de teclado que contenham Alt e/ou Windows como teclas modificadoras. Se isso fosse feito anteriormente, executar o script faria com que fosse ativado o Menu Iniciar ou a barra de menus. (<A HREF="http://community.nvda-project.org/ticket/3472">#3472</A>)
+<LI>Selecionar textos em documentos no modo de navegação (usando por exemplo control+shift+end) já não altera a disposição de teclado em sistemas com várias disposições de teclado instaladas. (<A HREF="http://community.nvda-project.org/ticket/3472">#3472</A>)
 <LI>O Internet Explorer não deve mais travar ou ficar inutilizado ao fechar o NVDA. (<A HREF="http://community.nvda-project.org/ticket/3397">#3397</A>)
 <LI>Movimentos físicos e outros eventos em computadores recentes não são mais tratados como pressionamentos inapropriados de teclas. Anteriormente, os mesmos silenciavam a fala e às vezes chamavam comandos do NVDA. (<A HREF="http://community.nvda-project.org/ticket/3468">#3468</A>)
 <LI>Agora o NVDA se comporta como esperado no Poedit 1.5.7. Usuários de versões mais antigas terão de atualizar. (<A HREF="http://community.nvda-project.org/ticket/3485">#3485</A>)
@@ -40,7 +40,11 @@ Traduzido por Marlin Rodrigues da Silva e Cleverson Casarin Uliana
 <LI>Caso seja fornecida uma opção de linha de comando desconhecida ao carregar o pacote de distribuição do NVDA, entra não entra mais num ciclo infinito de diálogos de mensagem de erro. (<A HREF="http://community.nvda-project.org/ticket/3463">#3463</A>)
 </UL>
 
-<H3>Alterações para desenvolvedores</H3>
+<H3>Alterações específicas para desenvolvedores</H3>
+
+<P>
+Alguns itens ou termos desta seção não serão traduzidos, uma vez que são demasiado técnicos e relevantes apenas para desenvolvedores. Todavia, os itens que possam ser relevantes para usuários comuns, serão traduzidos.
+</P>
 
 <UL>
 <LI>Você pode especificar a categoria a ser mostrada ao usuário para scripts usando o atributo scriptCategory em classes  ScriptableObject e o atributo category em métodos script. Consulte a documentação da baseObject.ScriptableObject para mais detalhes. (<A HREF="http://community.nvda-project.org/ticket/1532">#1532</A>)
@@ -110,18 +114,22 @@ Traduzido por Marlin Rodrigues da Silva e Cleverson Casarin Uliana
 <LI>Diálogos de confirmação no Microsoft Office 2013 agora têm seu conteúdo automaticamente lido quando aparecem.
 <LI>Melhorias de desempenho ao navegar em certas tabelas no Microsoft Word. (<A HREF="http://community.nvda-project.org/ticket/3326">#3326</A>)
 <LI>Os comandos de navegação em tabelas do NVDA (control+alt+setas) funcionam melhor em certas tabelas do Microsoft Word nas quais uma célula abrange várias linhas.
-<LI>Caso o gestor de complementos já esteja aberto, ativá-lo de novo (seja pelo menu ferramentas ou abrindo um arquivo de complemento) não mais falha nem torna impossível fechar o gestor de complementos. (<A HREF="http://community.nvda-project.org/ticket/3351">#3351</A>)
+<LI>Caso o gestor de complementos já esteja aberto, ativá-lo de novo (seja pelo menu ferramentas ou abrindo um arquivo de complemento) não mais causa falha nem torna impossível fechar o gestor de complementos. (<A HREF="http://community.nvda-project.org/ticket/3351">#3351</A>)
 <LI>O NVDA não congela mais em certos diálogos quando o IME Chinês ou Japonês do Office 2010 está em uso. (<A HREF="http://community.nvda-project.org/ticket/3064">#3064</A>)
 <LI>Vários espaços não são mais comprimidos para um só espaço em linhas braile. (<A HREF="http://community.nvda-project.org/ticket/1366">#1366</A>)
-<LI>O Zend Eclipse PHP Developer Tools agora funciona do mesmo jeito que o Eclipse. (<A HREF="http://community.nvda-project.org/ticket/3353">#3353</A>)
+<LI>O Zend Eclipse PHP Developer Tools agora funciona da mesma forma que o Eclipse. (<A HREF="http://community.nvda-project.org/ticket/3353">#3353</A>)
 <LI>No Internet Explorer, voltou a não ser necessário pressionar tab para interagir com um objeto embutido (como o conteúdo Flash) depois de pressionar Enter nele. (<A HREF="http://community.nvda-project.org/ticket/3364">#3364</A>)
-<LI>Ao editar texto no Microsoft PowerPoint, a última linha não é mais anunciada como a linha acima se a linha final estiver em branco. (<A HREF="http://community.nvda-project.org/ticket/3403">#3403</A>)
+<LI>Ao editar textos no Microsoft PowerPoint, a última linha não é mais anunciada como a linha acima se a linha final estiver em branco. (<A HREF="http://community.nvda-project.org/ticket/3403">#3403</A>)
 <LI>No Microsoft PowerPoint, os objetos não são mais falados em dobro às vezes quando você os seleciona ou escolhe editá-los. (<A HREF="http://community.nvda-project.org/ticket/3394">#3394</A>)
-<LI>O NVDA não faz mais o Adobe Reader encerrar ou congelar em certos documentos PDF mal-feitos que contém linhas do lado de fora de tabelas. (<A HREF="http://community.nvda-project.org/ticket/3399">#3399</A>)
-<LI>O NVDA agora detecta corretamente o próximo slaide com foco ao apagar um slaide na vista de miniaturas do Microsoft PowerPoint. (<A HREF="http://community.nvda-project.org/ticket/3415">#3415</A>)
+<LI>O NVDA não faz mais o Adobe Reader encerrar ou congelar em certos documentos PDF mal-feitos que contém linhas fora de tabelas. (<A HREF="http://community.nvda-project.org/ticket/3399">#3399</A>)
+<LI>O NVDA agora detecta corretamente o próximo slaide com foco ao apagar um slaide no visualizador de miniaturas do Microsoft PowerPoint. (<A HREF="http://community.nvda-project.org/ticket/3415">#3415</A>)
 </UL>
 
 <H3>Alterações Específicas Para desenvolvedores</H3>
+
+<P>
+ Alguns itens ou termos desta seção não serão traduzidos, uma vez que são demasiado técnicos e relevantes apenas para desenvolvedores. Todavia, os itens que possam ser relevantes para usuários comuns, serão traduzidos.
+</P>
 
 <UL>
 <LI>windowUtils.findDescendantWindow foi adicionado para buscar uma janela descendente (HWND) que corresponda à visibilidade especificada, ID de controle e/ou nome de classe.
