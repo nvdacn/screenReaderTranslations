@@ -17,7 +17,7 @@ addresses = {
     },
     'ar': {
         'lang':'Arabic',
-        'email': ['Fatma Mehanna <fatma.mehanna@gmail.com>', 'Shaimaa Ibrahim <shamse1@gmail.com>', 'faraz <fawaz.ar94@gmail.com>'],
+        'email': ['Fatma Mehanna <fatma.mehanna@gmail.com>', 'Shaimaa Ibrahim <shamse1@gmail.com>'],
     },
     'ar_SO': {
         'lang':'Somalian Arabic',
@@ -29,7 +29,7 @@ addresses = {
     },
     'cs': {
         'lang': 'Czech',
-        'email': ['Radek zalud <radek.zalud@seznam.cz>', 'Martina Letochova <letochova@seznam.cz>'],
+        'email': ['Martina Letochova <letochova@seznam.cz>'],
     },
     'da': {
         'lang': 'Danish',
@@ -77,11 +77,11 @@ addresses = {
     },
     'hi': {
         'lang': 'Hindi',
-        'email': ['dipendra.lists@gmail.com', 'ayeshameshaq@hotmail.com'],
+        'email': ['dipendra.lists@gmail.com'],
     },
     'hr': {
         'lang': 'Croatian',
-        'email': ['Hrvoje Katic <hrvojekatic@gmail.com>', 'Mario Percinic <mario.percinic@gmail.com>'],
+        'email': ['Hrvoje Katic <hrvojekatic@gmail.com>'],
     },
     'hu': {
         'lang': 'Hungarian',
@@ -121,7 +121,7 @@ addresses = {
     },
     'nl': {
         'lang':'Duch',
-        'email': ['Bram Duvigneau <bram@bramd.nl>', 'Bart Simons <bart@bartsimons.be>', 'Alwine Hardus <ahardus@xs4all.nl>', 'A Campen <a.campen@wxs.nl>', 'Leonard de Ruijter <mail@leonardderuijter.nl>'],
+        'email': ['Bram Duvigneau <bram@bramd.nl>', 'Bart Simons <bart@bartsimons.be>', 'A Campen <a.campen@wxs.nl>', 'Leonard de Ruijter <mail@leonardderuijter.nl>'],
     },
     'nb_NO': {
         'lang':'Norwegian bokmål',
@@ -129,7 +129,7 @@ addresses = {
     },
     'pl': {
         'lang':'Polish',
-        'email': ['Konrad <FOX20PL@aol.com>', 'Hubert Meyer <killer@tyflonet.com>', 'Grzegorz Zlotowicz <grzezlo@wp.pl>'],
+        'email': ['Hubert Meyer <killer@tyflonet.com>', 'Grzegorz Zlotowicz <grzezlo@wp.pl>'],
     },
     'pt_BR': {
         'lang': 'Brazilian Portuguese',
