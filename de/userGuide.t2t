@@ -852,6 +852,10 @@ Wenn dieses Kontrollfeld aktiviert ist, können Sie die Einfüge-Taste der erwei
 
 ==== Einfügetaste des Nummernblocks als NVDA-Taste verwenden ====
 Wenn dieses Kontrollfeld aktiviert ist, können Sie die Einfüge-Taste des Nummernblocks als NVDA-Taste verwenden.
+Wenn Sie keine dieser Tasten als NVDA-Tasten festlegen, können Sie nicht mehr auf bestimmte Funktionen von NVDA zugreifen.
+Aus diesem Grund wird eine Fehlermeldung angezeigt, wenn Sie keine Taste als NVDA-Taste verwenden. 
+Legen Sie daher immer mindestens eine Taste als NVDA-Taste fest, nachdem Sie die Fehlermeldung mit OK geeschlossen haben.
+
 
 %kc:setting
 ==== Eingegebene Zeichen ansagen ====
@@ -1171,7 +1175,75 @@ Die folgenden Tastenbefehle sind auch hilfreich:
 | Konfiguration zurücksetzen | NVDA+STRG+R | NVDA+STRG+R | Setzt bei einmaligem Drücken die NVDA-Einstellungen auf den letzten gespeicherten Stand zurück, bei dreimaligem Drücken wird die Werkseinstellung wiederhergestellt. |
 %kc:endInclude
 
-++ Die Konfigurationsdateien und Benutzerprofile ++
+++ Konfigurationsprofile ++
+Manchmal möchten Sie unterschiedliche Einstellungen in unterschiedlichen Situationen verwenden.
+Zum Korrekturlesen ist es beispielsweise sinnvoll, Einrückungen und Schriftattribute angesagt zu bekommen.
+In NVDA können sie hierfür Konfigurationsprofile verwenden.
+
+Ein Konfigurationsprofil enthält alle Einstellungen von NVDA ausgenommen die Einstellungen des Dialogs "allgemein".
+
+Konfigurationsprofile können manuell aktiviert werden.
+Außerdem können Sie solche Profile aber auch automatisch aktivieren (beispelsweise beim Wechsel in eine bestimmte Anwendung).
+
++++ Verwalten von Konfigurationsprofilen +++
+Konfigurationsprofile werden über den Menüpunkt "Konfigurationsprofile" im NVDA-Menü verwaltet. 
+Dieser Dialog ist auch über eine Tastenkombination erreichbar:
+%kc:beginInclude
+- NVDA+strg+p: zeigt den Dialog Konfigurationsprofile an.
+-
+%kc:endInclude
+
+Wenn Sie den Dialog öffnen, wird Ihnen eine Liste der vorhandenen Profile angezeigt und das aktive Profil ausgewählt.
+Außerdem werden Ihnen noch zusätzliche Informationen angezeigt wie z.B. die eingestellte Aktivierungsmethode (manuell oder per Auslöser) oder der Bearbeitungsstatus.
+
+Über die Schalter "umbenennen" oder "löschen" können Sie ein Profil umbenennen oder löschen.
+
+Über den Schalter "Schließen" können Sie den Dialog schließen.
+
++++ erstellen eines Konfigurationsprofils +++
+Um ein neues Profil zu erstellen, drücken Sie den Schalter "neu".
+
+Über den erscheinenden Dialog können Sie einen Namen für das Profil vergeben.
+Außerdem können Sie bestimmen, wie dieses Profil verwendet werden soll.
+Wenn sie vorhaben, das Profil manuell zu aktivieren, wählen Sie "manuelle Aktivierung" aus.
+Wählen Sie anderenfalls einen Auslöser aus, durch den das Profil automatisch aktiviert werden soll.
+Wenn Sie keinen Namen vergeben und einen Auslöser auswählen, wird automatisch ein passender name für das Profil eingetragen.
+Weiter Informationen über Auslöser finden Sie  [weiter unten #ConfigProfileTriggers].
+
+Wenn Sie den Dialog mit OK schließen, wird auch der Konfigurationsprofil-Dialog geschlossen, sodass sie das Profil bearbeiten können.
+
++++ manuelle Aktivierung +++[ConfigProfileManual]
+Sie können ein Konfigurationsprofil manuell aktivieren, indem Sie den Schalter "manuell aktivieren/bearbeiten" verwenden.
+Wenn Sie einmal ein Profil manuell aktiviert haben, sind Auslöser für automatisch aktivierte profile zwar weiterhin aktiv, Einstellungen in manuell aktivierten Profilen haben jedoch Vorrang.
+Jegliche Einstellungen, die sie ab sofort ändern, werden im manuell aktivierten Profil gespeichert.
+Um ein manuell aktiviertes Profil wieder zu deaktivieren, drücken Sie den Schalter "manuell deaktivieren".
+
++++ Auslöser +++[ConfigProfileTriggers]
+Mit diesem  Schalter können Sie einen Auslöser bestimmen, über den ein Profil automatisch aktiviert werden soll.
+
+
+Folgende Auslöser stehen zur Verfügung:
+- aktuelle Anwendung; wird ausgelöst, wenn Sie in die aktuelle Anwendung wechseln
+- alles lesen: wird ausgelöst, sobald Sie den Befehl "alles lesen" verwenden.
+-
+
+Um das Profil zu bestimmen, das durch einen bestimmten Auslöser aktiviert werden soll, wählen Sie zunächst den auslöser und anschließend das Profil aus.
+Wenn Sie nicht möchten, dass ein bestimmtes Profil ausgewählt wird, wählen Sie "Standardkonfiguration" aus.
+
+Über den Schalter "Schließen" können Sie den Konfigurationsprofil-Dialog schließen.
+
++++ bearbeiten eines Konfigurationsprofils +++
+Wenn Sie ein Konfigurationsprofil manuell aktiviert haben, werden sämtliche Einstellungen in diesem Profil gespeichert.
+Andernfalls werden alle Einstellungen in jenem Profil gespeichert, das zuletztdurch einen Auslöser aktiviert wurde.
+Wenn Sie beispielsweise ein Profil für den Editor erstellt haben und sich momentan im Editor befinden, werden alle Einstellungen in diesem Profil gespeichert.
+Wenn Sie weder ein manuell aktiviertes noch ein durch einen Auslöser aktiviertes Profil erstellt haben, werden alle einstellungen in der Standardkonfiguration gespeichert.
+
+Um ein Profil zu bearbeiten, das an den auslöser "alles lesen" gekoppelt ist, müssen Sie dieses Profil zuvor  [manuell aktivieren #ConfigProfileManual].
+
++++ Auslöser vorübergehend abschalten +++
+Wenn Sie ein manuell aktiviertes Profil bearbeiten wollen oder wenn Sie die Standardkonfiguration bearbeiten wollen, ohne von automatisch aktivierten Profilen gestört zu werden, können Sie über dieses Kontrollfeld alle Auslöser vorübergehend deaktivieren.
+
+++ Speicherorte für Konfigurationsdateien ++
 In der Portablen Edition von NVDA werden sämtliche Einstellungen, die benutzerdefinierten Anwendungsmodule und die angepassten Treiber im Ordner "userConfig" unterhalb des Stammordners von NVDA abgelegt.
 
 Bei den installierten Versionen von NVDA werden sämtliche Einstellungen, die benutzerdefinierten Anwendungsmodule und die angepassten Treiber in einem speziellen Ordner in dem Ordner des angemeldeten Benutzers in dessen Windows-Profil abgelegt.
