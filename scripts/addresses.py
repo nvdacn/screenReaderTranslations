@@ -133,7 +133,7 @@ addresses = {
     },
     'pt_BR': {
         'lang': 'Brazilian Portuguese',
-        'email': ['Cleverson Casarin Uliana <clever92000@yahoo.com.br>', 'Marlin Rodrigues <marlincgrodrigues@yahoo.com.br>'],
+        'email': ['Cleverson Casarin Uliana <clcaul@live.com>', 'Marlin Rodrigues <marlincgrodrigues@yahoo.com.br>'],
     },
     'pt_PT': {
         'lang': 'Portuguese',
