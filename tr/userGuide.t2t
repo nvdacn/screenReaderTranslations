@@ -782,6 +782,10 @@ Bu onay kutusu işaretlenirse, genellikle yön tuşlarının üzerinde home ve e
 ==== Numaratördeki insert tuşunu NVDA Değişken Tuşu Olarak Kullan ====
 Bu onay kutusu işaretlenirse, numaratördeki insert tuşu NVDA değişken tuşu olarak kullanılabilir.
 
+Hiçbir tuş NVDA tuşu olarak ayarlanmazsa, bazı NVDA komutları kullanılamaz.
+Dolayısıyla, bütün tuşlar seçilmemiş durumdaysa, Klavye Ayarları iletişim kutusu  tamam düğmesine basıldığında bir hata mesajı gösterir.
+Bu mesajı kapattıktan sonra, iletişim kutusunu uygun bir şekilde kapatabilmek için en az bir tuşu NVDA tuşu olarak seçmelisiniz.
+
 %kc:setting
 ==== Yazılan Karakterleri Söyle ====
 Kısayol tuşu: NVDA+2
@@ -1094,7 +1098,78 @@ Ayrıca aşağıdaki NVDA tuş komutları da yararlıdır:
 | Kaydedilmiş ayarlara (konfigürasyona) geri dön | NVDA+kontrol+r | NVDA+kontrol+r | Bir kez basıldığında NVDA konfigürasyonunu en son kaydetmiş olduğunuz haline, üç kez basıldığında  fabrika ayarlarına döndürür |
 %kc:endInclude
 
-++ Ayar Dosyaları ve Kullanıcı Profilleri ++
+++ Konfigürasyon Profilleri ++
+Bazen, farklı durumlar için farklı ayarlar kullanmak isteyebilirsiniz.
+Örneğin, yazı yazarken satır girintilerinin bildirimini etkinleştirmek ya da   düzeltme okuması yaparken yazı biçimi özelliklerinin bildirimini açmak isteyebilirsiniz.
+NVDA konfigürasyon profillerini kullanarak bunu yapmanıza olanak tanır.
+
+Bİr konfigürasyon profili, sadece profil düzenlenirken değiştirilen ayarları kapsar.
+Konfigürasyon profillerinde, NVDA bütünlüğü için geçerli olan Genel Ayarlar iletişim kutusundakiler hariç, çoğu ayar değiştirilebilir.
+
+Konfigürasyon profilleri elle aktif hale getirilebilir.
+Ayrıca, tetikleyuiciler vesilesiyle, örneğin  belli bir uygulama açıldığında konfigürasyon profili otomatik olarak aktif hale getirilebilir.
+
++++ Temel Yönetim +++
+Konfigürasyon profillerini NVDA menüsü altından "Konfigürasyon profilleri" öğesini seçerek yönetebilirsiniz.
+Ayrıca bunu bir tuş komutuyla yapabilirsiniz:
+%kc:beginInclude
+- NVDA+kontrol+p: Konfigürasyon profilleri iletişim kutusunu göster.
+-
+%kc:endInclude
+
+Bu iletişim kutusundaki ilk kontrol, mevcut profillerden birini seçebileceğiniz profil listesidir.
+İletişim kutusunu açtığınızda, o anda düzenlemekte olduğunuz profil seçilidir.
+Aktif profiller için onların elle aktifleştirildiği, tetiklendiği veya düzenlenmekte olduğuyla ilgili ek bilgiler de gösterilir.
+
+Bir profili yeniden adlandırmak veya silmek için, Yeniden adlandır veya Sil düğmelerine basın.
+
+Iletişim kutusunu kapatmak için Kapat düğmesine basın.
+
++++ Profil Oluşturma +++
+Bir profil oluşturmak için, Yeni düğmesine basın.
+
+Yeni Profil iletişim kutusunda, profil için bir ad girebilirsiniz.
+Ayrıca Bu profilin nasıl kullanılması gerektiğini seçebilirsiniz.
+Bu profili yalnızca elle seçerek kullanmak istiyorsanız, varsayılan olan Manuel etkinleştirme seçeneğini tercih edin.
+Aksi halde, bu profili otomatik olarak etkinleştirecek bir tetikleyici belirleyin.
+Kolaylık sağlamak amacıyla, profil için isim girmediyseniz, tetikleyici seçtiğinizde isim alanı seçiminize uygun olarak doldurulacaktır. 
+Tetikleyiciler hakkında daha fazla bilgi için [aşağıya #ConfigProfileTriggers] bakın.
+
+Tamam tuşuna basarak profili oluşturup yeni profili düzenlemek üzere konfigürasyon profilleri iletişim kutusunu kapatabilirsiniz.
+
++++ Manuel Etkinleştirme +++[ConfigProfileManual]
+Manuel olarak etkinleştir/düzenle  düğmesine basarak bir profili elle etkinleştirebilirsiniz.
+Etkinleştirildiğinde, başka profiller de tetikleyiciler nedeniyle aktifleştirilebilecektir, ama elle seçilen profildeki ayarlar tetiklenen profildeki ayarlardan farklıysa geçerli olan elle seçilen profildeki ayardır.
+Ayrıca yapacağınız değişiklikler manuel olarak etkinleştirilen profile kaydedilir.
+Manuel olarak aktifleştirilmiş  profili devre dışı bırakmak için, profili konfigürasyon profilleri iletişim kutusunda seçtikten  sonra Manuel devre dışı bırak  düğmesine basın.
+
++++ Tetikleyiciler +++[ConfigProfileTriggers]
+Konfigürasyon Profilleri iletişim kutusunda Tetikleyiciler düğmesine bastığınızda, çeşitli tetikleyiciler için otomatik olarak   etkinleştirilecek profilleri belirleyebilirsiniz.
+
+Listede gösterilen mevcut tetikleyiciler aşağıdaki gibidir :
+- Aktif uygulama: uygulamaya geçtiğinizde tetiklenir.
+- Tümünü oku: Tümünü oku komutu verildiğinde tetiklenir.
+-
+
+Bir tetikleyici için otomatik olarak etkinleştirilecek profili değiştirmek için, tetikleyiciyi seçtikten sonra  Profil listesinden istediğiniz profili seçin.
+Bir profil kullanılmasını istemiyorsanız (normal konfigürasyon) seçeniğini tercih etmelisiniz.
+
+Konfigürasyon profilleri iletişim kutusuna dönmek için Kapat düğmesine basın.
+
++++ Profil Düzenleme +++
+Bir profili manuel olarak etkinleştirdiyseniz, yapılacak değişiklikler bu profile kaydedilir.
+Aksi takdirde, herhangi bir ayar değişikliği en son tetiklenen profile kaydedilir.
+Örneğin, Not Dewfteri uygulaması için bir profil belirlemişseniz ve Not Defteri aktifse, NVDA ayarlarıyla ilgili değişiklikler bu profile kaydedilir.
+Son olarak, manuel olarak etkinleştirilmiş ya da tetiklenmiş bir profil söz konusu değilse, yapılacak değişiklikler normal konfigürasyon profiline kaydedilecektir.
+
+Tümünü oku tetikleyicisiyle ilişkili profili düzenlemek isterseniz, bu profili [manuel olarak #ConfigProfileManual] etkinleştirmelisiniz.
+
++++ Tetikleyicileri Geçici Olarak Devre Dışı Bırakma +++
+Bazen, tüm tetikleyicileri geçici olarak devre dışı bırakmak yararlıdır.
+Örneğin, manuel olarak etkinleştirdiğiniz bir profili ya da normal konfigürasyonu, herhangi bir tetikleyiciye atanmış bir profilin araya girmesini engelleyerek düzenlemek isteyebilirsiniz.
+Bunu, Konfigürasyon Profilleri iletişim kutusunda bulunan , Tüm tetikliyiceleri geçici olarak devre dışı bırak  onay kutusunu işaretleyerek yapabilirsiniz.
+
+++ Konfigürasyon Dosyalarının Konumu ++
 NVDA taşınabilir sürümü, tüm ayarları, kişisel uygulama modüllerini ve kişisel sürücüleri NVDA dizininde bulunan ve UserConfig adı verilen dizinde saklamaktadır.
 
 Kurulabilir NVDA sürümü ise, tüm ayarları, kişisel uygulama modülleri ve kişisel sürücüleri Windows kullanıcı profilinizde bulunan özel bir NVDA dizininde saklar.
