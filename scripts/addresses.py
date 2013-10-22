@@ -141,7 +141,7 @@ addresses = {
     },
     'ru': {
         'lang': 'Russian',
-        'email': ['Beqa Gozalishvili <beqaprogger@gmail.com>', 'ruslan <ru2020slan@yandex.ru>'],
+        'email': ['Beqa Gozalishvili <beqaprogger@gmail.com>', 'ruslan <ru2020slan@yandex.ru>', 'Vadim <eye0@rambler.ru>'],
     },
     'si': {
         'lang': 'Sinhala',
