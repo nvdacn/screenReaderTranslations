@@ -782,6 +782,10 @@ Quand cette case est cochée, Insert du clavier étendu, généralement situé a
 ==== Utiliser insert du pavé numérique comme touche NVDA ====
 Si cette case est cochée, la touche Insert du pavé numérique peut être utilisée comme touche NVDA.
 
+Si aucune touche n'est choisie pour être la touche NVDA, il peut être impossible d'accéder à certaines commandes NVDA.
+Par conséquent, la boîte de dialogue Paramètres du clavier affichera un message d'erreur si aucune touche n'est sélectionnée en appuyant sur OK.
+Après avoir fermé le message d'erreur, vous devrez sélectionner au moins une touche avant de pouvoir appuyer sur OK pour fermer la boîte de dialogue correctement.
+
 %kc:setting
 ==== Echo clavier par caractère ====
 Touche : NVDA+2
@@ -1094,16 +1098,83 @@ Les touches de commande suivantes sont également utiles :
 | Réinitialiser la configuration | NVDA+control+r | NVDA+control+r | appuyez une fois pour réinitialiser à la configuration qui existait lors de votre dernière sauvegarde. Appuyez trois fois pour revenir à la configuration par défaut de NVDA. |
 %kc:endInclude
 
-++ Fichiers de configuration et profils utilisateur ++
+++ Profiles de configuration ++
+Parfois, vous pouvez souhaiter avoir des paramètres différents pour des situations différentes.
+Par exemple, vous pouriez avoir l'annonce d'indentation activée pendant que vous éditez ou l'annonce des attributs de la police activée pendant que vous corrigez.
+NVDA vous permet de faire cela en utilisant des profils de configuration.
+
+Un profil de configuration contient uniquement les paramètres qui sont modifiés alors que le profil est en cours d'édition.
+La plupart des paramètres peuvent être modifiés dans les profils de configuration à l'exception de ceux dans la boîte de dialogue Paramètres généraux, qui s'appliquent à l'ensemble de NVDA.
+
+Les profils de configuration peuvent être activés manuellement.
+Ils peuvent également être activés automatiquement grâce à des déclencheurs tels que le passage à une application particulière.
+
++++ Gestion basique +++
+Vous pouvez gérer les profils de configuration en sélectionnant "profils de configuration" dans le menu NVDA.
+Vous pouvez aussi le faire en utilisant un raccourci clavier :
+%kc:beginInclude
+- NVDA+control+p : Afficher la boîte de dialogue Profils de configuration.
+-
+%kc:endInclude
+
+Le premier élément dans cette boîte de dialogue est la liste des profil à partir de laquelle vous pouvez sélectionner un des profils disponibles.
+Lorsque vous ouvrez la boîte de dialogue, le profil en cours d'édition est sélectionnée.
+Des informations complémentaires sont également indiqué pour les profils actifs, indiquant si ils sont activés manuellement, déclenchés et/ou en cours d'édition.
+
+Pour renommer ou supprimer un profil, appuyez sur le bouton renommer ou supprimer, respectivement.
+
+Appuyez sur le bouton Fermer pour fermer la boîte de dialogue.
+
++++ Création d'un profil +++
+Pour créer un profil, appuyez sur le bouton Nouveau.
+
+Dans la boîte de dialogue Nouveau profil, vous pouvez entrer un nom pour le profil.
+Vous pouvez également choisir comment ce profil doit être utilisé.
+Si vous ne souhaitez utiliser ce profil que manuellement, sélectionnez activation manuelle, qui est la valeur par défaut.
+Sinon, sélectionnez un déclencheur qui doit activer automatiquement ce profil.
+Pour plus de commodité, si vous n'avez pas saisi un nom pour le profil, sélectionner un déclencheur remplira le nom en conséquence.
+Reportez-vous à [ci-dessous #ConfigProfileTriggers] pour plus d'information.
+
+Appuyer sur Accepter créer le profil et ferme la boîte de dialogue de configuration de sorte que vous pouvez le modifier.
+
++++ Activation manuelle +++[ConfigProfileManual]
+Vous pouvez activer manuellement un profil en sélectionnant un profil et en cliquant sur le bouton Activation/édition manuelle.
+Une fois activé, d'autres profils peuvent toujours être activés par des déclencheurs, mais les paramètres dans le profil activé manuellement remplacent eux des profiles activés par ces déclencheurs.
+En outre, les paramètres modifiés seront sauvegardés dans ce profil.
+Pour désactiver un profil activé manuellement, sélectionnez-le dans la boîte de dialogue Profils de configuration et appuyez sur le bouton désactiver manuellement.
+
++++ Déclencheurs +++[ConfigProfileTriggers]
+En appuyant sur le bouton Déclencheurs dans la boîte de dialogue Profils de configuration, vous pouvez modifier les profils qui doivent être activée automatiquement par divers déclencheurs.
+
+La liste des Déclencheurs affiche les déclencheurs disponibles, qui sont comme suit :
+- Application en cours : déclenché lors de l'activation de l'application en cours.
+- Dire tout: déclenchée lors de la lecture avec la commande Dire Tout.
+-
+
+Pour modifier le profil qui doit être automatiquement activée par un déclencheur, sélectionnez le déclencheur, puis sélectionnez le profil désiré dans la liste des profils.
+Vous pouvez sélectionner (configuration normale) si vous ne voulez pas utiliser de profil.
+
+Cliquez sur le bouton Fermer pour revenir à la boîte de dialogue Profils de configuration.
+
++++ éditer un profil +++
+Si vous avez activé manuellement un profil, les paramètres modifiés seront sauvegardés dans ce profil.
+Autrement, tous les paramètres modifiés seront sauvegardés dans le profil le plus récemment déclenché.
+Par exemple, si vous avez associé un profil avec l'application Bloc-notes et vous basculer vers le Bloc-notes, tous les paramètres modifiés seront sauvegardés dans ce profil.
+Enfin, s'il n'y a ni de profil activé manuellement, ni de profil déclenché, tous les paramètres que vous modifierez seront sauvegardé dans votre configuration normale.
+
+pour éditer le profil utilisé dans Dire Tout, vous devez [activer manuellement #ConfigProfileManual] ce profil.
+
++++ désactiver temporairement tous les déclencheurs +++
+Parfois, il peut être utile de désactiver temporairement les déclencheurs.
+Par exemple, vous voudrez peut-être modifier un profil activé manuellement ou votre configuration normale sans profils déclenchées interférents.
+Vous pouvez le faire en cochant la case Désactiver temporairement tous les déclencheurs dans la boîte de dialogue Profils de configuration.
+
++ + Emplacement des fichiers de configuration + +
 Les versions portables de NVDA enregistrent tous les paramètres, modules d'applications personnalisés et pilotes personnalisés dans un répertoire nommé userConfig situé dans le répertoire de votre copie portable de NVDA.
 
-Les versions installées de NVDA enregistrent tous les paramètres, modules d'applications personnalisés et pilotes personnalisés dans un répertoire spécial de NVDA situé dans votre profil utilisateur Windows.
-Cela signifie que chaque utilisateur du système peut avoir ses propres paramètres NVDA.
-Pour accéder à votre répertoire de paramètres pour une version installée de NVDA, depuis le menu Démarrer vous pouvez aller à Tous les programmes -> NVDA -> Explorer les paramètres utilisateur.
+Les versions installées de NVDA enregistrent tous les paramètres, modules d'applications personnalisés et pilotes personnalisés dans un répertoire spécial de NVDA situé dans votre profil utilisateur Windows. Cela signifie que chaque utilisateur du système peut avoir ses propres paramètres NVDA. Pour accéder à votre répertoire de paramètres pour une version installée de NVDA, depuis le menu Démarrer vous pouvez aller à Tous les programmes -> NVDA -> Explorer les paramètres utilisateur.
 
-Les paramètres qu'utilise NVDA quand il s'exécute sur l'écran de connexion ou l'écran UAC sont enregistrés dans le répertoire systemConfig situé dans le répertoire nVDA. 
-En général, cette configuration n'a pas à être modifiée.
-Pour modifier cette configuration, configurez nVDA à votre convenance, Sauvegardez la configuration puis cliquez sur  le bouton "Utiliser les paramètres NVDA actuellement sauvegardés pour l'écran de connexion à Windows (nécessite des privilèges administrateur)" dans le dialogue Paramètres généraux.
+Les paramètres qu'utilise NVDA quand il s'exécute sur l'écran de connexion ou l'écran UAC sont enregistrés dans le répertoire systemConfig situé dans le répertoire nVDA. En général, cette configuration n'a pas à être modifiée. Pour modifier cette configuration, configurez nVDA à votre convenance, Sauvegardez la configuration puis cliquez sur le bouton "Utiliser les paramètres NVDA actuellement sauvegardés pour l'écran de connexion à Windows (nécessite des privilèges administrateur)" dans le dialogue Paramètres généraux.
 
 + Outils Additionnels +
 
