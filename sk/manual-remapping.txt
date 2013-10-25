@@ -1,0 +1,71 @@
++ Pre pokroèilıch +
+
+++ Ako prispôsobi klávesové skratky a ostatné vstupné príkazy ++
+Pouívatelia si môu vytvori svoju vlastnú alebo pozmeni aktuálnu konfiguráciu klávesovıch príkazov NVDA modifikáciou špeciálne na to urèeného súboru v prieèinku s pouívate¾skımi nastaveniami.
+Tento súbor je nazvanı gestures.ini.
+
+Na zápis tohoto súboru sa pouíva štandardná syntaks zápisu ini súborov.
+Súbor môe obsahova viacej sekcií z èoho kadá sekcia môe obsahova jednu alebo viac poloiek.
+
+Kadá sekcia obsahuje mapovanie vstupnıch príkazov na skripty v jednom Python module a triede NVDA.
+- Názov sekcie pozostáva z názvu Python modulu a názvu triedy oddelenımi bodkou (.).
+- K¾úèmi kadej sekcie sú názvy skriptov, na ktoré si eláte namapova vstupnı príkaz.
+Je moné odstráni mapovanie nejakého u pouitého vstupného príkazu a na miesto názvu skriptu uvies slovo None.
+Kadı k¾úè môete napísa v jednej sekcii len raz, aj v prípade, ak pouijete názov Nnone.
+- Hodnotou kadého k¾úèa je èiarkou (,) oddelenı zoznam identifikátorov vstupnıch príkazov, ktoré majú by namapované na skript uvedenı v k¾úèi.
+Hodnota musí by uzavretá v úvodzovkách "" alebo znakmi apostrof ''.
+- 
+
+Identifikátor vstupného príkazu pozostáva z dvoj znakového identifikátora zariadenia, nepovinného identifikátora subzariadenia, rozloenia klávesov, alebo reimu v zátvorke, dvojbodky a špecifického reazca znázoròujúceho samotnı vstup napr. názov klávesov alebo dotikového gesta.
+- Pre gestá z klávesnice je kód zariadenia vdy kb.
+Èas v zátvorke znamená rozloenie klávesnice a nie je povinná.
+Ak nie je zadaná, gesto sa pouije pre všetky rozloenia klávesnice.
+Reazec za znakom dvojbodka pozostáva z jedného alebo viacerıch názvov klávesov oddelenıch znakom plus.
+- Pre gestá braillovskıch riadkov je kód zariadenia vdy br.
+Èas v zátvorke identifikuje špecifickı ovládaè zariadenia a je povinná.
+Reazec za znakom dvojbodka pozostáva z jedného alebo viacerıch názvov klávesov oddelenıch znakom plus.
+- Pre dotikové gestá je kód zariadenia vdy ts.
+Èas v zátvorke nie je povinná a reprezentuje dotikovı reim.
+Reazec za znakom dvojbodka je názov dotikového gesta napr. double_tap, 2fingerflickUp, alebo 3finger_tap.
+-
+
+Na získanie identifikátorov vstupnıch príkazov, názvov modulov, tried a skriptov je moné:
++ aktivova nápovedu vstupu.
++ vyvola poadovanı skript (stlaèi klávesovú skratku, dotknú sa obrazovky).
++ vypnú nápovedu vstupu.
++ z podmenu nástroje otvori zobrazovaè logu.
++ preèíta si posledné riadky.
+Jeden z nich by mal obsahova vstupnı príkaz, ktorı ste vykonali spolu aj s modulom, triedou a skriptom, ku ktorému sú momentálne priradené.
++
+
+Nasleduje príklad, ktorı vysvet¾uje, ako je moné príkaz NVDA+shift+t priradi skriptu èas a dátum.
+
+Aby ste získali správny názov skriptu, názov triedy a modulu, spustíte vstupnú nápovedu stlaèením NVDA+1 a následne stlaèíte NVDA+F12, pretoe toto je aktuálny príkaz pre skript èas a dátum.
+Potom vypnete vstupnú nápovedu opä stlaèením NVDA+1 a preèítate si posledné riadky v okne zobrazovaè logu.
+
+Takmer úplne na konci nájdete nieèo ako:
+
+```
+INFO - inputCore.InputManager._handleInputHelp (13:17:22):
+Input help: gesture kb(desktop):nvda+f12, bound to script dateTime on globalCommands.GlobalCommands
+```
+
+Z tohoto vıpisu  môete urèi, e názov skriptu je dateTime a názvy modulu.triedy sú globalCommands.GlobalCommands.
+
+Ak takıto súbor ešte neexistuje, vytvoríte v prieèinku s pouívate¾skımi nastaveniami NVDA súbor gestures.ini s nasledovnım obsahom:
+
+```
+[globalCommands.GlobalCommands]
+	dateTime = kb:NVDA+shift+t
+```
+
+Toto priradí klávesovı príkaz NVDA+shift+t skriptu dateTime vo všetkıch rozloeniach klávesnice.
+
+Všimnite si, e aj pôvodne priradenı klávesovı príkaz NVDA+F12 bude stále funkènı.
+Ak by ste chceli zruši jeho mapovanie, môete prida riadok:
+
+```
+	None = kb:NVDA+f12
+```
+
+
