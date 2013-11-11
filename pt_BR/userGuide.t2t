@@ -1062,6 +1062,25 @@ Para mudar um sinal, selecione-o na lista de sinais.
   
 Após finalizar, pressione ok para salvar as alterações ou cancelar  caso queira descartá-las.
 
++++ Gestos de Entrada +++
+Nesse diálogo, é possível personalizar os gestos de entrada (teclas do teclado, botões da linha braille, etc.) para comandos do NVDA.
+
+Somente comandos que são aplicábeis imediatamente antes do diálogo ser aberto serão mostrados.
+Por exemplo, se você deseja personalizar comandos relacionados com o modo de navegação, é necessário abrir o Diálogo de Gestos de Entrada enquanto está no modo de navegação.
+
+A árvore nesse diálogo lista todos os comandos aplicáveis do NVDA agrupados por categoria.
+ Quaisquer gestos associados a um comando são listados abaixo do comando.
+
+Para adicionar um gesto de entrada para um comando, selecione o comando e pressione o botão Adicionar.
+Em seguida, execute o gesto de entrada que deseja associar, isto é, pressione uma tecla do teclado ou um botão da linha braille.
+Usuualmente, um gesto pode ser interpretado em mais de uma forma.
+Por exemplo, ao pressionar uma tecla do teclado, você pode querer que ela seja especificamente para o esquema de teclado atual (desktop ou laptop) ou pode querer que esta se aplique a todos os esquemas.
+Nesse caso, um menu aparecerá permitindo-lhe selecionar a opção desejada.
+
+Para remover o gesto de um comando, selecione-o e pressione o botão Remover.
+
+Ao finalizar as alterações, pressione o botão OK para salvá-las ou cancelar para descartá-las.
+
 ++ Salvando e Restaurando Configurações ++
 Por padrão, este programa salva automaticamente suas configurações ao ser encerrado.
 Note, porém, que esta opção pode ser alterada nas Opções gerais que se encontram no menu Preferências.
@@ -1117,9 +1136,12 @@ Consulte [a seção abaixo #ConfigProfileTriggers] para mais informações sobre
 Ao pressionar OK criará o perfil e o Diálogo de Perfis de Configuração será fechado de modo que você possa editá-lo.
 
 +++ Ativação Manual +++[ConfigProfileManual]
-Você pode ativar um perfil manualmente selecionando um perfil e pressionando o botão  ativar/editar manualmente.
+Você pode ativar um perfil manualmente selecionando um perfil e pressionando o botão  ativar manualmente.
 Uma vez ativado, outros perfis continuarão podendo ser ativados através dos disparadores, mas quaisquer configurações no perfil ativado manualmente as substituirão.
 além disso, quaisquer configurações que você alterar serão salvas naquele perfil.
+Por exemplo, caso um perfil tenha sido disparado para o aplicativo atual e o anúncio de links estiver abilitado naquele perfil mas desabilitado no perfil ativado manualmente, os links não serão anunciados.
+Todavia, caso você tenha alterado a voz para o perfil disparado mas jamais o tenha alterado no perfil ativado manualmente, a voz usada para o perfil disparado será usada.
+Quaisquer configurações que você alterar serão salvas no perfil ativado manualmente.
 Para desativar um perfil ativado manualmente, selecione-o no Diálogo de Perfis de Configuração e pressione o botão desativar manualmente.
 
 ++++ Disparadores +++[ConfigProfileTriggers]
@@ -1136,19 +1158,19 @@ Você pode selecionar (configuração normal) caso não queira que um perfil sej
 Pressione o botão fechar para retornar ao Diálogo de Perfis de Configuração.
 
 +++ Editando um Perfil +++
-If you have manually activated a profile, any settings you change will be saved to that profile.
-Otherwise, any settings you change will be saved to the most recently triggered profile.
-For example, if you have associated a profile with the Notepad application and you switch to Notepad, any changed settings will be saved to that profile.
-Finally, if there is neither a manually activated nor a triggered profile, any settings you change will be saved to your normal configuration.
+Caso você tenha ativado um perfil manualmente, quaisquer configurações alteradas serão salvas para aquele perfil.
+Do contrário, quaisquer configurações que você alterar serão salvas para o perfil mais recentemente disparado.
+Por exemplo, se você tiver associado um perfil ao applicativo Notepad e alternar para o Notepad, quaisquer configurações alteradas serão salvas para aquele perfil.
+Finalmente, se não existir um perfil ativado manualmente nem um perfil que possua disparador, quaisquer configurações alteradas serão salvas para sua configuração normal.
 
-To edit the profile associated with say all, you must [manually activate #ConfigProfileManual] that profile.
+Para editar o perfil associado com a leitura contínua, é necessário [ativar manualmente #ConfigProfileManual] aquele perfil.
 
-+++ Temporarily Disabling Triggers +++
-Sometimes, it is useful to temporarily disable all triggers.
-For example, you might wish to edit a manually activated profile or your normal configuration without triggered profiles interfering.
-You can do this by checking the Temporarily disable all triggers checkbox in the Configuration Profiles dialog.
++++ Desabilitando Temporariamente os Disparadores +++
+Alguma vezes, é útil desabilitar temporariamente todos os disparadores.
+Por exemplo, você pode querer editar um perfil ativado manualmente  ou sua  configuração normal sem a interferência de perfis com disparadores.
+é possível fazer isso marcando a caixa de seleção Desabilitar Temporariamente Todos os Disparadores no diálogo de Perfis de Configuração.
 
-++ Perfis de Configuração ++
+++ Localização dos Arquivos de Configuração ++
 Versões portáteis do NVDA armazenam todas as opções, appModules e drivers personalizados numa pasta chamada userConfig que se pode encontrar na pasta do NVDA.
 
 Versões instaláveis armazenam suas opções, appModules e drivers personalizados numa pasta especial do NVDA localizada no seu perfil de utilizador do Windows.
@@ -1171,7 +1193,7 @@ Estas ações encontram-se disponíveis no menu Registo do visualizador.
 Para os programadores com visão ou para as pessoas que demonstram o NVDA para grupos sem quaisquer problemas relacionados com a visão, está disponível uma janela que lhes permite ver todo o texto que o NVDA fala no momento.
 
 Para ativar o exibidor de fala marque o item de menu "exibidor de fala" nas Ferramentas do Menu do NVDA.
-Ao desmarcar este item você o desativa.
+Ao desmarcar este item você o desativará.
 
 Enquanto o exibidor de fala estiver ativado, o mesmo atualizar-se-á constantemente para apresentar-lhe o texto mais recente que está sendo falado.
 Contudo, se clicar ou se o cursor ficar no visualizador, o NVDA parará temporariamente a atualização do texto, de modo que possa selecionar facilmente ou copiar o conteúdo existente. 
