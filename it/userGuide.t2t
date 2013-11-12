@@ -552,7 +552,7 @@ Nota: Questo tasto caldo funziona soltanto se la barra di stato di Foobar ha il 
 %kc:beginInclude
 || Nome | Tasto | Descrizione |
 | Annuncia finestra commenti | control+shift+c | Annuncia qualsiasi commento all'interno della finestra commenti. |
-| Annuncia finestra commenti automatici | control+shift+a | Annuncia ogni commento presente nella finestra commenti automatici. |
+| Annuncia note per traduttori | control+shift+a | Annuncia ogni nota presente per traduttori. |
 %kc:endInclude
 
 + Configurare NVDA +
@@ -1096,10 +1096,83 @@ I seguenti tasti rapidi risultano molto utili:
 | Torna alla configurazione salvata | NVDA+Control+r | NVDA+Control+r | Ripristina la configurazione di NVDA risalente all'ultima volta che essa è stata salvata. Premere tre volte in rapida successione per ripristinare le impostazioni di configurazione predefinite |
 %kc:endInclude
 
-++ File di configurazione e profili utente ++
-Le versioni portabili di NVDA registrano tutte le impostazioni, i moduli personalizzati per le applicazioni e i drivers in una cartella chiamata userConfig, situata nella directory di NVDA.
+++ Profili di configurazione ++
+Talvolta, può accadere di aver bisogno di impostazioni differenti in base a cosa si stia usando o cosa si stia facendo.
+Ad esempio, si potrebbe volere che NVDA legga i rientri mentre si sta modificando un documento, oppure annunci gli errori di ortografia durante la correzione.
+NVDA permette di effettuare questo genere di operazioni tramite la funzione profili di configurazione.
 
-Le versioni installer di NVDA registrano tutte le impostazioni, i moduli personalizzati per le applicazioni e i drivers in una cartella speciale situata nei profili utente di Windows. 
+Un profilo di configurazione contiene soltanto quelle impostazioni che sono state cambiate mentre si modificava il profilo.
+La maggior parte delle impostazioni può essere modificata nei profili, ad eccezione di quelle nella finestra di dialogo impostazioni generali, in quanto influiscono sul comportamento totale di NVDA.
+
+I profili possono essere anche attivati manualmente.
+Inoltre essi possono venir attivati automaticamente nel caso si verifichino degli eventi, come l'apertura di un programma particolare.
+
++++ Gestione di base +++
+è possibile gestire i profili di configurazione attraverso la voce "profili di configurazione..." nel menu di NVDA.
+è attivabile anche con un tasto caldo:
+%kc:beginInclude
+- NVDA+control+p: Visualizza la finestra profili di configurazione.
+-
+%kc:endInclude
+
+Il primo controllo in questa finestra di dialogo è l'elenco profili dal quale è possibile selezionare uno dei profili disponibili.
+Quando si apre la finestra di dialogo, viene selezionato il profilo che si sta modificando.
+Vengono visualizzate anche ulteriori informazioni per i profili attivi, che indicano il relativo stato, se in fase di modifica, se vi sono eventi associati e se si tratta di un profilo manuale.
+
+Per rinominare o eliminare un profilo, premere rispettivamente i pulsanti Rinomina o Elimina.
+
+Premere il pulsante Chiudi per chiudere la finestra.
+
++++ Creazione di un profilo +++
+Per creare un profilo, premere il pulsante Nuovo.
+
+Nella finestra di dialogo Nuovo profilo, è possibile immettere un nome per il profilo stesso.
+È anche possibile selezionare come dovrebbe essere utilizzato questo profilo.
+Se si desidera utilizzarlo solo manualmente, selezionare Attivazione manuale, che è l'impostazione predefinita.
+In caso contrario, selezionare un evento che dovrebbe attivare automaticamente questo profilo.
+Per comodità, se non è stato immesso un nome per il profilo, esso sarà generato assieme all'evento che verrà associato.
+Si veda [più sotto #ConfigProfileTriggers] per ulteriori informazioni sugli eventi.
+
+Premendo infine il pulsante OK, il profilo sarà creato, la finestra di dialogo chiusa, permettendo quindi la modifica del profilo stesso.
+
++++ Attivazione manuale +++[ConfigProfileManual]
+È possibile attivare manualmente un profilo selezionandolo e premendo il pulsante attivazione manuale.
+Una volta attivato, potranno essere attivati anche altri profili nel caso si verifichino eventi ad essi associati, ma qualsiasi impostazione presente nel profilo attivato manualmente sovrascrive e ha la precedenza rispetto agli altri.
+Ad esempio, se un profilo è configurato per attivarsi con l'applicazione corrente e l'annuncio dei link è abilitato in quel profilo, ma non in quello attivato manualmente,  i link non saranno letti.
+Tuttavia, se è stata cambiata la voce nel profilo che si attiva automaticamente in base agli eventi, e quel parametro non  è stato toccato nel profilo che si abilita in modo manuale, verrà regolarmente utilizzata la voce del profilo automatico.
+Tutte le impostazioni modificate verranno salvate nel profilo attivato manualmente.
+Per disattivare un profilo attivato manualmente, selezionarlo nella finestra di dialogo Profili di configurazione e premere il pulsante disattivazione manuale.
+
++++ Eventi +++[ConfigProfileTriggers]
+La pressione del pulsante Eventi nella finestra di dialogo Profili di configurazione consente di modificare i profili che devono essere attivati automaticamente per vari eventi.
+
+La lista Eventi mostra gli eventi disponibili, che sono i seguenti:
+- Applicazione corrente: attivato quando si passa all'applicazione corrente.
+- Dire tutto: attivato durante la lettura in modalità dire tutto.
+-
+
+Per cambiare il profilo che dovrebbe essere attivato automaticamente per un evento, selezionare l'evento e quindi scegliere il profilo desiderato dall'elenco Profili.
+È possibile selezionare (configurazione normale) se non si desidera utilizzare alcun profilo.
+
+Premere il pulsante Chiudi per tornare alla finestra di dialogo Profili di configurazione.
+
++++ Modifica di un profilo +++
+Se è stato attivato manualmente un profilo, le impostazioni modificate verranno salvate per quel profilo.
+In caso contrario, le impostazioni modificate verranno salvate nel profilo attivato automaticamente più di recente.
+Ad esempio, se si è associato un profilo con l'applicazione Blocco note e si passa a Blocco note, le impostazioni modificate verranno salvate per quel profilo.
+Infine, se non vi è né un profilo attivato manualmente, né uno  attivato con eventi, le impostazioni modificate vengono salvate nella configurazione normale.
+
+Per modificare il profilo associato alla modalità dire tutto, è necessario [attivare manualmente #ConfigProfileManual] quel profilo.
+
++++ Disattivazione temporanea degli eventi +++
+Talvolta, può risultare utile disattivare tutti gli eventi.
+Ad esempio, si potrebbe voler modificare un profilo attivato manualmente o la configurazione generale di NVDA senza che gli eventi interferiscano.
+è possibile farlo marcando la casella di controllo Disattiva temporaneamente tutti gli eventi nella finestra di dialogo Profili di configurazione.
+
+++ Posizione dei file di configurazione ++
+Le versioni portabili di NVDA registrano tutte le impostazioni, i moduli personalizzati per le applicazioni e i driver in una cartella chiamata userConfig, situata nella directory di NVDA.
+
+Le versioni installer di NVDA registrano tutte le impostazioni, i moduli personalizzati per le applicazioni e i driver in una cartella speciale situata nei profili utente di Windows. 
 Ciò significa che ciascun utente del sistema potrà avere le proprie impostazioni. 
 Per accedere a tale cartella, sarà sufficiente aprire il menu avvio, selezionare programmi - NVDA- esplora le impostazioni utente.
 
