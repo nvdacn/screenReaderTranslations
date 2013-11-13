@@ -1,13 +1,13 @@
 ﻿NVDA NVDA_VERSION 用戶指南 
-(最後更新日期：2013年11月10日)
+(最後更新日期：2013年11月14日)
 
-%!includeconf: ../userGuide.t2tconf
+%!includeconf: ../use		rGuide.t2tconf
 %kc:title: NVDA NVDA_VERSION 指令快速參考
 
 = 目錄 =[toc]
 %%toc
 
-+ 簡介 +
++ 簡介 +	
 NVDA 非視覺桌面存取系統(Nonvisual Desktop Access)，是一款免費且開放原始碼，而用於微軟視窗作業系統的螢幕報讀軟體。
 透過合成語音及點字，NVDA可以讓視障者不必花比一般明眼人更多的錢，即可存取使用任何執行微軟視窗作業系統的電腦。
 NVDA是由[NV Access http://www.nvaccess.org/]所開發，並包含來自NVDA社群參與者的許多貢獻和回饋。
@@ -144,10 +144,6 @@ NVDA受到「GNU 通用公共授權條款(第二版)」所保護。
 第一個是，[將 Caps Lock 鍵設為 NVDA 鍵]，
 第二個是，[NVDA會自動啟動當您登入Windows後並且使用 NVDA 安裝版。]。
 第三個是，[每當 NVDA 啟動時顯示此對話方塊]。
-The dialog box also contains three checkboxes.
-The first lets you control if NVDA should use the capslock as an NVDA modifier key.
-The second specifies whether NVDA should start automatically after you log on to Windows and is only available for installed copies of NVDA.
-The third lets you control if this Welcome dialog should appear each time NVDA starts.
 
 
 ++ 有關 NVDA 按鍵指令 ++
@@ -318,8 +314,6 @@ NVDA 可讓使用者以不同的方式在系統間導航並與之互動，包括
 
 目前正被瀏覽的物件稱為瀏覽物件。
 進到一個物件後，您可以使用[文字瀏覽指令 #ReviewingText]來瀏覽此物件。
-Once you navigate to an object, you can review it using the [text review commands #ReviewingText].
-Once you navigate to an object, you can review its content using the [text review commands #ReviewingText] while in [Object review mode #ObjectReview].
 預設情況下，物件導航會跟隨系統焦點移動，這個功能可以被啟用或停止。
 
 值得注意的是：點字焦點或游標預設是跟隨系統焦點與編輯游標，而不是瀏覽焦點或游標。若想改變此設定，可開啟偏好設定內的「點字設定」來修改。
@@ -342,7 +336,6 @@ Once you navigate to an object, you can review its content using the [text revie
 
 ++ 瀏覽文字 ++[ReviewingText]
 NVDA 允許您以逐一字元、逐一字詞及逐行方式讀出目前所在[瀏覽物件 #ObjectNavigation](包含[平面瀏覽 #FlatReview])的內容。
-NVDA allows you to read the contents of the current [navigator object #ObjectNavigation] (including [flat review #FlatReview]) by character, word or line.
 這對於【命令提示字元】視窗等沒有提供[系統游標 #SystemCaret]的地方尤其適用。
 例如，您可以利用此功能瀏覽對話方塊中的長串訊息文字。
 
@@ -410,26 +403,18 @@ NVDA allows you to read the contents of the current [navigator object #ObjectNav
 較複雜的文件可允許您瀏覽整個內容，並且應用程式視窗可讓您瀏覽螢幕視覺上出現的文字。
 這就稱為平面瀏覽。
 這類似於螢幕瀏覽或在許多其他報讀軟體的滑鼠游標功能。
-While you can generally only review the content of a single [object #Objects], some objects allow you to review the content of objects inside them.
-Complex documents allow you to review their entire content and application windows allow you to review the text of the screen as it appears visually.
-This is called flat review.
-This is similar to the screen review or mouse cursor functionality in many other Windows screen readers.
+
 
 當您移動平面柳覽，您可被定位在目前[瀏覽游標 #ObjectNavigation]的位置。
 若您尚未使用瀏覽游標，這通常會變成有[焦點 #SystemFocus]的物件。
 舉例來說，若瀏覽物件有一個按鈕，您通常可在平面瀏覽時將其定位在按鈕上的文字。
 然後您可藉由[文字瀏覽命令 #ReviewingText]來進行文字瀏覽。
 您也可直接瀏覽包覆在目前瀏覽游標位置的物件，這可讓您從這使用[物件瀏覽 #ObjectNavigation]。
-When you move to flat review, you will be positioned at the location of the current [navigator object #ObjectNavigation].
-If you haven't used object navigation, this will usually be the object that has the [focus #SystemFocus].
-For example, if the navigator object was a button, you will usually be positioned on the text of the button in flat review.
-You can then review the text using the [text review commands #ReviewingText].
-You can also navigate directly to the object encompassing the current position of the review cursor, allowing you to use [object navigation #ObjectNavigation] from there.
+
 
 請注意點字是按照預設的[焦點 #SystemFocus]和[游標 #SystemCaret]，而不是物件瀏覽和文字瀏覽。
 若您要讓他按照物件瀏覽和文字瀏覽，您必須到[調整點字游標跟隨 #BrailleTether]瀏覽。
-Note that braille follows the [focus #SystemFocus] and [caret #SystemCaret] by default, rather than object navigation and text review.
-If you want it to follow object navigation and text review instead, you need to [configure braille to be tethered to #BrailleTether] review.
+
 
 下列的二個快速鍵可以切換平面瀏覽：
 %kc:beginInclude 
@@ -438,10 +423,6 @@ If you want it to follow object navigation and text review instead, you need to 
 | 從平面瀏覽移到物件 | 數字鍵盤7 | NVDA+pageDown | 二根手指向下撥動 | 在瀏覽物件時用在平面瀏覽下在目前的位置使用瀏覽游標。
 The following two commands are used for switching to/from flat review:
 %kc:beginInclude
-|| Name | Desktop key | Laptop key | Touch | Description |
-| Move to flat review | NVDA+numpad7 | NVDA+pageUp | 2-finger flick up | Moves to flat review, placing you at the position of the current navigator object, allowing you to review the screen (or document if you are currently inside one) with the text review commands. |
-| Move to object from flat review | NVDA+numpad1 | NVDA+pageDown | 2-finger flick down | navigates to the object represented by the text at the current position of the review cursor in flat review |
-%kc:endInclude
 
 
 ++ 滑鼠瀏覽 ++
@@ -565,7 +546,7 @@ NVDA額外提供了一些應用程式專用的指令，可以更方便地執行�
 ++ Microsoft PowerPoint ++
 %kc:beginInclude
 || Name | Key | Description |
-| Toggle speaker notes reading | control+shift+s | When in a running slide show, this command will toggle between the speaker notes for the slide and the content for the slide. This only affects what NVDA reads, not what is displayed on screen. | 
+| 切換投影片講稿 | control+shift+s | 當投影片撥放時，此快速鍵可切換投影片講稿及內容。| 
 %kc:endInclude
 
 ++ foobar2000 ++
@@ -783,7 +764,6 @@ NVDA目前只支援電腦點字輸入，所以在此下拉方塊只呈現那些�
  
 ====訊息顯示的時間====
 此為一個可編輯的數字方塊，可設定NVDA訊息在點字顯示器上呈現的時間長短，以秒為單位。
-This option is a numerical field that controls how long NVDA messages are displayed on the braille display.
 
 
 %kc:setting
@@ -815,10 +795,9 @@ This option is a numerical field that controls how long NVDA messages are displa
 ====將數字鍵盤的 Insert 鍵設為 NVDA 鍵====
 若核取此控制項，則「數字鍵盤 Insert 鍵」可作為 NVDA 組合鍵。
 
-wjl若前述三個何取方塊控制項均沒有核取，則有些 NVDA 的指令鍵將無法執行，故在按 Ok 按鈕時，系統會跳出一個錯誤訊息，在將此錯誤訊息解除後，您必須核取前述三個控制項的其中一個才按 Ok按鈕，此對話方塊方可順利設定完成。wjl
-3edi.If no key is chosen as the NVDA key it may be impossible to access certain NVDA commands.
-Therefore, The Keyboard Settings dialog will display an error message if all keys are unselected when pressing Ok.
-After dismissing the error message, you must select at least one before being able to press Ok to dismiss the dialog properly.
+若前述三個核取方塊控制項均沒有核取，則有些 NVDA 的指令鍵將無法執行，
+故在按 Ok 按鈕時，系統會跳出一個錯誤訊息，
+在將此錯誤訊息解除後，您必須核取前述三個控制項的其中一個才按 Ok按鈕，此對話方塊方可順利設定完成。
 
 %kc:setting
 ====讀出輸入字元====
@@ -840,10 +819,6 @@ After dismissing the error message, you must select at least one before being ab
 
 ==== 讀出全部時允許跳讀 ====
 當開啟時，在某些瀏覽報讀模式下，若再按逐行或捸段瀏覽的按鍵，並不會停止全篇報讀，而是跳至下一個行或段落的開頭，接著往下報讀。
-
-==== Allow skim reading in Say All ====
-
-If on, certain navigation commands (such as quick navigation in browse mode or moving by line or paragraph) do not stop Say All, rather Say All jumps to the new position and continues reading.
 
 
 ==== 大寫鍵鎖定時，輸入小寫字母會發出嗶嗶聲 ====
@@ -1015,11 +990,7 @@ Key: NVDA+u
 當選項關閉，它們就不會用快速瀏覽被報讀或找到。
 然而，表格內的內容仍會被視同一般文字。
 此選項預設為關閉。
-This option affects how NVDA handles tables used purely for layout purposes.
-When on, NVDA will treat these as normal tables, reporting them based on [Document Formatting Settings #DocumentFormattingSettings] and locating them with quick navigation commands.
-When off, they will not be reported nor found with quick navigation.
-However, the content of the tables will still be included as normal text.
-This option is turned off by default.
+
 
 ====讀出連結、標題之類的元件====
 請參見 [文件格式設定 #DocumentFormattingSettings]，以決定瀏覽時是否要讀出連結、標題、表格等。
@@ -1123,25 +1094,6 @@ wjl+++ 手勢輸入 +++
 
 若完成所有的修改，可按 OK 按鈕，以儲存設定，若不想變更，則按 Cancel  按鈕。wjl 
 
-3edi.+++ Input Gestures +++
-In this dialog, you can customize the input gestures (keys on the keyboard, buttons on a braille display, etc.) for NVDA commands.
-
-Only commands that are applicable immediately before the dialog is opened are shown.
-For example, if you want to customize commands related to browse mode, you should open the Input Gestures dialog while you are in browse mode.
-
-The tree in this dialog lists all of the applicable NVDA commands grouped by category.
-Any gestures associated with a command are listed beneath the command.
-
-To add an input gesture to a command, select the command and press the Add button.
-Then, perform the input gesture you wish to associate; e.g. press a key on the keyboard or a button on a braille display.
-Often, a gesture can be interpreted in more than one way.
-For example, if you pressed a key on the keyboard, you may wish it to be specific to the current keyboard layout (e.g. desktop or laptop) or you may wish it to apply for all layouts.
-In this case, a menu will appear allowing you to select the desired option.
-
-To remove a gesture from a command, select the gesture and press the Remove button.
-
-When you are finished making changes, press the OK button to save them or the Cancel button to discard them.
-
 
 ++ 儲存與還原設定 ++
 預設情況下，當您退出 NVDA 時，本身會自動儲存您所作的一些設定變更。
@@ -1221,16 +1173,7 @@ wjl++ 設定檔 ++
 有時將所有的設定暫時全部解除對於操作是有幫助的。
 例如：您也許想編輯一個手動啟用的設定檔，或一般設定檔，而不會影響到自動啟用的設定檔。 
 您可以利用在「設定檔」對話方塊裡，勾選「暫時解除啟用」的核取方塊，來達此目標。WJL
-++ Configuration Profiles ++
-Sometimes, you may wish to have different settings for different situations.
-For example, you may wish to have reporting of indentation enabled while you are editing or reporting of font attributes enabled while you are proofreading.
-NVDA allows you to do this using configuration profiles.
 
-A configuration profile contains only those settings which are changed while the profile is being edited.
-Most settings can be changed in configuration profiles except for those in the General Settings dialog, which apply to the entirety of NVDA.
-
-Configuration profiles can be manually activated.
-They can also be activated automatically due to triggers such as switching to a particular application.
 
 +++ Basic Management +++
 You manage configuration profiles by selecting "Configuration profiles" in the NVDA menu.
@@ -1336,14 +1279,7 @@ NVDA 功能表的 [工具] 選項中的 [附加元件管理員]，可讓您安�
 這可讓你在您的電腦或網路上去瀏覽附加元件 (.nvda-addon 檔案)
 一旦按下[開啟]，NVDA會詢問您是否希望安裝附加元件。
 當附加元件已被安裝，NVDA首先會詢問您確認您真的希望安裝此附加元件。
-To browse and download available add-ons online, press the Get add-ons button.
-This button opens the [NVDA Add-ons page http://addons.nvda-project.org/].
-If NVDA is installed on your system, you can open the add-on directly from the browser to begin the installation process as described below.
-Otherwise, save the add-on package and follow the instructions below.
-To install an Add-on you previously obtained, press the Install button.
-This will allow you to browse for an add-on package (.nvda-addon file) somewhere on your computer or on a network.
-Once you press Open, the installation process will begin.
-When an add-on is being installed, NVDA will first ask you to confirm that you really wish to install the add-on.
+
 
 請確認下載的附加元件來自可信任的來源。
 一旦安裝完成，必須重新啟動NVDA以便讓已安裝的附加元件開始運作，直到執行完以上步驟，
