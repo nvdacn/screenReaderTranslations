@@ -57,7 +57,7 @@ addresses = {
     },
     'fa': {
         'lang':'Farsi',
-        'email': ['hamid rezaey <hamidrehzaey@gmail.com>', 'Ali Aslani <aslani.ali@gmail.com>'],
+        'email': ['hamid rezaey <hamidrehzaey@gmail.com>', 'Ali Aslani <aslani.ali@gmail.com>', 'Davood Choobiny <d.d.choobiny@gmail.com>'],
     },
     'fr': {
         'lang':'French',
