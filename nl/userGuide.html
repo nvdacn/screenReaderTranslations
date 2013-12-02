@@ -154,10 +154,9 @@
     </UL>
   <LI><A HREF="#toc106">12. Geavanceerde Onderwerpen</A>
     <UL>
-    <LI><A HREF="#toc107">12.1. Toetscombinaties en andere invoermethodes opnieuw toewijzen</A>
-    <LI><A HREF="#toc108">12.2. Meer uitgebreide aanpassing van de uitspraak van leestekens en  symbolen</A>
+    <LI><A HREF="#toc107">12.1. Meer uitgebreide aanpassing van de uitspraak van leestekens en  symbolen</A>
     </UL>
-  <LI><A HREF="#toc109">13. Verdere informatie</A>
+  <LI><A HREF="#toc108">13. Verdere informatie</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -253,7 +252,7 @@ Voor verdere bijzonderheden kan men de volledige licentie bekijken op: <A HREF="
 <H2>3. NVDA downloaden en uitvoeren</H2>
 
 <P>
-Als u het programma nog niet heeft, kunt u het downloaden van <A HREF="http://community.nvda-project.org/">www.nvda-project.org</A>.
+Als u het programma nog niet heeft, kunt u het downloaden van <A HREF="http://community.nvda-project.org/">www.nvaccess.org</A>
 </P>
 <P>
 Op de downloadpagina vindt u de link naar de nieuwste versie van NVDA.
@@ -2593,7 +2592,7 @@ Het is het beste deze bestanden te verwijderen uit uw configuratie en via Add-on
 
 <P>
 Met de Python console die u vindt onder Extra in het NVDA-menu kunnen fouten in de programmacode worden opgespoord en hersteld, algemene inspecties van de programmatuur worden uitgevoerd of de mate van toegankelijkheid van een toepassing worden gecontroleerd.
-Zie voor meer informatie de handleiding voor ontwikkelaars, dit document is beschikbaar in <A HREF="http://community.nvda-project.org/wiki/Development">de sectie voor ontwikkelaars op de NVDA website (Engelstalig)</A>.
+Zie voor meer informatie de handleiding voor ontwikkelaars, dit document is beschikbaar in <A HREF="http://community.nvda-project.org/wiki/Development">de sectie voor ontwikkelaars op de NVDA website (Engelstalig)</A>.].
 </P>
 
 <A NAME="toc81"></A>
@@ -2718,8 +2717,8 @@ In deze rubriek treft u informatie aan over de brailleleesregels die door NVDA w
 <P>
 Alle Focus en PAC Mate leesregels van <A HREF="http://www.freedomscientific.com/">Freedom Scientific</A> worden ondersteund.
 De drivers voor de brailleleesregels van Freedom Scientific moeten op uw computer worden geïnstalleerd.
-Zonodig kunt u de drivers downloaden van <A HREF="http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp">http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp</A>.
-Hoewel op deze pagina alleen de Focus 40 Blue wordt genoemd, ondersteunt deze driver alle leesregels van Freedom Scientific.
+Zonodig kunt u de drivers downloaden van <A HREF="http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-14-blue-downloads.asp">http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-14-blue-downloads.asp</A>.
+Hoewel op deze pagina alleen de Focus 40 Blueleesregel  wordt genoemd, ondersteunen deze drivers alleFocus en Packmate  leesregels van Freedom Scientific.
 Wanneer u met een 64-bit versie van Windows werkt, en de drivers door een ander schermlesprogramma reeds geïnstalleerd werden, is het waarschijnlijk toch nodig de drivers van bovenstaande link te installeren omdat de bestanden die NVDA nodig heeft, zeer waarschijnlijk niet door de andere schermlezer zijn geïnstalleerd. 
 </P>
 <P>
@@ -3425,6 +3424,9 @@ Bij gebruik van deze leesregels met NVDA zijn de volgende toetscombinaties van t
 <P>
 NVDA ondersteunt de leesregelmodellen Braile Sense en Braille Edge van <A HREF="http://www.hims-inc.com/">Hims</A>, die via USB of Bluetooth kunnen worden aangesloten. 
 Als u  voor de USB-aansluiting kiest, moet u wel eerst de USB-driver van HIMS op uw Systeem installeren.
+Via :<A HREF="http://www.hims-inc.com/resource-center/">http://www.hims-inc.com/resource-center/</A> , het Resource Center van HIMS, zijn de drivers te downloaden.
+Selecteer hier uw apparaat en download de driver in de rubriek Window Eyes. 
+Hoewel hier alleen Window Eyes wordt vermeld, betreft dit een algemene usb-driver die ook met NVDA werkt.
 </P>
 <P>
 Bij gebruik van deze leesregels met NVDA zijn de volgende toetscombinaties van toepassing:
@@ -4418,82 +4420,7 @@ Voor informatie over toetsenbordtabellen kunt u de  [BRLTTY-Documentatie op
 </P>
 
 <A NAME="toc107"></A>
-<H3>12.1. Toetscombinaties en andere invoermethodes opnieuw toewijzen</H3>
-
-<P>
-Gebruikers kunnen invoermethodes (zoals bij voorbeeld toetsaanslagen)in scrips  vastleggen. Dergelijke scripts worden bewaard in een speciaal  bestand, gestures. ini genaamd, dat zich in de gebruikersconfiguratiemap  bevindt. 
- 
-De scripts worden opgemaakt in de standaard syntaxis voor ini-bestanden. Het bestand kan uit meer rubrieken bestaan en elke rubriek kan één of meer onderdelen hebben. Elke rubriek bevat toewijzingen voor scripts in een bepaalde Python-module en in een bepaalde klasse binnen NVDA.
-</P>
-
-<UL>
-<LI>De naam van een rubriek moet uit de Python-modulenaam en de naam van de klasse bestaan, die door een punt van elkaar worden gescheiden.
-<LI>De sleutelnamen binnen de afzonderlijke onderdelen verwijzen naar de  scripts, die u zou willen toewijzen. Voor het geval dat u een toegewezen invoermethode ongedaan wilt maken, kan de naam "none" gebruikt worden. Een bepaalde sleutel, met inbegrip van “none”, mag slechts eenmaal per rubriek worden gebruikt.  
-<LI>De waarde van een sleutel is een door komma’s gescheiden  lijst met invoermethodes die aan een script moeten worden   toegekend. De invoermethodenamen met de komma aan het einde moeten tussen enkele ( ‘)of dubbele (“) aanhalingstekens staan. 
- 
-De namen van de invoermethodes bestaan uit een apparaatcode van twee letters – “kb” voor keyboard (toetsenbord)en "br" voor de brailleleesregel -, code voor een secundair apparaat of een toetsenbordindeling tussen vierkante haken, een Dubbele punt en tenslotte één of meer toetstekens gescheiden door een plusteken.
-Bij toetsenbordcommando’s heeft het gedeelte tussen vierkante haken betrekking op een toetsenbordindeling en is optioneel. Als dit ontbreekt, geldt de invoermethode voor elke indeling. 
-Bij Brailleleesregels heeft het gedeelte tussen vierkante haken betrekking op de naam van de Brailleleesregel en mag beslist niet ontbreken.
- 
-Om achter de scriptnamen, modules klassen en invoermethodes te komen, kunt u als volgt te werk gaan:
-</UL>
-
-<OL>
-<LI>Activeer invoerhulp door op NVDA+1 te drukken.
-<LI>Druk op de gewenste toetscombinatie.
-<LI>Zet invoerhulp uit door nogmaals op NVDA+1 te drukken.
-<LI>Activeer Logboek Weergave onder Extra in het NVDA-menu.
-<LI>Bekijk de recent opgenomen gegevens.
-Een van deze posten zou informatie moeten bevatten over de zojuist toegepaste invoermethode alsmede over de app-module, de klasse en het script , voor zover het script reeds was toegewezen.
-</OL>
-
-<P>
- 
-Het volgende voorbeeld laat zien hoe u de toetscombinatie NVDA+Shift+T kunt toewijzen aan het script dat datum en tijd weergeeft:
- 
-Om te bepalen wat de naam is van het script dat datum en tijd weergeeft, doet u het volgende: 
--schakel invoerhulp in en druk op NVDA+F12 (dit zou de standaard-toetscombinatie voor het weergeven van datum en tijd moeten zijn).
--zet vervolgens invoerhulp weer uit en open logboek weergave.
- 
-Aan het eind van het logboek zou het volgende moeten staan:
- 
-</P>
-
-<PRE>
-  INFO - inputCore.InputManager._handleInputHelp (13:17:22):
-  Input help: gesture kb(desktop):nvda+f12, bound to script dateTime on globalCommands.GlobalCommands
-</PRE>
-
-<P>
- 
-Hieruit kunt u opmaken dat de scriptnaam "dateTime"  is en de module en klasse “globalCommands.GlobalCommands”.
- 
-Als er nog geen gestures.ini bestand bestaat, moet u dit aanmaken in de gebruikersconfiguratiemap. In gestures.ini moet het volgende staan :
- 
-</P>
-
-<PRE>
-  [globalCommands.GlobalCommands]
-        dateTime = kb:NVDA+shift+t
-</PRE>
-
-<P>
- 
-Hiermee wordt de toetscombinatie NVDA+Shift+T (voor elke toetsenbordindeling) aan het script "dateTime" toegewezen.
-Opmerking : De oorspronkelijke toetscombinatie NVDA+F12 voor het weergeven datum en tijd functioneert nog steeds. Om deze koppeling te verwijderen, voegt u de volgende regel toe:
- 
-</P>
-
-<PRE>
-        None = kb:NVDA+f12
-</PRE>
-
-<P>
- 
-</P>
-
-<A NAME="toc108"></A>
-<H3>12.2. Meer uitgebreide aanpassing van de uitspraak van leestekens en  symbolen</H3>
+<H3>12.1. Meer uitgebreide aanpassing van de uitspraak van leestekens en  symbolen</H3>
 
 <P>
 Behalve in het <A HREF="#SymbolPronunciation">dialoogvenster Uitspraak van Interpunctie en Symbolen</A> zijn er nog andere mogelijkheden om de uitspraak van leestekens te beïnvloeden.
@@ -4506,7 +4433,7 @@ Informatie over de opmaak van dit bestand leest u in  de paragraaf over de Uits
 Door gebruikers kunnen echter geen complexe symbolen worden gedefinieerd.
 </P>
 
-<A NAME="toc109"></A>
+<A NAME="toc108"></A>
 <H2>13. Verdere informatie</H2>
 
 <P>
