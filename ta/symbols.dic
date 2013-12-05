@@ -19,7 +19,7 @@ in-word '	(?<=[^\W_])['’]
 negative number	(?<!\w)-(?=[$£€¥]?\d)
 # Treat dash differently when it is sandwitched between a number and a tamil character.
 # tamil unicode range is U+0B80–U+0BFF according to http://en.wikipedia.org/wiki/Tamil_script  
-tamilNumberDash	(?<=[^0-9])\-(?=[஀-௿])
+tamilNumberDash	(?<=[0-9])\-(?=[஀-௿])
 
 symbols:
 # identifier	replacement[[	level][	preserve]][	# display name]
@@ -34,7 +34,7 @@ decimal point	புள்ளி	none	always
 in-word '	ஒற்றை மேற்கோள்	all	norep
 negative number	கழித்தல்	none	norep
 # number dash, tamil letter special case:
-tamilNumberDash	test	none	norep
+tamilNumberDash	இணைக்கோடு	char	always
 
 # Whitespace
 \0	வெற்றிடம்	char	# null
