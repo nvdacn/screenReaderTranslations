@@ -10,11 +10,12 @@ echo '<META NAME="generator" CONTENT="postatus.sh">'
 echo '<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">'
 echo "<TITLE>po file status - $(date) </TITLE>"
 echo '</HEAD><BODY>'
+echo "<H1>po file status - $(date)</H1>"
 }
 
 printLangHeader() {
     lang=$1
-    echo "<br/><h1>${lang}</h1><br/>"
+    echo "<br/><H2>${lang}</H2><br/>"
     echo "<table><tr><th>filename</th><th>percent translated</th><th>number of messages</th></tr>"
 }
 
