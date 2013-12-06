@@ -16,7 +16,7 @@ echo "<H1>po file status - $(date)</H1>"
 printLangHeader() {
     lang=$1
     echo "<br/><H2>${lang}</H2><br/>"
-    echo "<table><tr><th>Filename</th><th>Percenage translated</th><th>Total number of messages</th></tr>"
+    echo "<table><tr><th>Filename</th><th>Percentage translated</th><th>Total number of messages</th></tr>"
 }
 
 printLangFooter() {
