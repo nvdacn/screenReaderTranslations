@@ -1,19 +1,24 @@
 [[!meta title="NVDA Add-on Development Guide"]]
 
-## Welcome! ##
-
 Welcome to NVDA add-on Development Guide. This is the one-stop guide on how NvDA add-ons are developed, as well as explaining some useful code segments from NvDA core source code useful when writing add-ons.
 
 For more information on NVDA development, please visit [NvDA Community Development page][1]. Be sure to go over [NVDA Developer Guide][2] to familiarize yourself with key terms and basics steps on getting started with add-on development.
 
-## System requirements ##
+## Audience ##
 
+This guide is designed for both beginners who are new to Python and/or NVDA development in general, as well as experts and power users and programmers who are familiar with Python or other programming languages and/or familiar with NvDA source code structure.
+
+If you are new to NVDA add-on or core development, we recommend that you get to know Python first, as it gives necessary programming background for understanding the rest of the guide. If you are a Python programmer but are new to NvDA development, please checkout NVDA development Guide and Design Overview document, both of which can be found on the NVDA Community website.
+
+## System requirements ##
 To create an add-on for NVDA, please make sure the following system requirements are met:
 
 * A version of NVDA is available on your computer (either a portable or installed version will work, but we strongly recommend that you install a copy of NVDA on your development computer).
 * Python 2.7 series, version 2.7.5 32-bit for Windows.
 * SCons 2, version 2.3.0 for generating add-on packages.
 * Markdown 2.0.1 for generating add-on documentation.
+* GNU Gettext package for Windows for message localization support.
+* Git 1.7.9 or later if you wish to upload the add-on to a repository such as Bitbucket (optional, see below). You can use various Git clients, such as Git Bash, Cygwin's Git, Tortoise Git and so forth.
 * Additional Python modules or dependencies for your add-on.
 
 ## What are add-ons? ##
@@ -30,15 +35,156 @@ Each NVDA add-on is a zip file with the file extension of .nvda-addon. These can
 
 Throughout this guide, we refer to standard NVDA modules as "NvDA Core" to distinguish it from add-on modules.
 
-# Future sections #
-
 ## Setting up the add-on development environment ##
 
-Includes how to launch SCons, writing add-on readme and tips on testing the add-on.
+Follow these steps to prepare your computer for writing NVDA add-ons.
 
-## Hands-on examples ##
+### Installing dependencies ###
 
-A beginner example section, including first global plugin, app module and add-on package. Also will include tips on commenting code and spaces versus tabs.
+1. If you don't have NVDA, download and install NVDA from NV access website.
+2. Install Python 2.7.x 32-bit on your computer (if using Windows, install using the 32-bit Windows installer package).
+3. Install Markdown and SCons using their Windows installer packages.
+4. If you plan to share your add-on code with others, install Git clients.
+5. Paste the Gettext executable files to your add-on development folder (see the next section on add-on development folder).
+
+### The add-on development folder ###
+
+When writing add-ons, it is recommended that you store your add-on code in separate folders, one per add-on. When you download the add-on template, the folder structure will be automatically created.
+
+Once you install the needed dependencies (see above), paste the Gettext package executables into this add-on folder.
+
+### Add-on folder structure ###
+
+Each add-on folder, at a minimum, must contain the following files:
+
+ * manifest.ini to store manifesst information such as add-on name and author.
+* An "addon" subfolder with the add-on type directory underneath this subfolder (appModules, globalPlugins, synthDrivers, brailleDisplays).
+
+If you are using the add-on template, the folder structure will automatically be created, so you need to create only the addon subfolder and the add-on type folder and code inside this folder.
+
+### Packaging add-ons ###
+
+There are two ways of packaging add-ons:
+
+1. To package your add-on manually, zip up (compress) your add-on folder as a .zip file, then rename the file extension to .nvda-addon.
+2. To use the add-on template with SCons, open Command Prompt with administrator mode (Windows Vista or later), change to your add-on folder and type `scons~.
+
+For more information on add-on management, see the management chapter in this guide.
+
+## Getting started: Hands-on examples ##
+
+So are you ready to start your adventure with add-ons, but not sure as to how to bring it to life? If that is you, please go through this chapter, as it gives you basic information to get you started with add-ons and give you tips on writing code.
+
+Note: for this chapter, we will not use the actual add-on packages. Instead, we'll use plugin folders - a number of subdirectories in your NVDA user configuration folder (available from Start Menu/Screen if NVDA is installed) to store our example Python files.
+
+To edit .py files, you need a word processor which can handle .py files. The best one we recommend is Notepad++.
+
+### How add-on code is organized ###
+
+ Your add-on code is stored in one or more Python files (.py file). Despite different kinds of add-ons out there, they all have similar layout.
+ 
+ First, you start by writing an optional header for your add-on, such as your name, a brief sentence or two on what the add-on is for and so on. Although this is optional, it is recommend that you write the header as a reminder to keep track of what you are doing with your add-on.
+ 
+ Next, you tell NVDA the modules you need for your add-on file. This is done by writing `import module` where module is the name of the module you wish to use in your code. For example, if you want to hear tones while writing your add-on, write `import tones`. Typically you may need to import two or more modules for your specific add-on (see below on list of modules you need for the type of add-on you are writing).
+ 
+ after declaring the modules you need or import, you write your add-on code (defining classes, variables, methods and so on). The most important section is the add-on class code, which will determine the type of add-on your code will be assigned to.
+ 
+ For instance, if you wish to add support for a program, you would write:
+ 
+ `class appModule(appModuleHandler.AppModule):`
+ 
+After that, all you are writing is Python code (see the Python documentation on how to write Python code).
+
+### Running your add-on in this example chapter ###
+
+To run your example add-ons from this chapter, open your NVDA user configuration directory (from Start Menu/Screen, look for Explore NVDA user configuration folder" item). Then paste your .py file to the appropriate folder: appModules folder for app module examples, and globalPlugins folder for global plugins.
+
+### Example 1: Hear a tone when pressing NVDA+A ###
+
+Let us start with a simple example: if you press NvDA+A, you would hear a tone for 1 second from any program. Since we want to use this everywhere, it must be a global plugin.
+
+First, open your user configuration folder, then open globalPlugins folder. Create a new .py file and give it a descriptive name such as example1.py (it is strongly recommended that when you name your global plugin file, give it a short descriptive name). Then open the newly created .py file in the word processor.
+
+The below code implements our example. Put this in your .py file as exactly as shown:
+
+	# Add-on development first example
+		
+	import globalPluginHandler
+	import tones # We want to hear beeps.
+	
+	class GlobalPlugin(globalPluginHandler.GlobalPlugin):
+		
+		def script_doBeep(self, gesture):
+			tones.beep(440, 1000) # Beep a standard middle A for 1 second.
+		
+		__gestures={
+			"kb:NVDA+A":"doBeep"
+		}
+
+In Python, you put comments by putting hash sign (#) at the start of the comment line.
+
+### Example 1 code explanation ###
+
+Our first example let's us sound a beep for one second when we press NVDA+A. But you might be wondering what that above code means, so let's step through the code, one piece at a time.
+
+1. At the top of the file, we wrote a header which tells us that this is an example add-on.
+2. Since this is a global plugin, we need to import a crucial module: global plugin handler, so we wrote `import globalPluginHandler`.
+3. Then we wrote `import tones` to import (load, or include) the tones module, a built-in module from NVDA. Whenever you wish to use a method from a given module, import the needed module(s).
+4. Next, we defined a class called GlobalPlugin. The text inside the brackets tells us where this class is coming from (more on this concept in a second). A class, in programming, describes an object, such as a person, a desk, a program and others.
+5. Inside the class, we wrote a method (function) called `script_doBeep`. This is an example of a script, a method that'll be run or executed when you press a command. Inside this script, we wrote `tones.beep(440, 1000)` to tell NVDA to sound a middle A tone for 1 second. In programming, a function can take arguments, or a set or parameters which tells the function what to do based on the given values (we'll meet them later). In fact, many methods you'll be writing, including our doBeep script takes one or more arguments.
+6. Lastly, we wrote a simple dictionary (a collection) to store our command (script) bindings for our doBeep script. Here, we told NVDA to assign NVDA+A command for doBeep script.
+
+Save this file, then restart NVDA. Now whenever you press NvDA+A, you'll hear a middle A tone for 1 second. Once you are comfortable with the add-on code and how it is laid out, you can delete the newly created .py file.
+
+### I don't understand those above terms ###
+
+For some, the terms "class", "method" and so on might be new. Let's go over what these terms are, as they are fundamental for add-on development:
+
+* Class: a class describes an object. It could describe anything, such as a person, a desk, an NVDA add-on and others. Classes are fundamental to NVDA and other programs - in fact, a number of programmers are skilled at coming up with classes.
+* Method: A method is a short program or a routine that a program runs for doing something, such as generating tones, calculating huge numbers, loading NVDA add-ons and so on. Some people call them "functions."
+* Script: A script is a method which runs when the user performs commands such as pressing certain keys on a keyboard. For example, when you press NVDA+F12, NVDA runs dateTime script, located in one of the NVDA core modules named Global Commands.
+* Variable: A variable is something that can change, such as name of a person, name of the NVDA add-on we're running, version of NVDA you are using and so on.
+* Module: A module is a collection of methods and variables in a file.
+
+There are other terms that we'll get to know shortly.
+
+### Example 2: Generate a tone when switching to Notepad ###
+
+Most of the below code comes from NvDA Developer Guide.
+
+Not only NVDA let's you add global commands, but it also allows writing code to enhance usage of programs through app modules. An app module is also a Python file except that, this time, the name of the .py file is the name of the executable for a program. For example, an app module for Notepad would be named notepad.py.
+
+The below code, from NVDA developer Guide, gives a short example of a typical app module: play a short beep when switching to Notepad. Put the below code in notepad.py, which in turn should be placed in appModules folder in your user configuration folder in order for it to run.
+
+	# An example app module.
+	
+	import appModuleHandler
+	import tones
+	
+	class AppModule(appModuleHandler.AppModule):
+		
+		def event_gainFocus(self, obj, nextHandler):
+			tones.beep(256, 200)
+			nextHandler()
+
+### Example 2 code explanation ###
+
+We're seeing more new code here. Let's go over this, again piece by piece:
+
+1. Unlike the first example, the crucial module we need is appModuleHandler.
+2. The class that we are using is AppModule.
+3. Unlike last time, we're using events, a method run when certain events occur such as when names of controls change. Events take an object as one of its arguments, the object for which the event needs to be dealt with, or, as many people say, "fired."
+4. Inside the event method, we're also seeing a call to `nextHandler`. This method is used in event methods to tell NvDA to pass the event so it can be taken care of, such as saying the name of a control after beeping.
+
+### More new terms please ###
+
+Other terms you may see include:
+
+* Event: An event is a method that'll be run when some events happen, such as when a program is on focused, when names of controls change and so on.
+* Call: We say a function calls some another method when we run the second method from another method. For example, in our first example, we're calling tones.beep method from our script method.
+* Object: An object is an instance of a class - that is, a class coming to life when a program runs. Throughout add-ons, as you write classes and when you run your add-ons, your classes come to life as objects, commonly abbreviated to obj. In NVDA, an object may refer to controls or parts of a program.
+
+Just like example 1, once you're comfortable with app module code, you may wish to delete the Notepad app module code unless you want to keep hearing beeps when you switch to Notepad. The actual differences between global plugins and app modules will become more clear when we talk about them in more detail throughout this guide.
 
 ## Useful modules from NVDA core ##
 
