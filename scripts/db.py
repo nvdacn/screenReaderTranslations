@@ -8,7 +8,8 @@ class DB(dict):
 
     def __init__(self, fname='settings', autoSave=False, *args, **kwargs):
         super(DB, self).__init__(*args, **kwargs)
-        # if settings file is corrupt or doesnt exist, make sure we end up with an empty dict.
+        # If settings file is corrupt or doesnt exist,
+        # make sure we end up with an empty dict.
         self.fname = fname
         self.autoSave = autoSave
         try:
@@ -55,25 +56,43 @@ class DB(dict):
 
 ##############
 if __name__ == "__main__" and len(sys.argv) >= 1:
-    parser = argparse.ArgumentParser(description='Json db interface.')
-    parser.add_argument('-f', '--file', default='settings', help='Use the given file as the database.')
+    help_welcome = 'Json db interface.'
+    help_file = 'Use the given file as the database.'
+    help_set = 'Insert or update key/value.'
+    help_set_default = ("If the given key doesn't exist,"
+                        " insert it with the given value as default.")
+    help_get = ('Return value stored for this key, if not found 0 will be returned.'
+                ' Note that if the key is not found, or the stored value is actually 0,'
+                ' the same output will be produced.')
+    help_delete = 'If this key is available in the database, remove it and its value.'
+    parser = argparse.ArgumentParser(description=help_welcome)
+    parser.add_argument('-f', '--file', metavar='FILE_NAME', default='settings', help=help_file)
     group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument('-s', '--set', nargs=2, help='insert or update key/value.')
-    group.add_argument('-g', '--get', help='name of key which should be looked up.')
-    group.add_argument('-d', '--delete', help='name of key which should be deleted.')
-    args = parser.parse_args()
+    group.add_argument('-s', '--set', nargs=2, metavar=('KEY', 'VALUE'), help=help_set)
+    group.add_argument('--set_default', nargs=2, metavar=('KEY', 'VALUE'), help=help_set_default)
+    group.add_argument('-g', '--get', metavar='KEY', help=help_get)
+    group.add_argument('-d', '--delete', metavar='KEY', help=help_delete)
+    cmdArgs = parser.parse_args()
 
-    db = DB(args.file, autoSave=True)
-    if args.get:
-        print(db[args.get])
-    elif args.set:
-        k, v = args.set
+    db = DB(cmdArgs.file, autoSave=True)
+    if cmdArgs.get:
+        print(db[cmdArgs.get])
+    elif cmdArgs.set:
+        k, v = cmdArgs.set
         if v == '-':  # user is giving us the data on stdin
             db[k] = sys.stdin.readlines()
         else:
             db[k] = v
-    elif args.delete:
+    elif cmdArgs.set_default:
+        k, v = cmdArgs.set_default
+        if v == '-':  # user is giving us the data on stdin
+            tmpv = sys.stdin.readlines()
+        else:
+            tmpv = v
+        if k not in db:
+            db[k] = tmpv
+    elif cmdArgs.delete:
         try:
-            del db[args.delete]
+            del db[cmdArgs.delete]
         except KeyError:
             pass
