@@ -2,13 +2,19 @@
 
 Welcome to NVDA add-on Development Guide. This is the one-stop guide on how NvDA add-ons are developed, as well as explaining some useful code segments from NvDA core source code useful when writing add-ons.
 
-For more information on NVDA development, please visit [NvDA Community Development page][1]. Be sure to go over [NVDA Developer Guide][2] to familiarize yourself with key terms and basics steps on getting started with add-on development.
+For more information on NVDA development, please visit [NvDA Community Development page][1]. Be sure to go over [NVDA Developer Guide][2] to familiarize yourself with key terms and basics on getting started with add-on development.
 
 ## Audience ##
 
 This guide is designed for both beginners who are new to Python and/or NVDA development in general, as well as experts and power users and programmers who are familiar with Python or other programming languages and/or familiar with NvDA source code structure.
 
 If you are new to NVDA add-on or core development, we recommend that you get to know Python first, as it gives necessary programming background for understanding the rest of the guide. If you are a Python programmer but are new to NvDA development, please checkout NVDA development Guide and Design Overview document, both of which can be found on the NVDA Community website.
+
+### Authors, contributions and copyright ###
+
+This guide was originally written by Joseph Lee and is shaped by NVDA user and developer community. We welcome your feedback and contributionn.
+
+Copyright: NVDA is copyright 2006-2013 NV Access. Microsoft Windows, Microsoft Office, Win32 API and other MS products are copyright Microsoft Corporation. IAccessible package is copyright IBM and Linux Foundation. Python is copyright Python Foundation. Other products mentioned are copyrighted by authors of these products.
 
 ## System requirements ##
 
@@ -17,7 +23,7 @@ To create an add-on for NVDA, please make sure the following system requirements
 * A version of NVDA is available on your computer (either a portable or installed version will work, but we strongly recommend that you install a copy of NVDA on your development computer).
 * Python 2.7 series, version 2.7.5 32-bit for Windows.
 * SCons 2, version 2.3.0 for generating add-on packages.
-* Markdown 2.0.1 for generating add-on documentation.
+* Markdown 2.0.1 or later for generating add-on documentation.
 * GNU Gettext package for Windows for message localization support.
 * Git 1.7.9 or later if you wish to upload the add-on to a repository such as Bitbucket (optional, see below). You can use various Git clients, such as Git Bash, Cygwin's Git, Tortoise Git and so forth.
 * The NVDA Community Add-on template for ease of add-on file and folder packaging and management (optional; [click here][3] to download the add-on template).
@@ -209,32 +215,231 @@ The following lists available NVDA core modules and some useful methods found in
 
 * Addon Handler (addonHandler.py): The module which implements the add-on subsystem. The addonHandler.initTranslation() method is used to initialize internationalization support for your add-on.
 * NVDA basic API (api.py): A collection of core methods used throughout NVDA, such as obtaining focus and navigator object, setting focus and so on. See the next list on useful methods from this module.
-* App Module subsystem (appModuleHandler.py): The subsystem in charge of handling app modules (see chapter on app modules for more information).
+* App Module subsystem (appModuleHandler.py, appModules): The subsystem in charge of handling app modules (see chapter on app modules for more information).
 * ARIA support (aria.py): Implements support for Accessible Rich Internet Applications (ARIA).
 * Base object collection (baseObject.py): Contains useful base objects such as scriptable objects (see the chapter on NvDA objects and overlay objects for more information).
-* Braille input and output subsystem (braille.py, brailleInput.py): Controls braille output to and input from braille displays.
+* Braille input and output subsystem (braille.py, brailleInput.py): Controls braille output to and input from braille displays, needed by braille display driver add-ons.
+* Build-in modules (builtin.py): Allows access to builtin modules when working with add-ons.
+* Configuration (config): Manages configuration and profiles (profiles are available in 2013.3 or later).
 * Controls and states collection (controltypes.py): Includes dictionaries on control types (roles) and possible states that a control can be in.
 * Events (eventHandler.py): Handles various events such as gaining focus.
+* Global Commands collection (globalCommands.py): A list of global commands available while using NVDA (see section on script scope for more information).
 * Global Plugin subsystem (globalPluginHandler.py): The module needed for controlling global plugins.
+* NVDA GUI (gui): A collection of classes used by NVDA to display its messages graphically. Includes GUI's for NVDA menu, add-on manager and others.
+* Hardware port utilities (hwPortUtils.py): A set of utilities for communicating over serial and other hardware ports, useful during driver add-on development.
 * IAccessible support (IAccessibleHandler.py, IAccessible objects): Used for supporting IAccessible controls.
+* Input management (inputCore.py): Manages input from the user.
+* Java Access Bridge support (JABHandler.py): A collection of methods used for supporting JAB subsystem used for Java applications.
+* Keyboard input (keyboardHandler.py): Supports entering commands from the keyboard.
+* Logging facility (logHandler.py): Allows a module to write logs to be viewed by a developer or a user via Log Viewer.
+* Mouse support (mouseHandler.py): Supports mouse commands.
+* NvDA objects collection (NVDAObjects): A collection of NvDA objects or controls used in many applications and standards such as UIA (User Interface Automation).
 * Scripts support (scriptHandler.py): Handles scripts, methods executed due to the user pressing keyboard commands and other input.
+* Speech output (speech.py): Controls speech output.
+* Synthesizer driver support (synthDriverHandler.py): This is the core module needed for speech synthesizer add-ons.
+* Widget text access (textInfos): Allows access to text for widget and documents.
+* Touchscreen support (touchHandler.py): Provides support for touchscreen input (installed versions only).
 * Tone output (tones.py): Allows the user to hear tones.
 * User interface messages (ui.py): Includes ui.message method used to speak or braille certain text.
+* Virtual buffers (virtualBuffers): Handles virtual buffer documents such as websites.
+
+The modules without .py extension are directories, containing specialist modules.
 
 ### Useful methods ###
 
-Here is a list of some useful methods used in add-ons:
+Here is a list of some useful methods used in add-ons. For more information on how they're implemented, see the NvDA source code documentation. For worked out examples, see the section of this guide on add-on components.
 
-Note: use table mode with the syntax of: method name, module where the method can be found, description, example usage.
+From addonHandler:
 
-Please cover the following methods:
+* `addonHandler.initTranslation()`: Sets up the translation subsystem for add-ons via Gettext.
 
-* From API: getFocusObject, getNavigatorObject, getForegroundObject, setFocusObject(obj), setNavigatorObject(obj).
-* From tones: tones.beep.
-* From UI: ui.message.
-* And other functions.
+From api.py:
 
-# Future sections #
+* `api.getFocusObject()`: Retrieves the focused control (returns the object with focus).
+* `api.getNavigatorObject()`: Fetches the current navigator object. If NvDA is set to follow system focus, the focus and navigator object will be the same, otherwise a different object is returned.
+* `api.getForegroundObject()`: Returns the foreground window of the current application (the parent of this object is the application itself).
+* These have a corresponding method to set certain object as the focus or navigator object.
+
+From logHandler:
+
+* `logHandler.Log`: The class which implements logging facility.
+
+From tones:
+
+* `tones.beep(pitch in hertz, duration in milliseconds, left channel volume, right channel volume)`: Plays a tone of specified pitch for specified duration. The first two arguments are mandatory, while the other two are optional.
+
+From ui:
+
+* `ui.message(message to be spoken/brailled)`: Speaks or brailles the message. This should be a string surrounded by quotes.
+
+There are other useful methods out there, but the above are the most useful ones. See the NVDA source code documentation for other methods, or see the examples below on how these methods and others are used throughout the life of an add-on.
+
+## Add-on module components and development tips ##
+
+An add-on module consists of a number of components. This includes handling input and output, working with different NvDA objects, reacting to events, storing configuration and more.
+
+This chapter introduces key components and concepts that are used in add-on development, such as NVDA objects, scripts, event handling and additional topics with examples.
+
+Note that the NVDA core development guide introduces the below concepts. This chapter is intended as an extension of that document. Consult the NVDA development guide for a brief introductions.
+
+### Working with objects on screen ###
+
+An object is an instance of a class - that is, a class coming to life while a program is running. For example, if a class called button has been defined, the button on a screen is the object of this button class.
+
+In NVDA, an object is representation of a control or parts of a program. This includes buttons, check boxes, edit fields, toolbars, sliders and even the application window. These are organized into hierarchies, or parent-child relationship where an object may contain child objects - for example, a list object in Windows Explorer may contain one or more list items, and the parent of this list might be the Windows Explorer window. The object that you're examining right now is termed "navigator object."
+
+The NVDA objects (or simply called objects) contains a number of useful properties or atributes. These include the object's name, its value (checked, text of the edit window, etc.), role (check box, window, embedded object, etc., location (screen coordinates) and more. NVDA objects also contain useful methods for manipulating them, such as changing the value of the object, reacting to events for the object (gains focus, value changed, etc.) and so on.
+
+In many situations, an NvDA object may belong to a class of related objects. For each object classes, NvDA provides ways of handling them. These classes include IAccessible, JAB, UIA and so forth. These classes and behaviors for each class of objects is defined in NVDAObjects directory in the NvDA source code, and to use them in your add-on, import the appropriate object class handler for the object you're using (e.g. if you're working with an IAccessible object, impore NVDAObjects.IAccessible.).
+
+Two of these object classes merit special mention: virtual buffers and tree interceptors. A tree interceptor allows NvDA to work with a "tree" of objects as though they are just one object. A special case of tree interceptor is virtual buffer, which allows NVDA to work with complex documents such as PDF documents.
+
+### Examining object hierarchy ###
+
+There are a number of ways which you can use to see the hierarchy of an object for a given program:
+
+1. Using object navigation commands (NvDA+Numpad 2/4/5/6/8) with simple review mode turned off.
+2. Using Python Console, use obj.next/previous/parent/firstChild/lastChild attributes. If you want to see all available properties, from mPython Console, type dir(obj).
+
+If you wish to see a more detailed description about the navigator object, while the navigator object is located at the object you're interested in, press NvDA+F1 to launch log viewer. The root of all objects in Windows is the desktop, or shell object.
+
+### Focus vs. navigator object ###
+
+In your add-on, you might wish to work with various objects and manipulate them. These may include changing the focused object, synchronizing navigator and focus objects, changing the role of an object and so on.
+
+A focus object is the currently focused control. These are linked to keyboard focus - that is, it follows the highlighted control. In contrast, a navigator object is the object you're interested in. Since navigator objects can move anywhere, you can examine two objects at once: the focused object and the navigator object. For instance, you might be focused on an edit field while examining the title bar as the navigator object.
+
+In your add-on, to fetch the object with focus, write `someObj = api.getFocusObject()`. The someObj can be named differently - the convention is to use the name "obj". To fetch the navigator object (which might be different from the focused object), use `obj = api.getNavigatorObject()`.
+
+### Other useful object-related goodies ###
+
+Here are some other methods which works with NVDA objects, all located in api.py module:
+
+* If you wish to obtain the foreground object (useful if you wish to look at some child object of the foreground window), use `obj = api.getForegroundObject()`.
+* From Python Console, to see the number of child objects that an object contains (for instance, the children, or widgets of a foreground window), type `obj.childCount`. The value 0 means that there are no more child objects.
+* To set some object as the new focus or navigator object, use `api.setFocusObject(obj)` or `api.setNavigatorObject(obj)`.
+* You can fetch various properties of an object by specifying obj.property where property is the attribute you wish to see (e.g. obj.value).
+
+### Example 1: Finding the value of a slider in a program ###
+
+Suppose you are asked by a user to give him the value of a slider in a program using an app module. After looking at the object hierarchy and other properties, you know that the toolbar is the last child of the foreground object.
+
+Here is the code to implement this feature:
+
+	# Object example 1
+	
+	import api
+	import appModuleHandler
+	
+	class AppModule(appModuleHandler.AppModule):
+		
+		sliderChildIndex = -1 # The variable to store the child index.
+		
+		def getSliderValue(self):
+			fg = api.getForegroundObject()
+			sliderVal = fg.children[self.sliderChildIndex].value
+			return sliderVal
+
+In this code, the method `fg.children[index]` is used to retrieve the child with the given index (here, since we said the toolbar is the last child, the index would be minus 1, or the very last child; we could have used fg.lastChild).
+
+However, this code has an issue: what if the slider value is actually within the first child of the actual slider control? One way to fix this is to check the object's role. The modified code looks like this:
+
+	def getSliderValue(self):
+		from controltypes import ROLE_SLIDER # It is possible to import from within a method.
+		fg = api.getForegroundObject()
+		slider = fg.lastChild
+		if slider.role == ROLE_SLIDER: return slider.firstChild.value
+
+Thus, when we know for sure that we're dealing with the slider, the method returns the value of the slider's first child (if that is the case). Note the two equals signs for equality, as opposed to just one equals sign for assignment.
+
+There are other examples you can try to familiarize yourself with object navigation and manipulation:
+
+* Obtaining the name of an object that is located somewhere else in the program.
+* Moving the navigator to the foreground object.
+* Setting focus to another program.
+
+For real-life examples on objects in NvDA, consult the NvDA source code or source codes of various community add-ons.
+
+### Specialist objects and overriding object properties at runtime ###
+
+Sometimes, it is not enough to work with default behavior for a control. For example, some parts of a program may need custom gestures, or one may need to change the role of a window to that of a button.
+
+NVDA provides two methods for creating specialist, or overlay objects (or classes), each suited for different needs:
+
+* `event_NvDAObject_init(self, object we're dealing with)`: If you wish to override certain attributes of a control such as its role or label (name), you can use this method to ask NvDA to take your "input" to account when meeting objects for the first time (or initialized). For instance, if the control has the window class name of TForm (seen on many Delphi applications), you can ask NVDA to treat this control as a standard window by assigning obj.role = ROLE_WINDOW (see control types dictionary for list of available roles).
+* `chooseNVDAObjectOverlayClasses(self, object, list of classes)`: This allows NVDA to use your own logic when dealing with certain objects. For example, this is useful if you wish to assign custom gestures for certain parts of a program in your app module (in fact, many app modules creates objects to deal with certain parts of a program, then uses chooseNvDAObjectOverlayClasses to select the correct object when certain conditions are met). These custom objects must be based on a solid object that we wish to eeal with (mostly IAccessible is enough, thus most overlay objects inherit from, or is the child or specialist class of IAccessible objects).
+
+Note that in case of the second method, the class(s) with the given name must be present in the file, which is/are inherited from a known base object (in Python, the syntax for the inheritence is `childClass(baseClass)`, and is usually read as, "this child class inherits from this base class". We'll see code like this later).
+
+### Examples of overlay classes and modified roles ###
+
+Below examples illustrate the uses of the two overlay and attribute modification methods we've discussed above:
+
+An example of the first case: modifying an atribute.
+
+	# Reassign some Delphi forms as window.
+		def event_NvDAObject_init(self, obj):
+			if obj.windowClassName == "TForm": obj.role = ROLE_WINDOW
+
+This means that whenever we encounter a window with the class name of "TForm", NvDA will treat this as a normal window.
+
+Example 2 deals with an app module which has two objects for dealing with specific parts of a program, then uses chooseNVDAObjectOverlayClasses to assign the logic for each control.
+
+	#An example of overlay classes
+	
+	class enhancedEdit(IAccessible):
+		# Some code to be run when window class name is MyEdit.
+	
+	class MainWindow(IAccessible):
+		# Another code, this time adding custom gestures for main window of the program.
+	
+	# In the app module:
+	
+	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
+		if obj.windowClassName == "myEdit": clsList.insert(0, enhancedEdit)
+		elif obj.windowClassName == "TWindow": clsList.insert(0, mainWindow)
+
+In both cases, the object that we wish to check must be inserted as the first element of the clsList. The effect is that these custom objects will take precedence when looking up gestures or code (behavior) for the object, and in the developer info, these custom objects will come first when MRO (Method Resolution Order) for the navigator object is displayed.
+
+### Input and output: scripts and UI messages ###
+
+Another crucial component of add-ons is handling commands from users and displaying what the add-on is doing. These are done via scripts (input) and UI messages (output).
+
+A script is a method run when the user performs certain commands. For example, when you press NvDA+T, NVDA runs a script in global commands module called SayTitle. In Poedit, for instance, when a translator presses Control+Shift+A, NvDA will read translator comments added by the programmer to help clarify a given translatable string. this command is not a native NvDA command, but it is defined in the Poedit app module to perform this function.
+
+Typically, an add-on which accepts scripts will have a list of command:function map somewhere in the module. The simplest is a gestures (commands) dictionary, a python dictionary (typically named __gestures) which holds commands as keys and scripts as values for these keys (more than one key, or command can be bound to scripts). These dictionaries are loaded when add-on loads and is cleared when either NvDA exits or the app for the app module loses focus (that is, the user has switched to another program).
+
+Another way to bind scripts is via runtime insertion. This is done by creating another gestures dictionary apart from __gestures dictionary which holds context-sensitive gestures such as manipulating a single control. Then the developer would use inputCore.bindGesture (or inputCore.bindGestures if more than one gestures/scripts are defined) to define certain gestures for a time, then using inputCore.clearGestures then inputCore.bindGestures(__gestures) to remove the added gestures. A more elegant way, which involves scripts for specific objects, will be covered when we talk about overlay classes.
+
+As of time of writing, NvDA supports input from the keyboard, braille dislays with or without braille keyboard and touchscreens.
+
+### Example 2: A basic script dictionary ###
+
+In this example, we'll define two scripts called "sayHello" and say"GoodBye", then bind them into two separte gestures.
+
+	# An example fragment for script assignment.
+	import ui
+	
+	def script_sayHello(self, gesture):
+		ui.message"Hello!")
+	
+	def script_sayGoodBye(self, gesture):
+		ui.message("Good Bye!")
+	
+	__gestures={
+		"kb:control+NVDA+1":"sayHello",
+		"kb:Control+NVDA+2":"sayGoodBye"
+	}
+
+Now when you press Control+NvDA+1, NvDA will say, "Hello", and when you press Control+NvDA+2, NVDA will say, "Good bye."
+
+### Example 3: runtime script insertion/removal ###
+
+
+
+
+
+	# Future sections #
 
 Please delete this notice when appropriate sections are done.
 
