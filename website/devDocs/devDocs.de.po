@@ -3,18 +3,18 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2013-12-14 22:15+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2013-12-16 09:36+0100\n"
+"Last-Translator: David Parduhn <xkill85@gmx.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.2\n"
 
 #. type: Plain text
 #, no-wrap
@@ -27,6 +27,10 @@ msgid ""
 "NvDA add-ons are developed, as well as explaining some useful code segments "
 "from NvDA core source code useful when writing add-ons."
 msgstr ""
+"Willkommen zum Entwicklerhandbuch für NVDA-Erweiterungen. In diesem Handbuch "
+"wird die entwicklung von NVDA-Erweiterungen beschrieben. Außerdem finden Sie "
+"hier auch einige Erläuterungen zu Teilen des nVDA-quellcodes, die für Sie "
+"während der Entwicklung von Nutzen sein könnten."
 
 #. type: Plain text
 msgid ""
@@ -35,11 +39,15 @@ msgid ""
 "familiarize yourself with key terms and basics on getting started with add-"
 "on development."
 msgstr ""
+"Weitere Informationen über die Entwicklung von Erweiterungen finden Sie im  "
+"[Teilbereich Entwicklung der Webseite der NVDA-Nutzergemeinschaft][1]. Sehen "
+"Sie sich außerdem das [NVDA Entwicklerhandbuch][2] an, um mehr über "
+"Grundlagen der Entwicklung von NVDA-Erweiterungen zu erfahren."
 
 #. type: Title ##
 #, no-wrap
 msgid "Audience"
-msgstr ""
+msgstr "Zielgruppe"
 
 #. type: Plain text
 msgid ""
@@ -48,6 +56,9 @@ msgid ""
 "who are familiar with Python or other programming languages and/or familiar "
 "with NvDA source code structure."
 msgstr ""
+"Dieses Handbuch richtet sich sowohl an Anfänger, die noch wenige Erfahrungen "
+"mit Python haben als auch an Experten, die bereits vertraut mit Python oder "
+"einer anderen Programmiersprache sowie mit dem NVDA-Quellcode sind."
 
 #. type: Plain text
 msgid ""
@@ -57,17 +68,24 @@ msgid ""
 "new to NvDA development, please checkout NVDA development Guide and Design "
 "Overview document, both of which can be found on the NVDA Community website."
 msgstr ""
+"Wenn Sie Anfänger sind, empfehlen wir Ihnen, sich zunächst die Grundlagen "
+"von Python anzueignen. Diese Grundlagen sind für das Verständnis dieses "
+"Handbuches notwendig. Wenn Sie Python-Programmierer(in) sind, sollten Sie "
+"das Entwicklerhandbuch lesen, welches Sie auf der Webseite der NVDA-"
+"Community finden können."
 
 #. type: Title ###
 #, no-wrap
 msgid "Authors, contributions and copyright"
-msgstr ""
+msgstr "Autoren, mitwirkende und Urheberrecht"
 
 #. type: Plain text
 msgid ""
 "This guide was originally written by Joseph Lee and is shaped by NVDA user "
 "and developer community. We welcome your feedback and contributionn."
 msgstr ""
+"Dieses Handbuch wurde ursprünglich von Joseph Lee geschrieben. Es wird von "
+"der NVDA-Nutzer- und Entwicklergemeinschaft weiterentwickelt."
 
 #. type: Plain text
 msgid ""
@@ -77,17 +95,25 @@ msgid ""
 "Python is copyright Python Foundation. Other products mentioned are "
 "copyrighted by authors of these products."
 msgstr ""
+"Urheberrecht: NVDA ist ein Markenzeichen von NV Access. Microsoft Windows, "
+"Microsoft Office, Win32 API und andere Produkte von Microsoft sind "
+"Markenzeichen der Microsoft Corporation. IAccessible ist ein Markenzeichen "
+"von IBM und der Linux Foundation. Python ist ein Markenzeichen der Python "
+"Foundation. Andere Produktnamen sind Markenzeichen ihrer jeweiligen "
+"Hersteller."
 
 #. type: Title ##
 #, no-wrap
 msgid "System requirements"
-msgstr ""
+msgstr "Systemanforderungen"
 
 #. type: Plain text
 msgid ""
 "To create an add-on for NVDA, please make sure the following system "
 "requirements are met:"
 msgstr ""
+"Wenn Sie eine NVDA-Erweiterung entwickeln wollen, stellen Sie sicher, dass "
+"die folgenden Systemanforderungen erfüllt sind:"
 
 #. type: Bullet: '* '
 msgid ""
@@ -95,22 +121,28 @@ msgid ""
 "installed version will work, but we strongly recommend that you install a "
 "copy of NVDA on your development computer)."
 msgstr ""
+"Auf Ihrem Rechner wird eine Version von NVDA ausgeführt (entweder als "
+"portable Version oder in instellierter Form, wir empfehlen jedoch, NVDA auf "
+"dem Rechner zu installieren, auf dem Sie Erweiterungen entwickeln wollen."
 
 #. type: Bullet: '* '
 msgid "Python 2.7 series, version 2.7.5 32-bit for Windows."
-msgstr ""
+msgstr "Python version 2.7.5 32-bit für Windows."
 
 #. type: Bullet: '* '
 msgid "SCons 2, version 2.3.0 for generating add-on packages."
-msgstr ""
+msgstr "SCons 2, version 2.3.0 zum Erzeugen der Erweiterungen."
 
 #. type: Bullet: '* '
 msgid "Markdown 2.0.1 or later for generating add-on documentation."
 msgstr ""
+"Markdown 2.0.1 oder neuer zum Erzeugen der Dokumentation für Ihre "
+"Erweiterungen"
 
 #. type: Bullet: '* '
 msgid "GNU Gettext package for Windows for message localization support."
 msgstr ""
+"GNU Gettext für Windows, um die Lokalisierung von Meldungen zu unterstützen"
 
 #. type: Bullet: '* '
 msgid ""
@@ -118,6 +150,9 @@ msgid ""
 "Bitbucket (optional, see below). You can use various Git clients, such as "
 "Git Bash, Cygwin's Git, Tortoise Git and so forth."
 msgstr ""
+"Git 1.7.9 oder neuer, falls Sie Ihre Erweiterung auf ein Git-Repository "
+"hochladen möchten (siehe unten) Sie können jedoch auch einen beliebigen "
+"anderen Git-Client verwenden."
 
 #. type: Bullet: '* '
 msgid ""
@@ -125,15 +160,18 @@ msgid ""
 "packaging and management (optional; [click here][3] to download the add-on "
 "template)."
 msgstr ""
+"Die Vorlage für NVDA-Erweiterungen, um die Verwaltung von Dateien und "
+"Ordnern innerhalb von Erweiterungen zu vereinfachen (optional; [klicken Sie "
+"hier][3] um die Vorlage herunterzuladen)."
 
 #. type: Bullet: '* '
 msgid "Additional Python modules or dependencies for your add-on."
-msgstr ""
+msgstr "zusätzliche Python-Module oder Abhängigkeiten für Ihre Erweiterung"
 
 #. type: Title ##
 #, no-wrap
 msgid "What are add-ons?"
-msgstr ""
+msgstr "Was sind Erweiterungen?"
 
 #. type: Plain text
 msgid ""
@@ -142,6 +180,11 @@ msgid ""
 "support for an application or adding support for newer braille displays or "
 "speech synthesizers."
 msgstr ""
+"Mit Hilfe von Erweiterungspaketen können Entwickler den Funktionsumfanf von "
+"NVDA erweitern. So können Sie beispielsweise neue anwendungsübergreifende "
+"Funktionen hinzufügen oder die Zugänglichkeit bestimmter Anwendungen "
+"verbessern. Genauso können Sie Unterstützung für zusätzliche Sprachausgaben "
+"oder Braillezeilen hinzufügen."
 
 #. type: Plain text
 msgid ""
@@ -149,24 +192,35 @@ msgid ""
 "may include more than one add-on modules such as a global plugin and a "
 "speech synthesizer packaged into one add-on."
 msgstr ""
+"Momentan werden die folgenden Module unterstützt (Sie können auch mehr als "
+"ein Modul verwenden, z.B. eine Sprachausgabe und ein globales Plug-in):"
 
 #. type: Bullet: '* '
 msgid ""
 "Global plugin: A global plugin adds features for NVDA which can be used "
 "anywhere, such as OCR capability."
 msgstr ""
+"globale Plug-ins: ein globales Plug-in ergänzt NVDA um weitere Funktionen, "
+"die in jeder beliebigen Anwendung zur Verfügung stehen sollen (wie z. B. "
+"eine optische Zeichenerkennung (OCR))"
 
 #. type: Bullet: '* '
 msgid ""
 "App module: An app module allows enhanced support for a program, such as "
 "specific windows or controls of a program such as audio editors."
 msgstr ""
+"Anwendungsmodule: mit Hilfe von Anwendungsmodulen können Sie die "
+"Zugänglichkeit von NVDA für bestimmte Anwendungen (wie etwa audio-Editoren) "
+"verbessern."
 
 #. type: Bullet: '* '
 msgid ""
 "Driver: A driver allows a program to talk to hardware. Currently one can "
 "write drivers for new braille displays or speech synthesizers."
 msgstr ""
+"Treiber: Mit Hilfe von Treibern können sie NVDA um die Unterstützung für "
+"neue Hardware erweitern. Momentan werden Braillezeilen- und "
+"Sprachausgabentreiber unterstützt."
 
 #. type: Plain text
 msgid ""
@@ -176,12 +230,18 @@ msgid ""
 "them from file manager if one uses NVDA 2012.3 or later installed on the "
 "computer."
 msgstr ""
+"Jedes Erweiterungspaket (bestehend aus einem oder mehreren Modulen) ist eine "
+"Zip-Datei mit der Dateierweiterung .nvda-addon."
 
 #. type: Plain text
 msgid ""
 "Throughout this guide, we refer to standard NVDA modules which comes with "
 "NVDA as \"NvDA Core\" to distinguish it from add-on modules."
 msgstr ""
+"Um im weiteren Verlauf dieses Handbuchs  NVDA-interne Module von solchen "
+"Modulen zu unterscheiden, die mit Erweiterungen mitgeliefert werden, "
+"sprechen wir von \"nvda-Kernmodulen\", wenn Module gemeint sind, die bereits "
+"in NVDA enthalten sind."
 
 #. type: Title ##
 #, no-wrap
@@ -1478,10 +1538,10 @@ msgid ""
 "holds context-sensitive gestures such as manipulating a single control. Then "
 "the developer would use inputCore.bindGesture (or inputCore.bindGestures if "
 "more than one gestures/scripts are defined) to define certain gestures for a "
-"time, then using inputCore.clearGestures then inputCore.bindGestures"
-"(__gestures) to remove the added gestures. A more elegant way, which "
-"involves scripts for specific objects, will be covered when we talk about "
-"overlay classes."
+"time, then using inputCore.clearGestures then inputCore."
+"bindGestures(__gestures) to remove the added gestures. A more elegant way, "
+"which involves scripts for specific objects, will be covered when we talk "
+"about overlay classes."
 msgstr ""
 
 #. type: Plain text
