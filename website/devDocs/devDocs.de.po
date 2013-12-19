@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2013-12-14 22:15+0000\n"
-"PO-Revision-Date: 2013-12-18 09:26+0100\n"
+"PO-Revision-Date: 2013-12-19 12:31+0100\n"
 "Last-Translator: David Parduhn <xkill85@gmx.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: de\n"
@@ -495,7 +495,7 @@ msgstr ""
 #. type: Title ###
 #, no-wrap
 msgid "Example 1: Hear a tone when pressing NVDA+A"
-msgstr ""
+msgstr "Beispiel 1: Abspielen eines Signaltons, beim Drücken von nvda+a"
 
 #. type: Plain text
 msgid ""
@@ -503,6 +503,9 @@ msgid ""
 "tone for 1 second from any program. Since we want to use this everywhere, it "
 "must be a global plugin."
 msgstr ""
+"Als erstes soll  eine Erweiterung entstehen, die beim Drücken von NVDA+a "
+"einen Signalton abspielt. Da diese Tastenkombination aus jeden Programm "
+"heraus funktionieren soll, mus hier ein globales Plug-in erstellt werden. "
 
 #. type: Plain text
 msgid ""
@@ -512,17 +515,21 @@ msgid ""
 "a short descriptive name). Then open the newly created .py file in the word "
 "processor."
 msgstr ""
+"Öffnen Sie zuerst ihr NVDA+Konfigurationsverzeichnis und erstellen sie in "
+"dessen Unterordner Globalplugins eine Python-Quelldatei mit einem "
+"beschreibenden Namen (z.B. beispiel1.py). Öffnen Sie die Datei anschließend "
+"in Ihrem Textverarbeitungsprogramm."
 
 #. type: Plain text
 msgid ""
 "The below code implements our example. Put this in your .py file as exactly "
 "as shown:"
-msgstr ""
+msgstr "Fügen Sie danach den untenstehenden Code so exakt wie möglich ein:"
 
 #. type: Plain text
 #, no-wrap
 msgid "\t# Add-on development first example\n"
-msgstr ""
+msgstr "\t# erstes Beispiel aus dem Entwicklerhandbuch für Erweiterungen\n"
 
 #. type: Plain text
 #, no-wrap
@@ -530,6 +537,8 @@ msgid ""
 "\timport globalPluginHandler\n"
 "\timport tones # We want to hear beeps.\n"
 msgstr ""
+"\timport globalPluginHandler\n"
+"\timport tones # es sollen Signaltöne abgespielt werden.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -542,6 +551,8 @@ msgid ""
 "\t\tdef script_doBeep(self, gesture):\n"
 "\t\t\ttones.beep(440, 1000) # Beep a standard middle A for 1 second.\n"
 msgstr ""
+"\t\tdef script_doBeep(self, gesture):\n"
+"\t\t\ttones.beep(440, 1000) # der Kammerton A wird eine Sekunde lang abgespielt.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -555,12 +566,12 @@ msgstr ""
 msgid ""
 "In Python, you put comments by putting hash sign (#) at the start of the "
 "comment line."
-msgstr ""
+msgstr "In Python beginnen Kommentare immer mit einer Raute."
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 1 code explanation"
-msgstr ""
+msgstr "Erläuterungen zum Code von Beispiel 1"
 
 #. type: Plain text
 msgid ""
@@ -568,18 +579,25 @@ msgid ""
 "But you might be wondering what that above code means, so let's step through "
 "the code, one piece at a time."
 msgstr ""
+"Das obige Beispiel bringt NVDA dazu, beim Drücken von nvda+a einen Signalton "
+"abzuspielen."
 
 #. type: Bullet: '1. '
 msgid ""
 "At the top of the file, we wrote a header which tells us that this is an "
 "example add-on."
 msgstr ""
+"am Dateianfang befindet sich ein Kommentar, der den Zweck dieses Beispiels "
+"kurz beschreibt."
 
 #. type: Bullet: '2. '
 msgid ""
 "Since this is a global plugin, we need to import a crucial module: global "
 "plugin handler, so we wrote `import globalPluginHandler`."
 msgstr ""
+"Da es sich bei diesem Beispiel um ein globales Plug-in handelt, muss eine "
+"Behandlungsroutine für globale Plug-ins importiert werden. Die nächste Zeile "
+"lautet also `import globalPluginHandler`."
 
 #. type: Bullet: '3. '
 msgid ""
@@ -587,6 +605,10 @@ msgid ""
 "a built-in module from NVDA. Whenever you wish to use a method from a given "
 "module, import the needed module(s)."
 msgstr ""
+"Als nächstes wird über die Zeile `import tones` ein Modul importiert, mit "
+"dessen Hilfe Töne abgespielt werden können. Wann immer Sie eine Methode aus "
+"einem bestimmten Modul verwenden wollen, müssen Sie zunächst das Modul "
+"importieren."
 
 #. type: Bullet: '4. '
 msgid ""
@@ -595,6 +617,9 @@ msgid ""
 "A class, in programming, describes an object, such as a person, a desk, a "
 "program and others."
 msgstr ""
+"Als nächstes wird eine Klasse GlobalPlugin definiert. Hinter dem "
+"Klassennamen wird in Klammern angegeben, woher diese Klasse abgeleitet wird. "
+"Eine Klasse dient in der Programmierung dazu, Objekte zu beschreiben."
 
 #. type: Bullet: '5. '
 msgid ""
@@ -607,6 +632,13 @@ msgid ""
 "you'll be writing, including our doBeep script takes one or more arguments. "
 "More on scripts later as we journey through the guide."
 msgstr ""
+"Innerhalb der Klasse wird eine Methode (eine Funktio) `script_doBeep` "
+"definiert. Ein Script ist eine Methode, die ausgeführt wird, wenn Sie einen "
+"bestimmten NVDA-Befehl ausführen. Innerhalb dieses Scripts wird die Funktion "
+"tones.beep wie folgt aufgerufen: `tones.beep(440, 1000)`, um den Kammerton A "
+"eine Sekunde lang abzuspielen. Über Parameter können einer Funktion Werte "
+"zur Verarbeitung übergeben werden.Viele Methoden, die sie schreiben werden, "
+"werden einen oder mehrere Parameter benötigen."
 
 #. type: Bullet: '6. '
 msgid ""
@@ -614,6 +646,8 @@ msgid ""
 "(script) bindings for our doBeep script. Here, we told NVDA to assign NVDA+A "
 "command for doBeep script."
 msgstr ""
+"Zu guter Letzt wird ein Wörterbuch erstellt, in dem dem Script dobeeps die "
+"Tastenkombination nvda+a zugeordnet wird."
 
 #. type: Plain text
 msgid ""
@@ -621,17 +655,24 @@ msgid ""
 "hear a middle A tone for 1 second. Once you are comfortable with the add-on "
 "code and how it is laid out, you can delete the newly created .py file."
 msgstr ""
+"Speichern Sie die Datei und starten Sie NVDA anschließend neu. Nun werden "
+"Sie jedesmal den Kammerton A hören, wenn Sie die Tastenkombination nvda+a "
+"drücken. Um die Änderungen wieder rückgängig zu machen, löschen Sie die "
+"Dateien beispiel1.* aus Ihrem benutzerspezifischen Konfigurationsverzeichnis."
 
 #. type: Title ###
 #, no-wrap
 msgid "I don't understand those above terms"
-msgstr ""
+msgstr "Begrifsklärungen"
 
 #. type: Plain text
 msgid ""
 "For some, the terms \"class\", \"method\" and so on might be new. Let's go "
 "over what these terms are, as they are fundamental for add-on development:"
 msgstr ""
+"Im Folgenden werden die Begriffe \"Klasse\", \"Methode\" usw. näher "
+"erläutert, zumal diese für die Entwicklung von NVDA-Erweiterungen von "
+"entscheidender Bedeutung sind:"
 
 #. type: Bullet: '* '
 msgid ""
@@ -640,6 +681,9 @@ msgid ""
 "and other programs - in fact, a number of programmers are skilled at coming "
 "up with classes."
 msgstr ""
+"Klasse: eine Klasse dient dazu, ein Objekt näher zu beschreiben (so z.B. "
+"eine nvda-Erweiterung, ein Anwendungsmodul, ein globales Plug-in etc.). "
+"Viele Programmiersprachen basieren auf dem Konzept der Klassen."
 
 #. type: Bullet: '* '
 msgid ""
@@ -647,6 +691,12 @@ msgid ""
 "doing something, such as generating tones, calculating huge numbers, loading "
 "NVDA add-ons and so on. Some people call them \"functions.\""
 msgstr ""
+"Methode: Eine Methode wird innerhalb eines Programms dazu verwendet, "
+"bestimmte Aktionen auszuführen (wie etwa Signaltöne abzuspielen, mit Werten "
+"zu rechnen etc). Methoden können auch als Funktionen geschrieben sein. In "
+"einem solchen Fall gibt eine Methode einen Wert zurück, den der "
+"programmierer z.B. in einer Variablen speichern oder weiterverarbeiten muss "
+"(siehe unten)."
 
 #. type: Bullet: '* '
 msgid ""
@@ -657,6 +707,14 @@ msgid ""
 "be executed (usually \"self\"; more on that later) and the gesture for the "
 "script (see below)."
 msgstr ""
+"Script: ein Script ist eine Methode, die ausgeführt wird, wenn der Anwender "
+"einen NVDA-Befehl ausführt (wie z.b. beim Drücken einer Tastenkombination). "
+"Wenn Sie beispielsweise die Tastenkombination nvda+f12 drücken, wird ein "
+"Script namens datetime ausgeführt, das sich im NVDA-Modul globalcommands "
+"(respektive: in dessen Klasse globalcommands) befindet. Scripte nehmen zwei "
+"Argumente entgegen: im ersten Argument ist gestgehalten, woher ein Script "
+"aufgerufen wird (normalerweise heißt dieses Argument \"self\"). Das zweite "
+"Argument gibt den nvda-Befehl an, auf den das Script reagieren soll."
 
 #. type: Bullet: '* '
 msgid ""
@@ -665,6 +723,8 @@ msgid ""
 "on. An add-on file may define one or more variables (for example, to store "
 "common constants such as strings)."
 msgstr ""
+"Variable: eine Variable kann verwendet werden, um Daten wie zeichenfolgen, "
+"Zahlen oder Objekte zwischenzuspeichern. "
 
 #. type: Bullet: '* '
 msgid ""
@@ -672,10 +732,15 @@ msgid ""
 "write add-ons, we are in fact writing additional modules that NVDA can use "
 "while it is running."
 msgstr ""
+"Modul: Wenn Variablen und Methoden in einer Datei zusammengafasst werden, so "
+"nennt man diese Dateien Module. Wann Immer Sie eine nvDA-Erweiterung "
+"erstellen, so erstellen Sie immer mindestens ein Modul."
 
 #. type: Plain text
 msgid "There are other terms that we'll get to know shortly."
 msgstr ""
+"Es gibt noch weitere Begriffe, die im Verlauf dieses Handbuchs geklärt "
+"werden."
 
 #. type: Title ###
 #, no-wrap
