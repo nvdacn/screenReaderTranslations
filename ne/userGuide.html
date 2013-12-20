@@ -108,10 +108,10 @@
     <LI><A HREF="#toc68">8.3. अभियोजन पार्श्वचित्र</A>
       <UL>
       <LI><A HREF="#toc69">8.3.1. आधारभूत व्यबस्थापन</A>
-      <LI><A HREF="#ConfigProfileManual">8.3.2. Manual Activation</A>
-      <LI><A HREF="#ConfigProfileTriggers">8.3.3. Triggers</A>
+      <LI><A HREF="#toc70">8.3.2. पार्श्वचित्रको सिर्जना</A>
+      <LI><A HREF="#ConfigProfileManual">8.3.3. Manual Activation</A>
       <LI><A HREF="#toc72">8.3.4. पार्श्वचित्रको सम्पादन</A>
-      <LI><A HREF="#toc73">8.3.5. Temporarily Disabling Triggers</A>
+      <LI><A HREF="#toc73">8.3.5. उतेजकहरूको अस्थाई निस्क्रियकरण</A>
       </UL>
     <LI><A HREF="#toc74">8.4. अभियोजन फाइलहरूको स्थान</A>
     </UL>
@@ -2372,25 +2372,25 @@ This option allows you to choose whether or not NVDA should report new symbols a
 </P>
 <P>
 अभियोजन पार्श्वचित्रलाई मानविय रुपले  सक्रिय गर्न सकिन्छ ।
-They can also be activated automatically due to triggers such as switching to a particular application.
+कुनै निश्चीत अनुप्रयोगमा गमन जस्ता उतेजकको प्रयोग  गरी यीनिहरूलाई स्वचालित रूपमा सक्रिय गर्न सकिन्छ ।
 </P>
 
 <A NAME="toc69"></A>
 <H4>8.3.1. आधारभूत व्यबस्थापन</H4>
 
 <P>
-You manage configuration profiles by selecting "Configuration profiles" in the NVDA menu.
-You can also do this using a key command:
+तपाइले   नेत्रवाणी मेनुमा रहेको  " पार्श्वचित्रको अभियोजन " लाई चयन गरी  पार्श्वचित्र अभियोजनको व्यबस्थापन गर्न सक्नु हुन्छ ।
+तपाइले यो कार्य कुञ्जी आदेसको पर्योग गरेर पनि  गर्न सक्नु हुन्छ ।
 </P>
 
 <UL>
-<LI>NVDA+control+p: Show the Configuration Profiles dialog.
+<LI>नेत्रवाणी + control+p: पार्श्वचित्र अभियोजन पातोलाई देखाउने छ ।
 </UL>
 
 <P>
-The first control in this dialog is the profile list from which you can select one of the available profiles.
+यो पातोको पहिलो नियन्त्रक भनेको पार्श्वचित्र सूची हो जहाँ बाट  तपाइले   उपलब्ध कुनै पनि पार्श्वचित्रलाई चयन गर्न सक्नु हुन्छ ।
 तपाइले पातो पल्टाउनु भयो भने वर्तमान सम्पादीत पार्श्वचित्र चयनित हुन्छ ।
-Additional information is also shown for active profiles, indicating whether they are manually activated, triggered and/or being edited.
+वर्तमान  पार्स्वचित्र मानविय रूपले अथवा उतेजक द्वारा सक्रिय बनाइएका हुन् वा  सम्पादित हुदै छन् भन्ने जस्ता सक्रिय पार्श्वचित्र सम्बन्धी अतिरिक्त सुचनालाई पनि देखाइने छ।
 </P>
 <P>
 नाम बदल्न वा हटाउनका लागि, नामाकरण वा हटाउ भन्नेटाँकलाई क्रमशः दबाउनु होला ।
@@ -2398,13 +2398,16 @@ Additional information is also shown for active profiles, indicating whether the
 <P>
 पातोलाई बन्द गर्न 'बन्द' भन्ने टाँकलाई दबाउनु होस् ।
 </P>
+
+<A NAME="toc70"></A>
+<H4>8.3.2. पार्श्वचित्रको सिर्जना</H4>
+
 <P>
-पार्श्वचित्रको सिर्जना
 पार्श्वचित्रको सिर्जना गर्न नयाँ टाँकलाई दबाउनु होस् ।
 </P>
 <P>
 नयाँ पार्श्वचित्र पातोमा तपाई नयाँ पार्श्वचित्रको नाम लेख्न सक्नु हुन्छ ।
-You can also select how this profile should be used.
+यो पार्श्वचित्रलाई कसरी प्रयोग गर्ने भनेर तपाइले चयन गर्न सक्नु हुन्छ ।
 If you only want to use this profile manually, select Manual activation, which is the default.
 Otherwise, select a trigger which should automatically activate this profile.
 For convenience, if you haven't entered a name for the profile, selecting a trigger will fill in the name accordingly.
@@ -2415,7 +2418,7 @@ Pressing OK will create the profile and close the Configuration Profiles dialog 
 </P>
 
 <A NAME="ConfigProfileManual"></A>
-<H4>8.3.2. Manual Activation</H4>
+<H4>8.3.3. Manual Activation</H4>
 
 <P>
 You can manually activate a profile by selecting a profile and pressing the Manual activate button.
@@ -2425,11 +2428,8 @@ However, if you have changed the voice in the triggered profile but have never c
 Any settings you change will be saved in the manually activated profile.
 To deactivate a manually activated profile, select it in the Configuration Profiles dialog and press the Manual deactivate button.
 </P>
-
-<A NAME="ConfigProfileTriggers"></A>
-<H4>8.3.3. Triggers</H4>
-
 <P>
++++ उतेजकहरू+++ [ConfigProfileTriggers]
 Pressing the Triggers button in the Configuration Profiles dialog allows you to change the profiles which should be automatically activated for various triggers.
 </P>
 <P>
@@ -2456,19 +2456,19 @@ Press the Close button to return to the Configuration Profiles dialog.
 If you have manually activated a profile, any settings you change will be saved to that profile.
 Otherwise, any settings you change will be saved to the most recently triggered profile.
 For example, if you have associated a profile with the Notepad application and you switch to Notepad, any changed settings will be saved to that profile.
-Finally, if there is neither a manually activated nor a triggered profile, any settings you change will be saved to your normal configuration.
+अन्तमा, यदि मानविय रूपले वा उतेजक द्वारा सक्रिय गरिएको पार्श्वचित्र  छैन भने यो सामान्य अभियोजनको रूपमा  बचत हुनेछ ।
 </P>
 <P>
-To edit the profile associated with say all, you must <A HREF="#ConfigProfileManual">manually activate</A> that profile.
+सबै पढ भन्ने पार्श्वचित्रको सम्पादन गर्न, तपाइले <A HREF="#ConfigProfileManual">मानविय रूपले सक्रिय गर</A> भन्ने पार्श्वचित्रलाई सक्रिय गर्नु पर्छ ।
 </P>
 
 <A NAME="toc73"></A>
-<H4>8.3.5. Temporarily Disabling Triggers</H4>
+<H4>8.3.5. उतेजकहरूको अस्थाई निस्क्रियकरण</H4>
 
 <P>
-Sometimes, it is useful to temporarily disable all triggers.
-For example, you might wish to edit a manually activated profile or your normal configuration without triggered profiles interfering.
-You can do this by checking the Temporarily disable all triggers checkbox in the Configuration Profiles dialog.
+कहिले कहीं उतेजकहरूलाई अस्थाइ रुपमा निस्क्रिय गर्नु उपयोगी हुन्छ ।
+उदाहरणका लागि,, तपाइले  कुनै मानविय रूपले सक्रिय पार्स्वचित्रलाई अथवा  तपाइको सामान्य अभियोजन लाइ उतेजक पार्श्वचित्रको हस्तक्षेप बिना नै सम्पादन गर्ने चाहना  राख्नु हुन्छ ।
+तपाइले सबै उतेजकहरुलाई निस्क्रिय गर भन्ने  चेक बाकसमा टिक लगाएर यो कार्य गर्न सक्नु हुन्छ । the Temporarily disable all triggers checkbox in the Configuration Profiles dialog.
 </P>
 
 <A NAME="toc74"></A>
