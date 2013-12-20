@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2013-12-14 22:15+0000\n"
-"PO-Revision-Date: 2013-12-19 12:31+0100\n"
+"PO-Revision-Date: 2013-12-20 13:11+0100\n"
 "Last-Translator: David Parduhn <xkill85@gmx.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: de\n"
@@ -745,11 +745,12 @@ msgstr ""
 #. type: Title ###
 #, no-wrap
 msgid "Example 2: Generate a tone when switching to Notepad"
-msgstr ""
+msgstr "Beispiel 2: Erzeugen von Signaltönen beim Wechsel in den Editor"
 
 #. type: Plain text
 msgid "Most of the below code comes from NvDA Developer Guide."
 msgstr ""
+"Der Größte Teil des folgenden codes stammt aus dem NVDA-Entwicklerhandbuch."
 
 #. type: Plain text
 msgid ""
@@ -759,6 +760,12 @@ msgid ""
 "the executable for a program. For example, an app module for Notepad would "
 "be named notepad.py."
 msgstr ""
+"Mit Hilfe von NVDA-Erweiterungen können Sie nicht nur globale Befehle "
+"hinzufügen; ebenso ist es möglich, mit Hilfe von Anwendungsmodulen die "
+"Zugänglichkeit für bestimmte Programme zu verbessern. Ein Anwendungsmodul "
+"ist eine Python-Quelldatei, die nach dem Programm benannt sein muss, dessen "
+"Zugänglichkeit Sie verbessern wollen. Im Fall des Windows-Editors muss das "
+"Anwendungsmodul notepad.py heißen."
 
 #. type: Plain text
 msgid ""
@@ -767,11 +774,15 @@ msgid ""
 "below code in notepad.py, which in turn should be placed in appModules "
 "folder in your user configuration folder in order for it to run."
 msgstr ""
+"Der untenstehende Code stammt aus dem NVDA-Entwicklerhandbuch und gibt einen "
+"kurzen Einblick in die anwendungsmodule. Speichern Sie den Code in einer "
+"Datei notepad.py und speichern Sie die Datei im Unterordner appmodules im "
+"NVDA-Konfigurationsverzeichnis ab."
 
 #. type: Plain text
 #, no-wrap
 msgid "\t# An example app module.\n"
-msgstr ""
+msgstr "\t# Beispiel für ein Anwendungsmodul.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -796,21 +807,23 @@ msgstr ""
 #. type: Title ###
 #, no-wrap
 msgid "Example 2 code explanation"
-msgstr ""
+msgstr "Erläuterungen zum Code von Beispiel 2"
 
 #. type: Plain text
 msgid ""
 "We're seeing more new code here. Let's go over this, again piece by piece:"
-msgstr ""
+msgstr "Im folgenden Abschnitt wird der Code des Anwendungsmoduls beschrieben:"
 
 #. type: Bullet: '1. '
 msgid ""
 "Unlike the first example, the crucial module we need is appModuleHandler."
 msgstr ""
+"Im Gegensatz zum vorigen eispiel wird diesmal das Modul appmodulehandler "
+"verwendet."
 
 #. type: Bullet: '2. '
 msgid "The class that we are using is AppModule."
-msgstr ""
+msgstr "Die Klasse, die diesmal verwendet wird, heißt appmodule."
 
 #. type: Bullet: '3. '
 msgid ""
@@ -819,6 +832,10 @@ msgid ""
 "arguments, the object for which the event needs to be dealt with, or, as "
 "many people say, \"fired.\""
 msgstr ""
+"Im Gegensatz zum vorigen Beispiel werden diesmal "
+"Ereignisbehandlungsroutinen  verwendet, um auf Ereignisse zu reagieren. Alle "
+"Ereignisbehandlungsroutinen nehmen mindestens einen Parameter entgegen. "
+"Dieser Parameter bezeichnet das Objekt, das das Ereignis ausgelöst hat."
 
 #. type: Bullet: '4. '
 msgid ""
@@ -826,21 +843,30 @@ msgid ""
 "method is used in event methods to tell NvDA to pass the event so it can be "
 "taken care of, such as saying the name of a control after beeping."
 msgstr ""
+"Außerdem wird die im Parameter \"nexthandler\" hinterlegte methode "
+"aufzurufen, um NVDA zu ermöglichen, das Ereignis beim Wechsel in den Editor "
+"weiterhin abzuarbeiten. Hierdurch wird beispielsweise sichergestellt, dass "
+"NVDA auch weiterhin die Namen der Steuerelemente innerhalb des Editors "
+"ansagt."
 
 #. type: Title ###
 #, no-wrap
 msgid "More new terms please"
-msgstr ""
+msgstr "Weitere Begriffsklärungen"
 
 #. type: Plain text
 msgid "Other terms you may see include:"
 msgstr ""
+"Im Zusammenhang mit Beispiel 2 sollten noch weitere Begriffe geklärt werden:"
 
 #. type: Bullet: '* '
 msgid ""
 "Event: An event is a method that'll be run when some events happen, such as "
 "when a program is on focused, when names of controls change and so on."
 msgstr ""
+"Ereignisbehandlungsroutine: eine Solche Routine wird immer dann aufgerufen, "
+"wenn bestimmte Ereignisse innerhalb von NVDA eintreten (wenn Sie in ein "
+"bestimmtes Programm wechseln, wenn Sie ein Steuerelement umbenennen etc)."
 
 #. type: Bullet: '* '
 msgid ""
@@ -848,6 +874,9 @@ msgid ""
 "method from another method. For example, in our first example, we're calling "
 "tones.beep method from our script method."
 msgstr ""
+"Aufruf: Wenn eine methode von einer anderen Methode aus ausgeführt wird, "
+"wird dies als Methodenaufruf bezeichnet. In Beispiel 1 rufen wir "
+"beispielsweise von einem Script aus die Methode tones.beep auf."
 
 #. type: Bullet: '* '
 msgid ""
@@ -857,6 +886,8 @@ msgid ""
 "abbreviated to obj. In NVDA, an object may refer to controls or parts of a "
 "program."
 msgstr ""
+"Objekt: ein Objekt ist eine Instanz einer Klasse. Objekte können sich auf "
+"Programme oder auf Steuerelemente innerhalb von Programmen beziehen."
 
 #. type: Bullet: '* '
 msgid ""
@@ -868,6 +899,8 @@ msgid ""
 "NVDA object (see below), or in the add-on development, the instance of an "
 "add-on. Many of your methods will have self as the first argument."
 msgstr ""
+"Self: In Python bezeichnet das Schlüsselwort \"self\" die Klasse, innerhalb "
+"derer eine Methode definiert wird."
 
 #. type: Plain text
 msgid ""
@@ -877,6 +910,8 @@ msgid ""
 "plugins and app modules will become more clear when we talk about them in "
 "more detail throughout this guide."
 msgstr ""
+"Wie im Beispiel 1 können Sie die Datei notepad.py löschen, sobald Sie mit "
+"Anwendungsmodulen vertraut sind."
 
 #. type: Title ###
 #, no-wrap
