@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2013-12-14 22:15+0000\n"
-"PO-Revision-Date: 2013-12-21 11:26+0100\n"
+"PO-Revision-Date: 2013-12-21 13:23+0100\n"
 "Last-Translator: David Parduhn <xkill85@gmx.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: de\n"
@@ -1345,7 +1345,7 @@ msgstr ""
 #. type: Title ##
 #, no-wrap
 msgid "Add-on module components and development tips"
-msgstr ""
+msgstr "Hinweise zur Entwicklung von NVDA-Erweiterungen und -komponenten"
 
 #. type: Plain text
 msgid ""
@@ -1353,6 +1353,10 @@ msgid ""
 "input and output, working with different NvDA objects, reacting to events, "
 "storing configuration and more."
 msgstr ""
+"eine NVDA-Erweiterung besteht aus mehreren Komponenten, die Aspekte wi. In "
+"solchen Komponenten können Sie z.B. auf Ereignisse reagieren, mit "
+"sprachausgaben oder Braillezeilen umgehen, Einstellungen verwalten, "
+"Meldungen ausgeben etc."
 
 #. type: Plain text
 msgid ""
@@ -1360,6 +1364,8 @@ msgid ""
 "development, such as NVDA objects, scripts, event handling and additional "
 "topics with examples."
 msgstr ""
+"In diesem Kapitel werden Konzepte wie NVDA-Objekte, Scripte, "
+"Ereignisbehandlung und weitere Themen behandelt und durch Beispiele vertieft."
 
 #. type: Plain text
 msgid ""
@@ -1367,11 +1373,13 @@ msgid ""
 "This chapter is intended as an extension of that document. Consult the NVDA "
 "development guide for a brief introductions."
 msgstr ""
+"Das NVDA-Entwicklerhandbuch gibt bereits eine Einführung zu den obigen "
+"Themen; dieses Kapitel bietet lediglich weitere informationen."
 
 #. type: Title ###
 #, no-wrap
 msgid "Working with objects on screen"
-msgstr ""
+msgstr "Arbeien mit Objekten auf dem Bildschirm"
 
 #. type: Plain text
 msgid ""
@@ -1379,6 +1387,9 @@ msgid ""
 "a program is running. For example, if a class called button has been "
 "defined, the button on a screen is the object of this button class."
 msgstr ""
+"Ein Objekt ist eine Instanz einer Klasse. Wenn sie beispielsweise eine "
+"Schaltfläche in einer Anwendung sehen, wird diese von einer Instanz der "
+"Klasse button repräsentiert."
 
 #. type: Plain text
 msgid ""
@@ -1390,6 +1401,10 @@ msgid ""
 "the parent of this list might be the Windows Explorer window. The object "
 "that you're examining right now is termed \"navigator object.\""
 msgstr ""
+"in NVDA werden jegliche Steuerelemente durch Objekte repräsentiert; ganz "
+"gleich, ob es sich dabei um Schalte, Kontrollkästchen, Eingabefelder, "
+"Symbolleisten, Bildlaufleisten oder Anwendungsfenster handelt. Die Objekte "
+"sind hierbei hierarchisch organisiert. "
 
 #. type: Plain text
 msgid ""
@@ -1401,6 +1416,12 @@ msgid ""
 "the object, reacting to events for the object (gains focus, value changed, "
 "etc.) and so on."
 msgstr ""
+"Objekte enthalten eine Reihe nützlicher Eigenschaften. Dazu zählen der Typ "
+"(Eingabefeld, Kontrollkästchen etc), der name, der Wert (der Inhalt eines "
+"Eingabefeldes), der Status (aktiviert, hervorgehoben etc), der Standort (die "
+"Position auf dem Bildschirm). Objekte enthalten außerdem eine Reihe von "
+"Methoden, um die Eigenschaften zu manipulieren oder auf Ereignisse zu "
+"reagieren."
 
 #. type: Plain text
 msgid ""
@@ -1412,6 +1433,11 @@ msgid ""
 "handler for the object you're using (e.g. if you're working with an "
 "IAccessible object, impore NVDAObjects.IAccessible.)."
 msgstr ""
+"Für viele Objekte stellt nVDA Basisklassen zur Verfügung, um mit den "
+"Objekten umzugehen. Dazu zählen, IAccessible, UIA, JAB und andere mehr. Die "
+"Klassen befinden sich unterhalb des Verzeichnisses NVDAObjects. Wenn Sie zum "
+"Beispiel mit einem IAccessible-Objekt umgehen wollen, müssen Sie die Klasse "
+"NVDAObjects.IAccessible importieren."
 
 #. type: Plain text
 msgid ""
@@ -1421,23 +1447,33 @@ msgid ""
 "interceptor is virtual buffer, which allows NVDA to work with complex "
 "documents such as PDF documents."
 msgstr ""
+"Von dieser Regel gibt es zwei Ausnahmen: virtuelle Puffer und tree "
+"interceptors. ein tree interceptor erlaubt es, mit einem ganzen Objektbaum "
+"umzugehen, auch wenn es sich bei dem zugrundeliegendenen Objekt nur um ein "
+"einzelnes objekt handelt. Einen Spezialfall eines tree interceptors stellt "
+"der virtuelle Puffer dar, mit dessen Hilfe es möglich ist, mit komplexen "
+"Dokumenten wie etwa pdf-Dokumenten umzugehen."
 
 #. type: Title ###
 #, no-wrap
 msgid "Examining object hierarchy"
-msgstr ""
+msgstr "untersuchen der objekthierarchie"
 
 #. type: Plain text
 msgid ""
 "There are a number of ways which you can use to see the hierarchy of an "
 "object for a given program:"
 msgstr ""
+"Es gibt verschiedene Möglichkeiten, um die Hierarchie der objekte innerhalb "
+"eines Programms zu untersuchen:"
 
 #. type: Bullet: '1. '
 msgid ""
 "Using object navigation commands (NvDA+Numpad 2/4/5/6/8) with simple review "
 "mode turned off."
 msgstr ""
+"Verwenden der objektnavigationsbefehle (NvDA+Nummernblock 2/4/5/6/8) mit "
+"deaktiviertem vereinfachten Darstellungsmodus"
 
 #. type: Bullet: '2. '
 msgid ""
@@ -1445,6 +1481,9 @@ msgid ""
 "attributes. If you want to see all available properties, from mPython "
 "Console, type dir(obj)."
 msgstr ""
+"Vrwenden der Python-Konsole; verwenden Sie  obj.next/previous/parent/"
+"firstChild/lastChild. Um sich die Namen aller eigenschaften eines Objekts "
+"anzeigen zu lassen, verwenden Sie den Befehl dir(obj)"
 
 #. type: Plain text
 msgid ""
@@ -1453,6 +1492,9 @@ msgid ""
 "press NvDA+F1 to launch log viewer. The root of all objects in Windows is "
 "the desktop, or shell object."
 msgstr ""
+"Um eine ausführlichere Liste der Eigenschaften angezeigt zu bekommen, setzen "
+"Sie den Navigator auf das betreffende Objekt und drücken Sie anschließend "
+"die Tastenkombination nvda+f1. Es wird der Protokollbetrachter angezeigt."
 
 #. type: Title ###
 #, no-wrap
