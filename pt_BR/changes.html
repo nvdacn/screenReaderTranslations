@@ -18,7 +18,7 @@ Traduzido por Marlin Rodrigues da Silva e Cleverson Casarin Uliana
 <H3>Novas características</H3>
 
 <UL>
-<LI>Suport para o Microsoft PowerPoint 2013. <A HREF="suportada">Visualização protegida  não</A>. (<A HREF="http://community.nvda-project.org/ticket/3578">#3578</A>)
+<LI>Suport para o Microsoft PowerPoint 2013. Note que a visualização protegida não é suportada. (<A HREF="http://community.nvda-project.org/ticket/3578">#3578</A>)
  <UL>
  <LI>Agora é possível escolher se conteúdos em documentos devem ser identificados como clicáveis, por meio de uma nova opção no Diálogo de Opções de Formatação de Documentos. Essa opção está ativada por padrão (comportamento anterior). (<A HREF="http://community.nvda-project.org/ticket/3556">#3556</A>)
  <LI>Suporte para linhas braille conectadas via Bluetooth em computadores onde haja  o Software Widcomm Bluetooth. (<A HREF="http://community.nvda-project.org/ticket/2418">#2418</A>)
@@ -30,6 +30,7 @@ Traduzido por Marlin Rodrigues da Silva e Cleverson Casarin Uliana
 
 <UL>
 <LI>Para as linhas braille Papenmeier, o comando mover para a revisão plana/foco  foi removido. Os usuários poderão assinar suas próprias teclas usando o Diálogo de Gestos de Entrada. (<A HREF="http://community.nvda-project.org/ticket/3652">#3652</A>)
+<LI>O NVDA agora usa o Microsoft VC runtime versão 11, o que significa que já não é mais possível executá-lo em sistemas operacionais mais antigos que o Windows XP Service Pack 2 ou o Windows Server 2003 Service Pack 1.
 </UL>
 
 <H3>Correção de falhas</H3>
@@ -39,6 +40,7 @@ Traduzido por Marlin Rodrigues da Silva e Cleverson Casarin Uliana
  <UL>
  <LI>No Instantbird, o NVDA já não exibe informações inúteis sempre que você move  para um contato na lista de contatos. (<A HREF="http://community.nvda-project.org/ticket/2667">#2667</A>)
  </UL>
+<LI>O NVDA já não anuncia todas as células no Microsoft Excel como sublinhadas em suas informações de formatação. (<A HREF="http://community.nvda-project.org/ticket/3669">#3669</A>)
 </UL>
 
 <H3>Alterações específicas para desenvolvedores</H3>
@@ -534,7 +536,7 @@ Os destaques dessa versão incluem um instalador integrado com o recurso de cria
 <LI>No Winamp, o braille agora é atualizado corretamente ao mover para um item diferente no editor de listas de reprodução. (<A HREF="http://community.nvda-project.org/ticket/1912">#1912</A>)
 <LI>A árvore encontrada na Lista de Elementos (disponível para documentos do modo de navegação) agora é calculada corretamente para exibir o texto de cada elemento. (<A HREF="http://community.nvda-project.org/ticket/2276">#2276</A>)
 <LI>Em aplicativos que usam Java Access Bridge, os campos de edição de texto agora são apresentados corretamente em braille. (<A HREF="http://community.nvda-project.org/ticket/2284">#2284</A>)
-<LI>Em aplicativos que usam java Access Bridge, os campos de edição de texto já não anunciam caracteres estranhos em determinadas circumstâncias. (<A HREF="http://community.nvda-project.org/ticket/1892">#1892</A>)
+<LI>Em aplicativos que usam java Access Bridge, os campos de edição de texto já não anunciam caracteres estranhos em determinadas circunstâncias. (<A HREF="http://community.nvda-project.org/ticket/1892">#1892</A>)
 <LI>Em aplicativos que usam Java Access Bridge, estando no fim de um campo de edição de texto, a linha atual agora é anunciada corretamente. (<A HREF="http://community.nvda-project.org/ticket/1892">#1892</A>)
 <LI>No modo de navegação em aplicativos que usam Mozilla Gecko 14 e posteriores (como Firefox 14), a navegação rápida agora funciona para blocos de citação  e objetos embutidos. (<A HREF="http://community.nvda-project.org/ticket/2287">#2287</A>) 
 <LI>No Internet Explorer 9, o NVDA já não lê conteúdo indesejado quando o foco é movido para dentro de certas marcas ou elementos enfocáveis (especificamente, um elemento div que é enfocável ou possui uma função ARIA de marca).
@@ -664,7 +666,7 @@ Os destaques desta versão incluem a mudança automática do idioma do sintetiza
 
 <UL>
 <LI>O NVDA agora pode alterar o idioma do sintetizador eSpeak ao ler certos documentos da web/pdf que forneçam a informação apropriada do idioma. A mudança automática do idioma//dialeto pode ser ativada ou desativada através do Diálogo de Opções de Voz. (<A HREF="http://community.nvda-project.org/ticket/845">#845</A>)
-<LI>Java Access Bridge 2.0.2 agora é suportado, o que inclui suporte para Java 64 bit.
+<LI>O Java Access Bridge 2.0.2 agora é suportado, o que passa a incluir suporte para Java 64 bit.
 <LI>No Mozilla Gecko (isto é, Firefox) os níveis dos cabeçalhos agora são anunciados quando se usa a navegação de objetos.
 <LI>A formatação de textos agora é informada quando se usa o modo de navegação no Mozilla Gecko (isto é, Firefox e Thunderbird). (<A HREF="http://community.nvda-project.org/ticket/394">#394</A>)
 <LI>Textos com sublinhado e/ou taxado agora podem ser detectados e informados em controles de texto standard IAccessible2 tais como em aplicativos da Mozilla.
@@ -1048,7 +1050,7 @@ As características mais notáveis desta versão incluen uma grande simplificaç
 <LI>quando se move o mouse sobre células no Microsoft Excel, o NVDA as anuncia apropriadamente.
 <LI>em aplicações que utilizam Java Access Bridge, o texto de um diálogo agora é anunciado quando aparece. (<A HREF="http://community.nvda-project.org/ticket/554">#554</A>)
 <LI>Agora pode-se utilizar um buffer virtual para navegar pelo conteúdo do adobe Flash. Navegar por objetos e interagir com os controles diretamente (ativando o modo de foco) já é suportado. (<A HREF="http://community.nvda-project.org/ticket/453">#453</A>)
-<LI>Os controles de texto editável no IDE Eclipse, incluindo o editor de código, agora são acessíveis. Deve utilizar Eclipse 3.6 ou superior. (<A HREF="http://community.nvda-project.org/ticket/256">#256</A>, <A HREF="http://community.nvda-project.org/ticket/641">#641</A>)
+<LI>Os controles de texto editável no IDE Eclipse, incluindo o editor de código, agora são acessíveis. é necessário utilizar Eclipse 3.6 ou superior. (<A HREF="http://community.nvda-project.org/ticket/256">#256</A>, <A HREF="http://community.nvda-project.org/ticket/641">#641</A>)
 <LI>O NVDA agora pode recuperar maior parte do texto escrito na tela. (<A HREF="http://community.nvda-project.org/ticket/40">#40</A>, <A HREF="http://community.nvda-project.org/ticket/643">#643</A>)
 </UL>
 
@@ -1516,7 +1518,7 @@ O mais destacável desta versão inclui o suporte para versões de 64 bit do Win
 
 <UL>
 <LI>NVDA+shift+numpad6 e NVDA+shift+numpad4 lhe permiten navegar ao seguinte ou ao anterior objeto em fluxo respectivamente. isto significa que pode navegar numa aplicação utilizando apenas estas dúas teclas sen se preocupar em navegar para o pai ou  para o primeiro filho conforme se mova através da hierarquía de objetos. Por exemplo nun navegador web tal como firefox, pode navegar no documento por objetos, utilizando apenas estas dúas teclas. Se o seguinte em fluxo ou o anterior em fluxo lhe coloca e desloca de um objeto, ou abaixo nun objeto, ouvirá beeps indicando a direção.
-<LI>agora é possível configurar opções de voz sem abrir o Diálogo correspondente, utilizando o Anel de Opções de Voz. Este é um grupo de opções de voz que permite alternar através do presssionamento de control+NVDA+direita e control+NVDA+esquerda. Para alterar uma opção utilize control+NVDA+acima e control+NVDA+abaixo.
+<LI>agora é possível configurar opções de voz sem abrir o Diálogo correspondente, utilizando o Anel de Opções de Voz. Este é um grupo de opções de voz que permite alternar através do pressionamento de control+NVDA+direita e control+NVDA+esquerda. Para alterar uma opção utilize control+NVDA+acima e control+NVDA+abaixo.
 <LI>adicionado um comando para anunciar a seleção atual em campos de edição (NVDA+shift+seta acima).
 <LI>Um bom número de comandos do NVDA que anunciam texto (como anunciar linha atual etc) agora podem soletrar o texto se pressionados dúas vezes rápidamente.
 <LI>O Caps Loc, insert do teclado numérico e insert extendido podem ser todos utilizados como teclas modificadoras do NVDA. também se uma destas teclas for utilizada, pressionando-a dúas vezes rápidamente sen pressionar nenhuma outra, enviará a tecla ao sistema operacional, como se você a pressionasse sen que o NVDA estivesse sendo executado. Para fazer com que uma destas teclas torne-se modificadora do NVDA, marque súa caixa de seleção  no diálogo de Opções de Teclado (utilizado para ser chamado o diálogo de eco de teclado).
@@ -1539,10 +1541,10 @@ O mais destacável desta versão inclui o suporte para versões de 64 bit do Win
 <H3>APIs e toolkits</H3>
 
 <UL>
-<LI>melhorada a navegação de objetos pelos objetos de MSAA. Se uma janela posssui um menu de sistema, barra de título, ou barras de deslocamento, agora é possível navegar por elas.
+<LI>melhorada a navegação de objetos pelos objetos de MSAA. Se uma janela possui um menu de sistema, barra de título, ou barras de deslocamento, agora é possível navegar por elas.
 <LI>adicionado suporte para a API de acessibilidade IAccessible2. uma parte da capacidade para anunciar mais tipos de controles, isto também permite ao NVDA acessar o cursor em aplicações como Firefox 3 e Thunderbird 3, lhe permitindo navegar, selecionar ou editar textos.
 <LI>adicionado suporte para controles de edição de Scintilla (tais controles podem ser encontrados no Notepad++ ou no Tortoise SVN).
-<LI>adicionado suporte para aplicações Java (através do Java Access Bridge). isto pode proporcionar suporte básico para Open Office (se Java estiver ativado), e qualquer outra aplicação autônoma Java. Tenha em conta que os Applets de java dentro de um navegador web não poderão funcionar aínda.
+<LI>adicionado suporte para aplicações Java (através do Java Access Bridge). isto pode oferecer suporte básico para Open Office (se o Java estiver ativado), e qualquer outra aplicação autônoma Java. Tenha em conta que os Applets de java dentro de um navegador web não poderão funcionar aínda.
 </UL>
 
 <H3>mouse</H3>
