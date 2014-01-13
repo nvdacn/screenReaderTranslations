@@ -3,23 +3,23 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2014-01-12 22:25+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2013-12-27 21:15+0100\n"
+"Last-Translator: Juan C. Buño <quetzatl@eresmas.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "[[!meta title=\"NVDA Add-on Development Guide\"]]\n"
-msgstr ""
+msgstr "[[!meta title=\"Guía de Desarrollo de Complementos para NVDA\"]]\n"
 
 #. type: Plain text
 msgid ""
@@ -27,6 +27,10 @@ msgid ""
 "NvDA add-ons are developed, as well as explaining some useful code segments "
 "from NvDA core source code useful when writing add-ons."
 msgstr ""
+"Bienvenido a la Guía de Desarrollo de Complementos para NVDA. Esta es la "
+"guía única sobre cómo se desarrollan los complementos para NVDA, así como la "
+"explicación de algunos segmentos del código fuente del núcleo de NVDA útiles "
+"para escribir complementos."
 
 #. type: Plain text
 msgid ""
@@ -35,11 +39,16 @@ msgid ""
 "familiarize yourself with key terms and basics on getting started with add-"
 "on development."
 msgstr ""
+"Para más información sobre el desarrollo de NVDA, por favor visita [La "
+"Página de Desarrollo de la Comunidad de NVDA][1]. Asegúrate de revisar [La "
+"Guía del desarrollador de NVDA][2] para familiarizarte con términos y "
+"conceptos básicos claves sobre cómo empezar con el desarrollo de un "
+"complemento."
 
 #. type: Title ##
 #, no-wrap
 msgid "Audience"
-msgstr ""
+msgstr "Audiencia"
 
 #. type: Plain text
 msgid ""
@@ -48,6 +57,11 @@ msgid ""
 "who are familiar with Python or other programming languages and/or familiar "
 "with NvDA source code structure."
 msgstr ""
+"Esta guía está diseñada tanto para principiantes que sean nuevos en Python "
+"y / o en el desarrollo de NVDA en general, así como para expertos y usuarios "
+"avanzados y programadores que estén familiarizados con Python y otros "
+"lenguajes de programación y / o familiarizados con la estructura del código "
+"fuente de NVDA ."
 
 #. type: Plain text
 msgid ""
@@ -57,17 +71,27 @@ msgid ""
 "new to NvDA development, please checkout NVDA development Guide and Design "
 "Overview document, both of which can be found on the NVDA Community website."
 msgstr ""
+"Si eres nuevo en el desarrollo de complementos o en el núcleo de NVDA, se "
+"recomienda que te familiarices con Python primero, ya que ofrece "
+"conocimientos de programación necesarios para comprender el resto de la "
+"guía. Si eres un programador de Python, pero eres nuevo en el desarrollo de "
+"NVDA, por favor comprueba la Guía de Desarrollo de NVDA y el documento "
+"Descripción del diseño, ambos de los cuales se pueden encontrar en el sitio "
+"web de la Comunidad de NVDA ."
 
 #. type: Title ###
 #, no-wrap
 msgid "Authors, contributions and copyright"
-msgstr ""
+msgstr "Autores, contribuciones y derechos de autor"
 
 #. type: Plain text
 msgid ""
 "This guide was originally written by Joseph Lee and is shaped by NVDA user "
 "and developer community. We welcome your feedback and contributionn."
 msgstr ""
+"Esta guía ha sido escrita por Joseph Lee y está conformada por la comunidad "
+"de usuarios y desarrolladores de NVDA. Agradecemos tus comentarios y "
+"colaboración."
 
 #. type: Plain text
 msgid ""
@@ -77,17 +101,24 @@ msgid ""
 "Python is copyright Python Foundation. Other products mentioned are "
 "copyrighted by authors of these products."
 msgstr ""
+"Derechos de autor: NVDA es propiedad 2006-2013 de NV Access. Microsoft "
+"Windows, Microsoft Office, Win32 API y otros productos de MS son propidad de "
+"Microsoft Corporation. IAccessible package es propiedad de IBM y de la Linux "
+"Foundation. Python es propiedad de la Python Foundation. Otros productos "
+"mencionados son propiedad de los autores de estos productos."
 
 #. type: Title ##
 #, no-wrap
 msgid "System requirements"
-msgstr ""
+msgstr "Requisitos del sistema"
 
 #. type: Plain text
 msgid ""
 "To create an add-on for NVDA, please make sure the following system "
 "requirements are met:"
 msgstr ""
+"Para crear un complemento para NVDA, por favor asegúrate de que se cumplan "
+"los siguientes requisitos del sistema:"
 
 #. type: Bullet: '* '
 msgid ""
@@ -95,22 +126,27 @@ msgid ""
 "installed version will work, but we strongly recommend that you install a "
 "copy of NVDA on your development computer)."
 msgstr ""
+"Una versión de NVDA estará disponible en el equipo (ya sea una versión "
+"portátil o instalada funcionará, pero te recomendamos encarecidamente que "
+"instales una copia de NVDA en el equipo de desarrollo)."
 
 #. type: Bullet: '* '
 msgid "Python 2.7 series, version 2.7.5 32-bit for Windows."
-msgstr ""
+msgstr "Python serie 2.7, la versión 2.7.5 de 32 bits para Windows."
 
 #. type: Bullet: '* '
 msgid "SCons 2, version 2.3.0 for generating add-on packages."
-msgstr ""
+msgstr "SCons 2, versión 2.3.0 para generar paquetes de complemento."
 
 #. type: Bullet: '* '
 msgid "Markdown 2.0.1 or later for generating add-on documentation."
 msgstr ""
+"Markdown 2.0.1 o posterior para generar la documentación del complemento."
 
 #. type: Bullet: '* '
 msgid "GNU Gettext package for Windows for message localization support."
 msgstr ""
+"Paquete GNU Gettext para Windows para el soporte de mensajes de localización."
 
 #. type: Bullet: '* '
 msgid ""
@@ -118,6 +154,9 @@ msgid ""
 "Bitbucket (optional, see below). You can use various Git clients, such as "
 "Git Bash, Cygwin's Git, Tortoise Git and so forth."
 msgstr ""
+"Git 1.7.9 o posterior si deseas cargar el complemento a un repositorio como "
+"Bitbucket (opcional, ver más abajo). Puedes utilizar varios clientes de Git, "
+"como Git Bash, Git de Cygwin, Tortoise Git y así sucesivamente."
 
 #. type: Bullet: '* '
 msgid ""
@@ -125,15 +164,18 @@ msgid ""
 "packaging and management (optional; [click here][3] to download the add-on "
 "template)."
 msgstr ""
+"La Plantilla NVDA Community Add-on para facilitar el empaquetado y "
+"administración de los ficheros y carpetas del complemento (opcional; [haz "
+"clic aquí][3] para descargar la plantilla de complementos)."
 
 #. type: Bullet: '* '
 msgid "Additional Python modules or dependencies for your add-on."
-msgstr ""
+msgstr "Módulos de Python adicionales o dependencias para tu complemento."
 
 #. type: Title ##
 #, no-wrap
 msgid "What are add-ons?"
-msgstr ""
+msgstr "¿Qué son los complementos?"
 
 #. type: Plain text
 msgid ""
@@ -142,28 +184,43 @@ msgid ""
 "support for an application or adding support for newer braille displays or "
 "speech synthesizers."
 msgstr ""
+"Un complemento es un paquete adicional que extiende la funcionalidad de NVDA "
+"o el sopporte para  programas. Esto podrá incluir la adición de "
+"características globales, la mejora en el soporte para una aplicación o el "
+"añadido de soporte para pantallas braille o sintetizadores de voz más "
+"modernos."
 
 #. type: Plain text
 msgid "An add-on may include one or more of the following components:"
 msgstr ""
+"Actualmente, se admiten los siguientes módulos adicionales. Ten en cuenta "
+"que un complemento puede incluir más de un módulo adicional tales como un "
+"plugin global y un sintetizador de voz empaquetados en un complemento."
 
 #. type: Bullet: '* '
 msgid ""
 "Global plugin: A global plugin adds features for NVDA which can be used "
 "anywhere, such as OCR capability."
 msgstr ""
+"plugin Global: <Un plugin  global añade características para NVDA que se "
+"pueden utilizar en cualquier lugar, tal como la capacidad de OCR."
 
 #. type: Bullet: '* '
 msgid ""
 "App module: An app module allows enhanced support for a program, such as "
 "specific windows or controls of a program such as audio editors."
 msgstr ""
+"App module: Un app module permite mejorar el soporte para un programa, tal "
+"como ventanas específicas o controles de un programa como editores de audio."
 
 #. type: Bullet: '* '
 msgid ""
 "Driver: A driver allows a program to talk to hardware. Currently one can "
 "write drivers for new braille displays or speech synthesizers."
 msgstr ""
+"Controlador: Un controlador permite a un programa contactar con el hardware. "
+"actualmente se puede escribir <controladores para pantallas braille y "
+"sintetizadores de voz nuevos."
 
 #. type: Plain text
 msgid ""
@@ -172,62 +229,85 @@ msgid ""
 "Manager, found in NvDA 2012.2 or later. Alternatively, one can install them "
 "from file manager if one uses NVDA 2012.3 or later installed on the computer."
 msgstr ""
+"Cada paquete de complemento de NVDA (compuesto por uno o más módulos de "
+"complemento) es un fichero zip con la extensión de fichero .nvda-addon. "
+"Estos pueden instalarse a través del administrador de complementos, "
+"encontrado en NVDA 2012.2 o posterior. Alternativamente, se los puede "
+"instalar desde  el gestor de ficheros si se utiliza NVDA 2012.3 o posterior "
+"instalado en el ordenador."
 
 #. type: Plain text
 msgid ""
 "Throughout this guide, we refer to standard NVDA python modules which comes "
 "with NVDA as \"NvDA Core\" to distinguish it from add-on modules."
 msgstr ""
+"A lo largo de esta guía, nos referiremos a los módulos estándar de NVDA que "
+"vienen con NVDA como \"NVDA Core\" para distinguirlos de módulos de "
+"complemento."
 
 #. type: Title ##
 #, no-wrap
 msgid "Setting up the add-on development environment"
-msgstr ""
+msgstr "Configurando el entorno de desarrollo de complementos"
 
 #. type: Plain text
 msgid "Follow these steps to prepare your computer for writing NVDA add-ons."
 msgstr ""
+"Sigue estos pasos para preparar tu ordenador para escribir complementos para "
+"NVDA."
 
 #. type: Title ###
 #, no-wrap
 msgid "Installing dependencies"
-msgstr ""
+msgstr "Instalando las dependencias"
 
 #. type: Bullet: '1. '
 msgid ""
 "If you don't have NVDA, download and install NVDA from NV access website."
 msgstr ""
+"Si no lo tienes, descarga e instala NVDA desde el sitio web de NV acces."
 
 #. type: Bullet: '2. '
 msgid ""
 "Install Python 2.7.x 32-bit on your computer (if using Windows, install "
 "using the 32-bit Windows installer package)."
 msgstr ""
+"Instala Python 2.7.x de 32 bits en tu ordenador (si utilizas Windows, "
+"instala utilizando el paquete instalable de windows de 32 bits)."
 
 #. type: Bullet: '3. '
 msgid "Install Markdown and SCons using their Windows installer packages."
 msgstr ""
+"Instala Markdown y SCons utilizando sus paquetes para instalación de Windows."
 
 #. type: Bullet: '4. '
 msgid "If you plan to share your add-on code with others, install Git clients."
 msgstr ""
+"Si vas a compartir tu código del complemento con los demás, instala clientes "
+"Git."
 
 #. type: Bullet: '5. '
 msgid ""
 "Paste the Gettext executable files to your add-on development folder (see "
 "the next section on add-on development folder)."
 msgstr ""
+"Pega los ficheros ejecutables de Gettext en tu carpeta de desarrollo de "
+"complementos (consulta en la sección siguiente la carpeta de desarrollo de "
+"complementos)."
 
 #. type: Bullet: '6. '
 msgid ""
 "If you are developing support for a program, speech synthesizer or a braille "
 "display, install the needed software and/or have the hardware handy."
 msgstr ""
+"Si vas a desarrollar el soporte para un programa, un sintetizador de voz o "
+"una pantalla braille, instala el software necesario y / o ten el hardware a "
+"mano."
 
 #. type: Title ###
 #, no-wrap
 msgid "The add-on development folder"
-msgstr ""
+msgstr "La carpeta de desarrollo de complementos"
 
 #. type: Plain text
 msgid ""
@@ -235,23 +315,31 @@ msgid ""
 "separate folders, one per add-on. If you chose to download the add-on "
 "template, the folder structure will be automatically created."
 msgstr ""
+"Al escribir complementos, es recomendable que guardes tu código de "
+"complemento en carpetas separadas, una por cada complemento. Si optas por "
+"descargar la plantilla de complemento, se creará automáticamente la "
+"estructura de carpetas."
 
 #. type: Plain text
 msgid ""
 "Once you install the needed dependencies (see above), paste the Gettext "
 "package executables into this add-on folder."
 msgstr ""
+"Una vez que instales las dependencias necesarias (ver más arriba), pega los "
+"ejecutables del paquete Gettext en esta carpeta de complemento."
 
 #. type: Title ###
 #, no-wrap
 msgid "Add-on folder structure"
-msgstr ""
+msgstr "Estructura de la carpeta de complementos"
 
 #. type: Plain text
 msgid ""
 "Each add-on folder, at a minimum, must contain the following files and "
 "folders:"
 msgstr ""
+"Cada carpeta de complemento, como mínimo, debe contener los siguientes "
+"archivos y carpetas:"
 
 #. type: Plain text
 #, no-wrap
@@ -259,6 +347,8 @@ msgid ""
 " * manifest.ini to store manifesst information such as add-on name and author.\n"
 "* An \"addon\" subfolder with the add-on module directory underneath this subfolder (appModules, globalPlugins, synthDrivers, brailleDisplays). One or more module folders can be specified.\n"
 msgstr ""
+" * manifest.ini para almacenar información de manifesst tal como el nombre y el autor del complemento.\n"
+"* Una subcarpeta \"addon\" con el directorio de módulos del complemento debajo de esta subcarpeta (appModules, globalPlugins, synthDrivers, brailleDisplays). se pueden especificar una o más carpetas de módulo.\n"
 
 #. type: Plain text
 msgid ""
@@ -268,21 +358,30 @@ msgid ""
 "in the template folder for more information on customizing your add-on "
 "manifest using the template files."
 msgstr ""
+"Si estás utilizando la plantilla del complemento, se creará automáticamente "
+"la estructura de carpetas, por lo que necesitas sólo para crear la "
+"subcarpeta addon y la carpeta del módulo complemento (s) y el código dentro "
+"de esta carpeta. Consulta el archivo Léame en la carpeta de plantillas para "
+"más información sobre cómo personalizar tu complemento en el manifiesto "
+"mediante los archivos de plantilla."
 
 #. type: Title ###
 #, no-wrap
 msgid "Packaging add-ons"
-msgstr ""
+msgstr "Empaquetando complementos"
 
 #. type: Plain text
 msgid "There are two ways of packaging add-ons:"
-msgstr ""
+msgstr "Hay dos formas de empaquetar complementos:"
 
 #. type: Bullet: '1. '
 msgid ""
 "To package your add-on manually, zip up (compress) your add-on folder as a ."
 "zip file, then rename the file extension to .nvda-addon."
 msgstr ""
+"Para empaquetar el complemento de forma manual, comprime el complemento en "
+"la carpeta como un archivo zip., A continuación, cambia la extensión del "
+"archivo a. NVDA-addon."
 
 #. type: Bullet: '2. '
 msgid ""
@@ -1474,10 +1573,10 @@ msgid ""
 "holds context-sensitive gestures such as manipulating a single control. Then "
 "the developer would use inputCore.bindGesture (or inputCore.bindGestures if "
 "more than one gestures/scripts are defined) to define certain gestures for a "
-"time, then using inputCore.clearGestures then inputCore.bindGestures"
-"(__gestures) to remove the added gestures. A more elegant way, which "
-"involves scripts for specific objects, will be covered when we talk about "
-"overlay classes."
+"time, then using inputCore.clearGestures then inputCore."
+"bindGestures(__gestures) to remove the added gestures. A more elegant way, "
+"which involves scripts for specific objects, will be covered when we talk "
+"about overlay classes."
 msgstr ""
 
 #. type: Plain text
