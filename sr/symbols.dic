@@ -1,15 +1,16 @@
 ﻿complexSymbols:
 # identifier	regexp
 # Sentence endings.
-. sentence ending	(?<=[^\s.])\.(?=[\"')\s]|$)
-! sentence ending	(?<=[^\s!])\!(?=[\"')\s]|$)
-? sentence ending	(?<=[^\s?])\?(?=[\"')\s]|$)
+. sentence ending	(?<=[^\s.])\.(?=[\"'”’)\s]|$)
+! sentence ending	(?<=[^\s!])\!(?=[\"'”’)\s]|$)
+? sentence ending	(?<=[^\s?])\?(?=[\"'”’)\s]|$)
 # Phrase endings.
 ; phrase ending	(?<=[^\s;]);(?=\s|$)
 : phrase ending	(?<=[^\s:]):(?=\s|$)
 # Others
 decimal point	(?<=\d)\.(?=\d)
-in-word '	(?<=[^\W_])'
+in-word '	(?<=[^\W_])['’]
+negative number	(?<!\w)-(?=[$£€¥]?\d)
 
 symbols:
 # identifier	replacement[[	level][	preserve]][	# display name]
@@ -62,7 +63,6 @@ $	dolar	some
 @	et	some
 [	leva uglasta	most
 ]	desna uglasta	most
-"	navodnik	most
 \\	obrnuta kosa crta	most
 ^	kapica	most
 _	donja crta	most
@@ -100,7 +100,8 @@ _	donja crta	most
 ©	kopirajt	some
 ±	plus minus	most
 ×	puta	most
-÷	deleno	most
+÷	podeljeno sa	most
+←	strelica levo	some
 →	strelica desno	some
 ✓	štiklirano	some
 ✔	podebljano štiklirano	some
