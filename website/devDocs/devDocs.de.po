@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-01-12 22:25+0000\n"
-"PO-Revision-Date: 2013-12-21 13:23+0100\n"
+"PO-Revision-Date: 2014-01-27 10:07+0100\n"
 "Last-Translator: David Parduhn <xkill85@gmx.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: de\n"
@@ -19,7 +19,7 @@ msgstr ""
 #. type: Plain text
 #, no-wrap
 msgid "[[!meta title=\"NVDA Add-on Development Guide\"]]\n"
-msgstr ""
+msgstr "[[!meta title=\"NVDA Add-on Development Guide\"]]\n"
 
 #. type: Plain text
 msgid ""
@@ -189,6 +189,7 @@ msgstr ""
 #. type: Plain text
 msgid "An add-on may include one or more of the following components:"
 msgstr ""
+"eine Erweiterung kann eine oder mehrere der folgenden Komponenten enthalten:"
 
 #. type: Bullet: '* '
 msgid ""
@@ -468,7 +469,7 @@ msgstr "Wenn Sie beispielsweise die Zugänglichkeit für eine bestimmte Anwendun
 #. type: Plain text
 #, no-wrap
 msgid " `class appModule(appModuleHandler.AppModule):`\n"
-msgstr ""
+msgstr " `class appModule(appModuleHandler.AppModule):`\n"
 
 #. type: Plain text
 msgid ""
@@ -548,7 +549,7 @@ msgstr ""
 #. type: Plain text
 #, no-wrap
 msgid "\tclass GlobalPlugin(globalPluginHandler.GlobalPlugin):\n"
-msgstr ""
+msgstr "\tclass GlobalPlugin(globalPluginHandler.GlobalPlugin):\n"
 
 #. type: Plain text
 #, no-wrap
@@ -566,6 +567,9 @@ msgid ""
 "\t\t\t\"kb:NVDA+A\":\"doBeep\"\n"
 "\t\t}\n"
 msgstr ""
+"\t\t__gestures={\n"
+"\t\t\t\"kb:NVDA+A\":\"doBeep\"\n"
+"\t\t}\n"
 
 #. type: Plain text
 msgid ""
@@ -795,11 +799,13 @@ msgid ""
 "\timport appModuleHandler\n"
 "\timport tones\n"
 msgstr ""
+"\timport appModuleHandler\n"
+"\timport tones\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "\tclass AppModule(appModuleHandler.AppModule):\n"
-msgstr ""
+msgstr "\tclass AppModule(appModuleHandler.AppModule):\n"
 
 #. type: Plain text
 #, no-wrap
@@ -808,6 +814,9 @@ msgid ""
 "\t\t\ttones.beep(256, 200)\n"
 "\t\t\tnextHandler()\n"
 msgstr ""
+"\t\tdef event_gainFocus(self, obj, nextHandler):\n"
+"\t\t\ttones.beep(256, 200)\n"
+"\t\t\tnextHandler()\n"
 
 #. type: Title ###
 #, no-wrap
@@ -1504,7 +1513,7 @@ msgstr ""
 #. type: Title ###
 #, no-wrap
 msgid "Focus vs. navigator object"
-msgstr ""
+msgstr "Fokus- Vs. Navigatorobjekt"
 
 #. type: Plain text
 msgid ""
@@ -1512,6 +1521,10 @@ msgid ""
 "them. These may include changing the focused object, synchronizing navigator "
 "and focus objects, changing the role of an object and so on."
 msgstr ""
+"Innerhalb Ihrer Erweiterung möchten Sie  möglicherweise mit Objekten umgehen "
+"oder diese manipulieren. Dazu gehört u.a. das Verschieben des Fokus auf ein "
+"bestimmtes Objekt, das Synchronisieren von Fokus und Navigator oder das "
+"Ändern des Typs eines bestimmten Objekts."
 
 #. type: Plain text
 msgid ""
@@ -1522,6 +1535,14 @@ msgid ""
 "and the navigator object. For instance, you might be focused on an edit "
 "field while examining the title bar as the navigator object."
 msgstr ""
+"Das Fokusobjekt ist dasjenige Objekt, das momentan hervorgehoben wird. "
+"Dieses Objekt nimmt üblicherweise die Tastatureingaben entgegen. Im "
+"Gegensatz dazu wird dasjenige Objekt, an dem Sie interessiert sind, als "
+"Navigatorobjekt bezeichnet.Da Sie den Navigator auf ein beliebiges Objekt "
+"verschieben können, können Sie zwei Objekte zur selben Zeit untersuchen: das "
+"Fokusobjekt und das Navigatorobjekt. So können Sie beispielsweise ein "
+"Eingabefeld im Fokus haben und gleichzeitig den Navigator auf der Titelzeile "
+"des Fensters plazieren."
 
 #. type: Plain text
 msgid ""
@@ -1530,17 +1551,24 @@ msgid ""
 "to use the name \"obj\". To fetch the navigator object (which might be "
 "different from the focused object), use `obj = api.getNavigatorObject()`."
 msgstr ""
+"Um innerhalb Ihrer Erweiterung auf das Fokusobjekt zuzugreifen und "
+"Informationen von ihm abzurufen, verwenden Sie die folgende Anweisung: "
+"`fokus = api.getFocusObject()`. Den Varialbennamen (im Beispiel Obj) können "
+"Sie frei wählen. Um auf das Navigatorobjekt zuzugreifen, verwenden Sie die "
+"folgende Anweisung: `obj2 = api.getNavigatorObject()`."
 
 #. type: Title ###
 #, no-wrap
 msgid "Other useful object-related goodies"
-msgstr ""
+msgstr "andere nützliche Tipps zu Objekten"
 
 #. type: Plain text
 msgid ""
 "Here are some other methods which works with NVDA objects, all located in "
 "api.py module:"
 msgstr ""
+"Im Folgenden Abschnitt finden Sie einige nützliche Methoden rund um objekte, "
+"die aus dem Modul Api Stammen:"
 
 #. type: Bullet: '* '
 msgid ""
@@ -1548,6 +1576,9 @@ msgid ""
 "some child object of the foreground window), use `obj = api."
 "getForegroundObject()`."
 msgstr ""
+"Wenn Sie das Vordergrundfenster ermitteln wollen (um z.B. auf dessen "
+"untergeordnete Objekte zuzugreifen), verwenden Sie  `obj = api."
+"getForegroundObject()`."
 
 #. type: Bullet: '* '
 msgid ""
@@ -1556,18 +1587,28 @@ msgid ""
 "type `obj.childCount`. The value 0 means that there are no more child "
 "objects."
 msgstr ""
+"Um von der Python-Konsole aus die Anzahl untergeordneter Objekte für ein "
+"Objekt abzurufen, verwenden Sie `obj.childCount`. Wenn Sie einen "
+"Rückgabewert von 0 erhalten, bedeutet dies, dass dieses Objekt keine "
+"untergeordneten Objekte besitzt."
 
 #. type: Bullet: '* '
 msgid ""
 "To set some object as the new focus or navigator object, use `api."
 "setFocusObject(obj)` or `api.setNavigatorObject(obj)`."
 msgstr ""
+"Um den Fokus oder den Navigator auf ein bestimmtes Objekt zu setzen, "
+"verwenden Sie  `api.setFocusObject(obj)` Bzw. `api.setNavigatorObject(obj)`."
 
 #. type: Bullet: '* '
 msgid ""
 "You can fetch various properties of an object by specifying obj.property "
 "where property is the attribute you wish to see (e.g. obj.value)."
 msgstr ""
+"Sie können diverse Eigenschaften über ein objekt abrufen, indem Sie obj."
+"eigenschaft angeben, wobei Eigenschaft das Attribut angibt, das Sie abrufen "
+"möchten. Um zum Beispiel den Wert eines Objekts abzurufen, verwenden Sie obj."
+"value."
 
 #. type: Title ###
 #, no-wrap
@@ -1841,10 +1882,10 @@ msgid ""
 "holds context-sensitive gestures such as manipulating a single control. Then "
 "the developer would use inputCore.bindGesture (or inputCore.bindGestures if "
 "more than one gestures/scripts are defined) to define certain gestures for a "
-"time, then using inputCore.clearGestures then inputCore.bindGestures"
-"(__gestures) to remove the added gestures. A more elegant way, which "
-"involves scripts for specific objects, will be covered when we talk about "
-"overlay classes."
+"time, then using inputCore.clearGestures then inputCore."
+"bindGestures(__gestures) to remove the added gestures. A more elegant way, "
+"which involves scripts for specific objects, will be covered when we talk "
+"about overlay classes."
 msgstr ""
 
 #. type: Plain text
