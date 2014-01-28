@@ -3,23 +3,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: devDocs\n"
 "POT-Creation-Date: 2014-01-12 22:25+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-01-28 22:21+0900\n"
+"Last-Translator: Takuya Nishimoto <nishimotz@gmail.com>, Kojiro Kuyo <kuyo@bitstoyama.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "[[!meta title=\"NVDA Add-on Development Guide\"]]\n"
-msgstr ""
+msgstr "[[!meta title=\"NVDA Add-on 開発者ガイド\"]]\n"
 
 #. type: Plain text
 msgid ""
@@ -27,6 +26,9 @@ msgid ""
 "NvDA add-ons are developed, as well as explaining some useful code segments "
 "from NvDA core source code useful when writing add-ons."
 msgstr ""
+"NVDAアドオン開発者ガイドへようこそ。このガイドは、アドオンを製作する時に役に"
+"立つNVDAコアのソースコード・セグメントについて解説 すると同時に、NVDAアドオン"
+"の開発方法について記述したワンステップガイドです。"
 
 #. type: Plain text
 msgid ""
@@ -35,11 +37,14 @@ msgid ""
 "familiarize yourself with key terms and basics on getting started with add-"
 "on development."
 msgstr ""
+"NVDA開発について詳細は、[NvDA開発コミュニティーのページ][1]をご覧ください。ア"
+"ドオンの開発を始めるために重要事項と基本に慣れるために[NVDA開発者ガイド][2]を"
+"必ずよくお読みください。"
 
 #. type: Title ##
 #, no-wrap
 msgid "Audience"
-msgstr ""
+msgstr "対象者"
 
 #. type: Plain text
 msgid ""
@@ -48,6 +53,10 @@ msgid ""
 "who are familiar with Python or other programming languages and/or familiar "
 "with NvDA source code structure."
 msgstr ""
+"このガイドは、Python及びその他のプログラム言語に精通している方や、NvDAソース"
+"コードの構造に精通しているエキスパート、パワーユーザー、及びプログラマはもち"
+"ろんのこと、一般のPythonユーザー、またはNVDA開発をするのは初めてというビギ"
+"ナーの両者のために書かれています。"
 
 #. type: Plain text
 msgid ""
@@ -57,17 +66,24 @@ msgid ""
 "new to NvDA development, please checkout NVDA development Guide and Design "
 "Overview document, both of which can be found on the NVDA Community website."
 msgstr ""
+"もしNVDAアドオンまたはコアの開発をするのが初めてならば、このガイドを理解する"
+"ため、まず最初に、そのプログラミングバックグラウンドであるPythonを理解される"
+"ことをお勧めします。あなたがPythonプログラマであるけれどもNvDAの開発をするの"
+"が初めてならば、チェックアウトNVDA開発者ガイドと設計概要を文書化した(両方が"
+"NVDAコミュニティのウェブサイト上に掲載されています)。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Authors, contributions and copyright"
-msgstr ""
+msgstr "作者、貢献者と著作権"
 
 #. type: Plain text
 msgid ""
 "This guide was originally written by Joseph Lee and is shaped by NVDA user "
 "and developer community. We welcome your feedback and contributionn."
 msgstr ""
+"このガイドはジョセフ・リーによって書かれ、NVDAユーザと開発コミュニティによっ"
+"てまとめられます。私達はあなたのフィードバックと貢献を歓迎します。"
 
 #. type: Plain text
 msgid ""
@@ -77,17 +93,24 @@ msgid ""
 "Python is copyright Python Foundation. Other products mentioned are "
 "copyrighted by authors of these products."
 msgstr ""
+"著作権: NVDA is copyright 2006-2013 NV Access. Microsoft Windows、Microsoft "
+"Office、Win32 API、および他のMS製品の著作権はMicrosoft Corporationに帰属しま"
+"す。IAccessibleパッケージの著作権はIBM及びLinux財団に帰属します。Pythonの著作"
+"権はPython Foundationに帰属します。その他製品の著作権は各製品の作者に帰属しま"
+"す。"
 
 #. type: Title ##
 #, no-wrap
 msgid "System requirements"
-msgstr ""
+msgstr "システム用件"
 
 #. type: Plain text
 msgid ""
 "To create an add-on for NVDA, please make sure the following system "
 "requirements are met:"
 msgstr ""
+"NVDAアドオンを作成するためには、以下のシステム用件を満たしていることをご確認"
+"ください："
 
 #. type: Bullet: '* '
 msgid ""
@@ -95,22 +118,26 @@ msgid ""
 "installed version will work, but we strongly recommend that you install a "
 "copy of NVDA on your development computer)."
 msgstr ""
+"NVDAのバージョンは、ポータブル版、インストール版のどちらでもかまいませんが、"
+"開発を行うコンピュータにNVDAをインストールしておくことを推奨します。"
 
 #. type: Bullet: '* '
 msgid "Python 2.7 series, version 2.7.5 32-bit for Windows."
-msgstr ""
+msgstr "Python2.7シリーズ、version 2.7.5 32-bit for Windows."
 
 #. type: Bullet: '* '
 msgid "SCons 2, version 2.3.0 for generating add-on packages."
-msgstr ""
+msgstr "SCons 2, version 2.3.0 アドオンパッケージを生成する際に使用します。"
 
 #. type: Bullet: '* '
 msgid "Markdown 2.0.1 or later for generating add-on documentation."
-msgstr ""
+msgstr "Markdown 2.0.1以降 アドオン文書類を生成する際に使用します。"
 
 #. type: Bullet: '* '
 msgid "GNU Gettext package for Windows for message localization support."
 msgstr ""
+"GNU Gettext package for Windows メッセージの多言語化をサポートする際に使用し"
+"ます。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -118,6 +145,9 @@ msgid ""
 "Bitbucket (optional, see below). You can use various Git clients, such as "
 "Git Bash, Cygwin's Git, Tortoise Git and so forth."
 msgstr ""
+"Git 1.7.9 もしくはそれ以降のバーション アドオンをアップロードするさいにに使用"
+"します。Git Bash、Cygwin's Git、Tortoise Gitなどなどの様々なGitクライアントが"
+"利用可能です。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -125,15 +155,18 @@ msgid ""
 "packaging and management (optional; [click here][3] to download the add-on "
 "template)."
 msgstr ""
+"NVDAコミュニティにはアドオンテンプレートや簡単なアドオンファイル、及びアドオ"
+"ンパッケージを用意しています。(アドオンテンプレートをダウンロードするには[こ"
+"こをクリック][3]してください。)"
 
 #. type: Bullet: '* '
 msgid "Additional Python modules or dependencies for your add-on."
-msgstr ""
+msgstr "あなたが作成するアドオンに必要なPython追加モジュール。"
 
 #. type: Title ##
 #, no-wrap
 msgid "What are add-ons?"
-msgstr ""
+msgstr "アドオンって何？"
 
 #. type: Plain text
 msgid ""
@@ -142,28 +175,42 @@ msgid ""
 "support for an application or adding support for newer braille displays or "
 "speech synthesizers."
 msgstr ""
+"アドオンとは、NVDAの機能を拡張したり、NVDAがアプリケーションをサポートするた"
+"めの追加パッケージです。アドオンはグローバルな機能を追加し、アプリケーション"
+"への支持を強化したり、新たな点字ディスプレイまたは音声エンジンに対応できる可"
+"能性があります。"
 
 #. type: Plain text
 msgid "An add-on may include one or more of the following components:"
 msgstr ""
+"ひとつのアドオンは以下のひとつまたは複数のコンポーネントを含むことができま"
+"す。"
 
 #. type: Bullet: '* '
 msgid ""
 "Global plugin: A global plugin adds features for NVDA which can be used "
 "anywhere, such as OCR capability."
 msgstr ""
+"グローバルプラグイン：グローバルプラグインはどの場面でも使うことができるプラ"
+"グインで、例えばOCR等、NVDAの可能性を広げる機能を追加することができます。"
 
 #. type: Bullet: '* '
 msgid ""
 "App module: An app module allows enhanced support for a program, such as "
 "specific windows or controls of a program such as audio editors."
 msgstr ""
+"Appモジュール：Appモジュールは特定のウィンドウに指示を与えたり、オーディオエ"
+"ディタのようなプログラムのコントロールなど、アプリケーション対応機能の強化を"
+"図ります。"
 
 #. type: Bullet: '* '
 msgid ""
 "Driver: A driver allows a program to talk to hardware. Currently one can "
 "write drivers for new braille displays or speech synthesizers."
 msgstr ""
+"ドライバ：ドライバは、プログラムがハードウェアに働きかけることを可能にしま"
+"す。現在、新しい点字ディスプレイや音声エンジンをサポートするために、ドライバ"
+"を作成することができます。"
 
 #. type: Plain text
 msgid ""
@@ -172,62 +219,81 @@ msgid ""
 "Manager, found in NvDA 2012.2 or later. Alternatively, one can install them "
 "from file manager if one uses NVDA 2012.3 or later installed on the computer."
 msgstr ""
+"各NVDAアドオンパッケージ(一個または複数のアドオンモジュールから構成されていま"
+"す)は、 .nvda-addon という名前のファイル拡張子を持つzipファイルです。これらは"
+"アドオンマネージャー経由でインストールされます。これはNVDA 2012.2以降のバー"
+"ジョンに備わっています。NVDA 2012.3以降を使うならば、別の方法として、ファイル"
+"マネージャからそれらをインストールすることができます。"
 
 #. type: Plain text
 msgid ""
 "Throughout this guide, we refer to standard NVDA python modules which comes "
 "with NVDA as \"NvDA Core\" to distinguish it from add-on modules."
 msgstr ""
+"このガイドでは、スタンダードなNVDAモジュールを、アドオンモジュールと区別する"
+"ために、「NvDAコア」と呼びます。"
 
 #. type: Title ##
 #, no-wrap
 msgid "Setting up the add-on development environment"
-msgstr ""
+msgstr "アドオン開発環境の構築"
 
 #. type: Plain text
 msgid "Follow these steps to prepare your computer for writing NVDA add-ons."
-msgstr ""
+msgstr "以下の手順に従って、アドオン開発環境を整えてください。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Installing dependencies"
-msgstr ""
+msgstr "依存パッケージのインストール"
 
 #. type: Bullet: '1. '
 msgid ""
 "If you don't have NVDA, download and install NVDA from NV access website."
 msgstr ""
+"まだNVDAをおもちでなければ、 NV accessのサイトからダウンロードし、インストー"
+"ルしてください。"
 
 #. type: Bullet: '2. '
 msgid ""
 "Install Python 2.7.x 32-bit on your computer (if using Windows, install "
 "using the 32-bit Windows installer package)."
 msgstr ""
+"Python 2.7.x 32ビット版をインストールしてください  (もしWindowsをお使いであれ"
+"ば 、Windows 32ビット版インストールパッケージを使ってください)."
 
 #. type: Bullet: '3. '
 msgid "Install Markdown and SCons using their Windows installer packages."
 msgstr ""
+"Markdown 及びSCons のWindows版インストールパッケージをインストールしてくださ"
+"い。"
 
 #. type: Bullet: '4. '
 msgid "If you plan to share your add-on code with others, install Git clients."
 msgstr ""
+"もしアドオンのソースコードを他の人とシェアする計画があるならば、Git クライア"
+"ントをインストールします。"
 
 #. type: Bullet: '5. '
 msgid ""
 "Paste the Gettext executable files to your add-on development folder (see "
 "the next section on add-on development folder)."
 msgstr ""
+"Gettext 実行ファイルを、アドオン開発フォルダにペーストしてください（アドオン"
+"開発フォルダについては次の段落をご覧ください）。"
 
 #. type: Bullet: '6. '
 msgid ""
 "If you are developing support for a program, speech synthesizer or a braille "
 "display, install the needed software and/or have the hardware handy."
 msgstr ""
+"もし、音声エンジンまたは点字ディスプレイをサポートするプログラムを作成なら"
+"ば、それらに必要なソフトウェア及びハードウェアをご用意ください。"
 
 #. type: Title ###
 #, no-wrap
 msgid "The add-on development folder"
-msgstr ""
+msgstr "アドオン開発フォルダ"
 
 #. type: Plain text
 msgid ""
@@ -235,23 +301,30 @@ msgid ""
 "separate folders, one per add-on. If you chose to download the add-on "
 "template, the folder structure will be automatically created."
 msgstr ""
+"アドオンを作成する時には、それ専用のフォルダ、1つのアドオンに対して1個のフォ"
+"ルダに、アドオンコードを収めることをお勧めします。アドオンテンプレートをダウ"
+"ンロードして使用されるなら、フォルダ構造は自動的に作成されます。"
 
 #. type: Plain text
 msgid ""
 "Once you install the needed dependencies (see above), paste the Gettext "
 "package executables into this add-on folder."
 msgstr ""
+"必要な依存パッケージ(上記を見てください)をインストールしたら、このアドオン"
+"フォルダの中にGettextパッケージの実行形式ファイルを貼り付けてください。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Add-on folder structure"
-msgstr ""
+msgstr "アドオンフォルダの構造"
 
 #. type: Plain text
 msgid ""
 "Each add-on folder, at a minimum, must contain the following files and "
 "folders:"
 msgstr ""
+"各アドオンフォルダは、最低限、以下のファイルとフォルダを含まなければなりませ"
+"ん："
 
 #. type: Plain text
 #, no-wrap
@@ -259,6 +332,8 @@ msgid ""
 " * manifest.ini to store manifesst information such as add-on name and author.\n"
 "* An \"addon\" subfolder with the add-on module directory underneath this subfolder (appModules, globalPlugins, synthDrivers, brailleDisplays). One or more module folders can be specified.\n"
 msgstr ""
+"  * manifest.ini アドオンの名前や制作者等の情報を記述します。\n"
+"*\"addon\" サブフォルダ この下に、(appModules, globalPlugins, synthDrivers, brailleDisplays)等のアドオンモジュールディレクトリを持つフォルダです。１つ以上または複数のモジュールフォルダを指定することができます。\n"
 
 #. type: Plain text
 msgid ""
@@ -268,21 +343,28 @@ msgid ""
 "in the template folder for more information on customizing your add-on "
 "manifest using the template files."
 msgstr ""
+"アドオンテンプレートを使っているなら、フォルダ構造は自動的に作成されますか"
+"ら、このフォルダの中のaddonサブフォルダとアドオンモジュールフォルダ(複数可)と"
+"コードだけを作成する必要があります。テンプレートファイルを使ってアドオンを作"
+"成したりカスタマイズする方法についての詳細な説明は、テンプレートフォルダの中"
+"のreadmeファイルをご覧ください。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Packaging add-ons"
-msgstr ""
+msgstr "アドオンのパッケージング"
 
 #. type: Plain text
 msgid "There are two ways of packaging add-ons:"
-msgstr ""
+msgstr "アドオンをパッケージングするには2つの方法があります："
 
 #. type: Bullet: '1. '
 msgid ""
 "To package your add-on manually, zip up (compress) your add-on folder as a ."
 "zip file, then rename the file extension to .nvda-addon."
 msgstr ""
+"手動でアドオンをパッケージングするには、アドオンフォルダをzipファイルとして圧"
+"縮したあと、そのファイルの拡張子を.zipから.nvda-addonにリネームしてください。"
 
 #. type: Bullet: '2. '
 msgid ""
@@ -290,17 +372,21 @@ msgid ""
 "administrator mode (Windows Vista or later), change to your add-on folder "
 "and type `scons~."
 msgstr ""
+"アドオンテンプレートとSConsを使って作成するには、まず管理者モード(Windows "
+"Vistaまたはそれ以降の場合)でコマンドプロンプトを開き、アドオンフォルダに移動"
+"して、 scons とタイプしてください。"
 
 #. type: Plain text
 msgid ""
 "For more information on add-on management, see the management chapter in "
 "this guide."
 msgstr ""
+"アドオン管理における詳細については、このガイドの管理の章をご覧ください。"
 
 #. type: Title ##
 #, no-wrap
 msgid "Getting started: Hands-on examples"
-msgstr ""
+msgstr "さあ始めましょう：実際例"
 
 #. type: Plain text
 msgid ""
@@ -309,6 +395,10 @@ msgid ""
 "it gives you basic information to get you started with add-ons and give you "
 "tips on writing code."
 msgstr ""
+"それでは、あなたはアドオンの冒険の旅に出発する準備ができていると思いますが、"
+"どのようにしてそれが蘇生させるかについてまだ確信していませんね？もしそうなら"
+"どうぞ、アドオンの開発を始めるために、コードを書くことについての秘訣を与える"
+"ために、それがあなたに基礎情報を与える時に、この章に目を通してください。"
 
 #. type: Plain text
 msgid ""
@@ -317,37 +407,43 @@ msgid ""
 "configuration folder (available from Start Menu/Screen if NVDA is installed) "
 "to store our example Python files."
 msgstr ""
+"メモ：この章では、実際のアドオンパッケージは使用しません。代わりに、プラグイ"
+"ンフォルダを使います - 例Pythonファイルを格納するフォルダで、NVDAのユーザー設"
+"定フォルダ中の多くのサブディレクトリ(NVDAがインストールされるならスタートメ"
+"ニュー/スクリーンから入手可能です)。"
 
 #. type: Plain text
 msgid ""
 "To edit .py files, you need a word processor which can handle .py files. The "
 "best one we recommend is Notepad++."
 msgstr ""
+".pyファイルを編集するために、.pyファイルを処理することができるテキストエディ"
+"タが必要です。我々が推奨する最もよいものはNotepad++です。"
 
 #. type: Title ###
 #, no-wrap
 msgid "How add-on code is organized"
-msgstr ""
+msgstr "アドオンコードの作成方法"
 
 #. type: Plain text
 #, no-wrap
 msgid " Your add-on code is stored in one or more Python files (.py file). Despite different kinds of add-ons out there, they all have similar layout.\n"
-msgstr ""
+msgstr "アドオンコードは１つまたは複数のPythonファイル(.pyファイル)に記述します。世の中にはさまざまな種類のアドオンが存在しますが、それらはみな同じようなレイアウトで記述されています。\n"
 
 #. type: Plain text
 #, no-wrap
 msgid " First, you start by writing an optional header for your add-on, such as your name, a brief sentence or two on what the add-on is for and so on. Although this is optional, it is recommend that you write the header as a reminder to keep track of what you are doing with your add-on.\n"
-msgstr ""
+msgstr "まず最初に、アドオンがあるものの上のあなたの名前、1、2の短いセンテンスなどなどのあなたのアドオンのためにオプショナル・ヘッダを書くことから始めます。これはオプションですが、あなたのアドオンにさせたいことに絶えず注意するために、リマインダーとしてヘッダを書くことを勧めます。\n"
 
 #. type: Plain text
 #, no-wrap
 msgid " Next, you tell NVDA the modules you need for your add-on file. This is done by writing `import module` where module is the name of the module you wish to use in your code. For example, if you want to hear tones while writing your add-on, write `import tones`. Typically you may need to import two or more modules for your specific add-on (see below on list of modules you need for the type of add-on module you are writing).\n"
-msgstr ""
+msgstr "次に、アドオンファイルに必要なNVDAモジュールを伝えます。あなたがコードの中で使うことを希望するモジュールの名前で、`import module` と記述することによって指定します。例えば、アドオンを書く間に、tonesを聞きたいならば、`import tones`と書いてください。一般に、具体的な、アドオン(あなたがアドオンモジュールのタイプのために必要なモジュールのリストの上で、あなたが書いていると下でわかってください).のために１つあるいは２つ以上のモジュールをインポートする必要があるかもしれません。\n"
 
 #. type: Plain text
 #, no-wrap
 msgid " after declaring the modules you need or import, you write your add-on code (defining classes, variables, methods and so on). The most important section is the add-on class code, which will determine the type of add-on module your code will be assigned to.\n"
-msgstr ""
+msgstr "必要なモジュールをインポート宣言したあと、アドオンコード(定義するクラス、変数、手順など)を書きます。最も重要な節はアドオンクラスコードで、それは、あなたが作るアドオンモジュールの種類を決定づけます。\n"
 
 #. type: Plain text
 #, no-wrap
