@@ -21,6 +21,7 @@
 <LI>Wenn Sie die Widcomm-Bluetoot-Software verwenden, werden nun auch Braillezeilen korrekt erkannt, die per Bluetooth verbunden sind. (<A HREF="http://community.nvda-project.org/ticket/2418">#2418</A>)
 <LI>Beim Bearbeiten von Text in Powerpoint werden Links als solche erkannt. (<A HREF="http://community.nvda-project.org/ticket/3416">#3416</A>)
 <LI>Um Aria-Dialoge und -Anwendungen im Lesemodus anzuzeigen, können Sie mit nvda+Leertaste in den Lesemodus wechseln, während Sie eine Aria-Anwendung verwenden. (<A HREF="http://community.nvda-project.org/ticket/2023">#2023</A>)
+<LI>In Outlook Express / Windows Mail / Windows Live Mail wird die Existenz von Anhängen oder Kennzeichnungen von Nachrichten angezeigt. (<A HREF="http://community.nvda-project.org/ticket/1594">#1594</A>)
 <P></P>
 == Änderungen ==
 <LI>die Befehle zum Umschalten von/in den Flächenmodus wurden aus der Tastenbelegung für Papenmeier-Braillezeilen entfernt. Sie können im Dialog einstellungen/Eingaben jedoch eine eigene Tastenkombination zuweisen. (<A HREF="http://community.nvda-project.org/ticket/3652">#3652</A>)
@@ -44,9 +45,30 @@
 <LI>Die Namen von Berührungsgesten werden nun im Dialog einstellungen/eingaben in übersetzter Form angezeigt. (<A HREF="http://community.nvda-project.org/ticket/3624">#3624</A>)
 <LI>NVDA wird keine Abstürze mehr verursachen, wenn Sie die Maus über die Dokumentfenster (TRichEdit) mancher Programme bewegen. Dies betrifft u.a.  Jarte 5.1 und BRfácil. (<A HREF="http://community.nvda-project.org/ticket/3693">#3693</A>, <A HREF="http://community.nvda-project.org/ticket/3603">#3603</A>, <A HREF="http://community.nvda-project.org/ticket/3581">#3581</A>)
 <LI>Aria-Elemente, die als Präsentation gekennzeichnet sind, werden nicht mehr angezeigt. (<A HREF="http://community.nvda-project.org/ticket/3713">#3713</A>)
-<LI>in Microsoft Word-Tabellen werden Spalten- und Reiheninformationen nun nicht mehr mehrfach angesagt. (<A HREF="http://community.nvda-project.org/ticket/3702">#3702</A>)
-<P></P>
-== Änderungen für Entwickler ==
+<LI>in Microsoft Word-Tabellen werden Spalten- und Reiheninformationen nun nicht mehr mehrfach in Braille angezeigt. (<A HREF="http://community.nvda-project.org/ticket/3702">#3702</A>)
+<LI>In Sprachen, in denen das leerzeichen als Tausendertrennzeichen verwendet wird, werden Zahlen, die durch Lerzeichen getrennt sind, nicht mehr irrtümlich zusammengezogen (nützlich bei der Ansage von Tabellenzellen, die nur Zahlen enthalten). (<A HREF="http://community.nvda-project.org/ticket/3698">#3698</A>)
+<LI>die Braille-Anzeige wird nun korrekt aktualisiert, wenn Sie in Microsoft Word 2013 den Systemcursor bewegen. (<A HREF="http://community.nvda-project.org/ticket/3784">#3784</A>)
+<LI>Wenn Sie sich in Microsoft Word auf dem ersten Zeichen einer Überschrift befinden, wird die Kennzeichnung «Überschift» (einschließlich der Ebene) in Braille angezeigt. (<A HREF="http://community.nvda-project.org/ticket/3701">#3701</A>)
+<LI>ein Konfigurationsprofil, das beim Starten einer Anwendung per Auslöser automatisch ausgewählt wird, wird nun deaktiviert, wenn die betreffende Anwendung beendet wird. (<A HREF="http://community.nvda-project.org/ticket/3732">#3732</A>)
+<LI>Asiatische Sonderzeichen werden nun korrekt angesagt/angezeigt, wenn Sie sie innerhalb von nvda eingeben (z.B. im Suchdialog im Lesemodus). (<A HREF="http://community.nvda-project.org/ticket/3726">#3726</A>)
+<LI>die Registerkarten im Optionendialog von Outlook 2013 werden korrekt angezeigt. (<A HREF="http://community.nvda-project.org/ticket/3826">#3826</A>)
+<LI>Verbesserung der Unterstützung von Aria-Live-Regionen in Mozilla-Anwendungen:
+</UL>
+
+	<BLOCKQUOTE>
+	- automatische Aktualisierung von Live-Regionen (<A HREF="http://community.nvda-project.org/ticket/2640">#2640</A>)
+	- alternative Texte (z.B. alt-Attribute) werden verwendet, sofern keine anderweitige Beschriftung vorhanden ist. (<A HREF="http://community.nvda-project.org/ticket/3329">#3329</A>)
+	- Aktualisierungen von Live-Regionen werden ausgegeben, wenn Sie gleichzeitig den Fokus bewegen. (<A HREF="http://community.nvda-project.org/ticket/3777">#3777</A>)
+	</BLOCKQUOTE>
+
+<UL>
+<LI>Certain presentation elements in Firefox and other Mozilla Gecko applications are no longer inappropriately shown in browse mode (specifically when the element is marked with aria-presentation but its also focusable). (<A HREF="http://community.nvda-project.org/ticket/3781">#3781</A>)
+<LI>A performance improvement when navigating a document in Microsoft Word with spelling errors enabled. (<A HREF="http://community.nvda-project.org/ticket/3785">#3785</A>)
+</UL>
+
+<H3>Änderungen für Entwickler</H3>
+
+<UL>
 <LI>Alle Anwendungsmodule enthalten nun die Eigenschaften productName und productVersion. Diese Informationen werden auch in der Entwicklerinfo angezeigt, die mit der Tastenkombination NVDA+f1 abgerufen werden kann. (<A HREF="http://community.nvda-project.org/ticket/1625">#1625</A>)
 <LI>Sie können nun in der Python-Konsole Tab drücken, um den aktuellen Bezeichner zu vervollständigen. (<A HREF="http://community.nvda-project.org/ticket/433">#433</A>)
  <UL>
