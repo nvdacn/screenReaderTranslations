@@ -35,10 +35,6 @@ addresses = {
         'lang':'German',
         'email': ['Bernd Dorer <bernd_dorer@yahoo.de>', 'David Parduhn <xkill85@gmx.net>', 'Rene Linke <demetry@gmx.de>'],
     },
-    'dv': {
-        'lang': 'Dhivehi',
-        'email': ['Abdulla Shuhood <shuhood@ellygroup.net>'],
-    },
     'el': {
         'lang': 'Greek',
         'email': ['access@e-rhetor.com'],
