@@ -139,10 +139,6 @@ addresses = {
         'lang':'Serbian',
         'email': ['Janko Valencik <janko.valencik@alfanum.co.rs>'],
     },
-    'sv': {
-        'lang':'Swedish',
-        'email': ['Mesar Hameed <mhameed@src.gnome.org>'],
-    },
     'uk': {
         'lang':'Ukrainian',
         'email': ['Volodymyr Pyrig <vlodko@torba.com>'],
