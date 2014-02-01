@@ -135,10 +135,6 @@ addresses = {
         'lang': 'Russian',
         'email': ['Beqa Gozalishvili <beqaprogger@gmail.com>', 'ruslan <ru2020slan@yandex.ru>', 'Vadim <eye0@rambler.ru>'],
     },
-    'si': {
-        'lang': 'Sinhala',
-        'email': ['Asoka Bandula <asokabandula@gmail.com>'],
-    },
     'sk': {
         'lang':'Slovak',
         'email': ['Ondrej Rosik <ondrej.rosik@gmail.com>', 'Peter Vagner <peter.v@datagate.sk>'],
