@@ -1,14 +1,21 @@
 #!/usr/bin/env bash
+# mhameed 2013-03-19 13:12:03 +0100
 
-LOCKDIR=/tmp/NVDA_Tran.lock
 
 cleanup() {
-    echo "cleaning up lock"
-    rm -rf $LOCKDIR
+    #echo "cleaning up lock"
+    rm $LOCKDIR/pid
+    rmdir $LOCKDIR
     trap '' EXIT
 }
 
 grabLock () {
+    if [ $# -eq 0 ]; then
+        # no lock name was given
+        LOCKDIR=/tmp/lock.sh.lock
+    else
+        LOCKDIR="$1"
+    fi
     if ! mkdir $LOCKDIR >/dev/null 2>&1;  then
         pid=$(cat $LOCKDIR/pid)
         echo "could not grab $LOCKDIR, $pid got it."
