@@ -151,10 +151,6 @@ addresses = {
         'lang':'Ukrainian',
         'email': ['Volodymyr Pyrig <vlodko@torba.com>'],
     },
-    'ur': {
-        'lang':'Urdu',
-        'email': ['Rana Ayaz <rana.ayaz1@gmail.com>', 'him Prasad Gautam <drishtibachak@gmail.com>'],
-    },
     'ta': {
         'lang':'Tamil',
         'email': ['Dinakar T.D. <td.dinkar@gmail.com>'],
