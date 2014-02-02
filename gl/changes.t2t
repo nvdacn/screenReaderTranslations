@@ -12,12 +12,12 @@ Que hai de Novo no NVDA
 - Soporte para as pantallas braille conectadas a través do Bluetooth nun computador executando o  Software de Widcomm Bluetooth. (#2418)
 - Cando se edita texto no PowerPoint, agora anúncianse os hipervínculos. (#3416)
 - Cando se estea en aplicacións ARIA ou diálogos na web, agora é posible forzar ó NVDA para que cambie a modo navegación con NVDA+espazo seguindo a navegación de estilos de documento da aplicación ou do diálogo. (#2023)
-
+- No Outlook Express / Windows Mail / Windows Live Mail, NVDA agora anuncia se unha mensaxe ten un adxunto ou está marcado. (#1594)
 
 == Cambios ==
 - Para as pantallas braille Papenmeier, eliminouse a orde mover a revisión plana/foco. Os usuarios poden asignar as súas proprias teclas usando o diálogo de Xestos de entrada. (#3652)
 - NVDA agora baséase na versión 11 do Microsoft VC runtime, o que significa que xa non se pode executar en sistemas operativos anteriores ó Windows XP Service Pack 2 ou Windows Server 2003 Service Pack 1.
-
+- No nível de pontoación Algunha agora falaránse os caracteres asterisco(*) e máis (+). (#3614)
 
 == Corrección de Fallos ==
 - Cando te movas ou seleciones  celdas no Microsoft Excel, NVDA xa non debería  anunciar inapropriadamente a antiga celda en lugar da nova celda cando Microsoft Excel estea lento ó mover a seleción. (#3558)
@@ -37,9 +37,19 @@ Que hai de Novo no NVDA
 - Os nomes dos xestos táctiles listados no diálogo Xestos de entrada do NVDA agora son máis amigables e están traducidos. (#3624)
 - NVDA xa non fai que certos programas se bloqueen cando se mova o punteiro do rato sobre os seus controis de edición enriquecidos (TRichEdit). Programas incluíndo Jarte 5.1 e BRfácil. (#3693, #3603, #3581)
 - No Internet Explorer e outros controis MSHTML, os contedores como táboas marcadas como presentación por ARIA xa non se informan ó usuario. (#3713)
-- No Microsoft Word, NVDA xa non repite de xeito inapropriado a fila da táboa e a información da columna dunha celda varias veces. (#3702)
+- No Microsoft Word, NVDA xa non repite de xeito inapropriado a fila da táboa e a información da columna dunha celda nunha pantalla braille 
 - En linguas que utilicen  un espazo como un díxito separador de grupos de milleiros  como no  Francés e no Alemán, os números de anacos separados de texto xa non se pronuncian como un so número. Esto era particularmente problemático  para as celdas de táboa que contiñan números. (#3698)
 - O braille xa non falla ás veces ó se actualizar cando se move o cursor do sistema no Microsoft Word 2013. (#3784)
+- Cando se estea posicionado sobre o primeiro carácter dunha cabeceira no Microsoft Word, o texto comunícase como unha cabeceira  (incluindo o nível) e xa non desaparece dunha pantalla braille. (#3701)
+- Cando se dispara un perfil de configuración por unha aplicación e esa aplicación se pecha, NVDA xa non falla ás veces ó desactivar o perfil. (#3732)
+- Cando se escribe ca entrada Asiática nun control dentro do proprio NVDA (ex.: no diálogo Buscar no modo navegación), "NVDA" xa non se anuncia incorrectamente en lugar do candidato. (#3726)
+- Agora anúncianse as pestanas no diálogo Opcións do Outlook 2013. (#3826)
+- Mellorado o soporte  para  rexiones ARIA live en Firefox e outras aplicacións Gecko de Mozilla:
+	- Soporte para actualizacións aria-atomic e filtrado de actualizacións aria-busy (#2640)
+	- Inclúese o texto alternativo (como o atributo alt ou aria-label) se non hai outro texto útil. (#3329)
+	- As actualizacións Live region xa non se silencian se se producen ó mesmo tempo que o desprazamento do foco. (# 3777)
+- Certos elementos de presentación en Firefox e outras aplicacións  Gecko de Mozilla xa non se amosan inapropriadamente en modo navegación (expresamente cando o elemento se marcóu con aria-presentation pero tamén é enfocable). (#3781)
+- Mellora do rendemento ó navegar por un documento en Microsoft Word ca corrección ortográfica activada. (#3785)
 
 
 == Cambios para Desenvolvedores ==
