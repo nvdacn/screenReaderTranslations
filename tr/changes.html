@@ -21,6 +21,7 @@
 <LI>Support for braille displays connected via Bluetooth on a computer running the Widcomm Bluetooth Software. (<A HREF="http://community.nvda-project.org/ticket/2418">#2418</A>)
 <LI>When editing text in PowerPoint, hyperlinks are now reported. (<A HREF="http://community.nvda-project.org/ticket/3416">#3416</A>)
 <LI>When in ARIA applications or dialogs on the web, it is now possible to force NVDA to switch to browse mode with NVDA+space allowing document-style navigation of the application or dialog. (<A HREF="http://community.nvda-project.org/ticket/2023">#2023</A>)
+<LI>In Outlook Express / Windows Mail / Windows Live Mail, NVDA now reports if a message has an attachment or is flagged. (<A HREF="http://community.nvda-project.org/ticket/1594">#1594</A>)
 </UL>
 
 <H3>Changes</H3>
@@ -28,6 +29,7 @@
 <UL>
 <LI>For Papenmeier braille displays, the move to flat review/focus command has been removed. Users can assign their own keys using the Input Gestures dialog. (<A HREF="http://community.nvda-project.org/ticket/3652">#3652</A>)
 <LI>NVDA now relies  on the Microsoft VC runtime version 11, which means it can no longer be run on Operating systems older than Windows XP Service Pack 2 or Windows Server 2003 Service Pack 1.
+<LI>Punctuation level Some will now speak star (*) and plus (+) characters. (<A HREF="http://community.nvda-project.org/ticket/3614">#3614</A>)
 </UL>
 
 <H3>Bug Fixes</H3>
@@ -50,9 +52,25 @@
 <LI>Touch gesture names listed in NVDA's Input Gestures dialog are now friendly and localized. (<A HREF="http://community.nvda-project.org/ticket/3624">#3624</A>)
 <LI>NVDA no longer causes certain programs to crash when moving the mouse over their rich edit (TRichEdit) controls. Programs include Jarte 5.1 and BRfácil. (<A HREF="http://community.nvda-project.org/ticket/3693">#3693</A>, <A HREF="http://community.nvda-project.org/ticket/3603">#3603</A>, <A HREF="http://community.nvda-project.org/ticket/3581">#3581</A>)
 <LI>In Internet Explorer and other MSHTML controls, containers such as tables marked as presentation by ARIA are no longer reported to the user. (<A HREF="http://community.nvda-project.org/ticket/3713">#3713</A>)
-<LI>in Microsoft Word, NVDA no longer inappropriately repeats table row and column information for a cell multiple times. (<A HREF="http://community.nvda-project.org/ticket/3702">#3702</A>)
+<LI>in Microsoft Word, NVDA no longer inappropriately repeats table row and column information for a cell on a braille display multiple times. (<A HREF="http://community.nvda-project.org/ticket/3702">#3702</A>)
 <LI>In languages which use a space as a digit group/thousands separator such as French and German, numbers from separate chunks of text are no longer pronounced as a single number. This was particularly problematic for table cells containing numbers. (<A HREF="http://community.nvda-project.org/ticket/3698">#3698</A>)
 <LI>Braille no longer sometimes fails to update when the system caret is moved in Microsoft Word 2013. (<A HREF="http://community.nvda-project.org/ticket/3784">#3784</A>)
+<LI>When positioned on the first character of a heading in Microsoft Word, the text communicating it is a heading (including the level) no longer disappears off a braille display. (<A HREF="http://community.nvda-project.org/ticket/3701">#3701</A>)
+<LI>When a configuration profile is triggered for an application and that application is exited, NVDA no longer sometimes fails to deactivate the profile. (<A HREF="http://community.nvda-project.org/ticket/3732">#3732</A>)
+<LI>When entering Asian input into a control within NVDA itself (e.g. the browse mode Find dialog), "NVDA" is no longer incorrectly reported in place of the candidate. (<A HREF="http://community.nvda-project.org/ticket/3726">#3726</A>)
+<LI>The tabs in the Outlook 2013 options dialog are now reported. (<A HREF="http://community.nvda-project.org/ticket/3826">#3826</A>)
+<LI>Improved support for ARIA live regions in Firefox and other Mozilla Gecko applications:
+</UL>
+
+	<BLOCKQUOTE>
+	- Support for aria-atomic updates and filtering of aria-busy updates (<A HREF="http://community.nvda-project.org/ticket/2640">#2640</A>)
+	- Alternative text (such as alt attribute or aria-label) is included if there is no other useful text. (<A HREF="http://community.nvda-project.org/ticket/3329">#3329</A>)
+	- Live region updates are no longer silenced if they occur at the same time as the focus moves. (<A HREF="http://community.nvda-project.org/ticket/3777">#3777</A>)
+	</BLOCKQUOTE>
+
+<UL>
+<LI>Certain presentation elements in Firefox and other Mozilla Gecko applications are no longer inappropriately shown in browse mode (specifically when the element is marked with aria-presentation but its also focusable). (<A HREF="http://community.nvda-project.org/ticket/3781">#3781</A>)
+<LI>A performance improvement when navigating a document in Microsoft Word with spelling errors enabled. (<A HREF="http://community.nvda-project.org/ticket/3785">#3785</A>)
 </UL>
 
 <H3>Changes for Developers</H3>
