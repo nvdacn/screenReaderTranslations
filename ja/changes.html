@@ -10,6 +10,88 @@
 </CENTER>
 
 
+<H2>2014.1</H2>
+
+<H3>新機能</H3>
+
+<UL>
+<LI>Microsoft PowerPoint 2013に対応しました。ただし保護ビューには対応していません。(<A HREF="http://community.nvda-project.org/ticket/3578">#3578</A>)
+<LI>Microsoft Word および Excel で記号挿入ダイアログで記号を選択するときの選択された記号の読み上げに対応しました。(<A HREF="http://community.nvda-project.org/ticket/3538">#3538</A>)
+<LI>書式設定ダイアログにクリック可能の通知オプションが追加されました。過去のバージョンの仕様に合わせて、このオプションはデフォルトで有効になっています。(<A HREF="http://community.nvda-project.org/ticket/3556">#3556</A>)
+<LI>Widcomm Bluetooth ソフトウェアが使われているコンピューターにおいて、Bluetoothによる点字ディスプレイ接続に対応しました。(<A HREF="http://community.nvda-project.org/ticket/2418">#2418</A>)
+<LI>PowerPoint でのテキスト編集においてハイパーリンクが通知されるようになりました。(<A HREF="http://community.nvda-project.org/ticket/3416">#3416</A>)
+<LI>ARIA アプリケーションやWebのダイアログにおいて、NVDA+スペース による強制的なブラウズモードへの切り替えが可能になりました。これにより、ドキュメント形式でのナビゲーションが可能になります。(<A HREF="http://community.nvda-project.org/ticket/2023">#2023</A>)
+<LI>Outlook Express / Windows Mail / Windows Live Mail において NVDA はメッセージに付けられた添付ファイルやフラグを通知するようになりました。(<A HREF="http://community.nvda-project.org/ticket/1594">#1594</A>)
+<LI>アクセシブルなJavaアプリケーションにおいて、テーブルのナビゲーションで行と列の座標を通知し、行見出しや列見出しがあれば合わせて通知するようになりました。(<A HREF="http://community.nvda-project.org/ticket/3756">#3756</A>)
+</UL>
+
+<H3>変更点</H3>
+
+<UL>
+<LI>Papenmeier 点字ディスプレイにおいて、フラットレビューとフォーカスモードを切り替えるコマンドが廃止されました。入力ジェスチャーの設定でユーザーが割り当てることは可能です。(<A HREF="http://community.nvda-project.org/ticket/3652">#3652</A>)
+<LI>NVDA が依存する Microsoft VC ランタイムがバージョン 11 になりました。これにより Windows XP Service Pack 2 または Windows Server 2003 Service Pack 1 よりも以前のバージョンは非対応になりました。
+<LI>英語の記号読み上げレベル「一部」でスター(*)およびプラス(+)を読み上げるようになりました。(<A HREF="http://community.nvda-project.org/ticket/3614">#3614</A>)
+</UL>
+
+<H3>バグ修正</H3>
+
+<UL>
+<LI>Microsoft Excel のセル移動やセル選択において、選択範囲の移動に時間がかかったときに、NVDA は不適切に古いセルの情報を通知せず、新しいセルを通知するようになりました。(<A HREF="http://community.nvda-project.org/ticket/3558">#3558</A>)
+<LI>Microsoft Excel のセルにおいて、コンテクストメニューからドロップダウンリストを開いたときに、適切に処理されるようになりました。(<A HREF="http://community.nvda-project.org/ticket/3586">#3586</A>)
+<LI>iTunes 11 のストアページでストアの中のリンクを選択したときや最初にストアを開いたときに、新しいページ内容がブラウズモードで適切に表示されるようになりました。(<A HREF="http://community.nvda-project.org/ticket/3625">#3625</A>)
+<LI>iTunes 11 ストアの曲のプレビューボタンのラベルがブラウズモードで適切に表示されるようになりました。(<A HREF="http://community.nvda-project.org/ticket/3638">#3638</A>)
+<LI>Google Chrome のブラウズモードで、チェックボックスやラジオボタンのラベルが正しく処理されるようになりました。(<A HREF="http://community.nvda-project.org/ticket/1562">#1562</A>)
+<LI>Instantbird においてコンタクトリストの連絡先を移動するたびに不要な情報が通知される問題を解決しました。(<A HREF="http://community.nvda-project.org/ticket/2667">#2667</A>)
+<LI>Adobe Reader のブラウズモードにおいて、ボタンなどのラベルのテキストがツールチップや他のメニューでオーバライドされる場合に正しく処理されるようになりました。(<A HREF="http://community.nvda-project.org/ticket/3640">#3640</A>)
+<LI>Adobe Reader のブラウズモードにおいて、"mc-ref" テキストを含む無関係なグラフィックスが出力されないようになりました。(<A HREF="http://community.nvda-project.org/ticket/3645">#3645</A>)
+<LI>Microsoft Excel で書式情報としてアンダーラインが使われているセルを全て通知してしまう問題を修正しました。(<A HREF="http://community.nvda-project.org/ticket/3669">#3669</A>)
+<LI>Unicode プライベート領域の文字などがブラウズモードのドキュメントに現れたときに、より意味のある情報の出力ができず、無意味な文字しか出力されなかった問題を修正しました。(<A HREF="http://community.nvda-project.org/ticket/2963">#2963</A>)
+<LI>PuTTY で東アジア文字のための入力メソッド処理が失敗しないようになりました。(<A HREF="http://community.nvda-project.org/ticket/3432">#3432</A>)
+<LI>「すべて読み上げ」をキャンセルした後で、ドキュメントのナビゲーションをすると、ドキュメントの続きにあるテーブルなどのフィールドが通知されなくなるなど、不適切だった処理を修正しました。(<A HREF="http://community.nvda-project.org/ticket/3688">#3688</A>)
+<LI>ブラウズモードでクイックナビゲーションコマンドを使うときに、「すべて読み上げ」で「流し読み」が有効なとき、テキストに加えて「見出し」と通知するなど、新しいフィールドの通知がより正確になりました。(<A HREF="http://community.nvda-project.org/ticket/3689">#3689</A>)
+<LI>コンテナの先頭や最後にジャンプするクイックナビゲーションコマンドが、「すべて読み上げ」で「流し読み」をキャンセルすることなく、適切に動作するようになりました。(<A HREF="http://community.nvda-project.org/ticket/3675">#3675</A>)
+<LI>NVDA 入力ジェスチャーのダイアログでタッチジェスチャーの名前がリスト中でわかりやすくなり国際化されました。(<A HREF="http://community.nvda-project.org/ticket/3624">#3624</A>)
+<LI>リッチエディット(TRichEdit)コントロールの上でマウスポインタを動かしたときに Jarte 5.1 や BRfácil など特定のプログラムがクラッシュする問題を修正しました。(<A HREF="http://community.nvda-project.org/ticket/3693">#3693</A>, <A HREF="http://community.nvda-project.org/ticket/3603">#3603</A>, <A HREF="http://community.nvda-project.org/ticket/3581">#3581</A>)
+<LI>Internet Explorer や MSHTML コントロールにおいて、ARIA でプレゼンテーションと指定されているテーブルなどのコンテナをユーザーに通知しないようになりました。(<A HREF="http://community.nvda-project.org/ticket/3713">#3713</A>)
+<LI>Microsoft Word において、テーブルのセルの行や列の情報を不適切に何度も点字ディスプレイに通知しないようになりました。(<A HREF="http://community.nvda-project.org/ticket/3702">#3702</A>)
+<LI>1個の空白を数字のグルーピングや3桁ごとの区切りとして使うフランス語やドイツ語などで、空白で区切られた数字が別々に読み上げられる問題を修正しました。この問題は数字を含むテーブルのセルで特に深刻でした。(<A HREF="http://community.nvda-project.org/ticket/3698">#3698</A>)
+<LI>Microsoft Word 2013 でシステムキャレットを移動したときに点字ディスプレイが更新に失敗する問題を修正しました。(<A HREF="http://community.nvda-project.org/ticket/3784">#3784</A>)
+<LI>Microsoft Word において見出しの最初の文字に移動したときに、見出しやそのレベルなどが点字ディスプレイに出力されない問題を修正しました。(<A HREF="http://community.nvda-project.org/ticket/3701">#3701</A>)
+<LI>あるアプリケーションが設定プロファイルをトリガーした後でそのアプリケーションが終了した場合に、プロファイルが非アクティブ化されなかった問題を修正しました。(<A HREF="http://community.nvda-project.org/ticket/3732">#3732</A>)
+<LI>NVDA のブラウズモードの検索ダイアログなどでアジア文字入力をしたときに、候補リストが "NVDA" と不適切に通知される問題を修正しました。(<A HREF="http://community.nvda-project.org/ticket/3726">#3726</A>)
+<LI>Outlook 2013 オプションダイアログのタブが通知されるようになりました。(<A HREF="http://community.nvda-project.org/ticket/3826">#3826</A>)
+<LI>Firefox とその他の Mozilla Gecko アプリケーションにおいて ARIA ライブリージョンへの対応を改善しました:
+</UL>
+
+	<BLOCKQUOTE>
+	- aria-atomic 属性の指定された更新と aria-busy 属性による更新通知のフィルタリング(<A HREF="http://community.nvda-project.org/ticket/2640">#2640</A>)
+	- 他の有用なテキストがない場合は代替テキスト(alt属性やaria-label属性)を通知に含める(<A HREF="http://community.nvda-project.org/ticket/3329">#3329</A>)
+	- ライブリージョンの更新がフォーカス移動と同時に起きたときに適切に通知する(<A HREF="http://community.nvda-project.org/ticket/3777">#3777</A>)
+	</BLOCKQUOTE>
+
+<UL>
+<LI>Firefox とその他の Mozilla Gecko アプリケーションにおいて特定のプレゼンテーション要素が不適切にブラウズモードで通知される問題を修正しました。具体的には aria-presentation と指定されたフォーカス可能な要素です。(<A HREF="http://community.nvda-project.org/ticket/3781">#3781</A>)
+<LI>Microsoft Word でスペルエラー通知を有効に為た場合のナビゲーションの処理時間を改善しました。(<A HREF="http://community.nvda-project.org/ticket/3785">#3785</A>)
+<LI>アクセシブルなJavaアプリケーションへの対応を改善しました:
+ <UL>
+ <LI>フレームやダイアログがフォアグラウンドになったときに、最初にフォーカスされたコントロールの通知ができない問題を修正しました。(<A HREF="http://community.nvda-project.org/ticket/3753">#3753</A>)
+ <LI>ラジオボタンで「1の1」のような無意味な位置情報を通知しないようになりました。(<A HREF="http://community.nvda-project.org/ticket/3754">#3754</A>)
+ <LI>JComboBox の通知を改善しました。htmlの通知をやめ、展開、折りたたみの状態の通知を改善しました。(<A HREF="http://community.nvda-project.org/ticket/3755">#3755</A>)
+ <LI>ダイアログのキャプション情報の自動取得において、より多くのテキスト情報を使うようになりました。(<A HREF="http://community.nvda-project.org/ticket/3857">#3857</A>)
+ <LI>フォーカスされたコントロールの名前、値、説明の変更をより正確に通知するようになりました。(<A HREF="http://community.nvda-project.org/ticket/3770">#3770</A>)
+ </UL>
+</UL>
+
+<H3>開発者向けの変更</H3>
+
+<UL>
+<LI>AppModules に productName と productVersion のプロパティを追加しました。これは開発者向け情報(NVDA+f1)でも取得できます。(<A HREF="http://community.nvda-project.org/ticket/1625">#1625</A>)
+<LI>Python コンソールにおいて Tab キーで現在の識別子の補完が可能になりました。(<A HREF="http://community.nvda-project.org/ticket/433">#433</A>)
+ <UL>
+ <LI>複数の候補がある場合は、もう1回 Tab キーを押すとリストが表示され選択ができます。
+ </UL>
+</UL>
+
 <H2>2013.3</H2>
 
 <H3>新機能</H3>
