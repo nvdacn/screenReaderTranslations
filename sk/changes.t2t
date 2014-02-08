@@ -12,11 +12,14 @@
 - Podpora pre brailovské riadky pripojenie cez Bluetooth, ak sa používa softvér Widcomm. (#2418)
 - pri úprave textu v MS powerpointe NVDa správne číta odkazy. (#3416)
 - V Aria aplikáciách alebo dialogoch na internete je možné aktivovať režim prehliadania skratkou nvda+medzera a pohybovať sa v dokumente alebo dilógu ako v ostatných virtuálnychd okumentoch. (#2023)
+- V programoch Outlook Express, Windows Mail a Windows Live Mail NVDA odteraz oznámi, ak má správa prílohu, alebo je označená príznakom. (#1594)
+- Pri navigácii v tabuľkách v prístupných Java aplikáciách sú oznamované súradnice riadkov a stĺpcov vrátane hlavičiek riadkov a stĺpcov, ak sú definované. (#3756)
 
 
 == Zmeny ==
 - Pre riadky Papenmeier bol odstránený príkaz na prechod z a do plošného prezerania. Používatelia tiež môžu nastavovať skratky cez dialóg Klávesové skratky. (#3652)
 - NVDA odteraz pracuje pomocou Microsoft VC runtime verzia 11, čo znamená, že nebude fungovať na systémoch starších, ako Windows XP Service Pack 2, alebo Windows Server 2003 Service Pack 1.
+- Prri nastavenej úrovni interpunkcie na niektorá bude odteraz NVDA čítať interpunkčné znaky * (hviezda) a + (plus). (#3614)
 
 
 == opravy ==
@@ -40,6 +43,22 @@
 - V dokumentoch Programu MS Word NVDA viacnásobne neopakuje informácie o aktuálnej bunke. (#3702)
 - V jazykoch, pri ktorých sa využíva medzera na oddelenie číslic alebo tisícok (napríklad Nemčina a Francúzština), čísla oddelené od iného textu nie sú oznamované ako jedno číslo. Toto spôsobovalo problémy pri oznamovaní súradníc v tabuľkách. (#3698)
 - Brailovské riadky sa odteraz správne aktualizujú pri pohybe systémovým kurzorom v programe MS Word 2013. (#3784)
+- Ak sa nachádzate na prvom znaku nadpisu v dokumente Microsoft Word, hlásenie (nadpis úrovne X) ostane zobrazené na riadku. (#3701)
+- Ak je používateľský profil zviazaný s aplikáciou a ukončíte alikáciu, NVDA viac nebude mať problém deaktivovať profil. (#3732)
+- pri pokuse použiť ázijské vstupné metódy v kombinácii s príkazmi NVDA (napríklad hľadanie v režime prehliadania), pri návrhoch sa neozýva hlásenie "NVDA". (#3726)
+- odteraz sú oznamované záložky v dialógu možnosti v programe Outlook 2013. (#3826)
+- Vylepšená podpora pre dinamické Aria-live oblasti stránky v prehliadači Firefox a iných Mozilla Gecko aplikáciách:
+	- Podpora pre sledovanie priebehu aria-atomic a filtrovanie priebehu aria-busy. (#2640)
+	- Alternatívny text (atribút alt alebo označenie aria-label) je oznamované, ak nie je k dispozícii užitočnejší text. (#3329)
+	- hlásenia cez Live oblasti stránky nie sú prerušované, ak dôjde k zmene fokusu. (#3777)
+- Niektoré prezentačné prvky v prehliadači Firefox a iných Mozilla Gecko aplikáciách nie sú oznamované v režime prehliadania, ak sú označené ako aria-presentation ale je možné na ne presunúť fokus. (#3781)
+- Zrýchlená navigácia v dokumentoch programu MS Word pri aktívnej kontrole pravopisu. (#3785)
+- Vylepšenia podpori pre prístupné Java aplikácie:
+	- Prvý ovládač v rámci alebo dialógu je správne oznamovaný, ak sa dialóg alebo rámec dostane do popredia. (#3753)
+	- Nepodstatné informácie o pozícii nie sú viac oznamované pri prepínačoch (napríkald 1 z 1). (#3754)
+- lepšie oznamovanie ovládačov JComboBox (nie je oznamovný kód HTMl a tiež je správne oznamované zblaenie a rozbalenie). (#3755)
+ - More text is included in automatic dialog caption calculations. (#3857)
+- Zmeny v názve, hodnote alebo popise prvkoch zameraných fokusom sú presnejšie. (#3770)(
 
 
 = 2013.3 =
