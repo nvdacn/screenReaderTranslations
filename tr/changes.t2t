@@ -1,4 +1,4 @@
-﻿What's New in NVDA
+﻿NVDA'da Ne Yeni
 
 
 %!includeconf: ../changes.t2tconf
@@ -20,6 +20,7 @@
 - For Papenmeier braille displays, the move to flat review/focus command has been removed. Users can assign their own keys using the Input Gestures dialog. (#3652)
 - NVDA now relies  on the Microsoft VC runtime version 11, which means it can no longer be run on Operating systems older than Windows XP Service Pack 2 or Windows Server 2003 Service Pack 1.
 - Punctuation level Some will now speak star (*) and plus (+) characters. (#3614)
+- Upgraded eSpeak to version 1.48.02 which includes many language fixes and fixes several crashes. (#3842, #3739)
 
 
 == Bug Fixes ==
@@ -57,8 +58,12 @@
  - The initially focused control in a frame or dialog no longer fails to be reported when the frame or dialog comes to the foreground. (#3753)
  - Unuseful position information is no longer announced for radio buttons (e.g. 1 of 1). (#3754)
  - Better reporting of JComboBox controls (html no longer reported, better reporting of expanded and collapsed states). (#3755)
+ - When reporting the text of dialogs, some text that was previously missing is now included. (#3757)
  - More text is included in automatic dialog caption calculations. (#3857)
  - Changes to the name, value or description of the focused control is now reported more accurately. (#3770)
+- Fix a crash in NVDA seen in Windows 8 when focusing on certain RichEdit controls containing large amounts of text (e.g. NVDA's log viewer, windbg). (#3867)
+- On systems with a high DPI display setting (which occurs by default for many modern screens), NVDA no longer routes the mouse to the wrong location in some applications. (#3758, #3703)
+- Fixed an occasional problem when browsing the web where NVDA would stop working correctly until restarted, even though it didn't crash or freeze. (#3804)
 
 
 == Changes for Developers ==
