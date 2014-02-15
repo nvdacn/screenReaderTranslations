@@ -1,9 +1,0 @@
-commit f2968185a6fbc2208a3c3209f01a347fc6f6c77f
-Author: James Teh <jamie@nvaccess.org>
-Date:   Mon Jan 27 01:00:22 2014 +0000
-
-    Fix issues with application profile triggers when creating a virtual buffer fails.
-    
-    If creating a virtual buffer failed in api.setFocusObject, the global focus variables weren't set, but application triggers were already exited/entered. This meant that next time the focus changed, NVDA tried to exit triggers that had already been exited. Also, there may have been triggers entered that were never exited.
-    Exceptions from treeInterceptorHandler.update are now caught. Also, the call to handleAppSwitch has been moved as late as possible so other exceptions don't cause this problem. Ideally, there aren't any other possible exceptions like this, but it's best to be safe.
-    Fixes #3804.
