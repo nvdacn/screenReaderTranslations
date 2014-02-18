@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-01-12 22:25+0000\n"
-"PO-Revision-Date: 2014-02-14 20:57+0100\n"
+"PO-Revision-Date: 2014-02-18 21:25+0100\n"
 "Last-Translator: Juan C. Buño <quetzatl@eresmas.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
@@ -495,11 +495,17 @@ msgid ""
 "folder: appModules folder for app module examples, and globalPlugins folder "
 "for global plugins."
 msgstr ""
+"Para ejecutar tu ejemplo de complemento desde este capítulo, abre el "
+"directorio de configuración de usuario de NVDA(desde Menú o pantalla Inicio, "
+"busca el elemento NVDA \"  buscar Explorar carpeta de configuración del "
+"usuario). Luego pega tu fichero .py en la carpeta correspondiente: carpeta "
+"appModules para ejemplos de módulos de aplicación, y carpeta globalPlugins "
+"para plugins globales."
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 1: Hear a tone when pressing NVDA+A"
-msgstr ""
+msgstr "Ejemplo 1: Escuchar un tono al pulsarNVDA+A"
 
 #. type: Plain text
 msgid ""
@@ -507,6 +513,9 @@ msgid ""
 "tone for 1 second from any program. Since we want to use this everywhere, it "
 "must be a global plugin."
 msgstr ""
+"Comencemos con un ejemplo sencillo: Si pulsamos NVDA+A, se oye un tono "
+"durante 1 segundo desde cualquier programa. Puesto que queremos usar esto en "
+"todas partes, debe ser un plugin global."
 
 #. type: Plain text
 msgid ""
@@ -516,17 +525,25 @@ msgid ""
 "a short descriptive name). Then open the newly created .py file in the word "
 "processor."
 msgstr ""
+"En primer lugar, abre la carpeta de configuración de usuario, a "
+"continuación, abre la carpeta globalPlugins. Crea un nuevo fichero .py y "
+"dale un nombre descriptivo, como example1.py (se recomienda encarecidamente "
+"que cuando le dés el nombre del fichero del plugin global, le dés un nombre "
+"descriptivo corto). A continuación, abre el archivo py recién creado en el "
+"procesador de textos."
 
 #. type: Plain text
 msgid ""
 "The below code implements our example. Put this in your .py file as exactly "
 "as shown:"
 msgstr ""
+"El código siguiente implementa nuestro ejemplo. Pon esto en tu py "
+"exactamente como se muestra.:"
 
 #. type: Plain text
 #, no-wrap
 msgid "\t# Add-on development first example\n"
-msgstr ""
+msgstr "\t# Complemento en desarrollo primer ejemplo\n"
 
 #. type: Plain text
 #, no-wrap
@@ -534,11 +551,13 @@ msgid ""
 "\timport globalPluginHandler\n"
 "\timport tones # We want to hear beeps.\n"
 msgstr ""
+"\timport globalPluginHandler\n"
+"\timport tones # Queremos escuchar pitidos.\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "\tclass GlobalPlugin(globalPluginHandler.GlobalPlugin):\n"
-msgstr ""
+msgstr "\tclass GlobalPlugin(globalPluginHandler.GlobalPlugin):\n"
 
 #. type: Plain text
 #, no-wrap
@@ -546,6 +565,8 @@ msgid ""
 "\t\tdef script_doBeep(self, gesture):\n"
 "\t\t\ttones.beep(440, 1000) # Beep a standard middle A for 1 second.\n"
 msgstr ""
+"\t\tdef script_doBeep(self, gesture):\n"
+"\t\t\ttones.beep(440, 1000) # Beep a standard middle A for 1 second.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -554,17 +575,22 @@ msgid ""
 "\t\t\t\"kb:NVDA+A\":\"doBeep\"\n"
 "\t\t}\n"
 msgstr ""
+"\t\t__gestures={\n"
+"\t\t\t\"kb:NVDA+A\":\"doBeep\"\n"
+"\t\t}\n"
 
 #. type: Plain text
 msgid ""
 "In Python, you put comments by putting hash sign (#) at the start of the "
 "comment line."
 msgstr ""
+"En Python, para poner comentarios se pone el símbolo número (#) al principio "
+"de la línea de comentario."
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 1 code explanation"
-msgstr ""
+msgstr "Explicación del código de Example 1"
 
 #. type: Plain text
 msgid ""
