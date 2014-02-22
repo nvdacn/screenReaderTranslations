@@ -37,7 +37,7 @@ addresses = {
     },
     'el': {
         'lang': 'Greek',
-        'email': ['access@e-rhetor.com'],
+        'email': ['Irene Nakas <irnakas@gmail.com>', 'access@e-rhetor.com'],
     },
     'es': {
         'lang': 'Spanish',
