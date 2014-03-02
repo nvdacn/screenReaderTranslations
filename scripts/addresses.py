@@ -37,7 +37,7 @@ addresses = {
     },
     'el': {
         'lang': 'Greek',
-        'email': ['Irene Nakas <irnakas@gmail.com>', 'access@e-rhetor.com'],
+        'email': ['Irene Nakas <irnakas@gmail.com>', 'Nikos Demetriou <nikosdemetriou@googlemail.com>', 'access@e-rhetor.com'],
     },
     'es': {
         'lang': 'Spanish',
@@ -53,7 +53,7 @@ addresses = {
     },
     'fr': {
         'lang':'French',
-        'email': ['Michel such <michel.such@free.fr>', 'Patrick ZAJDA <patrick@zajda.fr>', 'Remy Ruiz <remyruiz@gmail.com>'],
+        'email': ['Michel such <michel.such@free.fr>', 'Patrick ZAJDA <patrick@zajda.fr>', 'Remy Ruiz <remyruiz@gmail.com>', 'Bachir Benanou <ben_bach@yahoo.fr>'],
     },
     'ga': {
         'lang': 'Gaeilge',
