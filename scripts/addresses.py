@@ -155,6 +155,10 @@ addresses = {
         'lang':'Turkish',
         'email': ['Cagri Dogan <cagrid@hotmail.com>'],
     },
+    'vi': {
+        'lang':'Vietnamese',
+        'email': ['Nguyen Van Dung <dungnv1984@gmail.com>'],
+    },
     'zh_CN': {
         'lang':'Simplified Chinese',
         'email': ['vgjh2005@gmail.com'],
