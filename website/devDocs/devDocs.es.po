@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-01-12 22:25+0000\n"
-"PO-Revision-Date: 2014-02-28 21:27+0100\n"
+"PO-Revision-Date: 2014-03-06 17:07+0100\n"
 "Last-Translator: Juan C. Buño <quetzatl@eresmas.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
@@ -694,6 +694,9 @@ msgid ""
 "For some, the terms \"class\", \"method\" and so on might be new. Let's go "
 "over what these terms are, as they are fundamental for add-on development:"
 msgstr ""
+"Para algunos, los términos \"clase\", \"método\" y demás podrían ser nuevos. "
+"Vamos a repasar lo que son estos términos, ya que son fundamentales para el "
+"desarrollo de complementos:"
 
 #. type: Bullet: '* '
 msgid ""
@@ -702,6 +705,10 @@ msgid ""
 "and other programs - in fact, a number of programmers are skilled at coming "
 "up with classes."
 msgstr ""
+"Clase: una clase describe un objeto. Podría describir cualquier cosa, tal "
+"como una persona, una mesa, un complemento de NVDA y otros. Las clases son "
+"fundamentales para NVDA y otros programas - de hecho, un buen número de "
+"programadores son expertos por conocer las clases."
 
 #. type: Bullet: '* '
 msgid ""
@@ -709,6 +716,10 @@ msgid ""
 "doing something, such as generating tones, calculating huge numbers, loading "
 "NVDA add-ons and so on. Some people call them \"functions.\""
 msgstr ""
+"Método: Un método es un pequeño programa o una rutina que ejecuta un "
+"programa para hacer algo, tal como generar tonos, calcular números grandes, "
+"cargar complementos de NVDA y así sucesivamente. Alguna gente los llama "
+"\"funciones.\""
 
 #. type: Bullet: '* '
 msgid ""
@@ -719,6 +730,12 @@ msgid ""
 "be executed (usually \"self\"; more on that later) and the gesture for the "
 "script (see below)."
 msgstr ""
+"Script: Un script es un método que se ejecuta cuando el usuario realiza "
+"órdenes tales como pulsar ciertas teclas en un teclado. Por ejemplo, cuando "
+"pulsas NVDA+F12, NVDA ejecuta el script dateTime, localizado en uno de los "
+"módulos principales de NVDA nombrado Global Commands. Un script toma dos "
+"argumentos: dónde se debería ejecutar el script (normalmente \"self\"; lo "
+"veremos más adelante) y el gesto para el script (véase más adelante)."
 
 #. type: Bullet: '* '
 msgid ""
@@ -727,6 +744,11 @@ msgid ""
 "on. An add-on file may define one or more variables (for example, to store "
 "common constants such as strings)."
 msgstr ""
+"Variable: Una variable es algo que puede cambiar, tal como el nombre de una "
+"persona, un nombre del complemento de  NVDA en ejecución, la versión de NVDA "
+"que estás utilizando y así sucesivamente. En un archivo de complemento "
+"pueden definirse una o más variables(Por ejemplo, para almacenar constantes "
+"comunes, tales como cadenas)."
 
 #. type: Bullet: '* '
 msgid ""
@@ -734,19 +756,24 @@ msgid ""
 "write add-ons, we are in fact writing additional modules that NVDA can use "
 "while it is running."
 msgstr ""
+"Módulo: Un módulo es una colección de métodos y variables en un fichero. "
+"Cuando escribimos complementos, de hecho, estamos escribiendo módulos "
+"adicionales que NVDA puede utilizar mientras se está ejecutando."
 
 #. type: Plain text
 msgid "There are other terms that we'll get to know shortly."
-msgstr ""
+msgstr "Hay otros términos que vamos a llegar a conocer en breve."
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 2: Generate a tone when switching to Notepad"
-msgstr ""
+msgstr "Ejemplo 2: Generar un tono cuando se cambie a Notepad"
 
 #. type: Plain text
 msgid "Most of the below code comes from NvDA Developer Guide."
 msgstr ""
+"La mayor parte del código de abajo viene de la Guía del desarrollador de "
+"NVDA."
 
 #. type: Plain text
 msgid ""
@@ -756,6 +783,12 @@ msgid ""
 "the executable for a program. For example, an app module for Notepad would "
 "be named notepad.py."
 msgstr ""
+"No sólo NVDA te permite agregar comandos globales, sino que también permite "
+"la escritura de código para mejorar el uso de los programas a través de "
+"módulos de aplicaciones. Un módulo de aplicación es también un archivo de "
+"Python, excepto que, esta vez, el nombre del archivo PY. Es el nombre del "
+"ejecutable de un programa. Por ejemplo, un módulo de aplicación para el Bloc "
+"de notas se llamaría notepad.py."
 
 #. type: Plain text
 msgid ""
@@ -764,11 +797,16 @@ msgid ""
 "below code in notepad.py, which in turn should be placed in appModules "
 "folder in your user configuration folder in order for it to run."
 msgstr ""
+"El código de abajo, de la Guía del desarrollador de NVDA, da un pequeño "
+"ejemplo de un módulo de aplicación típica: reproducir un pitido corto al "
+"cambiar al Bloc de notas. Pon el código de abajo en notepad.py, que a su vez "
+"se debe colocar en la carpeta appModules en la carpeta de configuración del "
+"usuario con el fin de que se ejecute."
 
 #. type: Plain text
 #, no-wrap
 msgid "\t# An example app module.\n"
-msgstr ""
+msgstr "\t# Un ejemplo de app module.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -776,11 +814,13 @@ msgid ""
 "\timport appModuleHandler\n"
 "\timport tones\n"
 msgstr ""
+"\timport appModuleHandler\n"
+"\timport tones\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "\tclass AppModule(appModuleHandler.AppModule):\n"
-msgstr ""
+msgstr "\tclass AppModule(appModuleHandler.AppModule):\n"
 
 #. type: Plain text
 #, no-wrap
@@ -789,11 +829,14 @@ msgid ""
 "\t\t\ttones.beep(256, 200)\n"
 "\t\t\tnextHandler()\n"
 msgstr ""
+"\t\tdef event_gainFocus(self, obj, nextHandler):\n"
+"\t\t\ttones.beep(256, 200)\n"
+"\t\t\tnextHandler()\n"
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 2 code explanation"
-msgstr ""
+msgstr "Explicación del código del ejemplo 2"
 
 #. type: Plain text
 msgid ""
