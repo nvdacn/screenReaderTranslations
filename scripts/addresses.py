@@ -139,10 +139,6 @@ addresses = {
         'lang':'Serbian',
         'email': ['Janko Valencik <janko.valencik@alfanum.co.rs>'],
     },
-    'uk': {
-        'lang':'Ukrainian',
-        'email': ['Volodymyr Pyrig <vlodko@torba.com>'],
-    },
     'ta': {
         'lang':'Tamil',
         'email': ['Dinakar T.D. <td.dinkar@gmail.com>'],
@@ -154,6 +150,10 @@ addresses = {
     'tr': {
         'lang':'Turkish',
         'email': ['Cagri Dogan <cagrid@hotmail.com>'],
+    },
+    'uk': {
+        'lang':'Ukrainian',
+        'email': ['Volodymyr Pyrig <vlodko@torba.com>'],
     },
     'vi': {
         'lang':'Vietnamese',
