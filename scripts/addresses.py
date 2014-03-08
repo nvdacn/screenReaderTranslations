@@ -17,7 +17,7 @@ addresses = {
     },
     'ar': {
         'lang':'Arabic',
-        'email': ['Fatma Mehanna <fatma.mehanna@gmail.com>', 'Shaimaa Ibrahim <shamse1@gmail.com>'],
+        'email': ['Fatma Mehanna <fatma.mehanna@gmail.com>', 'Shaimaa Ibrahim <shamse1@gmail.com>', 'Ali al Omary <alialomary@gmail.com>'],
     },
     'bg': {
         'lang':'Bulgarian',
