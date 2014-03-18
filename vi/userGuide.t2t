@@ -268,70 +268,69 @@ Có một số phím tắt quan trọng khi thao tác với con trỏ hệ thố
 | Thông báo thanh trạng thái | NVDA+end | NVDA+shift+end | thông báo thanh trạng thái của cửa sổ |
 %kc:endInclude
 
-++ Navigating with the System Caret ++[SystemCaret]
-When an [object #Objects] that allows navigation and/or editing of text is [focused #SystemFocus], you can move through the text using the system caret, also known as the edit cursor.
+++ Thao tác với con trỏ nháy ++[SystemCaret]
+Khi một  [object #Objects] cho phép thao tác và chỉnh sửa text trên đó [focused #SystemFocus], bạn có thể di chuyển con trỏ nháy hay còn gọ là con trỏ nhập.
 
-When the focus is on an object that has the system caret, you can use the arrow keys, page up, page down, home, end, etc. to move through the text.
-You can also change the text if the control supports editing.
-NVDA will announce as you move by character, word and line, and will also announce as you select and unselect text.
+Khi một đối tượng được chọn (có focus) và có con trỏ nháy trên đó thì bạn có thể dùng cac phím mũi tên, các phím page up, page down, các phím Home, end để di chuyển con trỏ nháy.
+bạn cũng có thể nhập hay chỉnh sửa text nếu đối tượng đó cho phép.
+nVDA sẽ thông báo khi bạn di chuyển qua từng ký tự, từng dòng hay từng trang, đồng thời nó cũng thông báo khi bạn chọn hay bỏ chọn text.
 
-NVDA provides the following key commands in relation to the system caret:
+Dưới đây là các phím tắt mà NVDA cung cấp cho việc thao tác với con trỏ nháy:
 %kc:beginInclude
-|| Name | Desktop key | Laptop key | Description |
-| Say all | NVDA+downArrow | NVDA+a | Starts reading from the current position of the system caret, moving it along as it goes |
-| Read current line | NVDA+upArrow | NVDA+l | Reads the line where the system caret is currently situated. Pressing twice spells the line. |
-| Read current text selection | NVDA+Shift+upArrow | NVDA+shift+s | Reads any currently selected text |
+|| Chức năng | Desktop key | Laptop key | Mô tả |
+| Đọc cả văn bản từ vị trí con trỏ | NVDA+downArrow | NVDA+a | Đọc cả văn bản từ vị trí con trỏ nháy |
+| Đọc dòng hiện tại | NVDA+upArrow | NVDA+l | Đọc dòng hiện tại nơi có con trỏ nháy, ấn nhanh 2 lần để đánh vần dòng đó |
+| Đọc vùng text đang chọn | NVDA+Shift+upArrow | NVDA+shift+s | Đọc vùng text đang được chọn |
 
 
-When within a table, the following key commands are also available:
-|| Name | Key | Description |
-| Move to previous column | control+alt+leftArrow | Moves the system caret to the previous column (staying in the same row) |
-| Move to next column | control+alt+rightArrow | Moves the system caret to the next column (staying in the same row) |
-| Move to previous row | control+alt+upArrow | Moves the system caret to the previous row (staying in the same column) |
-| Move to next row | control+alt+downArrow | Moves the system caret to the next row (staying in the same column) |
+Khi ở trong bảng thì dùng các phím tắt sau để thao tác:
+|| chức năng | Key | Mô tả |
+| chuyển về cột trước | control+alt+leftArrow | Đưa con trỏ nháy về cột trước đó ( vẫn ở trên cùng dòng) |
+| Chuyển sang cột kế tiếp | control+alt+rightArrow | Đưa con trỏ nháy sang cột kế tiếp (vẫn ở trên cùng dòng) |
+| Chuyển lên dòng trên | control+alt+upArrow | Đưa con trỏ nháy lên dòng trên ( vẫn ở trong cùng cột) |
+| Chuyển xuống dòng bên dưới | control+alt+downArrow | Đưa con trỏ nháy xuống dòng bên dưới (vẫn ở trong cùng cột) |
 %kc:endInclude
 
-++ Object Navigation ++
-Most of the time, you will work with applications using commands which move the [focus #SystemFocus] and the [caret #SystemCaret].
-However, sometimes, you may wish to explore the current application or the Operating System without moving the focus or caret.
-You may also wish to work with [objects #Objects] that cannot be accessed normally using the keyboard.
-In these cases, you can use object navigation.
+++ Kỹ thuật duyệt đối tượng ++
+Trong quá trình thao tác trên Windows, phần lớn là bạn sẽ thao tác với con trỏ hệ thống và con trỏ nháy.
+Tuy nhiên trong một số trường hợp bạn cần khám phá các đối tượng trên cửa sổ ứng dụng hay trong hệ diều hành mà không muốn di chuyển con trỏ hệ thóng hay con trỏ nháy.
+Bạn có thể sẽ muốn duyệt qua các đối tượng [objects #Objects] mà thông thường không thể thao tác được bằng bàn phím.
+Trong những trường hợp như vậy bạn có thể dùng phương pháp duyệt các đối tượng.
 
-Object navigation allows you to move between and obtain information about individual [objects #Objects].
-When you move to an object, NVDA will report it similarly to the way it reports the system focus.
-For a way to review all text as it appears on the screen, you can instead use [screen review #ScreenReview].
+Kỹ thuật này cho phép bạn duyệt qua lại và lấy thông tin về các đối tượng đó.
+Khi bạn duyệt qua đối tượng thì NVDA sẽ thông báo thông tin về các đối tượng đó giống như bạn thao tác với con trỏ hệ thống.
+đối với việc duyệt text trên màn hình thì bạn có thể sử dụng  [screen review #ScreenReview].
 
-Rather than having to move back and forth between every single object on the system, the objects are organized hierarchically.
-This means that some objects contain other objects and you must move inside them to access the objects they contain.
-For example, a list contains list items, so you must move inside the list in order to access its items.
-If you have moved to a list item, moving next and previous will take you to other list items in the same list.
-Moving to a list item's containing object will take you back to the list.
-You can then move past the list if you wish to access other objects.
-Similarly, a toolbar contains controls, so you must move inside the toolbar to access the controls in the toolbar.
+bên cạnh việc duyệt qua lại giữa các đối tượng riêng lẻ, các đối tượng còn có quan hệ với nhau, đó là quan hệ cha con.
+Nghĩa là một số đối tượng chứa các đối tượng khác và bạn có thể duyệt đến các đối tượng con của một đối tượng cha.
+Ví dụ một danh sách có thể chứa nhiều mục con, và bạn có thể duyệt sâu vào trong danh sách đó để tìm mục mình muốn.
+Khi bạn đã vào trong một đối tượng cha và tìm đến một mục con thì nếu bạn duyệt các đối tượng liền kề thì đó chính là các đối tượng liền kề của đối tượng con đó.
+Chuyển đến đối tượng chứa chính là đối tượng cha.
+Bạn có thể bỏ qua danh sách để chuyển qua các đối tượng khác.
+Tương tự như vậy, một thanh công cụ chứa các mục con và bạn phải duyệt vào trong thanh công cụ thì mới tìm được các mục con đó.
 
-The object currently being reviewed is called the navigator object.
-Once you navigate to an object, you can review its content using the [text review commands #ReviewingText] while in [Object review mode #ObjectReview].
-By default, the navigator object moves along with the System focus, though this behaviour can be toggled on and off.
+Đối tượng đang được xem gọi là đối tượng đang được duyệt.
+Khi bạn duyệt đến một đối tượng, bạn có thể duyệt tiếp nội dung text của nó bằng  [text review commands #ReviewingText] while in [Object review mode #ObjectReview].
+Mặc định thì đối tượng duyệt đi liền với con trỏ hệ thống (khi được focus) nhưng bạn có thể bật hoặc tắt chế độ đó.
 
-Note that braille follows the [focus #SystemFocus] and [caret #SystemCaret] by default, rather than object navigation and text review.
-If you want it to follow object navigation and text review instead, you need to [configure braille to be tethered to #BrailleTether] review.
+Chú ý là việc hiển thị trên màn hình nổi phụ thuộc vào  [focus #SystemFocus] và [caret #SystemCaret] và nếu bạn muốn nó có thể hiển thị khi duyệt đối tượng hay duyệt text trên đối tượng thì bạn phải cấu hình cho màn hình nổi ở [configure braille to be tethered to #BrailleTether] review.
 
-To navigate by object, use the following commands:
+Sử dụng các phím tắt sau để duyệt qua các đối tượng:
 
 %kc:beginInclude
-|| Name | Desktop key | Laptop key | Touch | Description |
-| Report current object | NVDA+numpad5 | NVDA+shift+o | none | Reports the current navigator object. Pressing twice spells the information, and pressing 3 times copies this object's name and value to the clipboard. |
-| Move to containing object | NVDA+numpad8 | NVDA+shift+upArrow | flick up (object mode) | Moves to the object containing the current navigator object |
-| Move to previous object | NVDA+numpad4 | NVDA+shift+leftArrow | flick left (object mode) | Moves to the object before the current navigator object |
-| Move to next object | NVDA+numpad6 | NVDA+shift+rightArrow | flick right (object mode) | Moves to the object after the current navigator object |
-| Move to first contained object | NVDA+numpad2 | NVDA+shift+downArrow | flick down (object mode) | Moves to the first object contained by the current navigator object |
-| Move to focus object | NVDA+numpadMinus | NVDA+backspace | none | Moves to the object that currently has the system focus, and also places the review cursor at the position of the System caret, if it is showing |
-| Activate current navigator object | NVDA+numpadEnter | NVDA+enter | double tap | Activates the current navigator object (similar to clicking with the mouse or pressing space when it has the system focus) |
-| Move System focus or caret to current review position | NVDA+shift+numpadMinus | NVDA+shift+backspace | none | pressed once Moves the System focus to the current navigator object, pressed twice moves the system caret to the position of the review cursor |
-| Report navigator object dimensions | NVDA+numpadDelete | NVDA+delete | none | Reports the current navigator object's dimensions on screen in per centages (including distance from left and top of screen, and its width and height) |
+|| Chức năng | Desktop key | Laptop key | Touch | Mô tả |
+| Thông báo đối tượng hiện tại | NVDA+numpad5 | NVDA+shift+o | none | Thông báo đối tượng đang được duyệt hiện tại, ấn 2 lần để đánh vần thông tin, ấn 3 lần để copy thông tin vào bộ nhớ đệm |
+| Chuyển đến đối tượng chứa (cha) | NVDA+numpad8 | NVDA+shift+upArrow | flick up (object mode) | Chuyển lên đối tượng cha mà chứa đối tượng hiện tại |
+| Chuyển về đối tượn trước cùng cấp | NVDA+numpad4 | NVDA+shift+leftArrow | flick left (object mode) | Chuyển về đối tượng trước đối tượng hiện tại |
+| Chuyển sang đối tượng kế tiếp cùng cấp | NVDA+numpad6 | NVDA+shift+rightArrow | flick right (object mode) | Chuyển sang đối tượng kế tiếp |
+| Chuyển đến đối tượng con đầu tiên | NVDA+numpad2 | NVDA+shift+downArrow | flick down (object mode) | Chuyển đến đối tượng con đầu tiên của đối tượng hiện tại |
+| Chuyển đến đối tượng đang được focus | NVDA+numpadMinus | NVDA+backspace | none | Chuyển đến đối tượng đang được chọn (focus) và đặt con trỏ duyệt text vào vị trí con trỏ nháy |
+| Kích hoạt đối tượng hiện tại | NVDA+numpadEnter | NVDA+enter | double tap | Kích hoạt đối tượng đang duyệt (giống như kích hoạt đối tượng đang được focus) |
+| Chuyển focus hoặc con trỏ nháy vào vị trí duyệt text trên đối tượng đang duyệt| NVDA+shift+numpadMinus | NVDA+shift+backspace | none | Ấn 1 lần để chuyển focus đến đối tượng đang duyệt, ấn 2 lần để chuyển con trỏ nháy vào vị trí duyệt text của đối tượng đó |
+| Thông báo chiều của đối tượng đang duyệt | NVDA+numpadDelete | NVDA+delete | none | Thông báo vị rí của đối tượng đang duyệt, bao gồm cả vị trí so với mép trái, mép trên của màn hình và chiều rộng, chiều cao của đối tượng đó |
 %kc:endInclude
 
-Note: numpad keys require numlock key to be turned off to work properly.
+Chú ý: Bạn cần tắt phím NumLock để sử dụng các phím số bên bàn phím số trong bàn phím Desktop
 
 ++ Reviewing Text ++[ReviewingText]
 NVDA allows you to read the contents of the [screen #ScreenReview], current [document #DocumentReview] or current [object #ObjectReview] by character, word or line.
