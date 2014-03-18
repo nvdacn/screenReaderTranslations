@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-01-12 22:25+0000\n"
-"PO-Revision-Date: 2014-01-27 10:07+0100\n"
+"PO-Revision-Date: 2014-03-18 11:11+0100\n"
 "Last-Translator: David Parduhn <xkill85@gmx.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Poedit 1.6.4\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1613,7 +1613,7 @@ msgstr ""
 #. type: Title ###
 #, no-wrap
 msgid "Example 1: Finding the value of a slider in a program"
-msgstr ""
+msgstr "Beispiel 1: Auffinden des Wertes für einen Schieberegler in einem Programm"
 
 #. type: Plain text
 msgid ""
@@ -1622,15 +1622,20 @@ msgid ""
 "properties, you know that the toolbar is the last child of the foreground "
 "object."
 msgstr ""
+"Angenommen, Sie möchten dem Anwender die Möglichkeit geben, den aktuellen "
+"Wert eines Schiebereglers abzurufen. Nachdem Sie sich die objekthierarchie "
+"angesehen haben, wissen Sie, dass der Schieber das letzte untergeordnete "
+"Objekt des Vordergrundfensters ist."
 
 #. type: Plain text
 msgid "Here is the code to implement this feature:"
 msgstr ""
+"Die können folgenden Code verwenden, um diese Funktion zu implementieren:"
 
 #. type: Plain text
 #, no-wrap
 msgid "\t# Object example 1\n"
-msgstr ""
+msgstr "\t# Beispiel 1 zum Umgang mit Objekten\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1638,11 +1643,13 @@ msgid ""
 "\timport api\n"
 "\timport appModuleHandler\n"
 msgstr ""
+"\timport api\n"
+"\timport appModuleHandler\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "\t\tsliderChildIndex = -1 # The variable to store the child index.\n"
-msgstr ""
+msgstr "\t\tsliderChildIndex = -1 # in dieser Variablen wird der Index des untergeordneten Objekts gespeichert.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1652,6 +1659,10 @@ msgid ""
 "\t\t\tsliderVal = fg.children[self.sliderChildIndex].value\n"
 "\t\t\treturn sliderVal\n"
 msgstr ""
+"\t\tdef getSliderValue(self):\n"
+"\t\t\tfg = api.getForegroundObject()\n"
+"\t\t\tsliderVal = fg.children[self.sliderChildIndex].value\n"
+"\t\t\treturn sliderVal\n"
 
 #. type: Plain text
 msgid ""
@@ -1660,6 +1671,10 @@ msgid ""
 "index would be minus 1, or the very last child; we could have used fg."
 "lastChild)."
 msgstr ""
+"In diesem Beispiel wird über `fg.children[index]` das Element mit dem "
+"angegebenen Index abgerufen.  Da der Schieber das letzte Element ist, ist "
+"der index -1, alternativ können Sie auch die Eigenschaft LastChild "
+"verwenden, um den Schieberegler aufzufinden."
 
 #. type: Plain text
 msgid ""
@@ -1677,6 +1692,11 @@ msgid ""
 "\t\tslider = fg.lastChild\n"
 "\t\tif slider.role == ROLE_SLIDER: return slider.firstChild.value\n"
 msgstr ""
+"\tdef getSliderValue(self):\n"
+"\t\tfrom controltypes import ROLE_SLIDER # innerhalb einer Methode kann Code importiert werden.\n"
+"\t\tfg = api.getForegroundObject()\n"
+"\t\tslider = fg.lastChild\n"
+"\t\tif slider.role == ROLE_SLIDER: return slider.firstChild.value\n"
 
 #. type: Plain text
 msgid ""
@@ -1741,6 +1761,15 @@ msgid ""
 "by assigning obj.role = ROLE_WINDOW (see control types dictionary for list "
 "of available roles)."
 msgstr ""
+"`event_NvDAObject_init(self, gewünschtes Objekt)`: Wenn Sie bestimmte "
+"Eigenschaften eines objekts überschreiben möchten wie z.B. den Objekttyp "
+"oder den Namen), können Sie diese Methode verwenden, um die Initialisierung "
+"von Objekten zu beeinflussen. Wenn das Steuerelement beispielsweise die "
+"Fensterklasse tform besitzt (Dies ist in vielen delphi-basierten Anwendungen "
+"üblich), können Sie NVDA dazu bringen, solche Objekte als Standardfenster zu "
+"betrachten, indem Sie die Eigenschaft Role auf role_window setzen. Eine "
+"Liste gültiger Objekttypen (ROLE_XXXX-Konstanten) finden Sie im Wörterbuch "
+"controlTypes."
 
 #. type: Bullet: '* '
 msgid ""
@@ -1755,6 +1784,11 @@ msgid ""
 "objects inherit from, or is the child or specialist class of IAccessible "
 "objects)."
 msgstr ""
+"`chooseNVDAObjectOverlayClasses(self, Objekt, Klassenliste)`: Dies "
+"ermöglicht es NVDA, beim Umgang mit bestimmten Objekten eigenen Code zu "
+"verwenden. Dies ist beispielsweise nützlich, wenn Sie zusätzliche "
+"Tasten(Kombinationen) in bestimmten Teilen eines Programms definieren "
+"wollen. "
 
 #. type: Plain text
 msgid ""
@@ -1778,7 +1812,7 @@ msgstr ""
 
 #. type: Plain text
 msgid "An example of the first case: modifying an atribute."
-msgstr ""
+msgstr "ein Beispiel zu Fall 1: Ändern eines Attributes."
 
 #. type: Plain text
 #, no-wrap
@@ -1787,6 +1821,9 @@ msgid ""
 "\t\tdef event_NvDAObject_init(self, obj):\n"
 "\t\t\tif obj.windowClassName == \"TForm\": obj.role = ROLE_WINDOW\n"
 msgstr ""
+"\t# Delphi-Formulare als Fenster neu zuweisen\n"
+"\t\tdef event_NvDAObject_init(self, obj):\n"
+"\t\t\tif obj.windowClassName == \"TForm\": obj.role = ROLE_WINDOW\n"
 
 #. type: Plain text
 msgid ""
@@ -1804,7 +1841,7 @@ msgstr ""
 #. type: Plain text
 #, no-wrap
 msgid "\t#An example of overlay classes\n"
-msgstr ""
+msgstr "\t# Beispiel zu überlagernden Klassen\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1812,6 +1849,8 @@ msgid ""
 "\tclass enhancedEdit(IAccessible):\n"
 "\t\t# Some code to be run when window class name is MyEdit.\n"
 msgstr ""
+"\tclass enhancedEdit(IAccessible):\n"
+"\t\t# Dieser Code wird ausgeführt, wenn die Fensterklasse \"myedit\" ist.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1819,11 +1858,13 @@ msgid ""
 "\tclass MainWindow(IAccessible):\n"
 "\t\t# Another code, this time adding custom gestures for main window of the program.\n"
 msgstr ""
+"\tclass MainWindow(IAccessible):\n"
+"\t\t# Diesmal werden neue Gesten zum Hauptfenster der Anwendung hinzugefügt.\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "\t# In the app module:\n"
-msgstr ""
+msgstr "\t# im Anwendungsmodul:\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1832,6 +1873,9 @@ msgid ""
 "\t\tif obj.windowClassName == \"myEdit\": clsList.insert(0, enhancedEdit)\n"
 "\t\telif obj.windowClassName == \"TWindow\": clsList.insert(0, mainWindow)\n"
 msgstr ""
+"\tdef chooseNVDAObjectOverlayClasses(self, obj, clsList):\n"
+"\t\tif obj.windowClassName == \"myEdit\": clsList.insert(0, enhancedEdit)\n"
+"\t\telif obj.windowClassName == \"TWindow\": clsList.insert(0, mainWindow)\n"
 
 #. type: Plain text
 msgid ""
@@ -1863,6 +1907,15 @@ msgid ""
 "clarify a given translatable string. this command is not a native NvDA "
 "command, but it is defined in the Poedit app module to perform this function."
 msgstr ""
+"ein Script ist eine Methode, die ausgeführt wird, wenn der Benutzer einen "
+"bestimmten Befehl ausführt (beispielsweise eine bestimmte Tastenkombination "
+"drückt). Wwenn Sie beispielsweise die Tastenkombination NVDA+t drücken, "
+"führt NVDA einen globalen Befehl namens SayTZitle aus und der Fenstertitel "
+"wird angesagt und als Blitzmeldung angezeigt. Wenn Sie in Poedit die "
+"Tastenkombination strg+Umschalt+a drücken, wird der Übersetzerkommentar "
+"vorgelesen. Dieser Kommentar soll übersetzern die Bedeutung einer zu "
+"übersetzenden Zeichenkette näher erläutern. Dies ist kein globaler Befehl; "
+"er ist im Anwendungsmodul von Poedit definiert."
 
 #. type: Plain text
 msgid ""
@@ -1911,6 +1964,8 @@ msgid ""
 "\t# An example fragment for script assignment.\n"
 "\timport ui\n"
 msgstr ""
+"\t# ein Beispiel-Codefragment für die Zuweisung von Scripten.\n"
+"\timport ui\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1918,6 +1973,8 @@ msgid ""
 "\tdef script_sayHello(self, gesture):\n"
 "\t\tui.message\"Hello!\")\n"
 msgstr ""
+"\tdef script_sayHello(self, gesture):\n"
+"\t\tui.message\"Hallo!\")\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1925,6 +1982,8 @@ msgid ""
 "\tdef script_sayGoodBye(self, gesture):\n"
 "\t\tui.message(\"Good Bye!\")\n"
 msgstr ""
+"\tdef script_sayGoodBye(self, gesture):\n"
+"\t\tui.message(\"Auf Wiedersehen!\")\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1958,7 +2017,7 @@ msgstr ""
 #. type: Title ##
 #, no-wrap
 msgid "Add-on components and development tips"
-msgstr ""
+msgstr "Hinweise zur Entwicklung der Komponenten einer Erweiterung"
 
 #. type: Plain text
 msgid ""
@@ -2045,7 +2104,7 @@ msgstr ""
 
 #. type: Plain text
 msgid "A chapter devoted to global plugins."
-msgstr ""
+msgstr "ein Kapitel  über globale Plugins"
 
 #. type: Plain text
 msgid "Planned sections:"
@@ -2067,7 +2126,7 @@ msgstr ""
 
 #. type: Bullet: '* '
 msgid "A few worked out examples."
-msgstr ""
+msgstr "einige Beispiele"
 
 #. type: Bullet: '* '
 msgid "These sections may change."
@@ -2080,7 +2139,7 @@ msgstr ""
 
 #. type: Plain text
 msgid "A chapter devoted to app modules."
-msgstr ""
+msgstr "ein Kapitel über Anwendungsmodule"
 
 #. type: Bullet: '* '
 msgid "What is an app module."
@@ -2107,6 +2166,7 @@ msgid ""
 "A few worked out examples and examples from existing app modules from NVDA "
 "core and from community."
 msgstr ""
+"einige Beispiele aus dem Quellcode von NVDA und von der Entwicklergemeinde"
 
 #. type: Bullet: '* '
 msgid "These topics may change."
@@ -2119,7 +2179,7 @@ msgstr ""
 
 #. type: Plain text
 msgid "A chapter devoted to driver development."
-msgstr ""
+msgstr "ein Kapitel zur Entwicklung von Treibern"
 
 #. type: Title ##
 #, no-wrap
