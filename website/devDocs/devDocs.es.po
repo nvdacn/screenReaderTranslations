@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-01-12 22:25+0000\n"
-"PO-Revision-Date: 2014-03-10 21:15+0100\n"
+"PO-Revision-Date: 2014-03-19 18:32+0100\n"
 "Last-Translator: Juan C. Buño <quetzatl@eresmas.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
@@ -1255,17 +1255,21 @@ msgid ""
 "Virtual buffers (virtualBuffers): Handles virtual buffer documents such as "
 "websites."
 msgstr ""
+"Mmodos virtuales(virtualBuffers): Maneja documentos del modo virtual, tales "
+"como sitios web."
 
 #. type: Plain text
 msgid ""
 "The modules without .py extension are directories, containing specialist "
 "modules."
 msgstr ""
+"Los módulos sin la extensión .py son directorios, que contienen módulos "
+"especializados."
 
 #. type: Title ###
 #, no-wrap
 msgid "Useful methods"
-msgstr ""
+msgstr "Métodos útiles"
 
 #. type: Plain text
 msgid ""
@@ -1273,26 +1277,34 @@ msgid ""
 "on how they're implemented, see the NvDA source code documentation. For "
 "worked out examples, see the section of this guide on add-on components."
 msgstr ""
+"Aquí está una lista de algunos métodos útiles que se usan en los "
+"complementos. Para obtener más información sobre cómo están implementados, "
+"consulta la documentación del código fuente de NVDA. Para ejemplos "
+"prácticos, mira la sección de esta guía en los componentes de complemento."
 
 #. type: Plain text
 msgid "From addonHandler:"
-msgstr ""
+msgstr "De addonHandler:"
 
 #. type: Bullet: '* '
 msgid ""
 "`addonHandler.initTranslation()`: Sets up the translation subsystem for add-"
 "ons via Gettext."
 msgstr ""
+"`addonHandler.initTranslation()`: Establece el subsistema de traducción de "
+"complementos a través de Gettext."
 
 #. type: Plain text
 msgid "From api.py:"
-msgstr ""
+msgstr "De api.py:"
 
 #. type: Bullet: '* '
 msgid ""
 "`api.getFocusObject()`: Retrieves the focused control (returns the object "
 "with focus)."
 msgstr ""
+"`api.getFocusObject()`: Recupera el control enfocado (devuelve el objeto con "
+"el foco)."
 
 #. type: Bullet: '* '
 msgid ""
@@ -1300,30 +1312,38 @@ msgid ""
 "set to follow system focus, the focus and navigator object will be the same, "
 "otherwise a different object is returned."
 msgstr ""
+"`api.getNavigatorObject()`: Obtiene el actual navegador de objetos. Si NVDA "
+"está  configurado para seguir el foco del sistema, el foco y el navegador de "
+"objetos serán lo mismo, de lo contrario se devuelve un objeto diferente."
 
 #. type: Bullet: '* '
 msgid ""
 "`api.getForegroundObject()`: Returns the foreground window of the current "
 "application (the parent of this object is the application itself)."
 msgstr ""
+"`api.getForegroundObject()`: Devuelve la ventana en primer plano de la "
+"aplicación actual (el padre de este objeto es la propia aplicación)."
 
 #. type: Bullet: '* '
 msgid ""
 "These have a corresponding method to set certain object as the focus or "
 "navigator object."
 msgstr ""
+"Estos tienen un método correspondiente para establecer cierto objeto como el "
+"foco o el navegador de objetos."
 
 #. type: Plain text
 msgid "From logHandler:"
-msgstr ""
+msgstr "De logHandler:"
 
 #. type: Bullet: '* '
 msgid "`logHandler.Log`: The class which implements logging facility."
 msgstr ""
+"`logHandler.Log`: La clase que implementa la facilidad de autentificación."
 
 #. type: Plain text
 msgid "From tones:"
-msgstr ""
+msgstr "De tones:"
 
 #. type: Bullet: '* '
 msgid ""
@@ -1332,16 +1352,22 @@ msgid ""
 "duration. The first two arguments are mandatory, while the other two are "
 "optional."
 msgstr ""
+"`tones.beep(tono en hercios, duración en milisegundos, volumen del canal "
+"izquierdo, volumen del canal derecho)`: Reproduce un tono de tono "
+"especificado para la duración especificada. Los dos primeros argumentos son "
+"obligatorios, mientras que los otros dos son opcionales."
 
 #. type: Plain text
 msgid "From ui:"
-msgstr ""
+msgstr "De ui:"
 
 #. type: Bullet: '* '
 msgid ""
 "`ui.message(message to be spoken/brailled)`: Speaks or brailles the message. "
 "This should be a string surrounded by quotes."
 msgstr ""
+"`ui.message(mensaje a verbalizar/braillificar)`: Habla o pone en Braille el "
+"mensaje. Esto debe ser una cadena entre comillas."
 
 #. type: Plain text
 msgid ""
@@ -1350,11 +1376,15 @@ msgid ""
 "examples below on how these methods and others are used throughout the life "
 "of an add-on."
 msgstr ""
+"Hay otros métodos útiles por ahí, pero los anteriores son los más útiles. "
+"Consulta la documentación del código fuente de NVDA para otros métodos, o "
+"mira los siguientes ejemplos de cómo se utilizan estos métodos y otros a lo "
+"largo de la vida de un complemento."
 
 #. type: Title ##
 #, no-wrap
 msgid "Add-on module components and development tips"
-msgstr ""
+msgstr "Consejos para desarrollo de componentes de módulos y de complementos "
 
 #. type: Plain text
 msgid ""
@@ -1362,6 +1392,10 @@ msgid ""
 "input and output, working with different NvDA objects, reacting to events, "
 "storing configuration and more."
 msgstr ""
+"Un módulo de complemento se compone de un número de componentes. Esto "
+"incluye el manejo de la entrada y de la salida, del trabajo con diferentes "
+"objetos de NVDA, reaccionar a los eventos, el almacenamiento de "
+"configuración y más."
 
 #. type: Plain text
 msgid ""
@@ -1369,6 +1403,9 @@ msgid ""
 "development, such as NVDA objects, scripts, event handling and additional "
 "topics with examples."
 msgstr ""
+"Este capítulo presenta los componentes y conceptos clave que se utilizan en "
+"el desarrollo de complementos, tales como objetos de NVDA, scripts, gestión "
+"de eventos y temas adicionales con ejemplos."
 
 #. type: Plain text
 msgid ""
@@ -1376,11 +1413,15 @@ msgid ""
 "This chapter is intended as an extension of that document. Consult the NVDA "
 "development guide for a brief introductions."
 msgstr ""
+"Ten en cuenta que la guía básica para el desarrollo de NVDA introduce los "
+"conceptos de abajo. Este capítulo está pensado como una extensión de ese "
+"documento. Consulta la guía de desarrollo de NVDA para una breve "
+"introducción."
 
 #. type: Title ###
 #, no-wrap
 msgid "Working with objects on screen"
-msgstr ""
+msgstr "Trabajando con objetos en pantalla"
 
 #. type: Plain text
 msgid ""
@@ -1434,7 +1475,7 @@ msgstr ""
 #. type: Title ###
 #, no-wrap
 msgid "Examining object hierarchy"
-msgstr ""
+msgstr "Examinando la jerarquía de objetos"
 
 #. type: Plain text
 msgid ""
@@ -1466,7 +1507,7 @@ msgstr ""
 #. type: Title ###
 #, no-wrap
 msgid "Focus vs. navigator object"
-msgstr ""
+msgstr "Foco versus navegador de objetos"
 
 #. type: Plain text
 msgid ""
