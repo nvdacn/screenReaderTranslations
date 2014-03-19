@@ -332,141 +332,139 @@ Sử dụng các phím tắt sau để duyệt qua các đối tượng:
 
 Chú ý: Bạn cần tắt phím NumLock để sử dụng các phím số bên bàn phím số trong bàn phím Desktop
 
-++ Reviewing Text ++[ReviewingText]
-NVDA allows you to read the contents of the [screen #ScreenReview], current [document #DocumentReview] or current [object #ObjectReview] by character, word or line.
-This is mostly useful in places (including Windows command consoles) where there is no [system caret #SystemCaret].
-For example, you might use it to review the text of a long information message in a dialog.
+++ Duyệt text ++[ReviewingText]
+NVDA cho phép bạn duyệt nội dung của  [màn hình #ScreenReview], [tài liệu #DocumentReview] hoặc [đối tượng hiện tại #ObjectReview] theo từng ký tự, từng từ hay từng dòng.
+Tính năng này đặc biệt hiệu quả đối với các màn hình console như windows command line mà không có  [con trỏ nháy #SystemCaret].
+Ví dụ khi bạn muốn xem và đọc các thông báo dài trên hộp thoại.
 
-When moving the review cursor, the System caret does not follow along, so you can review text without losing your editing position.
-However, by default, when the System caret moves, the review cursor follows along.
-This can be toggled on and off.
+Khi duyệt text sẽ không làm thay đổi vị trí của con trỏ nháy.
+tuy nhiên mặc định khi bạn thay đổi vị trí con trỏ nháy thì con trỏ duyệt text cũng sẽ thay đổi theo đó.
+bạn có thể bật hoặc tắt chế độ này.
 
-Note that braille follows the [focus #SystemFocus] and [caret #SystemCaret] by default, rather than object navigation and text review.
-If you want it to follow object navigation and text review instead, you need to [configure braille to be tethered to #BrailleTether] review.
+Chú ý là mặc định thì màn hình nổi chỉ hiển thị được text ở chế độ [con trỏ hệ thống #SystemFocus] và  [con trỏ nháy #SystemCaret] chứ không hiển thị text ở chế độ duyệt đối tượng và màn hình,
+nên nếu bạn muốn hiển thị thì bạn phải [cấu hình cho màn hình nổi #BrailleTether].
 
-The following commands are available for reviewing text:
+Dưới đây là một số phím tắt dùng để duyệt text:
 %kc:beginInclude
-|| Name | Desktop key | Laptop key | Touch | Description |
-| Move to top line in review | shift+numpad7 | NVDA+control+home | none | Moves the review cursor to the top line of the text |
-| Move to previous line in review | numpad7 | NVDA+upArrow | flick up (text mode) | Moves the review cursor to the previous line of text |
-| Report current line in review | numpad8 | NVDA+shift+. | none | Announces the current line of text where the review cursor is positioned. Pressing twice spells the line. Pressing three times spells the line using character descriptions. |
-| Move to next line in review | numpad9 | NVDA+downArrow | flick down (text mode) | Move the review cursor to the next line of text |
-| Move to bottom line in review | shift+numpad9 | NVDA+control+end | none | Moves the review cursor to the bottom line of text |
-| Move to previous word in review | numpad4 | NVDA+control+leftArrow | 2-finger flick left (text mode) | Moves the review cursor to the previous word in the text |
-| Report current word in review | numpad5 | NVDA+control+. | none | Announces the current word in the text where the review cursor is positioned. Pressing twice spells the word. Pressing three times spells the word using character descriptions. |
-| Move to next word in review | numpad6 | NVDA+control+rightArrow | 2-finger flick right (text mode) | Move the review cursor to the next word in the text |
-| Move to start of line in review | shift+numpad1 | NVDA+home | none | Moves the review cursor to the start of the current line in the text |
-| Move to previous character in review | numpad1 | NVDA+leftArrow | flick left (text mode) | Moves the review cursor to the previous character on the current line in the text |
-| Report current character in review | numpad2 | NVDA+. | none | Announces the current character on the line of text where the review cursor is positioned. Pressing twice reports a description or example of that character. Pressing three times reports the numeric value of the character in decimal and hexadecimal. |
-| Move to next character in review | numpad3 | NVDA+rightArrow | flick right (text mode) | Move the review cursor to the next character on the current line of text |
-| Move to end of line in review | shift+numpad3 | NVDA+end | none | Moves the review cursor to the end of the current line of text |
-| Say all with review | numpadPlus | NVDA+shift+a | 3-finger flick down (text mode) | Reads from the current position of the review cursor, moving it as it goes |
-| Copy from review cursor | NVDA+f9 | NVDA+f9 | none | starts copying text from the current position of the review cursor. The actual copy is not performed until you tell NVDA where to copy to |
-| Copy to review cursor | NVDA+f10 | NVDA+f10 | none | Copies from the position of the review cursor currently set with Copy from review cursor, to the review cursor's current position. After pressing this key, the text will be copied to the Windows clipboard |
-| Report text formatting | NVDA+f | NVDA+f | none | Reports the formatting of the text where the review cursor is currently situated |
+|| Chức năng | Desktop key | Laptop key | Touch | mô tả |
+| Chuyển đến dòng đầu tiên trên cùng | shift+numpad7 | NVDA+control+home | none | Chuyển con trỏ duyệt text lên dòng đầu tiên trên cùng |
+| Chuyển đến dòng trên | numpad7 | NVDA+upArrow | flick up (text mode) | Chuyển con trỏ duyệt text lên dòng trên |
+| Thông báo nội dung của dòng hiện tại | numpad8 | NVDA+shift+. | none | Thông báo nội dung của dòng hiện tại nơi có con trỏ duyệt text. Ấn 2 lần để đánh vần, ấn 3 lần để đánh vần theo mô tả từng ký tự |
+| Chuyển đến dòng tiếp theo bên dưới | numpad9 | NVDA+downArrow | flick down (text mode) | Chuyển con trỏ duyệt text xuống dòng dưới tiếp theo |
+| Chuyển đến dòng dưới cùng | shift+numpad9 | NVDA+control+end | none | Chuyển con trỏ duyệt text xuống dòng dưới cùng |
+| Chuyển sang từ bên trái | numpad4 | NVDA+control+leftArrow | 2-finger flick left (text mode) | chuyển con trỏ duyệt text sang từ bên trái |
+| thông báo từ hiện tại | numpad5 | NVDA+control+. | none | Thông báo từ hiện tại nơi có con trỏ duyệt text. Ấn 2 lần để đánh vần. Ấn 3 lần để đánh vần theo mô tả từng ký tự |
+| Chuyển sang từ kế tiếp bên phải | numpad6 | NVDA+control+rightArrow | 2-finger flick right (text mode) | chuyển con trỏ duyệt text sang từ kế tiếp bên phải |
+| Chuyển về đầu dòng | shift+numpad1 | NVDA+home | none | chuyển con trỏ duyệt text về đầu dòng |
+| Chuyển sang ký tự bên trái | numpad1 | NVDA+leftArrow | flick left (text mode) | chuyển con trỏ duyệt text sang ký tự bên trái |
+| Đọc ký tự hiện tại | numpad2 | NVDA+. | none | Đọc ký tự nơi có con trỏ duyệt text. Ấn 2 lần để nghe đánh vần mô tả hay ví dụ về ký tự đó. Ấn 3 lần để nghe mã cơ số 10 và 16 của ký tự đó |
+| chuyển sang ký tự bên phải | numpad3 | NVDA+rightArrow | flick right (text mode) | chuyển con trỏ duyệt text sang ký tự bên phải |
+| chuyển đến  cuối dòng | shift+numpad3 | NVDA+end | none | chuyển con trỏ duyệt text đến cuối dòng hiện tại |
+| Đọc cả vùng văn bản | numpadPlus | NVDA+shift+a | 3-finger flick down (text mode) | Đọc cả vùng văn bản từ vị trí con trỏ duyệt hiện tại đến hết vùng đó |
+| Copy text từ vị trí hiện tại | NVDA+f9 | NVDA+f9 | none | Copy văn bản từ vị trí con trỏ duyệt hiện tại đến hết vào bộ nhớ đệm |
+| Copy text từ đầu đến vị trí hiện tại | NVDA+f10 | NVDA+f10 | none | copy text từ đầu vùng cho đến vị trí con trỏ duyệt text vào bộ nhớ đệm |
+| Thông báo thuộc tính của text | NVDA+f | NVDA+f | none | Thông báo thuộc tính của text nơi có con trỏ duyệt |
 %kc:endInclude
 
-Note: numpad keys require numlock key to be turned off to work properly.
+Chú ý: Bạn cần tắt phím NumLock để sử dụng các phím số bên bàn phím số trong bàn phím Desktop.
 
-A good way to remember the basic text review commands  when using the Desktop layout  is to think of them as being in a grid of three by three, with top to bottom being line, word and character and left to right being previous, current and next.
-The layout is illustrated as follows:
-| Previous line | Current line | Next line |
-| Previous word | Current word | Next word |
-| Previous character | Current character | Next character |
+Một cách nhớ đơn giản các phím tắt trên với kiểu bàn phím Desktop là hình dung có 3 hàng mỗi hàng có 3 phím, hàng trên cùng là cho duyệt từng dòng, hàng thứ 2 là cho duyệt từng từ, hàng thứ 3 là duyệt từng ký tự. Mỗi phím trên một hàng sẽ dùng cho duyệt phần tử trước, phần tử hiện tại và phần tử kế tiếp.
+Minh họa như dưới đây:
+| dòng trước bên trên | dòng hiện tại | dòng dưới |
+| từ bên trái | từ hiện tại | từ bên phải |
+| ký tự bên trái | ký tự hiện tại | ký tự bên phải |
 
-++ Review Modes ++[ReviewModes]
-NVDA's [text review commands #ReviewingText] can review content within the current navigator object, current document or screen, depending on the review mode selected.
-Review modes are a replacement for the older Flat Review concept found in NVDA.
+++ Chế độ duyệt ++[ReviewModes]
+[Các phím duyệt text #ReviewingText] có thể duyệt text trên đối tượng đang duyệt, trên tài liệu hay trên màn hình phụ thuộc vào chế độ duyệt text mà bạn chọn.
 
-The following commands switch between review modes:
+Các phím để chuyển qua lại giữa các chế độ duyệt text:
 %kc:beginInclude
-|| Name | Desktop key | Laptop key | Touch | Description |
-| switch to next review mode | NVDA+numpad7 | NVDA+pageUp | 2-finger flick up | switches to the next available review mode |
-| switch to previous review mode | NVDA+numpad1 | NVDA+pageDown | 2-finger flick down | switches to the previous available review mode |
+|| chức năng | Desktop key | Laptop key | Touch | Mô tả |
+| Chuyển sang chế độ duyệt tiếp theo mode | NVDA+numpad7 | NVDA+pageUp | 2-finger flick up | chuyển sang chế độ duyệt tiếp theo (nếu có) |
+| Chuyển về chế độ duyệt trước | NVDA+numpad1 | NVDA+pageDown | 2-finger flick down | Chuyển về chế độ duyệt trước (nếu có) |
 %kc:endInclude
 
-+++ Object Review +++[ObjectReview]
-While in object review mode, you are able to only review the content of the current [navigator object #ObjectNavigation].
-For objects such as editable text fields or other basic text controls, this will generally be the text content.
-For other objects, this may be the name and/or value.
++++ Chế độ duyệt text trong đối tượng +++[ObjectReview]
+Trong chế độ duyệt text của đối tượng thì bạn chỉ có thể duyệt nội dung của [đối tượng đang duyệt hiện tại #ObjectNavigation].
+Với các đối tượng như ô nhập liệu thì đó chính là nội dung của ô nhập liệu.
+Với các đối tượng còn lại thì đó là tên hoặc giá trị của đối tượng đó.
 
-+++ Document Review +++[DocumentReview]
-When the [navigator object #ObjectNavigation] is within a browse mode document (e.g. web page) or other complex document (e.g. a Lotus Symphony document), it is possible to switch to the document review mode.
-The document review mode allows you to review the text of the entire document.
++++ Chế độ duyệt text trong tài liệu +++[DocumentReview]
+Nếu đối tượng đang duyệt nằm trong một tài liệu như web hay các tài liệu phức tạp khác thì có thể chuyển qua chế độ duyệt text trên tài liệu.
+chế độ duyệt text trên tài liệu sẽ cho phép bạn duyệt text trên cả tài liệu đó.
 
-When switching from object review to document review, the review cursor is placed in the document at the position of the navigator object.
-When moving around the document with review commands, the navigator object is automatically updated to the object found at the current review cursor position.
+Khi chuyển từ chế độ duyệt text trên đối tượng sang chế độ duyệt text trên tài liệu thì con trỏ duyệt của tài liệu sẽ được đặt tại vị trí con trỏ duyệt trên đối tượng.
+Khi bạn di chuyển trong tài liệu thì đối tượng được duyệt cũng sẽ thay đổi theo vị trí con trỏ duyệt tài liệu.
 
-Note that NVDA will switch to document review from object review automatically when moving around browse mode documents.
+Chú ý là NVDA sẽ tự động chuyển từ chế độ duyệt text trên đối tượng sang chế độ duyệt tài liệu khi gặp  các tài liệu như web và một số tài liệu khác.
 
-+++ Screen Review +++[ScreenReview]
-The screen review mode allows you to review the text of the screen as it appears visually within the current application.
-This is similar to the screen review or mouse cursor functionality in many other Windows screen readers.
++++ chế độ duyệt text trên màn hình +++[ScreenReview]
+chế độ duyệt text trên màn hình cho phép bạn duyệt text trên màn hình của ứng dụng hiện tại.
+Chức năng này tương tự như chức năng duyệt text trên màn hình của các phần mềm đọc màn hình khác.
 
-When switching to screen review mode, the review cursor is placed at the screen position of the current [navigator object #ObjectNavigation].
-When moving around the screen with review commands, the navigator object is automatically updated to the object found at the screen position of the review cursor.
+Khi chuyển từ chế độ duyệt text trên đối tượn sang chế độ duyệt text trên màn hình thì con trỏ duyệt sẽ được đặt tạ vị trí của đối tượng hiện tại.
+Khi di chuyển con trỏ duyệt text trên màn hình thì đối tượng duyệt cũng sẽ tự động thay đổi theo vị trí của con trỏ duyệt.
+Chú ý là với một số ứng dụng thì NVDA chưa nhận biết được hết text trên đó vì do có thể là ứng dụng đã sử dụng cơ chế vẽ text
 
-Note that in some newer applications, NVDA may not see some or all text displayed on the screen due to the use of newer screen drawing technologies which are impossible to support at this time.
+++ Thao tác với chuột ++
+Khi bạn di chuyển chuột thì theo mặc định NVDA sẽ tự đọng thông báo text và đối tượng ở dưới vị trí con trỏ chuột hay nơi chuọt đi qua.
+Nếu bạn lựa chọn thì NVDA có thể thông báo cả đoạn văn bản, hay 1 dòng tại vị trí con trỏ chuột.
 
-++ Navigating with the Mouse ++
-When you move the Mouse, NVDA by default reports the text that is directly under the mouse pointer as the pointer moves over it.
-Where supported, NVDA will read the surrounding paragraph of text, though some controls may only read by line.
+Bạn cũng có thể cài đặt đẻ NVDA thông báo kiểu đối tượng khi nó đi qua như kiểu nút, danh sách, v...v.
+chức năng này rất hữu ích trong nhiều trường hợp thông tin text hiển thị chưa đủ để bạn hiểu được về đối tượng đó.
 
-NVDA can be configured to also announce the type of [object #Objects] under the mouse as it moves (e.g. list, button, etc.).
-This may be useful for totally blind users, as sometimes, the text isn't enough.
+NVDA giúp bạn dễ hình dung được vị trí của chuột trên màn hình dựa vào sự thay đổi âm thanh theo tọa độ của chuột.
+Nếu chuột ở vị trí trên cao thì độ cao của tiếng bip cũng tăng theo.
+Còn khi chuột thay đổi vị trí theo phương ngang (trái hoặc phải) thì âm lượng của tiếng bíp ở 2 bên loa cũng sẽ thay đổi theo.
 
-NVDA provides a way for users to understand where the mouse is located relative to the dimensions of the screen by playing the current mouse coordinates as audio beeps.
-The higher the mouse is on the screen, the higher the pitch of the beeps.
-The further left or right the mouse is located on the screen, the further left or right the sound will be played (assuming the user has stereo speakers or headphones).
+Tính năng này mặc định chưa được bật.
+Nếu bạn muốn bật chức năng này bạn có thể mở cửa sổ [Cấu hình cho chuột #MouseSettings] từ thực đơn tùy chọn của NVDA
 
-These extra mouse features are not turned on by default in NVDA.
-If you wish to take advantage of them, you can configure them from the [Mouse settings #MouseSettings] dialog, found in the NVDA Preferences menu.
-
-Although a physical mouse or trackpad should be used to navigate with the mouse, NVDA has a few key commands related to the mouse:
+bên cạnh sử dụng trực tiếp chuọt thì NVDA cung cấp cho bạn thêm mọt số phím kác tương tác giống như chuột:
 %kc:beginInclude
-|| Name | Desktop key | Laptop key | Description |
-| Left mouse button click | numpadDivide | NVDA+[ | clicks the left mouse button once. The common double click can be performed by pressing this key twice in quick succession |
-| Left mouse button lock | shift+numpadDivide | NVDA+control+[ | Locks the left mouse button down. Press again to release it. To drag the mouse, press this key to lock the left button down and then move the mouse either physically or use one of the other mouse routing commands |
-| Right mouse click | numpadMultiply | NVDA+] | Clicks the right mouse button once. |
-| Right mouse button lock | shift+numpadMultiply | NVDA+control+] | Locks the right mouse button down. Press again to release it. To drag the mouse, press this key to lock the right button down and then move the mouse either physically or use one of the other mouse routing commands |
-| Move mouse to current navigator object | NVDA+numpadDivide | NVDA+shift+m | Moves the mouse to the location of the current navigator object and review cursor |
-| Navigate to the object under the mouse | NVDA+numpadMultiply | NVDA+shift+n | Set the navigator object to the object located at the position of the mouse |
+|| chức năng | Desktop key | Laptop key | Mô tả |
+| Kích hoạt nút chuột trái | numpadDivide | NVDA+[ | Kích hoạt nút chuột trái, ấn nhanh 2 lần sẽ tương tự như kích đúp nút chuột trái |
+| Khóa nút chuột trái | shift+numpadDivide | NVDA+control+[ |  Khóa nút chuột trái, ấn tiếp để mở lại |
+| Kích hoạt nút chuột phải | numpadMultiply | NVDA+] | Kích hoạt nút chuột phải |
+| Khóa nút chuột phải | shift+numpadMultiply | NVDA+control+] | Khóa nút chuột phải, ấn tiếp 1 lần nữa để mở lại |
+| Di chuyển chuột đến vị trí đối tượng đang duyệt | NVDA+numpadDivide | NVDA+shift+m | Di chuyển chuột đến vị trí đối tượng đang duyệt |
+| Set đối tượng dưới vị trí chuột là đối tượng hiện tại | NVDA+numpadMultiply | NVDA+shift+n | Set đối tượng ở dưới vị trí chuột là đối tượng hiện tại |
 %kc:endInclude
 
-+ Browse Mode +
-Complex read-only documents such as web pages are browsed in NVDA using browse mode.
-This includes documents in Mozilla Firefox, Microsoft Internet Explorer, Google Chrome, Adobe Reader and Adobe Flash.
++ Chế độ duyệt tài liệu +
+Với các tài liệu phức tạp và chỉ đọc như tài liệu web thì sẽ được duyệt bằng chế độ duyệt tài liệu trong NVDA.
+Bao gồm các tài liệu được mở bằng  Mozilla Firefox, Microsoft Internet Explorer, Google Chrome, Adobe Reader and Adobe Flash.
 
-In browse mode, the content of the document is made available in a flat representation that can be navigated with the cursor keys as if it were a normal text document.
-All of NVDA's [system caret #SystemCaret] key commands will work in this mode; e.g. say all, report formatting, table navigation commands, etc.
-Information such as whether text is a link, heading, etc. is reported along with the text as you move.
+trong chế độ duyệt tài liệu, nội dung có thể được duyệt bằng các phím mũi tên.
+Tất cả các phím tắt sử dụng cho con trỏ nháy cũng đều hoạt động tốt như đọc cả tài liệu, thông báo thuộc tính văn bản, di chuyển qua các hàng, các cột trong bảng, v..v.
+Các thông tin khác như liên kết, tiêu đề, v..v của text khi bạn duyệt qua cũng sẽ được thông báo.
 
-Sometimes, you will need to interact directly with controls in these documents.
-For example, you will need to do this for editable text fields and lists so that you can type characters and use the cursor keys to work with the control.
-You do this by switching to focus mode, where almost all keys are passed to the control.
-When in Browse mode, by default, NVDA will automatically switch to focus mode if you tab to or click on a particular control that requires it.
-Conversely, tabbing to or clicking on a control that does not require focus mode will switch back to browse mode.
-You can also press enter or space to switch to focus mode on controls that require it.
-Pressing escape will switch back to browse mode.
-In addition, you can manually force focus mode, after which it will remain in effect until you choose to disable it.
+Đôi khi bạn muốn tương tác trực tiếp với các đối tượng trong tài liệu.
+Ví dụ bạn cần thao tác trực tiếp với ô nhập liệu để nhập nội dung.
+bạn chuyển qua chế độ nhập (focus mode) mà cho phép đối tượng nhận trực tiếp sự kiện từ bàn phím.
+mặc định, khi bạn đang ở chế độ duyệt mà dùng phím tab, để duyệt hoặc kích hoạt một đối tượng hoạt động ở chế độ nhập thì NVDA sẽ tự động chuyển sang chế độ nhập cho bạn.
+Ngược lại nếu bạn chuyển đến một đối tượng mà không hoạt động ở chế độ nhập thì NVDA sẽ tự động chuyển sang chế độ duyệt cho bạn.
+Bạn cũng có thể tự chuyển sang chế độ nhập ở một đối tượng nào đó bằng phím enter hoặc phím dấu cách.
+Ấn phím ESC để quay lại chế độ duyệt.
+Bạn cũng có thể thiết lập để chế độ nhập tiếp tục hoạt động cho đến khi bạn thoát khỏi chế độ đó.
 
 %kc:beginInclude
-|| Name | Key | Description |
-| Toggle browse/focus modes | NVDA+space | Toggles between focus mode and browse mode |
-| Exit focus mode | escape | switches back to browse mode if focus mode was previously switched to automatically |
-| Refresh browse mode document | NVDA+f5 | Reloads the current document content (useful if certain content seems to be missing from the document) |
-| Find | NVDA+control+f | Pops up a dialog in which you can type some text to find in the current document |
-| Find next | NVDA+f3 | Finds the next occurrence of the text in the document that you previously searched for |
-| Find previous | NVDA+shift+f3 | Finds the previous occurrence of the text in the document you previously searched for |
-| open long description | NVDA+d | Opens a new window containing a long description for the element you are on if it has one. | 
+|| Chức năng | Phím tắt | Mô tả |
+| Chuyển qua lại giữa chế độ nhập và chế độ duyệt | NVDA+space | Chuyển qua lại giữa chế độ nhập và chế độ duyệt |
+| thoát khỏi chế độ nhập | escape | thoát khỏi chế độ nhập và quay trở lại chế độ duyệt |
+| Tải lại nội dung tài liệu | NVDA+f5 | Tải lại nội dung tài liệu ví dụ như trang web |
+| Tìm kiếm trên tài liệu | NVDA+control+f | Tìm kiếm trên tài liệu |
+| Tìm kết quả tiếp theo | NVDA+f3 | Tìm kết quả tiếp theo |
+| Tìm kết quả trước đó | NVDA+shift+f3 | Tìm kết quả trước đó |
+| Mở cửa sổ mô tả | NVDA+d | Mở cửa sổ mô tả cho thành phần hiện tại | 
 %kc:endInclude
 
 
-++ Single Letter Navigation ++
-While in browse mode, For quicker navigation, NVDA also provides single character keys to jump to certain fields in the document.
+++ Duyệt nhanh tài liệu ++
+Trong chế độ duyệt tài liệu, NVDA cung cấp cơ chế chuyệt nhanh đén các thành phần trng tài liệu đó.
 
 %kc:beginInclude
-The following keys by themselves jump to the next available element, while adding the shift key causes them to jump to the previous element:
+Dưới đây là các phím cho phép chuyển nhanh đến các đối tượng tiếp theo, nếu kết hợp với phím shift thì sẽ quay về đối tượng ftrước đó:
 - h: heading
 - l: list
 - i: list item
@@ -489,576 +487,475 @@ The following keys by themselves jump to the next available element, while addin
 - o: embedded object
 - 1 to 6: headings at levels 1 to 6 respectively
 -
-To move to the beginning or end of containing elements such as lists and tables:
-|| Name | Key | Description |
-| Move to start of container | shift+comma | Moves to the start of the container (list, table, etc.) where the caret is positioned |
-| Move past end of container | comma | Moves past the end of the container (list, table, etc.) where the caret is positioned |
+Còn đây là các phím để chuyển về đầu hoặc cuối các đối tượng chứa như danh sách (list) hay bảng (table):
+|| chức năng | Phím tắt | Mô tả |
+| chuyển về đầu đối tượng chứa | shift+comma | chuyển về đầu đối tượng chứa |
+| chuyển đến cuối đối tượng chứa | comma | chuyển đến cuối đối tượng chứa |
 %kc:endInclude
 
-++ The Elements List ++
-The elements list provides access to a list of either links, headings or landmarks in the document.
-Radio buttons allow you to switch between these three types of information.
-An edit field is also provided in the dialog which allows you to filter the list to help you search for a particular item on the page.
-Once you have chosen an item, you can use the provided buttons in the dialog to move to or activate that item.
+++ Cửa sổ danh sách đối tượng ++
+NVDA cho phép bạn lọc và truy cập nhanh đến các đối tượng trong tài liệu như liên kết (link), tiêu đề (heading) hay land mark bằng cửa sổ danh sách đối tượng.
+Bạn có thể thay đổi giữa các loại đối tượng trên qua nút radio.
+Một ô nhập liệu cũng cho phép bạn nhập các ký tự để lọc các đối tượng trong danh sách.
+Khi tìm thấy đối tượng mình mong muốn, bạn có thể nhảy đến đối tượng đó hoặc kích hoạt luôn nó.
 %kc:beginInclude
-|| Name | Key | Description |
-| Browse mode elements list | NVDA+f7 | Brings up the Elements list which contains links, headings and landmarks from the current document |
+|| Chức năng | Phím tắt | Mô tả |
+| Mở cửa sổ danh sách đối tượng | NVDA+f7 | Mở cửa sổ danh sách đối tượng để lọc theo link, heading hay land mark |
 %kc:endInclude
 
-++ Embedded Objects ++
-Pages can include rich content using technologies such as Adobe Flash and Sun Java, as well as applications and dialogs.
-Where these are encountered in browse mode, NVDA will report "embedded object", "application" or "dialog", respectively.
-You can press enter on these objects to interact with them.
-If it is accessible, you can then tab around it and interact with it like any other application.
-A key command is provided to return to the original page containing the embedded object:
+++ Thao tác trên đối tượng nhúng ++
+Tài liệu có thể chứa các loại đối tượng như Adobe Flash và Sun Java, cũng như các cửa sổ hay ứng dụng khác.
+trong quá trình duyệt tài liệu, nếu gặp các đối tượng trên thì NVDA sẽ thông báo kiểu đối tượng cho bạn, ví dụ đối tượng nhúng, hộp thoại, v..v.
+Bạn có thể ấn phím enter để tương tác trực tiếp trên các đối tượng này.
+Nếu đối tượng đó có thể tương tác được thì bạn có thể dùng phím tab để chuyển qua lại giữa các thành phần con trong đối tượng này.
+Dưới đây là phím tắt để giúp bạn quay trở lại chế độ duyệt tài liệu:
 %kc:beginInclude
-|| Name | Key | Description |
-| Move to containing browse mode document | NVDA+control+space | Moves the focus out of the current embedded object and into the document that contains it |
+|| chức năng | Phím | Mô tả |
+| Quay về chế độ duyệt tài liệu | NVDA+control+space | Quay về chế độ duyệt tài liệu |
 %kc:endInclude
 
-+ Application Specific NVDA Commands +
-NVDA provides its own extra commands for some applications to make certain tasks easier or to provide access to functionality which is not otherwise accessible to screen reader users.
++ Phím tắt cho một số ứng dụng +
+NVDA cung cấp một số phím tắt mở rộng để hỗ trợ người dùng thao tác trên một số ứng dụng.
 
 ++ Microsoft Excel ++
 %kc:beginInclude
-|| Name | Key | Description |
-| Set column headers | NVDA+shift+c | Pressing this once tells NVDA this is the row that contains column headers, which should be automatically announced when moving between columns below this row. Pressing twice will clear the setting. | 
-| Set row headers | NVDA+shift+r | Pressing this once tells NVDA this is the column that contains row headers, which should be automatically announced when moving between rows after  this column. Pressing twice will clear the setting. | 
+|| Chức năng | Phím tắt | Mô tả |
+| Set tiêu đề cho cột | NVDA+shift+c | Ấn 1 lần để Set tiêu đề cho cột, ấn 2 lần để hủy bỏ tiêu đề | 
+| Set tiêu đề cho hàng | NVDA+shift+r | Ấn 1 lần để Set tiêu đề cho hàng, ấn 2 lần để hủy bỏ tiêu đề | 
 %kc:endInclude
 
 ++ Microsoft PowerPoint ++
 %kc:beginInclude
-|| Name | Key | Description |
-| Toggle speaker notes reading | control+shift+s | When in a running slide show, this command will toggle between the speaker notes for the slide and the content for the slide. This only affects what NVDA reads, not what is displayed on screen. | 
+|| Chức năng | Phím tắt | Mô tả |
+| bật tắt chế độ đọc chú thích của slide | control+shift+s | bật tắt chế độ đọc chú thích của slide, nó chỉ có tác dụng đọc chứ không hiển thị lên slide khi trình diễn | 
 %kc:endInclude
 
 ++ foobar2000 ++
 %kc:beginInclude
-|| Name | Key | Description |
-| Report remaining time | control+shift+r | Reports the remaining time of the currently playing track, if any. |
+|| Chức năng | Phím tắt | Mô tả |
+| Thông báo thời gian còn lại | control+shift+r | thông báo thời gian còn lại của bài hát hiện tại |
 %kc:endInclude
 
-Note: The report remaining time shortcut works only with the default formatting string for foobar's status line.
+Chú ý: Phím tắt trên chỉ hoạt động với định dạng mặc định cho dòng trạng thái của foobar
 
 ++ Miranda IM ++
 %kc:beginInclude
-|| Name | Key | Description |
-| Report recent message | NVDA+control+1-4 | Reports one of the recent messages, depending on the number pressed; e.g. NVDA+control+2 reads the second most recent message. |
+|| Chức năng | Phím tắt | Mô tả |
+| thông báo các tin nhắn gần đây | NVDA+control+1-4 | thông báo các tin nhắn gần đây, số tin nhắn chính là số bạn ấn |
 %kc:endInclude
 
 ++ Poedit ++
 %kc:beginInclude
-|| Name | Key | Description |
-| Report Comments Window | control+shift+c | Reports any comments in the comments window. |
-| Report notes for translators | control+shift+a | Reports any notes for translators. |
+|| Chức năng | Phím tắt | Mô tả |
+| Thông báo chú thích | control+shift+c | Thông báo chú thích |
+| Thông báo chú thích cho người dịch | control+shift+a | Thông báo chú thích cho người dịch |
 %kc:endInclude
 
-+ Configuring NVDA +
++ Cấu hình cho NVDA +
 
-++ Preferences ++
+++ thực đơn Tùy chọn ++
 %kc:settingsSection: || Name | Desktop key | Laptop key | Description |
-Most NVDA settings can be changed using dialog boxes accessed through the Preferences sub-menu of the NVDA menu.
-In all NVDA settings dialog boxes, press the OK button to accept any changes you have made.
-To cancel any changes, press the Cancel button or the escape key.
-Some settings can also be changed using shortcut keys, which are listed where relevant in the sections below.
+Phần lớn việc thay đổi cấu hình cho NVDA có thể được thực hiện trong thực đơn tùy chọn của NVDA.
+trong các cửa sổ cài đặt cấu hình cho NVDA, bạn chọn nút đồng ý để chấp nhận những thay đổi và chọn nút hủy bỏ (hoặc ấn phím ESc) nếu bạn bỏ qua các thay đổi đó.
+Một số cấu hình có thể được thay đổi thông qua phím tắt mà sẽ được giới thiệu chi tiết dưới đây.
 
-+++ General Settings (NVDA+control+g) +++
-The General settings dialog box is found in the Preferences menu.
-It contains the following options:
++++ Cài đặt chung (NVDA+control+g) +++
+Cửa sổ cài đặt chung có thể được mở từ thực đơn tùy chọn.
+Nó chứa các mục sau:
 
-==== Language ====
-A combo box which allows you to select the language that NVDA's user interface and messages should be shown in.
-There are many languages, however the default option is "User Default, Windows".
-This option tells NVDA to use the language that Windows is currently set to.
+==== ngôn ngữ ====
+Đó là một com bo box cho phép bạn chọn ngôn ngữ hiển thị cho giao diện, các thông báo hay tài liệu hướng dẫn.
+có nhiều ngôn ngữ, tuy nhiên giá trị mặc định là "User Default, Windows".
+Nó cho phép NVDA sử dụng ngôn ngữ mà hệ điều hành đang sử dụng.
 
-Please note that NVDA must be restarted when changing the language.
-NVDA will ask you if you wish to restart if you do change the selection.
-Press OK, and NVDA will restart.
+chú ý là NVDA cần được khởi động lại để có hiệu lực khi bạn thay đổi ngôn ngữ.
+NVDA sẽ thông báo khi bạn chấp nhận thay đổi ngôn ngữ mới.
+Ấn nút đồng ý là NVDA sẽ khởi động lại.
 
-==== Save Configuration on Exit ====
-This option is a checkbox that, when checked, tells NVDA to automatically save the current configuration when you exit NVDA.
+==== Lưu cấu hình khi thoát khỏi thực đơn ====
+Nếu được chọn, NVDA sẽ lưu các thay đổi của bạn ngay sau khi bạn thoát khỏi thực đơn.
 
-==== Warn before exiting NVDA ====
-This option is a checkbox that allows you to choose whether or not a dialog appears when you exit NVDA that asks whether or not you would like to exit.
-When checked, a dialog will appear when you attempt to exit NVDA asking whether or not you want to exit.
+==== Cảnh báo khi thoát NVDA NVDA ====
+tùy chọn này sẽ cho phép hiển thị một cửa sổ hỏi bạn có chắc chắn muốn thoát NVDA hay không
 
-==== Logging level ====
-This is a combo box that permits you to choose how much NVDA will log as it's running.
-Generally users should not need to touch this as not too much is logged.
-However if you are wanting to provide information in a bug report, then it may be a useful option.
+==== Mức độ log ====
+cho phép bạn chọn cấp độ log trong NVDA.
+thông thường bạn không cần cài đặt tùy chọn này.
+tuy nhiên trong trường hợp cần thông tin về lỗi thì nó rất hữu ích.
 
-==== Automatically start NVDA after I log on to Windows ====
-If this option is enabled, NVDA will start automatically as soon as you log on to Windows.
-This option is only available for installed copies of NVDA.
+==== Tự động khởi động NVDA khi khởi động Windows ====
+Nếu chọn mục này thì NVDA sẽ tự khởi động sau khi bạn đăng nhập vào Windows.
+tùy chọn này chỉ có trên bản cài đặt NVDA.
 
-==== Use NVDA on the windows Logon screen (requires administrative privileges) ====
-If you log on to Windows by providing a user name and password, then enabling this option will make NVDA start automatically at the logon screen when Windows starts.
-This option is only available for installed copies of NVDA.
+==== sử dụng NVDA trong màn hình đăng nhập của windows (yêu cầu quyền quản trị ====
+Nếu chọn tùy chọn này thì NVDA cũng sẽ được khởi động trong màn hình đăng nhập của windows, gíp bạn dễ thao tác hơn trên man fhình này
+Tùy chọn này chỉ có trong phiên bản cài đặt NVDA.
 
-==== Use currently saved settings on the logon and other secure screens ====
-Pressing this button copies your currently saved NVDA user configuration to NVDA's system configuration directory, so that NVDA will use it when running on the logon, User Account Control (UAC) and other secure Windows screens.
-To make sure that all your settings are transfered, make sure to firstly save your configuration with control+NVDA+c or save configuration in the NVDA menu.
-This option is only available for installed copies of NVDA.
+==== Sử dụng cấu hình NVDA cho màn hình đăng nhập NVDA và các man fhình bảo vệ khác ====
+Chọn nút này để copy cấu hình hiện tại tới thư mục cấu hình trong hệ thống của NVDA, khi đó NVDA sẽ sử dụng các cấu hình đó trong màn hình đăng nhập của windows, trong màn hình UAC hay các màn hình bảo vệ khác.Để chắc chắn các cấu hình dã được lưu trước khi copy, bạn nên ấn tổ hợp phím ctrl + NVDA + C để lưu lại các thay đổi cấu hình của NVDA đã.
+tùy chọn này chỉ có trong phiên bản cài đặt NVDA.
 
-==== Automatically check for updates to NVDA ====
-If this is enabled, NVDA will automatically check for updated versions of NVDA and inform you when an update is available.
-You can also manually check for updates by selecting Check for updates under Help in the NVDA menu.
+==== Tự động kiểm tra phiên bản NVDA mới ====
+Nếu được họn thì NVDA sẽ tự động kiểm tra phiên bản mới và thông báo lại cho bạn nếu có.
+bạn cũng có thể tự kiểm tra các phiên bản mới bằng cách chọn mục "Kiểm tra phiên bản mới" trong thực đơn Trợ giúp.
 
-+++ Synthesizer Selection (NVDA+control+s) +++
-The Synthesizer dialog, which is found under "Synthesizer..." in the Preferences menu, allows you to select which Synthesizer NVDA should use to speak with.
-Once you have selected your synthesizer of choice, you can press Ok and NVDA will load the selected Synthesizer.
-If there is an error loading the synthesizer, NVDA will notify you with a message, and continue using the previous synthesizer.
++++ Chọn bộ đọc (NVDA+control+s) +++
+Mở cửa sổ này từ thực đơn tùy chọn, nó sẽ có phép bạn chọn mọt bộ đọc mà mình mong muón.
+Sau khi chọn được bộ đọc cho mình, bạn chọn nút đồng ý và NVDA sẽ khởi động bộ đọc đó cho bạn.
+Nếu có lỗi thì NVDA sẽ thông báo lỗi cho bạn và tiếp tục sử dụng bộ đọc cũ.
 
-==== Synthesizer ====
-This option allows you to choose the synthesizer you wish NVDA to use for speech output.
+==== các bộ đọc ====
+Đây là danh sách các bọ đọc và bạn có thể chọn một trong số chúng.
 
-For a list of the Synthesizers that NVDA supports, please see the [Supported Speech Synthesizers #SupportedSpeechSynths] section.
+Để biết thêm thông tin về danh sách các bộ tổng hợp tiếng nói mà NVDA hỗ trợ, xin vui lòng xem phần [Hỗ trợ các bộ tổng hợp tiếng nói #SupportedSpeechSynths].
 
-One special item that will always appear in this list is "No speech", which allows you to use NVDA with no speech output what so ever.
-This may be useful for someone who wishes to only use NVDA with Braille, or perhaps to sighted developers who only wish to use the Speech Viewer.
+Trong danh sách các bộ đọc trên có một mục là "im lặng", nếu bạn chọn mục này thì NVDA vẫn hoạt động nhưng không nói gì cả.
+chức năng này khá hữu ích cho những người chỉ muón dùng NVDA với màn hình nổi hay các lập trình viên chỉ muốn xem các từ đã đọc.
 
-==== Output device ====
-This option allows you to choose the sound card that NVDA should instruct the selected synthesizer to speak through.
+==== Thiết bị đầu ra ====
+cho phép bạn chọn thiết bị đầu ra cho bộ đọc mà bạn đã chọn.
 
-+++ Voice Settings (NVDA+control+v) +++[VoiceSettings]
-The Voice Settings dialog, found in the Preferences menu, contains options that let you change the sound of the speech.
-For a quicker alternative way of controlling speech parameters from anywhere, please see the [Synth Settings Ring #SynthSettingsRing] section.
++++ cấu hình cho giọng đọc (NVDA+control+v) +++[VoiceSettings]
+cửa sổ này có thể được mở từ thực đơn tùy chọn, nó cho phép bạn thay đổi các tham số cho giọng đọc.
+Ngoài việc thay đổi trên cửa sổ này, bạn có thể thay đổi nhanh bằng các phím tắt. Xem chi tiết phần [thiết lập nhanh các tham số cho giọng đọc #SynthSettingsRing].
 
-The Voice Settings dialog box contains the following options:
+có các tùy chọn sau trong cửa sổ này:
 
-==== Voice ====
-The first option that you land on in this dialog is a combo box listing all the voices of the current synthesizer that you have installed.
-You can use the arrow keys to listen to all the various choices.
-Left and Up arrow take you up in the list, while right and down arrow move you down in the list.
+==== ngôn ngữ ====
+Đây là các ngôn ngữ mà bộ đọc hỗ trợ.
+Bạn có thể sử dụng các phím mũi tên để chọn ngôn ngữ.
 
-==== Variant ====
-If you are using the Espeak synthesizer that is packaged with NVDA, this is a combo box that lets you select the Variant the synthesizer should speak with.
-ESpeak's Variants are rather like voices, as they provide slightly different attributes to the eSpeak voice.
-Some variants will sound like a male, some like a female, and some even like a frog.
+==== tên giọng ====
+bạn có thể chọn một giọng mà phù hợp nhất với bạn.
 
-==== Rate ====
-This option allows you to change the rate of your voice.
-This is a slider that goes from 0 to 100, (0 being the slowest, 100 being the fastest).
+==== tốc độ đọc ====
+Cho phép bạn thay đổi tốc độ đọc.
+Đó là 1 thanh trượt có giá trị từ 0 đến 100 (o là chậm nhất, và 100 là nhanh nhất).
 
-==== Pitch ====
-This option allows you to change the pitch of the current voice.
-It is a slider which goes from 0 to 100, (0 being the lowest pitch and 100 being the highest).
+==== Độ cao ====
+cho phép bạn thay đổi độ cao của giọng hiện tại.
+Nó có giá trị từ 0 đến 100 (o là thấp nhất, 100 là cao nhất).
 
-==== Volume ====
-This option is a slider which goes from 0 to 100, (0 being the lowest volume and 100 being the highest).
+==== Âm lượng ====
+Nó có giá trị từ 0 đến 100 (o là bé nhất, 100 là to nhất).
 
-==== Inflection ====
-This option is a slider that lets you choose how much inflection (rise and fall in pitch) the synthesizer should use to speak with. (The only synthesizer that provides this option at the present time is eSpeak).
+==== Ngữ điệu ====
+Cho phép bạn chọn ngữ điệu cho giọng, tùy chọn này chỉ có tác dụng với các bộ đọc hỗ trợ tính năng này.
 
-==== Automatic Language switching ====
-This checkbox allows you to toggle whether or not NVDA should switch speech synthesizer languages on the fly, if language markup is available in the text being read.
-This option is enabled by default.
-Currently only the eSpeak synthesizer supports automatic language switching.
+==== Tự động chuyển ngôn ngữ ====
+Tùy chọn này cho phép bạn tự động chuyển ngôn ngữ nếu trong bộ đọc có thành phần đánh dấu ngôn ngữ trog văn bản được đọc.
+Nó được chọn mặc định.
+Hiện tại chỉ có bộ đọc eSpeak hỗ trợ chức năng tự động chuyển ngôn ngữ này.
 
-==== Automatic Dialect switching ====
-If automatic language switching is turned on, this checkbox allows you to toggle whether or not dialect changes should be made, rather than just actual language changes. E.g. If reading in an English U.S. voice but a document states some text is in English U.K. then if this feature is enabled the synthesizer will switch accents.
-This option is disabled by default.
+==== Tự động chuyển vùng ====
+Nếu chức năng tự động chuyển ngôn ngữ được bật thì tùy chnj này cho phép chuyển vùng trong một ngôn ngữ.Mặc định tùy chọn này không được chọn.
 
 %kc:setting
-==== Punctuation/Symbol Level ====
-Key: NVDA+p
+==== Đọc dấu và ký hiệu ====
+Phím tắt: NVDA+p
 
-This allows you to choose the amount of punctuation and other symbols that should be spoken as words.
-For example, when set to all, all symbols will be spoken as words.
-This option applies to all synthesizers, not just the currently active synthesizer.
+Cho phép bạn chọn chế độ đọc dấu câu và ký hiệu.
+Ví dụ, nếu bạn chọn tất cả thì tất cả các dấu và ký hiệu trong văn bản sẽ được đọc.
+Tùy chọn này áp dụng cho tất cả các bộ đọc chứ khong chỉ cho bộ đọc hiện tại.
 
-==== Capital pitch change percentage ====
-This edit field allows you to type the amount that the pitch of the voice will change when speaking a capital letter.
-This value is a percentage, where a negative value lowers the pitch and a positive value raises it.
-For no pitch change you would use 0.
+==== Phần trăm thay đổi độ cao cho chữ hoa ====
+Tùy chọn này cho phép bạn nhập phần trăm độ cao sẽ thay đổi khi đọc các chữ cái in hoa.
+Đây là giá trị phần trăm nên không nhận số âm và phải nằm trong vùng cho phép (từ 1 đến 100).
+Nếu không muốn có sự thay đổi về độ cao thì bạn có thể set giá trị o cho mục này.
 
-==== Say "cap" before capitals ====
-This setting is a checkbox that, when checked, tells NVDA to say the word "cap" before any capital letter when spoken as an individual character such as when spelling.
-Usually, NVDA raises the pitch slightly for any capital letter, but some synthesizers may not support this well, so perhaps this option may be of use.
+==== Thông báo chữ in hoa ====
+Chọn tùy chọn này sẽ cho phép NVDA đọc thông báo chữ in hoa khi đứng trước chữ in hoa hoặc khi đánh vần
+Thông thường NVDA sẽ thay đổi độ cao khi đọc các chữ cái in hoa nhưng có bộ đọc không hỗ trợ việc thay đổi độ cao nên chức năng này sẽ được sử dụng.
 
-==== Beep for capitals ====
-If this checkbox is checked, NVDA will make a small beep each time it encounters a capitalized character by itself.
-Like the "say cap for capitals" checkbox, this is useful for Synthesizers that can't change their pitch for capital letters.
+==== Bip cho chữ in hoa ====
+Nếu được chọn, NVDA sẽ báo tiếng bip khi đứng trước chữ in hoa.
+Nó cũng rất hữu ích khi bộ đọc không hỗ trợ thay đổi độ cao cho giọng đọc.
 
-==== Use spelling functionality if supported ====[VoiceSpellingFunctionality]
-Some words consist of only one character, but the pronunciation is different depending on whether the character is being spoken as an individual character (such as when spelling) or a word.
-For example, in English, "a" is both a letter and a word.
-This option allows the synthesizer to differentiate between these two cases if the synthesizer supports this.
-Most synthesizers do support it.
+==== Chức năng đánh vần ====[VoiceSpellingFunctionality]
+Một số từ chỉ có một ký tự nhưng việc phát âm ký tự đó thì còn tùy thuộc vào việc coi đó là 1 từ hay một ký tự.
+Ví dụ trong tiếng anh thì "a" vừa là 1 từ, và cũng là 1 ký tự.
+Tùy chọn này sẽ cho phép bộ đọc phân biệt được các trường hợp đó.
+Phần lớn các bộ đọc đều hỗ trợ chức năng này.
 
-This option should generally be enabled.
-However, some Microsoft Speech API synthesizers do not implement this correctly and behave strangely when it is enabled.
-If you are having problems with the pronunciation of individual characters, try disabling this option.
+Tùy chọn này nên được chọn.
+tuy nhiên một số bộ đọc SAPI5 không phát triển tính năng này nên hoạt động không chính xác.
+Nếu bạn có vấn đề khi bật chức năng này thì bạn nên tắt nó đi.
 
-+++ Synth settings ring +++[SynthSettingsRing]
-If you wish to quickly change speech settings without going to the Voice settings dialog, there are some NVDA key commands that allow you to move through the most common speech settings from anywhere while running NVDA:
++++ Thiết lập nhanh tham số cho giọng đọc +++[SynthSettingsRing]
+Ngoài việc thay đổi các tham số cho giọng đọc trong cửa sổ, bạn còn có thể thay đổi chúng bằng các phím tắt ở bất cứ nơ nào.Dưới đây là các phím tắt đó:
 %kc:beginInclude
-|| Name | Desktop key | Laptop key | Description |
-| Move to next synth setting | NVDA+control+rightArrow | NVDA+shift+control+rightArrow | Moves to the next available speech setting after the current, wrapping around to the first setting again after the last |
-| Move to previous synth setting | NVDA+control+leftArrow | NVDA+shift+control+leftArrow | Moves to the next available speech setting before the current, wrapping around to the last setting after the first |
-| Increment current synth setting | NVDA+control+upArrow | NVDA+shift+control+upArrow | increases the current speech setting you are on. E.g. increases the rate, chooses the next voice, increases the volume |
-| Decrement current synth setting | NVDA+control+downArrow | NVDA+shift+control+downArrow | decreases the current speech setting you are on. E.g. decreases the rate, chooses the previous voice, decreases the volume |
+|| Chức năng| Desktop key | Laptop key | Mô tả |
+| Chuyển tới tham số tiếp theo của giọng đọc | NVDA+control+rightArrow | NVDA+shift+control+rightArrow | Chuyển tới tham số tiếp theo của giọng đọc, nếu hết thì sẽ quay vòng |
+| Chuyển tới tham số trước đó của giọng đọc | NVDA+control+leftArrow | NVDA+shift+control+leftArrow | Chuyển tới tham số trước đó của giọng đọc, nếu hết thì sẽ quay vòng |
+| Tăng giá trị cho tham số hiện tại | NVDA+control+upArrow | NVDA+shift+control+upArrow | Tăng giá trị cho tham số hiện tại |
+| Giảm giá trị cho tham số hiện tại | NVDA+control+downArrow | NVDA+shift+control+downArrow | Giảm giá trị cho tham số hiện tại |
 %kc:endInclude
 
-+++ Braille Settings +++
-The braille settings dialog box can be invoked by going to the preferences menu and then to the braille settings option.
++++ Cấu hình cho màn hình nổi (Braille) +++
+Để biết thêm thông tin chi tiết về cấu hình cho màn hình nổi, xin vui lòng xem tài liệu hướng dẫn bản tiếng anh.
 
-==== Braille Display ====
-The first option you will come upon in the braille settings dialog is a combo box that says "braille display".
-You will be presented with several options depending on what braille display drivers are available on your system.
-Move between these options with the arrow keys.
++++ Cấu hình cho bàn phím (NVDA+control+k) +++
+bạn có thể mở cửa sổ này từ thực đơn tùy chọn của NVDA.
+Có các tùy chọn sau trong cửa sổ này:
 
-No braille means that you are not using braille.
+==== Kiểu bàn phím ====
+bạn có thể chọn kiểu bàn phím là desktop hoặc Laptop. ưu điểm của sử dụng kiểu bàn phím desktop là có thể sử dụng các phím số bên bàn phím số để duyệt text.
 
-Please see the [Supported Braille Displays #SupportedBrailleDisplays] section for more information about supported braille displays.
+==== Sử dụng phím caplock là phím định danh NVDA ====
+Nếu bạn chọn thì phím Caplock sẽ là một trong các phím định danh của NVDA.
 
-==== Port ====
-This option, if available, allows you to choose what port or type of connection will be used to communicate with the braille display you have selected.
-It is a combo box containing the possible choices for your braille display.
+==== Sử dụng phím Insert ====
+Nếu bạn chọn thì phím Insert (cạnh phím home và end) sẽ là phím định danh của NVDA.
 
-By default, NVDA employs automatic port detection, which means the connection with the braille device will be established automatically by scanning for available USB and bluetooth devices on your system.
-However, for some braille displays, you may be able to explicitly choose what port should be used.
-Common options are "Automatic" (which tells NVDA to employ the default automatic port selection procedure), "USB", "Bluetooth" and legacy serial communication ports if your braille display supports this type of communication.
+==== Sử dụng phím Insert bàn phím só là phím định danh NVDA ====
+Nếu bạn chọn thì phím Insert ở bên bàn phím số sẽ là phím định danh của NVDA.
 
-This option won't be available if your braille display only supports automatic port detection.
-
-You may consult the documentation for your braille display in the section [Supported Braille Displays #SupportedBrailleDisplays] to check for more details on the supported types of communication and available ports.
-
-==== Output Table ====
-The next option you will come to in this dialog is the braille output table combo box.
-In this combo box, you will find braille tables for different languages, braille standards and grades.
-The chosen table will be used to translate text into braille to be presented on your braille display.
-You can move from braille table to braille table in the list by using the arrow keys.
-
-==== Input Table ====
-Complementary to the previous option, the next setting you will find is the braille input table combo box.
-The chosen table will be used to translate braille entered on your braille display's Perkins-style keyboard into text.
-NVDA currently only supports computer braille input, so only 8 dot computer braille tables will be shown.
-You can move from braille table to braille table in the list by using the arrow keys.
-
-Note that this option is only useful if your braille display has a Perkins-style keyboard and this feature is supported by the braille display driver.
-If input is not supported on a display which does have a braille keyboard, this will be noted in the [Supported Braille Displays #SupportedBrailleDisplays] section.
-
-==== Expand to computer braille for the word at the cursor ====
-This option allows the word that is under the cursor to be displayed in non-contracted computer braille.
-
-==== Cursor Blink Rate ====
-This option is a numerical field that allows you to change the blink rate of the cursor in milliseconds.
-
-==== Message Timeout (sec) ====
-This option is a numerical field that controls how long NVDA messages are displayed on the braille display.
-Specifying 0 disables displaying of these messages completely.
+nếu bạn không chọn phím nào làm phím định danh thì NVDA không thể sử dụng được các phím tắt.
+trong trường hợp đó NVDA sẽ hiển thị thông báo lỗi.
+Và bạn phải chọn ít nhất 1 phím làm phím định danh.
 
 %kc:setting
-==== Braille Tethered to ====[BrailleTether]
-Key: NVDA+control+t
+==== Đọc ký tự ====
+Phím bật/tắt: NVDA+2
 
-This option allows you to choose whether the braille display will follow the system focus, or whether it follows the navigator object / review cursor.
-
-==== Read by Paragraph ====
-If enabled, braille will be displayed by paragraphs instead of lines.
-Also, the next and previous line commands will move by paragraph accordingly.
-This means that you do not have to scroll the display at the end of each line even where more text would fit on the display.
-This may allow for more fluent reading of large amounts of text.
-It is disabled by default.
-
-+++ Keyboard Settings (NVDA+control+k) +++
-This dialog box is found in the Preferences menu, under "Keyboard settings...".
-It contains the following options:
-
-==== Keyboard layout ====
-This combo box lets you choose what type of keyboard layout NVDA should use. Currently the two that come with NVDA are Desktop and Laptop.
-
-==== Use capslock as an NVDA modifier key ====
-If this checkbox is checked, capslock can be used as an NVDA modifier key.
-
-==== Use extended insert as an NVDA modifier key ====
-If this checkbox is checked, the extended insert key (usually found above the arrow keys, near home and end) can be used as an NVDA modifier key.
-
-==== Use numpad insert as an NVDA modifier key ====
-If this checkbox is checked, the insert key on the number pad can be used as an NVDA modifier key.
-
-If no key is chosen as the NVDA key it may be impossible to access certain NVDA commands.
-Therefore, The Keyboard Settings dialog will display an error message if all keys are unselected when pressing Ok.
-After dismissing the error message, you must select at least one before being able to press Ok to dismiss the dialog properly.
+Khi được chọn, NVDA sẽ đọc tất cả các ký tự mà bạn nhập vào từ bàn phím.
 
 %kc:setting
-==== Speak Typed Characters ====
-Key: NVDA+2
+==== Đọc từ ====
+Phím bật/tắt: NVDA+3
 
-When enabled, NVDA will announce all characters you type on the keyboard.
+Khi được chọn, NVDA sẽ đọc tất cả các từ sau khi bạn gõ xong.
 
-%kc:setting
-==== Speak Typed Words ====
-Key: NVDA+3
+==== Ngừng đọc khi gõ phím ====
+Nếu được chọn, việc đọc sẽ bị ngắt giữa chừng khi bạn gõ phím. Mặc định nó đã được chọn.
 
-When enabled, NVDA will announce all words you type on the keyboard.
+==== Ngừng đọc khi gõ phím Enter key ====
+Nếu được chọn, việc đọc sẽ bị ngắt giữa chừng khi bạn gõ phím enter. Mặc định nó đã được chọn.
 
-==== Speech interrupt for typed characters ====
-If on, this option will cause speech to be interrupted each time a character is typed. This is on by default.
-
-==== Speech interrupt for Enter key ====
-If on, this option will cause speech to be interrupted each time the Enter key is pressed. This is on by default.
-
-==== Allow skim reading in Say All ====
-If on, certain navigation commands (such as quick navigation in browse mode or moving by line or paragraph) do not stop Say All, rather Say All jumps to the new position and continues reading.
+==== Thay đổi vị trí khi đọc tất cả ====
+nếu được chọn thì việc duyệt qua các đối tượng bằng các phím tắt không dừng việc đọc.Hơn nữa việc đọc sẽ bắt đầu từ vị trí mới của con trỏ.
  
-==== Beep if Typing Lowercase Letters when Caps Lock is On ====
-When enabled, a warning beep will be heard if a letter is typed with the shift key while caps lock is on.
-Generally, typing shifted letters with caps lock is unintentional and is usually due to not realising that caps lock is enabled.
-Therefore, it can be quite helpful to be warned about this.
+==== Tiếng bip khi phím Caplock bật ====
+Nếu được chọn và khi phím Caplock bật thì sẽ có tiếng bip cảnh báo khi bạn gõ phím chữ kết hợp với phím shift.
+Đôi khi phím Caplock bật mà bạn không biết.
+Do vậy chức năng này khá hữu ích.
 
 %kc:setting
-==== Speak Command Keys ====
-Key: NVDA+4
+==== Đọc phím điều khiển ====
+Phím bật/tắt: NVDA+4
 
-When enabled, NVDA will announce all non-character keys you type on the keyboard. This includes key combinations such as control plus another letter.
+nếu được chọn thì NVDA sẽ thông báo tất cả các phím điều khiển (không phải phím chữ và phím số) như phím ctrl, alt, shift, v..v.
 
-+++ Mouse Settings (NVDA+control+m) +++[MouseSettings]
-The Mouse Settings dialog is found in the Preferences Menu, under "Mouse settings...".
-It contains the following options:
++++ Cài đặt cho chuột(NVDA+control+m) +++[MouseSettings]
+Bạn mở cửa sổ này từ thực đơn tùy chọn của NVDA.
+Nó chứa các mục sau:
 
-==== Report Mouse Shape Changes ====
-A checkbox, that when checked means that NVDA will announce the shape of the mouse pointer each time it changes.
-The mouse pointer in Windows changes shape to convey certain information such as when something is editable, or when something is loading etc.
-
-%kc:setting
-==== Enable mouse tracking ====
-Key: NVDA+m
-
-When enabled, NVDA will announce the text currently under the mouse pointer, as you move it around the screen. This allows you to find things on the screen, by physically moving the mouse, rather than trying to find them through object navigation.
-
-==== Text unit resolution ====
-If NVDA is set to announce the text under the mouse as you move it, this option allows you to choose exactly how much text will be spoken.
-The options are character, word, line and paragraph.
-
-==== Report role when mouse enters object ====
-If this checkbox is checked, NVDA will announce the role (type) of object as the mouse moves in side it.
-
-==== Play audio coordinates when mouse moves ====
-Checking this checkbox makes NVDA play beeps as the mouse moves, so that the user can work out where the mouse is in regards to the dimensions of the screen.
-
-==== Brightness controls audio coordinates volume ====
-If the "play audio coordinates when mouse moves" checkbox is checked, then checking this checkbox means that the volume of the audio coordinates beeps is controled by how bright the screen is under the mouse.
-This setting is unchecked by default.
-
-+++ Review Cursor Settings +++
-Found in the Preferences menu under "Review Cursor...".
-This dialog contains the following options:
+==== Thông báo khi hình dạng chuọt thay đổi ====
+Nếu chọn, NVDA sẽ thông báo khi hình dạng của chuột thay đổi (ví dụ khi tải trang web và phải chờ đợi thì chuột có hình vòng tròn quay, v..v).
+Thông thường hình dạng của chuột thay đổi khi chuyển qua đối tượng nhập liệu, hoặc thao tác phải chờ lâu.
 
 %kc:setting
-==== Follow System Focus ====
-Key: NVDA+7
+==== Theo dõi vị trí chuột ====
+Phím bật/tắt: NVDA+m
 
-When enabled, The review cursor will always be placed in the same object as the current system focus whenever the focus changes.
+Nếu được chọn và bạn di chuyển chuột trên màn hình thì NVDA sẽ thông báo text và các đối tượng dưới vị trí con trỏ chuột và nơi mà nó đi qua
+==== Đơn vị đọc text ====
+Tùy chọn này cho phép bạn chọn lượng text sẽ được đọc khi chuột đi qua đối tượng
+Các giá trị cho tùy chọn này là: ký tự, từ, dòng hay đoạn văn bản.
 
-%kc:setting
-==== Follow System Caret ====
-Key: NVDA+6
+==== Thông báo vai trò của đối tượng ====
+Nếu được chọn thì NVDA sẽ thông báo vai trò của đối tượng (kiểu) khi chuột đi qua nó.
 
-When enabled, the review cursor will automatically be moved to the position of the System caret each time it moves.
+==== Phát tiếng bip theo tọa độ cchuột ====
+Tùy chọn này sẽ phát ra âm thanh theo tọa độ của chuột, ví dụ chuột ở vị trí cao thì độ cao của tiếng bip cũng cao hơn.
 
-==== Follow mouse ====
-When enabled, the review cursor will follow the mouse as it moves.
+==== Thay đổi âm lượng tiếng bip theo tọa độ chuột ====
+nếu chức năng phát ra tiếng bip được chọn và cả chức năng này thì âm lượng của tiếng bip ở 2 loa sẽ thay đổi theo vị trí theo chiều ngang của chuột. Ví dụ chuột ở bên trái thì tiếng bip ở loa bên trái sẽ to hơn và ngược lại.
+Mặc định chức năng này không được chọn.
 
-==== Simple Review mode ====
-When enabled, NVDA will filter the hierarchy of objects that can be navigated to exclude objects that aren't of interest to the user; e.g. invisible objects and objects used only for layout purposes.
-
-+++ Object Presentation Settings (NVDA+control+o) +++
-Found in the Preferences menu under "Object Presentation...".
-This dialog box contains the following options:
-
-==== Report Tool Tips ====
-A checkbox that when checked tells NVDA to report tool tips as they appear.
-Many Windows and controls show a small message (or tool tip) when you move the mouse pointer over them, or sometimes when you move the focus to them.
-
-==== Report Help Balloons ====
-This checkbox when checked tells NVDA to report help balloons as they appear.
-Help Balloons are like tool tips, but are usually larger in size, and are associated with system events such as a network cable being unplugged, or perhaps to alert you about Windows security issues.
-
-==== Report Object Shortcut Keys ====
-When this checkbox is checked, NVDA will include the shortcut key that is associated with a certain object or control when it is reported.
-For example the File menu on a menu bar may have a shortcut key of alt+f.
-
-==== Report object position information ====
-This option lets you choose whether you wish to have an object's position (e.g. 1 of 4) reported when moving to the object with the focus or object navigation.
-
-==== Guess Object Position Information when unavailable ====
-If reporting of object position information is turned on, this option allows NVDA to guess object position information when it is otherwise unavailable for a particular control.
-
-When on, NVDA will report position information for more controls such as menus and toolbars, however this information may be slightly inaccurate.
-
-==== Report Object descriptions ====
-Uncheck this checkbox if you don't wish to have the description reported along with objects.
++++ Con trỏ duyệt text Settings +++
+Mở cửa sổ này từ thực đơn tùy chọn của NVDA.
+Có các mục sau trong cửa sổ này:
 
 %kc:setting
-==== Progress bar output ====
-Key: NVDA+u
+==== Cập nhật theo con trỏ hệ thống ====
+Phím bật/tắt: NVDA+7
 
-This option controls how NVDA reports progress bar updates to you.
+Nếu được bật thì con trỏ duyệt text trên đối tượng sẽ thay đổi theo con trỏ hệ thống (khi thay đổi focus).
 
-It has the following options:
-- Off: Progress bars will not be reported as they change.
-- Speak: This option tells NVDA to speak the progress bar in percentages. Each time the progress bar changes, NVDA will speak the new value.
-- Beep: This tells NVDA to beep each time the progress bar changes. The higher the beep, the closer the progress bar is to completion.
-- Beep and speak: This option tells NVDA to both beep and speak when a progress bar updates.
+%kc:setting
+==== Cập nhật theo con trỏ nháy ====
+Phím bật/tắt: NVDA+6
+
+Nếu được chọn thì vị trí con trỏ duyệt text sẽ thay đổi theo vị trí con trỏ nháy.
+
+==== cập nhật theo chuột ====
+Khi được chọn thì vị trí con trỏ duyệt text sẽ thay đổi theo vị trí chuột.
+
+==== Chế độ duyệt đơn giản ====
+nếu được chọn thì NVDA sẽ lọc bỏ bớt một số đối tượng như các đối tượng bị ẩn, các đối tượng chỉ có mục đích trang trí.
+
++++ Cấu hình thông tin cho đối tượng Settings (NVDA+control+o) +++
+Mở cửa sổ này từ thực đơn tùy chọn của NVDA.
+Có các mục sau trong cửa sổ này:
+
+==== Đọc các thông báo của đối tượng ====
+Tùy chọn này cho phép NVDA đọc thông báo của đối tượng khi nó xuất hiện.
+Rất nhiều đối tượng trên các cửa sổ và trong Windows hiển thị một thông báo nhỏ (tool tip) khi bạn di chuột qua hoặc focus nó.
+
+==== Đọc thông báo trợ giúp ====
+Cho phép NVDA đọc thông báo trợ giúp nếu chúng xuất hiện.
+Thông báo trợ giúp (help bloon) thường là các thông báo xuất hiện trên các biểu tượng dưới khay hệ thống như tình trạng kết nối mạng, nhận biết thiết bị mới cắm vào, v..v
+
+==== Thông báo phím tắt của đối tượng ====
+Nếu được chọn thì NVDA sẽ thông báo phím tắt của đối tượng (nếu có).
+Ví dụ thực đơn File có phím tắt là Alt + F.
+
+==== Thông báo thông tin vị trí đối tượng ====
+Tùy chọn này cho phép NVDA sẽ thông báo thông tin vị trí của đối tượng.
+
+==== Lấy thông tin cho cả đối tượng ẩn ====
+Tùy chọn này cho phép NVDA lấy thông tin vị trí cho cả các đối tượng ẩn ngay cả với các mục trong thực đơn.
+Sử dụng chức năng này khi chức năng lấy thông tin vị trí đối tượng được bật
+
+==== Thông báo mô tả của đối tượng ====
+Tùy chọn này sẽ thông báo mô tả của đối tượng (nếu có).
+
+%kc:setting
+==== Thông báo trạng thái thanh tiến trình ====
+Phím chuyển qua lại giữa các lựa chọn: NVDA+u
+
+Cho phép bạn chọn cách thông báo trạng thái của thanh tiến trình.
+
+Có các lựa chọn như:
+- Im lặng: Không thông báo gì cả.
+- Đọc: đọc giá trị phần trăm của thanh tiến trình.
+- Bipp: Thông báo trạng thái của thanh tiến trình qua tiếng bip.
+- bip và đọc:Cả đọc và có tiếng bíp
 -
 
-==== Report background progress bars ====
-This is an option that, when checked, tells NVDA to keep reporting a progress bar, even if it is not physically in the foreground.
-If you minimize or switch away from a window that contains a progress bar, NVDA will keep track of it, allowing you to do other things while NVDA tracks the progress bar.
+==== Thông báo thanh tiến trình ngầm ====
+chọn tùy chọn này cho phép NVDA vẫn thông báo trạng thái của thanh tiến trình ngay cả khi nó đang chạy ngầm.
 
 %kc:setting
-==== Report dynamic content changes ====
-Key: NVDA+5
+==== Thông báo khi có sự thay đổi text động ====
+Phím bật/tắt: NVDA+5
 
-Toggles the announcement of new content in particular objects such as terminals and the history control in chat programs.
+Bật tắt chế độ thông báo màn hình khi nội dung thay đổi động như các màn hình chat hay màn hình console (windows command line).
 
-+++ Input Composition Settings +++
-The Input Composition Settings dialog can be found under the Preferences menu.
-This dialog allows you to control how NVDA reports the input of Asian characters, such as with IME or Text Service input methods.
-Note that due to the fact that input methods vary greatly by available features and by how they convey information, it will most likely be necessary to configure these options differently for each input method to get the most efficient typing experience.
++++ Cài đặt chế độ nhập +++
+Vì không có bàn phím tiếng việt nên bạn không cần xem phần này.
  
-==== Automatically report all available candidates ====
-This option, which is on by default,  allows you to choose whether or not all visible candidates should be reported automatically when a candidate list appears or its page is changed.
-Having this option on for pictographic input methods such as chinese New ChangJie or Boshiami is useful, as you can automatically hear all symbols and their numbers and you can choose one right away.
-However, for phonetic input methods such as chinese New Phonetic, it may be more useful to turn this option off, as all the symbols will sound the same and you will have to use the arrow keys to navigate the list items individually to gain more information  from the character descriptions for each candidate.
++++ Càu đặt cho chế độ duyệt tài liệu (NVDA+control+b) +++
+Có thể mở cửa sổ này từ thực đơn tùy chọn của NVDA.
 
-==== Announce Selected Candidate ====
-This option, which is on by default, allows you to choose whether NVDA should announce the selected candidate when a candidate list appears or when the selection is changed.
-For input methods where the selection can be changed with the arrow keys  (such as Chinese New Phonetic) this is necessary, but for some input methods it may be more efficient typing with this option turned off.
-Note that even with this option off, the review cursor will still be placed on the selected candidate allowing you to use object navigation / review to manually read this or other candidates.
+có các mục sau trong cửa sổ này:
 
-==== Always include short character descriptions for candidates ====
-This option, which is on by default, allows you to choose whether or not NVDA should provide a short description for each character in a candidate, either when its selected or when its automatically read when the candidate list appears.
-Note that for locales such as Chinese, the announcement of extra character descriptions for the selected candidate is not affected by this option.
-This option may be useful for Korean and japanese input methods.
- 
-==== Report changes to the reading string ====
-Some input methods such as Chinese New Phonetic and New ChangJie have a reading string (sometimes known as a precomposition string).
-You can choose whether or not NVDA should announce new characters being typed into this reading string with this option.
-This option is on by default.
-Note some older input methods such as Chinese ChangJie may not use the reading string to hold precomposition characters, but instead use the composition string directly. Please see the next option for configuring reporting of the composition string.
+==== Set số ký tự tối đa cho một dòng ====
+Set số ký tự tối đa cho một dòng.
 
-==== Report changes to the composition string ====
-After reading or precomposition data has been combined into a valid pictographic symbol, most input methods place this symbol into a composition string for temporary storage along with other combined symbols before they are finally inserted into the document.
-This option allows you to choose whether or not NVDA should report new symbols as they appear  in the composition string.
-This option is on by default.
-
-+++ Browse Mode Settings (NVDA+control+b) +++
-The Browse Mode settings dialog can be found in the Preferences menu, under "Browse mode...".
-
-The dialog contains the following options:
-
-==== Maximum Number of Characters on One Line ====
-This field sets the maximum length of a line in browse mode (in characters).
-
-==== Maximum Lines Per Page ====
-This field sets the amount of lines you will move by when pressing page up or page down while in browse mode.
+==== Set số dòng tối đa cho một trang ====
+Set số dòng tối đa cho một trang.
 
 %kc:setting
-==== Use screen layout ====
-Key: NVDA+v
+==== Đọc theo sự trình bày ====
+Phím bật/tắt: NVDA+v
 
-This option allows you to specify whether content in browse mode should place content such as links and other fields on their own line, or if it should keep them in the flow of text as it is visually shown. If the option is enabled then things will stay as they are visually shown, but if it is disabled then fields will be placed on their own line.
+Nếu chọn mục này thì các đối tượng được bố trí trên một dòng (các liên kết) sẽ được đọc cùng một lúc khi bạn di chuyển đến dòng đó. 
+Ngược lại nếu không chọn thì NVDA sẽ đọc theo từng đối tượng.
 
-==== Automatic Say All on page load ====
-This checkbox toggles the automatic reading of a page after it loads in browse mode.
-This option is enabled by default.
+==== Tự động đọc cả tài liệu khi mở ====
+Với tùy chọn này, NVDa sẽ tự động đọc cả tài liệu khi nó được mở (hoặc khi trang web được tải)
+Mặc định nó đã được chọn.
 
-==== Include layout tables ====
-This option affects how NVDA handles tables used purely for layout purposes.
-When on, NVDA will treat these as normal tables, reporting them based on [Document Formatting Settings #DocumentFormattingSettings] and locating them with quick navigation commands.
-When off, they will not be reported nor found with quick navigation.
-However, the content of the tables will still be included as normal text.
-This option is turned off by default.
+==== Hỗ trợ các bảng khác nhau ====
+Với tùy chọn này cho phép NVDA tiếp cận được với các kiểu bảng khác nhau.
+Khi được bật và gặp các bảng có kiểu trình bày khác nhau nhưng NVDA vẫn hỗ trợ thao tác trên bảng như các bảng thông thường khác.Nếu không chọn, thì NVDA sẽ chỉ thông báo được text mà không hỗ trợ tao tác trong bảng.
+Mặc định nó không được chọn.
 
-==== Configuring reporting of fields such as links and headings ====
-Please see the options in the [Document Formatting Settings dialog #DocumentFormattingSettings] to configure the fields that are reported when navigating, such as links, headings and tables.
+==== Cấu hình thông báo các đối tượng như links and headings ====
+Xem các tùy chọn trong cửa sổ  [Cấu hình thông tin cho tài liệu #DocumentFormattingSettings] để cấu hình các đối tượng sẽ được thông báo như link, headings and tables.
 
-==== Automatic focus mode for focus changes ====
-This option allows focus mode to be invoked if focus changes.
-For example, when on a web page, if you press tab and you land on a form, if this option is checked, focus mode will automatically be invoked.
+==== Tự động chuyển sang chế độ nhập khi thay đổi focus ====
+Tùy chọn này cho phép tự động chuyển sang chế độ nhập khi thay đổi focus trong tài liệu.
+Ví dụ trong trang web, nếu bạn ấn phím tab, thao tác trên ô nhập liệu, v..v thì chế độ nhập sẽ được tự động chuyển.
 
-==== Automatic focus mode for caret movement ====
-This option, when checked, allows NVDA to enter and leave focus mode when using arrow keys.
-For example, if arrowing down a webpage and you land on an edit box, NVDA will automatically bring you into focus mode. If you arrow out of the edit box, NVDA will put you back in browse mode.
+==== Tự động chuyển sang chế độ nhập khi di chuyển con trỏ nháy ====
+khi được chọn, chế độ nhập cho một đối tượng (nếu yêu cầu) sẽ được tự động chuyển sang khi bạn di chuyển con trỏ nháy bằng các phím mũi tên.
+Ví dụ nếu bạn di chuyển con trỏ nháy bằng các phím mũi tên, khi đến ô nhập liệu thì nó tự động chuyển sang chế độ nhập, khi ra khỏi ô đó thì nó lại quay về chế độ duyệt tài liệu.
 
-==== Audio indication of Focus and Browse modes ====
-If this option is enabled, NVDA will play special sounds when it switches between browse mode and focus mode, rather than speaking the change.
+==== âm thanh báo khi chuyển giữa chế độ nhập và chế độ duyệt ====
+Nếu được chọn thì NVDA sẽ phát ra âm thanh báo hiệu khi chuyển qua lại giữa chế độ nhập và chế dộ duyệt.
 
-+++ Document Formatting Settings (NVDA+control+d) +++[DocumentFormattingSettings]
-This dialog box is found in the Preferences menu, under "Document Formatting...".
++++ Cấu hình thông tin cho tài liệu (NVDA+control+d) +++[DocumentFormattingSettings]
+Mở cửa sổ này từ thực đơn tùy chọn của NVDA.
 
-Most of the checkboxes in this dialog are for configuring what type of formatting you wish to have reported as you move the cursor around documents.
-For example, if you check the report font name checkbox, each time you arrow onto text with a different font, the name of the font will be announced.
+các mục trong cửa sổ này là các thành phần thông tin sẽ được thông báo khi bạn duyệt tài liệu.
+Ví dụ nếu bạn chọn mục thông báo tên phông chữ thì khi bạn duyệt tài liệu, nếu đến vùng text mà có phông chữ khác nhau thì nó sẽ tự động thông báo tên phông chữ đó cho bạn.
 
-You can configure reporting of:
-- Font name
-- Font size
-- Font attributes
-- Text alignment
-- Colors
-- editor revisions
-- Text style
-- Spelling errors
-- Page numbers
-- Line numbers
-- Line indentation
-- Tables
-- Table row/column headers
-- Table cell coordinates
-- Links
-- Headings
-- Lists
-- Block quotes
-- Landmarks
-- Frames
+Bạn có thể chọn các mục sau:
+- tên phông chữ
+- kích cỡ phông chữ
+- Thuộc tính phông chữ
+- Canh lề
+- Mầu chữ
+- các thay đổi
+- kiểu chữ
+- Lỗi chính tả
+- số trang
+- số dòng
+- Canh lề
+- Bảng
+- tiêu đề cho hàng và cột trong bảng
+- Vị trí của ô trong bảng
+- Liên kết
+- tiêu đề
+- Danh sách
+- đoạn trích dẫn
+- Land mark
+- Khung
 -
 
-==== Announce formatting changes after the cursor ====
-If enabled, this setting tells NVDA to try and detect all the formatting changes on a line as it speaks it, even if doing this may slow down NVDA's performance.
+==== Thông báo thông tin định dạng tại vị trí con trỏ ====
+Nếu được chọn thì NVDA sẽ tìm và phân tích các thông tin về text khác nhau và thông báo cho người dùng mặc dù điều này có thể khiến NVDA chạy chậm hơn.
 
-By default, NVDA will detect the formatting at the position of the System caret / Review Cursor, and in some instances may detect formatting on the rest of the line, only if it is not going to cause a performance decrease.
+Mặc định thì NVDA sẽ dò tìm thông tin định dạng của text tại vị trí con trỏ nháy hay con trỏ duyệt text và trong một vài trường hợp thì nó cũng sẽ dò tìm thông tin cho phần còn lại của dòng văn bản nhưng chỉ khi điều đó không làm chậm NVDA.
 
-Enable this option while proof reading documents in applications such as Microsoft Word, where formatting is important.
+bật chức năng này sẽ hỗ trợ trong việc đọc một số tài liệu như Microsoft Word.
 
-+++ Speech dictionaries +++
-The speech dictionaries menu (found in the Preferences menu) contains dialogs that allow you to manage the way NVDA pronounces particular words or phrases.
-There are currently three different types of speech dictionaries.
-They are:
-- Default: rules in this dictionary affect all speech in NVDA.
-- Voice: rules in this dictionary affect speech for the synthesizer voice currently being used.
-- Temporary: rules in this dictionary affect all speech in NVDA, but only for the current session. These rules are temporary and will be lost if NVDA is restarted.
++++ Từ điển giọng nói +++
+Bạn có thể mở cửa sổ này từ thực đơn tùy chọn của NVDA, trong cửa sổ này sẽ cho phép bạn định nghĩa cách phát âm cho các từ hoặc cụm từ.
+có 3 loại từ điển, bao gồm.
+- mặc định: Từ điển sẽ được sử dụng bởi tất cả các bộ đọc.
+- giọng đọc: từ điển chỉ dùng cho một giọng đọc hiện tại.
+- Tạm thời: Từ điển cho tất cả các bộ đọc nhưng chỉ có tác dụng trong lần dùng hiện tại, nó sẽ bị mất khi khởi động lại NVDA.
 -
 
-All dictionary dialogs contain a list of rules which will be used for processing the speech.
-The dialog also contains Add, Edit and remove buttons.
+các cửa sổ định nghĩa từ điển đều chứa các nguyên tắc cho việc định nghĩa các phát âm cho từ hoặc cụm từ
+ngoài ra còn có các nút thêm, sửa và xóa từ trong từ điển.
 
-To add a new rule to the dictionary, press the Add button, and fill in the fields in the dialog box that appears and then press Ok.
-You will then see your new rule in the list of rules.
-However to make sure your rule is actually saved, make sure to press Ok to exit the dictionary dialog all together once you have finished adding/editing rules.
+Để thêm từ vào trong từ điển, chọn nút thêm từ và định nghĩa cách phát âm cho từ đó.
+Sau đó bạn có thể xem từ mới thêm vào có trong danh sách.
+Nhưng để chắc chắn có hiệu lực thì bạn cần chọn nút Đóng để đóng cửa sổ lại.
 
-The rules for NVDA's speech dictionaries allow you to change one string of characters into another.
-A simple example would be that you want to have NVDA say the word frog each time it is supposed to say the word bird.
-In the Add rule dialog, the easiest way to do this is to type the word bird in the Pattern field, and the word frog in the Replacement field.
-You may also want to type a description of the rule in the Comment field (something like: changes bird to frog).
+Nguyên tắc định nghĩa từ mới trong từ điển sẽ cho phép bạn định nghĩa cách phát âm cho một chuỗi ký tự.
+Ví dụ như bạn có thể đọc từ VN thành "Việt Nam".
+Để làm được điều này thì trong cửa sổ tạo từ, bạn chỉ cần đánh từ VN vào ô mẫu và đánh "Việt Nam" vào ô thay thế.
+bạn cũng có thể thêm chú thích cho các từ.
 
-NVDA's speech dictionaries however are much more powerful than simple word replacement.
-The Add rule dialog also contains a checkbox to say whether or not you want the rule to be case sensitive (meaning that NVDA should care whether the characters are uppercase or lowercase.
-NVDA ignores case by default).
-Another checkbox allows you to state whether your pattern is a "Regular expression".
-A regular expression is a pattern containing special symbols that allow you to match on more than one character at a time, or match on just numbers, or just letters, as a few examples.
-Regular expressions are not covered in this user guide, but there are many tutorials on the web which can provide you with more information.
+việc định nghĩa từ điển trong NVDA không đơn giản là thay thế các ký tự.
+mà trong cửa sổ định nghĩa từ thì bạn có thể lựa chọn chức năng phân biệt chữ hoa và chữ thường, theo đó NVDA sẽ kiểm tra các ký tự xem là chữ hoa hay chữ thường.
+mặc định thì NVDA không phân biệt chữ hoa và chữ thường.
+ngoài ra bạn cũng có thể kiểm tra xem từ khóa của bạn có phải là một biểu thức hay không.
 
-+++ Punctuation/symbol pronunciation +++[SymbolPronunciation]
-This dialog allows you to change the way punctuation and other symbols are pronounced, as well as the symbol level at which they are spoken.
++++ Từ điển cho dấu và ký hiệu +++[SymbolPronunciation]
+Trong cửa sổ này sẽ cho phép bạn thay đổi cách phát âm cho các dấu câu và các ký hiệu, đồng thời quyết định khi nào thì đọc chúng.
 
-To change a symbol, first select it in the Symbols list.
-The Replacement field allows you to change the text that should be spoken in place of this symbol.
-Using the Level field, you can adjust the lowest symbol level at which this symbol should be spoken.
+Để thay đổi một ký hiệu, trước tiên hãy chọn một ký hiệu trong danh sách.
+Trong ô thay thế bạn có thể nhập cách phát âm mới cho ký hiệu đó.
+bạn cũng có thể chọn chế độ đọc cho từng ký hiệu.
 
-When you are finished, press the OK button to save your changes or the Cancel button to discard them.
+Khi bạn xong, chọn nút Đồng ý để lưu lại những thay đổi hoặc chọn nút hủy bỏ để bỏ qua chúng.
 
 +++ Input Gestures +++
 In this dialog, you can customize the input gestures (keys on the keyboard, buttons on a braille display, etc.) for NVDA commands.
