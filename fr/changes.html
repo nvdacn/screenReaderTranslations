@@ -1007,33 +1007,33 @@ Précédemment, elles étaient toutes annoncées comme ereurs grammaticales. (<A
 <H3>Changements pour les Dévelopeurs</H3>
 
 <UL>
-<LI>SCons is now used to prepare the source tree and create binary builds, portable archives, installers, etc. See readme.txt at the root of the source distribution for details.
-<LI>The key names used by NVDA (including key maps) have been made more friendly/logical; e.g. upArrow instead of extendedUp and numpadPageUp instead of prior. See the vkCodes module for a list.
-<LI>All input from the user is now represented by an inputCore.InputGesture instance. (<A HREF="http://community.nvda-project.org/ticket/601">#601</A>)
+<LI>SCons est maintenant utilisé pour préparer l'arborescence de la source et pour créer les versions binaires, archives portables, installateurs, etc. Voir Readme.txt à la racine de la distribution source pour plus de détails.
+<LI>Les noms des touches utilisés par NVDA (y compris les maps des touches) ont été rendues plus facile/logiques ; p. ex. UpArrow au lieu d'extendedUp et numpadPageUp au lieu de prior. Voir le module vkCodes pour en obtenir la liste.
+<LI>Toute la frappe venant de l'utilisateur est maintenant représentée par une instance de inputCore.InputGesture. (<A HREF="http://community.nvda-project.org/ticket/601">#601</A>)
  <UL>
- <LI>Each source of input subclasses the base InputGesture class.
- <LI>Key presses on the system keyboard are encompassed by the keyboardHandler.KeyboardInputGesture class.
- <LI>Presses of buttons, wheels and other controls on a braille display are encompassed by subclasses of the braille.BrailleDisplayGesture class. These subclasses are provided by each braille display driver.
+ <LI>Chaque source d'entrée sous-classe la classe de base de InputGesture.
+ <LI>Les appuis sur les touches du clavier système sont englobés par la classe keyboardHandler.KeyboardInputGesture.
+ <LI>Les appuis sur les boutons, ceux sur les roulettes et d'autres contrôles sur un afficheur braille sont englobés par les sous-classes de la classe braille.BrailleDisplayGesture. Ces sous-classes sont fournis par chaque pilote d'afficheur braille.
  </UL>
-<LI>Input gestures are bound to ScriptableObjects using the ScriptableObject.bindGesture() method on an instance or an __gestures dict on the class which maps gesture identifiers to script names. See baseObject.ScriptableObject for details.
-<LI>App modules no longer have key map files. All input gesture bindings must be done in the app module itself.
-<LI>All scripts now take an InputGesture instance instead of a key press.
+<LI>Les gestes d'entrée sont affectés à ScriptableObjects à l'aide de la méthode ScriptableObject.bindGesture() sur une instance ou une dict __gestures sur la classe qui mappe des identificateurs de gestes aux noms des scripts. Voir baseObject.ScriptableObject pour plus de détails.
+<LI>Les modules d'applications ne possèdent plus de fichiers de mappage de touches. Toutes les assignations d'entrée doivent être faits dans le module de l'application lui-même.
+<LI>Tous les scripts prennent maintenant une instance de InputGesture au lieu d'une pression de touche.
  <UL>
- <LI>KeyboardInputGestures can be sent on to the OS using the send() method of the gesture.
+ <LI>Les gestes d'entrées au clavier (KeyboardInputGestures) peuvent être envoyés à l'OS par le moyen de la méthode de gestes send().
  </UL>
-<LI>To send an arbitrary key press, you must now create a KeyboardInputGesture using KeyboardInputGesture.fromName() and then use its send() method.
-<LI>Locales may now provide an input gesture map file to add new bindings or override existing bindings for scripts anywhere in NVDA. (<A HREF="http://community.nvda-project.org/ticket/810">#810</A>)
+<LI>Pour envoyer un appui de touche arbitraire, vous devez, désormais, créer un geste d'entrée clavier (KeyboardInputGesture) en utilisant KeyboardInputGesture.fromName(), puis utilisez sa méthode send().
+<LI>Les locales peuvent maintenant fournir un fichier de mappage de gestes d'entrée pour que l'on puisse ajouter de nouvelles affectations ou remplacer des affectations existantes pour les scripts n'importe où dans NVDA. (<A HREF="http://community.nvda-project.org/ticket/810">#810</A>)
  <UL>
- <LI>Locale gesture maps should be placed in locale\LANG\gestures.ini, where LANG is the language code.
- <LI>See inputCore.GlobalGestureMap for details of the file format.
+ <LI>Les mappages des gestes d'entrée pour les locales doivent être placés dans locale\LANG\gestures.ini, où LANG est le code de langue.
+ <LI>Voir inputCore.GlobalGestureMap pour plus de détails sur le format de fichier.
  </UL>
-<LI>The new LiveText and Terminal NVDAObject behaviors facilitate automatic reporting of new text. See those classes in NVDAObjects.behaviors for details. (<A HREF="http://community.nvda-project.org/ticket/936">#936</A>)
+<LI>Les nouveaux comportements LiveText et Terminal NVDAObject facilitent l'annonce automatique du nouveau texte. Voir ces classes dans NVDAObjects.behaviors pour plus de détails. (<A HREF="http://community.nvda-project.org/ticket/936">#936</A>)
  <UL>
- <LI>The NVDAObjects.window.DisplayModelLiveText overlay class can be used for objects which must retrieve text written to the display.
- <LI>See the mirc and putty app modules for usage examples.
+ <LI>La classe de superposition de NVDAObjects.window.DisplayModelLiveText peut être utilisée pour les objets qui doivent récupérer le texte écrit à l'écran.
+ <LI>Voir les modules d'application pour Mirc et Putty pour des exemples d'utilisation.
  </UL>
-<LI>There is no longer an _default app module. App modules should instead subclass appModuleHandler.AppModule (the base AppModule class).
-<LI>Support for global plugins which can globally bind scripts, handle NVDAObject events and choose NVDAObject overlay classes. (<A HREF="http://community.nvda-project.org/ticket/281">#281</A>) See globalPluginHandler.GlobalPlugin for details.
+<LI>Le module d'application _default n'existe plus. Les modules d'application doivent à présent sous-classer appModuleHandler.AppModule (la classe de base AppModule).
+<LI>Le support des plugins globaux qui peuvent globalement assigner des scripts, manipulent les évènements de NVDAObject et choisissent les classes de superposition de NVDAObject. (<A HREF="http://community.nvda-project.org/ticket/281">#281</A>) Voir globalPluginHandler.GlobalPlugin pour plus de détails.
 <LI>On SynthDriver objects, the available* attributes for string settings (e.g. availableVoices and availableVariants)  are now OrderedDicts keyed by ID instead of lists.
 <LI>synthDriverHandler.VoiceInfo now takes an optional language argument which specifies the language of the voice.
 <LI>SynthDriver objects now provide a language attribute which specifies the language of the current voice.
@@ -1433,7 +1433,7 @@ Les points forts principaux de cette version comprennent le support des édition
 <LI>Add the ability to view the current log file for NVDA. it can be found in the NVDA menu -&gt; Tools
 <LI>Scripts such as say time and date now take the current language in to account; punctuation and ordering of words now reflects the language
 <LI>The language combo box in NVDA's General settings dialog now shows full language names for ease of use
-<LI>When reviewing text in the current navigator object, the text is always up to date if it changes dynamically. E.g. reviewing the text of a list item in Task Manager. (<A HREF="http://community.nvda-project.org/ticket/15">[[#15</A>]])
+<LI>When reviewing text in the current navigator object, the text is always up to date if it changes dynamically. E.g. reviewing the text of a list item in Task Manager. (<A HREF="http://community.nvda-project.org/ticket/15">#15</A>)
 <LI>When moving with the mouse, the current paragraph of text under the mouse is now announced, rather than either all the text in that particular object or just the current word. Also audio coordinates, and announcement of object roles is optional, they are turned off by default
 <LI>Support for reading text with the mouse in Microsoft Word
 <LI>Fixed bug where leaving the menu bar in applications such as Wordpad would cause text selection to not be announced anymore
@@ -1593,22 +1593,22 @@ Les points forts principaux de cette version comprennent le support des édition
 <H2>0.5</H2>
 
 <UL>
-<LI>NVDA now has a built-in synthesizer called eSpeak, developed by Jonathan Duddington.It is very responsive and lite-weight, and has support for many different languages. Sapi synthesizers can still be used, but eSpeak will be used by default.
+<LI>NVDA dispose maintenant d'une synthèse vocale intégrée appelée eSpeak, développée par Jonathan Duddington. Elle est très réactive et légère et prend en charge beaucoup de langues différentes. Les synthèses vocales Sapi peuvent encore être utilisées, mais eSpeak sera utilisée par défaut.
  <UL>
- <LI>eSpeak does not depend on any special software to be installed, so it can be used with NVDA on any computer, on a USB thumb drive, or anywhere.
- <LI>For more info on eSpeak, or to find other versions, go to [[<A HREF="http://espeak.sourceforge.net/">http://espeak.sourceforge.net/</A>]].
+ <LI>eSpeak ne dépend d'aucun logiciel spécial pour être installée, elle peut donc être utilisée avec NVDA sur n'importe quel ordinateur, sur une clef USB, ou partout.
+ <LI>Pour plus d'informations au sujet d'eSpeak, où pour trouver d'autres versions, aller à [[<A HREF="http://espeak.sourceforge.net/">http://espeak.sourceforge.net/</A>]].
  </UL>
-<LI>Fix bug where the wrong character was being announced when pressing delete in Internet Explorer / Outlook Express editable panes.
-<LI>Added support for more edit fields in Skype.
-<LI>VirtualBuffers only get loaded when focus is on the window that needs to be loaded. This fixes some problems when the preview pane is turned on in Outlook Express.
-<LI>Added commandline arguments to NVDA:
+<LI>Correction d'un bogue où le mauvais caractère était annoncé lors de l'appui sur supprime dans les volets éditables dans Internet Explorer / Outlook Express.
+<LI>Ajout du support pour plus de champs d'édition dans Skype.
+<LI>Les tampons virtuels ne sont chargés que lorsque le focus es sur la fenêtre qui a besoin d'être chargée. Ceci corrige quelques problèmes quand le volet de visualisation est actifdans Outlook Express.
+<LI>Ajout d'arguments en ligne de commande à NVDA :
  <UL>
- <LI>-m, --minimal: do not play startup/exit sounds and do not show the interface on startup if set to do so.
- <LI>-q, --quit: quit any other already running instance of NVDA and then exit
- <LI>-s, --stderr-file fileName: specify where NVDA should place uncaught errors and exceptions
- <LI>-d, --debug-file fileName: specify where NVDA should place debug messages
- <LI>-c, --config-file: specify an alternative configuration file
- <LI>-h, -help: show a help message listing commandline arguments
+ <LI>-m, --minimal: ne joue pas les sons de démarrage et d'arrêt et ne présente pas d'interface au démarrage si configuré à cet effet.
+ <LI>-q, --quit: Met fin à tout autre instance déjà en cours d'exécution de NVDA et arrête ce dernier
+ <LI>-s, --stderr-file fileName: Spécifiez où NVDA doit placer les erreurs non interceptées ainsi que les exceptions
+ <LI>-d, --debug-file fileName: spécifie où NVDA doit placer les messages de débogage
+ <LI>-c, --config-file: spécifie un autre fichier de configuration
+ <LI>-h, -help: affiche un message d'aide dressant la liste des arguments en ligne de commande
  </UL>
 <LI>Correction d'un bogue faisant que les symboles de ponctuation n'étaient pas traduits vers la langue appropriée, lors de l'utilisation d'une langue autre que l'anglais, et quand l'écho par caractères était activé.
 <LI>Ajout des fichiers de la langue Slovaque grâce à Peter Vagner
@@ -1657,6 +1657,7 @@ ActiveVoice.ActiveVoice. Ces deux pilotes ont des problèmes, à vous de voir ce
 <LI>NVDA demande si la configuration doit être sauvegardée et s'il doit redémarrer lors du changement de langue sous la boîte de dialogue Langue de l'interface utilisateur. NVDA doit être relancé pour que les changements prennent effet.
 <LI>Lorsqu'une synthèse vocale choisie par l'utilisateur ne peut pas être chargé par le moyen de la boîte de dialogue Synthétiseur, NVDA affiche une alerte à cet effet.
 <LI>Lors du chargement d'une synthèse vocale pour la première fois, NVDA permet que ce dernier choisisse les paramètres appropriés de sa voix, son débit et sa tonalité, au lieu de le forcer à utiliser des paramètres par défaut que le lecteur d'écran juge adéquats. Ceci résout un problème où Eloquence et IBM Viavoice Outloud Sapi 4 tendaient à parler vraiment trop rapidement de prime abord.
+<P></P>
 </UL>
 
 <!-- html code generated by txt2tags 2.6 (http://txt2tags.org) -->
