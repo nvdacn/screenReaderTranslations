@@ -4,7 +4,7 @@
 *	download [stable version][1]
 *	download [development version][2]
 
-This add-on improves accessibility of TeamViewer with nVDA.
+This add-on improves accessibility of TeamViewer with NVDA.
 
 It's based on TeamViewerNVDASupport add-on, developed by the same author. You should uninstall that old add-on to use this one, since both have common keystrokes and features.
 
