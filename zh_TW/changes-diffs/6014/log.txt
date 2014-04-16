@@ -1,0 +1,10 @@
+------------------------------------------------------------
+revno: 6014
+fixes bug: http://www.nvda-project.org/ticket/3005
+committer: James Teh <jamie@jantrid.net>
+branch nick: 2013.1
+timestamp: Fri 2013-04-05 15:40:53 +1000
+message:
+  IAccessibleHandler.accFocus: Don't call accChild for CHILDID_SELF.
+  Some implementations do return CHILDID_SELF and we end up in an endless loop when this happens because the objeccts appear different each time, even though we're actually getting different pointers to the same accessible.
+  This fix means that NVDA no longer freezes when using Asian character input in some .NET applications.
