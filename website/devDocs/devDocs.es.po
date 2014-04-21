@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-01-12 22:25+0000\n"
-"PO-Revision-Date: 2014-04-08 22:05+0100\n"
+"PO-Revision-Date: 2014-04-21 16:51+0100\n"
 "Last-Translator: Juan C. Buño <quetzatl@eresmas.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
@@ -1558,6 +1558,10 @@ msgid ""
 "them. These may include changing the focused object, synchronizing navigator "
 "and focus objects, changing the role of an object and so on."
 msgstr ""
+"En tu complemento, podrías querer trabajar con varios objetos y "
+"manipularlos. Estos podrán incluír cambiar el objeto enfocado, sincronizar "
+"el navegador de objetos y el foco, cambiar la función de un objeto y así "
+"sucesivamente."
 
 #. type: Plain text
 msgid ""
@@ -1568,6 +1572,13 @@ msgid ""
 "and the navigator object. For instance, you might be focused on an edit "
 "field while examining the title bar as the navigator object."
 msgstr ""
+"Un objeto en el enfoque es el control enfocado actualmente. Este está "
+"relacionado con el foco del teclado- es decir, sigue al control resaltado. "
+"En contraste, un navegador de objetos es el objeto de tu interés. Dado que "
+"el navegador de objetos se puede mover en cualquier lugar, puedes examinar "
+"dos objetos a la vez: el objeto enfocado y el navegador de objetos. Por "
+"ejemplo, podrías enfocar sobre un campo de edición mientras examinas la "
+"barra de título con el navegador de objetos."
 
 #. type: Plain text
 msgid ""
@@ -1576,6 +1587,11 @@ msgid ""
 "to use the name \"obj\". To fetch the navigator object (which might be "
 "different from the focused object), use `obj = api.getNavigatorObject()`."
 msgstr ""
+"En tu complemento, para obtener el objeto con el foco, escribe `someObj = "
+"api.getFocusObject()`. el someObj puede ser llamado de forma diferente- la "
+"convención es utilizar el nombre \"obj\". Para obtener el navegador de "
+"objetos (que podría ser diferente del del objeto enfocado), utiliza `obj = "
+"api.getNavigatorObject()`."
 
 #. type: Title ###
 #, no-wrap
@@ -1587,6 +1603,8 @@ msgid ""
 "Here are some other methods which works with NVDA objects, all located in "
 "api.py module:"
 msgstr ""
+"Aquí están algunos otros métodos que funcionan con objetos de NVDA, todos "
+"ubicados en el módulo api.py:"
 
 #. type: Bullet: '* '
 msgid ""
@@ -1594,6 +1612,9 @@ msgid ""
 "some child object of the foreground window), use `obj = api."
 "getForegroundObject()`."
 msgstr ""
+"Si deseas obtener el objeto en primer plano (útil si se desea ver algún "
+"objeto secundario de la ventana en primer plano), utiliza `obj = api."
+"getForegroundObject()`."
 
 #. type: Bullet: '* '
 msgid ""
@@ -1602,23 +1623,31 @@ msgid ""
 "type `obj.childCount`. The value 0 means that there are no more child "
 "objects."
 msgstr ""
+"Desde Python Console, para ver el número de objetos secundarios que contiene "
+"un objeto (por ejemplo, el hijo,  o los widgets de una ventana en primer "
+"plano), teclea `obj.childCount`. El valor0 significa que no hay más objetos "
+"secundarios."
 
 #. type: Bullet: '* '
 msgid ""
 "To set some object as the new focus or navigator object, use `api."
 "setFocusObject(obj)` or `api.setNavigatorObject(obj)`."
 msgstr ""
+"Para definir un objeto como el nuevo foco o el navegador de objetos, utiliza "
+"`api.setFocusObject(obj)` o `api.setNavigatorObject(obj)`."
 
 #. type: Bullet: '* '
 msgid ""
 "You can fetch various properties of an object by specifying obj.property "
 "where property is the attribute you wish to see (e.g. obj.value)."
 msgstr ""
+"Puedes obtener varias propiedades de un objeto especificando obj.property "
+"donde property es el atributo que deseas ver (por ejemplo. obj.value)."
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 1: Finding the value of a slider in a program"
-msgstr ""
+msgstr "Ejemplo 1: Encontrar el valor de un deslizador en un programa"
 
 #. type: Plain text
 msgid ""
