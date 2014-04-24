@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-01-12 22:25+0000\n"
-"PO-Revision-Date: 2014-04-21 16:51+0100\n"
+"PO-Revision-Date: 2014-04-24 22:09+0100\n"
 "Last-Translator: Juan C. Buño <quetzatl@eresmas.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
@@ -1656,15 +1656,19 @@ msgid ""
 "properties, you know that the toolbar is the last child of the foreground "
 "object."
 msgstr ""
+"Supongamos que se te preguntó por un usuario para darle el valor de un "
+"deslizador en un programa usando un app module. Después de buscar en la "
+"jerarquía de objetos y otras propiedades, sabes que la barra de herramientas "
+"es el último hijo del objeto en primer plano."
 
 #. type: Plain text
 msgid "Here is the code to implement this feature:"
-msgstr ""
+msgstr "Aquí está el código para implementar esta función:"
 
 #. type: Plain text
 #, no-wrap
 msgid "\t# Object example 1\n"
-msgstr ""
+msgstr "\t# Objeto ejemplo 1\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1672,11 +1676,13 @@ msgid ""
 "\timport api\n"
 "\timport appModuleHandler\n"
 msgstr ""
+"\timport api\n"
+"\timport appModuleHandler\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "\t\tsliderChildIndex = -1 # The variable to store the child index.\n"
-msgstr ""
+msgstr "\t\tsliderChildIndex = -1 # La variable para almacenar el índice del hijo.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1686,6 +1692,10 @@ msgid ""
 "\t\t\tsliderVal = fg.children[self.sliderChildIndex].value\n"
 "\t\t\treturn sliderVal\n"
 msgstr ""
+"\t\tdef getSliderValue(self):\n"
+"\t\t\tfg = api.getForegroundObject()\n"
+"\t\t\tsliderVal = fg.children[self.sliderChildIndex].value\n"
+"\t\t\treturn sliderVal\n"
 
 #. type: Plain text
 msgid ""
@@ -1694,6 +1704,10 @@ msgid ""
 "index would be minus 1, or the very last child; we could have used fg."
 "lastChild)."
 msgstr ""
+"En este código, el método `fg.children[index]` se utiliza para recuperar al "
+"hijo con el índice dado (aquí, ya dijimos que la barra de herramientas es el "
+"último hijo, el índice sería menos 1, o el último hijo; podríamos haber "
+"utilizado fg.lastChild)."
 
 #. type: Plain text
 msgid ""
@@ -1701,6 +1715,10 @@ msgid ""
 "the first child of the actual slider control? One way to fix this is to "
 "check the object's role. The modified code looks like this:"
 msgstr ""
+"Sin embargo, este código tiene un problema: ¿y si el valor del deslizador "
+"está en realidad dentro del primer elemento secundario del control "
+"deslizador real? Una forma de solucionar este problema es comprobar el rol "
+"del objeto. El código modificado se ve así:"
 
 #. type: Plain text
 #, no-wrap
@@ -1711,6 +1729,11 @@ msgid ""
 "\t\tslider = fg.lastChild\n"
 "\t\tif slider.role == ROLE_SLIDER: return slider.firstChild.value\n"
 msgstr ""
+"\tdef getSliderValue(self):\n"
+"\t\tfrom controltypes import ROLE_SLIDER # Es posible importar desde un método.\n"
+"\t\tfg = api.getForegroundObject()\n"
+"\t\tslider = fg.lastChild\n"
+"\t\tif slider.role == ROLE_SLIDER: return slider.firstChild.value\n"
 
 #. type: Plain text
 msgid ""
@@ -1719,37 +1742,47 @@ msgid ""
 "the two equals signs for equality, as opposed to just one equals sign for "
 "assignment."
 msgstr ""
+"Así, cuando estemos seguros de que estamos tratando con el control "
+"deslizador, el método devuelve el valor del primer hijo del deslizador (Si "
+"ese es el caso). Nota los dos signos de igual para la igualdad, en lugar de "
+"sólo uno que es signo igual para la asignación."
 
 #. type: Plain text
 msgid ""
 "There are other examples you can try to familiarize yourself with object "
 "navigation and manipulation:"
 msgstr ""
+"Hay otros ejemplos que puedes intentar para familiarizarte con la navegación "
+"y manipulación de objetos:"
 
 #. type: Bullet: '* '
 msgid ""
 "Obtaining the name of an object that is located somewhere else in the "
 "program."
 msgstr ""
+"Obtener el nombre de un objeto que se encuentra en otro lugar en el programa."
 
 #. type: Bullet: '* '
 msgid "Moving the navigator to the foreground object."
-msgstr ""
+msgstr "Mover el navegador al objeto en primer plano."
 
 #. type: Bullet: '* '
 msgid "Setting focus to another program."
-msgstr ""
+msgstr "Poner el foco en otro programa."
 
 #. type: Plain text
 msgid ""
 "For real-life examples on objects in NvDA, consult the NvDA source code or "
 "source codes of various community add-ons."
 msgstr ""
+"Para ver ejemplos en la vida real sobre los objetos de NVDA, consulta el "
+"código fuente de NVDA o los códigos fuente de diversos complementos de la "
+"comunidad."
 
 #. type: Title ###
 #, no-wrap
 msgid "Specialist objects and overriding object properties at runtime"
-msgstr ""
+msgstr "Objetos Especiales y redefinición de las propiedades de objetos en tiempo de ejecución"
 
 #. type: Plain text
 msgid ""
