@@ -8,6 +8,7 @@
 """
 
 import os
+import sys
 import codecs
 import re
 import txt2tags
@@ -278,6 +279,10 @@ class KeyCommandsMaker(object):
 
 if __name__ == "__main__":
     f = KeyCommandsMaker('userGuide.t2t')
-    if not f.make():
-        print("WARNING: User Guide does not contain key commands markup, skipping")
-  
+    try:
+        result = f.make()
+        if not result:
+            print("WARNING: User Guide does not contain key commands markup, skipping")
+    except KeyCommandsError as e:
+        print e.message
+        sys.exit(1)
