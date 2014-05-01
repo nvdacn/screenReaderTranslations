@@ -191,6 +191,6 @@ if __name__ == "__main__" and len(sys.argv) >= 2:
         email(addresses[lang]['email'], sys.argv[2], sys.argv[3])
     # we were called by another script, with a lang code, spit out email addresses suitable for a commit message.
     elif len(sys.argv) == 2:
-        print " \\\n".join([ "--author='%s'" %x for x in addresses[lang]['email']])
+        print "\n".join(addresses[lang]['email'])
     else:
         print "dont know what to do."
