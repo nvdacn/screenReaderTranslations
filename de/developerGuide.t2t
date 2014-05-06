@@ -10,7 +10,7 @@
 %%toc
 
 + Einleitung +
-Dieses Handbuch stellt informationen zur Entwicklung von NVDA und dessen Komponenten sowie ihre Übersetzungen bereit.
+Dieses Handbuch stellt Informationen zur Entwicklung von NVDA und dessen Komponenten sowie ihre Übersetzungen bereit.
 (HINWEIS: Dies ist lediglich eine Einführung. Für die komplette Referenz ist es für Entwickler empfehlenswert sich die Code-Dokumentation durchzulesen.)
 
 ++ Eine Anmerkung zu Python ++
@@ -33,7 +33,7 @@ Die Dokumentationen und weitere Materialien sind in einer oder mehreren der folg
 
 
 + Übersetzung +
-Damit NVDA mehrere Sprachen bzw. Sprachräume unterstützt, muss es übersetzt und sprachspezifische Daten müssen zur Verfügung gestellt werden.
+Damit NVDA mehrere Sprachen bzw. Sprachräume unterstützt, müssen sie übersetzt und sprachspezifische Daten zur Verfügung gestellt werden.
 Dieser Abschnitt stellt lediglich Informationen über NVDA-Eigene Dateiformate bereit, die für Übersetzungen verwendet werden. 
 Andere Teile von NVDA wie z. B. die Benutzeroberfläche oder die Dokumentation verwenden Standarddateiformate.
 Weitere Informationen über die Übersetzung von NVDA finden sie unter http://www.nvda-project.org/wiki/TranslatingNVDA
@@ -43,14 +43,14 @@ Manchmal kann es schwierig bis unmöglich sein, zwei Zeichen voneinander zu unte
 Zwei Zeichen können beispielsweise identisch ausgesprochen werden, auch wenn es eigentlich völlig unterschiedliche Zeichen sind.
 Um dieses problem zu lösen, können Zeichenbeschreibungen bereitgestellt werden, die jedes Zeichen eindeutig beschreiben.
 
-Zeichenbeschreibungen für einen Sprachraum können in einer Datei characterDescriptions.dic bereitgestellt werden, die sich im Verzeichnis des jeweiligen Sprachraums befinden muss.
-Die Datei muss im UTF-8 kodiert werden.
+Zeichenbeschreibungen für einen Sprachraum können in einer Datei namens "characterDescriptions.dic" bereitgestellt werden, die sich im Verzeichnis des jeweiligen Sprachraums befinden muss.
+Dazu muss die Datei im UTF-8 kodiert werden.
 Leerzeilen und Zeilen, die mit dem Zeichen "#" beginnen, werden ignoriert.
 Alle anderen Zeilen müssen ein Zeichen gefolgt von einem Tabulator und dessen Beschreibung enthalten.
 
 zum Beispiel:
 ```
-# Dies ist ein Kommentar
+# Dies ist eine Kommentarzeile
 a	Anton
 b	Berta
 ```
@@ -86,7 +86,7 @@ Zum Beispiel:
 . Satzende	(?<=[^\s.])\.(?=[\"')\s]|$)
 ```
 
-Da ein jeder Sprachraum die komplexen Symbole des englischen Sprachraumes übernimmt, brauchen Sie diese in Ihrer Symboldefinition nicht noch einmal aufzuführen.
+Da jeder Sprachraum die komplexen Symbole des englischen Sprachraumes übernimmt, brauchen Sie diese in Ihrer Symboldefinition nicht noch einmal aufzuführen.
 
 +++ Symbol-Informationen definieren +++
 Der zweite Abschnitt enthält Informationen darüber, ob und wie Symbole ausgesprochen werden. 
@@ -107,13 +107,13 @@ Folgende Felder sind verfügbar:
  - \r: Wagenrücklauf
  - \f: Seitenvorschub
  - \#: #-Zeichen (benötigt einen Backslash, da dieses #-Zeichen sonst als Kommentar angesehen wird)
-- Ersatztext: der Text, der anstelle des Symbols ausgesprochen werden soll.
-- Ebene: die Symbolebene, ab der das Symbol gesprochen werden soll. Die Symbolebene kann vom Anwender konfiguriert werden und gibt die Menge an auszusprechenden Sonderzeichen an. Dieses Feld sollte einen der Werte  "none", "some", "most", "all" oder  "char" enthalten oder "-", um den Standardwert zu erzwingen. Die angabe "char" bedeutet, dass das Symbol nur bei der zeichenweisen Navigation verarbeitet wird. Standardmäßig wird hier der Wert aus dem englischen Sprachraum verwendet. Ist in der Symboldefinitionsdatei für den englischen Sprachraum kein Wert angegeben, so wird der Wert "all" angenommen.
+- Ersatztext: Der Text, der anstelle des Symbols ausgesprochen werden soll.
+- Ebene: Die Symbolebene, ab der das Symbol gesprochen werden soll. Die Symbolebene kann vom Anwender konfiguriert werden und gibt die Menge an auszusprechenden Sonderzeichen an. Dieses Feld sollte einen der Werte  "none", "some", "most", "all" oder  "char" enthalten oder "-", um den Standardwert zu erzwingen. Die angabe "char" bedeutet, dass das Symbol nur bei der zeichenweisen Navigation verarbeitet wird. Standardmäßig wird hier der Wert aus dem englischen Sprachraum verwendet. Ist in der Symboldefinitionsdatei für den englischen Sprachraum kein Wert angegeben, so wird der Wert "all" angenommen.
 - Beibehalten: Dieses Feld muss immer dann belegt sein, wenn ein bestimmtes Symbol unverarbeitet an die Sprachausgabe weitergegeben werden soll, um eine korrekte Aussprache zu ermöglichen. Beispiele hierfür sind Sonderzeichen, die Sprechpausen verursachen, wie z.B. der Punkt, das Komma etc. Dieses Feld kann die folgenden Werte enthalten:
  - never: Das Symbol wird nie beibehalten.
- - always: das Symbol wird immer beibehalten.
- - norep: Das Symbol wird nur dann beibehalten, wenn es nicht ersetzt wird (z.B. wenn der Anwender die Satzzeichen- und Symbolebene niedriger eingestellt hat, als für das betreffende Symbol.
- - -: verwendet den Standardwert.
+ - always: Das Symbol wird immer beibehalten.
+ - norep: Das Symbol wird nur dann beibehalten, wenn es nicht ersetzt wird (z. B. wenn der Anwender die Satzzeichen- und Symbolebene niedriger eingestellt hat, als für das betreffende Symbol.
+ - -: Verwendet den Standardwert.
  -
 Standardmäßig wird der Wert aus dem englischen Sprachraum verwendet. Ist in der dortigen Symboldefinitionsdatei kein Wert angegeben, so wird der Wert "never" verwendet.
 -
@@ -123,7 +123,7 @@ Dieser Name wird Anwendern angezeigt, wenn sie die komplexen Symbole bearbeiten 
 
 Hierzu einige Beispiele:
 ```
-(	runde Klammer auf	most
+(	Runde Klammer auf	most
 ```
 Dies bedeutet, dass das Zeichen "(" als "Runde Klammer auf" gesprochen werden soll, wenn der Anwender die Satzzeichen- und Symbolebene auf "meiste" oder "alle" eingestellt hat.
 ```
@@ -138,48 +138,47 @@ Sie besagt, dass das komplexe Symbol ". sentence ending" als "point" gesprochen 
 Ebene und Einstellung zum Beibehalten des Symbols sind hier nicht angegeben, werden also aus dem englischen Sprachraum übernommen.
 Ein anzeigename wird ebenfalls angegeben, sodass französische nvda-Nutzer wissen, was dieses Symbol bedeutet.
 
-Bitte sehen Sie sich die Datei locale\en\symbols.dic für die englischsprachigen Symboldefinitionen an.
+Bitte sehen Sie sich die Datei "locale\en\symbols.dic" für die englischsprachigen Symboldefinitionen an.
 
 
-+ Plugins +
++ Erweiterungen +
 
 ++ Übersicht ++
-Mittels der Plugins erhalten Sie die Möglichkeit, das Verhalten global oder in bestimmten Anwendungen nach Ihren Wünschen anzupassen.
-Hierzu zählen z.B.:
+Mittels der Erweiterungen erhalten Sie die Möglichkeit, das Verhalten global oder in bestimmten Anwendungen nach Ihren Wünschen anzupassen.
+Hierzu zählen z. B.:
 - Auf bestimmte Ereignisse reagieren, wenn sich zum Beispiel der Fokus verschiebt oder wenn sich die Eigenschaften eines Objekts ändern.
 - Befehle implementieren, die an bestimmte Tastendrücke oder andere Eingabemethoden gebunden werden können.
 - Das Verhalten bestimmter Steuerelemente beeinflussen oder weitere Funktionen hinzufügen.
 - Unterstützung für Textinhalte oder komplexe Dokumente anpassen oder hinzufügen.
 -
 
-Dieser Abschnitt enthält lediglich eine Einführung in die Entwicklung von Plug-ins. Schauen Sie sich die Code-Dokumentation für eine komplette Referenz an.
+Dieser Abschnitt enthält lediglich eine Einführung in die Entwicklung von Erweiterungen. Schauen Sie sich die Code-Dokumentation für eine komplette Referenz an.
 
-++ Typen von Plugins ++
-Es gibt zwei unterschiedliche Typen von Plug-ins:
+++ Typen von Erweiterungen ++
+Es gibt zwei unterschiedliche Typen von Erweiterungen:
 - Anwendungsmodule: Enthalten speziellen Code für eine bestimmte Anwendung. Ein Anwendungsmodul nimmt Ereignisse für eine bestimmte Anwendung entgegen, auch wenn die Anwendung momentan nicht fokussiert ist. Wenn eine Anwendung fokussiert ist, kann der Nutzer sämtliche Befehle ausführen, die im Anwendungsmodul definiert und an Eingabemethoden zugewiesen wurden.
-- Allgemeine Plugins: enthalten Code, der in allen Anwendungen ausgeführt wird. Dabei nehmen Sie alle Ereignisse von allen Elementen im Betriebssystem entgegen. Befehle, die in allgemeinen Plugins an Eingabemethoden zugewiesen wurden, können unabhängig davon ausgeführt werden, welche Anwendung grade aktiv ist. 
+- Allgemeine Erweiterungen: Enthalten Code, der in allen Anwendungen ausgeführt wird. Dabei nehmen Sie alle Ereignisse von allen Elementen im Betriebssystem entgegen. Befehle, die in allgemeinen Erweiterungen an Eingabemethoden zugewiesen wurden, können unabhängig davon ausgeführt werden, welche Anwendung grade aktiv ist. 
 -
 
 Wenn Sie vorhaben, die Zugänglichkeit von NVDA für bestimmte Anwendungen zu verbessern, sind die Anwendungsmodule empfehlenswert.
-wenn Sie Im Gegensatz dazu vorhaben, globalen Code für NVDA zu entwickeln, der systemweit zugänglich sein soll, zum Beispiel um sich die Signalstärke von Funknetzwerken anzeigen zu lassen, ist ein allgemeines Plugin empfehlenswert.
+Wenn Sie im Gegensatz dazu vorhaben, globalen Code für NVDA zu entwickeln, der systemweit zugänglich sein soll, zum Beispiel um sich die Signalstärke von Funknetzwerken anzeigen zu lassen, ist eine allgemeine Erweiterung empfehlenswert.
 
-Anwendungsmodule und allgemeine Plugins sind sehr ähnlich.
-Beides sind Python-Quelldateien (mit der Erweiterung .py), die eine spezielle Klasse definieren.
+Anwendungsmodule und allgemeine Erweiterungen sind sehr ähnlich.
+Beides sind Python-Quelldateien (mit der Endung ".py"), die eine spezielle Klasse definieren.
 Diese Klasse enthält sämtliche Ereignisse, Skripte und eingabemethodenzuweisungen.
 Außerdem können Sie eigene Klassen erstellen, um auf Steuerelemente, Textpassagen und komplexe Dokumente zuzugreifen.
 
-
-Die folgenden Abschnitte beschreiben separat die Anwendungsmodule und die allgemeinen Plugins. Anschließend werden wieder allgemeinere Punkte erläutert.
+Die folgenden Abschnitte beschreiben separat die Anwendungsmodule und die allgemeinen Erweiterungen. Anschließend werden wieder allgemeinere Punkte erläutert.
 
 ++ Grundlagen eines Anwendungsmoduls ++
-Anwendungsmodule besitzen die Erweiterung .py und haben den gleichen Namen wie die Anwendungen, für die sie verwendet werden sollen.
+Anwendungsmodule besitzen die Endung ".py" und haben den gleichen Namen wie die Anwendungen, für die sie verwendet werden sollen.
 Ein Anwendungsmodul für den Editor müsste zum Beispiel notepad.py heißen, weil die ausführbare Datei des Editors notepad.exe heißt.
 
-Anwendungsmodule müssen im Unterordner "appModules" der Benutzerkonfiguration von nvda liegen. 
+Anwendungsmodule müssen im Unterordner "appModules" der Benutzerkonfiguration von NVDA liegen. 
 Weitere Informationen über den Standort Ihres benutzerspezifischen Konfigurationsverzeichnisses finden Sie im Benutzerhandbuch von NVDA.
 
 Anwendungsmodule müssen eine Klasse "appModule" definieren, die alle Eigenschaften und Methoden von appModuleHandler.AppModule erbt.
-Diese Klasse kann dann Ereignisse, Scripte, Eingabemethodenzuweisungen und anderen Code enthalten.
+Diese Klasse kann dann Ereignisse, Skripte, Eingabemethodenzuweisungen und anderen Code enthalten.
 Details hierzu lesen Sie weiter unten.
 
 Sobald NVDA erkennt, dass eine bestimmte Anwendung gestartet wird, wird das jeweilige Anwendungsmodul geladen.
@@ -192,9 +191,9 @@ Dieses Beispiel veranschaulicht den grundsätzlichen Aufbau eines Anwendungsmodu
 Fügen Sie den Folgenden Code zwischen den Start- und Endmarken (jedoch nicht die Marken selbst) in eine Datei mit dem Namen notepad.py ein und speichern Sie diese im Unterverzeichnis appmodules in ihrer benutzerspezifischen nvda-Konfiguration.
 Übernehmen Sie hierbei auch alle Tab- und Leerzeichen.
 
-Starten Sie anschließend NVDA neu oder wählen Sie Plugins neu laden" aus dem Menü Extras, damit die Änderungen wirksam werden.
+Starten Sie anschließend NVDA neu oder wählen Sie "Erweiterungen neu laden" aus dem Menü Extras, damit die Änderungen wirksam werden.
 
-Öffnen Sie zu guter Letzt den Editor und bewegen Sie den Fokus innerhalb der Anwendung (z.B. innerhalb des Menüs, innerhalb von Dialogfeldern, etc.).
+Öffnen Sie zu guter Letzt den Editor und bewegen Sie den Fokus innerhalb der Anwendung (z. B. innerhalb des Menüs, innerhalb von Dialogfeldern, etc.).
 Sie sollten nun jedes Mal einen Signalton hören, wenn sich der Fokus ändert.
 Wenn Sie sich jedoch außerhalb des Editors (z. B. im Explorer) befinden, sollten Sie keine Signaltöne hören.
  
@@ -221,41 +220,41 @@ Anschließend wird das Modul "appmoduleHandler" importiert, welches die Basiskla
 
 Als nächstes wird eine Klasse namens AppModule definiert, die von appModuleHandler.AppModule abgeleitet ist.
 
-Innerhalb der Klasse werden ein oder mehr Ereignisse, scripte oder Eingabemethodenzuweisungen definiert.
+Innerhalb der Klasse werden ein oder mehr Ereignisse, skripte oder Eingabemethodenzuweisungen definiert.
 Dieses Beispiel definiert ein Ereignis namens gainfocus (event_gainFocus), das bei jeder Ausführung einen kurzen Signalton abspielt.
 Die Implementierung des Ereignisses ist für dieses Beispiel noch nicht wichtig, wichtig ist lediglich die Definition der Klasse.
 
 Ereignisse werden weiter unten in diesem Handbuch näher erläutert.
 
-Denken Sie - wie bei anderen Beispielen in diesem handbuch - daran, das erstellte anwendungsmodul zu löschen und NVDA neu zu starten bzw. die Plugins neuzuladen, wenn Sie Ihre Tests abgeschlossen haben, um das ursprüngliche Verhalten von NVDA wiederherzustellen.
+Denken Sie - wie bei anderen Beispielen in diesem handbuch - daran, das erstellte anwendungsmodul zu löschen und NVDA neu zu starten bzw. die Erweiterungen neu zu laden, wenn Sie Ihre Tests abgeschlossen haben, um das ursprüngliche Verhalten von NVDA wiederherzustellen.
 
-++ Grundlagen Allgemeiner Plugins ++
-Globale Plug-ins sollten die Erweiterung .py besitzen und einen kurzen Namen haben, der ihren Zweck beschreibt.
+++ Grundlagen allgemeiner Erweiterungen ++
+Globale Erweiterungen sollten die Endung ".py" besitzen und einen kurzen Namen haben, der ihren Zweck beschreibt.
 
-Globale Plugins müssen im unterordner "GlobalPlugins" des benutzerspezifischen Konfigurationsverzeichnisses liegen. 
+Globale Erweiterungen müssen im unterordner "GlobalErweiterungen" des benutzerspezifischen Konfigurationsverzeichnisses liegen. 
 Weitere Informationen darüber, wo Sie das benutzerspezifische Konfigurationsverzeichnis finden, finden Sie im NVDA-Benutzerhandbuch.
 
-Globale Plugins müssen eine Klasse namens GlobalPlugin, definieren, die ein direkter Nachkomme von globalPluginHandler.GlobalPlugin ist.
-Diese klasse kann anschließend Ereignisse, Script-Methoden, Eingabemethoden-zuweisungen und anderen Code enthalten.
+Globale Erweiterungen müssen eine Klasse namens "globalPlugin", definieren, die ein direkter Nachkomme von "globalPluginHandler.GlobalPlugin" ist.
+Diese klasse kann anschließend Ereignisse, Skriptmethoden, Eingabemethoden-zuweisungen und anderen Code enthalten.
 All dies wird im Folgenden behandelt.
 
-NVDA lädt alle globalen Plug-ins, sobald es gestartet wird und entlädt sie beim Beenden wieder.
+NVDA lädt alle globalen Erweiterungen, sobald es gestartet wird und entlädt sie beim Beenden wieder.
 
 ++ Beispiel 2: Eine Standarderweiterung - Ein Skript zur Ansage der NVDA-Version ++
 Das folgende Beispiel erlaubt Ihnen, sich von überall im System aus mit der Tastenkombination NVDA+Umschalt+V die NVDA-Version anzeigen zu lassen.
-Das Beispiel dient lediglich dazu, den grundlegenden Aufbau globaler Plugins zu veranschaulichen.
+Das Beispiel dient lediglich dazu, den grundlegenden Aufbau globaler Erweiterungen zu veranschaulichen.
 
-Kopieren sie den folgenden Text zwischen den Anfangs- und Endmarkern (jedoch nicht die Marker selbst), in eine Datei namens beispiel2.py und speichern Sie diese im Unterordner "GlobalPlugins" Ihres NVDA-Konfigurationsverzeichnisses.
+Kopieren sie den folgenden Text zwischen den Anfangs- und Endmarkern (jedoch nicht die Marker selbst), in eine Datei namens beispiel2.py und speichern Sie diese im Unterordner "GlobalErweiterungen" Ihres NVDA-Konfigurationsverzeichnisses.
 Lassen Sie dabei alle Tabs und Leerzeichen stehen.
 
-Starten Sie nach dem Speichern entweder NVDA neu oder wählen aus dem menü Extras des nvda-Menüs den Befehl Plug-ins neu laden.
+Starten Sie nach dem Speichern entweder NVDA neu oder wählen aus dem menü Extras des NVDA-Menüs den Befehl "Erweiterungen neu laden".
 
 Von nun an können Sie NVDA+Umschalt+V drücken, um die NVDA-Version angesagt und in Braille angezeigt zu bekommen.
 
 ```
 --- Beginn ---
-# Plugin zur Ausgabe der Versionsinformationen in NVDA
-# Beispiel 2 aus dem Entwicklerhaldbuch
+# Erweiterung zur Ausgabe der Versionsinformationen in NVDA
+# Beispiel 2 aus dem Entwicklerhandbuch
 
 import globalPluginHandler
 import ui
@@ -273,20 +272,20 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 --- Ende ---
 ```
 
-Dieses globale Plugin beginnt mit zwei Kommentarzeilen, die den Zweck der Datei kurz beschreiben.
+Diese globale Erweiterung beginnt mit zwei Kommentarzeilen, die den Zweck der Datei kurz beschreibt.
 
-Anschließend wird das Modul globalPluginHandler importiert, sodass das Plug-in Zugriff auf die Basisklasse GlobalPlugin hat. 
+Anschließend wird das Modul "globalPluginHandler" importiert, sodass die Erweiterung Zugriff auf die Basisklasse "globalPlugin" hat. 
 
-Außerdem werden noch die Module UI und Versioninfo importiert, damit das Plugin die Versionsinformationen ausgeben kann. 
+Außerdem werden noch die Module "UI" und "Versioninfo" importiert, damit die Erweiterung die Versionsinformationen ausgeben kann. 
 
-Als nächstes wird eine Klasse GlobalPlugin, definiert, die ein Nachkomme von globalPluginHandler.GlobalPlugin ist.
+Als nächstes wird eine Klasse "globalPlugin" definiert, die ein Nachkomme von "globalPluginHandler.GlobalPlugin" ist.
 
-Innerhalb dieser Klasse werden ein oder mehrere Ereignisse, Scripte oder Eingabemethoden-Zuweisungen definiert.
-In diesem Beispiel enthält die Klasse ein Script, das die Versionsinformationen ausgibt und eine eingabemethoden-Zuweisung, die dieses Script an NVDA+Umschalt+V zuweist.
-Die Details des Scripts und der Eingabemethodenzuweisung sind für dieses Beispiel jedoch nicht von Belang.
+Innerhalb dieser Klasse werden ein oder mehrere Ereignisse, Skripte oder Eingabemethoden-Zuweisungen definiert.
+In diesem Beispiel enthält die Klasse ein Skript, das die Versionsinformationen ausgibt und eine eingabemethoden-Zuweisung, die dieses Skript an NVDA+Umschalt+V zuweist.
+Die Details des Skripts und der Eingabemethodenzuweisung sind für dieses Beispiel jedoch nicht von Belang.
 Das wichtigste ist die Klasse selbst.
  
-Um das ursprüngliche Verhalten von NVDA wiederherzustellen, müssen Sie die globale Plugin-Datei löschen und NVDA anschließend neu starten oder die Plugins neu laden.
+Um das ursprüngliche Verhalten von NVDA wiederherzustellen, müssen Sie die Datei löschen und NVDA anschließend neu starten oder die Erweiterungen neu laden.
 
 ++ NVDA-Objekte ++
 NVDA stellt Steuerelemente und andere Bestandteile von Benutzeroberflächen in Form von NVDA-Objekten dar.
@@ -318,32 +317,32 @@ Diese entsprechen den oben beschriebenen Eigenschaften, NVDA filtert hier jedoch
 Diese eigenschaften werden immer dann verwendet, wenn der vereinfachte Darstellungsmodus in NVDA aktiviert ist, was der Normalfall ist.
 Die vereinfachten Eigenschaften sind zwar leichter zu verwenden, die komplexeren Eigenschaften spiegeln jedoch diezugrundeliegende Objektstruktur des Betriebsystems wesentlich besser wieder.
 
-Wenn Sie NVDA-Plugins entwickeln, spielt es meistens keine Rolle, mit welchem Komponentenbausatz die Benutzeroberfläche erstellt wurde oder mit welcher Zugänglichkeitsschnittstelle Sie darauf zugreifen müssen. Meistens können sie mit Standardeigenschaften auf die Objekte zugreifen wie z. B. dessen Namen, Wert oder Status.
-Wenn Plug-ins komplexer werden, kann es jedoch erforderlich werden tiefer in die Objekte abzusteigen, um Komponentenbausatz- oder zugänglichkeitsschnittstellen-spezifische Informationen zu erhalten.
+Wenn Sie NVDA-Erweiterungen entwickeln, spielt es meistens keine Rolle, mit welchem Komponentenbausatz die Benutzeroberfläche erstellt wurde oder mit welcher Zugänglichkeitsschnittstelle Sie darauf zugreifen müssen. Meistens können sie mit Standardeigenschaften auf die Objekte zugreifen wie z. B. dessen Namen, Wert oder Status.
+Wenn Erweiterungen komplexer werden, kann es jedoch erforderlich werden tiefer in die Objekte abzusteigen, um Komponentenbausatz- oder zugänglichkeitsschnittstellen-spezifische Informationen zu erhalten.
 
-Es gibt drei Möglichkeiten, wie Plug-ins nvda-Objekte verwenden können:
+Es gibt drei Möglichkeiten, wie Erweiterungen NVDA-Objekte verwenden können:
 - Die meisten Ereignisse verarbeiten ein Argument, das dasjenige Objekt angibt, auf das sich das Ereignis bezieht. Das Ereignis event_gainfocus übernimmt beispielsweise dasjenige Objekt als Parameter, das soeben den Fokus bekommen hat.
 - Skripte und Ereignisse können Objekte verarbeiten Wie z. B. das aktuell hervorgehobene Objekt, das aktuelle navigatorobjekt oder den Desktop. Anschließend könnte auf andere Objekte bezug genommen und Informationen von ihnen abgerufen werden.
-- Das Plug-in könnte auch eine eigene NVDA-Objektklasse definieren, um ein bestimmtes Steuerelement darin einzuschließen. Solche benutzerdefinierten NVDA-Objekte können einem NVDA-Objekt neue Fnktionalität geben, dessen Eigenschaften umwandeln, etc.
+- Die Erweiterung könnte auch eine eigene NVDA-Objektklasse definieren, um ein bestimmtes Steuerelement darin einzuschließen. Solche benutzerdefinierten NVDA-Objekte können einem NVDA-Objekt neue Funktionalität geben, dessen Eigenschaften umwandeln, etc.
 -
 
-Ebenso wie Anwendungsmodule oder globale Plug-ins können nvda-Objekte Scripte, Ereignisse und Eingabemethoden-zuweisungen enthalten.
+Ebenso wie Anwendungsmodule oder globale Erweiterungen können NVDA-Objekte Skripte, Ereignisse und Eingabemethoden-zuweisungen enthalten.
  
 ++ Skripte und Tastenanbindung ++
-Anwendungsmodule, globale Plugins und NVDA-Objekte können Methoden enthalten, die an Ereignisse wie z.B. Tastendrücke zugewiesen werden können.
+Anwendungsmodule, globale Erweiterungen und NVDA-Objekte können Methoden enthalten, die an Ereignisse wie z. B. Tastendrücke zugewiesen werden können.
 Auf solche Methoden greift NVDA mit Hilfe von Skripten zu.
 
 Ein Skript ist eine standard-Python-Instanzmethode, deren Name mit "Script_" beginnt, wie z. B. "script_sayDateTime".
 
 Eine Skriptmethode verarbeitet zwei Argumente:
-- self: Eine Referenz auf das Anwendungsmodul, globale Plugin oder NVDA-Objekt, von dem aus das Skript aufgerufen wird.
-- gesture: Ein Eingabemethoden-Objekt, das die Ausführung des Scripts verursacht hat.
+- self: Eine Referenz auf das Anwendungsmodul, globale Erweiterung oder NVDA-Objekt, von dem aus das Skript aufgerufen wird.
+- gesture: Ein Eingabemethoden-Objekt, das die Ausführung des Skripts verursacht hat.
 -
 
-Neben dem eigentlichen Skript muss noch ein Eingabemethoden-Objekt definiert werden, damit NVDA bekannt ist, durch welches Ereignis das Script aufgerufen werden soll.
+Neben dem eigentlichen Skript muss noch ein Eingabemethoden-Objekt definiert werden, damit NVDA bekannt ist, durch welches Ereignis das Skript aufgerufen werden soll.
 
-Um eine Eingabemethode an ein Skript zuzuweisen,  kann ein spezielles Python-Wörterbuch namens "__gestures" als Klassenvariable definiert werden. Dies kann innerhalb eines anwendungsmoduls, eines globalen Plug-ins oder eines NVDA-Objekts geschehen.
-Diese Wörterbücher sollten Einträge mit den Eingabemethoden enthalten, die auf die entsprechenden Scripts zeigen. Der name muss hierbei ohne das Präfix "Script_" angegeben werden.
+Um eine Eingabemethode an ein Skript zuzuweisen,  kann ein spezielles Python-Wörterbuch namens "__gestures" als Klassenvariable definiert werden. Dies kann innerhalb eines anwendungsmoduls, einer globalen Erweiterung oder eines NVDA-Objekts geschehen.
+Diese Wörterbücher sollten Einträge mit den Eingabemethoden enthalten, die auf die entsprechenden Skripte zeigen. Der Name muss hierbei ohne das Präfix "script_" angegeben werden.
 
 Es gibt zwar noch kompliziertere und dynamischere Methoden, Eingabemethoden zuzuweisen, das Wörterbuch __gestures ist jedoch der einfachste Weg.
  
@@ -359,28 +358,28 @@ Einige Beispiele für eingabemethodenbezeichner sind:
 Aktuell werden folgende Eingabequellen unterstützt:
 - kb: Tastatureingaben
 - br: Tastendrücke und andere navigierende Eingaben an Braillezeilen
-- ts: Aktionen an einem Touchscreen
+- ts: Aktionen an einem TouchScreen
 -
 
 Wenn NVDA eine Tastatureingabe registriert, sucht es in einer bestimmten Reihenfolge nach einer entsprechenden Eingabemethoden-Zuweisung.
 Wurde eine Zuweisung gefunden, so wird das entsprechende Skript ausgeführt. Weder wird weiter nach Eingabemethoden-Zuweisungen gesucht, noch wird der Tastendruck ans Betriebssystem weitergereicht.
 
 Folgende Reihenfolge wird bei der Suche nach Eingabemethodenzuweisungen verwendet:
-- Geladene globale Plugins
+- Geladene globale Erweiterungen
 - Anwendungsmodul der aktiven Anwendung
 - Der Interceptor des NVDA-Objekts, das den Fokus hat (wie beispielsweise ein virtueller Puffer).
 - Das NVDA-Objekt, welches den Fokus besitzt
 - Globale, eingebaute Befehle wie beispielsweise das Beenden von NVDA, die Objektnavigation, usw.
 -
 
-++ Beispiel 3: Ein globales Plugin zum Aufspüren von FensterKlassen und Steuerelementen ++
-Das folgende globale Plugin bewirkt, dass Sie NVDA+Pfeil links drücken können, um die Fensterklasse des aktuellen Fensters zu erfahren. Ebenso können Sie NVDA+Pfeil rechts drücken, um die Steuerelementnummer des aktuellen Objekts zu erfahren.
-Das Beispiel veranschaulicht, wie Sie ein Skript und eine Eingabemethodenzuweisung in einem globalen Plugin definieren.
+++ Beispiel 3: Eine globale Erweiterungzum Aufspüren von FensterKlassen und Steuerelementen ++
+Die folgende globale Erweiterung bewirkt, dass Sie NVDA+Pfeil links drücken können, um die Fensterklasse des aktuellen Fensters zu erfahren. Ebenso können Sie NVDA+Pfeil rechts drücken, um die Steuerelementnummer des aktuellen Objekts zu erfahren.
+Das Beispiel veranschaulicht, wie Sie ein Skript und eine Eingabemethodenzuweisung in einer globalen Erweiterung definieren.
  
-Speichern Sie den Text innerhalb der Start- und Endmarken (jedoch nicht die Marken selbst) in einer Datei beispiel3.py im Unterverzeichnis "globalPlugins" ab.
+Speichern Sie den Text innerhalb der Start- und Endmarken (jedoch nicht die Marken selbst) in einer Datei beispiel3.py im Unterverzeichnis "globalErweiterungen" ab.
 Achten Sie dabei darauf, alle Tabs und Leerzeichen exakt zu übernehmen.
 
-Starten Sie nach dem Speichern entweder NVDA neu oder wählen Sie im NVDA-Menü den Befehl "Plugins neu laden" aus dem Menü "Extras".
+Starten Sie nach dem Speichern entweder NVDA neu oder wählen Sie im NVDA-Menü den Befehl "Erweiterungen neu laden" aus dem Menü "Extras".
 
 ```
 --- Beginn ---
@@ -414,14 +413,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 ```
 
 ++ Ereignisse ++
-wenn NVDA ein Betriebssystemereignis erkennt, so wird dieses abstrahiert und ein eigenes Ereignis bei nvda-Objekten ausgelöst.
+wenn NVDA ein Betriebssystemereignis erkennt, so wird dieses abstrahiert und ein eigenes Ereignis bei NVDA-Objekten ausgelöst.
 
 Wenngleich die meisten Ereignisse zu bestimmten NVDA-Objekten gehören  (wie z. B. Umbenennungen, Fokuserhalt, Statusänderung, etc.), können sie auf unterschiedlichen Ebenen verarbeitet werden.
 Wird ein Ereignis behandelt, so wird es nicht mehr weitergereicht.
 Das Weiterreichen des Ereignsses kann jedoch durch Code innerhalb der Ereignisbehandlungsroutine erzwungen werden, falls nötig.
 
 Ereignisse werden in folgender Reihenfolge abgearbeitet:
-- Durch geladene globale Plugins.
+- Durch geladene globale Erweiterungen.
 - Durch das Anwendungsmodul, das dem Objekt zugeordnet wurde, bei dem das Ereignis eintrat.
 - Durch den Interceptor (falls vorhanden) der dem Objekt zugeordnet wurde, bei dem das Ereignis eintrat.
 - Durch das NVDA-Objekt selbst.
@@ -434,8 +433,8 @@ Diese Ereignismethoden verarbeiten unterschiedliche Argumente, abhängig davon, 
 Wenn ein Ereignis, das sich auf ein NVDA-Objekt bezieht im NVDA-Objekt selbst definiert wird, akzeptiert es ein Argument namens "self", das die Instanz des NVDA-Objekts darstellt.
 einige Ereignisse verarbeiten noch zusätzliche Argumente, dies ist allerdings ziemlich selten.
 
-Wird ein Ereignis, das sich auf ein NVDA-Objekt bezieht, in einem globalen Plug-in, in einem Anwendungsmodul oder in einem Interceptor definiert, verarbeitet es die folgenden Argumente:
-- self: Die Instanz des Anwendungsmoduls, des globalen Plugins oder des Interceptors.
+Wird ein Ereignis, das sich auf ein NVDA-Objekt bezieht, in einer globalen Erweiterung, in einem Anwendungsmodul oder in einem Interceptor definiert, verarbeitet es die folgenden Argumente:
+- self: Die Instanz des Anwendungsmoduls, des globalen Erweiterungen oder des Interceptors.
 - obj: Das NVDA-Objekt, welches das Ereignis ausgelöst hat.
 - nextHandler: Eine Funktion, die bei ihrem Aufruf das Ereignis weiter durchreicht.
 -
@@ -456,15 +455,15 @@ Es gibt zwar noch viel mehr, die oben aufgeführten Ereignisse sind jedoch die g
 Ein Beispiel für eine Ereignisbehandlungsroutine finden Sie im Beispiel 1.
 
 ++ Die Schlafmodus-Variable ++
-Anwendungsmodule besitzen eine sehr nützliche Eigenschaft namens "sleepmode". Diese Eigenschaft deaktiviert, wenn sie auf True gesetzt wird, fast alle Funktionen von NVDA.
+Anwendungsmodule besitzen eine sehr nützliche Eigenschaft namens "sleepmode". Diese Eigenschaft deaktiviert, wenn sie auf "True" gesetzt wird, fast alle Funktionen von NVDA.
 Der Schlafmodus ist nützlich für anwendungen, die eigene Bildschirmlese-Funktionen besitzen oder für Spiele, bei denen man volle Kontrolle über die Tastatur benötigt.
 
 Obwohl der Anwender den Schlafmodus mit NVDA+Umschalt+S ein- und ausschalten kann, kann der Entwickler trotzdem die Standardeinstellung des Schlafmodus vorgeben.
-Dies geschied einfach durch setzen der Eigenschaft sleepMode auf True in der Klasse des Anwendungsmoduls.
+Dies geschied einfach durch setzen der Eigenschaft "sleepMode" auf "True" in der Klasse des Anwendungsmoduls.
 
 ++ Beispiel 4: Ein Schlafmodus-Anwendungsmodul ++
 Der folgende Code kann kopiert und im Anwendungsmodul-Verzeichnis in einer Datei für eine Anwendung gespeichert werden, für die Sie den Schlafmodus aktivieren möchten.
-Die Datei muss die Endung .py erhalten.
+Die Datei muss die Endung ".py" erhalten.
 
 ```
 --- Beginn ---
@@ -479,11 +478,11 @@ class AppModule(appModuleHandler.AppModule):
  
 ++ Eigene NVDA-Objektklassen erstellen ++
 Um die Zugänglichkeit von anwendungen mit NVDA zu verbessern, ist das Definieren von eigenen NVDA-Objektklassen der effektivste Weg.
-Dies erlaubt Ihnen, die gesamte für ein Steuerelement relevante Logik an einer einzigen Stelle zusammenzufassen, anstatt sie auf verschiedene Plugin-Ereignisse aufzuteilen.
+Dies erlaubt Ihnen, die gesamte für ein Steuerelement relevante Logik an einer einzigen Stelle zusammenzufassen, anstatt sie auf verschiedene Ereignisse einer Erweiterung aufzuteilen.
 
 die definition einer eigenen Objektklasse erfolgt in zwei Schritten:
 - Definieren der NVDA-Objektklasse und deren Skripte, Ereignisse, Eigenschaften und Eingabemethoden-Zuweisungen
-- NVDA mitteilen, dass diese Klasse in bestimmten Situationen zu verwenden ist, indem sie  sie mit Hilfe der Methode "chooseNVDAObjectOverlayClasses" auf Plugin-Ebene einbinden.
+- NVDA mitteilen, dass diese Klasse in bestimmten Situationen zu verwenden ist, indem sie  sie mit Hilfe der Methode "chooseNVDAObjectOverlayClasses" auf Ebene einer Erweiterung einbinden.
 -
 
 Wenn Sie eigene NVDA-Objektklassen definieren, haben Sie viele NVDA-Objekt-basisklassen zur Auswahl.
@@ -494,9 +493,9 @@ so ähnlich werden Sie Ihr Objekt von der Klasse "NVDAObjects.IAccessible.IAcces
 Außerdem sollten Sie genau wissen, welche Eigenschaften Sie bei Ihrer benutzerdefinierten Klasse überschreiben wollen.
 Wenn Sie beispielsweise eine iAccessible-spezifische Eigenschaft wie "shouldAllowIAccessibleFocusEvent" überschreiben wollen, müssen Sie Ihr Objekt von  "NVDAObjects.IAccessible.IAccessible" ableiten.
 
-Die Methode "chooseNVDAObjectOverlayClasses" kann in Anwendungsmodulen oder globalen Plugins eingesetzt werden.
+Die Methode "chooseNVDAObjectOverlayClasses" kann in Anwendungsmodulen oder globalen Erweiterungen eingesetzt werden.
 Dabei verarbeitet sie drei Argumente:
-- self: Die Instanz des anwendungsmoduls oder des globalen Plugins.
+- self: Die Instanz des anwendungsmoduls oder des globalen Erweiterungen.
 - obj: Das Objekt, für das eine neue Klasse ausgewählt werden soll.
 - clsList: Eine Python-Liste mit Klassen, die für das Objekt benutzt werden sollen.
 -
@@ -622,26 +621,26 @@ class AppModule(appModuleHandler.AppModule):	def event_gainFocus(self, obj, next
 --- Ende ---
 ```
 
-++ Verwenden von Dialog- und Meldungsfenstern zur Interaktion mit Anwendungsmodulen und globalen Plug-ins ++
-Wenn Sie anwendungsmodule oder globale plug-ins schreiben, kann es manchmal sinnvoll sein, mit dem anwendungsmodul zu interagieren. Zu diesem Zweck können sie die in wxpython mitgelieferten Dialoge und Meldungsfenster verwenden. Den einfachsten Fall stellt hier die Funktion messagebox dar, mit der Sie Informations- und Bestätigungsdialoge in Ihre Plug-ins integrieren können. Die Funktion ist Teil des Moduls gui und erwartet folgende Parameter:
-- message: der Text, der im Dialogfeld angezeigt werden soll.
-- caption: Der titel des Dialogfensters, Standardwert ist 'Message'.
-- style: definiert Charakteristika des Meldungsfensters, wie z.B. die anzuzeigenden Schaltflächen, die Symbole in der Titelzeile etc. Der Parameter Style ist eine Kombination von Konstanten, die im Modul wx definiert sind und beim Aufruf von MessageBox durch senkrechte Striche getrennt angegeben werden. Folgende konstanten sind verfügbar:
- - YES: Das meldungsfenster enthält die Schaltfläche "ja"
- - NO: das meldungsfenster enthält die Schaltfläche "nein".
- - OK: das meldungsfenster enthält die Schaltfläche "ok"
- - CANCEL: Das meldungsfenster enthält die Schaltfläche "abbrechen".
+++ Verwenden von Dialog- und Meldungsfenstern zur Interaktion mit Anwendungsmodulen und globalen Erweiterungen ++
+Wenn Sie Anwendungsmodule oder globale Erweiterungen schreiben, kann es manchmal sinnvoll sein, mit dem anwendungsmodul zu interagieren. Zu diesem Zweck können sie die in wxPython mitgelieferten Dialoge und Meldungsfenster verwenden. Den einfachsten Fall stellt hier die Funktion messagebox dar, mit der Sie Informations- und Bestätigungsdialoge in Ihre Erweiterungen integrieren können. Die Funktion ist Teil des Moduls "gui" und erwartet folgende Parameter:
+- message: Der Text, der im Dialogfeld angezeigt werden soll.
+- caption: Der Titel des Dialogfensters, Standardwert ist "Message".
+- style: Definiert Charakteristika des Meldungsfensters, wie z. B. die anzuzeigenden Schaltflächen, die Symbole in der Titelzeile etc. Der Parameter Style ist eine Kombination von Konstanten, die im Modul "wx" definiert sind und beim Aufruf von MessageBox durch senkrechte Striche getrennt angegeben werden. Folgende konstanten sind verfügbar:
+ - YES: Das Meldungsfenster enthält die Schaltfläche "Ja".
+ - NO: Das Meldungsfenster enthält die Schaltfläche "Nein".
+ - OK: Das Meldungsfenster enthält die Schaltfläche "OK".
+ - CANCEL: Das Meldungsfenster enthält die Schaltfläche "Abbrechen".
  - ICON_ERROR: Das Meldungsfenster wird als Fehlermeldung angezeigt (und ein entsprechender im System hinterlegter Klang abgespielt).
- - ICON_WARNING: Die meldung wird als Warnung angezeigt
- - ICON_INFORMATION: Die Meldung wird als informationsfenster angezeigt (Standard)
+ - ICON_WARNING: Die Meldung wird als Warnung angezeigt.
+ - ICON_INFORMATION: Die Meldung wird als informationsfenster angezeigt (Standard).
  -
 -
 
 Hinweis: Die Konstanten, die die angezeigten Schaltflächen angeben, können auch benutzt werden, um zu prüfen, welche Schaltfläche der Anwender gedrückt hat, um das Meldungsfenster zu schließen.
 
 
-++ Beispiel 8: ein globales Plug-in, das beim Drücken von nvda+umschalt+r nach  dem Anzeigen eines Bestätigungsdialogs die Konfiguration auf die Werkseinstellungen zurücksetzt ++
-Das folgende Beispiel zeigt, wie Sie die im Python-Modul gui  mitgelieferte Funktion messageBox verwenden können, um einen Bestätigungsdialog anzuzeigen. gleichzeitig wird die Verwendung der Funktion CallAfter() aus dem Modul wx demonstriert, die nötig ist, um zu verhindern, dass sich NVDA während der Anzeige des Bestätigungsdialogs aufhängt. Kopieren sie den folgenden Quelltext in eine Datei beliebigen namens in ihr benutzerspezifisches Verzeichnis für globale Plug-ins.
+++ Beispiel 8: Eine globale Erweiterung, das beim Drücken von NVDA+Umschalt+R nach  dem Anzeigen eines Bestätigungsdialogs die Konfiguration auf die Werkseinstellungen zurücksetzt ++
+Das folgende Beispiel zeigt, wie Sie die im Python-Modul "gui" mitgelieferte Funktion "messageBox" verwenden können, um einen Bestätigungsdialog anzuzeigen. gleichzeitig wird die Verwendung der Funktion CallAfter() aus dem Modul "wx" demonstriert, die nötig ist, um zu verhindern, dass sich NVDA während der Anzeige des Bestätigungsdialogs aufhängt. Kopieren sie den folgenden Quelltext in eine Datei beliebigen namens in ihr benutzerspezifisches Verzeichnis für globale Erweiterungen.
 
 ```
 --- Beginn ---
@@ -652,41 +651,41 @@ import gui
 import core
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	__gestures = {
-		'kb:nvda+shift+r': 'resetconfig'
+		'kb:NVDA+Shift+R': 'resetconfig'
 	}
 	def script_resetconfig(self, gestures):
 		wx.CallAfter(self.resetconfig)
 	def resetconfig(self):
-		if gui.messageBox(caption='Konfiguration zuruecksetzen', message='wollen Sie wirklich die Konfiguration auf die Werkseinstellungen zuruecksetzen und NVDA danach neu starten?', style=wx.YES|wx.NO)==wx.YES:
+		if gui.messageBox(caption='Konfiguration zurücksetzen', message='Möchten Sie wirklich die Konfiguration auf die Werkseinstellungen zurücksetzen und NVDA danach neu starten?', style=wx.YES|wx.NO)==wx.YES:
 			config.load(True)
 			core.restart()
 --- Ende ---
 ```
 
-+++ Hinweise zur Funktion wx.CallAfter +++
-- Problem: Technisch sind Eingabemethoden wie tastaturanschläge nichts anderes als Ereignisse, auf die innerhalb von NVDA mit Hilfe von Scripts reagiert wird. Es kann immer nur ein Ereignis zur selben Zeit abgearbeitet werden. Dies bedeutet, dass NVDA z.B. nicht auf Tastendrücke oder Braillezeilen-Aktionen reagieren kann, wenn ein an ein Ereignis gekoppeltes Script stehen bleibt, weil es auf eine Benutzereingabe wartet. 
-- Lösung: Mit Hilfe der in wx enthaltenen Funktion CallAfter kann (wie der Name verrät) Code ausgeführt werden, nachdem die Ereignisbehandlung abgearbeitet wurde. Die ausführung des mit CallAfter angegebenen codes wird gewissermaßen "vorgemerkt" und unmittelbar nach Abschluss der Ereignisbehandlungsroutine ausgeführt. Hierdurch ist es NVDA möglich, auf Braillezeilen-Navigationstasten zu reagieren, wenn der Anwender versucht, ein meldungsfenster auszulesen, das in ein Skript eingebunden war.
++++ Hinweise zur Funktion "wx.CallAfter" +++
+- Problem: Technisch sind Eingabemethoden wie tastaturanschläge nichts anderes als Ereignisse, auf die innerhalb von NVDA mit Hilfe von Skripten reagiert wird. Es kann immer nur ein Ereignis zur selben Zeit abgearbeitet werden. Dies bedeutet, dass NVDA z.B. nicht auf Tastendrücke oder Braillezeilen-Aktionen reagieren kann, wenn ein an ein Ereignis gekoppeltes Skript stehen bleibt, weil es auf eine Benutzereingabe wartet. 
+- Lösung: Mit Hilfe der in "wx" enthaltenen Funktion "CallAfter" kann (wie der Name verrät) Code ausgeführt werden, nachdem die Ereignisbehandlung abgearbeitet wurde. Die ausführung des mit CallAfter angegebenen codes wird gewissermaßen "vorgemerkt" und unmittelbar nach Abschluss der Ereignisbehandlungsroutine ausgeführt. Hierdurch ist es NVDA möglich, auf Braillezeilen-Navigationstasten zu reagieren, wenn der Anwender versucht, ein meldungsfenster auszulesen, das in ein Skript eingebunden war.
 -
 
-Die Funktion CallAfter akzeptiert den namen der "vorzumerkenden" Funktion und eine beliebige Anzahl von Argumenten als Parameter, die an diese Funktion übergeben werden. Die Parameter können benannt oder unbenannt angegeben werden.
+Die Funktion "CallAfter" akzeptiert den namen der "vorzumerkenden" Funktion und eine beliebige Anzahl von Argumenten als Parameter, die an diese Funktion übergeben werden. Die Parameter können benannt oder unbenannt angegeben werden.
 
 
 + Verpacken von Code als NVDA-Erweiterungen +
-Um das Verteilen und die Installation von Plug-ins und Treibern zu erleichtern, können diese in einzelne Paketdateien verpackt werden, die dann mit Hilfe der Funktion "Erweiterungen verwalten" installiert werden können. Diese Funktion ist im Menü "Extras" zu finden. 
+Um das Verteilen und die Installation von Erweiterungen und Treibern zu erleichtern, können diese in einzelne Paketdateien verpackt werden, die dann mit Hilfe der Funktion "Erweiterungen verwalten" installiert werden können. Diese Funktion ist im Menü "Extras" zu finden. 
 Erweiterungspakete werden nur von NVDA 2012.2 und neuer unterstützt.
-Ein Paket ist einfach eine Datei im Zip-Format mit der Erweiterung .nvda-addon, die folgende Dateien und Verzeichnisse enthalten kann:
+Ein Paket ist einfach eine Datei im Zip-Format mit der Erweiterung ".nvda-addon", die folgende Dateien und Verzeichnisse enthalten kann:
 - Eine Manifest-Datei mit grundlegenden Informationen über das Paket.
-- Ordner mit Plugins und Treibern, die in NVDA installiert werden sollen.
+- Ordner mit Erweiterungen und Treibern, die in NVDA installiert werden sollen.
 - Zusätzlichen Code, der bei der Installation bzw. der Deinstallation des Pakets ausgeführt werden soll.
-- Übersetzungen der in Ihren Plugins und Treibern verwendeten Meldungen für unterschiedliche Sprachräume.
+- Übersetzungen der in Ihren Erweiterungen und Treibern verwendeten Meldungen für unterschiedliche Sprachräume.
 -
 
 ++ Nicht-ASCII-Dateinamen in Zip-Archiven ++
-wenn Ihr Archiv Dateien enthält, in deren Namen Zeichen vorkommen, die nicht zum Ascii-Zeichensatz gehören, muss das Archiv so erstellt werden, dass die Dateinamen utf-8-codiert werden. 
+Wenn Ihr Archiv Dateien enthält, in deren Namen Zeichen vorkommen, die nicht zum Ascii-Zeichensatz gehören, muss das Archiv so erstellt werden, dass die Dateinamen utf-8-codiert werden. 
 Dies ermöglicht ein Entpacken des Archivs unabhängig davon, für welche Sprache das Zielsystem ausgelegt ist.
 Unglücklicherweise unterstützen viele Archivierungsprogramme (einschließlich Windows-Explorer) diese Methode nicht.
-Generell muss die utf8-Codierung von Datinamen ausdrücklich aktiviert werden, auch wenn das Archivierungsprogramm dies von Hause aus unterstützt.
-In [[http://www.7-zip.org/ 7-zip]] können Sie die utf-8-Codierung von Dateinamen beispielsweise durch Angabe des Parameters "cu=on" beim Erstellen des Archivs einschalten.
+Generell muss die UTF8-Kodierung von Dateinamen ausdrücklich aktiviert werden, auch wenn das Archivierungsprogramm dies von Hause aus unterstützt.
+In [[http://www.7-zip.org/ 7-zip]] können Sie die UTF8-Kodierung von Dateinamen beispielsweise durch Angabe des Parameters "cu=on" beim Erstellen des Archivs einschalten.
 
 
 ++ Manifest-Dateien ++
@@ -717,54 +716,53 @@ url = http://www.nvda-project.org/wiki/Development
 --- Ende ---
 ``` 
 
-++ Plugins und Treiber ++
-Die folgenden Plugins und Treiber können in einer Erweiterung enthalten sein:
+++ Erweiterungen und Treiber ++
+Die folgenden Erweiterungen und Treiber können in einer Erweiterung enthalten sein:
 - Anwendungsmodule: Diese müssen in einem Ordner namens "appModules" innerhalb des Archivs liegen.
 - Braillezeilentreiber: Diese müssen in einem Ordner namens "brailleDisplayDrivers" innerhalb des Archivs liegen.
-- globale Plug-ins: Diese müssen in einem Ordner namens "globalPlugins" innerhalb des archivs liegen.
+- Globale Erweiterungen: Diese müssen in einem Ordner namens "globalPlugins" innerhalb des archivs liegen.
 - Treiber für Sprachausgaben: Diese müssen in einem Ordner namens "synthDrivers" innerhalb des Archivs liegen.
 -
 
 ++ Zusätzlicher Code zur Installation / deinstallation ++
-Falls Sie während der Installation oder der Deinstallation des Pakets zusätzlichen Code ausführen möchten, um z. B. Lizenzinformationen zu prüfen oder Dateien an einen benutzerdefinierten Ort zu kopieren, können Sie in ihrem Paket eine Datei namens installTasks.py bereitstellen, die spezielle Funktionen enthält. Diese Funktionen werden immer dann aufgerufen, wenn die Erweiterung installiert/deinstalliert wird.
-Sie sollten unbedingt das unnötige Laden von Modulen vermeiden (Insbesondere Python-C-Erweiterungen oder dlls ihrer eigenen Erweiterung), weil dies sonst die Deinstalation des Pakets verhindern könnte.
+Falls Sie während der Installation oder der Deinstallation des Pakets zusätzlichen Code ausführen möchten, um z. B. Lizenz-Informationen zu prüfen oder Dateien an einen benutzerdefinierten Ort zu kopieren, können Sie in ihrem Paket eine Datei namens "installTasks.py" bereitstellen, die spezielle Funktionen enthält. Diese Funktionen werden immer dann aufgerufen, wenn die Erweiterung installiert/deinstalliert wird.
+Sie sollten unbedingt das unnötige Laden von Modulen vermeiden (insbesondere Python-C-Erweiterungen oder Programmbibliotheken (DLLs) ihrer eigenen Erweiterung), weil dies sonst die Deinstalation des Pakets verhindern könnte.
 Sollte dies jedoch vorkommen, so wird das Verzeichnis der Erweiterung umbenannt und erst beim nächsten Start von NVDA gelöscht.
 
-+++ Die Funktion onInstall +++
-Nachdem die Dateien der Erweiterung aus dem Paket entpackt und in NVDA integriert wurden, wird NVDA die Datei installtasks.py nach einer Funktion namens onInstall durchsuchen und diese ausführen.
-Auch wenn die Erweiterung zu diesem Zeitpunkt bereits entpackt wurde, besitzt das Verzeichnis immer noch den Namenszusatz .pendinginstall. Dieser wird erst nach einem Neustart von NVDA entfernt und die Erweiterung wird zum ersten Mal geladen.
++++ Die Funktion "onInstall" +++
+Nachdem die Dateien der Erweiterung aus dem Paket entpackt und in NVDA integriert wurden, wird NVDA die Datei "installtasks.py" nach einer Funktion namens "onInstall" durchsuchen und diese ausführen.
+Auch wenn die Erweiterung zu diesem Zeitpunkt bereits entpackt wurde, besitzt das Verzeichnis immer noch den Namenszusatz ".pendinginstall". Dieser wird erst nach einem Neustart von NVDA entfernt und die Erweiterung wird zum ersten Mal geladen.
 Wenn die Funktion einen Ausnahmefehler auslöst, wird die Installation abgebrochen und das Verzeichnis gelöscht.
 
-+++ Die Funktion onUninstall +++
-Wenn NVDA nach der Deinstallation eines Pakets neu gestartet wird, wird die Datei InstallTasks.py nach einer Funktion onUninstall durchsucht und diese ausgeführt.
++++ Die Funktion "onUninstall" +++
+Wenn NVDA nach der Deinstallation eines Pakets neu gestartet wird, wird die Datei "installtasks.py" nach einer Funktion "onUninstall" durchsucht und diese ausgeführt.
 Wurde diese Funktion erfolgreich ausgeführt, wird das Verzeichnis der Erweiterung automatisch entfernt.
 Da dies zu einem Zeitpunkt geschieht, noch bevor andere Komponenten von NVDA geladen wurden, kann die funktion keinerlei Eingaben vom Benutzer entgegennehmen.
 
-++ Erweiterungen lokalisieren ++
+++ Erweiterungen übersetzen ++
 Sie können für Ihre Erweiterung sprachspezifische Informationen hinterlegen.
 Diese werden im Ordner "locale" innerhalb des Archivs gespeichert.
 Der Ordner sollte Unterordner für jeden Sprachraum enthalten, für den Sie Meldungen hinterlegen wollen. Hierbei muss dasselbe Namensformat benutzt werden, wie bei den Kernkomponenten von NVDA so z. B. "en" für Englisch oder "de" für deutsch.
 
 +++ Sprachspezifische Manifest-Dateien +++
 Jedes Sprachenverzeichnis kann eine sprachspezifische Manifest.ini enthalten, die einige der oben beschriebenen Manifest-Felder in übersetzter Form bereitstellt.
-Dies sind die Felder Summary und Description.
+Dies sind die Felder "Summary" und "Description".
 Alle anderen Felder werden ignoriert.
 
 +++ Sprachspezifische Meldungen +++
 Jedes sprachverzeichnis kann auch GetText-kompatible Kataloge mit Übersetzungen von Meldungen enthalten.
 Wie bei den NVDA-Kernkomponenten auch, sollten Sie die Meldungsdatei in kompilierter Form unter dem Namen "nvda.mo" im Unterverzeichnis LC_MESSAGES des Sprachenverzeichnisses ablegen.
-Um Ihren Plugins zu erlauben, mittels der Funktion _() auf GetText-Katalogdateien zuzugreifen, müssen Sie die Übersetzung am Beginn eines jeden Python-Moduls initialisieren. Rufen Sie hierzu die Funktion addonHandler.initTranslations() auf.
-Weitere Informationen über gettext und allgemeine Informationen über die Übersetzung von NVDA finden Sie in folgendem Artikel:
+Um Ihren Erweiterungen zu erlauben, mittels der Funktion _() auf GetText-Katalogdateien zuzugreifen, müssen Sie die Übersetzung am Beginn eines jeden Python-Moduls initialisieren. Rufen Sie hierzu die Funktion addonHandler.initTranslations() auf.
+Weitere Informationen über GetText und allgemeine Informationen über die Übersetzung von NVDA finden Sie in folgendem Artikel:
 http://www.nvda-project.org/wiki/TranslatingNVDA
 
 + Die Python-Konsole von NVDA +
-
 Die Python-Konsole emuliert innerhalb von NVDA den interaktiven Python-Interpreter.
-Sie ist zur Fehlerbehebung oder zum Erkunden von NVDA's Interna oder zum Erkunden von Zugänglichkeitsschnittstellen nützlich.
+Sie ist zur Fehlerbehebung oder zum Erkunden von NVDAs Interna oder zum Erkunden von Zugänglichkeitsschnittstellen nützlich.
 
 ++ Verwendung ++
 Die Konsole kann auf zwei Arten aktiviert werden:
-- Durch Drücken von NVDA+Steuerung+Z.
+- Durch Drücken von NVDA+Strg+Z.
 Wenn Sie die Konsole auf diese Art aktivieren, werden Informationen über den Zustand von NVDA in Variablen gespeichert, die über die Konsole verfügbar sind.
 Lesen Sie den Abschnitt zu  [Schnappschuss-Variablen #PythonConsoleSnapshotVariables] für weitere Informationen.
 - Durch Aufrufen des Befehls Extras --> Python-Konsole aus dem NVDA-Menü.
@@ -778,7 +776,7 @@ Mit den Pfeiltasten können Sie durch die Ausgaben von ausgeführten Befehlen na
 Die ausgabe des Befehls wird beim Drücken von Eingabe vorgelesen.
 Mit F6 können Sie zwischen Ein- und Ausgabefenster wechseln.
 
-durch Schließen des Fensters wird die Sitzung lediglich verborgen. Dies macht es möglich, zur Konsole zurückzukehren und alle bisherigen Eingaben und Variablen beizubehalten
+Durch Schließen des Fensters wird die Sitzung lediglich verborgen. Dies macht es möglich, zur Konsole zurückzukehren und alle bisherigen Eingaben und Variablen beizubehalten
 
 
 ++ Namensraum ++[PythonConsoleNamespace]
@@ -788,7 +786,7 @@ Der Einfachheit halber werden die folgenden Module und Variablen automatisch imp
 sys, os, wx, log (aus logHandler), api, queueHandler, speech, braille
 
 +++ Schnappschuss-Variablen +++[PythonConsoleSnapshotVariables]
-Wann immer NVDA+Steuerung+Z gedrückt wird, werden einige Variablen gesetzt, die eine Momentaufnahme von NVDA darstellen.
+Wann immer NVDA+Strg+Z gedrückt wird, werden einige Variablen gesetzt, die eine Momentaufnahme von NVDA darstellen.
 Diese Variablen sind:
 - focus: Das Objekt, welches momentan den Fokus besitzt.
 - focusAnc: Die Vorfahren des aktuell fokussierten Objekts.
@@ -808,7 +806,7 @@ Sie sollten die Remote-Python-Konsole nur dann aktivieren, wenn Sie mit vertraue
 
 ++ Verwendung ++
 Um die Remote-Python-Konsole zu aktivieren, verwenden Sie die lokale Python-Konsole und importieren Sie remotePythonConsole. Rufen Sie anschließend remotePythonConsole.initialize() auf.
-Jetzt können Verbindungen über den tcp-Port 6832 aufgebaut werden.
+Jetzt können Verbindungen über den TCP-Port 6832 aufgebaut werden.
 Die Eingabeaufzeichnungsliste für zuvor eingegebene Befehle wird nicht unterstützt.
 Der Namensbereich ist identisch mit dem  [Namensbereich der lokalen Python-Konsole #PythonConsoleNamespace].
 
@@ -816,5 +814,4 @@ Es gibt jedoch einige weitere spezielle Funktionen:
 - snap(): Erstellt einen Schnappschuss des aktuellen Zustands von NVDA und speichert diesen in den [Schnappschuss-Variablen #PythonConsoleSnapshotVariables].
 - rmSnap(): Entfernt alle Schnappschuss-Variablen.
 -
-
 
