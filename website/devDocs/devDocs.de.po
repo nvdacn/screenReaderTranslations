@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-01-12 22:25+0000\n"
-"PO-Revision-Date: 2014-05-05 09:49+0100\n"
+"PO-Revision-Date: 2014-05-06 17:03+0100\n"
 "Last-Translator: David Parduhn <xkill85@gmx.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: de\n"
@@ -1749,7 +1749,7 @@ msgstr ""
 #. type: Title ###
 #, no-wrap
 msgid "Specialist objects and overriding object properties at runtime"
-msgstr ""
+msgstr "spezialisieren von Objekten und überschreiben von Objekteigenschaften zur Laufzeit"
 
 #. type: Plain text
 msgid ""
@@ -1757,12 +1757,17 @@ msgid ""
 "example, some parts of a program may need custom gestures, or one may need "
 "to change the role of a window to that of a button."
 msgstr ""
+"Manchmal genügt Ihnen beim Umgang mit Objekten deren Standardverhalten "
+"nicht. Beispiele herfür sind Objekte, die zusätzliche Tastenkombinationen "
+"benötigen oder Objekte, deren Eigenschaften falsch erkannt werden."
 
 #. type: Plain text
 msgid ""
 "NVDA provides two methods for creating specialist, or overlay objects (or "
 "classes), each suited for different needs:"
 msgstr ""
+"NVDA stellt je nach Anwendungsfall zwei Methoden zum Erstellen von "
+"speziellen objekten zur Verfügung"
 
 #. type: Bullet: '* '
 msgid ""
@@ -1812,17 +1817,25 @@ msgid ""
 "is usually read as, \"this child class inherits from this base class\". "
 "We'll see code like this later)."
 msgstr ""
+"Bedenken Sie, dass die abgeleitete(n) Klasse(n) in der selben Datei "
+"vorhanden sein sollte(n). Die Klassen sollten von einer bekannten "
+"Basisklasse abgeleitet sein.In Python werden benutzerdefinierte Klasen mit "
+"folgender Syntax abgeleitet:  `class benutzerdefinierte_Klasse(basisklasse)`."
+"Diese Syntax bedeutet soviel wie \"diese benutzerdefinierter Klasse wurde "
+"von dieser Basisklasse abgeleitet\". Für Codebeispiele siehe weiter unten."
 
 #. type: Title ###
 #, no-wrap
 msgid "Examples of overlay classes and modified roles"
-msgstr ""
+msgstr "Beispiele zu überlagernden Klassen und benutzerdefinierten Steuerelementtypen"
 
 #. type: Plain text
 msgid ""
 "Below examples illustrate the uses of the two overlay and attribute "
 "modification methods we've discussed above:"
 msgstr ""
+"Der folgende Abschnitt zeigt Beispiele zu den oben besprochenen Themen "
+"\"benutzerdefinierte Steuerelementtypen\" und \"überlagernde Klassen\"."
 
 #. type: Plain text
 msgid "An example of the first case: modifying an atribute."
@@ -1844,6 +1857,8 @@ msgid ""
 "This means that whenever we encounter a window with the class name of \"TForm"
 "\", NvDA will treat this as a normal window."
 msgstr ""
+"Dies bedeutet, dass NVDA ein jedes objekt als normales Fenster ansehen wird, "
+"welches die Fensterklasse \"tform\" besitzt."
 
 #. type: Plain text
 msgid ""
@@ -1851,6 +1866,10 @@ msgid ""
 "specific parts of a program, then uses chooseNVDAObjectOverlayClasses to "
 "assign the logic for each control."
 msgstr ""
+"Im Anwendungsmodul im zweiten Beispiel werden für zwei Objekte "
+"benutzerdefinierte Klassen definiert. anschließend wird "
+"chooseNVDAObjectOverlayClasses verwendet, um die benutzerdefinierten Klassen "
+"an die richtigen Objekte zuzuweisen."
 
 #. type: Plain text
 #, no-wrap
@@ -1899,11 +1918,18 @@ msgid ""
 "and in the developer info, these custom objects will come first when MRO "
 "(Method Resolution Order) for the navigator object is displayed."
 msgstr ""
+"In beiden Fällen muss die benutzerdefinierte Klasse an den Anfang der "
+"Klassenliste \"clsList\" eingefügt werden. Dies bewirkt, dass sämtlicher "
+"Code (einschließlich Tastenkombinationen) mit höherer Priorität ausgeführt "
+"wird.Außerdem werden die benutzerdefinierten Klassen an erster Stelle "
+"angezeigt, wenn Sie sich für ein derart manipuliertes Objekt die "
+"Entwicklerinfo (insbesondere die MRO, die Methodenauflösungsreihenfolge) "
+"anzeigen lassen."
 
 #. type: Title ###
 #, no-wrap
 msgid "Input and output: scripts and UI messages"
-msgstr ""
+msgstr "Ein- und Ausgabe: Skripte und Meldungen"
 
 #. type: Plain text
 msgid ""
@@ -1911,6 +1937,9 @@ msgid ""
 "displaying what the add-on is doing. These are done via scripts (input) and "
 "UI messages (output)."
 msgstr ""
+"ein weiterer wichtger Bestandteil von Erweiterungen sind Skripte und "
+"meldungen mit denen Sie Befehle (Eingaben) vom Benutzer entgegennehmen Bzw. "
+"Meldungen ausgeben können."
 
 #. type: Plain text
 msgid ""
@@ -1941,6 +1970,9 @@ msgid ""
 "loads and is cleared when either NvDA exits or the app for the app module "
 "loses focus (that is, the user has switched to another program)."
 msgstr ""
+"Der einfachste Weg, Skripte an Tastenkombinationen zuzuweisen, ist ein "
+"Python-Wörterbuch namens __gestures.Die Syntax innerhalb des Wörterbuchs "
+"lautet \"Befehl:Script\""
 
 #. type: Plain text
 msgid ""
@@ -1960,6 +1992,8 @@ msgid ""
 "As of time of writing, NvDA supports input from the keyboard, braille "
 "dislays with or without braille keyboard and touchscreens."
 msgstr ""
+"Momentan unterstützt NVDA Eingeben von einer Tastatur, von einer "
+"Braillezeile, einer Brailletastatur oder einem Touchscreen."
 
 #. type: Title ###
 #, no-wrap
