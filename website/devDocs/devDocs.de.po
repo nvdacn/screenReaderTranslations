@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-01-12 22:25+0000\n"
-"PO-Revision-Date: 2014-05-07 19:17+0100\n"
+"PO-Revision-Date: 2014-05-08 09:24+0100\n"
 "Last-Translator: David Parduhn <xkill85@gmx.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: de\n"
@@ -1985,16 +1985,18 @@ msgid ""
 "which involves scripts for specific objects, will be covered when we talk "
 "about overlay classes."
 msgstr ""
-"Eine weitere Möglichkeit ist Skripte einzubinden über die Laufzeitumgebung. "
-"Dabei wird das über das Wörterbuch für die Gesten erstellt (\"__gestures\"). "
-"Die Groß- und Kleinschreibung wird dabei behalten. Der Entwickler könnte "
-"dann \"inputCore.bindGesture\" (oder \"inputCore.bindGestures\" verwenden, "
-"falls mehr als eine Geste oder ein Skript benötigt wird). Um nur eine "
-"bestimmte Geste auf einmal zu definieren, verwenden Sie \"inputCore."
-"clearGestures\", dann \"inputCore.bindGestures(__gestures)\", um die "
-"hinzugefügten Gesten zu entfernen. Ein wesentlich eleganter Weg ist, Skripte "
-"für spezielle Objekte einzubinden. Aber das wird in den Klassen noch weiter "
-"ausführlicher behandelt."
+"Eine weitere Möglichkeit ist das Einbinden von Sripten zur Laufzeit. Hierfür "
+"können Sie ein weiteres Python-Wörterbuch erstellen, das (neben __gestures) "
+"z.B. kontextsensitive Gesten enthalten kann, um die Zugänglichkeit für ein "
+"bestinntes Steuerelement zu verbessern. Um die Gestendefinitionen zu "
+"aktivieren, kann der Entwickler die Methoden inputCore.BindGesture (Bzw. "
+"inputCure.BindGestures) verwenden, je nach dem, ob eine oder mehrere Gesten/"
+"Scripte verwendet werden sollen. Um die Gestendefinitionen wieder zu "
+"entfernen, kann die Methode inputCure.ClearGestures verwendet werden. Um "
+"schließlich das ursprüngliche Verhalten von NVDA wiedeherzustellen, können "
+"Sie inputCore.BindGestures(__gestures) verwenden. eine elegantere "
+"Möglichkeit, Eingabemethoden an Objekte zuzuweisen, wird im Kapitel über "
+"überlagernde Klassen beschrieben."
 
 #. type: Plain text
 msgid ""
@@ -2014,7 +2016,7 @@ msgid ""
 "In this example, we'll define two scripts called \"sayHello\" and say"
 "\"GoodBye\", then bind them into two separte gestures."
 msgstr ""
-"In diesem Beispiel definieren wir zwei Skripte \"sayHallo\" und \"sayTschüß"
+"In diesem Beispiel definieren wir zwei Skripte \"sayHallo\" und \"sayGoodBye"
 "\", denen wir dann die jeweilige Tastenkombination zuweisen."
 
 #. type: Plain text
@@ -2033,7 +2035,7 @@ msgid ""
 "\t\tui.message\"Hello!\")\n"
 msgstr ""
 "\tdef script_sayHello(self, gesture):\n"
-"\t\tui.message\"Hallo!\")\n"
+"\t\tui.message(\"Hallo!\")\n"
 
 #. type: Plain text
 #, no-wrap
@@ -2053,8 +2055,8 @@ msgid ""
 "\t}\n"
 msgstr ""
 "\t__gestures={\n"
-"\t\t\"kb:control+NVDA+1\":\"sayHallo\",\n"
-"\t\t\"kb:Control+NVDA+2\":\"sayTschüß\"\n"
+"\t\t\"kb:control+NVDA+1\":\"sayHello\",\n"
+"\t\t\"kb:Control+NVDA+2\":\"sayGoodBye\"\n"
 "\t}\n"
 
 #. type: Plain text
@@ -2062,13 +2064,13 @@ msgid ""
 "Now when you press Control+NvDA+1, NvDA will say, \"Hello\", and when you "
 "press Control+NvDA+2, NVDA will say, \"Good bye.\""
 msgstr ""
-"Jetzt, wenn Sie Strg+NVDA+1 drücken, sagt NVDA \"Hallo\" und wenn Sie Strg"
-"+NVDA+2 drücken, sagt NVDA \"Tschüß\"."
+"wenn Sie jetzt Strg+NVDA+1 drücken, sagt NVDA \"Hallo\" und wenn Sie Strg"
+"+NVDA+2 drücken, sagt NVDA \"Auf Wiedersehen\"."
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 3: runtime script insertion/removal"
-msgstr "Beispiel 3: Ein Laufzeitskript einfügen / entfernen"
+msgstr "Beispiel 3: einfügen und entfernen von Skripten zur laufzeit"
 
 #. type: Plain text
 #, no-wrap
@@ -2077,7 +2079,7 @@ msgstr "\t# Zukünftige Abschnitte #\n"
 
 #. type: Plain text
 msgid "Please delete this notice when appropriate sections are done."
-msgstr "Bitte löschen Sie diese Notiz, sobald Sie damit fertig sind."
+msgstr "Bitte löschen Sie diese Anmerkung, sobald Sie damit fertig sind."
 
 #. type: Title ##
 #, no-wrap
