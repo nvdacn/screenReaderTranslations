@@ -110,16 +110,19 @@
       <LI><A HREF="#toc69">8.3.1. Osnovno Upravljanje</A>
       <LI><A HREF="#toc70">8.3.2. Ustvarjanje Profila</A>
       <LI><A HREF="#ConfigProfileManual">8.3.3. Ročna aktivacija</A>
+      <LI><A HREF="#ConfigProfileTriggers">8.3.4. Prožilci</A>
+      <LI><A HREF="#toc73">8.3.5. Urejanje Profila</A>
+      <LI><A HREF="#toc74">8.3.6. Začasno Onemogočanje Prožilcev</A>
       </UL>
-    <LI><A HREF="#toc72">8.4. Mesta datotek z Nastavitvami</A>
+    <LI><A HREF="#toc75">8.4. Mesta datotek z Nastavitvami</A>
     </UL>
-  <LI><A HREF="#toc73">9. Dodatna Orodja</A>
+  <LI><A HREF="#toc76">9. Dodatna Orodja</A>
     <UL>
-    <LI><A HREF="#toc74">9.1. Pregledovalnik Dnevnika</A>
-    <LI><A HREF="#toc75">9.2. Prikazovalnik Govora</A>
-    <LI><A HREF="#toc76">9.3. Upravitelj Dodatkov</A>
-    <LI><A HREF="#toc77">9.4. Python Konzola</A>
-    <LI><A HREF="#toc78">9.5. Ponovno Naloži vtičnike</A>
+    <LI><A HREF="#toc77">9.1. Pregledovalnik Dnevnika</A>
+    <LI><A HREF="#toc78">9.2. Prikazovalnik Govora</A>
+    <LI><A HREF="#toc79">9.3. Upravitelj Dodatkov</A>
+    <LI><A HREF="#toc80">9.4. Python Konzola</A>
+    <LI><A HREF="#toc81">9.5. Ponovno Naloži vtičnike</A>
     </UL>
   <LI><A HREF="#SupportedSpeechSynths">10. Podprte Govorne Sinteze</A>
   </UL>
@@ -2388,13 +2391,72 @@ Pritisnite gumb Zapri, da zaprete to pogovorno okno.
 V pogovornem oknu za nov profil, lahko določite ime novega profila.
 Lahko izberete tudi, kako naj se ta profil uporablja.
 Če ta profil želite aktivirati ročno, izberite ročna aktivacija (privzeta možnost).
-Drugače izberite prožilec, ki 
+Drugače izberite prožilec, ki bo samodejno aktiviral izbran profil.
+Zaradi udobnejšega delovanja, če polje z imenom pustite prazno, ga bo izpolnil izbran prožilec, ki aktivira profil.
+Glejte <A HREF="#ConfigProfileTriggers">spodaj</A>, če želite dobiti več informacij o prožilcih profilov.
+</P>
+<P>
+Pritisk gumba V redu bo zaprl pogovorno okno profilov konfiguracije in ustvaril profil z izbranimi značilnostmi.
 </P>
 
 <A NAME="ConfigProfileManual"></A>
 <H4>8.3.3. Ročna aktivacija</H4>
 
-<A NAME="toc72"></A>
+<P>
+Profil ročno aktivirate tako, da ga izberete in pritisnete gumb Sproži.
+Ko je profil enkrat aktiviran, ga še vedno lahko preglasijo profili s prožilci, vendar bodo nastavitve tega profila prevladale nad tistimi iz profila s prožilcem.
+Na primer, če profil sproži trenuten program in je poročanje povezav omogočeno v tem profilu, vendar je ista nastavitev v profilu, ki se ročno aktivira izključena, NVDA ne bo sporočala povezav.
+Toda, če zamenjate glas v profilu na prožilec in tega niste nikoli storili v profilu, ki se aktivira ročno, bo NVDA upoštevala nastavitev profila na prožilec.
+Vsaka nastavitev, ki jo boste spremenili, se bo shranila v profilu, ki ga aktivirate ročno.
+Za deaktivacijo ročno aktiviranega profila, ga izberite v seznamu pogovornega okna Konfiguracije profilov in pritisnite gumb Ročno deaktiviraj.
+</P>
+
+<A NAME="ConfigProfileTriggers"></A>
+<H4>8.3.4. Prožilci</H4>
+
+<P>
+Pritisk gumba Prožilci v pogovornem oknu Konfiguracije profilov vam omogoča spreminjanje profilov, ki se morajo aktivirati ob različnih dogodkih. To pomeni, da se aktivirajo različni prožilci.
+</P>
+<P>
+Seznam prožilcev prikazuje seznam prožilcev, ki so trenutno na voljo. Večinoma so to sledeči:
+</P>
+
+<UL>
+<LI>Trenuten program: Ta prožilec aktivira profil, ko se odpre program, ki teče takoj za NVDA nastavitvami. To pomeni, da se prožilec veže na program, s katerega ste odprli nastavitve NVDA. Pozor, Če želite nastaviti prožilec za izbran program, mora program teči v ospredju.
+<LI>Preberi vse: Ta prožilec je vezan na ukaz Preberi vse.
+</UL>
+
+<P>
+Za spremembo profila, ki naj se navezuje na posamezen prožilec, ki ga samodejno aktivira, izberite prožilec in potem izberite še odgovarjajoč profil iz seznama.
+Lahko izberete tudi (Normalno konfiguracijo), če želite, naj profili ne bodo v uporabi.
+</P>
+<P>
+Pritisnite gumb Zapri, da se vrnete v glavno pogovorno okno Konfiguracije profilov.
+</P>
+
+<A NAME="toc73"></A>
+<H4>8.3.5. Urejanje Profila</H4>
+
+<P>
+Če uporabljate ročno aktiviran profil, bo vsaka nastavitev, ki jo boste spremenili, v ta profil.
+Drugače bo nastavitev shranjena v zadnji samodejno aktiviran profil.
+Na primer, če ste profil povezali s prožilcem Beležnice, in potem Beležnico odprete ali se premaknete vanjo, se bo vsaka sprememba nastavitev shranila v ta profil.
+Če za posamezno situacijo ne obstaja niti profil z ročno aktivacijo niti profil s prožilcem, se bo vsaka sprememba nastavitev shranila v Normalno konfiguracijo.
+</P>
+<P>
+Za urejanje profila, ki je povezan s prožilcem "Preberi vse", morate <A HREF="#ConfigProfileManual">ročno aktivirati</A> ta profil.
+</P>
+
+<A NAME="toc74"></A>
+<H4>8.3.6. Začasno Onemogočanje Prožilcev</H4>
+
+<P>
+Včasih je uporabno, če lahko začasno onemogočimo vse prožilce.
+Tak primer se pojavi, ko želite urejati profil, ki se aktivira ročnoali Normalno konfiguracijo brez motenj profilov na prožilcu.
+To storite s potrditvijo izbirnika Začasno onemogoči vse prožilce v pogovornem oknu Konfiguracije profilov.
+</P>
+
+<A NAME="toc75"></A>
 <H3>8.4. Mesta datotek z Nastavitvami</H3>
 
 <P>
@@ -2411,10 +2473,10 @@ Običajno se teh nastavitev ne bi smelo dotikati.
 Za spremembo delovanja NVDA na prijavnem/NUR zaslonih nastavite NVDA, kot želite, da deluje medtem, ko ste prijavljeni v Okna, shranite to konfiguracijo in potem pritisnite gumb "Uporabljaj trenutno shranjene nastavitve na prijavnem zaslonu in drugih "varnih" namizjih" v splošnih nastavitvah za NVDA.
 </P>
 
-<A NAME="toc73"></A>
+<A NAME="toc76"></A>
 <H2>9. Dodatna Orodja</H2>
 
-<A NAME="toc74"></A>
+<A NAME="toc77"></A>
 <H3>9.1. Pregledovalnik Dnevnika</H3>
 
 <P>
@@ -2425,7 +2487,7 @@ Poleg branja vsebine, lahko kopijo dnevnika lahko tudi shranite ali osvežite dn
 Ukazi so na voljo v meniju Pregledovalnika dnevnika.
 </P>
 
-<A NAME="toc75"></A>
+<A NAME="toc78"></A>
 <H3>9.2. Prikazovalnik Govora</H3>
 
 <P>
@@ -2440,7 +2502,7 @@ Ko je prikazovalnik govora omogočen, se stalno posodablja, da vam pokaže besed
 Kakorkoli, če kliknete ali postavite žarišče znotraj prikazovalnika, bo NVDA začasno prenehala posodabljati besedilo, tako da ga boste lažje izbrali ali preslikali.
 </P>
 
-<A NAME="toc76"></A>
+<A NAME="toc79"></A>
 <H3>9.3. Upravitelj Dodatkov</H3>
 
 <P>
@@ -2484,7 +2546,7 @@ V preteklosti je bilo mogoče razširiti zmožnosti NVDA s preslikavo posamezneg
 Najbolje je, da te datoteke odstranite iz vaše konfiguracije in namestite ustrezen dodatek, če je na voljo.
 </P>
 
-<A NAME="toc77"></A>
+<A NAME="toc80"></A>
 <H3>9.4. Python Konzola</H3>
 
 <P>
@@ -2492,7 +2554,7 @@ NVDA Python konzola, ki se nahaja v Orodjih menija NVDA, je orodje za razvijalce
 Več informacij, prosimo, poiščite v Vodiču za Razvijalce (v Angleščini), ki se nahaja v <A HREF="http://community.nvda-project.org/wiki/Development">Razvojnem oddelku na spletnem mestu NVDA</A>.
 </P>
 
-<A NAME="toc78"></A>
+<A NAME="toc81"></A>
 <H3>9.5. Ponovno Naloži vtičnike</H3>
 
 <P>
