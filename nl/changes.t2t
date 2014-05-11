@@ -7,33 +7,34 @@ Wat is Nieuw in NVDA
 
 == Nieuwe Functies ==
 - Aankondiging van tekstselectie is nu mogelijk in sommige custom invoervelden waar display information wordt gebruikt. (#770)
-- In toegankelijke Javatoepassingen wordt informatie over de positie nu aangekondigd voor radio buttons en andere controls die expose group informatie. (#3754)
-- In toegankelijke Javatoepassingen worden keyboard shortcuts nu aangekondigd voor controls die hiervan voorzien zijn. (#3881)
-- In bladermodus, labels on landmarks are nu gemeld. They are also included in the Elements List dialog. (#1195)
-- In bladermodus worden labelled regions nu behandeld als landmarks. (#3741)
-- In Internet Explorer documenten en toepassingen, Live Regions (part of de W3c ARIA standaard) are nu supported, thus allowing web authors to mark particular content to be automatically spoken as it changes. (#1846)
+- In toegankelijke Javatoepassingen wordt informatie over de positie nu aangekondigd voor keuzerondjes en andere controls die groepsinformatie weergeven. (#3754)
+- In toegankelijke Javatoepassingen worden sneltoetsen nu aangekondigd voor controls die hiervan voorzien zijn. (#3881)
+- In bladermodus worden nu labels bij oriëntatiepunten gemeld. Ze zijn ook opgenomen in het dialoogvenster van de Elementenlijst. (#1195)
+- In bladermodus worden gelabelde gebieden nu behandeld als oriëntatiepunten. (#3741)
+- In Internet Explorer documenten en toepassingen worden Live Regions (onderdeel van de W3c ARIA standaard) nu ondersteund. Deze laten auteurs van webpagina's toe om bepaalde gebieden te markeren als veranderlijk. Als de inhoud van zo een gebied verandert, zal die automatisch worden voorgelezen. (#1846)
 
 
-== Changes ==
-- When exiting een dialog or application within een bladermodus document, the bladermodus document's name en type wordt niet langer aangekondigd. (#4069)
+== Veranderingen ==
+- Bij het afsluiten van een dialoogvenster of toepassing in een bladermodus document, wordt de naam en het type van het bladermodus document niet langer aangekondigd. (#4069)
 
 
 == Opgeloste problemen ==
-- The standard Windows System menu is niet langer accidentally silenced in Javatoepassingen (#3882)
-- Bij het kopiëren van tekst van screen review, worden lijnsprongen niet langer genegeerd. (#3900)
-- Pointless whitespace objects worden niet langer gemeld in sommige toepassingen als de focus verandert of when using object navigation with simple review enabled. (#3839)
-- Message boxes en andere dialogs produced by NVDA again cause previous speech to be canceled before announcing the dialog.
-- In bladermodus, the labels of controls such as links en knoppen are nu rendered correctly where het label has been overridden by de auteur for accessibility purposes (specifically, using aria-label or aria-labelledby). (#1354)
-- In Bladermodus in Internet Explorer, text contained within an element marked as presentational (aria-presentation) is niet langer inappropriately ignored. (#4031)
-- Het is nu opnieuw mogelijk Viëtnamese tekst te typen met de Unikey software. To do this, uncheck the Handle keys from andere toepassingen checkbox, added to NVDA's Keyboard settings dialog. (#4043) 
-- In bladermodus, radio en check menu items are gemeld as controls in plaats van just clickable text. (#4092)
-- NVDA schakelt niet langer foutief van focus mode naar bladermdous als een radio of check menu item focus krijgt. (#4092)
-- In Microsoft PowerPoint with speaking of typed words enabled, worden karakters die worden verwijderd met backspace niet langer aangekondigd als deel van het getypte woord. (#3231)
-- In Microsoft Office 2010 Options dialogs, worden de labels van combo boxes correct gemeld. (#4056)
-- In bladermodus in Mozillatoepassingen, using quick navigation commands to move to de volgende of vorige knop of formulierveld nu includes toggle buttons as expected. (#4098)
+- Het standaard Windows Systeemmenu wordt niet langer onverwacht geblokkeerd in Javatoepassingen (#3882)
+- Bij het kopiëren van tekst van Schermoverzichtmodus, worden lijnsprongen niet langer genegeerd. (#3900)
+- Nutteloze objecten met witruimte worden niet langer gemeld in sommige toepassingen als de focus verandert of bij gebruik van objectnavigatie met eenvoudige leesoverzichtmodus ingeschakeld. (#3839)
+- Berichtvakken en andere dialoogvensters van NVDA veroorzaken opnieuw dat eerdere spraak wordt geannuleerd vooraleer het dialoogvenster aan te kondigen.
+- In bladermodus worden de labels van controls zoals links en knoppen nu correct weergegeven als de auteur het label heeft overschreven om de toegankelijkheid te verbeteren (meer bepaald door aria-label of aria-labelledby te gebruiken). (#1354)
+- In Bladermodus in Internet Explorer wordt tekst in een element met aria-presentation niet langer genegeerd. (#4031)
+- Het is nu opnieuw mogelijk Viëtnamese tekst te typen met de Unikey software. Schakel hiervoor het selectievakje Behandel toetsen van andere toepassingen uit, dat is toegevoegd aan het dialoogvenster Toetsenbordinstellingen. (#4043) 
+- In bladermodus worden menu items van keuzerondjes en selectievakjes gemeld als controls in plaats van gewone klikbare tekst. (#4092)
+- NVDA schakelt niet langer foutief van focus mode naar bladermodus als een menu item van een keuzerondje of selectievakje focus krijgt. (#4092)
+- Als in Microsoft PowerPoint "getypte woorden uitspreken is ingeschakeld, worden karakters die worden verwijderd met backspace niet langer aangekondigd als deel van het getypte woord. (#3231)
+- In de dialoogvensters met opties van Microsoft Office 2010 worden de labels van vervolgkeuzelijsten correct gemeld. (#4056)
+- Als u in bladermodus in Mozillatoepassingen de snelnavigaticommando's gebruikt om naar volgende/vorige knop of formulierveld te springen, worden nu ook aankruisknoppen meegenomen. (#4098)
 - De inhoud van alerts in Mozillatoepassingen wordt niet langer tweemaal gemeld. (#3481)
-- In bladermodus, containers en landmarks are niet langer inappropriately repeated while navigating within them op hetzelfde moement als page content is changing (b.v. navigating the Facebook en Twitter websites). (#2199)
-- NVDA recovers in more cases when switching away from toepassingen that stop responding. (#3825)
+- In bladermodus worden containers en oriëntatiepunten niet langer herhaald als u erbinnen navigeert terwijl de pagina-inhoud wijzigt (b.v. bij het navigeren op de websites van Facebook en Twitter). (#2199)
+- NVDA herstelt zich vaker als u wegschakelt van toepassingen die niet meer reageren. (#3825)
+- The caret (insertion point) again correctly updates when doing a sayAll command while in editable text drawn directly to the screen. (#4125)
 
 
 = 2014.1 =
@@ -88,15 +89,15 @@ Wat is Nieuw in NVDA
 - Bepaalde presentatie-elementen worden niet langer foutief getoond in Firefox en andere Mozilla Geckotoepassingen in bladermodus (meer bepaald als het element is gemarkeerd met aria-presentation maar ook focus kan krijgen). (#3781)
 - Een performantieverbetering bij het navigeren door een document in Microsoft Word als melden van spelfouten is ingeschakeld. (#3785)
 - Verschillende verbeteringen aan de ondersteuning voor toegankelijke Java toepassingen:
- - The initially focused control in een frame of dialoogvenster niet langer fails to be gemeld als het frame of dialoogvenster op de voorgrond komt. (#3753)
- - Overbodige position information wordt niet langer aangekondigd for radio buttons (b.v. 1 van 1). (#3754)
- - Beter melden van JComboBox controls (html niet langer gemeld, beter melden van expanded en collapsed states). (#3755)
+ - De control die initieel focus had in een frame of dialoogvenster weigert niet langer gemeld te worden als het frame of dialoogvenster op de voorgrond komt. (#3753)
+ - Overbodige positie-informatie wordt niet langer aangekondigd voor keuzerondjes (b.v. 1 van 1). (#3754)
+ - Beter melden van JComboBox controls (html niet langer gemeld, beter melden van de statussen uitgevouwen en samengevouwen). (#3755)
  - Bij het melden van de tekst van dialoogvensters ontbrak soms tekst. Die is nu inbegrepen. (#3757)
  - Veranderingen aan de naam, waarde of beschrijving van de control die focus heeft worden nu accurater gemeld. (#3770)
-- Een crash opgelost in NVDA in Windows 8 when focusing on bepaalde RichEdit controls die grote hoeveelheden tekst bevatten (b.v. NVDA's log viewer, windbg). (#3867)
-- On systems with een high DPI display setting (which occurs by default for many modern screens), NVDA niet langer routes the mouse to the wrong location in sommige toepassingen. (#3758, #3703)
+- Een crash opgelost in NVDA in Windows 8 als de focus gaat naar bepaalde RichEdit controls die grote hoeveelheden tekst bevatten (b.v. NVDA's log viewer, windbg). (#3867)
+- On systems with a high DPI display setting (which occurs by default for many modern screens), NVDA no longer routes the mouse to the wrong location in some applications. (#3758, #3703)
 - Fixed an occasional problem when browsing the web where NVDA would stop working correctly until restarted, even though it didn't crash or freeze. (#3804)
-- een Papenmeier braille display can nu be used even if een Papenmeier display has never been connected via USB. (#3712)
+- Een Papenmeier brailleleesregel kan nu gebruikt worden zelfs als er nooit een Papenmeier leesregel aangesloten was via USB. (#3712)
 - NVDA loopt niet langer vast als een ouder model Papenmeier BRAILLEX brailleleesregel wordt geselecteerd zonder dat er een leesregel is aangesloten.
 
 
