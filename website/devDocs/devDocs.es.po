@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-01-12 22:25+0000\n"
-"PO-Revision-Date: 2014-04-24 22:09+0100\n"
+"PO-Revision-Date: 2014-05-11 19:06+0100\n"
 "Last-Translator: Juan C. Buño <quetzatl@eresmas.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
@@ -1790,12 +1790,18 @@ msgid ""
 "example, some parts of a program may need custom gestures, or one may need "
 "to change the role of a window to that of a button."
 msgstr ""
+"A veces, no es suficiente con trabajar con el comportamiento predeterminado "
+"de un control. Por ejemplo, algunas partes de un programa pueden necesitar "
+"gestos personalizados, o puede que uno tenga que cambiar el rol de una "
+"ventana a la de un botón."
 
 #. type: Plain text
 msgid ""
 "NVDA provides two methods for creating specialist, or overlay objects (or "
 "classes), each suited for different needs:"
 msgstr ""
+"NVDA proporciona dos métodos para crear especiales, o superponer objetos (o "
+"clases), cada uno adaptado para diferentes necesidades:"
 
 #. type: Bullet: '* '
 msgid ""
@@ -1808,6 +1814,15 @@ msgid ""
 "by assigning obj.role = ROLE_WINDOW (see control types dictionary for list "
 "of available roles)."
 msgstr ""
+"`event_NvDAObject_init(self, object we're dealing with)`: Si deseas pasar "
+"por alto ciertos atributos de un control, como su rol o la etiqueta(nombre), "
+"puedes utilizar este método para preguntar a NVDA para tomar tu\"input\" a "
+"tener en cuenta cuando se encuentran los objetos por primera vez (o "
+"inicializado). Por ejemplo, si el control tiene el nombre de clase de "
+"ventana de TForm (visto en muchas aplicaciones Delphi), puedes pedir a NVDA "
+"tratar a este control como una ventana estándar asignando obj.role = "
+"ROLE_WINDOW (ver diccionario tipos de control para lista de funciones "
+"disponibles)."
 
 #. type: Bullet: '* '
 msgid ""
@@ -1822,6 +1837,17 @@ msgid ""
 "objects inherit from, or is the child or specialist class of IAccessible "
 "objects)."
 msgstr ""
+"`chooseNVDAObjectOverlayClasses(self, object, list of classes)`: Esto "
+"permite a NVDA que utilice su propia lógica cuando se trate de ciertos "
+"objetos. Por ejemplo, esto es útil si deseas asignar gestos personalizados "
+"para determinadas partes de un programa en tu app module (De hecho, muchos "
+"app modules crean objetos para hacer frente a determinadas partes de un "
+"programa, luego usan chooseNvDAObjectOverlayClasses para seleccionar el "
+"objeto correcto cuando se cumplan ciertas condiciones). Estos objetos "
+"personalizados se deben basar en un objeto sólido con el que deseamos hacer "
+"frente (principalmente IAccessible es suficiente, por lo tanto los demás "
+"objetos superppuestos heredan de, o es el hijo o la clase especializada de "
+"los objetos IAccessible)."
 
 #. type: Plain text
 msgid ""
@@ -1831,21 +1857,29 @@ msgid ""
 "is usually read as, \"this child class inherits from this base class\". "
 "We'll see code like this later)."
 msgstr ""
+"Ten en cuenta que en el caso del segundo método, la clase(s) con el nombre "
+"dado debe estar presente en el fichero, que es /son heredado de un objeto "
+"base conocido (en Python, la sintaxis para la herencia es "
+"`childClass(baseClass)`, y es por lo general leída como, \"esta clase hija "
+"hereda de esta clase base\". Veremos un código como éste más tarde)."
 
 #. type: Title ###
 #, no-wrap
 msgid "Examples of overlay classes and modified roles"
-msgstr ""
+msgstr "Ejemplos de sobreescritura de clases y de modificación de roles"
 
 #. type: Plain text
 msgid ""
 "Below examples illustrate the uses of the two overlay and attribute "
 "modification methods we've discussed above:"
 msgstr ""
+"A continuación los ejemplos que ilustran el uso de los dos métodos de "
+"modificación de sobreescritura y de atributos que hemos comentado "
+"anteriormente:"
 
 #. type: Plain text
 msgid "An example of the first case: modifying an atribute."
-msgstr ""
+msgstr "Un ejemplo del primer caso: la modificación de un atributo."
 
 #. type: Plain text
 #, no-wrap
@@ -1854,12 +1888,17 @@ msgid ""
 "\t\tdef event_NvDAObject_init(self, obj):\n"
 "\t\t\tif obj.windowClassName == \"TForm\": obj.role = ROLE_WINDOW\n"
 msgstr ""
+"\t# Reassign some Delphi forms as window.\n"
+"\t\tdef event_NvDAObject_init(self, obj):\n"
+"\t\t\tif obj.windowClassName == \"TForm\": obj.role = ROLE_WINDOW\n"
 
 #. type: Plain text
 msgid ""
 "This means that whenever we encounter a window with the class name of \"TForm"
 "\", NvDA will treat this as a normal window."
 msgstr ""
+"Esto significa que cada vez que nos encontremos con una ventana con la clase "
+"llamada \"TForm\", NVDA la tratará como una ventana normal."
 
 #. type: Plain text
 msgid ""
@@ -1867,11 +1906,14 @@ msgid ""
 "specific parts of a program, then uses chooseNVDAObjectOverlayClasses to "
 "assign the logic for each control."
 msgstr ""
+"El ejemplo 2 se refiere a un módulo de aplicación que tiene dos objetos para "
+"hacer frente a determinadas partes de un programa, luego utiliza "
+"chooseNVDAObjectOverlayClasses para asignar la lógica para cada control."
 
 #. type: Plain text
 #, no-wrap
 msgid "\t#An example of overlay classes\n"
-msgstr ""
+msgstr "\t#Un ejemplo de sobreescritura de las clases\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1879,6 +1921,8 @@ msgid ""
 "\tclass enhancedEdit(IAccessible):\n"
 "\t\t# Some code to be run when window class name is MyEdit.\n"
 msgstr ""
+"\tclass enhancedEdit(IAccessible):\n"
+"\t\t# Parte del código que se ejecutará cuando el nombre de clase de ventana sea MyEdit.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1886,11 +1930,13 @@ msgid ""
 "\tclass MainWindow(IAccessible):\n"
 "\t\t# Another code, this time adding custom gestures for main window of the program.\n"
 msgstr ""
+"\tclass MainWindow(IAccessible):\n"
+"\t\t# Otro código, esta vez añadiendo gestos personalizados para la ventana principal del programa.\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "\t# In the app module:\n"
-msgstr ""
+msgstr "\t# En el app module:\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1899,6 +1945,9 @@ msgid ""
 "\t\tif obj.windowClassName == \"myEdit\": clsList.insert(0, enhancedEdit)\n"
 "\t\telif obj.windowClassName == \"TWindow\": clsList.insert(0, mainWindow)\n"
 msgstr ""
+"\tdef chooseNVDAObjectOverlayClasses(self, obj, clsList):\n"
+"\t\tif obj.windowClassName == \"myEdit\": clsList.insert(0, enhancedEdit)\n"
+"\t\telif obj.windowClassName == \"TWindow\": clsList.insert(0, mainWindow)\n"
 
 #. type: Plain text
 msgid ""
