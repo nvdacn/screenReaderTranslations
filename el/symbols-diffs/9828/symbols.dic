@@ -15,7 +15,7 @@ complexSymbols:
 # Others
 decimal point	(?<=\d)\.(?=\d)
 in-word '	(?<=[^\W_])['’]
-negative number	(?<!\w)-(?=\d)
+negative number	(?<!\w)-(?=[$£€¥]?\d)
 
 symbols:
 # identifier	replacement[[	level][	preserve]][	# display name]
@@ -53,8 +53,8 @@ $	dollar	all	norep
 '	tick	all
 (	left paren	most
 )	right paren	most
-*	star	most
-+	plus	most
+*	star	some
++	plus	some
 ,	comma	all	always
 -	dash	most
 .	dot	some
@@ -63,7 +63,7 @@ $	dollar	all	norep
 ;	semi	most
 <	less	most
 >	greater	most
-=	equals	most
+=	equals	some
 ?	question	all
 @	at	some
 [	left bracket	most
@@ -108,6 +108,7 @@ _	line	most
 ±	Plus or Minus	most
 ×	times	most
 ÷	divide by	most
+←	left arrow	some
 →	right arrow	some
 ✓	check	some
 ✔	check	some
