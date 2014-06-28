@@ -1,0 +1,930 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="http://txt2tags.org">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<TITLE>NVDA 2014.2-dev Guia do Desenvolvedor</TITLE>
+</HEAD><BODY BGCOLOR="white" TEXT="black">
+<CENTER>
+<H2>﻿NVDA 2014.2-dev Guia do Desenvolvedor</H2>
+</CENTER>
+
+
+<A NAME="toc"></A>
+<H2>ÍNDICE</H2>
+
+
+<UL>
+
+<LI><A HREF="#toc2">1. Introdução</A>
+  <UL>
+  <LI><A HREF="#toc3">1.1. Nota Sobre Python</A>
+  </UL>
+<LI><A HREF="#toc4">2. Tradução</A>
+  <UL>
+  <LI><A HREF="#toc5">2.1. Descrição de Caracteres</A>
+  <LI><A HREF="#toc6">2.2. Pronúncia de Símbolos</A>
+    <UL>
+    <LI><A HREF="#toc7">2.2.1. Definição de Símbolos Complexos</A>
+    <LI><A HREF="#toc8">2.2.2. Definindo informação do Símbolo</A>
+    </UL>
+  <LI><A HREF="#toc9">2.3. Tipos de Plugins</A>
+  <LI><A HREF="#toc10">2.4. Considerações Básicas Sobre App Modules</A>
+  <LI><A HREF="#Example1">2.5. Exemplo 1: Um App Module que emite um Beep sempre que o foco muda</A>
+  <LI><A HREF="#toc12">2.6. Considerações Básicas Sobre Global Plugins</A>
+  <LI><A HREF="#toc13">2.7. Exemplo 2: Um Global Plugin que fornece um comando para anunciar a Versão do NVDA</A>
+  <LI><A HREF="#toc14">2.8. Os Objectos do NVDA</A>
+  <LI><A HREF="#toc15">2.9. Exemplo 3: Um Global Plugin para anunciar  a Window Class e Control ID</A>
+  <LI><A HREF="#toc16">2.10. Eventos</A>
+  <LI><A HREF="#toc17">2.11. A variável SleepMode dos App Modules</A>
+  <LI><A HREF="#toc18">2.12. Exemplo 4: Um App Module para desactivar o NVDA</A>
+  <LI><A HREF="#toc19">2.13. Criando Classes Personalizadas de Objectos NVDA</A>
+  <LI><A HREF="#toc20">2.14. Exemplo 5: Etiquetando o campo de edição do  Notepad usando um Objecto NVDA</A>
+  </UL>
+<LI><A HREF="#toc21">3. Empacotar Código Como Add-ons do NVDA</A>
+  <UL>
+  <LI><A HREF="#toc22">3.1. Ficheiros Manifest</A>
+    <UL>
+    <LI><A HREF="#toc23">3.1.1. Campos Disponíveis</A>
+    <LI><A HREF="#toc24">3.1.2. Um Exemplo de Ficheiro Manifest</A>
+    </UL>
+  </UL>
+</UL>
+
+<A NAME="toc2"></A>
+<H2>1. Introdução</H2>
+
+<P>
+Este guia fornece informação respeitante ao desenvolvimento do NVDA, incluindo tradução e desenvolvimento de componentes para o NVDA.
+</P>
+
+<A NAME="toc3"></A>
+<H3>1.1. Nota Sobre Python</H3>
+
+<P>
+O NVDA e os seus componentes são, essencialmente, escritos na linguagem de programação .Python.
+Não é intenção deste manual ensinar-lhe Python, embora sejam fornecidos exemplos ao longo deste manual para o ajudar a familiarizar-se com a sintaxe do Python.
+Documentação e outros recursos relacionados com a linguagem Python podem ser encontrados em <A HREF="http://www.python.org/">www.python.org/</A>
+</P>
+
+<A NAME="toc4"></A>
+<H2>2. Tradução</H2>
+
+<P>
+Para poder suportar múltiplas línguas/dialectos, o NVDA tem de ser traduzido e têm de ser fornecidos os ficheiros referentes a cada idioma.
+</P>
+
+<A NAME="toc5"></A>
+<H3>2.1. Descrição de Caracteres</H3>
+
+<P>
+Por vezes, pode ser difícil, ou até impossível, distinguir um caracter de outro.
+Por exemplo, dois caracteres podem ser pronunciados da mesma maneira, apesar de serem caracteres diferentes.
+Para ajudar os utilizadores quando isto acontece, podem ser fornecidas descrições dos caracteres, que descrevem cada caracter de uma forma única.
+</P>
+<P>
+As descrições dos caracteres são fornecidas para cada idioma num ficheiro chamado characterDescriptions.dic que deve ser colocado na directoria correspondente ao idioma.
+Estes são ficheiros de texto codificados em UTF-8.
+As linhas em branco e as começadas por "#" são ignoradas.
+Todas as outras linhas devem conter um caracter, seguido de um tab, e seguidos por uma ou mais descrições separadas por tab.
+</P>
+<P>
+Por exemplo:
+</P>
+
+<PRE>
+# Isto é um comentário.
+a	alfa
+b	bravo
+e	eco
+i	índía
+</PRE>
+
+<P>
+Veja o ficheiro locale\en\characterDescriptions.dic para um exemplo completo.
+</P>
+
+<A NAME="toc6"></A>
+<H3>2.2. Pronúncia de Símbolos</H3>
+
+<P>
+Muitas vezes é útil que a pontuação, e outros símbolos, seja  pronunciada como palavras ao ler texto, particularmente ao nos movermos por caracter.
+Infelizmente, a pronúncia de símbolos é inconsistente entre os vários sintetizadores, e muitos deles não pronunciam vários símbolos e/ou não permitem controlar que símbolos são falados.
+Por isso, o NVDA permite que seja fornecida informação sobre a pronúncia de símbolos.
+</P>
+<P>
+Isto é feito para cada idioma fornecendo um ficheiro chamado symbols.dic que deve ser colocado na directoria correspondente ao idioma..
+Estes são ficheiros de texto codificados em UTF-8.
+As linhas em branco e as começadas por "#" são ignoradas.
+Todos os idiomas herdam, implicitamente, a informação do símbolo para o inglês, apesar de qualquer destas informações poder ser sobreescrita.
+</P>
+<P>
+O ficheiro contém duas secções.
+</P>
+
+<A NAME="toc7"></A>
+<H4>2.2.1. Definição de Símbolos Complexos</H4>
+
+<P>
+A primeira secção é opcional, e define padrões de expressões regulares para símbolos complexos.
+Símbolos complexos são símbolos que não são apenas um caracter ou sequência de caracteres, mas que requerem uma maior exactidão.
+Um exempo é o ponto final (.) que indica o fim de uma frase.
+O "." é usado para múltiplos fins, pelo que é necessário uma verificação mais complexa, para se determinar que se refer a um fim de frase.
+</P>
+<P>
+A secção dos Símbolos Complexos começa com a linha:
+</P>
+
+<PRE>
+complexSymbols:
+</PRE>
+
+<P>
+AS linhas seguintes contêm um identificador textual usado para identificar o símbolo, um tab, e o padrão da expressão regular para esse símbolo.
+Por exemplo:
+</P>
+
+<PRE>
+. sentence ending	(?&lt;=[^\s.])\.(?=[\"')\s]|$)
+</PRE>
+
+<P>
+Novamente, note que os símbolos complexos do inglês são herdados por todos os outros idiomas, portanto não precisa de incluir qualquer símbolo complexo já definido para inglês.
+</P>
+
+<A NAME="toc8"></A>
+<H4>2.2.2. Definindo informação do Símbolo</H4>
+
+<P>
+A segunda secção fornece informação sobre como, e quando, pronunciar todos os símbolos.
+Começa pela linha:
+</P>
+
+<PRE>
+symbols:
+</PRE>
+
+<P>
+As linhas seguintes devem conter vários campos, separados por tab.
+Os únicos campos obrigatórios são o identificador e a substituição.
+O valor padrão será usado nos campos omitidos.
+os campos são os seguintes:
+</P>
+
+<UL>
+<LI>identificador: O identificador do símbolo.
+Na maior parte dos casos, será apenas o caracter ou caracteres do símbolo.
+Contudo, também pode ser o identificador de um símbolo complexo.
+Certos caracteres não podem aparecer no ficheiro, pelo que poderão ser usadas as seguintes sequências especiais:
+ <UL>
+ <LI>\0: null
+ <LI>\t: tab
+ <LI>\n: line feed mudança de linha
+ <LI>\r: carriage return mudança forçada de linha
+ <LI>\f: form feed mudança de página
+ <LI>\#: caracter # (necessário pois # no início da linha indica um comentário)
+ <P></P>
+ </UL>
+<LI>Substituição: O texto que deve ser falado para o símbolo.
+<LI>nível: O nível em que o símbolo deve ser falado.
+O nível de símbolos é configurado pelo utilizador, e especifica quais os símbolos que devem ser falados.
+Este campo deve conter um dos seguintes níveis, "none", "some", "most", "all", ou "char", ou "-" para usar o padrão.
+"char" significa que o símbolo só deve ser falado quando nos movermos por caracter.
+O padrão é herdar o valor, ou "all", se não houver nada para herdar.
+<P></P>
+<LI>preserve: Se o símbolo propriamente dito deve ser preservado, para facilitar a correcta pronúncia pelo sintetizador.
+Por exemplo, símbolos que provocam pausas ou inflexões (tais como a vírgula em português) devem ser preservados.
+Este campo deve ter um dos seguintes valores:
+ <UL>
+ <LI>never: Não preservar o símbolo.
+ <LI>always: Preservar sempre o símbolo.
+ <LI>norep: Preservar o símbolo apenas se não estiver a ser substituido; i.e. o utilizador definiu um nível de símbolos mais baixo que o definido para este caracter.
+ <LI>-: Usar o padrão.
+ </UL>
+<P></P>
+ O padrão é herdar o valor  ou "never" se não houver nada para herdar.
+<P></P>
+ <UL>
+ <LI>Finalmente, um nome a ser mostrado para o símbolo pode ser definido num comentário após um tab no fim da linha.
+Este será mostrado aos utilizadores quando estiverem a editar a informação dos símbolos, e é especialmente útil para os tradutores para definir as traduções para os símbolos complexos.
+ <P></P>
+Eis alguns exemplos:
+
+<PRE>
+(	abrir parênteses	most
+</PRE>
+
+Isto significa que o caracter "(" deve ser falado como "abrir parênteses" apenas quando o nível de símbolos estiver definido para "A maioiria" ou superior; i.e. a maioiria ou todos.
+ <P></P>
+
+<PRE>
+,	vírgula	all	always
+</PRE>
+
+Isto significa que o caracter "," deve ser falado como "vírgula" apenas quando o nível de símbolos estiver definido para "Todos", e que o caracter deve ser sempre preservado para que o sintetizador faça a devida pausa.
+ <P></P>
+
+<PRE>
+. sentence ending	point	# . fin de phrase
+</PRE>
+
+Esta linha aparece no ficheiro symbols.dic para o francês.
+Significa que o símbolo complexo ". sentence ending" deve ser falado como "point".
+O nível e preserve não foram especificados, portanto herdam da definição para o inglês.
+É definido um nome a mostrar, para que os utilizadores franceses saibam o que o símbolo representa.
+ <P></P>
+Por favor, veja o ficheiro locale\en\symbols.dic para ver as definições inglesas, que serão herdadas para todos os idiomas, e é um bom, e completo, exemplo.
+ <P></P>
+ </UL>
+<LI>Plugins +
+<P></P>
+++ Visão Geral++
+Os Plugins permitem personalizar a forma como o NVDA se comporta na generalidade ou numa aplicação em particular.
+Os Plugins podem:
+<LI>Responder a eventos específicos, tais como alterações de foco e de propriedades dos objectos, e.g. quando um controlo muda de nome;
+<LI>Implementar comandos que são associados a um determinado comando, de teclado, linha Braille, etc;
+<LI>Personalizar o comportamento de uma funcionalidade, ou implementar nova, para um determinado controlo;
+<LI>Personalizar, ou criar novo, suporte para conteúdo de texto ou documentos complexos.
+</UL>
+
+<P>
+Esta secção é uma introdução ao desenvolvimento de plugins.
+Os desenvolvedores devem consultar a documentação do código para uma referência completa.
+</P>
+
+<A NAME="toc9"></A>
+<H3>2.3. Tipos de Plugins</H3>
+
+<P>
+Há dois tipos de plugins, que são:
+</P>
+
+<UL>
+<LI>App Modules (módulos de aplicação): código específico a uma determinada aplicação;
+Os App Modules recebem todos os eventos para a aplicação, mesmo que esta não esteja actualmente activa.
+Quando a aplicação está activa, qualquer comando definido no App Module pode ser executado pelo utilizador.
+<LI>Global Plugins (plugins globais): código global para o NVDA; i.e. é usado em todas as aplicações.
+Os Global Plugins Recebem todos os eventos, para todos os controlos, em todas as situações.
+Qualquer comando definido num Global Plugin pode ser executado pelo utilizador, em qualquer altura, independemtemente da aplicação em execução.
+</UL>
+
+<P>
+Se quiser melhorar o acesso do NVDA a uma aplicação específica, deverá desenvolver um App Module.
+Pelo contrário, se pretender adicionar uma funcionalidade geral ao NVDA, por exemplo um script que anuncie a potência do sinal Wireless, disponível em qualquer aplicação, então deverá criar um Global Plugin.
+</P>
+<P>
+Quer os App Modules, quer os Global Plugins, partilham de características comuns.
+Ambos são ficheiros de código Python, com extensão .py, Ambos definem uma classe especial que contém todos os eventos, scripts e associações de comandos, e ambos podem definir classes personalizadas para aceder a controlos, conteúdo de texto e documentos complexos.
+Mas, eles diferem em várias características.
+</P>
+<P>
+As quatro secções seguintes discutirão separadamente App Modules e Global Plugins.
+Após essas secções, a discussão é novamente comum aos dois tipos.
+</P>
+
+<A NAME="toc10"></A>
+<H3>2.4. Considerações Básicas Sobre App Modules</H3>
+
+<P>
+Os App Modules têm uma extensão .py e têm o nome do executável principal da aplicação a que se destinam.
+Por exemplo, um App Module para o Bloco de Notas terá o nome notepad.py, já que o executável chama-se notepad.exe.
+</P>
+<P>
+Os ficheiros dos App Modules devem ser colocados na subdirectoria appModules dentro da directoria de configurações do utilizador.
+Para mais informações sobre a localização da directoria , por favor, consulte o Manual do Utilizador do NVDA.
+</P>
+<P>
+Os App Modules têm de definir uma classe chamada AppModule, que herda as características de appModuleHandler.AppModule.
+Assim, esta classe pode definir eventos, scripts, comandos e outro código.
+Isto será aprofundado mais à frente.
+</P>
+<P>
+O NVDA carrega o App Module para uma aplicação assim que a aplicação estiver em execução.
+O App Module é descarregado quando a aplicação for fechada ou o NVDA for fechado.
+</P>
+
+<A NAME="Example1"></A>
+<H3>2.5. Exemplo 1: Um App Module que emite um Beep sempre que o foco muda</H3>
+
+<P>
+O seguinte exemplo de App Module faz com que o NVDA emita um beep semprre que o foco muda dentro da aplicação Bloco de Notas.
+Este exemplo mostra o esquema básico de um App Module.
+</P>
+<P>
+Copie e cole as linhas de código, entre os marcadores de início e fim, mas sem os incluir, num novo ficheiro de texto chamado notepad.py, que deverá ser depois guardado na subdirectoria AppModules.
+Tenha em atenção que deve preservar todas as indentações e espaçamentos intactos.
+</P>
+<P>
+Depois de guardado no local apropriado, re-inicie o NVDA ou escolha "Recarregar Plugins" a partir do submenu "Ferramentas" no menu do NVDA.
+</P>
+<P>
+Finalmente, abra o bloco de Notas, e mova-se pela aplicação, por exemplo mova-se pela barra de menus, abra algum diálogo, etc.
+Deverá ouvir um beep sempre que o foco muda.
+Note, no entanto, que se sair do Bloco de Notas, por exemplo, para o Explorador do Windows, deixará de ouvir os beeps.
+</P>
+
+<PRE>
+--- Início ---
+# Notepad App Module for NVDA
+# Developer guide example 1
+
+import appModuleHandler
+
+class AppModule(appModuleHandler.AppModule):
+
+	def event_gainFocus(self, obj, nextHandler):
+		import tones
+		tones.beep(550, 50)
+		nextHandler()
+
+--- Fim ---
+</PRE>
+
+<P>
+Este App Module começa por duas linhas de comentário, que descrevem para que serve o ficheiro.
+</P>
+<P>
+Depois, importa o módulo appModuleHandler, para ter acesso à base da classe AppModule.
+</P>
+<P>
+De seguida, define uma classe chamada AppModule, que herda de appModuleHandler.AppModule.
+</P>
+<P>
+Dentro desta classe, define um, ou mais, eventos, scripts ou comandos.
+Neste exemplo, define um "event method" para o evento "gainFocus" (event_gainFocus), que reproduz um pequeno beep de cada vez que é executado.
+A implementaçãon deste evento não é importante para o propósito deste exemplo.
+A parte mais importante é a definição da classe.
+Os eventos serão abordados, com mais detalhe, mais à frente.
+</P>
+<P>
+Tal como com os próximos exemplos, lembre-se de os eliminar, quando terminar de os testar, e re-iniciar o NVDA ou de recarregar os plugins, para voltar a ter as funcionalidades originais.
+</P>
+
+<A NAME="toc12"></A>
+<H3>2.6. Considerações Básicas Sobre Global Plugins</H3>
+
+<P>
+Os Global Plugins têm uma extensão .py e devem ter um nome identificador do fim a que se destinam.
+</P>
+<P>
+Os ficheiros dos Global Plugins devem ser colocados na subdirectoria globalPlugins dentro da directoria de configurações do utilizador.
+Para mais informações sobre a localização da directoria , por favor, consulte o Manual do Utilizador do NVDA.
+</P>
+<P>
+Os Global Plugins têm de definir uma classe chamada GlobalPlugin que herda as características de globalPluginHandler.GlobalPlugin.
+Assim, esta classe pode definir eventos, scripts, comandos e outro código.
+Isto será aprofundado mais à frente.
+</P>
+<P>
+O NVDA carrega todos os Global Plugins quando se inicia, e descarrega-os quando for fechado.
+</P>
+
+<A NAME="toc13"></A>
+<H3>2.7. Exemplo 2: Um Global Plugin que fornece um comando para anunciar a Versão do NVDA</H3>
+
+<P>
+O seguinte exemplo de Global Plugin permite pressionar NVDA+shift+v em qualquer altura , para saber qual a versão do NVDA.
+Este exemplo mostra o esquema básico de um Global Plugin. 
+</P>
+<P>
+Copie e cole as linhas de código, entre os marcadores de início e fim, mas sem os incluir, num novo ficheiro de texto chamado example2.py, que deverá ser depois guardado na subdirectoria globalPlugins .
+Tenha em atenção que deve preservar todas as indentações e espaçamentos intactos.
+</P>
+<P>
+Depois de guardado no local apropriado, re-inicie o NVDA ou escolha "Recarregar Plugins" a partir do submenu "Ferramentas" no menu do NVDA.
+</P>
+<P>
+Agora, em qualquer altura, pode pressionar NVDA+shift+v para ter o anúncio, em voz e Braille, da versão do NVDA.
+</P>
+
+<PRE>
+--- Início ---
+# Version announcement plugin for NVDA
+# Developer guide example 2
+
+import globalPluginHandler
+import ui
+import versionInfo
+
+class GlobalPlugin(globalPluginHandler.GlobalPlugin):
+
+	def script_announceNVDAVersion(self, gesture):
+		ui.message(versionInfo.version)
+
+	__gestures={
+		"kb:NVDA+shift+v": "announceNVDAVersion",
+	}
+
+--- Fim ---
+</PRE>
+
+<P>
+Este Global Plugin começa por duas linhas de comentário, que descrevem para que serve o ficheiro.
+</P>
+<P>
+Depois, importa o módulo globalPluginHandler para ter acesso à base da classe GlobalPlugin.
+Importa também outros módulos, nomeadamente ui e versionInfo, que são especificamente necessários para este plugin poder anunciar a versão do NVDA.
+</P>
+<P>
+De seguida, define uma classe chamada GlobalPlugin, que herda de globalPluginHandler.GlobalPlugin.
+</P>
+<P>
+Dentro desta classe, define um, ou mais, eventos, scripts ou comandos.
+Neste exemplo, define um "script method" que executa o anúncio da versão, e fornece um "binding", que associa o comando NVDA+shift+v a este script.
+No entanto, os detalhes do script e do "binding" não são importantes para o propósito deste exemplo.
+A parte mais importante é a definição da classe.
+Os eventos serão abordados, com mais detalhe, mais à frente.
+</P>
+<P>
+Tal como com os próximos exemplos, lembre-se de os eliminar, quando terminar de os testar, e re-iniciar o NVDA ou de recarregar os plugins, para voltar a ter as funcionalidades originais.
+</P>
+
+<A NAME="toc14"></A>
+<H3>2.8. Os Objectos do NVDA</H3>
+
+<P>
+O NVDA representa controlos e outros elementos da interface gráfica, GUI, como Objectos do NVDA.
+Estes objectos do NVDA contêm propriedades definidas, tais como nome, função, valor, estado e descrição, que permitem que outras partes do NVDA questionem ou apresentem informação sobre um controlo de uma forma geral.
+Por exemplo, o botão "OK" num diálogo, será representado como um Objecto do NVDA, com o nome "OK" e a função de botão.
+Similarmente, uma caixa de verificação com a etiqueta "I agree", terá o nome "I agree", a função de caixa de verificação e, se marcada, o estado de marcada.
+</P>
+<P>
+Como existem variadas ferramentas para as interfaces gráficas, GUI, plataformas e  APIs  de acessibilidade, os Objectos NVDA generalizam essas diferenças para que o NVDA possa usá-las, independentemente da ferramenta ou API usada para criar um determinado controlo.
+Por exemplo, o botão "Ok" referido acima pode ser um widget  de uma aplicação em Java, pode ser um objecto MSAA ou IAccessible2, ou ainda um elemento de UI Authomation.
+</P>
+<P>
+Os objectos NVDA têm muitas propriedades.
+Algumas das mais úteis são:
+</P>
+
+<UL>
+<LI>name: A etiqueta do controlo.
+<LI>role: Uma das constantes "ROLE_*" do módulo  "controlTypes " do NVDA.
+Alguns exemplos são: "Button", "dialog", "editableText", "window" e "checkbox".
+<LI>states: Um conjunto de 0 ou mais das constantes "STATE_*" do módulo "controlTypes" do NVDA.
+Alguns exemplos: "Focusable", "focused", "selected", "selectable", "expanded", "collapsed" e "checked".
+<LI>value: O valor do controlo. Alguns exemplos são a percentagem de uma barra deslizante ou o valor actual de uma caixa combinada.
+<LI>description: Uma frase descrevendo o que faz o controlo, normalmente o mesmo que a sugestão, "tooltip".
+<LI>location: Os valores, em coordenadas do ecrã, pixéiss, da borda esquerda e superior, e a largura e altura do objecto.
+<LI>parent: O objecto que contém o objecto actual.
+Por exemplo, a lista será o objecto "Parent" dum item de lista.
+<LI>next: O objecto imediatamente seguinte, no mesmo nível, na ordem lógica.
+Por exemplo, o objecto seguinte dum item de menu do NVDA é, quase certamente, outro item de menu dentro do mesmo menu.
+<LI>previous: Como "next", mas ao contrário.
+<LI>firstChild: O primeiro objecto contido neste objecto.
+Por exemplo, O primeiro objecto contido numa lista será o primeiro item dessa lista.
+<LI>lastChild: O último objecto contido por este objecto.
+<LI>children: Uma lista de todos os objectos contidos neste objecto. Por exemplo, todos os itens de menu de um determinado menu.
+</UL>
+
+<P>
+Existem também algunas propriedades de navegação simplificada, tais como, "simpleParent", "simpleNext", "simpleFirstChild" e "simpleLastChild".
+São como as respectivas propriedades de navegação descritas acima, mas o NVDA filtra objectos não necessários.
+Estas propriedades são usadas quando o modo de revisão simples do NVDA está ligado, o que acontece por padrão.
+Estas propriedades simples podem ser mais fáceis de usar, mas as propriedades de navegação real representam mais fielmente a estrutura do sistema operativo.
+</P>
+<P>
+Ao desenvolver plugins, na maior parte das vezes não é importante saber qual a ferramenta ou API por trás de um objecto do NVDA, já que o plugin apenas acederá as propriedades padrão, tais como nome, função e valor.
+No entanto, à medida que os plugins forem mais avançados, é possível ir mais fundo nos objectos do NVDA para descobrir informação específica da ferramenta ou API utilizada.
+</P>
+<P>
+Os Plugins usam os Objectos do NVDA de três maneiras:
+</P>
+
+<UL>
+<LI>A maioiria dos eventos que os plugins recebem precisam de um argumento, que é o objecto do NVDA em que ocorre o  evento.
+Por exemplo, o event_gainFocus tem como argumento o objecto do NVDA que representa o controlo que recebe o foco.
+<LI>Os scripts, eventos, ou outro código, podem ir buscar outros objectos, tais como Objectos NVDA em foco, objectos da navegação por objectos do NVDA, ou até objectos Desktop do NVDA.
+O código pode então recolher informação desse objecto, ou até  ir buscar outros objectos relacionados com ele (por exemplo,  o seu parent, first child, etc.).
+<LI>O Plugin pode definir a sua própria classe de objecto personalizado do NVDA, a qual  será usada para enquadrar um controlo específico, para lhe dar funcionalidades extra, mudar as suas propriedades, etc.
+<P></P>
+Tal como os App Modules e os  Global Plugins, os Objectos NVDA também podem definir eventos, scripts e  comandos.
+<P></P>
+++ Scripts e Comandos ++
+Os App Modules, Global Plugins e os  Objectos NVDA podem definir métodos especiais, que podem ser  associados a uma acção nossa, como o pressionar de uma tecla.
+O NVDA chama a esses métodos scripts.
+<P></P>
+Um script é um normal método Python com um nome iniciado com "script_" )por exemplo, "script_sayDateTime".
+<P></P>
+Um  script precisa de dois argumentos:
+<LI>self: referência à instância do App Module, Global Plugin ou Objecto NVDA onde o script foi activado.
+<LI>gesture: um  objecto  Gesture, que representa a acção que causa a execução do  script.
+</UL>
+
+<P>
+Além de se definir o script, tem de se definir a associação de um comando a esse script, para  que o NVDA saiba que acção  provoca   a execução do script.
+</P>
+<P>
+Para associar um gesture a um script, pode ser criado um dicionário especial do Python, "__gestures", que pode ser definido como uma classe variável no App Module, Global Plugin ou Objecto NVDA.
+Esses dicionários devem conter expressões identificadoras de gesture apontando para o nome do script que se pretende activar, sem o prefixo "script_".
+</P>
+<P>
+Há maneiras mais avançadas de associar  gestures  dinamicamente, no entanto, o dicionário de __gestures é o mais simples.
+</P>
+<P>
+Uma expressão identificadora de gesture identifica uma tecla.
+Consiste num código de duas letras   indicando a origem da tecla, um dispositivo opcional, entre parênteses), um sinal de dois pontos (:) e um ou mais nomes separados por um sinal de mais (+) indicando as teclas ou valor do comando.
+</P>
+<P>
+Alguns exemplos de expressões identificadoras de gestures  são:
+</P>
+
+<UL>
+<LI>"kb:NVDA+shift+v"
+<LI>"br(freedomScientific):leftWizWheelUp"
+<LI>"kb(laptop):NVDA+t"
+</UL>
+
+<P>
+Actualmente, as únicas fontes de entrada no NVDA são:
+</P>
+
+<UL>
+<LI>kb: Entrada do teclado
+<LI>br: Entrada braille
+</UL>
+
+<P>
+Quando o NVDA recebe um comando, procura pela  associação desse comando numa determinada ordem.
+Assim que uma associação for encontrada, o script é executado e não são procuradas mais associações, nem o comando é passado ao sistema operativo.
+</P>
+<P>
+A ordem de procura por uma associação é a seguinte:
+</P>
+
+<UL>
+<LI>Global Plugins carregados
+<LI>App Module da aplicação activa
+<LI>Interceptor Hierárquico do Objecto NVDA com foco, se algum estiver activo; por  exemplo um  virtualBuffer
+<LI>Objecto NVDA com o  foco
+<LI>Comandos Globais (comandos nativos  como  encerrar o NVDA, comandos de navegação por objectos, etc.)
+</UL>
+
+<A NAME="toc15"></A>
+<H3>2.9. Exemplo 3: Um Global Plugin para anunciar  a Window Class e Control ID</H3>
+
+<P>
+O Global Plugin seguinte permite-lhe pressionar NVDA+Seta Esquerda para que seja anunciada a window class do controlo em foco, e  NVDA+Seta direita para que seja  anunciado o  control ID do  controlo em foco.
+Este  exemplo mostra como definir um ou mais scripts e associações de comandos numa class tal como   App Module, Global Plugin ou Objecto NVDA .
+</P>
+<P>
+Copie e cole as linhas de código, entre os marcadores de início e fim, mas sem os incluir, num novo ficheiro de texto chamado example3.py, que deverá ser depois guardado na subdirectoria globalPlugins.
+Tenha em atenção que deve preservar todas as indentações e espaçamentos intactos.
+</P>
+<P>
+Depois de guardado no local apropriado, re-inicie o NVDA ou escolha "Recarregar Plugins" a partir do submenu "Ferramentas" no menu do NVDA.
+</P>
+
+<PRE>
+--- Início ---
+#Window utility scripts for NVDA
+#Developer guide example 3
+
+import globalPluginHandler
+import ui
+import api
+
+class GlobalPlugin(globalPluginHandler.GlobalPlugin):
+
+	def script_announceWindowClassName(self, gesture):
+		focusObj = api.getFocusObject()
+		name = focusObj.name
+		windowClassName = focusObj.windowClassName
+		ui.message("class for %s window: %s" % (name, windowClassName))
+
+	def script_announceWindowControlID(self, gesture):
+		focusObj = api.getFocusObject()
+		name = focusObj.name
+		windowControlID = focusObj.windowControlID
+		ui.message("Control ID for %s window: %d" % (name, windowControlID))
+
+	__gestures = {
+		"kb:NVDA+leftArrow": "announceWindowClassName",
+		"kb:NVDA+rightArrow": "announceWindowControlID",
+	}
+
+--- Fim ---
+</PRE>
+
+<A NAME="toc16"></A>
+<H3>2.10. Eventos</H3>
+
+<P>
+Quando o  NVDA detecta certos eventos de uma  API ou do sistema Operativo, abstrai-se desse evento e corre o seu próprio evento nos plugins e nos Objectos NVDA.
+</P>
+<P>
+Apesar da maioria dos eventos estarem relacionados com  um Objecto NVDA específico (por exemplo, name change, gain focus, state change, etc.), esses evento podem ser tratados em vários níveis.
+Quando um evvento é processado, é interrompida a sua progressão na cadeia.
+Contudo, o código  do evento pode fazê-lo prosseguir, se necessário.
+</P>
+<P>
+A  ordem dos níveis através dos quais é feita a pesquisa de um método para o evento é:
+</P>
+
+<UL>
+<LI>Plugins Globais carregados
+<LI>O App Module associado ao Objecto NVDA onde o evento teve origem
+<LI>O Interceptor Hierárquico (se estiver  activo) ao Objecto NVDA onde o evento teve origem
+<LI>O Objecto NVDA propriamente dito.
+</UL>
+
+<P>
+Os eventos são métodos Python, cujo nome começa por "event_" seguido do nome do evento (por exemplo, gainFocus).
+</P>
+<P>
+Estes eventos necessitam de diferentes argumentos  dependendo do nível em que são definidos.
+</P>
+<P>
+Se um  evento para um Objecto NVDA  for definido no  próprio objecto, apenas requer um argumento obrigatório que é o "self".
+Alguns eventos podem ter argumentos extra, apesar de ser raro.
+</P>
+<P>
+Se um  evento para um Objecto NVDA  for definido num Global Plugin, App Module ou Tree Interceptor, precisará dos seguintes argumentos:
+</P>
+
+<UL>
+<LI>self: O Global Plugin, App Module ou Tree Interceptor
+<LI>obj: O Objecto NVDA onde o evento foi gerado
+<LI>nextHandler: uma função que quando chamada  permite que o evento  prossiga na cadeia.
+</UL>
+
+<P>
+Alguns eventos normais de Objectos NVDA  são:
+</P>
+
+<UL>
+<LI>foreground: Este Objecto NVDA passou a ser o objecto em foreground, isto é, o objecto activo de nível mais elevado
+<LI>gainFocus
+<LI>loseFocus
+<LI>nameChange
+<LI>valueChange
+<LI>stateChange
+<LI>caret: Quando o cursor de inserção (insertion point) deste Objecto NVDA se move
+<LI>locationChange: quando a posição física no ecrã  muda
+</UL>
+
+<P>
+Há muitos outros eventos, mas os listados acima são os mais úteis.
+</P>
+<P>
+para um exemplo de um evento processado por um App Module, veja o <A HREF="#Example1">exemplo 1</A> (Um App Module que emite um Beep sempre que o foco muda).
+</P>
+
+<A NAME="toc17"></A>
+<H3>2.11. A variável SleepMode dos App Modules</H3>
+
+<P>
+Os App Modules têm uma propriedade muito útil chamada "sleepMode", que se for definida para true, desactiva, quase totalmente, o NVDA nessa aplicação.
+Este modo é muito útil em aplicações com voz própria, ou talvez também  em alguns jogos que necessitem do teclado sem interferências.
+</P>
+<P>
+Apesar deste modo poder ser activado e desactivado pelo utilizador, com o comando NVDA+shift+s, o utilizador, ou um desenvolvedor, pode definir o modo silencioso como activado por padrão para uma aplicação.
+Isto é feito providenciando  um App Module para a aplicação em causa que apenas define sleepMode para True na  classe AppModule.
+</P>
+
+<A NAME="toc18"></A>
+<H3>2.12. Exemplo 4: Um App Module para desactivar o NVDA</H3>
+
+<P>
+O código seguinte pode ser copiado e colado num ficheiro de texto, e depois guardado na pasta appModules com o nome da aplicação para a qual quer activar o modo silencioso.
+Como sempre, o ficheiro deve ter a extensão .py.
+</P>
+
+<PRE>
+--- Início ---
+import appModuleHandler
+
+class AppModule(appModuleHandler.AppModule):
+
+	sleepMode = True
+
+--- Fim ---
+</PRE>
+
+<A NAME="toc19"></A>
+<H3>2.13. Criando Classes Personalizadas de Objectos NVDA</H3>
+
+<P>
+Criar classes personalizadas de Objectos NVDA, é a maneira mais útil e funcional de melhorar a acessibilidade de uma aplicação num  plugin do NVDA.
+Este método permite colocar todo o código necessário para um determinado controlo apenas num Objecto NVDA representando esse controlo, em vez de dispersar o código por vários controlos em eventos do  plugin.
+</P>
+<P>
+Há dois passos para criar uma  classe de Objecto NVDA:
+</P>
+
+<UL>
+<LI>Definir a classe Objecto NVDA, e suas substituições de propriedades,  eventos, scripts e associações de comandos.
+<LI>Informar o  NVDA para usar  esta classe de Objecto NVDA em situações específicas,bprocessando-o no método chooseNVDAObjectOverlayClasses do Plugin.
+</UL>
+
+<P>
+Ao definir uma classe NVDAObject, tem muitas classes NVDAObject base entre as quais escolher.
+Essas classes  base contém a base de suporte para as   APIs 	do sistema operativo ou de acessibilidade que estão por trás do controlo, tais como win32, MSAA ou Java access Bridge.
+Normalmente, deve fazer com que a sua classe NVDAObject herde as propriedades da classe  base mais elevada que necessitar.
+Por exemplo, se escolher criar a sua classe NVDAObject quando a window class name for "Edit" e o window control ID for 15, provavelmente deve escolher herdar de NVDAObjects.window.Window, porque sabe que  é um object Window.
+Similarmente, se quiser usar   a propriedade accRole do MSAA, provavelmente precisa de herdar de NVDAObjects.IAccessible.IAccessible.
+Deve também considerar que propriedades vai substituir no  Objecto NVDA personalizado.
+Por exemplo, se vai substituir  uma propriedade IAccessible, tal como shouldAllowIAccessibleFocusEvent, tem de herdar de  NVDAObjects.IAccessible.IAccessible.
+</P>
+<P>
+O método chooseNVDAObjectOverlayClasses pode ser implementado nas classes de app modules ou global plugins.
+Necessita de 3 argumentos:
+</P>
+
+<UL>
+<LI>self: O app module ou global plugin
+<LI>obj: O NVDAObject para os quais se está a definir as classes.
+<LI>clsList: uma lista Python de classes para NVDAObject que serão usadas para este obj.
+</UL>
+
+<P>
+Neste método, deve decidir que  classe(s) do Objecto NVDA (se alguma) este Objecto NVDA deverá usar verificando as suas propriedades, etc.
+Se quiser usar uma  classe personalizada, ela deve ser acrescentada à lista de classes, geralmente no início.
+Também pode remover da lista classes predefinidas do NVDA, mas é raro isso ser necessário.
+</P>
+
+<A NAME="toc20"></A>
+<H3>2.14. Exemplo 5: Etiquetando o campo de edição do  Notepad usando um Objecto NVDA</H3>
+
+<P>
+Este app module para o notepad faz com que o NVDA anuncie o campo de edição principal do Notepad como tendo o nome de "content".
+Isto é, quando recebe o foco, o NVDA dirá "Content edit".
+</P>
+<P>
+O código seguinte pode ser copiado e colado num ficheiro de texto, e depois guardado na pasta appModules com o nome notepad.py.
+</P>
+
+<PRE>
+--- Início ---
+import appModuleHandler
+from NVDAObjects.window import Window
+
+class AppModule(appModuleHandler.AppModule):
+
+	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
+		if isinstance(obj, Window) and obj.windowClassName == "Edit" and obj.windowControlID == 15:
+			clsList.insert(0, LabelledEditField)
+
+class LabelledEditField(Window):
+
+	name="Content"
+
+--- Fim ---
+</PRE>
+
+<A NAME="toc21"></A>
+<H2>3. Empacotar Código Como Add-ons do NVDA</H2>
+
+<P>
+Para facilitar a partilha e instalação de plugins e drivers, estes podem ser empacotados num único add-on do NVDA, que o utilizador pode instalar numa cópia do NVDA através do Gestor de Extras, encontrado no menu Ferramentas no menu do NVDA.
+Um Add-on é apenas um ficheiro zip com a extensão .nvda-addon, contendo um ficheiro manifest,  código opcional  para instalação/desinstalação e uma ou mais pastas contendo plugins e/ou drivers.
+</P>
+
+<A NAME="toc22"></A>
+<H3>3.1. Ficheiros Manifest</H3>
+
+<P>
+Cada Add-on deve conter um ficheiro Manifest chamado manifest.ini.
+Este ficheiro Manifest contém vários pares key = value declarando informação tal como  o nome do Add-on, versão e  descrição.
+</P>
+
+<A NAME="toc23"></A>
+<H4>3.1.1. Campos Disponíveis</H4>
+
+<P>
+Apesar de ser altamente recomendável que o manifest tenha todos os campos, os campos marcados como obrigatórios Têm de ser sempre incluídos.
+Caso contrário, o Add-on não será instalado.
+</P>
+
+<UL>
+<LI>name: Um nome curto e identificativo do Add-on. É usado para diferenciar os Add-ons internamente. (Obrigatório)
+<LI>summary: Algumas palavras descrevendo o Add-on. É o nome que aparece no Gestor de Extras. (Obrigatório)
+<LI>version: A versão do Add-on, por exemplo, 2.0. (Obrigatório)
+<LI>author: O autor do Add-on, de preferência no formato Name Completo &lt;endereço de e-mail&gt;, por exemplo  Michael Curran &lt;<A HREF="mailto:mick@kulgan.net">mick@kulgan.net</A>&gt;. (Obrigatório)
+<LI>description: Uma frase ou duas descrevendo o que faz o Add-on mais detalhadamente.
+<LI>url: Um URL onde este Add-on, mais informações e futuras actualizações poderão ser encontrados .
+</UL>
+
+<A NAME="toc24"></A>
+<H4>3.1.2. Um Exemplo de Ficheiro Manifest</H4>
+
+<P>
+***
+<S>- Início -</S>
+name = MeuAddonDeTeste
+summary = Um bom teste de Add-on
+version = 1.0
+description = Um exemplo de Add-on mostrando como se criam Add-ons!
+author = Michael Curran &lt;<A HREF="mailto:mick@kulgan.net">mick@kulgan.net</A>&gt;
+url = <A HREF="http://www.nvda-project.org/wiki/Development">http://www.nvda-project.org/wiki/Development</A>
+<S>- fim -</S>
+</P>
+
+<PRE>
+
+++ Plugins e Drivers ++
+Os Plugins e Drivers seguintes podem ser incluídos num Add-on:
+- App modules: Coloque-os numa pasta appModules do ficheiro;
+- Braille display drivers: Coloque-os numa pasta brailleDisplayDrivers do ficheiro;
+- Global plugins: Coloque-os numa pasta globalPlugins do ficheiro ;
+- Synthesizer drivers: Coloque-os numa pasta synthDrivers do ficheiro;
+-
+
+++ Código Opcional Para instalação / Desinstalação code ++
+Se for necessário executar qualquer código enquanto o Add-on é instalado ou desinstalado do NVDA (por exemplo, validar informação da licença ou  copiar ficheiros para uma localização específica), pode fornecer um ficheiro Python   chamado installTasks.py contendo funções especiais que o NVDA correrá durante a instalação ou desinstalação do Add-on.
+Este ficheiro deve evitar carregar quaisquer módulos que não sejam absolutamente necessários,  especialmente   extensões C para Python ou DLLs do seu próprio Add-on, pois isso pode causar futuras falhas na remoção do Add-on.
+Contudo, se esta falha acontecer, a pasta do Add-on será renomeada e apagada no próximo reinício do NVDA. 
+Finalmente, não deve depender da existência ou estado de outros Add-ons, pois estes podem não estar instalados, terem sido removidos ou ainda não terem sido iniciados.
+
++++ A função onInstall +++
+O NVDA procurará e executará uma função onInstall no ficheiro installTasks.py após concluir a extração do Add-on para o NVDA.
+Note que apesar de o Add-on já ter sido descompactado, a sua directoria terá uma extensão .pendingInstall até o NVDA ser reiniciado, a diretoria ser renomeada e o Add-on ser realmente carregado pela  primeira vez.
+Se esta função levantar uma excepção, a instalação do Add-on falhará e a sua directoria será eliminada.
+
++++ A Função onUninstall +++
+O NVDA procurará e executará uma função onUninstall no ficheiro installTasks.py quando o NVDA é reiniciado após o utilizador ter escolhido remover o Add-on.
+Após esta função terminar, a directoria do Add-on será automaticamente removida.
+Como isto acontece no arranque do NVDA, antes de outros componentes serem inicializados, esta função não poderá requerer intervenção do utilizador.
+
+++ Localização de Add-ons ++
+É possível incluir num  Add-on informação e mensagens noutros idiomas.
+Essa informação deve ser incluida na directoria locale .
+Esta directoria deve conter as sub-directorias necessárias para os idiomas pretendidos, usando o mesmo formato de código de idiomas  usado pelo  NVDA, por exemplo, en para inglês, fr_CA para o francês do Canadá.
+
++++ Ficheiros Manifest Localizados +++
+Cada uma das directorias de  idioma deve conter um  ficheiro chamado manifest.ini, que deve conter uma parte dos campos do manifest para serem traduzidos.
+Esses campos são "summary" e "description".
+Todos os outros campos serão ignorados.
+
++++ Mensagens Localizadas+++
+Cada uma das directorias de  idioma deve conter  informação gettext, que é o sistema usado para  traduzir o restante do NVDA, interface e mensagens anunciadas.
+Tal como no NVDA, um ficheiro gettext database compilado, nvda.mo, deve ser colocado na directoria LC_MESSAGES da pasta respeitante a cada idioma.
+Para permitir que os plugins do Add-on acedam às mensagens gettext, via chamadas às funções _(), deve inicializar as traduções no ínicio de cada módulo Python chamando addonHandler.initTranslations().
+Para mais informações sobre gettext e tradução do NVDA em geral, por favor, consulte
+http://www.nvda-project.org/wiki/TranslatingNVDA
+
++ Consola Python do NVDA +[PythonConsole]
+A consola Python do NVDA simula o interpretador  interactivo Python a partir do NVDA.
+É uma ferramenta de desenvolvimento que é útil para depuração, inspeção geral de código interno do NVDA ou inspeção da hierarquia de acessibilidade de uma aplicação.
+
+++ Utilização ++
+A  consola pode ser activada de duas formas:
+- Pressionando NVDA+control+z.
+Se activada desta forma, várias variáveis do NVDA serão transpostas, no  estado actual do momento em que o comando foi dado, para as variáveis disponíveis na consola.
+Consulte [Variáveis Transpostas #PythonConsoleSnapshotVariables] para mais detalhes.
+- Seleccionando Ferramentas -&gt; Consola de Python do menu do NVDA.
+-
+
+A consola é semelhante a um Interpretador interactivo de Python comum.
+A introdução é aceite uma linha de cada vez.
+A linha actual é processada quando se pressiona enter.
+Pode navegar pelo histórico de linhas introduzidas usando as setas para cima e para baixo.
+
+As respostas do interpretador serão faladas após pressionar enter.
+f6 alterna entre as janelas de introdução e de resultados.
+
+Fechar a janela da consola apenas a oculta.
+Isto permite ao utilizador voltar a uma sessão tal como estava quando foi fechada a janela, incluindo histórico e variáveis.
+
+++ Espaço de Nomes ++[PythonConsoleNamespace]
+
++++ Importações Automáticas +++
+Convenientemente, os seguintes módulos e variáveis são automáticamente importados na Consola:
+sys, os, wx, log (from logHandler), api, queueHandler, speech, braille
+
++++ Variáveis Transpostas+++[PythonConsoleSnapshotVariables]
+Sempre que se pressiona NVDA+control+z, certas variáveis disponíveis na consola serão  definidas para o estado actual no NVDA.
+Essas variáveis são:
+- focus: O objecto actualmente em foco
+- focusAnc: O ancestors do objecto em foco
+- fdl: Diferença de nível de Foco, isto é,  em que nível os ancestors para o foco actual e para o anterior  diferem
+- fg: O objecto actualmente em  foreground
+- nav: O actual objecto de navegação 
+- mouse: O actual objecto sob o rato
+- brlRegions: As regiões do buffer Braille activo
+-
+
++ Consola Remota de Python +
+Está disponível uma consola remota de Python para situações em que é necessária depuração remota do NVDA.
+É semelhante à [consola local de Python #PythonConsole] discutida acima, mas é acedida via TCP.
+
+Por favor, tenha atenção que isto é um grande risco de segurança.
+Só deve activar esta opção se estiver ligado a uma rede segura.
+
+++ Utilização ++
+Para activar a consola remota de Python, use a consola local de Python para importar remotePythonConsole e chame remotePythonConsole.initialize().
+Após isso já pode ligar por  TCP, porta 6832.
+
+O histórico de  linhas anteriores não é suportado.
+
+O  espaço de nomes é o mesmo que [na namespace da Consola local de Python #PythonConsoleNamespace].
+
+Existem algumas funções especiais:
+- snap(): Recolhe as informações sobre o estado das variáveis do NVDA e importa-as para as [Variáveis Transpostas #PythonConsoleSnapshotVariables].
+- rmSnap(): Remove todas as variáveis transpostas .
+-
+</PRE>
+
+<!-- html code generated by txt2tags 2.6 (http://txt2tags.org) -->
+<!-- cmdline: txt2tags -q developerGuide.t2t -->
+</BODY></HTML>
