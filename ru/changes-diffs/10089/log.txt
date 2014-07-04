@@ -1,9 +1,0 @@
-commit 2c85af120867552db4e386c6365112d1bd1e07c3
-Author: James Teh <jamie@nvaccess.org>
-Date:   Tue Apr 29 18:14:21 2014 +1000
-
-    In Google Chrome and Chrome-based browsers, certain chunks of text (such as those with emphasis) are no longer repeated when reporting the text of an alert or dialog.
-    
-    This occurred because getDialogText uses text leaf nodes, but text leaf nodes in Chrome include their text in both accName and IAccessibleText.
-    getDialogText now assumes the name is always part of the text for static text objects.
-    Fixes #4066.
