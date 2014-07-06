@@ -4,12 +4,39 @@
 
 = 2014.3 =
 
+== neue Funktionen ==
+- Die Klänge beim Starten/Beenden von NVDA können mit einer neuen Option in den allgemeinen Einstellungen ein- und ausgeschaltet werden. (#834)
+- Sie können im Erweiterungs-Manager eine Hilfeseite zu einer Erweiterung aufrufen, sofern die Erweiterung dies unterstützt. (#2694)
+- Unterstützung für den Kalender in Outlook 2007 und neuer (#2943) including:
+ - Wenn Sie sich mit den Pfeiltasten im Kalender bewegen, wird die aktuelle Uhrzeit angezeigt
+ - es wird angezeigt, ob der gewählte Zeitpunkt mit einem Termin kollidiert
+ - der gewählte Termin wird angezeigt, wenn Sie Tab drücken
+ - Das Datum wird nur noch angezeigt, wenn sich der neu gewählte Termin/Zeitpunkt auf einen anderen Tag bezieht
+ - erweiterte Unterstützung für den Posteingang und andere Nachrichtenlisten in Outlook 2010 und nduer (#3834)
+ - Sie können die Anzeige der Spaltenüberschriften (Absender, Betreff usw.) unterdrücken, indem Sie die Option "Spalten- und Reihenüberschriften von Tabellen ansagen" in den Einstellungen für Dokumentformatierungen deaktivieren.
+ - Die können die Tabellennavigationsbefehle (strg+Pfeiltasten) verwenden, um zwischen den Spalten zu navigieren
+- Microsoft Word: Wenn eine eingebundene Grafik keinen Alternativtext besitzt, wird stattdessen der Titel angezeigt, sofern vorhanden. (#4193)
+- Microsoft Word: Sie können die Einrückung eines Absatzes in die Dokumentformatierung (nvda+f) einbeziehen, indem Sie die Option "Absatzeinrückungen anzeigen" in den Einstellungen für Dokumentformatierungen aktivieren. (#4165).
+- Wenn Sie in einem Eingabefeld oder in einem Dokument die Eingabetaste drücken, wird automatisch eingefügter Text (Tab-Zeichen, Aufzählungszeichen, Numerierungen) angezeigt. (#4185)
+- Microsoft Word: Sie können nvda+alt+c drücken, um sich den Kommentar in einem Word-Dokument anzeigen zu lassen. (#3528)
+- verbessertes automatisches Anzeigen von Reihen- und Spaltenüberschriften in Microsoft Excel (#3568)
+ - Es werden (jaws-kompatible) definierte Namen verwendet, um Reihen- und Spaltenüberschriften zu identifizieren
+ - Die Befehle zum Setzen von Spalten- und Reihenbeschriftungen (nvda+Umschalt+c und nvda+Umschalt+r) speichern die Spalten- und Reihenbeschriftungen im Excel-Arbeitsblatt, sodass diese nach einem Neustart von NVDA oder Microsoft Excel wieder zur Verfügung stehen. Solche Reihen-/Spaltenüberschriften sollten von allen Bildschirmlesern ausgewertet werden können, die definierte Namen unterstützen
+ - Die Befehle können außerdem mehrmals in einem Arbeitsblatt verwendet werden, um verschiedene Überschriften für unterschiedliche Regionen eines Arbeitsblattes zu definieren.
+- Unterstützung für die Anzeige von Reihen- und Spaltenüberschriften in Microsoft Word (#3110)
+ - Es werden (jaws-kompatible) Word-Lesezeichen verwendet, um Reihen- und Spaltenüberschriften zu identifizieren
+ - Wenn Sie sich in der ersten Zeile/Spalte einer Tabelle befinden, können Sie diese mit nvda+Umschalt+c und nvda+Umschalt+R als Spalten-/Zeilenbeschriftung festlegen. Diese Beschriftungen werden im Word-Dokument gespeichert und stehen allen Bildschirmlesern zur Verfügung, die derartige Lesezeichen unterstützen.
+- Microsoft Word: Wenn Sie Tab drücken, wird der Abstand vom linken Seitenrand angezeigt. (#1353)
+- Für die meisten Befehle, die die Formatierungen in einem Word-Dokument verändern (Fett, Kursiv, unterstrichen; Gliederungsebenen usw.) meldet NVDA die Änderung der Formatierung per Sprache und Braille. (#1353)
+- Wenn in einem Microsoft-Excel-Arbeitsblatt die aktuelle Zelle einen Kommentar besitzt, können Sie diesem über die Tastenkombination nvda+alt+c anzeigen lassen. (#2920)
+- Wenn Sie in Micrsoft Excel den Modus zum Bearbeiten von Kommentaren mit der Tastenkombination umschalt+F2 einschalten, wird ein nvda-eigener Dialog zur Eingabe eines Kommentars angezeigt. (#2920)
+
 == Änderungen ==
 - Braille-Übersetzer Liblouis auf 2.5.4 aktualisiert. (#4103)
 
 == Fehlerbehebungen ==
 - In Chrome und Chrome-basierten Browsern werden hervorgehobene Dialogtexte nicht mehr doppelt angesagt. (#4066)
-- im Lesemodus in Mozilla-anwendungen werden Schalter, etc. zuverlässiger mit der Eingabetaste gedrückt. Zuvor wurde ein Schalter nicht bzw. ein anderer Schalter betätigt.dies betrifft z. B. die Schalter oben auf der Facebook-Seite. (#4106)
+- im Lesemodus in Mozilla-Anwendungen werden Schalter, etc. zuverlässiger mit der Eingabetaste gedrückt. Zuvor wurde ein Schalter nicht bzw. ein anderer Schalter betätigt.dies betrifft z. B. die Schalter oben auf der Facebook-Seite. (#4106)
 - Beim Navigieren in Itunes wird nutzlose Information ausgefiltert. (#4128)
 - Das Navigieren auf den nächsten Eintrag in Listen wie der Musik-Liste in Itunes funktioniert korrekt, wenn Sie die Objektnavigation verwenden. (#4129)
 - im Internet Explorer werden HTML-Elemente, die Überschriften enthalten, in die Schnellnavigation und in die Elementliste einbezogen. (#4140)
@@ -18,7 +45,15 @@
 - in Outlook 2010 werden in der Befehls-Symbolleiste im Dialog für Signaturen keine nutzlosen Informationen mehr angezeigt. (#4096)
 - Wenn Sie in Microsoft Word auf eine leere Zelle in einer Tabelle navigieren, wird nicht mehr fälschlicherweise das Verlassen der Tabelle gemeldet. (#4151)
 - Microsoft Word, das erste Zeichen jenseits einer Tabelle wird nun nicht mehr fälschlicherweise in die Tabelle verlegt. (#4152)
- 
+- im Dialog der Rechtschreibprüfung in Microsoft Word wird nun das falsch geschriebene Wort korrekt angezeigt, anstatt das erste fett gedruckte Wort anzuzeigen. (#3431) 
+- im Internet Explorer und anderen mshtml-Dokumenten werden die Beschriftungen von Formularfeldern korrekt angezeigt, wenn Sie die Tab-Taste oder die Schnellnavigationstasten zur Navigation im Dokument verwenden. Dies betrifft vor allem Formularfelder, bei denen das html-Element Label zur Beschriftung verwendet wurde. (#4170)
+- Die Existenz von Kommentaren wird in Microsoft Word zuverlässiger gemeldet. (#3528)
+- Der Umgang mit Dialogen in Microsoft Ofice wurde verbessert Insbesondere werden manche Symbolleisten ignoriert. (#4198) 
+
+
+== Änderungen für Entwickler ==
+- Die Unterstützung für das Beilegen von Dokumentation zu NVDA-Erweiterungen wurde vereinheitlicht. Sehen Sie sich den Abschnit zu Dokumentation für Erweiterungen für weitere Informationen an. (#2694)
+
 = 2014.2 =
 
 == Neue Funktionen ==
