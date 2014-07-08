@@ -333,7 +333,7 @@ Pour naviguer par objet, utilisez les commandes suivantes :
 | Aller à l'objet en focus | NVDA+pavnumMoins | NVDA+retour arrière | Aucun | Va à l'objet ayant le focus système, et place le curseur de revue sur le curseur système s'il est présent |
 | Activer l'objet navigateur courant | NVDA+pavnumEntrer | NVDA+entrer | Double tape | Active l'objet navigateur courant (similaire à un clic de souris ou à appuyer la barre d'espace quand l'objet a le focus système) |
 | Amener le focus système à l'objet navigateur courant | NVDA+maj+pavnumMoins | NVDA+maj+retour arrière | Aucun | Amène le focus système à l'objet navigateur courant si c'est possible |
-| Annoncer les dimensions de l'objet navigateur courant | NVDA+pavnumEffacement | NVDA+effacement | Aucun | Annonce les dimensions de l'objet navigateur courant à l'écran (en incluant sa distance par rapport au haut et à la gauche de l'écran ainsi que sa hauteur et sa largeur) |
+| Annoncer les dimensions de l'objet navigateur | NVDA+pavnumEffacement | NVDA+effacement | Aucun | Annonce la position du curseur de revue, soit en termes pratiques tels que le pourcentage dans le document ou la distance au bord de la page, soit en pixels d'écran. Un double appui annonce des informations supplémentaires.|
 %kc:endInclude
 
 Note : Les touches du pavé numérique nécessitent de désactiver le verrouillage numérique pour fonctionner correctement.
@@ -525,11 +525,20 @@ Une touche de commande permet de retourner à la page contenant l'objet embarqu�
 + Commandes NVDA spécifiques à certaines applications +
 NVDA fournit ses propres commandes additionnelles dans quelques applications pour rendre certaines tâches plus faciles ou pour donner accès à certaines fonctions qui ne seraient pas accessibles autrement.
 
+++ Microsoft Word ++
+%kc:beginInclude
+|| Nom | Touche | Description |
+| Annonce du commentaire courant | NVDA+Alt+c | Annonce le texte du commentaire à la position du curseur système. | 
+| Définir les entêtes de colonnes | NVDA+maj+c | Appuyer une fois indique à NVDA que cette cellule est la première de la ligne contenant les entêtes de colonnes, qui devraient automatiquement être annoncés en navigant entre les colonnes sous cette ligne. Appuyer deux fois permet d'effacer le paramétrage. | 
+| Définir les entêtes de lignes | NVDA+maj+r | Appuyer une fois indique à NVDA que cette cellule est la première de la colonne contenant les entêtes de lignes, qui devraient automatiquement être annoncés en navigant entre les lignes après cette colonne. Appuyer deux fois permet d'effacer le paramétrage. | 
+%kc:endInclude
+
 ++ Microsoft Excel ++
 %kc:beginInclude
 || Nom | Touche | Description |
-| Définir les entêtes de colonnes | NVDA+maj+c | Appuyer une fois permet de définir la ligne contenant les entêtes de colonnes, qui devraient automatiquement être annoncés en navigant sous cette rangée. Appuyer deux fois permet d'effacer le paramétrage. | 
-| Définir les entêtes de lignes | NVDA+maj+r | Appuyer une fois permet de définir la colonne contenant les entêtes de lignes, qui devraient automatiquement être annoncés en navigant dans les cellules après cette colonne. Appuyer deux fois permet d'effacer le paramétrage. | 
+| Définir les entêtes de colonnes | NVDA+maj+c | Appuyer une fois indique à NVDA que cette cellule est la première de la ligne contenant les entêtes de colonnes, qui devraient automatiquement être annoncés en navigant entre les colonnes sous cette ligne. Appuyer deux fois permet d'effacer le paramétrage. | 
+| Définir les entêtes de lignes | NVDA+maj+r | Appuyer une fois indique à NVDA que cette cellule est la première de la colonne contenant les entêtes de lignes, qui devraient automatiquement être annoncés en navigant entre les lignes après cette colonne. Appuyer deux fois permet d'effacer le paramétrage. | 
+| Annonce du commentaire | NVDA+alt+c | Annonce le commentaire sur la cellule courante s'il y en a un. |
 %kc:endInclude
 
 ++ Microsoft PowerPoint ++
@@ -587,6 +596,9 @@ C'est une case à cocher qui, une fois cochée, indique à NVDA de sauvegarder a
 ==== Avertir avant de quitter NVDA ====
 Cette option est une case à cocher vous permettant d'indiquer si une confirmation doit être demandée quand vous voulez quitter NVDA.
 Quand elle est cochée, un dialogue apparaîtra lorsque vous voudrez quitter NVDA, vous demandant si oui ou non vous voulez quitter.
+
+==== Jouer des sons au démarrage ou à l'arrêt de NVDA ====
+Cette option est une case à cocher qui, quand elle est cochée, dit à NVDA de jouer des sons lors de son démarrage ou de son arrêt.
 
 ==== Niveau de journalisation ====
 C'est une liste déroulante qui vous permet de choisir la quantité d'informations que NVDA consignera dans son journal durant son exécution. 
@@ -1015,6 +1027,7 @@ On peut configurer les annonces suivantes :
 - numéro de page,
 - numéro de ligne,
 - indentation de ligne,
+- Indentation de paragraphe (ex : indentation en cours, indentation de première ligne),
 - tableaux,
 - titres des lignes et colonnes d'un tableau,
 - coordonnées des cellules d'un tableau,
@@ -1211,6 +1224,7 @@ Ces paquets sont fournis par la communauté et contiennent du code qui peut ajou
 
 Le gestionnaire de modules complémentaires contient une liste affichant tous les modules complémentaires actuellement installés dans votre configuration utilisateur de NVDA.
 Un nom de paquet, la version et l'auteur sont affichés pour chaque module complémentaire, et des informations suplémentaires telles qu'une description et une URL peuvent être affichées en sélectionnant le module complémentaire et en activant le bouton "À propos" du module complémentaire...
+Si une aide est disponible pour le module sélectionné, vous pouvez y accéder en pressant le bouton "Aide du module complémentaire".
 
 Pour télécharger des modules complémentaires mis à disposition par la communauté, cliquez sur le bouton "Obtenir des modules complémentaires".
 Ce bouton ouvre la [page des modules complémentaires NVDA http://addons.nvda-project.org/].
