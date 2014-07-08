@@ -5,6 +5,50 @@ Qué hay de Nuevo en NVDA
 
 = 2014.3 =
 
+== Nuevas Características ==
+- Los sonidos que se ejecutan cuando NVDA arranca y sale se pueden desactivar a través de una nueva opción en el cuadro de diálogo Opciones generales. (#834)
+- Se puede acceder a la ayuda para los complementos desde el Administrador de complementos para los que lo soporten. (#2694)
+- Soporte para el Calendario en Microsoft Outlook 2007 y superior (#2943) incluyendo:
+ - El anunciado de la hora actual al moverte con las flechas,
+ - el indicado de si la hora seleccionada está dentro de alguna cita,
+ - el anuncio de la cita seleccionada al pulsar tab
+ - El filtrado inteligente de la hora de manera que sólo se anuncia la fecha si la nueva hora o cita seleccionada es en un día diferente a la última.
+- Mejorado el soporte para la bandeja de entrada y otras listas de mensajes en Outlook 2010 y posterior (#3834) incluyendo:
+ - La capacidad de silenciar los encabezados de columna (de, Asunto etc) desactivando la opción Anunciar Encabezados de Fila y Columna de Tabla en Opciones de Formateado de Texto,
+ - La capacidad de utilizar las órdenescomandos de navegación de tabla (control + flechas) para moverse a lo largo de las columnas individuales. 
+- Microsoft word: Si una imagen en línea no tiene puesto ningún texto alternativo, NVDA anunciará el título de la imagen, si el autor ha proporcionado uno. (#4193)
+- Microsoft Word: Se anuncia el sangrado del párrafo con la orden  Anunciar Formato (NVDA+f) y automáticamente cuando la nueva opción Anunciar Sangría del Párrafo en Formateo de Documentos esté activada. (#4165).
+- Se anuncia el texto insertado automáticamente tal como una nueva viñeta, número o sangría cuando se pulse intro en documentos y campos de texto editables. (#4185)
+- Microsoft word: Al pulsar NVDA+alt+c se anunciará el texto de  un comentario si el cursor está dentro de uno. (#3528)
+- Mejorado el soporte para la lectura automática de encabezados de fila y columna en Microsoft Excel (#3568) incluyendo:
+ - Soporte de los rangos de nombres definidos de Excel para identificar las celdas de encabezado (compatible con el lector de pantalla Jaws) 
+ - Las órdenes fijar encabezado de columna (NVDA+shift+c) y fijar encabezado de fila (NVDA+shift+r) ahora almacenan las opciones en la hoja de cálculo tal que estén disponibles la siguiente vez que la hoja se abra  y estarán disponibles para otros lectores de pantalla que soporten el esquema de rango de nombres definidos.
+ - Estas órdenes ahora también pueden utilizarse múltiples veces por hoja para fijar diferentes encabezados para diferentes regiones.
+- Soporte para la lectura automática de  encabezados de columna y fila en Microsoft Word (#3110) incluyendo:
+ - Soporte de marcas de MS Word para identificar celdas de encabezado (compatible con el lector de pantalla Jaws) 
+ -  las órdenes fijar encabezado de columna (NVDA+shift+c) y fijar encabezado de fila (NVDA+shift+r) mientras se esté en la primera celda de encabezado en una tabla permiten decir a NVDA que esos encabezados  deberían anunciarse automáticamente.  Las opciones se almacenan en el documento tal que estén disponibles la siguiente vez que el documento se abra, y estarán disponibles para otros lectores de pantalla que soporten el esquema de marcas.
+- Microsoft Word: Anuncia la distancia desde el borde izquierdo de la página cuando se pulse la tecla tab. (#1353)
+- Microsoft Word: se proporciona información en voz y en braille para la mayoría de teclas de atajo disponibles  para el formato (negrita, cursiva, subrayado,  alineación y nivel de esquema). (#1353)
+- Microsoft Excel: Si la celda seleccionada contiene comentarios, pueden ser ahora anunciados pulsando NVDA+alt+c (#2920)
+- Microsoft Excel: se Proporciona un diálogo específico para NVDA para editar los comentarios sobre la celda seleccionada al pulsar la orden de Excel shift + f2 para acceder al modo de edición de comentarios. (#2920)
+- Microsoft Excel: información en voz y en braille  para muchos más atajos de teclado para movimientos de selección (#4211) incluyendo:
+ - Movimiento de página Vertical (Re Pág y Av Pág)
+ - Movimiento de página Horizontal (alt+RePág y alt+AlPág)
+ - Ampliar la selección (las teclas anteriores añadiendo Shift).
+ - Selección de la región actual (control+shift+8)
+- Microsoft Excel: anunciar  alineación vertical y horizontal para las céldas con la orden anunciar formato(NVDA+f) y automáticamente si la opción Anunciar Alineación en las opciones Forrmato de Documentos está activada. (#4212)
+- Microsoft Excel: anunciar el estilo de una celda con la opción anunciar formato  (NVDA+f) y automáticamente si la opción Anunciar Estilo en las opciones de Formato de documento está activada. (#4213)
+- Microsoft Powerpoint: cuando se mueven las formas de una diapositiva con las teclas de flecha, ahora se anuncia la ubicación actual de la forma (#4214) incluyendo:
+ - Se anuncia la distancia entre la forma y cada uno de los bordes de la diapositiva 
+ - Si la forma cubre o está cubierta por otra forma, entonces la distancia superpuesta, y la otra forma se anuncian. 
+ - Para anunciar esta información en cualquier momento sin mover una forma, pulsa la orden anunciar localización (NVDA+suprimir)
+ - Al seleccionar una forma, si está cubierta por otra forma, se anunciará el estado oculto.
+- La orden anunciar localización (NVDA+suprimir) es más específica al contexto en algunas situaciones. (#4219):
+ - En los campos de edición estándar y en el modo navegación, se anuncian la posición del cursor como un porcentaje del contenido, y sus coordenadas de pantalla .
+ - En formas en presentaciones de Powerpoint, se anuncia la posición de la forma relativa a la diapositiva  y otras formas.
+ - Al pulsar   esta orden dos veces se producirá el antiguo comportamiento del anunciado de la información de localización para todo el control.
+ 
+
 == Cambios ==
 - Actualizado el transcriptor braille liblouis a 2.5.4. (#4103)
 
@@ -17,9 +61,20 @@ Qué hay de Nuevo en NVDA
 - Los elementos HTML se consideran encabezados  debido a que las marcas WAI ARIA ahora están incluidas en la lista de elementos del modo navegación y la navegación rápida de documentos de Internet Explorer. (#4140)
 - Al seguir enlaces a la misma página en versiones recientes de Internet Explorer ahora nos movemos allí correctamente y se anuncia la posición de destino en los documentos en modo navegación. (#4134)
 - Microsoft Outlook 2010 y superior: se mejora todo el acceso a diálogos seguros tales como los nuevos perfiles y cuadros de diálogo de configuración de correo. (#4090, #4091, #4095)
-- Microsoft Outlook: se disminuye la verbosidad inútil de las barras de herramientas de órdenes cuando se navega a través del diálogo de Firmas. (#4096)
+- Microsoft Outlook: se disminuye la verbosidad inútil de las barras de herramientas de órdenes cuando se navega a través de ciertos diálogos. (#4096, #3407)
 - Microsoft word: al tabular por una celda en blanco en una tabla ya no se anuncia incorrectamente saliendo de tabla. (#4151)
 - Microsoft Word: El primer carácter más allá de fin de una tabla (incluyendo una nueva línea en blanco), ya no se considera incorrectamente que está dentro de la tabla. (#4152)
+- Diálogo del corrector de ortografía de Microsoft Word 2010: Anuncia deletreando la palabra  real en lugar de sólo la primera palabra  en negrita. (#3431) 
+- En modo navegación en Internet Explorer y otros controles MSHTML, al tabular o utilizar la navegación de una sola tecla para moverte a campos  de formulario anuncia la etiqueta de nuevo en muchos casos donde no debería (en concreto, cuando se utilizan elementos de la etiqueta HTML). (#4170)
+- Microsoft Word: el anunciado sobre la existencia y ubicación de comentarios es más preciso. (#3528)
+- Se mejora la navegación de algunos cuadros de diálogo en los productos de MS Office como Word, Excel y Outlook ya no se anuncian  barras de herramientas de control de contenedores que no son útiles para el usuario. (#4198) 
+- Los paneles de tareas tales como el administrador del portapapeles o de recuperación de ficheros ya no parecen obtener el foco accidentalmente al abrir una aplicación tal como Microsoft Word o Excel, lo que a veces provocaba que el usuario tuviera que salir y volver a la aplicación para utilizar el documento u hoja de cálculo.  (#4199)
+- NVDA ya no falla al ejecutarse en los últimos sistemas operativos Windows, si el idioma de Windows del usuario se establece en Serbio (Latino). (#4203) 
+- Ya no es necesario pulsar alt varias veces con el fin de activar las cintas de Microsoft Office la primera vez que se activan, después de abrir un programa de Office como Word o Excel. (#4207)
+
+
+== Cambios para Desarrolladores ==
+- NVDA ahora cuenta con el apoyo unificado de documentación para los complementos. Véase la sección de complementos de la documentación de la Guía del desarrollador para obtener más información. (#2694)
 
 
 = 2014.2 =
