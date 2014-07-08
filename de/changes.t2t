@@ -30,6 +30,22 @@
 - Für die meisten Befehle, die die Formatierungen in einem Word-Dokument verändern (Fett, Kursiv, unterstrichen; Gliederungsebenen usw.) meldet NVDA die Änderung der Formatierung per Sprache und Braille. (#1353)
 - Wenn in einem Microsoft-Excel-Arbeitsblatt die aktuelle Zelle einen Kommentar besitzt, können Sie diesem über die Tastenkombination nvda+alt+c anzeigen lassen. (#2920)
 - Wenn Sie in Micrsoft Excel den Modus zum Bearbeiten von Kommentaren mit der Tastenkombination umschalt+F2 einschalten, wird ein nvda-eigener Dialog zur Eingabe eines Kommentars angezeigt. (#2920)
+- Microsoft Excel: für etliche Tastenkombinationen, die sich auf das Verschieben von Markierungen beziehen, wurde die Ausgabe in Sprache und Braille verbessert (#4211):
+ - vertikales seitenweises Verschieben (Seite auf und Seite ab)
+ - horizontales seitenweises Verschieben (alt+Seite auf und alt+Seite ab)
+ - Erweitern von Markierungen (die obigen Tastenkombinationen mit der Umschalt-Taste).
+ - markieren der aktuellen Region (strg+Umschalt+8)
+- Microsoft Excel: Wenn die Ansage der Ausrichtung in den Einstellungen für Dokumentformatierungen aktiviert ist, wird die vertikale und horizontale Ausrichtung der aktuellen Zelle angezeigt (#4212)
+- Microsoft Excel: Die Formatierungen werden angezeigt, wenn Sie nvda+f drücken, während die Option "formatierungen ansagen" in den Einstellungen für Dokumentformatierungen aktiviert ist. (#4213)
+- Microsoft Powerpoint: Wenn Sie ein Objekt über eine Folie mit Hilfe der Pfeiltasten bewegen, wird die neue Position angezeigt (#4214):
+ - der Abstand zwischen dem Objekt und jedem Rand der Folie wird angezeigt
+ - Sofern das Objekt ein anderes Objekt überlagert oder überlagert wird, wird die Überlagerung angezeigt.
+ - Verwenden Sie den Befehl "Position anzeigen" (nvda+Nummernblock entf), um diese Informationen abzurufen, ohne das objekt zu bewegen.
+ - Wenn Sie ein Objekt auf einer Fole auswählen, wird Überlagerung mit anderen Objekten gemeldet.
+- Der Befehl zum Anzeigen der Dimentsionen eines Objekts reagiert kontextsensitiver. (#4219):
+ - In Eingabefeldern wird die Cursorposition relativ zum Feldinhalt und in Form von Bildschirmkoordinaten gemeldet.
+ - Bei Powerpoint-Objekten wird die Position des Objekts auf der Folie sowie evtl. vorhandene Überlagerungen gemeldet.
+ - Wenn Sie die Tastenkombination zweimal drücken, wird die Position dem alten Verhalten entsprechend gemeldet.
 
 == Änderungen ==
 - Braille-Übersetzer Liblouis auf 2.5.4 aktualisiert. (#4103)
@@ -49,6 +65,9 @@
 - im Internet Explorer und anderen mshtml-Dokumenten werden die Beschriftungen von Formularfeldern korrekt angezeigt, wenn Sie die Tab-Taste oder die Schnellnavigationstasten zur Navigation im Dokument verwenden. Dies betrifft vor allem Formularfelder, bei denen das html-Element Label zur Beschriftung verwendet wurde. (#4170)
 - Die Existenz von Kommentaren wird in Microsoft Word zuverlässiger gemeldet. (#3528)
 - Der Umgang mit Dialogen in Microsoft Ofice wurde verbessert Insbesondere werden manche Symbolleisten ignoriert. (#4198) 
+- Wenn Sie ein Word-Dokument oder ein Excel-Arbeitsblatt öffnen, wird nicht mehr versehentlich das Fenster zur Dateiwiederherstellung in den Fokus genommen.  (#4199)
+- Wenn NVDA auf serbischen Windows-Systemen verwendet wird, funktioniert es ordnungsgemäß. (#4203) 
+- In Microsoft Word oder Excel müssen Sie nicht mehr mehrmals Alt drücken, um das Menüband zu aktivieren. (#4207)
 
 
 == Änderungen für Entwickler ==
