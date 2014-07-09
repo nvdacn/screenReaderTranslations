@@ -8,11 +8,17 @@ Quoi de Neuf dans NVDA
 == Nouvelles fonctionnalités ==
 - Les sons joués au démarrage et à l'arrêt de NVDA peuvent être désactivés via une nouvelle option dans le dialogue "Paramètres Généraux". (#834)
 - L'aide des modules complémentaires est accessible depuis le Gestionnaire de Modules Complémentaires pour les modules qui le permettent. (#2694)
-- Support du Calendrier dans Microsoft Outlook 2007 et plus récent
-- La possibilité de désactiver l'annonce des entêtes de colonnes dans la Boîte de Réception et les autres listes de messages sous Outlook 2010 et plus récent. (#3834)
-- Microsoft word : annonce le titre des images si aucun texte alternatif n'est défini. (#4193)
-- Microsoft Word : annonce l'indentation du paragraphe avec la commande d'annonce du format (NVDA+f) et automatiquement quand le nouveau paramètre "Annoncer l'indentation des paragraphes" du dialogue "Mise en Forme des Documents" est activé. (#4165)
-- Annonce le texte inséré automatiquement tel qu'une nouvelle puce, indentation par numéro ou tabulation quand on presse "Entrée" dans les documents éditables et les champs de texte. (#4185)
+- Support du Calendrier sous Microsoft Outlook 2007 et plus récent (#2943) incluant :
+ - Annonce de l'heure quand on se déplace avec les flèches,
+ - Indication si le temps sélectionné est à l'intérieur d'un rendez-vous,
+ - annonce du rendez-vous sélectionné quand on presse la touche tab
+ - Filtrage intelligent de la date pour ne l'annoncer que si la date ou le rendez-vous sélectionnés sont sur un jour différent du dernier
+- Support amélioré de la boîte de réception et des autres listes de messages sous Outlook 2010 et plus récent (#3834) incluant :
+ - La possibilité de ne pas annoncer les entêtes de colonnes (de, sujet etc) en désactivant l'annonce des lignes et colonnes d'un tableau dans le dialogue "Mise en forme des documents",
+ - La possibilité d'utiliser les commandes de navigation dans un tableau (contrôle + flèches) pour se déplacer dans une colonne particulière. 
+- Microsoft word : Si une image incluse n'a pas de texte alternatif défini, NVDA annoncera à la place le titre de l'image si l'auteur en a donné un. (#4193)
+- Microsoft Word : annonce de l'indentation du paragraphe avec la commande d'annonce du format (NVDA+f) et automatiquement quand le nouveau paramètre "Annoncer l'indentation des paragraphes" du dialogue "Mise en Forme des Documents" est activé. (#4165)
+- Annonce du texte inséré automatiquement tel qu'une nouvelle puce, indentation par numéro ou tabulation quand on presse "Entrée" dans les documents éditables et les champs de texte. (#4185)
 - Microsoft word : Si le curseur est à l'intérieur d'un commentaire, l'appui sur NVDA+alt+c annoncera le texte de celui-ci. (#3528)
 - Support amélioré de la lecture automatique des entêtes de lignes et de colonnes sous Microsoft Excel (#3568) incluant :
  - Support des jeux de noms définis par Excel pour identifier les cellules d'entête (compatible avec la revue d'écran Jaws) 
@@ -22,8 +28,26 @@ Quoi de Neuf dans NVDA
  - Support des signets MS Word pour identifier les cellules d'entête (compatible avec la revue d'écran Jaws) 
  - Les commandes de définition d'entête de colonne (NVDA+shift+c) et de définition d'entête de ligne (NVDA+shift+r) quand on est sur la première cellule d'entête d'un tableau vous permettent d'indiquer à NVDA que ces entêtes devraient être annoncés automatiquement. les paramètres sont stockés dans le document pour être disponibles lors de la prochaine ouverture du document et pour être utilisable par les revues d'écran supportant le schéma de signets.
 - Microsoft Word : Annonce de la distance au bord gauche de la page quand la touche tab est pressée. (#1353)
-- Microsoft Word : fournit un retour vocal et braille pour la plupart des raccourcis clavier de formatage disponibles (gras, italique, souligné, alignement et niveau hiérarchique). (#1353)
- 
+- Microsoft Word : ajout d'un retour vocal et braille pour la plupart des raccourcis clavier de formatage disponibles (gras, italique, souligné, alignement et niveau hiérarchique). (#1353)
+- Microsoft Excel : Si la cellule sélectionnée contient des commentaires, ils peuvent maintenant être annoncés en pressant NVDA+alt+c (#2920)
+- Microsoft Excel : Ajout d'un dialogue spécifique de NVDA pour éditer les commentaires sur la cellule sélectionnée quand on presse la commande d'Excel maj+f2 pour entrer en mode édition de commentaire. (#2920)
+- Microsoft Excel : retour vocal et braille pour beaucoup plus de raccourcis de déplacement de sélection (#4211) incluant :
+ - Mouvement vertical de la page  (pagePrec et pageSuiv)
+ - Mouvement horizontal de la page (alt+pagePrec et alt+pageSuiv)
+ - Extension de la sélection (les touches ci-dessus en ajoutant Maj).
+ - Sélection de la région en cours (contrôle+maj+8)
+- Microsoft Excel : annonce de l'alignement vertical et horizontal des cellules avec la commande d'annonce de mise en forme (NVDA+f) et automatiquement si l'option d'annonce de l'alignement est activée dans le dialogue "Mise en Forme des Documents". (#4212)
+- Microsoft Excel : annonce du style d'une cellule avec la commande d'annonce de mise en forme (NVDA+f) et automatiquement si l'option d'annonce du style est activée dans le dialogue "Mise en Forme des Documents". (#4213)
+- Microsoft Powerpoint : Quand on déplace des formes dans une diapositive avec les flèches, la position courante de la forme est maintenant annoncée (#4214) incluant :
+ - L'annonce de la distance entre la forme et chaque bord de la diapositive
+ - Si la forme couvre ou est couverte par une autre forme, la distance de couverture et l'autre forme sont annoncées. 
+ - Pour obtenir cette information à tout moment sans déplacer une forme, pressez la commande d'annonce de position (NVDA+effacement)
+ - Quand on sélectionne une forme, si elle est couverte par une autre, l'état Masqué est annoncé.
+- La commande d'annonce de position (NVDA+effacement) est plus spécifique au contexte dans certaines situations. (#4219):
+ - Dans les zones d'édition standards et le mode navigation, la position du curseur a un pourcentage dans le contenu, et ses coordonnées à l'écran sont annoncées.
+ - Sur les formes dans les Présentations Powerpoint, la position de la forme par rapport à la diapositive et aux autres forme est annoncée.
+ - Un double appui sur cette commande produira l'ancienne façon d'annoncer l'information de position pour l'ensemble du contrôle.
+
 
 == Changements ==
 - Mise à jour de la librairie de traduction en braille liblouis vers la version 2.5.4. (#4103)
@@ -36,12 +60,17 @@ Quoi de Neuf dans NVDA
 - Dans certaines listes d'iTunes comme la liste des musiques, le déplacement à l'élément suivant fonctionne maintenant correctement. (#4129)
 - Les éléments HTML considérés comme cachés à cause des marques WAI ARIA sont maintenant inclus dans la liste d'éléments en mode navigation et dans la navigation rapide dans Internet Explorer. (#4140)
 - Les liens sur la même page dans les versions récentes d'Internet Explorer déplacent bien le curseur et annoncent bien la position de la destination en mode navigation. (#4134)
-- Microsoft Outlook 2010 et plus récent : amélioration de l'accès aux boîtes de dialogue sécurisées comme les profils ou la configuration des mails. (#4090, #4091, #4095)
+- Microsoft Outlook 2010 et plus récent : amélioration de l'accès aux boîtes de dialogue sécurisées comme les profils ou la configuration des courriels. (#4090, #4091, #4095)
 - Microsoft Outlook : diminution de la verbosité des barres d'outils de commandes lorsque l'on navigue dans certains dialogues. (#4096, #3407)
 - Microsoft Word : tabuler sur une cellule vide dans un tableau n'annonce plus que l'on quitte le tableau. (#4151)
 - Microsoft Word : Le premier caractère après la fin d'un tableau (y compris une nouvelle ligne vide) n'est plus considéré à tort comme étant à l'intérieur du tableau. (#4152)
-- Dialogue du correcteur orthographique de Microsoft Word 2010 : détection améliorée des mots mal orthographiés. (#3431)
-- En mode navigation sous Internet Explorer et les autres contrôles MSHTML, l'utilisation d'une seule lettre de navigation pour atteindre une zone d'édition annonce de nouveau l'étiquette (en particulier, là ou des éléments d'étiquette HTML sont utilisés). (#4170)
+- Dialogue du correcteur orthographique de Microsoft Word 2010 : annonce du vrai mot mal orthographié au lieu de simplement annoncer le premier mot en caractères gras rencontré. (#3431)
+- En mode navigation sous Internet Explorer et les autres contrôles MSHTML, tabuler ou utiliser une lettre de navigation pour atteindre une zone d'édition annonce de nouveau l'étiquette (en particulier, là ou des éléments d'étiquette HTML sont utilisés). (#4170)
+- Microsoft Word : L'annonce de l'existence et de la position des commentaires est plus précise. (#3528)
+- Amélioration de la navigation dans certains dialogues des produits MS Office tels que Word, Excel et Outlook en n'annonçant plus certaines barres d'outils de conteneurs inutiles pour l'utilisateur. (#4198) 
+- Des volets de Tâches tels que le gestionnaire de presse-papiers ou la récupération de fichiers ne semblent plus accidentellement prendre le focus quand on ouvre une application comme Word ou Excel, ce qui obligeait parfois l'utilisateur à changer de fenêtre et revenir pour accéder au document ou à la feuille de calcul. (#4199)
+- NVDA ne refuse plus de fonctionner sur les version récentes de Windows quand la langue de l'utilisateur du système est définie comme Serbe (Latin). (#4203) 
+- Il n'est plus nécessaire de presser alt plusieurs fois pour activer le ruban de Microsoft Office la première fois qu'on veut l'activer après l'ouverture d'un programme Office tel que Word ou Excel. (#4207)
  
  
 == Changements pour les Développeurs ==
