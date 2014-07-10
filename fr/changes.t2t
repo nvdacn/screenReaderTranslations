@@ -953,19 +953,19 @@ Précédemment, elles étaient toutes annoncées comme ereurs grammaticales. (#8
  - Voir les modules d'application pour Mirc et Putty pour des exemples d'utilisation.
 - Le module d'application _default n'existe plus. Les modules d'application doivent à présent sous-classer appModuleHandler.AppModule (la classe de base AppModule).
 - Le support des plugins globaux qui peuvent globalement assigner des scripts, manipulent les évènements de NVDAObject et choisissent les classes de superposition de NVDAObject. (#281) Voir globalPluginHandler.GlobalPlugin pour plus de détails.
-- On SynthDriver objects, the available* attributes for string settings (e.g. availableVoices and availableVariants)  are now OrderedDicts keyed by ID instead of lists.
-- synthDriverHandler.VoiceInfo now takes an optional language argument which specifies the language of the voice.
-- SynthDriver objects now provide a language attribute which specifies the language of the current voice.
- - The base implementation uses the language specified on the VoiceInfo objects in availableVoices. This is suitable for most synthesisers which support one language per voice.
-- Braille display drivers have been enhanced to allow buttons, wheels and other controls to be bound to NVDA scripts:
- - Drivers can provide a global input gesture map to add bindings for scripts anywhere in NVDA.
- - They can also provide their own scripts to perform display specific functions.
- - See braille.BrailleDisplayDriver for details and existing braille display drivers for examples.
-- The 'selfVoicing' property on AppModule classes has now been renamed to 'sleepMode'.
-- The app module events event_appLoseFocus and event_appGainFocus have now been renamed to event_appModule_loseFocus and event_appModule_gainFocus, respectivly, in order to make the naming convention consistent with app modules and tree interceptors.
-- All braille display drivers should now use braille.BrailleDisplayDriver instead of braille.BrailleDisplayDriverWithCursor.
- - The cursor is now managed outside of the driver.
- - Existing drivers need only change their class statement accordingly and rename their _display method to display.
+- Dans les objets SynthDriver, les attributs de paramètres de chaînes available* (ex: availableVoices et availableVariants)  sont maintenant OrdeeredDicts indexés par ID au lieu de listes.
+- synthDriverHandler.VoiceInfo prend maintenant un argument optionnel de langue qui spécifie la langue de la voix.
+- Les objets SynthDriver fournissent maintenant un attribut langue qui spécifie la langue de la voix en cours.
+ - L'implémentation de base utilise la langue specifiée sur les objets VoiceInfo dans availableVoices. Ceci est adapté à la plupart des synthétiseurs qui supportent une langue par voix.
+- Les pilotes d'afficheurs braille ont été améliorés pour permettre aux boutons, roulettes et autres contrôles d'être reconnus par les scripts NVDA :
+ - Les pilotes peuvent fournir un ensemble de gestes de saisie global connectables à des scripts n'importe où dans NVDA.
+ - Ils peuvent aussi fournir leurs propres scripts pour effectuer des fonctions spécifiques à l'afficheur.
+ - Veuillez consulter braille.BrailleDisplayDriver pour les détails et les pilotes d'afficheurs braille existants pour des exemples.
+- La propriété 'selfVoicing' des classes AppModule a maintenant été renommée en 'sleepMode'.
+- Les événements app module event_appLoseFocus et event_appGainFocus ont maintenant été renommés en event_appModule_loseFocus et event_appModule_gainFocus, respectivement, pour que la convention de nommage soit cohérente avec les app modules et les intercepteurs d'arborescences.
+- Tous les pilotes d'afficheurs braille devraient maintenant utiliser braille.BrailleDisplayDriver au lieu de braille.BrailleDisplayDriverWithCursor.
+ - Le curseur est maintenant géré hors du pilote.
+ - Les pilotes existants doivent seulement changer leur instruction de classe en conséquence et renommer leur méthode _display en display.
 
 
 = 2010.2 =
