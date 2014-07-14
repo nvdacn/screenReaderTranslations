@@ -31,6 +31,22 @@
 - Microsoft Word: informacja zwrotna mową i brajlem dla większości dostępnych klawiszy skrótu formatowania (pogrubienie, kursywa, podkreślenie, wyrównanie i poziom konspektu). (#1353)
 - Microsoft Excel: jeśli wybrana komórka zawiera komentarze, mogą one zostać odczytane po naciśnięciu NVDA+alt+c (#2920)
 - Microsoft Excel: specyficzne dla NVDA okno edycji komentarzy aktualnie wybranej komórki po naciśnięciu shift+f2 by przejść do trybu edycji komentarzy. (#2920)
+- Microsoft Excel: informacja zwrotna mową i brajlem po użyciu większej liczby skrótów klawiaturowych do nawigacji i zaznaczania komórek (#4211) w tym:
+ - Pionowo po stronach (pageUp i pageDown)
+ - Poziomo po stronach (alt+pageUp and alt+pageDown)
+ - Rozszerzenie zaznaczenia (powyższe klawisze z klawiszem Shift).
+ - Zaznaczenie aktualnego obszaru (control+shift+8)
+- Microsoft Excel: zgłaszaj pionowe i poziome wyrównanie komórek poleceniem odczytania formatowania (NVDA+f) oraz automatycznie, jeśli włączona jest opcja odczytywania wyrównania tekstu w ustawieniach formatowania dokumentu. (#4212)
+- Microsoft Excel: odczytaj styl komórki poleceniem odczytania formatowania (NVDA+f) oraz automatycznie, jeśli włączona jest opcja informowania o stylach w ustawieniach formatowania dokumentu. (#4213)
+- Microsoft Powerpoint: podczas przemieszczania kształtów po slajdzie przy użyciu strzałek, zgłaszane jest teraz położenie kształtu (#4214) w tym:
+ - Odczytana jest odległość kształtu od każdej krawędzi slajdu
+ - Jeśli kształt przysłania, lub jest przysłonięty przez inny kształt, podawany jest rozmiar zachodzenia, oraz inny kształt. 
+ - Aby w każdej chwili otrzymać te informacje bez przesuwania kształtu, wywołaj polecenie zgłaszania położenia (NVDA+delete)
+ - Podczas zaznaczania kształtu przysłoniętego przez inny kształt, zgłoszony zostanie stan przysłonięcia.
+- Polecenie odczytania położenia (NVDA+delete) jest bardziej zależne od kontekstu w niektórych sytuacjach. (#4219):
+ - W polach edycji i trybie czytania, zgłaszana jest pozycja kursora jako procent treści, oraz jego współrzędne na ekranie.
+ - Na kształtach w prezentacjach Powerpoint, odczytana zostanie pozycja kształtu w odniesieniu do krawędzi slajdu i innych kształtów.
+ - Dwukrotne wywołanie tego polecenia spowoduje dawne zachowanie, czyli odczytanie położenia całej kontrolki.
 
 
 == Zmiany ==
@@ -53,6 +69,8 @@
 - Microsoft Word: dokładniejsze zgłaszanie istnienia i położenia komentarzy. (#3528)
 - Poprawiona nawigacja w niektórych oknach produktów MS Office takich jak Word, Excel and Outlook poprzez nieodczytywanie określonych kontenerów pasków narzędzi, które nie są przydatne dla użytkownika. (#4198) 
 - Okienka zadań takie jak manager schowka lub odzyskiwanie plików, nie otrzymują fokusa podczas otwierania aplikacji Microsoft Word, albo Excel, co czasem zmuszało użytkownika do przełączania się z i do aplikacji, aby móc używać dokumentu lub arkusza.  (#4199)
+- Rozwiązany problem uruchamiania NVDA na nowszych systemach Windows, jeśli język użytkownika jest ustawiony na serbski (łaciński). (#4203) 
+- Nie jest już konieczne wielokrotne naciskanie klawisza alt, aby aktywować wstążkę Microsoft Office, po raz pierwszy po uruchomieniu programu wchodzącego w skład pakietu, np. Word czy Excel. (#4207)
 
 
 == Zmiany dla programistów ==
