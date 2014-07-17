@@ -23,6 +23,10 @@ addresses = {
         'lang':'Bulgarian',
         'email': ['Zahari Yurukov <zahari.yurukov@gmail.com>', 'Kostadin Kolev <k_kolev1985@mail.bg>'],
     },
+    'ca': {
+        'lang': 'Catalan',
+        'email': ['Ruben Alcaraz <ruben.hangar1.8@gmail.com>']
+    },
     'cs': {
         'lang': 'Czech',
         'email': ['Martina Letochova <letochova@seznam.cz>'],
