@@ -16,6 +16,7 @@ Quoi de Neuf dans NVDA
 - Support amélioré de la boîte de réception et des autres listes de messages sous Outlook 2010 et plus récent (#3834) incluant :
  - la possibilité de ne pas annoncer les entêtes de colonnes (de, sujet etc) en désactivant l'annonce des lignes et colonnes d'un tableau dans le dialogue "Mise en forme des documents",
  - la possibilité d'utiliser les commandes de navigation dans un tableau (contrôle + flèches) pour se déplacer dans une colonne particulière. 
+ - la possibilité d'utiliser les commandes (contrôle + alt + flèches) pour se déplacer entre les collones. 
 - Microsoft word : si une image incluse n'a pas de texte alternatif défini, NVDA annoncera à la place le titre de l'image si l'auteur en a donné un. (#4193)
 - Microsoft Word : annonce de l'indentation du paragraphe avec la commande d'annonce du format (NVDA+f) et automatiquement quand le nouveau paramètre "Annoncer l'indentation des paragraphes" du dialogue "Mise en Forme des Documents" est activé. (#4165)
 - Annonce du texte inséré automatiquement tel qu'une nouvelle puce, indentation par numéro ou tabulation quand on presse "Entrée" dans les documents éditables et les champs de texte. (#4185)
@@ -70,11 +71,18 @@ Quoi de Neuf dans NVDA
 - Amélioration de la navigation dans certains dialogues des produits MS Office tels que Word, Excel et Outlook en n'annonçant plus certaines barres d'outils de conteneurs inutiles pour l'utilisateur. (#4198) 
 - Des volets de Tâches tels que le gestionnaire de presse-papiers ou la récupération de fichiers ne semblent plus accidentellement prendre le focus quand on ouvre une application comme Word ou Excel, ce qui obligeait parfois l'utilisateur à changer de fenêtre et revenir pour accéder au document ou à la feuille de calcul. (#4199)
 - NVDA ne refuse plus de fonctionner sur les version récentes de Windows quand la langue de l'utilisateur du système est définie comme Serbe (Latin). (#4203) 
-- L'appui sur verrouillage numérique quand on est en mode aide à la saisie active et désactive maintenant correctement le verrouillage numérique, au lieu de créer une désynchronisation entre l'état du clavier et l'état du système. (#4226)
- 
+- En mode aide à la saisie, l'appui sur verrouillage numérique active et désactive maintenant correctement le verrouillage numérique, au lieu de créer une désynchronisation entre l'état du clavier et l'état du système. (#4226)
+- Sous Google Chrome, le titre du document est à nouveau annoncé quand on change d'onglet. Sous NVDA 2014.2, cela ne se produisait pas dans certains cas. (#4222)
+- Sous Google Chrome et les navigateurs basés sur Chrome, l'URL du document n'est plus indiqué à l'annonce du document. (#4223)
+- Quand on utilise "dire tout" avec le synthétiseur "Pas de parole" (utile pour des tests automatiques), dire tout ira maintenant jusqu'au bout au lieu de s'arrêter à la première erreur. (#4225)
+- Dans le dialogue de signature de Microsoft Outlook, la zone d'édition de la signature est maintenant accessible, permettant le suivi du curseur et la détection du format. (#3833) 
+- Microsoft Word : Quand on lit la dernière ligne d'une cellule de tableau, la cellule entière n'est plus relue. (#3421)
+- Microsoft Word: Quand on lit la première ou la dernière ligne d'une table des matière, la table entière n'est plus relue. (#3421)
+
  
 == Changements pour les Développeurs ==
 - NVDA possède maintenant un support unifié pour la documentation des modules complémentaires. Consultez la section "Documentation des modules complémentaires" du "Guide de Développement" pour plus de détails. (#2694)
+- Quand on fournit des liens de gestes sur un ScriptableObject via __gestures, il est maintenant possible de fournir le mot clé None comme script. Ceci délie le geste dans toutes les classes de base. (#4240)
 
 
 = 2014.2 =
