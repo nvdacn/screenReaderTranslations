@@ -69,7 +69,7 @@ addresses = {
     },
     'hi': {
         'lang': 'Hindi',
-        'email': ['Bhavya shah <bhavya.shah125@gmail.com>', 'him Prasad Gautam <drishtibachak@gmail.com>', 'dipendra.lists@gmail.com'],
+        'email': ['Bhavya Shah <bhavya.shah125@gmail.com>', 'him Prasad Gautam <drishtibachak@gmail.com>', 'dipendra.lists@gmail.com'],
     },
     'hr': {
         'lang': 'Croatian',
@@ -142,6 +142,10 @@ addresses = {
     'sr': {
         'lang':'Serbian',
         'email': ['Janko Valencik <janko.valencik@alfanum.co.rs>'],
+    },
+    'sv': {
+        'lang':'Swedish',
+        'email': ['Daniel Johansson <daniel.johansson@coeptus.se>'],
     },
     'ta': {
         'lang':'Tamil',
