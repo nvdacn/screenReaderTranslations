@@ -27,7 +27,7 @@
 <LI>Enhanced support for the Inbox and other message lists in Outlook 2010 and above (<A HREF="http://community.nvda-project.org/ticket/3834">#3834</A>) including:
  <UL>
  <LI>The ability to silence column headers (from, subject etc) by turning off the Report Table row and column headers option in Document formatting settings,
- <LI>The ability to use table navigation commands (control + arrows) to move along the individual columns. 
+ <LI>The ability to use table navigation commands (control + alt + arrows) to move along the individual columns. 
  </UL>
 <LI>Microsoft word: If an inline image has no alternative text set, NVDA will instead report the title of the image if the author has provided one. (<A HREF="http://community.nvda-project.org/ticket/4193">#4193</A>)
 <LI>Microsoft Word: Report paragraph indenting with  the report formatting command (NVDA+f) and automatically when the new Report Paragraph indenting Document formatting setting is enabled. (<A HREF="http://community.nvda-project.org/ticket/4165">#4165</A>).
@@ -97,13 +97,20 @@
 <LI>Improve navigation of certain dialogs in MS Office products such as Word, Excel and Outlook by no longer reporting particular control container toolbars which are not useful to the user. (<A HREF="http://community.nvda-project.org/ticket/4198">#4198</A>) 
 <LI>Task panes such as clipboard manager or File recovery no longer accidentilly seem to gain focus when opening an application such as Microsoft Word or Excel, which was sometimes causing the user to have to switch away and back to the application to use the document or spreadsheet.  (<A HREF="http://community.nvda-project.org/ticket/4199">#4199</A>)
 <LI>NVDA no longer fails to run on recent Windows Operating Systems if the user's Windows language is set to Serbian (Latin). (<A HREF="http://community.nvda-project.org/ticket/4203">#4203</A>) 
-<LI>It is no longer necessary to press alt multiple times  in order to activate the Microsoft Office ribbon  the first time it is activated, after opening an Office program such as Word or Excel. (<A HREF="http://community.nvda-project.org/ticket/4207">#4207</A>)
+<LI>Pressing numlock while in input help mode now correctly toggles numlock, rather than causing the keyboard and the Operating System to become out of sync in regards to the state of this key. (<A HREF="http://community.nvda-project.org/ticket/4226">#4226</A>)
+<LI>In Google Chrome, the title of the document is again reported when switching tabs. In NVDA 2014.2, this did not occur in some cases. (<A HREF="http://community.nvda-project.org/ticket/4222">#4222</A>)
+<LI>In Google Chrome and Chrome-based browsers, the URL of the document is no longer reported when reporting the document. (<A HREF="http://community.nvda-project.org/ticket/4223">#4223</A>)
+<LI>When running say all with the No speech synthesizer selected (useful for automated testing), say all will now complete instead of stopping after the first few lines. (<A HREF="http://community.nvda-project.org/ticket/4225">#4225</A>)
+<LI>Microsoft Outlook's Signature dialog: the Signature editing field is now accessible, allowing for full cursor tracking and format detection. (<A HREF="http://community.nvda-project.org/ticket/3833">#3833</A>) 
+<LI>Microsoft Word: When reading the last line of a table cell, the entire table cell is no longer read. (<A HREF="http://community.nvda-project.org/ticket/3421">#3421</A>)
+<LI>Microsoft Word: When reading the first or last line of a table of contents, the entire table of contents is no longer read. (<A HREF="http://community.nvda-project.org/ticket/3421">#3421</A>)
 </UL>
 
 <H3>Changes for Developers</H3>
 
 <UL>
 <LI>NVDA now has unified support for add-on documentation. See the Add-on Documentation section of the Developer Guide for details. (<A HREF="http://community.nvda-project.org/ticket/2694">#2694</A>)
+<LI>When providing gesture bindings on a ScriptableObject via __gestures, it is now possible to provide the None keyword as the script. This unbinds the gesture in any base classes. (<A HREF="http://community.nvda-project.org/ticket/4240">#4240</A>)
 </UL>
 
 <H2>2014.2</H2>
