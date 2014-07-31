@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NVDA bzr main:5884\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-02 19:14+1000\n"
+"POT-Creation-Date: 2014-07-31 19:13+1000\n"
 "PO-Revision-Date: 2014-07-17 17:21+0100\n"
 "Last-Translator: Aron Ocsvari <oaron@nvda.hu>\n"
 "Language-Team: NVDA Honosítási project <nvda@nvda.hu>\n"
@@ -1446,6 +1446,10 @@ msgstr "képletet tartalmaz"
 msgid "has comment"
 msgstr "Megjegyzés"
 
+#. Translators: a state that denotes that the object is covered partially or fully by another object
+msgid "obscured"
+msgstr ""
+
 #. Translators: This is presented when a selectable object (e.g. a list item) is not selected.
 msgid "not selected"
 msgstr "Nincs kijelölve"
@@ -1806,29 +1810,16 @@ msgstr ""
 "betűzi, háromszor gyorsan megnyomva pedig az elem nevét és értékét a "
 "vágólapra másolja"
 
-#. Translators: Reported when attempting to find out the navigator object's dimensions (width, height) but cannot obtain object's location.
-msgid "No location information for navigator object"
-msgstr "nem lehet a navigátor kurzornál lévő elem helyét meghatározni"
+#. Translators: message when there is no location information for the review cursor
+#, fuzzy
+msgid "No location information"
+msgstr "Nincs formázási információ"
 
-#. Translators: Reported when attempting to find out the navigator object's dimensions but the screen does not provide location information.
-msgid "No location information for screen"
-msgstr "Nem lehet meghatározni a képernyő felbontását."
-
-#. Translators: Reports navigator object's dimensions (example output: object edges positioned 20 per cent from left edge of screen, 10 per cent from top edge of screen, width is 40 per cent of screen, height is 50 per cent of screen).
+#. Translators: Description for report review cursor location command.
 msgid ""
-"Object edges positioned {left:.1f} per cent from left edge of screen, "
-"{top:.1f} per cent from top edge of screen, width is {width:.1f} per cent of "
-"screen, height is {height:.1f} per cent of screen"
+"Reports information about the location of the text or object at the review "
+"cursor. Pressing twice may provide further detail."
 msgstr ""
-"Az objektum pozíciója: {left:.1f} százalék a képernyő bal, {top:.1f} a "
-"képernyő felső szélétől, a szélessége {width:.1f} százaléka, a magassága "
-"{height:.1f} százaléka a képernyőnek"
-
-#. Translators: Input help mode message for report object dimensions command.
-msgid "Reports the hight, width and position of the current navigator object"
-msgstr ""
-"Bemondja a navigátor kurzornál lévő elem magasságát, szélességét és "
-"pozícíóját"
 
 #. Translators: Reported when attempting to move the navigator object to focus.
 msgid "move to focus"
@@ -3068,6 +3059,12 @@ msgstr "jobbra igazítás"
 msgid "align justify"
 msgstr "sorkizárt igazítás"
 
+#. Translators: Reported when text is justified with character spacing (Japanese etc)
+#. See http://kohei.us/2010/01/21/distributed-text-justification/
+#, fuzzy
+msgid "align distributed"
+msgstr "jobbra igazítás"
+
 #. Translators: Reported when text has reverted to default alignment.
 msgid "align default"
 msgstr "alapértelmezett igazítás"
@@ -3103,6 +3100,36 @@ msgstr "első sor behúzása"
 #. Translators: the message when there is no paragraph format first line indent
 msgid "no first line indent"
 msgstr "első sor nincs behúzva"
+
+#. Translators: Reported when text is vertically top-aligned.
+msgid "vertical align top"
+msgstr ""
+
+#. Translators: Reported when text is vertically middle aligned.
+msgid "vertical align middle"
+msgstr ""
+
+#. Translators: Reported when text is vertically bottom-aligned.
+msgid "vertical align bottom"
+msgstr ""
+
+#. Translators: Reported when text is vertically aligned on the baseline.
+msgid "vertical align baseline"
+msgstr ""
+
+#. Translators: Reported when text is vertically justified.
+#, fuzzy
+msgid "vertical align justified"
+msgstr "sorkizárt igazítás"
+
+#. Translators: Reported when text is vertically justified but with character spacing (For some Asian content).
+msgid "vertical align distributed"
+msgstr ""
+
+#. Translators: Reported when text has reverted to default vertical alignment.
+#, fuzzy
+msgid "vertical align default"
+msgstr "alapértelmezett igazítás"
 
 #. Translators: Reported when text no longer contains a comment.
 msgid "out of comment"
@@ -3412,6 +3439,16 @@ msgstr ""
 "Nem telepíthető  NVDA kiegészítő erről a helyről: {path}.\n"
 "Futnia kell az NVDA programnak ahhoz, hogy kiegészítőket telepíthessen."
 
+#. Translators: Reports navigator object's dimensions (example output: object edges positioned 20 per cent from left edge of screen, 10 per cent from top edge of screen, width is 40 per cent of screen, height is 50 per cent of screen).
+msgid ""
+"Object edges positioned {left:.1f} per cent from left edge of screen, "
+"{top:.1f} per cent from top edge of screen, width is {width:.1f} per cent of "
+"screen, height is {height:.1f} per cent of screen"
+msgstr ""
+"Az objektum pozíciója: {left:.1f} százalék a képernyő bal, {top:.1f} a "
+"képernyő felső szélétől, a szélessége {width:.1f} százaléka, a magassága "
+"{height:.1f} százaléka a képernyőnek"
+
 #. Translators: a message announcing a candidate's character and description.
 msgid "{symbol} as in {description}"
 msgstr "{symbol} mint {description}"
@@ -3570,7 +3607,7 @@ msgstr "Melléklet"
 msgid "sent: %s"
 msgstr "Elküldve: %s"
 
-#. Translators: A title for a dialog shown while Microsoft PowerPoint initializes
+#. Translators: The title for the dialog shown while Microsoft Outlook initializes.
 msgid "Waiting for Outlook..."
 msgstr "Várakozás az Outlook-ra..."
 
@@ -3730,6 +3767,78 @@ msgstr "Fő miniatűrök"
 #. Translators: the label for a slide in Microsoft PowerPoint.
 msgid "Slide {slideNumber}"
 msgstr "Fólia {slideNumber}"
+
+#. Translators: A message when a shape is infront of another shape on a Powerpoint slide
+msgid "covers left of {otherShape} by {distance:.3g} points"
+msgstr ""
+
+#. Translators: A message when a shape is behind  another shape on a powerpoint slide
+msgid "behind left of {otherShape} by {distance:.3g} points"
+msgstr ""
+
+#. Translators: A message when a shape is infront of another shape on a Powerpoint slide
+msgid "covers top of {otherShape} by {distance:.3g} points"
+msgstr ""
+
+#. Translators: A message when a shape is behind another shape on a powerpoint slide
+msgid "behind top of {otherShape} by {distance:.3g} points"
+msgstr ""
+
+#. Translators: A message when a shape is infront of another shape on a Powerpoint slide
+msgid "covers right of {otherShape} by {distance:.3g} points"
+msgstr ""
+
+#. Translators: A message when a shape is behind another shape on a powerpoint slide
+msgid "behind right of {otherShape} by {distance:.3g} points"
+msgstr ""
+
+#. Translators: A message when a shape is infront of another shape on a Powerpoint slide
+msgid "covers bottom of {otherShape} by {distance:.3g} points"
+msgstr ""
+
+#. Translators: A message when a shape is behind another shape on a powerpoint slide
+msgid "behind bottom of {otherShape} by {distance:.3g} points"
+msgstr ""
+
+#. Translators: A message when a shape is infront of another shape on a Powerpoint slide
+msgid "covers  {otherShape}"
+msgstr ""
+
+#. Translators: A message when a shape is behind another shape on a powerpoint slide
+msgid "behind {otherShape}"
+msgstr ""
+
+#. Translators: the distance in points from the edge of a PowerpointSlide
+msgid "{distance:.3g} points from left slide edge"
+msgstr ""
+
+#. Translators: the distance in points off the edge of a PowerpointSlide
+msgid "Off left slide edge by {distance:.3g} points"
+msgstr ""
+
+#. Translators: the distance in points from the edge of a PowerpointSlide
+msgid "{distance:.3g} points from top slide edge"
+msgstr ""
+
+#. Translators: the distance in points off the edge of a PowerpointSlide
+msgid "Off top slide edge by {distance:.3g} points"
+msgstr ""
+
+#. Translators: the distance in points from the edge of a PowerpointSlide
+msgid "{distance:.3g} points from right slide edge"
+msgstr ""
+
+#. Translators: the distance in points off the edge of a PowerpointSlide
+msgid "Off right slide edge by {distance:.3g} points"
+msgstr ""
+
+#. Translators: the distance in points from the edge of a PowerpointSlide
+msgid "{distance:.3g} points from bottom slide edge"
+msgstr ""
+
+#. Translators: the distance in points off the edge of a PowerpointSlide
+msgid "Off bottom slide edge by {distance:.3g} points"
+msgstr ""
 
 #. Translators: The description for a script
 msgid ""
@@ -5534,6 +5643,14 @@ msgstr "Csendes üzemmód"
 msgid "word"
 msgstr "szó"
 
+#. Translators: current position in a document as a percentage of the document length
+msgid "{curPercent:.0f}%"
+msgstr ""
+
+#. Translators: the current position's screen coordinates in pixels
+msgid "at {x},{y}"
+msgstr ""
+
 #. Translators: This is spoken and brailled to indicate a landmark (example output: main landmark).
 #, python-format
 msgid "%s landmark"
@@ -6426,6 +6543,7 @@ msgid "{offset:.3g} points"
 msgstr "{offset:.3g} pont"
 
 #. Translators: a measurement in Microsoft Word
+#. See http://support.microsoft.com/kb/76388 for details.
 msgid "{offset:.3g} picas"
 msgstr "{offset:.3g} pika"
 
@@ -6452,6 +6570,18 @@ msgstr "HIMS Braille Sense/Braille EDGE sorozat"
 #. Translators: The name of a braille display.
 msgid "HIMS SyncBraille"
 msgstr "HIMS SyncBraille"
+
+#~ msgid "No location information for navigator object"
+#~ msgstr "nem lehet a navigátor kurzornál lévő elem helyét meghatározni"
+
+#~ msgid "No location information for screen"
+#~ msgstr "Nem lehet meghatározni a képernyő felbontását."
+
+#~ msgid ""
+#~ "Reports the hight, width and position of the current navigator object"
+#~ msgstr ""
+#~ "Bemondja a navigátor kurzornál lévő elem magasságát, szélességét és "
+#~ "pozícíóját"
 
 #~ msgid "Set column header row"
 #~ msgstr "oszlopfejléc sor beállítva"
