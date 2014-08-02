@@ -7,7 +7,7 @@ import txt2tags
 nheader = re.compile(r'(\++)(.*?)(\++.*)')
 unheader = re.compile(r'(\=+)(.*?)(\=+.*)')
 
-f = open('userGuide.t2t')
+f = open(sys.argv[1])
 lines = f.readlines()
 f.close()
 
@@ -61,11 +61,5 @@ if id:
     info.append((id, ln, pars, tables, lists))
     pars = 0; tables = 0; lists = 0
 
-# store the stats.
-f = open('userGuide-stats.txt', 'w')
-f.write("# section number, section starts at line, paragraphs in this section, tables in this section, lists in this section.\n")
 for i in info:
-    f.write("%s start:%s paragraphs:%d, tables:%d, lists:%d\n\n" %(i[0],i[1], i[2], i[3], i[4] ))
-f.close()
-
-
+    print("%s start:%s paragraphs:%d, tables:%d, lists:%d\n\n" %(i[0],i[1], i[2], i[3], i[4] ))
