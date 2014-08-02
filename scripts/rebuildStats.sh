@@ -27,3 +27,5 @@ if ! diff -q "${d_args[@]}" next.stats localized.stats; then
 else
     echo -e "# Structural comparison of ${lang}/userGuide.t2t against ${lang}/userGuide-diffs/$nextRev/userGuide.t2t\n# files have identical structure" >${outFile}
 fi
+
+rm localized.stats next.stats
