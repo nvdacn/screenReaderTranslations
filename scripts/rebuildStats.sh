@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 nextRev=`ls -1 userGuide-diffs/ | head -n 1`
-outFile=userGuide-stats-diff.txt
+outFile=userGuide-structureDifferences.txt
 if [ "$nextRev" == "" ]; then
     echo "No revision found, unable to calculate structure difference." >${outFile}
     exit
