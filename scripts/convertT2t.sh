@@ -24,7 +24,6 @@ for lang in ${convertLangs[*]}; do
     if [ "$encoding" != "" ]; then
         python ../scripts/addresses.py $lang "File encoding problem" "Please save the following as unicode UTF-8: $encoding"
     else
-        python ../scripts/stats.py
         $PYTHON27 ../scripts/keyCommandsDoc.py
 
         # process each t2t file individually to make it easier to spot errors in output.
@@ -33,11 +32,8 @@ for lang in ${convertLangs[*]}; do
             txt2tags -q $file
         done
 
-        lastRev=`ls -1v userGuide-diffs/ | tail -n 1`
-        diff  --unchanged-line-format='' --old-line-format='en %L' --new-line-format="$lang %L" \
-        userGuide-diffs/$lastRev/userGuide-stats.txt  userGuide-stats.txt |
-        sed -e "s/$lang $//g" -e "s/^en $//g" | sort -V -s -k 2,2 |
-        sed '/^\s*$/d' >userGuide-stats-diff.txt
+        ../scripts/rebuildStats.sh
+
         mfiles=`git status -s -uno | grep -i ".html$" | awk '{printf(" %s", $2)}'`
         mstats=`git status -s -uno | grep -i "userGuide\-stats\-diff.txt$" | awk '{printf(" %s", $2)}'`
 
