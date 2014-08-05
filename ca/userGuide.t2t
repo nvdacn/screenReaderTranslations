@@ -281,3 +281,219 @@ NVDA avisarà lletra a lletra, paraula a paraula o línia a línia mentre et mou
 NVDA ofereix les següents comandes de teclat relacionades amb la Caret del sistema:
 %kc:beginInclude
 || Nom |Tecla en teclat de sobretaula | Tecla en teclat portàtil | Descripció |
+| Verbalitza-ho tot | NVDA+fletxa avall | NVDA+a | Comença a llegir des de la posició actual de la Careta del sistema, i es mou a mida que avança |
+| Llegeix la línia actual | NVDA+fletxa amunt | NVDA+l | LLegeix la linia en la que es troba la Careta del sistema. Si prems dos cops lletreja la línia. |
+| Llegeix la selecció de text actual | NVDA+Majúscules+fletxa amunt | NVDA+Majúscules+s | Llegeix qualsevol text seleccionat en aquell moment |
+
+
+Quan et trobes dins d'una taula, les següents comandes de teclat també estan disponibles:
+|| Nom | Tecla | Descripció |
+| Moure's a la columna anterior | control+alt+fletxa esquerra | Mou la Careta del sistema a la columna anterior (mantenint-se en la mateixa fila) |
+| Moure's a la columna següent | control+alt+fletxa dreta | Mou la Careta del sistema a la columna següent (mantenint-se en la mateixa fila) |
+| Moure's a la fila anterior | control+alt+fletxa amunt | Mou la Careta del sistema a la fila anterior (mantenint-se a la mateixa columna)  |
+| Moure's a la fila següent | control+alt+fletxa avall | Mou la Careta del sistema a la fila següent (mantenint-se a la mateixa columna) |
+%kc:endInclude
+
+++ Navegació per objectes ++
+La major part del temps, treballaràs amb les aplicacions usant comandes que mouen el [focus #SystemFocus] i la  [Careta #SystemCaret].
+Tot i així, a vegades, potser vols explorar l'aplicació actual o el sistema operatiu sense moure el focus o la Careta.
+Potser també vols treballar amb [objectes #Objects] als que no pots accedir amb el teclat.
+En aquests casos, pots usar la navegació per objectes.
+
+La navegació per objectes et permet moure't entre els [objectes #Objects] individuals i obtenir-ne informació.
+Quan et desplaces a un objecte, NVDA t'informarà de manera similar a com t'informa del focus de sistema.
+Alternativament, per revisar tot el text que apareix a pantalla, pots usar [revisió de pantalla #ScreenReview].
+
+En comptes de desplaçar-te endavant i endarrera entre cadascun dels objectes del sistema, aquests estan organitzats jeràrquicament.
+Això significa que alguns objectes en contenen d'altres i que has de desplaçar-te dins d'ells per accedir als objectes que contenen.
+Per exemple, una llista conté ítems de llista, i has de desplaçar-te dins la llista per poder accedir als seus ítems.
+Si t'has desplaçat fins a un ítem de llista, les comandes següent i anterior et mouran als altres ítems de la mateixa llista.
+Si et desplaces a l'objecte contenidor dels ítems de llista, tornaràs a la llista.
+En aquell moment pots desplaçar-te més enllà de la llista si vols accedir a altres objectes.
+Igualment, una barra d'eines conté controls, i has de desplaçar-te dins de la barra per accedir als controls de la barra d'eines.
+
+L'objecte que estàs revisant en un moment donat s'anomena objecte de navegació.
+Un cop has navegat a un objecte, pots revisar el seu contingut usant les [comandes de revisió de text #ReviewingText] mentre ets en [mode de revisió d'objectes #ObjectReview].
+Per defecte, l'objecte de navegació es mou amb el focus de sistema, però pots activar o desactivar aquest funcionament.
+
+Tingues en compte que, per defecte, la línia Braille segueix el [focus #SystemFocus] i la  [Careta #SystemCaret], i no la navegació per objectes o la revisió de text.
+Si prefereixes seguir la navegació per objectes o la revisió de text, has de [configurar Braille a tethered a #BrailleTether] revisió.
+
+Per navegar per objectes, fes servir les següents comandes:
+
+%kc:beginInclude
+|| Nom | Tecla en teclat de sobretaula | Tecla en teclat de portàtil | Gest | Descripció |
+| Informa de l'objecte actual | NVDA+ teclat numèric 5 | NVDA+Majúscules+o | cap | Informa de l'objecte de navegació actual. Si prems dos cops lletreja la informació, i si prems tres cops copia el nom i valor de l'objecte al porta-retalls. |
+| Moure's a l'objecte contenidor | NVDA+teclat numèric 8 | NVDA+Majúscules+fletxa amunt | flick amunt (mode objectes) | Et mou a l'objecte que conté l'actual objecte de navegació |
+| Moure's a l'objecte anterior | NVDA+teclat numèric4 | NVDA+Majúscules+fletxa esquerra | flick esquerra (mode objectes) | Et mou a l'objecte anterior a l'actual objecte de navegació |
+| Moure's al següent objecte | NVDA+teclat numèric 6 | NVDA+Majúscules+fletxa dreta | flick dreta (mode objectes) | Et mou a l'objecte posterior a  l'actual objecte de navegació |
+| Moure's al primer objecte contingut | NVDA+teclat numèric 2 | NVDA+Majúscules+fletxa avall | flick avall (mode objectes) | Et mou al primer objecte inclòs en l'actual objecte de navegació |
+| Moure's a l'objecte amb focus | NVDA+teclat numèric Menys | NVDA+backspace | cap | Et mou a l'objecte que actualment rep el focus del sistema, i desplaça el cursor de revisió a la posició de la Careta del sistema, si aquesta es mostra |
+| Activar l'objecte de navegació actual | NVDA+teclat numèric Retorn | NVDA+retorn | cop doble | Activa l'actual objecte de navegació (fa la mateixa funció que clicar amb el ratolí o premer la barra espaiadora quan l'objecte té el focus del sistema) |
+| Moure el focus del sistema o la Careta a la posició de revisió actual | NVDA+Majúscules+teclat numèric Menys | NVDA+Majúscules+backspace | cap | si es prem un cop mou el focus del sistema a l'actual objecte de navegació, si es prem dos cops mou la Careta del sistema a la posició del cursor de revisió |
+| Informa de la posició del cursor de revisió | NVDA+teclat numèric Suprimir | NVDA+Suprimir | cap | Informa de la posició del text o objecte en el que es troba el cursor de revisió. La posició pot indicar-se, per exemple, com a percentatge dins del document, com a distància des del marge de la pàgina, o amb les coordenades exactes de la pantalla. Si es prem dos cops dóna més detalls. |
+%kc:endInclude
+
+Atenció: heu de desactivar la tecla de bloqueig numèric per a què les tecles del teclat numèric funcionin correctament.
+
+++ Revisió de text ++[ReviewingText]
+NVDA et permet llegir el contingut de la [pantalla #ScreenReview], el [document #DocumentReview] actual, o l'[objecte #ObjectReview] actual, lletra a lletra, paraula a paraula o línia a línia.
+Aquesta funció és especialment útil quan no existeix [Careta del sistema #SystemCaret] (també a la consola Windows).
+Per exemple, pots usar aquesta funció per revisar el text d'un missatge llarg en un diàleg.
+
+Quan mous el cursor de revisió, la Careta del sistema no es desplaça amb ell, per permetre't revisar el text sense perdre la posició d'edició.
+En canvi, per defecte, quan mous la Careta del sistema, el cursor de revisió sí que la segueix.
+Aquest funcionament es pot activar o desactivar.
+
+Cal tenir en compte que, per defecte, la línia Braille segueix el [focus #SystemFocus] i la [Careta #SystemCaret], i no la navegació per objectes o la revisió de text.
+Si prefereixes seguir la navegació per objectes o la revisió de text, has de [configurar Braille a tethered a #BrailleTether] revisió.
+
+Disposes de les següents comandes per revisar el text:
+%kc:beginInclude
+|| Nom | Tecla en teclat de sobretaula | Tecla en teclat de portàtil | Gest | Descripció |
+| Mou a la línia en revisió superior  | Majúscules+teclat numèric 7 | NVDA+control+Inici | cap | Mou el cursor de revisió a la línia superior del text |
+| Mou a la línia en revisió anterior | teclat numèric 7 | NVDA+fletxa amunt | flick amunt (mode textual) | Mou el cursor de revisió a la línia de text anterior |
+| Informa de la línia en revisió actual | teclat numèric 8 | NVDA+Majúscules+. | cap | Anuncia la línia de text en la que es troba actualment el cursor de revisió. Si prems dos cops lletreja la línia. Si prems tres cops lletreja la línia i en descriu els caràcters. |
+| Mou a la línia en revisió seguent | teclat numèric 9 | NVDA+fletxa avall | flick avall (mode textual) | Mou el cursor de revisió a la següent línia de text |
+| Mou a la línia de revisió inferior | Majúscules+teclat numèric 9 | NVDA+control+Fi | cap | Mou el cursor de revisió a la línia de text inferior |
+| Mou a la paraula en revisió anterior | teclat numèric 4 | NVDA+control+fletxa esquerra | flick esquerra amb dos dits(mode textual) | Mou el cursor de revisió a la paraula anterior del text |
+| Informa de la paraula en revisió actual | teclat numèric 5 | NVDA+control+. | cap | Anuncia la paraula en la que es troba actualment el cursor de revisió. Si prems dos cops lletreja la paraula. Si prems tres cops lletreja la paraula i en descriu els caràcters. |
+| Mou a la següent paraula en revisió | teclat numèric 6 | NVDA+control+fletxa dreta | flick dreta amb dos dits(mode textual) | Mou el cursor de revisió a la següent paraula en el text |
+| Mou al principi de la línia en revisió | Majúscules+teclat numèric 1 | NVDA+Inici | cap | Mou el cursor de revisió al principi de la línia de text actual |
+| Mou al caràcter anterior en revisió | teclat numèric 1 | NVDA+fletxa esquerra | flick esquerra (mode textual) | Mou el cursor de revisió al caràcter anterior en la línia de text actual |
+| Informa del caràcter en revisió actual | teclat numèric 2 | NVDA+. | cap | Anuncia el caràcter actual en la línia de text en la que es troba el cursor de revisió. Si prems dos cops et descriu o posa un exemple d'aquell caràcter. Si prems tres cops t'informa del valor numèric del caràcter en decimal o en hexadecimal. |
+| Mou al següent character en revisió | teclat numèric 3 | NVDA+fletxa dreta | flick dreta (mode textual) | Mou el cursor de revisió al següent caràcter en la línia de text actual |
+| Mou al final de la línia en revisió | Majúscules+teclat numèric 3 | NVDA+Fi | cap | Mou el cursor de revisió al final de la línia de text actual |
+| Verbalitza-ho tot en revisió | teclat numèric Més | NVDA+Majúscules+a | flick avall amb tres dits(mode textual) | Llegeix des de la posició actual del cursor de revisió, i el desplaça mentre avança |
+| Copia des del cursor de revisió | NVDA+f9 | NVDA+f9 | cap | inicia el copiat de text des de la posició actual del cursor de revisió. La còpia no es farà efectiva fins que indiquis a NVDA a on copiar-ho |
+| Copia al cursor de revisió | NVDA+f10 | NVDA+f10 | cap | Copia des de la posició del cursor de revisió marcat com a Copia des del cursor de revisió, a la posició actual del cursor de revisió's. Després de premer aquestes tecles, el text es copiarà al porta-retalls de Windows |
+| Informa del format del text | NVDA+f | NVDA+f | cap | Infoma del format del text en el que es troba actualment el cursor de revisió |
+%kc:endInclude
+
+Atenció: heu de desactivar la tecla de bloqueig numèric per a què les tecles del teclat numèric funcionin correctament.
+
+Un truc per recordar les comandes bàsiques de revisió de text en la disposició de teclat de sobretaula, és imaginar-les com si estessin en una quadricula de tres per tres, i amb el significat de dalt a baix com a línia, paraula i caràcter i d'esquerra a dreta com a anterior, actual i següent.
+La disposició s'exemplifica com es mostra a continuació:
+| Línia anterior | Línia actual | Següent linía |
+| Paraula anterior | Paraula actual | Següent paraula |
+| Caràcter anterior | Caràcter actual | Següent caràcter |
+
+++ Modes de revisió ++[ReviewModes]
+Les [comandes de revisió de text #ReviewingText] a NVDA permeten revisar el contingut dins l'actual objecte de navegació, document o pantalla, depenent del mode de revisió seleccionat.
+Els modes de revisió reemplacen l'antic concepte de NVDA de revisió plana.
+
+Les següents comandes permeten canviar el mode de revisió:
+%kc:beginInclude
+|| Nom | Tecla en teclat de sobretaula | Tecla en teclat de portàtil | Gest | Descripció |
+| Canvia al següent mode de revisió | NVDA+teclat numèric 7 | NVDA+RePag | flick amunt amb dos dits| canvia al següent mode de revisió disponible |
+| Canvia a l'anterior mode de revisió | NVDA+teclat numèric 1 | NVDA+AvPag | flick avall amb dos dits| canvia a l'anterior mode de revisió disponible |
+%kc:endInclude
+
++++ Revisió d'objectes +++[ObjectReview]
+Mentre et trobes en mode de revisió d'objectes, només pots revisar el contingut de l'[objecte de navegació #ObjectNavigation] actual.
+Per a altres objectes com camps de text editables o altres controls bàsics de text, generalment el contingut serà el propi text.
+Per a altres objectes, el contingut pot ser el nom o el valor.
+
++++ Revisió de document +++[DocumentReview]
+Quan l'[objecte de navegació #ObjectNavigation] es troba dins un document en mode de navegació (per ex. una pàgina web) o altres documents complexos (per ex. un document de Lotus Symphony), es pot canviar al mode de revisió de document.
+El mode de revisió de document et permet revisar el text de tot el document.
+
+Quan canvies del mode revisió d'objecte al mode de revisió de document, el cursor de revisió se situa en el document en la posició de l'objecte de navegació.
+Quan et desplaces amunt i avall del document amb comandes de revisió, l'objecte de navegació passa automàticament a ser l'objecte que es troba en la posició del cursor de revisió.
+
+Tingues en compte que NVDA canviarà de revisió d'objecte a revisió de document automàticament quan et desplaces amunt i avall del document en mode de navegació.
+
++++ Revisió de pantalla +++[ScreenReview]
+El mode de revisió de pantalla et permet revisar el text de la pantalla tal i com apareix visualment en l'aplicació actual. Aquest mode és similar a la funció de revisió de pantalla o a la de cursor de ratolí en molts altres lectors de pantalla de Windows.
+
+Quan canvies al mode de revisió de pantalla, el cursor de revisió se situa a la posició de pantalla de l'actual [objecte de navegació #ObjectNavigation].
+Quan et desplaces amunt i avall de la pantalla amb comandes de revisió, l'objecte de navegació passa automàticament a ser l'objecte que es troba en la posició de pantalla del cursor de revisió.
+
+Tingues en compte que en algunes aplicacions més noves, NVDA potser no veu part o la totalitat del text mostrat a pantalla ja que aquest s'ha escrit amb noves tecnologies de dibuix a pantalla, ara mateix incompatibles amb NVDA.
+
+++ Navegació amb el ratolí ++
+Quan desplaces el ratolí, NVDA per defecte informa del text que està just a sota del punter del ratolí així que el ratolí hi passa per sobre. 
+En algunes aplicacions compatibles, NVDA llegirà el paràgraf de text circumdant, tot i que alguns controls potser només llegeixen línia a línia.
+
+Pots configurar NVDA per anunciar també el tipus de [objectes #Objects] que es troba sota el ratolí quan aquest s'hi desplaça a sobre (per ex. una llista, un botó, etc.).
+Aquesta funció pot ser útil per als usuaris totalment cecs, ja que de vegades, amb el text no n'hi ha prou.
+
+NVDA ofereix un mecanisme per a què els usuaris sàpiguen on es troba el ratolí en relació a les dimensions de la pantalla consistent en fer un avís auditiu de les coordenades del ratolí.
+Com més amunt es trobi el ratolí respecte la pantalla, més aguda serà la nota de l'avís.
+Com més a l'esquerra o a la dreta es trobi el ratolí respecte a la pantalla, més a l'esquerra o a la dreta sonarà la nota de l'avís (sempre i quan l'usuari tingui altaveus o auriculars estèreo).
+
+Aquestes característiques extres del ratolí per defecte no estan activades a NVDA.
+Si vols gaudir-ne, pots configurar-les des del diàleg de [configuració del ratolí #MouseSettings], que es troba dins el menú de preferències de NVDA.
+
+Tot i que cal usar un ratolí físic o un trackpad per navegar amb el ratolí, existeixen unes quantes comandes de teclat relacionades amb el ratolí a NVDA:
+%kc:beginInclude
+|| Nom | Tecla en teclat de sobretaula | Tecla en teclat de portàtil | Descripció |
+| clic amb el botó esquerra del ratolí | teclat numèric Divisió | NVDA+[ | Fa un clic de botó esquerra de ratolí. El típic doble clic es pot aconseguir clicant aquesta combinació de tecles dues vegades ràpidament |
+| bloqueig del botó esquerra del ratolí | Majúscules+teclat numèric Divisió | NVDA+control+[ | Bloqueja el botó esquerra del ratolí avall. Prem de nou per desbloquejar. Per arrossegar el ratolí, prem aquestes tecles per bloquejar el botó esquerra avall, i llavors mou el ratolí físicament o amb les comandes de moviment de ratolí |
+| clic amb el botó dret de ratolí | teclat numèric multiplicació | NVDA+] | Fa un clic de botó dret de ratolí. |
+| bloqueig del botó dret del ratolí | Majúscules+teclat numèric Multiplicació | NVDA+control+] | Bloqueja el botó dret del ratolí avall. Prem de nou per desbloquejar. Per arrossegar el ratolí, prem aquestes tecles per bloquejar el botó dret avall, i llavors mou el ratolí físicament o amb les comandes de moviment de ratolí |
+| Mou el cursor a l'objecte de navegació actual | NVDA+teclat numèric Divisió | NVDA+Majúscules+m | Mou el ratolí a la posició de l'objecte de navegació actual, i del cursor de revisió |
+| Navega a l'objecte sota el ratolí | NVDA+teclat numèric Multiplicació | NVDA+Majúscules+n | L'objecte de navegació passa a ser l'objecte ubicat a la posició del ratolí |
+%kc:endInclude
+
++ Mode de navegació +
+NVDA navega pels documents complexos de només lectura com les pàgines web amb el mode de navegació.
+Així es llegeixen els documents de Mozilla Firefox, Microsoft Internet Explorer, Google Chrome, Adobe Reader i Adobe Flash.
+
+En mode de navegació, el contingut del document s'ofereix en una representació plana que es pot navegar amb les tecles de cursor com si fos un document de text normal.
+Totes les comandes de teclat de NVDA de la [Careta del sistema #SystemCaret] funcionaran en aquest mode; per ex. verbalitza-ho tot, informa del format, comandes de navegació per taules, etc.
+Mentre et vas movent, NVDA informa del text i també si aquest és un enllaç, un encapçalament, etc.
+
+Algunes vegades, en aquests documents, et caldrà interaccionar directament amb controls.
+Per exemple, et caldrà fer-ho en els camps de text editables, i a les llistes per tal de poder escriure caràcters i usar les tecles de cursor per treballar amb el control.
+Per fer-ho cal canviar a mode focus, on quasi totes les tecles s'envien al control
+Quan et trobes en mode de navegació, NVDA per defecte canviarà al mode de focus si cliques o et mous amb el tabulador a un control en particular que requereix aquest mode.
+Inversament, quan cliques o et mous amb el tabulador a un control que no requereix el mode de focus, NVDA tornarà al mode de navegació.
+També pots canviar al mode de focus en els controls que així ho requereixin prement Retorn o la Barra espaiadora.
+Si prems Escape tornaràs al mode de navegació.
+A més, pots forçar el mode de focus manualment, que romandrà actiu fins que decideixis desactivar-lo.
+
+%kc:beginInclude
+|| Nom | Tecla | Descripció |
+| Canvia de modes entre navegació i focus | NVDA+Barra espaiadora | Canvia entre el mode de focus i el mode de navegació |
+| Surt del modus de focus | escape | retorna al mode de navegació si el mode de focus s'ha activat automàticament |
+| Actualitza el document en navegació | NVDA+f5 | Recarrega el contingut del document actual (útil si sembla que falti part del contingut del document) |
+| Busca | NVDA+control+f | Obre un diàleg en el que pots escriure un text per buscar-lo al document |
+| Busca següent | NVDA+f3 | Troba la següent ocurrència en el document del text que has buscat prèviament |
+| Busca anterior | NVDA+Majúscules+f3 | Troba l'anterior ocurrència en el document del text que has buscat prèviament |
+| Obrir descripció llarga | NVDA+d | Obre una nova finestra que conté una descripció llarga de l'element actiu, si és que en té. | 
+%kc:endInclude
+
+
+++ Navegació amb una sola lletra ++
+Quan et trobes en mode de navegació, per facilitar una navegació més ràpida, NVDA ofereix algunes tecles d'una sola lletra per saltar a certs camps del document.
+
+%kc:beginInclude
+Les següents tecles, per sí soles, salten al següent element disponible, i si hi afegeixes la tecla de Majúscules salten a l'element anterior:
+- h: encapçalament
+- l: llista
+- i: ítem de llista
+- t: taula
+- k: enllaç
+- n: text sense enllaços
+- f: camp de formulari
+- u: enllaç no visitat
+- v: enllaç visitat
+- e: camp editable
+- b: botó
+- x: casella de verificació
+- c: caixa combinada
+- r: botó d'opció
+- q: cita
+- s: separador
+- m: marc
+- g: gràfic
+- d: marca estructural
+- o: objecte incrustat
+- 1 to 6: encapçalaments de nivells 1 a 6 respectivament
+-
+Per moure's a l'inici o al final dels elements contenidors com les llistes o taules:
+|| Nom | Tecla | Descripció |
+| Mou al principi del contenidor | Majúscules+comma | Mou al principi del contenidor (llista, taula, etc.) en el que està posicionada la Careta |
+| Mou més enllà del final del contenidor | comma | Mou més enllà del final del contenidor (llista, taula, etc.) en el que està posicionada la Careta |
+%kc:endInclude
