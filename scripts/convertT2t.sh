@@ -35,7 +35,7 @@ for lang in ${convertLangs[*]}; do
         ../scripts/rebuildStats.sh
 
         mfiles=`git status -s -uno | grep -i ".html$" | awk '{printf(" %s", $2)}'`
-        mstats=`git status -s -uno | grep -i "userGuide\-stats\-diff.txt$" | awk '{printf(" %s", $2)}'`
+        mstats=`git status -s -uno | grep -i "userGuide\-structureDifferences.txt$" | awk '{printf(" %s", $2)}'`
 
         if [ "$mfiles" != "" ]; then git add $mfiles; fi
         if [ "$mstats" != "" ]; then git add $mstats userGuide-stats.txt; fi
