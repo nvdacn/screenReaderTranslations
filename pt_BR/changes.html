@@ -23,9 +23,9 @@ Traduzido por Marlin Rodrigues da Silva e Cleverson Casarin Uliana
 <LI>Suporte para o Calendário no Microsoft Outlook 2007 e posteriores (<A HREF="http://community.nvda-project.org/ticket/2943">#2943</A>) incluindo:
  <UL>
  <LI>anúncio da hora atual ao mover-se a ela com as setas;
- <LI>indicação no caso de a hora selecionada se encontrar dentro de algum apontamento;
- <LI>anúncio do apontamento selecionado ao pressionar tab;
- <LI>Filtragem inteligente da data, de modo a anunciar a data somente se a nova hora ou apontamento selecionado  estiver em um dia diferente do último.
+ <LI>indicação no caso de a hora selecionada se encontrar dentro de algum compromisso;
+ <LI>anúncio do compromisso selecionado ao pressionar tab;
+ <LI>Filtragem inteligente da data, de modo a anunciar a data somente se a nova hora ou compromisso selecionado  estiver em um dia diferente do último.
  </UL>
 <LI>Melhorado o suporte para a caixa de entrada e outras listas de mensagens no Outlook 2010 e superiores (<A HREF="http://community.nvda-project.org/ticket/3834">#3834</A>) incluindo:
  <UL>
@@ -38,17 +38,42 @@ Traduzido por Marlin Rodrigues da Silva e Cleverson Casarin Uliana
 <LI>Microsoft word: ao pressionar NVDA+alt+c irá anunciar o texto do comentário caso o cursor esteja sobre algum. (<A HREF="http://community.nvda-project.org/ticket/3528">#3528</A>)
 <LI>Melhorado o suporte para a leitura automática dos cabeçalhos de colunas e linhas no Microsoft Excel (<A HREF="http://community.nvda-project.org/ticket/3568">#3568</A>) incluindo:
  <UL>
- <LI>Support para intervalo com nome definido no Excel para identificar cabeçalhos de células (compatível com o leitor de telas Jaws)
+ <LI>Support para o esquema de intervalo com nome definido no Excel para identificar cabeçalhos de células (compatível com o leitor de telas Jaws)
  <LI>Os comandos para definir cabeçalhos de colunas    (NVDA+shift+c) e definir cabeçalhos de linhas (NVDA+shift+r) agora armazenam as configurações   na planilha, de modo que  estejam disponíveis na próxima vez que esta for aberta, e estarão disponíveis para outros leitores de telas que  suportem o esquema de intervalo com nome definido.
  <LI>Esses comandos também poderão ser usados múltiplas vezes por planilha para definir diferentes cabeçalhos para diferentes regiões.
  </UL>
 <LI>Suporte para leitura automática de cabeçalhos de linhas e colunas das tabelas no Microsoft Word (<A HREF="http://community.nvda-project.org/ticket/3110">#3110</A>) incluindo:
-Support of MS Word bookmarks to identify header cells (compatible with Jaws screen reader) - set column header (NVDA+shift+c) and set row header (NVDA+shift+r) commands while on the first header cell in a table allow you to tell NVDA that these headers should be reported automatically. Settings are stored in the document so that they are available the next time the document is opened, and will be available to other screen readers that support the bookmark scheme.
+ <UL>
+ <LI>Suporte para marcadores do MS Word para identificar cabeçalhos das células (compatível com o leitor de telas Jaws)
+ <LI>Os comandos para definir cabeçalhos de colunas    (NVDA+shift+c) e definir cabeçalhos de linhas (NVDA+shift+r), caso você esteja sob a primeira célula do cabeçalho em uma tabela, informarão ao NVDA que esses cabeçalhos devem ser anunciados automaticamente.
+ <LI>As configurações serão armazenadas no documento,de modo a estarem disponíveis na próxima vez que o documento for aberto, e estarão disponíveis para outros leitores de telas que suportem o esquema desses marcadores.
+ </UL>
 <LI>Microsoft Word: Anúncio da distância para a borda esquerda da página quando a tecla tab é pressionada. (<A HREF="http://community.nvda-project.org/ticket/1353">#1353</A>)
 <LI>Microsoft Word: obtenção de resposta em voz e braille para grande parte das teclas de atalho disponíveis para formatação  (negrito, itálico, sublinhado, alinhamento e nível de rascunho. ). (<A HREF="http://community.nvda-project.org/ticket/1353">#1353</A>)
 <LI>Microsoft Excel: Caso haja comentários na célula selecionada, estes agora podem ser anunciaddos pressionando-se NVDA+alt+c. (<A HREF="http://community.nvda-project.org/ticket/2920">#2920</A>)
 <LI>Microsoft Excel: implementado um diálogo específico do NVDA para editar comentários na célula atualmente selecionada ao pressionar o comando shift+f2 do Excel para entrar no modo de edição de comentários. (<A HREF="http://community.nvda-project.org/ticket/2920">#2920</A>)
-<LI>Microsoft Excel: resposta em voz e braille para vários atalhos de movimentos de seleção. (<A HREF="http://community.nvda-project.org/ticket/4211">#4211</A>) incluindo:
+<LI>Microsoft Excel: resposta em voz e braille para vários atalhos de movimentos de seleção (<A HREF="http://community.nvda-project.org/ticket/4211">#4211</A>) incluindo:
+ <UL>
+ <LI>Movimento de página vertical (pageUp e pageDown);
+ <LI>Movimento horizontal de página (alt+pageUp and alt+pageDown);
+ <LI>Estender seleção (teclas supracitadas em conjunto com  Shift); e
+ <LI>Selecionar a região atual (control+shift+8).
+ </UL>
+<LI>Microsoft Excel: O alinhamento vertical e horizontal das células agora podem ser anunciados com o comando  de anunciar formatação (NVDA+f). Isso também pode ser anunciado automaticamente se a opção Anunciar alinhamento nas Opções de Formatação de Documento  estiver habilitada. (<A HREF="http://community.nvda-project.org/ticket/4212">#4212</A>)
+<LI>Microsoft Excel:  O estilo das células agora pode ser anunciado com o comando  de anunciar formatação (NVDA+f). Isso também pode ser anunciado automaticamente se a opção Anunciar estilo nas Opções de Formatação de Documento  estiver habilitada. (<A HREF="http://community.nvda-project.org/ticket/4213">#4213</A>)
+<LI>Microsoft PowerPoint: Ao mover formas dentro dum slide usando as setas, a localização atual da forma é agora anunciada (<A HREF="http://community.nvda-project.org/ticket/4214">#4214</A>) including:
+ <UL>
+ <LI>A distância entre a forma e cada borda do slide é anunciada.
+ <LI>Se uma forma está encobrindo ou é encoberta por outra, o tamanho da parte sobreposta e a forma que está sendo sobreposta são anunciadas.
+ <LI>Para anunciar essa informação a qualquer momento sem se mover para a forma, pressione o comando anunciar localização (NVDA+delete).
+ <LI>Ao selecionar uma forma, caso esta esteja encoberta por outra forma, o NVDA anunciará que ela está ofuscada.
+ </UL>
+<LI>O comando Anunciar localização  (NVDA+delete) agora é mais específico em algumas situações. (<A HREF="http://community.nvda-project.org/ticket/4219">#4219</A>)
+ <UL>
+ <LI>Em campos padrão de edição e no modo de navegação, são anunciadas a posição do cursor como percentagem do conteúdo e também suas coordenadas de tela.
+ <LI>Nas formas em apresentações do PowerPoint , é anunciada a posição da forma em relação ao slide e a outras formas.
+ <LI>Pressionando esse comando duas vezes, produzir-se-á o comportamento anterior e anunciará a informação da localização para o controle completo.
+ </UL>
 </UL>
 
 <H3>Alterações</H3>
@@ -64,7 +89,28 @@ Support of MS Word bookmarks to identify header cells (compatible with Jaws scre
 <LI>No modo de navegação em aplicativos Mozilla, pressionando-se enter em um botão, etc. já não falha para ativá-lo (ou ativa o controle errado) em certos casos tais como os botões no topo  do Facebook. (<A HREF="http://community.nvda-project.org/ticket/4106">#4106</A>)
 <LI>Informações inúteis já não são anunciadas ao mover-se com tab no iTunes. (<A HREF="http://community.nvda-project.org/ticket/4128">#4128</A>)
 <LI>Em certas listas do iTunes tais como a lista Músicas, mover para o próximo item usando a navegação de objetos agora funciona corretamente. (<A HREF="http://community.nvda-project.org/ticket/4129">#4129</A>)
-<LI>Elementos HTML considerados cabeçalhos because of WAI ARIA markup are now included in the Browse mode Elements list and quick navigation for Internet Explorer documents. (<A HREF="http://community.nvda-project.org/ticket/4140">#4140</A>)
+<LI>Elementos HTML considerados como cabeçalhos devido a uma marca WAI ARIA agora são incluídos na lista de elementos do modo de navegação  e na navegação rápida para documentos do Internet Explorer. (<A HREF="http://community.nvda-project.org/ticket/4140">#4140</A>)
+<LI>Ao ativar links para a mesma página em versões recentes do Internet Explorer, agora move para e anuncia corretamente a posição de destino em documentos do modo de navegação. (<A HREF="http://community.nvda-project.org/ticket/4134">#4134</A>)
+<LI>Microsoft Outlook 2010 e superior: Foi melhorado o acesso especial a diálogos seguros como o de novos perfis e configuração de e-mail. (<A HREF="http://community.nvda-project.org/ticket/4090">#4090</A>, <A HREF="http://community.nvda-project.org/ticket/4091">#4091</A>, <A HREF="http://community.nvda-project.org/ticket/4095">#4095</A>)
+<LI>Microsoft Outlook: Anúncios inúteis foram diminuídos em barras de ferramentas de comandos ao navegar por certos diálogos. (<A HREF="http://community.nvda-project.org/ticket/4096">#4096</A>, <A HREF="http://community.nvda-project.org/ticket/3407">#3407</A>)
+<LI>Microsoft word: Ao mover-se com tab para a célula vazia de uma tabela,já não anuncia incorretamente o fim desta. (<A HREF="http://community.nvda-project.org/ticket/4151">#4151</A>)
+<LI>Microsoft Word: O primeiro caractere depois do fim de uma tabela (incluindo uma nova linha em branco) já não é considerado incorretamente como se estivesse dentro da tabela. (<A HREF="http://community.nvda-project.org/ticket/4152">#4152</A>)
+<LI>Diálogo de Verificação Ortográfica do Microsoft Word 2010: A atual palavra incorreta é anunciada em lugar de anunciar incorretamente a primeira palavra em negrito. (<A HREF="http://community.nvda-project.org/ticket/3431">#3431</A>)
+<LI>No modo de navegação no Internet Explorer e outros controles MSHTML, ao mover-se com tabb ou usando a navegação com um caractere para mover-se para campos de formulário, é novamente anunciada a etiqueta em muitos casos onde tal não ocorria (especificamente, onde são usadas etiquetas de elementos HTML). (<A HREF="http://community.nvda-project.org/ticket/4170">#4170</A>)
+<LI>Microsoft Word: O anúncio da existência e da localização de comentários agora é mais acurado. (<A HREF="http://community.nvda-project.org/ticket/3528">#3528</A>)
+<LI>A navegação de certos diálogos em produtos do MS Office tais como Word, Excel e Outlook foi melhorada de modo que já não anuncia barras de ferramentas que contém controles em particular sem utilidade para o usuário. (<A HREF="http://community.nvda-project.org/ticket/4198">#4198</A>)
+<LI>Os painéis de tarefas, como o gerenciador da área de transferência ou recuperação de arquivos, não mais aparentam ter ganhado foco ao abrir um aplicativo como o Microsoft Word ou Excel, o que às vezes obrigava o usuário a alternar para fora e de volta ao o aplicativo para usar o documento ou planilha. (<A HREF="http://community.nvda-project.org/ticket/4199">#4199</A>)
+<LI>O NVDA já não falha ao ser executado  em versões recentes do Windows   quando o idioma do sistema operacional é configurado para Sérvio (Latino). (<A HREF="http://community.nvda-project.org/ticket/4203">#4203</A>)
+<LI>Ao pressionar o numlock estando no modo ajuda de entrada agora alterna corretamente o numlock, ao invés de fazer com que o teclado e o Sistema Operacional se descincronizem em relação ao estado dessa tecla. (<A HREF="http://community.nvda-project.org/ticket/4226">#4226</A>)
+<LI>No Google Chrome, o título do documento volta a ser anunciado quando se alterna abas. No NVDA 2014.2, isso não ocorria em alguns casos. (<A HREF="http://community.nvda-project.org/ticket/4222">#4222</A>)
+<LI>No Google Chrome e navegadores baseados no Chrome, a URL do documento já não é anunciada ao anunciar o documento. (<A HREF="http://community.nvda-project.org/ticket/4223">#4223</A>)
+<LI>Ao executar uma leitura contínua com o sintetizador sem fala selecionado (útil para testes automatizados), a leitura contínua agora é completa ao invés de parar após algumas poucas linhas. (<A HREF="http://community.nvda-project.org/ticket/4225">#4225</A>)
+<LI>Diálogo de assinatura do Microsoft Outlook: O campo de edição de assinatura agora é acessível, permitindo a completa detecção do cursor e  da formatação. (<A HREF="http://community.nvda-project.org/ticket/3833">#3833</A>)
+<LI>Microsoft Word: Ao ler a última linha de uma célula de tabela, a célula já não é lida por completo. (<A HREF="http://community.nvda-project.org/ticket/3421">#3421</A>)
+<LI>Microsoft Word: Ao ler a primeira ou a última linha de um índice, o mesmo já não é lido por completo. (<A HREF="http://community.nvda-project.org/ticket/3421">#3421</A>)
+<LI>Ao falar palavras digitadas e em alguns outros casos, as palavras já não são quebradas incorretamente  em marcas tais como sinais de vogais e virama em idiomas Indianos. (<A HREF="http://community.nvda-project.org/ticket/4254">#4254</A>)
+<LI>Campos de edição de texto numéricos no GoldWave agora são controlados corretamente. (<A HREF="http://community.nvda-project.org/ticket/670">#670</A>)
+<LI>Microsoft Word: ao mover-se por parágrafo usando control+seta abaixo/control+seta acima, já não é necessário pressionar esses comandos  duas vezes para mover-se por listas numeradas ou com marcas. (<A HREF="http://community.nvda-project.org/ticket/3290">#3290</A>) 
 </UL>
 
 <H3>Alterações específicas para desenvolvedores</H3>
@@ -75,6 +121,7 @@ Alguns itens ou termos desta seção não serão traduzidos, uma vez que são de
 
 <UL>
 <LI>O NVDA agora possui suporte unificado para a documentação de seus complementos. Consulte a seção Add-on Documentation do Developer Guide para mais detalhes. (<A HREF="http://community.nvda-project.org/ticket/2694">#2694</A>)
+When providing gesture bindings on a ScriptableObject via __gestures, it is now possible to provide the None keyword as the script. This unbinds the gesture in any base classes. (<A HREF="http://community.nvda-project.org/ticket/4240">#4240</A>)
 </UL>
 
 <H2>2014.2</H2>
