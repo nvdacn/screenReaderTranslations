@@ -27,12 +27,10 @@ else
 
     ../scripts/rebuildStats.sh
 
-    mfiles=`git status -s -uno | awk '{printf(" %s", $2)}'`
+    mfiles=`git status -s -uno . | awk '{printf(" %s", $2)}'`
 
-    if [ "$mfiles" != "" ]; then git add $mfiles; fi
-        msg="${lang}: updated $mfiles from t2t."
-        git commit -q -m "$msg"
+    if [ "$mfiles" != "" ]; then
+        git commit -q -m "${lang}: updated $mfiles" $mfiles
         ../scripts/commit.sh
     fi
 fi
-
