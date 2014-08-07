@@ -1,4 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash
+set -u
+source checkProgs.sh
+source lock.sh
+
 encoding=`file *.t2t  | grep -viP "utf-8|empty|ascii"`
 if [ "$encoding" != "" ]; then
     python ../scripts/addresses.py $lang "File encoding problem" "Please save the following as unicode UTF-8: $encoding"
