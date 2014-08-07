@@ -38,7 +38,6 @@ for lang in ${convertLangs[*]}; do
         mstats=`git status -s -uno | grep -i "userGuide\-structureDifferences.txt$" | awk '{printf(" %s", $2)}'`
 
         if [ "$mfiles" != "" ]; then git add $mfiles; fi
-        if [ "$mstats" != "" ]; then git add $mstats userGuide-stats.txt; fi
         if [ "$mfiles" != "$mstats" ]; then
             msg="${lang}: updated $mfiles $mstats from t2t."
             git commit -q -m "$msg"
