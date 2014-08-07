@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+getAbsPath() {
+absPath=$(readlink -f -n $1)
+absPath=$(dirname $absPath)
+echo $absPath
+}
+
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 # Checking for the existance of needed programs (sorted)
@@ -47,5 +53,6 @@ elif [ "$XGETTEXT" == "" ]; then
     exit 1
 fi
 
-source systemData.sh
+MYDIR=$(getAbsPath $0)
+source "${MYDIR}/systemData.sh"
 

@@ -1,7 +1,17 @@
 #!/bin/bash
 set -u
-source checkProgs.sh
-source lock.sh
+
+getAbsPath() {
+absPath=$(readlink -f -n $1)
+absPath=$(dirname $absPath)
+echo $absPath
+}
+
+MYDIR=$(getAbsPath $0)
+
+source "${MYDIR}/checkProgs.sh"
+source "${MYDIR}/lock.sh"
+lang=$(basename $(pwd))
 
 encoding=`file *.t2t  | grep -viP "utf-8|empty|ascii"`
 if [ "$encoding" != "" ]; then
@@ -17,12 +27,10 @@ else
 
     ../scripts/rebuildStats.sh
 
-    mfiles=`git status -s -uno | grep -i ".html$" | awk '{printf(" %s", $2)}'`
-    mstats=`git status -s -uno . | grep -i "structuredifferences.txt" | awk '{printf(" %s", $2)}'`
+    mfiles=`git status -s -uno | awk '{printf(" %s", $2)}'`
 
     if [ "$mfiles" != "" ]; then git add $mfiles; fi
-    if [ "$mfiles" != "$mstats" ]; then
-        msg="${lang}: updated $mfiles $mstats from t2t."
+        msg="${lang}: updated $mfiles from t2t."
         git commit -q -m "$msg"
         ../scripts/commit.sh
     fi
