@@ -3,6 +3,57 @@
 
 %!includeconf: ../changes.t2tconf
 
+= 2014.3 =
+
+== Nové vlastnosti ==
+- V dialógu všeobecné nastavenia pribudlo nové začiarkávacie pole, ktoré určuje, či bude NVDA pri štarte a ukončení prehrávať zvuk. (#834)
+- Pomoc k doplnkom, ktoré návod obsahujú, nájdete v správcovi doplnkov po aktivovaní tlačidla Návod. (#2694)
+- Podpora pre kalendár v programe Microsoft Outlook od verzie 2007  (#2943) zahŕňa:
+- Čítanie času pri pohybe šípkami.
+- Oznamovanie pripomienok k danému časovému slotu.
+- Oznámenie vybratej pripomienky po stlačení klávesu tab.
+- NVDA prečíta dátum len vtedy, ak je nasledujúca pripomienka alebo nasledujúci časový slot v odlišnom dni, ako predchádzajúce hlásenie.
+- Zlepšená podpora pre zoznam s doručenou poštou a ostatné zoznamy v programe  Microsoft Outlookod verzie  2010 (#3834) zahŕňa:
+- Možnosť vypnúť oznamovanie hlavičiek (od, predmet a podobne) deaktivovaním položky oznamovať hlavičky riadkov / stĺpcov tabuľky v nastaveniach čítania textu.
+- Možnosť použiť navigáciu po tabuľkách (ctrl+alt+šípky) na pohyb po stĺpcoch.
+- Microsoft word: Ak inline obrázok neobsahuje alternatívny text, ale obsahuje názov, NVDA ho prečíta. (#4193)
+- Microsoft Word: NVDA po stlačení skratky nvda+f prečíta v informácii o formátovaní aj informáciu o odsadení odseku. Automatické oznamovanie odsadenia odsekov je možné nastaviť v nastaveniach čítania textu, začiarknutím položky Oznamovať odsadenie odsekov.  (#4165)
+- Ak textový editor automaticky po stlačení klávesu enter vkladá nový text (napríklad odrážky, čísla alebo tabulátory), NVDA túto skutočnosťoznámy.  (#4185)
+- Microsoft Word: Klávesová skratka NVDA+alt+c prečíta obsah aktuálneho komentára, ak sa na ňom nachádza kurzor. (#3528)
+- Zlepšená podpora pre automatické čítanie hlavičiek riadkov a stĺpcov v tabuľkách programu Microsoft Excel (#3568) zahŕňa:
+- Podporu pre excelom definované rozsahy na identifikáciu hlavičiek, ktoré sú podporované aj programom JAWS.
+- Skratky pre na stavenie hlavičiek stĺpcov (NVDA+shift+c) a hlavičiek riadkov (NVDA+shift+r) ukladajú informáciu priamo dozošitu program Excel a informácie o hlavičkách sú dostupné pre všetky čítače obrazovky, ktoré podporujú definované rozsahy pre hlavičky.
+- tieto príkazy je odteraz možné použiť aj viackrát vzošite pre nastavenie rôznych hlavičiek v rôznych častiach dokumentu.
+- Podpora pre automatické čítanie hlavičiek riadkov a stĺpcov v tabuľkách programu Microsoft Excel (#3110) zahŕňa:
+- Podporu pre záložky programu MS Word na definovanie hlavičiek, ktoré vie identifikovať aj program JAWS.
+- Skratky pre na stavenie hlavičiek stĺpcov (NVDA+shift+c) a hlavičiek riadkov (NVDA+shift+r) ak ste na prvej bunke záhlavia inštruujú NVDA, aby považoval riadok alebo stĺpec za hlavičku tabuľky. Informácia je uložená aj v záložkách programu MS word, takže je dostupná aj po opätovnom načítaní dokumentu. Navyše ju takto môžu sprístupniť aj iné čítače obrazovky, ktoré dokážu identifikovať záložky v programe MS Word.
+- Microsoft Word: Po stlačení klávesu tab NVDA oznámy vzdialenosť od ľavého okraja strany. (#1353)
+- Microsoft word: NVDA Poskytuje informáciu cez hlasový výstup a brailovský riadok pri najčastejších skratkách používaných na formátovanie dokumentu, ako napríklad tučné písmo, kurzíva, podčiarknutie, zarovnanie, úroveň, indexy a veľkosť písma.
+- Microsoft Excel: Ak bunka obsahuje komentár, môžete si ho prečítať skratkou nvda+alt+c. (#2920)
+- Microsoft Excel: NVDA poskytuje vlastný dialóg na editáciu komentára, ktorý sa zobrazí po vyvolaní predvoleného dialógu na zadanie komentára skratkou shift+F2. (#2920)
+- Microsoft Excel: NVDA oznamuje cez hlasový výstup a brailovský riadok informácie pri viacerých skratkách na navigáciu a výber v tabuľke (#4211), konkrétne:
+- Vertikálny pohyb po stranách (page up a page down);
+- Horizontálny pohyb po stranách (alt+page up a alt+page down);
+- Skratky na rozšírenei výberu (vyššie spomenuté s klávesom shift);
+- Výber aktuálnej oblasti (ctrl+shift+8).
+- Microsoft Excel: NVDA pri oznánení formátovanie (skratka nvda+f) prečíta aj informáciu o vertikálnom a horizontálnom zarovnaní bunky. Automatické oznamovanie je možné dosiahnuť začiarknutím položky oznamovať zarovnanie v nastaveniach čítania textu.
+- Microsoft Excel: NVDA pri oznánení formátovanie (skratka nvda+f) prečíta aj informáciu o použitom štýle.. Automatické oznamovanie je možné dosiahnuť začiarknutím položky oznamovať štýl v nastaveniach čítania textu.
+- Microsoft powerpoint: pri premiestňovaní prvkov v snímke šípkami odteraz NVDA oznamuje pozíciu prvku (#4214) vrátane:
+- vzdialenosti prvku od okrajov snímky.
+- prekrývania prvkov, vrátane toho, aká veľká časť je prekrýtá.
+- Na zistenie aktuálneho stavu bez nutnosti pohybovať objektami na snímke stačí použiť Skratku na zistenie polohy kurzora (nvda+delete).
+- Ak je prvok, ktorý má fokus, prekrytý iným prvkom, NVDA túto skutočnosť oznámy.
+- príkaz na zystenie súradníc kurzora (nvda+delete) podáva informáciu v závislosti na aktuálnom kontexte (#4219)
+- V štandardných editačných poliach a vrežime prehliladania je to poloha kurzora v percentách.
+- V programe Microsoft Powerpoint je oznamovaná polohy prvku vzhľadom na okraje snímky a prípadné prekrývanie iných prvkov.
+- Po dvojitom stlačení skratky NVDa prečíta informáciu o polohe prvku na obrazovke, tak ako to bolo doposiaľ.
+- NVDA je odteraz lokalizovaný do Katalánčiny.
+
+
+== Zmeny ==
+- Brailovská prekladová tabuľka liblouis bola aktualizovaná na verziu 2.5.4. (#4103)
+
+
 = 2014.2 =
 
 == Nové vlastnosti ==
