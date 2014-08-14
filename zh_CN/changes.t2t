@@ -22,7 +22,7 @@
 - Microsoft word: 按下“NVDA+alt+c”将朗读光标所在的注释文本。 (#3528)
 - 提高 Microsoft Excel 的行列标题自动朗读之匙 (#3568) 包括：
  - 支持识别标题单元的 Excel 自定义名称范围(与 JAWS 屏幕阅读器兼容)
- - 使用命令“设置列标题”(NVDA+shift+c)和“设置行标题”(NVDA+shift+r)进行的设置现在存储在工作表内，因而，下次打开此表格时仍旧可用，且与其他支持自定义名称范围方案的屏幕阅读器兼容。
+- 使用命令“设置列标题”(NVDA+shift+c)和“设置行标题”(NVDA+shift+r)进行的设置现在存储在工作表内，因而，下次打开此表格时仍旧可用，且与其他支持自定义名称范围方案的屏幕阅读器兼容。
  - 在每个表格中还可多次使用此命令，为不同的区域设置不同的标题。
 - 支持 Microsoft Word 的自动行列标题朗读 (#3110) 包括:
  - 支持识别标题单元的 Microsoft Word 标记(与 JAWS 屏幕阅读器兼容)
@@ -49,7 +49,7 @@
  - 连按两次此命令将针对整个控件再度执行先前的动作，读出位置信息。
 - 新的语言，加泰罗尼亚语。
 
-== 修改 ==
+== 更改 ==
 - 更新 liblouis 盲文翻译器到2.5.4. (#4103)
 
 
@@ -68,26 +68,25 @@
 - 在 Internet Explorer ，切换或使用单键浏览找到表单时朗读出其标签（特别是 HTML 元素已经定义好标签的情况）。 (#4170)
 - Microsoft Word: 评论的存在和位置将读的更加准确。 (#3528)
 - 浏览某些对话框时，通过不在读出某些对用户无用的特别的控件容器工具栏的方式，提高对 Microsoft Office 产品(word、OutLook、Excel等)的支持。 (#4198) 
-- Task panes such as clipboard manager or File recovery no longer accidentilly seem to gain focus when opening an application such as Microsoft Word or Excel, which was sometimes causing the user to have to switch away from and back to the application to use the document or spreadsheet. (#4199)
-- NVDA no longer fails to run on recent Windows Operating Systems if the user's Windows language is set to Serbian (Latin). (#4203)
-- Pressing numlock while in input help mode now correctly toggles numlock, rather than causing the keyboard and the Operating System to become out of sync in regards to the state of this key. (#4226)
-- In Google Chrome, the title of the document is again reported when switching tabs. In NVDA 2014.2, this did not occur in some cases. (#4222)
-- In Google Chrome and Chrome-based browsers, the URL of the document is no longer reported when reporting the document. (#4223)
-- When running say all with the No speech synthesizer selected (useful for automated testing), say all will now complete instead of stopping after the first few lines. (#4225) 
-- Microsoft Outlook's Signature dialog: The Signature editing field is now accessible, allowing for full cursor tracking and format detection. (#3833)
-- Microsoft Word: When reading the last line of a table cell, the entire table cell is no longer read. (#3421)
-- Microsoft Word: When reading the first or last line of a table of contents, the entire table of contents is no longer read. (#3421)
-- When speaking typed words and in some other cases, words are no longer incorrectly broken at marks such as vowel signs and virama in Indic languages. (#4254)
-- Numeric editable text fields in GoldWave are now handled correctly. (#670)
-- Microsoft Word: when moving by paragraph with control+downArrow / control+upArrow, it is no longer necessary to press them twice if moving through bulleted or numbered lists. (#3290)
+- 任务窗格（如文件恢复器、剪贴板管理器）不会再发生偶然丢失焦点的情况，这个情况会发生在打开某些程序时（如Word、Excel等），用户再也无需切换到其他窗口后返回才能使用文档或电子表格。 (#4199)
+- 在系统语言被设置成塞尔维亚语（拉丁）时，NVDA 不会发生无法运行在最新的 Windows 操作系统的情况。 (#4203)
+- 现在，在打开“帮助模式”的情况下，按下数字键盘切换可以正常的切换状态，而不是强制键盘和系统保持在一种状态。 (#4226)
+- 在 Chrome 切换标签时，文档标题将再次可以正常的朗读，这种情况不会发生在 NVDA2014.2。 (#4222)
+- 在使用 Chrome 或基于 Chrome 所开发的浏览器，在朗读文档时文档的 URL 将不会被朗读。 (#4223)
+- 当在选择“无合成器”时进行全文朗读，内容将可完全读完，而不会再发生在读完某些行之后自动停止的情况。 (#4225) 
+- Microsoft Outlook的附件对话框: 签名编辑区域将具有完全的可访问性，允许完全的鼠标导航和格式检测。 (#3833)
+- Microsoft Word: 当朗读表格单元的第一行或最后一行时，不会发生读出整个列表的情况。 (#3421)
+- 在朗读输入字词打开时，词语不会再被某些印第安语的符号打断。 (#4254)
+- GoldWave 的数字可编辑文本区域现在可以正确获取。 (#670)
+- Microsoft Word: 当使用 control+下光标或control加上光标进行段落跳转时，无需在通过按下两次该键来略过项目列表和数字列表。 (#3290)
 
 
-== Changes for Developers ==
-- NVDA now has unified support for add-on documentation. See the Add-on Documentation section of the Developer Guide for details. (#2694)
-- When providing gesture bindings on a ScriptableObject via __gestures, it is now possible to provide the None keyword as the script. This unbinds the gesture in any base classes. (#4240)
-+-     It is now possible to change the shortcut key used to start NVDA for locales where the normal shortcut causes problems. (#2209)
-+ - This is done via gettext.
-+ - Note that the text for the Create desktop shortcut option in the Install NVDA dialog, as well as the shortcut key in the User Guide, must also be updated.
+== 针对开发者的更改 ==
+- NVDA 现在拥有统一的插件文档支持，详情请查阅开发文档的插件帮助章节。 (#2694)
+- 当为 scriptableObject 和 gesture 提供 gesture绑定时，允许为脚本设定关键字为空，取消了许多基本类的绑定。 (#4240)
+- 现在，您可以为某些启动快捷键会造成问题的地区修改启动 NVDA 的快捷键。 (#2209)
+ - 此功能通过 gettext 实现。
+ - 请注意，在安装 NVDA 对话框，设置启动快捷方式的快捷键如果被更改，也应当在帮助文档中体现。
 
 = 2014.2 =
 
