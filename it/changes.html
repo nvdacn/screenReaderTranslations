@@ -10,6 +10,88 @@
 </CENTER>
 
 
+<H2>2014.3</H2>
+
+<H3>Nuove caratteristiche</H3>
+
+<UL>
+<LI>La riproduzione del suono all'avvio e alla chiusura di nvda, ora può essere disabilitata tramite una nuova opzione nelle impostazioni generali. (<A HREF="http://community.nvda-project.org/ticket/834">#834</A>)
+<LI>L'aiuto per i componenti aggiuntivi che lo supportano, ora può essere raggiunto dalla gestione componenti aggiuntivi. (<A HREF="http://community.nvda-project.org/ticket/2694">#2694</A>)
+<LI>supporto per il Calendario in Microsoft Outlook 2007 e superiori (<A HREF="http://community.nvda-project.org/ticket/2943">#2943</A>) incluso:
+ <UL>
+ <LI>Notifica del'ora corrente quando ci si sposta con le frecce,
+ <LI>Indicazione se l'ora selezionata è presente in un appuntamento,
+ <LI>Notifica dell'appuntamento selezionato quando si preme tab 
+ <LI>Filtro intelligente per la data in modo da notificarla solo se la selezione della nuova ora o del nuovo appuntamento è in un giorno diverso rispetto all'ultimo.
+ </UL>
+<LI>Esteso il supporto per la Inbox e altre liste messaggi in Outlook 2010 e superiori (<A HREF="http://community.nvda-project.org/ticket/3834">#3834</A>) including:
+ <UL>
+ <LI>Possibilità di silenziare le intestazioni di colonna(daà oggetto etc) disattivando l'opzione annuncia le intestazioni di riga e colonna nelle impostazioni di formattazione documento,
+ <LI>Possibilità di usare icomandi di navigazione tabella (control + frecce)  per muoversi tra le singole colonne. 
+ </UL>
+<LI>Microsoft word: se un'immagine in linea non ha impostato un testo alternativo, al suo posto, NVDA riporterà il titolo se l'autore ne ha fornito uno. (<A HREF="http://community.nvda-project.org/ticket/4193">#4193</A>)
+<LI>Microsoft Word: Viene riportata l'indentazione di paragrafo col comando 
+(NVDA+f) e in modo automatico quando la nuova impostazione notifica indentazione paragrafo nella formattazione documento è abilitata (<A HREF="http://community.nvda-project.org/ticket/4165">#4165</A>).
+<LI>Viene letto automaticamente il testo inserito come un nuovo bullet, numero o una tabulazione quando viene premuto invio nei documenti editabili o in un campo di testo. (<A HREF="http://community.nvda-project.org/ticket/4185">#4185</A>)
+<LI>Microsoft word: Premendo NVDA+alt+c verrà letto il testo del commento se il cursore è posizionato sopra. (<A HREF="http://community.nvda-project.org/ticket/3528">#3528</A>)
+<LI>Migliorato il supporto per la lettura automatica dell'intestazione di riga e colonna in Microsoft Excel (<A HREF="http://community.nvda-project.org/ticket/3568">#3568</A>) incluso:
+ <UL>
+ <LI>Supporto per <B>of Excel defined name ranges</B> per identificare le celle d'intestazione (compatibile con loscreen reader Jaws)
+ <LI>I comandi imposta l'intestazione di colonna (NVDA+shift+c) e imposta l'intestazione di riga (NVDA+shift+r) ora salvano le impostazioni nel foglio di lavoro in modo da essere disponibili la prossima volta che il foglio viene aperto, e saranno a deisposizione degli screen readers che supportano <B>the defined name range scheme</B>.
+ <LI>These commands can also now be used multiple times per sheet to set different headers for different regions.
+ </UL>
+<LI>Supporto per la lettura automatica dell'intestazione di riga e colonna in Microsoft Word (<A HREF="http://community.nvda-project.org/ticket/3110">#3110</A>) incluso:
+ <UL>
+ <LI>Supporto dei segnalibri di MS Word per identificare le celle d'intestazione (compatibile con lo screen reader Jaws) 
+ <LI>I comandi imposta l'intestazione di colonna (NVDA+shift+c) e imposta l'intestazione di riga (NVDA+shift+r) quando ci si trova sulla prima cella d'intestazione in una tabella, permette di dire a NVDA che le intestazioni vanno lette automaticamente. Le impostazioni sono salvate nel documento in modo da essere disponibili alla prossima apertura e sono disponibili per gli screen reader che supportano lo <B>schema dei segnalibri</B>
+ </UL>
+<LI>Microsoft Word: Notifica la distanza dall'angolo sinistro della pagina quando viene premuto il tasto tab. (<A HREF="http://community.nvda-project.org/ticket/1353">#1353</A>)
+<LI>Microsoft Word: fornito riscontro in voce e in braille per la maggior parte dei comandi rapidi di formattazione disponibili  (grassetto, corsivo, sottolineato, allineamento <B>outline level</B>). (<A HREF="http://community.nvda-project.org/ticket/1353">#1353</A>)**
+<LI>Microsoft Excel: se la cella selezionata contiene commenti, ora possono essere letti prmendo  NVDA+alt+c (<A HREF="http://community.nvda-project.org/ticket/2920">#2920</A>)
+<LI>Microsoft Excel: prevista una finestra di dialogo specifica di NVDA per editare i commenti nella cella selezionata corrente quando si preme il comando di Excel shift+f2 per accedere alla modalità editazione commento. (<A HREF="http://community.nvda-project.org/ticket/2920">#2920</A>)
+<LI>Microsoft Excel: Riscontro in voce e in Braille di molti altri comandi rapidi di spostamento e selezione (<A HREF="http://community.nvda-project.org/ticket/4211">#4211</A>) incluso:
+ <UL>
+ <LI>Spostamento di pagina verticale (pagina su e pagina giù)
+ <LI>Spostamento di pagina orizzontale (alt+pagina su e alt+pagina giù)
+ <LI>Selezione estesa (i tasti precedenti più l'aggiunta del tasto Shift).
+ <LI>Selezionare la regione corrente  (control+shift+8)
+ </UL>
+</UL>
+
+<H3>Cambiamenti</H3>
+
+<UL>
+<LI>Aggiornato liblouis braille translator alla versione 2.5.4. (<A HREF="http://community.nvda-project.org/ticket/4103">#4103</A>)
+</UL>
+
+<H3>Bug Fixes</H3>
+
+<UL>
+<LI>In Google Chrome e Chrome-based browsers, alcune porzioni di testo (come quelle enfatizzate) non vengono più ripetute quando viene letto il testo di un avviso o di una finestra di dialogo. (<A HREF="http://community.nvda-project.org/ticket/4066">#4066</A>)
+<LI>Nella modalità navigazione nelle applicazioni di Mozilla, premendo invio su un pulsante, etc. non fallisce più la sua attivazione (o che si attivi il controllo sbagliato) in certi casi come i bottoni all'inizio di Facebook. (<A HREF="http://community.nvda-project.org/ticket/4106">#4106</A>)
+<LI>Non vengono più riportate le informazioni inutili quando si preme tab in iTunes. (<A HREF="http://community.nvda-project.org/ticket/4128">#4128</A>)
+<LI>In alcune liste in iTunes, come la lista Musica, spostarsi all'elemento successivo tramite il navigatore ad oggetti ora funzionacorrettamente. (<A HREF="http://community.nvda-project.org/ticket/4129">#4129</A>)
+<LI>Gli elementi HTML considerati intestazioni inquanto marcatori di tipo WAI ARIA ora vengono inclusi nella lista elementi della modalità navigazione e nella navigazione rapida nel documento di internet explorer. (<A HREF="http://community.nvda-project.org/ticket/4140">#4140</A>)
+<LI>Nelle recenti versioni di Internet Explorer, seguendo i links nella stessa pagina, si viene spostati correttamente nella giusta posizione che viene letta nella modalità navigazione documenti. (<A HREF="http://community.nvda-project.org/ticket/4134">#4134</A>)
+<LI>Microsoft Outlook 2010 e superiori: miglioramenti nell'accesso a tutte le finestre di dialogo sicure come i nuovi profili o le impostazioni mail. (<A HREF="http://community.nvda-project.org/ticket/4090">#4090</A>, <A HREF="http://community.nvda-project.org/ticket/4091">#4091</A>, <A HREF="http://community.nvda-project.org/ticket/4095">#4095</A>)
+<LI>Microsoft Outlook: diminuita l'inutile verbosità dei comandi della barra degli strumenti quando si naviga in alcune finestre di dialogo. (<A HREF="http://community.nvda-project.org/ticket/4096">#4096</A>, <A HREF="http://community.nvda-project.org/ticket/3407">#3407</A>)
+<LI>Microsoft word: <B>tabbing to a blank cell in a table no longer incorrectly announces exiting the table.</B> (<A HREF="http://community.nvda-project.org/ticket/4151">#4151</A>)
+<LI>Microsoft Word: il primo carattere dopo la fine di una tabella (inclusa una nuova riga vuota) non è più considerato erroneamente parte della tabella. (<A HREF="http://community.nvda-project.org/ticket/4152">#4152</A>)
+<LI>Microsoft Word 2010 finestra di dialogo del controllo ortografico: viene letta la reale parola errata piuttosto che in modo inappropriato la prima parola in grassetto. (<A HREF="http://community.nvda-project.org/ticket/3431">#3431</A>) 
+<LI>Nel modo navigazione in Internet Explorer e in altri controlli MSHTML, usando tab o le lettere singole di navigazione per spostarsi sui controlli modulo, verrà riletta  l'etichetta in molti casi nei quali non veniva fatto (in particolar modo dove vengono impiegati gli elementi di tipo etichetta html). (<A HREF="http://community.nvda-project.org/ticket/4170">#4170</A>)
+<LI>Microsoft Word: la notifica dell'esistenza di commenti e del loro posizionamento, ora è più accurata. (<A HREF="http://community.nvda-project.org/ticket/3528">#3528</A>)
+<LI>migliorata la navigazione di alcune finestre di dialogo in prodotti MS Office come Word, Excel e Outlook non riportando particolari barre degli strumenti contenitore di controlli poco utili per gli utenti. (<A HREF="http://community.nvda-project.org/ticket/4198">#4198</A>) 
+<LI>i riquadri attività come il clipboard manager o recupero File non ricevono più accidentalmente il fuoco quando si apre un'applicazione come Microsoft Word o Excel, che in qualche caso obbligavano l'utente a lasciare e riprendere l'applicazione per poter usare il documento o il foglio di calcolo. (<A HREF="http://community.nvda-project.org/ticket/4199">#4199</A>)
+<LI>NVDA non fallisce più nell'avvio nei recenti sistemi operativi Windows se la lingua utente del sistema è impostata su Serba (Latin). (<A HREF="http://community.nvda-project.org/ticket/4203">#4203</A>) 
+<LI>non è più necessario premere più volte tab per attivare i ribbon di Microsoft Office alla sua prima attivazione dopo l'apertura di un programma Office come Word o Excel. (<A HREF="http://community.nvda-project.org/ticket/4207">#4207</A>)
+</UL>
+
+<H3>Cambiamenti per gli sviluppatori</H3>
+
+<UL>
+<LI>NVDA ha unito  ora il supporto per la documentazione sugli add-on. Consultare la sezione sulla documentazione sugli add-on della guida per sviluppatori per maggiori dettagli. (<A HREF="http://community.nvda-project.org/ticket/2694">#2694</A>)
+</UL>
+
 <H2>2014.2</H2>
 
 <H3>Novità</H3>
