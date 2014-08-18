@@ -1,9 +1,0 @@
-commit 7ffeb00bbe6333117008e2b51d65e62610a7f0e3
-Author: James Teh <jamie@nvaccess.org>
-Date:   Tue Jul 8 13:39:45 2014 +1000
-
-    Fix incorrect breaking of words at marks such as vowel signs and virama in Indic languages.
-    
-    speech.speakTypedCharacters and textInfos.offsets.find{Start,End}OfWord were using unicode.isalnum to check for characters that are part of a word, but this only covers alphanumeric characters. The marks in question aren't alphanumeric, but should still be considered part of a word.
-    Therefore, use the Unicode category of the character and include letters, marks and numbers.
-    Fixes #4254.
