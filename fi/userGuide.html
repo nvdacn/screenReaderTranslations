@@ -153,11 +153,12 @@
     <LI><A HREF="#toc105">11.14. HumanWare BrailleNote</A>
     <LI><A HREF="#toc106">11.15. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc107">12. Edistyneet aiheet</A>
+  <LI><A HREF="#toc107">12. Braille control type and state abbreviations</A>
+  <LI><A HREF="#toc108">13. Edistyneet aiheet</A>
     <UL>
-    <LI><A HREF="#toc108">12.1. Edistynyt symboleiden puhumisen mukauttaminen</A>
+    <LI><A HREF="#toc109">13.1. Edistynyt symboleiden puhumisen mukauttaminen</A>
     </UL>
-  <LI><A HREF="#toc109">13. Lisätietoja</A>
+  <LI><A HREF="#toc110">14. Lisätietoja</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -3785,7 +3786,7 @@ Seuraavia pistenäyttöjä tuetaan:
 </UL>
 
 <P>
-NVDA käyttää BrxCom:ia, mikäli se on asennettu.
+NVDA käyttää BrxComia, mikäli se on asennettu.
 BrxCom on työkalu, joka mahdollistaa pistesyötön käyttämisen itsenäisesti ruudunlukuohjelmasta riippumatta.
 Papenmeier julkaisee piakkoin siitä NVDA:lla toimivan version.
 Trio-mallissa pistesyöttö on kuitenkin mahdollista ilman BrxCom:iakin.
@@ -3793,12 +3794,12 @@ Trio-mallissa pistesyöttö on kuitenkin mahdollista ilman BrxCom:iakin.
 <P>
 Useimmissa laitteissa on intuitiivisen ja nopean käytön mahdollistava ohjaustankonäppäin (EAB).
 Sitä voidaan siirtää neljään suuntaan, joissa kussakin on yleensä kaksi kytkintä.
-C-sarjan näytöt ovat ainoa poikkeus.
+C-sarjan näytöt ovat ainoa poikkeus tästä.
 </P>
 <P>
 Niissä ja muutamissa muissa näytöissä on kaksi kosketuskohdistinriviä, joista ylempää käytetään muotoilutietojen lukemiseen.
 C-sarjan laitteissa ylärivin jonkin näppäimen alhaalla pitäminen ja ohjaustankonäppäimen painaminen jäljittelee toisen kytkimen tilaa.
-Ylös-, alas-, oikea- sekä vasen-näppäinten (tai ohjaustankonäppäimen) painaminen ja alhaalla pitäminen toistaa kyseessä olevan toiminnon.
+Ylös-, alas-, oikea- ja vasen-näppäinten (tai ohjaustankonäppäimen) painaminen ja alhaalla pitäminen toistaa kyseessä olevan toiminnon.
 </P>
 <P>
 Näissä pistenäytöissä on käytettävissä yleensä seuraavat näppäimet:
@@ -4442,10 +4443,151 @@ Katso <A HREF="http://mielke.cc/brltty/doc/drivers/">BRLTTY:n näppäintaulukoid
 </TABLE>
 
 <A NAME="toc107"></A>
-<H2>12. Edistyneet aiheet</H2>
+<H2>12. Braille control type and state abbreviations</H2>
+
+<P>
+In order to fit as much information as possible on a braille display, The folowing abbreviations have been defined to indicate control type and state.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Abbreviation</TH>
+<TH>Control type</TH>
+</TR>
+<TR>
+<TD>btn</TD>
+<TD>button</TD>
+</TR>
+<TR>
+<TD>cbo</TD>
+<TD>combo box</TD>
+</TR>
+<TR>
+<TD>chk</TD>
+<TD>check box</TD>
+</TR>
+<TR>
+<TD>dlg</TD>
+<TD>dialog</TD>
+</TR>
+<TR>
+<TD>edt</TD>
+<TD>editable text field</TD>
+</TR>
+<TR>
+<TD>gra</TD>
+<TD>graphic</TD>
+</TR>
+<TR>
+<TD>cN</TD>
+<TD>table column number n, e.g. c1, c2.</TD>
+</TR>
+<TR>
+<TD>rN</TD>
+<TD>table row number n, e.g. r1, r2.</TD>
+</TR>
+<TR>
+<TD>hN</TD>
+<TD>heading at level n, e.g. h1, h2.</TD>
+</TR>
+<TR>
+<TD>lnk</TD>
+<TD>link</TD>
+</TR>
+<TR>
+<TD>lst</TD>
+<TD>list</TD>
+</TR>
+<TR>
+<TD>vlnk</TD>
+<TD>visited link</TD>
+</TR>
+<TR>
+<TD>mnu</TD>
+<TD>menu</TD>
+</TR>
+<TR>
+<TD>mnubar</TD>
+<TD>menu bar</TD>
+</TR>
+<TR>
+<TD>rbtn</TD>
+<TD>radio button</TD>
+</TR>
+<TR>
+<TD>tb</TD>
+<TD>table</TD>
+</TR>
+<TR>
+<TD>tv</TD>
+<TD>treeview</TD>
+</TR>
+<TR>
+<TD>lv N</TD>
+<TD>a tree view item has a hierarchical level N|</TD>
+</TR>
+<TR>
+<TD><CODE>-----</CODE></TD>
+<TD>seperator</TD>
+</TR>
+</TABLE>
+
+<P>
+The following state indicators are also defined:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Abbreviation</TH>
+<TH>Control state</TH>
+</TR>
+<TR>
+<TD>...</TD>
+<TD>displayed when an object supports autocompletion</TD>
+</TR>
+<TR>
+<TD>( )</TD>
+<TD>displayed when an object (e.g. a check box) is not checked</TD>
+</TR>
+<TR>
+<TD>(x)</TD>
+<TD>displayed when an object (e.g. a check box) is checked</TD>
+</TR>
+<TR>
+<TD>(-)</TD>
+<TD>displayed when an object (e.g. a check box) is half checked</TD>
+</TR>
+<TR>
+<TD>-</TD>
+<TD>displayed when an object (e.g. a tree view item) is collapsible</TD>
+</TR>
+<TR>
+<TD>+</TD>
+<TD>displayed when an object (e.g. a tree view item) is Expandable</TD>
+</TR>
+<TR>
+<TD>clk</TD>
+<TD>displayed when an object is clickable</TD>
+</TR>
+<TR>
+<TD>ro</TD>
+<TD>displayed when an object (e.g. an editable text field) is read-only</TD>
+</TR>
+<TR>
+<TD>sel</TD>
+<TD>displayed when an object is selected</TD>
+</TR>
+<TR>
+<TD>submnu</TD>
+<TD>displayed when an object has a popup (usually a sub-menu)</TD>
+</TR>
+</TABLE>
 
 <A NAME="toc108"></A>
-<H3>12.1. Edistynyt symboleiden puhumisen mukauttaminen</H3>
+<H2>13. Edistyneet aiheet</H2>
+
+<A NAME="toc109"></A>
+<H3>13.1. Edistynyt symboleiden puhumisen mukauttaminen</H3>
 
 <P>
 Välimerkkien ja muiden symboleiden lukutapaa voidaan mukauttaa enemmänkin kuin mitä <A HREF="#SymbolPronunciation">Välimerkkien ja symboleiden puhuminen</A> -valintaikkunassa on mahdollista.
@@ -4458,8 +4600,8 @@ Tiedoston muoto on dokumentoitu Symbol pronunciation -kappaleessa kehittäjän o
 Monimutkaisten symboleiden määrittäminen ei ole kuitenkaan mahdollista.
 </P>
 
-<A NAME="toc109"></A>
-<H2>13. Lisätietoja</H2>
+<A NAME="toc110"></A>
+<H2>14. Lisätietoja</H2>
 
 <P>
 Mikäli tarvitset lisätietoja tai neuvoja NVDA:han liittyen, käy  sen verkkosivustolla osoitteessa <A HREF="http://community.nvda-project.org/">http://community.nvda-project.org/</A>.
