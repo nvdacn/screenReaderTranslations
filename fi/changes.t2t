@@ -3,6 +3,17 @@
 
 %!includeconf: ../changes.t2tconf
 
+= 2014.4 =
+
+== Muutokset ==
+- Asiakirja-tarkastelutila otetaan automaattisesti käyttöön, jos objekti, johon siirryit objektinavigoinnilla, on selaustila-asiakirjassa mutta objekti, jossa olit aiemmin, ei ollut. Tätä tapahtui aiemmin vain, jos navigointiobjektia siirrettiin kohdistuksen muuttumisen vuoksi. (#4369)
+
+== Korjatut ohjelmavirheet ==
+- Kun kohdistus siirretään takaisin selaustila-asiakirjaan (esim. siirtymällä Alt+sarkain-näppäinyhdistelmällä jo avoimelle verkkosivulle), tarkastelukohdistin sijoitetaan oikein näennäiskohdistimen kohdalle aktiivisen kontrollin (esim. lähellä olevan linkin) sijasta. (#4369)
+- Tarkastelukohdistin seuraa asianmukaisesti näennäiskohdistinta PowerPoint-diaesityksissä. (#4370)
+- Aktiivisen alueen uusi sisältö luetaan Mozilla Firefoxissa ja muissa Gecko-pohjaisissa selaimissa, vaikka sisällöllä on käyttökelpoinen ARIA-live-määre, joka eroaa ylemmän tason aktiivisen alueen määreestä. Esim. assertive-määreellä merkitty sisältö lisätään polite-määreellä merkittyyn aktiiviseen alueeseen. (#4169).
+
+
 = 2014.3 =
 
 == Uudet ominaisuudet ==
