@@ -141,7 +141,7 @@ addresses = {
     },
     'sr': {
         'lang':'Serbian',
-        'email': ['Janko Valencik <janko.valencik@alfanum.co.rs>'],
+        'email': ['Nikola Jovic <wwenikola123@gmail.com>', 'Janko Valencik <janko.valencik@alfanum.co.rs>'],
     },
     'sv': {
         'lang':'Swedish',
