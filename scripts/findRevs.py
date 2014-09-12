@@ -23,17 +23,17 @@ linfo = {
     'changes': {
         'filename': 'changes.t2t',
         'srcpath': 'user_docs/en/changes.t2t',
-        'dstprefix': 'changes-diffs',
+        'dstprefix': 'changes-newRevisions',
     },
     'userGuide': {
         'filename': 'userGuide.t2t',
         'srcpath': 'user_docs/en/userGuide.t2t',
-        'dstprefix': 'userGuide-diffs',
+        'dstprefix': 'userGuide-newRevisions',
     },
     'symbols': {
         'filename': 'symbols.dic',
         'srcpath': 'source/locale/en/symbols.dic',
-        'dstprefix': 'symbols-diffs',
+        'dstprefix': 'symbols-newRevisions',
     }
 }
 _wdiff = wdiff['-w', '-{', '-x', '}-', '-y', '+{', '-z', '}+', '-d']
