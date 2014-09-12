@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-import cgi, os
-from re import findall
-from subprocess import PIPE, Popen
+import cgi
+from re import search
+from subprocess import PIPE, call
 from addresses import addresses, email
 
 form = cgi.FieldStorage() # instantiate only once!
@@ -19,9 +19,9 @@ body = "%s %s %s\n\n%s" %(author, action, title, body)
 
 rcpts = []
 for key in addresses.keys():
-    if findall('/test/', body):
+    if search('/test/', body):
         break
-    if findall('(\s+/%s/)|(\.%s\.po)' %(key, key), body):
+    if search('(\s+/%s/)|(\.%s\.po)' %(key, key), body):
         rcpts.extend(addresses[key]['email'])
 
 email(rcpts, subject, body)
@@ -39,8 +39,13 @@ f.close()
 print "Notification sent."
 
 
-print "running website post-commit hook."
-pc = '/var/www/addons.nvda-project.org/post-commit'
-#p1 = Popen([pc])
-os.system(pc)
-print "finnished website post-commit hook."
+if search("/website/", body):
+    print "running website post-commit hook."
+    pc = '/home/nvdal10n/ikiwiki/publish/post-commit'
+    call([pc])
+    print "finnished website post-commit hook."
+
+if search(r"\s+/([^/\s]+/)+\w+\.t2t\b", body):
+    print "running t2t conversion"
+    call(["./convertT2t.sh"], cwd="/home/nvdal10n/mr/srt_conv/scripts")
+    print "finished running t2t conversion"
