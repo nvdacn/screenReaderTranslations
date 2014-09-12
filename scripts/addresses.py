@@ -5,7 +5,7 @@ from subprocess import PIPE, Popen
 addresses = {
     'default': {
         'lang': '',
-        'email': ['Mesar hameed <mesar.hameed@gmail.com>'],
+        'email': ['Mesar hameed <mesar.hameed@gmail.com>', 'James Teh <jamie@nvaccess.org>'],
     },
     'am': {
         'lang':'Amharic',
