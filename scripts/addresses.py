@@ -17,7 +17,7 @@ addresses = {
     },
     'ar': {
         'lang':'Arabic',
-        'email': ['Fatma Mehanna <fatma.mehanna@gmail.com>', 'Shaimaa Ibrahim <shamse1@gmail.com>', 'Ali al Omary <alialomary@gmail.com>'],
+        'email': ['Fatma Mehanna <fatma.mehanna@gmail.com>', 'Shaimaa Ibrahim <shamse1@gmail.com>'],
     },
     'bg': {
         'lang':'Bulgarian',
@@ -53,7 +53,7 @@ addresses = {
     },
     'fa': {
         'lang':'Farsi',
-        'email': ['hamid rezaey <hamidrehzaey@gmail.com>', 'Ali Aslani <aslani.ali@gmail.com>', 'Davood Choobiny <d.d.choobiny@gmail.com>'],
+        'email': ['Ali Aslani <aslani.ali@gmail.com>', 'hamid rezaey <hamidrehzaey@gmail.com>'],
     },
     'fr': {
         'lang':'French',
@@ -117,7 +117,7 @@ addresses = {
     },
     'pl': {
         'lang':'Polish',
-        'email': ['Hubert Meyer <killer@tyflonet.com>', 'Grzegorz Zlotowicz <grzezlo@wp.pl>'],
+        'email': ['Grzegorz Zlotowicz <grzezlo@wp.pl>', 'Hubert Meyer <killer@tyflonet.com>'],
     },
     'pt_BR': {
         'lang': 'Brazilian Portuguese',
