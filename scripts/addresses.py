@@ -9,7 +9,7 @@ addresses = {
     },
     'am': {
         'lang':'Amharic',
-        'email': ['Dr. Tamru E. Belay <g.braille@sympatico.ca>'],
+        'email': ['KETEMA ZEREGAW <kzeregaw@msn.com>', 'Dr. Tamru E. Belay <g.braille@sympatico.ca>'],
     },
     'an': {
         'lang':'Aragonese',
@@ -145,7 +145,7 @@ addresses = {
     },
     'sv': {
         'lang':'Swedish',
-        'email': ['Daniel Johansson <daniel.johansson@coeptus.se>'],
+        'email': ['Daniel Johansson <daniel.johansson@coeptus.se>', 'Niklas Johansson <sleeping.pillow@gmail.com>'],
     },
     'ta': {
         'lang':'Tamil',
