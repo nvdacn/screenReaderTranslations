@@ -1,0 +1,207 @@
+Guideline for Localization of NVDA 
+
+% Prepared by Him Prasad Gautam <drishtibachak@gmail.com>
+
+%!includeconf: ../userGuide.t2tconf
+%kc:title: Guideline for NVDA Translation in Local Language.
+
+= Table of Contents =[toc]
+%%toc
+
+
++ Introduction +
+Basically, , NVDA is developed in English but it has a provision of localizing its interface and document. To run NVDA in local language, The original English texts must be translated. The translation of NVDA message/document is often called 'localization of NVDA'. Obviously, , one should follow the standard process of translation. Here are some tips of guide to the beginners of NVDA localization in their language. Broadly speaking, there are few key steps to be learn.
+
++ Registration process +
+There are two approaches of registration and getting an account for sbn. You can follow any one of the following:
+- First method:
+Express your interest of contribution to the localization of NVDA and request for an invitation on the mailing address NVDA-translations@freelists.org
+You will get an invitation within 1or 2 days. Accept the received invitation within the prescribed time. Accept means; Click the invitation link, registered yourself in the assembla with a user name and password. Please maintain the users ID and password which is necessary for sending the translation work in future.
+- Second method:
+Register yourself with a user name and password on: www.subversion.assembla.com
+Express your interest of contribution to nvda- localization forum and inform your sbn user id to the sbn repository administrator.
+
++ Installation of Assistive systems +
+++ TortoiseSbn ++
+Download the suitable windows version of setup tortoisesvn.exe file from http://tortoisesvn.net/downloads.html and install it. On installation, the default options are sufficient and no need to configure any more. Just press next, next ... install button.
+
+++ PoEdit ++
+Download window installer version of poedit setup .exe from http://www.poedit.net/download.php and install it. On installation, the default options are sufficient and no need to configure any more. Just press next, next ... install button. In first time of run, PoEdit asks your name and Email address. Better first to go the preference menu- language option, the running version of PoEdit may be available in your language! If your language is in the list, you can use the Poedit in your own language! , You can set PoEdit to your language; otherwise the poEdit will remain in English. Fill your name and email address. PoEdit automatically includes This name and email address in translated catalogs.
+
+++PoeditMadeEasy ++
+PoeditMadeEasy is an NVDA-addons which enhances some features of poedit in NVDA system. Download it from
+www.github.com/dhankuta/poeditmadeeasy.git
+
++ Getting Source Files +
+++ Knowing your language code ++
+It is a known fact that the Computer recognizes each language by an unique code text. The language code text is generally composed by two letters. For example:
+- en - English.
+- fr - French.
+- ne - Nepali
+- ru - Russian etc.
+
+To download the source files and test the translation, you must know the two letter iso 639-1 code of your language. If your language does not have an ISO 639-1 code, then the 3 letter ISO 639-3 code can be used. If you do not have an idea of your language code, visit the related site or you may enquire in forum too.
+
+
+++ Creation of Translation Folder ++
+You must create a translation related folder in your computer. Though you can create it anywhere, but it is good to create it within backup drives instead in frequently accessing place like desktop or active windows installed drive.
+For the purpose of understanding this guideline, It is assumed that the place of your choice for translation folder is drive d :\). Now do the following:
+- Create a translation folder at d: (Here D:- is an example, assumed drive of your choice)
+- Name the folder.
+Let we assume that you named it as my_localized_nvda.
+
+
+++ Downloading the Source Files ++
+- Confirm that your computer is connected to internet. If not Connected, connect it.
+- Select the recently created folder my_localized_nvda.
+- Go to the file menu and select the sbn checkout sub menu. (Alternatively, you can press Aps and Down Arrow key to reach sbn checkout submenu!)
+- Press Enter. A dialog box will appear asking you to type the url.
+- Type the url address as:
+http://subversion.assembla.com/sbn/screenreadertranslations/<language_code>
+Note: Here the last segment of the url term as <language_code> is a indicator , you have to write exact two lettter code of your language.
+Example:
+- For Nepali: http://subversion.assembla.com/sbn/screenreadertranslations/ne
+- For Serbian: http://subversion.assembla.com/sbn/screenreadertranslations/sr
+The two letter code of Nepali is ne and sr for Serbian; hence ne or sr should be written instead of the term <language_code>
+
+- Within a moment, your language related source files will begin to download at my_localized_nvda folder in your machine.
+- wait till the transferring of all files from sbn repository is not complete.
+- Once the download is over, press the ok button.
+
+
++ Starting Translation +
+Once the preparatory stage is over, all required source files will be available in your computer. Now, you can start the real translation work at your suitable time. To begin the work, do the following.
+- Open the my_localized_nvda folder.
+- The my_localized_nvda folder empty before sbn checkout now contains files. Among the files, there will be a file named "NVDA.po". This is the main file which contains all NVDA messages/interface menus in English which are the text to be translated in your language.
+- Open the NVDA.po file.
+Note: At this time, we will not consider the translation of rest files. They are dealt on coming pages.
+
+++ Using poedit ++
+The process of translation using PoEdit Application can be learnt by studying its help document. The purpose of this guideline is to inform the preliminary steps and provide a hint of using Poedit for translating messages and interfaces available in *.po format. Only A hint of working process of poedit is given below.
+
++++ Copying English messages +++
+Once a po file is opened in poedit, the messages appear at the top pane in a listview interface and at the bottom portion there lie information and editable text boxes. The message to be translated is first copied to the editable translation text box. You can copy a message using any one of the following methods.
+- Go to edit menu, select the copy option and press Enter.
+- Or; press 'App' button, press down arrow, select copy menu and press enter.
+- Or; Press shortcut key Alt + B
+Note:- Here copy means copying and pasting. No need to paste manually.)
+- I advise that in one time, copy ten-fifteen messages and translate them. At the first time of learning, it is better to copy only 4-5 messages and practice the translation work.
+
+
++++ Translating the copied messages. +++
+After copying; by pressing the tab key, you can move to the translation edit box containing source texts. There you will find the copied message in English. Translate the phrase or sentence into your language by overwriting the English texts.
+
+
++++ Navigating the next message +++
+Once the current message is translated, do the following:
+- Press control+Up arrow key to navigate the previous or control+down arrow to navigate the next message.
+- Translate the currently navigated message.
+- Repeat the above process for another message.
+- When the all copied messages got translated, press tab key to visit to the rest message list. Copy some message again and follow the steps explained above.
+Note: While in source edit box, You can press control + down/Up arrow to move from one source message to another source message too.
+
+++ Untranslatable strings ++
+Basically, we have to translate all the source texts. But in some messages there may contain some untranslatable strings. These are text readable by NVDA system and they are not for interaction with users.
+What sorts of strings should not be translated and left them as they are?
++++ String enclosed by brackets. +++
+If any message contains a string enclosed by bracket, it indicates that the phrase inside the bracket is a variable, leave it as it is. However, you can put it in any suitable place within your sentence. The rule of grammer of the translating language determines the appropriate location.
++++ Letters followed by a % sign +++
+In some source texts, You can often find some string like %d or %s or %g etc. The % sign indicates a variable. The %d represents a numeric variable and %s represents a string variable. You can shift their position anywhere within your sentence similar to the string enclosed by bracket but you must keep them as they are.
++++ Backslash sign followed by lettr n +++
+Throughout the translation, You can frequently encounter a string of backslash followed by letter n. The '\n' string indicates the beginning of a new line from that point where it is written. You neither can translate it nor should shift its location. Leave it as it is!
++++ Ampersand sign within a word. +++
+In some source phrases, you often find the ampersand (&) sign within a word as a spelling of that word. Naturally it is not a part of spelling. This sign indicates the shortcut alphabet for the activation of the control containing the message. You can put the ampersand sign before any alphabet within the word or next word of the message before that letter to which you want to define a firing alphabet. For example:
+- &File means get activate when F is pressed.
+- F&ile means get activate when i is pressed.
+- Fi&le means get activate when l is pressed.
+- Fil&e means get activate when e is pressed.
+
+
+++ Saving the translation ++
+You need to save the work you had executed. You can Save the file during translation or just before closing the current session of translation. Press control + S or save it from file menu. The saving action saves your translation texts within the NVDA.po file itself. Now the NVDA.po file contains both the source text in English and the translation text of Your language. On saving, it may create a binary file named NVDA.mo. We will discuss about this nvda.mo file later.
+
+
++ Testing of Translation. +
+++ Testing the Fresh translation ++
+To test the translation you had made at the first time i.e. no previous translation is available in your running nvda; perform the following task. Mind that you need not to complete the translation to test the yet completed work. Those messages which are already translated will appear in your language and the untranslated messages will appear in English.
+For testing, do the following:
+- Be sure that the NVDA.mo file is created while saving it. If the option of auto generation of mo file is set; it is automatically created while saving the translated NVDA.po file.
+- Select and copy the NVDA.mo file located at my_localized_nvda folder.
+- Open the NVDA installed Directory. Generally it is at:
+- for 32 bit windows: C:\Program files\NVDA
+- for 64 bit windows: C:\Program files (x86)\NVDA
+- Open the folder Locale under NVDA.
+- Under locale folder, you will find many files with two letter names which represent different languages that are available in running NVDA.
+- creat a folder and name it as your language code. i.e.fr, sr, ne, ur etc...
+- open the newly created folder which is named as your language code.
+- under this folder, create a new folder Lc_Messages.
+- open the newly created lc_messages folder and paste the NVDA.mo file.
+- Close the explorer window.
+- Go to NVDA menu, preferences, general setting sub menu, select your language and press ok button.
+- Now, the translated NVDA messages will appear in your language!
+
+
+++ Testing the updated Translation ++
+To test the updated translation while there already exist NVDA in your language; do the following.
+- Copy the NVDA.mo file from my_localized_nvda folder.
+- open the NVDA\locale\<your language code>\lc_messages folder as describe above.
+- paste the NVDA.mo file replacing the existing one.
+- Configure NVDA language to your language if not already set.
+
+
++ sending the Translation. +
+Generally speaking, Sending of materials from local machine to a repository is said as 'commit'! Here, the word 'commit' should be understood as transfering the latest contents of the recently edited/translated files from your machine to sbn repository. The commit is essential for:
+- Entact the repository of your language related files exactly as they are at your machine.
+- Update the repository with the contents of the latest changes of nvda with your work.
+- Make available the latest changes you have made to nvda project/community.
+
+
+How often should the commit be performed?
+
+Theoritically, There is no hard and fast time schedule of a commit. You can do it as you wish. But practically, it is far bettr to commit after each work of translation. As often the commit, the repository gets a fresh update with an up to date contents with a merge of latest source texts!
+
+
+How to commit i.e. send the files?
+
+- Save the work you had performed and close the file.
+- Be sure a net connection has established.
+- Select that file or folder which you want to commit i.e. send.
+- Go to the file menu and select the sbn commit sub menu. (Alternatively, you can press Aps and Down Arrow key to reach sbn commit. submenu!)
+- press enter. A dialog box will appear.
+- Type few words about the commit. It is like a subject of an Email. You can type some thing like:
+*	update of translation.
+
+*	commit of yet completed translation.
+
+*	Latest review of translation etc.
+
+- Press tab key, set the options and select the names/types of files to commit from the list.
+- Select the ok button and press enter.
+- If asked, type the user's id and the password which you had set while registring the sbn.
+- Close the explorer window when the commit is over.
+
+
++ Receiving the Latest messages +
+The sbn repository containing the files/folders related to your language is fed  by two directions.
+1. It gets a revised files/folder from the translators. You yourself are the one of the source of supply! It contains all the items which you had sent. to the repository. There contains the same contents as they are in your computer. 
+2. Besides you, the administrator of the repository or an another member of your translation team may have sent the changes whatever he/she have. That means, the repository may have got data from multiple corner. The administrator of the repository may have sent latest changes made in main nvda system.
+Hence, the sbn repository is the sole meeting spot of changes made by each stakeholders. Here receiving the latest messages means getting the latest files/folders from the sbn repository fed by other means than yourself.
+
+ How to receive the latest contensts of a file or folder of the sbn repository?
+Follow these steps:
+- Be sure a net connection has established in your computer.
+- open the folder my_localized_nvda in which your translation related files are located.
+- Select the file or folder to which you want to update from the sbn repository.
+- Go to the file menu and select the sbn update sub menu. (Alternatively, you can press Aps and Down Arrow key to reach sbn update submenu!)
+- press enter and wait a while
+- let it to complete the update and close the explorer window.
+
+when and how often should the update action be performed?
+By principle, there is no specific time schedule. But it is useful to update each time just before starting any works in any file of my_localized_nvda folder i.e. your translation related files. This will reduce any possible chances of version conflict and makes your files up to date at your machine.
+
+
++ Translation of user guide +
++ Defining a character +
++ Frequently encounter Problems +
++ Some Tips of Translations. +
+Texts for the topics translation to users guide and onward is Remain to complete.
