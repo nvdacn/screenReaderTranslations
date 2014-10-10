@@ -15,6 +15,9 @@ Tested on [TeamViewer][3] 9, trial version.
 *	nvda+shift+C: Copies the ID and current password to the clipboard, so that they can be pasted and sent via chat for example when remote control is required.
 *	control+tab and control+shift+tab: Switch to other tab in the TeamViewer main dialog.
 
+## Changes for 2.0 ##
+*	 Add-on help is available from the Add-ons Manager.
+
 ## Changes for 1.0 ##
 *	 Initial version.
 
