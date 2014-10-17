@@ -117,7 +117,7 @@ addresses = {
     },
     'pa': {
         'lang':'Punjabi',
-        'email': ['Maheshinder Singh Khosla <mahesh.khosla@gmail.com>', 'him Prasad Gautam <drishtibachak@gmail.com>'],
+        'email': ['Maheshinder Singh Khosla <mahesh.khosla@gmail.com>', 'Dinesh Mittal <punjabimaster259@gmail.com>', 'him Prasad Gautam <drishtibachak@gmail.com>'],
     },
     'pl': {
         'lang':'Polish',
