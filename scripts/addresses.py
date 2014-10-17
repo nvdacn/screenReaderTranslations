@@ -115,6 +115,10 @@ addresses = {
         'lang':'Norwegian bokmål',
         'email': ['David Hole <balubathebrave@gmail.com>', 'Bjornar Seppola <bjornar@seppola.net>'],
     },
+    'pa': {
+        'lang':'Punjabi',
+        'email': ['Maheshinder Singh Khosla <mahesh.khosla@gmail.com>'],
+    },
     'pl': {
         'lang':'Polish',
         'email': ['Grzegorz Zlotowicz <grzezlo@wp.pl>', 'Hubert Meyer <killer@tyflonet.com>'],
