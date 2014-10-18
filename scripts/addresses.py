@@ -47,6 +47,10 @@ addresses = {
         'lang': 'Spanish',
         'email': ['Juan C. buno <oprisniki@gmail.com>', 'Noelia Martinez <nrm1977@gmail.com>'],
     },
+    'es_CO': {
+        'lang': 'Spanish Colombia',
+        'email': ['Jorge Zarache <reydelasmaquinas@outlook.com>'],
+    },
     'fi': {
         'lang':'Finnish',
         'email': ['Jani Kinnunen <jani.kinnunen@wippies.fi>'],
