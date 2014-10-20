@@ -7,13 +7,24 @@ Quoi de Neuf dans NVDA
 
 == Changements ==
 - Si vous vous déplacez vers un objet en mode navigation par objet et que cet objet est dans un document en mode revue de document, le mode de revue de document sera automatiquement activé. Précédemment, cela n'arrivait que si l'objet navigateur était déplacé à la suite d'un changement de focus. (#4369)
+- La liste des afficheurs braille et celle des synthétiseurs dans leurs dialogues de paramétrage respectifs sont maintenant triées dans l'ordre alphabétique à l'exception de "Pas de Braille" et "Pas de parole" qui se trouvent maintenant en fin de liste. (#2724)
+- Mise à jour du traducteur Braille Liblouis  à la version 2.6.0. (#4434, #3835)
+- En mode navigation, l'appui sur e et maj+e pour naviguer entre les zones dédition inclut maintenant les listes déroulantes éditables. Ceci inclut la boîte de recherche dans la dernière version de Google Search. (#4436)
+- Un clic gauche sur l'icône NVDA dans la zone de notification ouvre maintenant le menu NVDA au lieu de ne rien faire. (#4459)
 
 
 == Corrections de bogues ==
 - Quand on ramène le focus vers un document en mode navigation (ex. alt tab vers une page web déjà ouverte) le curseur de revue est correctement positionné au curseur virtuel plutôt qu'au contrôle en focus (ex. un lien proche). (#4369)
 - Dans les diaporamas Powerpoint, le curseur de revue suit correctement le curseur virtuel. (#4370)
 - Dans Mozilla Firefox et autres navigateurs basés sur Gecko, un nouveau contenu à l'intéieur d'une région live sera annoncé même si le nouveau contenu a un type ARIA live utilisable différent de la région live parent. Ex : Un contenu marqué comme assertif est ajouté à une région live marquée comme polie. (#4169).
-- Dans Internet Explorer et autres contrôles MSHTML, les cadres inclus dans des cadres ne créent plus un nouveau document navigable pour les cadres inclus, ce qui interdisait la navigation vers les cadres externes. (#4418)
+- Dans Internet Explorer et autres contrôles MSHTML, certains cas où un document est contenu dans un autre document n'empêchent plus l'utilisateur d'accéder à certains contenus, (en particuliers les cadres dans des cadres). (#4418)
+- NVDA ne se plante plus quand on essaie d'utiliser un terminal braille Handy Tech dans certains cas. (#3709)
+- Sous Windows Vista, un faux dialogue "Point d'entrée non trouvé" n'est plus affiché dans plusieurs cas tels que le démarrage de NVDA depuis le bureau ou depuis le raccourci clavier. (#4235)
+- De sérieux problèmes avec les contrôles de texte éditable dans les dialogues des versions récentes d'Eclipse ont été corrigés. (#3872)
+- Dans Outlook 2010, le déplacement du curseur fonctionne maintenant comme prévu dans le champ endroit des demandes de rendez-vous et de réunions. (#4126)
+- Dans une région active, le contenu marqué comme inactif (ex : aria-live="off") est maintenant correctement ignoré. (#4405)
+- Durant l'annonce d'une barre dd'état ayant un nom, le nom est maintenant correctement séparé du premier mot du texte de la barre d'état. (#4430)
+- Dans les champs de saisie de mot de passe quand l'écho par mot est activé, de multiples astérisques ne sont plus annoncées sans raison au commencement d'un nouveau mot. (#4402)
 
 
 = 2014.3 =
