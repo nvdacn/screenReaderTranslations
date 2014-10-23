@@ -7,13 +7,24 @@
 
 == Muutokset ==
 - Asiakirjatarkastelu otetaan automaattisesti käyttöön, jos objekti, johon siirryit objektinavigoinnilla, on selaustila-asiakirjassa mutta objekti, jossa olit aiemmin, ei ollut. Tätä tapahtui aiemmin vain, jos navigointiobjektia siirrettiin kohdistuksen muuttumisen vuoksi. (#4369)
+- Pistenäyttö- ja Syntetisaattori-yhdistelmäruutujen sisältö näkyy nyt aakkosjärjestyksessä omissa valintaikkunoissaan Ei pistenäyttöä/Ei puhetta -vaihtoehtoja lukuun ottamatta, jotka ovat alimmaisina. (#2724)
+- Liblouis-pistekääntäjä päivitetty versioksi 2.6.0. (#4434, #3835)
+- E:n ja Shift+E:n painaminen selaustilassa muokkauskenttiin siirtymiseksi siirtää nyt myös muokattaviin yhdistelmäruutuihin. Tällaisia ovat esim. Google-haun uusimman version hakukenttä. (#4436)
+- NVDA-kuvakkeen napsauttaminen vasemmalla hiiren painikkeella tehtäväpalkin ilmoitusalueella avaa nyt NVDA-valikon sen sijaan, ettei tee mitään. (#4459)
 
 
 == Korjatut ohjelmavirheet ==
 - Kun kohdistus siirretään takaisin selaustila-asiakirjaan (esim. siirtymällä Alt+sarkain-näppäinyhdistelmällä jo avoimelle verkkosivulle), tarkastelukohdistin sijoitetaan oikein näennäiskohdistimen kohdalle aktiivisen säätimen (esim. lähellä olevan linkin) sijasta. (#4369)
 - Tarkastelukohdistin seuraa asianmukaisesti näennäiskohdistinta PowerPoint-diaesityksissä. (#4370)
 - Aktiivisen alueen uusi sisältö luetaan Mozilla Firefoxissa ja muissa Gecko-pohjaisissa selaimissa, vaikka sisällöllä on käyttökelpoinen ARIA-live-määre, joka eroaa ylemmän tason aktiivisen alueen määreestä. Esim. assertive-määreellä merkitty sisältö lisätään polite-määreellä merkittyyn aktiiviseen alueeseen. (#4169).
-- Sisäkkäisten kehyssivujen sisemmät kehykset eivät enää aiheuta uuden selaustila-asiakirjan luomista, joka esti uloimpiin kehyksiin siirtymisen Internet Explorerissa ja muissa MSHTML-säätimissä. (#4418)
+- Tapaukset, joissa asiakirjan sisällä on toinen asiakirja, eivät enää estä osan sisällön käyttöä (tarkemmin sanottuna sisäkkäisiä kehyksiä) Internet Explorerissa ja muissa MSHTML-säätimissä. (#4418)
+- NVDA ei enää kaadu yritettäessä käyttää joissakin tapauksissa Handy Tech -pistenäyttöä. (#3709)
+- Virheellistä "Latauskohtaa ei löydy" -valintaikkunaa ei enää näytetä useissa tapauksissa, kuten käynnistettäessä NVDA:ta työpöydän pikakuvakkeesta tai pikanäppäimellä Windows Vistassa. (#4235)
+- Vakavia Eclipsen uusimpien versioiden valintaikkunoissa käytettävien muokattavien tekstisäädinten ongelmia korjattu. (#3872)
+- Kohdistimen siirtäminen toimii nyt odotetusti Outlook 2010:n tapaamisten ja kokouspyyntöjen sijaintikentissä. (#4126)
+- Sisältö, joka on merkitty aktiivisen alueen sisällä ei-aktiiviseksi (esim. aria-live="off"), ohitetaan nyt asianmukaisesti. (#4405)
+- Kun tekstiä luetaan sellaisesta tilapalkista, jolla on nimi, se erotetaan nyt oikein tilapalkin tekstin ensimmäisestä sanasta. (#4430)
+- Useita tähtiä ei enää lueta turhaan uusien sanojen aluissa salasanojen syöttökentissä kirjoitettujen sanojen lukemisen ollessa käytössä. (#4402)
 
 
 = 2014.3 =
