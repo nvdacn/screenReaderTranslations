@@ -1,0 +1,474 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="http://txt2tags.org">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<TITLE>Guideline for Localization of NVDA</TITLE>
+</HEAD><BODY BGCOLOR="white" TEXT="black">
+<CENTER>
+<H2>Guideline for Localization of NVDA</H2>
+</CENTER>
+
+
+<A NAME="toc"></A>
+<H2>Table of Contents</H2>
+
+
+  <UL>
+
+  <LI><A HREF="#toc2">1. Introduction</A>
+  <LI><A HREF="#toc3">2. Registration process</A>
+  <LI><A HREF="#toc4">3. Installation of assisting systems</A>
+    <UL>
+    <LI><A HREF="#toc5">3.1. Tortoisesvn</A>
+    <LI><A HREF="#toc6">3.2. PoEdit</A>
+    <LI><A HREF="#toc7">3.3. PoeditMadeEasy</A>
+    </UL>
+  <LI><A HREF="#toc8">4. Getting Source Files</A>
+    <UL>
+    <LI><A HREF="#toc9">4.1. Knowing your language code</A>
+    <LI><A HREF="#toc10">4.2. Creation of Translation Folder</A>
+    <LI><A HREF="#toc11">4.3. Downloading the Source Files</A>
+    </UL>
+  <LI><A HREF="#toc12">5. Starting Translation</A>
+    <UL>
+    <LI><A HREF="#toc13">5.1. Using poedit</A>
+      <UL>
+      <LI><A HREF="#toc14">5.1.1. Copying English messages</A>
+      <LI><A HREF="#toc15">5.1.2. Translating the copied messages.</A>
+      <LI><A HREF="#toc16">5.1.3. Navigating the next message</A>
+      </UL>
+    <LI><A HREF="#toc17">5.2. Untranslatable strings</A>
+      <UL>
+      <LI><A HREF="#toc18">5.2.1. String enclosed by brackets.</A>
+      <LI><A HREF="#toc19">5.2.2. Letters preceded  by a % sign</A>
+      <LI><A HREF="#toc20">5.2.3. Backslash sign followed by lettr n</A>
+      <LI><A HREF="#toc21">5.2.4. Ampersand sign within a word.</A>
+      </UL>
+    <LI><A HREF="#toc22">5.3. Saving the translation</A>
+    </UL>
+  <LI><A HREF="#toc23">6. Testing of Translation.</A>
+    <UL>
+    <LI><A HREF="#toc24">6.1. Testing the Fresh translation</A>
+    <LI><A HREF="#toc25">6.2. Testing the updated Translation</A>
+    </UL>
+  <LI><A HREF="#toc26">7. Sending the Translation.</A>
+  <LI><A HREF="#toc27">8. Receiving the Latest messages</A>
+  <LI><A HREF="#toc28">9. Files/Folders in the translation folder.</A>
+    <UL>
+    <LI><A HREF="#toc29">9.1. Add-ons</A>
+    <LI><A HREF="#toc30">9.2. Symbols-NewRevisions</A>
+    <LI><A HREF="#toc31">9.3. userGuide-NewRevisions</A>
+    <LI><A HREF="#toc32">9.4. characterDescriptions.dic</A>
+    <LI><A HREF="#toc33">9.5. keyCommand.html</A>
+    <LI><A HREF="#toc34">9.6. nvda.po</A>
+    <LI><A HREF="#toc35">9.7. setting</A>
+    <LI><A HREF="#toc36">9.8. userGuide.html</A>
+    <LI><A HREF="#toc37">9.9. userGuide.t2t</A>
+    <LI><A HREF="#toc38">9.10. userGuide-structureDifferences.txt</A>
+    </UL>
+  <LI><A HREF="#toc39">10. Translation of user guide</A>
+  <LI><A HREF="#toc40">11. Defining a character</A>
+  <LI><A HREF="#toc41">12. Frequently encounter Problems</A>
+  <LI><A HREF="#toc42">13. Some Tips of Translations.</A>
+  </UL>
+
+<A NAME="toc2"></A>
+<H2>1. Introduction</H2>
+
+<P>
+We strongly believe that people anywhere in the world, no matter what language they speak, must have unrestricted access to the available technology in equal footing that another language community enjoys. To materialize this ideology, NVDA has made a provision of localizing its interface, messages and the documents.
+Basically, NVDA is developed in English and is translated in many languages. To run NVDA in any local language, The original English texts must be translated. The translation of NVDA message/document is often called 'localization of NVDA'. Obviously, one should follow the standard process of translation. Here are some tips to the beginners of NVDA localization. Broadly speaking, these are the key steps to be learn.
+</P>
+
+<A NAME="toc3"></A>
+<H2>2. Registration process</H2>
+
+<P>
+There are two approaches of registration and getting an account for svn. You can follow any one of the following:
+</P>
+
+<UL>
+<LI>First method:
+Express your interest of contribution to the localization of NVDA and request for an invitation on the mailing address <A HREF="mailto:NVDA-translations@freelists.org">NVDA-translations@freelists.org</A>
+You will get an invitation within 1or 2 days. Accept the received invitation within the prescribed time. Accept means; Click the invitation link, registered yourself in the assembla with a user name and password. Please maintain the users ID and password which is necessary for sending the translation work in future.
+<LI>Second method:
+Register yourself with a user name and password on: <A HREF="http://www.subversion.assembla.com">www.subversion.assembla.com</A>
+Express your interest of contribution to NVDA- localization forum and inform your svn user id to the svn repository administrator.
+</UL>
+
+<A NAME="toc4"></A>
+<H2>3. Installation of assisting systems</H2>
+
+<A NAME="toc5"></A>
+<H3>3.1. Tortoisesvn</H3>
+
+<P>
+TortoiseSVN is a Windows client version control system which manages files and directories over time. Download the suitable windows version of setup tortoisesvn.exe file from <A HREF="http://tortoisesvn.net/downloads.html">http://tortoisesvn.net/downloads.html</A> and install it. On installation, the default options are sufficient and no need to configure any more. Just press next, next ... install button.
+</P>
+
+<A NAME="toc6"></A>
+<H3>3.2. PoEdit</H3>
+
+<P>
+poedit is a multi plateform translation environment utility. Download window installer version of poedit setup .exe from <A HREF="http://www.poedit.net/download.php">http://www.poedit.net/download.php</A> and install it. On installation, the default options are sufficient and no need to configure any more. Just press next, next ... install button. In first time of run, PoEdit asks your name and Email address. Press Alt+f, go to the file menu, then the preference sub-menu and choose language option. Now, a dialog box will appear with a list of languages available in the running poedit. Check whether it contains your language or not. If available, set it and use the Poedit in your own language; otherwise the poEdit will remain in English. Fill your name and email address. PoEdit automatically includes This name and email address in translated catalogs.
+</P>
+
+<A NAME="toc7"></A>
+<H3>3.3. PoeditMadeEasy</H3>
+
+<P>
+PoeditMadeEasy is an NVDA-addons which enhances some features of poedit in NVDA. Download it from
+<A HREF="http://www.github.com/dhankuta/poeditmadeeasy.git">www.github.com/dhankuta/poeditmadeeasy.git</A>
+</P>
+
+<A NAME="toc8"></A>
+<H2>4. Getting Source Files</H2>
+
+<A NAME="toc9"></A>
+<H3>4.1. Knowing your language code</H3>
+
+<P>
+This is to know that the Computer recognizes a language by an unique code. The language code text is generally composed by two letters. For example:
+</P>
+
+<UL>
+<LI>en - English.
+<LI>fr - French.
+<LI>ne - Nepali
+<LI>ru - Russian etc.
+<P></P>
+To download the source files and test the translation, you must know the two letter iso 639-1 code of your language. If your language does not have an ISO 639-1 code, then the 3 letter ISO 639-3 code can be used. If you do not have an idea of your language code, visit the related site or you may enquire in NVDA translation forum too.
+</UL>
+
+<A NAME="toc10"></A>
+<H3>4.2. Creation of Translation Folder</H3>
+
+<P>
+You must create a translation related folder in your computer. Though you can create it anywhere, but it is good to create it within backup drives instead in frequently visiting place like desktop or the running windows installed drive.
+For the purpose of understanding this guideline, It is assumed that the place of your choice for translation folder is drive d :\). Now do the following:
+</P>
+
+<UL>
+<LI>Create a translation folder at d: (Here D:- is an example, assumed drive of your choice)
+<LI>Name the folder.
+Let we assume that you named it as NVDA_inMyLanguage.
+</UL>
+
+<A NAME="toc11"></A>
+<H3>4.3. Downloading the Source Files</H3>
+
+<UL>
+<LI>Confirm that your computer is connected to internet. If not Connected, connect it.
+<LI>Select the recently created folder NVDA_inMyLanguage.
+<LI>Go to the file menu and select the svn checkout sub menu. (Alternatively, you can press Aps and Down Arrow key to reach svn checkout submenu!)
+<LI>Press Enter. A dialog box will appear asking you to type the url.
+<LI>Type the url address as:
+<P></P>
+<A HREF="http://subversion.assembla.com/svn/screenreadertranslations/">http://subversion.assembla.com/svn/screenreadertranslations/</A>&lt;language_code&gt;
+<P></P>
+Note: Here the last segment of the url term as &lt;language_code&gt; is a indicator, you have to write exact two lettter code of your language.
+For example:
+<LI>For Nepali: <A HREF="http://subversion.assembla.com/svn/screenreadertranslations/ne">http://subversion.assembla.com/svn/screenreadertranslations/ne</A>
+<LI>For Serbian: <A HREF="http://subversion.assembla.com/svn/screenreadertranslations/sr">http://subversion.assembla.com/svn/screenreadertranslations/sr</A>
+<P></P>
+Mark that The two letter code of Nepali is ne and sr for Serbian; hence ne or sr is   written here!
+<P></P>
+<LI>Press tab till you will reach the ok button and press Enter.
+<LI>Within a moment, the source files will begin to transfer at NVDA_inMyLanguage folder.
+<LI>wait till the transferring of all files from svn repository is not complete.
+<LI>Whenever the download is over, a faint beep tone will be played and press the ok button.
+</UL>
+
+<A NAME="toc12"></A>
+<H2>5. Starting Translation</H2>
+
+<P>
+Once the preparatory step is over, all required source files will be available in your computer. Now, you can start the real translation work at your suitable time. To begin the work, do the following.
+</P>
+
+<UL>
+<LI>Open the NVDA_inMyLanguage folder.
+<LI>The NVDA_inMyLanguage folder empty before svn checkout now contains files. Among the files, there will be a file named "NVDA.po". This is the main file which contains all NVDA messages/interface menus in English which are the text to be translated in your language.
+<LI>Open the NVDA.po file.
+<P></P>
+Note: At this time, we will not consider the translation of rest files. They will be dealt later.
+</UL>
+
+<A NAME="toc13"></A>
+<H3>5.1. Using poedit</H3>
+
+<P>
+The process of translation using PoEdit Application can be learnt by studying its help document. The purpose of this guideline is to inform the preliminary steps and provide a hint of using Poedit for translating messages and interfaces available in *.po format. Only A hint of working process of poedit is given below.
+</P>
+
+<A NAME="toc14"></A>
+<H4>5.1.1. Copying English messages</H4>
+
+<P>
+Once a po file is opened in poedit, the messages appear at the top pane in a listview interface and at the bottom portion there lie information and editable text boxes. First of all, The message to be translated is copied to the editable translation text box. You can copy a message using any one of the following methods.
+</P>
+
+<UL>
+<LI>Go to edit menu, select the copy option and press Enter.
+<LI>Or, press 'Aps' button, press down arrow, select copy menu and press enter.
+<LI>Or; Press shortcut key Control + B.
+<P></P>
+Note:- Here copy means copy and paste. No need to paste manually.)
+<LI>At once, copy ten to fifteen messages and translate them. While learning at the beginning, it is better to copy four to five messages and practice.
+</UL>
+
+<A NAME="toc15"></A>
+<H4>5.1.2. Translating the copied messages.</H4>
+
+<P>
+After copying; by pressing the tab key, you can move to the translation edit box which contains the source texts. There you will find the copied message in English. Translate the phrase or sentence into your language by overwriting the English texts.
+</P>
+
+<A NAME="toc16"></A>
+<H4>5.1.3. Navigating the next message</H4>
+
+<P>
+Once the current message is translated, do the following:
+</P>
+
+<UL>
+<LI>Press control+Up arrow key to navigate the previous or control+down arrow to navigate the next message.
+<LI>Translate the currently navigated message.
+<LI>Repeat the above process for another message.
+<LI>When the all copied messages got translated, press tab key to visit to the rest message list. Copy some message again and follow the steps explained above.
+<P></P>
+Note: While in source edit box, You can press control + down/Up arrow to move from one source message to another.
+</UL>
+
+<A NAME="toc17"></A>
+<H3>5.2. Untranslatable strings</H3>
+
+<P>
+Basically, we have to translate all the source texts. But in some messages there may contain some untranslatable strings. These are text readable by NVDA system and they are not for interaction with users.
+The following strings should not be translated and should be left them as they are.
+</P>
+
+<A NAME="toc18"></A>
+<H4>5.2.1. String enclosed by brackets.</H4>
+
+<P>
+If any message contains a string enclosed by bracket, it indicates that the phrase inside the bracket is a variable, leave it as it is. However, you can put it in appropriate place within your sentence. The grammetical rule of your language determines the proper location.
+</P>
+
+<A NAME="toc19"></A>
+<H4>5.2.2. Letters preceded  by a % sign</H4>
+
+<P>
+In some source texts, You can often find some string like %d or %s or %g etc. A letter preceded by a % sign indicates a variable. The  %d  indicates  a   numeric  and %s indicates  a string variable. You can shift their position anywhere within your sentence similar to the string enclosed by bracket but you must keep them as they are.
+</P>
+
+<A NAME="toc20"></A>
+<H4>5.2.3. Backslash sign followed by lettr n</H4>
+
+<P>
+In process of translation, You will often  encounter a string of backslash followed by letter n. The '\n' string indicates the beginning of a new line from that point where it is written. You neither can translate it nor should shift its location. Leave it as it is!
+</P>
+
+<A NAME="toc21"></A>
+<H4>5.2.4. Ampersand sign within a word.</H4>
+
+<P>
+In some source phrases, you often find the ampersand (&amp;) sign within a word as a spelling of that word. Naturally it is not a part of spelling. This sign indicates the shortcut alphabet for the activation of the control containing the message. You can put the ampersand sign before any alphabet within the word or next word of the message before that letter to which you want to define a firing alphabet. For example:
+</P>
+
+<UL>
+<LI>&amp;File means get activate when F is pressed.
+<LI>F&amp;ile means get activate when i is pressed.
+<LI>Fi&amp;le means get activate when l is pressed.
+<LI>Fil&amp;e means get activate when e is pressed.
+</UL>
+
+<A NAME="toc22"></A>
+<H3>5.3. Saving the translation</H3>
+
+<P>
+You need to save the work you had executed. You can Save the file at any moment or just before closing the current translation session. To save the work, press control + S or save it from file menu. The saving action saves your translation texts within the NVDA.po file itself. Now the NVDA.po file contains both the source text in English and the translation text of Your language. On saving, it may create a binary file named NVDA.mo. This is a binary file which is utilized by NVDA system. We will discuss its uses in later topic.
+</P>
+
+<A NAME="toc23"></A>
+<H2>6. Testing of Translation.</H2>
+
+<A NAME="toc24"></A>
+<H3>6.1. Testing the Fresh translation</H3>
+
+<P>
+To test the translation you had made at first time i.e. no previous translation prevails in NVDA; perform the following task. Mind that to test the yet completed work, you need not complete the translation. The translated messages will appear in your language and the untranslated one will appear in English.
+For fresh testing, do the following:
+</P>
+
+<UL>
+<LI>Be sure that the NVDA.mo file is created while saving it. If the option of auto generation of mo file is set; it is automatically created while saving the translated NVDA.po file.
+<LI>Select and copy the latest NVDA.mo file located at NVDA_inMyLanguage folder.
+<LI>Open the NVDA installed Directory. Generally it is at:
+<LI>for 32 bit windows: C:\Program files\NVDA
+<LI>for 64 bit windows: C:\Program files (x86)\NVDA
+<LI>Open the folder Locale under NVDA.
+<LI>Under locale folder, you can find two letter named folders representing different languages available in running NVDA.
+<LI>creat a new folder and name it as your language code. i.e.fr, sr, ne, ur etc...
+<LI>open the newly created folder which is named as your language code.
+<LI>under this folder, create a new folder again and name it Lc_Messages.
+<LI>open the newly created lc_messages folder and paste the NVDA.mo file.
+<LI>Close the explorer window.
+<LI>Go to NVDA menu, preferences, general setting sub menu, select your language and press ok button.
+<LI>Now, the translated NVDA messages will appear in your language!
+</UL>
+
+<A NAME="toc25"></A>
+<H3>6.2. Testing the updated Translation</H3>
+
+<P>
+To test the updated translation while there already exist your language in NVDA; do the following.
+</P>
+
+<UL>
+<LI>Copy the latest NVDA.mo file from the folder NVDA_inMyLanguage.
+<LI>open the NVDA\locale\&lt;your language code&gt;\lc_messages folder as describe above.
+<LI>paste the NVDA.mo file replacing the existing one.
+<LI>If not already set, Configure NVDA language to your language from General Setting menu.
+</UL>
+
+<A NAME="toc26"></A>
+<H2>7. Sending the Translation.</H2>
+
+<P>
+Generally speaking, Sending of files from local machine to a repository is said as 'commit'! Here, the word 'commit' should be understood as transfering the latest contents of the recently edited/translated files from your machine to svn repository. The commit is essential for:
+</P>
+
+<UL>
+<LI>Entact the repository of your language related files exactly as they are at your machine.
+<LI>Update the repository with the contents of the latest changes of NVDA with your work.
+<LI>Make available the latest changes you have made to NVDA project/community.
+</UL>
+
+<P>
+How often should the commit be performed?
+</P>
+<P>
+Theoritically, There is no hard and fast time schedule of a commit. You can do it as you wish. But practically, it is far bettr to commit after each work of translation. As often the commit, the repository gets a fresh update with an up to date contents with a merge of latest source texts!
+</P>
+<P>
+How to commit i.e. send the files?
+</P>
+
+<UL>
+<LI>Save the work you had performed and close the file.
+<LI>Be sure a net connection has established.
+<LI>Select that file or folder which you want to commit i.e. send.
+<LI>Go to the file menu and select the svn commit sub menu. (Alternatively, you can press Aps and Down Arrow key to reach svn commit. submenu!)
+<LI>press enter. A dialog box will appear.
+<LI>Type few words about the commit. It is like a subject of an Email. You can type some thing like:
+*	update of translation.
+<P></P>
+*	commit of yet completed translation.
+<P></P>
+*	Latest review of translation etc.
+<P></P>
+<LI>Press tab key, set the options and select the names/types of files to commit from the list.
+<LI>Select the ok button and press enter.
+<LI>If asked, type the user's id and the password which you had set while registring the svn.
+<LI>Close the explorer window when the commit is over.
+</UL>
+
+<A NAME="toc27"></A>
+<H2>8. Receiving the Latest messages</H2>
+
+<P>
+The svn repository containing the files/folders related to your language is fed by two directions.
+</P>
+
+<OL>
+<LI>It gets a revised files/folder from the translators. You yourself are the one of the source of supply! It contains all the items which you had sent. There contains the same items as they are in your NVDA_inMyLanguage folder.
+<LI>Besides you, the administrator of the repository or an another member of your translation team may have sent the changes whatever he/she have. That means, the repository may have got data from multiple corner. The administrator of the repository may have sent latest changes made in main NVDA system.
+Hence, the svn repository is the sole meeting spot of changes made by each stakeholders. Here receiving the latest messages means getting the latest files/folders from the svn repository fed by other means than yourself.
+<P></P>
+How to receive the latest contensts of a file or folder of the svn repository?
+<P></P>
+To receive the latest update, follow the steps:
+</OL>
+
+<UL>
+<LI>Be sure a net connection has established in your computer.
+<LI>open the folder NVDA_inMyLanguage in which your translation related files are stored.
+<LI>Select the file or folder to which you want to update from the svn repository.
+<LI>Go to the file menu and select the svn update sub menu. (Alternatively, you can press Aps and Down Arrow key to reach svn update submenu!)
+<LI>press enter and wait for the update.
+<LI>When the update is complete, close the explorer window.
+<P></P>
+when and how often should the update action need performed?
+<P></P>
+By principle, there is no specific time schedule. But it is useful to update each time just before starting any works in any file of NVDA_inMyLanguage folder i.e. your translation related files. This will reduce any possible chances of version conflict and makes your files up to date at your machine.
+</UL>
+
+<A NAME="toc28"></A>
+<H2>9. Files/Folders in the translation folder.</H2>
+
+<P>
+After the svn checkout in NVDA_inMyLanguage folder, in addition to NVDA.po file, there contains many folders and files. Generally this folder contains the following files.
+</P>
+
+<A NAME="toc29"></A>
+<H3>9.1. Add-ons</H3>
+
+<P>
+This is a folder which contains the source message files of different NVDA add-ons. Inside it, many folders with a name of the particular add-on are found and they contains NVDA.po file of that add-ons.
+</P>
+
+<A NAME="toc30"></A>
+<H3>9.2. Symbols-NewRevisions</H3>
+
+<A NAME="toc31"></A>
+<H3>9.3. userGuide-NewRevisions</H3>
+
+<A NAME="toc32"></A>
+<H3>9.4. characterDescriptions.dic</H3>
+
+<A NAME="toc33"></A>
+<H3>9.5. keyCommand.html</H3>
+
+<A NAME="toc34"></A>
+<H3>9.6. nvda.po</H3>
+
+<P>
+This is the main file which contains the source texts of nvda menu, interface and messages. It also contains the texts of your translation!
+</P>
+
+<A NAME="toc35"></A>
+<H3>9.7. setting</H3>
+
+<A NAME="toc36"></A>
+<H3>9.8. userGuide.html</H3>
+
+<A NAME="toc37"></A>
+<H3>9.9. userGuide.t2t</H3>
+
+<A NAME="toc38"></A>
+<H3>9.10. userGuide-structureDifferences.txt</H3>
+
+<A NAME="toc39"></A>
+<H2>10. Translation of user guide</H2>
+
+<A NAME="toc40"></A>
+<H2>11. Defining a character</H2>
+
+<A NAME="toc41"></A>
+<H2>12. Frequently encounter Problems</H2>
+
+<A NAME="toc42"></A>
+<H2>13. Some Tips of Translations.</H2>
+
+<P>
+works for the topics translation to users guide and onward is Remain to complete.
+</P>
+<P>
+<B>*Prepared by Him Prasad Gautam &lt;<A HREF="mailto:drishtibachak@gmail.com">drishtibachak@gmail.com</A>&gt;*</B>
+</P>
+
+<!-- html code generated by txt2tags 2.6 (http://txt2tags.org) -->
+<!-- cmdline: txt2tags -q translationManual.t2t -->
+</BODY></HTML>
