@@ -156,9 +156,10 @@
   <LI><A HREF="#toc107">12. 컨트롤 및 스테이트 표시용 점자 기호 목록</A>
   <LI><A HREF="#toc108">13. 고급 사용자 기능</A>
     <UL>
-    <LI><A HREF="#toc109">13.1. 기호 발음 고급 조정</A>
+    <LI><A HREF="#CommandLineOptions">13.1. 실행 명령</A>
+    <LI><A HREF="#toc110">13.2. 기호 발음 고급 조정</A>
     </UL>
-  <LI><A HREF="#toc110">14. 사용설명서 외 추가 정보</A>
+  <LI><A HREF="#toc111">14. 사용설명서 외 추가 정보</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -360,6 +361,7 @@ NVDA를 임시 버전으로 사용하는 것도 한가지 선택사항이긴 합
 <P>
 NVDA를 인스톨러로 설치한 경우 control+alt+n을 누르거나 시작 메뉴 - 프로그램  - NVDA 메뉴 - NVDA를 선택하면 간단히 NVDA가 실행됩니다.
 그밖에 실행 대화상자(윈도우키+R)에서 nvda를 입력하고 엔터키를 눌러도 됩니다.
+또한 <A HREF="#CommandLineOptions">실행 옵션</A>을 사용하여 NVDA 재시작 (-r), 종료 (-q), 추가 기능 미사용 (--disable-addons) 등을 지정할 수 있습니다.
 </P>
 <P>
 휴대용 버전에서 NVDA를 실행하려면 NVDA를 풀어 놓았던 디렉토리로 이동한 후 nvda.exe에서 엔터키를 누르거나 더블 클릭합니다.
@@ -1500,11 +1502,12 @@ OK를 누르면 NVDA가 재시작됩니다.
 이 체크상자를 체크하면 NVDA 종료시 현재 환경 설정이 자동으로 저장됩니다.
 </P>
 
-<H5>NVDA 종료전 경고 알림</H5>
+<H5>NVDA 종료전 종료 옵션 호출</H5>
 
 <P>
-이 옵션은 NVDA 종료시 종료 확인 대화상자를 띄울것인지를 조절합니다.
-이 옵션을 선택하면 NVDA 종료전 NVDA를 종료할것인지를 묻는 대화상자가 나타납니다.
+이 옵션은 NVDA 종료시 종료 옵션 대화상자를 띄울것인지를 조절합니다.
+이 옵션을 선택하면 NVDA 종료전 종료 옵션(종료, 재시작, 재시작 및 추가 기능 미사용)을 묻는 대화상자가 나타납니다.
+본 옵션을 해제하면 NVDA 종료 명령을 누르면 NVDA는 곧바로 종료됩니다.
 </P>
 
 <H5>NVDA 시작 및 종료음 재생</H5>
@@ -4551,8 +4554,132 @@ BRLTTY 사용시 점자 키보드가 탑제된 디스플레이를 사용한다�
 <A NAME="toc108"></A>
 <H2>13. 고급 사용자 기능</H2>
 
-<A NAME="toc109"></A>
-<H3>13.1. 기호 발음 고급 조정</H3>
+<A NAME="CommandLineOptions"></A>
+<H3>13.1. 실행 명령</H3>
+
+<P>
+NVDA 시작시 하나 이상의 실행 명령 옵션을 통해 NVDA 실행 방식을 조절할 수 있습니다.
+바탕 화면에 있는 NVDA 바로가기 아이콘(속성 페이지), 실행 대화상자(시작 메뉴/실행 또는 Windows+R) 또는 명령 Prompt에서 설정이 가능하며 이때 다수의 옵션을 입력할 수 있습니다.
+실행 명령을 입력시 NVDA 실행 파일명과 각 옵션간 스페이스를 두어 입력하시기 바랍니다.
+예를 들어 NVDA 설치중 바탕 화면 아이콘을 생성할때 -r 옵션이 추가되는데 이는 이전에 실행되던 NVDA를 종료시킨 후 재시작하라는 명령입니다.
+다른 예로 --disable-addons 옵션인데 이는 현재 사용중인 추가 기능들을 일시 정지시키라는 명령이며 현재 발생한 문제가 추가 기능에 의한 문제인지를 파악하고자 할때 유용합니다.
+</P>
+<P>
+한 예로 현재 실행중인 NVDA를 종료하려면 실행 대화상자에서 다음과 같이 입력합니다:
+</P>
+<P>
+nvda -q
+</P>
+<P>
+모든 실행 명령은 단어 명령이며 특정 옵션에 한해 약자 명령이 존재합니다.
+다수의 약자 명령을 입력하려면 다음과 같이 입력하시면 됩니다:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>nvda -rm</TD>
+<TD>NVDA를 재시작함과 동시에 시작음 재생 불가 등을 적용합니다.</TD>
+</TR>
+<TR>
+<TD>nvda -rm --disable-addons</TD>
+<TD>위와 같으며 또한 추가 기능을 일시 정지시킵니다.</TD>
+</TR>
+</TABLE>
+
+<P>
+여러 옵션은 세부 옵션을 지정할 수 있습니다(예: 실행 로그 레벨, NVDA 설정 파일 경로 지정 등).
+세부 설정 입력시 약자 명령과 이에 대한 세부 명령 사이에 스페이스를 삽입하고 단어 명령과 이에 대한 세부 명령 사이에는 등호 기호(=)를 삽입합니다. 예를 들어:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>nvda -l 10</TD>
+<TD>실행 기록 레벨을 디버그로 설정합니다.</TD>
+</TR>
+<TR>
+<TD>nvda --log-file=c:\nvda.log</TD>
+<TD>c:\nvda.log를 로그 파일로 지정합니다.</TD>
+</TR>
+<TR>
+<TD>nvda --log-level=20 -f c:\nvda.log</TD>
+<TD>실행 기록 레벨을 실행 정보로 설정하고 로그 내용을 c:\nvda.log 파일에 저장하도록 설정합니다.</TD>
+</TR>
+</TABLE>
+
+<P>
+다음은 NVDA 실행 명령 목록입니다:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>약자 명령</TH>
+<TH>단어 명령</TH>
+<TH>설명</TH>
+</TR>
+<TR>
+<TD>-h</TD>
+<TD>--help</TD>
+<TD>실행 옵션 출력후 종료</TD>
+</TR>
+<TR>
+<TD>-q</TD>
+<TD>--quit</TD>
+<TD>NVDA 종료</TD>
+</TR>
+<TR>
+<TD>-r</TD>
+<TD>--replace</TD>
+<TD>NVDA 재시작</TD>
+</TR>
+<TR>
+<TD>-k</TD>
+<TD>--check-running</TD>
+<TD>NVDA 실행 여부 확인(0=실행중, 1=실행하지 않음)</TD>
+</TR>
+<TR>
+<TD>-f LOGFILENAME</TD>
+<TD>--log-file=LOGFILENAME</TD>
+<TD>로그 파일 지정</TD>
+</TR>
+<TR>
+<TD>-l LOGLEVEL</TD>
+<TD>--log-level=LOGLEVEL</TD>
+<TD>최소 로그 레벨 지정(debug 10, info 20, warning 30, error 40, critical 50, 기본으로 warning)</TD>
+</TR>
+<TR>
+<TD>-c CONFIGPATH</TD>
+<TD>--config-path=CONFIGPATH</TD>
+<TD>NVDA 환경 파일 경로 지정</TD>
+</TR>
+<TR>
+<TD>-m</TD>
+<TD>--minimal</TD>
+<TD>최소한으로 시작(시작 및 종료음 재생 해제, 인터페이스 미사용, 시작 메시지 출력 해제 등)</TD>
+</TR>
+<TR>
+<TD>-s</TD>
+<TD>--secure</TD>
+<TD>보안 모드(Python Console 실행 불가)</TD>
+</TR>
+<TR>
+<TD>없음</TD>
+<TD>--disable-addons</TD>
+<TD>추가 기능 미사용</TD>
+</TR>
+<TR>
+<TD>없음</TD>
+<TD>--no-sr-flag</TD>
+<TD>시스템 스크린 리더 지정 무시</TD>
+</TR>
+<TR>
+<TD>없음</TD>
+<TD>--install</TD>
+<TD>조용하게 NvDA 설치</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc110"></A>
+<H3>13.2. 기호 발음 고급 조정</H3>
 
 <P>
 <A HREF="#SymbolPronunciation">구두점/기호 발음</A> 대화상자를 사용하여 작업하지 않고서도 구두점 및 다른 기호의 발음을 조정할 수 있습니다.
@@ -4564,7 +4691,7 @@ BRLTTY 사용시 점자 키보드가 탑제된 디스플레이를 사용한다�
 본 파일 형식에 대한 자세한 설명은 <A HREF="http://community.nvda-project.org/wiki/Development">NVDA 웹 사이트의 개발 섹션</A>에 있는 NVDA 개발자 안내서의 기호 발음 섹션에 게재되어 있습니다 (단 복합 기호는 정의할 수 없음).
 </P>
 
-<A NAME="toc110"></A>
+<A NAME="toc111"></A>
 <H2>14. 사용설명서 외 추가 정보</H2>
 
 <P>
