@@ -130,7 +130,8 @@ Cliquez sur "OK" pour fermer ce dialogue.
 
 ++ Démarrer NVDA ++
 Si NVDA a été installé à l'aide de l'installateur, alors il suffit, soit de frapper la combinaison contrôle+alt+n, soit de choisir dans le menu Démarrer / Programmes / NVDA / NVDA. 
-Vous pouvez aussi taper NVDA dans le dialogue "Exécuter" puis appuyer sur "Entrée".
+De plus, Vous pouvez taper NVDA dans le dialogue "Exécuter" puis appuyer sur "Entrée".
+Vous pouvez aussi ajouter quelques [options de ligne de commande #CommandLineOptions] vous permettant de redémarrer NVDA (-r), quitter (-q), désactiver les modules complémentaires (--disable-addons), etc.
 
 Pour démarrer la copie portable, rendez-vous dans le dossier où NVDA a été décompressé, et appuyez sur "Entrée" ou double-cliquez sur nvda.exe.
 
@@ -591,9 +592,10 @@ Appuyez sur "Accepter" et NVDA redémarrera.
 ==== Sauvegarder la configuration en quittant ====
 C'est une case à cocher qui, une fois cochée, indique à NVDA de sauvegarder automatiquement la configuration courante lorsqu'on arrête NVDA.
 
-==== Avertir avant de quitter NVDA ====
-Cette option est une case à cocher vous permettant d'indiquer si une confirmation doit être demandée quand vous voulez quitter NVDA.
-Quand elle est cochée, un dialogue apparaîtra lorsque vous voudrez quitter NVDA, vous demandant si oui ou non vous voulez quitter.
+==== Afficher les options de sortie avant de quitter NVDA ====
+Cette option est une case à cocher vous permettant d'indiquer si un dialogue vous demandant quelle action effectuer doit s'afficher quand vous quittez NVDA.
+Quand elle est cochée, un dialogue apparaît lorsque vous voulez quitter NVDA, vous demandant si vous voulez quitter, redémarer ou redémarrer sans modules complémentaires.
+Quand elle n'est pas cochée, NVDA s'arrête immédiatement.
 
 ==== Jouer des sons au démarrage ou à l'arrêt de NVDA ====
 Cette option est une case à cocher qui, quand elle est cochée, dit à NVDA de jouer des sons lors de son démarrage ou de son arrêt.
@@ -1919,6 +1921,45 @@ Les indicateurs d'état suivants sont également définis :
 | smnu | affiché quand un objet a un sous-menu |
  
 + Fonctions avancées +
+ 
+++ Options de Ligne de Commande ++[CommandLineOptions]
+NVDA peut accepter une ou plusieurs options additionnelles quand il démarre pour modifier son comportement.
+Vous pouvez passer autant d'options que nécessaire.
+Ces options peuvent être passées quand on démarre depuis un raccourci (dans les propriétés du raccourci), depuis le dialogue Exécuter (Menu Démarrer -> Exécuter ou Windows+r) ou depuis une console de commande Windows.
+Les options doivent être séparées du nom de l'exécutable NVDA et des autres options par des espaces.
+Par exemple, le raccourci de bureau créé par NVDA pendant l'installation a l'option -r, qui dit à NVDA d'arrêter la copie en cours avant d'en démarrer une nouvelle.
+Une autre option utile est --disable-addons, qui dit à NVDA d'interrompre tous les modules complémentaires en cours d'exécution.
+Cela vous permet de déterminer si un problème est causé par un module complémentaire et de vous sortir de sérieux problèmes pouvant être causés par des modules complémentaires.
+
+Par exemple, vous pouvez quitter la copie en cours de NVDA en entrant ce qui suit dans le dialogue Exécuter :
+
+nvda -q
+
+Certaines options de ligne de commande ont une version courte et une version longue, tandis que d'autrres n'ont qu'une version longue.
+Pour celles qui ont une version courte, vous pouvez les combiner ainsi :
+| nvda -rm | Ceci arrêtera la version en cours de NVDA et redémarrera avec le son de démarrage désactivé, etc. |
+| nvda -rm --disable-addons | Même chose, mais avec les modules complémentaires désactivés |
+
+Certaines options de ligne de commande acceptent des paramètres additionnels; ex : le niveau de détail du journal ou le chemin du répertoire de configuration utilisateur.
+Ces paramètres doivent être placés après l'option, séparés de l'option par un espace quand il s'agit d'une option en version courte ou par un signe égal quand il s'agit d'une option en version longue; ex :
+| nvda -l 10 | Dit à NVDA de démarrer avec le niveau de journalisation sur débogage |
+| nvda --log-file=c:\nvda.log |  Dit à NVDA d'écrire le fichier journal dans c:\nvda.log |
+| nvda --log-level=20 -f c:\nvda.log | Dit à NVDA de démarrer avec le niveau de journalisation sur info et d'écrire son journal dans c:\nvda.log |
+
+Voici les options de ligne de commande de NVDA :
+|| Courte | Longue | Description |
+| -h | --help | affiche l'aide de la ligne de commande et s'arrête |
+| -q | --quit | Quitte la copie en cours d'exécution de NVDA |
+| -r | --replace | Quitte la copie en cours d'exécution de NVDA et démarre celle-ci |
+| -k | --check-running | Indique si NVDA est en cours d'exécution via le code retour; 0 si oui, 1 si non |
+| -f NOMDUFICHIERJOURNAL | --log-file=NOMDUFICHIERJOURNAL | Le fichier où les messages du journal doivent être écrits |
+| -l NIVEAUDEJOURNALISATION | --log-level=NIVEAUDEJOURNALISATION | Le niveau minimal de message journalisé (débogage 10, info 20, avertissement 30, erreur 40, critique 50), le défaut est avertissement |
+| -c CHEMINDECONFIG | --config-path=CHEMINDECONFIG | Le chemin vers lequel tous les paramètres de NVDA sont stockés |
+| -m | --minimal | Pas de sons, pas d'interface, pas de message de démarrage etc |
+| -s | --secure | Mode sécurisé (désactive la console Python) |
+| Aucune | --disable-addons | Les modules complémentaires n'auront pas d'effet |
+| Aucune | --no-sr-flag  | Ne change pas l'indicateur système global de revue d'écran |
+| Aucune | --install | Installe NVDA en silence |
 
 ++ Personnalisation avancée de la prononciation des symboles ++
 Il est possible de personnaliser la prononciation des ponctuations et autres symboles au-delà de ce que permet le dialogue ["Prononciation des symboles et ponctuations" #SymbolPronunciation].
