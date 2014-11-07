@@ -7,6 +7,9 @@ Quoi de Neuf dans NVDA
 
 == Nouvelles Fonctionnalités ==
 - Nouvelles langues : Espagnol Colombien, Punjabi
+- Il est maintenant possible de redémarrer NVDA normalement ou avec les modules complémentaires désactivés depuis le dialogue d'arrêt de NVDA. (#4057)
+ - NVDA peut aussi être démarré sans modules complémentaires en utilisant l'option de ligne de commande --disable-addons.
+- Dans les dictionnaires de prononciation, il est maintenant possible de spécifier qu'un modèle ne devrait correspondre que s'il s'agit d'un mot entier. (#1704)
 
 
 == Changements ==
@@ -31,6 +34,13 @@ Quoi de Neuf dans NVDA
 - Dans les champs de saisie de mot de passe quand l'écho par mot est activé, de multiples astérisques ne sont plus annoncées sans raison au commencement d'un nouveau mot. (#4402)
 - Dans la liste de messages de Microsoft Outlook, des éléments ne sont plus annoncés sans raison comme éléments de données. (#4439)
 - Quand on sélectionne du texte dans le contrôle d'édition de code de l'IDE d'Eclipse, la sélection entière n'est plus annoncée chaque fois que la sélection change. (#2314)
+- Différentes versions d'Eclipse, telles que Spring Tool Suite ou la version incluse dans le pack d'outils de développement d'Android, sont maintenant reconnues comme Eclipse et prises en compte de manière appropriée. (#4360)
+
+
+== Changements pour les Développeurs ==
+- Pour les exécutables qui hébergent beaucoup d'applications différentes (ex : javaw.exe), du code peut maintenant être fourni pour charger des modules spécifiques pour chaque application au lieu de charger le même module pour toutes les applications hébergées. (#4360)
+ - Consultez la documentation du code de appModuleHandler.AppModule pour des détails.
+ - Le support de javaw.exe est implémenté.
 
 
 = 2014.3 =
