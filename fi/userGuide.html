@@ -36,7 +36,7 @@
       </UL>
     <LI><A HREF="#toc15">3.3. Massamuistiversion luominen</A>
     </UL>
-  <LI><A HREF="#toc16">4. Alkuun pääseminen</A>
+  <LI><A HREF="#toc16">4. Aloittaminen</A>
     <UL>
     <LI><A HREF="#toc17">4.1. NVDA:n käynnistäminen</A>
     <LI><A HREF="#toc18">4.2. Tietoja näppäinkomennoista</A>
@@ -156,9 +156,10 @@
   <LI><A HREF="#toc107">12. Säädintyyppien ja tilojen lyhenteet pistenäytöllä</A>
   <LI><A HREF="#toc108">13. Edistyneet aiheet</A>
     <UL>
-    <LI><A HREF="#toc109">13.1. Edistynyt symboleiden puhumisen mukauttaminen</A>
+    <LI><A HREF="#CommandLineOptions">13.1. Komentorivivalitsimet</A>
+    <LI><A HREF="#toc110">13.2. Symboleiden puhumisen lisämukauttaminen</A>
     </UL>
-  <LI><A HREF="#toc110">14. Lisätietoja</A>
+  <LI><A HREF="#toc111">14. Lisätietoja</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -354,14 +355,15 @@ Valintaikkuna suljetaan Painamalla OK.
 </P>
 
 <A NAME="toc16"></A>
-<H2>4. Alkuun pääseminen</H2>
+<H2>4. Aloittaminen</H2>
 
 <A NAME="toc17"></A>
 <H3>4.1. NVDA:n käynnistäminen</H3>
 
 <P>
-Jos NVDA on asennettu sen omalla asennusohjelmalla, se voidaan käynnistää joko painamalla Control+Alt+n tai valitsemalla Käynnistä-valikosta Ohjelmat -&gt; NVDA -&gt; NVDA.
-Se voidaan käynnistää myös kirjoittamalla Suorita-valintaikkunaan NVDA ja painamalla Enteriä.
+Jos asensit NVDA:n omalla asennusohjelmallaan, voit käynnistää sen joko painamalla Control+Alt+N tai valitsemalla Käynnistä-valikosta Ohjelmat -&gt; NVDA -&gt; NVDA.
+Voit käynnistää sen myös kirjoittamalla Suorita-valintaikkunaan NVDA ja painamalla Enteriä.
+Lisäksi on mahdollista syöttää joitakin <A HREF="#CommandLineOptions">komentorivivalitsimia</A>, joilla NVDA voidaan käynnistää uudelleen (-r), sulkea (-q), poistaa lisäosat käytöstä (--disable-addons) jne.
 </P>
 <P>
 Massamuistiversio voidaan käynnistää menemällä hakemistoon, johon se on purettu ja painamalla Enteriä nvda.exe-tiedoston kohdalla tai kaksoisnapsauttamalla sitä hiiren vasemmalla painikkeella.
@@ -372,8 +374,8 @@ Riippuen tietokoneen nopeudesta, tai jos NVDA:ta käytetään USB-muistitikulta 
 Jos käynnistyminen kestää erityisen kauan, NVDA:n pitäisi ilmoittaa "NVDA käynnistetään, odota..."
 </P>
 <P>
-Jos mitään tällaista ei kuulu, tai mikäli kuuluu Windowsin virheääni tai joukko laskevia ääniä, tämä tarkoittaa, että NVDA:ssa on mahdollisesti ohjelmavirhe ja että siitä on raportoitava kehittäjille.
-Tarkista NVDA:n verkkosivustolta, miten ohjelmavirheistä raportoidaan.
+Jos mitään tällaista ei kuulu, tai mikäli kuuluu Windowsin virheääni tai joukko laskevia ääniä, tämä tarkoittaa, että NVDA:ssa on mahdollisesti ohjelmavirhe ja että siitä on ilmoitettava kehittäjille.
+Tarkista NVDA:n verkkosivustolta, miten ohjelmavirheistä ilmoitetaan.
 </P>
 <P>
 Kun NVDA käynnistyy ensimmäistä kertaa, näkyviin tulee valintaikkuna, jossa on joitakin perustietoja NVDA-näppäimestä ja -valikosta.
@@ -1516,11 +1518,12 @@ Hyväksy painamalla OK.
 Jos tämä valintaruutu on valittuna, nykyiset asetukset tallennetaan, kun NVDA suljetaan.
 </P>
 
-<H5>Vahvista sulkeminen</H5>
+<H5>Näytä sulkemisvaihtoehdot</H5>
 
 <P>
-Tällä valintaruudulla voidaan määrittää, kysyykö NVDA vahvistuksen sitä suljettaessa.
-Kun tämä on valittuna, aina NVDA:ta suljettaessa tulee näkyviin valintaikkuna, jossa kysytään, halutaanko se varmasti sulkea.
+Tällä valintaruudulla voit määrittää, tuleeko NVDA:ta suljettaessa näkyviin valintaikkuna, jossa kysytään suoritettavaa toimintoa.
+Kun tämä asetus on käytössä, NVDA:ta suljettaessa tulee näkyviin valintaikkuna, jossa kysytään, haluatko sulkea, käynnistää uudelleen vai käynnistää uudelleen poistaen lisäosat käytöstä.
+Kun asetus ei ole käytössä, NVDA sulkeutuu heti.
 </P>
 
 <H5>Toista ääni käynnistettäessä ja suljettaessa</H5>
@@ -2320,7 +2323,7 @@ Lisätty sääntö näkyy tämän jälkeen sääntöjen luettelossa.
 Tehtyjen muutosten tallentaminen varmistetaan poistumalla sanastovalintaikkunasta painamalla OK.
 </P>
 <P>
-Puhesanastojen sääntöjen avulla voidaan muuttaa merkkijono joksikin muuksi.
+Puhesanastosääntöjen avulla voidaan muuttaa merkkijono joksikin muuksi.
 Yksinkertaisena esimerkkinä tästä voisi olla, että NVDA saadaan sanomaan "sammakko" jokaisen lintu-sanan kohdalla.
 Helpointa tämä on tehdä  kirjoittamalla säännönlisäysvalintaikkunassa Korvattava-kenttään lintu ja Korvaava-kenttään sammakko.
 Kommentti-kenttään voidaan kirjoittaa säännön kuvaus (esim. muuttaa linnun sammakoksi).
@@ -2329,7 +2332,13 @@ Kommentti-kenttään voidaan kirjoittaa säännön kuvaus (esim. muuttaa linnun 
 Puhesanastoja voidaan käyttää paljon muuhunkin kuin yksinkertaiseen sanojen korvaamiseen.
 Säännönlisäämisvalintaikkunassa on myös valintaruutu, jolla voidaan määrittää, halutaanko säännön ottavan kirjainkoon huomioon, eli ovatko isot ja pienet kirjaimet merkitseviä.
 NVDA ei oletusarvoisesti huomioi kirjainkokoa.
-Toisella tämän valintaikkunan valintaruudulla voidaan määrittää, onko korvattava merkkijono "säännöllinen lauseke".
+</P>
+<P>
+Lopuksi on joukko valintapainikkeita, joiden avulla voit määrittää, täsmääkö korvattava merkkijono kaikkialla, vain kokonaisena sanana vai käsitelläänkö sitä säännöllisenä lausekkeena.
+Korvattavan merkkijonon määrittäminen täsmäämään kokonaisena sanana tarkoittaa, että se korvataan vain, jos se ei esiinny pidemmän sanan osana, ts. heti sitä ennen ja sen jälkeen on muu kuin aakkosnumeerinen merkki, alaviiva (tai ei ole merkkiä ollenkaan).
+Joten, käyttääksemme aiempaa esimerkkiä lintu-sanan korvaamisesta sanalla sammakko, jos tekisit siitä koko sanan korvauksen, se ei täsmäisi "lintuja"- tai "sinilintu"-sanoihin.
+</P>
+<P>
 Säännöllinen lauseke on erikoismerkkejä sisältävä merkkiyhdistelmä, jonka avulla voidaan täsmätä useampaan kuin yhteen merkkiin kerrallaan, pelkkiin numeroihin tai pelkkiin kirjaimiin.
 Säännöllisiä lausekkeita ei käsitellä tässä käyttöoppaassa, mutta internetistä löytyy useita asiaa käsitteleviä oppaita.
 </P>
@@ -4584,8 +4593,134 @@ Seuraavat tilan ilmaisimet on myös määritetty:
 <A NAME="toc108"></A>
 <H2>13. Edistyneet aiheet</H2>
 
-<A NAME="toc109"></A>
-<H3>13.1. Edistynyt symboleiden puhumisen mukauttaminen</H3>
+<A NAME="CommandLineOptions"></A>
+<H3>13.1. Komentorivivalitsimet</H3>
+
+<P>
+NVDA hyväksyy käynnistyessään yhden tai useamman toimintaansa vaikuttavan komentorivivalitsimen.
+Voit antaa kerralla niin monta valitsinta kuin tarvitset.
+Valitsimet voidaan antaa pikakuvakkeesta käynnistettäessä (syötetään kuvakkeen Ominaisuudet-valintaikkunassa olevaan Kohde:-kenttään), Suorita-valintaikkunasta (Käynnistä-valikko -&gt; Suorita tai Windows+R) tai Windowsin komentokehotteesta.
+Valitsimet erotetaan NVDA:n ohjelmatiedoston nimestä ja toisistaan välilyönneillä.
+Esimerkiksi asennuksen aikana Työpöydälle luodussa pikakuvakkeessa on -r-valitsin, joka sulkee NVDA:n käynnissä olevan version ennen uuden käynnistämistä.
+Toinen hyödyllinen valitsin on --disable-addons, joka poistaa kaikki lisäosat käytöstä.
+Sen avulla voit selvittää, aiheuttaako jokin lisäosa ongelmia.
+</P>
+<P>
+Voit esimerkiksi sulkea NVDA:n nykyisen version kirjoittamalla seuraavan komennon Suorita-valintaikkunaan:
+</P>
+<P>
+nvda -q
+</P>
+<P>
+Joistakin komentorivivalitsimista on sekä lyhyt että pitkä muoto, kun taas joistakin on vain pitkä muoto.
+Voit yhdistellä lyhyitä valitsimia näin:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>nvda -rm</TD>
+<TD>Tämä sulkee NVDA:n nykyisen version ja käynnistää uuden poistaen samalla käynnistysäänet käytöstä jne.</TD>
+</TR>
+<TR>
+<TD>nvda -rm --disable-addons</TD>
+<TD>Muuten sama kuin edellä, mutta poistaa myös lisäosat käytöstä.</TD>
+</TR>
+</TABLE>
+
+<P>
+Jotkin valitsimet hyväksyvät lisäparametrejä, esim. miten yksityiskohtaisia tietoja lokiin tallennetaan tai käyttäjän asetushakemiston polkumäärityksen.
+Parametrit annetaan valitsimen jälkeen ja erotetaan sen lyhyestä muodosta välilyönnillä tai pitkää muotoa käytettäessä yhtä suuri -merkillä (=), esim.:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>nvda -l 10</TD>
+<TD>Käynnistää NVDA:n virheenkorjaus-lokitasolla.</TD>
+</TR>
+<TR>
+<TD>nvda --log-file=c:\nvda.log</TD>
+<TD>NVDA tallentaa lokinsa tiedostoon c:\nvda.log.</TD>
+</TR>
+<TR>
+<TD>nvda --log-level=20 -f c:\nvda.log</TD>
+<TD>Käynnistää NVDA:n tiedot-lokitasolla ja tallentaa lokin tiedostoon c:\nvda.log.</TD>
+</TR>
+</TABLE>
+
+<P>
+Seuraavassa on lista NVDA:n komentorivivalitsimista:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Lyhyt</TH>
+<TH>Pitkä</TH>
+<TH>Kuvaus</TH>
+</TR>
+<TR>
+<TD>-h</TD>
+<TD>--help</TD>
+<TD>Näyttää komentoriviohjeen.</TD>
+</TR>
+<TR>
+<TD>-q</TD>
+<TD>--quit</TD>
+<TD>Sulkee jo käynnissä olevan NVDA:n version.</TD>
+</TR>
+<TR>
+<TD>-r</TD>
+<TD>--replace</TD>
+<TD>Sulkee jo käynnissä olevan NVDA:n version ja käynnistää uuden.</TD>
+</TR>
+<TR>
+<TD>-k</TD>
+<TD>--check-running</TD>
+<TD>Ilmoittaa lopetuskoodilla, onko NVDA käynnissä, 0 = jos käynnissä tai 1 = jos ei käynnissä.</TD>
+</TR>
+<TR>
+<TD>-f LOKITIEDOSTO</TD>
+<TD>--log-file=LOKITIEDOSTO</TD>
+<TD>Tiedosto, johon lokiviestit tallennetaan.</TD>
+</TR>
+<TR>
+<TD>-l LOKITASO</TD>
+<TD>--log-level=LOKITASO</TD>
+<TD>Alin taso, jonka ilmoitukset tallennetaan lokiin (10 = virheenkorjaus, 20 = tiedot, 30 = varoitus, 40 = virhe, 50 = kriittinen). Oletustasona on varoitus.</TD>
+</TR>
+<TR>
+<TD>-c ASETUSPOLKU</TD>
+<TD>--config-path=ASETUSPOLKU</TD>
+<TD>Hakemistopolku, johon kaikki NVDA:n asetukset tallennetaan.</TD>
+</TR>
+<TR>
+<TD>-m</TD>
+<TD>--minimal</TD>
+<TD>Ei ääniä, ei käyttöliittymää, ei käynnistysilmoitusta jne.</TD>
+</TR>
+<TR>
+<TD>-s</TD>
+<TD>--secure</TD>
+<TD>Suojattu tila (poistaa käytöstä Python-konsolin).</TD>
+</TR>
+<TR>
+<TD>Ei mitään</TD>
+<TD>--disable-addons</TD>
+<TD>Poistaa lisäosat käytöstä.</TD>
+</TR>
+<TR>
+<TD>Ei mitään</TD>
+<TD>--no-sr-flag</TD>
+<TD>Ei muuta järjestelmänlaajuista ruudunlukuohjelmalippua.</TD>
+</TR>
+<TR>
+<TD>Ei mitään</TD>
+<TD>--install</TD>
+<TD>Asentaa NVDA:n ilman kehotteita.</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc110"></A>
+<H3>13.2. Symboleiden puhumisen lisämukauttaminen</H3>
 
 <P>
 Välimerkkien ja muiden symboleiden lukutapaa voidaan mukauttaa enemmänkin kuin mitä <A HREF="#SymbolPronunciation">Välimerkkien ja symboleiden puhuminen</A> -valintaikkunassa on mahdollista.
@@ -4598,7 +4733,7 @@ Tiedoston muoto on dokumentoitu Symbol pronunciation -kappaleessa kehittäjän o
 Monimutkaisten symboleiden määrittäminen ei ole kuitenkaan mahdollista.
 </P>
 
-<A NAME="toc110"></A>
+<A NAME="toc111"></A>
 <H2>14. Lisätietoja</H2>
 
 <P>
