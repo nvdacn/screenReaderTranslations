@@ -156,9 +156,10 @@
   <LI><A HREF="#toc107">12. Abbréviations des types et états des contrôles en Braille</A>
   <LI><A HREF="#toc108">13. Fonctions avancées</A>
     <UL>
-    <LI><A HREF="#toc109">13.1. Personnalisation avancée de la prononciation des symboles</A>
+    <LI><A HREF="#CommandLineOptions">13.1. Options de Ligne de Commande</A>
+    <LI><A HREF="#toc110">13.2. Personnalisation avancée de la prononciation des symboles</A>
     </UL>
-  <LI><A HREF="#toc110">14. Informations complémentaires</A>
+  <LI><A HREF="#toc111">14. Informations complémentaires</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -361,7 +362,8 @@ Cliquez sur "OK" pour fermer ce dialogue.
 
 <P>
 Si NVDA a été installé à l'aide de l'installateur, alors il suffit, soit de frapper la combinaison contrôle+alt+n, soit de choisir dans le menu Démarrer / Programmes / NVDA / NVDA. 
-Vous pouvez aussi taper NVDA dans le dialogue "Exécuter" puis appuyer sur "Entrée".
+De plus, Vous pouvez taper NVDA dans le dialogue "Exécuter" puis appuyer sur "Entrée".
+Vous pouvez aussi ajouter quelques <A HREF="#CommandLineOptions">options de ligne de commande</A> vous permettant de redémarrer NVDA (-r), quitter (-q), désactiver les modules complémentaires (--disable-addons), etc.
 </P>
 <P>
 Pour démarrer la copie portable, rendez-vous dans le dossier où NVDA a été décompressé, et appuyez sur "Entrée" ou double-cliquez sur nvda.exe.
@@ -1515,11 +1517,12 @@ Appuyez sur "Accepter" et NVDA redémarrera.
 C'est une case à cocher qui, une fois cochée, indique à NVDA de sauvegarder automatiquement la configuration courante lorsqu'on arrête NVDA.
 </P>
 
-<H5>Avertir avant de quitter NVDA</H5>
+<H5>Afficher les options de sortie avant de quitter NVDA</H5>
 
 <P>
-Cette option est une case à cocher vous permettant d'indiquer si une confirmation doit être demandée quand vous voulez quitter NVDA.
-Quand elle est cochée, un dialogue apparaîtra lorsque vous voudrez quitter NVDA, vous demandant si oui ou non vous voulez quitter.
+Cette option est une case à cocher vous permettant d'indiquer si un dialogue vous demandant quelle action effectuer doit s'afficher quand vous quittez NVDA.
+Quand elle est cochée, un dialogue apparaît lorsque vous voulez quitter NVDA, vous demandant si vous voulez quitter, redémarer ou redémarrer sans modules complémentaires.
+Quand elle n'est pas cochée, NVDA s'arrête immédiatement.
 </P>
 
 <H5>Jouer des sons au démarrage ou à l'arrêt de NVDA</H5>
@@ -4582,8 +4585,134 @@ Les indicateurs d'état suivants sont également définis :
 <A NAME="toc108"></A>
 <H2>13. Fonctions avancées</H2>
 
-<A NAME="toc109"></A>
-<H3>13.1. Personnalisation avancée de la prononciation des symboles</H3>
+<A NAME="CommandLineOptions"></A>
+<H3>13.1. Options de Ligne de Commande</H3>
+
+<P>
+NVDA peut accepter une ou plusieurs options additionnelles quand il démarre pour modifier son comportement.
+Vous pouvez passer autant d'options que nécessaire.
+Ces options peuvent être passées quand on démarre depuis un raccourci (dans les propriétés du raccourci), depuis le dialogue Exécuter (Menu Démarrer -&gt; Exécuter ou Windows+r) ou depuis une console de commande Windows.
+Les options doivent être séparées du nom de l'exécutable NVDA et des autres options par des espaces.
+Par exemple, le raccourci de bureau créé par NVDA pendant l'installation a l'option -r, qui dit à NVDA d'arrêter la copie en cours avant d'en démarrer une nouvelle.
+Une autre option utile est --disable-addons, qui dit à NVDA d'interrompre tous les modules complémentaires en cours d'exécution.
+Cela vous permet de déterminer si un problème est causé par un module complémentaire et de vous sortir de sérieux problèmes pouvant être causés par des modules complémentaires.
+</P>
+<P>
+Par exemple, vous pouvez quitter la copie en cours de NVDA en entrant ce qui suit dans le dialogue Exécuter :
+</P>
+<P>
+nvda -q
+</P>
+<P>
+Certaines options de ligne de commande ont une version courte et une version longue, tandis que d'autrres n'ont qu'une version longue.
+Pour celles qui ont une version courte, vous pouvez les combiner ainsi :
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>nvda -rm</TD>
+<TD>Ceci arrêtera la version en cours de NVDA et redémarrera avec le son de démarrage désactivé, etc.</TD>
+</TR>
+<TR>
+<TD>nvda -rm --disable-addons</TD>
+<TD>Même chose, mais avec les modules complémentaires désactivés</TD>
+</TR>
+</TABLE>
+
+<P>
+Certaines options de ligne de commande acceptent des paramètres additionnels; ex : le niveau de détail du journal ou le chemin du répertoire de configuration utilisateur.
+Ces paramètres doivent être placés après l'option, séparés de l'option par un espace quand il s'agit d'une option en version courte ou par un signe égal quand il s'agit d'une option en version longue; ex :
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>nvda -l 10</TD>
+<TD>Dit à NVDA de démarrer avec le niveau de journalisation sur débogage</TD>
+</TR>
+<TR>
+<TD>nvda --log-file=c:\nvda.log</TD>
+<TD ALIGN="right">Dit à NVDA d'écrire le fichier journal dans c:\nvda.log</TD>
+</TR>
+<TR>
+<TD>nvda --log-level=20 -f c:\nvda.log</TD>
+<TD>Dit à NVDA de démarrer avec le niveau de journalisation sur info et d'écrire son journal dans c:\nvda.log</TD>
+</TR>
+</TABLE>
+
+<P>
+Voici les options de ligne de commande de NVDA :
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Courte</TH>
+<TH>Longue</TH>
+<TH>Description</TH>
+</TR>
+<TR>
+<TD>-h</TD>
+<TD>--help</TD>
+<TD>affiche l'aide de la ligne de commande et s'arrête</TD>
+</TR>
+<TR>
+<TD>-q</TD>
+<TD>--quit</TD>
+<TD>Quitte la copie en cours d'exécution de NVDA</TD>
+</TR>
+<TR>
+<TD>-r</TD>
+<TD>--replace</TD>
+<TD>Quitte la copie en cours d'exécution de NVDA et démarre celle-ci</TD>
+</TR>
+<TR>
+<TD>-k</TD>
+<TD>--check-running</TD>
+<TD>Indique si NVDA est en cours d'exécution via le code retour; 0 si oui, 1 si non</TD>
+</TR>
+<TR>
+<TD>-f NOMDUFICHIERJOURNAL</TD>
+<TD>--log-file=NOMDUFICHIERJOURNAL</TD>
+<TD>Le fichier où les messages du journal doivent être écrits</TD>
+</TR>
+<TR>
+<TD>-l NIVEAUDEJOURNALISATION</TD>
+<TD>--log-level=NIVEAUDEJOURNALISATION</TD>
+<TD>Le niveau minimal de message journalisé (débogage 10, info 20, avertissement 30, erreur 40, critique 50), le défaut est avertissement</TD>
+</TR>
+<TR>
+<TD>-c CHEMINDECONFIG</TD>
+<TD>--config-path=CHEMINDECONFIG</TD>
+<TD>Le chemin vers lequel tous les paramètres de NVDA sont stockés</TD>
+</TR>
+<TR>
+<TD>-m</TD>
+<TD>--minimal</TD>
+<TD>Pas de sons, pas d'interface, pas de message de démarrage etc</TD>
+</TR>
+<TR>
+<TD>-s</TD>
+<TD>--secure</TD>
+<TD>Mode sécurisé (désactive la console Python)</TD>
+</TR>
+<TR>
+<TD>Aucune</TD>
+<TD>--disable-addons</TD>
+<TD>Les modules complémentaires n'auront pas d'effet</TD>
+</TR>
+<TR>
+<TD>Aucune</TD>
+<TD>--no-sr-flag</TD>
+<TD>Ne change pas l'indicateur système global de revue d'écran</TD>
+</TR>
+<TR>
+<TD>Aucune</TD>
+<TD>--install</TD>
+<TD>Installe NVDA en silence</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc110"></A>
+<H3>13.2. Personnalisation avancée de la prononciation des symboles</H3>
 
 <P>
 Il est possible de personnaliser la prononciation des ponctuations et autres symboles au-delà de ce que permet le dialogue <A HREF="#SymbolPronunciation">"Prononciation des symboles et ponctuations"</A>.
@@ -4596,7 +4725,7 @@ Le format de ce fichier est documenté dans la section "Prononciation des Symbol
 Cependant, l'utilisateur ne peut pas définir de symboles complexes.
 </P>
 
-<A NAME="toc110"></A>
+<A NAME="toc111"></A>
 <H2>14. Informations complémentaires</H2>
 
 <P>
