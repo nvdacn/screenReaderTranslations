@@ -16,6 +16,11 @@
 
 <UL>
 <LI>New languages: Colombian Spanish, Punjabi
+<LI>It is now possible to restart NVDA or restart NVDA with add-ons disabled from NVDA's exit dialog. (<A HREF="http://community.nvda-project.org/ticket/4057">#4057</A>)
+ <UL>
+ <LI>NVDA can also be started with add-ons disabled by using the --disable-addons command line option.
+ </UL>
+<LI>In speech dictionaries, it is now possible to specify that a pattern should only match if it is a whole word; i.e. it does not occur as part of a larger word. (<A HREF="http://community.nvda-project.org/ticket/1704">#1704</A>)
 </UL>
 
 <H3>Changes</H3>
@@ -44,6 +49,17 @@
 <LI>In password entry fields with speaking of typed words enabled, multiple asterisks are no longer pointlessly reported when beginning new words. (<A HREF="http://community.nvda-project.org/ticket/4402">#4402</A>)
 <LI>In the Microsoft Outlook message list, items are no longer pointlessly announced as Data Items. (<A HREF="http://community.nvda-project.org/ticket/4439">#4439</A>)
 <LI>When selecting text in the code editing control in the Eclipse IDE, the entire selection is no longer announced every time the selection changes. (<A HREF="http://community.nvda-project.org/ticket/2314">#2314</A>)
+<LI>Various versions of Eclipse, such as Spring Tool Suite and the version included in the Android Developer Tools bundle, are now recognised as Eclipse and handled appropriately. (<A HREF="http://community.nvda-project.org/ticket/4360">#4360</A>, <A HREF="http://community.nvda-project.org/ticket/4454">#4454</A>)
+</UL>
+
+<H3>Changes for Developers</H3>
+
+<UL>
+<LI>For executables which host many different apps (e.g. javaw.exe), code can now be provided to load specific app modules for each app instead of loading the same app module for all hosted apps. (<A HREF="http://community.nvda-project.org/ticket/4360">#4360</A>)
+ <UL>
+ <LI>See the code documentation for appModuleHandler.AppModule for details.
+ <LI>Support for javaw.exe is implemented.
+ </UL>
 </UL>
 
 <H2>2014.3</H2>
