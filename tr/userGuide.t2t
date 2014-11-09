@@ -131,6 +131,7 @@ Bu iletişim kutusunu kapatmak için Tamam'a basabilirsiniz.
 ++ NVDA'yı açma ++
 NVDA'yı yükleyiciyle bilgisayarınıza kurduysanız, programı kontrol+alt+n tuşlarına basarak veya başlat menüsündeki programlar altındaki NVDA menüsünden kolayca başlatabilirsiniz.
 Ayrıca Çalıştır bölümüne NVDA yazıp girişe basarak da programı başlatabilirsiniz.
+Ek olarak, NVDA'yı yeniden başlatmak için NVDA (-r), NVDA'yı kapatmak için (-q), eklentileri devre dışı bırakmak için (--disable-addons), gibi bazı [komut satırı seçeneklerini #CommandLineOptions] de kullanabilirsiniz.
 
 Taşınabilir sürümü başlatmak için, NVDA'yı çıkarttığınız dizine gidin ve NVDA'.exe dosyası üzerinde girişe basın veya çift tıklatın.
 
@@ -591,9 +592,10 @@ Tamama bastığınızda NVDA yeniden başlayacaktır.
 ==== Çıkışta Ayarları (konfigürasyonu) Kaydet ====
 Bu bir onay kutusudur ve işaretlendiğinde, NVDA'ya çıkışta yapılan ayarların kaydedilmesini söyler.
 
-==== NVDA'dan Çıkmadan Önce uyar ====
-Bu bir onay kutusudur ve NVDA'yı kapatırken, kapatmak isteyip istemediğinizi soran bir iletişim kutusunun görüntülenip görüntülenmeyeceğini kontrol eder.
-İşaretlendiğinde, NVDA'yı kapatmaya teşebbüs ettiğinizde, gerçekten çıkmak isteyip istemediğinizi soran bir iletişim kutusu açılır.
+==== NVDA'yı kapatırken çıkış seçeneklerini göster ====
+Bu seçenek, NVDA kapatılırken, çeşitli seçeneklerin bulunduğu bir iletişim kutusunun gösterilip gösterilmeyeceğiyle ilgili bir onay kutusudur.
+İşaretlenirse, NVDA'yı kapatmaya teşebbüs ettiğinizde, NVDA'yı kapatmak mı, yeniden başlatmak mı yoksa, eklentileri devre dışı bırakarak yeniden başlatmak mı istediğinizi soran bir iletişim kutusu açılacaktır.
+İşaretlenmezse, NVDA hemen kapanır.
 
 ==== NVDA Açılırken ya da Kapanırken Ses Çal ====
 BU seçenek NVDA açılış ve kapanış sesinin çalınıp çalınmamasıyla ilgili bir onay kutusudur.
@@ -1062,14 +1064,18 @@ bundan sonra kural listesinde eklediğiniz yeni kuralı da göreceksiniz.
 Ancak, kurallarınızı kaydettiğinizden emin olabilmek için, kural ekleme/düzenleme işiniz bitikten sonra sözlük iletişim kutusunu tamam düğmesine basarak tümüyle kapamayı unutmayın.
 
 NVDA konuşma sözlüklerindeki kurallar, bir sözcüğün telafuzunu farklı bir şeye dönüştürmenizi sağlar.
-örneğin, NVDA'dan, kurbağ kelimesiyle her karşılaştığında buna "kuş" demesini isteyebilirsiniz.
-Kural Ekle iletişim kutusunda bunun en basit yolu, Öbek yazma alanına kurbağa,"Olarak Değiştir" yazma alanına da "kuş" yazmaktır.
-Ayrıca Yorum alanına kuralla ilgili şunun gibi bir tanım yazmak isteyebilirsiniz. Kurbağayı kuş olarak değiştirir.
+örneğin, NVDA'dan, kuş kelimesiyle her karşılaştığında buna "kurbağa" demesini isteyebilirsiniz.
+Kural Ekle iletişim kutusunda bunun en basit yolu, ifade  alanına kuş,"Olarak Değiştir" yazma alanına da "kurbağa" yazmaktır.
+Ayrıca Yorum alanına kuralla ilgili şunun gibi bir tanım yazmak isteyebilirsiniz. Kuşu kurbağa olarak değiştirir.
 
 Öte yandan, NVDA konuşma sözlükleri basit bir sözcük değişiminden çok daha güçlüdür.
 Kural ekle diyaloğunda ayrıca, kuralın büyük küçük harf duyarlı olup olmamasını ayarlayabileceğiniz bir onay kutusu da yer almaktadır.
 Yani NVDA sözcüğün büyük ya da küçük yazılışına bakabilir. Varsayılan olarak NVDA büyük küçük harfleri yoksaymaktadır.
-Bir diğer onay kutusu öbeğinizin düzenli bir ifade olup olmadığını belirtmenizi sağlar.
+
+Son olarak, bir dizi seçim düğmesi, NVDA'ya girdiğiniz ifadenin her yerde mi, ifadenin tamamı   tek başına bir sözcük oluşturduğu taktirde mi tanımladığınız  gibi seslendirileceğini ya da ifadeye    düzenli ifade olarak "Regular expression" muamele edileceğini belirlemenizi sağlar.
+İfade türünün sözcüğün  tamamı olarak ayarlanması,  yerine koyma işleminin ancak ifade daha geniş bir sözcüğün parçası değilse yapılacağı anlamına gelir; Örn, girilen sözcüğün önünde ya da sonunda  herhangi bir harf ya da sayı yoksa ifadenin yerine olarak değiştir alanına girilen ifade konur.
+Öyleyse, yukarıdaki "kuş" ifadesini "kurbağa" ile değiştirme örneğini kullanırsak, ifadenin tamamı seçeneği tercih edildiyse, "kuşlar" ifadesi "kurbağalar" olarak seslendirilmez.
+
 Bir düzenli ifade, içinde bir seferde birden fazla karakterle eşleştirme yapmanızı sağlayan özel karakterler barındıran bir öbektir.
 bu eşleşme yalnızca rakamlar veya yalnızca harfler de olabilir. Düzenli ifadeler konusu bu kullanıcı rehberinde kapsanmamıştır, ancak webde size konuyla ilgili çok daha fazla bilgi verebilecek eğitimler bulunmaktadır.
 
@@ -1919,6 +1925,45 @@ Aşağıdaki durum belirtenleri de tanımlanmıştır:
 | altmnu | Bir nesne açılan (genellikle bir alt-menü) olduğunda gösterilir |
 
 + İleri Düzey Konular +
+
+++ Komut Satırı Seçenekleri ++[CommandLineOptions]
+NVDA başladığında onun davranışını değiştirecek bir veya daha fazla ek seçenek kabul edebilir.
+İhtiyaç duyduğunuz kadar seçenek kullanabilirsiniz.
+Bu seçenekler kısayol üzerinden (kısayol özelliklerinden), çalıştır iletişim kutusundan (başlat menüsü -> Çalıştır ya da  Windows+r) veya Windows komut konsolu üzerinden kullanılabilir.
+Seçenekler NVDA çalıştırılabilir dosyasından ve diğer seçeneklerden aralık ile ayrılarak kullanılmalıdır.
+Örnek olarak, NVDA masaüstü kısayolu, ona mevcut kopyayı kapatıp yenisini başlatmasını söyleyen -r seçeneği ile oluşturulmuştur.
+Başka bir yararlı seçenek, NVDA'ya tüm eklentileri askıya almasını söyleyen --disable-addons komutudur.
+Bu, bir eklentinin herhangi bir probleme neden olup olmadığını anlamanıza ya da eklentilerden birinin neden olduğu sorunlu durumdan kurtulmanıza yardımcı olur.
+
+Bir örnek olarak, çalıştır iletişim kutusuna aşağıdaki komutu girerek NVDA'yı kapatabilirsiniz:
+
+nvda -q
+
+Komut satırı seçeneklerinin bazılarının uzun ve kısa versiyonları bulunurken; bazılarının yalnızca uzun versiyonları vardır.
+Kısa versiyonu olanlar için, aşağıdaki gibi onları birleştirebilirsiniz:
+| nvda -rm | Bu, mevcut NVDA kopyasını kapatır ve başlama seslerini devre dışı bırakarak yeni bir kopya başlatır |
+| nvda -rm --disable-addons | Yukarıdakine ek olarak eklentileri de devre dışı bırakır |
+
+Bazı komut satırı seçenekleri ek parametrelerle kullanılabilir; Örn, günlük seviyesi ya da kullanıcı konfigürasyon dizini.
+Bu parametreler seçenekten sonra kullanılmalıdır, kısa versiyon için seçenek sonrası bir aralık ile ayrılarak ya da   uzun versiyon için eşittir işareti ile (=); Örneğin:
+| nvda -l 10 | NVDA'ya günlük seviyesi debug olarak başlamasını söyler |
+| nvda --log-file=c:\nvda.log |  NVDA'ya günlüğü c:\nvda.log dosyasına kaydetmesini söyler |
+| nvda --log-level=20 -f c:\nvda.log | NVDA'nın bilgi seviyesinde günlük tutarak başlamasını ve günlüğü c:\nvda.log dosyasına kaydetmesini söyler |
+
+Aşağıdakiler NVDA komut satırı seçenekleridir:
+|| Kısa | Uzun | Açıklama |
+| -h | --help | Komut satırı yardımını göster ve çık |
+| -q | --quit | Halihazırda çalışan NVDA kopyasını kapat |
+| -r | --replace | Mevcut NVDA kopyasını kapatıp belirtileni açar |
+| -k | --check-running | Çıkış kodu aracılığıyla NVDA'nın çalışıp çalışmadığını bildirir; çalışıyorsa 0, çalışmıyorsa 1 |
+| -f LOGFILENAME | --log-file=LOGFILENAME | Günlük mesajlarının tutulacağı dosya |
+| -l LOGLEVEL | --log-level=LOGLEVEL | Günlüğü tutulacak en düşük seviye (debug 10, bilgi 20, uyarı 30, hata 40, kritik 50), varsayılan uyarı'dır |
+| -c CONFIGPATH | --config-path=CONFIGPATH | NVDA ile ilgili tüm ayarların kaydedileceği adres  |
+| -m | --minimal | Ses, arayüz, başlangıç mesajı vb olmaz |
+| -s | --secure | Güvenli kip (Python konsolu devre dışı bırakır) |
+| None | --disable-addons | Eklentiler etkisizdir |
+| None | --no-sr-flag  | Global ekran okuyucu bayrağını devre dışı bırakmaz |
+| None | --install | NVDA'yı sessizce kurar |
 
 ++ Noktalama/imla Seslendirmesiyle İlgili İleri Düzey Ayarlamalar ++
 Noktalama ya da başka işaretlerin nasıl seslendirileceğiyle ilgili [Noktalama/imla sözlüğü #SymbolPronunciation] iletişim kutusunu kullanarak değiştirebileceğinizden daha fazla ayarlama da yapmanız mümkündür.
