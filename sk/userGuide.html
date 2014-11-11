@@ -156,9 +156,10 @@
   <LI><A HREF="#toc107">12. Skratky pre prvky a typy stavov v brailovskom zobrazení</A>
   <LI><A HREF="#toc108">13. Pre pokročilých</A>
     <UL>
-    <LI><A HREF="#toc109">13.1. Zmena vyslovovania symbolov pre pokročilých</A>
+    <LI><A HREF="#CommandLineOptions">13.1. parametre príkazového riadka</A>
+    <LI><A HREF="#toc110">13.2. Zmena vyslovovania symbolov pre pokročilých</A>
     </UL>
-  <LI><A HREF="#toc110">14. Ako získať viac informácií</A>
+  <LI><A HREF="#toc111">14. Ako získať viac informácií</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -361,6 +362,7 @@ Dialóg zatvorte aktivovaním tlačidla OK.
 <P>
 Ak už máte nainštalovaný NVDA podľa pokynov inštalátora, spustiť NVDA je veľmi jednoduché. Stačí stlačiť klávesovú skratku Ctrl+Alt+N, alebo vybrať položku NVDA zo skupiny NVDA z menu štart/programy.
 Tiež môžete NVDA spustiť napísaním "nvda" do okna Spustiť v ponuke štart.
+Pomocou <A HREF="#CommandLineOptions">parametrov príkazového riadka</A> môžete reštartovať NVDA (-r), Ukončiť NVDA (-q), zakázať doplnky (--disable-addons) a podobne.
 </P>
 <P>
 Na spustenie prenosnej verzie vstúpte do priečinka, kam ste si NVDA rozbalili a stlačte enter, alebo kliknite na súbor NVDA.exe.
@@ -1514,11 +1516,12 @@ Na reštartovanie stlačte tlačidlo OK.
 Začiarkavacie políčko, ktoré ak začiarknete, bude NVDA pri ukončení automaticky ukladať svoje nastavenia.
 </P>
 
-<H5>Potvrdzovať ukončenie NVDA</H5>
+<H5>Pri ukončení NVDA zobraziť dialóg s možnosťami</H5>
 
 <P>
-Začiarkávacie políčko, ktorého začiarknutím sa bude NVDA pred ukončením pýtať, či ste si istí, že program NVDA chcete ukončiť.
-Ak je začiarknuté a rozhodnete sa ukončiť NVDA, NVDA vás vyzve, aby ste ukončenie potvrdili.
+toto začiarkávacie pole určuje, či sa pri ukončení NVDA zobrazí dialóg, v ktorom môžete vybrať akciu.
+Ak je začiarknuté, pri ukončení NVDA sa zobrazí dialóg, v ktorom môžete vybrať, či chcete NVDA ukončiť, reštartovať, alebo reštartovať a zakázať doplnky.
+Ak toto pole nie je začiarknuté, NVDA sa ukončí okamžite.
 </P>
 
 <H5>prehrať zvuk pri spustení a ukončení NVDA</H5>
@@ -2327,7 +2330,13 @@ Aby ste sa v zozname pravidiel nestratili, je vhodné zadať nejaký text vystih
 Rečové slovníky NVDA toho dokážu ešte viac než len zamieňať slová.
 Dialóg Upraviť položku slovníka obsahuje začiarkavacie políčko Rozlišovať malé a veľké písmená, čím môžete NVDA prinútiť rozlišovať či text je písaný veľkými písmenami alebo nie.
 Predvolene NVDA ignoruje veľkosť písmen.
-Ďalšie začiarkavacie políčko Regulárny výraz hovorí o tom, či v poli Vzor sa nachádza jednoduchý text alebo tzv. regulárny výraz.
+</P>
+<P>
+Nasleduje prepínač, ktorým určíte, či sa má výraz použiť ak sa nachádza kdekoľvek, ak je to celé slovo, alebo ide o "regulárny výraz".
+Ak nastavíte možnosť Iba celé slová, výraz sa použije len vtedy, ak nie je súčasťou väčšieho slova, teda pred a za výrazom nenasleduje žiadny alfanumerický znak, alebo podčiarkovník, alebo za a pred výrazom nie sú žiadne znaky a symboli.
+Vráťme sa ešte k predchádzajúcemu príkladu, v ktorom sme nahradili výraz "vták" výrazom "žaba". Ak nastavíte prepínač na Iba celé slová, výraz sa nezmení, ak bude v texte výraz "vtáky" alebo "bielyvták".
+</P>
+<P>
 Regulárny výraz je špeciálny druh vzoru, ktorý umožňuje filtrovať len znaky, len číslice alebo ľubovoľný počet ľubovoľných znakov v rôznych kombináciách.
 Regulárne výrazy nie sú podrobne vysvetlené v tejto príručke, ale na internete je na túto tému možné nájsť množstvo zaujímavých článkov.
 </P>
@@ -4582,8 +4591,134 @@ Skratkami sú tiež označené tieto stavy:
 <A NAME="toc108"></A>
 <H2>13. Pre pokročilých</H2>
 
-<A NAME="toc109"></A>
-<H3>13.1. Zmena vyslovovania symbolov pre pokročilých</H3>
+<A NAME="CommandLineOptions"></A>
+<H3>13.1. parametre príkazového riadka</H3>
+
+<P>
+NVDA dokáže pri spustení spracovať parametre, ktoré ovplyvnia jeho činnosť.
+Môžete použiť viacero parametrov súčasne.
+parametre sa dajú použiť priamo v odkaze (cez vlastnosti odkazu), v dialógu spustiť (menu štart &gt; spustiť alebo skratka Windows+r) alebo priamo cez príkazový riadok Windows.
+parametre oddeľujte od seba a od názvu spustiteľného súboru NVDA medzerou.
+napríklad predvolene sa s NVDA inštaluje odkaz na pracovnej ploche, ktorý obsahuje parameter -r. Ten najprv ukončí NVDA, ak je spustené, a potom NVDA znovu spustí.
+Druhý užitočný parameter je --disable-addons, ktorý zakáže všetky doplnky.
+toto vám môže pomôcť zistiť, či problémy s NVDA spôsobuje doplnok a prípadne zabrániť vážnym problémom, ktoré doplnok spôsobuje.
+</P>
+<P>
+NVDA môžete napríklad ukončiť tak, že do okna spustiť napíšete:
+</P>
+<P>
+nvda -q
+</P>
+<P>
+Niektoré parametre majú dlhý a skrátený zápis, iné majú len dlhý zápis.
+Tie, ktoré podporujú skrátený zápis môžete kombinovať takto:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>nvda -rm</TD>
+<TD>Toto ukončí aktuálne spustenú kópiu NVDA a spustí novú kópiu, v ktorej budú zakázané zvuky a ďalšie možnosti.</TD>
+</TR>
+<TR>
+<TD>nvda -rm --disable-addons</TD>
+<TD>To isté ako v predchádzajúcom príklade, ale so zakázanými doplnkami</TD>
+</TR>
+</TABLE>
+
+<P>
+K niektorým parametrom príkazového riadka musíte pridať aj argumenty. Tak určíte, ako podrobne má NVDA zaznamenávať informácie do logu, alebo môžete určiť priečinok s používateľskými dátami NVDA.
+Ak použijete krátky zápis parametra, argumenty oddeľte medzerou, ak použijete dlhý zápis, použite znak rovná sa (=). napríklad:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>nvda -l 10</TD>
+<TD>Povie NVDA, že úroveň záznamu je debug</TD>
+</TR>
+<TR>
+<TD>nvda --log-file=c:\nvda.log</TD>
+<TD ALIGN="right">Povie NVDA, aby log zapisoval do súboru c:\nvda.log</TD>
+</TR>
+<TR>
+<TD>nvda --log-level=20 -f c:\nvda.log</TD>
+<TD>Povie NVDA, že úroveň záznamu je info a log sa má zapísať do c:\nvda.log</TD>
+</TR>
+</TABLE>
+
+<P>
+NVDA v súčasnosti podporuje tieto parametre:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>krátky zápis</TH>
+<TH>dlhý zápis</TH>
+<TH>popis</TH>
+</TR>
+<TR>
+<TD>-h</TD>
+<TD>--help</TD>
+<TD>zobrazí pomoc pre parametre príkazového riadka a skončí</TD>
+</TR>
+<TR>
+<TD>-q</TD>
+<TD>--quit</TD>
+<TD>Ukončí práve spustenú kópiu NVDA</TD>
+</TR>
+<TR>
+<TD>-r</TD>
+<TD>--replace</TD>
+<TD>Ukončí práve spustenú kópiu NVDA a spustí novú</TD>
+</TR>
+<TR>
+<TD>-k</TD>
+<TD>--check-running</TD>
+<TD>Oznámi, či NVDA beží alebo nie. 0 =beží, 1 =nie</TD>
+</TR>
+<TR>
+<TD>-f c:\esta\k\suboru</TD>
+<TD>--log-file=c:\esta\k\suboru</TD>
+<TD>Cesta k súboru, kde sa má zapisovať log</TD>
+</TR>
+<TR>
+<TD>-l n</TD>
+<TD>--log-level=n</TD>
+<TD>Určuje úroveň záznamu (debug 10, info 20, upozornenia 30, chyby 40, kritické chyby 50), predvolene je úroveň nastavená na upozornenia</TD>
+</TR>
+<TR>
+<TD>-c C:\esta\k\profilu</TD>
+<TD>--config-path=C:\esta\k\profilu</TD>
+<TD>určuje cestu, kam sa ukladajú nastavenia NVDA</TD>
+</TR>
+<TR>
+<TD>-m</TD>
+<TD>--minimal</TD>
+<TD>spustí NVDA bez zvukov, bez používateľského rozhrania, bez úvodného dialógu a podobne</TD>
+</TR>
+<TR>
+<TD>-s</TD>
+<TD>--secure</TD>
+<TD>Zabezpečený režim (je zakázaná Python konzola)</TD>
+</TR>
+<TR>
+<TD>nie je</TD>
+<TD>--disable-addons</TD>
+<TD>Všetky doplnky budú vypnuté</TD>
+</TR>
+<TR>
+<TD>nie je</TD>
+<TD>--no-sr-flag</TD>
+<TD>Nezmení predvolené označenie čítača obrazovky v systéme</TD>
+</TR>
+<TR>
+<TD>nie je</TD>
+<TD>--install</TD>
+<TD>Nainštaluje NVDA s predvolenými parametrami bez používateľského rozhrania</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc110"></A>
+<H3>13.2. Zmena vyslovovania symbolov pre pokročilých</H3>
 
 <P>
 Pomocou dialógu <A HREF="#SymbolPronunciation">Výslovnosť interpunkčných a špeciálnych symbolov</A> je možné prispôsobiť vyslovovanie interpunkčných alebo iných špeciálnych znakov. Okrem toho je možné tabuľku symbolov upravovať ručne, čo prináša širšie možnosti.
@@ -4596,7 +4731,7 @@ Formát tohoto súboru je zdokumentovaný v príručke pre vývojárov, ktorú j
 Používatelia ale nemôžu pridávať vlastné komplexné symboly.
 </P>
 
-<A NAME="toc110"></A>
+<A NAME="toc111"></A>
 <H2>14. Ako získať viac informácií</H2>
 
 <P>
