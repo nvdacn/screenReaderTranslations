@@ -10,6 +10,50 @@
 </CENTER>
 
 
+<H2>2014.4</H2>
+
+<H3>Újdonságok</H3>
+
+<UL>
+<LI>Új nyelvek: kolumbiai spanyol, pandzsábi
+<LI>Most már lehetőség van az NVDA újraindítására szokásos módon, és letiltott bővítményekkel is az NVDA Kilépés párbeszédpanelen. (<A HREF="http://community.nvda-project.org/ticket/4057">#4057</A>)
+ <UL>
+ <LI>Az NVDA a --disable-addons parancssori opcióval is elindítható letiltott bővítményekkel.
+ </UL>
+<LI>A kivétel szótárakban már megadható, hogy csak a tényleges kifejezés pontos egyezésekor történjen behelyettesítés. Tehát ha a tényleges kifejezés egy hosszabb szó részeként fordul elő, akkor a korábbiakkal ellentétben már ne történjen semmi. (<A HREF="http://community.nvda-project.org/ticket/1704">#1704</A>)
+</UL>
+
+<H3>Változások</H3>
+
+<UL>
+<LI>Elem navigációval egy böngésző módú dokumentumon kívülről annak egy elemére navigáláskor az áttekintő mód automatikusan dokumentum áttekintésre vált. Korábban ez csak akkor történt meg, amikor a navigátor kurzornál lévő elem változott a fókusz változásával párhuzamosan. (<A HREF="http://community.nvda-project.org/ticket/4369">#4369</A>)
+<LI>A braille kijelzők, és a beszédszintetizátorok listája a megfelelő párbeszédpanelen már ábécérendbe van rendezve, úgy, hogy a Nincs braille kijelző és a Csendes üzemmód opciók már mindenképpen a lista alján találhatók. (<A HREF="http://community.nvda-project.org/ticket/2724">#2724</A>)
+<LI>A liblouis braille-fordító frissítve lett a 2.6.0. verzióra (<A HREF="http://community.nvda-project.org/ticket/4434">#4434</A>, <A HREF="http://community.nvda-project.org/ticket/3835">#3835</A>)
+<LI>Böngészőmódban az e és shift+e szerkesztőmezők közti navigálásra szolgáló gyorsbillentyűk már a szerkeszthető kombinált listamezőket is kezelik, ezáltal a Googgle kereső legújabb változatának keresőmezőjét is. (<A HREF="http://community.nvda-project.org/ticket/4436">#4436</A>)
+<LI>A bal egérgombbal történő kattintás a Windows értesítési területén található NVDA ikonra már megnyitja az NVDA menüjét, korábban ilyen esetben nem történt semmi. (<A HREF="http://community.nvda-project.org/ticket/4459">#4459</A>)
+</UL>
+
+<H3>Hibajavítások</H3>
+
+<UL>
+<LI>Amikor egy böngésző módú dokumentum visszakapja a fókuszt (pl. alt+tabbal egy már megnyitott weboldal) az áttekintő kurzor már a virtuális kurzorhoz kerül, nem pedig a legközelebbi aktív vezérlőhöz (pl. egy közeli linkhez) (<A HREF="http://community.nvda-project.org/ticket/4369">#4369</A>)
+<LI>Powerpoint diavetítéseknél az áttekintő kurzor már a virtuális kurzort követi. (<A HREF="http://community.nvda-project.org/ticket/4370">#4370</A>)
+<LI>Mozilla Firefox és más Gecko-alapú böngészők: Az új tartalmakat a dinamikus területeken az NVDA már akkor is felolvassa, ha az új tartalom ARIA dinamikus típusa eltér a szülő dinamikus terület típusától. Pl. ha assertive megjelölésű tartalmat adnak hozzá polite megjelölésű dinamikus területhez. (<A HREF="http://community.nvda-project.org/ticket/4169">#4169</A>).
+<LI>Internet Explorer és más MSHTML vezérlők: Egyes esetekben amikor egy dokumentum egy másik dokumentumot tartalmaz, az már nem akadályozza meg a felhasználókat a tartalom bizonyos részeinek elérésében. (Kifejezetten keretkészleteken belüli keretkészletek esetében). (<A HREF="http://community.nvda-project.org/ticket/4418">#4418</A>)
+<LI>Az NVDA bizonyos esetekben már nem omlik össze a Handy Tech braille kijelző használatakor. (<A HREF="http://community.nvda-project.org/ticket/3709">#3709</A>)
+<LI>Windows Vista: Számos esetben már nem jelenik meg hibásan a "Belépési pont nem található" párbeszédpanel, pl. amikor az NVDA indítása asztali parancsikonról, vagy billentyűparanccsal történik. (<A HREF="http://community.nvda-project.org/ticket/4235">#4235</A>)
+<LI>Eclipse legújabb verziói: A párbeszédpaneleken található szerkeszthető szöveges vezérlőkkel kapcsolatos súlyos hibákat javítottak ki. (<A HREF="http://community.nvda-project.org/ticket/3872">#3872</A>)
+<LI>Outlook 2010: a kurzor mozgása az események, és találkozó felkérések területén már az elvárt módon működik. (<A HREF="http://community.nvda-project.org/ticket/4126">#4126</A>)
+<LI>Egy dinamikus területen belül a nem dinamikusnak megjelölt tartalmakat (pl. aria-live="off") az NVDA már helyesen kezeli. (<A HREF="http://community.nvda-project.org/ticket/4405">#4405</A>)
+<LI>Állapotsorról történő szövegfelolvasáskor, ha az adott szöveg névvel is el van látva, akkor már világosan elkülönül a név a szöveg első szavától. (<A HREF="http://community.nvda-project.org/ticket/4430">#4430</A>)
+<LI>A védett szerkesztőmezőkben beírt szavak bemondása opció bekapcsolt állapotában sem mondja már be az NVDA a helyettesítő karaktereket szavakként új szó kezdésekor. (<A HREF="http://community.nvda-project.org/ticket/4402">#4402</A>)
+<LI>Microsoft Outlook üzenetlista: az elemeket már nem adatelemekként jelenti be az NVDA. (<A HREF="http://community.nvda-project.org/ticket/4439">#4439</A>)
+<LI>Eclipse IDE: A kódszerkesztő vezérlőben szöveg kijelölése esetén az NVDA már nem mondja be az egész kijelölést a kijelölés minden változásakor. (<A HREF="http://community.nvda-project.org/ticket/2314">#2314</A>)
+<LI>Az Eclipse különböző verzióit - mint a Spring Tool Suite és az Android Developer Tools csomagban található verzió - az NVDA már Eclipse-ként azonosítja, és megfelelően kezeli. (<A HREF="http://community.nvda-project.org/ticket/4360">#4360</A>, <A HREF="http://community.nvda-project.org/ticket/4454">#4454</A>)
+<LI>Internet Explorer és más MSHTML vezérlők (beleértve számos Windows 8 alkalmazást is): Az egérmutató követése, és az érintési parancsok is sokkal pontosabban működnek nagy felbontású (magas DPI számmal rendelkező) kijelzőkön, és olyankor is, amikor a dokumentumok nagyítási szintje változik. (<A HREF="http://community.nvda-project.org/ticket/3494">#3494</A>) 
+<LI>Internet Explorer és más MSHTML vezérlők: Az egérmutató követése és az érintési parancsok használatával is már több gomb címkéje hangzik el. (<A HREF="http://community.nvda-project.org/ticket/4173">#4173</A>)
+</UL>
+
 <H2>2014.3</H2>
 
 <H3>Újdonságok</H3>
