@@ -158,12 +158,14 @@
     <LI><A HREF="#toc106">11.14. HumanWare BrailleNote</A>
     <LI><A HREF="#toc107">11.15. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc108">12. Haladó témák</A>
+  <LI><A HREF="#toc108">12. Braille vezérlőtípus- és állapotrövidítések</A>
+  <LI><A HREF="#toc109">13. Haladó témák</A>
     <UL>
-    <LI><A HREF="#toc109">12.1. Az írásjelek haladó testreszabása</A>
+    <LI><A HREF="#CommandLineOptions">13.1. Parancssori beállítások</A>
+    <LI><A HREF="#toc111">13.2. Az írásjelek haladó testreszabása</A>
     </UL>
-  <LI><A HREF="#toc110">13. További információk</A>
-  <LI><A HREF="#toc111">14. Fogalom meghatározások</A>
+  <LI><A HREF="#toc112">14. További információk</A>
+  <LI><A HREF="#toc113">15. Fogalom meghatározások</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -391,6 +393,7 @@ A hordozható verzió elkészítéséhez nyomja meg a "folytatás" gombot. A tel
 
 <P>
 Ha ön az NVDA telepítős változatát használja,  az NVDA a control+alt+n billentyűparanccsal (ha ezt engedélyezte a telepítéskor), vagy az enter billentyű megnyomásával a start menü NVDA almenüjéből elindítható. A futtatás menüből is elindíthatja a programot (start gomb +r), írja be a megjelenő mezőbe, hogy NVDA, majd nyomja meg az enter billentyűt.
+Megadhat  néhány <A HREF="#CommandLineOptions">parancssori beállítást</A> is, mely lehetővé teszi az NVDA különféle módú újraindítását (-r), quit (-q), bővítmények letiltása (--disable-addons), stb.
 </P>
 <P>
 Ha a hordozható exe fájl verziót szeretné elindítani, nyissa meg a kicsomagolt fájlok mappáját, jelölje ki az nvda.exe fájlt, nyomja meg az enter billentyűt, vagy kattintson kétszer az nvda.exe fájlra.
@@ -1540,10 +1543,12 @@ Fontos: a nyelv megváltoztatása csak az NVDA újbóli elindításával követk
 Ez egy jelölőnégyzet, amivel vezérelheti az NVDA-t, hogy elmentse-e a beállításokat kilépéskor. Alapértelmezetten ez be van kapcsolva.
 </P>
 
-<H6>Figyelmesztetés megjelenítése az NVDA bezárásakor</H6>
+<H6>A kilépési lehetőségek mutatása az NVDA-ból való kilépéskor</H6>
 
 <P>
-Ennek a jelölőnégyzetnek a bejelölése esetén az NVDA kilépéskor egy figyelmeztető párbeszédpanelt jelenít meg. A nem gombbal tovább használhatja az NVDA-t, az igen gomb hatására a program kilép. Ha ez a jelölőnégyzet nincs bejelölve, az NVDA+Q vagy a menüparancsok hatására az NVDA ereszkedő hangjelzést ad és kérdés nélkül bezárul.
+Ez a beállítás egy jelölőnégyzet, mely lehetővé teszi, hogy az NVDA-ból való kilépéskor megjelenjen-e egy párbeszédpanel az NVDA-ból való kilépéskori lehetőségek felkínálásával.
+Ha be van jelölve, egy párbeszédpanel jelenik meg, ahol eldönthető, hogy kilépünk-e az NVDA-ból, bővítmények nélkül indítjuk újra, vagy a bővítmények betöltésével együtt.
+Ha nincs bejelölve, az NVDA azonnal kilép.
 </P>
 
 <H6>Hangjelzés lejátszása az NVDA indításakor és kilépéskor</H6>
@@ -3993,10 +3998,273 @@ Alább a BRLTTY billentyűparancsait olvashatja, a kijelzők helyes beállítás
 </TABLE>
 
 <A NAME="toc108"></A>
-<H2>12. Haladó témák</H2>
+<H2>12. Braille vezérlőtípus- és állapotrövidítések</H2>
+
+<P>
+Ahhoz, hogy a braille kijelzőn minél több információ elférjen, a következő rövidítéseket alkalmazzuk a vezérlőelemek típusának és állapotának a feltüntetésére.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Rövidítés</TH>
+<TH>Vezérlő típus</TH>
+</TR>
+<TR>
+<TD>btn</TD>
+<TD>gomb</TD>
+</TR>
+<TR>
+<TD>cbo</TD>
+<TD>kombinált lista</TD>
+</TR>
+<TR>
+<TD>chk</TD>
+<TD>jelölőnégyzet</TD>
+</TR>
+<TR>
+<TD>dlg</TD>
+<TD>párbeszédablak</TD>
+</TR>
+<TR>
+<TD>edt</TD>
+<TD>szerkesztőmező</TD>
+</TR>
+<TR>
+<TD>gra</TD>
+<TD>kép</TD>
+</TR>
+<TR>
+<TD>cN</TD>
+<TD>táblázat oszlopszáma , pl. c1, c2.</TD>
+</TR>
+<TR>
+<TD>rN</TD>
+<TD>táblázat oszlopszáma , pl. r1, r2.</TD>
+</TR>
+<TR>
+<TD>hN</TD>
+<TD>címsorszint, pl. h1, h2.</TD>
+</TR>
+<TR>
+<TD>lnk</TD>
+<TD>hivatkozás</TD>
+</TR>
+<TR>
+<TD>lst</TD>
+<TD>lista</TD>
+</TR>
+<TR>
+<TD>vlnk</TD>
+<TD>meglátogatott hivatkozás</TD>
+</TR>
+<TR>
+<TD>mnu</TD>
+<TD>menü</TD>
+</TR>
+<TR>
+<TD>mnubar</TD>
+<TD>menüsor</TD>
+</TR>
+<TR>
+<TD>rbtn</TD>
+<TD>választógomb</TD>
+</TR>
+<TR>
+<TD>tb</TD>
+<TD>táblázat</TD>
+</TR>
+<TR>
+<TD>tv</TD>
+<TD>fanézet</TD>
+</TR>
+<TR>
+<TD>lv N</TD>
+<TD>a fanézet elemének hierarchikus szintjét mutatja N|</TD>
+</TR>
+<TR>
+<TD><CODE>-----</CODE></TD>
+<TD>elválasztó</TD>
+</TR>
+</TABLE>
+
+<P>
+Továbbá a következő állapotjelzőket alkalmazzuk:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Rövidítés</TH>
+<TH>Vezérlőelem állapota</TH>
+</TR>
+<TR>
+<TD>...</TD>
+<TD>Jelzi, ha egy elem támogatja az automatikus kiegészítést</TD>
+</TR>
+<TR>
+<TD>( )</TD>
+<TD>jelzi, ha egy elem (pl. egy jelölőnégyzet) - nincs bejelölve</TD>
+</TR>
+<TR>
+<TD>(x)</TD>
+<TD>jelzi, ha egy elem (pl. egy jelölőnégyzet) be van jelölve</TD>
+</TR>
+<TR>
+<TD>(-)</TD>
+<TD>jelzi, ha egy elem (pl. egy jelölőnégyzet) félig van bejelölve</TD>
+</TR>
+<TR>
+<TD>-</TD>
+<TD>jelzi, ha egy elem (pl. egy fanézetelem) összecsukható</TD>
+</TR>
+<TR>
+<TD>+</TD>
+<TD>jelzi, ha egy elem (pl. egy fanézetelem) kiterjeszthető</TD>
+</TR>
+<TR>
+<TD>clk</TD>
+<TD>jelzi, ha egy elem kattintható</TD>
+</TR>
+<TR>
+<TD>ro</TD>
+<TD>jelzi, ha egy elem (pl. egy szerkesztőmező) csak olvasható</TD>
+</TR>
+<TR>
+<TD>sel</TD>
+<TD>jelzi, ha egy elem ki van jelölve</TD>
+</TR>
+<TR>
+<TD>submnu</TD>
+<TD>jelzi, ha egy elemnek van felugró további eleme (általában egy almenü)</TD>
+</TR>
+</TABLE>
 
 <A NAME="toc109"></A>
-<H3>12.1. Az írásjelek haladó testreszabása</H3>
+<H2>13. Haladó témák</H2>
+
+<A NAME="CommandLineOptions"></A>
+<H3>13.1. Parancssori beállítások</H3>
+
+<P>
+Az NVDA képes elfogadni egy vagy több olyan beállítást, mely az NVDA indulásakor módosítja a program működését.
+Annyi beállítást adhat meg, amennyire csak szüksége van.
+Ezeket a beállításokat az NVDA parancsikonjának tulajdonságlapján a parancsmezőben, a Windows futtatás (windows r) párbeszédpanelének parancsmezőjében, vagy a parancssorban lehet megadni. 
+A beállítási lehetőségeket az NVDA futtatható programfájljának nevétől és egymástól szóközzel kell elválasztani. 
+Például: az NVDA parancsikonjában, amely a telepítéskor keletkezik, benne van az -r kapcsoló, mely az NVDA-t arra utasítja, hogy zárja be a futó példányt, mielőtt az újat megnyitná. 
+Egy másik hasznos beállítás a --disable-addons, amely az NVDA-t arra utasítja, hogy minden futó bővítményt állítson le.
+Ez a beállítás lehetővé teszi, hogy megállapítsuk, hogy egy problémát egy bővítmény okoz-e, és ha igen, azt elháríthassuk.
+Például: a futtatás ablakban a következő parancs kiadásával kiléphet a futó NVDA-ból:
+</P>
+<P>
+nvda -q
+</P>
+<P>
+Egyes beállítások megadhatók rövid és hosszú változatban, mások csak hosszú változatban. Azoknál, amelyeknél van rövid és hosszú változat, ezek tetszőlegesen használhatók, például így:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>nvda -rm</TD>
+<TD>Ez kilép az NVDA jelenleg futó példányából, majd elindítja az NVDA egy új példányát bejelentkező hangok és egyebek nélkül, stb.</TD>
+</TR>
+<TR>
+<TD>nvda -rm --disable-addons</TD>
+<TD>Ugyanaz, mint a fenti, csak a bővítményeket is tiltja.</TD>
+</TR>
+</TABLE>
+
+<P>
+Egyes parancssori beállítások elfogadnak megadható paramétereket, mint a naplózás részletessége, a konfigurációs mappa helye. Ezeket a paramétereket a rövid változat esetén szóközzel, hosszú változat esetén egyenlőségjellel (=)  kell a beállítás után írni, például: 
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>nvda -l 10</TD>
+<TD>Arra utasítja az NVDA-t, hogy a naplózás szintje a nyomkövetés legyen.</TD>
+</TR>
+<TR>
+<TD>nvda --log-file=c:\nvda.log</TD>
+<TD>Arra utasítja az NVDA-t, hogy a naplóját a c:\nvda.log fájlba írja.</TD>
+</TR>
+<TR>
+<TD>nvda --log-level=20 -f c:\nvda.log</TD>
+<TD>Arra utasítja az NVDA-t, hogy a naplózási szintje az információ legyen, a naplóját a c:\nvda.log fájlba írja.</TD>
+</TR>
+</TABLE>
+
+<P>
+Az NVDA parancssori beállításai a következők:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Rövid</TH>
+<TH>Hosszú</TH>
+<TH>Leírás</TH>
+</TR>
+<TR>
+<TD>-h</TD>
+<TD>--help</TD>
+<TD>Ismerteti a parancssori beállításokat és kilép</TD>
+</TR>
+<TR>
+<TD>-q</TD>
+<TD>--quit</TD>
+<TD>Kilép az NVDA éppen futó példányából</TD>
+</TR>
+<TR>
+<TD>-r</TD>
+<TD>--replace</TD>
+<TD>Kilép az NVDA aktuálisan futó példányából, és újat indít</TD>
+</TR>
+<TR>
+<TD>-k</TD>
+<TD>--check-running</TD>
+<TD>Kilépési kóddal jelentést ad arról, hogy az NVDA fut-e. Ha fut, a kilépési kód 0, ha nem fut, 1.</TD>
+</TR>
+<TR>
+<TD>-f NAPLÓFÁJLNÉV</TD>
+<TD>--log-file=NAPLÓFÁJLNÉV</TD>
+<TD>Megadja a naplófájlt, amibe az NVDA a naplóját írja</TD>
+</TR>
+<TR>
+<TD>-l NAPLÓZÁSSZINT</TD>
+<TD>--log-level=NAPLÓZÁSSZINT</TD>
+<TD>A naplózott üzenetek legalacsonyabb szintje (nyomkövetés 10, információ 20, figyelmeztetés 30, hiba 40, kritikus hiba 50), az alapértelmezett a figyelmeztetés</TD>
+</TR>
+<TR>
+<TD>-c BEÁLLÍTÁSMAPPA</TD>
+<TD>--config-path=BEÁLLÍTÁSMAPPA</TD>
+<TD>Annak a mappának az útvonala, ahol az NVDA a beállításait tárolja</TD>
+</TR>
+<TR>
+<TD>-m</TD>
+<TD>--minimal</TD>
+<TD>Hang, interfész, üzenet stb. nélkül indul</TD>
+</TR>
+<TR>
+<TD>-s</TD>
+<TD>--secure</TD>
+<TD>Biztonsági mód (tiltja a Python konzolt)</TD>
+</TR>
+<TR>
+<TD>None</TD>
+<TD>--disable-addons</TD>
+<TD>Nem indulnak el a bővítmények</TD>
+</TR>
+<TR>
+<TD>None</TD>
+<TD>--no-sr-flag</TD>
+<TD>Nem változtatja meg a globális képernyőbeállítás jelölőnégyzetének állapotát</TD>
+</TR>
+<TR>
+<TD>None</TD>
+<TD>--install</TD>
+<TD>Beavatkozás és képernyőkimenet nélkül telepíti az NVDA-t.</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc111"></A>
+<H3>13.2. Az írásjelek haladó testreszabása</H3>
 
 <P>
 Az írásjelek és egyéb szimbólumok egyénileg testreszabhatóak, azon túl ami az NVDA <A HREF="#SymbolPronunciation">Írásjel Kiejtés</A> párbeszédablakában megadható.
@@ -4009,15 +4277,15 @@ A fájl formája az NVDA fejlesztői útmutatójának Írásjelkiejtés fejezet�
 Érdemes megjegyezni, hogy összetett szimbólumok megadása jelenleg nem lehetséges.
 </P>
 
-<A NAME="toc110"></A>
-<H2>13. További információk</H2>
+<A NAME="toc112"></A>
+<H2>14. További információk</H2>
 
 <P>
 Mivel az NVDA-t folyamatosan frissítik, nem lehet szavatolni, hogy az e felhasználói kézikönyvben írott útmutatások mindegyike alkalmazható lesz. Ha bármilyen észrevétele van az e kézikönyvben írott útmutatásokkal kapcsolatban, kérjük, magyar nyelvű javaslata, kérése, kérdése esetén látogassa meg az: <A HREF="http://www.nvda.hu">NVDA Honosítási project</A> weboldalát, angol nyelvű kérés, kérdés, javaslat esetén pedig az <A HREF="http://www.nvda-project.org/">NVDA hivatalos weboldalát</A> további segítségért.
 </P>
 
-<A NAME="toc111"></A>
-<H2>14. Fogalom meghatározások</H2>
+<A NAME="toc113"></A>
+<H2>15. Fogalom meghatározások</H2>
 
 <P>
 Ebben a dokumentumban a következő fogalmakon az alábbi meghatározásokat értjük:
