@@ -1,33 +1,42 @@
-Novidades do NVDA
-
+﻿Novidades do NVDA
 
 %!includeconf: ../changes.t2tconf
 
 Adaptado da tradução para Português do Brasil.
 
-Traduzido por Marlin Rodrigues da Silva e Cleverson Casarin Uliana (adaptado por Rui Batista)
+Traduzido por Marlin Rodrigues da Silva e Cleverson Casarin Uliana (adaptado por Rui Batista e Rui Fontes)
+
+= 2014.4 =
+
+== Alterações ==
+- Caso o objeto para o qual se tenha movido, utilizando a navegação de objetos esteja dentro de um documento do modo de navegação, mas o objeto onde se encontrava anteriormente não estava, o modo de revisão é automaticamente alterado para modo de documento. Anteriormente, isso ocorria apenas quando o objeto de navegação era movido devido à mudança no foco. (#4369)
+
+
+ == Correcção de falhas ==
+ - Ao mover o foco de volta para  um documento do modo de navegação (isto é, usando alt+tab para retornar a uma página web já aberta), o cursor de exploração agora é posicionado adequadamente sob o cursor virtual, em lugar de colocar-se sob o controle que tem o foco (isto é, próximo a um link). (#4369)
+ - Na Apresentação de diapositivos do Powerpoint, o cursor de revisão agora acompanha corretamente  o cursor virtual. (#4370)
+ - No Mozilla Firefox e outros navegadores baseados em Gecko, o novo conteúdo numa região live será anunciado mesmo que o novo conteúdo tenha um tipo usável de ARIA live diferente do região live superior. E.g. Conteúdo marcado  como assertive é adicionado a uma região live marcada como polite. (#4169).
+ - No Internet Explorer e outros controlos MSHTML, framesets dentro de framesets já não causam a criação de um novo documento  em modo de navegação para a frameset interior, o que não permitia a navegação para as frames exteriores. (#4418)
 
 
 = 2014.3 =
-
 == Novas características ==
 - Os sons tocados quando o NVDA inicia ou termina podem agora ser desactivados, por meio de uma nova opção no Diálogo de Definições Gerais. (#834)
 - A ajuda de extras agora pode ser acedida a partir do gestor de extras para extras que o suportem. (#2694)
 - Suporte para o Calendário no Microsoft Outlook 2007 e posteriores (#2943) incluindo:
- - anúncio da hora atual ao mover-se para ela com as setas;
- - indicação no caso de a hora seleccionada se encontrar dentro de algum compromisso;
+ - anúncio da hora atual ao mover-se para ela com as setas; - indicação no caso de a hora seleccionada se encontrar dentro de algum compromisso;
  - anúncio do compromisso selecionado ao premir tab;
  - Filtragem inteligente da data, de modo a anunciar a data apenas se a nova hora ou compromisso seleccionado  estiver num dia diferente do anterior.
 - Melhorado o suporte para a caixa de entrada e outras listas de mensagens no Outlook 2010 e pusteriores (#3834) incluindo:
  - Possibilidade de silenciar os cabeçalhos das colunas (como por exemplo assunto, de, etc), desativando a opção Anunciar os cabeçalhos de linhas e colunas das tabelas no Diálogo de Definições de Formatação de Documentos;
  - Possibilidade de usar os comandos de navegação de tabelas (control + alt + setas) para se mover pelas colunas separadamente.
 - Microsoft word: Quando não houver texto descritivo para uma imagem inserida no texto, o NVDA irá anunciar o título da imagem, caso o autor tenha definido um. (#4193)
-- Microsoft Word: Anúncio da indentação do parágrafo através do comando de anúncio de formatação (NVDA+f) automaticamente, caso a nova opção Anunciar indentação do parágrafo esteja activa, nas definições de formatação de documentos. (#4165).
+- Microsoft Word: Anúncio da indentação do parágrafo através do comando de anúncio de formatação (NVDA+f) automaticamente, caso a nova opção Anunciar indentação de parágrafos esteja activa, nas definições de formatação de documentos. (#4165).
 - Anúncio de textos  inseridos automaticamente, tais como um novo marcador, numeração ou indentação com tab ao premir enter em documentos editáveis  e campos de texto. (#4185)
 - Microsoft word: ao premir NVDA+alt+c, irá anunciar o texto do comentário caso o cursor esteja sobre um. (#3528)
 - Melhorado o suporte para a leitura automática dos cabeçalhos de colunas e linhas no Microsoft Excel (#3568) incluindo:
  - Support para o esquema de intervalo com nome definido no Excel para identificar cabeçalhos de células (compatível com o leitor de ecrã Jaws)
- - Os comandos para definir cabeçalhos de colunas    (NVDA+shift+c) e definir cabeçalhos de linhas (NVDA+shift+r) agora armazenam as configurações   na folha de cálculo, parao que  estejam disponíveis da próxima vez que esta for aberta, e estarão disponíveis para outros leitores de ecrã que  suportem o esquema de intervalo com nome definido.
+ - Os comandos para definir cabeçalhos de colunas    (NVDA+shift+c) e definir cabeçalhos de linhas (NVDA+shift+r) agora armazenam as configurações   na folha de cálculo, para que  estejam disponíveis da próxima vez que esta for aberta, e estarão disponíveis para outros leitores de ecrã que  suportem o esquema de intervalo com nome definido.
  - Estes comandos também poderão ser usados múltiplas vezes por folha de cálculo para definir diferentes cabeçalhos para diferentes regiões.
 - Suporte para leitura automática de cabeçalhos de linhas e colunas das tabelas no Microsoft Word (#3110) incluindo:
  - Suporte para marcadores do MS Word para identificar cabeçalhos das células (compatível com o leitor de ecrã Jaws)
@@ -55,10 +64,8 @@ Traduzido por Marlin Rodrigues da Silva e Cleverson Casarin Uliana (adaptado por
  - Premindo esse comando duas vezes, produzir-se-á o comportamento anterior e anunciará a informação da localização para o controle completo.
 - Novo idioma: Catalão.
 
-
 == Alterações ==
 - Atualizado o transcritor braille liblouispara a versão 2.5.4. (#4103)
-
 
 == Correcção de falhas ==
 - No Google Chrome e navegadores baseados neste, certos blocos de texto (tais como os providos de ênfase) já não são repetidos quando é anunciado o texto de uma alerta ou diálogo. (#4066)
