@@ -157,9 +157,10 @@
   <LI><A HREF="#toc107">12. Tipi di controlli braille e abbreviazioni di stato</A>
   <LI><A HREF="#toc108">13. Argomenti avanzati</A>
     <UL>
-    <LI><A HREF="#toc109">13.1. Personalizzazione avanzata dei simboli di punteggiatura</A>
+    <LI><A HREF="#CommandLineOptions">13.1. Opzioni a riga di comando</A>
+    <LI><A HREF="#toc110">13.2. Personalizzazione avanzata dei simboli di punteggiatura</A>
     </UL>
-  <LI><A HREF="#toc110">14. Ulteriori Informazioni</A>
+  <LI><A HREF="#toc111">14. Ulteriori Informazioni</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -363,6 +364,7 @@ Premere a questo punto il pulsante OK per chiudere questa finestra.
 <P>
 Se si è installato NVDA tramite l'installer, per avviarlo basta premere semplicemente control+alt+n, o scegliere la voce NVDA dal menu NVDA sotto programmi del menu avvio. 
 In alternativa è possibile digitare NVDA dalla finestra di dialogo  esegui e premere invio.
+ Inoltre risulta possibile servirsi di alcuni <A HREF="#CommandLineOptions">parametri a riga di comando</A> che permettono di riavviare NVDA (-r), uscire (-q), disattivare i componenti aggiuntivi (--disable-addons) etc.
 </P>
 <P>
 Per avviare la versione portable, spostarsi nella cartella nella quale si è scompattato NVDA e premere invio o far doppio click su NVDA.exe.
@@ -1514,11 +1516,12 @@ Basterà premere il bottone OK e NVDA verrà riavviato
 Una casella di controllo che se attivata permette a NVDA di salvare automaticamente la configurazione all'uscita dal programma.
 </P>
 
-<H5>Avvisa prima di uscire da NVDA</H5>
+<H5>Mostra opzioni all'uscita di NVDA</H5>
 
 <P>
-Una casella di controllo che permette di decidere se, alla chiusura di NVDA, debba apparire una finestra di conferma, con la possibilità di annullare l'operazione.
-Se attivata, quando si cerca di chiudere NVDA apparirà una finestra di dialogo che chiederà conferma dell'operazione.
+Una casella di controllo che permette di decidere se, alla chiusura di NVDA, debbano comparire opzioni aggiuntive per decidere come chiudere il programma.
+Se attivata, quando si cerca di chiudere NVDA apparirà una finestra di dialogo che chiederà se riavviare lo screen reader, riavviarlo senza componenti aggiuntivi o semplicemente chiuderlo.
+Se non la si attiva, NVDA uscirà immediatamente.
 </P>
 
 <H5>Riproduci un suono all'avvio o all'uscita di NVDA</H5>
@@ -2323,9 +2326,15 @@ Dopo aver premuto il bottone Aggiungi, scrivere la parola nebbia sul primo campo
 </P>
 <P>
 Si noti che in realtà le regole inerenti i dizionari possono essere molto più complesse di quella mostrata a titolo esemplificativo. 
-Vi sono infatti due caselle di controllo quando si compila una nuova regola, la prima, permette di distinguere tra maiuscole e minuscole.
+Vi sono infatti alcune opzioni quando si compila una nuova regola, la prima, permette di distinguere tra maiuscole e minuscole.
 Di default NVDA non effettua questa distinzione.
-La seconda, consente di stabilire se la regola debba essere trattata come un'espressione regolare.
+</P>
+<P>
+In fine, una serie di pulsanti radio consente di stabilire se l'occorrenza inserita debba essere valutata ovunque, oppure solo come parola intera, o se invece si tratta di un'espressione regolare.
+Impostare  questa opzione su parola intera significa che non verranno presi in esame porzioni di parola.
+Per tornare all'esempio precedente, se scrivessimo UccelloMarino, e abbiamo selezionato di prendere in esame soltanto le parole intere, questa stringa verrebbe scartata.
+</P>
+<P>
 Le espressioni regolari sono strumenti molto potenti per manipolare porzioni di testo, ma non verranno trattate in questo manuale a causa della loro complessità.
 Si consiglia di cercare in rete tutorials che ne spieghino l'uso.
 </P>
@@ -4574,8 +4583,134 @@ Sono inoltre definiti i seguenti indicatori di stato:
 <A NAME="toc108"></A>
 <H2>13. Argomenti avanzati</H2>
 
-<A NAME="toc109"></A>
-<H3>13.1. Personalizzazione avanzata dei simboli di punteggiatura</H3>
+<A NAME="CommandLineOptions"></A>
+<H3>13.1. Opzioni a riga di comando</H3>
+
+<P>
+NVDA è in grado di accettare alcune opzioni a riga di comando per modificarne il comportamento all'avvio.
+Si possono inserire tutti i parametri che si desiderano.
+Queste opzioni possono essere digitate sia dalla finestra esegui di Windows, sia nelle proprietà di un collegamento sul desktop o semplicemente nella console prompt dei comandi.
+Le opzioni devono essere separate da spazi, come del resto è consuetudine.
+Ad esempio, il collegamento sul desktop che NVDA crea in fase di installazione contiene l'opzione -r, per chiudere eventuali copie dello screen reader prima di essere eseguito nuovamente.
+Un altro parametro molto utile è --disable-addons, che permette di sospendere tutti i componenti aggiuntivi all'avvio di NVDA.
+Ciò permette di stabilire se un determinato problema è causato da un componente aggiuntivo e in quel caso poterlo risolvere senza che gli addon vengano eseguiti.
+</P>
+<P>
+Per fare un esempio, è possibile uscire da NVDA digitando la stringa seguente nella finestra esegui di Windows:
+</P>
+<P>
+NVDA -q
+</P>
+<P>
+Alcuni parametri possiedono una versione breve e lunga, altri invece soltanto una lunga.
+Per quelli che possiedono solo la versione breve, si possono unire nel modo seguente:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>nvda -rm</TD>
+<TD>Chiude la copia attuale di NVDA e ne esegue una nuova con i suoni disattivati, etc.</TD>
+</TR>
+<TR>
+<TD>nvda -rm --disable-addons</TD>
+<TD>Identico a prima, ma con i componenti aggiuntivi disattivati</TD>
+</TR>
+</TABLE>
+
+<P>
+Alcune delle opzioni della riga di comando accetta parametri aggiuntivi; ad esempio quanto dettagliato debba essere il log oppure la cartella inerente il profilo di configurazione utente.
+Questi parametri devono essere collocati dopo l'opzione, separati da essa da uno spazio in cui si utilizza la versione corta o un segno di uguale (=) quando si utilizza la versione lunga; ad esempio .:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>nvda -l 10</TD>
+<TD>Dice a NVDA di avviarsi con il log impostato su debug</TD>
+</TR>
+<TR>
+<TD>nvda --log-file=c:\nvda.log</TD>
+<TD ALIGN="right">Dice a NVDA di scrivere il log in c:\nvda.log</TD>
+</TR>
+<TR>
+<TD>nvda --log-level=20 -f c:\nvda.log</TD>
+<TD>Dice a NVDA  di avviarsi con livello di log impostato su info e di scrivere il log in c:\nvda.log</TD>
+</TR>
+</TABLE>
+
+<P>
+Ecco l'elenco dei parametri a riga di comando di NVDA:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Breve</TH>
+<TH>Lungo</TH>
+<TH>Descrizione</TH>
+</TR>
+<TR>
+<TD>-h</TD>
+<TD>--help</TD>
+<TD>Visualizza l'aiuto sulla riga di comando ed esce</TD>
+</TR>
+<TR>
+<TD>-q</TD>
+<TD>--quit</TD>
+<TD>Chiude eventuali copie in esecuzione di NVDA</TD>
+</TR>
+<TR>
+<TD>-r</TD>
+<TD>--replace</TD>
+<TD>Chiude la copia in esecuzione di NVDA e si riavvia</TD>
+</TR>
+<TR>
+<TD>-k</TD>
+<TD>--check-running</TD>
+<TD>Notifica se NVDA è in esecuzione tramite exit code; 0 se in esecuzione, 1 se non lo è</TD>
+</TR>
+<TR>
+<TD>-f LOGFILENAME</TD>
+<TD>--log-file=LOGFILENAME</TD>
+<TD>Il file nel quale verrà scritto il log</TD>
+</TR>
+<TR>
+<TD>-l LOGLEVEL</TD>
+<TD>--log-level=LOGLEVEL</TD>
+<TD>Il livello più basso di un messaggio loggato (debug 10, info 20, warning 30, error 40, critical 50), default è warning</TD>
+</TR>
+<TR>
+<TD>-c CONFIGPATH</TD>
+<TD>--config-path=CONFIGPATH</TD>
+<TD>Il percorso ove sono salvate tutte le impostazioni di NVDA</TD>
+</TR>
+<TR>
+<TD>-m</TD>
+<TD>--minimal</TD>
+<TD>Niente suoni, niente interfaccia, niente messaggio all'avvio etc</TD>
+</TR>
+<TR>
+<TD>-s</TD>
+<TD>--secure</TD>
+<TD>Modalità protetta (disabilita Python console)</TD>
+</TR>
+<TR>
+<TD>None</TD>
+<TD>--disable-addons</TD>
+<TD>I componenti aggiuntivi non avranno alcun effetto</TD>
+</TR>
+<TR>
+<TD>None</TD>
+<TD>--no-sr-flag</TD>
+<TD>Non modifica il flag Screen Reader per il sistema</TD>
+</TR>
+<TR>
+<TD>None</TD>
+<TD>--install</TD>
+<TD>Silently installa NVDA</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc110"></A>
+<H3>13.2. Personalizzazione avanzata dei simboli di punteggiatura</H3>
 
 <P>
 in aggiunta a ciò che abbiamo visto nella <A HREF="#SymbolPronunciation">Finestra di dialogo Pronuncia Punteggiatura/Simboli</A>, è possibile personalizzare la punteggiatura ed altri simboli in maniera diversa.
@@ -4588,7 +4723,7 @@ Il formato di tale file è documentato nella guida per gli sviluppatori, sezione
 Comunque, non è possibile per gli utenti definire simboli troppo complessi.
 </P>
 
-<A NAME="toc110"></A>
+<A NAME="toc111"></A>
 <H2>14. Ulteriori Informazioni</H2>
 
 <P>
