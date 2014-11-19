@@ -25,7 +25,7 @@ addresses = {
     },
     'ca': {
         'lang': 'Catalan',
-        'email': ['Ruben Alcaraz <ruben.hangar1.8@gmail.com>', 'Dr. Mireia Ribera <mireia.ribera@gmail.com>', 'Santi Moese <santispock@gmail.com>', 'salse@ub.edu']
+        'email': ['Ruben Alcaraz <ruben.hangar1.8@gmail.com>', 'Dr. Mireia Ribera <mireia.ribera@gmail.com>', 'Santi Moese <santispock@gmail.com>', 'Marina Salse Rovira <salse@ub.edu>']
     },
     'cs': {
         'lang': 'Czech',
