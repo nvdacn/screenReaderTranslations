@@ -54,6 +54,16 @@
 <LI>Hiiren seuranta ja kosketuksella tutkiminen lukevat nyt useampien painikkeiden nimet Internet Explorerissa ja muissa MSHTML-säätimissä. (<A HREF="http://community.nvda-project.org/ticket/4173">#4173</A>)
 </UL>
 
+<H3>Muutokset kehittäjille (englanniksi)</H3>
+
+<UL>
+<LI>For executables which host many different apps (e.g. javaw.exe), code can now be provided to load specific app modules for each app instead of loading the same app module for all hosted apps. (<A HREF="http://community.nvda-project.org/ticket/4360">#4360</A>)
+ <UL>
+ <LI>See the code documentation for appModuleHandler.AppModule for details.
+ <LI>Support for javaw.exe is implemented.
+ </UL>
+</UL>
+
 <H2>2014.3</H2>
 
 <H3>Uudet ominaisuudet</H3>
@@ -152,6 +162,18 @@
 <LI>Sanoja ei enää katkaista virheellisesti esim. vokaalimerkin tai intialaisissa kielissä käytettävän virama-tarkkeen kohdalla kirjoitettuja sanoja luettaessa sekä muutamissa muissa tapauksissa. (<A HREF="http://community.nvda-project.org/ticket/4254">#4254</A>)
 <LI>Numeeriset muokattavat tekstikentät käsitellään nyt oikein GoldWave-äänieditorissa. (<A HREF="http://community.nvda-project.org/ticket/670">#670</A>)
 <LI>Microsoft Word: Kun liikutaan kappaleittain Control+ala- tai Control+ylänuolella, niitä ei tarvitse enää painaa  kahdesti luettelomerkkejä sisältävissä tai numeroiduissa luetteloissa oltaessa. (<A HREF="http://community.nvda-project.org/ticket/3290">#3290</A>)
+</UL>
+
+<H3>Muutokset kehittäjille (englanniksi)</H3>
+
+<UL>
+<LI>NVDA now has unified support for add-on documentation. See the Add-on Documentation section of the Developer Guide for details. (<A HREF="http://community.nvda-project.org/ticket/2694">#2694</A>)
+<LI>When providing gesture bindings on a ScriptableObject via __gestures, it is now possible to provide the None keyword as the script. This unbinds the gesture in any base classes. (<A HREF="http://community.nvda-project.org/ticket/4240">#4240</A>)
+<LI>It is now possible to change the shortcut key used to start NVDA for locales where the normal shortcut causes problems. (<A HREF="http://community.nvda-project.org/ticket/2209">#2209</A>)
+ <UL>
+ <LI>This is done via gettext.
+ <LI>Note that the text for the Create desktop shortcut option in the Install NVDA dialog, as well as the shortcut key in the User Guide, must also be updated.
+ </UL>
 </UL>
 
 <H2>2014.2</H2>
@@ -270,6 +292,16 @@
 <LI>NVDA ei jää enää jumiin, kun Papenmeier BRAILLEX:n vanhempi malli on valittu pistenäytöksi ja jos sitä ei ole kytketty koneeseen.
 </UL>
 
+<H3>Muutokset kehittäjille (englanniksi)</H3>
+
+<UL>
+<LI>AppModules now contain productName and productVersion properties. This info is also now included in Developer Info (NVDA+f1). (<A HREF="http://community.nvda-project.org/ticket/1625">#1625</A>)
+<LI>In the Python Console, you can now press the tab key to complete the current identifier. (<A HREF="http://community.nvda-project.org/ticket/433">#433</A>)
+ <UL>
+ <LI>If there are multiple possibilities, you can press tab a second time to choose from a list.
+ </UL>
+</UL>
+
 <H2>2013.3</H2>
 
 <H3>Uudet ominaisuudet</H3>
@@ -309,6 +341,14 @@
 <LI>NVDA:n vaihtaminen ruututarkasteluun ei enää epäonnistu, mikäli navigointiobjektilla ei ole ruudulla todellista sijaintia. Tarkastelukohdistin sijoitetaan nyt tällaisessa tapauksessa ruudun yläreunaan. (<A HREF="http://community.nvda-project.org/ticket/3454">#3454</A>)
 <LI>Korjattu ongelma, joka aiheutti joissakin tapauksissa Freedom Scientificin pistenäyttöajurin toimimattomuutta, kun portiksi oli määritetty USB. (<A HREF="http://community.nvda-project.org/ticket/3509">#3509</A>, <A HREF="http://community.nvda-project.org/ticket/3662">#3662</A>)
 <LI>Korjattu ongelma, joka aiheutti joissakin tapauksissa sen, että Freedom Scientificin pistenäyttöjen näppäimiä ei tunnistettu. (<A HREF="http://community.nvda-project.org/ticket/3401">#3401</A>, <A HREF="http://community.nvda-project.org/ticket/3662">#3662</A>)
+</UL>
+
+<H3>Muutokset kehittäjille (englanniksi)</H3>
+
+<UL>
+<LI>You can specify the category to be displayed to the user for scripts using the scriptCategory attribute on ScriptableObject classes and the category attribute on script methods. See the documentation for baseObject.ScriptableObject for more details. (<A HREF="http://community.nvda-project.org/ticket/1532">#1532</A>)
+<LI>config.save is deprecated and may be removed in a future release. Use config.conf.save instead. (<A HREF="http://community.nvda-project.org/ticket/667">#667</A>)
+<LI>config.validateConfig is deprecated and may be removed in a future release. Add-ons which need this should provide their own implementation. (<A HREF="http://community.nvda-project.org/ticket/667">#667</A>, <A HREF="http://community.nvda-project.org/ticket/3632">#3632</A>)
 </UL>
 
 <H2>2013.2</H2>
@@ -384,6 +424,17 @@
 <LI>Objekteja ei enää lueta Microsoft PowerPointissa ajoittain kahdesti niitä valittaessa tai muokattaessa. (<A HREF="http://community.nvda-project.org/ticket/3394">#3394</A>)
 <LI>NVDA ei enää aiheuta Adobe Readerin kaatumista tai jumiutumista tietyissä väärin muotoilluissa PDF-asiakirjoissa, jotka sisältävät taulukoiden ulkopuolisia rivejä. (<A HREF="http://community.nvda-project.org/ticket/3399">#3399</A>)
 <LI>NVDA tunnistaa nyt asianmukaisesti seuraavan aktiivisen dian poistettaessa niitä Microsoft PowerPointin pikkukuvanäkymässä. (<A HREF="http://community.nvda-project.org/ticket/3415">#3415</A>)
+</UL>
+
+<H3>Muutokset kehittäjille (englanniksi)</H3>
+
+<UL>
+<LI>windowUtils.findDescendantWindow has been added to search for a descendant window (HWND) matching the specified visibility, control ID and/or class name.
+<LI>The remote Python console no longer times out after 10 seconds while waiting for input. (<A HREF="http://community.nvda-project.org/ticket/3126">#3126</A>)
+<LI>Inclusion of the bisect module in binary builds is deprecated and may be removed in a future release. (<A HREF="http://community.nvda-project.org/ticket/3368">#3368</A>)
+ <UL>
+ <LI>Add-ons which depend on bisect (including the urllib2 module) should be updated to include this module.
+ </UL>
 </UL>
 
 <H2>2013.1.1</H2>
@@ -514,6 +565,22 @@ Katso uudet näppäinkomennot <A HREF="keyCommands.html">komentojen pikaoppaasta
 <LI>Selaustilan käyttäminen on nyt mahdollista Internet Explorer 10:ssä (esim. <A HREF="http://www.gmail.com">www.gmail.com</A> -kirjautumissivulla) yhteensopivuustilassa oltaessa. (<A HREF="http://community.nvda-project.org/ticket/3151">#3151</A>)
 </UL>
 
+<H3>Muutokset kehittäjille (englanniksi)</H3>
+
+<UL>
+<LI>Braille display drivers can now support manual port selection. (<A HREF="http://community.nvda-project.org/ticket/426">#426</A>)
+ <UL>
+ <LI>This is most useful for braille displays which support connection via a legacy serial port.
+ <LI>This is done using the getPossiblePorts class method on the BrailleDisplayDriver class.
+ </UL>
+<LI>Braille input from braille keyboards is now supported. (<A HREF="http://community.nvda-project.org/ticket/808">#808</A>)
+ <UL>
+ <LI>Braille input is encompassed by the brailleInput.BrailleInputGesture class or a subclass thereof.
+ <LI>Subclasses of braille.BrailleDisplayGesture (as implemented in braille display drivers) can also inherit from brailleInput.BrailleInputGesture. This allows display commands and braille input to be handled by the same gesture class.
+ </UL>
+<LI>You can now use comHelper.getActiveObject to get an active COM object from a normal process when NVDA is running with the UIAccess privilege. (<A HREF="http://community.nvda-project.org/ticket/2483">#2483</A>)
+</UL>
+
 <H2>2012.3</H2>
 
 <P>
@@ -637,6 +704,25 @@ Tämän version uusia ominaisuuksia ovat mm. tuki aasialaisten kielten merkkien 
 <LI>NVDA toimii taas Yahoo! Mailin viestilistassa Internet Explorerista käytettäessä. (<A HREF="http://community.nvda-project.org/ticket/2780">#2780</A>)
 </UL>
 
+<H3>Muutokset kehittäjille (englanniksi)</H3>
+
+<UL>
+<LI>Previous log file is now copied to nvda-old.log on NVDA initialization. Therefore, if NVDA crashes or is restarted, logging information from that session is still accessible for inspection. (<A HREF="http://community.nvda-project.org/ticket/916">#916</A>)
+<LI>Fetching the role property in chooseNVDAObjectOverlayClasses no longer causes the role to be incorrect and thus not reported on focus for certain objects such as Windows command consoles and Scintilla controls. (<A HREF="http://community.nvda-project.org/ticket/2569">#2569</A>)
+<LI>The NVDA Preferences, Tools and Help menus are now accessible as attributes on gui.mainFrame.sysTrayIcon named preferencesMenu, toolsMenu and helpMenu, respectively. This allows plugins to more easily add items to these menus.
+<LI>The navigatorObject_doDefaultAction script in globalCommands has been renamed to review_activate.
+<LI>Gettext message contexts are now supported. This allows multiple translations to be defined for a single English message depending on the context. (<A HREF="http://community.nvda-project.org/ticket/1524">#1524</A>)
+ <UL>
+ <LI>This is done using the pgettext(context, message) function.
+ <LI>This is supported for both NVDA itself and add-ons.
+ <LI>xgettext and msgfmt from GNU gettext must be used to create any PO and MO files. The Python tools do not support message contexts.
+ <LI>For xgettext, pass the --keyword=pgettext:1c,2 command line argument to enable inclusion of message contexts.
+ <LI>See <A HREF="http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts">http://www.gnu.org/software/gettext/manual/html_node/Contexts.html#Contexts</A> for more information.
+ </UL>
+<LI>It is now possible to access built-in NVDA modules where they have been overridden by third party modules. See the nvdaBuiltin module for details.
+<LI>Add-on translation support can now be used within the add-on installTasks module. (<A HREF="http://community.nvda-project.org/ticket/2715">#2715</A>)
+</UL>
+
 <H2>2012.2.1</H2>
 
 <P>
@@ -685,6 +771,12 @@ Tämän version tärkeimpiä uusia ominaisuuksia ovat sisäänrakennettu asennus
 <LI>Pikanavigointi toimii nyt sisennetyille kappaleille ja upotetuille objekteille selaustilassa Mozilla Gecko 14:ää ja uudempaa käyttävissä sovelluksissa (esim. Firefox 14:ssä). (<A HREF="http://community.nvda-project.org/ticket/2287">#2287</A>)
 <LI>NVDA ei enää lue häiritsevää sisältöä Internet Explorer 9:ssä kohdistuksen siirtyessä tiettyjen kiintopisteiden tai kohdistettavien elementtien sisään (erityisesti kohdistettavaan tai ARIA-kiintopisteroolin sisältävään div-elementtiin).
 <LI>NVDA:n kuvake näytetään nyt oikein työpöydän ja Käynnistä-valikon pikakuvakkeissa 64-bittisissä Windows-versioissa. (<A HREF="http://community.nvda-project.org/ticket/354">#354</A>)
+</UL>
+
+<H3>Muutokset kehittäjille (englanniksi)</H3>
+
+<UL>
+<LI>Due to the replacement of the previous NSIS installer for NVDA with a built-in installer in Python, it is no longer necessary for translaters to maintain a langstrings.txt file for the installer. All localization strings are now managed by gettext po files.
 </UL>
 
 <H2>2012.1</H2>
@@ -768,6 +860,25 @@ Tämän version tärkeimpiä uusia ominaisuuksia ovat pistenäytön sujuvampi lu
 <LI>Puhe ei enää mykisty joissakin tapauksissa NVDA:n Näytä loki -sovelluksen Tallenna nimellä -valintaikkunassa eSpeakia käytettäessä. (<A HREF="http://community.nvda-project.org/ticket/2145">#2145</A>)
 </UL>
 
+<H3>Muutokset kehittäjille (englanniksi)</H3>
+
+<UL>
+<LI>There is now a remote Python console for situations where remote debugging is useful. See the Developer Guide for details.
+<LI>The base path of NVDA's code is now stripped from tracebacks in the log to improve readability. (<A HREF="http://community.nvda-project.org/ticket/1880">#1880</A>)
+<LI>TextInfo objects now have an activate() method to activate the position represented by the TextInfo.
+ <UL>
+ <LI>This is used by braille to activate the position using cursor routing keys on a braille display. However, there may be other callers in future.
+ </UL>
+<LI>TreeInterceptors and NVDAObjects which only expose one page of text at a time can support automatic page turns during say all by using the textInfos.DocumentWithPageTurns mix-in. (<A HREF="http://community.nvda-project.org/ticket/1978">#1978</A>)
+<LI>Several control and output constants have been renamed or moved. (<A HREF="http://community.nvda-project.org/ticket/228">#228</A>)
+ <UL>
+ <LI>speech.REASON_* constants have been moved to controlTypes.
+ <LI>In controlTypes, speechRoleLabels and speechStateLabels have been renamed to just roleLabels and stateLabels, respectively.
+ </UL>
+<LI>Braille output is now logged at level input/output. First, the untranslated text of all regions is logged, followed by the braille cells of the window being displayed. (<A HREF="http://community.nvda-project.org/ticket/2102">#2102</A>)
+<LI>subclasses of the sapi5 synthDriver can now override _getVoiceTokens and extend <U>init</U> to support custom voice tokens such as with sapi.spObjectTokenCategory to get tokens from a custom registry location.
+</UL>
+
 <H2>2011.3</H2>
 
 <P>
@@ -834,6 +945,16 @@ Tämän version tärkeimpiä uusia ominaisuuksia ovat automaattinen puhesyntetis
 <LI>NVDA toimii nyt oikein useiden Windows XP:n mukana toimitettujen sovellusten Tietoja-valintaikkunoissa, mukaan lukien Muistion Tietoja Muistiosta ja Tietoja Windowsista. (<A HREF="http://community.nvda-project.org/ticket/1853">#1853</A>, <A HREF="http://community.nvda-project.org/ticket/1855">#1855</A>)
 <LI>Korjattu sanoittain lukeminen Windowsin muokkaussäätimissä. (<A HREF="http://community.nvda-project.org/ticket/1877">#1877</A>)
 <LI>Muokattavasta tekstikentästä pois Siirtyminen vasemmalla/oikealla nuolella tai Page up -näppäimellä vuorovaikutustilassa oltaessa vaihtaa nyt asianmukaisesti selaustilaan, kun Automaattinen vuorovaikutustila kohdistinta liikutettaessa -asetus on käytössä. (<A HREF="http://community.nvda-project.org/ticket/1733">#1733</A>)
+</UL>
+
+<H3>Muutokset kehittäjille (englanniksi)</H3>
+
+<UL>
+<LI>NVDA can now instruct speech synthesizers to switch languages for particular sections of speech.
+ <UL>
+ <LI>To support this, drivers must handle speech.LangChangeCommand in sequences past to SynthDriver.speak().
+ <LI>SynthDriver objects should also provide the language argument to VoiceInfo objects (or override the language attribute to retrieve the current language). Otherwise, NVDA's user interface language will be used.
+ </UL>
 </UL>
 
 <H2>2011.2</H2>
@@ -955,7 +1076,31 @@ Tämän version tärkeimpiä uusia ominaisuuksia ovat merkittävät välimerkkej
 <LI>Ratkaistu joitakin MDV Lilli -pistenäytön USB-yhteyden ongelmia. (<A HREF="http://community.nvda-project.org/ticket/241">#241</A>)
 <LI>Selaustilassa ei jätetä enää tietyissä tapauksissa välilyöntejä huomiotta (esim. linkin jälkeen) Internet explorerissa ja muissa MSHTML-säätimissä.
 <LI>Jätetty huomiotta joitakin ylimääräisiä rivinvaihtoja selaustilassa internet Explorerissa ja muissa MSHTML-säätimissä. Erityisesti HTML-elementit, joissa on None-näyttötyyli, eivät enää aiheuta pakotettua rivinvaihtoa. (<A HREF="http://community.nvda-project.org/ticket/1685">#1685</A>)
-<LI>Mikäli NVDA ei pysty käynnistymään, Windowsin kriittisen pysähdyksen äänen soittaminen ei enää aiheuta lokitiedostoon kriittisen virheen ilmoitusta.
+<LI>Jos NVDA ei pysty käynnistymään, Windowsin kriittisen pysähdyksen äänen soittaminen ei enää aiheuta lokitiedostoon kriittisen virheen ilmoitusta.
+</UL>
+
+<H3>Muutokset kehittäjille (englanniksi)</H3>
+
+<UL>
+<LI>Developer documentation can now be generated using SCons. See readme.txt at the root of the source distribution for details, including associated dependencies.
+<LI>Locales can now provide descriptions for characters. See the Character Descriptions section of the Developer Guide for details. (<A HREF="http://community.nvda-project.org/ticket/55">#55</A>)
+<LI>Locales can now provide information about the pronunciation of specific punctuation and other symbols. See the Symbol Pronunciation section of the Developer Guide for details. (<A HREF="http://community.nvda-project.org/ticket/332">#332</A>)
+<LI>You can now build NVDAHelper with several debugging options using the nvdaHelperDebugFlags SCons variable. See readme.txt at the root of the source distribution for details. (<A HREF="http://community.nvda-project.org/ticket/1390">#1390</A>)
+<LI>Synth drivers are now passed a sequence of text and speech commands to speak, instead of just text and an index.
+ <UL>
+ <LI>This allows for embedded indexes, parameter changes, etc.
+ <LI>Drivers should implement SynthDriver.speak() instead of SynthDriver.speakText() and SynthDriver.speakCharacter().
+ <LI>The old methods will be used if SynthDriver.speak() is not implemented, but they are deprecated and will be removed in a future release.
+ </UL>
+<LI>gui.execute() has been removed. wx.CallAfter() should be used instead.
+<LI>gui.scriptUI has been removed.
+ <UL>
+ <LI>For message dialogs, use wx.CallAfter(gui.messageBox, ...).
+ <LI>For all other dialogs, real wx dialogs should be used instead.
+ <LI>A new gui.runScriptModalDialog() function simplifies using modal dialogs from scripts.
+ </UL>
+<LI>Synth drivers can now support boolean settings. See SynthDriverHandler.BooleanSynthSetting.
+<LI>SCons now accepts a certTimestampServer variable specifying the URL of a timestamping server to use to timestamp authenticode signatures. (<A HREF="http://community.nvda-project.org/ticket/1644">#1644</A>)
 </UL>
 
 <H2>2011.1.1</H2>
@@ -1057,6 +1202,57 @@ Tämän version tärkeimpiä uusia ominaisuuksia ovat automaattinen uuden teksti
 <LI>NVDA ei enää lue koko tekstiä jokaisen kirjoitetun merkin jälkeen Visual Studio 2005:n ja 2008:n koodieditorissa. (<A HREF="http://community.nvda-project.org/ticket/975">#975</A>)
 <LI>Korjattu ongelma, joka aiheutti sen, että joitakin pistenäyttöjä ei tyhjennetty asianmukaisesti kun NVDA suljettiin tai käytettävää pistenäyttöä vaihdettiin.
 <LI>Alkuperäistä kohdistusta ei enää lueta ajoittain kahta kertaa NVDA:n käynnistyessä. (<A HREF="http://community.nvda-project.org/ticket/1359">#1359</A>)
+</UL>
+
+<H3>Muutokset kehittäjille (englanniksi)</H3>
+
+<UL>
+<LI>SCons is now used to prepare the source tree and create binary builds, portable archives, installers, etc. See readme.txt at the root of the source distribution for details.
+<LI>The key names used by NVDA (including key maps) have been made more friendly/logical; e.g. upArrow instead of extendedUp and numpadPageUp instead of prior. See the vkCodes module for a list.
+<LI>All input from the user is now represented by an inputCore.InputGesture instance. (<A HREF="http://community.nvda-project.org/ticket/601">#601</A>)
+ <UL>
+ <LI>Each source of input subclasses the base InputGesture class.
+ <LI>Key presses on the system keyboard are encompassed by the keyboardHandler.KeyboardInputGesture class.
+ <LI>Presses of buttons, wheels and other controls on a braille display are encompassed by subclasses of the braille.BrailleDisplayGesture class. These subclasses are provided by each braille display driver.
+ </UL>
+<LI>Input gestures are bound to ScriptableObjects using the ScriptableObject.bindGesture() method on an instance or an __gestures dict on the class which maps gesture identifiers to script names. See baseObject.ScriptableObject for details.
+<LI>App modules no longer have key map files. All input gesture bindings must be done in the app module itself.
+<LI>All scripts now take an InputGesture instance instead of a key press.
+ <UL>
+ <LI>KeyboardInputGestures can be sent on to the OS using the send() method of the gesture.
+ </UL>
+<LI>To send an arbitrary key press, you must now create a KeyboardInputGesture using KeyboardInputGesture.fromName() and then use its send() method.
+<LI>Locales may now provide an input gesture map file to add new bindings or override existing bindings for scripts anywhere in NVDA. (<A HREF="http://community.nvda-project.org/ticket/810">#810</A>)
+ <UL>
+ <LI>Locale gesture maps should be placed in locale\LANG\gestures.ini, where LANG is the language code.
+ <LI>See inputCore.GlobalGestureMap for details of the file format.
+ </UL>
+<LI>The new LiveText and Terminal NVDAObject behaviors facilitate automatic reporting of new text. See those classes in NVDAObjects.behaviors for details. (<A HREF="http://community.nvda-project.org/ticket/936">#936</A>)
+ <UL>
+ <LI>The NVDAObjects.window.DisplayModelLiveText overlay class can be used for objects which must retrieve text written to the display.
+ <LI>See the mirc and putty app modules for usage examples.
+ </UL>
+<LI>There is no longer an _default app module. App modules should instead subclass appModuleHandler.AppModule (the base AppModule class).
+<LI>Support for global plugins which can globally bind scripts, handle NVDAObject events and choose NVDAObject overlay classes. (<A HREF="http://community.nvda-project.org/ticket/281">#281</A>) See globalPluginHandler.GlobalPlugin for details.
+<LI>On SynthDriver objects, the available* attributes for string settings (e.g. availableVoices and availableVariants)  are now OrderedDicts keyed by ID instead of lists.
+<LI>synthDriverHandler.VoiceInfo now takes an optional language argument which specifies the language of the voice.
+<LI>SynthDriver objects now provide a language attribute which specifies the language of the current voice.
+ <UL>
+ <LI>The base implementation uses the language specified on the VoiceInfo objects in availableVoices. This is suitable for most synthesisers which support one language per voice.
+ </UL>
+<LI>Braille display drivers have been enhanced to allow buttons, wheels and other controls to be bound to NVDA scripts:
+ <UL>
+ <LI>Drivers can provide a global input gesture map to add bindings for scripts anywhere in NVDA.
+ <LI>They can also provide their own scripts to perform display specific functions.
+ <LI>See braille.BrailleDisplayDriver for details and existing braille display drivers for examples.
+ </UL>
+<LI>The 'selfVoicing' property on AppModule classes has now been renamed to 'sleepMode'.
+<LI>The app module events event_appLoseFocus and event_appGainFocus have now been renamed to event_appModule_loseFocus and event_appModule_gainFocus, respectivly, in order to make the naming convention consistent with app modules and tree interceptors.
+<LI>All braille display drivers should now use braille.BrailleDisplayDriver instead of braille.BrailleDisplayDriverWithCursor.
+ <UL>
+ <LI>The cursor is now managed outside of the driver.
+ <LI>Existing drivers need only change their class statement accordingly and rename their _display method to display.
+ </UL>
 </UL>
 
 <H2>2010.2</H2>
