@@ -215,10 +215,14 @@ class PoChecker(object):
 def main():
 	if len(sys.argv) <= 1:
 		sys.exit("Usage: %s poFile ...")
+	exitCode = 0
 	for fn in sys.argv[1:]:
 		c = PoChecker(fn)
 		if not c.check():
 			print c.getReport().encode("UTF-8") + "\n\n"
+		if c.errorCount > 0:
+			exitCode = 1
+	return exitCode
 
 if __name__ == "__main__":
-	main()
+	sys.exit(main())
