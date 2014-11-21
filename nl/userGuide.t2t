@@ -131,6 +131,7 @@ Druk nu op OK om het dialoogvenster te sluiten.
 ++ NVDA starten ++
 Als u NVDA hebt geïnstalleerd met het installatieprogramma, kunt u NVDA eenvoudig starten met de toetscombinatie Ctrl+Alt+n, of NVDA selecteren onder Programma’s in het Startmenu gevolgd door Enter.
 U kunt het programma ook starten door in het dialoogvenster Uitvoeren de letters NVDA te typen en vervolgens Enter in te drukken.
+U kunt ook [commandoregelopties opgeven #CommandLineOptionstart waarmee u NVDAherstart  (-r), be�indigt (-q), add -ons uitschakelt (--disable-addons), etc.
 
 Om de  draagbare versie van NVDA te starten gaat u naar de map waarin u de uitgepakte bestanden hebt opgeslagen. Daar selecteert u NVDA.exe. Druk op de Entertoets of dubbelklik op het bestand.
 
@@ -608,8 +609,9 @@ Druk op OK en NVDA wordt opnieuw gestart.
 ==== Configuratie opslaan bij afsluiten ====
 Als u een vinkje plaatst in het selectievakje zal de huidige configuratie automatisch worden opgeslagen bij afsluiting van NVDA.
 
-==== Waarschuwen bij afsluiten NVDA ====
-Als u een vinkje plaatst in dit selectievakje zal NVDA u vragen of u het programma al dan niet wilt afsluiten telkens wanneer u het programma wilt beëindigen. 
+==== Afsluitkeuzemogelijkheden tonen bij be�indigen NVDA ====
+Als u het selectievakje aanvinkt, verschijnt er bij het be�indigen van NVDA een dialoogvenster met afsluitopties. 
+U hebt de keuze uit Afsluiten, Herstarten of Herstarten zonder Add-ons.
 
 ==== Geluid afspelen bij het starten of afsluiten van NVDA ====
 Als u een vinkje plaatst in dit selectievakje zal NVDA bij het opstarten of afsluiten geluid afspelen.
@@ -1937,6 +1939,44 @@ Verder worden de volgende gebruiksstatusaanduidingen gebruikt:
 
 + Geavanceerde Onderwerpen +
  
+++ Commandoregelopties ++[CommandLineOptions]	
+Aan het commando'NVDA starten' kunnenextra  opties worden toegevoegd die van invloed zijn op het opstartgedrag. U kunt zoveel opties opgeven als u nodig hebt. 
+	Deze opties kunnen worden opgegeven in het dialoogvenster Eigenschappen van de snelkoppeling waarmee NVDA wordt gestart, het venster Uitvoeren (Windows-toets + r) of via de Windows-opdrachtprompt.
+De opties moeten met spaties van de naam van  het NVDA-uitvoerbestand en van elkaar worden gescheiden.
+De snelkoppeling op het bureaublad, bij voorbeeld, die tijdens het installeren door NVDA wordt aangemaakt heeft als optie '-r' die er voor zorgt dat de op dat moment actieve kopie van NVDA eerst wordt afgesloten alvorens een nieuwe wordt gestart. 
+Nog een nuttige optie is het uitschakelen van add-Ons, waarmee alle actieve Add-Ons in NVDA worden onderbroken.
+Hierdoor kan worden vastgesteld of een probleem door een Add-On wordt veroorzaakt en kan de normale werking van NVDA, als deze ernstig werd verstoord door problemen met Add-Ons, worden hersteld.  
+
+U kunt bij voorbeeld  het volgende opgeven in het dialoogvenster Uitvoeren om de op dat moment actieve kopie van NVDA af te sluiten:
+
+nvda -q
+
+Er zijn commandoregel-opties die een lange en een korte notatie hebben, terwijl andere alleen een lange notatie hebben.
+De opties met een korte notatie kunnen als volgt worden gecombineerd: 
+| nvda -rm | Hiermee wordt de momenteel active kopie van NVDA afgesloten en wordt een nieuwe kopie gestart zonder opstartgeluid etc. |
+| nvda -rm --disable-addons | Zelfde als hiervoor maar met Add-Ons onderbroken. |
+
+Aan sommige commandoregelopties kunnen extra parameters worden toegevoegd, zoals het niveau van loggen of het pad naar het configuratiebestand van de gebruiker. 
+Die parameters moeten achter de optie worden geplaatst en moeten daarvan gescheiden worden door een spatie wanneer het de korte notatie betreft terwijl bij de lange notatie het =  teken wordt gebruikt. Voorbeelden zijn:
+ | nvda -l 10 | Geeft NVDA opdracht te starten met log-niveau ingesteld op debug |
+| nvda --log-file=c:\nvda.log |  Geeft NVDA opdracht te loggen naar c:\nvda.log |
+| nvda --log-level=20 -f c:\nvda.log | Geeft NVDA opdracht te starten met het log-niveau ingesteld op info en te loggen naar c:\nvda.log |
+
+	Hieronder volgen de commandoregelopties voor NVDA:
+|| Kort | Lang | Omschrijving |
+| -h | --help | commandoregel-hulp tonen en afsluiten |
+| -q | --quit | De reeds actieve kopie van NVDA afsluiten. |
+| -r | --replace | De reeds actieve kopie van NVDA afsluiten en deze (nieuwe) starten. |
+| -k | --check-running | Melden via afsluitcode of NVDA actief is,; 0 voor actief, 1 voor niet actief. |
+| -f LOGFILENAME | --log-file=LOGFILENAME | Het bestand waar log-berichten naartoe moeten worden geschreven. |
+| -l LOGLEVEL | --log-level=LOGLEVEL | Het laagste niveau gelogd bericht (debug 10, info 20, waarschuwing 30, fout 40, kritiek 50), standaardinstelling is waarschuwing |
+| -c CONFIGPATH | --config-path=CONFIGPATH | Het pad waar alle instellingen voor NVDA worden opgeslagen. |
+| -m | --minimal | Geen geluiden, geen interface, geen opstartbericht etc. |
+| -s | --secure | Veilige modus (Python consool uitschakelen) |
+| None | --disable-addons | Addons buiten werking gesteld. |
+| None | --no-sr-flag  | Verander de systeem-brede vlag voor de schermlezer niet. |
+| None | --install | NVDA stil installeren.  |
+
 ++ Meer uitgebreide aanpassing van de uitspraak van leestekens en  symbolen ++
 Behalve in het [dialoogvenster Uitspraak van Interpunctie en Symbolen #SymbolPronunciation] zijn er nog andere mogelijkheden om de uitspraak van leestekens te beïnvloeden.
 U kunt bij voorbeeld  aangeven dat bepaalde tekens onbewerkt aan de synthesizer worden doorgegeven ( om een pauze in te lassen of het intonatiepatroon te beïnvloeden, etc.) en u kunt aangepaste symbolen toevoegen. 
