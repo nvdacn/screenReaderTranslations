@@ -77,7 +77,7 @@ addresses = {
     },
     'hr': {
         'lang': 'Croatian',
-        'email': ['Hrvoje Katic <hrvojekatic@gmail.com>'],
+        'email': ['Hrvoje Katic <hrvojekatic@gmail.com>', 'zvonimir <zvonimirek222@yandex.com>'],
     },
     'hu': {
         'lang': 'Hungarian',
