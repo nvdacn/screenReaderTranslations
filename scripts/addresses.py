@@ -77,7 +77,7 @@ addresses = {
     },
     'hr': {
         'lang': 'Croatian',
-        'email': ['Hrvoje Katic <hrvojekatic@gmail.com>', 'zvonimir <zvonimirek222@yandex.com>', 'Mario Percinic <mario.percinic@gmail.com'],
+        'email': ['Hrvoje Katic <hrvojekatic@gmail.com>', 'Zvonimir <zvonimirek222@yandex.com>', 'Mario Percinic <mario.percinic@gmail.com'],
     },
     'hu': {
         'lang': 'Hungarian',
@@ -149,7 +149,7 @@ addresses = {
     },
     'sr': {
         'lang':'Serbian',
-        'email': ['Nikola Jovic <wwenikola123@gmail.com>', 'Janko Valencik <janko.valencik@alfanum.co.rs>'],
+        'email': ['Nikola Jovic <wwenikola123@gmail.com>', 'Janko Valencik <janko.valencik@alfanum.co.rs>', 'Zvonimir <zvonimirek222@yandex.com>'],
     },
     'sv': {
         'lang':'Swedish',
