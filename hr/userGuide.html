@@ -56,6 +56,19 @@
     <LI><A HREF="#toc28">4.7. Izvještavanje o informacijama sustava</A>
     </UL>
   <LI><A HREF="#toc29">5. Navigacija uz pomoć NVDA</A>
+    <UL>
+    <LI><A HREF="#Objects">5.1. Objects</A>
+    <LI><A HREF="#SystemFocus">5.2. Navigating with the System Focus</A>
+    <LI><A HREF="#SystemCaret">5.3. Navigating with the System Caret</A>
+    <LI><A HREF="#toc33">5.4. Object Navigation</A>
+    <LI><A HREF="#ReviewingText">5.5. Reviewing Text</A>
+    <LI><A HREF="#ReviewModes">5.6. Review Modes</A>
+      <UL>
+      <LI><A HREF="#ObjectReview">5.6.1. Object Review</A>
+      <LI><A HREF="#DocumentReview">5.6.2. Document Review</A>
+      <LI><A HREF="#ScreenReview">5.6.3. Screen Review</A>
+      </UL>
+    </UL>
   </UL>
 
 <A NAME="toc2"></A>
@@ -509,6 +522,487 @@ Kada se izbornik prikaže, koristite strelice za navigaciju, i enter kako bi ste
 <P>
 NVDA vam omogućuje istraživanje i navigaciju kroz sustav na nekoliko načina, Uključujući normalnu interakciju i pregled.
 </P>
+
+<A NAME="Objects"></A>
+<H3>5.1. Objects</H3>
+
+<P>
+Each Application and the operating system itself consist of many objects.
+An object is a single item such as a piece of text, button, checkbox, slider, list or editable text field.
+</P>
+
+<A NAME="SystemFocus"></A>
+<H3>5.2. Navigating with the System Focus</H3>
+
+<P>
+The system focus, also known simply as the focus, is the <A HREF="#Objects">object</A> which receives keys typed on the keyboard.
+For example, if you are typing into an editable text field, the editable text field has the focus.
+</P>
+<P>
+The Most common way of navigating around Windows with NVDA is to simply move the system focus using standard Windows keyboard commands, such as pressing tab and shift+tab to move forward and back between controls, pressing alt to get to the menu bar and then using the arrows to navigate menus, and using alt+tab to move between running applications.
+As you do this, NVDA will report information about the object with focus, such as its name, type, value, state, description, keyboard shortcut and positional information.
+</P>
+<P>
+There are some key commands that are useful when moving with the System focus:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Desktop key</TH>
+<TH>Laptop key</TH>
+<TH>Description</TH>
+</TR>
+<TR>
+<TD>Report current focus</TD>
+<TD>NVDA+tab</TD>
+<TD>NVDA+tab</TD>
+<TD>announces the current object or control that has the System focus. Pressing twice will spell the information</TD>
+</TR>
+<TR>
+<TD>Report title</TD>
+<TD>NVDA+t</TD>
+<TD>NVDA+t</TD>
+<TD>Reports the title of the currently active window. Pressing twice will spell the information. Pressing three times will copy it to the clipboard</TD>
+</TR>
+<TR>
+<TD>Read active window</TD>
+<TD>NVDA+b</TD>
+<TD>NVDA+b</TD>
+<TD>reads all the controls in the currently active window (useful for dialogs)</TD>
+</TR>
+<TR>
+<TD>Report Status Bar</TD>
+<TD>NVDA+end</TD>
+<TD>NVDA+shift+end</TD>
+<TD>Reports the Status Bar if NVDA finds one. It also moves the navigator object to this location</TD>
+</TR>
+</TABLE>
+
+<A NAME="SystemCaret"></A>
+<H3>5.3. Navigating with the System Caret</H3>
+
+<P>
+When an <A HREF="#Objects">object</A> that allows navigation and/or editing of text is <A HREF="#SystemFocus">focused</A>, you can move through the text using the system caret, also known as the edit cursor.
+</P>
+<P>
+When the focus is on an object that has the system caret, you can use the arrow keys, page up, page down, home, end, etc. to move through the text.
+You can also change the text if the control supports editing.
+NVDA will announce as you move by character, word and line, and will also announce as you select and unselect text.
+</P>
+<P>
+NVDA provides the following key commands in relation to the system caret:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Desktop key</TH>
+<TH>Laptop key</TH>
+<TH>Description</TH>
+</TR>
+<TR>
+<TD>Say all</TD>
+<TD>NVDA+downArrow</TD>
+<TD>NVDA+a</TD>
+<TD>Starts reading from the current position of the system caret, moving it along as it goes</TD>
+</TR>
+<TR>
+<TD>Read current line</TD>
+<TD>NVDA+upArrow</TD>
+<TD>NVDA+l</TD>
+<TD>Reads the line where the system caret is currently situated. Pressing twice spells the line.</TD>
+</TR>
+<TR>
+<TD>Read current text selection</TD>
+<TD>NVDA+Shift+upArrow</TD>
+<TD>NVDA+shift+s</TD>
+<TD>Reads any currently selected text</TD>
+</TR>
+</TABLE>
+
+<P>
+When within a table, the following key commands are also available:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Key</TH>
+<TH>Description</TH>
+</TR>
+<TR>
+<TD>Move to previous column</TD>
+<TD>control+alt+leftArrow</TD>
+<TD>Moves the system caret to the previous column (staying in the same row)</TD>
+</TR>
+<TR>
+<TD>Move to next column</TD>
+<TD>control+alt+rightArrow</TD>
+<TD>Moves the system caret to the next column (staying in the same row)</TD>
+</TR>
+<TR>
+<TD>Move to previous row</TD>
+<TD>control+alt+upArrow</TD>
+<TD>Moves the system caret to the previous row (staying in the same column)</TD>
+</TR>
+<TR>
+<TD>Move to next row</TD>
+<TD>control+alt+downArrow</TD>
+<TD>Moves the system caret to the next row (staying in the same column)</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc33"></A>
+<H3>5.4. Object Navigation</H3>
+
+<P>
+Most of the time, you will work with applications using commands which move the <A HREF="#SystemFocus">focus</A> and the <A HREF="#SystemCaret">caret</A>.
+However, sometimes, you may wish to explore the current application or the Operating System without moving the focus or caret.
+You may also wish to work with <A HREF="#Objects">objects</A> that cannot be accessed normally using the keyboard.
+In these cases, you can use object navigation.
+</P>
+<P>
+Object navigation allows you to move between and obtain information about individual <A HREF="#Objects">objects</A>.
+When you move to an object, NVDA will report it similarly to the way it reports the system focus.
+For a way to review all text as it appears on the screen, you can instead use <A HREF="#ScreenReview">screen review</A>.
+</P>
+<P>
+Rather than having to move back and forth between every single object on the system, the objects are organized hierarchically.
+This means that some objects contain other objects and you must move inside them to access the objects they contain.
+For example, a list contains list items, so you must move inside the list in order to access its items.
+If you have moved to a list item, moving next and previous will take you to other list items in the same list.
+Moving to a list item's containing object will take you back to the list.
+You can then move past the list if you wish to access other objects.
+Similarly, a toolbar contains controls, so you must move inside the toolbar to access the controls in the toolbar.
+</P>
+<P>
+The object currently being reviewed is called the navigator object.
+Once you navigate to an object, you can review its content using the <A HREF="#ReviewingText">text review commands</A> while in <A HREF="#ObjectReview">Object review mode</A>.
+By default, the navigator object moves along with the System focus, though this behaviour can be toggled on and off.
+</P>
+<P>
+Note that braille follows the <A HREF="#SystemFocus">focus</A> and <A HREF="#SystemCaret">caret</A> by default, rather than object navigation and text review.
+If you want it to follow object navigation and text review instead, you need to <A HREF="#BrailleTether">configure braille to be tethered to</A> review.
+</P>
+<P>
+To navigate by object, use the following commands:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Desktop key</TH>
+<TH>Laptop key</TH>
+<TH>Touch</TH>
+<TH>Description</TH>
+</TR>
+<TR>
+<TD>Report current object</TD>
+<TD>NVDA+numpad5</TD>
+<TD>NVDA+shift+o</TD>
+<TD>none</TD>
+<TD>Reports the current navigator object. Pressing twice spells the information, and pressing 3 times copies this object's name and value to the clipboard.</TD>
+</TR>
+<TR>
+<TD>Move to containing object</TD>
+<TD>NVDA+numpad8</TD>
+<TD>NVDA+shift+upArrow</TD>
+<TD>flick up (object mode)</TD>
+<TD>Moves to the object containing the current navigator object</TD>
+</TR>
+<TR>
+<TD>Move to previous object</TD>
+<TD>NVDA+numpad4</TD>
+<TD>NVDA+shift+leftArrow</TD>
+<TD>flick left (object mode)</TD>
+<TD>Moves to the object before the current navigator object</TD>
+</TR>
+<TR>
+<TD>Move to next object</TD>
+<TD>NVDA+numpad6</TD>
+<TD>NVDA+shift+rightArrow</TD>
+<TD>flick right (object mode)</TD>
+<TD>Moves to the object after the current navigator object</TD>
+</TR>
+<TR>
+<TD>Move to first contained object</TD>
+<TD>NVDA+numpad2</TD>
+<TD>NVDA+shift+downArrow</TD>
+<TD>flick down (object mode)</TD>
+<TD>Moves to the first object contained by the current navigator object</TD>
+</TR>
+<TR>
+<TD>Move to focus object</TD>
+<TD>NVDA+numpadMinus</TD>
+<TD>NVDA+backspace</TD>
+<TD>none</TD>
+<TD>Moves to the object that currently has the system focus, and also places the review cursor at the position of the System caret, if it is showing</TD>
+</TR>
+<TR>
+<TD>Activate current navigator object</TD>
+<TD>NVDA+numpadEnter</TD>
+<TD>NVDA+enter</TD>
+<TD>double tap</TD>
+<TD>Activates the current navigator object (similar to clicking with the mouse or pressing space when it has the system focus)</TD>
+</TR>
+<TR>
+<TD>Move System focus or caret to current review position</TD>
+<TD>NVDA+shift+numpadMinus</TD>
+<TD>NVDA+shift+backspace</TD>
+<TD>none</TD>
+<TD>pressed once Moves the System focus to the current navigator object, pressed twice moves the system caret to the position of the review cursor</TD>
+</TR>
+<TR>
+<TD>Report review cursor location</TD>
+<TD>NVDA+numpadDelete</TD>
+<TD>NVDA+delete</TD>
+<TD>none</TD>
+<TD>Reports information about the location of the text or object at the review cursor. For example, this might include the percentage through the document, the distance from the edge of the page or the exact screen position. Pressing twice may provide further detail.</TD>
+</TR>
+</TABLE>
+
+<P>
+Note: numpad keys require numlock key to be turned off to work properly.
+</P>
+
+<A NAME="ReviewingText"></A>
+<H3>5.5. Reviewing Text</H3>
+
+<P>
+NVDA allows you to read the contents of the <A HREF="#ScreenReview">screen</A>, current <A HREF="#DocumentReview">document</A> or current <A HREF="#ObjectReview">object</A> by character, word or line.
+This is mostly useful in places (including Windows command consoles) where there is no <A HREF="#SystemCaret">system caret</A>.
+For example, you might use it to review the text of a long information message in a dialog.
+</P>
+<P>
+When moving the review cursor, the System caret does not follow along, so you can review text without losing your editing position.
+However, by default, when the System caret moves, the review cursor follows along.
+This can be toggled on and off.
+</P>
+<P>
+Note that braille follows the <A HREF="#SystemFocus">focus</A> and <A HREF="#SystemCaret">caret</A> by default, rather than object navigation and text review.
+If you want it to follow object navigation and text review instead, you need to <A HREF="#BrailleTether">configure braille to be tethered to</A> review.
+</P>
+<P>
+The following commands are available for reviewing text:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Desktop key</TH>
+<TH>Laptop key</TH>
+<TH>Touch</TH>
+<TH>Description</TH>
+</TR>
+<TR>
+<TD>Move to top line in review</TD>
+<TD>shift+numpad7</TD>
+<TD>NVDA+control+home</TD>
+<TD>none</TD>
+<TD>Moves the review cursor to the top line of the text</TD>
+</TR>
+<TR>
+<TD>Move to previous line in review</TD>
+<TD>numpad7</TD>
+<TD>NVDA+upArrow</TD>
+<TD>flick up (text mode)</TD>
+<TD>Moves the review cursor to the previous line of text</TD>
+</TR>
+<TR>
+<TD>Report current line in review</TD>
+<TD>numpad8</TD>
+<TD>NVDA+shift+.</TD>
+<TD>none</TD>
+<TD>Announces the current line of text where the review cursor is positioned. Pressing twice spells the line. Pressing three times spells the line using character descriptions.</TD>
+</TR>
+<TR>
+<TD>Move to next line in review</TD>
+<TD>numpad9</TD>
+<TD>NVDA+downArrow</TD>
+<TD>flick down (text mode)</TD>
+<TD>Move the review cursor to the next line of text</TD>
+</TR>
+<TR>
+<TD>Move to bottom line in review</TD>
+<TD>shift+numpad9</TD>
+<TD>NVDA+control+end</TD>
+<TD>none</TD>
+<TD>Moves the review cursor to the bottom line of text</TD>
+</TR>
+<TR>
+<TD>Move to previous word in review</TD>
+<TD>numpad4</TD>
+<TD>NVDA+control+leftArrow</TD>
+<TD>2-finger flick left (text mode)</TD>
+<TD>Moves the review cursor to the previous word in the text</TD>
+</TR>
+<TR>
+<TD>Report current word in review</TD>
+<TD>numpad5</TD>
+<TD>NVDA+control+.</TD>
+<TD>none</TD>
+<TD>Announces the current word in the text where the review cursor is positioned. Pressing twice spells the word. Pressing three times spells the word using character descriptions.</TD>
+</TR>
+<TR>
+<TD>Move to next word in review</TD>
+<TD>numpad6</TD>
+<TD>NVDA+control+rightArrow</TD>
+<TD>2-finger flick right (text mode)</TD>
+<TD>Move the review cursor to the next word in the text</TD>
+</TR>
+<TR>
+<TD>Move to start of line in review</TD>
+<TD>shift+numpad1</TD>
+<TD>NVDA+home</TD>
+<TD>none</TD>
+<TD>Moves the review cursor to the start of the current line in the text</TD>
+</TR>
+<TR>
+<TD>Move to previous character in review</TD>
+<TD>numpad1</TD>
+<TD>NVDA+leftArrow</TD>
+<TD>flick left (text mode)</TD>
+<TD>Moves the review cursor to the previous character on the current line in the text</TD>
+</TR>
+<TR>
+<TD>Report current character in review</TD>
+<TD>numpad2</TD>
+<TD>NVDA+.</TD>
+<TD>none</TD>
+<TD>Announces the current character on the line of text where the review cursor is positioned. Pressing twice reports a description or example of that character. Pressing three times reports the numeric value of the character in decimal and hexadecimal.</TD>
+</TR>
+<TR>
+<TD>Move to next character in review</TD>
+<TD>numpad3</TD>
+<TD>NVDA+rightArrow</TD>
+<TD>flick right (text mode)</TD>
+<TD>Move the review cursor to the next character on the current line of text</TD>
+</TR>
+<TR>
+<TD>Move to end of line in review</TD>
+<TD>shift+numpad3</TD>
+<TD>NVDA+end</TD>
+<TD>none</TD>
+<TD>Moves the review cursor to the end of the current line of text</TD>
+</TR>
+<TR>
+<TD>Say all with review</TD>
+<TD>numpadPlus</TD>
+<TD>NVDA+shift+a</TD>
+<TD>3-finger flick down (text mode)</TD>
+<TD>Reads from the current position of the review cursor, moving it as it goes</TD>
+</TR>
+<TR>
+<TD>Copy from review cursor</TD>
+<TD>NVDA+f9</TD>
+<TD>NVDA+f9</TD>
+<TD>none</TD>
+<TD>starts copying text from the current position of the review cursor. The actual copy is not performed until you tell NVDA where to copy to</TD>
+</TR>
+<TR>
+<TD>Copy to review cursor</TD>
+<TD>NVDA+f10</TD>
+<TD>NVDA+f10</TD>
+<TD>none</TD>
+<TD>Copies from the position of the review cursor currently set with Copy from review cursor, to the review cursor's current position. After pressing this key, the text will be copied to the Windows clipboard</TD>
+</TR>
+<TR>
+<TD>Report text formatting</TD>
+<TD>NVDA+f</TD>
+<TD>NVDA+f</TD>
+<TD>none</TD>
+<TD>Reports the formatting of the text where the review cursor is currently situated</TD>
+</TR>
+</TABLE>
+
+<P>
+Note: numpad keys require numlock key to be turned off to work properly.
+</P>
+<P>
+A good way to remember the basic text review commands  when using the Desktop layout  is to think of them as being in a grid of three by three, with top to bottom being line, word and character and left to right being previous, current and next.
+The layout is illustrated as follows:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>Previous line</TD>
+<TD>Current line</TD>
+<TD>Next line</TD>
+</TR>
+<TR>
+<TD>Previous word</TD>
+<TD>Current word</TD>
+<TD>Next word</TD>
+</TR>
+<TR>
+<TD>Previous character</TD>
+<TD>Current character</TD>
+<TD>Next character</TD>
+</TR>
+</TABLE>
+
+<A NAME="ReviewModes"></A>
+<H3>5.6. Review Modes</H3>
+
+<P>
+NVDA's <A HREF="#ReviewingText">text review commands</A> can review content within the current navigator object, current document or screen, depending on the review mode selected.
+Review modes are a replacement for the older Flat Review concept found in NVDA.
+</P>
+<P>
+The following commands switch between review modes:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Desktop key</TH>
+<TH>Laptop key</TH>
+<TH>Touch</TH>
+<TH>Description</TH>
+</TR>
+<TR>
+<TD>switch to next review mode</TD>
+<TD>NVDA+numpad7</TD>
+<TD>NVDA+pageUp</TD>
+<TD>2-finger flick up</TD>
+<TD>switches to the next available review mode</TD>
+</TR>
+<TR>
+<TD>switch to previous review mode</TD>
+<TD>NVDA+numpad1</TD>
+<TD>NVDA+pageDown</TD>
+<TD>2-finger flick down</TD>
+<TD>switches to the previous available review mode</TD>
+</TR>
+</TABLE>
+
+<A NAME="ObjectReview"></A>
+<H4>5.6.1. Object Review</H4>
+
+<P>
+While in object review mode, you are able to only review the content of the current <A HREF="#ObjectNavigation">navigator object</A>.
+For objects such as editable text fields or other basic text controls, this will generally be the text content.
+For other objects, this may be the name and/or value.
+</P>
+
+<A NAME="DocumentReview"></A>
+<H4>5.6.2. Document Review</H4>
+
+<P>
+When the <A HREF="#ObjectNavigation">navigator object</A> is within a browse mode document (e.g. web page) or other complex document (e.g. a Lotus Symphony document), it is possible to switch to the document review mode.
+The document review mode allows you to review the text of the entire document.
+</P>
+<P>
+When switching from object review to document review, the review cursor is placed in the document at the position of the navigator object.
+When moving around the document with review commands, the navigator object is automatically updated to the object found at the current review cursor position.
+</P>
+<P>
+Note that NVDA will switch to document review from object review automatically when moving around browse mode documents.
+</P>
+
+<A NAME="ScreenReview"></A>
+<H4>5.6.3. Screen Review</H4>
 
 <!-- html code generated by txt2tags 2.6 (http://txt2tags.org) -->
 <!-- cmdline: txt2tags -q userGuide.t2t -->
