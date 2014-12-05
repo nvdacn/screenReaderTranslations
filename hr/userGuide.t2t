@@ -373,72 +373,72 @@ Slijedeće komande su dostupne za pregled teksta:
 
 Bilješka: tipke na numeričkoj tipkovnici zahtjevaju isključen numerički blok kako bi ispravno radile.
 
-A good way to remember the basic text review commands  when using the Desktop layout is to think of them as being in a grid of three by three, with top to bottom being line, word and character and left to right being previous, current and next.
-The layout is illustrated as follows:
-| Previous line | Current line | Next line |
-| Previous word | Current word | Next word |
-| Previous character | Current character | Next character |
+Dobar način pamćenja prečica za pregled teksta kada se koristi izgled tipkovnice za stolna računala da ih zamislite kao da su u mreži koja izgleda kao tri sa tri, od vrha do dna da je redak, riječ i znak i s lijeva na desno da se nalaze komande prijašnji, sadašnji, slijedeći.
+Izgled je opisan kako slijedi:
+| prethodni redak | trenutni redak | slijedeći redak |
+| prethodna riječ | trenutna riječ | sljedeća riječ |
+| prethodni znak | trenutni znak | slijedeći znak |
 
-++ Review Modes ++[ReviewModes]
-NVDA's [text review commands #ReviewingText] can review content within the current navigator object, current document or screen, depending on the review mode selected.
-Review modes are a replacement for the older Flat Review concept found in NVDA.
+++ načini pregleda ++[ReviewModes]
+NVDA [prečice za pregled teksta #ReviewingText] mogu služiti za pregled sadržaja unutar trenutnog objekta navigacije, trenutnog dokumenta ili zaslona, ovisno o označenom načinu pregleda.
+Načini pregleda su zamjena za stariji koncept pregleda zaslona koji se mogao naći u NVDA.
 
-The following commands switch between review modes:
+Slijedeće komande koriste se za prebacivanje između preglednih načina:
 %kc:beginInclude
-|| Name | Desktop key | Laptop key | Touch | Description |
-| switch to next review mode | NVDA+numpad7 | NVDA+pageUp | 2-finger flick up | switches to the next available review mode |
-| switch to previous review mode | NVDA+numpad1 | NVDA+pageDown | 2-finger flick down | switches to the previous available review mode |
+|| Ime | prečica za stolna računala | Prečica za prijenosna računala | dodir | opis |
+| prebaci se na slijedeći način pregleda | NVDA+num7 | NVDA+pageUp | klizni sa dva prsta prema gore | prebacuje se na slijedeći dostupni način pregleda |
+| prebaci se na prethodni način pregleda | NVDA+num1 | NVDA+pageDown | klizni sa dva prsta prema dolje | prebacuje se na prethodni dostupni mod pregleda |
 %kc:endInclude
 
-+++ Object Review +++[ObjectReview]
-While in object review mode, you are able to only review the content of the current [navigator object #ObjectNavigation].
-For objects such as editable text fields or other basic text controls, this will generally be the text content.
-For other objects, this may be the name and/or value.
++++ Pregled objekata +++[ObjectReview]
+Kada se nalazite u načinu pregleda objekta, možete pregledavati samo sadržaj trenutnog objekta [objekt navigacije #ObjectNavigation].
+za objekte kao što su to polja za uređivanje teksta ili ostale osnovne kontrole za uređivanje teksta, to će uglavnom biti sadržaj teksta.
+za ostale objekte, to može biti ime i/ili vrijednost.
 
 +++ pregled dokumenta +++[DocumentReview]
-When the [navigator object #ObjectNavigation] is within a browse mode document (e.g. web page) or other complex document (e.g. a Lotus Symphony document), it is possible to switch to the document review mode.
-The document review mode allows you to review the text of the entire document.
+Kada je [objekt navigacije #ObjectNavigation] unutar dokumenta koji koristi način pregleda (npr. web stranici) ili drugom kompleksnom dokumentu (npr. dokumentu programa Lotus symphony), moguće je prebaciti se u način pregleda objekta.
+Način pregleda dokumenta omogućuje vam pregled teksta cijelog dokumenta.
 
-When switching from object review to document review, the review cursor is placed in the document at the position of the navigator object.
-When moving around the document with review commands, the navigator object is automatically updated to the object found at the current review cursor position.
+Kada se prebacujete iz načina pregleda dokumenta u pregled objekta, pregledni kursor se nalazi u dokumentu na  na poziciji objektnog navigatora.
+Kada se krećete po dokumentu sa prečicama za pregled dokumenta, navigator objekta je osvježen automatski sa objektom koji se trenutno  nalazi na toj poziciji.
 
-Note that NVDA will switch to document review from object review automatically when moving around browse mode documents.
+Imajte na umu da će se NVDA prebaciti na pregled objekta automatski sa pregleda dokumenta kada ćete se kretati bo dokumentima u modu surfanja.
 
 +++ Pregled zaslona +++[ScreenReview]
-The screen review mode allows you to review the text of the screen as it appears visually within the current application.
-This is similar to the screen review or mouse cursor functionality in many other Windows screen readers.
+Način pregleda zaslona omogućuje prikaz dokumenta kako se on doista prikazuje na zaslonu.
+to je slično pregledu zaslona ili  ili funkcionalnosti kursora miša u mnogim drugim čitačima ekrana za Windows operativni sustav.
 
-When switching to screen review mode, the review cursor is placed at the screen position of the current [navigator object #ObjectNavigation].
-When moving around the screen with review commands, the navigator object is automatically updated to the object found at the screen position of the review cursor.
+Kada se prebacujete na način pregleda zaslona, pregledni je kursor smješten na na zaslonskoj poziciji trenutnog [objekta navigacije #ObjectNavigation].
+kada se premještate po zaslonu sa prečicama za pregled zaslona, objekt navigacije je automatski osvježen na objekt pronađen na zaslonskoj poziciji preglednog kursora.
 
-Note that in some newer applications, NVDA may not see some or all text displayed on the screen due to the use of newer screen drawing technologies which are impossible to support at this time.
+Imaj te na umu da u većini novijih aplikacija, NVDA neće moći vidjeti većinu ili ili cijeli tekst prikazan na zaslonu zbog korištenja novijih tehnologija crtanja zaslona koje je trenutačno nemoguće podržati.
 
-++ Navigating with the Mouse ++
-When you move the Mouse, NVDA by default reports the text that is directly under the mouse pointer as the pointer moves over it.
-Where supported, NVDA will read the surrounding paragraph of text, though some controls may only read by line.
+++ Navigacija uz pomoć miša ++
+Kada pomićete miš, NVDA po podrazumjevanom izvješćuje tekst koji se nalazi izravno pod pokazivaćem miša kada se pokazivać miša kreće preko njega.
+gdje je to podržano, NVDA će pročitati popratni odlomak teksta, premda neke kontrole mogu biti pročitane samo po retku.
 
-NVDA can be configured to also announce the type of [object #Objects] under the mouse as it moves (e.g. list, button, etc.).
-This may be useful for totally blind users, as sometimes, the text isn't enough.
+NVDA također može biti konfiguriran da obavješta va o tipu [objekta #Objects] ispod miša kako se kreće (npr. popis, gumb, etc.).
+To može biti korisno potpuno slijepim korisnicima, jer ponekada tekst nije dovoljan.
 
-NVDA provides a way for users to understand where the mouse is located relative to the dimensions of the screen by playing the current mouse coordinates as audio beeps.
-The higher the mouse is on the screen, the higher the pitch of the beeps.
-The further left or right the mouse is located on the screen, the further left or right the sound will be played (assuming the user has stereo speakers or headphones).
+NVDA korisnicima način da razumiju gdje se miš nalazi u vezi sa dimenzijama zaslona reproducirajući zvučne kordinate kao zvučne signale.
+čim je miš na zaslonu viši, visina zvučnih signala je veća.
+Ako je više lijevo ili desno miš na zaslonu, više lijevo ili desno zvuk će biti reproduciran (ako uzmemo u obzir da korisnik ima stereo zvučnike ili slušalice).
 
-These extra mouse features are not turned on by default in NVDA.
-If you wish to take advantage of them, you can configure them from the [Mouse settings #MouseSettings] dialog, found in the NVDA Preferences menu.
+Po podrazumjevanom ove značajke nisu uključene u postavkama NVDA.
+Ako želite imati koristi od tih značajki, možete ih podesiti the [postavkama miša #MouseSettings] , koje se mogu pronaći u postavkama koje se nalaze u NVDA izborniku.
 
-Although a physical mouse or trackpad should be used to navigate with the mouse, NVDA has a few key commands related to the mouse:
+Iako bi se za navigaciju mišem trebao koristiti miš ili trackpad, NVDA ima nekoliko prečica vezanih uz miš:
 %kc:beginInclude
-|| Name | Desktop key | Laptop key | Description |
-| Left mouse button click | numpadDivide | NVDA+[ | clicks the left mouse button once. The common double click can be performed by pressing this key twice in quick succession |
-| Left mouse button lock | shift+numpadDivide | NVDA+control+[ | Locks the left mouse button down. Press again to release it. To drag the mouse, press this key to lock the left button down and then move the mouse either physically or use one of the other mouse routing commands |
-| Right mouse click | numpadMultiply | NVDA+] | Clicks the right mouse button once. |
-| Right mouse button lock | shift+numpadMultiply | NVDA+control+] | Locks the right mouse button down. Press again to release it. To drag the mouse, press this key to lock the right button down and then move the mouse either physically or use one of the other mouse routing commands |
-| Move mouse to current navigator object | NVDA+numpadDivide | NVDA+shift+m | Moves the mouse to the location of the current navigator object and review cursor |
-| Navigate to the object under the mouse | NVDA+numpadMultiply | NVDA+shift+n | Set the navigator object to the object located at the position of the mouse |
+|| Ime | prečac za stolna računala | Prečac za prijenosna računala | Opis |
+| lijevi klik miša | numpadPodijeljeno | NVDA+[ | pritišće lijevu tipku miša jedamput . uobičajeni dvostruki klik se izvađa pritiskom  dva puta brzim pritiskom ove tipke |
+| lijeva zaključana tipka miša | shift+numpadPodijeljeno | NVDA+control+[ | Zaključava lijevu tipku miša pritisnutom. Pritisnite ponovno kako bi ste ju otpustili. kako bi ste povukli miš, pritisnite ovu tipku kako biste zaključali gumb i onda mićite miš ili fizički ili koristite  jednu od prečica za usmjeravanje miša |
+| desni klik miša | numpadZvjezdica | NVDA+] | Pritišće desnu tipku miša jedamput. |
+| Zaključana desna tipka miša | shift+numpadZvjezdica | NVDA+control+] | Zaključava desnu tipku miša. Pritisnite ponovo kako biste ju otpustili. Kako biste povukli miš, Pritisnite ovu tipku kako biste zaključali desnu tipku miša i premještajte miš ili  fizički ili koristite jednu od prečica za usmjeravanje miša |
+| Premjesti miš na trenutni objekt navigatora | NVDA+numpadPodijeljeno | NVDA+shift+m | Premješta miš i pregledni kursor na mjesto trenutnog objekta navigacije |
+| Fokusiraj se na objekt pod mišem | NVDA+numpadZvjezdica | NVDA+shift+n | Postavi objekt navigatora na objekt koji se nalazi na poziciji miša |
 %kc:endInclude
 
-+ Browse Mode +
++ Mod surfanja +
 Complex read-only documents such as web pages are browsed in NVDA using browse mode.
 This includes documents in Mozilla Firefox, Microsoft Internet Explorer, Google Chrome, Adobe Reader and Adobe Flash.
 
