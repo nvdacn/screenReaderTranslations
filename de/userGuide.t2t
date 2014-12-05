@@ -610,26 +610,6 @@ Hinweis: Der Befehl "verbleibende Zeit ausgeben" funktioniert nur, wenn die Stan
 | Anmerkungen für Übersetzer ausgeben | Strg+Umschalt+A | Gibt alle Anmerkungen für Übersetzer aus. |
 %kc:endInclude
 
-+ Bekannte Probleme +
-In diesem Abschnitt werden einige bekannte Probleme beschrieben, die beim Umgang mit NVDA und bestimmten Programmen auftauchen können. Außerdem wird beschrieben, wie die Probleme durch Ändern der Einstellung der Programme bzw. durch Ändern der NVDA-Einstellungen umgangen oder gelöst werden können.
-
-++ Adobe Reader X ++
-- Problem: Beim Lesen von PDF-Dokumenten mit Adobe Reader X kann es in der Werkseinstellung zu Problemen kommen, weil NVDA das Dokument nicht im Lesemodus anzeigt, sondern nur ein Grafikobjekt darstellt. 
-- Ursache: Ursache dieses Problems ist eine Schutzfunktion, die in Adobe Reader X standardmäßig aktiviert ist und NVDA daran hindert, das Pdf-Dokument im Lesemodus aufzubereiten. 
-- Lösung: Deaktivieren Sie in den Einstellungen von Adobe Reader X (Bearbeiten / Voreinstellungen) in der Kategorie "Allgemein" die Option "Geschützten Modus beim Start aktivieren". Es erscheint eine Nachfrage, die Sie darüber informiert, dass die Einstellung erst beim Neustart von Adobe Reader x wirksam wird. Bestätigen Sie diese Nachfrage mit "Ja" und starten Sie Adobe Reader X anschließend neu. Jetzt sollte NVDA die im Adobe Reader X angezeigten PDF-Dokumente im Lesemodus aufbereiten können.
--
-
-
-++ Verwendung von Antiviren-Programmen und Internet-Sicherheitspaketen bei der Installation oder Aktualisierung von NVDA ++
-- Problem: Wenn Antiviren-Programme oder Internet-Sicherheitspakete ausgeführt werden, kann die Installation oder die Aktualisierung von NVDA nicht erfolgreich abgeschlossen werden.
-- Ursache: Seit Revision 5058 wird die Installation von NVDA nicht mehr von NSIS, sondern von NVDA selbst durchgeführt. dies bedeutet rein technisch, dass die temporäre Kopie von NVDA, die während der installation ausgeführt wird, eine Kopie ihrer Selbst am Zielort ablegt und diese (im Falle einer Installation) als Dienst registriert, wenn sie sich dafür entschieden haben, NVDA während der Windows-Anmeldung auszuführen. Dieses Verhalten wird von vielen Sicherheitssoftwarepaketen und Antiviren-Programmen als verdächtig eingestuft und die Sicherheitspakete ergreifen Gegenmaßnahmen. 
-- Details: Bisher wurden Probleme mit den folgenden Produkten beobachtet:
-  - Kaspersky Internet Security 2012: Beim Erstellen einer portablen Version stuft KIS das Verhalten der Installationsroutine als verdächtig ein, wenn NVDA versucht, eine Kopie seiner Selbst am Zielort auf dem tragbaren Medium abzulegen. Wenn KIS so konfiguriert ist, dass es die Gegenmaßnahme automatisch ergreifen darf, wird die Kopie von NVDA, von der aus die Installation ausgeführt wurde, gelöscht und die Kopie am Zielort gar nicht angelegt. dies hat zur Folge, dass Sie am Ende NVDA nicht einmal mehr über die Tastenkombination Strg+Alt+N starten können. 
-  - Viper Internet Security: Beim Aktualisieren von NVDA behindert Viper die Installationsroutine von NVDA beim Installieren der neuen Version, wodurch der Installationsvorgang ungewöhnlich lange dauert.
-  - Avira Internet Security: Beim erstellen einer portablen Version behindert Avira die Installationsroutine von NVDA, wodurch diese mit einer Fehlermeldung abbricht.
-- Lösung: Halten Sie die Schutzfunktion ihres Antiviren-Programms oder Internet-sicherheitspakets kurzfristig an, während Sie NVDA installieren, aktualisieren oder eine portable Version erstellen oder deaktivieren Sie das Sicherheitspaket vollständig.
--
-
 
 + NVDA konfigurieren +
 
