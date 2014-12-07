@@ -130,13 +130,13 @@ Valintaikkuna suljetaan Painamalla OK.
 
 ++ NVDA:n käynnistäminen ++
 Jos asensit NVDA:n omalla asennusohjelmallaan, voit käynnistää sen joko painamalla Control+Alt+N tai valitsemalla Käynnistä-valikosta Ohjelmat -> NVDA -> NVDA.
-Voit käynnistää sen myös kirjoittamalla Suorita-valintaikkunaan NVDA ja painamalla Enteriä.
-Lisäksi on mahdollista syöttää joitakin [komentorivivalitsimia #CommandLineOptions], joilla NVDA voidaan käynnistää uudelleen (-r), sulkea (-q), poistaa lisäosat käytöstä (--disable-addons) jne.
+Voit käynnistää sen myös kirjoittamalla Suorita-valintaikkunaan NVDA ja painamalla Enter.
+Lisäksi on mahdollista syöttää joitakin [komentorivivalitsimia #CommandLineOptions], joilla NVDA voidaan käynnistää uudelleen (-r), sulkea se (-q), poistaa lisäosat käytöstä (--disable-addons) jne.
 
-Massamuistiversio voidaan käynnistää menemällä hakemistoon, johon se on purettu ja painamalla Enteriä nvda.exe-tiedoston kohdalla tai kaksoisnapsauttamalla sitä hiiren vasemmalla painikkeella.
+Käynnistä massamuistiversio menemällä hakemistoon, johon olet purkanut sen ja painamalla Enter nvda.exe-tiedoston kohdalla tai kaksoisnapsauttamalla sitä hiiren vasemmalla painikkeella.
 
 NVDA:n käynnistyessä kuuluu joukko nousevia ääniä, jotka kertovat, että se käynnistyy.
-Riippuen tietokoneen nopeudesta, tai jos NVDA:ta käytetään USB-muistitikulta tai muulta hitaammalta tallennusvälineeltä, käynnistyminen saattaa kestää jonkin aikaa.
+Käynnistyminen saattaa kestää jonkin aikaa riippuen tietokoneesi nopeudesta, tai jos käytät NVDA:ta USB-muistitikulta tai muulta hitaammalta tallennusvälineeltä.
 Jos käynnistyminen kestää erityisen kauan, NVDA:n pitäisi ilmoittaa "NVDA käynnistetään, odota..."
 
 Jos mitään tällaista ei kuulu, tai mikäli kuuluu Windowsin virheääni tai joukko laskevia ääniä, tämä tarkoittaa, että NVDA:ssa on mahdollisesti ohjelmavirhe ja että siitä on ilmoitettava kehittäjille.
@@ -423,7 +423,7 @@ Tästä voi olla hyötyä täysin sokeille käyttäjille, sillä joskus pelkän 
 
 NVDA tarjoaa käyttäjille tavan ymmärtää, missä hiiri on ruudun mittojen suhteen soittamalla hiiren nykyiset koordinaatit äänimerkkeinä.
 Mitä ylempänä hiiri on ruudulla, sitä korkeampia äänimerkit ovat.
-Mitä enemmän vasemmalla tai oikealla hiiri on ruudulla, sitä enemmän vasemmalta tai oikealta ääni kuuluu (olettaen, että käytössä on stereokaiuttimet tai kuulokkeet).
+Mitä enemmän vasemmalla tai oikealla hiiri on ruudulla, sitä enemmän vasemmalta tai oikealta ääni kuuluu (mikäli käytössä on stereokaiuttimet tai kuulokkeet).
 
 Nämä lisäominaisuudet eivät ole oletusarvoisesti käytössä, mutta ne voidaan ottaa tarvittaessa käyttöön [Hiiriasetukset #MouseSettings]-valintaikkunasta, joka löytyy NVDA:n Asetukset-valikosta.
 
@@ -1065,47 +1065,54 @@ Varmista tehtyjen muutosten tallentaminen poistumalla sanastovalintaikkunasta pa
 
 Puhesanastosääntöjen avulla voit muuttaa merkkijonon joksikin muuksi.
 Yksinkertaisena esimerkkinä tästä voisi olla, että NVDA saadaan sanomaan "sammakko" jokaisen lintu-sanan kohdalla.
-Helpointa tämä on tehdä  kirjoittamalla säännönlisäysvalintaikkunassa Korvattava merkkijono -kenttään lintu ja Korvaava merkkijono -kenttään sammakko.
+Helpointa tämä on tehdä  kirjoittamalla säännönlisäysvalintaikkunassa Korvattava teksti -kenttään lintu ja Korvaava teksti -kenttään sammakko.
 Kirjoita Kommentti-kenttään säännön kuvaus (esim. muuttaa linnun sammakoksi).
 
 Puhesanastoja on mahdollista käyttää paljon muuhunkin kuin yksinkertaiseen sanojen korvaamiseen.
-Säännönlisäämisvalintaikkunassa on myös valintaruutu, jolla voit määrittää, onko isoilla ja pienillä kirjaimilla merkitystä säännön toiminnan kannalta.
+Säännönlisäysvalintaikkunassa on myös valintaruutu, jolla voit määrittää, onko isoilla ja pienillä kirjaimilla merkitystä säännön toiminnan kannalta.
 Oletusarvoisesti kirjainkokoa ei huomioida.
 
 Lopuksi on joukko valintapainikkeita, joiden avulla voit määrittää, täsmääkö korvattava merkkijono kaikkialla, vain kokonaisena sanana vai käsitelläänkö sitä säännöllisenä lausekkeena.
-Korvattavan merkkijonon määrittäminen täsmäämään kokonaisena sanana tarkoittaa, että se korvataan vain, jos se ei esiinny pidemmän sanan osana, ts. heti sitä ennen ja sen jälkeen on muu kuin aakkosnumeerinen merkki, alaviiva (tai ei ole merkkiä ollenkaan).
-Joten, käyttääksemme aiempaa esimerkkiä lintu-sanan korvaamisesta sanalla sammakko, jos tekisit siitä koko sanan korvauksen, se ei täsmäisi "lintuja"- tai "sinilintu"-sanoihin.
+Korvattavan tekstin määrittäminen kokonaiseksi sanaksi tarkoittaa, että se korvataan vain, jos se ei esiinny pidemmän sanan osana, ts. sen edellä ja/tai jäljessä ei ole muu kuin aakkosnumeerinen merkki tai alaviiva.
+Eli käyttääksemme aiempaa esimerkkiä lintu-sanan korvaamisesta sanalla sammakko, jos tekisit siitä koko sanan korvauksen, se ei täsmäisi "lintuja"- tai "sinilintu"-sanoihin.
 
 Säännöllinen lauseke on erikoismerkkejä sisältävä merkkiyhdistelmä, jonka avulla voidaan täsmätä useampaan kuin yhteen merkkiin kerrallaan, pelkkiin numeroihin tai pelkkiin kirjaimiin.
 Säännöllisiä lausekkeita ei käsitellä tässä käyttöoppaassa, mutta internetistä löytyy useita asiaa käsitteleviä oppaita.
 
 +++ Välimerkkien ja symboleiden puhuminen +++[SymbolPronunciation]
-Tässä valintaikkunassa voidaan muuttaa välimerkkien ja muiden symboleiden lukutapaa sekä tasoa, jolla ne puhutaan.
+Tässä valintaikkunassa voit muuttaa välimerkkien ja muiden symboleiden lukutapaa sekä tasoa, jolla ne puhutaan.
 
 Symbolia muutetaan valitsemalla se Symbolit-listasta.
-Korvaava-kentän avulla voidaan muuttaa tekstiä, joka puhutaan kyseisen symbolin sijasta.
-Taso-kentän avulla voidaan säätää alin taso, jolla symboli puhutaan.
+Korvaava teksti -kentässä voit muuttaa tekstiä, joka puhutaan kyseisen symbolin sijasta.
+Taso-yhdistelmäruudussa voit säätää alimman tason, jolla symboli puhutaan.
 
-Muutokset tallennetaan painamalla OK-painiketta tai kumotaan painamalla Peruuta.
+Lisää uusia symboleita painamalla Lisää-painiketta.
+Kirjoita symboli avautuvaan valintaikkunaan ja paina OK.
+Muuta tämän jälkeen sen korvaava teksti ja taso kuten muillekin symboleille.
+
+Poista aiemmin lisäämäsi symboli painamalla Poista-painiketta.
+
+Tallenna muutokset painamalla OK-painiketta tai kumoa ne painamalla Peruuta.
 
 +++ Syöte-eleet +++
-Tässä valintaikkunassa voidaan mukauttaa NVDA-komennoissa käytettäviä syöte-eleitä (näppäimistön näppäimiä, pistenäytön painikkeita jne.).
+Tässä valintaikkunassa voit mukauttaa NVDA-komennoissa käytettäviä syöte-eleitä (näppäimistön näppäimiä, pistenäytön painikkeita jne.)
 
 Vain sellaiset komennot näytetään, jotka ovat käytettävissä valintaikkunaa avattaessa.
-Jos esimerkiksi halutaan mukauttaa selaustilaan liittyviä komentoja, on Syöte-eleet-valintaikkuna avattava selaustilassa oltaessa.
+Jos esim. haluat mukauttaa selaustilaan liittyviä komentoja, sinun on avattava Syöte-eleet-valintaikkuna selaustilassa ollessasi.
 
 Tämän valintaikkunan puunäkymässä näytetään kaikki käytettävissä olevat NVDA-komennot kategorioihin ryhmiteltyinä.
+Voit suodattaa niitä kirjoittamalla Suodata-muokkauskenttään komennon nimestä yhden tai useamman sanan missä tahansa järjestyksessä.
 Kaikki komentoon liitetyt syöte-eleet näytetään kyseisen komennon alapuolella.
 
-Syöte-ele lisätään komentoon valitsemalla haluttu komento ja painamalla Lisää-painiketta.
-Tämän jälkeen suoritetaan haluttu syöte-ele (ts. painetaan näppäimistön näppäintä tai pistenäytön painiketta.
+Lisää komentoon syöte-ele valitsemalla se listasta ja painamalla Lisää-painiketta.
+Suorita tämän jälkeen valitsemasi syöte-ele (ts. paina näppäimistön näppäimiä tai pistenäytön painikkeita).
 Ele voidaan usein tulkita useammalla kuin yhdellä tavalla.
-Jos esimerkiksi painetaan näppäimistön näppäintä, sen saatetaan haluta toimivan jossain tietyssä näppäimistöasettelussa (esim. pöytäkone tai kannettava) tai kaikissa asetteluissa.
-Tässä tapauksessa näkyviin tulee valikko, josta voidaan valita haluttu vaihtoehto.
+Jos esim. painat näppäimistön näppäimiä, saatat haluta niiden toimivan jossain tietyssä näppäimistöasettelussa (esim. pöytäkone tai kannettava) tai kaikissa asetteluissa.
+Tällöin näkyviin tulee valikko, josta voit valita haluamasi vaihtoehdon.
 
-Syöte-ele poistetaan komennosta valitsemalla se ja painamalla Poista-painiketta.
+Poista syöte-ele komennosta valitsemalla se ja painamalla Poista-painiketta.
 
-Tehdyt muutokset tallennetaan painamalla OK-painiketta tai hylätään painamalla Peruuta.
+Tallenna tekemäsi muutokset painamalla OK-painiketta tai hylkää ne painamalla Peruuta.
 
 ++ Asetusten tallentaminen ja palauttaminen ++
 NVDA tallentaa asetukset automaattisesti suljettaessa.
