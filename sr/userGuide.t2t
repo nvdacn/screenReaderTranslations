@@ -957,8 +957,58 @@ NVDA подржава све екране од [Хенди Тек http://www.han
 Да бисте ово урадили, требаћете инсталирати [БИ-АР-ЕЛ-ТИ-ТИ-ВАЈ http://brl.thefreecat.org/brltty/] за Виндоуз.
 Требате преузети и инсталирати последње паковање инсталера, које ће бити именовано нпр. brltty-win-4.2-2.exe.
 Када будете конфигурисали екран и порт који ћете користити, потрудите се да обратите пажњу на инструкције, поготово ако користите УСБ екран и већ имате инсталиране драјвере произвођача.
++ Napredne Teme +
+
+++ opcije komandne linije ++[CommandLineOptions]
+NVDA moже да прихвати једну или више додатних опција када се покреће које контролишу његову функционалност.
+Ви можете писати онолико информација колико вам треба.
+Ове  опције могу бити уписане када се нвда покреће са пречицом (у  својствима пречице), са покрени дијалога(Start Meни -> покрени или Windows+r) или са Windows командне конзоле.
+Опције морају бити одвојене од име од NVDA'овог exe датотеке и од других опција са размацима.
+На пример, Desktop пречица коју NVDA креира у току  инсталације има -r опцију, која каже NVDA да затвори тренутно активну копију пре покретања нове.
+Друга корисна опција је --disable-addons, која каже NVDA да онемогући све активне додатке.
+Ово вам дозвољава да схватите да ли проблем ствара  неки додатак и да решите озбиљне проблеме створене од додатака.
+
+као пример, ви можете изаћи из тренутно активне копије NVDA тако што ће те уписати следеће у покрени dialog:
+
+nvda -q
+
+неке од опција имају кратак и дуг упис, док неке од њих имају само дуг упис.
+За оне које имају кратку верзију, ви можете да их комбинујете  као ово:
+| nvda -rm | Ово ће изаћи из тренутно активне копије NVDA и покренуће нову копију са  звуковима за паљење искљученим, итд. |
+| nvda -rm --disable-addons | исто као изнад, али са додацима онемогућеним |
+
+неке од командних опција прихватају додатне параметре; нпр. колико детаљно уписивање у дневник би  требало да буде или адреса до корисничке конфигурације .
+ови параметри морају бити постављени после опције, одвојени од опције са размаком када користите кратку верзију или са једнако знаком (=) када користите дугу верзију; нпр.:
+| nvda -l 10 | Каже NVDA да се покрене са нивоом дневника подешеним на дебаговање |
+| nvda --log-file=c:\nvda.log |  Каже NVDA да пише своје дневнике у c:\nvda.log |
+| nvda --log-level=20 -f c:\nvda.log | Каже NVDA да се покрене са нивоом дневника подешеним на infо и да пише своје дневнике у c:\nvda.log |
+
+следе командне опције за NVDA:
+|| Short | Long | Description |
+| -h | --help | show command line help and exit |
+| -q | --quit | Quit already running copy of NVDA |
+| -r | --replace | Quit already running copy of NVDA and start this one |
+| -k | --check-running | Report whether NVDA is running via the exit code; 0 if running, 1 if not running |
+| -f LOGFILENAME | --log-file=LOGFILENAME | The file where log messages should be written to |
+| -l LOGLEVEL | --log-level=LOGLEVEL | The lowest level of message logged (debug 10, info 20, warning 30, error 40, critical 50), default is warning |
+| -c CONFIGPATH | --config-path=CONFIGPATH | The path where all settings for NVDA are stored |
+| -m | --minimal | No sounds, no interface, no start message etc |
+| -s | --secure | Secure mode (disable Python console) |
+| None | --disable-addons | Addons will have no effect |
+| None | --no-sr-flag  | Don't change the global system screen reader flag |
+| None | --install | Silently installs NVDA |
+
+++ Напредно Прилагођавање Изговора Симбола++
+It is possible to customize the pronunciation of punctuation and other symbols beyond what can be done using the [Punctuation/symbol pronunciation #SymbolPronunciation] dialog.
+For example, you can specify whether the raw symbol should be sent to the synthesizer (e.g. to cause a pause or change in inflection) and you can add custom symbols.
+
+To do this, you must edit the symbol pronunciation information file in your NVDA user configuration directory.
+The file is called symbols-xx.dic, where xx is the language code.
+The format of this file is documented in the Symbol Pronunciation section of the NVDA Developer Guide, which is available from [the Development section of the NVDA web site http://community.nvda-project.org/wiki/Development].
+However, it is not possible for users to define complex symbols.
+
 
 + druge informacije +
 ako vam treba joш информација о нвда читачу екрана посетите нвда сајт на следећем линкуNVDA_URL.
-Here, you can find additional documentation, as well as technical support and community resources.
-This site also provides information and resources concerning NVDA development.
+Овде, ви можете пронаћи додатну документацију, као и техничку подршку и подршку заједнице.
+Овај сајт такође пружа информације и изворе о NVDA развоју.
