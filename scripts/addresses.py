@@ -53,7 +53,7 @@ addresses = {
     },
     'fi': {
         'lang':'Finnish',
-        'email': ['Jani Kinnunen <jani.kinnunen@wippies.fi>'],
+        'email': ['Jani Kinnunen <jani.kinnunen@wippies.fi>', 'Isak Sand <isak.sand@gmail.com>'],
     },
     'fa': {
         'lang':'Farsi',
