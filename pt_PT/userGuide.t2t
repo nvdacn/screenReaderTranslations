@@ -437,7 +437,8 @@ Apesar de um rato físico ou de um touchpad terem de ser utilizados para navegar
 
 + Modo de Navegação +
 Os documentos complexos, só de leitura, tais como páginas de Internet, são apresentados pelo NVDA, através da utilização do modo de navegação.
-Isto inclui os documentos no Mozilla Firefox, Microsoft Internet Explorer, Google Chrome, Adobe Reader e Adobe Flash.
+Isto inclui os documentos no Mozilla Firefox, Microsoft Internet Explorer, mensagens em HTML do Microsoft Outlook, Google Chrome, Adobe Reader e Adobe Flash.
+O modo de navegação também está disponível como opção para o Microsoft Word para navegar documentos complexos.
 
 No modo de navegação, o conteúdo do documento está disponível numa representação plana e pode ser navegado com as teclas de cursor, como se se tratasse de um documento de texto normal.
 Todos os comandos de teclado do NVDA referentes ao [cursor do sistema #SystemCaret] trabalharão neste modo; ex: leitura contínua, anunciar formatação, comandos de navegação em tabelas, etc.
@@ -1008,6 +1009,11 @@ Por exemplo, se for pressionando a Seta Abaixo, numa página da Internet e encon
 
 ==== Indicação em áudio dos modos de foco e de navegação ====
 Se esta opção estiver activa, o NVDA reproduzirá sons especiais, quando alternar entre o modo de navegação e modo de foco, em vez de anunciar essa alteração.
+
+==== Impedir comandos de atingir o documento ====
+Activada por padrão, esta opção permite que escolha se os comandos, (como o pressionar de teclas) que não são um comando do NVDA, nem são considerados como uma tecla de comando, em geral, devem ser impedidos de atingir o documento que está actualmente em foco.
+Por exemplo, se a opção estiver activada, se a letra j for pressionada, seria impedida de atingir o documento, pois não é um comando rápido de navegação nem é provável que seja um comando da própria aplicação.
+
 
 +++ Definições de Formatação de Documentos (NVDA+Ctrl+D) +++[DocumentFormattingSettings]
 Esta caixa de diálogo está no menu Preferências, em "Formatação de Documentos...".
@@ -1947,20 +1953,20 @@ nvda -q
 
 Algumas das opções têm uma versão curta e uma longa, enquanto algumas só têm a longa.
 Para as que têm uma versão curta, pode combiná-las como se segue:
-| nvda -rm | This will exit the currently running copy of NVDA and will start a new copy with startup sounds disabled, etc. |
-| nvda -rm --disable-addons | Same as above, but with add-ons disabled |
+| nvda -rm | Isto sairá da cópia do NVDA em execução e iniciará uma nova cópia com o som de início desactivado, etc. |
+| nvda -rm --disable-addons | Igual à anterior mas também com os extras desactivados |
 
-Some of the command line options accept additional parameters; e.g. how detailed the logging should be or the path to the user configuration directory.
-Those parameters should be placed after the option, separated from the option by a space when using the short version or an equals sign (=) when using the long version; e.g.:
-| nvda -l 10 | Tells NVDA to start with log level set to debug |
-| nvda --log-file=c:\nvda.log |  Tells NVDA to write its log to c:\nvda.log |
-| nvda --log-level=20 -f c:\nvda.log | Tels NVDA to start with log level set to info and to write its log to c:\nvda.log |
+Algumas das opções da linha de comando aceitam parâmetros adicionais, por exemplo quão detalhado o ficheiro de log deve ser ou o caminho para as configurações do utilizador.
+Esses parâmetros devem ser colocados depois da opção, separados da opção por um espaço se estivermos a usar a versão curta ou um sinal de igual (=) se usarmos a versão longa. Por exemplo:
+| nvda -l 10 | Informa o NVDA para iniciar com o nível de registo definido para depuração |
+| nvda --log-file=c:\nvda.log |  Informa o NVDA para escrever o ficheiro de log em c:\nvda.log |
+| nvda --log-level=20 -f c:\nvda.log | Informa o NVDA para iniciar com o nível de registo definido para info e para guardar o ficheiro em c:\nvda.log |
 
-Following are the command line options for NVDA:
-|| Short | Long | Description |
+Seguidamente apresentam-se as opções para a linha de comando para o NVDA
+|| Curta | Longa | Descrição |
 | -h | --help | Mostra a ajuda da linha de comandos e sai |
 | -q | --quit | Sai da cópia em execução do NVDA |
-| -r | --replace | Sai da cópia em execução do NVDA e inicia esta |
+| -r | --replace | Sai da cópia em execução do NVDA e inicia outra |
 | -k | --check-running | Anuncia se o NVDA está em execução via código de saída; 0 se em execução, 1 se não em execução |
 | -f NomeDoFicheiroDeRegisto | --log-file=NomeDoFicheiroDeRegisto | Especifica em que ficheiro devem ser escritas as informações de registo |
 | -l NivelDeRegisto | --log-level=NivelDeRegisto | O nível mais baixo de mensagens registadas (depuração 10, info 20, aviso 30, erro 40, crítico 50), o padrão é aviso |
