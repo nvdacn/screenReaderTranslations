@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NVDA dev-docs.\n"
 "POT-Creation-Date: 2014-01-12 22:25+0000\n"
-"PO-Revision-Date: 2014-11-29 22:13+0100\n"
+"PO-Revision-Date: 2015-01-03 21:29+0100\n"
 "Last-Translator: Jorge Pérez Pérez <jorgtum@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Aragonese <softaragones@googlegroups.com>\n"
 "Language: an\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.7.1\n"
 
 #. type: Plain text
 #, no-wrap
@@ -768,11 +768,12 @@ msgstr "Bi ha belatros termins que imos a plegar a conoixer en breu."
 #. type: Title ###
 #, no-wrap
 msgid "Example 2: Generate a tone when switching to Notepad"
-msgstr ""
+msgstr "Eixemplo 2: Chenerar un ton en que se cambee t'o Notepad"
 
 #. type: Plain text
 msgid "Most of the below code comes from NvDA Developer Guide."
 msgstr ""
+"A mayor parti d'o codigo d'abaixo vien d'a Guía d'o desembolicador d'o NVDA."
 
 #. type: Plain text
 msgid ""
@@ -782,6 +783,12 @@ msgid ""
 "the executable for a program. For example, an app module for Notepad would "
 "be named notepad.py."
 msgstr ""
+"O NVDA no te permite nomás adhibir comandos globals, sino que tamién permite "
+"a escritura de codigo t'amillorar l'uso d'os programas a traviés de modulos "
+"d'aplicacions. Un modulo d'aplicación ye tamién un fichero de Python, fueras "
+"que, ista vegada, o nombre d'o fichero PY. Ye o nombre de l'executable d'un "
+"programa. Por eixemplo, un modulo d'aplicación t'o Bloc de notas (notepad) "
+"se clamaría notepad.py."
 
 #. type: Plain text
 msgid ""
@@ -790,11 +797,16 @@ msgid ""
 "below code in notepad.py, which in turn should be placed in appModules "
 "folder in your user configuration folder in order for it to run."
 msgstr ""
+"O codigo d'abaixo, d'a Guía d'o desembolicador d'o NVDA, da un chicot "
+"eixemplo d'un modulo d'aplicación tipica: reproducir un chufliu curto en "
+"cambiar t'o Bloc de notas. Mete o codigo d'abaixo en o notepad.py, que de "
+"vegada s'ha de colocar en a carpeta appModules en a carpeta de configuración "
+"de l'usuario con a finalidat que s'execute."
 
 #. type: Plain text
 #, no-wrap
 msgid "\t# An example app module.\n"
-msgstr ""
+msgstr "\t# Un eixemplo de modulo d'aplicación.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -802,11 +814,15 @@ msgid ""
 "\timport appModuleHandler\n"
 "\timport tones\n"
 msgstr ""
+"\timport appModuleHandler\n"
+"\timport tones\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "\tclass AppModule(appModuleHandler.AppModule):\n"
 msgstr ""
+"\tclass AppModule(appModuleHandler.AppModule):\n"
+"\tclass AppModule(appModuleHandler.AppModule):\n"
 
 #. type: Plain text
 #, no-wrap
@@ -815,25 +831,31 @@ msgid ""
 "\t\t\ttones.beep(256, 200)\n"
 "\t\t\tnextHandler()\n"
 msgstr ""
+"\t\tdef event_gainFocus(self, obj, nextHandler):\n"
+"\t\t\ttones.beep(256, 200)\n"
+"\t\t\tnextHandler()\n"
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 2 code explanation"
-msgstr ""
+msgstr "Explicación d'o codigo de l'eixemplo 2"
 
 #. type: Plain text
 msgid ""
 "We're seeing more new code here. Let's go over this, again piece by piece:"
 msgstr ""
+"Viyemos más codigo nuevo aquí. Imos a repasar isto unatra vegada troz a troz:"
 
 #. type: Bullet: '1. '
 msgid ""
 "Unlike the first example, the crucial module we need is appModuleHandler."
 msgstr ""
+"A diferencia d'o primer eixemplo, o modulo fundamental que amenestemos ye "
+"appModuleHandler."
 
 #. type: Bullet: '2. '
 msgid "The class that we are using is AppModule."
-msgstr ""
+msgstr "A clase que somos fendo servir ye appModule."
 
 #. type: Bullet: '3. '
 msgid ""
@@ -842,6 +864,11 @@ msgid ""
 "arguments, the object for which the event needs to be dealt with, or, as "
 "many people say, \"fired.\""
 msgstr ""
+"A diferencia d'a zaguera vegada somos fendo servir eventos, un metodo "
+"s'executa en que se producen determinaus eventos como que os nombres d'os "
+"controls cambeen. Os eventos tienen un obchecto como un d'os suyos "
+"argumentos, l'obchecto con que l'evento ha de tractar-se u como muita chent "
+"diz, \"disparar-se.\""
 
 #. type: Bullet: '4. '
 msgid ""
@@ -849,6 +876,10 @@ msgid ""
 "method is used in event methods to tell NvDA to pass the event so it can be "
 "taken care of, such as saying the name of a control after beeping."
 msgstr ""
+"Adentro d'o metodo d'evento, tamién somos viyendo una clamada "
+"a`nextHandler`. Iste metodo s'usa en metodos d'evento ta decir-le a lo NVDA "
+"que pase l'evento ta que pueda estar atendiu, tal como decir o nombre d'un "
+"control dimpués de chuflar."
 
 #. type: Title ###
 #, no-wrap
