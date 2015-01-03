@@ -298,30 +298,29 @@ Taulukoissa ovat käytettävissä lisäksi seuraavat näppäinkomennot:
 ++ Objektinavigointi ++[]
 Sovelluksia käytetään enimmäkseen komennoilla, jotka siirtävät [kohdistusta #SystemFocus] ja [kohdistinta #SystemCaret].
 Toisinaan voi kuitenkin olla tarpeen tutkia nykyistä sovellusta tai käyttöjärjestelmää ilman, että kohdistus tai kohdistin liikkuu.
-Saatat myös haluta siirtyä [objekteihin #Objects], joihin ei pääse normaalisti näppäimistöllä.
-  Tällaisissa tapauksissa voidaan käyttää objektinavigointia.
+Saatat myös haluta siirtyä [objekteihin #Objects], joihin ei ole mahdollista päästä normaalisti näppäimistöä käyttäen.
+Tällaisissa tapauksissa voit käyttää objektinavigointia.
 
 Objektinavigoinnin avulla on mahdollista liikkua yksittäisten [objektien #Objects] välillä ja saada niistä tietoja.
-Kun objektiin siirrytään, NVDA lukee sen samalla tavalla kuin järjestelmäkohdistuksenkin.
-Tekstiä voidaan myös tarkastella sellaisena kuin se näkyy ruudulla.
-Tähän käytetään objektinavigoinnin asemesta [ruututarkastelua #ScreenReview].
+Kun siirryt objektiin, NVDA lukee sen samalla tavalla kuin järjestelmäkohdistuksen.
+Voit käyttää [ruututarkastelua #ScreenReview] tekstin tarkastelemiseen sellaisena kuin se näkyy ruudulla.
 
 Objektit on ryhmitelty hierarkisesti sen sijaan, että niiden välillä liikuttaisiin edestakaisin.
 Tämä tarkoittaa, että jotkin objektit sisältävät muita objekteja, ja että on siirryttävä niiden sisään, jotta päästäisiin edelleen niiden sisältämiin objekteihin.
 Lista esimerkiksi sisältää listakohteita, joten niihin pääsemiseksi on siirryttävä listan sisään.
-Jos on siirrytty listan kohteeseen, seuraavaan ja edelliseen objektiin siirtyminen siirtää saman listan muihin kohteisiin.
-Listakohteen säilöobjektiin siirtyminen siirtää takaisin listan kohdalle.
-Tämän jälkeen siitä voidaan siirtyä pois, mikäli halutaan päästä muihin objekteihin.
+Jos olet siirtynyt listan kohteeseen, pääset saman listan muihin kohteisiin siirtymällä seuraavaan tai edelliseen objektiin.
+Takaisin listaan pääset siirtymällä listakohteen säilöobjektiin.
+Tämän jälkeen voit siirtyä listasta pois, mikäli haluat päästä muihin objekteihin.
 Myös työkalurivi sisältää säätimiä, joten niihin pääsemiseksi on siirryttävä kyseisen työkalurivin sisään.
 
 Nykyistä tarkasteltavaa objektia kutsutaan navigointiobjektiksi.
-Kun objektiin siirrytään, sitä voidaan tarkastella [tekstintarkastelukomennoilla #ReviewingText] [objektintarkastelutilassa #ObjectReview] oltaessa.
+Kun siirryt objektiin, voit tarkastella sitä [tekstintarkastelukomennoilla #ReviewingText] [objektintarkastelutilassa #ObjectReview] ollessasi.
 Navigointiobjekti liikkuu oletusarvoisesti järjestelmäkohdistuksen mukana, mutta tämä asetus voidaan poistaa myös käytöstä.
 
 Huomaa, että pistenäyttö seuraa oletusarvoisesti objektinavigoinnin ja tekstintarkastelukohdan sijasta [kohdistusta #SystemFocus] ja [kohdistinta #SystemCaret].
-Mikäli pistenäytön halutaan kuitenkin seuraavan objektinavigointia ja tekstinlukukohtaa, on se [määritettävä seuraamaan #BrailleTether] tarkastelukohdistinta.
+Jos kuitenkin haluat pistenäytön seuraavan objektinavigointia ja tekstintarkastelukohtaa, näyttö on [määritettävä seuraamaan #BrailleTether] tarkastelukohdistinta.
 
-Seuraavia komentoja käytetään objekteittain liikkumiseen:
+Käytä seuraavia komentoja objekteittain liikkumiseen:
 %kc:beginInclude
 || Nimi | Näppäinkomento pöytäkoneissa | Näppäinkomento kannettavissa | Kosketusele | Kuvaus |
 | Lue nykyinen objekti | NVDA+numeronäppäimistön 5 | NVDA+Shift+O | Ei mitään | Lukee nykyisen navigointiobjektin. Kahdesti painettaessa tiedot tavataan ja kolmesti painettaessa objektin nimi ja arvo kopioidaan leikepöydälle. |
@@ -335,19 +334,19 @@ Seuraavia komentoja käytetään objekteittain liikkumiseen:
 | Lue tarkastelukohdistimen sijainti | NVDA+numeronäppäimistön delete | NVDA+delete | Ei mitään | Kertoo tietoja tarkastelukohdistimen kohdalla olevan tekstin tai objektin sijainnista. Näitä tietoja voivat olla esim. prosenttimäärä asiakirjasta, etäisyys sivun reunasta tai tarkka sijainti ruudulla. Kahdesti painettaessa kerrotaan lisätietoja. |
 %kc:endInclude
 
-Huomautus: Numlockin on oltava pois päältä, jotta numeronäppäimistön näppäimet toimisivat oikein.
+Huom: Numlockin on oltava pois päältä, jotta numeronäppäimistön näppäimet toimisivat oikein.
 
 ++ Tekstin tarkastelu ++[ReviewingText]
-NVDA:lla on mahdollista lukea [ruutua #ScreenReview], nykyistä [asiakirjaa #DocumentReview] tai nykyistä [objektia #ObjectReview] merkeittäin, sanoittain tai riveittäin.
+NVDA:n avulla on mahdollista lukea [ruutua #ScreenReview], nykyistä [asiakirjaa #DocumentReview] tai nykyistä [objektia #ObjectReview] merkeittäin, sanoittain tai riveittäin.
 Tästä on eniten hyötyä paikoissa, joissa ei ole [järjestelmäkohdistinta #SystemCaret] (Windowsin komentokehote mukaan lukien).
-Tätä voidaan käyttää esim. valintaikkunassa olevan ilmoituksen lukemiseen.
+Voit käyttää tätä esim. valintaikkunassa olevan ilmoituksen lukemiseen.
 
-Kun tarkastelukohdistinta siirretään, järjestelmäkohdistin ei seuraa mukana, joten tekstin tarkastelu onnistuu muokkauskohtaa menettämättä.
+Kun siirrät tarkastelukohdistinta, järjestelmäkohdistin ei seuraa mukana, joten tekstin tarkastelu onnistuu muokkauskohtaa menettämättä.
 Kun järjestelmäkohdistin liikkuu, tarkastelukohdistin seuraa kuitenkin oletusarvoisesti mukana.
-Tätä asetusta voidaan myös muuttaa.
+Tätä asetusta voidaan muuttaa.
 
 Huomaa, että pistenäyttö seuraa oletusarvoisesti objektinavigoinnin ja tekstintarkastelukohdan sijasta [kohdistusta #SystemFocus] ja [kohdistinta #SystemCaret].
-Mikäli pistenäytön halutaan kuitenkin seuraavan objektinavigointia ja tekstintarkastelukohtaa, on se [määritettävä seuraamaan #BrailleTether] tarkastelukohdistinta.
+Jos kuitenkin haluat pistenäytön seuraavan objektinavigointia ja tekstintarkastelukohtaa, näyttö on [määritettävä seuraamaan #BrailleTether] tarkastelukohdistinta.
 
 Seuraavat tekstintarkastelukomennot ovat käytettävissä:
 %kc:beginInclude
@@ -371,7 +370,7 @@ Seuraavat tekstintarkastelukomennot ovat käytettävissä:
 | Lue tekstin muotoilutiedot | NVDA+F | NVDA+F | Ei mitään | Lukee järjestelmäkohdistimen nykyisessä sijainnissa olevan tekstin muotoilutiedot. |
 %kc:endInclude
 
-Huomautus: Numlockin on oltava pois päältä, jotta numeronäppäimistön näppäimet toimisivat oikein.
+Huom: Numlockin on oltava pois päältä, jotta numeronäppäimistön näppäimet toimisivat oikein.
 
 Hyvä keino tekstin tarkastelun peruskomentojen muistamiseen pöytäkoneen näppäimistöasettelua käytettäessä on ajatella  niitä  kolme kertaa kolme ruudukkona, jossa on ylhäältä alas rivi, sana ja merkki sekä vasemmalta oikealle edellinen, nykyinen ja seuraava.
 Asettelua kuvataan seuraavasti:
@@ -391,21 +390,21 @@ Seuraavat komennot vaihtavat tarkastelutilojen välillä:
 %kc:endInclude
  
 +++ Objektitarkastelu +++[ObjectReview]
-Objektintarkastelutilassa voidaan tarkastella vain nykyisen [navigointiobjektin #ObjectNavigation] sisältöä.
+Objektintarkastelutilassa on mahdollista tarkastella vain nykyisen [navigointiobjektin #ObjectNavigation] sisältöä.
 Tämä on yleensä tekstiä sellaisissa objekteissa kuin muokattavat tekstikentät tai muut perustekstisäätimet.
 Muissa objekteissa sisältöä voivat olla kyseisten objektien nimi ja/tai arvo.
 
 +++ Asiakirjatarkastelu +++[DocumentReview]
-[Navigointiobjektin #ObjectNavigation] ollessa selaustila-asiakirjassa (esim. verkkosivulla) tai muussa monisisältöisessä asiakirjassa (esim. Lotus Symphony -asiakirjassa) on mahdollista vaihtaa asiakirjan tarkastelutilaan.
-Tässä tilassa voidaan tarkastella koko asiakirjan sisältöä.
+Asiakirjan tarkastelutilaan on mahdollista vaihtaa [Navigointiobjektin #ObjectNavigation] ollessa selaustila-asiakirjassa (esim. verkkosivulla) tai muussa monisisältöisessä asiakirjassa (esim. Lotus Symphonyssa).
+Tässä tilassa voit tarkastella koko asiakirjan sisältöä.
 
-Kun objektitarkastelusta vaihdetaan asiakirjatarkasteluun, tarkastelukohdistin sijoitetaan asiakirjassa navigointiobjektin kohdalle.
-Navigointiobjekti siirretään automaattisesti tarkastelukohdistimen nykyisessä kohdassa olevaan objektiin liikuttaessa asiakirjassa tarkastelukomennoilla.
+Tarkastelukohdistin sijoitetaan asiakirjassa navigointiobjektin kohdalle vaihdettaessa objektitarkastelusta asiakirjatarkasteluun.
+Kun asiakirjassa liikutaan tarkastelukomennoilla, navigointiobjekti siirretään automaattisesti tarkastelukohdistimen nykyisessä kohdassa olevaan objektiin.
 
 Huomaa, että NVDA vaihtaa automaattisesti objektitarkastelusta asiakirjatarkasteluun selaustila-asiakirjoissa liikuttaessa.
 
 +++ Ruututarkastelu +++[ScreenReview]
-Ruuduntarkastelutilan avulla on mahdollista tarkastella ruudulla olevaa tekstiä sellaisena kuin se näkyy visuaalisesti nykyisessä sovelluksessa.
+Ruuduntarkastelutilan avulla voit tarkastella ruudulla olevaa tekstiä sellaisena kuin se näkyy visuaalisesti nykyisessä sovelluksessa.
 Tämä muistuttaa useiden muiden Windows-ruudunlukuohjelmien ruuduntarkastelu- tai hiirikohdistintoimintoa.
 
 Tarkastelukohdistin sijoitetaan ruuduntarkastelutilaan vaihdettaessa ruudulla nykyisen [navigointiobjektin #ObjectNavigation] kohdalle.
@@ -415,33 +414,33 @@ Huomaa, että NVDA ei saata pystyä lukemaan kaikkea tai mitään ruudulla oleva
 
 ++ Hiirellä liikkuminen ++
 Kun hiirtä liikutetaan, NVDA lukee oletusarvoisesti suoraan sen alla olevan tekstin.
-NVDA lukee myös hiirikohdistinta ympäröivän tekstikappaleen mikäli mahdollista.
-Joissakin säätimissä lukeminen on tosin mahdollista vain riveittäin.
+NVDA lukee myös hiirikohdistinta ympäröivän tekstikappaleen mikäli se on mahdollista, vaikka joissakin säätimissä lukeminen on mahdollista vain riveittäin.
 
 NVDA voidaan määrittää kertomaan myös hiiren alla olevan [objektin #Objects] tyypin (esim. lista, painike jne).
 Tästä voi olla hyötyä täysin sokeille käyttäjille, sillä joskus pelkän tekstin lukeminen ei riitä.
 
-NVDA tarjoaa käyttäjille tavan ymmärtää, missä hiiri on ruudun mittojen suhteen soittamalla hiiren nykyiset koordinaatit äänimerkkeinä.
+NVDA tarjoaa käyttäjille tavan ymmärtää, missä hiiri on ruudun mittojen suhteen toistamalla hiiren nykyiset koordinaatit äänimerkkeinä.
 Mitä ylempänä hiiri on ruudulla, sitä korkeampia äänimerkit ovat.
 Mitä enemmän vasemmalla tai oikealla hiiri on ruudulla, sitä enemmän vasemmalta tai oikealta ääni kuuluu (mikäli käytössä on stereokaiuttimet tai kuulokkeet).
 
-Nämä lisäominaisuudet eivät ole oletusarvoisesti käytössä, mutta ne voidaan ottaa tarvittaessa käyttöön [Hiiriasetukset #MouseSettings]-valintaikkunasta, joka löytyy NVDA:n Asetukset-valikosta.
+Nämä lisäominaisuudet eivät ole oletusarvoisesti käytössä.
+Voit ottaa ne tarvittaessa käyttöön [Hiiriasetukset #MouseSettings]-valintaikkunasta, joka löytyy NVDA:n Asetukset-valikosta.
 
 Vaikka hiiren avulla liikkumiseen tulisikin käyttää fyysistä hiirtä tai kosketuslevyä, on NVDA:ssa joitakin hiiren käyttöön tarkoitettuja näppäinkomentoja:
 %kc:beginInclude
 || Nimi | Näppäinkomento pöytäkoneissa | Näppäinkomento kannettavissa | Kuvaus |
 | Vasemman hiiripainikkeen napsautus | Numeronäppäimistön kautta | NVDA+Å | Napsauttaa kerran hiiren vasenta painiketta. Kaksoisnapsautus tehdään painamalla tätä näppäinkomentoa kaksi kertaa nopeasti peräkkäin. |
-| Vasemman hiiripainikkeen lukitus | Shift+numeronäppäimistön kautta | NVDA+Control+Å | Lukitsee vasemman hiiripainikkeen alas. Lukitus vapautetaan painamalla tätä näppäinkomentoa uudelleen. Hiirellä vetäminen tehdään painamalla tätä näppäinkomentoa vasemman painikkeen lukitsemiseksi ja siirtämällä sitten hiirtä joko fyysisesti tai käyttämällä jotakin muista sen siirtämiskomennoista. |
+| Vasemman hiiripainikkeen lukitus | Shift+numeronäppäimistön kautta | NVDA+Control+Å | Lukitsee vasemman hiiripainikkeen alas. Lukitus vapautetaan painamalla tätä näppäinkomentoa uudelleen. Hiirellä vetäminen tehdään painamalla tätä näppäinkomentoa vasemman painikkeen lukitsemiseksi ja siirtämällä sitten hiirtä joko fyysisesti tai käyttämällä jotakin muista hiiren siirtämiskomennoista. |
 | Oikean hiiripainikkeen napsautus | Numeronäppäimistön tähti | NVDA+Treema | Napsauttaa kerran hiiren oikeaa painiketta. |
-| Oikean hiiripainikkeen lukitus | Shift+numeronäppäimistön tähti | NVDA+Control+Treema | Lukitsee oikean hiiripainikkeen alas. Lukitus vapautetaan painamalla tätä näppäinkomentoa uudelleen. Hiirellä vetäminen tehdään painamalla tätä komentoa oikean painikkeen lukitsemiseksi ja siirtämällä sitten hiirtä joko fyysisesti tai käyttämällä jotakin muista sen siirtämiskomennoista. |
+| Oikean hiiripainikkeen lukitus | Shift+numeronäppäimistön tähti | NVDA+Control+Treema | Lukitsee oikean hiiripainikkeen alas. Lukitus vapautetaan painamalla tätä näppäinkomentoa uudelleen. Hiirellä vetäminen tehdään painamalla tätä komentoa oikean painikkeen lukitsemiseksi ja siirtämällä sitten hiirtä joko fyysisesti tai käyttämällä jotakin muista hiiren siirtämiskomennoista. |
 | Siirrä hiiri nykyiseen navigointiobjektiin | NVDA+numeronäppäimistön kautta | NVDA+Shift+M | Siirtää hiiren nykyisen navigointiobjektin ja tarkastelukohdistimen sijaintiin. |
 | Siirrä hiiren alla olevaan objektiin | NVDA+numeronäppäimistön tähti | NVDA+Shift+N | Siirtää navigointiobjektin hiiren alla olevaan objektiin. |
 %kc:endInclude
 
 + Selaustila +
-Monimutkaisia, ei-muokattavia asiakirjoja kuten verkkosivuja luetaan NVDA:lla selaustilassa.
+Monisisältöisiä, ei-muokattavia asiakirjoja kuten verkkosivuja luetaan NVDA:lla selaustilassa.
 Tällaisia ovat Mozilla Firefoxissa, Microsoft Internet Explorerissa, Google Chromessa ja Adobe Readerissa luettavat asiakirjat, Microsoft Outlookin HTML-viestit sekä Flash-sisältö.
-Selaustila on käytettävissä myös valinnaisesti Microsoft Wordissa monimutkaisissa asiakirjoissa liikuttaessa.
+Selaustila on käytettävissä myös valinnaisesti Microsoft Wordissa monisisältöisissä asiakirjoissa liikuttaessa.
 
 Selaustilassa asiakirjan sisältö on käytettävissä kokonaisesityksenä, jossa voidaan liikkua nuolinäppäimillä, aivan kuin se olisi tavallinen tekstiasiakirja.
 Kaikki NVDA:n [järjestelmäkohdistimen #SystemCaret] näppäinkomennot, kuten esim. lue kaikki, lue muotoilutiedot, taulukoissa liikkumiseen käytettävät komennot jne, toimivat tässä tilassa.
