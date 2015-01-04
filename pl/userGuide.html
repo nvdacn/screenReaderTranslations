@@ -156,9 +156,10 @@
   <LI><A HREF="#toc107">12. Brajlowskie skróty typu i stanu kontrolki</A>
   <LI><A HREF="#toc108">13. dla zaawansowanych</A>
     <UL>
-    <LI><A HREF="#toc109">13.1. Zaawansowana edycja wymowy symboli</A>
+    <LI><A HREF="#CommandLineOptions">13.1. Parametry linii komend</A>
+    <LI><A HREF="#toc110">13.2. Zaawansowana edycja wymowy symboli</A>
     </UL>
-  <LI><A HREF="#toc110">14. Dodatkowe Informacje</A>
+  <LI><A HREF="#toc111">14. Dodatkowe Informacje</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -362,6 +363,7 @@ Naciśnij "Ok" aby zamknąć tę informację.
 <P>
 W celu uruchomienia programu zainstalowanego za pomocą instalatora wybierz NVDA z menu Programy w Menu Start lub użyj skrótu Kontrol+Alt+D.
 Możesz również wpisać NVDA w oknie Uruchom w menu Start i nacisnąć klawisz Enter, a program zostanie uruchomiony.
+Możesz również podać pewne <A HREF="#CommandLineOptions">parametry linii komend</A> które pozwalają zrestartować NVDA (-r), zakończyć (-q), wyłączyć dodatki (--disable-addons), etc.
 </P>
 <P>
 Aby uruchomić wersję przenośną NVDA, przejdź do katalogu w którym zostały wypakowane pliki, zaznacz plik  "nvda.exe" i naciśnij klawisz Enter lub dwukrotnie kliknij na nim lewym przyciskiem myszy.
@@ -1178,7 +1180,8 @@ Nawigacja myszą powinna odbywać się przy użyciu fizycznej myszy lub trackpad
 
 <P>
 Złożone dokumenty przeznaczone tylko do odczytywania, na przykład strony internetowe, przedstawiane są w NVDA w trybie czytania.
-Dotyczy to dokumentów wyświetlanych w programach Mozilla Firefox, Microsoft Internet Explorer, Google Chrome, Adobe Reader and Adobe Flash.
+Dotyczy to dokumentów wyświetlanych w programach Mozilla Firefox, Microsoft Internet Explorer, wiadomości HTML w Microsoft Outlook, Google Chrome, Adobe Reader and Adobe Flash.
+Tryb czytania jest również opcjonalnie dostępny dla nawigowania w złożonych dokumentach w programie Microsoft Word . 
 </P>
 <P>
 W trybie czytania treść dokumentu jest udostępniana w płaskiej reprezentacji, po której można się przemieszczać z użyciem klawiszy kursora tak jak w zwykłych dokumentach tekstowych.
@@ -1514,11 +1517,12 @@ Naciśnij Ok, a program uruchomi się ponownie.
 Ta opcja, to pole wyboru. Jeśli jest zaznaczone, to NVDA automatycznie zapisze aktualne ustawienia przy wyjściu z programu.
 </P>
 
-<H5>Ostrzegaj przed zamknięciem NVDA</H5>
+<H5>Pokaż opcje przy wyjściu z NVDA</H5>
 
 <P>
-Jest to pole wyboru, które określa, czy przy zamykaniu programu ma się pojawić pytanie potwierdzające.
-Jeśli zaznaczysz to pole, każdorazowo przed zamknięciem NVDA wyświetlone zostanie okno komunikatu z pytaniem, czy chcesz zakończyć program.
+To pole wyboru pozwala zdecydować, czy przy wyjściu z NVDA pojawi się okno dialogowe z pytaniem o akcję, którą chcesz wykonać.
+Jeśli zaznaczone, przy próbie wyjścia z NVDA pojawi się pytanie, czy chcesz wyjść, uruchomić ponownie program, albo uruchomić ponownie z wyłączonymi dodatkami.
+Jeśli niezaznaczone, NVDA zakończy działanie natychmiast.
 </P>
 
 <H5>Odtwarzaj dźwięk przy uruchamianiu i zamykaniu NVDA</H5>
@@ -2243,6 +2247,13 @@ Na przykład, gdy poruszając się strzałkami po stronie internetowej natrafisz
 Jeśli ta opcja jest włączona, NVDA będzie sygnalizować dźwiękiem przełączanie się między trybem czytania i trybem formularza, zamiast ogłaszać te zmiany mową.
 </P>
 
+<H5>Nie przekazuj do dokumentu zdarzeń wejścia nie będących poleceniami</H5>
+
+<P>
+Domyślnie włączone, to ustawienie pozwala zdecydować, że zdarzenia wejścia, (takie jak naciskane klawisze) które nie są poleceniami NVDA, ani nie wyglądają na polecenia aplikacji, powinny być nieprzekazywane do dokumentu, w którym znajduje się punkt uwagi. 
+Dla przykładu: jeśli to ustawienie jest włączone i naciśnięto literę j, zostanie ona zignorowana, ponieważ nie jest komendą szybkiej nawigacji i nie wydaje się być poleceniem aplikacji.
+</P>
+
 <A NAME="DocumentFormattingSettings"></A>
 <H4>8.1.12. Formatowanie Dokumentów (NVDA+kontrol+d)</H4>
 
@@ -2327,7 +2338,13 @@ Można także wpisać opis reguły w polu komentarz (np. zamiana słowa ptak na 
 Słowniki mowy w NVDA mają jednak o wiele więcej możliwości niż tylko proste zamiany słów.
 Okno dodawania reguły zawiera pole wyboru "Uwzględniaj wielkość liter", a jego zaznaczenie sprawi, że NVDA będzie przy stosowaniu reguły zwracał uwagę na to, czy tekst jest wpisany dużymi, czy małymi literami. 
 Domyślnie NVDA ignoruje różnice w wielkości liter.
-Drugie pole wyboru określa, czy wzorzec reguły jest wyrażeniem regularnym.
+</P>
+<P>
+Zestaw przycisków opcji pozwala określić, czy wpisany wzorzec powinien pasować gdziekolwiek, tylko jako całe słowo, albo powinien być traktowany jako "wyrażenie regularne".
+Ustawienie, aby wzorzec pasował jako całe słowo oznacza, że zastąpienie zostanie wykonane tylko jeśli wzorzec nie pojawia się jako część większego słowa; tj. znak inny niż znak alfanumeryczny lub podkreślenie (albo żaden znak) występuje od razu przed i po wzorcu.
+Wracając do wcześniejszego przykładu zamiany "ptak" na "żaba", jeśli reguła zostałaby ustawiona jako zastąpienie całego słowa, nie zastąpiłaby słowa "ptaki".
+</P>
+<P>
 Wyrażenie regularne jest to wzorzec zawierający specjalne symbole, które pozwalają na dopasowanie więcej niż jednego znaku jednocześnie, mogą to być np. cyfry, lub litery.
 Wyrażenia regularne nie są opisane w tym podręczniku, ale wiele podręczników na ich temat można znaleźć w internecie.
 </P>
@@ -2342,6 +2359,14 @@ To okno dialogowe pozwala określić w jaki sposób NVDA wypowiada konkretne zna
 Aby zmienić symbol, najpierw zaznacz go na liście. 
 Pole zamień określa w jaki sposób znak jest wypowiadany. 
 Używając listy poziom, można regulować najniższy poziom interpunkcji, na którym dany znak będzie wypowiadany. 
+</P>
+<P>
+Możesz dodać nowe symbole po naciśnięciu przycisku "Dodaj".
+W okienku, które się pojawi, wprowadź symbol i naciśnij Ok.
+Następnie zmodyfikuj zastępnik i poziom, tak jak przy innych symbolach.
+</P>
+<P>
+Możesz usunąć symbol, naciskając przycisk "Usuń".
 </P>
 <P>
 Aby zapisać zmiany kliknij przycisk ok, aby je odrzucić - kliknij Anuluj.
@@ -2359,6 +2384,7 @@ Dla przykładu, jeśli chcesz skonfigurować polecenia związane z trybem czytan
 </P>
 <P>
 Drzewo w tym oknie wyświetla wszystkie dostępne polecenia NVDA podzielone na kategorie.
+Możesz je filtrować wpisując w pole edycyjne filtru jedno lub więcej słów występujących w nazwie polecenia.
 Jakiekolwiek zdarzenia wejścia powiązane z poleceniem, są wyświetlone poniżej tego polecenia.
 </P>
 <P>
@@ -4582,8 +4608,134 @@ Zdefiniowano także poniższe oznaczenia stanu:
 <A NAME="toc108"></A>
 <H2>13. dla zaawansowanych</H2>
 
-<A NAME="toc109"></A>
-<H3>13.1. Zaawansowana edycja wymowy symboli</H3>
+<A NAME="CommandLineOptions"></A>
+<H3>13.1. Parametry linii komend</H3>
+
+<P>
+NVDA  akceptuje jeden lub więcej przełączników startowych, zmieniających jego zachowanie.
+Możesz podać tak wiele opcji, jak to jest potrzebne.
+Te opcje mogą być wpisane podczas uruchamiania ze skrótu  (we właściwościach skrótu), w oknie dialogowym "Uruchom"  (Menu start-&gt; Uruchom lub Windows+r) lub w konsoli wiersza poleceń Windows.
+Opcje powinny być oddzielone spacjami od nazwy pliku wykonywalnego NVDA, oraz od innych opcji.
+Dla przykładu, skrót tworzony na pulpicie przez instalator, posiada przełącznik -r, który nakazuje NVDA zamknąć aktualnie uruchomioną kopię przed uruchomieniem nowej.
+Inny użyteczny parametr to --disable-addons, który nakazuje NVDA zawiesić wszystkie dodatki.
+Pozwala to ustalić, czy jakiś problem jest powodowany przez dodatek i szybko go naprawić.
+</P>
+<P>
+Inny przykład, to zamknięcie aktualnie uruchomionej kopii NVDA poprzez wpisanie:
+</P>
+<P>
+nvda -q
+</P>
+<P>
+Niektóre opcje występują w dwóch wersjach - krótkiej i długiej, inne tylko w długiej wersji.
+opcje posiadające krótką wersję, możesz łączyć np.:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>nvda -rm</TD>
+<TD>zakończy uruchomioną kopię NVDA i uruchomi nową z wyłączonymi dźwiękami startowymi, etc.</TD>
+</TR>
+<TR>
+<TD>nvda -rm --disable-addons</TD>
+<TD>to samo co powyżej, ale z wyłączonymi dodatkami</TD>
+</TR>
+</TABLE>
+
+<P>
+Niektóre przełączniki akceptują dodatkowe ustawienia; np. jak szczegółowy powinien być tworzony log, albo ścieżkędo katalogu konfiguracyjnego użytkownika.
+Te ustawienia powinny być umieszczane po odpowiedniej opcji oddzielone spacją od krótkiej wersji przełącznika, lub znakiem równości (=) od długiej wersji, np.:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>nvda -l 10</TD>
+<TD>Wywołuje NVDA z poziomem logowania ustawionym na Debugowanie</TD>
+</TR>
+<TR>
+<TD>nvda --log-file=c:\nvda.log</TD>
+<TD ALIGN="right">Nakazuje NVDA zapisywać log do pliku c:\nvda.log</TD>
+</TR>
+<TR>
+<TD>nvda --log-level=20 -f c:\nvda.log</TD>
+<TD>Uruchamia NVDA z poziomem logowania ustawionym na info i plikiem logu zapisywanym w c:\nvda.log</TD>
+</TR>
+</TABLE>
+
+<P>
+Poniżej wymieniono wszystkie opcje linii poleceń dla NVDA:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Krótka</TH>
+<TH>Długa</TH>
+<TH>Opis</TH>
+</TR>
+<TR>
+<TD>-h</TD>
+<TD>--help</TD>
+<TD>Pokaż pomoc wiersza poleceń i wyjdź</TD>
+</TR>
+<TR>
+<TD>-q</TD>
+<TD>--quit</TD>
+<TD>Zakończ aktualnie uruchomioną kopię NVDA</TD>
+</TR>
+<TR>
+<TD>-r</TD>
+<TD>--replace</TD>
+<TD>Zakończ aktualną kopię NVDA i uruchom obecną</TD>
+</TR>
+<TR>
+<TD>-k</TD>
+<TD>--check-running</TD>
+<TD>Poinformuj kodem wyjścia, czy NVDA jest uruchomiony; 0 jeśli uruchomiony, 1 jeśli nie uruchomiony</TD>
+</TR>
+<TR>
+<TD>-f LOGFILENAME</TD>
+<TD>--log-file=LOGFILENAME</TD>
+<TD>Plik, do którego powinny być zapisywane informacje logu</TD>
+</TR>
+<TR>
+<TD>-l poziom</TD>
+<TD>--log-level=poziom</TD>
+<TD>Najniższy poziom zapisywanych informacji logu (debugowanie 10, informacje 20, ostrzeżenia 30, błędy 40, krytyczne 50), domyślnie ostrzeżenia</TD>
+</TR>
+<TR>
+<TD>-c ścieżka</TD>
+<TD>--config-path=ścieżka</TD>
+<TD>Ścieżka folderu, w którym zapisane są wszystkie ustawienia NVDA</TD>
+</TR>
+<TR>
+<TD>-m</TD>
+<TD>--minimal</TD>
+<TD>bez dźwięku, interfejsu, informacji początkowej etc</TD>
+</TR>
+<TR>
+<TD>-s</TD>
+<TD>--secure</TD>
+<TD>Tryb bezpieczny (wyłącz konsolę Pythona)</TD>
+</TR>
+<TR>
+<TD>Brak</TD>
+<TD>--disable-addons</TD>
+<TD>dodatki będą ignorowane</TD>
+</TR>
+<TR>
+<TD>None</TD>
+<TD>--no-sr-flag</TD>
+<TD>Nie zmieniaj globalnej flagi systemowej czytnika ekranu</TD>
+</TR>
+<TR>
+<TD>None</TD>
+<TD>--install</TD>
+<TD>Po cichu instaluje NVDA</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc110"></A>
+<H3>13.2. Zaawansowana edycja wymowy symboli</H3>
 
 <P>
 Możliwa jest  edycja wymowy symboli wykraczająca poza to, co daje okno dialogowe <A HREF="#SymbolPronunciation">Wymowa znaków i symboli</A>. 
@@ -4596,7 +4748,7 @@ Format tego pliku jest opisany w rozdziale "Symbol Pronunciation" podręcznika d
 Nie jest możliwe dla użytkowników definiowanie skomplikowanych symboli.
 </P>
 
-<A NAME="toc110"></A>
+<A NAME="toc111"></A>
 <H2>14. Dodatkowe Informacje</H2>
 
 <P>
