@@ -101,7 +101,7 @@ addresses = {
     },
     'ka': {
         'lang': 'Georgian',
-        'email': ['Beqa Gozalishvili <beqaprogger@gmail.com>'],
+        'email': ['Beqa Gozalishvili <beqaprogger@gmail.com>', 'Goderdzi Gogoladze <goderdzigogoladze@gmail.com'],
     },
     'kn': {
         'lang':'Kannada',
