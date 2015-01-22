@@ -12,6 +12,7 @@
 - Selaustilan Etsi-valintaikkunassa on nyt asetus, joka mahdollistaa kirjainkoon huomioivan haun suorittamisen. (#4584)
 - Pikanavigointi (esim. h otsikoihin siirtymiseen jne) sekä Elementtilista (NVDA+F7) ovat nyt käytettävissä Microsoft Word -asiakirjoissa selaustilassa, joka voidaan ottaa käyttöön näppäinkomennolla NVDA+välilyönti. (#2975)
 - HTML-viestien lukemista on paranneltu huomattavasti Microsoft Outlook 2007:ssä ja uudemmissa, sillä selaustila otetaan nyt automaattisesti käyttöön tällaisia viestejä luettaessa. Mikäli selaustilaa ei oteta käyttöön joissakin harvoissa tapauksissa, voit pakottaa sen käyttöön näppäinkomennolla NVDA+välilyönti. (#2975) 
+- Riviotsikot luetaan nyt automaattisesti Microsoft wordissa sellaisissa taulukoissa, joiden otsikkosolun tekijä on nimenomaisesti määritellyt taulukon ominaisuuksissa. (#4510) 
 
 
 == Muutokset ==
@@ -90,7 +91,7 @@
  - Valitun tapaamisen lukeminen sarkainta painettaessa.
  - Päiväyksen älykäs suodatus, jotta se luetaan vain, jos uusi valittuna oleva ajankohta tai tapaaminen on eri päivänä kuin edellinen.
 - Paranneltu tuki Outlook 2010:n ja sitä uudempien versioiden Saapuneet- sekä muiden kansioiden viestiluetteloille (#3834) mukaan lukien:
- - Mahdollisuus sarakeotsikoiden (lähettäjä, aihe jne.) hiljentämiseen poistamalla käytöstä Lue taulukoiden rivi- ja sarakeotsikot -asetuksen Asiakirjojen muotoiluasetuksista.
+ - Mahdollisuus sarakeotsikoiden (lähettäjä, aihe jne.) hiljentämiseen poistamalla käytöstä Lue taulukon rivi- ja sarakeotsikot -asetuksen asiakirjojen muotoiluasetuksista.
  - Mahdollisuus sarakkeiden välillä liikkumiseen taulukkonavigointikomentoja (Control+Alt+nuolet) käyttäen.
 - Microsoft word: Jos kuvalle ei ole lisätty vaihtoehtoista tekstiä, NVDA lukee sen sijaan kuvan nimen, jos asiakirjan tekijä on sen määrittänyt. (#4193)
 - Microsoft Word: Kappaleen sisennykset luetaan Lue muotoilutiedot -komennolla (NVDA+F) sekä automaattisesti, kun uusi Lue kappaleen sisennykset -asetus on otettu käyttöön Asiakirjojen muotoiluasetukset -valintaikkunasta. (#4165).
@@ -627,9 +628,9 @@ Tämän version tärkeimpiä uusia ominaisuuksia ovat sisäänrakennettu asennus
 
 
 == Muutokset ==
-- Solujen koordinaatit luetaan nyt Microsoft Excelissä solujen sisällön jälkeen , ja vain, mikäli Lue taulukot ja Lue taulukon solujen koordinaatit -asetukset on otettu käyttöön Asiakirjojen muotoiluasetukset -valintaikkunasta. (#320)
+- Solujen koordinaatit luetaan nyt Microsoft Excelissä solujen sisällön jälkeen vain, jos Lue taulukot ja Lue taulukon solujen koordinaatit -asetukset on otettu käyttöön Asiakirjojen muotoiluasetukset -valintaikkunassa. (#320)
 - NVDA:ta jaetaan nyt yhtenä pakettina. Erillisen massamuistiversion ja asennusohjelman sijaan on vain yksi tiedosto, joka käynnistää suoritettaessa NVDA:n väliaikaisen kopion ja mahdollistaa asentamisen tai massamuistijakelun luomisen. (#1715)
-- NVDA asennetaan nyt kaikissa järjestelmissä aina Program Files -hakemistoon. Myös aiempi asennus siirretään päivitettäessä sinne automaattisesti, mikäli se on asennettu jonnekin muualle.
+- NVDA asennetaan nyt kaikissa järjestelmissä aina Program Files -hakemistoon. Myös aiempi asennus siirretään päivitettäessä automaattisesti kyseiseen hakemistoon, mikäli se on asennettu jonnekin muualle.
 
 
 == Korjatut ohjelmavirheet ==
