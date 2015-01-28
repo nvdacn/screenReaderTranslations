@@ -13,12 +13,17 @@ Quoi de Neuf dans NVDA
 - La navigation rapide (h pour titre etc) et la Liste d'éléments (NVDA+f7) sont maintenant disponibles dans les documents Microsoft Word en activant le mode navigation avec NVDA+espace. (#2975)
 - La lecture des messages HTML sous Microsoft Outlook 2007 et les versions supérieures a été considérablement améliorée, le mode navigation étant automatiquement activé pour ces messages. Si le mode navigation n'est pas activé dans certaines situations rares, vous pouvez l'activer par NVDA+espace. (#2975) 
 - Dans Microsoft Word, les en-têtes de colonnes de tableaux sont annoncés automatiquement pour les tableaux où la ligne d'en-têtes a été explicitement spécifiée par l'auteur via les propriétés de tableau de Microsoft Word. (#4510) 
+- Dans Skype for Desktop, les notifications sont maintenant annoncées. (#4741)
+- Dans Skype for Desktop, vous pouvez maintenant entendre et revoir les messages récents en utilisant les raccourcis de NVDA+control+1 à NVDA+control+0; ex: NVDA+control+1 pour le message le plus récent et NVDA+control+0 pour le dixième plus récent. (#3210)
+- Dans une conversation sous Skype for Desktop, NVDA annonce maintenant quand un correspondant est en train d'écrire. (#3506)
  
  
 == Changements ==
 - dans le dialogue Mise en Forme des Documents de NVDA, l'option d'annonce des fautes d'orthographe a maintenant un raccourci (alt+f). (#793)
 - NVDA utilisera maintenant la langue de la voix du synthétiseur pour le traitement des caractères et symboles
 (incluant le nom des symboles de ponctuation), que le changement automatique de langue soit activé ou non. Pour désactiver cette fonction de manière à ce que NVDA utilise à nouveau la langue de son interface, décochez la nouvelle option dans les paramètres vocaux appelée Se baser sur la langue de la voix pour le traitement des caractyres et symboles. (#4210)
+- Le support du synthétiseur Newfon a été supprimé. Newfon est maintenant disponible sous la forme d'un module complémentaire. (#3184)
+- Skype for Desktop 7 ou plus récent est maintenant requis pour utilisation avec NVDA; les versions plus anciennes ne sont pas supportées. (#4218)
 
 
 == Corrections de Bogues ==
@@ -33,7 +38,15 @@ Quoi de Neuf dans NVDA
 - Le focus retourne maintenant correctement au document en cours d'édition en fin de saisie en Coréen ou autre langue Est-Asiatique, quand l'édition est dans un cadre sous Internet Explorer et autres documents MSHTML. (#4045)
 - Dans le dialogue Gestes de Commandes, quand on sélectionne une configuration clavier pour l'ajout d'un geste clavier, l'appui sur échap ferme maintenant le menu comme prévu au lieu de fermer le dialogue. (#3617)
 - Quand on supprime un module complémentaire, le répertoire du module est maintenant effacé correctement au redémarrage de NVDA. avant, il fallait redémarrer deux fois. (#3461)
+- Des problèmes majeurs ont été corrigés dans l'utilisation de Skype for Desktop 7. (#4218)
+- Quand vous envoyez un message sous Skype for Desktop, il n'est plus lu deux fois. (#3616)
+- Dans Skype for Desktop, NVDA ne devrait plus de temps en temps lire un grand nombre de messages (peut-être même une conversation entière). (#4644)
+- correction d'un problème qui faisait que la commande d'annonce de la date et de l'heure de NVDA ne respectait pas les paramètres régionaux définis par l'utilisateur dans certains cas. (#2987)
+- En mode navigation, un texte sans signification (s'étendant parfois sur plusieurs lignes) n'est plus affiché pour certains graphiques comme on peut en trouver sur Google Groups. (En particulier, ceci arrivait pour les images encodées en base64.) (#4793)
 
+
+== Changements pour les Développeurs ==
+- Mise à jour de wxPython à la version 3.0.2.0. (#3763)
 
 
 = 2014.4 =
