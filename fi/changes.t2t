@@ -13,11 +13,16 @@
 - Pikanavigointi (esim. h otsikoihin siirtymiseen jne) sekä Elementtilista (NVDA+F7) ovat nyt käytettävissä Microsoft Word -asiakirjoissa selaustilassa, joka voidaan ottaa käyttöön näppäinkomennolla NVDA+välilyönti. (#2975)
 - HTML-viestien lukemista on paranneltu huomattavasti Microsoft Outlook 2007:ssä ja uudemmissa, sillä selaustila otetaan nyt automaattisesti käyttöön tällaisia viestejä luettaessa. Mikäli selaustilaa ei oteta käyttöön joissakin harvoissa tapauksissa, voit pakottaa sen käyttöön näppäinkomennolla NVDA+välilyönti. (#2975) 
 - Riviotsikot luetaan nyt automaattisesti Microsoft wordissa sellaisissa taulukoissa, joiden otsikkosolun tekijä on nimenomaisesti määritellyt taulukon ominaisuuksissa. (#4510) 
+- Ilmoitukset luetaan nyt Skypen työpöytäversiossa. (#4741)
+- Uusimpien viestien lukeminen ja tarkastelukohdistimen siirtäminen niihin on nyt mahdollista Skypen työpöytäversiossa näppäinkomentoja NVDA+Control+1 - NVDA+Control+0 käyttäen (esim. NVDA+Control+1 uusimman ja NVDA+Control+0 kymmenenneksi uusimman viestin lukemiseen). (#3210)
+- NVDA ilmoittaa Skypen työpöytäversiossa, kun kontakti kirjoittaa keskustelussa oltaessa. (#3506)
 
 
 == Muutokset ==
 - Asiakirjojen muotoiluasetukset -valintaikkunassa olevalla kirjoitusvirheiden lukemisen käyttöönottavalla asetuksella on nyt pikanäppäin (Alt+R), kun NVDA:ta käytetään englanninkielisenä. (#793)
 - NVDA käyttää nyt syntetisaattorin/puheäänen kieltä merkkien ja symboleiden käsittelyyn (välimerkkien nimet mukaan lukien) riippumatta siitä, onko automaattinen kielen vaihtaminen käytössä vai ei. Jotta NVDA käyttäisi taas käyttöliittymänsä kieltä, poista käytöstä uusi Puheäänen asetukset -valintaikkunan Käytä puheäänen kieltä merkkejä ja symboleita käsiteltäessä -asetus. (#4210)
+- Newfon-syntetisaattorin tuki on poistettu. Newfon on nyt saatavilla NVDA:n lisäosana. (#3184)
+- Skypen käyttämiseen NVDA:n kanssa tarvitaan nyt Skypen työpöytäversio 7.0 tai uudempi; aiempia versioita ei tueta. (#4218)
 
 
 == Korjatut ohjelmavirheet ==
@@ -31,6 +36,11 @@
 - Kun tekstiä muokataan Internet Explorerissa ja muissa MSHTML-asiakirjoissa kehyksessä oltaessa, kohdistus palaa nyt asianmukaisesti muokattavana olevaan asiakirjaan viimeisteltäessä korean ja muiden itäaasialaisten kielten syöttämistä. (#4045)
 - Kun Syöte-eleet-valintaikkunassa valitaan lisättävälle näppäineleelle näppäimistöasettelua, Esc-näppäimen painaminen sulkee nyt odotetusti vain kyseisen valikon koko valintaikkunan sijasta. (#3617)
 - Kun lisäosa poistetaan, sen hakemisto poistetaan nyt oikein NVDA:n uudelleenkäynnistyksen jälkeen. Aiemmin NVDA piti käynnistää uudelleen kahdesti. (#3461)
+- Korjattu merkittäviä ongelmia käytettäessä Skype 7.0:n työpöytäversiota. (#4218)
+- Viestiä ei lueta enää kahdesti, kun se lähetetään Skypen työpöytäversiossa. (#3616)
+- NVDA:n ei pitäisi enää satunnaisesti ja virheellisesti lukea Skypen työpöytäversiossa suurta määrää viestejä (ehkä jopa koko keskustelua). (#4644)
+- Korjattu ongelma, joka aiheutti sen, että NVDA:n Lue päiväys/aika -komento ei joissakin tapauksissa noudattanut käyttäjän määrittämiä alue- ja kieliasetuksia. (#2987)
+- Tarpeetonta, joskus useammalle riville jakaantuvaa tekstiä ei enää näytetä selaustilassa tietyille grafiikoille (esim. Google-ryhmistä löytyville). (Tätä tapahtui erityisesti base64-koodatuille kuville.) (#4793)
 
 
 == Muutokset kehittäjille (englanniksi) ==
