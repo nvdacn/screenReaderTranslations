@@ -22,9 +22,14 @@
 <LI>Pikanavigointi (esim. h otsikoihin siirtymiseen jne) sekä Elementtilista (NVDA+F7) ovat nyt käytettävissä Microsoft Word -asiakirjoissa selaustilassa, joka voidaan ottaa käyttöön näppäinkomennolla NVDA+välilyönti. (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>)
 <LI>HTML-viestien lukemista on paranneltu huomattavasti Microsoft Outlook 2007:ssä ja uudemmissa, sillä selaustila otetaan nyt automaattisesti käyttöön tällaisia viestejä luettaessa. Mikäli selaustilaa ei oteta käyttöön joissakin harvoissa tapauksissa, voit pakottaa sen käyttöön näppäinkomennolla NVDA+välilyönti. (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>) 
 <LI>Riviotsikot luetaan nyt automaattisesti Microsoft wordissa sellaisissa taulukoissa, joiden otsikkosolun tekijä on nimenomaisesti määritellyt taulukon ominaisuuksissa. (<A HREF="http://community.nvda-project.org/ticket/4510">#4510</A>) 
+ <UL>
+ <LI>Tämä ei kuitenkaan toimi yhdistettyjä soluja sisältävissä taulukoissa. Tällaisissa tapauksissa voit silti määrittää sarakeotsikot manuaalisesti näppäinkomennolla NVDA+Shift+C.
+ </UL>
 <LI>Ilmoitukset luetaan nyt Skypen työpöytäversiossa. (<A HREF="http://community.nvda-project.org/ticket/4741">#4741</A>)
 <LI>Uusimpien viestien lukeminen ja tarkastelukohdistimen siirtäminen niihin on nyt mahdollista Skypen työpöytäversiossa näppäinkomentoja NVDA+Control+1 - NVDA+Control+0 käyttäen (esim. NVDA+Control+1 uusimman ja NVDA+Control+0 kymmenenneksi uusimman viestin lukemiseen). (<A HREF="http://community.nvda-project.org/ticket/3210">#3210</A>)
 <LI>NVDA ilmoittaa Skypen työpöytäversiossa, kun kontakti kirjoittaa keskustelussa oltaessa. (<A HREF="http://community.nvda-project.org/ticket/3506">#3506</A>)
+<LI>NVDA:n hiljainen asennus on nyt mahdollista suorittaa komentoriviltä ilman, että asennettu kopio käynnistetään asennuksen jälkeen. Tämä tehdään --install-silent-parametria käyttäen. (<A HREF="http://community.nvda-project.org/ticket/4206">#4206</A>)
+<LI>Tuki Papenmeierin BRAILLEX Live 20-, BRAILLEX Live- ja BRAILLEX Live Plus -pistenäytöille. (<A HREF="http://community.nvda-project.org/ticket/4614">#4614</A>)
 </UL>
 
 <H3>Muutokset</H3>
@@ -34,6 +39,7 @@
 <LI>NVDA käyttää nyt syntetisaattorin/puheäänen kieltä merkkien ja symboleiden käsittelyyn (välimerkkien nimet mukaan lukien) riippumatta siitä, onko automaattinen kielen vaihtaminen käytössä vai ei. Jotta NVDA käyttäisi taas käyttöliittymänsä kieltä, poista käytöstä uusi Puheäänen asetukset -valintaikkunan Käytä puheäänen kieltä merkkejä ja symboleita käsiteltäessä -asetus. (<A HREF="http://community.nvda-project.org/ticket/4210">#4210</A>)
 <LI>Newfon-syntetisaattorin tuki on poistettu. Newfon on nyt saatavilla NVDA:n lisäosana. (<A HREF="http://community.nvda-project.org/ticket/3184">#3184</A>)
 <LI>Skypen käyttämiseen NVDA:n kanssa tarvitaan nyt Skypen työpöytäversio 7.0 tai uudempi; aiempia versioita ei tueta. (<A HREF="http://community.nvda-project.org/ticket/4218">#4218</A>)
+<LI>NVDA:n päivitysten lataaminen on nyt turvallisempaa. (päivityksen tiedot haetaan HTTPS-protokollalla ja tiedoston tarkistussumma tarkistetaan latauksen jälkeen.) (<A HREF="http://community.nvda-project.org/ticket/4716">#4716</A>)
 </UL>
 
 <H3>Korjatut ohjelmavirheet</H3>
@@ -54,12 +60,18 @@
 <LI>NVDA:n ei pitäisi enää satunnaisesti ja virheellisesti lukea Skypen työpöytäversiossa suurta määrää viestejä (ehkä jopa koko keskustelua). (<A HREF="http://community.nvda-project.org/ticket/4644">#4644</A>)
 <LI>Korjattu ongelma, joka aiheutti sen, että NVDA:n Lue päiväys/aika -komento ei joissakin tapauksissa noudattanut käyttäjän määrittämiä alue- ja kieliasetuksia. (<A HREF="http://community.nvda-project.org/ticket/2987">#2987</A>)
 <LI>Tarpeetonta, joskus useammalle riville jakaantuvaa tekstiä ei enää näytetä selaustilassa tietyille grafiikoille (esim. Google-ryhmistä löytyville). (Tätä tapahtui erityisesti base64-koodatuille kuville.) (<A HREF="http://community.nvda-project.org/ticket/4793">#4793</A>)
+<LI>NVDA:n ei pitäisi enää jäädä jumiin muutama sekunti sen jälkeen, kun kohdistus siirretään pois Windows 8:n Metro-sovelluksesta, sillä sen suoritus keskeytetään. (<A HREF="http://community.nvda-project.org/ticket/4572">#4572</A>)
+<LI>Aktiivisten alueiden aria-atomic-määrettä noudatetaan nyt Mozilla Firefoxissa, vaikka itse atomic-elementti muuttuu. Tämä vaikutti aiemmin vain alempiin elementteihin. (<A HREF="http://community.nvda-project.org/ticket/4794">#4794</A>) 
+<LI>Päivitykset näytetään selaustilassa, ja aktiiviset alueet ilmoitetaan asiakirjaan upotettujen ARIA-sovellusten sisällä olevissa selaustila-asiakirjoissa Internet Explorerissa tai muissa MSHTML-säätimissä. (<A HREF="http://community.nvda-project.org/ticket/4798">#4798</A>)
+<LI>Kun teksti muuttuu tai sitä lisätään text-relevant -tyyppisiin aktiivisiin alueisiin Internet Explorerissa ja muissa MSHTML-säätimissä, vain muutettu tai lisätty teksti puhutaan säilöelementin kaiken tekstin sijasta. (<A HREF="http://community.nvda-project.org/ticket/4800">#4800</A>)
+<LI>Internet Explorerissa ja muissa MSHTML-säätimissä aria-labeledby-määreellä ilmaistava elementtien sisältö korvaa oikein alkuperäisen sisällön, jos se on tarkoituksenmukaista. (<A HREF="http://community.nvda-project.org/ticket/4575">#4575</A>)
 </UL>
 
 <H3>Muutokset kehittäjille (englanniksi)</H3>
 
 <UL>
 <LI>Updated wxPython to 3.0.2.0. (<A HREF="http://community.nvda-project.org/ticket/3763">#3763</A>)
+<LI>NVDA no longer crashes when restarting after removing or updating an add-on which imports speechDictHandler in its installTasks module. (<A HREF="http://community.nvda-project.org/ticket/4496">#4496</A>)
 </UL>
 
 <H2>2014.4</H2>
