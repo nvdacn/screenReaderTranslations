@@ -1,5 +1,5 @@
+﻿# tested buggy behavior
 {
-#tested buggy behavior
 input: "WILDCARD",
 output: "⠘⠺⠊⠇⠙⠉⠁⠗⠙",
 },
@@ -8,18 +8,18 @@ output: "⠘⠺⠊⠇⠙⠉⠁⠗⠙",
 input: "-",
 output: "⠤",
 },
+# common punctuation test
 {
-#common punctuation test
 input: "!"#$%&/()=?*\|÷×[]¤@{}§<>€+'",
 output: "⠖⠶⠼⠲⠼⠚⠴⠈⠯⠌⠶⠶⠶⠢⠤⠡⠈⠇⠳⠘⠒⠶⠄⠠⠶⠶⠧⠶⠜⠶⠆⠰⠶⠬⠐⠪⠕⠂⠢⠖⠄",
 },
+# alphabet test (including diacritics) latin script only
 {
-#alphabet test (including diacritics) latin script only
 input: "qwertzuiopšđasdfghjklčćžyxcvbnm",
 output: "⠟⠺⠑⠗⠞⠵⠥⠊⠕⠏⠱⠹⠁⠎⠙⠋⠛⠓⠚⠅⠇⠡⠩⠮⠽⠭⠉⠧⠀⠃⠝⠍",
 },
+# special syllables /digraphs
 {
-#special syllables /digraphs
 input: "dž, lj, nj,),
 output: "⠻, ⠣, ⠫,",
 },
@@ -31,12 +31,14 @@ output: "⠁⠃⠉⠼⠁⠃⠉",
 {
 #numbers and letters
 input: "123abc",
-output: "⠼⠁⠃⠉⠠⠁⠃⠉",
+output: "⠼⠁⠃⠉⠁⠃⠉",
 },
+# cyrillic letters, assuming that cyrillic script works tested on a braille display
 {
 input: "љњертзуиопшђасдфгхјклчћжџцвбнм",
 output: "⠣⠫⠑⠗⠞⠵⠥⠊⠕⠏⠱⠹⠁⠎⠙⠋⠛⠓⠚⠅⠇⠡⠩⠮⠻⠉⠧⠃⠝⠍",
 },
+# fixed buggy behavior of the letter u
 {
 input: "u",
 output: "⠥",
