@@ -22,9 +22,14 @@
 <LI>Brzo kretanje (H za naslove itd.) i popis elemenata (NVDA+f7) su sada dostupni i u dokumentima programa Microsoft Word kad uključite način pregleda pomoću prečaca NVDA+razmak. (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>)
 <LI>Čitanje HTML poruka u Microsoft Outlooku 2007 i višim vidno se poboljšalo jer je način pregleda automatski uključen za te poruke. Ako način pregleda nije uključen, što se zna dogoditi u rijetkim situacijama, možete ga prisilno uključiti koristeći prečac NVDA+razmak. (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>) 
 <LI>Zaglavlja stupaca u Microsoft wordu su automatski čitana u tablicama gdje je autor strogo odredio zaglavlje retka pomoću svojstava tablice u microsoft wordu. (<A HREF="http://community.nvda-project.org/ticket/4510">#4510</A>) 
+ <UL>
+ <LI>Međutim, za tablice u kojima su redovi spojeni ovo neće raditi automatski. U tom slučaju još uvijek možete namjestiti zaglavlja stupaca ručno unutar NVDA pomoću prečaca NVDA+shift+c.
+ </UL>
 <LI>Obavijesti se čitaju uobičajeno u Skypeu za radnu površinu. (<A HREF="http://community.nvda-project.org/ticket/4741">#4741</A>)
 <LI>U Skypeu za radnu površinu, sada možete čitati i pregledavati zadnje pristigle poruke koristeći prečace NVDA+control+1 do NVDA+control+0; npr. NVDA+control+1 za posljednju poruku i NVDA+control+0 za desetu posljednju. (<A HREF="http://community.nvda-project.org/ticket/3210">#3210</A>)
-<LI>U razgovoru u programu Skype za radnu površinu, NVDA NVDA sada izvještava kada kontakt piše tekst. (<A HREF="http://community.nvda-project.org/ticket/3506">#3506</A>)
+<LI>U razgovoru u programu Skype za radnu površinu, NVDA sada izvještava kada kontakt piše tekst. (<A HREF="http://community.nvda-project.org/ticket/3506">#3506</A>)
+<LI>NVDA se sada može tiho instalirati preko naredbenog retka bez da se pokreće instalirana kopija nakon instalacije. Kako biste to učinili koristite komandu --install-silent. (<A HREF="http://community.nvda-project.org/ticket/4206">#4206</A>)
+<LI>Podrška za Papenmeier BRAILLEX Live 20, BRAILLEX Live and BRAILLEX Live Plus brajične retke. (<A HREF="http://community.nvda-project.org/ticket/4614">#4614</A>)
 </UL>
 
 <H3>Izmjene</H3>
@@ -34,6 +39,7 @@
 <LI>NVDA će sad koristiti jezik sintetizatora/glasa za procesiranje znakova i simbola (uključujući imena simbola interpunkcije) u zavisnosti od toga je li automatsko prepoznavanje jezika uključeno. Da biste isključili ovu značajku tako da NVDA ponovno koristi svoj jezik sučelja, odznačite novu opciju u glasovnim postavkama koja se zove Vjeruj jeziku trenutnog glasa kad se procesiraju simboli i znakovi. (<A HREF="http://community.nvda-project.org/ticket/4210">#4210</A>)
 <LI>Podrška sintetizatora govora Newfon je uklonjena. Newfon je sad dostupan kao dodatak za NVDA. (<A HREF="http://community.nvda-project.org/ticket/3184">#3184</A>)
 <LI>Za korištenje uz pomoć NVDA zahtjeva se Skype za Radnu površinu 7 ili noviji; Ranije inačice nisu podržane. (<A HREF="http://community.nvda-project.org/ticket/4218">#4218</A>)
+<LI>Preuzimanje NVDA nadogradnji je sada više sigurnije. (Točnije, informacije o nadogradnjama sada se dobivaju putem https protokola i kontrolni zbroj datoteke se provjerava poslije preuzimanja.) (<A HREF="http://community.nvda-project.org/ticket/4716">#4716</A>)
 </UL>
 
 <H3>Ispravke grešaka</H3>
@@ -54,6 +60,11 @@
 <LI>U Skypeu za Radnu površinu, NVDA više neće sporadično nepravilno čitati više poruka (čak i cijeli razgovor). (<A HREF="http://community.nvda-project.org/ticket/4644">#4644</A>)
 <LI>Ispravljen problem u kojem NVDA prečac Izgovori datum/vrijeme nije poštivao regionalnu postavku koju je odredio korisnik u nekim slučajevima. (<A HREF="http://community.nvda-project.org/ticket/2987">#2987</A>)
 <LI>U načinu pregleda, besmisleni tekst (koji ponekada sadrži nekoliko redaka) više se ne prikazuje za većinu slika Kao što se može pronaći na Google grupama. (Specifično, ovo se događalo sa base64 enkodiranim slikama.) (<A HREF="http://community.nvda-project.org/ticket/4793">#4793</A>)
+<LI>NVDA se više neće smrzavati nakon nekoliko sekundi kad premještate fokus sa metro aplikacija u windowsu 8 kad se suspendiraju. (<A HREF="http://community.nvda-project.org/ticket/4572">#4572</A>)
+<LI>Atribut aria-atomic na živim regijama u Mozilla Firefoxu je sada uvažen, čak iako se element atomic promijeni. Prije je to utjecalo samo na elemente koji su slijedeći. (<A HREF="http://community.nvda-project.org/ticket/4794">#4794</A>) 
+<LI>Način pregleda će se osvježavati, žive regije će biti pročitane, za dokumente u načinu pregleda unutar aria aplikacija koje su ugrađene u dokument u Internet Exploreru ili drugim MSHTML kontrolama (<A HREF="http://community.nvda-project.org/ticket/4798">#4798</A>)
+<LI>Kada je tekst izmijenjen ili dodan u tekstualno relevantnim živim regijama u Internet Exploreru i drugim MSHTML kontrolama, Čita se samo dodan ili pročitan tekst, bolje nego sav tekst koji se nalazi u tom elementu. (<A HREF="http://community.nvda-project.org/ticket/4800">#4800</A>)
+<LI>Sadržaj koji je označen atributom aria-labelledby na elementima u Internet Exploreru i drugim MSHTML kontrolama ispravno zamjenjuje izvorni sadržaj gdje je to tako dozvoljeno. (<A HREF="http://community.nvda-project.org/ticket/4575">#4575</A>)
 </UL>
 
 <H3>Izmjene za razvojne programere</H3>
