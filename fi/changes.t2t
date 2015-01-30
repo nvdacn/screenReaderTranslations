@@ -13,9 +13,12 @@
 - Pikanavigointi (esim. h otsikoihin siirtymiseen jne) sekä Elementtilista (NVDA+F7) ovat nyt käytettävissä Microsoft Word -asiakirjoissa selaustilassa, joka voidaan ottaa käyttöön näppäinkomennolla NVDA+välilyönti. (#2975)
 - HTML-viestien lukemista on paranneltu huomattavasti Microsoft Outlook 2007:ssä ja uudemmissa, sillä selaustila otetaan nyt automaattisesti käyttöön tällaisia viestejä luettaessa. Mikäli selaustilaa ei oteta käyttöön joissakin harvoissa tapauksissa, voit pakottaa sen käyttöön näppäinkomennolla NVDA+välilyönti. (#2975) 
 - Riviotsikot luetaan nyt automaattisesti Microsoft wordissa sellaisissa taulukoissa, joiden otsikkosolun tekijä on nimenomaisesti määritellyt taulukon ominaisuuksissa. (#4510) 
+ - Tämä ei kuitenkaan toimi yhdistettyjä soluja sisältävissä taulukoissa. Tällaisissa tapauksissa voit silti määrittää sarakeotsikot manuaalisesti näppäinkomennolla NVDA+Shift+C.
 - Ilmoitukset luetaan nyt Skypen työpöytäversiossa. (#4741)
 - Uusimpien viestien lukeminen ja tarkastelukohdistimen siirtäminen niihin on nyt mahdollista Skypen työpöytäversiossa näppäinkomentoja NVDA+Control+1 - NVDA+Control+0 käyttäen (esim. NVDA+Control+1 uusimman ja NVDA+Control+0 kymmenenneksi uusimman viestin lukemiseen). (#3210)
 - NVDA ilmoittaa Skypen työpöytäversiossa, kun kontakti kirjoittaa keskustelussa oltaessa. (#3506)
+- NVDA:n hiljainen asennus on nyt mahdollista suorittaa komentoriviltä ilman, että asennettu kopio käynnistetään asennuksen jälkeen. Tämä tehdään --install-silent-parametria käyttäen. (#4206)
+- Tuki Papenmeierin BRAILLEX Live 20-, BRAILLEX Live- ja BRAILLEX Live Plus -pistenäytöille. (#4614)
 
 
 == Muutokset ==
@@ -23,6 +26,7 @@
 - NVDA käyttää nyt syntetisaattorin/puheäänen kieltä merkkien ja symboleiden käsittelyyn (välimerkkien nimet mukaan lukien) riippumatta siitä, onko automaattinen kielen vaihtaminen käytössä vai ei. Jotta NVDA käyttäisi taas käyttöliittymänsä kieltä, poista käytöstä uusi Puheäänen asetukset -valintaikkunan Käytä puheäänen kieltä merkkejä ja symboleita käsiteltäessä -asetus. (#4210)
 - Newfon-syntetisaattorin tuki on poistettu. Newfon on nyt saatavilla NVDA:n lisäosana. (#3184)
 - Skypen käyttämiseen NVDA:n kanssa tarvitaan nyt Skypen työpöytäversio 7.0 tai uudempi; aiempia versioita ei tueta. (#4218)
+- NVDA:n päivitysten lataaminen on nyt turvallisempaa. (päivityksen tiedot haetaan HTTPS-protokollalla ja tiedoston tarkistussumma tarkistetaan latauksen jälkeen.) (#4716)
 
 
 == Korjatut ohjelmavirheet ==
@@ -41,10 +45,16 @@
 - NVDA:n ei pitäisi enää satunnaisesti ja virheellisesti lukea Skypen työpöytäversiossa suurta määrää viestejä (ehkä jopa koko keskustelua). (#4644)
 - Korjattu ongelma, joka aiheutti sen, että NVDA:n Lue päiväys/aika -komento ei joissakin tapauksissa noudattanut käyttäjän määrittämiä alue- ja kieliasetuksia. (#2987)
 - Tarpeetonta, joskus useammalle riville jakaantuvaa tekstiä ei enää näytetä selaustilassa tietyille grafiikoille (esim. Google-ryhmistä löytyville). (Tätä tapahtui erityisesti base64-koodatuille kuville.) (#4793)
+- NVDA:n ei pitäisi enää jäädä jumiin muutama sekunti sen jälkeen, kun kohdistus siirretään pois Windows 8:n Metro-sovelluksesta, sillä sen suoritus keskeytetään. (#4572)
+- Aktiivisten alueiden aria-atomic-määrettä noudatetaan nyt Mozilla Firefoxissa, vaikka itse atomic-elementti muuttuu. Tämä vaikutti aiemmin vain alempiin elementteihin. (#4794) 
+- Päivitykset näytetään selaustilassa, ja aktiiviset alueet ilmoitetaan asiakirjaan upotettujen ARIA-sovellusten sisällä olevissa selaustila-asiakirjoissa Internet Explorerissa tai muissa MSHTML-säätimissä. (#4798)
+- Kun teksti muuttuu tai sitä lisätään text-relevant -tyyppisiin aktiivisiin alueisiin Internet Explorerissa ja muissa MSHTML-säätimissä, vain muutettu tai lisätty teksti puhutaan säilöelementin kaiken tekstin sijasta. (#4800)
+- Internet Explorerissa ja muissa MSHTML-säätimissä aria-labeledby-määreellä ilmaistava elementtien sisältö korvaa oikein alkuperäisen sisällön, jos se on tarkoituksenmukaista. (#4575)
 
 
 == Muutokset kehittäjille (englanniksi) ==
 - Updated wxPython to 3.0.2.0. (#3763)
+- NVDA no longer crashes when restarting after removing or updating an add-on which imports speechDictHandler in its installTasks module. (#4496)
 
 
 = 2014.4 =

@@ -731,11 +731,11 @@ NVDA:ssa on joitakin näppäinkomentoja, joiden avulla voit siirtyä missä taha
 | Pienennä nykyistä syntetisaattorin asetusta | NVDA+Control+alanuoli | NVDA+Shift+Control+alanuoli | Pienentää valittua puheasetusta, esim. vähentää nopeutta, valitsee edellisen puheäänen tai vähentää äänenvoimakkuutta. |
 %kc:endInclude
 
-+++ Pistenäytön asetukset +++
-Pistenäytön asetukset -valintaikkuna voidaan avata valitsemalla Asetukset-valikosta "Pistenäyttö...".
++++ Pistekirjoituksen asetukset +++
+Pistekirjoituksen asetukset -valintaikkuna voidaan avata valitsemalla Asetukset-valikosta "Pistekirjoitus..."-vaihtoehto.
 
 ==== Pistenäyttö ====
-Pistenäytön asetukset -valintaikkunassa on ensimmäisenä "Pistenäyttö"-yhdistelmäruutu.
+Pistekirjoitusasetukset-valintaikkunassa on ensimmäisenä "Pistenäyttö"-yhdistelmäruutu.
 Siinä on useita vaihtoehtoja riippuen käytettävissä olevista pistenäyttöajureista.
 Vaihtoehtojen välillä liikutaan nuolinäppäimillä.
 
@@ -751,7 +751,7 @@ NVDA käyttää oletusarvoisesti automaattista portintunnistusta, mikä tarkoitt
 Joillekin pistenäytöille voidaan kuitenkin itse valita käytettävä portti.
 Vaihtoehtoina ovat "Automaattinen" (joka käskee NVDA:ta käyttämään oletusarvoista automaattista portintunnistusta), "USB", "Bluetooth" sekä sarjaportit, mikäli pistenäyttö tukee sarjaportin kautta liittämistä.
 
-Tämä vaihtoehto ei ole käytettävissä, mikäli pistenäyttö tukee vain automaattista portintunnistusta.
+Tämä vaihtoehto ei ole käytettävissä, jos pistenäyttö tukee vain automaattista portintunnistusta.
 
 Katso [Tuetut pistenäytöt #SupportedBrailleDisplays] -kappaleesta lisätietoja pistenäyttösi tukemista kommunikointityypeistä ja käytettävissä olevista porteista.
 
@@ -1677,24 +1677,28 @@ Katso näytön käyttöohjeesta kuvaukset näppäinten paikoista.
 | Siirrä pistesoluun | kosketuskohdistinnäppäimet |
 %kc:endInclude
 
-++ Papenmeier BRAILLEX (uudemmat mallit) ++
+++ Papenmeier BRAILLEX (uudet mallit) ++
 Seuraavia pistenäyttöjä tuetaan:
 - BRAILLEX EL 40c, EL 80c, EL 20c, EL 60c (USB)
 - BRAILLEX EL 40s, EL 80s, EL 2d80s, EL 70s, EL 66s (USB)
 - BRAILLEX Trio (USB ja bluetooth)
+- BRAILLEX Live 20, BRAILLEX Live sekä BRAILLEX Live Plus (USB ja bluetooth)
 -
 
 NVDA käyttää BrxComia, mikäli se on asennettu.
 BrxCom on työkalu, joka mahdollistaa pistesyötön käyttämisen itsenäisesti ruudunlukuohjelmasta riippumatta.
-Papenmeier julkaisee piakkoin siitä NVDA:lla toimivan version.
-Trio-mallissa pistesyöttö on kuitenkin mahdollista ilman BrxCom:iakin.
+Papenmeier julkaisee piakkoin tästä työkalusta NVDA:n kanssa toimivan version.
+Trio-, BRAILLEX Live 20- ja Braillex Live -laitteissa pistesyöttö on tosin mahdollista myös ilman BrxComia.
+Pistesyöttö on mahdollista myös Live Plus -mallissa, mutta vain BrxComin avulla.
 
 Useimmissa laitteissa on intuitiivisen ja nopean käytön mahdollistava ohjaustankonäppäin (EAB).
 Sitä voidaan siirtää neljään suuntaan, joissa kussakin on yleensä kaksi kytkintä.
-C-sarjan näytöt ovat ainoa poikkeus tästä.
+C- ja Live-sarjan näytöt ovat ainoa poikkeus.
 
-Niissä ja muutamissa muissa näytöissä on kaksi kosketuskohdistinriviä, joista ylempää käytetään muotoilutietojen lukemiseen.
+C-mallin näytöissä ja muutamassa muussakin on kaksi kosketuskohdistinriviä, joista ylempää käytetään muotoilutietojen lukemiseen.
 C-sarjan laitteissa ylärivin jonkin näppäimen alhaalla pitäminen ja ohjaustankonäppäimen painaminen jäljittelee toisen kytkimen tilaa.
+Live-sarjan näytöissä on vain yksi kosketuskohdistinrivi, ja EAB:ssä on yksi askel kutakin suuntaa kohti.
+Toista askelta jäljitellään painamalla jotakin kosketuskohdistinnäppäintä ja EAB:tä vastaavaan suuntaan.
 Ylös-, alas-, oikea- ja vasen-näppäinten (tai ohjaustankonäppäimen) painaminen ja alhaalla pitäminen toistaa kyseessä olevan toiminnon.
 
 Näissä pistenäytöissä on käytettävissä yleensä seuraavat näppäimet:
@@ -1981,7 +1985,8 @@ Seuraavassa on lista NVDA:n komentorivivalitsimista:
 | -s | --secure | Suojattu tila (poistaa käytöstä Python-konsolin). |
 | Ei mitään | --disable-addons | Poistaa lisäosat käytöstä. |
 | Ei mitään | --no-sr-flag | Ei muuta järjestelmänlaajuista ruudunlukuohjelmalippua. |
-| Ei mitään | --install | Asentaa NVDA:n ilman kehotteita. |
+| Ei mitään | --install | Asentaa NVDA:n ja käynnistää asennetun kopion. |
+| Ei mitään | --install-silent | Asentaa NVDA:n ilman kehotteita ja asennetun kopion käynnistämistä. |
 
 ++ Symboleiden puhumisen lisämukauttaminen ++
 Välimerkkien ja muiden symboleiden lukutapaa voidaan mukauttaa enemmänkin kuin mitä [Välimerkkien ja symboleiden puhuminen #SymbolPronunciation] -valintaikkunassa on mahdollista.
