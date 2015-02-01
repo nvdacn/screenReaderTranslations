@@ -568,6 +568,13 @@ Bemærk: Genvejen til at oplyse den resterende tid virker kun, når statuslinjen
 | Læs oversætternoter | Ctrl+Shift+a | Læser oversætternoter. |
 %kc:endInclude
 
+++ Skype ++
+%kc:beginInclude
+Under en samtale:
+|| Navn | Tast | Beskrivelse |
+| Læs meddelelse | NVDA+Ctrl+1-0 | Læser og flytter læsemarkøren til en af de nyeste meddelelser alt efter, hvilket tal du trykker. F.eks. NVDA+Ctrl+2 læser den næstnyeste meddelelse. |
+%kc:endInclude
+
 + Konfigurering af NVDA+
 
 ++ Indstillinger ++
@@ -598,7 +605,7 @@ Denne indstillingsmulighed er en tjekboks, der giver mulighed for at vælge, hvo
 Når den er slået til, fremkommer en dialog, når du forsøger at afslutte NVDA, hvor du skal tage stilling til, hvorvidt du ønsker at afslutte eller ej.
 Når den er slået fra, bliver NVDA afsluttet med det samme.
 
-=== Afspil lyd ved start og afslutning af NVDA ===
+==== Afspil lyd ved start og afslutning af NVDA ====
 Dette er en checkboks, der, når den er slået til, får NVDA til at afspille en lyd ved opstart og afslutning af programmet.
 
 ==== Logningsniveau ====
@@ -687,6 +694,10 @@ Her kan du vælge, hvor mange sætningstegn og andre symboler, der skal udtales 
 Hvis du fx. sætter niveauet til "alt", vil alle symboler blive udtalt.
 Denne indstilling gælder for alle talesynteser, ikke kun den, som er aktiv i øjeblikket.
 
+==== Brug stemmens sprog til udtale af symboler og tegn ====
+Med den indstilling, som er slået til som standard, kan du vælge om du vil stole på sproget for den aktuelle stemme til udtale af tegn og symboler.
+Hvis du opdager, at NVDA læser tegn og symboler på et forkert sprog med en bestemt talesyntese eller stemme, kan du slå denne indstilling fra for at tvinge NVDA til at benytte sin globale sprogindstilling.
+
 ==== Ændring af tonehøjde ved store bogstaver ====
 I dette editfelt kan du indtaste et tal for, hvor meget tonehøjden skal ændre sig, når NVDA udtaler et stort bogstav.
 Denne værdi er en procentsats. En negativ værdi vil gøre tonehøjden lavere, og en positiv værdi vil gøre den højere.
@@ -734,7 +745,7 @@ Læs venligst afsnittet [Understøttede punktdisplays #SupportedBrailleDisplays]
 
 ==== Port ====
 Hvis denne indstilling er tilgængelig, giver den dig mulighed for at vælge, hvilken port eller forbindelsestype du vil benytte for at kommunikere med det punktdisplay, du har valgt.
-Det er en kombobox der indeholder de mulige valgmuligheder for dit display.
+Det er en kombobox der indeholder de mulige indstillinger for dit display.
 
 Som standard søger NVDA automatisk efter den påkrævede port til dit punktdisplay ved brug af automatisk detektering af port, hvilket betyder, at NVDA automatisk vil etablere forbindelse med din enhed ved at scanne computeren for alle tilgængelige USB og Bluetooth enheder koblet til dit system.
 For nogle punktdisplays er det dog muligt at vælge direkte, hvilken port du vil bruge.
@@ -1011,6 +1022,11 @@ Hvis du fx flytter ned over en webside med pil-ned og NVDA støder på et editfe
 ==== Lydindikering af fokustilstand og gennemsynstilstand ====
 Hvis denne indstilling er slået til, afspiller NVDA en særlig lyd i stedet for at oplæse ændringen.
 
+==== Forhindre alle ikke-NVDA-kommandoer i at nå til dokumentet ====
+med denne indstilling, som er slået til som udgangspunkt, kan du vælge om kommandobevægelser, f.eks. tastetryk, som ikke udgør en NVDA-kommando, og som ikke anses for at være en generel kommando, skal forhindres i at komme videre til det dokument, du har fokus på.
+Hvis denne indstilling er slået til, og du f.eks. trykker på bogstavet j, vil tastetrykket blive forhindret i at komme videre til dokumentet, selv om det ikke er en kommando til hurtignavigation, og det heller ikke er sandsynligt, at det er en kommando i selve programmet.
+
+
 +++ Indstillinger for dokument formatering (NVDA+Ctrl+d) +++[DocumentFormattingSettings]
 Denne dialogboks findes i menuen Indstillinger under "Dokumentformatering...".
 
@@ -1102,7 +1118,7 @@ Du får kun vist de kommandoer, som er tilgængelige på det tidspunkt, hvor du 
 Hvis du fx. vil tilpasse kommandoer til browsetilstand, skal du åbne dialogen, mens NVDA er i browsetilstand.
 
 Trævisningen i denne dialog viser alle de tilgængelige NVDA-kommandoer grupperet efter kategori.
-Du kan filtrere dem ved at indtaste et eller flere ord fra kommandoens navn i en hvilken som helst rækkefølge.
+Du kan filtrere dem ved at indtaste et eller flere ord fra kommandoens navn i editfeltet "Filtrer efter" i en hvilken som helst rækkefølge.
 Hvis en bevægelse er tilknyttet en kommando, bliver den vist neden under kommandoen.
 
 For at tilføje en inputbevægelse til en kommando skal du vælge kommandoen og så trykke på Tilføj-knappen.
@@ -1315,12 +1331,6 @@ For a tbruge disse stemmer, er det nødvendigt at installere to komponenter:
 Dette er en kommerciel talesyntese, der er specielt produceret til italiensk.
 Talesyntesen skal være installeret på dit system, før den kan bruges med NVDA.
 For yderligere oplysninger om talesyntesen henvises til Audiologics netsted på www.audiologic.it.
-
-Denne talesyntese understøtter ikke [stavefunktionalitet #VoiceSpellingFunctionality].
-
-++ Newfon ++
-Newfon er en gratis kommerciel talesyntese af Sergey Shishmintzev. Den understøtter russisk og ukrainsk. 
-Hvis du ønsker at hente denne talesyntese, henvises til NVDAs russiske fællesskab under sektionen for downloads: http://ru.nvda-community.org/?page_id=10
 
 Denne talesyntese understøtter ikke [stavefunktionalitet #VoiceSpellingFunctionality].
 
@@ -1672,19 +1682,23 @@ Følgende punktdisplay er understøttede
 - BRAILLEX EL 40c, EL 80c, EL 20c, EL 60c (USB)
 - BRAILLEX EL 40s, EL 80s, EL 2d80s, EL 70s, EL 66s (USB)
 - BRAILLEX Trio (USB og bluetooth)
--
+- BRAILLEX Live 20, BRAILLEX Live og BRAILLEX Live Plus (USB and bluetooth)
+- 
 
 Hvis BrxCom er installeret, vil NVDA benytte BrxCom.
 BrxCom er et værktøj der giver dig mulighed for, at bruge punktdisplayet uafhængigt af en skærmlæser.
 En ny version af BrxCom der virker med NVDA bliver snart udgivet af Papenmeier.  
-Indtastning af punkt er dog mulig med en TRIO-enhed uden BrxCom.
+Indtastning af punkt er mulig med TRIO, BRAILLEX Live 20 og Braillex Live -enheder uden BrxCom.
+Punktindtastning er også mulig med Live Plus-modellen, men kun med BrxCom.
 
 De fleste enheder har en Easy Access bjælke (EAB) der giver mulighed for intuitive og hurtige handlinger.
 EAB kan bevæge sig i fire retninger, hvor der generelt er to tilhørende stillinger.
-C-serien er den eneste undtagelse.
+C-serien og Live-serien er eneste undtagelser til denne regel.
 
 C-serien samt nogle andre displays har to rækker med markørsammenføringsknapper, hvor den øveste række bruges til at rapportere formateringsinformation.
 Hvis du holder en af de øverste  markørsammenføringsknapper og trykker på EAB på C-serien, vil enheden emulere handlingen for den anden stilling.
+Displays i Live-serien har kun en enkelt række sammenføringsknapper, og bjælken kan kun bevæges et enkelt trin i hver retning.
+Du kan emulere det andet trin ved at trykke på en af sammenføringstasterne og skubbe bjælken i den tilsvarende retning.
 Hvis du trykker og holder på piletasterne op, ned, højre og venstre (eller EAB) vil den tilsvarende handling gentages.
 
 De følgende taster er generelt tilgængelige på disse punktdisplays:
@@ -1969,9 +1983,10 @@ De mulige kommandolinjeparametre til NVDA er følgende:
 | -c CONFIGPATH | --config-path=CONFIGPATH | Stien hvor alle indstillinger i NVDA bliver gemt |
 | -m | --minimal | Ingen lyde, ingen brugergrænseflade, ingen opstartsmeddelelser osv. |
 | -s | --secure | Sikker tilstand (uden Python console) |
-| None | --disable-addons | ingen tilføjelsesprogrammer |
-| None | --no-sr-flag  | Lad være med at ændre det globale skærmlæserflag |
-| None | --install | Tavs installation af NVDA |
+| Ingen | --disable-addons | ingen tilføjelsesprogrammer |
+| Ingen | --no-sr-flag  | Lad være med at ændre det globale skærmlæserflag |
+| Ingen | --install | Tavs installerer NVDA og starter den nyinstallerede kopi |
+| Ingen | --install-silent | Tavs installation af NVDA (Starter ikke den nyinstallerede kopi) |
 
 ++ Avanceret tilpasning af udtalelse af symboler ++
 Det er muligt at tilpasse udtale af sætningstegn, samt andre symboler udover det som du kan opnå ved brug af dialogen [Udtale af sætningstegn/symboler #SymbolPronunciation].
