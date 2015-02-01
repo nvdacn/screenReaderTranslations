@@ -12,11 +12,18 @@
 - W oknie wyszukiwania trybu czytania, znajduje się od teraz opcja poszukiwania z uwzględnieniem wielkości liter. (#4584)
 - Szybka nawigacja (h do nagłówka etc.) oraz lista elementów (NVDA+f7) są teraz dostępne dla dokumentów Microsoft Word, po włączeniu trybu czytania NVDA+spacja. (#2975)
 - Odczyt wiadomości HTML w Microsoft Outlook 2007 i wyższych, został poprawiony ponieważ tryb czytania jest automatycznie włączony dla tych wiadomości. Jeśli tryb czytania nie jest włączony w niektórych rzadkich sytuacjach, możesz wymusić jego włączenie przez NVDA+spacja. (#2975) 
+- Nagłówki kolumn tabeli w Microsoft word są automatycznie zgłaszane dla tabel, w których wiersz nagłówkowy został określony przez autora we właściwościach tabeli. (#4510) 
+- W Skype dla pulpitu zgłaszane są powiadomienia. (#4741)
+- W Skype dla pulpitu można teraz czytać ostatnie wiadomości przy użyciu NVDA+control+1 do NVDA+control+0; np. NVDA+control+1 dla ostatniej wiadomości, NVDA+control+0 dla dziesiątej od końca. (#3210)
+- W konwersacji w Skype dla pulpitu, NVDA zgłasza, gdy kontakt pisze. (#3506)
+- NVDA może teraz zostać po cichu zainstalowany przy użyciu wiersza poleceń bez uruchamiania zainstalowanej kopii po instalacji. Aby to zrobić, użyj przełącznika --install-silent. (#4206)
 
 
 == Zmiany ==
 - W oknie ustawień formatowania dokumentu, opcja  informowania o błędach pisowni, posiada klawisz skrótu (alt+b). W polskiej wersji klawisz ten istniał już wcześniej. (#793)
 - NVDA  będzie używał języka syntezatora/głosu do przetwarzania znaków i symboli (włączając w to nazwy znaków przestankowych), niezależnie od tego, czy automatyczna zmiana języka jest włączona. Aby wyłączyć tę funkcję, czyli sprawić, żeby NVDA używał języka interfejsu, odznacz nową opcję w ustawieniach głosu: Ufaj językowi głosu przetwarzając znaki i symbole. (#4210)
+- Wsparcie dla syntezatora Newfon zostało usunięte. Newfon jest dostępny jako dodatek dla NVDA. (#3184)
+- Skype dla pulpitu 7 lub nowszy jest wymagany przez NVDA; wcześniejsze wersje nie są wspierane. (#4218)
 
 
 == Poprawki błędów ==
@@ -30,6 +37,15 @@
 - Punkt uwagi prawidłowo powraca do edytowanego dokumentu, po zakończeniu kompozycji wprowadzania koreańskiego i innych wschodnioazjatyckich języków, podczas edycji w ramce w Internet Explorer i dokumentach MSHTML . (#4045)
 - W oknie zdarzeń wejścia, podczas dokonywania wyboru układu klawiatury dla dodawanego zdarzenia, naciśnięcie escape teraz zamyka menu, a nie jak dawniej okno dialogowe. (#3617)
 - Po usunięciu dodatku, jego folder jest teraz prawidłowo usuwany po restarcie NVDA. Poprzednio trzeba było restartować dwukrotnie. (#3461)
+- Naprawiono główne problemy podczas używania Skype 7 dla pulpitu. (#4218)
+- Gdy wysyłasz wiadomość w Skype dla pulpitu, nie jest odczytywana podwójnie. (#3616)
+- W Skype dla pulpitu, NVDA nie powinien teraz od czasu do czasu czytać dużej ilości wiadomości (nawet całej konwersacji). (#4644)
+- Naprawiono problem, że komenda zgłaszania daty i czasu w NVDA w niektórych przypadkach nie uwzględniała ustawień regionalnych określonych przez użytkownika. (#2987)
+- Tryb czytania: nonsensowny tekst (czasem kilkuliniowy) nie jest od teraz prezentowany dla niektórych obrazków np. w serwisie grupy  Google . (Miało to miejsce szczególnie dla obrazków kodowanych w base64.) (#4793)
+- NVDA nie powinien się zawieszać po kilku sekundach, gdy punkt uwagi opuścił aplikację Windows 8 Metro, kiedy została ona wstrzymana. (#4572)
+- Atrybut aria-atomic żywych obszarów w Mozilla Firefox jest uwzględniany nawet dla zmian tego elementu. Wcześniej miał wpływ tylko na elementy potomne. (#4794) 
+- Tryb czytania będzie odzwierciedlał zmiany, zgłaszane będą żywe obszary dla dokumentów trybu czytania w aplikacjach ARIA osadzonych w dokumentach otwartych przez Internet Explorer lub innych kontrolek MSHTML (#4798)
+- Gdy dodany lub zmieniony jest tekst w żywych obszarach w  Internet Explorer i innych kontrolkach MSHTML, ogłaszany jest dodany lub zmieniony tekst, zamiast całej zawartości elementu. (#4800)
 
 
 == Zmiany dla programistów ==
