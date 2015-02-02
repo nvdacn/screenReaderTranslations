@@ -22,17 +22,29 @@
 <LI>In Microsoft Word kann nun mittels NVDA+Leertaste der Lesemodus verwendet werden, um mit Hilfe von Schnellnavigationstasten im Dokument zu navigieren. Die Elementliste ist ebenfalls verfügbar. (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>)
 <LI>das Lesen von Html-Nachrichten in Outlook 2007 und höher wurde verbessert, in dem der Lesemodus automatisch für diese Nachrichten aktiviert wird. Sollte dies in seltenen Fällen nicht geschehen, können Sie den Lesemodus mittels NVDA+Leertaste aktivieren. (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>) 
 <LI>In Microsoft Word werden Spaltenüberschriften automatisch gelesen, wenn sie in den Tabelleneigenschaften als solche gekennzeichnet wurden. (<A HREF="http://community.nvda-project.org/ticket/4510">#4510</A>)
+ <UL>
+ <LI>Wenn die Tabelle jedoch verbundene Zeilen enthält, müssen Sie die Spaltenüberschrift manuell mit NVDA setzen. Verwenden Sie hierfür die Tastenkombinationen nvda+Umschalt+c.
+ </UL>
 <LI>In der Desktop-Version von Skype werden Benachrichtigungen angezeigt. (<A HREF="http://community.nvda-project.org/ticket/4741">#4741</A>)
 <LI>in Skype können Sie die letzten Nachrichten mit nvda+strg+1 bis nvda+strg+0 anzeigen nvda+strg+1 zeigt beispielsweise die letzte eingegebene Nachricht an. (<A HREF="http://community.nvda-project.org/ticket/3210">#3210</A>)
 <LI>In einer Skype-Konversation wird nun angezeigt, wenn jemand tippt. (<A HREF="http://community.nvda-project.org/ticket/3506">#3506</A>)
-<P></P>
-== Änderungen ==
+<LI>Bei der Installation von NVDA kann die Anzeige von Meldungen unterdrückt werden. Verwenden Sie hierfür die Kommandozeilenoption  --install-silent. (<A HREF="http://community.nvda-project.org/ticket/4206">#4206</A>)
+<LI>Untestützung für Papenmeier BRAILLEX Live 20, BRAILLEX Live und BRAILLEX Live Plus. (<A HREF="http://community.nvda-project.org/ticket/4614">#4614</A>)
+</UL>
+
+<H3>Änderungen</H3>
+
+<UL>
 <LI>im Dialog Dokumentformatierungen besitzt die Option zur Ansage von Rechtschreibfehlern nun das Tastenkürzel alt+r. (<A HREF="http://community.nvda-project.org/ticket/793">#793</A>)
 <LI>NVDA wird die Sprache der Sprachausgabe/der Stimme verwenden, um Namen von Symbolen und Satzzeichen zu sprechen; unabhängig davon, ob "automatisch Sprache wechseln"  aktiviert ist. Um dieses Verhalten abzuschalten sodass NVDA wieder seine Dialogsprache verwendet, deaktivieren Sie in den Stimmeneinstellungen die neue Option "beim Sprechen von Zeichen und Symbolen die Sprache der Stimme berücksichtigen". (<A HREF="http://community.nvda-project.org/ticket/4210">#4210</A>)
 <LI>Die Unterstützung für Newfon wurde entfernt; Newfon ist jetzt als NVDA-Erweiterung verfügbar. (<A HREF="http://community.nvda-project.org/ticket/3184">#3184</A>)
 <LI>Skype 7 oder neuer wird nun benötigt; ältere Skype-Versionen werden nicht mehr unterstützt. (<A HREF="http://community.nvda-project.org/ticket/4218">#4218</A>)
-<P></P>
-== Fehlerbehebungen ==
+<LI>Das Herunterladen von Aktualisierungen von NVDA erfolgt nun über https. Zudem wird die Datei nach dem Herunterladen mit Hilfe ihres Hash-Wertes auf Unversehrtheit geprüft. (<A HREF="http://community.nvda-project.org/ticket/4716">#4716</A>)
+</UL>
+
+<H3>Fehlerbehebungen</H3>
+
+<UL>
 <LI>Wenn in Microsoft Excel die Reihen- oder Spaltenüberschriften aus verbundenen Zellen bestehen, werden diese richtig erkannt. Wenn beispielsweise A1 und A2 verbunden sind, wird in b2 der Inhalt aus a1 und b1 ausgegeben, anstatt die Überschrift zu ignorieren.   (<A HREF="http://community.nvda-project.org/ticket/4617">#4617</A>)
 <LI>beim Bearbeiten von Text in Eingabefeldern in Microsoft Powerpoint 2003 wird der Inhalt von jeder Zeile richtig ausgegeben. Zuvor wurden Zeilenumbrüche falsch verarbeitet. (<A HREF="http://community.nvda-project.org/ticket/4619">#4619</A>)
 <LI>alle NVDA-Dialoge werden zentriert angezeigt, um die Lesbarkeit zu verbessern. (<A HREF="http://community.nvda-project.org/ticket/3148">#3148</A>)
@@ -48,19 +60,22 @@
 <LI>in Skype sollte NVDA nicht mehr fälschlicherweise ganze Konversationen lesen. (<A HREF="http://community.nvda-project.org/ticket/4644">#4644</A>)
 <LI>Problem behoben, wonach NVDA beim Lesen des Datums und der Uhrzeit manchmal die Ländereinstellungen des Benutzers nicht berücksichtigt hat. (<A HREF="http://community.nvda-project.org/ticket/2987">#2987</A>)
 <LI>Im Lesemodus werden keine irreführenden Alternativtexte für Grafiken mehr angezeigt. dies betrifft u.a. base64-codierte Grafiken in Google Groups.(<A HREF="http://community.nvda-project.org/ticket/4793">#4793</A>)
+<LI>NVDA sollte nun nicht mehr hängen bleiben, sobald eine Metro-App durch Windows 8 stillgelegt wird. (<A HREF="http://community.nvda-project.org/ticket/4572">#4572</A>)
+<LI>In Firefox wird das Aria-Attribut Atomic in Live-Regionen berücksichtigt, wenn sich das Atomic-Element ändert. Zuvor wirkte sich eine Änderung des Atomic-Attributes nur auf enthaltene Elemente aus. (<A HREF="http://community.nvda-project.org/ticket/4794">#4794</A>) 
+<LI>Aktualisierungen von Dokumenten innerhalb von Aria-Anwendungen werden in Internet Explorer und anderen MSHTML-Dokumenten berücksichtigt (<A HREF="http://community.nvda-project.org/ticket/4798">#4798</A>)
+<LI>Wenn sich Text innerhalb von Aria-Elementen in Internet Explorer und MSHTML-Steuerelementen ändert, wird nur der neu hinzugekommene/geänderte Text ausgegeben. (<A HREF="http://community.nvda-project.org/ticket/4800">#4800</A>)
+<LI>Das Attribut Aria-labeledby wird korrekt verarbeitet. (<A HREF="http://community.nvda-project.org/ticket/4575">#4575</A>)
 </UL>
 
 <H3>Änderungen für Entwickler</H3>
 
 <UL>
 <LI>wxPython auf 3.0.2.0 aktualisiert. (<A HREF="http://community.nvda-project.org/ticket/3763">#3763</A>)
-</UL>
-
-<H2>2014.4</H2>
-
-<H3>Neuerungen</H3>
-
-<UL>
+<LI>Wenn Sie eine Erweiterung entfernen oder aktualisieren, die während der Installation das Modul speechDictHandler importiert hat, wird NVDA nicht mehr abstürzen. (<A HREF="http://community.nvda-project.org/ticket/4496">#4496</A>)
+<P></P>
+= 2014.4 =
+<P></P>
+== Neuerungen ==
 <LI>Neue Sprachen: Kolumbianisches Spanisch, Punjabi
 <LI>Sie können NVDA nun auch vom Dialog "beenden" aus (wahlweise mit deaktivierten Erweiterungen) neu starten. (<A HREF="http://community.nvda-project.org/ticket/4057">#4057</A>)
   <UL>
