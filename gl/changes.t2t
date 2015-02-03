@@ -13,9 +13,12 @@ Que hai de Novo no NVDA
 - Agora está dispoñible a navegación rápida (h para cabeceiras etc) máis a Lista de Elementos (NVDA+f7) en documentos de Microsoft Word activando o modo Exploración con NVDA+espazo. (#2975)
 - Lendo mensaxes HTML en Microsoft Outlook 2007 e posterior mellorouse moito cando se activa automáticamente o modo Exploración para esas mensaxes. Se o modo exploración non se habilita nalgunhas situacións raras, podes forzalo con NVDA+espazo. (#2975) 
 - As cabeceiras de columna de táboa no Microsoft word anúncianse automáticamente para táboas onde se especificara unha cabeceira de fila polo autor a través das propiedades de táboa do Microsoft word. (#4510) 
+ - Sin embargo, para táboas onde as filas foran fusionadas esto non funcionará automáticamente. Nesta situación aínda podes fixar as cabeceiras de columna manualmente no NVDA con NVDA+shift+c.
 - No Skype for Desktop, agora anúncianse as notificacións. (#4741)
 - No Skype for Desktop, agora podes anunciar e revisar as mensaxes recentes utilizando NVDA+control+1 ata NVDA+control+0; por ex.: NVDA+control+1 para a mensaxe máis recente e NVDA+control+0 para a décima máis recente. (#3210)
 - Nunha conversa No Skype for Desktop, NVDA agora anuncia cando un contacto estea a teclear. (#3506)
+- NVDA agora pode instalarse en silenzo a través da liña de ordes  sen iniciar a copia instalada despois da instalación. Para facer esto, utiliza --install-silent. (#4206)
+- Soporte para as pantallas braille Papenmeier BRAILLEX Live 20, BRAILLEX Live e BRAILLEX Live Plus. (#4614)
 
 
 == Cambios ==
@@ -23,6 +26,7 @@ Que hai de Novo no NVDA
 - NVDA agora utilizará a lingua do sintetizador ou voz para o procesamento do carácter e símbolo (incluindo nomes de símbolos de puntuación), xa o cambio automático de lingua estea activado ou non. Para desactivar esta característica para que NVDA utilice de novo a súa lingua de interface, desmarca a nova opción en Opcións de Voz chamada Confiar na lingua da Voz ó procesar caracteres e símbolos. (#4210)
 - Eliminouse o soporte para o sintetizador Newfon. Agora Newfon está dispoñible como un complemento do NVDA. (#3184)
 - Agora requírese Skype for Desktop 7 ou posterior para utilizar co NVDA; non se soportan as versións anteriores. (#4218)
+- A descarga das actualizacións do NVDA agora é máis segura. (en concreto, a información de actualización recupérase a través de https e o hash do ficheiro verifícase tras a súa descarga.) (#4716)
 
 
 == Corrección de Erros ==
@@ -41,10 +45,16 @@ Que hai de Novo no NVDA
 - No Skype for Desktop, NVDA xa non debería ler ocasionalmente unha grande cantidade de mensaxes en falso (quizáis incluso unha conversa enteira. (#4644)
 - Correxido un problema onde a orde de NVDA Anunciar data e hora non tiña en conta nalgúns casos as opcións rexionais especificadas polo usuario. (#2987)
 - No Modo exploración, xa non se presenta texto sen sentido (abranguendo ás veces varias liñas) para certos gráficos como os atopados en Google Groups. (en concreto, esto ocurría cas imaxes codificadas en base 64.) (#4793)
+- NVDA xa non debería  conxelarse despois duns poucos segundos cando se saca o foco dunha aplicación de estilo Windows 8 Metro cando permanece suspendido. (#4572)
+- O atributo aria-atomic en rexións activas en Mozilla Firefox agora tense en conta incluso aíndaque  o mesmo elemento atomic cambie. Anteiormente só afectaba a elementos descendentes. (#4794) 
+- O modo exploración reflictirá actualizacións, e as rexións activas anunciaranse,  para documentos en modo exploración dentro de aplicacións ARIA integradas nun documento en Internet Explorer ou outros controis MSHTML. (#4798)
+- Cando o texto cambie ou se engada a rexións activas de texto relevante en Internet Explorer e outros controis MSHTML, só se anuncia o texto cambiado ou engadido, en lugar de todo o texto no elemento contedor. (#4800)
+- O contido indicado polo atributo aria-labelledby en elementos en Internet Explorer e outros controis MSHTML reemplaza correctamente o contido orixinal  onde sexa apropriado facelo. (#4575)
 
 
 == Cambios para desenvolvedores ==
 - Actualizado wxPython a 3.0.2.0. (#3763)
+- NVDA xa non se romperá cando se reinicie despois de eliminar ou actualizar un complemento que importe speechDictHandler no seu módulo installTasks. (#4496)
 
 
 = 2014.4 =
