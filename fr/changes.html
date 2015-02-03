@@ -22,9 +22,14 @@
 <LI>La navigation rapide (h pour titre etc) et la Liste d'éléments (NVDA+f7) sont maintenant disponibles dans les documents Microsoft Word en activant le mode navigation avec NVDA+espace. (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>)
 <LI>La lecture des messages HTML sous Microsoft Outlook 2007 et les versions supérieures a été considérablement améliorée, le mode navigation étant automatiquement activé pour ces messages. Si le mode navigation n'est pas activé dans certaines situations rares, vous pouvez l'activer par NVDA+espace. (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>) 
 <LI>Dans Microsoft Word, les en-têtes de colonnes de tableaux sont annoncés automatiquement pour les tableaux où la ligne d'en-têtes a été explicitement spécifiée par l'auteur via les propriétés de tableau de Microsoft Word. (<A HREF="http://community.nvda-project.org/ticket/4510">#4510</A>) 
+ <UL>
+ <LI>Cependant, pour des tableaux où les lignes ont été fusionnées, cela ne marchera pas automatiquement. Dans cette situation vous pouvez toujours définir les en-têtes de colonnes manuellement sous NVDA avec NVDA+maj+c.
+ </UL>
 <LI>Dans Skype for Desktop, les notifications sont maintenant annoncées. (<A HREF="http://community.nvda-project.org/ticket/4741">#4741</A>)
 <LI>Dans Skype for Desktop, vous pouvez maintenant entendre et revoir les messages récents en utilisant les raccourcis de NVDA+control+1 à NVDA+control+0; ex: NVDA+control+1 pour le message le plus récent et NVDA+control+0 pour le dixième plus récent. (<A HREF="http://community.nvda-project.org/ticket/3210">#3210</A>)
 <LI>Dans une conversation sous Skype for Desktop, NVDA annonce maintenant quand un correspondant est en train d'écrire. (<A HREF="http://community.nvda-project.org/ticket/3506">#3506</A>)
+<LI>NVDA peut maintenant être installé silencieusement via la ligne de commande sans démarrage de la copie installée après installation. Pour faire cela, utilisez --install-silent. (<A HREF="http://community.nvda-project.org/ticket/4206">#4206</A>)
+<LI>Support des afficheurs braille Papenmeier BRAILLEX Live 20, BRAILLEX Live et BRAILLEX Live Plus. (<A HREF="http://community.nvda-project.org/ticket/4614">#4614</A>)
 </UL>
 
 <H3>Changements</H3>
@@ -35,6 +40,7 @@
 (incluant le nom des symboles de ponctuation), que le changement automatique de langue soit activé ou non. Pour désactiver cette fonction de manière à ce que NVDA utilise à nouveau la langue de son interface, décochez la nouvelle option dans les paramètres vocaux appelée Se baser sur la langue de la voix pour le traitement des caractyres et symboles. (<A HREF="http://community.nvda-project.org/ticket/4210">#4210</A>)
 <LI>Le support du synthétiseur Newfon a été supprimé. Newfon est maintenant disponible sous la forme d'un module complémentaire. (<A HREF="http://community.nvda-project.org/ticket/3184">#3184</A>)
 <LI>Skype for Desktop 7 ou plus récent est maintenant requis pour utilisation avec NVDA; les versions plus anciennes ne sont pas supportées. (<A HREF="http://community.nvda-project.org/ticket/4218">#4218</A>)
+<LI>Le téléchargement des mises à jour de NVDA est maintenant plus sécurisé. (En particulier, l'information de mise à jour est récupérée via https et le hash du fichier est vérifié après téléchargement.) (<A HREF="http://community.nvda-project.org/ticket/4716">#4716</A>)
 </UL>
 
 <H3>Corrections de Bogues</H3>
@@ -56,12 +62,18 @@
 <LI>Dans Skype for Desktop, NVDA ne devrait plus de temps en temps lire un grand nombre de messages (peut-être même une conversation entière). (<A HREF="http://community.nvda-project.org/ticket/4644">#4644</A>)
 <LI>correction d'un problème qui faisait que la commande d'annonce de la date et de l'heure de NVDA ne respectait pas les paramètres régionaux définis par l'utilisateur dans certains cas. (<A HREF="http://community.nvda-project.org/ticket/2987">#2987</A>)
 <LI>En mode navigation, un texte sans signification (s'étendant parfois sur plusieurs lignes) n'est plus affiché pour certains graphiques comme on peut en trouver sur Google Groups. (En particulier, ceci arrivait pour les images encodées en base64.) (<A HREF="http://community.nvda-project.org/ticket/4793">#4793</A>)
+<LI>NVDA ne devrait plus se figer après quelques secondes quand le focus quitte une application Windows 8 Metro-style en cours de suspension. (<A HREF="http://community.nvda-project.org/ticket/4572">#4572</A>)
+<LI>L'attribut aria-atomic dans les régions live sous Mozilla Firefox est maintenant respecté même quand l'élément atomique lui-même change. Précédemment cela n'affectait que les éléments descendants. (<A HREF="http://community.nvda-project.org/ticket/4794">#4794</A>) 
+<LI>Le mode navigation reflètera les mises à jour, et les régions live seront annoncées, pour les documents en mode navigation dans les applications ARIA incluses dans un document sous Internet Explorer ou autres contrôles MSHTML (<A HREF="http://community.nvda-project.org/ticket/4798">#4798</A>)
+<LI>Quand du texte est modifié ou ajouté dans des régions live de texte sous Internet Explorer et autres contrôles MSHTML, seul le texte modifié ou ajouté est annoncé, plutôt que tout le texte de l'élément contenant. (<A HREF="http://community.nvda-project.org/ticket/4800">#4800</A>)
+<LI>Le contenu indiqué par l'attribut aria-labelledby sur des éléments sous Internet Explorer et autres contrôles MSHTML remplace correctement le contenu original là où il est approprié de le faire. (<A HREF="http://community.nvda-project.org/ticket/4575">#4575</A>)
 </UL>
 
 <H3>Changements pour les Développeurs</H3>
 
 <UL>
 <LI>Mise à jour de wxPython à la version 3.0.2.0. (<A HREF="http://community.nvda-project.org/ticket/3763">#3763</A>)
+<LI>NVDA ne se plante plus au redémarrage après retrait ou mise à jour d'un module complémentaire qui importe speechDictHandler dans son module installTasks. (<A HREF="http://community.nvda-project.org/ticket/4496">#4496</A>)
 </UL>
 
 <H2>2014.4</H2>
