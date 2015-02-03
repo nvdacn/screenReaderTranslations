@@ -13,9 +13,12 @@ Quoi de Neuf dans NVDA
 - La navigation rapide (h pour titre etc) et la Liste d'éléments (NVDA+f7) sont maintenant disponibles dans les documents Microsoft Word en activant le mode navigation avec NVDA+espace. (#2975)
 - La lecture des messages HTML sous Microsoft Outlook 2007 et les versions supérieures a été considérablement améliorée, le mode navigation étant automatiquement activé pour ces messages. Si le mode navigation n'est pas activé dans certaines situations rares, vous pouvez l'activer par NVDA+espace. (#2975) 
 - Dans Microsoft Word, les en-têtes de colonnes de tableaux sont annoncés automatiquement pour les tableaux où la ligne d'en-têtes a été explicitement spécifiée par l'auteur via les propriétés de tableau de Microsoft Word. (#4510) 
+ - Cependant, pour des tableaux où les lignes ont été fusionnées, cela ne marchera pas automatiquement. Dans cette situation vous pouvez toujours définir les en-têtes de colonnes manuellement sous NVDA avec NVDA+maj+c.
 - Dans Skype for Desktop, les notifications sont maintenant annoncées. (#4741)
 - Dans Skype for Desktop, vous pouvez maintenant entendre et revoir les messages récents en utilisant les raccourcis de NVDA+control+1 à NVDA+control+0; ex: NVDA+control+1 pour le message le plus récent et NVDA+control+0 pour le dixième plus récent. (#3210)
 - Dans une conversation sous Skype for Desktop, NVDA annonce maintenant quand un correspondant est en train d'écrire. (#3506)
+- NVDA peut maintenant être installé silencieusement via la ligne de commande sans démarrage de la copie installée après installation. Pour faire cela, utilisez --install-silent. (#4206)
+- Support des afficheurs braille Papenmeier BRAILLEX Live 20, BRAILLEX Live et BRAILLEX Live Plus. (#4614)
  
  
 == Changements ==
@@ -24,6 +27,7 @@ Quoi de Neuf dans NVDA
 (incluant le nom des symboles de ponctuation), que le changement automatique de langue soit activé ou non. Pour désactiver cette fonction de manière à ce que NVDA utilise à nouveau la langue de son interface, décochez la nouvelle option dans les paramètres vocaux appelée Se baser sur la langue de la voix pour le traitement des caractyres et symboles. (#4210)
 - Le support du synthétiseur Newfon a été supprimé. Newfon est maintenant disponible sous la forme d'un module complémentaire. (#3184)
 - Skype for Desktop 7 ou plus récent est maintenant requis pour utilisation avec NVDA; les versions plus anciennes ne sont pas supportées. (#4218)
+- Le téléchargement des mises à jour de NVDA est maintenant plus sécurisé. (En particulier, l'information de mise à jour est récupérée via https et le hash du fichier est vérifié après téléchargement.) (#4716)
 
 
 == Corrections de Bogues ==
@@ -43,10 +47,16 @@ Quoi de Neuf dans NVDA
 - Dans Skype for Desktop, NVDA ne devrait plus de temps en temps lire un grand nombre de messages (peut-être même une conversation entière). (#4644)
 - correction d'un problème qui faisait que la commande d'annonce de la date et de l'heure de NVDA ne respectait pas les paramètres régionaux définis par l'utilisateur dans certains cas. (#2987)
 - En mode navigation, un texte sans signification (s'étendant parfois sur plusieurs lignes) n'est plus affiché pour certains graphiques comme on peut en trouver sur Google Groups. (En particulier, ceci arrivait pour les images encodées en base64.) (#4793)
+- NVDA ne devrait plus se figer après quelques secondes quand le focus quitte une application Windows 8 Metro-style en cours de suspension. (#4572)
+- L'attribut aria-atomic dans les régions live sous Mozilla Firefox est maintenant respecté même quand l'élément atomique lui-même change. Précédemment cela n'affectait que les éléments descendants. (#4794) 
+- Le mode navigation reflètera les mises à jour, et les régions live seront annoncées, pour les documents en mode navigation dans les applications ARIA incluses dans un document sous Internet Explorer ou autres contrôles MSHTML (#4798)
+- Quand du texte est modifié ou ajouté dans des régions live de texte sous Internet Explorer et autres contrôles MSHTML, seul le texte modifié ou ajouté est annoncé, plutôt que tout le texte de l'élément contenant. (#4800)
+- Le contenu indiqué par l'attribut aria-labelledby sur des éléments sous Internet Explorer et autres contrôles MSHTML remplace correctement le contenu original là où il est approprié de le faire. (#4575)
 
 
 == Changements pour les Développeurs ==
 - Mise à jour de wxPython à la version 3.0.2.0. (#3763)
+- NVDA ne se plante plus au redémarrage après retrait ou mise à jour d'un module complémentaire qui importe speechDictHandler dans son module installTasks. (#4496)
 
 
 = 2014.4 =
