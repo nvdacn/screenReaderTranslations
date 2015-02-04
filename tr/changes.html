@@ -12,6 +12,10 @@
 
 <H2>2015.1</H2>
 
+<P>
+Highlights of this release include browse mode for documents in Microsoft Word and Outlook; major enhancements to support for Skype for Desktop; and significant fixes for Microsoft Internet Explorer.
+</P>
+
 <H3>New Features</H3>
 
 <UL>
@@ -19,16 +23,16 @@
 <LI>In the Input Gestures dialog, you can use the new "Filter by" field to show only gestures containing specific words. (<A HREF="http://community.nvda-project.org/ticket/4458">#4458</A>)
 <LI>NVDA now automatically reports new text in mintty. (<A HREF="http://community.nvda-project.org/ticket/4588">#4588</A>)
 <LI>In the browse mode Find dialog, there is now an option to perform a case sensitive search. (<A HREF="http://community.nvda-project.org/ticket/4584">#4584</A>)
-<LI>Quick navigation (h for heading etc) plus Elements List (NVDA+f7) are now available in Microsoft Word documents by turning on browse mode with NVDA+space. (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>)
-<LI>Reading HTML messages in Microsoft Outlook 2007 and higher has been majorly improved as Browse mode is automatically enabled for these messages. If browse mode is not enabled in some rare situations, you can force it on with NVDA+space. (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>) 
-<LI>Table column headers in Microsoft word are automatically reported for tables where a header row has been explicitly specified by the author via Microsoft word's table properties. (<A HREF="http://community.nvda-project.org/ticket/4510">#4510</A>) 
+<LI>Quick navigation (pressing h to move by heading, etc.) and Elements List (NVDA+f7) are now available in Microsoft Word documents by turning on browse mode with NVDA+space. (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>)
+<LI>Reading HTML messages in Microsoft Outlook 2007 and later has been majorly improved as Browse mode is automatically enabled for these messages. If browse mode is not enabled in some rare situations, you can force it on with NVDA+space. (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>)
+<LI>Table column headers in Microsoft word are automatically reported for tables where a header row has been explicitly specified by the author via Microsoft word's table properties. (<A HREF="http://community.nvda-project.org/ticket/4510">#4510</A>)
  <UL>
- <LI>However, For tables where rows have been merged this will not work automatically. In this situation you can still set column headers manually in NVDA with NVDA+shift+c.
+ <LI>However, For tables where rows have been merged, this will not work automatically. In this situation, you can still set column headers manually in NVDA with NVDA+shift+c.
  </UL>
 <LI>In Skype for Desktop, notifications are now reported. (<A HREF="http://community.nvda-project.org/ticket/4741">#4741</A>)
 <LI>In Skype for Desktop, you can now report and review recent messages using NVDA+control+1 through NVDA+control+0; e.g. NVDA+control+1 for the most recent message and NVDA+control+0 for the tenth most recent. (<A HREF="http://community.nvda-project.org/ticket/3210">#3210</A>)
 <LI>In a conversation in Skype for Desktop, NVDA now reports when a contact is typing. (<A HREF="http://community.nvda-project.org/ticket/3506">#3506</A>)
-<LI>NVDA can now be installed silently via the commandline with out it starting the installed copy after installation. To do this, use --install-silent. (<A HREF="http://community.nvda-project.org/ticket/4206">#4206</A>)
+<LI>NVDA can now be installed silently via the command line without starting the installed copy after installation. To do this, use the --install-silent option. (<A HREF="http://community.nvda-project.org/ticket/4206">#4206</A>)
 <LI>Support for the Papenmeier BRAILLEX Live 20, BRAILLEX Live and BRAILLEX Live Plus braille displays. (<A HREF="http://community.nvda-project.org/ticket/4614">#4614</A>)
 </UL>
 
@@ -36,7 +40,7 @@
 
 <UL>
 <LI>In NVDA's Document Formatting settings dialog, the option to report spelling errors now has a shortcut key (alt+r). (<A HREF="http://community.nvda-project.org/ticket/793">#793</A>)
-<LI>NVDA will now use the synthesizer/voice's language for character and symbol processing (including punctuation symbol names), regardless of whether automatic language switching is turned on. To turn off this feature so that NVDA again uses its interface language, uncheck the new option in Voice settings called Trust Voice's language when processing characters and symbols. (<A HREF="http://community.nvda-project.org/ticket/4210">#4210</A>)
+<LI>NVDA will now use the synthesizer/voice's language for character and symbol processing (including punctuation/symbol names), regardless of whether automatic language switching is turned on. To turn off this feature so that NVDA again uses its interface language, uncheck the new option in Voice settings called Trust Voice's language when processing characters and symbols. (<A HREF="http://community.nvda-project.org/ticket/4210">#4210</A>)
 <LI>Support for the Newfon synthesizer has been removed. Newfon is now available as an NVDA add-on. (<A HREF="http://community.nvda-project.org/ticket/3184">#3184</A>)
 <LI>Skype for Desktop 7 or later is now required for use with NVDA; earlier versions are not supported. (<A HREF="http://community.nvda-project.org/ticket/4218">#4218</A>)
 <LI>Downloading of NVDA updates is now more secure. (Specifically, the update information is retrieved via https and the hash of the file is verified after it is downloaded.) (<A HREF="http://community.nvda-project.org/ticket/4716">#4716</A>)
@@ -45,8 +49,8 @@
 <H3>Bug Fixes</H3>
 
 <UL>
-<LI>In Microsoft Excel, handle the case when row and column header cells are merged. E.g. if A1 and B1 are merged, then B2 will now have A1 and B1 reported as its column header, rather than nothing at all. (<A HREF="http://community.nvda-project.org/ticket/4617">#4617</A>)
-<LI>When editing the content of a text box in Microsoft PowerPoint 2003, NVDA will correctly report the content of each line. Previously lines would increasingly be off by one character for each new paragraph. (<A HREF="http://community.nvda-project.org/ticket/4619">#4619</A>)
+<LI>In Microsoft Excel, merged row and column header cells are now handled correctly. For example, if A1 and B1 are merged, then B2 will now have A1 and B1 reported as its column header rather than nothing at all. (<A HREF="http://community.nvda-project.org/ticket/4617">#4617</A>)
+<LI>When editing the content of a text box in Microsoft PowerPoint 2003, NVDA will correctly report the content of each line. Previously, in each paragraph, lines would increasingly be off by one character. (<A HREF="http://community.nvda-project.org/ticket/4619">#4619</A>)
 <LI>All of NVDA's dialogs are now centred on the screen, improving visual presentation and usability. (<A HREF="http://community.nvda-project.org/ticket/3148">#3148</A>)
 <LI>In Skype for desktop, when entering an introductory message to add a contact, entering and moving through the text now works correctly. (<A HREF="http://community.nvda-project.org/ticket/3661">#3661</A>)
 <LI>When focus moves to a new itemn in tree views in the Eclipse IDE, if the previously focused item is a check box, it is no longer incorrectly announced. (<A HREF="http://community.nvda-project.org/ticket/4586">#4586</A>)
@@ -60,17 +64,19 @@
 <LI>In Skype for Desktop, NVDA should no longer occasionally spuriously read a large flood of messages (perhaps even an entire conversation). (<A HREF="http://community.nvda-project.org/ticket/4644">#4644</A>)
 <LI>fixed a problem where NVDA's Report date/time command did not honor the regional settings specified by the user in some cases. (<A HREF="http://community.nvda-project.org/ticket/2987">#2987</A>)
 <LI>In browse mode, nonsensical text (sometimes spanning several lines) is no longer presented for certain graphics such as found on Google Groups. (Specifically, this occurred with base64 encoded images.) (<A HREF="http://community.nvda-project.org/ticket/4793">#4793</A>)
-<LI>NVDA should no longer freeze after a few seconds when moving focus away from a Windows 8 Metro-style app as it becomes suspended. (<A HREF="http://community.nvda-project.org/ticket/4572">#4572</A>)
-<LI>The aria-atomic attribute on live regions in Mozilla Firefox is now honored even when the atomic element itself changes. Previously it only affected descendant elements. (<A HREF="http://community.nvda-project.org/ticket/4794">#4794</A>) 
-<LI>Browse mode will reflect updates, and live regions will be announced, for   browse mode documents within ARIA applications embedded in a document in Internet Explorer or other MSHTML controls (<A HREF="http://community.nvda-project.org/ticket/4798">#4798</A>)
-<LI>When text is changed or added in text-relevant live regions in Internet Explorer and other MSHTML controls, only the changed or added text is announced, rather than all of the text in the containing element. (<A HREF="http://community.nvda-project.org/ticket/4800">#4800</A>)
+<LI>NVDA should no longer freeze after a few seconds when moving focus away from a Windows Store app as it becomes suspended. (<A HREF="http://community.nvda-project.org/ticket/4572">#4572</A>)
+<LI>The aria-atomic attribute on live regions in Mozilla Firefox is now honored even when the atomic element itself changes. Previously, it only affected descendant elements. (<A HREF="http://community.nvda-project.org/ticket/4794">#4794</A>)
+<LI>Browse mode will reflect updates, and live regions will be announced, for   browse mode documents within ARIA applications embedded in a document in Internet Explorer or other MSHTML controls. (<A HREF="http://community.nvda-project.org/ticket/4798">#4798</A>)
+<LI>When text is changed or added in live regions in Internet Explorer and other MSHTML controls where the author has specified that text is relevant, only the changed or added text is announced, rather than all of the text in the containing element. (<A HREF="http://community.nvda-project.org/ticket/4800">#4800</A>)
 <LI>Content indicated by the aria-labelledby attribute on elements in Internet Explorer and other MSHTML controls correctly replaces the original content  where it is appropriate to do so. (<A HREF="http://community.nvda-project.org/ticket/4575">#4575</A>)
+<LI>When checking spelling in Microsoft Outlook 2013, the misspelled word is now announced. (<A HREF="http://community.nvda-project.org/ticket/4848">#4848</A>)
 </UL>
 
 <H3>Changes for Developers</H3>
 
 <UL>
 <LI>Updated wxPython to 3.0.2.0. (<A HREF="http://community.nvda-project.org/ticket/3763">#3763</A>)
+<LI>Updated Python to 2.7.9. (<A HREF="http://community.nvda-project.org/ticket/4715">#4715</A>)
 <LI>NVDA no longer crashes when restarting after removing or updating an add-on which imports speechDictHandler in its installTasks module. (<A HREF="http://community.nvda-project.org/ticket/4496">#4496</A>)
 </UL>
 
