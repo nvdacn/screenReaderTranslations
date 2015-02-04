@@ -17,7 +17,7 @@ NVDA:n avulla sokeat ja heikkonäköiset voivat käyttää Windows-käyttöjärj
 
 Tärkeimpiä ominaisuuksia ovat:
 - Tuki yleisille sovelluksille, internet-selaimet sekä sähköpostiasiakas-, internet-keskustelu- ja toimisto-ohjelmat mukaan lukien
-- Yli 43 kieltä tukeva sisäänrakennettu puhesyntetisaattori
+- Yli 80 kieltä tukeva sisäänrakennettu puhesyntetisaattori
 - Automaattinen tekstin muotoilutietojen, kuten fontin nimen ja koon, tyylin sekä kirjoitusvirheiden, lukeminen aina kun mahdollista
 - Automaattinen hiiren alla olevan tekstin lukeminen ja valinnainen hiiren sijainnin ilmaiseminen äänimerkillä
 - Tuki useille pistenäytöille, mukaan lukien pistekirjoituksen syöttäminen tietokonemerkistöä käyttäen pistenäytöissä, joissa on pistenäppäimistö
@@ -422,7 +422,7 @@ Tästä voi olla hyötyä täysin sokeille käyttäjille, sillä joskus pelkän 
 
 NVDA tarjoaa käyttäjille tavan ymmärtää, missä hiiri on ruudun mittojen suhteen toistamalla hiiren nykyiset koordinaatit äänimerkkeinä.
 Mitä ylempänä hiiri on ruudulla, sitä korkeampia äänimerkit ovat.
-Mitä enemmän vasemmalla tai oikealla hiiri on ruudulla, sitä enemmän vasemmalta tai oikealta ääni kuuluu (mikäli käytössä on stereokaiuttimet tai kuulokkeet).
+Mitä enemmän vasemmalla tai oikealla hiiri on ruudulla, sitä enemmän vasemmalta tai oikealta ääni kuuluu (olettaen, että käytössä on stereokaiuttimet tai kuulokkeet).
 
 Nämä lisäominaisuudet eivät ole oletusarvoisesti käytössä.
 Voit ottaa ne tarvittaessa käyttöön [Hiiriasetukset #MouseSettings]-valintaikkunasta, joka löytyy NVDA:n Asetukset-valikosta.
@@ -441,7 +441,7 @@ Vaikka hiiren avulla liikkumiseen tulisikin käyttää fyysistä hiirtä tai kos
 + Selaustila +
 Monisisältöisiä, ei-muokattavia asiakirjoja kuten verkkosivuja luetaan NVDA:lla selaustilassa.
 Tällaisia ovat Mozilla Firefoxissa, Microsoft Internet Explorerissa, Google Chromessa ja Adobe Readerissa luettavat asiakirjat, Microsoft Outlookin HTML-viestit sekä Flash-sisältö.
-Selaustila on käytettävissä myös valinnaisesti Microsoft Wordissa monisisältöisissä asiakirjoissa liikuttaessa.
+Selaustila on käytettävissä valinnaisesti myös Microsoft Wordissa.
 
 Selaustilassa asiakirjan sisältö on käytettävissä kokonaisesityksenä, jossa voidaan liikkua nuolinäppäimillä, aivan kuin se olisi tavallinen tekstiasiakirja.
 Kaikki NVDA:n [järjestelmäkohdistimen #SystemCaret] näppäinkomennot, kuten esim. lue kaikki, lue muotoilutiedot, taulukoissa liikkumiseen käytettävät komennot jne, toimivat tässä tilassa.
@@ -460,7 +460,7 @@ Vuorovaikutustila voidaan lisäksi pakottaa käyttöön manuaalisesti, jolloin s
 || Nimi | Näppäinkomento | Kuvaus |
 | Vaihda selaus- ja vuorovaikutustilojen välillä | NVDA+välilyönti | Vaihtaa vuorovaikutus- ja selaustilojen välillä. |
 | Poistu vuorovaikutustilasta | Esc | Siirtää takaisin selaustilaan, mikäli NVDA siirtyi aiemmin automaattisesti vuorovaikutustilaan. |
-| Päivitä selaustila-asiakirja | NVDA+F5 | Lataa uudelleen nykyisen asiakirjan sisällön (hyödyllistä, jos sivulta vaikuttaa puuttuvan jotakin). |
+| Päivitä selaustila-asiakirja | NVDA+F5 | Lataa uudelleen nykyisen asiakirjan sisällön. (Hyödyllistä, jos sivulta vaikuttaa puuttuvan jotakin. Komento ei ole käytettävissä Microsoft Wordissa tai Outlookissa.) |
 | Etsi | NVDA+Control+F | Avaa valintaikkunan, jossa voidaan etsiä tekstiä nykyisestä asiakirjasta. |
 | Etsi seuraava | NVDA+F3 | Etsii asiakirjasta aiemmin haetun tekstin seuraavan esiintymän. |
 | Etsi edellinen | NVDA+Shift+F3 | Etsii asiakirjasta aiemmin haetun tekstin edellisen esiintymän. |
@@ -470,6 +470,7 @@ Vuorovaikutustila voidaan lisäksi pakottaa käyttöön manuaalisesti, jolloin s
 
 ++ Pikanavigointinäppäimet ++
 NVDA:ssa on selaustilaa käytettäessä liikkumisen nopeuttamiseksi myös pikanavigointikomentoja, joilla voidaan siirtyä asiakirjan eri elementteihin.
+HUOM: Kaikkia komentoja ei tueta joissakin asiakirjatyypeissä.
 
 %kc:beginInclude
 Sellaisinaan nämä komennot siirtävät seuraavan ja Shift-näppäimen kanssa painettuna edellisen elementin kohdalle:
@@ -711,14 +712,14 @@ Tavallisesti NVDA nostaa hieman äänenkorkeutta jokaisen ison kirjaimen kohdall
 Jos tämä valintaruutu on valittuna, NVDA antaa pienen äänimerkin joka kerta, kun iso kirjain luetaan.
 Kuten Sano iso ennen isoja kirjaimia -asetus, tämäkin on käyttökelpoinen puhesyntetisaattoreilla, jotka eivät pysty nostamaan äänenkorkeuttaan isojen kirjainten kohdalla.
 
-==== Käytä tavaustoimintoa, mikäli mahdollista ====[VoiceSpellingFunctionality]
-Jotkin sanat koostuvat vain yhdestä kirjaimesta, mutta se lausutaan eri tavalla riippuen siitä, puhutaanko se yksittäisenä merkkinä (kuten tavattaessa) tai sanana.
-Esimerkiksi englanninkielessä "a" on sekä kirjain että sana.
-Tämän asetuksen avulla syntetisaattori pystyy erottamaan nämä tilanteet toisistaan, mikäli se vain tukee tätä.
+==== Käytä tavaustoimintoa (jos mahdollista) ====[VoiceSpellingFunctionality]
+Jotkin sanat koostuvat vain yhdestä kirjaimesta, mutta se lausutaan eri tavalla riippuen siitä, puhutaanko se yksittäisenä merkkinä (kuten tavattaessa) vai sanana.
+Esimerkiksi englanninkielessä "a" on sekä kirjain että sana, mutta se lausutaan kussakin tilanteessa eri tavalla.
+Tämän asetuksen avulla syntetisaattori pystyy erottamaan nämä tilanteet toisistaan, mikäli se vain tukee toimintoa.
 Useimmat syntetisaattorit tukevat asetusta.
 
 Tämä asetus tulisi tavallisesti ottaa käyttöön.
-Jotkin SAPI-syntetisaattorit toimivat kuitenkin kummallisesti tämän ollessa käytössä, koska sitä ei ole toteutettu niissä kunnolla.
+Jotkin SAPI-syntetisaattorit toimivat kuitenkin kummallisesti tämän ollessa käytössä, koska ominaisuutta ei ole toteutettu niissä kunnolla.
 Asetus kannattaa poistaa käytöstä, jos yksittäisten kirjainten lausumisessa on ongelmia.
 
 +++ Syntetisaattorin asetusrengas +++[SynthSettingsRing]
@@ -871,7 +872,9 @@ Vaihtoehtoina ovat merkki, sana, rivi ja kappale.
 Jos tämä valintaruutu on valittuna, NVDA kertoo objektin roolin (tyypin) hiiren siirtyessä siihen.
 
 ==== Ilmaise hiiren koordinaatit äänimerkillä ====
-Kun tämä valintaruutu on valittuna, NVDA antaa äänimerkkejä hiiren liikkuessa, jotta käyttäjä voi selvittää, missä hiiri on suhteessa ruudun kokoon.
+Kun tämä valintaruutu on valittuna, NVDA antaa äänimerkkejä hiiren liikkuessa, jotta käyttäjä saa selville, missä hiiri on suhteessa ruudun kokoon.
+Äänimerkit ovat sitä korkeampia, mitä ylempänä hiiri on ruudulla.
+Mitä enemmän vasemmalla tai oikealla hiiri on ruudulla, sitä enemmän vasemmalta tai oikealta ääni kuuluu (olettaen, että käytössä on stereokaiuttimet tai kuulokkeet).
 
 ==== Äänikoordinaatttien voimakkuutta säädetään ruudun kirkkauden mukaan ====
 Jos Ilmaise hiiren koordinaatit äänimerkeillä -asetus on käytössä, tämän valintaruudun valitseminen merkitsee, että äänikoordinaattien voimakkuutta säädetään sen mukaan, miten kirkas ruutu on hiiren alla.
@@ -1248,23 +1251,23 @@ Kun Näytä puhe -toiminto on käytössä, sen ikkuna päivittyy ajoittain näyt
 Jos ikkunaa kuitenkin napsautetaan hiirellä tai kohdistus siirretään siihen, NVDA keskeyttää  tilapäisesti tekstin päivittämisen, jotta olemassa olevaa sisältöä voidaan helposti valita ja kopioida.
 
 ++ Lisäosien hallinta ++
-Lisäosien hallinnalla, johon pääsee NVDA-valikosta Työkalut-valikon alta kohdasta Lisäosien hallinta, voit asentaa ja poistaa NVDA:n lisäosapaketteja.
+Lisäosien hallinnalla, johon pääset NVDA-valikosta Työkalut-valikon alta kohdasta Lisäosien hallinta, voit asentaa ja poistaa NVDA:n lisäosapaketteja.
 Lisäosat, jotka ovat NVDA-yhteisön toimittamia, saattavat lisätä tai muuttaa ominaisuuksia tai jopa tarjota tuen uusille pistenäytöille tai puhesyntetisaattoreille.
 
 Lisäosien hallinnassa on lista, jossa näkyvät kaikki nykyisen käyttäjän asentamat lisäosat.
 Jokaisesta lisäosasta näytetään nimi, versio sekä tekijä, ja lisätietoja kuten kuvausta ja URL-osoitetta voidaan tarkastella valitsemalla haluttu lisäosa ja painamalla Tietoja lisäosasta -painiketta.
 Jos valitulle lisäosalle on saatavana ohje, voit avata sen painamalla Ohje-painiketta.
 
-Verkossa saatavilla olevia lisäosia voidaan selata ja ladata painamalla Hae lisäosia -painiketta.
+Verkossa saatavilla olevia lisäosia on mahdollista selata ja ladata painamalla Hae lisäosia -painiketta.
 Tämä painike avaa [NVDA:n lisäosasivun http://addons.nvda-project.org/].
-Mikäli NVDA on asennettu tietokoneelle, lisäosan asennus voidaan aloittaa avaamalla se suoraan selaimesta, kuten alla on kuvailtu.
-Muussa tapauksessa lisäosa on tallennettava ja seurattava alla olevia ohjeita.
+Jos NVDA on asennettu ja käynnissä, lisäosan asennus voidaan aloittaa avaamalla se suoraan selaimesta, kuten alla on kuvailtu.
+Muussa tapauksessa tallenna lisäosa ja seuraa alla olevia ohjeita.
 
 Aiemmin haettu lisäosa asennetaan painamalla Asenna-painiketta.
-Avautuvassa ikkunassa voidaan etsiä tietokoneelta tai verkosta haluttu lisäosapaketti (.nvda-addon-tiedosto).
-Asennus käynnistyy Avaa-painiketta painettaessa.
+Avautuvassa ikkunassa etsitään tietokoneelta tai verkosta haluttu lisäosapaketti (.nvda-addon-tiedosto).
+Asennus käynnistyy painamalla Avaa-painiketta.
 
-NVDA kysyy ensin lisäosaa asennettaessa, halutaanko se varmasti asentaa.
+NVDA kysyy ensin, halutaanko lisäosa varmasti asentaa.
 Koska lisäosien toiminnallisuus on NVDA:n sisällä rajoittamatonta, mikä saattaisi teoriassa tarkoittaa pääsyä henkilökohtaisiin tietoihin tai asennettua versiota käytettäessä jopa koko järjestelmään, on erittäin tärkeää, että lisäosia asennetaan vain luotetuista lähteistä.
 NVDA on käynnistettävä uudelleen lisäosan asentamisen jälkeen, jotta se voidaan ottaa käyttöön.
 Uudelleenkäynnistykseen saakka listassa näkyy lisäosan tilana "asenna".
@@ -1890,16 +1893,16 @@ Katso laitteen käyttöohjeesta tarkat kuvaukset näppäinten paikoista.
 %kc:endInclude
 
 ++ BRLTTY ++
-[BRLTTY http://mielke.cc/brltty/] on erillinen ohjelma, jonka avulla voidaan käyttää entistä useampia pistenäyttöjä.
+[BRLTTY http://mielke.cc/brltty/] on erillinen ohjelma, jonka avulla on mahdollista käyttää entistä useampia pistenäyttöjä.
 Sen käyttämiseksi on asennettava [BRLTTY:n Windows-versio http://brl.thefreecat.org/brltty/].
-Siitä tulisi asentaa uusin versio, jonka tiedostonimi on esimerkiksi brltty-win-4.2-2.exe.
+On suositeltavaa asentaa uusin versio, jonka tiedostonimi on esimerkiksi brltty-win-4.2-2.exe.
 Käytettävää pistenäyttöä ja porttia määritettäessä on syytä kiinnittää tarkasti huomiota ohjeisiin, erityisesti jos käytetään USB-pistenäyttöä ja mikäli valmistajan ajurit on jo asennettu.
 
 BRLTTY huolehtii tällä hetkellä itse pistesyötöstä näytöissä, joissa on pistenäppäimistö.
-Tämän vuoksi NVDA:n pistesyöttötaulukkoasetuksella ei ole merkitystä
+Tämän vuoksi NVDA:n syöttötaulukkoasetuksella ei ole merkitystä.
 
 Seuraavassa on BRLTTY:n näppäinkomennot NVDA:ta käytettäessä.
-Katso [BRLTTY:n näppäintaulukoiden ohjetta http://mielke.cc/brltty/doc/drivers/] saadaksesi tietoja siitä, miten BRLTTY:n komennot määritetään pistenäyttöjen näppäimiin.
+Katso [BRLTTY:n näppäintaulukoiden ohjetta http://mielke.cc/brltty/doc/KeyTables/] saadaksesi tietoja siitä, miten BRLTTY:n komennot määritetään pistenäyttöjen näppäimiin.
 %kc:beginInclude
 || Nimi | BRLTTY-komento |
 | Vieritä pistenäyttöä taaksepäin | fwinlt (siirry yksi ikkuna vasemmalle) |
