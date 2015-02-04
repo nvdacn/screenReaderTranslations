@@ -17,7 +17,7 @@ Proporcionando un apoio de voz sintética, NVDA permite ás persoas cegas e defi
 
 O máis sinalable inclúe: 
 - Soporte para aplicacións populares incluíndo navegadores web, clientes de correo, programas de chat en internet e suites de oficina
-- Sintetizador de voz integrado que soporta sobre das 43 linguas
+- Sintetizador de voz integrado que soporta sobre 80 linguas
 - anunciado de formato de texto onde estea dispoñible como nome e tamano da fonte, estilo e erros de ortografía
 - Anunciado automático de texto baixo o rato e indicación opcional audible  da posición do rato
 - Soporte para moitas liñas de braille efímero incluíndo a entrada de braille computerizado para liñas braille que tenñan un teclado braille
@@ -441,7 +441,7 @@ Se ben un rato físico ou un trackpad poderíanse utilizar para navegar co rato,
 + Modo Navegación +
 Os documentos complexos de só lectura, como páxinas web, son representados no NVDA cun Modo Navegación. 
 Esto inclúe documentos en Mozilla Firefox, Microsoft Internet Explorer, mensaxes HTML en Microsoft Outlook,Google Chrome, Adobe Reader e Adobe Flash.
-O modo Exploración tamén está dispoñible opcionalmente para Microsoft Word cando se navegue por documentos comprexos.
+O modo Exploración tamén está dispoñible opcionalmente para documentos de Microsoft Word.
 
 No Modo Navegación, o contido do documento faise dispoñible mediante unha representación chan de contido como unha páxina Web, polo que te podes mover cas teclas de cursor. 
 Todas as teclas de ordes do [cursor do sistema #SystemCaret] do NVDA funcionarán neste modo; ex.: ler todo, anunciar formato, ordes de navegación de táboa, etc.
@@ -460,7 +460,7 @@ Ademáis, podes forzar manualmente o modo foco, despois permanecerá efectivo at
 || Nome | Tecla | Descripción |
 | Conmutar modos Navegación/foco | NVDA+espazo | Conmuta entre modo foco e modo navegación |
 | Saír de modo foco | escape | Cambia a modo navegación se o modo foco anteriormente estaba cambiado automáticamente |
-| Refrescar documento en modo Navegación | NVDA+f5 | Recarga o contido do documento actual (útil se certos contidos parecen estar desaparecidos da páxina) |
+| Refrescar documento en modo Navegación | NVDA+f5 | Recarga o contido do documento actual (útil se certos contidos parecen estar desaparecidos da páxina. Non dispoñible en Microsoft Word e Outlook) |
 | Procurar | NVDA+control+f | Desprega un diálogo no que podes teclear algún texto a atopar no  documento actual |
 | Procurar seguinte | NVDA+f3 | Atopa a seguinte  ocurrencia do texto no documento que buscaches anteriormente |
 | Procurar anterior | NVDA+shift+f3 | Atopa a ocurrencia anterior do texto no documento buscado anteriormente |
@@ -470,6 +470,7 @@ Ademáis, podes forzar manualmente o modo foco, despois permanecerá efectivo at
 
 ++ Navegación con unha Soa Letra ++
 Mentres se está en modo revisión, para unha navegación máis rápida NVDA tamén proporciona teclas dun so caracter para saltar cara certos campos no documento.
+Ten en conta que non todas estas ordes se soportan en cada tipo de documento.
 
 %kc:beginInclude
 A seguintes teclas elas soas saltan ó seguinte campo, ca tecla shift saltan ó anterior campo.
@@ -713,7 +714,7 @@ Como a caixa de verificación 'dicir maius para maiúsculas', esta é útil para
 
 ==== Utilizar funcionalidade de deletreo se está soportada ====[VoiceSpellingFunctionality]
 Algunhas palabras consisten en só un carácter, pero a pronunciación é diferente dependendo de se o carácter vai ser falado como un carácter individual (como cando se deletrea) ou unha palabra.
-Por exemplo, en galego, "e" é tanto unha letra como una palabra.
+Por exemplo, en galego, "e" é tanto unha letra como una palabra e pronúnciase de modo diferente en cada caso.
 Esta opción permite ó sintetizador diferenciar entre estos dous casos se o sintetizador o soporta.
 A maioría dos sintetizadores sopórtano.
 
@@ -872,6 +873,8 @@ Se esta caixa de verificación está marcada, NVDA anunciará o rol (tipo) de ob
 
 ==== Reproducir audio cando se mova o rato ====
 Marcando esta caixa de verificación fas que NVDA reproduza pitidos cando o rato se mova, así que o usuario poda resolver onde está o rato con respecto ás dimensións da pantalla.
+Canto máis alto está o rato na pantalla, máis alto é o ton dos pitidos.
+Canto máis estea situado o rato á esquerda ou á dereita  na pantalla, o son reproducirase máis á esquerda ou á dereita (asumindo que o usuario teña uns altavoces ou auriculares estéreo).
 
 ==== O Brilo controla o volume do audio ====
 Se a caixa de verificación 'reproducir audio cando o rato se mova' está marcada, entón marcando esta caixa de verificación significa que o volume dos pitidos de audio está controlado por cómo o brilo da pantalla estea baixo o rato. 
@@ -1026,8 +1029,7 @@ Se esta opción está activada, NVDA reproducirá sons especiales cando cambie e
 Habilitada de modo predeterminado, esta opción permíteche escoller se os xestos (como a pulsación de teclas) que non sexan unha orde do NVDA e que non se considere que sexa unha tecla de orde en xeral, deberían capturarse para non pasar ó documento que estea no foco actualmente. 
 Como un exemplo, ó estar activada, se se premeu a letra j, debería capturarse para non alcanzar o documento, xa que non é nin unha tecla de navegación rápida nin é probable que sexa unha orde da mesma aplicación.
 
- 
-+++ Opcións de Formato de Documento (NVDA+control+d) +++[DocumentFormattingSettings]
+ +++ Opcións de Formato de Documento (NVDA+control+d) +++[DocumentFormattingSettings]
 Esta caixa de diálogo atópase no menú Preferencias, baixo "Formato de Documento...". 
 
 A maioría das caixas de verificación neste diálogo son para configurar que tipo de formato desexas escoitar automáticamente cando movas o cursor polos documentos. 
@@ -1257,7 +1259,7 @@ Se hai axuda dispoñible para o complemento seleccionado, podes acceder a ela pr
 
 Para examinar e descargar os complementos dispoñibles online, preme o botón Obter Complementos.
 Este botón abre a [páxina de complementos do NVDA http://addons.nvda-project.org/].
-Se NVDA está instalado no teu sistema, podes abrir directamente o complemento dende o examinador para comenzar o proceso de instalación como se describe a continuación.
+Se NVDA está instalado e executándose no teu sistema, podes abrir directamente o complemento dende o explorador para comenzar o proceso de instalación como se describe a continuación.
 Pola contra, garda o paquete de complemento e segue as instruccións máis abaixo.
 
 Para instalar un complemento que conseguiches previamente, preme o botón Instalar.
@@ -1899,7 +1901,7 @@ Para liñas que teñan un teclado braille, BRLTTY actualmente manexa a entrada b
 Polo tanto, a opción táboa braille de entrada de NVDA é irrelevante.
 
 Seguidamente van as asignacións a ordes BRLTTY para NVDA.
-Por favor mira [a documentación de táboas de teclas de BRLTTY http://mielke.cc/brltty/doc/drivers/] para información acerca de cómo están mapeadas as ordes de BRLTTY para controlar as liñas braille.
+Por favor mira [a documentación de táboas de teclas de BRLTTY http://mielke.cc/brltty/doc/KeyTables/] para información acerca de cómo están mapeadas as ordes de BRLTTY para controlar as liñas braille.
 %kc:beginInclude
 || Nome | orde de BRLTTY |
 | Desprazar liña braille cara atrás | fwinlt (vai á esquerda unha ventá) |
