@@ -17,7 +17,7 @@ En restituant l'information par synthèse vocale ou en braille, NVDA permet aux 
 
 Ses points forts sont :
 - la prise en charge d'applications grand-public telles que des navigateurs Web, clients e-mail, programmes de tchat sur Internet et suites bureautiques ;
-- un synthétiseur intégré prenant en charge plus de 43 langues ;
+- un synthétiseur intégré prenant en charge plus de 80 langues ;
 - l'annonce, quand c'est possible, d'informations de formatage du texte telles que, le nom et la taille de la police, le style et les fautes d'orthographe ;
 - l'annonce automatique du texte sous la souris et, en option, l'indication sonore de la position de la souris ;
 - la prise en charge de nombreux afficheurs braille, incluant la saisie du braille informatique pour les afficheurs disposant d'un clavier braille ;
@@ -441,7 +441,7 @@ Bien qu'une souris physique devrait être utilisée pour naviguer à la souris, 
 + Le mode navigation +
 Les documents complexes, tels que les pages web, sont représentés sous NVDA en utilisant le Mode Navigation.
 Cela concerne les documents sous Mozilla Firefox, Microsoft Internet Explorer, les messages HTML sous Microsoft Outlook, Google Chrome, Adobe Reader et Adobe Flash.
-Le mode navigation est aussi optionnellement disponible sous Microsoft Word pour la navigation dans des documents complexes.
+Le mode navigation est aussi disponible en option sous Microsoft Word.
 
 Le mode navigation offre une représentation platement textuelle du document dans laquelle on peut se déplacer avec les flèches de navigation. 
 Dans ce mode, toutes les touches de commandes du [mode curseur #SystemCaret] fonctionneront (ex : dire tout, annonce du formatage, touches de navigation dans les tableaux etc).
@@ -460,7 +460,7 @@ De plus, vous pouvez aussi passer manuellement NVDA en mode formulaire, après q
 || Nom | Touche | Description |
 | Bascule entre mode formulaire et mode navigation | NVDA+espace | Bascule entre le mode formulaire et le mode navigation |
 | Quitter le mode formulaire | échap | Retourne en mode navigation si lemode formulaire a préalablement été activé automatiquement |
-| Réactualiser le document | NVDA+f5 | Recharge le document en cours, (utile si le contenu de la page semble incomplet) |
+| Réactualiser le document | NVDA+f5 | Recharge le document en cours, (utile si le contenu de la page semble incomplet. Non disponible sous Microsoft Word et Outlook.) |
 | Rechercher | NVDA+contrôle+f | Affiche un dialogue qui vous permet de rechercher du texte dans le document courant |
 | Rechercher suivant | NVDA+f3 | Recherche l'occurrence suivante du texte que vous avez préalablement recherché dans le document |
 | Rechercher précédent | NVDA+maj+f3 | Recherche l'occurrence précédente du texte que vous avez préalablement recherché dans le document |
@@ -470,6 +470,7 @@ De plus, vous pouvez aussi passer manuellement NVDA en mode formulaire, après q
 
 ++ Les touches de navigation rapide ++
 En mode navigation, pour une navigation plus rapide, NVDA dispose de raccourcis clavier où l'appui d'une seule touche amène à certains champs dans le document.
+Notez que toutes ces commandes ne sont pas disponibles dans tous les types de documents.
 
 %kc:beginInclude
 Les touches suivantes permettent d'aller à l'élément suivant. En les combinant avec maj, on retourne à l'élément précédent.
@@ -713,7 +714,7 @@ Comme l'option "Dire maj avant les majuscules", cette option est utile pour les 
 
 ==== Utiliser la fonction d'épellation si elle est supportée ====[VoiceSpellingFunctionality]
 Certains mots ne comportent qu'un seul caractère, mais la prononciation est différente selon que le caractère est prononcé comme un caractère unique (épellation) ou comme un mot.
-Par exemple, en Français, "y" est à la fois une lettre et un mot.
+Par exemple, en Français, "y" est à la fois une lettre et un mot et se prononce différemment selon le cas.
 Cette option permet au synthétiseur de différencier les deux cas si le synthétiseur le supporte.
 La plupart des synthétiseurs le supportent.
 
@@ -872,6 +873,8 @@ Quand cette case est cochée, NVDA annonce le type de l'objet quand la souris y 
 
 ==== Sonoriser les coordonnées quand la souris se déplace ====
 Quand cette case est cochée, NVDA émet des bips quand la souris se déplace, pour que l'utilisateur puisse se figurer la position de la souris sur l'écran.
+Plus la souris est haut sur l'écran, plus la fréquence des bips est élevée.
+Plus la souris est à gauche ou à droite sur l'écran, plus le son sera émis à gauche ou à droite, dans la mesure où l'utilisateur possède des haut-parleurs ou un casque stéréophoniques.
 
 ==== La brillance modifie le volume des coordonnées audio ====
 Si la case "Sonoriser les coordonnées quand la souris se déplace" est cochée, le volume des bips variera en fonction de la brillance de la zone sous le pointeur de la souris. 
@@ -1026,7 +1029,6 @@ Si cette option est activée, NVDA émettra des sons particuliers au passage du 
 Activée par défaut, cette option vous permet de choisir si des gestes (tels que l'appui sur des touches) qui ne déclenchent pas une commande NVDA et ne sont pas considérés comme une commande en général, devraient être interceptés pour ne pas interagir avec le document actuellement en focus. 
 Par exemple, si l'option est activée, si la lettre j est pressée, elle sera interceptée pour ne pas atteindre le document, même si ce n'est ni une touche de navigation rapide ni une commande dans l'application elle-même.
 
- 
 +++ Mise en forme des documents (NVDA+contrôle+d) +++[DocumentFormattingSettings]
 Ce dialogue se trouve dans le menu des "Préférences", sous "Mise en forme des documents...".
 
@@ -1257,7 +1259,7 @@ Si une aide est disponible pour le module sélectionné, vous pouvez y accéder 
 
 Pour télécharger des modules complémentaires mis à disposition par la communauté, cliquez sur le bouton "Obtenir des modules complémentaires".
 Ce bouton ouvre la [page des modules complémentaires NVDA http://addons.nvda-project.org/].
-Si NVDA est installé sur votre système, vous pourrez ouvrir le module complémentaire directement depuis votre navigateur afin de démarrer le processus d'installation décrit plus loin.
+Si NVDA est installé sur votre système et en cours d'exécution, vous pourrez ouvrir le module complémentaire directement depuis votre navigateur afin de démarrer le processus d'installation décrit plus loin.
 Autrement, enregistrez le fichier du module complémentaire et suivez les instructions ci-dessous.
 
 Pour ajouter un module complémentaire, cliquez sur le bouton "Ajouter".
@@ -1899,7 +1901,7 @@ Pour les afficheurs disposant d'un clavier braille, BRLTTY gèrent la saisie du 
 L'option table d'entrée n'est donc pas applicable.
 
 Voici les assignations de commandes BRLTTY pour NVDA.
-Veuillez consulter la [documentation tableau des touches de BRLTTY http://mielke.cc/brltty/doc/drivers/] pour des informations sur la manière dont BRLTTY lie ses commandes aux touches sur les terminaux braille.
+Veuillez consulter la [documentation tableau des touches de BRLTTY http://mielke.cc/brltty/doc/KeyTables/] pour des informations sur la manière dont BRLTTY lie ses commandes aux touches sur les terminaux braille.
 %kc:beginInclude
 || Nom | commande BRLTTY |
 | Défilement arrière de l'affichage braille | fwinlt (se déplacer à gauche d'une fenêtre) |
