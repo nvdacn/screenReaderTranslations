@@ -3,23 +3,23 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2014-01-12 22:25+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2015-02-04 16:54+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "[[!meta title=\"NVDA Add-on Development Guide\"]]\n"
-msgstr ""
+msgstr "[[!meta title=\"NVDA 插件开发文档\"]]\n"
 
 #. type: Plain text
 msgid ""
@@ -27,6 +27,8 @@ msgid ""
 "NvDA add-ons are developed, as well as explaining some useful code segments "
 "from NvDA core source code useful when writing add-ons."
 msgstr ""
+"欢迎来到 NVDA 插件开发文档，此文档将完整的叙述如何进行插件开发，也将选出某些"
+"开发插件时常用的 NVDA 核心代码进行分析讲解。"
 
 #. type: Plain text
 msgid ""
@@ -35,11 +37,13 @@ msgid ""
 "familiarize yourself with key terms and basics on getting started with add-"
 "on development."
 msgstr ""
+"更多有关于 NVDA 开发的信息，请访问 [NvDA Community Development 页][1]。请确认"
+"您对 [NVDA Developer Guide][2]有所熟悉，以了解关键术语及插件开发的基本知识。"
 
 #. type: Title ##
 #, no-wrap
 msgid "Audience"
-msgstr ""
+msgstr "读者"
 
 #. type: Plain text
 msgid ""
@@ -48,6 +52,8 @@ msgid ""
 "who are familiar with Python or other programming languages and/or familiar "
 "with NvDA source code structure."
 msgstr ""
+"此指南除了面向的是初步了解 Python 或对 NVDA 的一般开发熟悉的新手，也包括专"
+"家、超级用户、熟悉其他语言甚至是了解 NVDA 源码结构的程序员。"
 
 #. type: Plain text
 msgid ""
@@ -57,17 +63,23 @@ msgid ""
 "new to NvDA development, please checkout NVDA development Guide and Design "
 "Overview document, both of which can be found on the NVDA Community website."
 msgstr ""
+"如果您了解 NVDA 插件或了解 NVDA 的核心开发，我们建议您先去了解 Python，它将让"
+"您明白文档的剩余部分的必须背景。如果您是一个 Python 开发者而且了解 NVDA 开"
+"发，请查看 NVDA development Guide 和 Design Overview document两篇文档，这两个"
+"文档都可以在 NVDA community 网站找到。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Authors, contributions and copyright"
-msgstr ""
+msgstr "作者， 贡献和版权"
 
 #. type: Plain text
 msgid ""
 "This guide was originally written by Joseph Lee and is shaped by NVDA user "
 "and developer community. We welcome your feedback and contributionn."
 msgstr ""
+"此文档起初由 Joseph Lee 编写，他因 NVDA 用户及开发社区而成长，我们欢迎您的反"
+"馈及贡献。"
 
 #. type: Plain text
 msgid ""
@@ -77,17 +89,21 @@ msgid ""
 "Python is copyright Python Foundation. Other products mentioned are "
 "copyrighted by authors of these products."
 msgstr ""
+"版权:  2006-2013 NVDA 归 NV Access 所有。 Microsoft Windows, Microsoft "
+"Office, Win32 API 和其他微软产品归微软公司所有。 IAccessible 包归 IBM 和 "
+"Linux 基金会所有。 Python 归 python 基金会所有， 其他提及的产品归该产品的作者"
+"所有。"
 
 #. type: Title ##
 #, no-wrap
 msgid "System requirements"
-msgstr ""
+msgstr "系统要求"
 
 #. type: Plain text
 msgid ""
 "To create an add-on for NVDA, please make sure the following system "
 "requirements are met:"
-msgstr ""
+msgstr "要想 为 NVDA 创建插件，请确保下述系统要求已经做好："
 
 #. type: Bullet: '* '
 msgid ""
@@ -95,22 +111,24 @@ msgid ""
 "installed version will work, but we strongly recommend that you install a "
 "copy of NVDA on your development computer)."
 msgstr ""
+"在您的电脑上存有一个可用的 NVDA 安装版本或绿色版本，但是我们强烈建议您安装一"
+"个安装版本的 NVDA 到您的开发电脑上。"
 
 #. type: Bullet: '* '
 msgid "Python 2.7 series, version 2.7.5 32-bit for Windows."
-msgstr ""
+msgstr "Python 2.7 系列， 版本 2.7.5 32-bit for Windows."
 
 #. type: Bullet: '* '
 msgid "SCons 2, version 2.3.0 for generating add-on packages."
-msgstr ""
+msgstr "SCons 2，版本2.3.0，用来生成插件包。"
 
 #. type: Bullet: '* '
 msgid "Markdown 2.0.1 or later for generating add-on documentation."
-msgstr ""
+msgstr "Markdown 2.0.1 或更高，用来生成插件文档。"
 
 #. type: Bullet: '* '
 msgid "GNU Gettext package for Windows for message localization support."
-msgstr ""
+msgstr "GNU Gettext package for Windows，用来支持消息本地化。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -118,6 +136,9 @@ msgid ""
 "Bitbucket (optional, see below). You can use various Git clients, such as "
 "Git Bash, Cygwin's Git, Tortoise Git and so forth."
 msgstr ""
+"Git 1.7.9 或更高 ，如果您想上传您的插件代码到仓库，如 Bitbucket (可选，请看下"
+"文。)。 您可以使用各种各样的 Git 客户端， 如 Git Bash、 Cygwin's Git、 "
+"Tortoise Git等等。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -125,15 +146,17 @@ msgid ""
 "packaging and management (optional; [click here][3] to download the add-on "
 "template)."
 msgstr ""
+"NVDA 社区插件的简易魔板（包括文件和目录包 和管理（可选））， [点这里][3]下载"
+"插件魔板。"
 
 #. type: Bullet: '* '
 msgid "Additional Python modules or dependencies for your add-on."
-msgstr ""
+msgstr "其他您的插件所依赖的 python 模块。"
 
 #. type: Title ##
 #, no-wrap
 msgid "What are add-ons?"
-msgstr ""
+msgstr "什么是“插件”？"
 
 #. type: Plain text
 msgid ""
@@ -142,28 +165,33 @@ msgid ""
 "support for an application or adding support for newer braille displays or "
 "speech synthesizers."
 msgstr ""
+"“插件”是一种扩展 NVDA 功能或程序支持的增强包。这可能包括增加全局特性、增强软"
+"件支持、对新的点显器或语音合成器的支持。"
 
 #. type: Plain text
 msgid "An add-on may include one or more of the following components:"
-msgstr ""
+msgstr "一个插件可能包括下列一个或多个部分："
 
 #. type: Bullet: '* '
 msgid ""
 "Global plugin: A global plugin adds features for NVDA which can be used "
 "anywhere, such as OCR capability."
-msgstr ""
+msgstr "Global plugin：全局插件为 NVDA 增加全局可用的新特性， 如 OCR 识别。"
 
 #. type: Bullet: '* '
 msgid ""
 "App module: An app module allows enhanced support for a program, such as "
 "specific windows or controls of a program such as audio editors."
 msgstr ""
+"App module： 程序模块可以对程序做增强支持，如某些特定的程序窗口或控件，如音频"
+"编辑器。"
 
 #. type: Bullet: '* '
 msgid ""
 "Driver: A driver allows a program to talk to hardware. Currently one can "
 "write drivers for new braille displays or speech synthesizers."
 msgstr ""
+"Driver: 驱动可让程序直接与硬件沟通，目前可谓点显器或语音合成器开发驱动。"
 
 #. type: Plain text
 msgid ""
@@ -172,62 +200,70 @@ msgid ""
 "Manager, found in NvDA 2012.2 or later. Alternatively, one can install them "
 "from file manager if one uses NVDA 2012.3 or later installed on the computer."
 msgstr ""
+"每个 NVDA 插件都是由上述的一个或多个部分组成，它被打包成 zip文件且扩展名被改"
+"为 nvda-addon。NVDA2012.2版本之后可使用插件管理器进行安装，或者如果您安装了"
+"NVDA2012.3或其后的版本到您的电脑，也可以直接使用文件管理器进行安装。"
 
 #. type: Plain text
 msgid ""
 "Throughout this guide, we refer to standard NVDA python modules which comes "
 "with NVDA as \"NvDA Core\" to distinguish it from add-on modules."
 msgstr ""
+"在此文档中，我们参考了来自 NVDA 核心的标准模块，从而对插件模块进行剖析。"
 
 #. type: Title ##
 #, no-wrap
 msgid "Setting up the add-on development environment"
-msgstr ""
+msgstr "安装插件开发环境"
 
 #. type: Plain text
 msgid "Follow these steps to prepare your computer for writing NVDA add-ons."
-msgstr ""
+msgstr "跟随下面的步骤来为编写插件对您的电脑进行准备。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Installing dependencies"
-msgstr ""
+msgstr "安装依赖"
 
 #. type: Bullet: '1. '
 msgid ""
 "If you don't have NVDA, download and install NVDA from NV access website."
-msgstr ""
+msgstr "如果您没有 NVDA， 您可以从 NV access 网站或 NVDA 中文站下载 NVDA。"
 
 #. type: Bullet: '2. '
 msgid ""
 "Install Python 2.7.x 32-bit on your computer (if using Windows, install "
 "using the 32-bit Windows installer package)."
 msgstr ""
+"在您的电脑上安装 Python 2.7.x 32-bit  （如果使用 Windows， 请使用 32-bit "
+"Windows 安装包)。"
 
 #. type: Bullet: '3. '
 msgid "Install Markdown and SCons using their Windows installer packages."
-msgstr ""
+msgstr "使用 Windows 安装包 安装 Markdown 和 SCons"
 
 #. type: Bullet: '4. '
 msgid "If you plan to share your add-on code with others, install Git clients."
-msgstr ""
+msgstr "如果您计划和其他人分享您的插件代码，请安装 Git  客户端。"
 
 #. type: Bullet: '5. '
 msgid ""
 "Paste the Gettext executable files to your add-on development folder (see "
 "the next section on add-on development folder)."
 msgstr ""
+"粘贴您的 GetText 可执行文件到您的开发目录（请查看下一张“插件开发目录”）。"
 
 #. type: Bullet: '6. '
 msgid ""
 "If you are developing support for a program, speech synthesizer or a braille "
 "display, install the needed software and/or have the hardware handy."
 msgstr ""
+"如果您正在为某个程序、点显器或语音合成器进行支持，请安装所需软件或硬件设备。"
 
 #. type: Title ###
 #, no-wrap
 msgid "The add-on development folder"
-msgstr ""
+msgstr "插件开发目录"
 
 #. type: Plain text
 msgid ""
@@ -235,23 +271,25 @@ msgid ""
 "separate folders, one per add-on. If you chose to download the add-on "
 "template, the folder structure will be automatically created."
 msgstr ""
+"编写插件的时候，建议把每一个插件的代码存放在不同的目录，一个目录一个插件。如"
+"果您选择下载插件魔板，那么目录结构将会被自动创建。"
 
 #. type: Plain text
 msgid ""
 "Once you install the needed dependencies (see above), paste the Gettext "
 "package executables into this add-on folder."
-msgstr ""
+msgstr "当您安装了所需的依赖（请看上文），粘贴 GetText 可执行文件到插件目录。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Add-on folder structure"
-msgstr ""
+msgstr "插件目录结构"
 
 #. type: Plain text
 msgid ""
 "Each add-on folder, at a minimum, must contain the following files and "
 "folders:"
-msgstr ""
+msgstr "每个插件目录，最少包含下面的目录和文件："
 
 #. type: Plain text
 #, no-wrap
@@ -259,6 +297,8 @@ msgid ""
 " * manifest.ini to store manifesst information such as add-on name and author.\n"
 "* An \"addon\" subfolder with the add-on module directory underneath this subfolder (appModules, globalPlugins, synthDrivers, brailleDisplays). One or more module folders can be specified.\n"
 msgstr ""
+" * manifest.ini 用来存放插件的 manifest 信息，如插件名称、作者等。\n"
+"* 一个直接存放插件主体的“addon”子文件夹，当中包含 “AppModules”“globalPlugins”“synthDrivers”“BrailleDisplay”，也可定制更多的文件夹。\n"
 
 #. type: Plain text
 msgid ""
@@ -268,21 +308,24 @@ msgid ""
 "in the template folder for more information on customizing your add-on "
 "manifest using the template files."
 msgstr ""
+"如果您使用了插件魔板，插件的目录结构将被自动创建， 所以您只需创建“addon”子文"
+"件夹和包含插件本身的模块代码。请阅读 readme 文件来获取使用魔板文件如何自定义"
+"插件的 manifest  文件。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Packaging add-ons"
-msgstr ""
+msgstr "打包插件"
 
 #. type: Plain text
 msgid "There are two ways of packaging add-ons:"
-msgstr ""
+msgstr "这里有两种方法打包插件："
 
 #. type: Bullet: '1. '
 msgid ""
 "To package your add-on manually, zip up (compress) your add-on folder as a ."
 "zip file, then rename the file extension to .nvda-addon."
-msgstr ""
+msgstr "手动打包您的插件目录，压缩为zip文件并改变其扩展名为 nvda-addon。"
 
 #. type: Bullet: '2. '
 msgid ""
@@ -290,17 +333,19 @@ msgid ""
 "administrator mode (Windows Vista or later), change to your add-on folder "
 "and type `scons~."
 msgstr ""
+"要想使用 SCons 的插件魔板，请使用管理员模式(Windows Vista 或以上)定位到您的插"
+"件目录然后输入“SCons”"
 
 #. type: Plain text
 msgid ""
 "For more information on add-on management, see the management chapter in "
 "this guide."
-msgstr ""
+msgstr "更多有关于插件管理的详情，请查看本指南的“管理”章节。"
 
 #. type: Title ##
 #, no-wrap
 msgid "Getting started: Hands-on examples"
-msgstr ""
+msgstr "开始，动手实例"
 
 #. type: Plain text
 msgid ""
@@ -309,6 +354,8 @@ msgid ""
 "it gives you basic information to get you started with add-ons and give you "
 "tips on writing code."
 msgstr ""
+"您准备好开始编写插件冒险了，但不知道该如何让它“活起来”？请通读本章节，它将告"
+"诉您如何开始的一些基本信息，还将为编写代码给出一些提示。"
 
 #. type: Plain text
 msgid ""
@@ -317,42 +364,47 @@ msgid ""
 "configuration folder (available from Start Menu/Screen if NVDA is installed) "
 "to store our example Python files."
 msgstr ""
+"请注意，本章节将不会使用真实的插件包，取而代之的是使用NVDA用户配置目录下包含"
+"几个子目录的plugin目录（如果NVDA已经安装在电脑上，使用开始菜单或开始屏幕可访"
+"问该目录）来存放我们的python例子代码。"
 
 #. type: Plain text
 msgid ""
 "To edit .py files, you need a word processor which can handle .py files. The "
 "best one we recommend is Notepad++."
 msgstr ""
+"要想编辑一个py文件，您必须拥有一个可以控制py文件的文字处理器，我们推荐的最好"
+"的编辑器是 notepad++。"
 
 #. type: Title ###
 #, no-wrap
 msgid "How add-on code is organized"
-msgstr ""
+msgstr "如何组织插件代码"
 
 #. type: Plain text
 #, no-wrap
 msgid " Your add-on code is stored in one or more Python files (.py file). Despite different kinds of add-ons out there, they all have similar layout.\n"
-msgstr ""
+msgstr "您的插件代码将存放在一个或多个py文件（.py为后缀的文件）中，尽管不同种类的插件不是这样的，但他们都有非常相似的布局。\n"
 
 #. type: Plain text
 #, no-wrap
 msgid " First, you start by writing an optional header for your add-on, such as your name, a brief sentence or two on what the add-on is for and so on. Although this is optional, it is recommend that you write the header as a reminder to keep track of what you are doing with your add-on.\n"
-msgstr ""
+msgstr "首先，您可以从编写一段可选的插件抬头开始，如您的名字 、一个简单的用来描述插件用途的句子或两个关键字等等。虽然它是可选的，但我们仍然建议您这么做，这样可以让我们知道您的插件用途。\n"
 
 #. type: Plain text
 #, no-wrap
 msgid " Next, you tell NVDA the modules you need for your add-on file. This is done by writing `import module` where module is the name of the module you wish to use in your code. For example, if you want to hear tones while writing your add-on, write `import tones`. Typically you may need to import two or more modules for your specific add-on (see below on list of modules you need for the type of add-on module you are writing).\n"
-msgstr ""
+msgstr "接下来， 您需要告诉 NVDA 您的插件所需的模块。您可以写成 “import 模块名称”的形式，如您想在您的插件运行过程中可以使用提示音，您可以通过“import tones”导入该模块。您可能还需要导入多个模块，，请参照上面的格式，用逗号分隔每个文件。通过查看下方的模块列表，您将知道您编写的插件需要什么类型的模块。\n"
 
 #. type: Plain text
 #, no-wrap
 msgid " after declaring the modules you need or import, you write your add-on code (defining classes, variables, methods and so on). The most important section is the add-on class code, which will determine the type of add-on module your code will be assigned to.\n"
-msgstr ""
+msgstr "在导入您所需的插件模块之后，您可以开始编写您的插件了（如编写类、变量、方法等等）。最重要的是“插件类”的代码，他将决定您的插件代码所属的类型。\n"
 
 #. type: Plain text
 #, no-wrap
 msgid " For instance, if you wish to add support for a program, after importing appModuleHandler and other needed modules, you would write:\n"
-msgstr ""
+msgstr "举例来说，如果您想添加某个程序的支持，您可以导入 appModuleHandler  和其他所需模块，之后您就可以开始编写了。\n"
 
 #. type: Plain text
 #, no-wrap
@@ -364,11 +416,13 @@ msgid ""
 "After that, all you are writing is Python code (see the Python documentation "
 "on how to write Python programs)."
 msgstr ""
+"在那以后，您编写的全部都是 python 代码（请查看 python 文档以获取如何使用 "
+"python 边城的信息。）。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Running your add-on in this example chapter"
-msgstr ""
+msgstr "运行您的插件"
 
 #. type: Plain text
 msgid ""
@@ -378,11 +432,14 @@ msgid ""
 "folder: appModules folder for app module examples, and globalPlugins folder "
 "for global plugins."
 msgstr ""
+"要想运行您的插件，您可以把您的代码按照正确的路径存放。您可以打开开始菜单或开"
+"始屏幕中的“浏览 NVDA 配置目录”图标打开该配置目录，如针对特定程序的模块放在"
+"appModules，增加全局特性的放在globalPlugins等。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 1: Hear a tone when pressing NVDA+A"
-msgstr ""
+msgstr "例子1：按下“NVDA+a”的时候播放提示音"
 
 #. type: Plain text
 msgid ""
@@ -390,6 +447,9 @@ msgid ""
 "tone for 1 second from any program. Since we want to use this everywhere, it "
 "must be a global plugin."
 msgstr ""
+"让我们从查看一个简单例子开始。如果您按下“NVDA+A”，您可以听到一个长度为一秒的"
+"提示音。我们希望在任何地方都可以使用该插件，所以我们把代码放在GlobalPlugins目"
+"录下。"
 
 #. type: Plain text
 msgid ""
@@ -399,6 +459,8 @@ msgid ""
 "a short descriptive name). Then open the newly created .py file in the word "
 "processor."
 msgstr ""
+"首先，打开 NVDA 配置目录，创建一个文件并用您的插件名称为文件名（如 example1."
+"py），用文字处理器打开这个新创建的文件。"
 
 #. type: Plain text
 msgid ""
@@ -1474,10 +1536,10 @@ msgid ""
 "holds context-sensitive gestures such as manipulating a single control. Then "
 "the developer would use inputCore.bindGesture (or inputCore.bindGestures if "
 "more than one gestures/scripts are defined) to define certain gestures for a "
-"time, then using inputCore.clearGestures then inputCore.bindGestures"
-"(__gestures) to remove the added gestures. A more elegant way, which "
-"involves scripts for specific objects, will be covered when we talk about "
-"overlay classes."
+"time, then using inputCore.clearGestures then inputCore."
+"bindGestures(__gestures) to remove the added gestures. A more elegant way, "
+"which involves scripts for specific objects, will be covered when we talk "
+"about overlay classes."
 msgstr ""
 
 #. type: Plain text
