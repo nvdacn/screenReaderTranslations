@@ -1,0 +1,8 @@
+commit fd684d9dc908010bf66483f362f4ad6c9d3e5747
+Author: Noelia Ruiz Martínez <nrm1977@gmail.com>
+Date:   Thu Nov 20 09:14:05 2014 +0100
+
+    NVDA no longer crashes when restarting after removing or updating an add-on which imports speechDictHandler in its installTasks module.
+    
+    This was due to a circular import between speechDictHandler and synthDriverHandler. speechDictHandler no longer requires synthDriverHandler, so that import was simply removed.
+    Fixes #4496.
