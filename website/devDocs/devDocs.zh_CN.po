@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-01-12 22:25+0000\n"
-"PO-Revision-Date: 2015-02-04 16:54+0800\n"
+"PO-Revision-Date: 2015-02-06 16:16+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: zh_CN\n"
@@ -409,7 +409,7 @@ msgstr "举例来说，如果您想添加某个程序的支持，您可以导入
 #. type: Plain text
 #, no-wrap
 msgid " `class appModule(appModuleHandler.AppModule):`\n"
-msgstr ""
+msgstr " `class appModule(appModuleHandler.AppModule):`\n"
 
 #. type: Plain text
 msgid ""
@@ -466,12 +466,12 @@ msgstr ""
 msgid ""
 "The below code implements our example. Put this in your .py file as exactly "
 "as shown:"
-msgstr ""
+msgstr "下面的代码将实现我们的例子，请原封不动的把它放到py文件中去。"
 
 #. type: Plain text
 #, no-wrap
 msgid "\t# Add-on development first example\n"
-msgstr ""
+msgstr "\t# Add-on development first example\n"
 
 #. type: Plain text
 #, no-wrap
@@ -479,11 +479,13 @@ msgid ""
 "\timport globalPluginHandler\n"
 "\timport tones # We want to hear beeps.\n"
 msgstr ""
+"\timport globalPluginHandler\n"
+"\timport tones # We want to hear beeps.\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "\tclass GlobalPlugin(globalPluginHandler.GlobalPlugin):\n"
-msgstr ""
+msgstr "\tclass GlobalPlugin(globalPluginHandler.GlobalPlugin):\n"
 
 #. type: Plain text
 #, no-wrap
@@ -491,6 +493,8 @@ msgid ""
 "\t\tdef script_doBeep(self, gesture):\n"
 "\t\t\ttones.beep(440, 1000) # Beep a standard middle A for 1 second.\n"
 msgstr ""
+"\t\tdef script_doBeep(self, gesture):\n"
+"\t\t\ttones.beep(440, 1000) # Beep a standard middle A for 1 second.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -499,17 +503,20 @@ msgid ""
 "\t\t\t\"kb:NVDA+A\":\"doBeep\"\n"
 "\t\t}\n"
 msgstr ""
+"\t\t__gestures={\n"
+"\t\t\t\"kb:NVDA+A\":\"doBeep\"\n"
+"\t\t}\n"
 
 #. type: Plain text
 msgid ""
 "In Python, you put comments by putting hash sign (#) at the start of the "
 "comment line."
-msgstr ""
+msgstr "在 python 中，把“#（警号）”放在评论的行头。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 1 code explanation"
-msgstr ""
+msgstr "例子 1  代码解析"
 
 #. type: Plain text
 msgid ""
@@ -517,18 +524,22 @@ msgid ""
 "But you might be wondering what that above code means, so let's step through "
 "the code, one piece at a time."
 msgstr ""
+"我们的第一个例子是按下“NVDA+A”时发出长度为1秒的提示音，您可能想知道代码的用"
+"途。接下来，让我们一行一行的进行讲解。"
 
 #. type: Bullet: '1. '
 msgid ""
 "At the top of the file, we wrote a header which tells us that this is an "
 "example add-on."
-msgstr ""
+msgstr "在文件顶部，我们写了一个标题，用来说明这是一个例子插件。"
 
 #. type: Bullet: '2. '
 msgid ""
 "Since this is a global plugin, we need to import a crucial module: global "
 "plugin handler, so we wrote `import globalPluginHandler`."
 msgstr ""
+"因为这是一个全局插件，我们需要导入最重要的全局插件控制模块，所以我们写"
+"成“import globalPluginHandler”。"
 
 #. type: Bullet: '3. '
 msgid ""
@@ -536,6 +547,8 @@ msgid ""
 "a built-in module from NVDA. Whenever you wish to use a method from a given "
 "module, import the needed module(s)."
 msgstr ""
+"然后我们写下“import tones”导入这个来自 NVDA 的模块 tones，每当您决定使用某个"
+"模块，必须先将其导入。"
 
 #. type: Bullet: '4. '
 msgid ""
@@ -544,6 +557,8 @@ msgid ""
 "A class, in programming, describes an object, such as a person, a desk, a "
 "program and others."
 msgstr ""
+"接下来，我们定义了一个类 globalPlugin。括号中定义了这个类继承自哪里。编程中用"
+"到的类用来描述一个对象，如一个人、一张桌子、一个程序或其他东西。"
 
 #. type: Bullet: '5. '
 msgid ""
@@ -556,6 +571,12 @@ msgid ""
 "you'll be writing, including our doBeep script takes one or more arguments. "
 "More on scripts later as we journey through the guide."
 msgstr ""
+"在这个类里，我们定义了一个方法（或称函数）“script_doBeep”。这是一个脚本例子，"
+"我们按下某个快捷键后它就会被执行。在这个脚本里，我们写成“tones.beep(440, "
+"1000)”，这句代码告诉 NVDA 发出一个长度为1秒的中音A。在边城中，一个函数可以用"
+"来放变量、一套参数，它的用途取决于您给该方法赋予的值（接下来我们会用到它）。"
+"您会经常编写包括我们所说的“doBeep ”在内的、包含更多变量的许多方法，更多的方法"
+"脚本会放在指南的每个地方。"
 
 #. type: Bullet: '6. '
 msgid ""
@@ -563,6 +584,8 @@ msgid ""
 "(script) bindings for our doBeep script. Here, we told NVDA to assign NVDA+A "
 "command for doBeep script."
 msgstr ""
+"最后，我们写了一个简单字典（一个集合）来存储与 doBeep 方法绑定的命令。这里，"
+"我们告诉 NVDA 使用“NVDA+A”来执行 doBeep  脚本。"
 
 #. type: Plain text
 msgid ""
@@ -570,17 +593,22 @@ msgid ""
 "hear a middle A tone for 1 second. Once you are comfortable with the add-on "
 "code and how it is laid out, you can delete the newly created .py file."
 msgstr ""
+"保存这个文件并重启 NVDA，不论您在什么时候按下“NVDA+A”都可以听到一个长度为1秒"
+"的提示音。如果您认为您的插件代码和布局已经很合适，您可以把最近创建的 .py 文件"
+"删除。"
 
 #. type: Title ###
 #, no-wrap
 msgid "I don't understand those above terms"
-msgstr ""
+msgstr "我无法理解上面提到的术语"
 
 #. type: Plain text
 msgid ""
 "For some, the terms \"class\", \"method\" and so on might be new. Let's go "
 "over what these terms are, as they are fundamental for add-on development:"
 msgstr ""
+"对于某些人，类和方法等术语可能是全新的事物。让我们来看看他们的意义，因为在插"
+"件的开发过程中非常重要："
 
 #. type: Bullet: '* '
 msgid ""
@@ -589,6 +617,8 @@ msgid ""
 "and other programs - in fact, a number of programmers are skilled at coming "
 "up with classes."
 msgstr ""
+"类：一个类可以描述任何事物，例如一个人、一张桌子、一个插件或其他东西。类对于 "
+"NVDA 和其他程序来说都是非常重要的-- 大量的程序员正在提高使用类方面的技巧。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -596,6 +626,8 @@ msgid ""
 "doing something, such as generating tones, calculating huge numbers, loading "
 "NVDA add-ons and so on. Some people call them \"functions.\""
 msgstr ""
+"方法：方法是一段短小的程序或在程序执行过程中一个用来执行例行任务的程序。如发"
+"出提示音，计算人数，加载插件等等。有的人也把他们称为“函数”。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -606,6 +638,10 @@ msgid ""
 "be executed (usually \"self\"; more on that later) and the gesture for the "
 "script (see below)."
 msgstr ""
+"脚本：脚本是一个当用户执行特定动作（如按下某个特定的按键）就会执行的方法。\v"
+"如，当您按下“NVDA+F12”后 ， NVDA 将执行来自 NVDA 核心的模块 Global Commands "
+"的 dateTime  脚本。这个脚本有两个变量：在哪里执行和使用什么首饰后执行（译者"
+"注：所谓的首饰包括按键和触摸首饰两类）。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -614,6 +650,9 @@ msgid ""
 "on. An add-on file may define one or more variables (for example, to store "
 "common constants such as strings)."
 msgstr ""
+"变量：变量是一种可以修改的事物，如一个人的名字、您正在运行的NVDA插件的名称或"
+"您正在使用的 NVDA 版本等等。一个插件可能定义很多的变量，如存储共用常量（字"
+"串）等。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -621,19 +660,21 @@ msgid ""
 "write add-ons, we are in fact writing additional modules that NVDA can use "
 "while it is running."
 msgstr ""
+"模块：模块把方法和变量集合在一个文件里。我们现在在编写的插件就是一个 NVDA 在"
+"执行过程中会用到的模块。"
 
 #. type: Plain text
 msgid "There are other terms that we'll get to know shortly."
-msgstr ""
+msgstr "这里还有一些术语我们需要简单了解。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 2: Generate a tone when switching to Notepad"
-msgstr ""
+msgstr "例子2： 切换到记事本后发出提示音"
 
 #. type: Plain text
 msgid "Most of the below code comes from NvDA Developer Guide."
-msgstr ""
+msgstr "下面的大多数代码都来自 NvDA Developer Guide。"
 
 #. type: Plain text
 msgid ""
@@ -643,6 +684,9 @@ msgid ""
 "the executable for a program. For example, an app module for Notepad would "
 "be named notepad.py."
 msgstr ""
+"NVDA 不仅允许您编写全局插件，他还允许您通过编写程序模块来提高对某个软件的支"
+"持。模块名称除了是一个 python 文件之外，还代表着某个可执行程序。如，"
+"为“notepad”开发的模块就被命名为“notepad.py”。"
 
 #. type: Plain text
 msgid ""
@@ -651,11 +695,13 @@ msgid ""
 "below code in notepad.py, which in turn should be placed in appModules "
 "folder in your user configuration folder in order for it to run."
 msgstr ""
+"下面的代码描述了一段程序：当切换到记事本的时候发出一段很短的提示音。请把代码"
+"放到“notepad.py”里，并把它放置在 NVDA 用户配置的 appModules 目录中。"
 
 #. type: Plain text
 #, no-wrap
 msgid "\t# An example app module.\n"
-msgstr ""
+msgstr "\t# An example app module.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -663,11 +709,13 @@ msgid ""
 "\timport appModuleHandler\n"
 "\timport tones\n"
 msgstr ""
+"\timport appModuleHandler\n"
+"\timport tones\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "\tclass AppModule(appModuleHandler.AppModule):\n"
-msgstr ""
+msgstr "\tclass AppModule(appModuleHandler.AppModule):\n"
 
 #. type: Plain text
 #, no-wrap
@@ -676,25 +724,29 @@ msgid ""
 "\t\t\ttones.beep(256, 200)\n"
 "\t\t\tnextHandler()\n"
 msgstr ""
+"\t\tdef event_gainFocus(self, obj, nextHandler):\n"
+"\t\t\ttones.beep(256, 200)\n"
+"\t\t\tnextHandler()\n"
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 2 code explanation"
-msgstr ""
+msgstr "例子2代码解析"
 
 #. type: Plain text
 msgid ""
 "We're seeing more new code here. Let's go over this, again piece by piece:"
-msgstr ""
+msgstr "这里，我们又看到了心的代码。让我们逐行进行分析："
 
 #. type: Bullet: '1. '
+#, fuzzy
 msgid ""
 "Unlike the first example, the crucial module we need is appModuleHandler."
-msgstr ""
+msgstr "不像第一个例子，这次我们需要的最重要模块是 appModuleHandler。"
 
 #. type: Bullet: '2. '
 msgid "The class that we are using is AppModule."
-msgstr ""
+msgstr "我们使用的类是 AppModule。"
 
 #. type: Bullet: '3. '
 msgid ""
@@ -703,6 +755,9 @@ msgid ""
 "arguments, the object for which the event needs to be dealt with, or, as "
 "many people say, \"fired.\""
 msgstr ""
+"不同于上次，我们这次使用的是“事件”，极当某种事件发生后（如控件名称的更改）才"
+"执行该方法。“事件”把一个“对象”作为变量，“对象”极是每个“事件”都需要处理的事"
+"物，或是某些人所称的“触发（fired）”。"
 
 #. type: Bullet: '4. '
 msgid ""
@@ -710,21 +765,25 @@ msgid ""
 "method is used in event methods to tell NvDA to pass the event so it can be "
 "taken care of, such as saying the name of a control after beeping."
 msgstr ""
+"在 event 方法里，我们还看到了被称为“nextHandler”的方法。放在 event 的这个方法"
+"用来告诉 NVDA 监视这个事件的发生，如在发出提示音之后读出控件的名称。"
 
 #. type: Title ###
 #, no-wrap
 msgid "More new terms please"
-msgstr ""
+msgstr "更多新的术语"
 
 #. type: Plain text
 msgid "Other terms you may see include:"
-msgstr ""
+msgstr "您可能看到的其他术语包括："
 
 #. type: Bullet: '* '
 msgid ""
 "Event: An event is a method that'll be run when some events happen, such as "
 "when a program is on focused, when names of controls change and so on."
 msgstr ""
+"事件：事件是一种当某个事件发生候才会运行的方法。如一个程序拥有焦点或控件名称"
+"发生了改变等等。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -732,6 +791,8 @@ msgid ""
 "method from another method. For example, in our first example, we're calling "
 "tones.beep method from our script method."
 msgstr ""
+"调用：我们说一个方法（方法2）使用其他的方法（方法1）就被称为“调用”。如，在我"
+"们的第一个例子里，我们就在 script 方法里调用了 tones.beep  方法。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -741,6 +802,10 @@ msgid ""
 "abbreviated to obj. In NVDA, an object may refer to controls or parts of a "
 "program."
 msgstr ""
+" 对象（object）:对象就是类的实例，极当程序运行时“类”拥有了生命。Throughout "
+"your add-ons, as you write classes and when you run your add-ons, your "
+"classes come to life as objects,  通常简写为“obj”。对于 NVDA 来说，对象可能用"
+"来访问控件或程序的一部分。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -752,6 +817,11 @@ msgid ""
 "NVDA object (see below), or in the add-on development, the instance of an "
 "add-on. Many of your methods will have self as the first argument."
 msgstr ""
+"self：对于python来说，“self”表示的是当前类(如您在写插件的时候定义的类，还表示"
+"着这个类的方法)。如，我们创建了一个“numbers”的类，而这个类的方法“add”的第一个"
+"参数就是“self”。这样告诉我们，这个方法“add”是类“numbers”的一部分。在 NVDA 的"
+"开发世界里，“self”通常指的是“对象”（请看下面）”，对于插件开发来说，self指的是"
+"这个插件的实例。您的许多方法将会把“self”作为您方法的第一个参数。"
 
 #. type: Plain text
 msgid ""
@@ -761,23 +831,26 @@ msgid ""
 "plugins and app modules will become more clear when we talk about them in "
 "more detail throughout this guide."
 msgstr ""
+"和例子1一样，您可能希望在代码已经符合需求的情况下把他移除，除非您希望在切换到"
+"记事本的时候听到一个提示音。随着我们对他们的进一步探讨，更多有关于全局插件和"
+"模块插件的实际差异将会变得更加清晰。"
 
 #. type: Title ###
 #, no-wrap
 msgid "A few tips for beginners"
-msgstr ""
+msgstr "给初学者的一些提示"
 
 #. type: Plain text
 msgid "Here are a few useful tips passed on by add-on writers:"
-msgstr ""
+msgstr "这里有一些给插件开发者的实用提示："
 
 #. type: Bullet: '* '
 msgid "Start with easy add-ons, such as saying a message, tones and so on."
-msgstr ""
+msgstr "从编写一个简单的插件开始，例如输出一条消息，发出提示音等等。"
 
 #. type: Bullet: '* '
 msgid "Write and test one method at a time."
-msgstr ""
+msgstr "编写方法和测试方法这两个过程在同一段时间进行。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -785,6 +858,8 @@ msgid ""
 "synthesizers or braille displays you wish to support (e.g. read "
 "documentation, try using them, etc.)."
 msgstr ""
+"如果您正在编写程序模块和驱动，对于编程更加熟悉了，可以尝试使用语音合成器或点"
+"显器进行输出（如阅读文档等等）。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -792,11 +867,13 @@ msgid ""
 "in NvDA and other add-ons first before assigning a new command in your add-"
 "on to avoid command conflicts."
 msgstr ""
+"在定义一个命令以前（特别是全局插件），请首先对 NVDA 和其他插件所使用的命令进"
+"行考察，以避免发生命令键冲突。"
 
 #. type: Title ##
 #, no-wrap
 msgid "Useful modules from NVDA core"
-msgstr ""
+msgstr "来自 NVDA 核心的实用模块"
 
 #. type: Plain text
 msgid ""
@@ -805,17 +882,19 @@ msgid ""
 "section explains them and some functions in those modules that would be "
 "useful."
 msgstr ""
+"贯穿整个插件的开发周期，您可能会碰到一些有用的、来自 NVDA 核心的、对于您的插"
+"件代码非常有帮助的模块。这个章节介绍他们和他们的一些实用函数。"
 
 #. type: Title ###
 #, no-wrap
 msgid "List of useful NVDA core modules and methods"
-msgstr ""
+msgstr "实用的 NVDA 核心模块和方法列表"
 
 #. type: Plain text
 msgid ""
 "The following lists available NVDA core modules and some useful methods "
 "found in those modules:"
-msgstr ""
+msgstr "下面罗列了可用的 NVDA 核心模块和一些从在他们那儿找到的实用方法。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -823,6 +902,8 @@ msgid ""
 "subsystem. The addonHandler.initTranslation() method is used to initialize "
 "internationalization support for your add-on."
 msgstr ""
+"插件控制器 (addonHandler.py): 这个模块使得插件子系统可以正常工作。方"
+"法“addonHandler.initTranslation()”可以为您的插件进行国际化支持的初始化。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -830,6 +911,8 @@ msgid ""
 "such as obtaining focus and navigator object, setting focus and so on. See "
 "the next list on useful methods from this module."
 msgstr ""
+"NVDA 基础 API (api.py): 整个 NVDA 都在使用的核心方法的集合，如获取焦点和可浏"
+"览对象，设置焦点等等。请查看下一个列表中属于该模块的实用方法。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -837,12 +920,14 @@ msgid ""
 "charge of handling app modules (see chapter on app modules for more "
 "information)."
 msgstr ""
+"程序模块子系统(appModuleHandler.py和 appModule们):子系统负责控制程序模块（更"
+"多详情，请查看章节“程序模块”获取）。"
 
 #. type: Bullet: '* '
 msgid ""
 "ARIA support (aria.py): Implements support for Accessible Rich Internet "
 "Applications (ARIA)."
-msgstr ""
+msgstr "ARIA 支持 (aria.py): 掌握访问富互联网应用（ARIA）的支持。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -850,6 +935,8 @@ msgid ""
 "scriptable objects (see the chapter on NvDA objects and overlay objects for "
 "more information)."
 msgstr ""
+"基本对象集合(baseObject.py): 包含实用的对象，如可编程对象（请查看 NVDA 对象和"
+"重叠对象章节获取更多信息）。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -857,28 +944,32 @@ msgid ""
 "braille output to and input from braille displays, needed by braille display "
 "driver add-ons."
 msgstr ""
+"点字输入输出子系统(braille.py, brailleInput.py):控制点显器盲文的输入输出，需"
+"要点显器驱动插件的支持。"
 
 #. type: Bullet: '* '
 msgid ""
 "Build-in modules (builtin.py): Allows access to builtin modules when working "
 "with add-ons."
-msgstr ""
+msgstr "内建模块(builtin.py):允许在插件工作时访问内建模块。"
 
 #. type: Bullet: '* '
 msgid ""
 "Configuration (config): Manages configuration and profiles (profiles are "
 "available in 2013.3 or later)."
-msgstr ""
+msgstr "配置（config）:管理配置和配置文件（配置文件在 2013.3 后可用）。"
 
 #. type: Bullet: '* '
 msgid ""
 "Controls and states collection (controltypes.py): Includes dictionaries on "
 "control types (roles) and possible states that a control can be in."
 msgstr ""
+"控件和状态集合(controltypes.py): 包含控件类型的字典（角色）和可能被插件套用的"
+"状态。"
 
 #. type: Bullet: '* '
 msgid "Events (eventHandler.py): Handles various events such as gaining focus."
-msgstr ""
+msgstr "事件(eventHandler.py): 控制各种各样的事件，如正在获得焦点。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -886,18 +977,22 @@ msgid ""
 "available while using NVDA (see section on script scope for more "
 "information)."
 msgstr ""
+"全局命令集合 (globalCommands.py): 使用 NVDA 时可用的全局命令的列表（请查看脚"
+"本作用域章节获取更多信息）。"
 
 #. type: Bullet: '* '
 msgid ""
 "Global Plugin subsystem (globalPluginHandler.py): The module needed for "
 "controlling global plugins."
-msgstr ""
+msgstr "全局插件子系统(globalPluginHandler.py)：控制全局插件必备的模块。"
 
 #. type: Bullet: '* '
 msgid ""
 "NVDA GUI (gui): A collection of classes used by NVDA to display its messages "
 "graphically. Includes GUI's for NVDA menu, add-on manager and others."
 msgstr ""
+"NVDA 图形用户界面(gui): 一个 NVDA 用来以图形方式展示消息的类的集合。 包括 "
+"NVDA 使用的菜单、插件管理器和其他界面。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -905,22 +1000,28 @@ msgid ""
 "communicating over serial and other hardware ports, useful during driver add-"
 "on development."
 msgstr ""
+"硬件端口工具(hwPortUtils.py): 一套用来与串行端口或其他硬件端口进行通讯的工"
+"具。它对驱动插件的开发非常有用。"
 
 #. type: Bullet: '* '
 msgid ""
 "IAccessible support (IAccessibleHandler.py, IAccessible objects): Used for "
 "supporting IAccessible controls."
 msgstr ""
+"IAccessible 支持 （IAccessibleHandler.py和可访问对象）: 用于支持 IAccesible "
+"控件。"
 
 #. type: Bullet: '* '
 msgid "Input management (inputCore.py): Manages input from the user."
-msgstr ""
+msgstr "输入管理(inputCore.py):管理用户输入。"
 
 #. type: Bullet: '* '
 msgid ""
 "Java Access Bridge support (JABHandler.py): A collection of methods used for "
 "supporting JAB subsystem used for Java applications."
 msgstr ""
+"Java Access Bridge 支持 （JABHandler.py）: A collection of methods used for "
+"supporting JAB subsystem used for Java applications."
 
 #. type: Bullet: '* '
 msgid ""
