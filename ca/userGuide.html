@@ -155,9 +155,10 @@
     </UL>
   <LI><A HREF="#toc107">12. Temes avançats</A>
     <UL>
-    <LI><A HREF="#toc108">12.1. Personalització avançada de la pronúncia de símbols</A>
+    <LI><A HREF="#CommandLineOptions">12.1. Opcions de la línia de comandes</A>
+    <LI><A HREF="#toc109">12.2. Personalització avançada de la pronúncia de símbols</A>
     </UL>
-  <LI><A HREF="#toc109">13. Més informació</A>
+  <LI><A HREF="#toc110">13. Més informació</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -187,7 +188,8 @@ En són aspectes destacables:
 <LI>NVDA és compatible amb moltes línies braille, i també accepta entrades en braille d'ordinador per a aquelles línies braille que tenen teclat
 <LI>NVDA pot executar-se totalment des d'un llapis USB o altres suports portables, sense requerir instal·lació
 <LI>L'instal·lador de NVDA és amb veu i fàcil d'usar
-<LI>NVDA s'ha traduït a 44 idiomes
+<P></P>
+<LI>NVDA s'ha traduït a 47 idiomes
 <LI>NVDA és compatible amb els sistemes operatius Windows moderns, tant amb les versions de 32 bits com les de 64 bits
 <LI>NVDA funciona a la pantalla d'entrada de Windows i en altres pantalles de seguretat
 <LI>NVDA és compatible amb interfícies d'accessibilitat comunes com Microsoft Active Accessibility, Java Access Bridge, IAccessible2 o UI Automation (NVDA només és compatible amb UI Automation a partir de Windows 7)
@@ -199,7 +201,7 @@ En són aspectes destacables:
 
 <P>
 és important que les persones d'arreu del món, parlin la llengua que parlin, tinguin accés equitatiu a la tecnologia.
-A banda d'oferir-se en anglès, NVDA s'ha traduït a 44 idiomes més, entre ells: afrikaans, albanès, amhàric, àrab, aragonès, alemany, búlgar, coreà, croata, danès, eslovac, eslovè, espanyol, finès, francès, gallec, georgià, grec, hebreu, hindi, holandès, hongarès, irlandès, islandès, italià, japonès, nepalès, noruec, persa, polonès, portuguès, portuguès de Brasil, romanès, rus, serbi, suec, tailandès, tàmil, txec, turc, ucraïnès, vietnamita i xinès tradicional i simplificat.
+A banda d'oferir-se en anglès, NVDA s'ha traduït a 47 idiomes més, entre ells: afrikaans, albanès, alemany, amhàric, àrab, aragonès, búlgar, català, coreà, croata, danès, eslovac, eslovè, espanyol, espanyol de Colòmbia,  farsi, finès, francès, gallec, georgià, grec, hebreu, hindi, holandès, hongarès, irlandès, islandès, italià, japonès, nepalès, noruec, persa, polonès, portuguès, portuguès de Brasil, punjabi, romanès, rus, serbi, suec, tailandès, tàmil, txec, turc, ucraïnès, vietnamita i xinès tradicional i simplificat.
 </P>
 
 <A NAME="toc5"></A>
@@ -363,6 +365,9 @@ Si has instal·lat NVDA amb l'instal·lador, iniciar NVDA és tan senzill com pr
 També pots iniciar el programa si escrius NVDA al diàleg Executa de Windows i prems Retorn.
 </P>
 <P>
+També pots executar algunes <A HREF="#CommandLineOptions">opcions de línia de comandes</A> que et permeten reiniciar NVDA (-r), sortir (-q), desactivar extensions (--disable-addions), i altres.
+</P>
+<P>
 Per iniciar la versió portable, vés a la carpeta on has descomprimit NVDA, i prem Retorn o fes doble clic a nvda.exe.
 </P>
 <P>
@@ -391,7 +396,7 @@ La tercera casella permet controlar si aquest diàleg de benvinguda ha d'aparèi
 
 <P>
 La majoria d'ordres de teclat específiques de NVDA es basen en prémer una tecla concreta anomenada tecla modificadora de NVDA i prémer alhora una o més tecles addicionals.
-Una excepció remarcable a aquest funcionament són les ordres de revisió de text en els teclats d'ordinadors de sobretaula que usen només el teclat numèric, però existeixen altres ordres que no fan ús de la tecla modificadora.
+Una excepció remarcable a aquest funcionament són les ordres de revisió de text en la disposició de teclat de sobretaula que usen només el teclat numèric, però existeixen altres ordres que no fan ús de la tecla modificadora.
 </P>
 <P>
 Es pot configurar NVDA per tal que la tecla modificadora de NVDA sigui la tecla d'inserció del teclat numèric, la tecla d'inserció del teclat estès, o la tecla Bloqueig de majúscules.
@@ -407,8 +412,7 @@ Si vols que una de les tecles modificadores de NVDA realitzi la seva funció ori
 <H4>4.2.2. Disposicions de teclat</H4>
 
 <P>
-NVDA s'ofereix actualment amb dos conjunts d'ordres de teclat.
-Existeix una disposició de teclat per a ordinadors de sobretaula i una disposició de teclat per a ordinadors portàtils.
+NVDA s'ofereix actualment amb dos conjunts d'ordres de teclat (anomenats disposicions de teclat):una disposició de teclat per a ordinadors de sobretaula i una disposició de teclat per a ordinadors portàtils.
 De forma predeterminada, NVDA està configurat per usar el teclat d'ordinadors de sobretaula, però pots canviar al teclat per a ordinadors portàtils a la Configuració de teclat, que es troba a Preferències al menú NVDA.
 </P>
 <P>
@@ -542,7 +546,7 @@ Quan aparegui el menú, pots usar les tecles de fletxa per navegar pel menú, i 
 <TD>NVDA+n</TD>
 <TD>NVDA+n</TD>
 <TD>Toc doble amb dos dits</TD>
-<TD>Fa aparèixer el menú NVDA que et permet accedir a les preferències, eines i ajuda etc</TD>
+<TD>Fa aparèixer el menú NVDA que et permet accedir a les preferències, eines, ajuda etc</TD>
 </TR>
 <TR>
 <TD>Commutar Mode de so</TD>
@@ -1517,11 +1521,12 @@ Prem D'acord, i NVDA es reiniciarà.
 Aquesta opció és una casella de selecció, que quan està activada, indica a NVDA que ha de desar automàticament la configuració en sortir de NVDA.
 </P>
 
-<H5>Avisa abans de sortir de NVDA</H5>
+<H5>Mostra les opcions de sortida quan surts de NVDA</H5>
 
 <P>
-Aquesta opció és una casella de selecció que et permet triar si vols que aparegui un diàleg cada cop que surtis de NVDA que et preguntarà si realment vols sortir.
-Si l'opció està activada quan provis de sortir de NVDA t'apareixerà un diàleg en què se'l preguntarà si realment vols sortir.
+Aquesta opció és una casella de selecció que et permet triar si vols que aparegui un diàleg cada cop que surtis de NVDA que et preguntarà quina acció vols fer.
+Si l'opció està activada quan provis de sortir de NVDA t'apareixerà un diàleg en què se'l preguntarà si vols sortir, reiniciar o reiniciar sense extensions.
+Si l'opció està desactivada, NVDA sortirà immediatament.
 </P>
 
 <H5>Emet un so en entrar o sortir de NVDA</H5>
@@ -1651,7 +1656,7 @@ Aquesta opció és un control lliscant que et permet triar amb quanta inflexió 
 <H5>Canvi d'idioma automàtic</H5>
 
 <P>
-Aquesta casella de selecció et permet triar si vols que NVDA canviï o no l'idioma de síntesi de veu automàticament, quan el text llegit tingui indicació d'idioma.
+Aquesta casella de selecció et permet triar si vols que NVDA canviï  l'idioma de síntesi de veu automàticament, quan el text llegit tingui indicació d'idioma.
 Per defecte aquesta opció està activada.
 Actualment, eSpeak és l'únic sintetitzador que ofereix el canvi automàtic d'idioma.
 </P>
@@ -1659,7 +1664,8 @@ Actualment, eSpeak és l'únic sintetitzador que ofereix el canvi automàtic d'i
 <H5>Canvi de dialecte automàtic</H5>
 
 <P>
-Si el canvi automàtic d'idioma està activat, aquesta casella de selecció et permet triar si vols que NVDA canviï no només d'idioma sinó també de dialecte. Per exemple, si estàs llegint amb una veu d'anglès d'Estats Units, el document indica que un text està escrit en anglès britànic i aquesta opció està activada, el sintetitzador canviarà l'accent.
+Aquesta casella de selecció et permet triar si vols que NVDA faci canvis de dialecte, en comptes de canvis d'idioma.
+Per exemple, si estàs llegint amb una veu d'anglès d'Estats Units però el document indica que un text està escrit en anglès britànic, el sintetitzador canviarà l'accent si aquesta opció està activada.
 Per defecte aquesta opció està desactivada.
 </P>
 
@@ -4440,11 +4446,182 @@ Revisa la <A HREFLANG="en" HREF="http://mielke.cc/brltty/doc/drivers/">Documenta
 </TR>
 </TABLE>
 
+<P>
+++ Tipus de control Braille i abreviatures d'estat +
+</P>
+
+<OL>
+<LI>Per tal d'encabir tanta informació com sigui possible en una línia Braille, les següents abreviatures s'han definit per indicar tipus de control i estat.
+</OL>
+
+<P>
++|| Abreviatura | Tipus de control |
++| btn | botó |
++| cbo | quadre combinat |
++| chk | casella de verificació |
++| dlg | diàleg |
++| edt | camp de text editable |
++| gra | gràfic |
++| cN | columna número n de la taula, per ex. c1, c2. |
++| rN | fila número n de la taula, per ex. r1, r2. |
++| hN | encapçalament de nivell, e.g. h1, h2. |
++| lnk | enllaç |
++| lst | llista |
++| vlnk | enllaç visitat |
++| mnu | menú |
++| mnubar | barra de menú |
++| rbtn | botó d'opció |
++| tb | taula |
++| tv | vista en arbre |
++| lv N | l'element de la vista en arbre té el nivell jeràrquic N|
++| <CODE>-----</CODE> | separador |
++
++Els següents indicadors d'estat també s'han definit:
++|| Abreviatura | Estat de control |
++| ... | es mostra quan un objecte permet autocompletat |
++| ( ) | es mostra quan un objecte (per ex. una casella de verificació) no està seleccionat |
++| (x) | es mostra quan un objecte (per ex. una casella de verificació) està seleccionat |
++| (-) | es mostra quan un objecte (per ex. una casella de verificació) està seleccionat a mitges |
++| - | es mostra quan un objecte (per ex. un element en una llista d'arbre) es pot plegar |
++| + | es mostra quan un objecte (e.g. un element en una llista d'arbre) es pot desplegar |
++| clk | es mostra quan un objecte es pot clicar |
++| ro | es mostra quan un objecte (per ex. un camp de text editable) és de només lectura |
++| sel | es mostra quan un objecte està seleccionat |
++| submnu | es mostra quan un objecte té una finestra popup (normalment un submenú) |
++
+</P>
+
 <A NAME="toc107"></A>
 <H2>12. Temes avançats</H2>
 
-<A NAME="toc108"></A>
-<H3>12.1. Personalització avançada de la pronúncia de símbols</H3>
+<A NAME="CommandLineOptions"></A>
+<H3>12.1. Opcions de la línia de comandes</H3>
+
+<P>
+En iniciar NVDA es poden indicar una o més opcions que n'alteren el funcionament.
+Pots indicar tantes opcions com necessities.
+Aquestes opcions poden indicar-se en iniciar NVDA des d'una drecera de teclat (a les propietats de dreceres), des del diàleg d'Executar (Menú d'Inici -&gt; Executar o Windows+r) o des de la consòla de comandes Windows.
+Cal indicar les opcions després del nom del fitxer executable NVDA separades per espais.
+Per exemple, la drecera de sobretaula que crea NVDA durant la instal.lació té l'opció -r, la qual indica a NVDA que tanqui la còpia en execució abans d'iniciar la nova.
+Una altra opció molt útil és --disable-addons (desactiva extensions), que indica a NVDA que aturi totes les extensions actualment en execució. 
+Això et permet determinar si és una extensió la que causa un problema i refer-te d'alguns problemes seriosos causats per extensions.
+</P>
+<P>
+Com a exemple, pots sortir de la còpia en curs de NVDA introduint la següent comanda en el diàleg d'Execució:
+</P>
+<P>
+nvda -q
+</P>
+<P>
+Algunes de les opcions de la línia de comandes tenen una versió curta i una llarga, mentre que altres només tenen una versió llarga.
+Per aquelles que tenen una versió curta, pots combinar-les com:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>nvda -rm</TD>
+<TD>Aquesta comanda sortirà de la còpia en curs i iniciarà una nova còpia amb els sons d'inici desactivats, etc.</TD>
+</TR>
+<TR>
+<TD>nvda -rm --disable-addons</TD>
+<TD>Igual que abans, però amb les extensions desactivades</TD>
+</TR>
+</TABLE>
+
+<P>
+Algunes de les opcions de la línia de comandes accepten paràmetres addicionals; per ex. el nivell de detall del registre de log o el camí a la carpeta de configuració de l'usuari.
+Aquests paràmetres s'han de situar després de l'opció, separats de l'opció per un espai si s'usa la versió curta o per un signe igual (=) quan s'usa la versió llarga; per ex.:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TD>nvda -l 10</TD>
+<TD>Indica a NVDA d'iniciar-se amb un nivell de registre de log de debug</TD>
+</TR>
+<TR>
+<TD>nvda --log-file=c:\nvda.log</TD>
+<TD ALIGN="right">Indica a NVDA d'escriure el registre de log a c:\nvda.log</TD>
+</TR>
+<TR>
+<TD>nvda --log-level=20 -f c:\nvda.log</TD>
+<TD>Indica a NVDA d'iniciar-se amb un nivell de registre de log de informació i d'escriure el registre a c:\nvda.log</TD>
+</TR>
+</TABLE>
+
+<P>
+A continuació es mostres les opcions de la línia de comandes de NVDA:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Curta</TH>
+<TH>LLarga</TH>
+<TH>Descripció</TH>
+</TR>
+<TR>
+<TD>-h</TD>
+<TD>--help</TD>
+<TD>mostra l'ajuda de la línia de comandes i surt</TD>
+</TR>
+<TR>
+<TD>-q</TD>
+<TD>--quit</TD>
+<TD>Surt de la còpia de NVDA en execució</TD>
+</TR>
+<TR>
+<TD>-r</TD>
+<TD>--replace</TD>
+<TD>Surt de la còpia de NVDA en execució i inicia aquesta</TD>
+</TR>
+<TR>
+<TD>-k</TD>
+<TD>--check-running</TD>
+<TD>Informa sobre si NVDA s'està executant amb un codi de sortida; 0 si s'està executant, 1 si no s'està executant</TD>
+</TR>
+<TR>
+<TD>-f LOGFILENAME</TD>
+<TD>--log-file=LOGFILENAME</TD>
+<TD>El fitxer on els missatges del registre de log s'hauran d'escriure</TD>
+</TR>
+<TR>
+<TD>-l LOGLEVEL</TD>
+<TD>--log-level=LOGLEVEL</TD>
+<TD>El nivell més baix dels missatges registrats (debug 10, informació 20, avís 30, error 40, crítics 50), el nivell per defecte és 'avís'</TD>
+</TR>
+<TR>
+<TD>-c CONFIGPATH</TD>
+<TD>--config-path=CONFIGPATH</TD>
+<TD>La carpeta en la que la configuració de NVDA es guarda</TD>
+</TR>
+<TR>
+<TD>-m</TD>
+<TD>--minimal</TD>
+<TD>Sense so, sense interfície, sense missatge d'inici etc</TD>
+</TR>
+<TR>
+<TD>-s</TD>
+<TD>--secure</TD>
+<TD>Mode segur (amb la cònsola Python desactivada)</TD>
+</TR>
+<TR>
+<TD>None</TD>
+<TD>--disable-addons</TD>
+<TD>Les extensions no tindran efecte</TD>
+</TR>
+<TR>
+<TD>None</TD>
+<TD>--no-sr-flag</TD>
+<TD>No canviis el flag de lectors de pantalla del sistema global</TD>
+</TR>
+<TR>
+<TD>None</TD>
+<TD>--install</TD>
+<TD>Instal.la NVDA en silenci</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc109"></A>
+<H3>12.2. Personalització avançada de la pronúncia de símbols</H3>
 
 <P>
 Es pot personalitzar la pronúncia de la puntuació i d'altres símbols més enllà del qual permet el diàleg <A HREF="#SymbolPronunciation">Pronúncia de la puntuació i dels símbols</A>.
@@ -4457,7 +4634,7 @@ El format d'aquest fitxer es documenta a la secció Pronúncia de símbols a la 
 De totes maneres, els usuaris no poden definir símbols complexos.
 </P>
 
-<A NAME="toc109"></A>
+<A NAME="toc110"></A>
 <H2>13. Més informació</H2>
 
 <P>
