@@ -10,6 +10,76 @@
 </CENTER>
 
 
+<H2>2015.1</H2>
+
+<P>
+このリリースのハイライトは、 Microsoft Word および Outlook のドキュメントでのブラウズモード、Skype (Windows デスクトップ版) および Microsoft Internet Explorer への対応の強化です。
+</P>
+
+<H3>新機能</H3>
+
+<UL>
+<LI>句読点/記号読み辞書のダイアログにおいて「追加」が利用できるようになりました。 (<A HREF="http://community.nvda-project.org/ticket/4354">#4354</A>)
+<LI>入力ジェスチャーのダイアログにおいて「フィルター」フィールドを使い、特定の言葉を含んでいるジェスチャーだけを絞り込んで表示できるようになりました。 (<A HREF="http://community.nvda-project.org/ticket/4458">#4458</A>)
+<LI>mintty において新しいテキストが自動的に通知されるようになりました。 (<A HREF="http://community.nvda-project.org/ticket/4588">#4588</A>)
+<LI>ブラウズモードの検索ダイアログにおいて、大文字と小文字を区別する検索のオプションが利用できるようになりました。 (<A HREF="http://community.nvda-project.org/ticket/4584">#4584</A>)
+<LI>Microsoft Word のドキュメントにおいて NVDA+スペースを押すとブラウズモードが利用できるようになりました。ブラウズモードでは1文字ナビゲーション（hを押すと次の見出しにジャンプするなど）および要素リスト(NVDA+f7)が利用できます。 (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>)
+<LI>Microsoft Outlook 2007 以降において、HTMLメッセージの読み取りでブラウズモードに自動的に切り替わるようになりました。自動的にブラウズモードに切り替わらない場合は、NVDA+スペースで手動切り替えできます。 (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>)
+<LI>Microsoft Word において、ドキュメントの作成者がテーブルの属性で列見出しの行を指定していれば、テーブルの列見出しを自動的に通知するようになりました。 (<A HREF="http://community.nvda-project.org/ticket/4510">#4510</A>)
+ <UL>
+ <LI>ただし行の結合が使われている場合には、自動通知は利用できません。この場合は NVDA+Shift+C で列見出しの行を指定してください。
+ </UL>
+<LI>Skype (Windows デスクトップ版)において、通知の読み上げに対応しました。 (<A HREF="http://community.nvda-project.org/ticket/4741">#4741</A>)
+<LI>Skype (Windows デスクトップ版)において、NVDA+Ctrl+1 から NVDA+Ctrl+0 までの操作でチャット履歴の項目への移動と通知が可能になりました。 NVDA+Ctrl+1 が最新のメッセージ、NVDA+Ctrl+0 は最新から10番目のメッセージにナビゲーターオブジェクトを移動します。(<A HREF="http://community.nvda-project.org/ticket/3210">#3210</A>)
+<LI>Skype (Windows デスクトップ版)のチャット機能において、参加者のキー入力状態を通知するようになりました。 (<A HREF="http://community.nvda-project.org/ticket/3506">#3506</A>)
+<LI>NVDA を無音でインストールして、その後でインストールされた環境を実行しないためのコマンドラインのオプション --install-silent が追加されました。 (<A HREF="http://community.nvda-project.org/ticket/4206">#4206</A>)
+<LI>Papenmeier BRAILLEX Live 20, BRAILLEX Live および BRAILLEX Live Plus 点字ディスプレイに対応しました。 (<A HREF="http://community.nvda-project.org/ticket/4614">#4614</A>)
+</UL>
+
+<H3>変更点</H3>
+
+<UL>
+<LI>NVDA メニューの「書式情報」設定ダイアログにおいて、「スペルエラーの通知」に Alt+R で移動できるようになりました。 (<A HREF="http://community.nvda-project.org/ticket/793">#793</A>)
+<LI>NVDA は記号と文字の説明において、音声の言語を使用します。音声設定で「言語の自動切り替え」が有効であっても同様です。この処理を無効にして一般設定で指定された言語で記号と文字の説明を行うには、音声設定の「記号と文字の説明に音声の言語を使用」をチェックなしにしてください。 (<A HREF="http://community.nvda-project.org/ticket/4210">#4210</A>)
+<LI>Newfon 音声エンジンのドライバーを削除しました。 Newfon は NVDA のアドオンとして入手可能です。 (<A HREF="http://community.nvda-project.org/ticket/3184">#3184</A>)
+<LI>NVDA が対応する Skype (Windows デスクトップ版) のバージョンが 7 以降になりました。過去のバージョンの Skype には対応していません。 (<A HREF="http://community.nvda-project.org/ticket/4218">#4218</A>)
+<LI>NVDA の更新のダウンロードにおけるセキュリティが改善されました。(更新情報の https での取得、ダウンロード後のハッシュ値の検証が行われます) (<A HREF="http://community.nvda-project.org/ticket/4716">#4716</A>)
+</UL>
+
+<H3>バグ修正</H3>
+
+<UL>
+<LI>Microsoft Excel において、結合された行や列の見出しセルが適切に処理されるようになりました。例えば A1 と B1 が結合されている場合に、B2 では A1 および B1 の内容を列見出しとして通知します。このような場合にはこれまで何も通知されていませんでした。 (<A HREF="http://community.nvda-project.org/ticket/4617">#4617</A>)
+<LI>Microsoft PowerPoint 2003 においてテキストボックスの内容を編集する場合に NVDA は各行の内容を正しく通知するようになりました。これまでは、段落の中の各行の文字数が1文字ずつずれて処理されていました。 (<A HREF="http://community.nvda-project.org/ticket/4619">#4619</A>)
+<LI>NVDA のダイアログがすべて画面の中央に表示されるようになりました。視覚的な見栄えと使い勝手が改善されました。 (<A HREF="http://community.nvda-project.org/ticket/3148">#3148</A>)
+<LI>Skype (Windows デスクトップ版) において、連絡先を追加するための解説のメッセージに移動した場合に、テキスト内の移動が正しく処理されるようになりました。 (<A HREF="http://community.nvda-project.org/ticket/3661">#3661</A>)
+<LI>Eclipse IDE のツリービューで新しい項目にフォーカスを移動するときに、直前にフォーカスがあった項目がチェックボックスであった場合に、通知が不適切になる不具合を修正しました。 (<A HREF="http://community.nvda-project.org/ticket/4586">#4586</A>)
+<LI>Microsoft Word のスペルチェックダイアログにおいて、直前の箇所の変更または無視のショートカットキー操作の後で、次のエラーが自動的に通知されるようになりました。 (<A HREF="http://community.nvda-project.org/ticket/1938">#1938</A>)
+<LI>Tera Term Pro のターミナルウィンドウや Balabolka のドキュメントにおいて、テキストが正しく読み取れるようになりました。 (<A HREF="http://community.nvda-project.org/ticket/4229">#4229</A>)
+<LI>Internet Explorer や MSHTML ドキュメントのフレーム内でテキストを編集するときに、韓国語などのアジア言語の入力コンポジション完了後にフォーカスがドキュメントに戻らなかった不具合を修正しました。 (<A HREF="http://community.nvda-project.org/ticket/4045">#4045</A>)
+<LI>入力ジェスチャーのダイアログにおいて、キーボードジェスチャーを追加するためにキーボード配列の選択をしている途中で Esc キーが押されても、ダイアログを閉じるのではなく、選択中のメニューを閉じるようになりました。 (<A HREF="http://community.nvda-project.org/ticket/3617">#3617</A>)
+<LI>アドオンの削除を実行した場合に、NVDA の再起動後に正しくアドオンのディレクトリが消去されるようになりました。これまでは2回再起動されるまで消去されませんでした。 (<A HREF="http://community.nvda-project.org/ticket/3461">#3461</A>)
+<LI>Skype (Windows デスクトップ版) バージョン 7 における不具合を修正しました。 (<A HREF="http://community.nvda-project.org/ticket/4218">#4218</A>)
+<LI>Skype (Windows デスクトップ版) でメッセージを送信したときに2回読み上げる不具合を修正しました。 (<A HREF="http://community.nvda-project.org/ticket/3616">#3616</A>)
+<LI>Skype (Windows デスクトップ版) で不適切に大量の(おそらく会話全体と思われる)メッセージの読み上げが起きる不具合を修正しました。 (<A HREF="http://community.nvda-project.org/ticket/4644">#4644</A>)
+<LI>NVDA の日付と時刻の通知において、地域と言語の設定が反映されない場合がある不具合を修正しました。 (<A HREF="http://community.nvda-project.org/ticket/2987">#2987</A>)
+<LI>ブラウズモードにおいて、Google Groups などで使われる特定の画像が無意味な(複数行になる場合もある)テキストとして通知されていた不具合を修正しました。(具体的には base64 エンコードされた画像への対応です) (<A HREF="http://community.nvda-project.org/ticket/4793">#4793</A>)
+<LI>Windows ストアアプリから他のウィンドウにフォーカスが移った数秒後、アプリがサスペンドしたときに、NVDA がフリーズする不具合を修正しました。 (<A HREF="http://community.nvda-project.org/ticket/4572">#4572</A>)
+<LI>Mozilla Firefox のライブリージョンで、アトミックな要素自身が更新された場合にも aria-atomic 属性が考慮されるようになりました。これまでは内部の要素だけに反映されていました。 (<A HREF="http://community.nvda-project.org/ticket/4794">#4794</A>)
+<LI>Internet Explorer および MSHTML コントロールにおいて、ドキュメントに埋め込まれた ARIA アプリケーションがブラウズモードの対象となった場合に、内容の更新が処理され、ライブリージョンの通知も行われるようになりました。 (<A HREF="http://community.nvda-project.org/ticket/4798">#4798</A>)
+<LI>Internet Explorer および MSHTML コントロールにおいて、テキストの変更や追加があり、制作者が適切に記述をした場合には、変更または追加されたテキストだけが通知されるようになりました。これまでは内部の要素のすべてのテキストを通知していました。 (<A HREF="http://community.nvda-project.org/ticket/4800">#4800</A>)
+<LI>Internet Explorer および MSHTML コントロールにおいて、要素が aria-labelledby 属性で参照しているコンテンツがある場合には、その内容を必要に応じて適切に使用するようになりました。 (<A HREF="http://community.nvda-project.org/ticket/4575">#4575</A>)
+<LI>Microsoft Outlook 2013 でスペルチェックを行ったときに、スペルエラーの単語を通知するようになりました。 (<A HREF="http://community.nvda-project.org/ticket/4848">#4848</A>)
+</UL>
+
+<H3>開発者向けの変更</H3>
+
+<UL>
+<LI>wxPython 3.0.2.0 に更新しました。 (<A HREF="http://community.nvda-project.org/ticket/3763">#3763</A>)
+<LI>Python 2.7.9 に更新しました。 (<A HREF="http://community.nvda-project.org/ticket/4715">#4715</A>)
+<LI>アドオンの削除や更新の後で NVDA が再起動されたときに、installTasks モジュールから speechDictHandler をインポートする処理で NVDA がクラッシュする不具合を修正しました。 (<A HREF="http://community.nvda-project.org/ticket/4496">#4496</A>)
+</UL>
+
 <H2>2014.4</H2>
 
 <H3>新機能</H3>
