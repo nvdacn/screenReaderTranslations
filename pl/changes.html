@@ -12,6 +12,10 @@
 
 <H2>2015.1</H2>
 
+<P>
+Główne zmiany w tej wersji, to tryb czytania dla dokumentów Microsoft Word i Outlook; duże ulepszenia wsparcia Skype dla pulpitu; istotne poprawki dla Microsoft Internet Explorer.
+</P>
+
 <H3>Nowości</H3>
 
 <UL>
@@ -19,13 +23,17 @@
 <LI>W oknie Zdarzeń wejścia, można używać nowego pola filtrowania, aby wyświetlić zdarzenia zawierające określone słowa. (<A HREF="http://community.nvda-project.org/ticket/4458">#4458</A>)
 <LI>NVDA automatycznie odczytuje nowy tekst w mintty. (<A HREF="http://community.nvda-project.org/ticket/4588">#4588</A>)
 <LI>W oknie wyszukiwania trybu czytania, znajduje się od teraz opcja poszukiwania z uwzględnieniem wielkości liter. (<A HREF="http://community.nvda-project.org/ticket/4584">#4584</A>)
-<LI>Szybka nawigacja (h do nagłówka etc.) oraz lista elementów (NVDA+f7) są teraz dostępne dla dokumentów Microsoft Word, po włączeniu trybu czytania NVDA+spacja. (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>)
-<LI>Odczyt wiadomości HTML w Microsoft Outlook 2007 i wyższych, został poprawiony ponieważ tryb czytania jest automatycznie włączony dla tych wiadomości. Jeśli tryb czytania nie jest włączony w niektórych rzadkich sytuacjach, możesz wymusić jego włączenie przez NVDA+spacja. (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>) 
+<LI>Szybka nawigacja (naciśnięcie litery h by przejść do nagłówka etc.) oraz lista elementów (NVDA+f7) są teraz dostępne dla dokumentów Microsoft Word, po włączeniu trybu czytania NVDA+spacja. (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>)
+<LI>Poprawiony odczyt wiadomości HTML w Microsoft Outlook 2007 i wyższych: tryb czytania jest automatycznie włączony dla tych wiadomości. Jeśli tryb czytania nie jest włączony w niektórych rzadkich sytuacjach, możesz wymusić jego włączenie przez NVDA+spacja. (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>) 
 <LI>Nagłówki kolumn tabeli w Microsoft word są automatycznie zgłaszane dla tabel, w których wiersz nagłówkowy został określony przez autora we właściwościach tabeli. (<A HREF="http://community.nvda-project.org/ticket/4510">#4510</A>) 
+ <UL>
+ <LI>Dla tabel z połączonymi wierszami, nie będzie to działać automatycznie. W takiej sytuacji, można ustawić nagłówek kolumny ręcznie w NVDA, używając NVDA+shift+c.
+ </UL>
 <LI>W Skype dla pulpitu zgłaszane są powiadomienia. (<A HREF="http://community.nvda-project.org/ticket/4741">#4741</A>)
 <LI>W Skype dla pulpitu można teraz czytać ostatnie wiadomości przy użyciu NVDA+control+1 do NVDA+control+0; np. NVDA+control+1 dla ostatniej wiadomości, NVDA+control+0 dla dziesiątej od końca. (<A HREF="http://community.nvda-project.org/ticket/3210">#3210</A>)
 <LI>W konwersacji w Skype dla pulpitu, NVDA zgłasza, gdy kontakt pisze. (<A HREF="http://community.nvda-project.org/ticket/3506">#3506</A>)
 <LI>NVDA może teraz zostać po cichu zainstalowany przy użyciu wiersza poleceń bez uruchamiania zainstalowanej kopii po instalacji. Aby to zrobić, użyj przełącznika --install-silent. (<A HREF="http://community.nvda-project.org/ticket/4206">#4206</A>)
+<LI>Wsparcie dla monitorów brajlowskich Papenmeier BRAILLEX Live 20, BRAILLEX Live and BRAILLEX Live Plus. (<A HREF="http://community.nvda-project.org/ticket/4614">#4614</A>)
 </UL>
 
 <H3>Zmiany</H3>
@@ -35,6 +43,8 @@
 <LI>NVDA  będzie używał języka syntezatora/głosu do przetwarzania znaków i symboli (włączając w to nazwy znaków przestankowych), niezależnie od tego, czy automatyczna zmiana języka jest włączona. Aby wyłączyć tę funkcję, czyli sprawić, żeby NVDA używał języka interfejsu, odznacz nową opcję w ustawieniach głosu: Ufaj językowi głosu przetwarzając znaki i symbole. (<A HREF="http://community.nvda-project.org/ticket/4210">#4210</A>)
 <LI>Wsparcie dla syntezatora Newfon zostało usunięte. Newfon jest dostępny jako dodatek dla NVDA. (<A HREF="http://community.nvda-project.org/ticket/3184">#3184</A>)
 <LI>Skype dla pulpitu 7 lub nowszy jest wymagany przez NVDA; wcześniejsze wersje nie są wspierane. (<A HREF="http://community.nvda-project.org/ticket/4218">#4218</A>)
+<LI>Pobieranie aktualizacji NVDA jest teraz bardziej bezpieczne. (szczególnie, informacje o aktualizacji są pobierane przez https i sprawdzany jest hash pliku po pobraniu.) (<A HREF="http://community.nvda-project.org/ticket/4716">#4716</A>)
+<LI>eSpeak został zaktualizowany do wersji 1.48.04 (<A HREF="http://community.nvda-project.org/ticket/4325">#4325</A>)
 </UL>
 
 <H3>Poprawki błędów</H3>
@@ -55,10 +65,13 @@
 <LI>W Skype dla pulpitu, NVDA nie powinien teraz od czasu do czasu czytać dużej ilości wiadomości (nawet całej konwersacji). (<A HREF="http://community.nvda-project.org/ticket/4644">#4644</A>)
 <LI>Naprawiono problem, że komenda zgłaszania daty i czasu w NVDA w niektórych przypadkach nie uwzględniała ustawień regionalnych określonych przez użytkownika. (<A HREF="http://community.nvda-project.org/ticket/2987">#2987</A>)
 <LI>Tryb czytania: nonsensowny tekst (czasem kilkuliniowy) nie jest od teraz prezentowany dla niektórych obrazków np. w serwisie grupy  Google . (Miało to miejsce szczególnie dla obrazków kodowanych w base64.) (<A HREF="http://community.nvda-project.org/ticket/4793">#4793</A>)
-<LI>NVDA nie powinien się zawieszać po kilku sekundach, gdy punkt uwagi opuścił aplikację Windows 8 Metro, kiedy została ona wstrzymana. (<A HREF="http://community.nvda-project.org/ticket/4572">#4572</A>)
+<LI>NVDA nie powinien się zawieszać po kilku sekundach, gdy punkt uwagi opuścił aplikację sklepu Windows 8, kiedy została ona wstrzymana. (<A HREF="http://community.nvda-project.org/ticket/4572">#4572</A>)
 <LI>Atrybut aria-atomic żywych obszarów w Mozilla Firefox jest uwzględniany nawet dla zmian tego elementu. Wcześniej miał wpływ tylko na elementy potomne. (<A HREF="http://community.nvda-project.org/ticket/4794">#4794</A>) 
-<LI>Tryb czytania będzie odzwierciedlał zmiany, zgłaszane będą żywe obszary dla dokumentów trybu czytania w aplikacjach ARIA osadzonych w dokumentach otwartych przez Internet Explorer lub innych kontrolek MSHTML (<A HREF="http://community.nvda-project.org/ticket/4798">#4798</A>)
+<LI>Tryb czytania będzie odzwierciedlał zmiany, zgłaszane będą żywe obszary dla dokumentów trybu czytania w aplikacjach ARIA osadzonych w dokumentach otwartych przez Internet Explorer lub inne kontrolki MSHTML (<A HREF="http://community.nvda-project.org/ticket/4798">#4798</A>)
 <LI>Gdy dodany lub zmieniony jest tekst w żywych obszarach w  Internet Explorer i innych kontrolkach MSHTML, ogłaszany jest dodany lub zmieniony tekst, zamiast całej zawartości elementu. (<A HREF="http://community.nvda-project.org/ticket/4800">#4800</A>)
+<LI>Treść wskazywana przez atrybut aria-labelledby na elementach w Internet Explorer i innych kontrolkach MSHTML, prawidłowo zastępuje treść oryginalną, jeśli jest to potrzebne. (<A HREF="http://community.nvda-project.org/ticket/4575">#4575</A>)
+<LI>Błędnie wpisane słowo jest teraz oznajmiane podczas sprawdzania pisowni w Microsoft Outlook 2013. (<A HREF="http://community.nvda-project.org/ticket/4848">#4848</A>)
+<LI>W Internet Explorer i innych kontrolkach MSHTML, treść wewnątrz elementów ukrytych przez visibility:hidden nie jest nieprawidłowo pokazywana w trybie czytania. (<A HREF="http://community.nvda-project.org/ticket/4839">#4839</A>, <A HREF="http://community.nvda-project.org/ticket/3776">#3776</A>)
 </UL>
 
 <H3>Zmiany dla programistów</H3>
