@@ -440,7 +440,8 @@ Te dodatne značilnosti NVDA so privzeto izključene.
 
 + Brskalniško Delovanje +
 Kompleksne dokumente samo za branje, kot so spletne strani, v NVDA obravnavamo s pomočjo Brskalniškega delovanja.
-To vključuje dokumente v Mozilli Firefox, Microsoftovem Internet Explorerju, Google Chrome-u, Adobe Reader-ju in Adobe Flash-u.
+To vključuje dokumente v Mozilli Firefox, Microsoftovem Internet Explorerju, Google Chrome-u, HTML sporočila v Microsoftovem Outlooku, Adobe Reader-ju in Adobe Flash-u.
+Brskalniško delovanje je opcijsko na voljo tudi v Microsoftovem Wordu za krmarjenje po kompleksnih dokumentih.
 
 V brskalniškem delovanju je vsebina dokumenta na voljo v ravninski predstavitvi, tako da lahko uporabljate tipke za krmarjenje z utripalko podobno, kot če bi bili v navadnem besedilnem dokumentu.
 Vsi NVDA ukazi za [sistemsko kazalko #SystemCaret] bodo delovali v tem delovanju; npr. izgovori vse, sporoči oblikovanje, ukazi za pomikanje po tabeli, in drugi.
@@ -567,6 +568,13 @@ Opozorilo: Bližnjica poročaj o preostanku časa dela samo s privzetim oblikova
 | Sporočaj opombe za prevajalce | control+shift+a | Sporoča katerokoli sporočilo namenjeno prevajalcem. |
 %kc:endInclude
 
+++ Skype ++
+%kc:beginInclude
+Ko smo v pogovoru:
+|| Ime | Tipka | Opis |
+| Preglej sporočilo | NVDA+control+1-0 | Sporoči zadnje sporočilo in nanj premakne pregledno utripalko, odvisno od številke, ki ste jo pritisnili; npr. NVDA+control+2 prebere predzadnje sporočilo. |
+%kc:endInclude
+
 + Nastavljanje NVDA +
 
 ++ Nastavitve ++
@@ -685,6 +693,10 @@ Tipka: NVDA+p
 To vam omogoča izbiro vrednost naglaševanja in izgovorjave drugih simbolov, ki morajo biti brani kot besede.
 Ko je vrednost v tem spustnem meniju nastavljena na vse, potem se bodo vsi simboli brali z besedami.
 Ta možnost vpliva na vse sinteze in ne samo na tisto, ki je trenutno v uporabi.
+
+==== Zaupaj jeziku osebe med obdelovanjem simbolov in znakov ====
+Ta možnost, ki je privzeto vključena, pove NVDA, naj se pri obdelovanju znakov in simbolov zanaša na jezik osebe (slovar govorne sinteze preglasi slovar vgrajen v NVDA).
+Če ugotovite, da NVDA napačno izgovarja posamezno ločilo v nekem jeziku ob nastavitvi glasu ali govorne sinteze v celoti, potem lahko to možnost izključite, da NVDA vsilite uporabo globalnih jezikovnih nastavitev.
 
 ==== Sprememba višine glasu ob velikih črkah v odstotkih ====
 To vnosno polje omogoča vnos vrednosti razlike v tonu glasu, za katero se bo glas zvišal, ko bo sinteza izgovarjala veliko črko.
@@ -1009,6 +1021,11 @@ Na primer, ko se premikate s puščicami po spletni strani in vstopite na polje 
 
 ==== Zvočna indikacija delovanja Žarišča in Brskalniškega delovanja ====
 Če je ta možnost izbrana, bo NVDA oddajala posebne zvoke ob preklopu med brskalniškim delovanjem in delovanjem žarišča namesto govornega obvestila o spremembi.
+
+==== Onemogoči vpliv kretenj, ki niso ukazi, na dokument ====
+Ta možnost, ki je privzeto vključena, vam omogoča izbiro ali naj kretnje (pritiski tipk), ki niso ukazi NVDA, niti to niso splošni ukazi, ne vplivajo na dokument.
+Na primer, v primeru, ko je možnost vključena, pritisk črke j ne bo vplival na dokument, čeprav to niti ni ukaz NVDA, niti ni to splošen ukaz v programu.
+
 
 +++ Nastavitve Oblikovanja Dokumentov (NVDA+control+d) +++[DocumentFormattingSettings]
 To pogovorno okno se nahaja v meniju Nastavitev pod "Oblikovanje Dokumentov...".
@@ -1374,7 +1391,8 @@ NVDA pozna naslednje možnosti ukazne vrstice:
 | -s | --secure | Varni način (Onemogočena konzola Pythona) |
 | None | --disable-addons | Dodatki nimajo vpliva na NVDA. Isto, kot če v NVDA dodatkov ne bi bilo. |
 | None | --no-sr-flag  | Ne zamenjaj stanja globalne sistemske zastavice za bralnik zaslona. |
-| None | --install | Tiha namestitev NVDA. |
+| None | --install | Namesti NVDA (na novo nameščeno kopijo NVDA tudi zažene). |
+| None | --install-silent | Tiho namesti NVDA (na novo nameščene kopije NVDA ne zažene). |
 
 ++ Napredno Nastavljanje Izgovorjave Simbolov ++
 V NVDA je možno nastaviti izgovorjavo ločil in drugih simbolov glede na to, kaj omogočajo možnosti v pogovornem oknu [Izgovorjave ločil/simbolov. #SymbolPronunciation]
