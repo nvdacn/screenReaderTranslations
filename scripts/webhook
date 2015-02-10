@@ -29,7 +29,7 @@ for key in addresses.keys():
         rcpts.extend(addresses[key]['email'])
 
 # Check any po files in this commit.
-call(["svn", "update", "-q"], cwd=SRT_PATH)
+call([os.path.join(SRT_PATH, "scripts", "svn"), "update", "-q"], cwd=SRT_PATH)
 poFiles = re.findall(r'(?<=\s)/.*\.po', body)
 for po in poFiles:
     po = os.path.join(SRT_PATH, po[1:])
