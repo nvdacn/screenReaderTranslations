@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-01-12 22:25+0000\n"
-"PO-Revision-Date: 2015-02-12 12:09+0800\n"
+"PO-Revision-Date: 2015-02-14 19:07+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.6.4\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1239,7 +1239,7 @@ msgstr ""
 #. type: Title ###
 #, no-wrap
 msgid "Working with objects on screen"
-msgstr "Working with objects on screen"
+msgstr "雨屏幕上的控件协同工作"
 
 #. type: Plain text
 msgid ""
@@ -1247,6 +1247,8 @@ msgid ""
 "a program is running. For example, if a class called button has been "
 "defined, the button on a screen is the object of this button class."
 msgstr ""
+"一个对象就是一个“类”的“实例”，每当程序运行的时候，类就有了生命。如定义了一"
+"个“按钮”类，屏幕上的按钮就是这个“按钮”类的对象。"
 
 #. type: Plain text
 msgid ""
@@ -1258,6 +1260,11 @@ msgid ""
 "the parent of this list might be the Windows Explorer window. The object "
 "that you're examining right now is termed \"navigator object.\""
 msgstr ""
+"在 NVDA，一个“对象”表示了一个控件货程序的一部分。这包括按钮、复选框、编辑框、"
+"工具栏、滑块甚至是程序窗口。按照控件的父子关系--有些对象可能包含其他紫对"
+"象--，他们备分层组织。如 Windows 资源管理器的列表对象可能包含一个货多个列表项"
+"目对象。而这个列表的父对象可能就是 Windows 资源管理器窗口。您现在锁了解的对象"
+"就是“导航对象”。"
 
 #. type: Plain text
 msgid ""
@@ -1269,6 +1276,10 @@ msgid ""
 "the object, reacting to events for the object (gains focus, value changed, "
 "etc.) and so on."
 msgstr ""
+"NVDA 对象（货简单的称为对象）带有大量的实用特性和属性。包括对象名称、它的值"
+"（选择、编辑窗口的文本等）、角色(复选框、窗口、嵌入式对象等）、位置（屏幕坐"
+"标）货更多。NVDA 对象还包含一些操作他们的方法，如修改对象的值、响应对象的事件"
+"（获取焦点、值的更新等）诸多动作。"
 
 #. type: Plain text
 msgid ""
@@ -1280,6 +1291,11 @@ msgid ""
 "handler for the object you're using (e.g. if you're working with an "
 "IAccessible object, impore NVDAObjects.IAccessible.)."
 msgstr ""
+"在许多场景下，一个 NVDA 对象可能从属于相关对象的类。对于每个对象类， NVDA 都"
+"提供了控制方法。这些类包括 IAccessible、 JAB、 UIA 等等。这些类及对象类的行为"
+"都备定义在 NVDA 源码的 NVDAObjects  目录中。要想在您的插件中使用，只要导入您"
+"在使用的对象的对象类控制器即可。(如您正工作在一个 IAccessible  对象，那么可以"
+"导入 NVDAObjects.IAccessible）。"
 
 #. type: Plain text
 msgid ""
@@ -1289,23 +1305,26 @@ msgid ""
 "interceptor is virtual buffer, which allows NVDA to work with complex "
 "documents such as PDF documents."
 msgstr ""
+"这些中的两个对象类应该特别提到：虚拟缓冲区和树拦截器。树拦截器允许 NVDA 工作"
+"在“树”对象中，他们看起来就像只有一个对象。虚拟缓冲区就是特别的树对象，它允许 "
+"NVDA 在复杂的文档（如 PDF 文档）工作。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Examining object hierarchy"
-msgstr ""
+msgstr "检查对象层级"
 
 #. type: Plain text
 msgid ""
 "There are a number of ways which you can use to see the hierarchy of an "
 "object for a given program:"
-msgstr ""
+msgstr "这里有许多方法可以查看给定程序对象的所属层级："
 
 #. type: Bullet: '1. '
 msgid ""
 "Using object navigation commands (NvDA+Numpad 2/4/5/6/8) with simple review "
 "mode turned off."
-msgstr ""
+msgstr "在简易浏览模式关闭的前提下使用对象导航命令（NvDA+数字键盘2/4/5/6/8）。"
 
 #. type: Bullet: '2. '
 msgid ""
@@ -1313,6 +1332,8 @@ msgid ""
 "attributes. If you want to see all available properties, from mPython "
 "Console, type dir(obj)."
 msgstr ""
+"在 python 控制台,使用 obj.next/previous/parent/firstChild/lastChild 属性。如"
+"果您想查看所有可用的属性，在 Python 控制台输入“dir(obj)”。"
 
 #. type: Plain text
 msgid ""
@@ -1321,11 +1342,13 @@ msgid ""
 "press NvDA+F1 to launch log viewer. The root of all objects in Windows is "
 "the desktop, or shell object."
 msgstr ""
+"如果您想查看浏览对象的更详细描述，且导航对象已经定位到您锁感兴趣的对象，请"
+"按“NVDA+F1）运行日志查看器查看。所有对象的根就是桌面货外壳对象。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Focus vs. navigator object"
-msgstr ""
+msgstr "焦点 vs. 导航对象"
 
 #. type: Plain text
 msgid ""
@@ -1333,6 +1356,8 @@ msgid ""
 "them. These may include changing the focused object, synchronizing navigator "
 "and focus objects, changing the role of an object and so on."
 msgstr ""
+"在您的插件里，您可能会工作在各种各样的对象上并控制他们。这可能包括改变聚焦对"
+"象、同步导航对象和焦点的对象、修改一个对象的角色等等。"
 
 #. type: Plain text
 msgid ""
@@ -1343,6 +1368,10 @@ msgid ""
 "and the navigator object. For instance, you might be focused on an edit "
 "field while examining the title bar as the navigator object."
 msgstr ""
+"聚焦对象就是当前获得焦点的对象。控件连接着键盘焦点--就是说，焦点跟随着高亮的"
+"控件。与此不同，导航对象就是您感兴趣的对象。因为导航对象可以移动到任何地方。"
+"您可以马上查看这两个对象： 聚焦对象和浏览对象。 例如，您可以在聚焦于一个编辑"
+"框的同时使用导航对象查看标题栏。"
 
 #. type: Plain text
 msgid ""
@@ -1351,17 +1380,20 @@ msgid ""
 "to use the name \"obj\". To fetch the navigator object (which might be "
 "different from the focused object), use `obj = api.getNavigatorObject()`."
 msgstr ""
+"在您的插件里，要想获取有焦点的对象，编写 `someObj = api.getFocusObject()`。 "
+"someObj 可以使用不同的名字--习惯上使用名称 “Obj”。要想获取导航的对象（它可能"
+"雨聚焦对象不同）， 使用`obj = api.getNavigatorObject()`。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Other useful object-related goodies"
-msgstr ""
+msgstr "其他有用的对象--相关的优点"
 
 #. type: Plain text
 msgid ""
 "Here are some other methods which works with NVDA objects, all located in "
 "api.py module:"
-msgstr ""
+msgstr "这里有一些 NVDA 对象工作的其他实用方法，他们都备放置在模块“api.py”："
 
 #. type: Bullet: '* '
 msgid ""
@@ -1369,6 +1401,8 @@ msgid ""
 "some child object of the foreground window), use `obj = api."
 "getForegroundObject()`."
 msgstr ""
+"如果您想获取前景对象（如您想查看前景窗口的子对象，这是非常有用的），使用 "
+"`obj = api.getForegroundObject()`。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -1377,23 +1411,29 @@ msgid ""
 "type `obj.childCount`. The value 0 means that there are no more child "
 "objects."
 msgstr ""
+"从 Python 控制台查看某对象包含的子对象的数目（如紫成员货前景窗口的小部件"
+"等），输入`obj.childCount`。值为0说明已经没有更多的紫对象了。"
 
 #. type: Bullet: '* '
 msgid ""
 "To set some object as the new focus or navigator object, use `api."
 "setFocusObject(obj)` or `api.setNavigatorObject(obj)`."
 msgstr ""
+"要想设置某些对象为聚焦对象货浏览对象，可使用 `api.setFocusObject(obj)` 货 "
+"`api.setNavigatorObject(obj)`。"
 
 #. type: Bullet: '* '
 msgid ""
 "You can fetch various properties of an object by specifying obj.property "
 "where property is the attribute you wish to see (e.g. obj.value)."
 msgstr ""
+"您可以通过 obj.property 获得对象的各种属性property就是您想查看的属性（如 obj."
+"values）。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 1: Finding the value of a slider in a program"
-msgstr ""
+msgstr "例子1：查找程序滑块的值"
 
 #. type: Plain text
 msgid ""
@@ -1402,15 +1442,17 @@ msgid ""
 "properties, you know that the toolbar is the last child of the foreground "
 "object."
 msgstr ""
+"假设您的用户要求您使用程序模块查看一个程序滑块的值，在查看对象的层级和其他属"
+"性之后，您发现这个工具栏还是前景对象的最后一个子成员。"
 
 #. type: Plain text
 msgid "Here is the code to implement this feature:"
-msgstr ""
+msgstr "这里是提供此特性的代码："
 
 #. type: Plain text
 #, no-wrap
 msgid "\t# Object example 1\n"
-msgstr ""
+msgstr "\t# Object example 1\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1418,11 +1460,13 @@ msgid ""
 "\timport api\n"
 "\timport appModuleHandler\n"
 msgstr ""
+"\timport api\n"
+"\timport appModuleHandler\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "\t\tsliderChildIndex = -1 # The variable to store the child index.\n"
-msgstr ""
+msgstr "\t\tsliderChildIndex = -1 # The variable to store the child index.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1432,6 +1476,10 @@ msgid ""
 "\t\t\tsliderVal = fg.children[self.sliderChildIndex].value\n"
 "\t\t\treturn sliderVal\n"
 msgstr ""
+"\t\tdef getSliderValue(self):\n"
+"\t\t\tfg = api.getForegroundObject()\n"
+"\t\t\tsliderVal = fg.children[self.sliderChildIndex].value\n"
+"\t\t\treturn sliderVal\n"
 
 #. type: Plain text
 msgid ""
@@ -1440,6 +1488,9 @@ msgid ""
 "index would be minus 1, or the very last child; we could have used fg."
 "lastChild)."
 msgstr ""
+"在此代码中，方法`fg.children[index]`用来取回给出索引的子成员（这里，我们设定"
+"工具栏是最后一个子成员，因而索引号是 -1，货非常后面的成员，我们可以使用fg."
+"lastChild）。"
 
 #. type: Plain text
 msgid ""
@@ -1447,6 +1498,8 @@ msgid ""
 "the first child of the actual slider control? One way to fix this is to "
 "check the object's role. The modified code looks like this:"
 msgstr ""
+"可能，这份代码有一个问题：万一如果滑块的值实际上包含在滑块的第一个子成员控件"
+"怎么办？解决这个问题的其中一个办法就是检测对象角色。修改的代码看起来像这样："
 
 #. type: Plain text
 #, no-wrap
@@ -1457,6 +1510,11 @@ msgid ""
 "\t\tslider = fg.lastChild\n"
 "\t\tif slider.role == ROLE_SLIDER: return slider.firstChild.value\n"
 msgstr ""
+"\tdef getSliderValue(self):\n"
+"\t\tfrom controltypes import ROLE_SLIDER # It is possible to import from within a method.\n"
+"\t\tfg = api.getForegroundObject()\n"
+"\t\tslider = fg.lastChild\n"
+"\t\tif slider.role == ROLE_SLIDER: return slider.firstChild.value\n"
 
 #. type: Plain text
 msgid ""
@@ -1465,37 +1523,39 @@ msgid ""
 "the two equals signs for equality, as opposed to just one equals sign for "
 "assignment."
 msgstr ""
+"就此，我们知道并确定经过我们的处理，函数可以返回滑块的第一个子对象的值（如果"
+"这是一种情况的话）。请注意：两个等号表示相等，只有一个等于号表示分配。 "
 
 #. type: Plain text
 msgid ""
 "There are other examples you can try to familiarize yourself with object "
 "navigation and manipulation:"
-msgstr ""
+msgstr "这里还有其他的例子可以帮助您熟悉导航对象和操作："
 
 #. type: Bullet: '* '
 msgid ""
 "Obtaining the name of an object that is located somewhere else in the "
 "program."
-msgstr ""
+msgstr "获取不再这个程序而在其他地方的对象的名称。"
 
 #. type: Bullet: '* '
 msgid "Moving the navigator to the foreground object."
-msgstr ""
+msgstr "移动导航器到前景对象。"
 
 #. type: Bullet: '* '
 msgid "Setting focus to another program."
-msgstr ""
+msgstr "设置焦点到其他程序。"
 
 #. type: Plain text
 msgid ""
 "For real-life examples on objects in NvDA, consult the NvDA source code or "
 "source codes of various community add-ons."
-msgstr ""
+msgstr "关于 NVDA 对象的更多现实例子，可以查阅 NVDA 源代码货其他社区插件。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Specialist objects and overriding object properties at runtime"
-msgstr ""
+msgstr "运行时的专门对象货覆盖对象属性"
 
 #. type: Plain text
 msgid ""
@@ -1503,12 +1563,16 @@ msgid ""
 "example, some parts of a program may need custom gestures, or one may need "
 "to change the role of a window to that of a button."
 msgstr ""
+"有些时候，只在控件用默认动作工作是不够的。如某些程序的部分可能需要自定义的手"
+"势， 或者需要修改某个控件的窗口角色为按钮。"
 
 #. type: Plain text
 msgid ""
 "NVDA provides two methods for creating specialist, or overlay objects (or "
 "classes), each suited for different needs:"
 msgstr ""
+"NVDA 提供两个方法来创建专门的、或者是覆盖对象（或类），每一个都是为不同的需求"
+"配套："
 
 #. type: Bullet: '* '
 msgid ""
@@ -1521,6 +1585,11 @@ msgid ""
 "by assigning obj.role = ROLE_WINDOW (see control types dictionary for list "
 "of available roles)."
 msgstr ""
+"`event_NvDAObject_init(self, 您正在处理的对象)`: 如果您希望替换某个当前控件的"
+"属性，如角色货标签（名称），您可以使用这个方法在 NVDA 第一次遇到这个控件货初"
+"始化的时候把您的“输入”放入“account”。例如，如果一个控件拥有窗口类TForm (曾经"
+"在许多Delphi 程序见过)， 您可以通过 bj.role = ROLE_WINDOW 要求 NVDA 把它视为"
+"窗口。（查看控件类型词典获取可用角色的列表）。"
 
 #. type: Bullet: '* '
 msgid ""
@@ -1535,6 +1604,12 @@ msgid ""
 "objects inherit from, or is the child or specialist class of IAccessible "
 "objects)."
 msgstr ""
+"`chooseNVDAObjectOverlayClasses(self, 对象， 类表)`：这个方法允许 NVDA 用您的"
+"逻辑处理某些控件。例如，您如果想在您的程序模块中为程序的某部分设计特殊的手"
+"势，这是非常有用的（事实上，很多程序模块为了处理程序的特定部分而创建对象，然"
+"后在遇到某些状况的时候使用 chooseNvDAObjectOverlayClasses 选择正确的对象）。"
+"我们必须基于固有的对象来处理这些对象（大多数时候， Accessible 已经足够，因为"
+"大多数的覆盖对象都继承自此或是 IAccessible  的子成员货专门的类）。"
 
 #. type: Plain text
 msgid ""
@@ -1544,21 +1619,24 @@ msgid ""
 "is usually read as, \"this child class inherits from this base class\". "
 "We'll see code like this later)."
 msgstr ""
+"请注意，对于第二个方法，给定的类名必须放置在文件内。他们备继承字一个众所周知"
+"的基本对象(在 Python， 继承的语法是 `子类(基类)`， 通常也可以说成“这个子类继"
+"承自这个基类”。我们将在后面看到这样的代码）。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Examples of overlay classes and modified roles"
-msgstr ""
+msgstr "覆盖类和修改角色的例子"
 
 #. type: Plain text
 msgid ""
 "Below examples illustrate the uses of the two overlay and attribute "
 "modification methods we've discussed above:"
-msgstr ""
+msgstr "下面的例子说明了我们在上面讨论的覆盖和更改属性这两个方法的用法："
 
 #. type: Plain text
 msgid "An example of the first case: modifying an atribute."
-msgstr ""
+msgstr "第一个例子：修改属性。"
 
 #. type: Plain text
 #, no-wrap
@@ -1567,12 +1645,17 @@ msgid ""
 "\t\tdef event_NvDAObject_init(self, obj):\n"
 "\t\t\tif obj.windowClassName == \"TForm\": obj.role = ROLE_WINDOW\n"
 msgstr ""
+"\t# Reassign some Delphi forms as window.\n"
+"\t\tdef event_NvDAObject_init(self, obj):\n"
+"\t\t\tif obj.windowClassName == \"TForm\": obj.role = ROLE_WINDOW\n"
 
 #. type: Plain text
 msgid ""
 "This means that whenever we encounter a window with the class name of \"TForm"
 "\", NvDA will treat this as a normal window."
 msgstr ""
+"这样的意思是，每当我们遇到的窗口类名为“TForm”的窗口时, NvDA 会把他当作普通窗"
+"口对待。"
 
 #. type: Plain text
 msgid ""
@@ -1580,11 +1663,13 @@ msgid ""
 "specific parts of a program, then uses chooseNVDAObjectOverlayClasses to "
 "assign the logic for each control."
 msgstr ""
+"例子2：使用带有两个对象的程序模块处理程序的特定部分，然后使用 "
+"chooseNVDAObjectOverlayClasses 来自定义每个控件的逻辑。"
 
 #. type: Plain text
 #, no-wrap
 msgid "\t#An example of overlay classes\n"
-msgstr ""
+msgstr "\t#An example of overlay classes\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1592,6 +1677,8 @@ msgid ""
 "\tclass enhancedEdit(IAccessible):\n"
 "\t\t# Some code to be run when window class name is MyEdit.\n"
 msgstr ""
+"\tclass enhancedEdit(IAccessible):\n"
+"\t\t# Some code to be run when window class name is MyEdit.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1599,11 +1686,13 @@ msgid ""
 "\tclass MainWindow(IAccessible):\n"
 "\t\t# Another code, this time adding custom gestures for main window of the program.\n"
 msgstr ""
+"\tclass MainWindow(IAccessible):\n"
+"\t\t# Another code, this time adding custom gestures for main window of the program.\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "\t# In the app module:\n"
-msgstr ""
+msgstr "\t# In the app module:\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1612,6 +1701,9 @@ msgid ""
 "\t\tif obj.windowClassName == \"myEdit\": clsList.insert(0, enhancedEdit)\n"
 "\t\telif obj.windowClassName == \"TWindow\": clsList.insert(0, mainWindow)\n"
 msgstr ""
+"\tdef chooseNVDAObjectOverlayClasses(self, obj, clsList):\n"
+"\t\tif obj.windowClassName == \"myEdit\": clsList.insert(0, enhancedEdit)\n"
+"\t\telif obj.windowClassName == \"TWindow\": clsList.insert(0, mainWindow)\n"
 
 #. type: Plain text
 msgid ""
