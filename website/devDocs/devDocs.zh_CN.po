@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-01-12 22:25+0000\n"
-"PO-Revision-Date: 2015-02-14 19:07+0800\n"
+"PO-Revision-Date: 2015-02-15 15:54+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: zh_CN\n"
@@ -1713,11 +1713,14 @@ msgid ""
 "and in the developer info, these custom objects will come first when MRO "
 "(Method Resolution Order) for the navigator object is displayed."
 msgstr ""
+"对于这两个函数，我们希望检查的对象必须插入到“clsList”的第一项。 这样做的好处"
+"是在为对象查找手势和代码（行为）时这些自定义对象可以获得优先权。且在开发信息"
+"中，显示导航对象的MRO（方法解决顺序）时江首先显示这些自定义控件。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Input and output: scripts and UI messages"
-msgstr ""
+msgstr "输入和输出：脚本和 UI 消息"
 
 #. type: Plain text
 msgid ""
@@ -1725,6 +1728,8 @@ msgid ""
 "displaying what the add-on is doing. These are done via scripts (input) and "
 "UI messages (output)."
 msgstr ""
+"插件的另外一个组成部分就是获取用户命令和显示插件正在做什么。这些可以通过脚本"
+"（输入）和 UI 消息（输出）完成。"
 
 #. type: Plain text
 msgid ""
@@ -1735,6 +1740,10 @@ msgid ""
 "clarify a given translatable string. this command is not a native NvDA "
 "command, but it is defined in the Poedit app module to perform this function."
 msgstr ""
+"脚本是一个当用户执行某个动作而执行的方法。例如，如果您按下“NVDA+T”，NVDA 会执"
+"行存放在全局命令模块的脚本“SayTitle”。在 Poedit 中，译者按下“Control+Shift"
+"+A”时， NVDA 会朗读油程序员添加的注视以帮助理清可翻译字串的用意。这不是原本"
+"的 NVDA 命令，它备添加在 Poedit 程序模块当中以执行此功能。"
 
 #. type: Plain text
 msgid ""
@@ -1746,6 +1755,11 @@ msgid ""
 "loads and is cleared when either NvDA exits or the app for the app module "
 "loses focus (that is, the user has switched to another program)."
 msgstr ""
+"通常来说，可接收脚本的插件都会拥有一个命令列表:它就是放置在某个地方的功能表。"
+"最简单的就是手势（命令）词典， 极 python 词典（通常备命名为 __gestures），它"
+"可以容纳命令（作为 keys）和脚本（作为 values）（如果命令货 key 多余一个，则可"
+"以捆绑为脚本）。 这些词典江在 插件加载时载入，将在 NVDA 退出货程序模块所属程"
+"序丢失焦点时清空（就是说，用户切换到了另外一个程序）。"
 
 #. type: Plain text
 msgid ""
@@ -1759,23 +1773,31 @@ msgid ""
 "which involves scripts for specific objects, will be covered when we talk "
 "about overlay classes."
 msgstr ""
+"另外一种捆绑脚本的方法就是运行时插入。可以通过创建与 __gestures 分离的其他手"
+"势词典完成，它可以用来存储对上下文敏感的手势。如操作一个单独的控件。接下来开"
+"发者会使用 inputCore.bindGesture （如果定义了多个脚本货手势则使用 inputCore."
+"bindGestures ）来进行定义。最后在 inputCore.bindGestures 后使用 inputCore."
+"clearGestures 来移除已添加的手势。更加优雅的方法涉及到特定的对象，江在我们讲"
+"述覆盖类时覆讲到。"
 
 #. type: Plain text
 msgid ""
 "As of time of writing, NvDA supports input from the keyboard, braille "
 "dislays with or without braille keyboard and touchscreens."
-msgstr ""
+msgstr "从写入时起，NvDA 支持从键盘、点显器货点显器键盘和触摸屏输入。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 2: A basic script dictionary"
-msgstr ""
+msgstr "例子2：基础脚本字典"
 
 #. type: Plain text
 msgid ""
 "In this example, we'll define two scripts called \"sayHello\" and say"
 "\"GoodBye\", then bind them into two separte gestures."
 msgstr ""
+"在这个例子中，我们设计了“sayHello”和“sayGoodBye”两个脚本并绑定到单独的手势中"
+"去。"
 
 #. type: Plain text
 #, no-wrap
@@ -1783,6 +1805,8 @@ msgid ""
 "\t# An example fragment for script assignment.\n"
 "\timport ui\n"
 msgstr ""
+"\t# An example fragment for script assignment.\n"
+"\timport ui\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1790,6 +1814,8 @@ msgid ""
 "\tdef script_sayHello(self, gesture):\n"
 "\t\tui.message\"Hello!\")\n"
 msgstr ""
+"\tdef script_sayHello(self, gesture):\n"
+"\t\tui.message\"Hello!\")\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1797,6 +1823,8 @@ msgid ""
 "\tdef script_sayGoodBye(self, gesture):\n"
 "\t\tui.message(\"Good Bye!\")\n"
 msgstr ""
+"\tdef script_sayGoodBye(self, gesture):\n"
+"\t\tui.message(\"Good Bye!\")\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1806,31 +1834,37 @@ msgid ""
 "\t\t\"kb:Control+NVDA+2\":\"sayGoodBye\"\n"
 "\t}\n"
 msgstr ""
+"\t__gestures={\n"
+"\t\t\"kb:control+NVDA+1\":\"sayHello\",\n"
+"\t\t\"kb:Control+NVDA+2\":\"sayGoodBye\"\n"
+"\t}\n"
 
 #. type: Plain text
 msgid ""
 "Now when you press Control+NvDA+1, NvDA will say, \"Hello\", and when you "
 "press Control+NvDA+2, NVDA will say, \"Good bye.\""
 msgstr ""
+"现在，当您按下“Control+NvDA+1”，NVDA 会说“Hello”，当您按下“Control+NvDA+2”，"
+"NVDA 会说“Good Bye”。"
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 3: runtime script insertion/removal"
-msgstr ""
+msgstr "例子3：运行时插入货移除脚本"
 
 #. type: Plain text
 #, no-wrap
 msgid "\t# Future sections #\n"
-msgstr ""
+msgstr "\t# Future sections #\n"
 
 #. type: Plain text
 msgid "Please delete this notice when appropriate sections are done."
-msgstr ""
+msgstr "Please delete this notice when appropriate sections are done."
 
 #. type: Title ##
 #, no-wrap
 msgid "Add-on components and development tips"
-msgstr ""
+msgstr "Add-on components and development tips"
 
 #. type: Plain text
 msgid ""
@@ -1839,172 +1873,189 @@ msgid ""
 "some tips on add-on development such as debugging. It concludes with some "
 "useful examples and do's and don'ts."
 msgstr ""
+"Includes introductions to input and scripts, output systems, objects, "
+"events, configuration, add-on settings and reloading plug-ins. Also includes "
+"some tips on add-on development such as debugging. It concludes with some "
+"useful examples and do's and don'ts."
 
 #. type: Plain text
 msgid ""
 "Planned sections (please feel free to contribute your knowledge in this "
 "section):"
 msgstr ""
+"Planned sections (please feel free to contribute your knowledge in this "
+"section):"
 
 #. type: Bullet: '* '
 msgid "Introduction to NVDA objects."
-msgstr ""
+msgstr "Introduction to NVDA objects."
 
 #. type: Bullet: '* '
 msgid "Examining object attributes with Python Console."
-msgstr ""
+msgstr "Examining object attributes with Python Console."
 
 #. type: Bullet: '* '
 msgid "Fetching and setting objects."
-msgstr ""
+msgstr "Fetching and setting objects."
 
 #. type: Bullet: '* '
 msgid ""
 "Object hierarchy and differences between regular and simple review modes."
 msgstr ""
+"Object hierarchy and differences between regular and simple review modes."
 
 #. type: Bullet: '* '
 msgid "The event_NVDAObject_init and chooseNVDAObjectOverlayClasses methods."
-msgstr ""
+msgstr "The event_NVDAObject_init and chooseNVDAObjectOverlayClasses methods."
 
 #. type: Bullet: '* '
 msgid "Events and list of available events."
-msgstr ""
+msgstr "Events and list of available events."
 
 #. type: Bullet: '* '
 msgid "Next handlers."
-msgstr ""
+msgstr "Next handlers."
 
 #. type: Bullet: '* '
 msgid ""
 "Input from keyboard, braille displays, mouse and touchscreen via scripts."
 msgstr ""
+"Input from keyboard, braille displays, mouse and touchscreen via scripts."
 
 #. type: Bullet: '* '
 msgid "Script lookup process and conflicts."
-msgstr ""
+msgstr "Script lookup process and conflicts."
 
 #. type: Bullet: '* '
 msgid ""
 "Static and dynamic script bindings, gesture dictionaries and script "
 "categories."
 msgstr ""
+"Static and dynamic script bindings, gesture dictionaries and script "
+"categories."
 
 #. type: Bullet: '* '
 msgid "Braille, speech and tone output."
-msgstr ""
+msgstr "Braille, speech and tone output."
 
 #. type: Bullet: '* '
 msgid "Debugging add-ons."
-msgstr ""
+msgstr "Debugging add-ons."
 
 #. type: Bullet: '* '
 msgid "If something goes wrong (common errors and exceptions)."
-msgstr ""
+msgstr "If something goes wrong (common errors and exceptions)."
 
 #. type: Bullet: '* '
 msgid "Few working and non-working examples for each topic."
-msgstr ""
+msgstr "Few working and non-working examples for each topic."
 
 #. type: Bullet: '* '
 msgid "These plan sections may change."
-msgstr ""
+msgstr "These plan sections may change."
 
 #. type: Title ##
 #, no-wrap
 msgid "Global Plugins"
-msgstr ""
+msgstr "Global Plugins"
 
 #. type: Plain text
 msgid "A chapter devoted to global plugins."
-msgstr ""
+msgstr "A chapter devoted to global plugins."
 
 #. type: Plain text
 msgid "Planned sections:"
-msgstr ""
+msgstr "Planned sections:"
 
 #. type: Bullet: '* '
 msgid "What exactly is global plugin."
-msgstr ""
+msgstr "What exactly is global plugin."
 
 #. type: Bullet: '* '
 msgid ""
 "Importance of consulting NvDA and add-on commands to minimize command "
 "conflicts."
 msgstr ""
+"Importance of consulting NvDA and add-on commands to minimize command "
+"conflicts."
 
 #. type: Bullet: '* '
 msgid "When not to use global plugins."
-msgstr ""
+msgstr "When not to use global plugins."
 
 #. type: Bullet: '* '
 msgid "A few worked out examples."
-msgstr ""
+msgstr "A few worked out examples."
 
 #. type: Bullet: '* '
 msgid "These sections may change."
-msgstr ""
+msgstr "These sections may change."
 
 #. type: Title ##
 #, no-wrap
 msgid "App Modules"
-msgstr ""
+msgstr "App Modules"
 
 #. type: Plain text
 msgid "A chapter devoted to app modules."
-msgstr ""
+msgstr "A chapter devoted to app modules."
 
 #. type: Bullet: '* '
 msgid "What is an app module."
-msgstr ""
+msgstr "What is an app module."
 
 #. type: Bullet: '* '
 msgid "App module scripts."
-msgstr ""
+msgstr "App module scripts."
 
 #. type: Bullet: '* '
 msgid "Defining objects representing different parts of a program."
-msgstr ""
+msgstr "Defining objects representing different parts of a program."
 
 #. type: Bullet: '* '
 msgid "Silencing NVDA for a program."
-msgstr ""
+msgstr "Silencing NVDA for a program."
 
 #. type: Bullet: '* '
 msgid "How app developers can help NVDA users through accessible app designs."
-msgstr ""
+msgstr "How app developers can help NVDA users through accessible app designs."
 
 #. type: Bullet: '* '
 msgid ""
 "A few worked out examples and examples from existing app modules from NVDA "
 "core and from community."
 msgstr ""
+"A few worked out examples and examples from existing app modules from NVDA "
+"core and from community."
 
 #. type: Bullet: '* '
 msgid "These topics may change."
-msgstr ""
+msgstr "These topics may change."
 
 #. type: Title ##
 #, no-wrap
 msgid "Drivers"
-msgstr ""
+msgstr "Drivers"
 
 #. type: Plain text
 msgid "A chapter devoted to driver development."
-msgstr ""
+msgstr "A chapter devoted to driver development."
 
 #. type: Title ##
 #, no-wrap
 msgid "Misc items"
-msgstr ""
+msgstr "Misc items"
 
 #. type: Plain text
 msgid ""
 "Includes Bitbucket repo, add-ons lisst, other topics and contact information."
 msgstr ""
+"Includes Bitbucket repo, add-ons lisst, other topics and contact information."
 
 #. type: Plain text
 msgid ""
 "[1]: http://community.nvda-project.org/wiki/Development [2]: http://"
 "community.nvda-project.org/documentation/developerGuide.html"
 msgstr ""
+"[1]: http://community.nvda-project.org/wiki/Development [2]: http://"
+"community.nvda-project.org/documentation/developerGuide.html"
