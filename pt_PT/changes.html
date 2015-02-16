@@ -10,13 +10,14 @@
 </CENTER>
 
 <P>
-Adaptado da tradução para Português do Brasil.
-</P>
-<P>
-Traduzido por Marlin Rodrigues da Silva e Cleverson Casarin Uliana (adaptado por Rui Batista e Rui Fontes)
+A partir da versão 2015.1 traduzido por Rui Fontes, e as versões anteriores foram adaptadas por Rui Batista e Rui Fontes da tradução brasileira...
 </P>
 
 <H2>2015.1</H2>
+
+<P>
+Os destaques desta versão incluem o modo de navegação para documentos no Microsoft Word e Microsoft Outlook, grandes melhorias no suporte ao Skype para Desktop e correções significativas no suporte ao Microsoft Internet Explorer.
+</P>
 
 <H3>Novas Funcionalidades</H3>
 
@@ -27,6 +28,15 @@ Traduzido por Marlin Rodrigues da Silva e Cleverson Casarin Uliana (adaptado por
 <LI>Na caixa de diálogo Localizar do modo de navegação, existe agora uma opção para executar a pesquisa sensível a maiúsculas. (# 4584)
 <LI>As teclas de navegação rápida (h para títulos, etc), e a lista de elementos (NVDA + F7) estão agora disponíveis em documentos do Microsoft Word se activarmos o modo de navegação com NVDA + espaço. (# 2975)
 <LI>A leitura de mensagens no Microsoft Outlook 2007 e superiores foi bastante melhorada pois o modo de navegação é automaticamente activado para essas mensagens. Se o modo de navegação não for activado em algumas situações raras, pode forçá-lo com NVDA + espaço. (# 2975)
+<LI>Os títulos  de coluna de tabelas no Microsoft word são automaticamente anunciados nas  tabelas em que a linha de títulos foi especificamente definida pelo  autor nas propriedades de tabela do Microsoft word. (<A HREF="http://community.nvda-project.org/ticket/4510">#4510</A>)
+ <UL>
+ <LI>Contudo em tabelas com colunas unidas , isto não funcionará automaticamente. Nestas situações, pode definir os títulos de coluna manuamente no NVDA com NVDA+shift+c.
+ </UL>
+<LI>No Skype for Desktop, as notificações são agora anunciadas. (<A HREF="http://community.nvda-project.org/ticket/4741">#4741</A>)
+<LI>No  Skype for Desktop, Pode agora ter anunciadas  as várias mensagens antigas usando NVDA+control+1 até NVDA+control+0; por exemplo, NVDA+control+1 para a mensagem mais recente e NVDA+control+0 para a décima mensagem a ter sido recebida. (<A HREF="http://community.nvda-project.org/ticket/3210">#3210</A>)
+<LI>Numa  conversa no Skype for Desktop, o NVDA agora anuncia quando o outro elemento está a escrever. (<A HREF="http://community.nvda-project.org/ticket/3506">#3506</A>)
+<LI>O NVDA pode agora ser   instalado silenciosamente via linha de  comandos sem iniciar a cópia após instalação. Para tal, use a opção --install-silent. (<A HREF="http://community.nvda-project.org/ticket/4206">#4206</A>)
+<LI>Suporte para  as linhas Braille Papenmeier BRAILLEX Live 20, BRAILLEX Live e BRAILLEX Live Plus. (<A HREF="http://community.nvda-project.org/ticket/4614">#4614</A>)
 </UL>
 
 <H3>Alterações</H3>
@@ -34,6 +44,10 @@ Traduzido por Marlin Rodrigues da Silva e Cleverson Casarin Uliana (adaptado por
 <UL>
 <LI>Na caixa de diálogo das Preferências do NVDA, Formatação de documentos, a opção Anunciar erros ortográficos agora tem uma tecla de atalho (Alt + O). (# 793)
 <LI>O NVDA passa a usar o idioma da voz/sintetizador para o processamento de caracteres, símbolos e momes dos sinais de pontuação, independentemente da configuração da opção "Alterar o idioma automaticamente". Para desactivar esta funcionalidade, para que o NVDA volte a usar o idioma da interface, desmarque a nova opção nas definições de voz, "Usar o idioma da voz ao processar caracteres e símbolos". (<A HREF="http://community.nvda-project.org/ticket/4210">#4210</A>)
+<LI>O suporte ao  sintetizador Newfon foi removido. O Newfon está agora disponível como um  extra do NVDA. (<A HREF="http://community.nvda-project.org/ticket/3184">#3184</A>)
+<LI>As versões 7 ou superiores do Skype for Desktop são agora necessárias para que o suporte do    NVDA funcione. As versões anteriores já não são suportadas. (<A HREF="http://community.nvda-project.org/ticket/4218">#4218</A>)
+<LI>O download das actualizações do NVDA é agora mais seguro. (Mais especificamente, a informação da actualização é agora  feita via https e a verificação da integridade do ficheiro é feita após download.) (<A HREF="http://community.nvda-project.org/ticket/4716">#4716</A>)
+<LI>O sintetizador eSpeak foi actualizado para a versão 1.48.04 (<A HREF="http://community.nvda-project.org/ticket/4325">#4325</A>)
 </UL>
 
 <H3>Correcção de falhas</H3>
@@ -49,9 +63,28 @@ Traduzido por Marlin Rodrigues da Silva e Cleverson Casarin Uliana (adaptado por
 <LI>O foco agora retorna corretamente ao documento que está a ser editado Ao terminar a composição de entrada de texto em coreano e outros idiomas do leste asiático, durante a edição dentro de frames no Internet Explorer e outros documentos MSHTML. (# 4045)
 <LI>No diálogo Comandos, ao seleccionar um esquema de teclado para um comando de teclado que está a ser adicionado, ao pressinar escape agora fecha o menu, como eé expectável, em vez de fechar o diálogo. (<A HREF="http://community.nvda-project.org/ticket/3617">#3617</A>)
 <LI>Ao remover um Extra, a directoria do Extra é correctamente eliminada após o reinício do NVDA. Antes era necessário reiniciar o NVDA por duas vezes. (<A HREF="http://community.nvda-project.org/ticket/3461">#3461</A>)
-<P></P>
-== Alterações para Desenvolvedores ==
+<LI>Os problemas ao usar o Skype for Desktop 7 foram resolvidos. (<A HREF="http://community.nvda-project.org/ticket/4218">#4218</A>)
+<LI>Quando uma mensagem é enviada no Skype for Desktop, já não é anunciada duas vezes. (<A HREF="http://community.nvda-project.org/ticket/3616">#3616</A>)
+<LI>No Skype for Desktop, o NVDA já não deve, ocasionalmente, anunciar   continuamente um grande bloco de mensagens (às vezes toda a conversa). (<A HREF="http://community.nvda-project.org/ticket/4644">#4644</A>)
+<LI>Resolvido  o problema do comando de Anunciar a data/hora do NVDA por vezes não respeitar as definições regionais definidas. (<A HREF="http://community.nvda-project.org/ticket/2987">#2987</A>)
+<LI>No modo de navegação, para certos gráficos, como algumas imagens  em Google Groups, já não é apresentado texto sem sentido (por vezes estendendo-se por várias linhas). (Mais especificamente, isto ocorria em imagens codificadas em base64.) (<A HREF="http://community.nvda-project.org/ticket/4793">#4793</A>)
+<LI>O NVDA já não deve bloquear após alguns segundos, depois de mover o foco  de uma app da Windows Store, como se tivesse sido suspenso. (<A HREF="http://community.nvda-project.org/ticket/4572">#4572</A>)
+<LI>O atributo  aria-atomic em  regiões live no Mozilla Firefox é agora respeitado mesmo que  o próprio elemento atomic  mude. Antes, só afectava elementos descendentes. (<A HREF="http://community.nvda-project.org/ticket/4794">#4794</A>)
+<LI>O modo de navegação reflectirá actualizações, e as regiões serão anunciadas, em documentos que usem o modo de navegação dentro de aplicações ARIA inseridas em documentos no Internet Explorer, ou outros controlos MSHTML. (<A HREF="http://community.nvda-project.org/ticket/4798">#4798</A>)
+<LI>Quando é alterado, ou acrescentado, texto em regiões live no Internet Explorer, ou outros controlos MSHTML, em que o autor especificou que o texto é relevante, apenas o texto alterado ou modificado é anunciado, em vez de todo o texto no elemento que o contém. (<A HREF="http://community.nvda-project.org/ticket/4800">#4800</A>)
+<LI>Conteúdo indicado pelo atributo aria-labelledby em elementos no Internet Explorer, ou outros controlos MSHTML, substitui, quando apropriado, o conteúdo original. (<A HREF="http://community.nvda-project.org/ticket/4575">#4575</A>)
+<LI>Na verificação ortográfica do Microsoft Outlook 2013, a palavra errada é agora anunciada. (<A HREF="http://community.nvda-project.org/ticket/4848">#4848</A>)
+<LI>No Internet Explorer, ou outros controlos MSHTML, o conteúdo dentro de elementos ocultos com visibility:hidden já não é indevidamente mostrado no modo de navegação. (<A HREF="http://community.nvda-project.org/ticket/4839">#4839</A>, <A HREF="http://community.nvda-project.org/ticket/3776">#3776</A>)
+<LI>No Internet Explorer, ou outros controlos MSHTML, o atributo title nos controlos de formulário já não, indevidamente, tem preferência sobre outras associações de etiquetas. (<A HREF="http://community.nvda-project.org/ticket/4491">#4491</A>)
+<LI>No Internet Explorer, ou outros controlos MSHTML, o NVDA já não ignora a focagem de elementos devida ao atributo aria-activedescendant. (<A HREF="http://community.nvda-project.org/ticket/4667">#4667</A>)
+</UL>
+
+<H3>Alterações para Desenvolvedores</H3>
+
+<UL>
 <LI>Actualizado o wxPython para a versão 3.0.2.0. (<A HREF="http://community.nvda-project.org/ticket/3763">#3763</A>)
+<LI>Actualizado o Python para a versão 2.7.9. (<A HREF="http://community.nvda-project.org/ticket/4715">#4715</A>)
+<LI>O NVDA já não apresenta problemas quando é reiniciado após remover ou actualizar um extra que importe speechDictHandler no módulo installTasks. (<A HREF="http://community.nvda-project.org/ticket/4496">#4496</A>)
 </UL>
 
 <H2>2014.4</H2>
