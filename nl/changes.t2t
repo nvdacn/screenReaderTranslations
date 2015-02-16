@@ -36,7 +36,7 @@ Hoogtepunten in deze versie zijn  bladermodus voor Microsoft Word en Outlook doc
 - Bij het bewerken van de inhoud van een tekstvak in Microsoft PowerPoint 2003 zal NVDA nu de inhoud van iedere regel correct melden. (#4619)
 - Alle dialoogvensters van NVDA worden nu op het midden van het scherm weergegeven om visuele presentatie en bruikbaarheid te verbeteren. (#3148)
 - Wanneer er in Skype voor desktop bij het toevoegen van een contactpersoon een introducerend bericht wordt ingetypt, werkt het invoeren van en navigeren door de tekst nu correct. (#3661)
-- Wanneer de focus verplaatst naar een nieuw item in boomstructuren in de Eclipse IDEen het eerder geselecteerde item een selectivakje is, wordt het niet meer onterecht gemeld. (#4586)
+- Wanneer de focus verplaatst naar een nieuw item in boomstructuren in de Eclipse IDEen het eerder geselecteerde item een selectivakje is, wordt het niet langer onterecht gemeld. (#4586)
 - In het venster voor spellingscontrole van Microsoft Word zal de volgende fout automatisch gemeld moeten worden wanneer de laatste fout veranderd of genegeerd is met gebruik van de daarvoor bedoelde sneltoetsen. (#1938)
 - Tekst kan weer correct worden gelezen in plaatsen zoals het terminalvenster van Tera Term Pro en documenten in Balabolka. (#4229)
 - Wanneer u in het dialoogvenster Invoerhandelingen koppelen tijdens het selecteren van een toetsenbordindeling voor een toetsenbordsneltoets op escape drukt, zal het menu gesloten worden in plaats van het hele venster. (#3617)
@@ -47,17 +47,48 @@ Hoogtepunten in deze versie zijn  bladermodus voor Microsoft Word en Outlook doc
 - Er is een probleem opgelost waarbij het NVDA-commando voor het melden van de datum/tijd  de regionale instellingen van de gebruiker in sommige gevallen niet respecteerde. (#2987)
 - In de bladermodus wordt onzinnige tekst (die soms zelfs meerdere regels omvat) niet langer gepresenteerd voor bepaalde afbeeldingen zoals te vinden op Google Groups. Dit gebeurde specifiek met base64 gecodeerde afbeeldingen.) (#4793)
 - NVDA zou niet langer na enkele seconden moeten bevriezen wanneer de focus verplaatst wordt uit een app uit de Windows Store. (#4572)
-- Verschillende verbeteringen voor Mozilla Firefox, Internet Explorer en andere MSHTML elementen, onder andere voor ondersteuning van aria. Zie voor details het Engelstalige document. (#4045, #4794, #4798, #4800, #4575, #4839, #3776, #4491, #4667)
+- Verschillende verbeteringen voor Mozilla Firefox, Internet Explorer en andere MSHTML elementen, onder andere voor ondersteuning van aria. Zie voor details []het Engelstalige document ../en/changes.html]. (#4045, #4794, #4798, #4800, #4575, #4839, #3776, #4491, #4667)
 - Bij de spellingscontrole in Microsoft Outlook 2013 wordt het verkeerd gespelde woord nu gemeld. (#4848)
 
 
 == Veranderingen voor Ontwikkelaars ==
-Deze zijn niet vertaald. We verwijzen naar de Engelstalige versie van dit document.
+Deze zijn niet vertaald. We verwijzen naar []de Engelstalige versie van dit document ../en/changes.html].
 
 
 = 2014.4 =
 
-[Zie Engelstalig document ../en/changes.html]
+== Nieuwe Functies ==
+- Nieuwe talen: Colombiaans Spaans, Punjabi.
+- Het is nu mogelijk om NVDA te herstarten of NVDA te herstarten Nmet add-ons uitgeschakeld vanuit het afsluitvenster van NVDA. (#4057)
+ - NVDA kan ook worden gestart met add-ons uitgeschakeld via de --disable-addons commandoregeloptie.
+- In uitspraakwoordenboeken is het nu mogelijk om in te stellen dat een patroon alleen gebruikt wordt wanneer het een heel woord betreft, d.w.z. het vervangen vindt niet plaats wanneer het woord een deel van een langer woord is. (#1704)
+
+
+== Veranderingen ==
+- Wanneer u met objectnavigatie naar een object genavigeerd bent en dit object zich wel en het vorige object zich niet in een bladermodusdocument bevindt, zal de leesoverzichtsmodus automatisch ingesteld worden op document. Dit gebeurde voorheen alleen wanneer het navigatorobject veranderde door een focusverandering. (#4369)
+- De lijsten voor brailleleesregels en synthesizers in de respectievelijke instellingsvensters zijn nu alfabetisch gesorteerd, behalve geen braille/geen spraak die zich nu onderaan de lijst bevinden. (#2724)
+- Liblouis braillevertaler bijgewerkt naar 2.6.0. (#4434, #3835)
+- Het navigeren naar tekstvelden in bladermodus door het indrukken van e en shift+e omvat nu bewerkbare keuzelijsten. Dit omvat ook het zoekvak in de nieuwste versie van Google Zoeken. (#4436)
+- Het klikken op het NVDA-pictogram in het systeemvak met de linker muisknop opent nu het NVDA-menu. (#4459)
+
+
+== Opgeloste Problemen ==
+- Verschillende probleemoplossingen voor bladermodusdocumenten en de werking van NVDA op het internet. Zie voor details []het Engelstalige document ../en/changes.html]. (#4369, #4169, #4418, #4405, #3494, #4173)
+- In Powerpoint-presentaties volgt de leescursor nu de virtuele cursor op een correcte manier. (#4370)
+- NVDA loopt in sommige gevallen niet langer vast bij het gebruik van een Handy Tech brailleleesregel. (#3709)
+- Het in een aantal gevallen weergeven van een foutmelding in Windows Vista, bijv. bij het starten van NVDA via de bureaubladsnelkoppeling of via de sneltoets, is opgelost.(#4235)
+- Er zijn ernstige problemen met tekstinvoer opgelost in dialoogvensters in recente versies van Eclipse. (#3872)
+- In Outlook 2010 werkt het verplaatsen van de cursor in het locatieveld van afspraken en vergaderverzoeken nu naar behoren. (#4126)
+- Bij het melden van de tekst van een statusbalk met een naam wordt de naam nu correct gescheiden van het eerste woord van de statusbalktekst. (#4430)
+- Bij het invoeren van wachtwoorden met het uitspreken van woorden ingeschakeld worden er niet langer nodeloos meerdere sterretjes uitgesproken bij het beginnen aan een nieuw woord. (#4402)
+- In de berichtenlijst van Microsoft Outlook worden items niet langer nodeloos benoemd als data-items. (#4439)
+- Bij het selecteren van tekst in het codevenster van the Eclipse IDE wordt de hele selectie niet langer iedere keer uitgesproken bij een selectieverandering. (#2314)
+- Verschillende versies van Eclipse worden nu als zodanig herkend en behandeld. (#4360, #4454)
+- Bij het gebruik van een Papenmeier BRAILLEX brailleleesregel met BrxCom werken de toetsen op de leesregel nu als verwacht. (#4614)
+
+
+== Veranderingen voor Ontwikkelaars ==
+Deze zijn niet vertaald. We verwijzen naar []de Engelstalige versie van dit document ../en/changes.html].
 
 
 = 2014.3 =
@@ -141,7 +172,7 @@ Deze zijn niet vertaald. We verwijzen naar de Engelstalige versie van dit docume
 
 
 == Veranderingen voor Ontwikkelaars ==
-Deze zijn niet vertaald. We verwijzen naar de Engelstalige versie van dit document.
+Deze zijn niet vertaald. We verwijzen naar []de Engelstalige versie van dit document ../en/changes.html].
 
 
 = 2014.2 =
@@ -243,7 +274,7 @@ Deze zijn niet vertaald. We verwijzen naar de Engelstalige versie van dit docume
 
 
 == Veranderingen voor Ontwikkelaars ==
-Deze zijn niet vertaald. We verwijzen naar de Engelstalige versie van dit document.
+Deze zijn niet vertaald. We verwijzen naar []de Engelstalige versie van dit document ../en/changes.html].
 
 
 = 2013.3 =
@@ -281,7 +312,7 @@ Deze zijn niet vertaald. We verwijzen naar de Engelstalige versie van dit docume
 
 
 == Veranderingen voor Ontwikkelaars ==
-Deze zijn niet vertaald. We verwijzen naar de Engelstalige versie van dit document.
+Deze zijn niet vertaald. We verwijzen naar []de Engelstalige versie van dit document ../en/changes.html].
 
 
 = 2013.2 =
@@ -352,7 +383,7 @@ Deze zijn niet vertaald. We verwijzen naar de Engelstalige versie van dit docume
 
 
 == Veranderingen voor Ontwikkelaars ==
-Deze zijn niet vertaald. We verwijzen naar de Engelstalige versie van dit document.
+Deze zijn niet vertaald. We verwijzen naar []de Engelstalige versie van dit document ../en/changes.html].
 
 
 = 2013.1.1 =
@@ -446,7 +477,7 @@ Bekijk het [Overzicht van Commando's keyCommands.html] voor de nieuwe toetsen.
 
 
 == Veranderingen voor Ontwikkelaars ==
-Deze zijn niet vertaald. We verwijzen naar de Engelstalige versie van dit document.
+Deze zijn niet vertaald. We verwijzen naar []de Engelstalige versie van dit document ../en/changes.html].
 
 
 = 2012.3 =
@@ -556,7 +587,7 @@ Hoogtepunten in deze versie zijn ondersteuning voor Aziatische karakterinvoer; e
 
 
 == Veranderingen voor Ontwikkelaars ==
-Deze zijn niet vertaald. We verwijzen naar de Engelstalige versie van dit document.
+Deze zijn niet vertaald. We verwijzen naar []de Engelstalige versie van dit document ../en/changes.html].
 
 
 = 2012.2.1 =
@@ -600,10 +631,10 @@ Hoogtepunten in deze versie zijn een ingebouwd installatieprogramma en het aanma
 
 
 == Veranderingen voor Ontwikkelaars ==
-Deze zijn niet vertaald. We verwijzen naar de Engelstalige versie van dit document.
+Deze zijn niet vertaald. We verwijzen naar []de Engelstalige versie van dit document ../en/changes.html].
 
 
 = 2012.1 =
 Hoogtepunten in deze versie zijn functies voor vlotter lezen van braille; aanduiding van documentopmaak in braille; toegang tot veel meer opmaakinformatie en verbeterde performantie in Microsoft Word; en ondersteuning voor de iTunes Store.
 
-De rest van dit document is niet vertaald. Voor informatie over oudere versies verwijzen we naar het Engelse document.
+De rest van dit document is niet vertaald. Voor informatie over oudere versies verwijzen we naar []het Engelstalige document ../en/changes.html].
