@@ -13,7 +13,7 @@ source "${MYDIR}/checkProgs.sh"
 source "${MYDIR}/lock.sh"
 lang=$(basename $(pwd))
 
-encoding=`file *.t2t  | grep -viP "utf-8|empty|ascii"`
+encoding=`file *.t2t  | grep -vP ': +(ASCII text|UTF-8|empty)'`
 if [ "$encoding" != "" ]; then
     python ../scripts/addresses.py $lang "File encoding problem" "Please save the following as unicode UTF-8: $encoding"
 else
