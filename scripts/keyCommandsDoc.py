@@ -282,7 +282,6 @@ if __name__ == "__main__":
     try:
         result = f.make()
         if not result:
-            print("WARNING: User Guide does not contain key commands markup, skipping")
+            sys.exit("User Guide does not contain key commands markup")
     except KeyCommandsError as e:
-        print e.message
-        sys.exit(1)
+        sys.exit(e.message)
