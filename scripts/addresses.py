@@ -97,7 +97,7 @@ addresses = {
     },
     'ja': {
         'lang':'Japanese',
-        'email': ['Takuya Nishimoto <nishimotz@gmail.com>'],
+        'email': ['Takuya Nishimoto <nishimotz@gmail.com>', 'Minako Nonogaki <minakonono3519@gmail.com>'],
     },
     'ka': {
         'lang': 'Georgian',
