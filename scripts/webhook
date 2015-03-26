@@ -2,11 +2,12 @@
 import os
 import cgi
 import re
-from subprocess import PIPE, call
+import subprocess
 from addresses import addresses, email
 import poChecker
 
 SRT_PATH = "/home/nvdal10n/mr/srt"
+SCRIPTS_PATH = os.path.join(SRT_PATH, "scripts")
 
 form = cgi.FieldStorage() # instantiate only once!
 
@@ -28,15 +29,33 @@ for key in addresses.keys():
     if re.search('(\s+/%s/)|(\.%s\.po)' %(key, key), body):
         rcpts.extend(addresses[key]['email'])
 
+hasAlert = False
+subprocess.call([os.path.join(SCRIPTS_PATH, "svn"), "update", "-q"], cwd=SRT_PATH)
+
 # Check any po files in this commit.
-call([os.path.join(SRT_PATH, "scripts", "svn"), "update", "-q"], cwd=SRT_PATH)
 poFiles = re.findall(r'(?<=\s)/.*\.po', body)
 for po in poFiles:
     po = os.path.join(SRT_PATH, po[1:])
     c = poChecker.PoChecker(po)
     if not c.check():
+        if c.errorCount > 0:
+            hasAlert = True
         body += "\n\n\n" + c.getReport().encode("UTF-8")
 
+# Convert any t2t files in this commit.
+# The t2t conversion code operates per language.
+t2tLangs = re.findall(r'(?<=\s)/([^/]+)/[^/]+\.t2t', body)
+for lang in t2tLangs:
+    try:
+        subprocess.check_output([os.path.join(SCRIPTS_PATH, "convertOne.sh")],
+            cwd=os.path.join(SRT_PATH, lang),
+            stderr=subprocess.STDOUT)
+    except subprocess.CalledProcessError as e:
+        hasAlert = True
+        body += "\n\n\n" + e.output
+
+if hasAlert:
+    subject = "[alert] " + subject
 email(rcpts, subject, body)
 
 f = open('/tmp/webhook.log', 'a')
@@ -55,10 +74,5 @@ print "Notification sent."
 if re.search("/website/", body):
     print "running website post-commit hook."
     pc = '/home/nvdal10n/ikiwiki/publish/post-commit'
-    call([pc])
+    subprocess.call([pc])
     print "finnished website post-commit hook."
-
-if re.search(r"\s+/([^/\s]+/)+\w+\.t2t\b", body):
-    print "running t2t conversion"
-    call(["./convertT2t.sh"], cwd="/home/nvdal10n/mr/srt_conv/scripts")
-    print "finished running t2t conversion"
