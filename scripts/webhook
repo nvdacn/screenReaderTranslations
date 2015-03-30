@@ -9,6 +9,9 @@ import poChecker
 SRT_PATH = "/home/nvdal10n/mr/srt"
 SCRIPTS_PATH = os.path.join(SRT_PATH, "scripts")
 
+# Ensure our overridden svn gets used, includingsubprocesses.
+os.environ["PATH"] = "/home/nvdal10n/bin:" + os.environ["PATH"]
+
 form = cgi.FieldStorage() # instantiate only once!
 
 print "Content-type: text/plain\n"
@@ -30,7 +33,7 @@ for key in addresses.keys():
         rcpts.extend(addresses[key]['email'])
 
 hasAlert = False
-subprocess.call([os.path.join(SCRIPTS_PATH, "svn"), "update", "-q"], cwd=SRT_PATH)
+subprocess.call(["svn", "update", "-q"], cwd=SRT_PATH)
 
 # Check any po files in this commit.
 poFiles = re.findall(r'(?<=\s)/.*\.po', body)
