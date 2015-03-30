@@ -39,6 +39,8 @@ else
 
     ${MYDIR}/rebuildStats.sh
 
+    rm -f keyCommands.t2t
+
     mfiles=`svn status -q | awk '{printf(" %s", $2)}'`
 
     if [ "$mfiles" != "" ]; then
