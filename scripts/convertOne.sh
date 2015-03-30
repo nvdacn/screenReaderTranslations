@@ -14,7 +14,7 @@ source "${MYDIR}/lock.sh"
 result=0
 lang=$(basename $(pwd))
 
-encoding=`file *.t2t  | grep -vP ': +(ASCII text|UTF-8|empty)'`
+encoding=`file *.t2t  | grep -vP ': +(HTML document, )?(ASCII text|UTF-8|empty)'`
 if [ "$encoding" != "" ]; then
     result=1
     echo $lang: File encoding problem in t2t file. Please save the following as Unicode UTF-8:
