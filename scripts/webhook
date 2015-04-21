@@ -57,7 +57,9 @@ for lang in t2tLangs:
         hasAlert = True
         body += "\n\n\n" + e.output
 
-if hasAlert:
+# Don't flag alerts for automated commits.
+# Automated commits shouldn't introduce errors, so any errors were there before.
+if hasAlert and author != "CommitBot":
     subject = "[alert] " + subject
 email(rcpts, subject, body)
 
