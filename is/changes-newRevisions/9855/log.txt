@@ -1,9 +1,0 @@
-commit 437343a7e773292991f4005f9e03480a21c7064a
-Author: James Teh <jamie@nvaccess.org>
-Date:   Tue Jan 14 08:14:49 2014 +0000
-
-    When entering Asian input into a control within NVDA itself (e.g. the browse mode Find dialog), "NVDA" is no longer incorrectly reported in place of the actual candidate.
-    
-    When determining whether to fudge the name for the NVDA menu, the code wasn't checking whether the saved NVDA menu identity was None before comparing it. This meant that anything with an IAccessibleIdentity of None was getting the name "NVDA" before the NVDA menu was first opened.
-    Aside from Asian input, this seems to affect message dialogs in wxPython 3.
-    Fixes #3726.

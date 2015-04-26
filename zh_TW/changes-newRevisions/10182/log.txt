@@ -1,8 +1,0 @@
-commit 807deae35bff8c2dfe6483080ad1f1e12523e4b1
-Author: James Teh <jamie@nvaccess.org>
-Date:   Wed Jun 4 10:20:00 2014 +0800
-
-    In browse mode in Internet Explorer and other MSHTML controls, using single letter navigation to move to editable text fields again reports the label in many cases where it didn't (specifically, where HTML label elements are used).
-    
-    The new name from author checks used to determine whether to add the name attribute introduced in #1195 weren't taking HTML label elements into account. There's no efficient way to get the HTML label element for a control, so we have to specifically handle each control with which a label might be associated.
-    Fixes #4170.

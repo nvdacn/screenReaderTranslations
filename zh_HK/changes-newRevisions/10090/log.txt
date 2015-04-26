@@ -1,8 +1,0 @@
-commit 5abca082bebf84865b3d23049bd233cc701320dc
-Author: James Teh <jamie@nvaccess.org>
-Date:   Thu May 1 14:03:47 2014 +1000
-
-    In browse mode in Mozilla applications, pressing enter on a button, etc. no longer fails to activate it (or activates the wrong control) in certain cases such as the buttons at the top of Facebook.
-    
-    _activateNVDAObject in the Gecko vbuf now tries doAction on ancestors before it tries clicking. It tries doAction even if the button is off-screen/invisible. Also, it does not try to click objects with the invisible state or a width/height of 0.
-    Fixes #4106.
