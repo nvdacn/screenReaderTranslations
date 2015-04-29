@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NVDA Community Addons website\n"
-"POT-Creation-Date: 2014-02-14 11:52+0000\n"
+"POT-Creation-Date: 2015-04-30 07:27+1000\n"
 "PO-Revision-Date: 2013-12-21 17:54+0545\n"
 "Last-Translator: Him Prasad Gautam <drishtibachak@gmail.com>\n"
 "Language-Team: Nepali <drishtibachak@gmail.com>\n"
@@ -22,15 +22,27 @@ msgid "[[!meta title=\"instantTranslate\"]]\n"
 msgstr "[[!meta title=\"तुरून्तै अनुवाद (instantTranslate)\"]]\n"
 
 #. type: Bullet: '* '
+#, fuzzy
+#| msgid ""
+#| "Authors: Alexy Sadovoy, Beqa Gozalishvili, Mesar Hameed, Alberto "
+#| "Buffolino and other nvda contributors."
 msgid ""
 "Authors: Alexy Sadovoy, Beqa Gozalishvili, Mesar Hameed, Alberto Buffolino "
-"and other nvda contributors."
+"and other NVDA contributors."
 msgstr ""
 "लेखकहरू: Alexy Sadovoy, Beqa Gozalishvili, Mesar Hameed, Alberto Buffolino र "
 "अरू नेत्रवाणी योगदान कर्ताहरू"
 
 #. type: Bullet: '* '
-msgid "Download [version 3.0-dev][1]"
+#, fuzzy
+#| msgid "Download [version 3.0-dev][1]"
+msgid "Download [stable version][1]"
+msgstr "डाउनलोड [संस्करण ३.०-विकास][1]"
+
+#. type: Bullet: '* '
+#, fuzzy
+#| msgid "Download [version 3.0-dev][1]"
+msgid "Download [development version][2]"
 msgstr "डाउनलोड [संस्करण ३.०-विकास][1]"
 
 #. type: Plain text
@@ -47,24 +59,66 @@ msgid "Configuring languages"
 msgstr "भाषाहरूको अभियोजन"
 
 #. type: Plain text
-msgid ""
-"To configure source, target and in case swap language, from NVDA menu, go to "
-"Preferences, then go to Instant Translate Settings.  There are three combo "
-"boxes labeled \"translate from\", \"translate into\" and \"Language for "
-"swapping\" (if you selected auto option from source languages)."
+#, no-wrap
+msgid "To configure source, target and in case swap language, go to: NVDA Menu >> Preferences >> Instant Translate Settings.\n"
 msgstr ""
-"श्रोत भाषा, लक्षित भाषा अथवा भाषा साट्ने सुविधा अभियोजन गर्न, नेत्रवाणी मेनु, "
-"प्राथमिकता अनुकूलता, तुरुन्तै अनुवाद अनुकूलता रोज्नु होला । यसमा भाषाबाट, भाषामा र भाषा "
-"साडोफेरो भन्ने तीन वटा कम्बो बाकसहरू देखा पर्ने छन् । भाषाहरू चयन गरेर ठिक टाँकलाई दबाउनु "
-"होस् ।"
 
 #. type: Plain text
 msgid ""
-"If you selected the auto option from source languages, there is also a "
-"checkbox about the auto-swap: if you activate it, then the addon tries to "
-"commute automatically from your source and target configuration to a "
+"There are two comboboxes labeled \"Source language\" and \"Target language"
+"\", and a checkbox to decide if it must copy the translation to clipboard."
+msgstr ""
+
+#. type: Plain text
+msgid ""
+"In addition, if you selected auto option (the first choice) from \"Source "
+"language\" combobox, there are also a combobox labeled \"Language for "
+"swapping\" and a checkbox about the auto-swap."
+msgstr ""
+
+#. type: Plain text
+msgid ""
+"The meaning of two first comboboxes and checkbox for copy is clear, but some "
+"words about the rest are necessary. Remember always that the explanations "
+"below assume the source language set on the auto option."
+msgstr ""
+
+#. type: Plain text
+msgid ""
+"The \"Language for swapping\" combobox is useful when you swap via script "
+"(see below) the source and target language; in fact, a target language set "
+"on the auto option has no sense, so the addon sets it to value of combobox "
+"above."
+msgstr ""
+
+#. type: Plain text
+msgid ""
+"So, imagine this situation: you usually translate into English (your main "
+"language), but sometimes (for example, when you write a document) you need "
+"to translate into Italian (your second language, suppose); you can set "
+"\"Language for swapping\" combobox to Italian, so you will translate from "
+"English to Italian without accessing directly to the addon settings. "
+"Obviously this function has a major or minor utility according to your more "
+"frequent needs."
+msgstr ""
+
+#. type: Plain text
+#, fuzzy
+#| msgid ""
+#| "If you selected the auto option from source languages, there is also a "
+#| "checkbox about the auto-swap: if you activate it, then the addon tries to "
+#| "commute automatically from your source and target configuration to a "
+#| "configuration where target becomes the source language, and language "
+#| "selected in \"Language for swapping\" combo is the new target language; "
+#| "extremely useful if the source language of the text you want translate is "
+#| "the target language."
+msgid ""
+"Now, the auto-swap checkbox: it appears if and only if you set the auto "
+"option in \"Source language\" combobox, and is directly connected with "
+"\"Language for swapping\" combobox. If you activate it, then the addon tries "
+"to commute automatically from your source and target configuration to a "
 "configuration where target becomes the source language, and language "
-"selected in \"Language for swapping\" combo is the new target language; "
+"selected in \"Language for swapping\" combobox is the new target language; "
 "extremely useful if the source language of the text you want translate is "
 "the target language."
 msgstr ""
@@ -76,54 +130,100 @@ msgstr ""
 
 #. type: Plain text
 msgid ""
-"However, this is a temporary configuration, if this option has no effect "
-"(it's experimental), try to commute manually to a stable configuration, "
-"using the gesture for swapping described below."
+"A simple example: take again in mind the situation imagined previously; if "
+"you translate a text in a language different from English, there is no "
+"problem, you get the correct translation in English. But if you need to "
+"translate a text from English, normally you get a translation into English "
+"identical to original text, and this is a bit useless. Thanks to auto-swap "
+"function, however, assuming that you want to know how your text sounds into "
+"Italian, the addon commutes automatically the target language to Italian, so "
+"it returns a valid translation."
 msgstr ""
-"तर , यो अस्थायी अभियोजन हो, यदि यो विकल्पको कुनै प्रभाव परेन भने तल उल्लेख गरे अनुसारको "
-"सङ्केत प्रयोग गरी  (यसको परिक्षण), मानविय रूपले नै  स्थायी अभियोजनमा तय गर्न कोसिस "
-"गर्नु होस्, "
+
+#. type: Plain text
+msgid ""
+"Anyway, this is a temporary configuration; if this option has no effect "
+"(it's experimental), try to commute manually to a stable configuration, "
+"using the gesture for swapping described below. It's experimental because in "
+"some situations (with short texts, tipically), Google does not recognize the "
+"real source language correctly, and you have to swap languages manually via "
+"script, so to force the source language to be the previous target language "
+"(English in our example)."
+msgstr ""
 
 #. type: Title ##
 #, no-wrap
-msgid "How to use this add-on"
-msgstr "यो थप साधन कसरी प्रयोग गर्ने?"
+msgid "Using"
+msgstr ""
 
 #. type: Plain text
-msgid "There are two ways of using this add-on:"
-msgstr "यो उप-कर्मीको प्रयोग गर्ने दुई वटा तरीकाहरू छन् ।"
+#, fuzzy
+#| msgid "How to use this add-on"
+msgid "You can use this add-on in two ways:"
+msgstr "यो थप साधन कसरी प्रयोग गर्ने?"
 
 #. type: Bullet: '1. '
+#, fuzzy
+#| msgid ""
+#| "Select some text using selection commands (shift with arrow keys, for "
+#| "example). Then press Shift+NVDA+T to translate the selected text. Then "
+#| "the translated string will be read, providing that the synthesizer you "
+#| "are using supports the target language."
 msgid ""
 "Select some text using selection commands (shift with arrow keys, for "
-"example). Then press Shift+NVDA+T to translate the selected text. Then the "
-"translated string will be read, providing that the synthesizer you are using "
-"supports the target language."
+"example) and press associated key to translate. translation result willbe "
+"read with synthesizer which you are using."
 msgstr ""
 "चयन आदेस (जस्तै shift र arrow कुञ्जीहरु )को प्रयोग गरी केही पाठहरुको चयन गर्नु होस्  । "
 "त्यसपछि चयनीत पाठहरूलाई अनुवाद गर्न Shift+नेत्रवाणी +T कुञ्जी दबाउनु होला ।  लक्षित "
 "भाषाका पाठहरूलाई तपाइको संश्लेषकले समर्थन गर्छ भने अनुवादीत पाठहरू पढेर सुनाइने छ ।"
 
 #. type: Bullet: '2. '
-msgid ""
-"Copy some text to clipboard. Then press Shift+NVDA+Y to translate the text "
-"in the clipboard to the target language."
+#, fuzzy
+#| msgid ""
+#| "Now addon can translate text from clipboard when pressing nvda+shift+y."
+msgid "You can also translate text from the Clipboard."
 msgstr ""
-"क्लीपपाठिमा केही पाठहरूलाई सार्नु होस् । उक्त पाठहरूलाई लक्षित भाषामा अनुवाद गर्नका "
-"लागि  Shift+नेत्रवाणी +Y कुञ्जीलाई दबाउनु होला । "
+"अब यो उप-कर्मीले नेत्रवाणी +shift+y कुञ्जी दबाउँदा क्लीपपाटीका पाठहरूलाई  अनुवाद गर्ने छ "
+"।"
 
 #. type: Title ##
 #, no-wrap
-msgid "Other useful commands"
-msgstr "अरू उपयोगी आदेसहरू"
+msgid "Shortcuts"
+msgstr ""
+
+#. type: Plain text
+msgid ""
+"All following commands must be pressed after modifier key \"NVDA+Shift+t\":"
+msgstr ""
 
 #. type: Bullet: '* '
-msgid ""
-"NVDA+shift+r: pressed once, announce current configuration; pressed twice, "
-"swap source and target languages."
+msgid "T: Translate selected text,"
 msgstr ""
-"नेत्रवाणी+shift+r: एक पटक दबाउँदा, चालु अभियोजन बताउँ छ; दुई पटक दबाउँदा, श्रोत र "
-"लक्षित भाषालाई साटि दिन्छ ।"
+
+#. type: Bullet: '* '
+msgid "Shift+t: translate text from the Clipboard,"
+msgstr ""
+
+#. type: Bullet: '* '
+msgid "S: swap source and target languages,"
+msgstr ""
+
+#. type: Bullet: '* '
+msgid "A: announce current configuration,"
+msgstr ""
+
+#. type: Bullet: '* '
+msgid "C: copy last result to clipboard,"
+msgstr ""
+
+#. type: Bullet: '* '
+msgid "I: identify the language of selected text,"
+msgstr ""
+
+#. type: Bullet: '* '
+msgid "H: announces all available commands to user."
+msgstr ""
 
 #. type: Title ##
 #, no-wrap
@@ -131,14 +231,26 @@ msgid "Changes for 3.0"
 msgstr "3.० मा गरीएका परिवर्तन हरू"
 
 #. type: Bullet: '* '
+msgid ""
+"Change way how Shortcuts are used, now you can press instantTranslate "
+"modifier key \"NVDA+Shift+t\", and then single letter key to perform some "
+"action {see all Commands in the \"Shortcuts\" section}."
+msgstr ""
+
+#. type: Bullet: '* '
 msgid "Implemented swapping languages."
 msgstr "भाषा उल्टाउने सुविधा लागू गरियो ।"
 
 #. type: Bullet: '* '
+#, fuzzy
+#| msgid ""
+#| "Changed configuration format, now we can change instant translate "
+#| "settings if we are in readonly pane, but remember that this will work "
+#| "before first restart of nvda."
 msgid ""
 "Changed configuration format, now we can change instant translate settings "
 "if we are in readonly pane, but remember that this will work before first "
-"restart of nvda."
+"restart of NVDA."
 msgstr ""
 "अभियोजन ढाँचा बदलियो, अब हामिहरू पठनिय मात्र पातोमा रहदा पनि तुरुन्तै अनुवादलाइ  "
 "प्रयोग गर्न सक्छौ ।तर स्मरणीय छ कि यो नेत्रवाणीको पहिलो सुरुवात भन्दा अगाडि मात्र गर्न "
@@ -168,13 +280,9 @@ msgstr "अभियोजन फाइल अनुकूलता थैली
 
 #. type: Bullet: '* '
 msgid ""
-"New languages: Aragonese, Arabic, Brazilian Portuguese, Croatian, Dutch, "
-"Finnish, French, Galician, German, Hungarian, Italian, Japanese, Korean, "
-"Nepali, Polish, Slovak, Slovenian, Spanish, Tamil, Turkish."
+"Source and target languages syncronized with what Google Translate currently "
+"exposes (22 Apr 2015)."
 msgstr ""
-"नयाँ भाषाहरू: अर्गानिज, अरबी, ब्राजेलियन पुर्तगाली, क्रोएसियन, डच, जापानी, नेपाली, "
-"पोल्याणडेली, फिनिस, फ्रान्सेली, ग्यालिसियन, जर्मनी, हङ्गेरियाली, इटाली, कोरियाली, "
-"स्लोभाक, स्पेनी, तामिल, तुर्कि  स्लोभेनियन ।"
 
 #. type: Title ##
 #, no-wrap
@@ -221,13 +329,79 @@ msgid "Initial version."
 msgstr "सुरुको संस्करण"
 
 #. type: Plain text
-#, no-wrap
-msgid "[[!tag dev]]\n"
+#, fuzzy
+#| msgid "[1]: http://addons.nvda-project.org/files/get.php?file=it-dev"
+msgid ""
+"[1]: http://addons.nvda-project.org/files/get.php?file=it [2]: http://addons."
+"nvda-project.org/files/get.php?file=it-dev"
+msgstr "[1]: http://addons.nvda-project.org/files/get.php?file=it-dev"
+
+#. type: Plain text
+#, fuzzy, no-wrap
+#| msgid "[[!tag dev]]\n"
+msgid "[[!tag dev stable]]\n"
 msgstr "[[!tag dev]]\n"
 
 #. type: Plain text
-msgid "[1]: http://addons.nvda-project.org/files/get.php?file=it-dev"
+#, fuzzy
+#| msgid "[1]: http://addons.nvda-project.org/files/get.php?file=it-dev"
+msgid "[1]: http://addons.nvda-project.org/files/get.php?file=it"
 msgstr "[1]: http://addons.nvda-project.org/files/get.php?file=it-dev"
+
+#. type: Plain text
+#, fuzzy
+#| msgid "[1]: http://addons.nvda-project.org/files/get.php?file=it-dev"
+msgid "[2]: http://addons.nvda-project.org/files/get.php?file=it-dev"
+msgstr "[1]: http://addons.nvda-project.org/files/get.php?file=it-dev"
+
+#~ msgid ""
+#~ "To configure source, target and in case swap language, from NVDA menu, go "
+#~ "to Preferences, then go to Instant Translate Settings.  There are three "
+#~ "combo boxes labeled \"translate from\", \"translate into\" and \"Language "
+#~ "for swapping\" (if you selected auto option from source languages)."
+#~ msgstr ""
+#~ "श्रोत भाषा, लक्षित भाषा अथवा भाषा साट्ने सुविधा अभियोजन गर्न, नेत्रवाणी मेनु, "
+#~ "प्राथमिकता अनुकूलता, तुरुन्तै अनुवाद अनुकूलता रोज्नु होला । यसमा भाषाबाट, भाषामा र "
+#~ "भाषा साडोफेरो भन्ने तीन वटा कम्बो बाकसहरू देखा पर्ने छन् । भाषाहरू चयन गरेर ठिक "
+#~ "टाँकलाई दबाउनु होस् ।"
+
+#~ msgid ""
+#~ "However, this is a temporary configuration, if this option has no effect "
+#~ "(it's experimental), try to commute manually to a stable configuration, "
+#~ "using the gesture for swapping described below."
+#~ msgstr ""
+#~ "तर , यो अस्थायी अभियोजन हो, यदि यो विकल्पको कुनै प्रभाव परेन भने तल उल्लेख गरे "
+#~ "अनुसारको सङ्केत प्रयोग गरी  (यसको परिक्षण), मानविय रूपले नै  स्थायी अभियोजनमा तय "
+#~ "गर्न कोसिस गर्नु होस्, "
+
+#~ msgid "There are two ways of using this add-on:"
+#~ msgstr "यो उप-कर्मीको प्रयोग गर्ने दुई वटा तरीकाहरू छन् ।"
+
+#~ msgid ""
+#~ "Copy some text to clipboard. Then press Shift+NVDA+Y to translate the "
+#~ "text in the clipboard to the target language."
+#~ msgstr ""
+#~ "क्लीपपाठिमा केही पाठहरूलाई सार्नु होस् । उक्त पाठहरूलाई लक्षित भाषामा अनुवाद गर्नका "
+#~ "लागि  Shift+नेत्रवाणी +Y कुञ्जीलाई दबाउनु होला । "
+
+#~ msgid "Other useful commands"
+#~ msgstr "अरू उपयोगी आदेसहरू"
+
+#~ msgid ""
+#~ "NVDA+shift+r: pressed once, announce current configuration; pressed "
+#~ "twice, swap source and target languages."
+#~ msgstr ""
+#~ "नेत्रवाणी+shift+r: एक पटक दबाउँदा, चालु अभियोजन बताउँ छ; दुई पटक दबाउँदा, श्रोत र "
+#~ "लक्षित भाषालाई साटि दिन्छ ।"
+
+#~ msgid ""
+#~ "New languages: Aragonese, Arabic, Brazilian Portuguese, Croatian, Dutch, "
+#~ "Finnish, French, Galician, German, Hungarian, Italian, Japanese, Korean, "
+#~ "Nepali, Polish, Slovak, Slovenian, Spanish, Tamil, Turkish."
+#~ msgstr ""
+#~ "नयाँ भाषाहरू: अर्गानिज, अरबी, ब्राजेलियन पुर्तगाली, क्रोएसियन, डच, जापानी, नेपाली, "
+#~ "पोल्याणडेली, फिनिस, फ्रान्सेली, ग्यालिसियन, जर्मनी, हङ्गेरियाली, इटाली, कोरियाली, "
+#~ "स्लोभाक, स्पेनी, तामिल, तुर्कि  स्लोभेनियन ।"
 
 #~ msgid "Changes for 2.2"
 #~ msgstr "२.२ मा गरीएका परिवर्तन हरू"
