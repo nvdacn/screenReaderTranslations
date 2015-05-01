@@ -19,13 +19,13 @@ Les points forts de cette version incluent la possibilité de lire les graphique
 <H3>Nouvelles Fonctionnalités</H3>
 
 <UL>
-<LI>avancer et reculer par phrase sous Microsoft Word est maintenant possible avec alt+flècheBas et alt+flècheHaut respectivement. (<A HREF="http://community.nvda-project.org/ticket/3288">#3288</A>)
+<LI>Avancer et reculer par phrase sous Microsoft Word est maintenant possible avec alt+flècheBas et alt+flècheHaut respectivement. (<A HREF="http://community.nvda-project.org/ticket/3288">#3288</A>)
 <LI>De nouvelles tables de conversion braille pour plusieurs langues Indiennes. (<A HREF="http://community.nvda-project.org/ticket/4778">#4778</A>)
 <LI>Dans Microsoft Excel, NVDA annonce maintenant quand une cellule a un contenu en débordement ou réajusté. (<A HREF="http://community.nvda-project.org/ticket/3040">#3040</A>)
 <LI>Une liste d'éléments dans Microsoft Excel (NVDA+f7), permet de lister les graphiques, commentaires et formules. (<A HREF="http://community.nvda-project.org/ticket/1987">#1987</A>)
 <LI>Support de la lecture des graphiques dans Microsoft Excel : Sélectionnez le graphique en utilisant la liste d'éléments (NVDA+f7) puis utilisez les flèches pour aller à tous les points de données. (<A HREF="http://community.nvda-project.org/ticket/1987">#1987</A>)
 <LI>En utilisant MathPlayer 4 de Design Science, NVDA peut maintenant lire et naviguer de façon interactive dans les contenus mathématiques dans les navigateurs Internet et dans Microsoft Word et PowerPoint. Veuillez consulter la section "Lecture des Contenus Mathématiques" dans le Guide de l'utilisateur pour plus de détails. (<A HREF="http://community.nvda-project.org/ticket/4673">#4673</A>)
-<LI>Il est maintenant possible d'assigner des gestes de commande (commandes clavier,  gestes tactiles, etc.) pour tous les dialogues des préférences NVDA et les options de mise en forme de document en utilisant le dialogue Gestes de Commandes. (<A HREF="http://community.nvda-project.org/ticket/4898">#4898</A>)
+<LI>Il est maintenant possible d'assigner des gestes de commande (commandes clavier, gestes tactiles, etc.) pour tous les dialogues des préférences NVDA et les options de mise en forme de document en utilisant le dialogue Gestes de Commandes. (<A HREF="http://community.nvda-project.org/ticket/4898">#4898</A>)
 </UL>
 
 <H3>Changements</H3>
@@ -42,24 +42,22 @@ Les points forts de cette version incluent la possibilité de lire les graphique
 <UL>
 <LI>Les descriptions de caractère sont maintenant traitées correctement pour les caractères conjoints dans certaines langues Indiennes. (<A HREF="http://community.nvda-project.org/ticket/4582">#4582</A>)
 <LI>Si l'option "Se baser sur la langue de la voix pour le traitement des caractères et symboles" est cochée, le dialogue Prononciation des symboles et ponctuations utilise maintenant correctement la langue de la voix. La langue dont la prononciation est éditée est aussi indiquée dans le titre du dialogue. (<A HREF="http://community.nvda-project.org/ticket/4930">#4930</A>)
--Dans Internet Explorer et autres contrôles MSHTML, les caractères frappés ne sont plus annoncés de manière inappropriée dans les listes déroulantes éditables telles que le champ de recherche Google sur la page d'accueil de Google. (<A HREF="http://community.nvda-project.org/ticket/4976">#4976</A>)
+<LI>Dans Internet Explorer et autres contrôles MSHTML, les caractères frappés ne sont plus annoncés de manière inappropriée dans les listes déroulantes éditables telles que le champ de recherche Google sur la page d'accueil de Google. (<A HREF="http://community.nvda-project.org/ticket/4976">#4976</A>)
 <LI>Quand on sélectionne des couleurs dans les applications Microsoft Office, le nom des couleurs est maintenant annoncé. (<A HREF="http://community.nvda-project.org/ticket/3045">#3045</A>)
 <LI>L'affichage du Braille Danois fonctionne à nouveau. (<A HREF="http://community.nvda-project.org/ticket/4986">#4986</A>)
 <LI>pagePrec / pageSuiv peuvent de nouveau être utilisées pour changer de diapositive dans un diaporama PowerPoint. (<A HREF="http://community.nvda-project.org/ticket/4850">#4850</A>)
-<LI>Dans Skype for Desktop 7.2 et au-delà, les notifications de frappe sont maintenant annoncées et les problèmes intervenant immédiatement après que le focus ait quitté une conversations ont été corrigés. (<A HREF="http://community.nvda-project.org/ticket/4972">#4972</A>)
+<LI>Dans Skype for Desktop 7.2 et au-delà, les notifications de frappe sont maintenant annoncées et les problèmes intervenant immédiatement après que le focus ait quitté une conversation ont été corrigés. (<A HREF="http://community.nvda-project.org/ticket/4972">#4972</A>)
 <LI>Correction de problèmes de frappe de certains symboles telles que les crochets dans le champ de filtrage dans le dialogue de saisie des gestes de commande. (<A HREF="http://community.nvda-project.org/ticket/5060">#5060</A>)
 </UL>
 
 <H3>Changements pour les Développeurs</H3>
 
 <UL>
-<LI>brailleInput.handler.sendChars(mychar) N'ignorera plus un caractère s'il est égal au caractère précédent en s'assurant que la touche pressée a été correctement relâchée.
+<LI>brailleInput.handler.sendChars(mychar) N'ignorera plus un caractère s'il est égal au caractère précédent en s'assurant que la touche enfoncée a été correctement relâchée.
 <LI>Les scripts pour changer le mode de toucher honnoreront maintenant les nouvelles étiquettes ajoutée à touchHandler.touchModeLabels. (<A HREF="http://community.nvda-project.org/ticket/4699">#4699</A>)
 <LI>Les modules complémentaires peuvent fournir leur propre implémentation de présentation mathématique. Voir le package mathPres  pour plus de détails. (<A HREF="http://community.nvda-project.org/ticket/4509">#4509</A>)
 <LI>Des commandes de parole ont été implémentées pour insérer une pause entre les mots et pour changer la hauteur, le volume et le débit. Voir les commandes BreakCommand, PitchCommand, VolumeCommand et RateCommand dans le module speech. (<A HREF="http://community.nvda-project.org/ticket/4674">#4674</A>)
- <UL>
- <LI>Il y a aussi speech.PhonemeCommand pour insérer une prononciation spécifique, mais l'implémentation courante supporte un nombre très limité de phonèmes.
- </UL>
+<LI>Il y a aussi speech.PhonemeCommand pour insérer une prononciation spécifique, mais l'implémentation courante supporte un nombre très limité de phonèmes.
 </UL>
 
 <H2>2015.1</H2>
