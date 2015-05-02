@@ -497,6 +497,7 @@ Les touches suivantes permettent d'aller à l'élément suivant. En les combinan
 - d : région
 - o : objet embarqué
 - 1 ... 6 : Titres 1 ... 6.
+- a: annotation (commentaire, révisionde l'éditeur, etc.)
 -
 Pour se déplacer au début ou à la fin des éléments contenants comme les listes et tableaux :
 || Nom | Touche | Description |
@@ -526,6 +527,42 @@ Une touche de commande permet de retourner à la page contenant l'objet embarqu�
 | Aller au document contenant l'objet | NVDA+contrôle+espace | Retire le focus à l'objet embarqué en cours et le rend au document contenant l'objet |
 %kc:endInclude
 
++ Lecture de Contenu Mathématique +
+En utilisant MathPlayer 4 de Design Science, NVDA peut lire et naviguer interactivement dans le contenu mathématique supporté.
+Cela nécessite que MathPlayer 4 soit installé sur l'ordinateur.
+MathPlayer est disponible en téléchargement gratuit sur : http://www.dessci.com/en/products/mathplayer/
+
+NVDA supporte les types de contenu mathématiques suivants :
+- MathML sous Mozilla Firefox et Microsoft Internet Explorer.
+- Design Science MathType sous Microsoft Word et PowerPoint.
+- MathML sous Adobe Reader. Note that this is not an official standard yet, so there is currently no publicly available software that can produce this content.
+-
+
+Durant la lecture d'un document, NVDA annoncera tout contenu mathématique supporté quand il se présente.
+Si vous utilisez un afficheur braille, il sera aussi affiché en braille.
+
+++ Navigation Interactive ++
+Si vous travaillez principalement avec la parole, dans la plupart des cas, vous souhaiterez probablement examiner l'expression en plus petits segments plutôt qu'entendre toute l'expression en une seule fois.
+
+Si vous êtes en mode navigation, vous pouvez le faire en amenant le curseur sur le contenu mathématique et en pressant Entrée.
+
+Si vous n'êtes pas en mode navigation :
++ Amenez le curseur de revue sur le contenu mathématique.
+Par défaut, le curseur de revue suit le curseur système, vous pouvez donc généralement utiliser le curseur système pour aller au contenu désiré.
++ Ensuite, activez la commande suivante :
++
+
+%kc:beginInclude
+|| Nom | Touche | Description |
+| Interagir avec le contenu mathématique | NVDA+alt+m | Commence l'interaction avec le contenu mathématique. |
+%kc:endInclude
+
+Arrivé là, vous pouvez utiliser les commandes MathPlayer telles que les flèches pour explorer l'expression.
+Par exemple, vous pouvez vous déplacer dans l'expression avec les flèches gauche et droite puis zoomer sur une partie de l'expression telle qu'une fraction en utilisant la flèche basse.
+Veuillez consulter la documentation de MathPlayer pour plus d'information.
+
+Quand vous voulez retourner au document, pressez simplement la touche échap.
+
 + Commandes NVDA spécifiques à certaines applications +
 NVDA fournit ses propres commandes additionnelles dans quelques applications pour rendre certaines tâches plus faciles ou pour donner accès à certaines fonctions qui ne seraient pas accessibles autrement.
 
@@ -543,6 +580,7 @@ NVDA fournit ses propres commandes additionnelles dans quelques applications pou
 | Définir les titres de colonnes | NVDA+maj+c | Appuyer une fois indique à NVDA que cette cellule est la première de la ligne contenant les titres de colonnes, qui devraient être annoncés automatiquement en navigant entre les colonnes sous cette ligne. Appuyer deux fois permet d'effacer le paramétrage. | 
 | Définir les titres de lignes | NVDA+maj+r | Appuyer une fois indique à NVDA que cette cellule est la première de la colonne contenant les titres de lignes, qui devraient être annoncés automatiquement en navigant entre les lignes après cette colonne. Appuyer deux fois permet d'effacer le paramétrage. | 
 | Annonce du commentaire | NVDA+alt+c | Annonce le commentaire sur la cellule courante s'il y en a un. |
+| Liste d'éléments dialog | NVDA+f7 | ouvre le dialogue de la liste d'éléments présentant les graphiques, les cellules avec commentaires, ou les cellules avec formules. |
 %kc:endInclude
 
 ++ Microsoft PowerPoint ++
@@ -587,6 +625,9 @@ La plupart des paramètres de NVDA peuvent être modifiés en utilisant les dial
 Dans tous les dialogues de NVDA, appuyez sur le bouton "OK" pour valider vos modifications.
 Pour annuler les modifications, appuyez sur le bouton "Annuler" ou sur la touche "échap".
 Certains paramètres peuvent aussi être modifiés en utilisant des raccourcis clavier que vous trouverez dans les sections ci-dessous.
+
+Notez que par défaut, tous les dialogues des préférences ne peuvent pas être atteints par des gestes de commandes (raccourcis clavier, gestes tactiles, etc.).
+Si vous voulez atteindre des dialogues qui n'ont pas de raccourci clavier, utilisez le [dialogue Gestes de Commandes #InputGestures] pour ajouter un geste personnalisé pour ce dialogue.
 
 +++ Paramètres généraux (NVDA+contrôle+g) +++
 Le dialogue "Paramètres généraux" se trouve dans le menu "Préférences".
@@ -796,6 +837,18 @@ De la même manière, les commandes de ligne précédente et ligne suivante navi
 Cela signifie que vous n'aurez pas besoin de faire défiler l'afficheur à la fin de chaque ligne même si plus de texte peut entrer sur l'afficheur.
 Cela permet une lecture plus fluide des textes volumineux.
 Par défaut, cette option est désactivée.
+
+==== Ne pas couper les mots quand c'est possible ====
+Si cette option est activée, un mot trop long pour entrer à la fin de l'afficheur braille ne sera pas coupé.
+À la place, il y aura des espaces à la fin de l'affichage.
+En faisant défiler l'affichage, vous pourrez lire le mot entier.
+Ceci est parfois appelé retour automatique à la ligne.
+Notez que si le mot est trop long pour entrer sur l'afficheur, il devra quand-même être coupé.
+
+Si cette option est désactivée, le plus possible du mot sera affiché sur la ligne, mais le reste sera coupé.
+En faisant défiler l'affichage, vous pourrez lire le reste du mot.
+
+Activer cette option peut rendre la lecture plus fluide mais vous obligera à faire défiler plus souvent.
 
 +++ Paramètres du clavier (NVDA+contrôle+k) +++
 Ce dialogue se trouve dans le menu "Préférences", sous "Paramètres du clavier...". 
@@ -1060,7 +1113,9 @@ On peut configurer les annonces suivantes :
 - citations,
 - régions,
 - cadres.
+- Quand quelque chose est cliquable
 -
+Pour modifier ces paramètres de n'importe où, veuillez assigner un geste personnalisé en utilisant le [dialogue Gestes de Commandes #InputGestures].
 
 ==== Annonce des changements de mise en forme après le curseur ====
 Si on l'active, ce paramètre dit à NVDA de détecter tous les changements de mise en forme sur une ligne et de les annoncer pendant la lecture. Attention, cela peut dégrader les performances de NVDA.
@@ -1077,6 +1132,8 @@ Ce sont :
 - Voix : les règles de ce dictionnaire n'affectent que la voix en cours d'utilisation.
 - Temporaire : les règles de ce dictionnaire affectent tout NVDA mais seulement pour la session en cours.
 -
+
+Vous devez assigner des gestes personnalisés en utilisant le [dialogue Gestes de Commandes #InputGestures] si vous voulez ouvrir l'un de ces dialogues de dictionnaire depuis n'importe où.
 
 Tous les dialogues des dictionnaires contiennent une liste de règles qui seront utilisées pour produire la parole. 
 Chaque dialogue contient aussi des boutons "Ajouter", "Éditer" et "Supprimer"
@@ -1119,7 +1176,8 @@ Vous pouvez supprimer un symbole précédemment ajouté en pressant le bouton Su
 
 Quand vous avez fini, cliquez sur le bouton "OK" pour sauvegarder vos modifications, ou le bouton "Annuler" pour les supprimer.
 
-+++ Gestes de commandes +++
++++ Gestes de commandes +++[InputGestures]
+
 Dans ce dialogue, vous pouvez configurer les gestes de commandes (raccourcis clavier, boutons d'un afficheur braille etc) pour les commandes NVDA.
 
 Seules les commandes qui sont applicables immédiatement avant l'ouverture du dialogue sont affichées.
@@ -1255,6 +1313,8 @@ Décochez l'élément de menu pour la désactiver.
 Pendant que la visionneuse de parole est active, elle se met constamment à jour, vous permettant de voir les dernières paroles prononcées par NVDA. 
 Cependant, si vous cliquez ou mettez le focus sur la visionneuse, NVDA arrêtera momentanément de mettre à jour le texte, vous pourrez ainsi sélectionner ou copier le contenu.
 
+Pour activer la visionneuse de parole de n'importe où, Veuillez assigner un geste personnalisé en utilisant le [dialogue Gestes de Commandes #InputGestures].
+
 ++ Gestionnaire de modules complémentaires ++
 Le Gestionnaire de modules complémentaires, accessible en sélectionnant "Gestion des Modules Complémentaires" dans le menu "Outils" du menu NVDA, permet d'installer ou de désinstaller des paquets de modules complémentaires pour NVDA.
 Ces paquets sont fournis par la communauté et contiennent du code qui peut ajouter ou modifier des fonctionnalités dans NVDA ou proposer le support de plages braille ou synthèses vocales suplémentaires.
@@ -1288,6 +1348,8 @@ Si vous avez installé ou supprimé des modules complémentaires, NVDA vous dema
 Jusqu'à maintenant, il était possible d'étendre les fonctionnalités de NVDA en copiant des plugins ou pilotes dans votre répertoire de configuration utilisateur.
 Même si cette version peut toujours les charger, ceux-ci ne seront pas affichés dans le gestionnaire de modules complémentaires.
 Il est recommandé de supprimer ces fichiers de votre répertoire de configuration et d'installer le module complémentaire approprié s'il y en a un.
+
+Pour activer le gestionnaire de modules complémentaires de n'importe où, Veuillez assigner un geste personnalisé en utilisant le [dialogue Gestes de Commandes #InputGestures].
 
 ++ Console Python ++
 La console Python NVDA, située dans "Outils" du menu NVDA, est un outil de développement utile pour dépanner, inspecter le code ou inspecter la hiérarchie d'accessibilité d'une application.
@@ -1356,7 +1418,7 @@ Cette section contient des informations sur les terminaux braille pris en charge
 ++ Les terminaux Focus et PAC Mate de chez Freedom Scientific ++
 Tous les terminaux Focus et PAC Mate de chez [Freedom Scientific http://www.freedomscientific.com/] sont pris en charge quand ils sont connectés en USB ou Bluetooth.
 Vous devrez installer les pilotes de terminaux braille de Freedom Scientific sur votre système.
-Si vous ne les avez pas déjà, vous pourrez les obtenir sur http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-14-blue-downloads.asp.
+Si vous ne les avez pas déjà, vous pourrez les obtenir sur http://www2.freedomscientific.com/downloads/focus-40-blue/focus-40-14-blue-downloads.asp.
 Bien que cette page ne mentionne que le terminal Focus 40 Blue, le pilote supporte tous les terminaux de Freedom Scientific.
 Si votre système est sous Windows 64 bits et que les pilotes ont déjà été installés par une autre revue d'écran, vous devrez probablement installer quand-même les pilotes car les fichiers nécessaires pour NVDA n'auront probablement pas été installés par l'autre revue d'écran.
 
