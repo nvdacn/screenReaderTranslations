@@ -10,16 +10,25 @@
 </CENTER>
 
 <P>
-A partir da versão 2015.1 traduzido por Rui Fontes, e as versões anteriores foram adaptadas por Rui Batista e Rui Fontes da tradução brasileira...
+Tradução por Rui Fontes, a partir da versão 2015.1, adaptação por Rui Batista e Rui Fontes da tradução brasileira nas versões anteriores.
 </P>
 
 <H2>2015.2</H2>
+
+<P>
+Os destaques desta versão incluem a possibilidade de ler gráficos no Microsoft Excel e suporte para leitura e navegação interactiva de conteúdo matemático no MathPlayer 4.
+</P>
 
 <H3>Novas Funcionalidades</H3>
 
 <UL>
 <LI>Agora é possível mover-se para a frente e para trás por frase, no Microsoft Word, com alt + SetaAbaixo e alt + SetaAcima respectivamente. (<A HREF="http://community.nvda-project.org/ticket/3288">#3288</A>)
 <LI>Novas tabelas  braille para vários idiomas indianos (<A HREF="http://community.nvda-project.org/ticket/4778">#4778</A>)
+<LI>No Microsoft Excel, o NVDA agora anuncia quando uma célula tem conteúdo em sobreposição ou obscurecido. (<A HREF="http://community.nvda-project.org/ticket/3040">#3040</A>)
+<LI>No Microsoft Excel, agora pode usar a Lista de Elementos, NVDA+f7, para listar gráficos, comentários e fórmulas. (<A HREF="http://community.nvda-project.org/ticket/1987">#1987</A>)
+<LI>Suporte para a leitura de gráficos no Microsoft Excel. Para isso seleccione o gráfico usando a Lista de Elementos, NVDA+f7, e depois use as setas para se mover entre os vários pontos. (<A HREF="http://community.nvda-project.org/ticket/1987">#1987</A>)
+<LI>Usando o MathPlayer 4 da Design Science, o NVDA pode agora ler e navegar interactivamente conteúdo matemático nos navegadores de Internet, Microsoft Word E PowerPoint. Veja a secção "Leitura de conteúdo matemático" no Manual do utilizador para mais detalhes. (<A HREF="http://community.nvda-project.org/ticket/4673">#4673</A>)
+<LI>Passa a ser possível associar comandos, (comandos de teclado, comandos de toque, etc.) para todos os diálogos de preferências do NVDA e de formatação de documentos, usando o diálogo Comandos. (<A HREF="http://community.nvda-project.org/ticket/4898">#4898</A>)
 </UL>
 
 <H3>Alterações</H3>
@@ -27,18 +36,33 @@ A partir da versão 2015.1 traduzido por Rui Fontes, e as versões anteriores fo
 <UL>
 <LI>No diálogo de Formatação de documentos do NVDA, as teclas de atalho para Anunciar listas, Anunciar links, Anunciar números de linha e Anunciar nome do tipo de letra foram alterados em inglês, mas não em português (<A HREF="http://community.nvda-project.org/ticket/4650">#4650</A>)
 <LI>No diálogo de Definições do rato do NVDA, foram adicionadas teclas de atalho para Tocar coordenadas de áudio quando o rato se mover e Brilho controla o volume das coordenadas de áudio (<A HREF="http://community.nvda-project.org/ticket/4916">#4916</A>)
+<LI>Melhorado significativamente o anúncio dos nomes das cores. (<A HREF="http://community.nvda-project.org/ticket/4984">#4984</A>)
+<LI>Actualizado o liblouis braille translator para a versão 2.6.2. (<A HREF="http://community.nvda-project.org/ticket/4777">#4777</A>)
 </UL>
 
 <H3>Correcção de falhas</H3>
 
 <UL>
 <LI>As descrições de caracteres passam a ser correctamente tratadas para conjuntos de caracteres em certos idiomas indianos (<A HREF="http://community.nvda-project.org/ticket/4582">#4582</A>)
+<LI>Se a opção "Usar o idioma da voz ao processar caracteres e símbolos" estiver marcada, o diálogo "Pronúncia de pontuação/símbolo..." usará correctamente o idioma da voz. E também o nome do idioma para o qual estão a ser configurados os símbolos e pontuação estará presente no título do diálogo. (<A HREF="http://community.nvda-project.org/ticket/4930">#4930</A>)
+<LI>No Internet Explorer e noutros controlos MSHTML, os caracteres digitados já não são anunciados inapropriadamente em caixas combinadas editáveis, tais como o campo de pesquisa Google na página inicial do Google. (<A HREF="http://community.nvda-project.org/ticket/4976">#4976</A>)
+<LI>Ao seleccionar cores nas aplicações do  Microsoft Office, os nomes das cores passam a ser anunciados. (<A HREF="http://community.nvda-project.org/ticket/3045">#3045</A>)
+<LI>A tabela Braille de saída em dinamarquês volta a funcionar correctamente. (<A HREF="http://community.nvda-project.org/ticket/4986">#4986</A>)
+<LI>PageUp/pageDown podem ser usados novamente para mudar de slide numa apresentação PowerPoint. (<A HREF="http://community.nvda-project.org/ticket/4850">#4850</A>)
+<LI>No Skype para Desktop 7.2 e superiores, a notificação de contacto a escrever é agora anunciada e os problemas imediatamente após o foco sair de uma conversação foram resolvidos. (<A HREF="http://community.nvda-project.org/ticket/4972">#4972</A>)
+<LI>Resolvido o problema ao digitar alguns símbolos/pontuação, tais como parêntese rectos, no campo "Filtrar por" no diálogo Comandos. (<A HREF="http://community.nvda-project.org/ticket/5060">#5060</A>)
 </UL>
 
 <H3>Alterações para Desenvolvedores</H3>
 
 <UL>
 <LI>brailleInput.handler.sendChars(mychar) já não filtra o caractere, se for igual ao caractere anterior, por se certificar que a tecla é correctamente levantada.
+<LI>Scripts para alterar os modos de toque passam a respeitar os novos nomes adicionados a touchHandler.touchModeLabels. (<A HREF="http://community.nvda-project.org/ticket/4699">#4699</A>)
+<LI>Os Add-ons podem fornecer as suas próprias implementações de representação matemática. Ver o pacote mathPres para detalhes. (<A HREF="http://community.nvda-project.org/ticket/4509">#4509</A>)
+<LI>Foram implementados comandos de vvoz para inserir uma pausa entre palavras e para alterar a entoação, volume e velocidade. Ver BreakCommand, PitchCommand, VolumeCommand e RateCommand no módulo speech. (<A HREF="http://community.nvda-project.org/ticket/4674">#4674</A>)
+ <UL>
+ <LI>Criado também o speech.PhonemeCommand para inserir pronúncia específica, mas a implementação actual apenas suporta um número limitado de fonemas.
+ </UL>
 </UL>
 
 <H2>2015.1</H2>
