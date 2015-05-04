@@ -123,9 +123,6 @@ addresses = {
         'lang':'Duch',
         'email': ['Bram Duvigneau <bram@bramd.nl>', 'Bart Simons <bart@bartsimons.be>', 'A Campen <a.campen@wxs.nl>', 'Leonard de Ruijter <mail@leonardder.nl>'],
     },
-    'nb_NO': {
-        'lang':'Norwegian bokmål',
-        'email': ['David Hole <balubathebrave@gmail.com>', 'Bjornar Seppola <bjornar@seppola.net>'],
     },
     'pa': {
         'lang':'Punjabi',
