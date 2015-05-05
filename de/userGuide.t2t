@@ -506,13 +506,14 @@ Verwenden Sie folgende Tastenkombinationen, um zum Beginn Bzw. zum Ende eines Co
 %kc:endInclude
 
 ++ Die Liste der Elemente ++
-Die Liste der Elemente stellt eine Zugriffsmöglichkeit auf Seiten, die Links, Überschriften oder Sprungmarken enthalten, dar.
-Mit den Auswahlschaltern können Sie zwischen diesen drei Informationstypen umschalten.
+Mit Hilfe der Elementliste können Sie - abhängig von der aktiven Anwendung - auf verschiedene Elemnte im aktuellen Dokument zugreifen.
+In Webbrowsern können Sie hierbei auf links, Überschriften oder Sprungmarken zugreifen.
+Mit dem Auswahlschalter können Sie zwischen den unterschiedlichen Elementtypen umschalten.
 Mit dem Eingabefeld können Sie auch die Einträge filtern, um sich die Suche auf der seite zu erleichtern.
 Wenn Sie einmal einen Eintrag ausgewählt haben, können Sie mit den Schaltflächen im Dialog Entweder den Eintrag aktivieren oder zu diesem gelangen.
 %kc:beginInclude
 || Name | Tastenkombination | Beschreibung |
-| Liste der Elemente des Lesemodus | NVDA+F7 | Zeigt eine Auflistung aller Elemente an, die Links, Überschriften sowie ARIA-Sprungmarken aus dem aktuellen Dokument beinhalten. |
+| Liste der Elemente des Lesemodus | NVDA+F7 | Zeigt eine Liste aller Elemente im aktuellen Dokument an. |
 %kc:endInclude
 
 ++ Eingebettete Objekte ++
@@ -525,6 +526,40 @@ Es gibt eine Tastenkombination, um in die Originalansicht der Seite zurückzukeh
 || Name | Tastenkombination | Beschreibung |
 | Zum Inhalt des Lesemodus zurückkehren | NVDA+STRG+Leertaste | Verlässt den Fokus des eingebetteten Objekts und kehrt in den Lesemodus zurück. |
 %kc:endInclude
+
++ Lesen mathematischer Inhalte +
+Sie können Mathplayer 4 von Design Science verwenden, um mit NVDA in mathematischen Inhalten zu navigieren.
+Hierfür ist die Installation von Mathplayer 4 notwendig.
+Mathplayer kann hier heruntergeladen werden: http://www.dessci.com/en/products/mathplayer/
+
+NVDA unterstützt die folgende mathematischen Inhalte:
+- MathML in Mozilla Firefox und Microsoft Internet Explorer.
+- Design Science MathType in Microsoft Word und PowerPoint.
+- MathML in Adobe Reader. Note that Mathml ist noch kein offizieller Standard, deshalb gibt es noch keine öffentlich verfügbare Software, um solche Inhalte zu erzeugen.
+-
+
+NVDA wird mathematische Inhalte automatisch in Sprache und Braille ausgeben.
+
+++ Navigation ++
+Wenn Sie NVDA hauptsächlich mit einer sprachausgabe verwenden, können Sie einen mathematischen Ausdruck in Segmente unterteilt abfragen, anstatt ihn in einem Stück angesagt zu bekommen.
+
+Wenn sie sich momentan im lesmodus befinden, können Sie den nVDA-Cursor auf den Ausdruck stellen und die Eingabetaste drücken.
+
+Wenn Sie sich nicht im lesemodus befinden, gehen Sie folgendermaßen vor:
++ Bewegen Sie den nVDA-Cursor auf den mathematischen Ausdruck
+Standardmäßig ist der NVDA-Cursor an den Systemcursor gekoppelt. Sie können Also die Standard-Navigationstasten verwenden, um den NVDA-Cursor auf den mathematischen Inhaltzu bewegen.
++ Führen Sie anschließend den folgenden Befehl aus:
++
+
+%kc:beginInclude
+|| Name | Tastenkombination | Beschreibung |
+| in mathematischen Inhalten navigieren | NVDA+alt+m | beginnt die Navigation in mathematischen Inhalten |
+%kc:endInclude
+
+Jetzt können Sie mathplayer-Tastenkombinationen verwenden, um innerhalb des Ausdrucks zu navigieren.
+Verwenden Sie beispielsweise die Pfeiltasten links und rechts, um zwischen den Teilen eines Ausdrucks zu navigieren. Um in einen Teilausdruck abzusteigen, verwenden Sie die Pfeiltaste nach unten. Um die Navigation im Ausdruck zu beenden, drücken Sie esc.
+Weiter Informationen hierzu finden Sie in der Dokumentation zu mathplayer.
+
 
 + Anwendungsspezifische Befehle für NVDA +
 Für bestimmte Anwendungen stellt NVDA zusätzliche Tastenkombinationen bereit - etwa um bestimmte Aufgaben zu vereinfachen oder um Informationen zugänglich zu machen, die normalerweise für Anwender von Bildschirmleseprogrammen unerreichbar wären. 
@@ -543,6 +578,7 @@ Für bestimmte Anwendungen stellt NVDA zusätzliche Tastenkombinationen bereit -
 | Spaltenüberschriften festlegen | NVDA+Umschalt+c | Wenn Sie diese Tastenkombination einmal drücken, teilen Sie NVDA mit, dass Sie sich auf derjenigen Zeile befinden, die die Spaltenüberschriften enthält. Diese Spaltenüberschriften werden dann automatisch gelesen, sobald Sie unterhalb dieser Zeile navigieren. Zweimaliges Drücken dieser Tastenkombination löscht diese Zuweisung wieder. | 
 | Zeilenbeschriftungen festlegen | NVDA+Umschalt+r | Wenn Sie diese Tastenkombination einmal drücken, teilen Sie NVDA mit, dass Sie sich auf derjenigen Spalte befinden, die die Beschriftungen für die Zeilen enthält. Diese Beschriftungen werden automatisch gelesen, wenn Sie außerhalb dieser Spalte navigieren. Zweimaliges Drücken dieser Tastenkombination löscht diese Zuweisung. | 
 | Kommentar anzeigen | NVDA+alt+c | Zeigt den Kommentar der aktuellen Zelle an, sofern vorhanden. |
+| Elementliste | NVDA+f7 | Öffnet einen Dialog mit einer Elementliste. Hier werden Ihnen Diagramme, Zellen mit Kommentaren, oder Zellen mit Formeln angezeigt. |
 %kc:endInclude
 
 ++ Microsoft PowerPoint ++
@@ -1072,7 +1108,7 @@ Konfigurieren können Sie die Meldungen von:
 - Zitatblöcke
 - Sprungmarken
 - Rahmen
--
+- anklickbare Elemente
 
 ==== Änderungen der Formatierungen hinter dem Cursor ansagen ====
 Diese Einstellung veranlasst NVDA dazu, ALLE Änderungen in den Formatierungen innerhalb einer Zeile anzusagen, wenn sie eingeschaltet ist. Das kann sehr leistungsintensiv sein.
@@ -1118,7 +1154,12 @@ Reguläre Ausdrücke werden hier nicht behandelt. Weiterführende Beispiele und 
 
 
 +++ Der Dialog "Aussprache von Symbolen und Satzzeichen- " +++
-In diesem Dialog können Sie die Aussprache von Satzzeichen bzw. Sonderzeichen verändern. Um die aussprache eines Sonderzeichens zu verändern, wählen Sie es in der Liste aus.
+In diesem Dialog können Sie die Aussprache von Satzzeichen bzw. Sonderzeichen verändern. 
+
+Die Sprache, in der die Aussprache von Sonderzeichen geändert wird, wird im Dialogtitel angezeigt.
+Außerdem wird die Option "beim Sprechen von Zeichen und Symbolen die Sprache der Stimme berücksichtigen" aus den  [Stimmeneinstellungen #VoiceSettings] berücksichtigt; beispielsweise wird hierbei die Sprache der eingestellten Stimme anstelle der nvda-Sprache verwendet.
+
+Um die aussprache eines Sonderzeichens zu verändern, wählen Sie es in der Liste aus.
 Der Dialog besteht aus den folgenden Elementen:
 
 ==== Das Listenfeld "Sonderzeichen" ====
