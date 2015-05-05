@@ -506,14 +506,14 @@ Verwenden Sie folgende Tastenkombinationen, um zum Beginn Bzw. zum Ende eines Co
 %kc:endInclude
 
 ++ Die Liste der Elemente ++
-Mit Hilfe der Elementliste können Sie - abhängig von der aktiven Anwendung - auf verschiedene Elemnte im aktuellen Dokument zugreifen.
+Mit Hilfe der Elementliste können Sie - abhängig von der aktiven Anwendung - auf verschiedene Elemente im aktuellen Dokument zugreifen.
 In Webbrowsern können Sie hierbei auf links, Überschriften oder Sprungmarken zugreifen.
 Mit dem Auswahlschalter können Sie zwischen den unterschiedlichen Elementtypen umschalten.
 Mit dem Eingabefeld können Sie auch die Einträge filtern, um sich die Suche auf der seite zu erleichtern.
 Wenn Sie einmal einen Eintrag ausgewählt haben, können Sie mit den Schaltflächen im Dialog Entweder den Eintrag aktivieren oder zu diesem gelangen.
 %kc:beginInclude
 || Name | Tastenkombination | Beschreibung |
-| Liste der Elemente des Lesemodus | NVDA+F7 | Zeigt eine Liste aller Elemente im aktuellen Dokument an. |
+| Liste der Elemente des Lesemodus | NVDA+F7 | Zeigt eine Liste bestimmter Elemente im aktuellen Dokument an. |
 %kc:endInclude
 
 ++ Eingebettete Objekte ++
@@ -535,15 +535,16 @@ Mathplayer kann hier heruntergeladen werden: http://www.dessci.com/en/products/m
 NVDA unterstützt die folgende mathematischen Inhalte:
 - MathML in Mozilla Firefox und Microsoft Internet Explorer.
 - Design Science MathType in Microsoft Word und PowerPoint.
-- MathML in Adobe Reader. Note that Mathml ist noch kein offizieller Standard, deshalb gibt es noch keine öffentlich verfügbare Software, um solche Inhalte zu erzeugen.
+- MathML in Adobe Reader. Beachten Sie, dass Mathml noch kein offizieller Standard ist, deshalb gibt es noch keine öffentlich verfügbare Software, um solche Inhalte zu erzeugen.
 -
 
-NVDA wird mathematische Inhalte automatisch in Sprache und Braille ausgeben.
+Wenn Sie ein Dokument lesen, das mathematischen Inhalt enthält, liest NVDA diesen vor, sofern dieser von NVDA unterstützt wird.
+Falls Sie eine Braillezeile verwenden, wird es auch in Braille ausgegeben.
 
-++ Navigation ++
+++ Interaktive Navigation ++
 Wenn Sie NVDA hauptsächlich mit einer sprachausgabe verwenden, können Sie einen mathematischen Ausdruck in Segmente unterteilt abfragen, anstatt ihn in einem Stück angesagt zu bekommen.
 
-Wenn sie sich momentan im lesmodus befinden, können Sie den nVDA-Cursor auf den Ausdruck stellen und die Eingabetaste drücken.
+Wenn sie sich momentan im lese-modus befinden, können Sie den Cursor auf den Ausdruck stellen und die Eingabetaste drücken.
 
 Wenn Sie sich nicht im lesemodus befinden, gehen Sie folgendermaßen vor:
 + Bewegen Sie den nVDA-Cursor auf den mathematischen Ausdruck
@@ -556,10 +557,11 @@ Standardmäßig ist der NVDA-Cursor an den Systemcursor gekoppelt. Sie können A
 | in mathematischen Inhalten navigieren | NVDA+alt+m | beginnt die Navigation in mathematischen Inhalten |
 %kc:endInclude
 
-Jetzt können Sie mathplayer-Tastenkombinationen verwenden, um innerhalb des Ausdrucks zu navigieren.
-Verwenden Sie beispielsweise die Pfeiltasten links und rechts, um zwischen den Teilen eines Ausdrucks zu navigieren. Um in einen Teilausdruck abzusteigen, verwenden Sie die Pfeiltaste nach unten. Um die Navigation im Ausdruck zu beenden, drücken Sie esc.
+Jetzt können Sie mathplayer-Tastenkombinationen (z. B. Pfeiltasten) verwenden, um innerhalb des Ausdrucks zu navigieren.
+Verwenden Sie beispielsweise die Pfeiltasten links und rechts, um zwischen den Teilen eines Ausdrucks zu navigieren. Um in einen Teilausdruck abzusteigen, verwenden Sie die Pfeiltaste nach unten.
 Weiter Informationen hierzu finden Sie in der Dokumentation zu mathplayer.
 
+Um die Navigation im Ausdruck zu beenden, drücken Sie esc.
 
 + Anwendungsspezifische Befehle für NVDA +
 Für bestimmte Anwendungen stellt NVDA zusätzliche Tastenkombinationen bereit - etwa um bestimmte Aufgaben zu vereinfachen oder um Informationen zugänglich zu machen, die normalerweise für Anwender von Bildschirmleseprogrammen unerreichbar wären. 
@@ -623,6 +625,9 @@ Die meisten NVDA-Einstellungen können durch Dialoge vorgenommen werden, welche 
 In allen Einstellungsdialogen können Sie den "OK"-Schalter drücken, um die Einstellungen zu übernehmen.
 Um Einstellungen zu verwerfen, drücken sie den "abbrechen"-Schalter oder die Taste Escape.
 Einige Einstellungen können auch durch Kurztasten geändert werden. Diese Kurztasten werden in den entsprechenden Abschnitten aufgelistet.
+
+Beachten Sie, dass standardmäßig nicht alle Einstellungsdialoge mittels Tastenkombination, Berührungsgesten, etc.  aufgerufen werden können. 
+Falls Sie Dialoge öffnen wollen, die nicht über zugewiesene Tastenkombinationen verfügen, können Sie den [dialog Eingaben #InputGestures] verwenden, um eigene Tastenkombinationen zuzuweisen.
 
 +++ Allgemeine Einstellungen (NVDA+STRG+G) +++
 Sie finden die allgemeinen Einstellungen im Menü Einstellungen.
@@ -1109,6 +1114,9 @@ Konfigurieren können Sie die Meldungen von:
 - Sprungmarken
 - Rahmen
 - anklickbare Elemente
+-
+
+Um diese Einstellungen überall ändern zu können, verwenden Sie bitte den [dialog Eingaben #InputGestures] um eigene Tastenkombinationen hinzuzufügen.
 
 ==== Änderungen der Formatierungen hinter dem Cursor ansagen ====
 Diese Einstellung veranlasst NVDA dazu, ALLE Änderungen in den Formatierungen innerhalb einer Zeile anzusagen, wenn sie eingeschaltet ist. Das kann sehr leistungsintensiv sein.
@@ -1125,10 +1133,13 @@ Derzeit gibt es drei unterschiedliche Formen der Aussprachewörterbücher:
 
 - Standard: Regeln in diesem Wörterbuch haben Einfluss auf alle Aussprachen in NVDA.
 - Stimme: Regeln in diesem Wörterbuch haben Einfluss auf die momentan verwendete Stimme der Sprachausgabe in NVDA.
-- Vorläufig: Regeln in diesem Wörterbuch haben nur temporären Einfluss auf alle Stimmen in NVDA (gilt nur für diese Sitzung). Beim nächsten NeuStart von NVDA sind diese nicht mehr vorhanden.
+- temporär: Regeln in diesem Wörterbuch haben nur vorläufigen Einfluss auf alle Stimmen in NVDA (gilt nur für diese Sitzung). Beim nächsten NeuStart von NVDA sind diese nicht mehr vorhanden.
 -
 
-Alle Wörterbücher enthalten eine Liste von Sprachregeln, welche verwendet werden, um die Sprache zu verbessern. Die Dialogfelder enthalten die folgenden Schaltflächen: "Hinzufügen", "Bearbeiten" und "Entfernen".
+Sie müssen den Dialogen eigene Tastenkombinationen zuweisen, falls Sie die Wörterbücher per Tastenkürzel aurufen wollen. Verwenden Sie hierzu den [dialog Eingaben #InputGestures].
+
+Alle Wörterbücher enthalten eine Liste von Sprachregeln, welche verwendet werden, um die Sprache zu verbessern.
+Die Dialogfelder enthalten die folgenden Schaltflächen: "Hinzufügen", "Bearbeiten" und "Entfernen".
 
 Mit der Schaltfläche "Hinzufügen" erstellen Sie eine neue Regel im Wörterbuch. Anschließend geben Sie die entsprechenden Text in die Felder ein und klicken abschließend auf "OK".
 Sie sehen nun die neu hinzugefügte Regel in der Regelliste.
@@ -1180,7 +1191,7 @@ Geben Sie im erscheinenden Dialog das Symbol ein und drücken Sie den Schalter O
 Wenn Sie fertig sind, bestätigen Sie die Änderungen mit "ok" oder verwerfen Sie diese mittels "abbrechen".
 
 
-+++ Eingaben +++
++++ Eingaben +++[InputGestures]
 In diesem Dialog können Sie Eingaben (Tastenkombinationen, Tasten an einer Braillezeile, Aktionen an einem Touchscreen) an NVDA-Befehle zuweisen.
 
 Es werden nur unmittelbar zuweisbare Befehle angezeigt.
@@ -1316,6 +1327,8 @@ Den Sprachbetrachter können Sie im NVDA-Menü unter "Extras einschalten und auc
 Während der Sprachbetrachter eingeschaltet ist, aktualisiert sich sogleich der Text beim Sprechen.
 Wenn Sie in das Fenster des Betrachters klicken, unterbricht NVDA augenblicklich die weitere Aktualisierung der gesprochenen Textdarstellungen, so dass Sie nun die entsprechenden Einträge markieren und in die Zwischenablage kopieren können.
 
+Um den Sprachbetrachter per Tastenkombination ein- bzw. auszuschalten, müssen Sie diesem mittels des []Dialog Eingaben #InputGestures] eine eigene Tastenkombination zuweisen.
+
 ++ Erweiterungen verwalten ++
 Der Dialog "Erweiterungen verwalten", den Sie über das Untermenü Extras im NVDA-Menü erreichen, erlaubt Ihnen, Erweiterungspakete für NVDA zu installieren und zu deinstallieren. 
 Diese Pakete werden von der NVDA-Nutzergemeinde bereit gestellt und können zusätzlichen Code enthalten, um NVDA-Funktionen zu verändern oder zu erweitern. Es ist auf diese Weise sogar möglich, neue Braillezeilen- oder Sprachausgabentreiber hinzuzufügen.
@@ -1349,7 +1362,9 @@ In früheren NVDA-Versionen war es möglich, den Funktionsumfang durch Plug-ins,
 Auch wenn NVDA solche Module immer noch lädt, werden diese nicht im Erweiterungs-Manager angezeigt. 
 Es ist daher zu empfehlen, derartig «untergeschobene» Dateien zu entfernen und eine passende Erweiterung zu installieren, sofern verfügbar.
 
-++ Die Python-Konsole ++
+Um denDialog Erweiterungen verwalten per Tastenkombination aufrufen zu können, müssen Sie diesem eine Tastenkombination zuweisen. Verwenden Sie hierzu den [Dialog Eingaben #InputGestures]
+
+++ Python-Konsole ++
 Die in NVDA integrierte Python-Konsole ist im NVDA-Menü unter "Extras" zu finden. Sie ist ein nützliches Entwicklungswerkzeug zum beheben von Fehlern, zum allgemeinen Überprüfen der internen Komponente in NVDA sowie zur Überprüfung der Hierarchie der Zugänglichkeit einer Anwendung.
 Für weitere Informationen sehen Sie sich bitte den [Teilbereich "Entwicklung" auf der englischen Website http://community.nvda-project.org/wiki/Development] an.
 
