@@ -708,6 +708,18 @@ NVDA fornisce i seguenti comandi quando si lavora con il cursore di sistema:
 <TD>NVDA+shift+s</TD>
 <TD>Legge il testo selezionato ammesso che ve ne sia uno.</TD>
 </TR>
+<TR>
+<TD>frase successiva</TD>
+<TD>alt+freccia Giù</TD>
+<TD>alt+freccia Giù</TD>
+<TD>Sposta il cursore sulla frase successiva e la legge. (Supportato solo in Microsoft Word)</TD>
+</TR>
+<TR>
+<TD>frase precedente</TD>
+<TD>alt+freccia Su</TD>
+<TD>alt+freccia Su</TD>
+<TD>Sposta il cursore sulla frase precedente e la legge. (Supportato solo in Microsoft Word)</TD>
+</TR>
 </TABLE>
 
 <P>
@@ -1177,7 +1189,7 @@ Sebbene un mouse o un trackpad risultino la maniera migliore per esplorare lo sc
 
 <P>
 NVDA si serve della modalità navigazione per presentare all'utente documenti complessi di sola lettura, come ad esempio le pagine web.
-Essa viene utilizzata nei doccumenti di Mozilla Firefox, Microsoft Internet Explorer, messaggi html in Microsoft Outlook, Google Chrome, Adobe Reader e Adobe Flash.
+Essa viene utilizzata nei doccumenti di Mozilla Firefox, Microsoft Internet Explorer, messaggi html in Microsoft Outlook, Mozilla Thunderbird, Google Chrome, Adobe Reader e Adobe Flash.
 Inoltre, la modalità navigazione risulta disponibile anche per la gestione dei documenti in Microsoft Word.
 </P>
 <P>
@@ -1272,6 +1284,7 @@ I seguenti tasti premuti da soli portano al campo successivo, tenendo premuto Sh
 <LI>d: Sezione
 <LI>o: oggetto incorporato
 <LI>numeri da 1 a 6: intestazioni da 1 a 6
+<LI>a: annotazioni (commenti, revisioni degli autori, etc.)
 </UL>
 
 <P>
@@ -1300,8 +1313,9 @@ Per spostarsi all'inizio e alla fine degli elementi contenuti in elenchi e tabel
 <H3>6.2. Lista degli elementi</H3>
 
 <P>
-La lista degli elementi consente l'accesso all'elenco dei links, delle intestazioni o delle sezioni presenti nella pagina web. 
-I pulsanti radio permettono di ciclare tra questi tre tipi di informazioni.
+La lista degli elementi consente l'accesso ad un elenco di vari tipi di elementi presenti sul documento, a seconda dell'applicazione in uso.
+Per esempio, in una pagina web potremmo trovare un elenco dei link, delle intestazioni o delle sezioni presenti nel documento.
+I pulsanti radio permettono di ciclare tra questi tipi di informazioni.
 è presente anche un campo editazione, utile a filtrare tale lista per permettere una ricerca più rapida.
 Una volta selezionato l'elemento, si possono utilizzare i bottoni che si trovano nella finestra di dialogo, per spostarvisi o attivarlo.
 </P>
@@ -1315,7 +1329,7 @@ Una volta selezionato l'elemento, si possono utilizzare i bottoni che si trovano
 <TR>
 <TD>Elenco elementi modalità navigazione</TD>
 <TD>NVDA+f7</TD>
-<TD>Apre la finestra dell'elenco elementi contenente links, intestazioni e sezioni della modalità navigazione</TD>
+<TD>Elenca vari tipi di elementi presenti nel documento corrente</TD>
 </TR>
 </TABLE>
 
@@ -1869,9 +1883,26 @@ Questa impostazione permette di decidere se il display braille seguirà il focus
 <P>
 Se attivata, il braille verrà visualizzato per paragrafi invece che per righe.
 Inoltre, i comandi per spostarsi alla riga precedente/successiva andranno al paragrafo precedente/successivo.
-Questo significa che non sarà necessario utilizzare lo scrolling ogni volta quando ci si trova alla fine di una riga.
+Questo significa che non sarà necessario utilizzare lo scrolling ogni volta che ci si trova alla fine di una riga.
 La lettura dovrebbe risultare più fluente in presenza di grosse porzioni di testo.
 L'opzione risulta disabilitata da impostazioni predefinite.
+</P>
+
+<H5>Evita di spezzare le parole se possibile</H5>
+
+<P>
+Se abilitata, l'opzione farà in modo che parole troppo grandi non vengano spezzate su due righe del display braille.
+Invece, vi sarà un po' di spazio vuoto verso la fine della barra.
+Quando si sposterà il display alla riga successiva, sarà possibile leggere la parola per intero.
+Talvolta questa funzione è chiamata a capo automatico.
+Si noti che nel caso in cui la parola sia troppo grande per starci sul display, verrà per forza divisa.
+</P>
+<P>
+Se invece la funzione è disabilitata, verrà mostrato il più possibile della parola, mentre il rimanente finirà sulla riga successiva.
+Scorrendo il display, sarà possibile leggere il resto della parola.
+</P>
+<P>
+L'attivazione di questa funzione permetterà una lettura molto più fluida, ma richiederà di scorrere il display braille molto più spesso.
 </P>
 
 <A NAME="toc59"></A>
@@ -2315,6 +2346,7 @@ Ad esempio, se attiviamo la casella di controllo "Leggi il nome del font", NVDA 
 <LI>Blocchi tra virgolette
 <LI>Sezioni
 <LI>Frame
+<LI>Quando qualcosa è cliccabile
 </UL>
 
 <H5>Leggi i cambiamenti di formattazione dopo il cursore</H5>
@@ -2379,6 +2411,10 @@ Si consiglia di cercare in rete tutorials che ne spieghino l'uso.
 
 <P>
 Questa finestra di dialogo permette di modificare il modo ed il livello in cui i segni di punteggiatura e altri simboli vengono annunciati.
+</P>
+<P>
+Nel titolo della finestra verrà visualizzata anche la lingua per la quale si sta modificando la pronuncia dei simboli.
+Si noti che questa finestra di dialogo rispetta le impostazioni dell'opzione "Considera attendibile la lingua della voce  corrente nel processare caratteri e simboli", situata nelle <A HREF="#VoiceSettings">Impostazioni della Voce</A>; per esempio, verrà utilizzata la lingua della voce piuttosto che la lingua generale di NVDA, quando questa opzione è attiva.
 </P>
 <P>
 Per modificare un simbolo, dapprima selezionarlo nell'elenco simboli.
@@ -2788,8 +2824,8 @@ Questa sezione contiene informazioni sulle barre braille supportate da NVDA.
 
 <P>
 Sono supportati Tutti i Display Braille Focus e Pac Mate prodotti da <A HREF="http://www.freedomscientific.com/">Freedom Scientific</A>, sia USB che Bluetooth.
-per un corretto funzionamento è necessario avere installati nel proprio sistema i drivers per display Braille Freedom Scientific.
-Nel caso non si sia in possesso di tali drivers, è possibile scaricarli dall'indirizzo <A HREF="http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-14-blue-downloads.asp">http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-14-blue-downloads.asp</A>.
+per un corretto funzionamento è necessario avere installati nel proprio sistema i driver per display Braille Freedom Scientific.
+Nel caso non si sia in possesso di tali driver, è possibile scaricarli dall'indirizzo <A HREF="http://www2.freedomscientific.com/downloads/focus-40-blue/focus-40-14-blue-downloads.asp">http://www2.freedomscientific.com/downloads/focus-40-blue/focus-40-14-blue-downloads.asp</A>.
 Sebbene nella pagina sia nominata solo la barra Focus Blue, il driver funzionerà per tutti i modelli Freedom.
 Da notare che se nel proprio sistema si sta utilizzando una versione di Windows a 64 bit e i driver sono già stati installati da un altro screen reader, è probabile che sia necessario installare comunque il pacchetto, in quanto difficilmente quello screen reader avrà installato tutti i file utilizzati da NVDA.
 </P>
