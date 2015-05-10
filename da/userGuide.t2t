@@ -443,7 +443,7 @@ Selv om du bør bruge en fysisk mus eller et pegefelt til at navigere med musen,
 
 + Browsertilstand (gennemsynstilstand) +
 Komplekse dokumenter, der ikke kan redigeres, fx. web-sider, bliver præsenteret med NVDA i browsertilstand eller gennemsynstilstand.
-Dette omfatter dokumenter i Mozilla Firefox, Microsoft Internet Explorer, HTML-meddelelser i Microsoft Outlook, Google Chrome, Adobe Reader and Adobe Flash.
+Dette omfatter dokumenter i Mozilla Firefox, Microsoft Internet Explorer, Mozilla Thunderbird, HTML-meddelelser i Microsoft Outlook, Google Chrome, Adobe Reader and Adobe Flash.
 Gennemsynstilstand kan også bruges i Microsoft Word-dokumenter.
 
 Når du benytter gennemsynstilstand, bliver indholdet af dokumentet præsenteret i en flad visning, som du kan navigere rundt i ved hjælp af piletasterne, præcist som hvis det var det normalt dokument.
@@ -498,6 +498,7 @@ Hvis du trykker en af de følgende taster ned alene, hopper du til den næste fo
 - d: Landemærke
 - o: indlejret objekt
 - 1-6: overskrifter på niveauer fra 1 til 6.
+- a: Annotation (kommentar, revision o.s.v.)
 -
 Flyt til begyndelsen eller slutningen af overordnede elementer, fx. lister eller tabeller:
 || Navn | Tast | Beskrivelse |
@@ -506,13 +507,14 @@ Flyt til begyndelsen eller slutningen af overordnede elementer, fx. lister eller
 %kc:endInclude
 
 ++ Elementlisten ++
-Elementlisten giver adgang til en liste med enten links, overskrifter eller landmærker på siden.
-Med radioknapper kan du skifte mellem disse tre typer af information.
+Elementlisten giver adgang til en liste med  forskellige typer elementer i dokumentet, alt efter hvilket program du bruger.
+F.eks., i web-browsere kan kan elementlisten vise links, overskrifter og landemærker.
+Med radioknapper kan du skifte mellem de forskellige typer elementer.
 Ved hjælp af Et editfelt kan du filtrere listen, så du kan søge efter et bestemt element på siden.
 Når du har valgt et element, kan du bruge knapperne i dialogen til at flytte til, eller aktivere det pågældende element.
 %kc:beginInclude
 || Navn | Tast | Beskrivelse |
-| Elementliste i gennemsynstilstand | NVDA+f7 | Giver Element listen som indeholder links, overskrifter og landmærker fra det nuværende dokument |
+| Elementliste i gennemsynstilstand | NVDA+f7 | Giver Element listen som indeholder forskellige elementer i det nuværende dokument |
 %kc:endInclude
 
 ++ Indlejrede objekter ++
@@ -543,6 +545,7 @@ NVDA har sine egne ekstra kommandoer for nogle programmer. Dette er for at gøre
 | Indstil kolonneoverskrifter | NVDA+Shift+c | Tryk en gang for at fortælle NVDA, at dette er den første overskriftscelle i rækken med kolonneoverskrifter, som skal læses automatisk, når du bevæger dig mellem kolonner i rækkerne nedenunder. Tryk to gange for at nulstille denne indstilling. | 
 | Indstil rækkeoverskrifter | NVDA+Shift+r | Tryk en gang for at fortælle NVDA, at dette er den første overskriftscelle i kolonnen med rækkeoverskrifter, som skal læses automatisk, når du bevæger dig mellem rækker til højre for denne kolonne. Tryk to gange for at nulstille denne indstilling. | 
 | Læs kommentar | NVDA+Alt+c | Læser kommentaren til den aktuelle celle, hvis der er nogen. |
+| Elementliste | NVDA+F7 | Åbner elementlisten, som viser diagrammer, celler med kommentarer og celler med formler. |
 %kc:endInclude
 
 ++ Microsoft PowerPoint ++
@@ -796,6 +799,18 @@ Desuden vil kommandoer til forrige og næste linje flytte et afsnit ad gangen.
 Det betyder, at du ikke behøver at rulle med displayet for enden af hver linje, selv ikke hvis der er plads til mere tekst på displayet.
 Det kan give mulighed for en mere flydende læseoplevelse, når der er tale om store mængder tekst.
 Som standard er dette slået fra.
+
+==== Undgå at dele ord, når det er muligt ====
+Hvis denne indstilling er slået til, vil et ord, som er for langt til at være for enden af en punktlinje, ikke blive opdelt.
+I stedet vil der optræde nogle blanke tegn for enden af displayet.
+Når du ruller displayet videre, kan du læse hele ordet.
+Dette kaldes nogle gange for "ombrydning af ord"..
+Bemærk, at hvis ordet er for langt til at være på displayet overhovedet, bliver det stadig opdelt.
+
+Hvis indstillingen er slået fra, vil så meget af ordet som muligt blive vist, men resten vil blive skåret væk.
+Når du så ruller displayet videre, kan du læse resten af ordet.
+
+Hvis du slår denne indstilling til, kan det give en mere flydende læsning, men generelt medfører det, at du skal skifte linje på displayet hyppigere.
 
 +++ Tastatur-indstillinger (NVDA+Ctrl+k) +++
 Denne dialogboks findes i menuen Indstillinger under punktet Tastatur-indstillinger...".
@@ -1060,6 +1075,7 @@ Du kan tilpasse annoncering af:
 - Lange citater
 - Landmærker
 - Rammer
+- Når noget kan klikkes på (er klikbart)
 -
 
 ==== Annoncer ændringer i formatering efter markøren ====
@@ -1356,7 +1372,7 @@ Dette afsnit indeholder oplysninger om de punktdisplays, som NVDA understøtter.
 ++ Freedom Scientific Focus/PAC Mate Series ++
 Der er understøttelse af alle Focus og PAC Mate displays fra [Freedom Scientific http://www.freedomscientific.com/] når de kobles til med USB eller Bluetooth.
 Punktdisplay-driverne fra Freedom Scientific skal vær installeret på dit system.
-Hvis du ikke allerede har dem, kan du hente dem fra http://www.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp.
+Hvis du ikke allerede har dem, kan du hente dem fra http://www2.freedomscientific.com/downloads/focus-40-blue/focus-40-blue-downloads.asp.
 Selvom siden kun henviser til displayet Focus 40 Blue,understøtter driveren alle displays fra Freedom Scientific.
 Hvis dit system kører Windows 64 bit og driverne allerede er blevet  installeret af en anden skærmlæser, skal du sandsynligvis installere driveren fra dette link alligevel, da de filer, som NVDA har brug for, sikkert ikke er blevet installeret af den anden skærmlæser.
 
