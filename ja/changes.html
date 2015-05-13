@@ -10,6 +10,60 @@
 </CENTER>
 
 
+<H2>2015.2</H2>
+
+<P>
+このリリースのハイライトは、Microsoft Excel のグラフ読み上げ対応、数式コンテンツの読み上げと対話的ナビゲーションへの対応です。
+</P>
+
+<H3>新機能</H3>
+
+<UL>
+<LI>Microsoft Word で Alt+下矢印 および Alt+上矢印 による文単位の移動ができるようになりました。 (<A HREF="http://community.nvda-project.org/ticket/3288">#3288</A>)
+<LI>インドのいくつかの言語に対応した点訳テーブルが追加されました。 (<A HREF="http://community.nvda-project.org/ticket/4778">#4778</A>)
+<LI>Microsoft Excel においてセル内容のオーバーフローやクロップを通知するようになりました。 (<A HREF="http://community.nvda-project.org/ticket/3040">#3040</A>)
+<LI>Microsoft Excel において要素リスト (NVDA+f7) が利用可能になりました。グラフ、コメント、数式のリストを選択できます。 (<A HREF="http://community.nvda-project.org/ticket/1987">#1987</A>)
+<LI>Microsoft Excel のグラフの読み上げに対応しました。要素リスト (NVDA+f7) でグラフを選択して、矢印キーでデータポイントの移動を行ってください。 (<A HREF="http://community.nvda-project.org/ticket/1987">#1987</A>)
+<LI>Design Science の MathPlayer 4 を使って、ウェブブラウザ、Microsoft Word および PowerPoint において数式コンテンツの読み上げと対話的ナビゲーションが可能になりました。ユーザーガイドの「数式コンテンツの読み上げ」を参照してください。 (<A HREF="http://community.nvda-project.org/ticket/4673">#4673</A>)
+<LI>すべての NVDA 設定ダイアログと書式設定のオプション項目に対して、入力ジェスチャー(キーボードコマンド、タッチジェスチャーなど)を割り当てられるようになりました。入力ジェスチャーの設定ダイアログで割り当てを行ってください。 (<A HREF="http://community.nvda-project.org/ticket/4898">#4898</A>)
+</UL>
+
+<H3>変更点</H3>
+
+<UL>
+<LI>NVDA の書式設定ダイアログにおいて、リストの通知、リンクの通知、行番号の通知、フォント名の通知のキーボードショートカットが変更されました。 (<A HREF="http://community.nvda-project.org/ticket/4650">#4650</A>)
+<LI>NVDA のマウス設定ダイアログにおいて、「マウスカーソルの座標をビープ音で通知」「マウスカーソル位置の明るさをビープ音の音量で通知」のキーボードショートカットが追加されました。 (<A HREF="http://community.nvda-project.org/ticket/4916">#4916</A>)
+<LI>色の名前の読み上げを大幅に改良しました。 (<A HREF="http://community.nvda-project.org/ticket/4984">#4984</A>)
+<LI>liblouis 点訳エンジンを 2.6.2 に更新しました。 (<A HREF="http://community.nvda-project.org/ticket/4777">#4777</A>)
+</UL>
+
+<H3>バグ修正</H3>
+
+<UL>
+<LI>インドの一部の言語で特定の文字に関する文字説明が適切に動作するようになりました。 (<A HREF="http://community.nvda-project.org/ticket/4582">#4582</A>)
+<LI>「記号と文字の説明に音声の言語を使用」がチェックされている場合、句読点・記号読み上げ辞書の編集ダイアログが音声の言語で動作するようになりました。どの言語の辞書を編集しているかという情報がダイアログのタイトルに表示されるようになりました。 (<A HREF="http://community.nvda-project.org/ticket/4930">#4930</A>)
+<LI>Internet Explorer および MSHTML コントロールにおいて、編集可能なコンボボックスに入力された文字が不適切に通知される問題に対応しました。例えば Google のホームページで使われている Google 検索フィールドなどです。 (<A HREF="http://community.nvda-project.org/ticket/4976">#4976</A>)
+<LI>Microsoft Office アプリケーションで色を選択する場合に、色の名前が通知されるようになりました。 (<A HREF="http://community.nvda-project.org/ticket/3045">#3045</A>)
+<LI>デンマーク語の点字出力の不具合を修正しました。 (<A HREF="http://community.nvda-project.org/ticket/4986">#4986</A>)
+<LI>PowerPoint スライドショーで PageUp/PageDown によるスライドの切替ができない不具合を修正しました。 (<A HREF="http://community.nvda-project.org/ticket/4850">#4850</A>)
+<LI>デスクトップ版 Skype 7.2 以降において、文字入力が適切に通知されるようになりました。また会話の外にフォーカスが移動した直後に起きていた不具合を修正しました。 (<A HREF="http://community.nvda-project.org/ticket/4972">#4972</A>)
+<LI>入力ジェスチャーダイアログのフィルターにカッコなど特定の記号文字を入力した場合に起きていた不具合を修正しました。 (<A HREF="http://community.nvda-project.org/ticket/5060">#5060</A>)
+<LI>Internet Explorer および MSHTML コントロールにおいて、G または Shift+G を押して前後の画像に移動する機能が、アクセシビリティ目的の画像マークアップ(ARIA role img)
+を正しく処理するようになりました。 (<A HREF="http://community.nvda-project.org/ticket/5062">#5062</A>)
+</UL>
+
+<H3>開発者向けの変更</H3>
+
+<UL>
+<LI>brailleInput.handler.sendChars(mychar) は直前の文字と同じ文字を再度送った場合に、キーのリリースを正しく実行し、文字を欠落させないようになりました。 (<A HREF="http://community.nvda-project.org/ticket/4139">#4139</A>)
+<LI>タッチモードの変更スクリプトは touchHandler.touchModeLabels に追加された新しいラベルを利用するようになりました。 (<A HREF="http://community.nvda-project.org/ticket/4699">#4699</A>)
+<LI>アドオンで独自の数式プレゼンテーションを実装できるようになりました。詳細は mathPres パッケージを参照してください。 (<A HREF="http://community.nvda-project.org/ticket/4509">#4509</A>)
+<LI>単語間のブレーク、ピッチ・音量・速さの変更などの speech コマンドが実装されました。speech モジュールの BreakCommand, PitchCommand, VolumeCommand, RateCommand を参照してください。 (<A HREF="http://community.nvda-project.org/ticket/4674">#4674</A>)
+ <UL>
+ <LI>音素記号による読み上げを行う speech.PhonemeCommand も追加されましたが、現状ではごく限られた種類の音素にしか対応していません。
+ </UL>
+</UL>
+
 <H2>2015.1</H2>
 
 <P>
