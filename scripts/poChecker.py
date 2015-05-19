@@ -20,6 +20,7 @@ class PoChecker(object):
 	Construct an instance and call the L{check} method.
 	"""
 
+	FUZZY = "#, fuzzy"
 	MSGID = "msgid"
 	MSGSTR = "msgstr"
 
@@ -58,16 +59,24 @@ class PoChecker(object):
 		return string
 
 	def _messageAlert(self, alert, isError=True):
+		if self._fuzzy:
+			# Fuzzy messages don't get used, so this shouldn't be considered an error.
+			isError = False
 		if isError:
 			self.errorCount += 1
 		else:
 			self.warningCount += 1
-		self.alerts.append(u"Message starting on line {lineNum}\n"
+		if self._fuzzy:
+			msgType = "Fuzzy message"
+		else:
+			msgType = "Message"
+		self.alerts.append(u"{msgType} starting on line {lineNum}\n"
 				'Original: "{msgid}"\n'
 				'Translated: "{msgstr}"\n'
-				"{type}: {alert}"
-			.format(lineNum=self._messageLineNum, msgid=self._msgid, msgstr=self._msgstr,
-				type="Error" if isError else "Warning", alert=alert))
+				"{alertType}: {alert}"
+			.format(msgType=msgType, lineNum=self._messageLineNum,
+				msgid=self._msgid, msgstr=self._msgstr,
+				alertType="Error" if isError else "Warning", alert=alert))
 
 	def _checkSyntax(self):
 		p = subprocess.Popen((MSGFMT, "-o", "-", self._poPath),
@@ -84,9 +93,14 @@ class PoChecker(object):
 		command = None
 		self._msgid = None
 		self._msgstr = None
+		nextFuzzy = False
+		self._fuzzy = False
 		for lineNum, line in enumerate(self._po, 1):
 			line = line.strip()
-			if line.startswith(self.MSGID):
+			if line.startswith(self.FUZZY):
+				nextFuzzy = True
+				continue
+			elif line.startswith(self.MSGID):
 				# New message.
 				self._msgstr = self._finishString()
 				if self._msgstr:
@@ -95,6 +109,8 @@ class PoChecker(object):
 				command = self.MSGID
 				start = command
 				self._messageLineNum = lineNum
+				self._fuzzy = nextFuzzy
+				nextFuzzy = False
 			elif line.startswith(self.MSGSTR):
 				self._msgid = self._finishString()
 				command = self.MSGSTR
