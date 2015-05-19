@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 import sys
-from subprocess import PIPE, Popen
+from email.mime.text import MIMEText
+from email.utils import COMMASPACE, parseaddr
+import smtplib
+
+FROM_ADDR = "noreply+nvdaL10n@nvaccess.org"
+FROM_DISPLAY = "NVDA localisation <%s>" % FROM_ADDR
 
 addresses = {
     'default': {
@@ -196,10 +201,14 @@ addresses = {
 
 def email(rcpts, subject, body):
     rcpts.extend(addresses['default']['email'])
-    to = ", ".join(rcpts)
-    p1 = Popen(['echo', '-e', body], stdout=PIPE)
-    p2 = Popen(['mail', '-s', subject, to], stdin=p1.stdout)
-
+    msg = MIMEText(body, _charset="utf8")
+    msg["From"] = FROM_DISPLAY
+    msg["To"] = COMMASPACE.join(rcpts)
+    msg["Subject"] = subject
+    smtp = smtplib.SMTP("localhost")
+    smtp.sendmail(FROM_ADDR,
+        [parseaddr(rcpt)[1] for rcpt in rcpts],
+        msg.as_string())
 
 if __name__ == "__main__" and len(sys.argv) >= 2:
     lang = sys.argv[1]
