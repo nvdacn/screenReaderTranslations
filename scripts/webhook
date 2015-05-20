@@ -36,18 +36,23 @@ hasAlert = False
 subprocess.call(["svn", "update", "-q"], cwd=SRT_PATH)
 
 # Check any po files in this commit.
-poFiles = re.findall(r'(?<=\s)/.*\.po', body)
+poFiles = re.findall(r'(?<=[AM]\s)/.*\.po', body)
 for po in poFiles:
-    po = os.path.join(SRT_PATH, po[1:])
-    c = poChecker.PoChecker(po)
-    if not c.check():
-        if c.errorCount > 0:
-            hasAlert = True
-        body += "\n\n\n" + c.getReport().encode("UTF-8")
+    poPath = os.path.join(SRT_PATH, po[1:])
+    try:
+        c = poChecker.PoChecker(poPath)
+        if not c.check():
+            if c.errorCount > 0:
+                hasAlert = True
+            body += "\n\n\n" + c.getReport().encode("UTF-8")
+    except:
+        import traceback
+        body += "\n\n\nError checking %s:\n%s" % (po, traceback.format_exc())
+        hasAlert = True
 
 # Convert any t2t files in this commit.
 # The t2t conversion code operates per language.
-t2tLangs = re.findall(r'(?<=\s)/([^/]+)/[^/]+\.t2t', body)
+t2tLangs = re.findall(r'(?<=[AM]\s)/([^/]+)/[^/]+\.t2t', body)
 for lang in t2tLangs:
     try:
         subprocess.check_output([os.path.join(SCRIPTS_PATH, "convertOne.sh")],
