@@ -10,12 +10,154 @@
 </CENTER>
 
 
+<H2>2015.2</H2>
+
+<P>
+Lo reseñable de esta  versión incluye la capacidad de leer gráficos en  Microsoft Excel y el apoyo para la lectura y la navegación interactiva de contenido matemático.
+</P>
+
+<H3>Nuevas Características</H3>
+
+<UL>
+<LI>Ahora es posible moverse hacia adelante o atrás por frases en Microsoft Word con alt+flecha abajo y alt+flecha arriba respectivamente. (<A HREF="http://community.nvda-project.org/ticket/3288">#3288</A>)
+<LI>Nuevas tablas de transcripción braille para varios idiomas de la India. (<A HREF="http://community.nvda-project.org/ticket/4778">#4778</A>)
+<LI>En Microsoft Excel, NVDA ahora anuncia cuando una celda tiene contenido desbordante o cortado. (<A HREF="http://community.nvda-project.org/ticket/3040">#3040</A>)
+<LI>En Microsoft Excel, ahora puedes utilizar la Lista de Elementos (NVDA+f7) para permitir el listado de gráficos, comentarios y fórmulas. (<A HREF="http://community.nvda-project.org/ticket/1987">#1987</A>)
+<LI>Apoyo para la lectura de gráficos en Microsoft Excel. Para utilizar esto, selecciona el gráfico utilizando la Lista de Elementos (NVDA+f7) y luego utiliza las teclas de cursor para moverte entre los puntos de datos. (<A HREF="http://community.nvda-project.org/ticket/1987">#1987</A>)
+<LI>Utilizando MathPlayer 4 from Design Science, NVDA ahora puede leer y navegar interactivamente por el contenido matemático en los navegadores web y en Microsoft Word y PowerPoint. Mira la sección "Leyendo Contenido Matemático" en la Guía del Usuario para detalles. (<A HREF="http://community.nvda-project.org/ticket/4673">#4673</A>)
+<LI>Ahora es posible asignar gestos de entrada (órdenes de teclado, gestos táctiles, etc.) Para todos los diálogos de preferencias de NVDA y opciones de formato de documento utilizando el diálogo Gestos de Entrada. (<A HREF="http://community.nvda-project.org/ticket/4898">#4898</A>)
+</UL>
+
+<H3>Cambios</H3>
+
+<UL>
+<LI>En el diálogo de formateado de documentos de NVDA, los atajos de teclado para Anunciar listas, Anunciar enlaces, Anunciar números de Línea y Anunciar Nombre de fuente se ha cambiado. (<A HREF="http://community.nvda-project.org/ticket/4650">#4650</A>)
+<LI>En el diálogo Opciones del ratón de NVDA se han añadido atajos de teclado para Reproducir sonido cuando se mueve el ratón y El brillo controla el volumen del audio de las coordenadas. (<A HREF="http://community.nvda-project.org/ticket/4916">#4916</A>)
+<LI>Mejoras significativas en el anunciado de nombres de color. (<A HREF="http://community.nvda-project.org/ticket/4984">#4984</A>)
+<LI>Actualizado el transcriptor braille liblouis a 2.6.2. (<A HREF="http://community.nvda-project.org/ticket/4777">#4777</A>)
+</UL>
+
+<H3>Corrección de Fallos</H3>
+
+<UL>
+<LI>Las descripciones de carácter ahora se manejan correctamente para conjuntos de carácteres en ciertos idiomas de la India. (<A HREF="http://community.nvda-project.org/ticket/4582">#4582</A>)
+<LI>Si la opción "Confiar en el Idioma de la Voz al Procesar Caracteres y Símbolos" está activada, el diálogo Pronunciación de Puntuación/Símbolos  ahora utiliza correctamente el idioma de la voz. También, el idioma para el que la pronunciación esté siendo editada se muestra en el título del diálogo. (<A HREF="http://community.nvda-project.org/ticket/4930">#4930</A>)
+<LI>En Internet Explorer y otros controles MSHTML, los caracteres tecleados ya no se anuncian inapropiadamente en cuadros combinados editables tales como el campo de búsqueda de Google en la página de inicio de Google. (<A HREF="http://community.nvda-project.org/ticket/4976">#4976</A>)
+<LI>Al seleccionar colores en aplicaciones de Microsoft Office, los nombres de color ahora se anuncian. (<A HREF="http://community.nvda-project.org/ticket/3045">#3045</A>)
+<LI>La salida braille en Danés ahora funciona de nuevo. (<A HREF="http://community.nvda-project.org/ticket/4986">#4986</A>)
+<LI>AvPág/rePág pueden utilizarse de nuevo para cambiar diapositivas dentro de una presentación de diapositivas de PowerPoint. (<A HREF="http://community.nvda-project.org/ticket/4850">#4850</A>)
+<LI>En Skype para Escritorio 7.2 y posteriores, las notificaciones de tecleo ahora se anuncian y se han corregido los problemas imediatamente después de mover el foco fuera de una conversación. (<A HREF="http://community.nvda-project.org/ticket/4972">#4972</A>)
+<LI>Corregidos problemas al teclear ciertos símbolos de puntuación tales como paréntesis dentro del campo de filtrado en el diálogo Gestos de Entrada. (<A HREF="http://community.nvda-project.org/ticket/5060">#5060</A>)
+<LI>En Internet Explorer y otros controles MSHTML, al pulsar g o shift+g para navegar por gráficos ahora se incluyen elementos marcados como imágenes para propósitos de accesibilidad (por ejemplo ARIA role img). (<A HREF="http://community.nvda-project.org/ticket/5062">#5062</A>)
+</UL>
+
+<H3>Cambios para Desarrolladores</H3>
+
+<UL>
+<LI>brailleInput.handler.sendChars(mychar) ya no filtrará un carácter si es igual al carácter anterior, asegurándose que la tecla enviada  se liberó correctamente.
+<LI>Los scripts para cambiar los modos táctiles ahora cumplen con las nuevas etiquetas añadidas a touchHandler.touchModeLabels. (<A HREF="http://community.nvda-project.org/ticket/4699">#4699</A>)
+<LI>Los complementos pueden proveer sus propias implementaciones de presentación matemática. Mira el paquete mathPres para detalles. (<A HREF="http://community.nvda-project.org/ticket/4509">#4509</A>)
+<LI>Se han implementado órdenes de voz para insertar una ruptura entre palabras y para cambiar el tono, volumen y velocidad. Mira BreakCommand, PitchCommand, VolumeCommand y RateCommand en el módulo speech. (<A HREF="http://community.nvda-project.org/ticket/4674">#4674</A>)
+ <UL>
+ <LI>También hay speech.PhonemeCommand para insertar pronunciaciones específicas, pero las implementaciones actuales sólo soportan un número muy limitado de fonemas.
+ </UL>
+</UL>
+
+<H2>2015.1</H2>
+
+<P>
+Lo reseñable en esta versión  incluye el modo exploración para documentos en Microsoft Word y Outlook; mejoras mayores al soporte para Skype para Escritorio; y corecciones significativas para Microsoft Internet Explorer.
+</P>
+
+<H3>Nuevas Características</H3>
+
+<UL>
+<LI>Ahora puedes añadir símbolos nuevos en el diálogo Pronunciación de Símbolos. (<A HREF="http://community.nvda-project.org/ticket/4354">#4354</A>)
+<LI>En el diálogo Gestos de Entrada, puedes utilizar el nuevo campo "Filtrar por" para mostrar sólo gestos que contengan palabras específicas. (<A HREF="http://community.nvda-project.org/ticket/4458">#4458</A>)
+<LI>NVDA ahora anuncia automáticamente texto nuevo en mintty. (<A HREF="http://community.nvda-project.org/ticket/4588">#4588</A>)
+<LI>En el diálogo  Buscar en modo exploración, ahora hay una opción para realizar una búsqueda sensible a las mayúsculas. (<A HREF="http://community.nvda-project.org/ticket/4584">#4584</A>)
+<LI>La navegación rápida (h para encabezados etc) y la Lista de Elementos (NVDA+f7) ahora está disponible en documentos de Microsoft Word activando el modo Exploración con NVDA+espacio. (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>)
+<LI>Leyendo mensajes HTML en Microsoft Outlook 2007 y posterior se ha mejorado mucho cuando se activa automáticamente el modo Exploración para esos mensajes. Si el modo exploración no se habilita en algunas situaciones raras, puedes forzarlo con NVDA+espacio. (<A HREF="http://community.nvda-project.org/ticket/2975">#2975</A>) 
+<LI>Los encabezados de columna de tabla en Microsoft word se anuncian automáticamente para tablas donde se haya especificado un encabezado de fila por el autor a través de las propiedades de tabla de Microsoft word. (<A HREF="http://community.nvda-project.org/ticket/4510">#4510</A>) 
+ <UL>
+ <LI>Sin embargo, para tablas donde las filas hayan sido fusionadas esto no funcionará automáticamente. En esta situación todavía puedes fijar los encabezados de columna manualmente en NVDA con NVDA+shift+c.
+ </UL>
+<LI>En Skype para Escritorio, ahora se anuncian las notificaciones. (<A HREF="http://community.nvda-project.org/ticket/4741">#4741</A>)
+<LI>En Skype para Escritorio, ahora puedes anunciar y revisar los mensajes recientes utilizando NVDA+control+1 hasta NVDA+control+0; por ej.: NVDA+control+1 para el mensaje más reciente y NVDA+control+0 para el décimo más reciente. (<A HREF="http://community.nvda-project.org/ticket/3210">#3210</A>)
+<LI>En una conversación en Skype para Escritorio, NVDA ahora anuncia cuando un contacto esté tecleando. (<A HREF="http://community.nvda-project.org/ticket/3506">#3506</A>)
+<LI>NVDA ahora puede instalarse en silencio a través de la línea de órdenes  sin iniciar la copia instalada después de la instalación. Para hacer esto, utiliza la opción --install-silent. (<A HREF="http://community.nvda-project.org/ticket/4206">#4206</A>)
+<LI>Soporte para las pantallas braille Papenmeier BRAILLEX Live 20, BRAILLEX Live y BRAILLEX Live Plus. (<A HREF="http://community.nvda-project.org/ticket/4614">#4614</A>)
+</UL>
+
+<H3>Cambios</H3>
+
+<UL>
+<LI>En el diálogo de opciones de Formateado de documentos de NVDA, la opción para anunciar errores de ortografía ahora tiene un atajo de teclado (alt+r). (<A HREF="http://community.nvda-project.org/ticket/793">#793</A>)
+<LI>NVDA ahora utilizará el idioma del sintetizador o voz para el procesamiento del carácter y símbolo (incluyendo nombres de símbolos de puntuación), ya el cambio automático de idioma esté activado o no. Para desactivar esta característica para que NVDA utilice de nuevo su idioma de interface, desmarca la nueva opción en Opciones de Voz llamada Confiar en el idioma de la Voz al procesar caracteres y símbolos. (<A HREF="http://community.nvda-project.org/ticket/4210">#4210</A>)
+<LI>Se ha eliminado el soporte para el sintetizador Newfon. Ahora Newfon está disponible como un complemento de NVDA. (<A HREF="http://community.nvda-project.org/ticket/3184">#3184</A>)
+<LI>Ahora se requiere Skype para Escritorio 7 o posterior para utilizar con NVDA; no se soportan las versiones anteriores. (<A HREF="http://community.nvda-project.org/ticket/4218">#4218</A>)
+<LI>La descarga de las actualizaciones de NVDA ahora es más segura. (en concreto, la información de actualización se recupera a través de https y el hash del fichero se verifica tras su descarga.) (<A HREF="http://community.nvda-project.org/ticket/4716">#4716</A>)
+<LI>Se ha actualizado eSpeak a la versión 1.48.04 (<A HREF="http://community.nvda-project.org/ticket/4325">#4325</A>)
+</UL>
+
+<H3>Corrección de Errores</H3>
+
+<UL>
+<LI>En Microsoft Excel, se maneja el caso cuando las celdas de encabezado de fila y columna se fusionan. Ej.: si A1 y B1 se fusionan, entonces B2 ahora tendrá A1 y B1 anunciado como su encabezado de columna, en lugar de nada en absoluto. (<A HREF="http://community.nvda-project.org/ticket/4617">#4617</A>)
+<LI>Al editar el contenido  de un cuadro de texto en Microsoft PowerPoint 2003, NVDA anunciará correctamente el contenido de cada línea. Anteriormente las líneas  se indicarían mal,   un cqarácter por cada nuevo párrafo. (<A HREF="http://community.nvda-project.org/ticket/4619">#4619</A>)
+<LI>Todos los diálogos de NVDA ahora se centran en la pantalla, mejorando la presentación visual y la usabilidad. (<A HREF="http://community.nvda-project.org/ticket/3148">#3148</A>)
+<LI>En Skype para sobremesa, al introducir un mensaje introductorio para añadir un contacto, la entrada y el movimiento por el texto ahora funciona correctamente. (<A HREF="http://community.nvda-project.org/ticket/3661">#3661</A>)
+<LI>Cuando el foco se mueva a un elemento nuevo en vistas en árbol en el IDE  Eclipse, si el elemento anteriormente enfocado es una casilla de verificación, ya no la anuncia incorrectamente. (<A HREF="http://community.nvda-project.org/ticket/4586">#4586</A>)
+<LI>En el diálogo de corrección de ortografía de Microsoft Word, el siguiente error se anunciará automáticamente cuando el anterior se haya cambiado o ignorado utilizando los atajos de teclado respectivos. (<A HREF="http://community.nvda-project.org/ticket/1938">#1938</A>)
+<LI>El texto puede leerse de nuevo correctamente en lugares tales como la ventana de terminal de Tera Term Pro y documentos en Balabolka. (<A HREF="http://community.nvda-project.org/ticket/4229">#4229</A>)
+<LI>El foco ahora vuelve correctamente al documento que se esté editando cuando se finalice la composición de entrada de texto en coreano y otros idiomas del este asiático mientras se edita dentro de un marco en Internet Explorer y otros documentos MSHTML. (<A HREF="http://community.nvda-project.org/ticket/4045">#4045</A>)
+<LI>En el diálogo Gestos de entrada, al seleccionar una distribución de teclado para un gesto de teclado que se añade, ahora pulsando escape se cierra el menú como se debiera en lugar de cerrar el diálogo. (<A HREF="http://community.nvda-project.org/ticket/3617">#3617</A>)
+<LI>Al eliminar un complemento, el directorio del complemento ahora se borra correctamente después de reiniciar NVDA. Anteriormente, tenías que reiniciar dos veces. (<A HREF="http://community.nvda-project.org/ticket/3461">#3461</A>)
+<LI>Se corrigieron los principales problemas al utilizar Skype para Escritorio 7. (<A HREF="http://community.nvda-project.org/ticket/4218">#4218</A>)
+<LI>Cuando envíes un mensaje en Skype para Escritorio, ya no lo lee dos veces. (<A HREF="http://community.nvda-project.org/ticket/3616">#3616</A>)
+<LI>En Skype para Escritorio, NVDA ya no debería leer ocasionalmente una gran cantidad de mensajes en falso (quizás incluso una conversación entera. (<A HREF="http://community.nvda-project.org/ticket/4644">#4644</A>)
+<LI>Corregido un problema donde la orden de NVDA Anunciar fecha y hora no tenía en cuenta en algunos casos las opciones regionales especificadas por el usuario. (<A HREF="http://community.nvda-project.org/ticket/2987">#2987</A>)
+<LI>En Modo exploración, ya no se presenta texto sin sentido (abarcando a veces varias líneas) para ciertos gráficos tales como los encontrados en Google Groups. (en concreto, esto ocurría con imágenes codificadas en base 64.) (<A HREF="http://community.nvda-project.org/ticket/4793">#4793</A>)
+<LI>NVDA ya no debería  congelarse después de unos pocos segundos cuando se saca el foco de una aplicación de estilo Windows 8 Metro cuando permanece suspendido. (<A HREF="http://community.nvda-project.org/ticket/4572">#4572</A>)
+<LI>El atributo aria-atomic en regiones activas en Mozilla Firefox ahora se tiene en cuenta incluso aunque el mismo elemento atomic cambie. Anteiormente sólo afectaba a elementos descendientes. (<A HREF="http://community.nvda-project.org/ticket/4794">#4794</A>) 
+<LI>El modo exploración reflejará actualizaciones, y las regiones activas se anunciarán,  para documentos en modo exploración dentro de aplicaciones ARIA integradas en un documento en Internet Explorer u otros controles MSHTML. (<A HREF="http://community.nvda-project.org/ticket/4798">#4798</A>)
+<LI>Cuando el texto cambie o se añada a regiones activas de texto relevante en Internet Explorer y otros controles MSHTML, sólo se anuncia el texto cambiado o añadido, en lugar de todo el texto en el elemento contenedor. (<A HREF="http://community.nvda-project.org/ticket/4800">#4800</A>)
+<LI>El contenido indicado por el atributo aria-labelledby en elementos en Internet Explorer y otros controles MSHTML reemplaza correctamente el contenido original  donde sea apropiado hacerlo. (<A HREF="http://community.nvda-project.org/ticket/4575">#4575</A>)
+<LI>Cuando se revisa la ortografía en Microsoft Outlook 2013, ahora se anuncia la palabra mal escrita. (<A HREF="http://community.nvda-project.org/ticket/4848">#4848</A>)
+<LI>En Internet Explorer y otros controles MSHTML, el contenido dentro de elementos ocultos con visibility:hidden ya no se presenta inapropiadamente en modo exploración. (<A HREF="http://community.nvda-project.org/ticket/4839">#4839</A>, <A HREF="http://community.nvda-project.org/ticket/3776">#3776</A>)
+<LI>En Internet Explorer y otros controles MSHTML, el atributo title en controles form ya no toma inapropiadamente preferencia sobre otras asociaciones de etiqueta. (<A HREF="http://community.nvda-project.org/ticket/4491">#4491</A>)
+<LI>En Internet Explorer y otros controles MSHTML, NVDA ya no ignora el enfocado de elementos  debido al atributo aria-activedescendant. (<A HREF="http://community.nvda-project.org/ticket/4667">#4667</A>)
+</UL>
+
+<H3>Cambios para Desarrolladores</H3>
+
+<UL>
+<LI>Actualizado wxPython a 3.0.2.0. (<A HREF="http://community.nvda-project.org/ticket/3763">#3763</A>)
+<LI>Actualizado Python a 2.7.9. (<A HREF="http://community.nvda-project.org/ticket/4715">#4715</A>)
+<LI>NVDA ya no se romperá cuando se reinicie después de eliminar o actualizar un complemento que importe speechDictHandler en su módulo installTasks. (<A HREF="http://community.nvda-project.org/ticket/4496">#4496</A>)
+</UL>
+
 <H2>2014.4</H2>
+
+<H3>Nuevas Características</H3>
+
+<UL>
+<LI>Nuevos idiomas: Español de Colombia, Punjabi
+<LI>Ahora es posible reiniciar NVDA o reiniciar NVDA con los complementos deshabilitados desde el diálogo salir de NVDA. (<A HREF="http://community.nvda-project.org/ticket/4057">#4057</A>)
+ <UL>
+ <LI>NVDA también puede iniciarse con los complementos deshabilitados utilizando la opción de línea de órdenes --disable-addons.
+ </UL>
+<LI>En diccionarios del habla, ahora es posible especificar que un patrón sólo deba compararse si es una palabra completa; es decir,no ocurre como parte de una palabra más larga. (<A HREF="http://community.nvda-project.org/ticket/1704">#1704</A>)
+</UL>
 
 <H3>Cambios</H3>
 
 <UL>
 <LI>si un objeto al que te hayas movido con la navegación de objetos está dentro de un documento en modo exploración, pero el objeto en el que estabas anteriormente no lo estaba, el modo revisión se pone automáticamente en documentos. Con anterioridad esto sólo ocurría si el navegador de objetos se movía debido al cambio del foco. (<A HREF="http://community.nvda-project.org/ticket/4369">#4369</A>)
+<LI>Las listas de pantallas Braille y de Sintetizadores en sus respectivos cuadros de diálogo ahora se ordenan alfabéticamente excepto para Sin braille/Sin voz,  las cuales ahora están al fondo. (<A HREF="http://community.nvda-project.org/ticket/2724">#2724</A>)
+<LI>Actualizado el transcriptor braille liblouis a 2.6.0. (<A HREF="http://community.nvda-project.org/ticket/4434">#4434</A>, <A HREF="http://community.nvda-project.org/ticket/3835">#3835</A>)
+<LI>En modo exploración, al pulsar e y shift+e para  navegar a campos de edición ahora se incluyen cuadros combinados editables. Esto incluye el cuadro buscar en la última  versiónn de Google Search. (<A HREF="http://community.nvda-project.org/ticket/4436">#4436</A>)
+<LI>Al hacer Clic en el icono de NVDA en el Area de Notificación con el botón izquierdo del ratón ahora se abre el menú NVDA en lugar de no hacer nada. (<A HREF="http://community.nvda-project.org/ticket/4459">#4459</A>)
 </UL>
 
 <H3>Corrección de Fallos</H3>
@@ -24,7 +166,30 @@
 <LI>Al mover atrás el foco en un documento en modo exploración (ej.: yendo a una pestaña a una página web ya abierta) el cursor de revisión se coloca apropiadamente en el cursor virtual, en lugar de en el control enfocado (ej.: en un enlace más cercano). (<A HREF="http://community.nvda-project.org/ticket/4369">#4369</A>)
 <LI>En presentaciones de diapositivas en Powerpoint, el cursor de revisión sigue correctamente al cursor virtual. (<A HREF="http://community.nvda-project.org/ticket/4370">#4370</A>)
 <LI>En Mozilla Firefox y otros navegadores basados en Gecko, el contenido nuevo dentro de una región activa se anunciará incluso si el contenido nuevo tiene un tipo diferente de ARIA activa usable a la región activa padre. Ej.: Contenido marcado como assertive se añade a una región activa marcada como polite. (<A HREF="http://community.nvda-project.org/ticket/4169">#4169</A>).
-<LI>En Internet Explorer y otros controles MSHTML, los framesets dentro de  framesets ya no causan que se cree un nuevo documento en modo exploración para los conjuntos de framesets, los cuales no permitían la navegación a otros marcos. (<A HREF="http://community.nvda-project.org/ticket/4418">#4418</A>)
+<LI>En Internet Explorer y otros controles MSHTML, en algunos casos en los que un documento esté contenido dentro de otro documento ya no se evita que el usuario pueda acceder  a algunos de los contenidos (en concreto, framesets dentro de framesets). (<A HREF="http://community.nvda-project.org/ticket/4418">#4418</A>)
+<LI>NVDA ya no se cuelga cuando intenta utilizar una pantalla braille Handy Tech en algunos casos. (<A HREF="http://community.nvda-project.org/ticket/3709">#3709</A>)
+<LI>En Windows Vista, ya no se muestra un expúreo diálogo "Entry Point Not Found" mostrado en varios casos como cuando se inicia NVDA desde el atajo del escritorio o a través de la tecla de acceso directo. (<A HREF="http://community.nvda-project.org/ticket/4235">#4235</A>)
+<LI>Se han corregido problemas serios con controles de texto editable en diálogos en versiones recientes de Eclipse. (<A HREF="http://community.nvda-project.org/ticket/3872">#3872</A>)
+<LI>En Outlook 2010, ahora mover el cursor funciona como se espera en el campo de ubicación de citas y solicitudes de reunión. (<A HREF="http://community.nvda-project.org/ticket/4126">#4126</A>)
+<LI>Dentro de una región activa, el contenido que esté marcado como no activo (ej.: aria-live="off") ahora se ignora correctamente. (<A HREF="http://community.nvda-project.org/ticket/4405">#4405</A>)
+<LI>Al anunciar el texto de una barra de estado que tiene un nombre, el nombre ahora se separa correctamente de la primera palabra del texto de la barra de estado. (<A HREF="http://community.nvda-project.org/ticket/4430">#4430</A>)
+<LI>En campos de introdución de palabras clave con la verbalización de palabras al escribir activada, ya no se anuncian varios asteriscos inútilmente al comenzar palabras nuevas. (<A HREF="http://community.nvda-project.org/ticket/4402">#4402</A>)
+<LI>En la lista de mensajes de Microsoft Outlook, los elementos ya no se anuncian inútilmente como elementos de Fecha. (<A HREF="http://community.nvda-project.org/ticket/4439">#4439</A>)
+<LI>Al seleccionar texto en el control de edición de código en el IDE Eclipse, ya no se anuncia toda la selección cada vez que la selección cambia. (<A HREF="http://community.nvda-project.org/ticket/2314">#2314</A>)
+<LI>Varias versiones de Eclipse, tales como Spring Tool Suite y la versión incluída en el paquete Android Developer Tools, ahora se reconocen como Eclipse y se manejan apropiadamente. (<A HREF="http://community.nvda-project.org/ticket/4360">#4360</A>, <A HREF="http://community.nvda-project.org/ticket/4454">#4454</A>)
+<LI>El seguimiento del ratón y la exploración táctil en Internet Explorer y otros controles MSHTML (incluyendo muchas aplicaciones Windows 8) ahora es mucho más preciso en pantallas de alta DPI o cuando se cambia el zoom de documento. (<A HREF="http://community.nvda-project.org/ticket/3494">#3494</A>) 
+<LI>El seguimiento del ratón y la exploración táctil en Internet Explorer y otros controles MSHTML ahora anuncia la etiqueta de más botones. (<A HREF="http://community.nvda-project.org/ticket/4173">#4173</A>)
+<LI>Al utilizar una pantalla braille Papenmeier BRAILLEX con BrxCom, las teclas en la pantalla ahora funcionan como se esperaba. (<A HREF="http://community.nvda-project.org/ticket/4614">#4614</A>)
+</UL>
+
+<H3>Cambios para Desarrolladores</H3>
+
+<UL>
+<LI>Para ejecutables que albergan muchas aplicaciones diferentes (ej.: javaw.exe), ahora el código puede proporcionarse para que cargue app modules específicos para cada aplicación en lugar de cargar el mismo app module para todas las aplicaciones incluídas. (<A HREF="http://community.nvda-project.org/ticket/4360">#4360</A>)
+ <UL>
+ <LI>Mira  la documentación del código para appModuleHandler.AppModule para más detalles.
+ <LI>Se ha implementado el soporte para javaw.exe.
+ </UL>
 </UL>
 
 <H2>2014.3</H2>
