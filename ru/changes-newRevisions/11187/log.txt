@@ -1,0 +1,8 @@
+commit 7b7823c71f446435d195eb9f9a5037411c9c407c
+Author: Michael Curran <mick@nvaccess.org>
+Date:   Mon Jun 22 14:47:09 2015 +1000
+
+    Fix garbled text when typing in Outlook with braille enabled and with text expansion functionality (e.g. in AutoHotkey).
+    
+    InputGesture.execute: if an intercepted command script (script that sends the gesture it intercepts) is queued and or has not yet completed its execution, queue any further gestures that do not have a script via a fake script that just sends the gesture. this ensures that input stays in order even if it was delayed by NVDA.
+    Fixes #2953, #4499.
