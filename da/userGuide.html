@@ -3,10 +3,10 @@
 <HEAD>
 <META NAME="generator" CONTENT="http://txt2tags.org">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE> NVDA 2015.2-dev brugervejledning</TITLE>
+<TITLE> NVDA 2015.3-dev brugervejledning</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
-<H2>﻿ NVDA 2015.2-dev brugervejledning</H2>
+<H2>﻿ NVDA 2015.3-dev brugervejledning</H2>
 </CENTER>
 
 
@@ -155,15 +155,16 @@
     <LI><A HREF="#toc105">12.12. Papenmeier BRAILLEX Nyere modeller</A>
     <LI><A HREF="#toc106">12.13. Papenmeier Braille BRAILLEX Ældre Modeller</A>
     <LI><A HREF="#toc107">12.14. HumanWare BrailleNote</A>
-    <LI><A HREF="#toc108">12.15. BRLTTY</A>
+    <LI><A HREF="#toc108">12.15. EcoBraille</A>
+    <LI><A HREF="#toc109">12.16. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc109">13. Punktforkortelser for felttyper og felttilstande</A>
-  <LI><A HREF="#toc110">14. Avancerede emner</A>
+  <LI><A HREF="#toc110">13. Punktforkortelser for felttyper og felttilstande</A>
+  <LI><A HREF="#toc111">14. Avancerede emner</A>
     <UL>
-    <LI><A HREF="#toc111">14.1. indstillinger på kommandolinjen</A>
-    <LI><A HREF="#toc112">14.2. Avanceret tilpasning af udtale af symboler</A>
+    <LI><A HREF="#toc112">14.1. indstillinger på kommandolinjen</A>
+    <LI><A HREF="#toc113">14.2. Avanceret tilpasning af udtale af symboler</A>
     </UL>
-  <LI><A HREF="#toc113">15. Yderligere information</A>
+  <LI><A HREF="#toc114">15. Yderligere information</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -670,7 +671,7 @@ Der er nogle nyttige kommandoer, når du flytter fokus rundt i systemet:
 <TD>Læs statuslinje</TD>
 <TD>NVDA+End</TD>
 <TD>NVDA+Shift+End</TD>
-<TD>Annoncerer statuslinjen hvis NVDA kan finde den. Det flytter også navigatorobjektet til denne position</TD>
+<TD>Annoncerer statuslinjen hvis NVDA kan finde den. Det flytter også navigatorobjektet til denne position. Tryk to gange for at få stavet informationen.</TD>
 </TR>
 </TABLE>
 
@@ -718,13 +719,13 @@ Følgende NVDA-kommandoer kan bruges i forbindelse med systemmarkøren:
 <TD>Næste sætning</TD>
 <TD>Alt+Pil-ned</TD>
 <TD>Alt+Pil-ned</TD>
-<TD>Flytter markøren til den næste sætning og læser den (kun understøttet i Microsoft Word).</TD>
+<TD>Flytter markøren til den næste sætning og læser den (kun understøttet i Microsoft Word og Outlook).</TD>
 </TR>
 <TR>
 <TD>Forrige sætning</TD>
 <TD>Alt+Pil-op</TD>
 <TD>Alt+Pil-op</TD>
-<TD>Flytter markøren til den forrige sætning og læser den (kun understøttet i Microsoft Word).</TD>
+<TD>Flytter markøren til den forrige sætning og læser den (kun understøttet i Microsoft Word og Outlook).</TD>
 </TR>
 </TABLE>
 
@@ -1313,6 +1314,12 @@ Flyt til begyndelsen eller slutningen af overordnede elementer, fx. lister eller
 <TD>Flytter forbi slutningen af det overordnede element, liste tabel osv., hvor systemmarkøren er placeret.</TD>
 </TR>
 </TABLE>
+
+<P>
+Nogle web-applikationer, som f.eks. Gmail, Twitter og Facebook, bruger bogstaver som genvejstaster.
+Hvis du gerne vil kunne bruge disse genvejstaster og stadig være i stand til at bruge markørtasterne til at læse i browse-tilstand, kan du midlertidigt slå NVDAs bogstavnavigering fra.
+Du kan slå bogstavnavigering til og fra i det aktuelle dokument ved at trykke på NVDA+Shift+Mellemrum.
+</P>
 
 <A NAME="toc42"></A>
 <H3>6.2. Elementlisten</H3>
@@ -3953,10 +3960,9 @@ Følgende punktdisplay er understøttede
 
 <P>
 Hvis BrxCom er installeret, vil NVDA benytte BrxCom.
-BrxCom er et værktøj der giver dig mulighed for, at bruge punktdisplayet uafhængigt af en skærmlæser.
+BrxCom er et værktøj der giver dig mulighed for, at bruge  punktdisplayet som et tastatur uafhængigt af en skærmlæser.
 En ny version af BrxCom der virker med NVDA bliver snart udgivet af Papenmeier.  
-Indtastning i punkt er mulig med TRIO, BRAILLEX Live 20 og Braillex Live -enheder uden BrxCom.
-Punktindtastning er også mulig med Live Plus-modellen, men kun med BrxCom.
+Indtastning i punkt er mulig med  TRIO og  BRAILLEX Live-modellerne.
 </P>
 <P>
 De fleste enheder har en Easy Access bjælke (EAB) der giver mulighed for intuitive og hurtige handlinger.
@@ -4376,6 +4382,14 @@ BRAILLEX Tiny:
 <TD>Sig tekstformatering</TD>
 <TD>reportf</TD>
 </TR>
+<TR>
+<TD>Sig titel</TD>
+<TD>l1+op</TD>
+</TR>
+<TR>
+<TD>Læs statuslinje</TD>
+<TD>l2+ned</TD>
+</TR>
 </TABLE>
 
 <P>
@@ -4571,7 +4585,105 @@ Se venligst dokumentationen til din BrailleNote for at finde ud af, hvor du kan 
 </TABLE>
 
 <A NAME="toc108"></A>
-<H3>12.15. BRLTTY</H3>
+<H3>12.15. EcoBraille</H3>
+
+<P>
+NVDA understøtter EcoBraille displays fra <A HREF="http://www.once.es/">ONCE</A>.
+Følgende modeller er understøttet:
+</P>
+
+<UL>
+<LI>EcoBraille 20
+<LI>EcoBraille 40
+<LI>EcoBraille 80
+<LI>EcoBraille Plus
+</UL>
+
+<P>
+I NVDA kan du indstille, hvilken seriel port punktdisplayet er forbundet til, i dialogen Braille-indstillinger.
+</P>
+<P>
+Tastaturkommandoerne til Eco punktdisplays er som følger:
+Se venligst <A HREF="ftp://ftp.once.es/pub/utt/bibliotecnia/Lineas_Braille/ECO/">dokumentationen til EcoBraille</A> for en beskrivelse af, hvor disse taster er placeret.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Navn</TH>
+<TH>Tastetryk</TH>
+</TR>
+<TR>
+<TD>Rul punktdisplay tilbage</TD>
+<TD>T2</TD>
+</TR>
+<TR>
+<TD>Rul punktdisplay frem</TD>
+<TD>T4</TD>
+</TR>
+<TR>
+<TD>Flyt punktdisplay til forrige linje</TD>
+<TD>T1</TD>
+</TR>
+<TR>
+<TD>Flyt punktdisplay til næste linje</TD>
+<TD>T5</TD>
+</TR>
+<TR>
+<TD>Flyt markør til punktcelle</TD>
+<TD>Markørflyttetast</TD>
+</TR>
+<TR>
+<TD>Aktiver det aktuelle navigator-objekt</TD>
+<TD>T3</TD>
+</TR>
+<TR>
+<TD>Skift til næste gennemsynstilstand</TD>
+<TD>F1</TD>
+</TR>
+<TR>
+<TD>Flyt til overordnede objekt</TD>
+<TD>F2</TD>
+</TR>
+<TR>
+<TD>Skift til forrige gennemsynstilstand</TD>
+<TD>F3</TD>
+</TR>
+<TR>
+<TD>Flyt til forrige objekt</TD>
+<TD>F4</TD>
+</TR>
+<TR>
+<TD>Læs det aktuelle objekt</TD>
+<TD>F5</TD>
+</TR>
+<TR>
+<TD>flyt til næste objekt</TD>
+<TD>F6</TD>
+</TR>
+<TR>
+<TD>Flyt til objektet i fokus</TD>
+<TD>F7</TD>
+</TR>
+<TR>
+<TD>Flyt til første underordnede objekt</TD>
+<TD>F8</TD>
+</TR>
+<TR>
+<TD>Flyt systemfokus eller markør til den aktuelle position for gennemsyn</TD>
+<TD>F9</TD>
+</TR>
+<TR>
+<TD>Sig position for gennemsynsmarkør</TD>
+<TD>F0</TD>
+</TR>
+<TR>
+<TD>slå tøjring af Braille til/fra</TD>
+<TD>a</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc109"></A>
+<H3>12.16. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A> er et særskilt program, der understøtter yderligere en lang række punktdisplays.
@@ -4615,7 +4727,7 @@ Se venligst <A HREF="http://mielke.cc/brltty/doc/KeyTables/">BRLTTY dokumentatio
 </TR>
 </TABLE>
 
-<A NAME="toc109"></A>
+<A NAME="toc110"></A>
 <H2>13. Punktforkortelser for felttyper og felttilstande</H2>
 
 <P>
@@ -4756,10 +4868,10 @@ Desuden er følgende indikatorer for tilstande defineret:
 </TR>
 </TABLE>
 
-<A NAME="toc110"></A>
+<A NAME="toc111"></A>
 <H2>14. Avancerede emner</H2>
 
-<A NAME="toc111"></A>
+<A NAME="toc112"></A>
 <H3>14.1. indstillinger på kommandolinjen</H3>
 
 <P>
@@ -4887,7 +4999,7 @@ De mulige kommandolinjeparametre til NVDA er følgende:
 </TR>
 </TABLE>
 
-<A NAME="toc112"></A>
+<A NAME="toc113"></A>
 <H3>14.2. Avanceret tilpasning af udtale af symboler</H3>
 
 <P>
@@ -4901,7 +5013,7 @@ Formatet på denne fil er dokumenteret  i kapitlet Symbol Pronunciation, fundet 
 Det er dog ikke muligt for brugere at definere komplekse symboler.
 </P>
 
-<A NAME="toc113"></A>
+<A NAME="toc114"></A>
 <H2>15. Yderligere information</H2>
 
 <P>
