@@ -155,15 +155,16 @@
     <LI><A HREF="#toc105">12.12. Nouveaux modèles de Papenmeier brailleX</A>
     <LI><A HREF="#toc106">12.13. Papenmeier braille brailleX modèles anciens</A>
     <LI><A HREF="#toc107">12.14. brailleNote de HumanWare</A>
-    <LI><A HREF="#toc108">12.15. BRLTTY</A>
+    <LI><A HREF="#toc108">12.15. EcoBraille</A>
+    <LI><A HREF="#toc109">12.16. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc109">13. Abbréviations des types et états des contrôles en Braille</A>
-  <LI><A HREF="#toc110">14. Fonctions avancées</A>
+  <LI><A HREF="#toc110">13. Abbréviations des types et états des contrôles en Braille</A>
+  <LI><A HREF="#toc111">14. Fonctions avancées</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">14.1. Options de ligne de commande</A>
-    <LI><A HREF="#toc112">14.2. Personnalisation avancée de la prononciation des symboles</A>
+    <LI><A HREF="#toc113">14.2. Personnalisation avancée de la prononciation des symboles</A>
     </UL>
-  <LI><A HREF="#toc113">15. Informations complémentaires</A>
+  <LI><A HREF="#toc114">15. Informations complémentaires</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -670,7 +671,7 @@ Quelques touches de commandes utiles pour naviguer avec le focus :
 <TD>Annonce de la barre d'état</TD>
 <TD>NVDA+fin</TD>
 <TD>NVDA+maj+fin</TD>
-<TD>Lit la barre d'état si NVDA en trouve une. Déplace aussi l'objet navigateur à la barre d'état</TD>
+<TD>Lit la barre d'état si NVDA en trouve une. Déplace aussi l'objet navigateur à la barre d'état. Un double appui épelle l'information</TD>
 </TR>
 </TABLE>
 
@@ -718,13 +719,13 @@ NVDA fournit les commandes clavier suivantes par rapport au curseur système :
 <TD>Phrase suivante</TD>
 <TD>alt+flècheBas</TD>
 <TD>alt+flècheBas</TD>
-<TD>Amène le curseur à la phrase suivante et la lit. (Supporté seulement sous Microsoft Word)</TD>
+<TD>Amène le curseur à la phrase suivante et la lit. (Supporté seulement sous Microsoft Wordet Outlook)</TD>
 </TR>
 <TR>
 <TD>Phrase précédente</TD>
 <TD>alt+flècheHaut</TD>
 <TD>alt+flècheHaut</TD>
-<TD>Amène le curseur à la phrase précédente et la lit. (Supporté seulement sous Microsoft Word)</TD>
+<TD>Amène le curseur à la phrase précédente et la lit. (Supporté seulement sous Microsoft Wordet Outlook)</TD>
 </TR>
 </TABLE>
 
@@ -1316,6 +1317,12 @@ Pour se déplacer au début ou à la fin des éléments contenants comme les lis
 <TD>Se déplace après la fin du conteneur (liste, tableau etc.) où le curseur se trouve</TD>
 </TR>
 </TABLE>
+
+<P>
+Quelques applications web comme Gmail, Twitter et Facebook utilisent de simple lettres comme touches de raccourci.
+Si vous voulez les utiliser tout en restant capable d'utiliser vos touches curseur en mode navigation, vous pouvez désactiver temporairement les touches de navigation rapide de NVDA.
+Pour activer ou désactiver la navigation rapide pour le document courant, pressez NVDA+maj+espace.
+</P>
 
 <A NAME="toc42"></A>
 <H3>6.2. La liste d'éléments</H3>
@@ -3957,8 +3964,7 @@ Les afficheurs braille suivant sont supportés :
 Si BrxCom est installé, NVDA utilisera BrxCom.
 BrxCom est un outil qui permet d'utiliser le clavier braille indépendamment d'un lecteur d'écran.
 Une nouvelle version de BrxCom compatible avec NVDA sera bientôt mise à disposition par Papenmeier.
-La saisie braille est possible avec les terminaux Trio, BRAILLEX Live 20 et Braillex Live  sans BrxCom.
-La saisie braille est aussi possible avec le modèle Live Plus, mais seulement avec BrxCom.
+La saisie au clavier est possible avec les modèles Trio et BRAILLEX Live.
 </P>
 <P>
 La plupart des afficheurs ont une barre d'accès facile (EAB) qui permet des opérations intuitives et rapides.
@@ -4378,6 +4384,14 @@ brailleX Tiny :
 <TD>Annoncer la mise en forme</TD>
 <TD>reportf</TD>
 </TR>
+<TR>
+<TD>Annoncer le titre</TD>
+<TD>l1+up</TD>
+</TR>
+<TR>
+<TD>Annoncer la barre d'état</TD>
+<TD>l2+down</TD>
+</TR>
 </TABLE>
 
 <P>
@@ -4573,7 +4587,105 @@ Consultez la documentation de votre brailleNote pour savoir où se situent ces t
 </TABLE>
 
 <A NAME="toc108"></A>
-<H3>12.15. BRLTTY</H3>
+<H3>12.15. EcoBraille</H3>
+
+<P>
+NVDA supporte Les afficheurs EcoBraille de <A HREF="http://www.once.es/">ONCE</A>.
+Les modèles suivants sont supportés :
+</P>
+
+<UL>
+<LI>EcoBraille 20
+<LI>EcoBraille 40
+<LI>EcoBraille 80
+<LI>EcoBraille Plus
+</UL>
+
+<P>
+Sous NVDA, vous pouvez définir le port série auquel l'afficheur est connecté dans le dialogue "Paramètres braille".
+</P>
+<P>
+Voici les assignations de touche pour les afficheurs EcoBraille.
+Veuillez consulter <A HREF="ftp://ftp.once.es/pub/utt/bibliotecnia/Lineas_Braille/ECO/">la documentation EcoBraille</A> pour connaître la position de ces touches.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nom</TH>
+<TH>Touche</TH>
+</TR>
+<TR>
+<TD>Défilement braille arrière</TD>
+<TD>T2</TD>
+</TR>
+<TR>
+<TD>Défilement braille avant</TD>
+<TD>T4</TD>
+</TR>
+<TR>
+<TD>Amener l'afficheur braille à la ligne précédente</TD>
+<TD>T1</TD>
+</TR>
+<TR>
+<TD>Amener l'afficheur braille à la ligne suivante</TD>
+<TD>T5</TD>
+</TR>
+<TR>
+<TD>Aller à la cellule braille</TD>
+<TD>Routing</TD>
+</TR>
+<TR>
+<TD>Activer l'objet navigateur courant</TD>
+<TD>T3</TD>
+</TR>
+<TR>
+<TD>Passer au mode de revue suivant</TD>
+<TD>F1</TD>
+</TR>
+<TR>
+<TD>Aller à l'objet contenant</TD>
+<TD>F2</TD>
+</TR>
+<TR>
+<TD>Passer au mode de revue précédent</TD>
+<TD>F3</TD>
+</TR>
+<TR>
+<TD>Aller à l'objet précédent</TD>
+<TD>F4</TD>
+</TR>
+<TR>
+<TD>Annoncer l'objet courant</TD>
+<TD>F5</TD>
+</TR>
+<TR>
+<TD>Aller à l'objet suivant</TD>
+<TD>F6</TD>
+</TR>
+<TR>
+<TD>Aller à l'objet en focus</TD>
+<TD>F7</TD>
+</TR>
+<TR>
+<TD>Aller au premier objet inclus</TD>
+<TD>F8</TD>
+</TR>
+<TR>
+<TD>Amener le focus système ou le curseur à la position courante de revue</TD>
+<TD>F9</TD>
+</TR>
+<TR>
+<TD>Annoncer la position du curseur de revue</TD>
+<TD>F0</TD>
+</TR>
+<TR>
+<TD>Bascule du mode de suivi braille</TD>
+<TD>A</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc109"></A>
+<H3>12.16. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A> est un programme séparé qui permet de prendre en charge beaucoup plus de terminaux braille.
@@ -4617,7 +4729,7 @@ Veuillez consulter la <A HREF="http://mielke.cc/brltty/doc/KeyTables/">documenta
 </TR>
 </TABLE>
 
-<A NAME="toc109"></A>
+<A NAME="toc110"></A>
 <H2>13. Abbréviations des types et états des contrôles en Braille</H2>
 
 <P>
@@ -4758,7 +4870,7 @@ Les indicateurs d'état suivants sont également définis :
 </TR>
 </TABLE>
 
-<A NAME="toc110"></A>
+<A NAME="toc111"></A>
 <H2>14. Fonctions avancées</H2>
 
 <A NAME="CommandLineOptions"></A>
@@ -4892,7 +5004,7 @@ Voici les options de ligne de commande de NVDA :
 </TR>
 </TABLE>
 
-<A NAME="toc112"></A>
+<A NAME="toc113"></A>
 <H3>14.2. Personnalisation avancée de la prononciation des symboles</H3>
 
 <P>
@@ -4906,7 +5018,7 @@ Le format de ce fichier est documenté dans la section "Prononciation des Symbol
 Cependant, l'utilisateur ne peut pas définir de symboles complexes.
 </P>
 
-<A NAME="toc113"></A>
+<A NAME="toc114"></A>
 <H2>15. Informations complémentaires</H2>
 
 <P>
