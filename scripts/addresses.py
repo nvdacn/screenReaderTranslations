@@ -42,7 +42,7 @@ addresses = {
     },
     'de': {
         'lang':'German',
-        'email': ['Bernd Dorer <bernd.dorer@yahoo.de>', 'David Parduhn <xkill85@gmx.net>', 'Rene Linke <rene.linke@hamburg.de>'],
+        'email': ['Bernd Dorer <bdorer@mailbox.org>', 'David Parduhn <xkill85@gmx.net>', 'Rene Linke <rene.linke@hamburg.de>'],
     },
     'el': {
         'lang': 'Greek',
