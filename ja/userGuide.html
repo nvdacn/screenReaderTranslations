@@ -155,15 +155,16 @@
     <LI><A HREF="#toc105">12.12. Papenmeier BRAILLEX 新型機種</A>
     <LI><A HREF="#toc106">12.13. Papenmeier BRAILLEX 旧機種</A>
     <LI><A HREF="#toc107">12.14. HumanWare BrailleNote</A>
-    <LI><A HREF="#toc108">12.15. BRLTTY</A>
+    <LI><A HREF="#toc108">12.15. EcoBraille</A>
+    <LI><A HREF="#toc109">12.16. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc109">13. 点字でのコントロールの種類と状態の表記</A>
-  <LI><A HREF="#toc110">14. 高度なトピック</A>
+  <LI><A HREF="#toc110">13. 点字でのコントロールの種類と状態の表記</A>
+  <LI><A HREF="#toc111">14. 高度なトピック</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">14.1. コマンドラインオプション</A>
-    <LI><A HREF="#toc112">14.2. 記号の読み上げの高度なカスタマイズ</A>
+    <LI><A HREF="#toc113">14.2. 記号の読み上げの高度なカスタマイズ</A>
     </UL>
-  <LI><A HREF="#toc113">15. さらに詳細な情報</A>
+  <LI><A HREF="#toc114">15. さらに詳細な情報</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -668,7 +669,7 @@ NVDAによるWindows操作の最も一般的な方法は、通常のキーボー
 <TD>ステータスバーの報告</TD>
 <TD>NVDA+End</TD>
 <TD>NVDA+Shift+End</TD>
-<TD>みつかった場合にステータスバー情報を報告します。また、ナビゲーターオブジェクトをその場所に移動します。</TD>
+<TD>みつかった場合にステータスバー情報を報告します。また、ナビゲーターオブジェクトをその場所に移動します。2回押すとスペルを読み上げます。</TD>
 </TR>
 </TABLE>
 
@@ -716,13 +717,13 @@ NVDAには、以下のキャレットに関するコマンドがあります。
 <TD>次の文を読み上げ</TD>
 <TD>Alt+下矢印</TD>
 <TD>Alt+下矢印</TD>
-<TD>キャレットを次の文に移動してその文を読み上げます。(Microsoft Word のみ)</TD>
+<TD>キャレットを次の文に移動してその文を読み上げます。(Microsoft Word および Outlook)</TD>
 </TR>
 <TR>
 <TD>前の文を読み上げ</TD>
 <TD>Alt+上矢印</TD>
 <TD>Alt+上矢印</TD>
-<TD>キャレットを前の文に移動してその文を読み上げます。(Microsoft Word のみ)</TD>
+<TD>キャレットを前の文に移動してその文を読み上げます。(Microsoft Word および Outlook)</TD>
 </TR>
 </TABLE>
 
@@ -1314,6 +1315,12 @@ Escキーを押すとブラウズモードに戻ります。
 <TD>キャレットがあるコンテナ要素(リストやテーブルなど)の直後の要素に移動します。</TD>
 </TR>
 </TABLE>
+
+<P>
+Gmail, Twitter, Facebook などのWebアプリケーションでは、アルファベットの文字を単独で押す操作をキーボードショートカットとして利用できる場合があります。
+このようなキーボードショートカットとNVDAのブラウズモードのカーソルキーの機能を同時に使いたい場合は、1文字ナビゲーションだけを一時的に使わないことができます。
+現在のドキュメントで1文字ナビゲーションを使用するか使わないかを切り替えるには NVDA+Shift+スペース を押します。
+</P>
 
 <A NAME="toc42"></A>
 <H3>6.2. 要素リスト</H3>
@@ -3952,10 +3959,9 @@ NVDA で利用するときのキー割り当ては以下のとおりです。
 
 <P>
 BrxCom がインストールされていれば NVDA は BrxCom を使います。
-BrxCom はスクリーンリーダーと独立したツールで、点字入力を可能にします。
+BrxCom は点字ディスプレイからキーボード入力を可能にするツールで、スクリーンリーダーに依存せず動作します。
 NVDAに対応した新しいバージョンの BrxCom は Papenmeier からリリースされる予定です。
-ただし Trio, BRAILLEX Live 20 および Braillex Live での点字入力は BrxCom を必要としません。
-Live Plus でも点字入力が可能ですが、この場合は BrxCom が必要です。
+キーボード入力は Trio および BRAILLEX Live で利用可能です。
 </P>
 <P>
 多くの機種に Easy Access Bar (EAB) があり、直感的ですばやい操作ができます。
@@ -4067,7 +4073,7 @@ Live シリーズのディスプレイには1列のタッチカーソルがあ�
 </TR>
 <TR>
 <TD>タッチカーソルの切替</TD>
-<TD>r2</TD>
+<TD>R2</TD>
 </TR>
 <TR>
 <TD>タイトルの報告</TD>
@@ -4375,6 +4381,14 @@ BRAILLEX Tiny:
 <TD>書式の報告</TD>
 <TD>reportf</TD>
 </TR>
+<TR>
+<TD>タイトルの報告</TD>
+<TD>l1+up</TD>
+</TR>
+<TR>
+<TD>ステータスバーの報告</TD>
+<TD>l2+down</TD>
+</TR>
 </TABLE>
 
 <P>
@@ -4570,7 +4584,105 @@ BrailleNote Apex を USB 接続するためには、あらかじめ HumanWare �
 </TABLE>
 
 <A NAME="toc108"></A>
-<H3>12.15. BRLTTY</H3>
+<H3>12.15. EcoBraille</H3>
+
+<P>
+NVDA は <A HREF="http://www.once.es/">ONCE</A> の EcoBraille ディスプレイに対応しています。
+次の機種に対応しています:
+</P>
+
+<UL>
+<LI>EcoBraille 20
+<LI>EcoBraille 40
+<LI>EcoBraille 80
+<LI>EcoBraille Plus
+</UL>
+
+<P>
+NVDA の点字設定ダイアログで、点字ディスプレイが接続されているポートを指定できます。
+</P>
+<P>
+以下は EcoBraille ディスプレイのコマンド割り当てです。
+これらのキーの場所の詳細は <A HREF="ftp://ftp.once.es/pub/utt/bibliotecnia/Lineas_Braille/ECO/">EcoBraille ドキュメント</A> を参照してください。
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名称</TH>
+<TH>キー</TH>
+</TR>
+<TR>
+<TD>点字表示を後にスクロール</TD>
+<TD>T2</TD>
+</TR>
+<TR>
+<TD>点字表示を前にスクロール</TD>
+<TD>T4</TD>
+</TR>
+<TR>
+<TD>点字表示を前の行に移動</TD>
+<TD>T1</TD>
+</TR>
+<TR>
+<TD>点字表示を次の行に移動</TD>
+<TD>T5</TD>
+</TR>
+<TR>
+<TD>点字セルに移動</TD>
+<TD>タッチカーソル</TD>
+</TR>
+<TR>
+<TD>現在のナビゲーターオブジェクトをアクティブ化</TD>
+<TD>T3</TD>
+</TR>
+<TR>
+<TD>次のレビューモードに切替</TD>
+<TD>F1</TD>
+</TR>
+<TR>
+<TD>外側のオブジェクトに移動</TD>
+<TD>F2</TD>
+</TR>
+<TR>
+<TD>前のレビューモードに切替</TD>
+<TD>F3</TD>
+</TR>
+<TR>
+<TD>前のオブジェクトに移動</TD>
+<TD>F4</TD>
+</TR>
+<TR>
+<TD>現在のオブジェクトを報告</TD>
+<TD>F5</TD>
+</TR>
+<TR>
+<TD>次のオブジェクトに移動</TD>
+<TD>F6</TD>
+</TR>
+<TR>
+<TD>フォーカスのあるオブジェクトに移動</TD>
+<TD>F7</TD>
+</TR>
+<TR>
+<TD>内側の最初のオブジェクトに移動</TD>
+<TD>F8</TD>
+</TR>
+<TR>
+<TD>フォーカスまたはキャレットを現在のレビュー位置に移動</TD>
+<TD>F9</TD>
+</TR>
+<TR>
+<TD>レビューカーソルの位置を報告</TD>
+<TD>F0</TD>
+</TR>
+<TR>
+<TD>点字表示モードの切替</TD>
+<TD>A</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc109"></A>
+<H3>12.16. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A>は別のプログラムで、より多くの点字ディスプレイをサポートしています。
@@ -4614,7 +4726,7 @@ BRLTTY用のコマンドが、ディスプレイのコントロールにどの�
 </TR>
 </TABLE>
 
-<A NAME="toc109"></A>
+<A NAME="toc110"></A>
 <H2>13. 点字でのコントロールの種類と状態の表記</H2>
 
 <P>
@@ -4755,7 +4867,7 @@ BRLTTY用のコマンドが、ディスプレイのコントロールにどの�
 </TR>
 </TABLE>
 
-<A NAME="toc110"></A>
+<A NAME="toc111"></A>
 <H2>14. 高度なトピック</H2>
 
 <A NAME="CommandLineOptions"></A>
@@ -4889,7 +5001,7 @@ nvda -q
 </TR>
 </TABLE>
 
-<A NAME="toc112"></A>
+<A NAME="toc113"></A>
 <H3>14.2. 記号の読み上げの高度なカスタマイズ</H3>
 
 <P>
@@ -4903,7 +5015,7 @@ nvda -q
 しかし、ユーザーは複雑な記号を定義することはできません。
 </P>
 
-<A NAME="toc113"></A>
+<A NAME="toc114"></A>
 <H2>15. さらに詳細な情報</H2>
 
 <P>
