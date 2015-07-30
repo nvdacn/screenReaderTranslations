@@ -50,6 +50,11 @@
 
 <UL>
 <LI>Ahora puedes inyectar la entrada bruta desde un teclado de sistema que no se maneja nativamente por Windows (ej.: un teclado QWERTY en una pantalla braille) utilizando la nueva función keyboardHandler.injectRawKeyboardInput. (<A HREF="http://community.nvda-project.org/ticket/4576">#4576</A>)
+<LI>En lugar de un sólo atributo i18nName, synthDriverHandler.SynthSetting ahora tiene los atributos  displayNameWithAccelerator y displayName separados para evitar el anuncio del acelerador en el grupo de opciones del sintetizador en algunos idiomas.
+ <UL>
+ <LI>Por compatibilidad con versiones anteriores, en el constructor, displayName es opcional y se deribará de displayNameWithAccelerator si no se proporciona. Sin embargo, si intentas tener un acelerador para una opción, deberían proporcionarse ambos.
+ <LI>El atributo i18nName está obsoleto y se podrá eliminar en una versión futura.
+ </UL>
 </UL>
 
 <H2>2015.2</H2>
