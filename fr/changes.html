@@ -45,6 +45,11 @@
 <UL>
 <LI>Vous pouvez maintenant injecter de la saisie brute depuis un clavier système non supporté nativement par Windows (ex : un clavier QWERTY sur un afficheur braille) en utilisant la nouvelle fonction keyboardHandler.injectRawKeyboardInput. (<A HREF="http://community.nvda-project.org/ticket/4576">#4576</A>)
 <LI>eventHandler.requestEvents a été ajouté pour requérir des événements particuliers qui sont bloqués par défaut; ex : montrer les événements concernant un contrôle spécifique ou certains événements quand ils sont en arrière-plan. (<A HREF="http://community.nvda-project.org/ticket/3831">#3831</A>)
+<LI>Plutôt qu'un simple attribut i18nName, synthDriverHandler.SynthSetting possède maintenant un displayNameWithAccelerator séparé et des attributs displayName pour éviter l'annonce du raccourci dans la boucle des paramètres synthétiseur dans certaines langues.
+ <UL>
+ <LI>Pour assurer la compatibilité descendante, dans le constructeur, displayName est optionnel et sera dérivé de displayNameWithAccelerator s'il n'est pas fourni. Cependant, si vous voulez avoir un raccourci pour un paramètre, les deux doivent être fournis.
+ </UL>
+<LI>L'attribut i18nName est déprécié et sera peut-être retiré dans une version future.
 </UL>
 
 <H2>2015.2</H2>
