@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NVDA Community Addons website\n"
-"POT-Creation-Date: 2015-07-29 11:54+1000\n"
+"POT-Creation-Date: 2015-08-03 05:38+1000\n"
 "PO-Revision-Date: 2015-06-12 23:43+0400\n"
 "Last-Translator: Ruslan Kolodyazhni <eye0@rambler.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,214 +30,301 @@ msgstr ""
 "другие участники сообщества NVDA."
 
 #. type: Bullet: '* '
+msgid "Download [stable version][1]"
+msgstr "Загрузить [стабильную версию][1]"
+
+#. type: Bullet: '* '
 msgid "Download [development version][2]"
 msgstr "Загрузить [разрабатываемую версию][2]"
 
+#. type: Plain text
+#, fuzzy
+#| msgid ""
+#| "This add-on is used to translate selected and/or clipboard text from one "
+#| "language to another.  This is done using the Google Translate service."
+msgid ""
+"This add-on is used to translate selected and/or clipboard text from one "
+"language to another.  This is done using an external service."
+msgstr ""
+"Это дополнение используется для перевода выбранного текста и текста из "
+"буфера обмена с одного языка на другой. Это делается с помощью службы Google "
+"Translate."
+
 #. type: Title ##
 #, no-wrap
-msgid "IMPORTANT NOTICE: Add-on temporarily unavailable"
+msgid "Configuring languages"
+msgstr "Настройка языков"
+
+#. type: Plain text
+#, no-wrap
+msgid "To configure source, target and in case swap language, go to: NVDA Menu >> Preferences >> Instant Translate Settings.\n"
+msgstr "Чтобы настроить исходный, целевой и иногда  язык для перемены местами, перейдите: NVDA Меню >> Параметры >> Настройки Instant Translate.\n"
+
+#. type: Plain text
+msgid ""
+"There are two comboboxes labeled \"Source language\" and \"Target language"
+"\", and a checkbox to decide if it must copy the translation to clipboard."
+msgstr ""
+"Здесь два комбинированных списка, помеченые \"исходный язык\" и \"Целевой "
+"язык\", и флажок для копирования перевода в буфер, если это необходимо."
+
+#. type: Plain text
+msgid ""
+"In addition, if you selected auto option (the first choice) from \"Source "
+"language\" combobox, there are also a combobox labeled \"Language for "
+"swapping\" and a checkbox about the auto-swap."
+msgstr ""
+"Кроме того, если вы выбрали автоматическое определение языка (первый выбор) "
+"в комбинированном списке \"исходный язык\", есть также комбинированный "
+"список с названием \"Язык для смены местами\" и флажок автоматической "
+"перемены."
+
+#. type: Plain text
+msgid ""
+"The meaning of two first comboboxes and checkbox for copy is clear, but some "
+"words about the rest are necessary. Remember always that the explanations "
+"below assume the source language set on the auto option."
 msgstr ""
 
 #. type: Plain text
 msgid ""
-"Due to changes to the service the add-on uses, Instant Translate add-on is "
-"temporarily unavailable. Sorry for the inconvenience. If you wish to help "
-"the add-on author, please use the development version and ask on the NVDA "
-"community add-ons mailing list. Thank you."
+"The \"Language for swapping\" combobox is useful when you swap via script "
+"(see below) the source and target language; in fact, a target language set "
+"on the auto option has no sense, so the addon sets it to value of combobox "
+"above."
 msgstr ""
 
 #. type: Plain text
-msgid "NVDA Community add-ons team"
+msgid ""
+"So, imagine this situation: you usually translate into English (your main "
+"language), but sometimes (for example, when you write a document) you need "
+"to translate into Italian (your second language, suppose); you can set "
+"\"Language for swapping\" combobox to Italian, so you will translate from "
+"English to Italian without accessing directly to the addon settings. "
+"Obviously this function has a major or minor utility according to your more "
+"frequent needs."
 msgstr ""
+
+#. type: Plain text
+msgid ""
+"Now, the auto-swap checkbox: it appears if and only if you set the auto "
+"option in \"Source language\" combobox, and is directly connected with "
+"\"Language for swapping\" combobox. If you activate it, then the addon tries "
+"to commute automatically from your source and target configuration to a "
+"configuration where target becomes the source language, and language "
+"selected in \"Language for swapping\" combobox is the new target language; "
+"extremely useful if the source language of the text you want translate is "
+"the target language."
+msgstr ""
+
+#. type: Plain text
+msgid ""
+"A simple example: take again in mind the situation imagined previously; if "
+"you translate a text in a language different from English, there is no "
+"problem, you get the correct translation in English. But if you need to "
+"translate a text from English, normally you get a translation into English "
+"identical to original text, and this is a bit useless. Thanks to auto-swap "
+"function, however, assuming that you want to know how your text sounds into "
+"Italian, the addon commutes automatically the target language to Italian, so "
+"it returns a valid translation."
+msgstr ""
+
+#. type: Plain text
+msgid ""
+"Anyway, this is a temporary configuration; if this option has no effect "
+"(it's experimental), try to commute manually to a stable configuration, "
+"using the gesture for swapping described below. It's experimental because in "
+"some situations (with short texts, tipically), Google does not recognize the "
+"real source language correctly, and you have to swap languages manually via "
+"script, so to force the source language to be the previous target language "
+"(English in our example)."
+msgstr ""
+
+#. type: Title ##
+#, no-wrap
+msgid "Using"
+msgstr "Использование"
+
+#. type: Plain text
+msgid "You can use this add-on in two ways:"
+msgstr "Вы можете использовать это дополнение двумя способами:"
+
+#. type: Bullet: '1. '
+msgid ""
+"Select some text using selection commands (shift with arrow keys, for "
+"example) and press associated key to translate. translation result willbe "
+"read with synthesizer which you are using."
+msgstr ""
+"Выделите текст с помощью команд выделения (например, shift со стрелками). "
+"Затем нажмите связанную с переводом клавишную команду. Переведённая строка "
+"прочтётся синтезатором, который вы используете."
+
+#. type: Bullet: '2. '
+msgid "You can also translate text from the Clipboard."
+msgstr "Вы также можете перевести текст из буфера обмена."
+
+#. type: Title ##
+#, no-wrap
+msgid "Shortcuts"
+msgstr "Команды"
+
+#. type: Plain text
+msgid ""
+"All following commands must be pressed after modifier key \"NVDA+Shift+t\":"
+msgstr ""
+"Все следующие команды клавиш нужно нажимать после клавишного модификатора "
+"\"NVDA+Shift+t\":"
+
+#. type: Bullet: '* '
+msgid "T: Translate selected text,"
+msgstr "T: Перевести выделенный текст,"
+
+#. type: Bullet: '* '
+msgid "Shift+t: translate text from the Clipboard,"
+msgstr "Shift+t: перевести текст из буфера обмена,"
+
+#. type: Bullet: '* '
+msgid "S: swap source and target languages,"
+msgstr "S: поменять местами исходный и целевой языки,"
+
+#. type: Bullet: '* '
+msgid "A: announce current configuration,"
+msgstr "A: объявить текущую конфигурацию,"
+
+#. type: Bullet: '* '
+msgid "C: copy last result to clipboard,"
+msgstr "C: скопировать последний результат в буфер обмена,"
+
+#. type: Bullet: '* '
+msgid "I: identify the language of selected text,"
+msgstr "I: определить язык выделенного текста,"
+
+#. type: Bullet: '* '
+msgid "H: announces all available commands to user."
+msgstr "H: объявляет все доступные пользователю команды."
+
+#. type: Title ##
+#, no-wrap
+msgid "Changes for 3.0"
+msgstr "Изменения  в версии 3.0"
+
+#. type: Bullet: '* '
+msgid ""
+"Change way how Shortcuts are used, now you can press instantTranslate "
+"modifier key \"NVDA+Shift+t\", and then single letter key to perform some "
+"action (see all Commands in the \"Shortcuts\" section)."
+msgstr ""
+"Изменён способ использования команд, теперь вам нужно нажать клавишу-"
+"модификатор instantTranslate \"NVDA+Shift+t\", а затем клавишу одной буквы, "
+"чтобы выполнить некоторые действия (смотрите все комбинации клавиш в разделе "
+"\"Команды\")."
+
+#. type: Bullet: '* '
+msgid "Implemented swapping languages."
+msgstr "Реализована перемена языков местами."
+
+#. type: Bullet: '* '
+msgid ""
+"Changed configuration format, now we can change instant translate settings "
+"if we are in readonly pane, but remember that this will work before first "
+"restart of NVDA."
+msgstr ""
+"Изменен формат конфигурации, теперь можно изменить настройки instant "
+"translate, находясь в области только для чтения, но помните, что это будет "
+"работать до первого перезапуска NVDA."
+
+#. type: Bullet: '* '
+msgid "Removed limit on amount of text that can be translated."
+msgstr "Убраны ограничение объёма переводимого текста."
+
+#. type: Bullet: '* '
+msgid "Added shortcut t to the Instant Translate Settings menu item"
+msgstr ""
+"Добавлена клавиша быстрого доступа t к  пункту меню настроек Instant "
+"Translate"
+
+#. type: Bullet: '* '
+msgid ""
+"The auto option is now in first position in source combo, and absent in "
+"target combo."
+msgstr ""
+"Опция автоопределения языка теперь находится только в списке выбора "
+"исходного языка, убрана из списка целевого."
+
+#. type: Bullet: '* '
+msgid "Added a checkbox for configuring copying translation results."
+msgstr "Добавлен флажок для настройки результата копирования перевода."
+
+#. type: Bullet: '* '
+msgid "Store config file in the root of settings folder."
+msgstr "Файл конфигурации хранится в корневой папке пользовательских настроек."
+
+#. type: Bullet: '* '
+msgid ""
+"Source and target languages syncronized with what Google Translate currently "
+"exposes (22 Apr 2015)."
+msgstr ""
+"Исходный и целевой языки синхронизированы с тем, что предоставляет Google "
+"Translate на текущий момент (22 Apr 2015)."
+
+#. type: Title ##
+#, no-wrap
+msgid "Changes for 2.1"
+msgstr "Изменения  в версии 2.1"
+
+#. type: Bullet: '* '
+msgid "Now addon can translate text from clipboard when pressing nvda+shift+y."
+msgstr ""
+"Теперь дополнение переводит текст из буфера обмена при нажатии NVDA+Shift+Y."
+
+#. type: Title ##
+#, no-wrap
+msgid "Changes for 2.0"
+msgstr "Изменения  в версии 2.0"
+
+#. type: Bullet: '* '
+msgid ""
+"Added gui configurator where you can choose source and target languages."
+msgstr "Добавлен диалог для выбора исходного и целевого языков."
+
+#. type: Bullet: '* '
+msgid "Added addon menu item found under preferences menu."
+msgstr "Добавлен пункт меню дополнения, находящийся в меню параметров."
+
+#. type: Bullet: '* '
+msgid "Settings now is written in separate config file."
+msgstr "Настройки теперь сохраняются в отдельный конфигурационный файл."
+
+#. type: Bullet: '* '
+msgid ""
+"Translation results now automatically copies into the clipboard for future "
+"manipulations."
+msgstr ""
+"Результат перевода теперь автоматически копируется в буфер обмена для "
+"последующих манипуляций."
+
+#. type: Title ##
+#, no-wrap
+msgid "Changes for 1.0"
+msgstr "Изменения в версии 1.0"
+
+#. type: Bullet: '* '
+msgid "Initial version."
+msgstr "Начальная версия."
 
 #. type: Plain text
 #, fuzzy, no-wrap
 #| msgid "[[!tag dev stable]]\n"
-msgid "[[!tag dev]]\n"
+msgid "[[!tag dev stable]]\n"
 msgstr "[[!tag dev stable]]\n"
+
+#. type: Plain text
+msgid "[1]: http://addons.nvda-project.org/files/get.php?file=it"
+msgstr "[1]: http://addons.nvda-project.org/files/get.php?file=it"
 
 #. type: Plain text
 msgid "[2]: http://addons.nvda-project.org/files/get.php?file=it-dev"
 msgstr "[2]: http://addons.nvda-project.org/files/get.php?file=it-dev"
-
-#~ msgid "Download [stable version][1]"
-#~ msgstr "Загрузить [стабильную версию][1]"
-
-#~ msgid ""
-#~ "This add-on is used to translate selected and/or clipboard text from one "
-#~ "language to another.  This is done using the Google Translate service."
-#~ msgstr ""
-#~ "Это дополнение используется для перевода выбранного текста и текста из "
-#~ "буфера обмена с одного языка на другой. Это делается с помощью службы "
-#~ "Google Translate."
-
-#~ msgid "Configuring languages"
-#~ msgstr "Настройка языков"
-
-#~ msgid ""
-#~ "To configure source, target and in case swap language, go to: NVDA Menu "
-#~ ">> Preferences >> Instant Translate Settings.\n"
-#~ msgstr ""
-#~ "Чтобы настроить исходный, целевой и иногда  язык для перемены местами, "
-#~ "перейдите: NVDA Меню >> Параметры >> Настройки Instant Translate.\n"
-
-#~ msgid ""
-#~ "There are two comboboxes labeled \"Source language\" and \"Target language"
-#~ "\", and a checkbox to decide if it must copy the translation to clipboard."
-#~ msgstr ""
-#~ "Здесь два комбинированных списка, помеченые \"исходный язык\" и \"Целевой "
-#~ "язык\", и флажок для копирования перевода в буфер, если это необходимо."
-
-#~ msgid ""
-#~ "In addition, if you selected auto option (the first choice) from \"Source "
-#~ "language\" combobox, there are also a combobox labeled \"Language for "
-#~ "swapping\" and a checkbox about the auto-swap."
-#~ msgstr ""
-#~ "Кроме того, если вы выбрали автоматическое определение языка (первый "
-#~ "выбор) в комбинированном списке \"исходный язык\", есть также "
-#~ "комбинированный список с названием \"Язык для смены местами\" и флажок "
-#~ "автоматической перемены."
-
-#~ msgid "Using"
-#~ msgstr "Использование"
-
-#~ msgid "You can use this add-on in two ways:"
-#~ msgstr "Вы можете использовать это дополнение двумя способами:"
-
-#~ msgid ""
-#~ "Select some text using selection commands (shift with arrow keys, for "
-#~ "example) and press associated key to translate. translation result willbe "
-#~ "read with synthesizer which you are using."
-#~ msgstr ""
-#~ "Выделите текст с помощью команд выделения (например, shift со стрелками). "
-#~ "Затем нажмите связанную с переводом клавишную команду. Переведённая "
-#~ "строка прочтётся синтезатором, который вы используете."
-
-#~ msgid "You can also translate text from the Clipboard."
-#~ msgstr "Вы также можете перевести текст из буфера обмена."
-
-#~ msgid "Shortcuts"
-#~ msgstr "Команды"
-
-#~ msgid ""
-#~ "All following commands must be pressed after modifier key \"NVDA+Shift+t"
-#~ "\":"
-#~ msgstr ""
-#~ "Все следующие команды клавиш нужно нажимать после клавишного модификатора "
-#~ "\"NVDA+Shift+t\":"
-
-#~ msgid "T: Translate selected text,"
-#~ msgstr "T: Перевести выделенный текст,"
-
-#~ msgid "Shift+t: translate text from the Clipboard,"
-#~ msgstr "Shift+t: перевести текст из буфера обмена,"
-
-#~ msgid "S: swap source and target languages,"
-#~ msgstr "S: поменять местами исходный и целевой языки,"
-
-#~ msgid "A: announce current configuration,"
-#~ msgstr "A: объявить текущую конфигурацию,"
-
-#~ msgid "C: copy last result to clipboard,"
-#~ msgstr "C: скопировать последний результат в буфер обмена,"
-
-#~ msgid "I: identify the language of selected text,"
-#~ msgstr "I: определить язык выделенного текста,"
-
-#~ msgid "H: announces all available commands to user."
-#~ msgstr "H: объявляет все доступные пользователю команды."
-
-#~ msgid "Changes for 3.0"
-#~ msgstr "Изменения  в версии 3.0"
-
-#~ msgid ""
-#~ "Change way how Shortcuts are used, now you can press instantTranslate "
-#~ "modifier key \"NVDA+Shift+t\", and then single letter key to perform some "
-#~ "action (see all Commands in the \"Shortcuts\" section)."
-#~ msgstr ""
-#~ "Изменён способ использования команд, теперь вам нужно нажать клавишу-"
-#~ "модификатор instantTranslate \"NVDA+Shift+t\", а затем клавишу одной "
-#~ "буквы, чтобы выполнить некоторые действия (смотрите все комбинации клавиш "
-#~ "в разделе \"Команды\")."
-
-#~ msgid "Implemented swapping languages."
-#~ msgstr "Реализована перемена языков местами."
-
-#~ msgid ""
-#~ "Changed configuration format, now we can change instant translate "
-#~ "settings if we are in readonly pane, but remember that this will work "
-#~ "before first restart of NVDA."
-#~ msgstr ""
-#~ "Изменен формат конфигурации, теперь можно изменить настройки instant "
-#~ "translate, находясь в области только для чтения, но помните, что это "
-#~ "будет работать до первого перезапуска NVDA."
-
-#~ msgid "Removed limit on amount of text that can be translated."
-#~ msgstr "Убраны ограничение объёма переводимого текста."
-
-#~ msgid "Added shortcut t to the Instant Translate Settings menu item"
-#~ msgstr ""
-#~ "Добавлена клавиша быстрого доступа t к  пункту меню настроек Instant "
-#~ "Translate"
-
-#~ msgid ""
-#~ "The auto option is now in first position in source combo, and absent in "
-#~ "target combo."
-#~ msgstr ""
-#~ "Опция автоопределения языка теперь находится только в списке выбора "
-#~ "исходного языка, убрана из списка целевого."
-
-#~ msgid "Added a checkbox for configuring copying translation results."
-#~ msgstr "Добавлен флажок для настройки результата копирования перевода."
-
-#~ msgid "Store config file in the root of settings folder."
-#~ msgstr ""
-#~ "Файл конфигурации хранится в корневой папке пользовательских настроек."
-
-#~ msgid ""
-#~ "Source and target languages syncronized with what Google Translate "
-#~ "currently exposes (22 Apr 2015)."
-#~ msgstr ""
-#~ "Исходный и целевой языки синхронизированы с тем, что предоставляет Google "
-#~ "Translate на текущий момент (22 Apr 2015)."
-
-#~ msgid "Changes for 2.1"
-#~ msgstr "Изменения  в версии 2.1"
-
-#~ msgid ""
-#~ "Now addon can translate text from clipboard when pressing nvda+shift+y."
-#~ msgstr ""
-#~ "Теперь дополнение переводит текст из буфера обмена при нажатии NVDA+Shift"
-#~ "+Y."
-
-#~ msgid "Changes for 2.0"
-#~ msgstr "Изменения  в версии 2.0"
-
-#~ msgid ""
-#~ "Added gui configurator where you can choose source and target languages."
-#~ msgstr "Добавлен диалог для выбора исходного и целевого языков."
-
-#~ msgid "Added addon menu item found under preferences menu."
-#~ msgstr "Добавлен пункт меню дополнения, находящийся в меню параметров."
-
-#~ msgid "Settings now is written in separate config file."
-#~ msgstr "Настройки теперь сохраняются в отдельный конфигурационный файл."
-
-#~ msgid ""
-#~ "Translation results now automatically copies into the clipboard for "
-#~ "future manipulations."
-#~ msgstr ""
-#~ "Результат перевода теперь автоматически копируется в буфер обмена для "
-#~ "последующих манипуляций."
-
-#~ msgid "Changes for 1.0"
-#~ msgstr "Изменения в версии 1.0"
-
-#~ msgid "Initial version."
-#~ msgstr "Начальная версия."
-
-#~ msgid "[1]: http://addons.nvda-project.org/files/get.php?file=it"
-#~ msgstr "[1]: http://addons.nvda-project.org/files/get.php?file=it"
 
 #~ msgid ""
 #~ "[1]: http://addons.nvda-project.org/files/get.php?file=it [2]: http://"
