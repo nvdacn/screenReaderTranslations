@@ -155,15 +155,16 @@
     <LI><A HREF="#toc105">12.12. Nowsze modele Papenmeier BRAILLEX</A>
     <LI><A HREF="#toc106">12.13. Starsze modele Papenmeier Braille BRAILLEX</A>
     <LI><A HREF="#toc107">12.14. HumanWare BrailleNote</A>
-    <LI><A HREF="#toc108">12.15. BRLTTY</A>
+    <LI><A HREF="#toc108">12.15. EcoBraille</A>
+    <LI><A HREF="#toc109">12.16. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc109">13. Brajlowskie skróty typu i stanu kontrolki</A>
-  <LI><A HREF="#toc110">14. dla zaawansowanych</A>
+  <LI><A HREF="#toc110">13. Brajlowskie skróty typu i stanu kontrolki</A>
+  <LI><A HREF="#toc111">14. dla zaawansowanych</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">14.1. Parametry linii komend</A>
-    <LI><A HREF="#toc112">14.2. Zaawansowana edycja wymowy symboli</A>
+    <LI><A HREF="#toc113">14.2. Zaawansowana edycja wymowy symboli</A>
     </UL>
-  <LI><A HREF="#toc113">15. Dodatkowe Informacje</A>
+  <LI><A HREF="#toc114">15. Dodatkowe Informacje</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -666,10 +667,10 @@ Przydatne skróty klawiszowe do nawigacji za pomocą punktu uwagi:
 <TD>Odczytuje zawartość obiektu na pierwszym planie (aktualnie aktywnego okna). Funkcja przydatna zwłaszcza w przypadku okna dialogowego lub komunikatu, którego pojawienie się nie zostało zauważone.</TD>
 </TR>
 <TR>
-<TD>Odczytaj pasek statusu</TD>
+<TD>Odczytaj pasek stanu</TD>
 <TD>NVDA+end</TD>
 <TD>NVDA+shift+end</TD>
-<TD>odczytuje pasek statusu jeśli napodka na takowy, przenosi tam także obiekt nawigatora.</TD>
+<TD>odczytuje pasek statusu jeśli napodka na takowy, przenosi tam także obiekt nawigatora. Dwukrotne naciśnięcie przeliteruje informację.</TD>
 </TR>
 </TABLE>
 
@@ -717,13 +718,13 @@ NVDA wykorzystuje następujące klawisze poleceń do nawigacji kursorem klawiatu
 <TD>Następne zdanie</TD>
 <TD>alt+strzałka w dół</TD>
 <TD>alt+strzałka w dół</TD>
-<TD>Przenosi kursor do następnego zdania i odczytuje je. (obsługiwane tylko w Microsoft Word)</TD>
+<TD>Przenosi kursor do następnego zdania i odczytuje je. (obsługiwane tylko w Microsoft Word i Outlook)</TD>
 </TR>
 <TR>
 <TD>Poprzednie zdanie</TD>
 <TD>alt+strzałka w górę</TD>
 <TD>alt+strzałka w górę</TD>
-<TD>Przenosi kursor do poprzedniego zdania i odczytuje je. (obsługiwane tylko w Microsoft Word)</TD>
+<TD>Przenosi kursor do poprzedniego zdania i odczytuje je. (obsługiwane tylko w Microsoft Word i Outlook)</TD>
 </TR>
 </TABLE>
 
@@ -1315,6 +1316,12 @@ Aby przejść na początek lub koniec elementów takich jak listy i tabele:
 <TD>przenosi poza koniec kontenera (listy, tabeli, etc.)na którym znajdował się kursor</TD>
 </TR>
 </TABLE>
+
+<P>
+Niektóre aplikacje webowe takie jak Gmail, Twitter czy Facebook używają pojedynczych liter jako klawiszy skrótu.
+Jeśli chcesz używać tych skrótów i móc jednocześnie posługiwać się klawiszami strzałek do odczytu treści w trybie czytania, możesz tymczasowo wyłączyć nawigację pojedynczymi literami NVDA.
+Aby włączyć i wyłączyć nawigację literami dla aktualnego dokumentu, naciśnij NVDA+shift+space.
+</P>
 
 <A NAME="toc42"></A>
 <H3>6.2. Lista elementów</H3>
@@ -3955,10 +3962,9 @@ Obsługiwane są następujące monitory:
 
 <P>
 Jeśli zainstalowany jest BrxCom, NVDA będzie używać BrxCom.
-BrxCom jest to narzędzie, które pozwala używać wprowadzania brajlem niezależnie od używanego programu odczytu ekranu.
+BrxCom jest to narzędzie, które pozwala używać wprowadzania z klawiatury brajlowskiej niezależnie od używanego programu odczytu ekranu.
 Nowa wersja BrxCom pracująca z NVDA, wkrótce  zostanie wydana przez Papenmeier.  
-Możliwe jest jednak wprowadzanie brajlem na urządzeniach Trio, BRAILLEX Live 20 i Braillex Live bez BrxCom.
-Wprowadzanie brajla jest również możliwe na modelu Live Plus , ale tylko z BrxCom.
+Wprowadzanie z klawiatury jest możliwe na modelach Trio i BRAILLEX Live.
 </P>
 <P>
 Większość urządzeń posiada pasek łatwego dostępu(EAB) umożliwiający intuicyjną i szybką obsługę.
@@ -4378,6 +4384,14 @@ BRAILLEX Tiny:
 <TD>Raportuj formatowanie tekstu</TD>
 <TD>reportf</TD>
 </TR>
+<TR>
+<TD>Zgłoś tytuł</TD>
+<TD>l1+up</TD>
+</TR>
+<TR>
+<TD>zgłoś pasek stanu</TD>
+<TD>l2+down</TD>
+</TR>
 </TABLE>
 
 <P>
@@ -4573,7 +4587,105 @@ Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia:
 </TABLE>
 
 <A NAME="toc108"></A>
-<H3>12.15. BRLTTY</H3>
+<H3>12.15. EcoBraille</H3>
+
+<P>
+NVDA obsługuje monitory EcoBraille od <A HREF="http://www.once.es/">ONCE</A>.
+Obsługiwane są następujące modele:
+</P>
+
+<UL>
+<LI>EcoBraille 20
+<LI>EcoBraille 40
+<LI>EcoBraille 80
+<LI>EcoBraille Plus
+</UL>
+
+<P>
+W oknie ustawień brajla NVDA, możesz ustawić port szeregowy, do którego jest podłączony monitor.
+</P>
+<P>
+Poniżej znajdują się skróty klawiszowe dla monitorów EcoBraille.
+Proszę przeczytać <A HREF="ftp://ftp.once.es/pub/utt/bibliotecnia/Lineas_Braille/ECO/">Dokumentację EcoBraille</A> dla uzyskania informacji, gdzie znajdują się te klawisze.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Działanie</TH>
+<TH>Klawisz skrótu</TH>
+</TR>
+<TR>
+<TD>Przewiń wyświetlacz brajla wstecz</TD>
+<TD>T2</TD>
+</TR>
+<TR>
+<TD>Przewiń wyświetlacz brajla w przód</TD>
+<TD>T4</TD>
+</TR>
+<TR>
+<TD>Przenieś wyświetlacz brajla do poprzedniej linii</TD>
+<TD>T1</TD>
+</TR>
+<TR>
+<TD>Przenieś wyświetlacz brajla do następnej linii</TD>
+<TD>T5</TD>
+</TR>
+<TR>
+<TD>Przywołaj do komórki brajla</TD>
+<TD>Routing</TD>
+</TR>
+<TR>
+<TD>Uaktywnij bieżący obiekt nawigatora</TD>
+<TD>T3</TD>
+</TR>
+<TR>
+<TD>Przełącz do następnego trybu przeglądania</TD>
+<TD>F1</TD>
+</TR>
+<TR>
+<TD>Przejdź do obiektu nadrzędnego</TD>
+<TD>F2</TD>
+</TR>
+<TR>
+<TD>Przełącz do poprzedniego trybu przeglądania</TD>
+<TD>F3</TD>
+</TR>
+<TR>
+<TD>Przejdź do poprzedniego obiektu</TD>
+<TD>F4</TD>
+</TR>
+<TR>
+<TD>Zgłoś bieżący obiekt</TD>
+<TD>F5</TD>
+</TR>
+<TR>
+<TD>Przejdź do następnego obiektu</TD>
+<TD>F6</TD>
+</TR>
+<TR>
+<TD>Przejdź do obiektu w punkcie uwagi</TD>
+<TD>F7</TD>
+</TR>
+<TR>
+<TD>Przejdź do pierwszego obiektu podrzędnego</TD>
+<TD>F8</TD>
+</TR>
+<TR>
+<TD>Przenieś kursor lub punkt uwagi do aktualnej pozycji kursora przeglądu</TD>
+<TD>F9</TD>
+</TR>
+<TR>
+<TD>Zgłoś położenie kursora przeglądu</TD>
+<TD>F0</TD>
+</TR>
+<TR>
+<TD>Przełącz "Brajl związany z..."</TD>
+<TD>A</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc109"></A>
+<H3>12.16. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A> jest osobnym programem, który może być wykorzystany do wsparcia wielu monitorów Brajlowskich.
@@ -4617,7 +4729,7 @@ Zobacz <A HREF="http://mielke.cc/brltty/doc/KeyTables/">tabele klawiszy w dokume
 </TR>
 </TABLE>
 
-<A NAME="toc109"></A>
+<A NAME="toc110"></A>
 <H2>13. Brajlowskie skróty typu i stanu kontrolki</H2>
 
 <P>
@@ -4758,7 +4870,7 @@ Zdefiniowano także poniższe oznaczenia stanu:
 </TR>
 </TABLE>
 
-<A NAME="toc110"></A>
+<A NAME="toc111"></A>
 <H2>14. dla zaawansowanych</H2>
 
 <A NAME="CommandLineOptions"></A>
@@ -4892,7 +5004,7 @@ Poniżej wymieniono wszystkie opcje linii poleceń dla NVDA:
 </TR>
 </TABLE>
 
-<A NAME="toc112"></A>
+<A NAME="toc113"></A>
 <H3>14.2. Zaawansowana edycja wymowy symboli</H3>
 
 <P>
@@ -4906,7 +5018,7 @@ Format tego pliku jest opisany w rozdziale "Symbol Pronunciation" podręcznika d
 Nie jest możliwe dla użytkowników definiowanie skomplikowanych symboli.
 </P>
 
-<A NAME="toc113"></A>
+<A NAME="toc114"></A>
 <H2>15. Dodatkowe Informacje</H2>
 
 <P>
