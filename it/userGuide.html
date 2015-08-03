@@ -156,15 +156,16 @@
     <LI><A HREF="#toc105">12.12. Nuovi modelli Papenmeier BRAILLEX</A>
     <LI><A HREF="#toc106">12.13. Papenmeier Braille BRAILLEX vecchi modelli</A>
     <LI><A HREF="#toc107">12.14. HumanWare BrailleNote</A>
-    <LI><A HREF="#toc108">12.15. BRLTTY</A>
+    <LI><A HREF="#toc108">12.15. EcoBraille</A>
+    <LI><A HREF="#toc109">12.16. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc109">13. Tipi di controlli braille e abbreviazioni di stato</A>
-  <LI><A HREF="#toc110">14. Argomenti avanzati</A>
+  <LI><A HREF="#toc110">13. Tipi di controlli braille e abbreviazioni di stato</A>
+  <LI><A HREF="#toc111">14. Argomenti avanzati</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">14.1. Opzioni a riga di comando</A>
-    <LI><A HREF="#toc112">14.2. Personalizzazione avanzata dei simboli di punteggiatura</A>
+    <LI><A HREF="#toc113">14.2. Personalizzazione avanzata dei simboli di punteggiatura</A>
     </UL>
-  <LI><A HREF="#toc113">15. Ulteriori Informazioni</A>
+  <LI><A HREF="#toc114">15. Ulteriori Informazioni</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -668,7 +669,7 @@ Esistono alcuni comandi da tastiera utili per seguire il focus:
 <TD>Legge la barra di stato</TD>
 <TD>NVDA+fine</TD>
 <TD>NVDA+shift+fine</TD>
-<TD>Legge la barra di stato sempre che NVDA sia in grado di individuarne una. Inoltre sposta in quella posizione il navigatore ad oggetti</TD>
+<TD>Legge la barra di stato sempre che NVDA sia in grado di individuarne una. Inoltre sposta in quella posizione il navigatore ad oggetti. Una doppia pressione provocherà lo spelling delle informazioni</TD>
 </TR>
 </TABLE>
 
@@ -716,13 +717,13 @@ NVDA fornisce i seguenti comandi quando si lavora con il cursore di sistema:
 <TD>frase successiva</TD>
 <TD>alt+freccia Giù</TD>
 <TD>alt+freccia Giù</TD>
-<TD>Sposta il cursore sulla frase successiva e la legge. (Supportato solo in Microsoft Word)</TD>
+<TD>Sposta il cursore sulla frase successiva e la legge. (Supportato solo in Microsoft Word e Outlook)</TD>
 </TR>
 <TR>
 <TD>frase precedente</TD>
 <TD>alt+freccia Su</TD>
 <TD>alt+freccia Su</TD>
-<TD>Sposta il cursore sulla frase precedente e la legge. (Supportato solo in Microsoft Word)</TD>
+<TD>Sposta il cursore sulla frase precedente e la legge. (Supportato solo in Microsoft Word e Outlook)</TD>
 </TR>
 </TABLE>
 
@@ -1312,6 +1313,12 @@ Per spostarsi all'inizio e alla fine degli elementi contenuti in elenchi e tabel
 <TD>Si sposta all'ultimo elemento presente negli elenchi o nelle tabelle, e vi posiziona il cursore</TD>
 </TR>
 </TABLE>
+
+<P>
+Alcune applicazioni web come Gmail, Twitter e Facebook utilizzano lettere singole come tasti di scelta rapida.
+Se si desidera utilizzare questi tasti e allo stesso tempo essere in grado di muoversi con le frecce in modalità navigazione, è possibile disabilitare temporaneamente la modalità di navigazione a lettere singole di NVDA.
+Per attivare o disattivare la navigazione a lettere singole per il documento corrente, premere NVDA + shift + spazio.
+</P>
 
 <A NAME="toc42"></A>
 <H3>6.2. Lista degli elementi</H3>
@@ -3943,8 +3950,7 @@ Sono supportati i seguenti display braille:
 Se BrxCom è installato, NVDA lo utilizzerà.
 BrxCom è un utility che permette di gestire la scrittura tramite i tasti braille indipendentemente dallo screen reader in uso.
 Verrà realizzata presto da Papenmeier una nuova versione di BrXcom che funzioni con NVDA 
-In ogni caso, la scrittura tramite tastiera sarà sempre disponibile per i dispositivi Trio, BRAILLEX Live 20 e Braillex Live anche senza la presenza di BrxCom.
-La scrittura con tastiera è possibile anche con il modello Live Plus, ma soltanto con Brxcom.
+La scrittura tramite i tasti braille è disponibile per i modelli Trio e Braillex live.
 </P>
 <P>
 La maggior parte dei dispositivi è dotata di una barra di navigazione facilitata (EAB) che permette di svolgere le operazioni in una modalità molto più rapida ed intuitiva..
@@ -4363,6 +4369,14 @@ BRAILLEX Tiny:
 <TD>Annuncia formattazione testo</TD>
 <TD>reportf</TD>
 </TR>
+<TR>
+<TD>Leggi titolo</TD>
+<TD>l1+up</TD>
+</TR>
+<TR>
+<TD>Leggi barra di stato</TD>
+<TD>l2+down</TD>
+</TR>
 </TABLE>
 
 <P>
@@ -4557,7 +4571,109 @@ Si prega di consultare la documentazione del BrailleNote per informazioni su dov
 </TABLE>
 
 <A NAME="toc108"></A>
-<H3>12.15. BRLTTY</H3>
+<H3>12.15. EcoBraille</H3>
+
+<P>
+NVDA supporta i Display Braille EcoBraille prodotti da <A HREF="http://www.once.es/">ONCE</A>.
+Sono supportati i seguenti modelli:
+</P>
+
+<UL>
+<LI>EcoBraille 20
+<LI>EcoBraille 40
+<LI>EcoBraille 80
+<LI>EcoBraille Plus
+</UL>
+
+<P>
+In NVDA, è possibile impostare la porta seriale a cui il display braille è collegato nella finestra di dialogo Impostazioni Braille.
+</P>
+<P>
+Di seguito sono riportati i tasti assegnati per il display EcoBraille.
+Si prega di consultare la <A HREF="ftp://ftp.once.es/pub/utt/bibliotecnia/Lineas_Braille/ECO/">documentazione EcoBraille</A> per una descrizione sulla posizione dei tasti.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nome</TH>
+<TH>Tasto</TH>
+</TR>
+<TR>
+<TD>Scorrimento indietro</TD>
+<TD>T2</TD>
+</TR>
+<TR>
+<TD>Scorrimento avanti</TD>
+<TD>T4</TD>
+</TR>
+<TR>
+<TD>Spostarsi alla riga precedente</TD>
+<TD>T1</TD>
+</TR>
+<TR>
+<TD>Spostarsi alla riga successiva</TD>
+<TD>T5</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>Routing</TD>
+</TR>
+<TR>
+<TD>Attivare oggetto corrente</TD>
+<TD>T3</TD>
+</TR>
+<TR>
+<TD>Modalità revisione successiva</TD>
+<TD>F1</TD>
+</TR>
+<TR>
+<TD>Spostarsi all'oggetto contenitore</TD>
+<TD>F2</TD>
+</TR>
+<TR>
+<TD>Modalità revisione precedente</TD>
+<TD>F3</TD>
+</TR>
+<TR>
+<TD>Spostarsi all'oggetto precedente</TD>
+<TD>F4</TD>
+</TR>
+<TR>
+<TD>Annunciare oggetto corrente</TD>
+<TD>F5</TD>
+</TR>
+<TR>
+<TD>Spostarsi all'oggetto successivo</TD>
+<TD>F6</TD>
+</TR>
+<TR>
+<TD>Spostarsi all'oggetto che ha il focus</TD>
+<TD>F7</TD>
+</TR>
+<TR>
+<TD>Spostarsi al primo oggetto contenuto</TD>
+<TD>F8</TD>
+</TR>
+<TR>
+<TD>Spostare il cursore di sistema alla posizione corrente del cursore di controllo</TD>
+<TD>F9</TD>
+</TR>
+<TR>
+<TD>Leggi la posizione del cursore di controllo</TD>
+<TD>F0</TD>
+</TR>
+<TR>
+<TD>Commuta inseguimento braille</TD>
+<TD>A</TD>
+</TR>
+</TABLE>
+
+<P>
++%kc:endInclude
+</P>
+
+<A NAME="toc109"></A>
+<H3>12.16. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A> è un programma a parte del quale è possibile avvalersi per avere supporto per molte altre barre braille. 
@@ -4601,7 +4717,7 @@ Si legga la <A HREF="http://mielke.cc/brltty/doc/KeyTables">tabella dei tasti di
 </TR>
 </TABLE>
 
-<A NAME="toc109"></A>
+<A NAME="toc110"></A>
 <H2>13. Tipi di controlli braille e abbreviazioni di stato</H2>
 
 <P>
@@ -4742,7 +4858,7 @@ Sono inoltre definiti i seguenti indicatori di stato:
 </TR>
 </TABLE>
 
-<A NAME="toc110"></A>
+<A NAME="toc111"></A>
 <H2>14. Argomenti avanzati</H2>
 
 <A NAME="CommandLineOptions"></A>
@@ -4876,7 +4992,7 @@ Ecco l'elenco dei parametri a riga di comando di NVDA:
 </TR>
 </TABLE>
 
-<A NAME="toc112"></A>
+<A NAME="toc113"></A>
 <H3>14.2. Personalizzazione avanzata dei simboli di punteggiatura</H3>
 
 <P>
@@ -4890,7 +5006,7 @@ Il formato di tale file è documentato nella guida per gli sviluppatori, sezione
 Comunque, non è possibile per gli utenti definire simboli troppo complessi.
 </P>
 
-<A NAME="toc113"></A>
+<A NAME="toc114"></A>
 <H2>15. Ulteriori Informazioni</H2>
 
 <P>
