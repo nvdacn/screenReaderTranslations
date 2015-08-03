@@ -22,17 +22,13 @@
 <LI>Im Lese-Modus können Sie nun die Schnellnavigation mittels NVDA+Umschalt+Leertaste ein- und ausschalten. Bei ausgeschalteter Schnellnavigation werden Buchstaben an die aktive Anwendung weitergereicht. Dies ist in einigen Internet-Anwendungen wie GMail, Twitter und Facebook hilfreich. (<A HREF="http://community.nvda-project.org/ticket/3203">#3203</A>)
 <LI>neue Brailleübersetzungstabellen: Finnisch 6 Punkt, Irische Vollschrift, Irische Kurzschrift, Koreanische Vollschrift (2006), Koreanische Kurzschrift (2006). (<A HREF="http://community.nvda-project.org/ticket/5137">#5137</A>, <A HREF="http://community.nvda-project.org/ticket/5074">#5074</A>, <A HREF="http://community.nvda-project.org/ticket/5097">#5097</A>)
 <LI>Die Qwertz-Tastatur der Braillezeile BRAILLEX Live Plus von Papenmeier wird nun unterstützt. (<A HREF="http://community.nvda-project.org/ticket/5181">#5181</A>)
-</UL>
-
-<H3>Änderungen</H3>
-
-<UL>
+<LI>experimentelle Unterstützung für den  Web-browser Edge sowie dessen Unterbau in Windows 10. (<A HREF="http://community.nvda-project.org/ticket/5212">#5212</A>)
+<P></P>
+== Änderungen ==
 <LI>Liblouis auf Version 2.6.3 aktualisiert. (<A HREF="http://community.nvda-project.org/ticket/5137">#5137</A>)
-</UL>
-
-<H3>Fehlerbehebungen</H3>
-
-<UL>
+<LI>Wenn Sie versuchen, eine frühere Version von NVDA über eine aktuelle Version zu installieren wird eine Warnung angezigt. Dies wird nicht empfohlen. NVDA sollte vollständig deinstalliert werden, bevor Sie eine ältere Version installieren. (<A HREF="http://community.nvda-project.org/ticket/5037">#5037</A>)
+<P></P>
+== Fehlerbehebungen ==
 <LI>Wenn Sie die Schnellnavigationstasten verwenden, werden Listeneinträge ignoriert, die zu Gestaltungszwecken eingefügt wurden. (<A HREF="http://community.nvda-project.org/ticket/4204">#4204</A>)
 <LI>in Firefox erstellt NVDA keine Beschreibungen mehr für Aria-Registerkarten, die den gesamten Inhalt der Registerkarte enthalten. (<A HREF="http://community.nvda-project.org/ticket/4638">#4638</A>)
 <LI>Wenn Sie im Internet Explorer oder anderen MSHTML-Elementen in einen Abschnitt, einen Artikel oder einen Dialog navigieren, wird nicht mehr der gesamte Inhalt als Name angezeigt. (<A HREF="http://community.nvda-project.org/ticket/5021">#5021</A>, <A HREF="http://community.nvda-project.org/ticket/5025">#5025</A>) 
@@ -44,6 +40,10 @@
 <LI>Beim ausgeben der Textformatierung in Braille werden keine überflüssigen Leerzeichen mehr angezeigt. (<A HREF="http://community.nvda-project.org/ticket/5043">#5043</A>)
 <LI>Wenn Sie den Fokus von einer Anwendung nehmen, die langsam reagiert, sollte NVDA nun in den meisten Fällen schneller reagieren. (<A HREF="http://community.nvda-project.org/ticket/3831">#3831</A>)
 <LI>Windows 10-Benachrichtigungen werden nun wie erwartet angezeigt. (<A HREF="http://community.nvda-project.org/ticket/5136">#5136</A>)
+<LI>Ui-Automation-Kombinationsfelder werden korrekt angezeigt 
+<LI>Im Lesemodus verhält sich NVDA beim Navigieren wie erwartet, wenn Sie mit (Umschalt+)Tab in einem Rahmen navigieren. (<A HREF="http://community.nvda-project.org/ticket/5227">#5227</A>)
+<LI>Der Sperrbildschirm von Windows 10 kann nun mittels Touchscreen erkundet werden. (<A HREF="http://community.nvda-project.org/ticket/5220">#5220</A>)
+<LI>Wenn Sie in Windows 7 oder neuer Text in Eingabefelder eingeben, während Sie eine Braillezeile verwenden, wird die Eingabe nicht mehr verfälscht. (<A HREF="http://community.nvda-project.org/ticket/4291">#4291</A>)
 </UL>
 
 <H3>Änderungen für Entwickler</H3>
@@ -51,6 +51,11 @@
 <UL>
 <LI>Nun können auch Tastenanschläge von Tastaturen verarbeitet werden, die nicht vom Betriebssystem erkannt werden (wie z.B. Tastaturen von Braillezeilen). Verwenden Sie hierzu die neue Funktion  keyboardHandler.injectRawKeyboardInput. (<A HREF="http://community.nvda-project.org/ticket/4576">#4576</A>)
 <LI>Mit der neuen Funktion eventHandler.requestEvents können nun Ereignisse abgearbeitet werden, die standardmäßig blockiert werden  Hierzu zählen Ereignisse von bestimmten Steuerelementen oder Ereignisse, die im Hintergrund ausgelöst werden. (<A HREF="http://community.nvda-project.org/ticket/3831">#3831</A>)
+<LI>Anstelle eines einfachen i18name-Attributs enthält synthDriverHandler.SynthSetting nun sowohl displayNameWithAccelerator als auch displayName-Attribute. Hiermit wird verhindert, dass die Namen von Einstellungen im Synthesizer-Einstellungsring in einigen Sprachen mitsamt ihren hervorgehobenen Buchstaben angesagt werden (z.B. &amp;Stimme, Ton&amp;höhe, &amp;Lautstärke usw).
+ <UL>
+ <LI>Aus Gründen der Abwärtskompatibilität ist Displayname optional und wird von displaynamewithaccelerator abgeleitet. Wenn Sie jedoch planen, eine Einstellung sowohl in den Stimmeneinstellungen als auch im Synthesizer-Einstellungsring anzubieten, sollten Sie beide Attribute verwenden.
+ <LI>Das Attribut i18name ist veraltet und wird in einer der nächsten Versionen entfernt.
+ </UL>
 </UL>
 
 <H2>2015.2</H2>
