@@ -12,6 +12,10 @@
 
 <H2>2015.3</H2>
 
+<P>
+O subliñable nesta versión inclúe o apoio inicial para Windows 10; a capacidade de deshabilitar a navegación de unha soa letra no modo exploración (útil para algunhas aplicacións web); melloras no Internet Explorer; e correccións para texto ilexible ó se escrebir en certas aplicacións co braille habilitado.
+</P>
+
 <H3>Novas Características</H3>
 
 <UL>
@@ -22,20 +26,22 @@
 <LI>No modo exploración, agora podes  activar e desactivar a navegación con unha soa letra premendo NVDA+shift+espazo. Cando se desactive, as teclas de unha soa letra pásanse á aplicación, o que é útil para algunhas aplicacións web como Gmail, Twitter e Facebook. (<A HREF="http://community.nvda-project.org/ticket/3203">#3203</A>)
 <LI>Novas táboas de transcripción braille: Finés de 6 pontos, Irlandés grao 1, Irlandés grao 2, Coreán grao 1 (2006), Coreán grao 2 (2006). (<A HREF="http://community.nvda-project.org/ticket/5137">#5137</A>, <A HREF="http://community.nvda-project.org/ticket/5074">#5074</A>, <A HREF="http://community.nvda-project.org/ticket/5097">#5097</A>)
 <LI>Agora sopórtase o teclado QWERTY na pantalla braille Papenmeier BRAILLEX Live Plus. (<A HREF="http://community.nvda-project.org/ticket/5181">#5181</A>)
+<LI>Apoio Experimental para o navegador web Microsoft Edge e o motor de exploración web no Windows 10. (<A HREF="http://community.nvda-project.org/ticket/5212">#5212</A>)
 </UL>
 
 <H3>Canbios</H3>
 
 <UL>
 <LI>Actualizado o transcriptor braille liblouis a 2.6.3. (<A HREF="http://community.nvda-project.org/ticket/5137">#5137</A>)
+<LI>Ó tentar instalar unha versión máis antiga do NVDA da que está instalada actualmente, agora avisaráseche de que esto non está recomendado e de que NVDA debería desinstalarse compretamente antes de proceder. (<A HREF="http://community.nvda-project.org/ticket/5037">#5037</A>)
 </UL>
 
 <H3>Corrección de Erros</H3>
 
 <UL>
 <LI>No modo exploración para  Internet Explorer e outros controis MSHTML, a navegación rápida por campos xa non inclúe incorrectamente elementos de listas presentacionais. (<A HREF="http://community.nvda-project.org/ticket/4204">#4204</A>)
-<LI>En Firefox, NVDA xa non trata de crear unha descripción para pestanas de paneis ARIA baseados  en todo o texsto. (<A HREF="http://community.nvda-project.org/ticket/4638">#4638</A>)
-<LI>En Internet Explorer e outros controis MSHTML, ó tabular por seccións, artículos ou diálogos  xa non anuncia todo o contido do contedor como o seu nome
+<LI>No Firefox, NVDA xa non anuncia inapropriadamente o contido dun ARIA tab panel cando o foco se mova dentro del. (<A HREF="http://community.nvda-project.org/ticket/4638">#4638</A>)
+<LI>No Internet Explorer e outros controis MSHTML, ó tabular dentro de seccións, artículos ou diálogos  xa non anuncia inapropriadamente todo o contido no contedor. (<A HREF="http://community.nvda-project.org/ticket/5021">#5021</A>, <A HREF="http://community.nvda-project.org/ticket/5025">#5025</A>)
 <LI>Ó utilizar as pantallas braille Baum/HumanWare/APH cun teclado braille, a entrada braille xa non detén o seu funcionamento despois de premer outro tipo de tecla na pantalla. (<A HREF="http://community.nvda-project.org/ticket/3541">#3541</A>)
 <LI>En Windows 10, agora xa non se anuncia información extrana ó se premer alt+tab ou alt+shift+tab para cambiar entre aplicacións. (<A HREF="http://community.nvda-project.org/ticket/5116">#5116</A>)
 <LI>O texto excrito xa non é ilexible ó se utilizar certas aplicacións como Microsoft Outlook con unha pantalla braille. (<A HREF="http://community.nvda-project.org/ticket/2953">#2953</A>)
@@ -44,12 +50,21 @@
 <LI>En braille, xa non se amosan extranos espazos en braille entre ou despois dos indicadores para controis e formato. (<A HREF="http://community.nvda-project.org/ticket/5043">#5043</A>)
 <LI>Cando unha aplicación está respondendo lentamente e cambias dende esa aplicación, NVDA agora é moito máis  sensible en outras aplicacións en máis casos. (<A HREF="http://community.nvda-project.org/ticket/3831">#3831</A>)
 <LI>As notificacións de Windows 10 Toast agora anúncianse como se esperaba. (<A HREF="http://community.nvda-project.org/ticket/5136">#5136</A>)
-</UL>
-
-<H3>Cambios para Desenvolvedores</H3>
-
-<UL>
+<LI>O valor agora anúnciase segundo se  cambie en certas caixas combinadas (UI Automation) onde esto non funcionaba ate o de agora.
+<LI>No Modo exploración en navegadores web, ó tabular agora compórtase segundo se espera  despois de tabular a un marco de documento. (<A HREF="http://community.nvda-project.org/ticket/5227">#5227</A>)
+ <UL>
+ <LI>A pantalla de bloqueo do Windows 10 agora pode pecharse utilizando a pantalla tactil. (<A HREF="http://community.nvda-project.org/ticket/5220">#5220</A>)
+ </UL>
+<LI>No Windows 7 e posteriores, o texto xa non é ilexible ó se teclear en certas aplicacións como Wordpad e Skype cunha pantalla braille. (<A HREF="http://community.nvda-project.org/ticket/4291">#4291</A>)
+<LI>Na pantalla de bloqueo do Windows 10, xa  non é posible ler o portapapeis, acesar a  aplicacións en execución co cursor de revisión, cambiar a configuración do NVDA, etc. (<A HREF="http://community.nvda-project.org/ticket/5269">#5269</A>)
+<P></P>
+== Cambios para Desenvolvedores ==
 <LI>Agora podes inxectar a entrada bruta dende un teclado de sistema que non se manexa nativamente polo Windows (ex.: un teclado QWERTY nunha pantalla braille) utilizando a nova función keyboardHandler.injectRawKeyboardInput. (<A HREF="http://community.nvda-project.org/ticket/4576">#4576</A>)
+<LI>En lugar dun só atributo i18nName, synthDriverHandler.SynthSetting agora ten os atributos  displayNameWithAccelerator e displayName separados para evitar o anunciado do acelerador no grupo de opcións do sintetizador nalgunhas linguas.
+ <UL>
+ <LI>Por compatibilidade con versións anteriores, no constructor, displayName é opcional e deribarase de displayNameWithAccelerator se non se proporciona. Con todo, se tentas ter un acelerador para unha opción, deberían proporcionarse ámbolos dous.
+ <LI>O atributo i18nName está obsoleto e poderá eliminarse en unha versión futura.
+ </UL>
 </UL>
 
 <H2>2015.2</H2>
