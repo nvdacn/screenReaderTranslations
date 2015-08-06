@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NVDA bzr main:5884\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-27 19:09+1000\n"
+"POT-Creation-Date: 2015-08-06 19:09+1000\n"
 "PO-Revision-Date: 2015-07-21 17:12+0100\n"
 "Last-Translator: OAron <oaron@nvda.hu>\n"
 "Language-Team: NVDA Honosítási project <nvda@nvda.hu>\n"
@@ -758,7 +758,7 @@ msgstr "Ebben a dokumentumban nem támogatott."
 msgid "Lists various types of elements in this document"
 msgstr "Listázza a különböző típusú elemeket ebben a dokumentumban."
 
-#. Translators: the description for the activatePosition script on virtualBuffers.
+#. Translators: the description for the activatePosition script on browseMode documents.
 msgid "activates the current object in the document"
 msgstr "Aktiválja az aktuális elemet a dokumentumban."
 
@@ -1232,6 +1232,45 @@ msgstr "&Aktiválás"
 #. in the browse mode Elements List dialog.
 msgid "&Move to"
 msgstr "&Ugrás"
+
+#. Translators: This is spoken and brailled to indicate a landmark (example output: main landmark).
+#, python-format
+msgid "%s landmark"
+msgstr "%s jelzőpont"
+
+#. Translators: This is spoken to indicate what has been selected. for example 'selected hello world'
+#, python-format
+msgid "selected %s"
+msgstr "%s Kijelölve"
+
+#. Translators: the message presented when the activateLongDescription script cannot locate a long description to activate.
+msgid "No long description"
+msgstr "Nincs bővebb leírás"
+
+#. Translators: the description for the activateLongDescription script on browseMode documents.
+msgid "Shows the long description at this position if one is found."
+msgstr "Megmutatja a bővebb leírást, ha létezik a jelenlegi pozíciónál."
+
+# a fordítás rossz volt, és szó szerinti fordítással itt semmire sem megyünk.
+# Értelemszerűen javítottam.
+#. Translators: Reported when the user attempts to move to the start or end of a container (list, table, etc.)
+#. But there is no container.
+msgid "Not in a container"
+msgstr "Ez a parancs csak elemblokkban használható"
+
+#. Translators: Description for the Move to start of container command in browse mode.
+msgid "Moves to the start of the container element, such as a list or table"
+msgstr "Egy elemblokk (pl. lista vagy táblázat) elejéhez lép"
+
+#. Translators: a message reported when:
+#. Review cursor is at the bottom line of the current navigator object.
+#. Landing at the end of a browse mode document when trying to jump to the end of the current container.
+msgid "bottom"
+msgstr "vége"
+
+#. Translators: Description for the Move past end of container command in browse mode.
+msgid "Moves past the end  of the container element, such as a list or table"
+msgstr "Egy elemblokk (pl. lista vagy táblázat) végére ugrik"
 
 #. Translators: The level at which the given symbol will be spoken.
 msgctxt "symbolLevel"
@@ -1962,11 +2001,6 @@ msgctxt "color name"
 msgid "Yellow Green"
 msgstr "Sárgászöld"
 
-#. Translators: This is spoken to indicate what has been selected. for example 'selected hello world'
-#, python-format
-msgid "selected %s"
-msgstr "%s Kijelölve"
-
 #. Translators: The word for an unknown control type.
 #. Translators: Reported when the type of a chart is not known.
 msgid "unknown"
@@ -2091,7 +2125,6 @@ msgid "cell"
 msgstr "cella"
 
 #. Translators: Identifies a column (a group of vertical cells in a table).
-#. Translators: A column in a column chart.
 msgid "column"
 msgstr "oszlop"
 
@@ -2810,7 +2843,8 @@ msgid "Braille"
 msgstr "Braille"
 
 #. Translators: The name of a category of NVDA commands.
-#. Translators: The label for the Tools submenu in NVDA menu.
+#, fuzzy
+msgctxt "script category"
 msgid "Tools"
 msgstr "Eszközök"
 
@@ -3471,12 +3505,6 @@ msgstr ""
 "sort, háromszori megnyomásra pedig a karakterleírások felhasználásával "
 "betűzi le azt."
 
-#. Translators: a message reported when:
-#. Review cursor is at the bottom line of the current navigator object.
-#. Landing at the end of a browse mode document when trying to jump to the end of the current container.
-msgid "bottom"
-msgstr "vége"
-
 #. Translators: Input help mode message for move review cursor to next line command.
 msgid ""
 "Moves the review cursor to the next line of the current navigator object and "
@@ -4119,7 +4147,7 @@ msgstr "Felhasználói útmutató"
 msgid "Commands Quick Reference"
 msgstr "NVDA parancsok listája"
 
-#. Translators: A label for a shortcut in start menu and a menu entry in NVDA menu (to open the user guide).
+#. Translators: A label for a shortcut in start menu to open NVDA user guide.
 msgid "User Guide"
 msgstr "Felhasználói útmutató"
 
@@ -5857,6 +5885,15 @@ msgstr "&Az NVDA telepítése..."
 msgid "Reload plugins"
 msgstr "A bővítmények újratöltése"
 
+#. Translators: The label for the Tools submenu in NVDA menu.
+msgid "Tools"
+msgstr "Eszközök"
+
+#. Translators: The label of a menu item to open NVDA user guide.
+#, fuzzy
+msgid "&User Guide"
+msgstr "Felhasználói útmutató"
+
 #. Translators: The label of a menu item to open the Commands Quick Reference document.
 msgid "Commands &Quick Reference"
 msgstr "NVDA parancsok listája"
@@ -6335,6 +6372,7 @@ msgstr ""
 "életbe.\n"
 "Biztosan folytatja?"
 
+#. Translators: The title of a warning dialog.
 #. Translators: The title of the warning dialog displayed when trying to copy settings for use in secure screens.
 msgid "Warning"
 msgstr "Figyelmesztetés"
@@ -6460,6 +6498,20 @@ msgstr "A &hordozható beállítások másolása a jelenlegi felhasználói fió
 #. Translators: The label of a button to continue with the operation.
 msgid "&Continue"
 msgstr "&Folytatás"
+
+#. Translators: A warning presented when the user attempts to downgrade NVDA
+#. to an older version.
+msgid ""
+"You are attempting to install an earlier version of NVDA than the version "
+"currently installed. If you really wish to revert to an earlier version, you "
+"should first cancel this installation and completely uninstall NVDA before "
+"installing the earlier version."
+msgstr ""
+
+#. Translators: The label of a button to proceed with installation,
+#. even though this is not recommended.
+msgid "&Proceed with installation (not recommended)"
+msgstr ""
 
 #. Translators: The title of the Create Portable NVDA dialog.
 msgid "Create Portable NVDA"
@@ -7379,11 +7431,6 @@ msgstr "{curPercent:.0f}%"
 msgid "at {x}, {y}"
 msgstr "pozíció: {x}; {y}"
 
-#. Translators: This is spoken and brailled to indicate a landmark (example output: main landmark).
-#, python-format
-msgid "%s landmark"
-msgstr "%s jelzőpont"
-
 #. Translators: Reported when a page reloads (example: after refreshing a webpage).
 msgid "Refreshed"
 msgstr "Frissítve"
@@ -7391,14 +7438,6 @@ msgstr "Frissítve"
 #. Translators: Reported while loading a document.
 msgid "Loading document..."
 msgstr "Dokumentum betöltése..."
-
-#. Translators: the message presented when the activateLongDescription script cannot locate a long description to activate.
-msgid "No long description"
-msgstr "Nincs bővebb leírás"
-
-#. Translators: the description for the activateLongDescription script on virtualBuffers.
-msgid "Shows the long description at this position if one is found."
-msgstr "Megmutatja a bővebb leírást, ha létezik a jelenlegi pozíciónál."
 
 #. Translators: the description for the refreshBuffer script on virtualBuffers.
 msgid "Refreshes the document content"
@@ -7441,21 +7480,6 @@ msgstr "A táblázat következő oszlopához lép."
 #. Translators: the description for the previous table column script on virtualBuffers.
 msgid "moves to the previous table column"
 msgstr "A táblázat előző oszlopához lép."
-
-# a fordítás rossz volt, és szó szerinti fordítással itt semmire sem megyünk.
-# Értelemszerűen javítottam.
-#. Translators: Reported when the user attempts to move to the start or end of a container (list, table, etc.)
-#. But there is no container.
-msgid "Not in a container"
-msgstr "Ez a parancs csak elemblokkban használható"
-
-#. Translators: Description for the Move to start of container command in browse mode.
-msgid "Moves to the start of the container element, such as a list or table"
-msgstr "Egy elemblokk (pl. lista vagy táblázat) elejéhez lép"
-
-#. Translators: Description for the Move past end of container command in browse mode.
-msgid "Moves past the end  of the container element, such as a list or table"
-msgstr "Egy elemblokk (pl. lista vagy táblázat) végére ugrik"
 
 msgid "Taskbar"
 msgstr "tálca"
@@ -7980,6 +8004,12 @@ msgstr "Nincsenek adatsorok"
 #. Translators: A slice in a pie chart.
 msgid "slice"
 msgstr "szelet"
+
+#. Translators: A column in a column chart.
+#, fuzzy
+msgctxt "chart"
+msgid "column"
+msgstr "oszlop"
 
 #. Translators: A data point in a line chart.
 msgid "data point"

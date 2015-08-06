@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: master-11116\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-27 19:09+1000\n"
+"POT-Creation-Date: 2015-08-06 19:09+1000\n"
 "PO-Revision-Date: 2015-05-27 09:31+0800\n"
 "Last-Translator: Eric Yip <cyeric20@yahoo.com.hk>\n"
 "Language-Team: Eric Yip@ HKBU <cyeric20@yahoo.com.hk>\n"
@@ -763,7 +763,7 @@ msgstr "指令在本文件失效"
 msgid "Lists various types of elements in this document"
 msgstr "列出文件中的各類元件"
 
-#. Translators: the description for the activatePosition script on virtualBuffers.
+#. Translators: the description for the activatePosition script on browseMode documents.
 msgid "activates the current object in the document"
 msgstr "在虛擬文件中啟動目前的物件"
 
@@ -1237,6 +1237,43 @@ msgstr "啟動(&A)"
 #. in the browse mode Elements List dialog.
 msgid "&Move to"
 msgstr "移到(&M)"
+
+#. Translators: This is spoken and brailled to indicate a landmark (example output: main landmark).
+#, python-format
+msgid "%s landmark"
+msgstr "%s 地標"
+
+#. Translators: This is spoken to indicate what has been selected. for example 'selected hello world'
+#, python-format
+msgid "selected %s"
+msgstr "選取%s"
+
+#. Translators: the message presented when the activateLongDescription script cannot locate a long description to activate.
+msgid "No long description"
+msgstr "沒有詳細描述"
+
+#. Translators: the description for the activateLongDescription script on browseMode documents.
+msgid "Shows the long description at this position if one is found."
+msgstr "如有的話顯示目前位置的詳細描述"
+
+#. Translators: Reported when the user attempts to move to the start or end of a container (list, table, etc.)
+#. But there is no container.
+msgid "Not in a container"
+msgstr "不在物件包中"
+
+#. Translators: Description for the Move to start of container command in browse mode.
+msgid "Moves to the start of the container element, such as a list or table"
+msgstr "移到清單或表格等物件包的開頭位置"
+
+#. Translators: a message reported when:
+#. Review cursor is at the bottom line of the current navigator object.
+#. Landing at the end of a browse mode document when trying to jump to the end of the current container.
+msgid "bottom"
+msgstr "到了底部"
+
+#. Translators: Description for the Move past end of container command in browse mode.
+msgid "Moves past the end  of the container element, such as a list or table"
+msgstr "移過清單或表格等物件包的結尾位置"
 
 #. Translators: The level at which the given symbol will be spoken.
 msgctxt "symbolLevel"
@@ -1967,11 +2004,6 @@ msgctxt "color name"
 msgid "Yellow Green"
 msgstr "黃綠"
 
-#. Translators: This is spoken to indicate what has been selected. for example 'selected hello world'
-#, python-format
-msgid "selected %s"
-msgstr "選取%s"
-
 #. Translators: The word for an unknown control type.
 #. Translators: Reported when the type of a chart is not known.
 msgid "unknown"
@@ -2096,7 +2128,6 @@ msgid "cell"
 msgstr "儲存格"
 
 #. Translators: Identifies a column (a group of vertical cells in a table).
-#. Translators: A column in a column chart.
 msgid "column"
 msgstr "欄"
 
@@ -2811,7 +2842,8 @@ msgid "Braille"
 msgstr "點字"
 
 #. Translators: The name of a category of NVDA commands.
-#. Translators: The label for the Tools submenu in NVDA menu.
+#, fuzzy
+msgctxt "script category"
 msgid "Tools"
 msgstr "工具(&T)"
 
@@ -3435,12 +3467,6 @@ msgstr ""
 "在物件中讀出瀏覽游標所在的一行文字，連按兩次則把這一行的字元拼讀出來，連按三"
 "次則報讀這一整行的配詞解釋"
 
-#. Translators: a message reported when:
-#. Review cursor is at the bottom line of the current navigator object.
-#. Landing at the end of a browse mode document when trying to jump to the end of the current container.
-msgid "bottom"
-msgstr "到了底部"
-
 #. Translators: Input help mode message for move review cursor to next line command.
 msgid ""
 "Moves the review cursor to the next line of the current navigator object and "
@@ -4034,7 +4060,7 @@ msgstr "文件(&D)"
 msgid "Commands Quick Reference"
 msgstr "指令快速參考表"
 
-#. Translators: A label for a shortcut in start menu and a menu entry in NVDA menu (to open the user guide).
+#. Translators: A label for a shortcut in start menu to open NVDA user guide.
 msgid "User Guide"
 msgstr "檢視用戶指南(&U)"
 
@@ -5737,6 +5763,15 @@ msgstr "安裝 NVDA...(&I)"
 msgid "Reload plugins"
 msgstr "重新載入外掛程式(&R)"
 
+#. Translators: The label for the Tools submenu in NVDA menu.
+msgid "Tools"
+msgstr "工具(&T)"
+
+#. Translators: The label of a menu item to open NVDA user guide.
+#, fuzzy
+msgid "&User Guide"
+msgstr "檢視用戶指南(&U)"
+
 #. Translators: The label of a menu item to open the Commands Quick Reference document.
 msgid "Commands &Quick Reference"
 msgstr "指令快速參考表(&Q)"
@@ -6200,6 +6235,7 @@ msgstr ""
 "態設定檔關聯。\n"
 "要繼續進行嗎？"
 
+#. Translators: The title of a warning dialog.
 #. Translators: The title of the warning dialog displayed when trying to copy settings for use in secure screens.
 msgid "Warning"
 msgstr "警告"
@@ -6318,6 +6354,20 @@ msgstr "複製可攜版設定檔到目前使用者帳戶"
 #. Translators: The label of a button to continue with the operation.
 msgid "&Continue"
 msgstr "繼續(&C)"
+
+#. Translators: A warning presented when the user attempts to downgrade NVDA
+#. to an older version.
+msgid ""
+"You are attempting to install an earlier version of NVDA than the version "
+"currently installed. If you really wish to revert to an earlier version, you "
+"should first cancel this installation and completely uninstall NVDA before "
+"installing the earlier version."
+msgstr ""
+
+#. Translators: The label of a button to proceed with installation,
+#. even though this is not recommended.
+msgid "&Proceed with installation (not recommended)"
+msgstr ""
 
 #. Translators: The title of the Create Portable NVDA dialog.
 msgid "Create Portable NVDA"
@@ -7221,11 +7271,6 @@ msgstr "{curPercent:.0f}%"
 msgid "at {x}, {y}"
 msgstr "在 {x}、{y}"
 
-#. Translators: This is spoken and brailled to indicate a landmark (example output: main landmark).
-#, python-format
-msgid "%s landmark"
-msgstr "%s 地標"
-
 #. Translators: Reported when a page reloads (example: after refreshing a webpage).
 msgid "Refreshed"
 msgstr "重新整理"
@@ -7233,14 +7278,6 @@ msgstr "重新整理"
 #. Translators: Reported while loading a document.
 msgid "Loading document..."
 msgstr "載入文件中..."
-
-#. Translators: the message presented when the activateLongDescription script cannot locate a long description to activate.
-msgid "No long description"
-msgstr "沒有詳細描述"
-
-#. Translators: the description for the activateLongDescription script on virtualBuffers.
-msgid "Shows the long description at this position if one is found."
-msgstr "如有的話顯示目前位置的詳細描述"
 
 #. Translators: the description for the refreshBuffer script on virtualBuffers.
 msgid "Refreshes the document content"
@@ -7281,19 +7318,6 @@ msgstr "移到表格的右一欄"
 #. Translators: the description for the previous table column script on virtualBuffers.
 msgid "moves to the previous table column"
 msgstr "移到表格的左一欄"
-
-#. Translators: Reported when the user attempts to move to the start or end of a container (list, table, etc.)
-#. But there is no container.
-msgid "Not in a container"
-msgstr "不在物件包中"
-
-#. Translators: Description for the Move to start of container command in browse mode.
-msgid "Moves to the start of the container element, such as a list or table"
-msgstr "移到清單或表格等物件包的開頭位置"
-
-#. Translators: Description for the Move past end of container command in browse mode.
-msgid "Moves past the end  of the container element, such as a list or table"
-msgstr "移過清單或表格等物件包的結尾位置"
 
 msgid "Taskbar"
 msgstr "工作列"
@@ -7808,6 +7832,12 @@ msgstr "沒有定義數列"
 #. Translators: A slice in a pie chart.
 msgid "slice"
 msgstr "扇形區"
+
+#. Translators: A column in a column chart.
+#, fuzzy
+msgctxt "chart"
+msgid "column"
+msgstr "欄"
 
 #. Translators: A data point in a line chart.
 msgid "data point"
