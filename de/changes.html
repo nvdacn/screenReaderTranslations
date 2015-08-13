@@ -12,6 +12,10 @@
 
 <H2>2015.3</H2>
 
+<P>
+Schwerpunkte dieser Version sind anfängliche Unterstützung von Windows 10, die Möglichkeit Schnellnavigationstasten des Lese-Modus zu deaktivieren (sinvoll in bestimmten Internet-Anwendungen), Verbesserungen für den Internet Explorer sowie die Behebung von Fehlern, die beim schreiben in bestimmten Programmen zu verfälschtem Text geführt haben, wenn eine Braillezeile in Betrieb war.
+</P>
+
 <H3>neue Funktionen</H3>
 
 <UL>
@@ -26,7 +30,7 @@
 <P></P>
 == Änderungen ==
 <LI>Liblouis auf Version 2.6.3 aktualisiert. (<A HREF="http://community.nvda-project.org/ticket/5137">#5137</A>)
-<LI>Wenn Sie versuchen, eine frühere Version von NVDA über eine aktuelle Version zu installieren wird eine Warnung angezeigt. Dies wird nicht empfohlen. NVDA sollte vollständig deinstalliert werden, bevor Sie eine ältere Version installieren. (<A HREF="http://community.nvda-project.org/ticket/5037">#5037</A>)
+<LI>Wenn Sie versuchen, eine ältere Version von NVDA über eine aktuelle Version zu installieren wird eine Warnung angezeigt. Dies wird nicht empfohlen. NVDA sollte vollständig deinstalliert werden, bevor Sie eine ältere Version installieren. (<A HREF="http://community.nvda-project.org/ticket/5037">#5037</A>)
 <P></P>
 == Fehlerbehebungen ==
 <LI>Wenn Sie die Schnellnavigationstasten verwenden, werden Listeneinträge ignoriert, die zu Gestaltungszwecken eingefügt wurden. (<A HREF="http://community.nvda-project.org/ticket/4204">#4204</A>)
@@ -44,14 +48,14 @@
 <LI>Im Lesemodus verhält sich NVDA beim Navigieren wie erwartet, wenn Sie mit (Umschalt+)Tab in einem Rahmen navigieren. (<A HREF="http://community.nvda-project.org/ticket/5227">#5227</A>)
 <LI>Der Sperrbildschirm von Windows 10 kann nun mittels Touchscreen erkundet und geschlossen werden. (<A HREF="http://community.nvda-project.org/ticket/5220">#5220</A>)
 <LI>Wenn Sie in Windows 7 oder neuer Text in Eingabefelder von z. B. Wordpad oder Skype eingeben, während Sie eine Braillezeile verwenden, wird die Eingabe nicht mehr verfälscht. (<A HREF="http://community.nvda-project.org/ticket/4291">#4291</A>)
-<LI>Im Sperrbildschirm von Windows 10 ist es nicht mehr möglich, auf laufende Anwendungen zuzugreifen oder die Konfiguration von NVDA zu ändern. (<A HREF="http://community.nvda-project.org/ticket/5269">#5269</A>)
+<LI>Im Sperrbildschirm von Windows 10 ist es nicht mehr möglich mittels des NVDA-Cursors  auf laufende Anwendungen zuzugreifen oder die Konfiguration von NVDA zu ändern sowie die Zwischenablage auszulesen. (<A HREF="http://community.nvda-project.org/ticket/5269">#5269</A>)
 <P></P>
 == Änderungen für Entwickler ==
 <LI>Nun können auch Tastenanschläge von Tastaturen verarbeitet werden, die nicht vom Betriebssystem erkannt werden (wie z.B. Tastaturen von Braillezeilen). Verwenden Sie hierzu die neue Funktion  keyboardHandler.injectRawKeyboardInput. (<A HREF="http://community.nvda-project.org/ticket/4576">#4576</A>)
 <LI>Mit der neuen Funktion eventHandler.requestEvents können nun Ereignisse abgearbeitet werden, die standardmäßig blockiert werden  Hierzu zählen Ereignisse von bestimmten Steuerelementen oder Ereignisse, die im Hintergrund ausgelöst werden. (<A HREF="http://community.nvda-project.org/ticket/3831">#3831</A>)
-<LI>Anstelle eines einfachen i18name-Attributs enthält synthDriverHandler.SynthSetting nun sowohl displayNameWithAccelerator als auch displayName-Attribute. Hiermit wird verhindert, dass die Namen von Einstellungen im Synthesizer-Einstellungsring in einigen Sprachen mitsamt ihren hervorgehobenen Buchstaben angesagt werden (z.B. &amp;Stimme, Ton&amp;höhe, &amp;Lautstärke usw).
+<LI>Anstelle eines einfachen i18name-Attributs enthält synthDriverHandler.SynthSetting nun sowohl displayNameWithAccelerator als auch displayName-Attribute. Hiermit wird verhindert, dass die Namen von Einstellungen im Sprachausgaben-Einstellungsring in einigen Sprachen mitsamt ihren hervorgehobenen Buchstaben angesagt werden (z.B. &amp;Stimme, Ton&amp;höhe, &amp;Lautstärke usw).
  <UL>
- <LI>Aus Gründen der Abwärtskompatibilität ist Displayname optional und wird von displaynamewithaccelerator abgeleitet. Wenn Sie jedoch planen, eine Einstellung sowohl in den Stimmeneinstellungen als auch im Synthesizer-Einstellungsring anzubieten, sollten Sie beide Attribute verwenden.
+ <LI>Aus Gründen der Abwärtskompatibilität ist Displayname optional und wird von displaynamewithaccelerator abgeleitet. Wenn Sie jedoch planen, eine Einstellung sowohl in den Stimmeneinstellungen als auch im Sprachausgaben-Einstellungsring anzubieten, sollten Sie beide Attribute verwenden.
  <LI>Das Attribut i18name ist veraltet und wird in einer der nächsten Versionen entfernt.
  </UL>
 </UL>
