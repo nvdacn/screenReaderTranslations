@@ -56,13 +56,13 @@ addresses = {
         'lang': 'Spanish Colombia',
         'email': ['Jorge Zarache <reydelasmaquinas@outlook.com>'],
     },
-    'fi': {
-        'lang':'Finnish',
-        'email': ['Jani Kinnunen <jani.kinnunen@wippies.fi>', 'Isak Sand <isak.sand@gmail.com>'],
-    },
     'fa': {
         'lang':'Farsi',
         'email': ['Ali Aslani <aslani.ali@gmail.com>', 'Mohammadreza Rashad <mohammadreza5712@gmail.com>'],
+    },
+    'fi': {
+        'lang':'Finnish',
+        'email': ['Jani Kinnunen <jani.kinnunen@wippies.fi>', 'Isak Sand <isak.sand@gmail.com>'],
     },
     'fr': {
         'lang':'French',
@@ -114,7 +114,7 @@ addresses = {
     },
     'ko': {
         'lang':'Korean',
-        'email': ['Joseph Lee <joseph.lee22590@gmail.com>', 'Chang-Hoan Jang <462356@gmail.com>'],
+        'email': ['Joseph Lee <joseph.lee22590@gmail.com>', 'Chang-Hoan Jang <462356@gmail.com>', 'Dong Hee Park <hi@aheu.org>'],
     },
     'nb_NO': {
         'lang':'Norwegian bokmal',
