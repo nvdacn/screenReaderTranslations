@@ -56,7 +56,7 @@ NVDA 受到《GNU 通用公共许可证条款(第二版)》的保护。
 更详细的信息，请[查看完整授权， http://www.gnu.org/licenses/old-licenses/gpl-2.0.html]
 
 + 系统需求 +
-- 操作系统： 所有32位或者64位的Windows XP、 Windows Vista、 Windows 7和 Windows 8(包括服务器系统)。
+- 操作系统： 所有32位或者64位的Windows XP、 Windows Vista、 Windows 7、Windows 8和 Windows 10(包括服务器系统)。
 - 对于 Windows XP 32位版本，NVDA 要求 SP2 以上。
 - 对于 Windows Server 2003版本， NVDA 要求 SP1 或者更高。
 - 内存：需要 256MB 或以上 
@@ -285,8 +285,8 @@ NVDA 提供下列与系统输入焦点相关的快捷命令：
 | 全文朗读 | NVDA+下光标 | NVDA+a | 从系统输入焦点的当前位置开始朗读，焦点会随着朗读的内容移动。 |
 | 朗读当前航 | NVDA+上光标 | NVDA+l | 朗读系统输入焦点所在的行，连按两次拼读该行。 |
 | 朗读当前选择的文本 | NVDA+Shift+上光标 | NVDA+shift+s | 朗读当前选择的所有文本 |
-| 下一个句子 | alt+下光标 | alt+下光标 | 移动系统焦点到下一个句子（仅在 word 中受到支持）。 |
-| 上一个句子 | alt+上光标 | alt+上光标 | 移动系统焦点到上一个句子（仅在 word 中受到支持）。 |
+| 下一个句子 | alt+下光标 | alt+下光标 | 移动系统焦点到下一个句子（仅在 word 和 Outlook 中受到支持）。 |
+| 上一个句子 | alt+上光标 | alt+上光标 | 移动系统焦点到上一个句子（仅在 word 和 Outlook 中受到支持）。 |
 
 
 当处于一个列表之内时，下面的键盘命令也是可用的：
@@ -502,6 +502,12 @@ NVDA 使用浏览模式来浏览复杂的只读文档，如 web 页面。
 || 名称 | 按键 | 描述 |
 | 移动到容器的开始处 | shift+逗号 | 移动到输入焦点所在容器的开头(列表、表格等)。 |
 | 移动到容器的结尾处 | 逗号 | 移动到输入焦点所在容器的结尾(列表、表格等)。 |
+
+%kc:endInclude
+一些 web 应用程序，如Gmail、Twitter和Facebook，使用单字母作为快捷键
+如果您还想在可使用浏览模式的鼠标键进行文档浏览的前提下使用这些快捷键，您可以临时的停用 NVDA 单键导航按键。
+%kc:beginInclude
+要想在当前文档中切换单键导航功能的开关，请使用“NVDA+shift+空格键”。
 %kc:endInclude
 
 ++ 元素列表 ++
@@ -547,10 +553,10 @@ NVDA 支持下列类型的数学内容：
 如果您正处于浏览模式中，您可以移动光标到数学内容上然后按下“回车”键。
 
 如果您没有在浏览模式时：
-+ 移动浏览光标到数学内容。
+ 移动浏览光标到数学内容。
 默认情况下，浏览光标会跟随系统输入焦点，所以，实际上您可以直接使用系统输入焦点移动到期望的内容。
-+ 随后激活下面的命令。
-+
+ 随后激活下面的命令。
+
 
 %kc:beginInclude
 || 名称 | 按键 | 描述 |
@@ -1116,6 +1122,8 @@ NVDA现在只支持电脑盲文点字的输入，因此，只有八点点字表�
 -如果某些东西可点击
 -
 
+要想在任何地方切换这些设置，可在[输入手势对话框 #InputGestures]设置一个自定义手势
+
 ==== 朗读光标经过时的文本格式变化 ====
 如果启用，此设置告诉 NVDA 尝试去检测正在朗读的行的所有格式信息的变动，即使这样做会导致 NVDA 执行效率降低。
 
@@ -1131,6 +1139,8 @@ NVDA现在只支持电脑盲文点字的输入，因此，只有八点点字表�
 - 合成器：字典的规则会应用于当前使用的合成器的语音输出。
 - 临时：字典的规则会应用于 NVDA 所有的语音输出，但仅在当前绘画时可用，规则是临时的，并在下次 NVDA 重新启动之后丢失数据。
 -
+
+如果您想在任何地方打开任意的字典对话框，您必须在[输入手势对话框 #InputGestures]设置一个自定义手势。
 
 所有字典对话框都包含着一个可作用于当前语音进程的规则列表。
 对话框中也包含“添加”、“编辑”和“删除”的按钮。
@@ -1173,7 +1183,7 @@ NVDA 的语音字典比之单词替换更为强大。
 
 当您完成之后，您可以点击“确认”按钮保存设置或者点击“取消”按钮放弃对他们的修改。
 
-+++ 输入手势 +++
++++ 输入手势 +++[InputGestures]
 在此对话框，您可以为 NVDA 的命令自定义输入手势(如键盘上的按键、点显器上的按钮等等)。
 
 仅显示在此对话框被打开之前仍旧可用的命令。
@@ -1309,6 +1319,8 @@ NVDA 的语音字典比之单词替换更为强大。
 当朗读查看器启用时，它会不断地更新，从而向您显示最近朗读的文本。
 然而，当您点击或把焦点放在查看器之内，NVDA 就会暂停文本的更新，您可以轻松的选择或者复制已有的文本。
 
+要想在任何地方切换朗读查看器的开关，请在[输入手势对话框 #InputGestures]定义一个自定义手势。
+
 ++ 插件管理器 ++
 您可以通过 NVDA 的“工具”菜单的“插件管理器”访问插件管理器，插件管理器允许您安装或者移除 NVDA 的插件。
 您可以在社区找到这些插件包，它们包含定制的代码，为您添加或更改 NVDA 甚至是额外的点显器和语音合成气的特性。
@@ -1342,6 +1354,8 @@ NVDA 会询问您是否真的要这样做。
 在过去，您只需单独复制插件或驱动到 NVDA 的用户配置目录即可扩展 NVDA 的功能。
 虽然此版本的 NVDA 仍然会加载他们，但是他们不会被显示在插件管理器。
 最好从您的配置删除这些文件并安装可用的适合插件。
+
+要想在任何地方访问插件管理器，请在[输入手势对话框 #InputGestures]定义一个自定义手势。
 
 ++ Python 控制台 ++
 NVDA Python 控制台可以再 NVDA 的“工具”菜单找到，他是一个开发工具，他可用来进行调试，一般的内部检查和程序可访问程度的检查。
@@ -1748,10 +1762,11 @@ The following Braille displays are supported:
 -
 
 If BrxCom is installed, NVDA will use BrxCom.
-BrxCom is a tool that allows you to use the Braille input independently from a screen reader.
+BrxCom is a tool that allows keyboard input from the braille display to function independently from a screen reader.
 A new version of BrxCom which works with NVDA will be released by Papenmeier soon.
 Braille input is possible with the Trio, BRAILLEX Live 20 and Braillex Live devices without BrxCom.
 Braille input is also possible with the Live Plus model, but with BrxCom only.
+Keyboard input is possible with the Trio and BRAILLEX Live models.
 
 Most devices have an Easy Access Bar (EAB) that allows intuitive and fast operation.
 The EAB can be moved in four directions where generally each direction has two switches.
@@ -1788,6 +1803,7 @@ Following are the Papenmeier command assignments for NVDA:
 | Route to braille cell | routing |
 | Report current character in review | l1 |
 | Activate current navigator object | l2 |
+| Toggle braille tethered to | r2 |
 | Report title | l1+up |
 | Report Status Bar | l2+down |
 | Move to containing object | up2 |
@@ -1886,6 +1902,8 @@ BRAILLEX Tiny:
 | Move to previous object | r1+left |
 | Move to next object | r1+right |
 | Report text formatting | reportf |
+| Report title | l1+up |
+| Report status bar | l2+down |
 
 BRAILLEX 2D Screen:
 || Name | Key |
@@ -1951,6 +1969,41 @@ Please check your BrailleNote's documentation to find where these keys are locat
 | Toggle input help | space+dot2+dot3+dot6 (space+lower h) |
 %kc:endInclude
 
+++ EcoBraille ++
+NVDA supports EcoBraille displays from [ONCE http://www.once.es/].
+The following models are supported:
+- EcoBraille 20
+- EcoBraille 40
+- EcoBraille 80
+- EcoBraille Plus
+-
+
+In NVDA, you can set the serial port to which the display is connected in the Braille Settings dialog.
+
+Following are the key assignments for EcoBraille displays.
+Please see the [EcoBraille documentation ftp://ftp.once.es/pub/utt/bibliotecnia/Lineas_Braille/ECO/] for descriptions of where these keys can be found.
+
+%kc:beginInclude
+|| Name | Key |
+| Scroll braille display back | T2 |
+| Scroll braille display forward | T4 |
+| Move braille display to previous line | T1 |
+| Move braille display to next line | T5 |
+| Route to braille cell | Routing |
+| Activate current navigator object | T3 |
+| Switch to next review mode | F1 |
+| Move to containing object | F2 |
+| Switch to previous review mode | F3 |
+| Move to previous object | F4 |
+| Report current object | F5 |
+| Move to next object | F6 |
+| Move to focus object | F7 |
+| Move to first contained object | F8 |
+| Move System focus or caret to current review position | F9 |
+| Report review cursor location | F0 |
+| Toggle braille tethered to | A |
+%kc:endInclude
+
 ++ BRLTTY ++
 [BRLTTY http://mielke.cc/brltty/] is a separate program which can be used to support many more braille displays.
 In order to use this, you need to install [BRLTTY for Windows http://brl.thefreecat.org/brltty/].
@@ -2008,7 +2061,7 @@ The following state indicators are also defined:
 | sel | displayed when an object is selected |
 | submnu | displayed when an object has a popup (usually a sub-menu) |
 
-+ Advanced Topics +
++ 高级主题 +
 
 ++ 命令行选项 ++[CommandLineOptions]
 在 NVDA启动时，它可以接收一个或多个附加选项以改变它启动时的动作。
