@@ -108,7 +108,7 @@
       <LI><A HREF="#DocumentFormattingSettings">9.1.12. 文档格式设置 (NVDA+control+d)</A>
       <LI><A HREF="#toc68">9.1.13. 语音字典</A>
       <LI><A HREF="#SymbolPronunciation">9.1.14. 标点符号发音</A>
-      <LI><A HREF="#toc70">9.1.15. 输入手势</A>
+      <LI><A HREF="#InputGestures">9.1.15. 输入手势</A>
       </UL>
     <LI><A HREF="#toc71">9.2. 保存或重新加载配置</A>
     <LI><A HREF="#toc72">9.3. 配置文件</A>
@@ -155,15 +155,16 @@
     <LI><A HREF="#toc105">12.12. Papenmeier BRAILLEX Newer Models</A>
     <LI><A HREF="#toc106">12.13. Papenmeier Braille BRAILLEX Older Models</A>
     <LI><A HREF="#toc107">12.14. HumanWare BrailleNote</A>
-    <LI><A HREF="#toc108">12.15. BRLTTY</A>
+    <LI><A HREF="#toc108">12.15. EcoBraille</A>
+    <LI><A HREF="#toc109">12.16. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc109">13. Braille control type and state abbreviations</A>
-  <LI><A HREF="#toc110">14. Advanced Topics</A>
+  <LI><A HREF="#toc110">13. Braille control type and state abbreviations</A>
+  <LI><A HREF="#toc111">14. 高级主题</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">14.1. 命令行选项</A>
-    <LI><A HREF="#toc112">14.2. 标点符号读音的高级定制</A>
+    <LI><A HREF="#toc113">14.2. 标点符号读音的高级定制</A>
     </UL>
-  <LI><A HREF="#toc113">15. 更多信息</A>
+  <LI><A HREF="#toc114">15. 更多信息</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -249,7 +250,7 @@ NVDA 受到《GNU 通用公共许可证条款(第二版)》的保护。
 <H2>2. 系统需求</H2>
 
 <UL>
-<LI>操作系统： 所有32位或者64位的Windows XP、 Windows Vista、 Windows 7和 Windows 8(包括服务器系统)。
+<LI>操作系统： 所有32位或者64位的Windows XP、 Windows Vista、 Windows 7、Windows 8和 Windows 10(包括服务器系统)。
 <LI>对于 Windows XP 32位版本，NVDA 要求 SP2 以上。
 <LI>对于 Windows Server 2003版本， NVDA 要求 SP1 或者更高。
 <LI>内存：需要 256MB 或以上 
@@ -716,13 +717,13 @@ NVDA 提供下列与系统输入焦点相关的快捷命令：
 <TD>下一个句子</TD>
 <TD>alt+下光标</TD>
 <TD>alt+下光标</TD>
-<TD>移动系统焦点到下一个句子（仅在 word 中受到支持）。</TD>
+<TD>移动系统焦点到下一个句子（仅在 word 和 Outlook 中受到支持）。</TD>
 </TR>
 <TR>
 <TD>上一个句子</TD>
 <TD>alt+上光标</TD>
 <TD>alt+上光标</TD>
-<TD>移动系统焦点到上一个句子（仅在 word 中受到支持）。</TD>
+<TD>移动系统焦点到上一个句子（仅在 word 和 Outlook 中受到支持）。</TD>
 </TR>
 </TABLE>
 
@@ -1307,6 +1308,12 @@ NVDA 使用浏览模式来浏览复杂的只读文档，如 web 页面。
 </TR>
 </TABLE>
 
+<P>
+一些 web 应用程序，如Gmail、Twitter和Facebook，使用单字母作为快捷键
+如果您还想在可使用浏览模式的鼠标键进行文档浏览的前提下使用这些快捷键，您可以临时的停用 NVDA 单键导航按键。
+要想在当前文档中切换单键导航功能的开关，请使用“NVDA+shift+空格键”。
+</P>
+
 <A NAME="toc42"></A>
 <H3>6.2. 元素列表</H3>
 
@@ -1390,13 +1397,10 @@ NVDA 支持下列类型的数学内容：
 </P>
 <P>
 如果您没有在浏览模式时：
-</P>
-
-<OL>
-<LI>移动浏览光标到数学内容。
+ 移动浏览光标到数学内容。
 默认情况下，浏览光标会跟随系统输入焦点，所以，实际上您可以直接使用系统输入焦点移动到期望的内容。
-<LI>随后激活下面的命令。
-</OL>
+ 随后激活下面的命令。
+</P>
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -2423,6 +2427,10 @@ NVDA现在只支持电脑盲文点字的输入，因此，只有八点点字表�
 -如果某些东西可点击
 </UL>
 
+<P>
+要想在任何地方切换这些设置，可在<A HREF="#InputGestures">输入手势对话框</A>设置一个自定义手势
+</P>
+
 <H5>朗读光标经过时的文本格式变化</H5>
 
 <P>
@@ -2450,6 +2458,9 @@ NVDA现在只支持电脑盲文点字的输入，因此，只有八点点字表�
 <LI>临时：字典的规则会应用于 NVDA 所有的语音输出，但仅在当前绘画时可用，规则是临时的，并在下次 NVDA 重新启动之后丢失数据。
 </UL>
 
+<P>
+如果您想在任何地方打开任意的字典对话框，您必须在<A HREF="#InputGestures">输入手势对话框</A>设置一个自定义手势。
+</P>
 <P>
 所有字典对话框都包含着一个可作用于当前语音进程的规则列表。
 对话框中也包含“添加”、“编辑”和“删除”的按钮。
@@ -2507,7 +2518,7 @@ NVDA 的语音字典比之单词替换更为强大。
 当您完成之后，您可以点击“确认”按钮保存设置或者点击“取消”按钮放弃对他们的修改。
 </P>
 
-<A NAME="toc70"></A>
+<A NAME="InputGestures"></A>
 <H4>9.1.15. 输入手势</H4>
 
 <P>
@@ -2734,6 +2745,9 @@ NVDA 的语音字典比之单词替换更为强大。
 当朗读查看器启用时，它会不断地更新，从而向您显示最近朗读的文本。
 然而，当您点击或把焦点放在查看器之内，NVDA 就会暂停文本的更新，您可以轻松的选择或者复制已有的文本。
 </P>
+<P>
+要想在任何地方切换朗读查看器的开关，请在<A HREF="#InputGestures">输入手势对话框</A>定义一个自定义手势。
+</P>
 
 <A NAME="toc83"></A>
 <H3>10.3. 插件管理器</H3>
@@ -2778,6 +2792,9 @@ NVDA 会询问您是否真的要这样做。
 在过去，您只需单独复制插件或驱动到 NVDA 的用户配置目录即可扩展 NVDA 的功能。
 虽然此版本的 NVDA 仍然会加载他们，但是他们不会被显示在插件管理器。
 最好从您的配置删除这些文件并安装可用的适合插件。
+</P>
+<P>
+要想在任何地方访问插件管理器，请在<A HREF="#InputGestures">输入手势对话框</A>定义一个自定义手势。
 </P>
 
 <A NAME="toc84"></A>
@@ -3933,10 +3950,11 @@ The following Braille displays are supported:
 
 <P>
 If BrxCom is installed, NVDA will use BrxCom.
-BrxCom is a tool that allows you to use the Braille input independently from a screen reader.
+BrxCom is a tool that allows keyboard input from the braille display to function independently from a screen reader.
 A new version of BrxCom which works with NVDA will be released by Papenmeier soon.
 Braille input is possible with the Trio, BRAILLEX Live 20 and Braillex Live devices without BrxCom.
 Braille input is also possible with the Live Plus model, but with BrxCom only.
+Keyboard input is possible with the Trio and BRAILLEX Live models.
 </P>
 <P>
 Most devices have an Easy Access Bar (EAB) that allows intuitive and fast operation.
@@ -4045,6 +4063,10 @@ Following are the Papenmeier command assignments for NVDA:
 <TR>
 <TD>Activate current navigator object</TD>
 <TD>l2</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>r2</TD>
 </TR>
 <TR>
 <TD>Report title</TD>
@@ -4352,6 +4374,14 @@ BRAILLEX Tiny:
 <TD>Report text formatting</TD>
 <TD>reportf</TD>
 </TR>
+<TR>
+<TD>Report title</TD>
+<TD>l1+up</TD>
+</TR>
+<TR>
+<TD>Report status bar</TD>
+<TD>l2+down</TD>
+</TR>
 </TABLE>
 
 <P>
@@ -4547,7 +4577,105 @@ Please check your BrailleNote's documentation to find where these keys are locat
 </TABLE>
 
 <A NAME="toc108"></A>
-<H3>12.15. BRLTTY</H3>
+<H3>12.15. EcoBraille</H3>
+
+<P>
+NVDA supports EcoBraille displays from <A HREF="http://www.once.es/">ONCE</A>.
+The following models are supported:
+</P>
+
+<UL>
+<LI>EcoBraille 20
+<LI>EcoBraille 40
+<LI>EcoBraille 80
+<LI>EcoBraille Plus
+</UL>
+
+<P>
+In NVDA, you can set the serial port to which the display is connected in the Braille Settings dialog.
+</P>
+<P>
+Following are the key assignments for EcoBraille displays.
+Please see the <A HREF="ftp://ftp.once.es/pub/utt/bibliotecnia/Lineas_Braille/ECO/">EcoBraille documentation</A> for descriptions of where these keys can be found.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Key</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>T2</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>T4</TD>
+</TR>
+<TR>
+<TD>Move braille display to previous line</TD>
+<TD>T1</TD>
+</TR>
+<TR>
+<TD>Move braille display to next line</TD>
+<TD>T5</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>Routing</TD>
+</TR>
+<TR>
+<TD>Activate current navigator object</TD>
+<TD>T3</TD>
+</TR>
+<TR>
+<TD>Switch to next review mode</TD>
+<TD>F1</TD>
+</TR>
+<TR>
+<TD>Move to containing object</TD>
+<TD>F2</TD>
+</TR>
+<TR>
+<TD>Switch to previous review mode</TD>
+<TD>F3</TD>
+</TR>
+<TR>
+<TD>Move to previous object</TD>
+<TD>F4</TD>
+</TR>
+<TR>
+<TD>Report current object</TD>
+<TD>F5</TD>
+</TR>
+<TR>
+<TD>Move to next object</TD>
+<TD>F6</TD>
+</TR>
+<TR>
+<TD>Move to focus object</TD>
+<TD>F7</TD>
+</TR>
+<TR>
+<TD>Move to first contained object</TD>
+<TD>F8</TD>
+</TR>
+<TR>
+<TD>Move System focus or caret to current review position</TD>
+<TD>F9</TD>
+</TR>
+<TR>
+<TD>Report review cursor location</TD>
+<TD>F0</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>A</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc109"></A>
+<H3>12.16. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A> is a separate program which can be used to support many more braille displays.
@@ -4591,7 +4719,7 @@ Please see the <A HREF="http://mielke.cc/brltty/doc/KeyTables/">BRLTTY key table
 </TR>
 </TABLE>
 
-<A NAME="toc109"></A>
+<A NAME="toc110"></A>
 <H2>13. Braille control type and state abbreviations</H2>
 
 <P>
@@ -4732,8 +4860,8 @@ The following state indicators are also defined:
 </TR>
 </TABLE>
 
-<A NAME="toc110"></A>
-<H2>14. Advanced Topics</H2>
+<A NAME="toc111"></A>
+<H2>14. 高级主题</H2>
 
 <A NAME="CommandLineOptions"></A>
 <H3>14.1. 命令行选项</H3>
@@ -4866,7 +4994,7 @@ nvda -q
 </TR>
 </TABLE>
 
-<A NAME="toc112"></A>
+<A NAME="toc113"></A>
 <H3>14.2. 标点符号读音的高级定制</H3>
 
 <P>
@@ -4880,7 +5008,7 @@ nvda -q
 然而，用户无法定义复合标点。
 </P>
 
-<A NAME="toc113"></A>
+<A NAME="toc114"></A>
 <H2>15. 更多信息</H2>
 
 <P>
