@@ -3,6 +3,9 @@ Qué hay de Nuevo en NVDA
 
 %!includeconf: ../changes.t2tconf
 
+= 2015.4 =
+
+
 = 2015.3 =
 Lo reseñable en esta versión incluye el apoyo inicial para Windows 10; la capacidad de deshabilitar la navegación de una sola letra en modo exploración (útil para algunas aplicaciones web); mejoras en Internet Explorer; y correcciones para texto ilegible al escribir en ciertas aplicaciones con el braille habilitado.
 
@@ -16,6 +19,7 @@ Lo reseñable en esta versión incluye el apoyo inicial para Windows 10; la capa
 - Nuevas tablas de transcripción braille: Finlandés de 6 puntos, Irlandés grado 1, Irlandés grado 2, Coreano grado 1 (2006), Coreano grado 2 (2006). (#5137, #5074, #5097)
 - Ahora se soporta el teclado QWERTY en la pantalla braille Papenmeier BRAILLEX Live Plus. (#5181)
 - Apoyo Experimental para el navegador web Microsoft Edge y el motor de exploración web en Windows 10. (#5212)
+- Nuevo idioma: Canadá.
 
 
 == Canbios ==
@@ -35,7 +39,7 @@ Lo reseñable en esta versión incluye el apoyo inicial para Windows 10; la capa
 - En braille, ya no se muestran extraños espacios en braille entre o después de los indicadores para controles y formato. (#5043)
 - Cuando una aplicación está respondiendo lentamente y cambias desde esa aplicación, NVDA ahora es mucho más  sensible en otras aplicaciones en más casos. (#3831)
 - Las notificaciones de Windows 10 Toast ahora se anuncian como se esperaba. (#5136)
- - El valor ahora se anuncia según cambie en ciertos cuadros combinados (UI Automation) donde esto no funcionaba anteriormente.
+- El valor ahora se anuncia según cambie en ciertos cuadros combinados (UI Automation) donde esto no funcionaba anteriormente.
 - En Modo exploración en navegadores web, al tabular ahora se comporta según se espera  después de tabular a un marco de documento. (#5227)
  - La pantalla de bloqueo de Windows 10 ahora puede cerrarse utilizando la pantalla táctil. (#5220)
 - En Windows 7 y posteriores, el texto ya no es ilegible al teclear en ciertas aplicaciones tales como Wordpad y Skype con una pantalla braille. (#4291)
@@ -44,9 +48,10 @@ Lo reseñable en esta versión incluye el apoyo inicial para Windows 10; la capa
 
 == Cambios para Desarrolladores ==
 - Ahora puedes inyectar la entrada bruta desde un teclado de sistema que no se maneja nativamente por Windows (ej.: un teclado QWERTY en una pantalla braille) utilizando la nueva función keyboardHandler.injectRawKeyboardInput . (#4576)
+- Se ha añadido eventHandler.requestEvents para solicitar eventos particulares que estén bloqueados por omisión; ej.: muestra eventos desde un control específico o ciertos eventos aunque estén en segundo plano. (#3831)
 - En lugar de un sólo atributo i18nName, synthDriverHandler.SynthSetting ahora tiene los atributos  displayNameWithAccelerator y displayName separados para evitar el anuncio del acelerador en el grupo de opciones del sintetizador en algunos idiomas.
- - Por compatibilidad con versiones anteriores, en el constructor, displayName es opcional y se deribará de displayNameWithAccelerator si no se proporciona. Sin embargo, si intentas tener un acelerador para una opción, deberían proporcionarse ambos.
- - El atributo i18nName está obsoleto y se podrá eliminar en una versión futura.
+  - Por compatibilidad con versiones anteriores, en el constructor, displayName es opcional y se deribará de displayNameWithAccelerator si no se proporciona. Sin embargo, si intentas tener un acelerador para una opción, deberían proporcionarse ambos.
+  - El atributo i18nName está obsoleto y se podrá eliminar en una versión futura.
 
 
 = 2015.2 =
@@ -1675,5 +1680,6 @@ Lo más resaltable de esta versión incluye el soporte para ediciones de 64 bit 
 - NVDA ahora pregunta si debería guardar la configuración y reiniciar si el usuario ha cambiado el idioma en el diálogo Opciones de Interface de Usuario. NVDA debe ser reiniciado para que el cambio de idioma tenga un efecto completo.
 - Si un sintetizador no puede ser cargado, cuando se lo selecciona desde el diálogo Sintetizadores, Un cuadro de mensaje alerta al usuario del hecho.
 - Cuando se carga un sintetizador por primera vez, NVDA permite al sintetizador elegir la voz más conveniente, los parámetros de velocidad y tono, en lugar de forzarlo a dejarlo como piense que está bien. Esto corrige un problema donde los sintetizadores sapi4 Eloquence y Viavoice comienzan a hablar de un modo bastante rápido para una primera vez.
+
 
 
