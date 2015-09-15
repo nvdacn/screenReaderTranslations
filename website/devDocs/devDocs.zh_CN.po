@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2014-01-12 22:25+0000\n"
+"POT-Creation-Date: 2015-09-15 23:01+1000\n"
 "PO-Revision-Date: 2015-02-16 18:52+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,594 +11,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.6.4\n"
 
+#. type: Plain text
+#, no-wrap
+msgid "[[!meta title=\"NVDA Add-on Development Guide\"]]\n"
+msgstr "[[!meta title=\"NVDA 插件开发文档\"]]\n"
+
+#. type: Plain text
 msgid ""
-"\t\t__gestures={\n"
-"\t\t\t\"kb:NVDA+A\":\"doBeep\"\n"
-"\t\t}\n"
+"Welcome to NVDA add-on Development Guide. This is the one-stop guide on how "
+"NvDA add-ons are developed, as well as explaining some useful code segments "
+"from NvDA core source code useful when writing add-ons."
 msgstr ""
-"\t\t__gestures={\n"
-"\t\t\t\"kb:NVDA+A\":\"doBeep\"\n"
-"\t\t}\n"
+"欢迎来到 NVDA 插件开发文档，此文档将一步一步的叙述如何进行插件开发，也将选出"
+"某些开发插件时常用的 NVDA 核心代码进行分析讲解。"
 
-msgid ""
-"\t\tdef event_gainFocus(self, obj, nextHandler):\n"
-"\t\t\ttones.beep(256, 200)\n"
-"\t\t\tnextHandler()\n"
-msgstr ""
-"\t\tdef event_gainFocus(self, obj, nextHandler):\n"
-"\t\t\ttones.beep(256, 200)\n"
-"\t\t\tnextHandler()\n"
-
-msgid ""
-"\t\tdef getSliderValue(self):\n"
-"\t\t\tfg = api.getForegroundObject()\n"
-"\t\t\tsliderVal = fg.children[self.sliderChildIndex].value\n"
-"\t\t\treturn sliderVal\n"
-msgstr ""
-"\t\tdef getSliderValue(self):\n"
-"\t\t\tfg = api.getForegroundObject()\n"
-"\t\t\tsliderVal = fg.children[self.sliderChildIndex].value\n"
-"\t\t\treturn sliderVal\n"
-
-msgid ""
-"\t\tdef script_doBeep(self, gesture):\n"
-"\t\t\ttones.beep(440, 1000) # Beep a standard middle A for 1 second.\n"
-msgstr ""
-"\t\tdef script_doBeep(self, gesture):\n"
-"\t\t\ttones.beep(440, 1000) # Beep a standard middle A for 1 second.\n"
-
-msgid "\t\tsliderChildIndex = -1 # The variable to store the child index.\n"
-msgstr "\t\tsliderChildIndex = -1 # The variable to store the child index.\n"
-
-msgid "\t# Add-on development first example\n"
-msgstr "\t# Add-on development first example\n"
-
-msgid "\t# An example app module.\n"
-msgstr "\t# An example app module.\n"
-
-msgid ""
-"\t# An example fragment for script assignment.\n"
-"\timport ui\n"
-msgstr ""
-"\t# An example fragment for script assignment.\n"
-"\timport ui\n"
-
-msgid "\t# Future sections #\n"
-msgstr "\t# Future sections #\n"
-
-msgid "\t# In the app module:\n"
-msgstr "\t# In the app module:\n"
-
-msgid "\t# Object example 1\n"
-msgstr "\t# Object example 1\n"
-
-msgid ""
-"\t# Reassign some Delphi forms as window.\n"
-"\t\tdef event_NvDAObject_init(self, obj):\n"
-"\t\t\tif obj.windowClassName == \"TForm\": obj.role = ROLE_WINDOW\n"
-msgstr ""
-"\t# Reassign some Delphi forms as window.\n"
-"\t\tdef event_NvDAObject_init(self, obj):\n"
-"\t\t\tif obj.windowClassName == \"TForm\": obj.role = ROLE_WINDOW\n"
-
-msgid "\t#An example of overlay classes\n"
-msgstr "\t#An example of overlay classes\n"
-
-msgid ""
-"\t__gestures={\n"
-"\t\t\"kb:control+NVDA+1\":\"sayHello\",\n"
-"\t\t\"kb:Control+NVDA+2\":\"sayGoodBye\"\n"
-"\t}\n"
-msgstr ""
-"\t__gestures={\n"
-"\t\t\"kb:control+NVDA+1\":\"sayHello\",\n"
-"\t\t\"kb:Control+NVDA+2\":\"sayGoodBye\"\n"
-"\t}\n"
-
-msgid "\tclass AppModule(appModuleHandler.AppModule):\n"
-msgstr "\tclass AppModule(appModuleHandler.AppModule):\n"
-
-msgid "\tclass GlobalPlugin(globalPluginHandler.GlobalPlugin):\n"
-msgstr "\tclass GlobalPlugin(globalPluginHandler.GlobalPlugin):\n"
-
-msgid ""
-"\tclass MainWindow(IAccessible):\n"
-"\t\t# Another code, this time adding custom gestures for main window of the "
-"program.\n"
-msgstr ""
-"\tclass MainWindow(IAccessible):\n"
-"\t\t# Another code, this time adding custom gestures for main window of the "
-"program.\n"
-
-msgid ""
-"\tclass enhancedEdit(IAccessible):\n"
-"\t\t# Some code to be run when window class name is MyEdit.\n"
-msgstr ""
-"\tclass enhancedEdit(IAccessible):\n"
-"\t\t# Some code to be run when window class name is MyEdit.\n"
-
-msgid ""
-"\tdef chooseNVDAObjectOverlayClasses(self, obj, clsList):\n"
-"\t\tif obj.windowClassName == \"myEdit\": clsList.insert(0, enhancedEdit)\n"
-"\t\telif obj.windowClassName == \"TWindow\": clsList.insert(0, mainWindow)\n"
-msgstr ""
-"\tdef chooseNVDAObjectOverlayClasses(self, obj, clsList):\n"
-"\t\tif obj.windowClassName == \"myEdit\": clsList.insert(0, enhancedEdit)\n"
-"\t\telif obj.windowClassName == \"TWindow\": clsList.insert(0, mainWindow)\n"
-
-msgid ""
-"\tdef getSliderValue(self):\n"
-"\t\tfrom controltypes import ROLE_SLIDER # It is possible to import from "
-"within a method.\n"
-"\t\tfg = api.getForegroundObject()\n"
-"\t\tslider = fg.lastChild\n"
-"\t\tif slider.role == ROLE_SLIDER: return slider.firstChild.value\n"
-msgstr ""
-"\tdef getSliderValue(self):\n"
-"\t\tfrom controltypes import ROLE_SLIDER # It is possible to import from "
-"within a method.\n"
-"\t\tfg = api.getForegroundObject()\n"
-"\t\tslider = fg.lastChild\n"
-"\t\tif slider.role == ROLE_SLIDER: return slider.firstChild.value\n"
-
-msgid ""
-"\tdef script_sayGoodBye(self, gesture):\n"
-"\t\tui.message(\"Good Bye!\")\n"
-msgstr ""
-"\tdef script_sayGoodBye(self, gesture):\n"
-"\t\tui.message(\"Good Bye!\")\n"
-
-msgid ""
-"\tdef script_sayHello(self, gesture):\n"
-"\t\tui.message\"Hello!\")\n"
-msgstr ""
-"\tdef script_sayHello(self, gesture):\n"
-"\t\tui.message\"Hello!\")\n"
-
-msgid ""
-"\timport api\n"
-"\timport appModuleHandler\n"
-msgstr ""
-"\timport api\n"
-"\timport appModuleHandler\n"
-
-msgid ""
-"\timport appModuleHandler\n"
-"\timport tones\n"
-msgstr ""
-"\timport appModuleHandler\n"
-"\timport tones\n"
-
-msgid ""
-"\timport globalPluginHandler\n"
-"\timport tones # We want to hear beeps.\n"
-msgstr ""
-"\timport globalPluginHandler\n"
-"\timport tones # We want to hear beeps.\n"
-
-msgid ""
-" * manifest.ini to store manifesst information such as add-on name and "
-"author.\n"
-"* An \"addon\" subfolder with the add-on module directory underneath this "
-"subfolder (appModules, globalPlugins, synthDrivers, brailleDisplays). One or "
-"more module folders can be specified.\n"
-msgstr ""
-" * manifest.ini 用来存放插件的 manifest 信息，如插件名称、作者等。\n"
-" *  一个放在“addon”子文件夹且带有 "
-"“AppModules”“globalPlugins”“synthDrivers”“BrailleDisplay”子文件夹的模块插件子"
-"文件夹（译者注：addon/模块目录/brailleDisplay等，最后一级的目录请看原文），也"
-"可定制更多的模块文件夹。\n"
-
-msgid ""
-" First, you start by writing an optional header for your add-on, such as "
-"your name, a brief sentence or two on what the add-on is for and so on. "
-"Although this is optional, it is recommend that you write the header as a "
-"reminder to keep track of what you are doing with your add-on.\n"
-msgstr ""
-"首先，您可以从编写一段可选的插件抬头开始，如您的名字 、一个简单的用来描述插件"
-"用途的句子或两个关键字等等。虽然它是可选的，但我们仍然建议您这么做，因为这样"
-"可以让我们知道您的插件的用途。\n"
-
-msgid ""
-" For instance, if you wish to add support for a program, after importing "
-"appModuleHandler and other needed modules, you would write:\n"
-msgstr ""
-"举例来说，如果您想添加一个程序的支持，您可以导入 appModuleHandler 和其他所需"
-"模块，之后您就可以开始编写了。\n"
-
-msgid ""
-" Next, you tell NVDA the modules you need for your add-on file. This is done "
-"by writing `import module` where module is the name of the module you wish "
-"to use in your code. For example, if you want to hear tones while writing "
-"your add-on, write `import tones`. Typically you may need to import two or "
-"more modules for your specific add-on (see below on list of modules you need "
-"for the type of add-on module you are writing).\n"
-msgstr ""
-"接下来， 您需要告诉 NVDA 您的插件所需的模块。您可以写成 “import 模块名称”的形"
-"式，如您想在您的插件运行过程中可以使用提示音，您可以通过“import tones”导入该"
-"模块。您可能还需要导入多个模块，，请参照上面的格式，用逗号分隔每个文件。通过"
-"查看下方的模块列表，您将知道您编写的插件需要什么类型的模块。\n"
-
-msgid ""
-" Your add-on code is stored in one or more Python files (.py file). Despite "
-"different kinds of add-ons out there, they all have similar layout.\n"
-msgstr ""
-"您的插件代码将存放在一个或多个 python 文件（.py为后缀的文件）中，尽管一些不同"
-"种类的插件不是这样的，但他们都有非常相似的布局。\n"
-
-msgid " `class appModule(appModuleHandler.AppModule):`\n"
-msgstr " `class appModule(appModuleHandler.AppModule):`\n"
-
-msgid ""
-" after declaring the modules you need or import, you write your add-on code "
-"(defining classes, variables, methods and so on). The most important section "
-"is the add-on class code, which will determine the type of add-on module "
-"your code will be assigned to.\n"
-msgstr ""
-"在声明了您需要货导入的插件模块之后，您可以开始编写您的插件了（如编写类、变"
-"量、方法等等）。最重要的是“插件类”的代码，他将决定您的插件锁归属的插件类"
-"型。\n"
-
-msgid "A chapter devoted to app modules."
-msgstr "A chapter devoted to app modules."
-
-msgid "A chapter devoted to driver development."
-msgstr "A chapter devoted to driver development."
-
-msgid "A chapter devoted to global plugins."
-msgstr "A chapter devoted to global plugins."
-
-msgid "A few tips for beginners"
-msgstr "一些给初学者的提示"
-
-msgid ""
-"A few worked out examples and examples from existing app modules from NVDA "
-"core and from community."
-msgstr ""
-"A few worked out examples and examples from existing app modules from NVDA "
-"core and from community."
-
-msgid "A few worked out examples."
-msgstr "A few worked out examples."
-
-msgid ""
-"A focus object is the currently focused control. These are linked to "
-"keyboard focus - that is, it follows the highlighted control. In contrast, a "
-"navigator object is the object you're interested in. Since navigator objects "
-"can move anywhere, you can examine two objects at once: the focused object "
-"and the navigator object. For instance, you might be focused on an edit "
-"field while examining the title bar as the navigator object."
-msgstr ""
-"焦点对象就是当前获得焦点的对象。控件连接着键盘焦点--就是说，焦点跟随着高亮的"
-"控件。与此不同，导航对象就是您感兴趣的对象。因为导航对象可以移动到任何地方。"
-"您可以同时查看聚焦对象和浏览对象这两个对象。 例如，您可以在焦点处于一个编辑框"
-"的同时使用导航对象查看标题栏。"
-
-msgid ""
-"A script is a method run when the user performs certain commands. For "
-"example, when you press NvDA+T, NVDA runs a script in global commands module "
-"called SayTitle. In Poedit, for instance, when a translator presses Control"
-"+Shift+A, NvDA will read translator comments added by the programmer to help "
-"clarify a given translatable string. this command is not a native NvDA "
-"command, but it is defined in the Poedit app module to perform this function."
-msgstr ""
-"脚本是一个当用户执行某个动作而执行的方法。例如，如果您按下“NVDA+T”，NVDA 会执"
-"行存放在全局命令模块的脚本“SayTitle”。在 Poedit 中，译者按下“Control+Shift"
-"+A”时， NVDA 会朗读油程序员添加的注视以帮助理清可翻译字串的用意。这不是原本"
-"的 NVDA 命令，它备添加在 Poedit 的程序模块当中以执行此功能。"
-
-msgid ""
-"A version of NVDA is available on your computer (either a portable or "
-"installed version will work, but we strongly recommend that you install a "
-"copy of NVDA on your development computer)."
-msgstr ""
-"在您的电脑上存有一个可用的 NVDA 安装版本或绿色版本（但是我们强烈建议您安装一"
-"个安装版本的 NVDA 到您的开发电脑上）。"
-
-msgid ""
-"ARIA support (aria.py): Implements support for Accessible Rich Internet "
-"Applications (ARIA)."
-msgstr "ARIA 支持 (aria.py): 掌控访问富互联网应用（ARIA）的支持。"
-
-msgid "Add-on components and development tips"
-msgstr "Add-on components and development tips"
-
-msgid "Add-on folder structure"
-msgstr "插件目录的结构"
-
-msgid "Add-on module components and development tips"
-msgstr "插件模块的组成和开发提示"
-
-msgid "Additional Python modules or dependencies for your add-on."
-msgstr "其他您的插件所需的 python 模块货依赖。"
-
-msgid ""
-"Addon Handler (addonHandler.py): The module which implements the add-on "
-"subsystem. The addonHandler.initTranslation() method is used to initialize "
-"internationalization support for your add-on."
-msgstr ""
-"插件控制器 (addonHandler.py): 这个模块使得插件子系统可以正常工作。方"
-"法“addonHandler.initTranslation()”可以为您的插件进行国际化支持的初始化。"
-
-msgid ""
-"After that, all you are writing is Python code (see the Python documentation "
-"on how to write Python programs)."
-msgstr ""
-"在那以后，您编写的全部都是 python 代码（请查看 python 文档的“如何编写 python "
-"程序”部分。）。"
-
-msgid ""
-"An add-on is an additional package that extends NvDA's functionality or "
-"support for programs. This may include adding global features, enhancing "
-"support for an application or adding support for newer braille displays or "
-"speech synthesizers."
-msgstr ""
-"“插件”是一种扩展 NVDA 功能或程序支持的增强包。这可能包括增加全局特性、增强软"
-"件支持、对新的点显器或语音合成器的支持。"
-
-msgid "An add-on may include one or more of the following components:"
-msgstr "一个插件可能包括下面的一个或多个部分："
-
-msgid ""
-"An add-on module consists of a number of components. This includes handling "
-"input and output, working with different NvDA objects, reacting to events, "
-"storing configuration and more."
-msgstr ""
-"一个插件由很多成分组成。包括控制输入输出、在不同的 NVDA 对象下工作、响应事"
-"件、存储配置或更多。"
-
-msgid "An example of the first case: modifying an atribute."
-msgstr "第一个例子：修改属性。"
-
-msgid ""
-"An object is an instance of a class - that is, a class coming to life while "
-"a program is running. For example, if a class called button has been "
-"defined, the button on a screen is the object of this button class."
-msgstr ""
-"一个对象就是一个“类”的“实例”，每当程序运行的时候，类就有了生命。如定义了一"
-"个“按钮”类，屏幕上的按钮就是这个“按钮”类的对象。"
-
-msgid ""
-"Another crucial component of add-ons is handling commands from users and "
-"displaying what the add-on is doing. These are done via scripts (input) and "
-"UI messages (output)."
-msgstr ""
-"插件的另外一个组成部分就是获取用户命令和显示插件正在做什么。这些可以通过脚本"
-"（输入）和 UI 消息（输出）完成。"
-
-msgid ""
-"Another way to bind scripts is via runtime insertion. This is done by "
-"creating another gestures dictionary apart from __gestures dictionary which "
-"holds context-sensitive gestures such as manipulating a single control. Then "
-"the developer would use inputCore.bindGesture (or inputCore.bindGestures if "
-"more than one gestures/scripts are defined) to define certain gestures for a "
-"time, then using inputCore.clearGestures then inputCore."
-"bindGestures(__gestures) to remove the added gestures. A more elegant way, "
-"which involves scripts for specific objects, will be covered when we talk "
-"about overlay classes."
-msgstr ""
-"另外一种捆绑脚本的方法就是基于运行时的插入。可以通过创建与 __gestures 分离的"
-"其他手势词典完成，它可以用来存储对上下文敏感的手势。如操作一个单独的控件。接"
-"下来开发者会使用 inputCore.bindGesture （如果定义了多个脚本货手势则使用 "
-"inputCore.bindGestures ）来进行定义。最后在 inputCore.bindGestures 后使用 "
-"inputCore.clearGestures 来移除已添加的手势。更加优雅的方法涉及到特定对象的脚"
-"本，江在我们讲述覆盖类时讲到。"
-
-msgid ""
-"App Module subsystem (appModuleHandler.py, appModules): The subsystem in "
-"charge of handling app modules (see chapter on app modules for more "
-"information)."
-msgstr ""
-"程序模块子系统(appModuleHandler.py和程序模块们):子系统负责控制程序模块（更多"
-"详情，请查看章节“程序模块”获取）。"
-
-msgid "App Modules"
-msgstr "App Modules"
-
-msgid "App module scripts."
-msgstr "App module scripts."
-
-msgid ""
-"App module: An app module allows enhanced support for a program, such as "
-"specific windows or controls of a program such as audio editors."
-msgstr ""
-"App module： 程序模块可以对程序做增强支持，如某些程序的特定窗口或控件，如音频"
-"编辑器。"
-
-msgid ""
-"As of time of writing, NvDA supports input from the keyboard, braille "
-"dislays with or without braille keyboard and touchscreens."
-msgstr "NvDA 支持从键盘、点显器货点显器键盘和触摸屏输入。"
-
-msgid ""
-"At the top of the file, we wrote a header which tells us that this is an "
-"example add-on."
-msgstr "在文件顶部，我们写了一个标题，它告诉我们这是一个例子插件。"
-
-msgid "Audience"
-msgstr "读者"
-
-msgid "Authors, contributions and copyright"
-msgstr "作者， 贡献和版权"
-
-msgid ""
-"Base object collection (baseObject.py): Contains useful base objects such as "
-"scriptable objects (see the chapter on NvDA objects and overlay objects for "
-"more information)."
-msgstr ""
-"基本对象集合(baseObject.py): 包含实用的对象，如可编程对象（请查看 NVDA 对象和"
-"覆盖对象章节获取更多信息）。"
-
-msgid ""
-"Below examples illustrate the uses of the two overlay and attribute "
-"modification methods we've discussed above:"
-msgstr "下面的例子说明了我们在上面讨论的覆盖和更改属性这两个方法的用法："
-
-msgid ""
-"Braille input and output subsystem (braille.py, brailleInput.py): Controls "
-"braille output to and input from braille displays, needed by braille display "
-"driver add-ons."
-msgstr ""
-"点字输入输出子系统(braille.py, brailleInput.py):控制点显器盲文的输入输出，需"
-"要点显器驱动插件的支持。"
-
-msgid "Braille, speech and tone output."
-msgstr "Braille, speech and tone output."
-
-msgid ""
-"Build-in modules (builtin.py): Allows access to builtin modules when working "
-"with add-ons."
-msgstr "内建模块(builtin.py):允许在插件工作时访问内建模块。"
-
-msgid ""
-"Call: We say a function calls some another method when we run the second "
-"method from another method. For example, in our first example, we're calling "
-"tones.beep method from our script method."
-msgstr ""
-"调用：我们说一个方法（方法2）使用其他的方法（方法1）就被称为“调用”。如，在我"
-"们的第一个例子里，我们就在 script 方法里调用了 tones.beep 方法。"
-
-msgid ""
-"Class: a class describes an object. It could describe anything, such as a "
-"person, a desk, an NVDA add-on and others. Classes are fundamental to NVDA "
-"and other programs - in fact, a number of programmers are skilled at coming "
-"up with classes."
-msgstr ""
-"类：一个类可以描述任何事物，例如一个人、一张桌子、一个插件或其他。类对于 "
-"NVDA 和其他程序来说都是非常重要的—大量的程序员正在提高使用类方面的技巧。"
-
-msgid ""
-"Configuration (config): Manages configuration and profiles (profiles are "
-"available in 2013.3 or later)."
-msgstr "配置（config）： 管理配置和配置文件（配置文件在 2013.3 后可用）。"
-
-msgid ""
-"Controls and states collection (controltypes.py): Includes dictionaries on "
-"control types (roles) and possible states that a control can be in."
-msgstr ""
-"控件和状态集合(controltypes.py): 包含控件类型的字典（角色）和可能被插件套用的"
-"状态。"
-
-msgid ""
-"Copyright: NVDA is copyright 2006-2013 NV Access. Microsoft Windows, "
-"Microsoft Office, Win32 API and other MS products are copyright Microsoft "
-"Corporation. IAccessible package is copyright IBM and Linux Foundation. "
-"Python is copyright Python Foundation. Other products mentioned are "
-"copyrighted by authors of these products."
-msgstr ""
-"版权:  2006-2013 NVDA 归 NV Access 所有。 Microsoft Windows, Microsoft "
-"Office, Win32 API 和其他微软产品归微软公司所有。 IAccessible 包归 IBM 和 "
-"Linux 基金会所有。 Python 归 python 基金会所有， 其他提及的产品归该产品的作者"
-"所有。"
-
-msgid "Debugging add-ons."
-msgstr "Debugging add-ons."
-
-msgid "Defining objects representing different parts of a program."
-msgstr "Defining objects representing different parts of a program."
-
-msgid ""
-"Driver: A driver allows a program to talk to hardware. Currently one can "
-"write drivers for new braille displays or speech synthesizers."
-msgstr ""
-"Driver: 驱动可让程序直接与硬件沟通，目前可谓点显器或语音合成器开发驱动。"
-
-msgid "Drivers"
-msgstr "Drivers"
-
-msgid ""
-"Each NVDA add-on package (composed of one or more components) is a zip file "
-"with the file extension of .nvda-addon. These can be installed via Add-ons "
-"Manager, found in NvDA 2012.2 or later. Alternatively, one can install them "
-"from file manager if one uses NVDA 2012.3 or later installed on the computer."
-msgstr ""
-"每个 NVDA 插件都是由上述的一个或多个部分组成，它被打包成 zip 文件且扩展名被改"
-"为 nvda-addon 。NVDA2012.2版本之后可使用插件管理器进行安装，或者如果您在您的"
-"电脑上安装了 NVDA2012.3或其后的版本，也可以直接使用文件管理器进行安装。"
-
-msgid ""
-"Each add-on folder, at a minimum, must contain the following files and "
-"folders:"
-msgstr "每一个插件目录，最少包含下面的文件和目录："
-
-msgid ""
-"Event: An event is a method that'll be run when some events happen, such as "
-"when a program is on focused, when names of controls change and so on."
-msgstr ""
-"事件：事件是一种仅当某个事件发生候才会运行的方法。如一个程序拥有焦点或控件名"
-"称发生变动等。"
-
-msgid "Events (eventHandler.py): Handles various events such as gaining focus."
-msgstr "事件(eventHandler.py): 控制各种各样的事件，如正在获取焦点。"
-
-msgid "Events and list of available events."
-msgstr "Events and list of available events."
-
-msgid "Examining object attributes with Python Console."
-msgstr "Examining object attributes with Python Console."
-
-msgid "Examining object hierarchy"
-msgstr "检查对象层级"
-
-msgid "Example 1 code explanation"
-msgstr "例 1代码解析"
-
-msgid "Example 1: Finding the value of a slider in a program"
-msgstr "例1：查找程序滑块的值"
-
-msgid "Example 1: Hear a tone when pressing NVDA+A"
-msgstr "例1：按下“NVDA+a”的时候播放提示音"
-
-msgid "Example 2 code explanation"
-msgstr "例2代码解析"
-
-msgid ""
-"Example 2 deals with an app module which has two objects for dealing with "
-"specific parts of a program, then uses chooseNVDAObjectOverlayClasses to "
-"assign the logic for each control."
-msgstr ""
-"例子2：使用带有两个对象的程序模块处理程序的特定部分，然后使用 "
-"chooseNVDAObjectOverlayClasses 来自定义每个控件的逻辑。"
-
-msgid "Example 2: A basic script dictionary"
-msgstr "例子2：基础脚本字典"
-
-msgid "Example 2: Generate a tone when switching to Notepad"
-msgstr "例2： 切换到记事本后发出提示音"
-
-msgid "Example 3: runtime script insertion/removal"
-msgstr ""
-"例子3：脚本基于运行时的插入和移除（译者注：内容暂时就到这儿为止了，期待日后官"
-"方的更新吧。另外有几个地方网址没能正常显示也是原文档的bug。翻译有何不妥，欢迎"
-"随时与我联系，请访问 NVDA 中文站获取更多 NVDA 的中文资讯和插件。电邮："
-"vgjh2005@gmail.com，非常感谢您的阅读）。"
-
-msgid "Examples of overlay classes and modified roles"
-msgstr "覆盖类和修改角色的例子"
-
-msgid "Fetching and setting objects."
-msgstr "Fetching and setting objects."
-
-msgid "Few working and non-working examples for each topic."
-msgstr "Few working and non-working examples for each topic."
-
-msgid ""
-"First, open your user configuration folder, then open globalPlugins folder. "
-"Create a new .py file and give it a descriptive name such as example1.py (it "
-"is strongly recommended that when you name your global plugin file, give it "
-"a short descriptive name). Then open the newly created .py file in the word "
-"processor."
-msgstr ""
-"首先，打开您的用户配置目录，并进入 globalPlugins 目录，创建一个文件并赋予一个"
-"描述性名称（如 example1.py）（强烈建议您在给全局插件命名时，为您的文件添加一"
-"个短的、带有描述性质的文件名），然后用文字处理器打开这个新创建的 .py 文件。"
-
-msgid "Focus vs. navigator object"
-msgstr "焦点 vs. 导航对象"
-
-msgid "Follow these steps to prepare your computer for writing NVDA add-ons."
-msgstr "跟随下面的步骤为编写插件对您的电脑进行准备。"
-
+#. type: Plain text
 msgid ""
 "For more information on NVDA development, please visit [NvDA Community "
 "Development page][1]. Be sure to go over [NVDA Developer Guide][2] to "
@@ -608,145 +35,22 @@ msgstr ""
 "更多有关于 NVDA 开发的信息，请访问 [NvDA Community Development 页][1]。请确认"
 "您对 [NVDA Developer Guide][2]有所熟悉，以了解关键术语及插件开发的基本知识。"
 
-msgid ""
-"For more information on add-on management, see the management chapter in "
-"this guide."
-msgstr "更多有关于插件管理的详情，请查看本指南的“管理”章节。"
+#. type: Title ##
+#, no-wrap
+msgid "Audience"
+msgstr "读者"
 
+#. type: Plain text
 msgid ""
-"For real-life examples on objects in NvDA, consult the NvDA source code or "
-"source codes of various community add-ons."
-msgstr "关于 NVDA 对象的更多现实例子，可以查阅 NVDA 源代码货其他社区插件。"
-
-msgid ""
-"For some, the terms \"class\", \"method\" and so on might be new. Let's go "
-"over what these terms are, as they are fundamental for add-on development:"
+"This guide is designed for both beginners who are new to Python and/or NVDA "
+"development in general, as well as experts and power users and programmers "
+"who are familiar with Python or other programming languages and/or familiar "
+"with NvDA source code structure."
 msgstr ""
-"对于某些人，类和方法等术语可能是全新的事物。让我们来看看他们的意义，因为在插"
-"件的开发过程中非常重要："
+"此指南除了面向的是初步了解 Python 或对 NVDA 的一般开发熟悉的新手，也包括专"
+"家、超级用户、熟悉其他语言甚至是了解 NVDA 源码结构的程序员。"
 
-msgid ""
-"From Python Console, to see the number of child objects that an object "
-"contains (for instance, the children, or widgets of a foreground window), "
-"type `obj.childCount`. The value 0 means that there are no more child "
-"objects."
-msgstr ""
-"在 Python 控制台查看某对象包含的子对象（如紫成员货前景窗口的小部件等）的数"
-"目，输入`obj.childCount`。值为0说明已经没有更多的紫对象了。"
-
-msgid "From addonHandler:"
-msgstr "来自 addonHandler:"
-
-msgid "From api.py:"
-msgstr "来自 api.py:"
-
-msgid "From logHandler:"
-msgstr "来自 logHandler:"
-
-msgid "From tones:"
-msgstr "来自 tones:"
-
-msgid "From ui:"
-msgstr "来自 ui:"
-
-msgid "GNU Gettext package for Windows for message localization support."
-msgstr "GNU Gettext package for Windows，用来支持消息本地化。"
-
-msgid "Getting started: Hands-on examples"
-msgstr "入门：动手事例"
-
-msgid ""
-"Git 1.7.9 or later if you wish to upload the add-on to a repository such as "
-"Bitbucket (optional, see below). You can use various Git clients, such as "
-"Git Bash, Cygwin's Git, Tortoise Git and so forth."
-msgstr ""
-"Git 1.7.9 或更高，如果您想上传您的插件代码到仓库，如 Bitbucket （可选，请看下"
-"文）。您可以使用各种各样的 Git 客户端，如 Git Bash、 Cygwin's Git、 Tortoise "
-"Git 等等。"
-
-msgid ""
-"Global Commands collection (globalCommands.py): A list of global commands "
-"available while using NVDA (see section on script scope for more "
-"information)."
-msgstr ""
-"全局命令集合 (globalCommands.py): 使用 NVDA 时可用的全局命令的列表（请查看脚"
-"本作用域章节获取更多信息）。"
-
-msgid ""
-"Global Plugin subsystem (globalPluginHandler.py): The module needed for "
-"controlling global plugins."
-msgstr "全局插件子系统(globalPluginHandler.py)：控制全局插件必备的模块。"
-
-msgid "Global Plugins"
-msgstr "Global Plugins"
-
-msgid ""
-"Global plugin: A global plugin adds features for NVDA which can be used "
-"anywhere, such as OCR capability."
-msgstr "Global plugin：全局插件为 NVDA 增加全局可用的新特性， 如 OCR 识别。"
-
-msgid ""
-"Hardware port utilities (hwPortUtils.py): A set of utilities for "
-"communicating over serial and other hardware ports, useful during driver add-"
-"on development."
-msgstr ""
-"硬件端口工具(hwPortUtils.py): 一套用来与串行端口或其他硬件端口进行通讯的工"
-"具。它对驱动插件的开发非常有用。"
-
-msgid "Here are a few useful tips passed on by add-on writers:"
-msgstr "这里有一些给插件开发者的实用提示："
-
-msgid ""
-"Here are some other methods which works with NVDA objects, all located in "
-"api.py module:"
-msgstr ""
-"这里有一些 NVDA 对象工作时可用的其他实用方法，他们都备放置在模块“api.py”："
-
-msgid ""
-"Here is a list of some useful methods used in add-ons. For more information "
-"on how they're implemented, see the NvDA source code documentation. For "
-"worked out examples, see the section of this guide on add-on components."
-msgstr ""
-"这里列举了插件常用的方法。有关于如何调用的更多信息，请查看 NVDA 源码文档。编"
-"写的例子，请查看“插件组成”章节。"
-
-msgid "Here is the code to implement this feature:"
-msgstr "这里是提供此特性的代码："
-
-msgid "How add-on code is organized"
-msgstr "如何组织插件代码"
-
-msgid "How app developers can help NVDA users through accessible app designs."
-msgstr "How app developers can help NVDA users through accessible app designs."
-
-msgid ""
-"However, this code has an issue: what if the slider value is actually within "
-"the first child of the actual slider control? One way to fix this is to "
-"check the object's role. The modified code looks like this:"
-msgstr ""
-"可能，这份代码有一个问题：万一如果滑块的值实际上包含在滑块的第一个子成员控件"
-"怎么办？解决这个问题的其中一个办法就是检测对象角色。修改的代码看起来像这样："
-
-msgid "I don't understand those above terms"
-msgstr "我无法理解上面的术语"
-
-msgid ""
-"IAccessible support (IAccessibleHandler.py, IAccessible objects): Used for "
-"supporting IAccessible controls."
-msgstr ""
-"IAccessible 支持 （IAccessibleHandler.py和可访问对象）： 用于支持 IAccesible "
-"控件。"
-
-msgid "If something goes wrong (common errors and exceptions)."
-msgstr "If something goes wrong (common errors and exceptions)."
-
-msgid ""
-"If you are developing support for a program, speech synthesizer or a braille "
-"display, install the needed software and/or have the hardware handy."
-msgstr ""
-"如果您正在为某个程序、点显器或语音合成器进行支持，请安装所需软件和或硬件设"
-"备。"
-
+#. type: Plain text
 msgid ""
 "If you are new to NVDA add-on or core development, we recommend that you get "
 "to know Python first, as it gives necessary programming background for "
@@ -759,6 +63,241 @@ msgstr ""
 "发，请查看 NVDA development Guide 和 Design Overview document两篇文档，这两个"
 "文档都可以在 NVDA community 网站找到。"
 
+#. type: Title ###
+#, no-wrap
+msgid "Authors, contributions and copyright"
+msgstr "作者， 贡献和版权"
+
+#. type: Plain text
+msgid ""
+"This guide was originally written by Joseph Lee and is shaped by NVDA user "
+"and developer community. We welcome your feedback and contributionn."
+msgstr ""
+"此文档起初由 Joseph Lee 编写，他因 NVDA 用户及开发社区而成长，我们欢迎您的反"
+"馈及贡献。"
+
+#. type: Plain text
+msgid ""
+"Copyright: NVDA is copyright 2006-2013 NV Access. Microsoft Windows, "
+"Microsoft Office, Win32 API and other MS products are copyright Microsoft "
+"Corporation. IAccessible package is copyright IBM and Linux Foundation. "
+"Python is copyright Python Foundation. Other products mentioned are "
+"copyrighted by authors of these products."
+msgstr ""
+"版权:  2006-2013 NVDA 归 NV Access 所有。 Microsoft Windows, Microsoft "
+"Office, Win32 API 和其他微软产品归微软公司所有。 IAccessible 包归 IBM 和 "
+"Linux 基金会所有。 Python 归 python 基金会所有， 其他提及的产品归该产品的作者"
+"所有。"
+
+#. type: Title ##
+#, no-wrap
+msgid "System requirements"
+msgstr "系统要求"
+
+#. type: Plain text
+msgid ""
+"To create an add-on for NVDA, please make sure the following system "
+"requirements are met:"
+msgstr "要想 为 NVDA 创建插件，请确保下述系统要求已经做好："
+
+#. type: Bullet: '* '
+msgid ""
+"A version of NVDA is available on your computer (either a portable or "
+"installed version will work, but we strongly recommend that you install a "
+"copy of NVDA on your development computer)."
+msgstr ""
+"在您的电脑上存有一个可用的 NVDA 安装版本或绿色版本（但是我们强烈建议您安装一"
+"个安装版本的 NVDA 到您的开发电脑上）。"
+
+#. type: Bullet: '* '
+msgid "Python 2.7 series, version 2.7.5 32-bit for Windows."
+msgstr "Python 2.7 系列， 版本 2.7.5 32-bit for Windows."
+
+#. type: Bullet: '* '
+msgid "SCons 2, version 2.3.0 for generating add-on packages."
+msgstr "SCons 2，版本2.3.0，用来生成插件包。"
+
+#. type: Bullet: '* '
+msgid "Markdown 2.0.1 or later for generating add-on documentation."
+msgstr "Markdown 2.0.1 或更高，用来生成插件文档。"
+
+#. type: Bullet: '* '
+msgid "GNU Gettext package for Windows for message localization support."
+msgstr "GNU Gettext package for Windows，用来支持消息本地化。"
+
+#. type: Bullet: '* '
+msgid ""
+"Git 1.7.9 or later if you wish to upload the add-on to a repository such as "
+"Bitbucket (optional, see below). You can use various Git clients, such as "
+"Git Bash, Cygwin's Git, Tortoise Git and so forth."
+msgstr ""
+"Git 1.7.9 或更高，如果您想上传您的插件代码到仓库，如 Bitbucket （可选，请看下"
+"文）。您可以使用各种各样的 Git 客户端，如 Git Bash、 Cygwin's Git、 Tortoise "
+"Git 等等。"
+
+#. type: Bullet: '* '
+msgid ""
+"The NVDA Community Add-on template for ease of add-on file and folder "
+"packaging and management (optional; [click here][3] to download the add-on "
+"template)."
+msgstr ""
+"NVDA 社区插件的简易魔板（用来打包和管理文件和目录）（可选），[点这里][3]下载"
+"插件魔板。"
+
+#. type: Bullet: '* '
+msgid "Additional Python modules or dependencies for your add-on."
+msgstr "其他您的插件所需的 python 模块货依赖。"
+
+#. type: Title ##
+#, no-wrap
+msgid "What are add-ons?"
+msgstr "什么是“插件”？"
+
+#. type: Plain text
+msgid ""
+"An add-on is an additional package that extends NvDA's functionality or "
+"support for programs. This may include adding global features, enhancing "
+"support for an application or adding support for newer braille displays or "
+"speech synthesizers."
+msgstr ""
+"“插件”是一种扩展 NVDA 功能或程序支持的增强包。这可能包括增加全局特性、增强软"
+"件支持、对新的点显器或语音合成器的支持。"
+
+#. type: Plain text
+msgid "An add-on may include one or more of the following components:"
+msgstr "一个插件可能包括下面的一个或多个部分："
+
+#. type: Bullet: '* '
+msgid ""
+"Global plugin: A global plugin adds features for NVDA which can be used "
+"anywhere, such as OCR capability."
+msgstr "Global plugin：全局插件为 NVDA 增加全局可用的新特性， 如 OCR 识别。"
+
+#. type: Bullet: '* '
+msgid ""
+"App module: An app module allows enhanced support for a program, such as "
+"specific windows or controls of a program such as audio editors."
+msgstr ""
+"App module： 程序模块可以对程序做增强支持，如某些程序的特定窗口或控件，如音频"
+"编辑器。"
+
+#. type: Bullet: '* '
+msgid ""
+"Driver: A driver allows a program to talk to hardware. Currently one can "
+"write drivers for new braille displays or speech synthesizers."
+msgstr ""
+"Driver: 驱动可让程序直接与硬件沟通，目前可谓点显器或语音合成器开发驱动。"
+
+#. type: Plain text
+msgid ""
+"Each NVDA add-on package (composed of one or more components) is a zip file "
+"with the file extension of .nvda-addon. These can be installed via Add-ons "
+"Manager, found in NvDA 2012.2 or later. Alternatively, one can install them "
+"from file manager if one uses NVDA 2012.3 or later installed on the computer."
+msgstr ""
+"每个 NVDA 插件都是由上述的一个或多个部分组成，它被打包成 zip 文件且扩展名被改"
+"为 nvda-addon 。NVDA2012.2版本之后可使用插件管理器进行安装，或者如果您在您的"
+"电脑上安装了 NVDA2012.3或其后的版本，也可以直接使用文件管理器进行安装。"
+
+#. type: Plain text
+msgid ""
+"Throughout this guide, we refer to standard NVDA python modules which comes "
+"with NVDA as \"NvDA Core\" to distinguish it from add-on modules."
+msgstr ""
+"在文档全文，我们参考了来自“NVDA 核心”的标准 NVDA Python 模块，从而对插件模块"
+"进行剖析。"
+
+#. type: Title ##
+#, no-wrap
+msgid "Setting up the add-on development environment"
+msgstr "安装插件开发环境"
+
+#. type: Plain text
+msgid "Follow these steps to prepare your computer for writing NVDA add-ons."
+msgstr "跟随下面的步骤为编写插件对您的电脑进行准备。"
+
+#. type: Title ###
+#, no-wrap
+msgid "Installing dependencies"
+msgstr "安装依赖"
+
+#. type: Bullet: '1. '
+msgid ""
+"If you don't have NVDA, download and install NVDA from NV access website."
+msgstr "如果您没有 NVDA， 您可以从 NV access 网站或 NVDA 中文站下载 NVDA。"
+
+#. type: Bullet: '2. '
+msgid ""
+"Install Python 2.7.x 32-bit on your computer (if using Windows, install "
+"using the 32-bit Windows installer package)."
+msgstr ""
+"在您的电脑上安装 Python 2.7.x 32-bit  （如果使用 Windows， 请使用 32-bit "
+"Windows 安装包)。"
+
+#. type: Bullet: '3. '
+msgid "Install Markdown and SCons using their Windows installer packages."
+msgstr "使用他们的 Windows 安装包 安装 Markdown 和 SCons"
+
+#. type: Bullet: '4. '
+msgid "If you plan to share your add-on code with others, install Git clients."
+msgstr "如果您计划和其他人分享您的插件代码，请安装 Git  客户端。"
+
+#. type: Bullet: '5. '
+msgid ""
+"Paste the Gettext executable files to your add-on development folder (see "
+"the next section on add-on development folder)."
+msgstr ""
+"粘贴您的 GetText 可执行文件到您的开发目录（请查看下一张“插件开发目录”）。"
+
+#. type: Bullet: '6. '
+msgid ""
+"If you are developing support for a program, speech synthesizer or a braille "
+"display, install the needed software and/or have the hardware handy."
+msgstr ""
+"如果您正在为某个程序、点显器或语音合成器进行支持，请安装所需软件和或硬件设"
+"备。"
+
+#. type: Title ###
+#, no-wrap
+msgid "The add-on development folder"
+msgstr "插件开发目录"
+
+#. type: Plain text
+msgid ""
+"When writing add-ons, it is recommended that you store your add-on code in "
+"separate folders, one per add-on. If you chose to download the add-on "
+"template, the folder structure will be automatically created."
+msgstr ""
+"编写插件的时候，建议把每一个插件的代码存放在不同的目录，一个目录一个插件。如"
+"果您选择下载插件魔板，那么目录结构将会被自动创建。"
+
+#. type: Plain text
+msgid ""
+"Once you install the needed dependencies (see above), paste the Gettext "
+"package executables into this add-on folder."
+msgstr "当您安装了所需的依赖（请看上文），粘贴 GetText 可执行文件到插件目录。"
+
+#. type: Title ###
+#, no-wrap
+msgid "Add-on folder structure"
+msgstr "插件目录的结构"
+
+#. type: Plain text
+msgid ""
+"Each add-on folder, at a minimum, must contain the following files and "
+"folders:"
+msgstr "每一个插件目录，最少包含下面的文件和目录："
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+" * manifest.ini to store manifesst information such as add-on name and author.\n"
+"* An \"addon\" subfolder with the add-on module directory underneath this subfolder (appModules, globalPlugins, synthDrivers, brailleDisplays). One or more module folders can be specified.\n"
+msgstr ""
+" * manifest.ini 用来存放插件的 manifest 信息，如插件名称、作者等。\n"
+" *  一个放在“addon”子文件夹且带有 “AppModules”“globalPlugins”“synthDrivers”“BrailleDisplay”子文件夹的模块插件子文件夹（译者注：addon/模块目录/brailleDisplay等，最后一级的目录请看原文），也可定制更多的模块文件夹。\n"
+
+#. type: Plain text
 msgid ""
 "If you are using the add-on template, the folder structure will "
 "automatically be created, so you need to create only the addon subfolder and "
@@ -770,154 +309,257 @@ msgstr ""
 "件夹和包含插件本身的模块代码。请阅读放 template 的 readme 文件来获取使用魔板"
 "文件如何自定义插件的 manifest。"
 
+#. type: Title ###
+#, no-wrap
+msgid "Packaging add-ons"
+msgstr "打包插件"
+
+#. type: Plain text
+msgid "There are two ways of packaging add-ons:"
+msgstr "有两种打包插件的方法："
+
+#. type: Bullet: '1. '
 msgid ""
-"If you are writing app modules or drivers, become familiar with programs, "
-"synthesizers or braille displays you wish to support (e.g. read "
-"documentation, try using them, etc.)."
+"To package your add-on manually, zip up (compress) your add-on folder as a ."
+"zip file, then rename the file extension to .nvda-addon."
 msgstr ""
-"如果您正在编写程序模块或驱动，而且对于编程更加熟悉了，可以尝试使用语音合成器"
-"或点显器进行输出（如阅读文档等）。"
+"手动打包您的插件，把您的插件目录压缩为zip文件并改变其扩展名为 .nvda-addon。"
 
+#. type: Bullet: '2. '
 msgid ""
-"If you don't have NVDA, download and install NVDA from NV access website."
-msgstr "如果您没有 NVDA， 您可以从 NV access 网站或 NVDA 中文站下载 NVDA。"
-
-msgid "If you plan to share your add-on code with others, install Git clients."
-msgstr "如果您计划和其他人分享您的插件代码，请安装 Git  客户端。"
-
-msgid ""
-"If you wish to obtain the foreground object (useful if you wish to look at "
-"some child object of the foreground window), use `obj = api."
-"getForegroundObject()`."
+"To use the add-on template with SCons, open Command Prompt with "
+"administrator mode (Windows Vista or later), change to your add-on folder "
+"and type `scons~."
 msgstr ""
-"如果您想获取前景对象（如您想查看前景窗口的子对象，这是非常有用的），使用 "
-"`obj = api.getForegroundObject()`。"
+"要想在 SCons 使用插件魔板，请使用管理员模式（Windows Vista 或以上）的命令提示"
+"符定位到您的插件目录然后输入“SCons”。"
 
+#. type: Plain text
 msgid ""
-"If you wish to see a more detailed description about the navigator object, "
-"while the navigator object is located at the object you're interested in, "
-"press NvDA+F1 to launch log viewer. The root of all objects in Windows is "
-"the desktop, or shell object."
-msgstr ""
-"如果您想查看浏览对象的更详细描述，且导航对象已经定位到您锁感兴趣的对象，请"
-"按“NVDA+F1）运行日志查看器查看。所有对象的根就是桌面货外壳对象（译者注：所"
-"谓“根”通常指的是第一层）。"
+"For more information on add-on management, see the management chapter in "
+"this guide."
+msgstr "更多有关于插件管理的详情，请查看本指南的“管理”章节。"
 
+#. type: Title ##
+#, no-wrap
+msgid "Getting started: Hands-on examples"
+msgstr "入门：动手事例"
+
+#. type: Plain text
 msgid ""
-"Importance of consulting NvDA and add-on commands to minimize command "
-"conflicts."
+"So are you ready to start your adventure with add-ons, but not sure as to "
+"how to bring it to life? If that is you, please go through this chapter, as "
+"it gives you basic information to get you started with add-ons and give you "
+"tips on writing code."
 msgstr ""
-"Importance of consulting NvDA and add-on commands to minimize command "
-"conflicts."
+"如此，您准备好开始编写插件冒险了，但不知道该如何让它“活起来”？请通读本章节，"
+"它将告诉您如何开始的一些基本信息，还将为编写代码给出一些提示。"
 
+#. type: Plain text
 msgid ""
-"In NVDA, an object is representation of a control or parts of a program. "
-"This includes buttons, check boxes, edit fields, toolbars, sliders and even "
-"the application window. These are organized into hierarchies, or parent-"
-"child relationship where an object may contain child objects - for example, "
-"a list object in Windows Explorer may contain one or more list items, and "
-"the parent of this list might be the Windows Explorer window. The object "
-"that you're examining right now is termed \"navigator object.\""
+"Note: for this chapter, we will not use the actual add-on packages. Instead, "
+"we'll use plugin folders - a number of subdirectories in your NVDA user "
+"configuration folder (available from Start Menu/Screen if NVDA is installed) "
+"to store our example Python files."
 msgstr ""
-"在 NVDA，一个“对象”表示了一个控件货程序的一部分。这包括按钮、复选框、编辑框、"
-"工具栏、滑块甚至是程序窗口。按照控件的父子关系--有些对象可能包含其他紫对"
-"象--，他们备分层组织。如 Windows 资源管理器的列表对象可能包含一个货多个列表项"
-"目对象。而这个列表的父对象可能就是 Windows 资源管理器窗口。您现在锁了解的对象"
-"就是“导航对象”。"
+"请注意，本章节将不会使用真实的插件包，取而代之的是使用NVDA用户配置目录下包含"
+"着若干子目录的“plugin”目录（如果NVDA已经安装在电脑上，使用开始菜单或开始屏幕"
+"可访问该目录）来存放我们的例子 python 文件。"
 
+#. type: Plain text
+msgid ""
+"To edit .py files, you need a word processor which can handle .py files. The "
+"best one we recommend is Notepad++."
+msgstr ""
+"要想编辑一个 .py 文件，您必须拥有一个可以处理 .py 文件的文字处理程序，我们推"
+"荐的最好编辑器是 notepad++。"
+
+#. type: Title ###
+#, no-wrap
+msgid "How add-on code is organized"
+msgstr "如何组织插件代码"
+
+#. type: Plain text
+#, no-wrap
+msgid " Your add-on code is stored in one or more Python files (.py file). Despite different kinds of add-ons out there, they all have similar layout.\n"
+msgstr "您的插件代码将存放在一个或多个 python 文件（.py为后缀的文件）中，尽管一些不同种类的插件不是这样的，但他们都有非常相似的布局。\n"
+
+#. type: Plain text
+#, no-wrap
+msgid " First, you start by writing an optional header for your add-on, such as your name, a brief sentence or two on what the add-on is for and so on. Although this is optional, it is recommend that you write the header as a reminder to keep track of what you are doing with your add-on.\n"
+msgstr "首先，您可以从编写一段可选的插件抬头开始，如您的名字 、一个简单的用来描述插件用途的句子或两个关键字等等。虽然它是可选的，但我们仍然建议您这么做，因为这样可以让我们知道您的插件的用途。\n"
+
+#. type: Plain text
+#, no-wrap
+msgid " Next, you tell NVDA the modules you need for your add-on file. This is done by writing `import module` where module is the name of the module you wish to use in your code. For example, if you want to hear tones while writing your add-on, write `import tones`. Typically you may need to import two or more modules for your specific add-on (see below on list of modules you need for the type of add-on module you are writing).\n"
+msgstr "接下来， 您需要告诉 NVDA 您的插件所需的模块。您可以写成 “import 模块名称”的形式，如您想在您的插件运行过程中可以使用提示音，您可以通过“import tones”导入该模块。您可能还需要导入多个模块，，请参照上面的格式，用逗号分隔每个文件。通过查看下方的模块列表，您将知道您编写的插件需要什么类型的模块。\n"
+
+#. type: Plain text
+#, no-wrap
+msgid " after declaring the modules you need or import, you write your add-on code (defining classes, variables, methods and so on). The most important section is the add-on class code, which will determine the type of add-on module your code will be assigned to.\n"
+msgstr "在声明了您需要货导入的插件模块之后，您可以开始编写您的插件了（如编写类、变量、方法等等）。最重要的是“插件类”的代码，他将决定您的插件锁归属的插件类型。\n"
+
+#. type: Plain text
+#, no-wrap
+msgid " For instance, if you wish to add support for a program, after importing appModuleHandler and other needed modules, you would write:\n"
+msgstr "举例来说，如果您想添加一个程序的支持，您可以导入 appModuleHandler 和其他所需模块，之后您就可以开始编写了。\n"
+
+#. type: Plain text
+#, no-wrap
+msgid " `class appModule(appModuleHandler.AppModule):`\n"
+msgstr " `class appModule(appModuleHandler.AppModule):`\n"
+
+#. type: Plain text
+msgid ""
+"After that, all you are writing is Python code (see the Python documentation "
+"on how to write Python programs)."
+msgstr ""
+"在那以后，您编写的全部都是 python 代码（请查看 python 文档的“如何编写 python "
+"程序”部分。）。"
+
+#. type: Title ###
+#, no-wrap
+msgid "Running your add-on in this example chapter"
+msgstr "在此事例张杰运行您的插件"
+
+#. type: Plain text
+msgid ""
+"To run your example add-ons from this chapter, open your NVDA user "
+"configuration directory (from Start Menu/Screen, look for Explore NVDA user "
+"configuration folder\" item). Then paste your .py file to the appropriate "
+"folder: appModules folder for app module examples, and globalPlugins folder "
+"for global plugins."
+msgstr ""
+"要想运行来自此张杰的您的插件，您可以打开您的 NVDA 用户配置目录（在开始菜单/屏"
+"幕查找 “浏览 NVDA 配置目录”项目），把您的 .py 文件放到恰当的目录：appModules "
+"目录存放程序模块插件事例，globalPlugins 目录存放全局插件事例。"
+
+#. type: Title ###
+#, no-wrap
+msgid "Example 1: Hear a tone when pressing NVDA+A"
+msgstr "例1：按下“NVDA+a”的时候播放提示音"
+
+#. type: Plain text
+msgid ""
+"Let us start with a simple example: if you press NvDA+A, you would hear a "
+"tone for 1 second from any program. Since we want to use this everywhere, it "
+"must be a global plugin."
+msgstr ""
+"让我们从查看一个简单例子开始。如果您在任何程序按下“NVDA+A”，您可以听到一个长"
+"度为一秒的提示音。我们希望在任何地方都可以使用该插件，所以我们把代码放在 "
+"GlobalPlugins 目录下。"
+
+#. type: Plain text
+msgid ""
+"First, open your user configuration folder, then open globalPlugins folder. "
+"Create a new .py file and give it a descriptive name such as example1.py (it "
+"is strongly recommended that when you name your global plugin file, give it "
+"a short descriptive name). Then open the newly created .py file in the word "
+"processor."
+msgstr ""
+"首先，打开您的用户配置目录，并进入 globalPlugins 目录，创建一个文件并赋予一个"
+"描述性名称（如 example1.py）（强烈建议您在给全局插件命名时，为您的文件添加一"
+"个短的、带有描述性质的文件名），然后用文字处理器打开这个新创建的 .py 文件。"
+
+#. type: Plain text
+msgid ""
+"The below code implements our example. Put this in your .py file as exactly "
+"as shown:"
+msgstr "下面的代码将实现我们的例子，请原封不动的把它放到 .py 的文件中去。"
+
+#. type: Plain text
+#, no-wrap
+msgid "\t# Add-on development first example\n"
+msgstr "\t# Add-on development first example\n"
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"\timport globalPluginHandler\n"
+"\timport tones # We want to hear beeps.\n"
+msgstr ""
+"\timport globalPluginHandler\n"
+"\timport tones # We want to hear beeps.\n"
+
+#. type: Plain text
+#, no-wrap
+msgid "\tclass GlobalPlugin(globalPluginHandler.GlobalPlugin):\n"
+msgstr "\tclass GlobalPlugin(globalPluginHandler.GlobalPlugin):\n"
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"\t\tdef script_doBeep(self, gesture):\n"
+"\t\t\ttones.beep(440, 1000) # Beep a standard middle A for 1 second.\n"
+msgstr ""
+"\t\tdef script_doBeep(self, gesture):\n"
+"\t\t\ttones.beep(440, 1000) # Beep a standard middle A for 1 second.\n"
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"\t\t__gestures={\n"
+"\t\t\t\"kb:NVDA+A\":\"doBeep\"\n"
+"\t\t}\n"
+msgstr ""
+"\t\t__gestures={\n"
+"\t\t\t\"kb:NVDA+A\":\"doBeep\"\n"
+"\t\t}\n"
+
+#. type: Plain text
 msgid ""
 "In Python, you put comments by putting hash sign (#) at the start of the "
 "comment line."
 msgstr "在 python 中，请把“#（警号）”放在评论行的开始处。"
 
+#. type: Title ###
+#, no-wrap
+msgid "Example 1 code explanation"
+msgstr "例 1代码解析"
+
+#. type: Plain text
 msgid ""
-"In both cases, the object that we wish to check must be inserted as the "
-"first element of the clsList. The effect is that these custom objects will "
-"take precedence when looking up gestures or code (behavior) for the object, "
-"and in the developer info, these custom objects will come first when MRO "
-"(Method Resolution Order) for the navigator object is displayed."
+"Our first example let's us sound a beep for one second when we press NVDA+A. "
+"But you might be wondering what that above code means, so let's step through "
+"the code, one piece at a time."
 msgstr ""
-"对于这两个函数，我们希望检查的对象必须插入到“clsList”的第一项。 这样做的好处"
-"是在为对象查找手势和代码（行为）时这些自定义对象可以获得优先权。且在开发信息"
-"中，显示导航对象的MRO（方法解决顺序）时江首先显示这些自定义控件。"
+"我们的第一个例子是按下“NVDA+A”时发出长度为1秒的提示音，您可能想知道代码的用"
+"途。接下来，让我们一段一段的进行讲解。"
 
+#. type: Bullet: '1. '
 msgid ""
-"In many situations, an NvDA object may belong to a class of related objects. "
-"For each object classes, NvDA provides ways of handling them. These classes "
-"include IAccessible, JAB, UIA and so forth. These classes and behaviors for "
-"each class of objects is defined in NVDAObjects directory in the NvDA source "
-"code, and to use them in your add-on, import the appropriate object class "
-"handler for the object you're using (e.g. if you're working with an "
-"IAccessible object, impore NVDAObjects.IAccessible.)."
-msgstr ""
-"在许多场景下，NVDA 的对象可能从属于相关对象的类。对于每个对象类， NVDA 都提供"
-"了控制方法。这些类包括 IAccessible、 JAB、 UIA 等等。这些类及对象类的行为都备"
-"定义在 NVDA 源码的 NVDAObjects  目录中。要想在您的插件中使用，只要导入您锁使"
-"用的对象的对象类控制器即可。(如您正工作在一个 IAccessible  对象，那么可以导"
-"入 NVDAObjects.IAccessible）。"
+"At the top of the file, we wrote a header which tells us that this is an "
+"example add-on."
+msgstr "在文件顶部，我们写了一个标题，它告诉我们这是一个例子插件。"
 
+#. type: Bullet: '2. '
 msgid ""
-"In this code, the method `fg.children[index]` is used to retrieve the child "
-"with the given index (here, since we said the toolbar is the last child, the "
-"index would be minus 1, or the very last child; we could have used fg."
-"lastChild)."
+"Since this is a global plugin, we need to import a crucial module: global "
+"plugin handler, so we wrote `import globalPluginHandler`."
 msgstr ""
-"在此代码中，方法`fg.children[index]`用来取回给出索引的子成员（这里，我们设定"
-"工具栏是最后一个子成员，因而索引号是 -1，货对于非常后面的成员，我们可以使用"
-"fg.lastChild）。"
+"因为这是一个全局插件，我们需要导入最重要的模块“globalPluginHandler”，所以我们"
+"写成“import globalPluginHandler”。"
 
+#. type: Bullet: '3. '
 msgid ""
-"In this example, we'll define two scripts called \"sayHello\" and say"
-"\"GoodBye\", then bind them into two separte gestures."
+"Then we wrote `import tones` to import (load, or include) the tones module, "
+"a built-in module from NVDA. Whenever you wish to use a method from a given "
+"module, import the needed module(s)."
 msgstr ""
-"在这个例子中，我们设计了“sayHello”和“sayGoodBye”两个脚本并绑定到单独的手势中"
-"去。"
+"然后我们写下“import tones”导入（表示加载货包含）这个 NVDA 的内建模块 tones，"
+"每当您决定使用某个模块，必须先将其导入。"
 
+#. type: Bullet: '4. '
 msgid ""
-"In your add-on, to fetch the object with focus, write `someObj = api."
-"getFocusObject()`. The someObj can be named differently - the convention is "
-"to use the name \"obj\". To fetch the navigator object (which might be "
-"different from the focused object), use `obj = api.getNavigatorObject()`."
+"Next, we defined a class called GlobalPlugin. The text inside the brackets "
+"tells us where this class is coming from (more on this concept in a second). "
+"A class, in programming, describes an object, such as a person, a desk, a "
+"program and others."
 msgstr ""
-"在您的插件里，要想获取有焦点的对象，编写 `someObj = api.getFocusObject()`。 "
-"someObj 可以使用不同的名字——习惯上使用名称 “Obj”。要想获取导航对象（它可能雨"
-"焦点对象不同），可使用`obj = api.getNavigatorObject()`。"
+"接下来，我们定义了一个类 globalPlugin，括号中定义了这个类继承自哪里。编程中用"
+"到的类用来描述一个对象，如一个人、一张桌子、一个程序或其他。"
 
-msgid ""
-"In your add-on, you might wish to work with various objects and manipulate "
-"them. These may include changing the focused object, synchronizing navigator "
-"and focus objects, changing the role of an object and so on."
-msgstr ""
-"在您的插件里，您可能会工作在并控制着各种各样的对象。这可能包括改变聚焦对象、"
-"同步导航对象和焦点对象、修改一个对象的角色等等。"
-
-msgid ""
-"Includes Bitbucket repo, add-ons lisst, other topics and contact information."
-msgstr ""
-"Includes Bitbucket repo, add-ons lisst, other topics and contact information."
-
-msgid ""
-"Includes introductions to input and scripts, output systems, objects, "
-"events, configuration, add-on settings and reloading plug-ins. Also includes "
-"some tips on add-on development such as debugging. It concludes with some "
-"useful examples and do's and don'ts."
-msgstr ""
-"Includes introductions to input and scripts, output systems, objects, "
-"events, configuration, add-on settings and reloading plug-ins. Also includes "
-"some tips on add-on development such as debugging. It concludes with some "
-"useful examples and do's and don'ts."
-
-msgid "Input and output: scripts and UI messages"
-msgstr "输入和输出：脚本和 UI 消息"
-
-msgid ""
-"Input from keyboard, braille displays, mouse and touchscreen via scripts."
-msgstr ""
-"Input from keyboard, braille displays, mouse and touchscreen via scripts."
-
-msgid "Input management (inputCore.py): Manages input from the user."
-msgstr "输入管理(inputCore.py):管理用户输入。"
-
+#. type: Bullet: '5. '
 msgid ""
 "Inside the class, we wrote a method (function) called `script_doBeep`. This "
 "is an example of a script, a method that'll be run or executed when you "
@@ -935,53 +577,7 @@ msgstr ""
 "们）。您会经常编写包括我们所说的“doBeep ”在内的、包含更多变量的许多方法，更多"
 "的脚本江在指南的旅行过程中提供。"
 
-msgid ""
-"Inside the event method, we're also seeing a call to `nextHandler`. This "
-"method is used in event methods to tell NvDA to pass the event so it can be "
-"taken care of, such as saying the name of a control after beeping."
-msgstr ""
-"在 event 方法里，我们还看到了被称为“nextHandler”的方法。放在 event 的这个方法"
-"用来告诉 NVDA 监视这个事件的发生，如在发出提示音之后读出控件的名称。"
-
-msgid "Install Markdown and SCons using their Windows installer packages."
-msgstr "使用他们的 Windows 安装包 安装 Markdown 和 SCons"
-
-msgid ""
-"Install Python 2.7.x 32-bit on your computer (if using Windows, install "
-"using the 32-bit Windows installer package)."
-msgstr ""
-"在您的电脑上安装 Python 2.7.x 32-bit  （如果使用 Windows， 请使用 32-bit "
-"Windows 安装包)。"
-
-msgid "Installing dependencies"
-msgstr "安装依赖"
-
-msgid "Introduction to NVDA objects."
-msgstr "Introduction to NVDA objects."
-
-msgid ""
-"Java Access Bridge support (JABHandler.py): A collection of methods used for "
-"supporting JAB subsystem used for Java applications."
-msgstr ""
-"Java Access Bridge 支持 （JABHandler.py）：一套为 Java 程序支持 JAB 子系统的"
-"函数集合。"
-
-msgid ""
-"Just like example 1, once you're comfortable with app module code, you may "
-"wish to delete the Notepad app module code unless you want to keep hearing "
-"beeps when you switch to Notepad. The actual differences between global "
-"plugins and app modules will become more clear when we talk about them in "
-"more detail throughout this guide."
-msgstr ""
-"和例1相同，您可能希望在代码已经符合需求的情况下把他移除，除非您希望在切换到记"
-"事本的时候听到一个提示音。随着我们在本指南中对他们的进一步探讨，更多有关于全"
-"局插件和模块插件的实际差异将会变得更加清晰。"
-
-msgid ""
-"Keyboard input (keyboardHandler.py): Supports entering commands from the "
-"keyboard."
-msgstr "键盘输入 (keyboardHandler.py): 对键盘命令输入进行支持。"
-
+#. type: Bullet: '6. '
 msgid ""
 "Lastly, we wrote a simple dictionary (a collection) to store our command "
 "(script) bindings for our doBeep script. Here, we told NVDA to assign NVDA+A "
@@ -990,219 +586,7 @@ msgstr ""
 "最后，我们写了一个简单字典（一个集合）来存储与 doBeep 方法绑定的命令。这里，"
 "我们告诉 NVDA 使用“NVDA+A”来执行 doBeep  脚本。"
 
-msgid ""
-"Let us start with a simple example: if you press NvDA+A, you would hear a "
-"tone for 1 second from any program. Since we want to use this everywhere, it "
-"must be a global plugin."
-msgstr ""
-"让我们从查看一个简单例子开始。如果您在任何程序按下“NVDA+A”，您可以听到一个长"
-"度为一秒的提示音。我们希望在任何地方都可以使用该插件，所以我们把代码放在 "
-"GlobalPlugins 目录下。"
-
-msgid "List of useful NVDA core modules and methods"
-msgstr "实用的 NVDA 核心模块和方法列表"
-
-msgid ""
-"Logging facility (logHandler.py): Allows a module to write logs to be viewed "
-"by a developer or a user via Log Viewer."
-msgstr ""
-"日志工具(logHandler.py): 一个用来输出日志的模块，允许开发者直接查看，用户也可"
-"以使用“日志查看器”进行查看。"
-
-msgid "Markdown 2.0.1 or later for generating add-on documentation."
-msgstr "Markdown 2.0.1 或更高，用来生成插件文档。"
-
-msgid ""
-"Method: A method is a short program or a routine that a program runs for "
-"doing something, such as generating tones, calculating huge numbers, loading "
-"NVDA add-ons and so on. Some people call them \"functions.\""
-msgstr ""
-"方法：方法是一段短小的程序或在软件执行过程中一个用来执行例行任务的程序。如发"
-"出提示音，计算人数，加载插件等等。有的人也把他们称为“函数”。"
-
-msgid "Misc items"
-msgstr "Misc items"
-
-msgid ""
-"Module: A module is a collection of methods and variables in a file. When we "
-"write add-ons, we are in fact writing additional modules that NVDA can use "
-"while it is running."
-msgstr ""
-"模块：模块把方法和变量集合在一个文件里。我们现在在编写的插件，其实就是一个 "
-"NVDA 运行时可用的附加模块。"
-
-msgid "More new terms please"
-msgstr "更多新的术语"
-
-msgid "Most of the below code comes from NvDA Developer Guide."
-msgstr "下面的大多数代码都来自 NvDA Developer Guide。"
-
-msgid "Mouse support (mouseHandler.py): Supports mouse commands."
-msgstr "鼠标支持(mouseHandler.py): 支持鼠标命令。"
-
-msgid "Moving the navigator to the foreground object."
-msgstr "移动导航器到前景对象。"
-
-msgid ""
-"NVDA GUI (gui): A collection of classes used by NVDA to display its messages "
-"graphically. Includes GUI's for NVDA menu, add-on manager and others."
-msgstr ""
-"NVDA 图形用户界面(gui): 一个 NVDA 用来以图形方式展示消息的类的集合。 包括 "
-"NVDA 使用的菜单、插件管理器和其他界面。"
-
-msgid ""
-"NVDA basic API (api.py): A collection of core methods used throughout NVDA, "
-"such as obtaining focus and navigator object, setting focus and so on. See "
-"the next list on useful methods from this module."
-msgstr ""
-"NVDA 基础 API (api.py): 整个 NVDA 都在使用的核心方法的集合，如获取焦点和可浏"
-"览对象，设置焦点等等。请查看下一个列表中属于该模块的实用方法。"
-
-msgid ""
-"NVDA provides two methods for creating specialist, or overlay objects (or "
-"classes), each suited for different needs:"
-msgstr ""
-"NVDA 提供两个方法来创建专门对象或覆盖对象（也可能是类），每一个都是为了不同的"
-"需求而配备的："
-
-msgid "Next handlers."
-msgstr "Next handlers."
-
-msgid ""
-"Next, we defined a class called GlobalPlugin. The text inside the brackets "
-"tells us where this class is coming from (more on this concept in a second). "
-"A class, in programming, describes an object, such as a person, a desk, a "
-"program and others."
-msgstr ""
-"接下来，我们定义了一个类 globalPlugin，括号中定义了这个类继承自哪里。编程中用"
-"到的类用来描述一个对象，如一个人、一张桌子、一个程序或其他。"
-
-msgid ""
-"Not only NVDA let's you add global commands, but it also allows writing code "
-"to enhance usage of programs through app modules. An app module is also a "
-"Python file except that, this time, the name of the .py file is the name of "
-"the executable for a program. For example, an app module for Notepad would "
-"be named notepad.py."
-msgstr ""
-"NVDA 不仅允许您编写全局插件，他还允许您通过编写程序模块来提高对某个软件的支"
-"持。模块名称除了表示着可执行的 python 文件之外，还代表着某个可执行程序。如，"
-"为“notepad”开发的模块就被命名为“notepad.py”。"
-
-msgid ""
-"Note that in case of the second method, the class(s) with the given name "
-"must be present in the file, which is/are inherited from a known base object "
-"(in Python, the syntax for the inheritence is `childClass(baseClass)`, and "
-"is usually read as, \"this child class inherits from this base class\". "
-"We'll see code like this later)."
-msgstr ""
-"请注意，对于第二个方法，给定的类名必须放置在文件内。他们备继承字一个众所周知"
-"的基本对象(在 Python， 继承的语法是 `子类(基类)`， 通常也可以说成“这个子类继"
-"承自这个基类”。我们将在后面看到这样的代码）。"
-
-msgid ""
-"Note that the NVDA core development guide introduces the below concepts. "
-"This chapter is intended as an extension of that document. Consult the NVDA "
-"development guide for a brief introductions."
-msgstr ""
-"请注意： NVDA 核心开发指南中介绍了下面的概念。这一章节只是那个文档的扩充。查"
-"阅 NVDA development guide 可获得概述。"
-
-msgid ""
-"Note: for this chapter, we will not use the actual add-on packages. Instead, "
-"we'll use plugin folders - a number of subdirectories in your NVDA user "
-"configuration folder (available from Start Menu/Screen if NVDA is installed) "
-"to store our example Python files."
-msgstr ""
-"请注意，本章节将不会使用真实的插件包，取而代之的是使用NVDA用户配置目录下包含"
-"着若干子目录的“plugin”目录（如果NVDA已经安装在电脑上，使用开始菜单或开始屏幕"
-"可访问该目录）来存放我们的例子 python 文件。"
-
-msgid ""
-"Now when you press Control+NvDA+1, NvDA will say, \"Hello\", and when you "
-"press Control+NvDA+2, NVDA will say, \"Good bye.\""
-msgstr ""
-"现在，当您按下“Control+NvDA+1”，NVDA 会说“Hello”，当您按下“Control+NvDA+2”，"
-"NVDA 会说“Good bye”。"
-
-msgid ""
-"NvDA objects collection (NVDAObjects): A collection of NvDA objects or "
-"controls used in many applications and standards such as UIA (User Interface "
-"Automation)."
-msgstr ""
-"NvDA 对象集合 (NVDAObjects): 一个 NVDA 对象的集合，包含许多程序常用的控件和标"
-"准（如UIA（自动用户界面））。"
-
-msgid ""
-"Object hierarchy and differences between regular and simple review modes."
-msgstr ""
-"Object hierarchy and differences between regular and simple review modes."
-
-msgid ""
-"Object: An object is an instance of a class - that is, a class coming to "
-"life when a program runs. Throughout your add-ons, as you write classes and "
-"when you run your add-ons, your classes come to life as objects, commonly "
-"abbreviated to obj. In NVDA, an object may refer to controls or parts of a "
-"program."
-msgstr ""
-" 对象（object）:对象就是类的实例，极当程序运行时“类”拥有了生命。当您编写类病"
-"运行您的插件的时候，您的类就被具象化为“对象”（通常简写为“obj”）。对于 NVDA 来"
-"说，对象可能用来访问控件或程序的一部分。"
-
-msgid ""
-"Obtaining the name of an object that is located somewhere else in the "
-"program."
-msgstr "获取不再这个程序而在其他地方的对象的名称。"
-
-msgid ""
-"Once you install the needed dependencies (see above), paste the Gettext "
-"package executables into this add-on folder."
-msgstr "当您安装了所需的依赖（请看上文），粘贴 GetText 可执行文件到插件目录。"
-
-msgid "Other terms you may see include:"
-msgstr "您可能看到的其他术语包括："
-
-msgid "Other useful object-related goodies"
-msgstr "其他有用的对象——相关的优点"
-
-msgid ""
-"Our first example let's us sound a beep for one second when we press NVDA+A. "
-"But you might be wondering what that above code means, so let's step through "
-"the code, one piece at a time."
-msgstr ""
-"我们的第一个例子是按下“NVDA+A”时发出长度为1秒的提示音，您可能想知道代码的用"
-"途。接下来，让我们一段一段的进行讲解。"
-
-msgid "Packaging add-ons"
-msgstr "打包插件"
-
-msgid ""
-"Paste the Gettext executable files to your add-on development folder (see "
-"the next section on add-on development folder)."
-msgstr ""
-"粘贴您的 GetText 可执行文件到您的开发目录（请查看下一张“插件开发目录”）。"
-
-msgid ""
-"Planned sections (please feel free to contribute your knowledge in this "
-"section):"
-msgstr ""
-"Planned sections (please feel free to contribute your knowledge in this "
-"section):"
-
-msgid "Planned sections:"
-msgstr "Planned sections:"
-
-msgid "Please delete this notice when appropriate sections are done."
-msgstr "Please delete this notice when appropriate sections are done."
-
-msgid "Python 2.7 series, version 2.7.5 32-bit for Windows."
-msgstr "Python 2.7 系列， 版本 2.7.5 32-bit for Windows."
-
-msgid "Running your add-on in this example chapter"
-msgstr "在此事例张杰运行您的插件"
-
-msgid "SCons 2, version 2.3.0 for generating add-on packages."
-msgstr "SCons 2，版本2.3.0，用来生成插件包。"
-
+#. type: Plain text
 msgid ""
 "Save this file, then restart NVDA. Now whenever you press NvDA+A, you'll "
 "hear a middle A tone for 1 second. Once you are comfortable with the add-on "
@@ -1212,9 +596,39 @@ msgstr ""
 "的提示音。如果您认为您的插件代码和布局已经很合适，您可以把最近创建的 .py 文件"
 "删除。"
 
-msgid "Script lookup process and conflicts."
-msgstr "Script lookup process and conflicts."
+#. type: Title ###
+#, no-wrap
+msgid "I don't understand those above terms"
+msgstr "我无法理解上面的术语"
 
+#. type: Plain text
+msgid ""
+"For some, the terms \"class\", \"method\" and so on might be new. Let's go "
+"over what these terms are, as they are fundamental for add-on development:"
+msgstr ""
+"对于某些人，类和方法等术语可能是全新的事物。让我们来看看他们的意义，因为在插"
+"件的开发过程中非常重要："
+
+#. type: Bullet: '* '
+msgid ""
+"Class: a class describes an object. It could describe anything, such as a "
+"person, a desk, an NVDA add-on and others. Classes are fundamental to NVDA "
+"and other programs - in fact, a number of programmers are skilled at coming "
+"up with classes."
+msgstr ""
+"类：一个类可以描述任何事物，例如一个人、一张桌子、一个插件或其他。类对于 "
+"NVDA 和其他程序来说都是非常重要的—大量的程序员正在提高使用类方面的技巧。"
+
+#. type: Bullet: '* '
+msgid ""
+"Method: A method is a short program or a routine that a program runs for "
+"doing something, such as generating tones, calculating huge numbers, loading "
+"NVDA add-ons and so on. Some people call them \"functions.\""
+msgstr ""
+"方法：方法是一段短小的程序或在软件执行过程中一个用来执行例行任务的程序。如发"
+"出提示音，计算人数，加载插件等等。有的人也把他们称为“函数”。"
+
+#. type: Bullet: '* '
 msgid ""
 "Script: A script is a method which runs when the user performs commands such "
 "as pressing certain keys on a keyboard. For example, when you press NVDA"
@@ -1229,12 +643,170 @@ msgstr ""
 "情稍后讲解）和使用什么首饰后执行（请看下方）（译者注：所谓的首饰大体包括按键"
 "和触摸首饰两类）。"
 
+#. type: Bullet: '* '
 msgid ""
-"Scripts support (scriptHandler.py): Handles scripts, methods executed due to "
-"the user pressing keyboard commands and other input."
+"Variable: A variable is something that can change, such as name of a person, "
+"name of the NVDA add-on we're running, version of NVDA you are using and so "
+"on. An add-on file may define one or more variables (for example, to store "
+"common constants such as strings)."
 msgstr ""
-"脚本支持 (scriptHandler.py): 控制脚本、方法因应用户的键盘或其他输入的执行。"
+"变量：变量是一种可以修改的事物，如一个人的名字、您正在运行的NVDA插件的名称或"
+"您正在使用的 NVDA 版本等等。一个插件可能定义很多的变量，如用来存储共用常量"
+"（字串）等。"
 
+#. type: Bullet: '* '
+msgid ""
+"Module: A module is a collection of methods and variables in a file. When we "
+"write add-ons, we are in fact writing additional modules that NVDA can use "
+"while it is running."
+msgstr ""
+"模块：模块把方法和变量集合在一个文件里。我们现在在编写的插件，其实就是一个 "
+"NVDA 运行时可用的附加模块。"
+
+#. type: Plain text
+msgid "There are other terms that we'll get to know shortly."
+msgstr "这里还有一些术语我们需要简单了解。"
+
+#. type: Title ###
+#, no-wrap
+msgid "Example 2: Generate a tone when switching to Notepad"
+msgstr "例2： 切换到记事本后发出提示音"
+
+#. type: Plain text
+msgid "Most of the below code comes from NvDA Developer Guide."
+msgstr "下面的大多数代码都来自 NvDA Developer Guide。"
+
+#. type: Plain text
+msgid ""
+"Not only NVDA let's you add global commands, but it also allows writing code "
+"to enhance usage of programs through app modules. An app module is also a "
+"Python file except that, this time, the name of the .py file is the name of "
+"the executable for a program. For example, an app module for Notepad would "
+"be named notepad.py."
+msgstr ""
+"NVDA 不仅允许您编写全局插件，他还允许您通过编写程序模块来提高对某个软件的支"
+"持。模块名称除了表示着可执行的 python 文件之外，还代表着某个可执行程序。如，"
+"为“notepad”开发的模块就被命名为“notepad.py”。"
+
+#. type: Plain text
+msgid ""
+"The below code, from NVDA developer Guide, gives a short example of a "
+"typical app module: play a short beep when switching to Notepad. Put the "
+"below code in notepad.py, which in turn should be placed in appModules "
+"folder in your user configuration folder in order for it to run."
+msgstr ""
+"下面的代码（来自 NVDA developer Guide）给出了一个典型程序模块的小例子：当切换"
+"到记事本的时候发出一段很短的提示音。为了使它运行，请把代码放到“notepad."
+"py”里，并把文件放在用户配置的 appModules 目录下。"
+
+#. type: Plain text
+#, no-wrap
+msgid "\t# An example app module.\n"
+msgstr "\t# An example app module.\n"
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"\timport appModuleHandler\n"
+"\timport tones\n"
+msgstr ""
+"\timport appModuleHandler\n"
+"\timport tones\n"
+
+#. type: Plain text
+#, no-wrap
+msgid "\tclass AppModule(appModuleHandler.AppModule):\n"
+msgstr "\tclass AppModule(appModuleHandler.AppModule):\n"
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"\t\tdef event_gainFocus(self, obj, nextHandler):\n"
+"\t\t\ttones.beep(256, 200)\n"
+"\t\t\tnextHandler()\n"
+msgstr ""
+"\t\tdef event_gainFocus(self, obj, nextHandler):\n"
+"\t\t\ttones.beep(256, 200)\n"
+"\t\t\tnextHandler()\n"
+
+#. type: Title ###
+#, no-wrap
+msgid "Example 2 code explanation"
+msgstr "例2代码解析"
+
+#. type: Plain text
+msgid ""
+"We're seeing more new code here. Let's go over this, again piece by piece:"
+msgstr "我们在这里看到了更多的新代码。让我们再一次逐段进行分析："
+
+#. type: Bullet: '1. '
+msgid ""
+"Unlike the first example, the crucial module we need is appModuleHandler."
+msgstr "不像第一个例子，这次我们所需的最重要模块是 appModuleHandler。"
+
+#. type: Bullet: '2. '
+msgid "The class that we are using is AppModule."
+msgstr "我们使用的类是 AppModule。"
+
+#. type: Bullet: '3. '
+msgid ""
+"Unlike last time, we're using events, a method run when certain events occur "
+"such as when names of controls change. Events take an object as one of its "
+"arguments, the object for which the event needs to be dealt with, or, as "
+"many people say, \"fired.\""
+msgstr ""
+"不同于上次，我们这次使用的是“事件”，极只在某种事件发生后（如控件名称的更改）"
+"才执行该方法。“事件”把一个“对象”作为变量，“对象”极是每个“事件”都需要处理的事"
+"物，或是某些人所称的“击发（fired）”。"
+
+#. type: Bullet: '4. '
+msgid ""
+"Inside the event method, we're also seeing a call to `nextHandler`. This "
+"method is used in event methods to tell NvDA to pass the event so it can be "
+"taken care of, such as saying the name of a control after beeping."
+msgstr ""
+"在 event 方法里，我们还看到了被称为“nextHandler”的方法。放在 event 的这个方法"
+"用来告诉 NVDA 监视这个事件的发生，如在发出提示音之后读出控件的名称。"
+
+#. type: Title ###
+#, no-wrap
+msgid "More new terms please"
+msgstr "更多新的术语"
+
+#. type: Plain text
+msgid "Other terms you may see include:"
+msgstr "您可能看到的其他术语包括："
+
+#. type: Bullet: '* '
+msgid ""
+"Event: An event is a method that'll be run when some events happen, such as "
+"when a program is on focused, when names of controls change and so on."
+msgstr ""
+"事件：事件是一种仅当某个事件发生候才会运行的方法。如一个程序拥有焦点或控件名"
+"称发生变动等。"
+
+#. type: Bullet: '* '
+msgid ""
+"Call: We say a function calls some another method when we run the second "
+"method from another method. For example, in our first example, we're calling "
+"tones.beep method from our script method."
+msgstr ""
+"调用：我们说一个方法（方法2）使用其他的方法（方法1）就被称为“调用”。如，在我"
+"们的第一个例子里，我们就在 script 方法里调用了 tones.beep 方法。"
+
+#. type: Bullet: '* '
+msgid ""
+"Object: An object is an instance of a class - that is, a class coming to "
+"life when a program runs. Throughout your add-ons, as you write classes and "
+"when you run your add-ons, your classes come to life as objects, commonly "
+"abbreviated to obj. In NVDA, an object may refer to controls or parts of a "
+"program."
+msgstr ""
+" 对象（object）:对象就是类的实例，极当程序运行时“类”拥有了生命。当您编写类病"
+"运行您的插件的时候，您的类就被具象化为“对象”（通常简写为“obj”）。对于 NVDA 来"
+"说，对象可能用来访问控件或程序的一部分。"
+
+#. type: Bullet: '* '
 msgid ""
 "Self: In Python, the word \"self\" means current class (if we're defining "
 "one, such as when writing add-ons), or means the class for which a method is "
@@ -1253,80 +825,450 @@ msgstr ""
 "解释self的含义：self既是对象（宏观），也是插件实例（针对插件开发的微观），希"
 "望这段解释没有添乱）。"
 
-msgid "Setting focus to another program."
-msgstr "设置焦点到其他程序。"
-
-msgid "Setting up the add-on development environment"
-msgstr "安装插件开发环境"
-
-msgid "Silencing NVDA for a program."
-msgstr "Silencing NVDA for a program."
-
+#. type: Plain text
 msgid ""
-"Since this is a global plugin, we need to import a crucial module: global "
-"plugin handler, so we wrote `import globalPluginHandler`."
+"Just like example 1, once you're comfortable with app module code, you may "
+"wish to delete the Notepad app module code unless you want to keep hearing "
+"beeps when you switch to Notepad. The actual differences between global "
+"plugins and app modules will become more clear when we talk about them in "
+"more detail throughout this guide."
 msgstr ""
-"因为这是一个全局插件，我们需要导入最重要的模块“globalPluginHandler”，所以我们"
-"写成“import globalPluginHandler”。"
+"和例1相同，您可能希望在代码已经符合需求的情况下把他移除，除非您希望在切换到记"
+"事本的时候听到一个提示音。随着我们在本指南中对他们的进一步探讨，更多有关于全"
+"局插件和模块插件的实际差异将会变得更加清晰。"
 
-msgid ""
-"So are you ready to start your adventure with add-ons, but not sure as to "
-"how to bring it to life? If that is you, please go through this chapter, as "
-"it gives you basic information to get you started with add-ons and give you "
-"tips on writing code."
-msgstr ""
-"如此，您准备好开始编写插件冒险了，但不知道该如何让它“活起来”？请通读本章节，"
-"它将告诉您如何开始的一些基本信息，还将为编写代码给出一些提示。"
+#. type: Title ###
+#, no-wrap
+msgid "A few tips for beginners"
+msgstr "一些给初学者的提示"
 
-msgid ""
-"Sometimes, it is not enough to work with default behavior for a control. For "
-"example, some parts of a program may need custom gestures, or one may need "
-"to change the role of a window to that of a button."
-msgstr ""
-"有些时候，只在控件用默认动作工作是不够的。如某些程序的部分可能需要自定义的手"
-"势， 或者需要修改某个控件的窗口角色为按钮等。"
+#. type: Plain text
+msgid "Here are a few useful tips passed on by add-on writers:"
+msgstr "这里有一些给插件开发者的实用提示："
 
-msgid "Specialist objects and overriding object properties at runtime"
-msgstr "运行时的专门对象货覆盖对象的属性"
-
-msgid "Speech output (speech.py): Controls speech output."
-msgstr "语音输出 (speech.py): 控制语音输出"
-
+#. type: Bullet: '* '
 msgid "Start with easy add-ons, such as saying a message, tones and so on."
 msgstr "从编写一个简单的插件开始，例如输出一条消息，发出提示音等等。"
 
-msgid ""
-"Static and dynamic script bindings, gesture dictionaries and script "
-"categories."
-msgstr ""
-"Static and dynamic script bindings, gesture dictionaries and script "
-"categories."
+#. type: Bullet: '* '
+msgid "Write and test one method at a time."
+msgstr "编写方法和测试方法这两个过程在同时进行。"
 
+#. type: Bullet: '* '
 msgid ""
-"Suppose you are asked by a user to give him the value of a slider in a "
-"program using an app module. After looking at the object hierarchy and other "
-"properties, you know that the toolbar is the last child of the foreground "
-"object."
+"If you are writing app modules or drivers, become familiar with programs, "
+"synthesizers or braille displays you wish to support (e.g. read "
+"documentation, try using them, etc.)."
 msgstr ""
-"假设您的用户要求您使用程序模块查看一个程序滑块的值，在查看对象的层级和其他属"
-"性之后，您发现这个工具栏还是前景对象的最后一个子成员。"
+"如果您正在编写程序模块或驱动，而且对于编程更加熟悉了，可以尝试使用语音合成器"
+"或点显器进行输出（如阅读文档等）。"
 
+#. type: Bullet: '* '
+msgid ""
+"When defining commands (especially in global plugins), consult commands used "
+"in NvDA and other add-ons first before assigning a new command in your add-"
+"on to avoid command conflicts."
+msgstr ""
+"在定义一个命令以前（特别是全局插件），请首先对 NVDA 和其他插件所使用的命令进"
+"行考察，以避免发生命令键冲突。"
+
+#. type: Title ##
+#, no-wrap
+msgid "Useful modules from NVDA core"
+msgstr "来自 NVDA 核心的实用模块"
+
+#. type: Plain text
+msgid ""
+"Throughout the life of add-on development, you'll come across some useful "
+"modules from NvDA core that would be helpful in your add-on code. This "
+"section explains them and some functions in those modules that would be "
+"useful."
+msgstr ""
+"贯穿整个插件开发周期，您可能会碰到一些来自 NVDA 核心的、对于您的插件代码非常"
+"有帮助的有用模块。这个章节介绍他们和他们的一些实用函数。"
+
+#. type: Title ###
+#, no-wrap
+msgid "List of useful NVDA core modules and methods"
+msgstr "实用的 NVDA 核心模块和方法列表"
+
+#. type: Plain text
+msgid ""
+"The following lists available NVDA core modules and some useful methods "
+"found in those modules:"
+msgstr "下面罗列了可用的 NVDA 核心模块和一些从他们那儿找到的实用方法。"
+
+#. type: Bullet: '* '
+msgid ""
+"Addon Handler (addonHandler.py): The module which implements the add-on "
+"subsystem. The addonHandler.initTranslation() method is used to initialize "
+"internationalization support for your add-on."
+msgstr ""
+"插件控制器 (addonHandler.py): 这个模块使得插件子系统可以正常工作。方"
+"法“addonHandler.initTranslation()”可以为您的插件进行国际化支持的初始化。"
+
+#. type: Bullet: '* '
+msgid ""
+"NVDA basic API (api.py): A collection of core methods used throughout NVDA, "
+"such as obtaining focus and navigator object, setting focus and so on. See "
+"the next list on useful methods from this module."
+msgstr ""
+"NVDA 基础 API (api.py): 整个 NVDA 都在使用的核心方法的集合，如获取焦点和可浏"
+"览对象，设置焦点等等。请查看下一个列表中属于该模块的实用方法。"
+
+#. type: Bullet: '* '
+msgid ""
+"App Module subsystem (appModuleHandler.py, appModules): The subsystem in "
+"charge of handling app modules (see chapter on app modules for more "
+"information)."
+msgstr ""
+"程序模块子系统(appModuleHandler.py和程序模块们):子系统负责控制程序模块（更多"
+"详情，请查看章节“程序模块”获取）。"
+
+#. type: Bullet: '* '
+msgid ""
+"ARIA support (aria.py): Implements support for Accessible Rich Internet "
+"Applications (ARIA)."
+msgstr "ARIA 支持 (aria.py): 掌控访问富互联网应用（ARIA）的支持。"
+
+#. type: Bullet: '* '
+msgid ""
+"Base object collection (baseObject.py): Contains useful base objects such as "
+"scriptable objects (see the chapter on NvDA objects and overlay objects for "
+"more information)."
+msgstr ""
+"基本对象集合(baseObject.py): 包含实用的对象，如可编程对象（请查看 NVDA 对象和"
+"覆盖对象章节获取更多信息）。"
+
+#. type: Bullet: '* '
+msgid ""
+"Braille input and output subsystem (braille.py, brailleInput.py): Controls "
+"braille output to and input from braille displays, needed by braille display "
+"driver add-ons."
+msgstr ""
+"点字输入输出子系统(braille.py, brailleInput.py):控制点显器盲文的输入输出，需"
+"要点显器驱动插件的支持。"
+
+#. type: Bullet: '* '
+msgid ""
+"Build-in modules (builtin.py): Allows access to builtin modules when working "
+"with add-ons."
+msgstr "内建模块(builtin.py):允许在插件工作时访问内建模块。"
+
+#. type: Bullet: '* '
+msgid ""
+"Configuration (config): Manages configuration and profiles (profiles are "
+"available in 2013.3 or later)."
+msgstr "配置（config）： 管理配置和配置文件（配置文件在 2013.3 后可用）。"
+
+#. type: Bullet: '* '
+msgid ""
+"Controls and states collection (controltypes.py): Includes dictionaries on "
+"control types (roles) and possible states that a control can be in."
+msgstr ""
+"控件和状态集合(controltypes.py): 包含控件类型的字典（角色）和可能被插件套用的"
+"状态。"
+
+#. type: Bullet: '* '
+msgid "Events (eventHandler.py): Handles various events such as gaining focus."
+msgstr "事件(eventHandler.py): 控制各种各样的事件，如正在获取焦点。"
+
+#. type: Bullet: '* '
+msgid ""
+"Global Commands collection (globalCommands.py): A list of global commands "
+"available while using NVDA (see section on script scope for more "
+"information)."
+msgstr ""
+"全局命令集合 (globalCommands.py): 使用 NVDA 时可用的全局命令的列表（请查看脚"
+"本作用域章节获取更多信息）。"
+
+#. type: Bullet: '* '
+msgid ""
+"Global Plugin subsystem (globalPluginHandler.py): The module needed for "
+"controlling global plugins."
+msgstr "全局插件子系统(globalPluginHandler.py)：控制全局插件必备的模块。"
+
+#. type: Bullet: '* '
+msgid ""
+"NVDA GUI (gui): A collection of classes used by NVDA to display its messages "
+"graphically. Includes GUI's for NVDA menu, add-on manager and others."
+msgstr ""
+"NVDA 图形用户界面(gui): 一个 NVDA 用来以图形方式展示消息的类的集合。 包括 "
+"NVDA 使用的菜单、插件管理器和其他界面。"
+
+#. type: Bullet: '* '
+msgid ""
+"Hardware port utilities (hwPortUtils.py): A set of utilities for "
+"communicating over serial and other hardware ports, useful during driver add-"
+"on development."
+msgstr ""
+"硬件端口工具(hwPortUtils.py): 一套用来与串行端口或其他硬件端口进行通讯的工"
+"具。它对驱动插件的开发非常有用。"
+
+#. type: Bullet: '* '
+msgid ""
+"IAccessible support (IAccessibleHandler.py, IAccessible objects): Used for "
+"supporting IAccessible controls."
+msgstr ""
+"IAccessible 支持 （IAccessibleHandler.py和可访问对象）： 用于支持 IAccesible "
+"控件。"
+
+#. type: Bullet: '* '
+msgid "Input management (inputCore.py): Manages input from the user."
+msgstr "输入管理(inputCore.py):管理用户输入。"
+
+#. type: Bullet: '* '
+msgid ""
+"Java Access Bridge support (JABHandler.py): A collection of methods used for "
+"supporting JAB subsystem used for Java applications."
+msgstr ""
+"Java Access Bridge 支持 （JABHandler.py）：一套为 Java 程序支持 JAB 子系统的"
+"函数集合。"
+
+#. type: Bullet: '* '
+msgid ""
+"Keyboard input (keyboardHandler.py): Supports entering commands from the "
+"keyboard."
+msgstr "键盘输入 (keyboardHandler.py): 对键盘命令输入进行支持。"
+
+#. type: Bullet: '* '
+msgid ""
+"Logging facility (logHandler.py): Allows a module to write logs to be viewed "
+"by a developer or a user via Log Viewer."
+msgstr ""
+"日志工具(logHandler.py): 一个用来输出日志的模块，允许开发者直接查看，用户也可"
+"以使用“日志查看器”进行查看。"
+
+#. type: Bullet: '* '
+msgid "Mouse support (mouseHandler.py): Supports mouse commands."
+msgstr "鼠标支持(mouseHandler.py): 支持鼠标命令。"
+
+#. type: Bullet: '* '
+msgid ""
+"NvDA objects collection (NVDAObjects): A collection of NvDA objects or "
+"controls used in many applications and standards such as UIA (User Interface "
+"Automation)."
+msgstr ""
+"NvDA 对象集合 (NVDAObjects): 一个 NVDA 对象的集合，包含许多程序常用的控件和标"
+"准（如UIA（自动用户界面））。"
+
+#. type: Bullet: '* '
+msgid ""
+"Scripts support (scriptHandler.py): Handles scripts, methods executed due to "
+"the user pressing keyboard commands and other input."
+msgstr ""
+"脚本支持 (scriptHandler.py): 控制脚本、方法因应用户的键盘或其他输入的执行。"
+
+#. type: Bullet: '* '
+msgid "Speech output (speech.py): Controls speech output."
+msgstr "语音输出 (speech.py): 控制语音输出"
+
+#. type: Bullet: '* '
 msgid ""
 "Synthesizer driver support (synthDriverHandler.py): This is the core module "
 "needed for speech synthesizer add-ons."
 msgstr "合成器驱动支持(synthDriverHandler.py): 这是合成器插件必备的核心模块。"
 
-msgid "System requirements"
-msgstr "系统要求"
-
+#. type: Bullet: '* '
 msgid ""
-"The NVDA Community Add-on template for ease of add-on file and folder "
-"packaging and management (optional; [click here][3] to download the add-on "
-"template)."
-msgstr ""
-"NVDA 社区插件的简易魔板（用来打包和管理文件和目录）（可选），[点这里][3]下载"
-"插件魔板。"
+"Widget text access (textInfos): Allows access to text for widget and "
+"documents."
+msgstr "小部件文本访问(textInfos): 允许访问小部件和文档里的文本。"
 
+#. type: Bullet: '* '
+msgid ""
+"Touchscreen support (touchHandler.py): Provides support for touchscreen "
+"input (installed versions only)."
+msgstr "触摸屏支持(touchHandler.py): 提供对触摸屏输入的支持（仅安装版可用）。"
+
+#. type: Bullet: '* '
+msgid "Tone output (tones.py): Allows the user to hear tones."
+msgstr "提示音输出(tones.py): 可允许用户听到提示音。"
+
+#. type: Bullet: '* '
+msgid ""
+"User interface messages (ui.py): Includes ui.message method used to speak or "
+"braille certain text."
+msgstr "用户界面消息(ui.py): 包含 用语音或点字输出的方法“ui.message”。"
+
+#. type: Bullet: '* '
+msgid ""
+"Virtual buffers (virtualBuffers): Handles virtual buffer documents such as "
+"websites."
+msgstr "虚拟缓冲区(virtualBuffers): 控制虚拟缓冲区的文档（如网页）。"
+
+#. type: Plain text
+msgid ""
+"The modules without .py extension are directories, containing specialist "
+"modules."
+msgstr "没有扩展名“.py”的都是目录，包含的是专用模块。"
+
+#. type: Title ###
+#, no-wrap
+msgid "Useful methods"
+msgstr "实用的方法"
+
+#. type: Plain text
+msgid ""
+"Here is a list of some useful methods used in add-ons. For more information "
+"on how they're implemented, see the NvDA source code documentation. For "
+"worked out examples, see the section of this guide on add-on components."
+msgstr ""
+"这里列举了插件常用的方法。有关于如何调用的更多信息，请查看 NVDA 源码文档。编"
+"写的例子，请查看“插件组成”章节。"
+
+#. type: Plain text
+msgid "From addonHandler:"
+msgstr "来自 addonHandler:"
+
+#. type: Bullet: '* '
+msgid ""
+"`addonHandler.initTranslation()`: Sets up the translation subsystem for add-"
+"ons via Gettext."
+msgstr ""
+"`addonHandler.initTranslation()`: 在您的插件上安装翻译子系统并使用 Gettext。"
+
+#. type: Plain text
+msgid "From api.py:"
+msgstr "来自 api.py:"
+
+#. type: Bullet: '* '
+msgid ""
+"`api.getFocusObject()`: Retrieves the focused control (returns the object "
+"with focus)."
+msgstr "`api.getFocusObject()`: 检索有焦点的控件（返回有焦点的对象）。"
+
+#. type: Bullet: '* '
+msgid ""
+"`api.getNavigatorObject()`: Fetches the current navigator object. If NvDA is "
+"set to follow system focus, the focus and navigator object will be the same, "
+"otherwise a different object is returned."
+msgstr ""
+"`api.getNavigatorObject()`: 补货当前的浏览对象。 如果 NVDA 设置成“跟随系统焦"
+"点移动”，那么焦点和导航对象的返回相同，否则将返回不同的对象。"
+
+#. type: Bullet: '* '
+msgid ""
+"`api.getForegroundObject()`: Returns the foreground window of the current "
+"application (the parent of this object is the application itself)."
+msgstr ""
+"`api.getForegroundObject()`: 返回当前程序的前景窗口（对象的 parent 就是程序本"
+"身）。"
+
+#. type: Bullet: '* '
+msgid ""
+"These have a corresponding method to set certain object as the focus or "
+"navigator object."
+msgstr "还有相应的方法设置当前对象为焦点对象或导航对象。"
+
+#. type: Plain text
+msgid "From logHandler:"
+msgstr "来自 logHandler:"
+
+#. type: Bullet: '* '
+msgid "`logHandler.Log`: The class which implements logging facility."
+msgstr "`logHandler.Log`:一个控制日志输出的类。"
+
+#. type: Plain text
+msgid "From tones:"
+msgstr "来自 tones:"
+
+#. type: Bullet: '* '
+msgid ""
+"`tones.beep(pitch in hertz, duration in milliseconds, left channel volume, "
+"right channel volume)`: Plays a tone of specified pitch for specified "
+"duration. The first two arguments are mandatory, while the other two are "
+"optional."
+msgstr ""
+"`tones.beep(表示音高的赫兹数,持续的毫秒数,左通道音量,右通道音量)`: 按照给定的"
+"音高和时常播放提示音。前面的两个参数是必须的，而另外的两个是可选参数。"
+
+#. type: Plain text
+msgid "From ui:"
+msgstr "来自 ui:"
+
+#. type: Bullet: '* '
+msgid ""
+"`ui.message(message to be spoken/brailled)`: Speaks or brailles the message. "
+"This should be a string surrounded by quotes."
+msgstr ""
+"`ui.message(需要语音或点字输出的消息)`: 用语音或点字输出该消息，此参数必须是"
+"带有引号的字串。"
+
+#. type: Plain text
+msgid ""
+"There are other useful methods out there, but the above are the most useful "
+"ones. See the NVDA source code documentation for other methods, or see the "
+"examples below on how these methods and others are used throughout the life "
+"of an add-on."
+msgstr ""
+"除此之外，还有其他有用的方法，但是上面提到的就是最常用的。查看 NVDA 源码文档"
+"可以获知其他方法的信息，或者查看下方的例子学习如何在插件的开发生命周期使用方"
+"法和其他东西。"
+
+#. type: Title ##
+#, no-wrap
+msgid "Add-on module components and development tips"
+msgstr "插件模块的组成和开发提示"
+
+#. type: Plain text
+msgid ""
+"An add-on module consists of a number of components. This includes handling "
+"input and output, working with different NvDA objects, reacting to events, "
+"storing configuration and more."
+msgstr ""
+"一个插件由很多成分组成。包括控制输入输出、在不同的 NVDA 对象下工作、响应事"
+"件、存储配置或更多。"
+
+#. type: Plain text
+msgid ""
+"This chapter introduces key components and concepts that are used in add-on "
+"development, such as NVDA objects, scripts, event handling and additional "
+"topics with examples."
+msgstr ""
+"这一章节介绍了插件开发过程中的关键组成和概念。如 NVDA 对象、脚本、事件控制及"
+"其他主题，并付上了对应的例子。"
+
+#. type: Plain text
+msgid ""
+"Note that the NVDA core development guide introduces the below concepts. "
+"This chapter is intended as an extension of that document. Consult the NVDA "
+"development guide for a brief introductions."
+msgstr ""
+"请注意： NVDA 核心开发指南中介绍了下面的概念。这一章节只是那个文档的扩充。查"
+"阅 NVDA development guide 可获得概述。"
+
+#. type: Title ###
+#, no-wrap
+msgid "Working with objects on screen"
+msgstr "在屏幕上的控件工作"
+
+#. type: Plain text
+msgid ""
+"An object is an instance of a class - that is, a class coming to life while "
+"a program is running. For example, if a class called button has been "
+"defined, the button on a screen is the object of this button class."
+msgstr ""
+"一个对象就是一个“类”的“实例”，每当程序运行的时候，类就有了生命。如定义了一"
+"个“按钮”类，屏幕上的按钮就是这个“按钮”类的对象。"
+
+#. type: Plain text
+msgid ""
+"In NVDA, an object is representation of a control or parts of a program. "
+"This includes buttons, check boxes, edit fields, toolbars, sliders and even "
+"the application window. These are organized into hierarchies, or parent-"
+"child relationship where an object may contain child objects - for example, "
+"a list object in Windows Explorer may contain one or more list items, and "
+"the parent of this list might be the Windows Explorer window. The object "
+"that you're examining right now is termed \"navigator object.\""
+msgstr ""
+"在 NVDA，一个“对象”表示了一个控件货程序的一部分。这包括按钮、复选框、编辑框、"
+"工具栏、滑块甚至是程序窗口。按照控件的父子关系--有些对象可能包含其他紫对"
+"象--，他们备分层组织。如 Windows 资源管理器的列表对象可能包含一个货多个列表项"
+"目对象。而这个列表的父对象可能就是 Windows 资源管理器窗口。您现在锁了解的对象"
+"就是“导航对象”。"
+
+#. type: Plain text
 msgid ""
 "The NVDA objects (or simply called objects) contains a number of useful "
 "properties or atributes. These include the object's name, its value "
@@ -1341,196 +1283,23 @@ msgstr ""
 "标）货更多。NVDA 对象还包含一些操作他们的方法，如修改对象的值、响应对象的事件"
 "（获取焦点、值的更新等）诸多动作。"
 
-msgid "The add-on development folder"
-msgstr "插件开发目录"
-
+#. type: Plain text
 msgid ""
-"The below code implements our example. Put this in your .py file as exactly "
-"as shown:"
-msgstr "下面的代码将实现我们的例子，请原封不动的把它放到 .py 的文件中去。"
-
-msgid ""
-"The below code, from NVDA developer Guide, gives a short example of a "
-"typical app module: play a short beep when switching to Notepad. Put the "
-"below code in notepad.py, which in turn should be placed in appModules "
-"folder in your user configuration folder in order for it to run."
+"In many situations, an NvDA object may belong to a class of related objects. "
+"For each object classes, NvDA provides ways of handling them. These classes "
+"include IAccessible, JAB, UIA and so forth. These classes and behaviors for "
+"each class of objects is defined in NVDAObjects directory in the NvDA source "
+"code, and to use them in your add-on, import the appropriate object class "
+"handler for the object you're using (e.g. if you're working with an "
+"IAccessible object, impore NVDAObjects.IAccessible.)."
 msgstr ""
-"下面的代码（来自 NVDA developer Guide）给出了一个典型程序模块的小例子：当切换"
-"到记事本的时候发出一段很短的提示音。为了使它运行，请把代码放到“notepad."
-"py”里，并把文件放在用户配置的 appModules 目录下。"
+"在许多场景下，NVDA 的对象可能从属于相关对象的类。对于每个对象类， NVDA 都提供"
+"了控制方法。这些类包括 IAccessible、 JAB、 UIA 等等。这些类及对象类的行为都备"
+"定义在 NVDA 源码的 NVDAObjects  目录中。要想在您的插件中使用，只要导入您锁使"
+"用的对象的对象类控制器即可。(如您正工作在一个 IAccessible  对象，那么可以导"
+"入 NVDAObjects.IAccessible）。"
 
-msgid "The class that we are using is AppModule."
-msgstr "我们使用的类是 AppModule。"
-
-msgid "The event_NVDAObject_init and chooseNVDAObjectOverlayClasses methods."
-msgstr "The event_NVDAObject_init and chooseNVDAObjectOverlayClasses methods."
-
-msgid ""
-"The following lists available NVDA core modules and some useful methods "
-"found in those modules:"
-msgstr "下面罗列了可用的 NVDA 核心模块和一些从他们那儿找到的实用方法。"
-
-msgid ""
-"The modules without .py extension are directories, containing specialist "
-"modules."
-msgstr "没有扩展名“.py”的都是目录，包含的是专用模块。"
-
-msgid ""
-"Then we wrote `import tones` to import (load, or include) the tones module, "
-"a built-in module from NVDA. Whenever you wish to use a method from a given "
-"module, import the needed module(s)."
-msgstr ""
-"然后我们写下“import tones”导入（表示加载货包含）这个 NVDA 的内建模块 tones，"
-"每当您决定使用某个模块，必须先将其导入。"
-
-msgid ""
-"There are a number of ways which you can use to see the hierarchy of an "
-"object for a given program:"
-msgstr "这里有许多方法可以查看给定程序对象的所属层级："
-
-msgid ""
-"There are other examples you can try to familiarize yourself with object "
-"navigation and manipulation:"
-msgstr "这里还有其他的例子可以帮助您熟悉导航对象和操作："
-
-msgid "There are other terms that we'll get to know shortly."
-msgstr "这里还有一些术语我们需要简单了解。"
-
-msgid ""
-"There are other useful methods out there, but the above are the most useful "
-"ones. See the NVDA source code documentation for other methods, or see the "
-"examples below on how these methods and others are used throughout the life "
-"of an add-on."
-msgstr ""
-"除此之外，还有其他有用的方法，但是上面提到的就是最常用的。查看 NVDA 源码文档"
-"可以获知其他方法的信息，或者查看下方的例子学习如何在插件的开发生命周期使用方"
-"法和其他东西。"
-
-msgid "There are two ways of packaging add-ons:"
-msgstr "有两种打包插件的方法："
-
-msgid ""
-"These have a corresponding method to set certain object as the focus or "
-"navigator object."
-msgstr "还有相应的方法设置当前对象为焦点对象或导航对象。"
-
-msgid "These plan sections may change."
-msgstr "These plan sections may change."
-
-msgid "These sections may change."
-msgstr "These sections may change."
-
-msgid "These topics may change."
-msgstr "These topics may change."
-
-msgid ""
-"This chapter introduces key components and concepts that are used in add-on "
-"development, such as NVDA objects, scripts, event handling and additional "
-"topics with examples."
-msgstr ""
-"这一章节介绍了插件开发过程中的关键组成和概念。如 NVDA 对象、脚本、事件控制及"
-"其他主题，并付上了对应的例子。"
-
-msgid ""
-"This guide is designed for both beginners who are new to Python and/or NVDA "
-"development in general, as well as experts and power users and programmers "
-"who are familiar with Python or other programming languages and/or familiar "
-"with NvDA source code structure."
-msgstr ""
-"此指南除了面向的是初步了解 Python 或对 NVDA 的一般开发熟悉的新手，也包括专"
-"家、超级用户、熟悉其他语言甚至是了解 NVDA 源码结构的程序员。"
-
-msgid ""
-"This guide was originally written by Joseph Lee and is shaped by NVDA user "
-"and developer community. We welcome your feedback and contributionn."
-msgstr ""
-"此文档起初由 Joseph Lee 编写，他因 NVDA 用户及开发社区而成长，我们欢迎您的反"
-"馈及贡献。"
-
-msgid ""
-"This means that whenever we encounter a window with the class name of \"TForm"
-"\", NvDA will treat this as a normal window."
-msgstr ""
-"这样的意思是，每当我们遇到的窗口类名为“TForm”的窗口时, NvDA 会把他当作普通窗"
-"口对待。"
-
-msgid ""
-"Throughout the life of add-on development, you'll come across some useful "
-"modules from NvDA core that would be helpful in your add-on code. This "
-"section explains them and some functions in those modules that would be "
-"useful."
-msgstr ""
-"贯穿整个插件开发周期，您可能会碰到一些来自 NVDA 核心的、对于您的插件代码非常"
-"有帮助的有用模块。这个章节介绍他们和他们的一些实用函数。"
-
-msgid ""
-"Throughout this guide, we refer to standard NVDA python modules which comes "
-"with NVDA as \"NvDA Core\" to distinguish it from add-on modules."
-msgstr ""
-"在文档全文，我们参考了来自“NVDA 核心”的标准 NVDA Python 模块，从而对插件模块"
-"进行剖析。"
-
-msgid ""
-"Thus, when we know for sure that we're dealing with the slider, the method "
-"returns the value of the slider's first child (if that is the case). Note "
-"the two equals signs for equality, as opposed to just one equals sign for "
-"assignment."
-msgstr ""
-"就此，我们知道并确定经过我们的处理，函数可以返回滑块的第一个子对象的值（如果"
-"存在这种情况的话）。请注意：两个等号表示相等，只有一个等于号表示分配。 "
-
-msgid ""
-"To create an add-on for NVDA, please make sure the following system "
-"requirements are met:"
-msgstr "要想 为 NVDA 创建插件，请确保下述系统要求已经做好："
-
-msgid ""
-"To edit .py files, you need a word processor which can handle .py files. The "
-"best one we recommend is Notepad++."
-msgstr ""
-"要想编辑一个 .py 文件，您必须拥有一个可以处理 .py 文件的文字处理程序，我们推"
-"荐的最好编辑器是 notepad++。"
-
-msgid ""
-"To package your add-on manually, zip up (compress) your add-on folder as a ."
-"zip file, then rename the file extension to .nvda-addon."
-msgstr ""
-"手动打包您的插件，把您的插件目录压缩为zip文件并改变其扩展名为 .nvda-addon。"
-
-msgid ""
-"To run your example add-ons from this chapter, open your NVDA user "
-"configuration directory (from Start Menu/Screen, look for Explore NVDA user "
-"configuration folder\" item). Then paste your .py file to the appropriate "
-"folder: appModules folder for app module examples, and globalPlugins folder "
-"for global plugins."
-msgstr ""
-"要想运行来自此张杰的您的插件，您可以打开您的 NVDA 用户配置目录（在开始菜单/屏"
-"幕查找 “浏览 NVDA 配置目录”项目），把您的 .py 文件放到恰当的目录：appModules "
-"目录存放程序模块插件事例，globalPlugins 目录存放全局插件事例。"
-
-msgid ""
-"To set some object as the new focus or navigator object, use `api."
-"setFocusObject(obj)` or `api.setNavigatorObject(obj)`."
-msgstr ""
-"要想设置某些对象为新的有焦点对象货浏览对象，可使用 `api.setFocusObject(obj)` "
-"货 `api.setNavigatorObject(obj)`。"
-
-msgid ""
-"To use the add-on template with SCons, open Command Prompt with "
-"administrator mode (Windows Vista or later), change to your add-on folder "
-"and type `scons~."
-msgstr ""
-"要想在 SCons 使用插件魔板，请使用管理员模式（Windows Vista 或以上）的命令提示"
-"符定位到您的插件目录然后输入“SCons”。"
-
-msgid "Tone output (tones.py): Allows the user to hear tones."
-msgstr "提示音输出(tones.py): 可允许用户听到提示音。"
-
-msgid ""
-"Touchscreen support (touchHandler.py): Provides support for touchscreen "
-"input (installed versions only)."
-msgstr "触摸屏支持(touchHandler.py): 提供对触摸屏输入的支持（仅安装版可用）。"
-
+#. type: Plain text
 msgid ""
 "Two of these object classes merit special mention: virtual buffers and tree "
 "interceptors. A tree interceptor allows NvDA to work with a \"tree\" of "
@@ -1542,46 +1311,24 @@ msgstr ""
 "在“树”对象中，树对象看起来就像只有一个对象。虚拟缓冲区就是一个特别的树对象，"
 "它允许 NVDA 在复杂的文档（如 PDF 文档）工作。"
 
+#. type: Title ###
+#, no-wrap
+msgid "Examining object hierarchy"
+msgstr "检查对象层级"
+
+#. type: Plain text
 msgid ""
-"Typically, an add-on which accepts scripts will have a list of command:"
-"function map somewhere in the module. The simplest is a gestures (commands) "
-"dictionary, a python dictionary (typically named __gestures) which holds "
-"commands as keys and scripts as values for these keys (more than one key, or "
-"command can be bound to scripts). These dictionaries are loaded when add-on "
-"loads and is cleared when either NvDA exits or the app for the app module "
-"loses focus (that is, the user has switched to another program)."
-msgstr ""
-"通常来说，可接收脚本的插件都会拥有一个命令列表:它就是放置在某个地方的功能表。"
-"最简单的就是手势（命令）词典， 极 python 词典（通常备命名为 __gestures），它"
-"可以容纳命令（作为 keys）和脚本（作为 values）（如果命令货 key 多余一个，则可"
-"以捆绑为脚本）。 这些词典江在 插件加载时载入，将在 NVDA 退出货程序模块所属程"
-"序丢失焦点时清空（就是说，用户切换到了另外一个程序）。"
+"There are a number of ways which you can use to see the hierarchy of an "
+"object for a given program:"
+msgstr "这里有许多方法可以查看给定程序对象的所属层级："
 
+#. type: Bullet: '1. '
 msgid ""
-"Unlike last time, we're using events, a method run when certain events occur "
-"such as when names of controls change. Events take an object as one of its "
-"arguments, the object for which the event needs to be dealt with, or, as "
-"many people say, \"fired.\""
-msgstr ""
-"不同于上次，我们这次使用的是“事件”，极只在某种事件发生后（如控件名称的更改）"
-"才执行该方法。“事件”把一个“对象”作为变量，“对象”极是每个“事件”都需要处理的事"
-"物，或是某些人所称的“击发（fired）”。"
+"Using object navigation commands (NvDA+Numpad 2/4/5/6/8) with simple review "
+"mode turned off."
+msgstr "在简易浏览模式关闭的前提下使用对象导航命令（NvDA+数字键盘2/4/5/6/8）。"
 
-msgid ""
-"Unlike the first example, the crucial module we need is appModuleHandler."
-msgstr "不像第一个例子，这次我们所需的最重要模块是 appModuleHandler。"
-
-msgid "Useful methods"
-msgstr "实用的方法"
-
-msgid "Useful modules from NVDA core"
-msgstr "来自 NVDA 核心的实用模块"
-
-msgid ""
-"User interface messages (ui.py): Includes ui.message method used to speak or "
-"braille certain text."
-msgstr "用户界面消息(ui.py): 包含 用语音或点字输出的方法“ui.message”。"
-
+#. type: Bullet: '2. '
 msgid ""
 "Using Python Console, use obj.next/previous/parent/firstChild/lastChild "
 "attributes. If you want to see all available properties, from mPython "
@@ -1590,77 +1337,96 @@ msgstr ""
 "在 python 控制台,使用 obj.next/previous/parent/firstChild/lastChild 属性。如"
 "果您想查看所有可用的属性，在 Python 控制台输入“dir(obj)”。"
 
+#. type: Plain text
 msgid ""
-"Using object navigation commands (NvDA+Numpad 2/4/5/6/8) with simple review "
-"mode turned off."
-msgstr "在简易浏览模式关闭的前提下使用对象导航命令（NvDA+数字键盘2/4/5/6/8）。"
-
-msgid ""
-"Variable: A variable is something that can change, such as name of a person, "
-"name of the NVDA add-on we're running, version of NVDA you are using and so "
-"on. An add-on file may define one or more variables (for example, to store "
-"common constants such as strings)."
+"If you wish to see a more detailed description about the navigator object, "
+"while the navigator object is located at the object you're interested in, "
+"press NvDA+F1 to launch log viewer. The root of all objects in Windows is "
+"the desktop, or shell object."
 msgstr ""
-"变量：变量是一种可以修改的事物，如一个人的名字、您正在运行的NVDA插件的名称或"
-"您正在使用的 NVDA 版本等等。一个插件可能定义很多的变量，如用来存储共用常量"
-"（字串）等。"
+"如果您想查看浏览对象的更详细描述，且导航对象已经定位到您锁感兴趣的对象，请"
+"按“NVDA+F1）运行日志查看器查看。所有对象的根就是桌面货外壳对象（译者注：所"
+"谓“根”通常指的是第一层）。"
 
-msgid ""
-"Virtual buffers (virtualBuffers): Handles virtual buffer documents such as "
-"websites."
-msgstr "虚拟缓冲区(virtualBuffers): 控制虚拟缓冲区的文档（如网页）。"
+#. type: Title ###
+#, no-wrap
+msgid "Focus vs. navigator object"
+msgstr "焦点 vs. 导航对象"
 
+#. type: Plain text
 msgid ""
-"We're seeing more new code here. Let's go over this, again piece by piece:"
-msgstr "我们在这里看到了更多的新代码。让我们再一次逐段进行分析："
-
-msgid ""
-"Welcome to NVDA add-on Development Guide. This is the one-stop guide on how "
-"NvDA add-ons are developed, as well as explaining some useful code segments "
-"from NvDA core source code useful when writing add-ons."
+"In your add-on, you might wish to work with various objects and manipulate "
+"them. These may include changing the focused object, synchronizing navigator "
+"and focus objects, changing the role of an object and so on."
 msgstr ""
-"欢迎来到 NVDA 插件开发文档，此文档将一步一步的叙述如何进行插件开发，也将选出"
-"某些开发插件时常用的 NVDA 核心代码进行分析讲解。"
+"在您的插件里，您可能会工作在并控制着各种各样的对象。这可能包括改变聚焦对象、"
+"同步导航对象和焦点对象、修改一个对象的角色等等。"
 
-msgid "What are add-ons?"
-msgstr "什么是“插件”？"
-
-msgid "What exactly is global plugin."
-msgstr "What exactly is global plugin."
-
-msgid "What is an app module."
-msgstr "What is an app module."
-
+#. type: Plain text
 msgid ""
-"When defining commands (especially in global plugins), consult commands used "
-"in NvDA and other add-ons first before assigning a new command in your add-"
-"on to avoid command conflicts."
+"A focus object is the currently focused control. These are linked to "
+"keyboard focus - that is, it follows the highlighted control. In contrast, a "
+"navigator object is the object you're interested in. Since navigator objects "
+"can move anywhere, you can examine two objects at once: the focused object "
+"and the navigator object. For instance, you might be focused on an edit "
+"field while examining the title bar as the navigator object."
 msgstr ""
-"在定义一个命令以前（特别是全局插件），请首先对 NVDA 和其他插件所使用的命令进"
-"行考察，以避免发生命令键冲突。"
+"焦点对象就是当前获得焦点的对象。控件连接着键盘焦点--就是说，焦点跟随着高亮的"
+"控件。与此不同，导航对象就是您感兴趣的对象。因为导航对象可以移动到任何地方。"
+"您可以同时查看聚焦对象和浏览对象这两个对象。 例如，您可以在焦点处于一个编辑框"
+"的同时使用导航对象查看标题栏。"
 
-msgid "When not to use global plugins."
-msgstr "When not to use global plugins."
-
+#. type: Plain text
 msgid ""
-"When writing add-ons, it is recommended that you store your add-on code in "
-"separate folders, one per add-on. If you chose to download the add-on "
-"template, the folder structure will be automatically created."
+"In your add-on, to fetch the object with focus, write `someObj = api."
+"getFocusObject()`. The someObj can be named differently - the convention is "
+"to use the name \"obj\". To fetch the navigator object (which might be "
+"different from the focused object), use `obj = api.getNavigatorObject()`."
 msgstr ""
-"编写插件的时候，建议把每一个插件的代码存放在不同的目录，一个目录一个插件。如"
-"果您选择下载插件魔板，那么目录结构将会被自动创建。"
+"在您的插件里，要想获取有焦点的对象，编写 `someObj = api.getFocusObject()`。 "
+"someObj 可以使用不同的名字——习惯上使用名称 “Obj”。要想获取导航对象（它可能雨"
+"焦点对象不同），可使用`obj = api.getNavigatorObject()`。"
 
+#. type: Title ###
+#, no-wrap
+msgid "Other useful object-related goodies"
+msgstr "其他有用的对象——相关的优点"
+
+#. type: Plain text
 msgid ""
-"Widget text access (textInfos): Allows access to text for widget and "
-"documents."
-msgstr "小部件文本访问(textInfos): 允许访问小部件和文档里的文本。"
+"Here are some other methods which works with NVDA objects, all located in "
+"api.py module:"
+msgstr ""
+"这里有一些 NVDA 对象工作时可用的其他实用方法，他们都备放置在模块“api.py”："
 
-msgid "Working with objects on screen"
-msgstr "在屏幕上的控件工作"
+#. type: Bullet: '* '
+msgid ""
+"If you wish to obtain the foreground object (useful if you wish to look at "
+"some child object of the foreground window), use `obj = api."
+"getForegroundObject()`."
+msgstr ""
+"如果您想获取前景对象（如您想查看前景窗口的子对象，这是非常有用的），使用 "
+"`obj = api.getForegroundObject()`。"
 
-msgid "Write and test one method at a time."
-msgstr "编写方法和测试方法这两个过程在同时进行。"
+#. type: Bullet: '* '
+msgid ""
+"From Python Console, to see the number of child objects that an object "
+"contains (for instance, the children, or widgets of a foreground window), "
+"type `obj.childCount`. The value 0 means that there are no more child "
+"objects."
+msgstr ""
+"在 Python 控制台查看某对象包含的子对象（如紫成员货前景窗口的小部件等）的数"
+"目，输入`obj.childCount`。值为0说明已经没有更多的紫对象了。"
 
+#. type: Bullet: '* '
+msgid ""
+"To set some object as the new focus or navigator object, use `api."
+"setFocusObject(obj)` or `api.setNavigatorObject(obj)`."
+msgstr ""
+"要想设置某些对象为新的有焦点对象货浏览对象，可使用 `api.setFocusObject(obj)` "
+"货 `api.setNavigatorObject(obj)`。"
+
+#. type: Bullet: '* '
 msgid ""
 "You can fetch various properties of an object by specifying obj.property "
 "where property is the attribute you wish to see (e.g. obj.value)."
@@ -1668,42 +1434,168 @@ msgstr ""
 "您可以通过 obj.property 获得对象的各种属性，property就是您想查看的属性（如 "
 "obj.values）。"
 
+#. type: Title ###
+#, no-wrap
+msgid "Example 1: Finding the value of a slider in a program"
+msgstr "例1：查找程序滑块的值"
+
+#. type: Plain text
 msgid ""
-"[1]: http://community.nvda-project.org/wiki/Development [2]: http://"
-"community.nvda-project.org/documentation/developerGuide.html"
+"Suppose you are asked by a user to give him the value of a slider in a "
+"program using an app module. After looking at the object hierarchy and other "
+"properties, you know that the toolbar is the last child of the foreground "
+"object."
 msgstr ""
-"[1]: http://community.nvda-project.org/wiki/Development [2]: http://"
-"community.nvda-project.org/documentation/developerGuide.html"
+"假设您的用户要求您使用程序模块查看一个程序滑块的值，在查看对象的层级和其他属"
+"性之后，您发现这个工具栏还是前景对象的最后一个子成员。"
 
-msgid "[[!meta title=\"NVDA Add-on Development Guide\"]]\n"
-msgstr "[[!meta title=\"NVDA 插件开发文档\"]]\n"
+#. type: Plain text
+msgid "Here is the code to implement this feature:"
+msgstr "这里是提供此特性的代码："
 
+#. type: Plain text
+#, no-wrap
+msgid "\t# Object example 1\n"
+msgstr "\t# Object example 1\n"
+
+#. type: Plain text
+#, no-wrap
 msgid ""
-"`addonHandler.initTranslation()`: Sets up the translation subsystem for add-"
-"ons via Gettext."
+"\timport api\n"
+"\timport appModuleHandler\n"
 msgstr ""
-"`addonHandler.initTranslation()`: 在您的插件上安装翻译子系统并使用 Gettext。"
+"\timport api\n"
+"\timport appModuleHandler\n"
 
-msgid ""
-"`api.getFocusObject()`: Retrieves the focused control (returns the object "
-"with focus)."
-msgstr "`api.getFocusObject()`: 检索有焦点的控件（返回有焦点的对象）。"
+#. type: Plain text
+#, no-wrap
+msgid "\t\tsliderChildIndex = -1 # The variable to store the child index.\n"
+msgstr "\t\tsliderChildIndex = -1 # The variable to store the child index.\n"
 
+#. type: Plain text
+#, no-wrap
 msgid ""
-"`api.getForegroundObject()`: Returns the foreground window of the current "
-"application (the parent of this object is the application itself)."
+"\t\tdef getSliderValue(self):\n"
+"\t\t\tfg = api.getForegroundObject()\n"
+"\t\t\tsliderVal = fg.children[self.sliderChildIndex].value\n"
+"\t\t\treturn sliderVal\n"
 msgstr ""
-"`api.getForegroundObject()`: 返回当前程序的前景窗口（对象的 parent 就是程序本"
-"身）。"
+"\t\tdef getSliderValue(self):\n"
+"\t\t\tfg = api.getForegroundObject()\n"
+"\t\t\tsliderVal = fg.children[self.sliderChildIndex].value\n"
+"\t\t\treturn sliderVal\n"
 
+#. type: Plain text
 msgid ""
-"`api.getNavigatorObject()`: Fetches the current navigator object. If NvDA is "
-"set to follow system focus, the focus and navigator object will be the same, "
-"otherwise a different object is returned."
+"In this code, the method `fg.children[index]` is used to retrieve the child "
+"with the given index (here, since we said the toolbar is the last child, the "
+"index would be minus 1, or the very last child; we could have used fg."
+"lastChild)."
 msgstr ""
-"`api.getNavigatorObject()`: 补货当前的浏览对象。 如果 NVDA 设置成“跟随系统焦"
-"点移动”，那么焦点和导航对象的返回相同，否则将返回不同的对象。"
+"在此代码中，方法`fg.children[index]`用来取回给出索引的子成员（这里，我们设定"
+"工具栏是最后一个子成员，因而索引号是 -1，货对于非常后面的成员，我们可以使用"
+"fg.lastChild）。"
 
+#. type: Plain text
+msgid ""
+"However, this code has an issue: what if the slider value is actually within "
+"the first child of the actual slider control? One way to fix this is to "
+"check the object's role. The modified code looks like this:"
+msgstr ""
+"可能，这份代码有一个问题：万一如果滑块的值实际上包含在滑块的第一个子成员控件"
+"怎么办？解决这个问题的其中一个办法就是检测对象角色。修改的代码看起来像这样："
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"\tdef getSliderValue(self):\n"
+"\t\tfrom controltypes import ROLE_SLIDER # It is possible to import from within a method.\n"
+"\t\tfg = api.getForegroundObject()\n"
+"\t\tslider = fg.lastChild\n"
+"\t\tif slider.role == ROLE_SLIDER: return slider.firstChild.value\n"
+msgstr ""
+"\tdef getSliderValue(self):\n"
+"\t\tfrom controltypes import ROLE_SLIDER # It is possible to import from within a method.\n"
+"\t\tfg = api.getForegroundObject()\n"
+"\t\tslider = fg.lastChild\n"
+"\t\tif slider.role == ROLE_SLIDER: return slider.firstChild.value\n"
+
+#. type: Plain text
+msgid ""
+"Thus, when we know for sure that we're dealing with the slider, the method "
+"returns the value of the slider's first child (if that is the case). Note "
+"the two equals signs for equality, as opposed to just one equals sign for "
+"assignment."
+msgstr ""
+"就此，我们知道并确定经过我们的处理，函数可以返回滑块的第一个子对象的值（如果"
+"存在这种情况的话）。请注意：两个等号表示相等，只有一个等于号表示分配。 "
+
+#. type: Plain text
+msgid ""
+"There are other examples you can try to familiarize yourself with object "
+"navigation and manipulation:"
+msgstr "这里还有其他的例子可以帮助您熟悉导航对象和操作："
+
+#. type: Bullet: '* '
+msgid ""
+"Obtaining the name of an object that is located somewhere else in the "
+"program."
+msgstr "获取不再这个程序而在其他地方的对象的名称。"
+
+#. type: Bullet: '* '
+msgid "Moving the navigator to the foreground object."
+msgstr "移动导航器到前景对象。"
+
+#. type: Bullet: '* '
+msgid "Setting focus to another program."
+msgstr "设置焦点到其他程序。"
+
+#. type: Plain text
+msgid ""
+"For real-life examples on objects in NvDA, consult the NvDA source code or "
+"source codes of various community add-ons."
+msgstr "关于 NVDA 对象的更多现实例子，可以查阅 NVDA 源代码货其他社区插件。"
+
+#. type: Title ###
+#, no-wrap
+msgid "Specialist objects and overriding object properties at runtime"
+msgstr "运行时的专门对象货覆盖对象的属性"
+
+#. type: Plain text
+msgid ""
+"Sometimes, it is not enough to work with default behavior for a control. For "
+"example, some parts of a program may need custom gestures, or one may need "
+"to change the role of a window to that of a button."
+msgstr ""
+"有些时候，只在控件用默认动作工作是不够的。如某些程序的部分可能需要自定义的手"
+"势， 或者需要修改某个控件的窗口角色为按钮等。"
+
+#. type: Plain text
+msgid ""
+"NVDA provides two methods for creating specialist, or overlay objects (or "
+"classes), each suited for different needs:"
+msgstr ""
+"NVDA 提供两个方法来创建专门对象或覆盖对象（也可能是类），每一个都是为了不同的"
+"需求而配备的："
+
+#. type: Bullet: '* '
+msgid ""
+"`event_NvDAObject_init(self, object we're dealing with)`: If you wish to "
+"override certain attributes of a control such as its role or label (name), "
+"you can use this method to ask NvDA to take your \"input\" to account when "
+"meeting objects for the first time (or initialized). For instance, if the "
+"control has the window class name of TForm (seen on many Delphi "
+"applications), you can ask NVDA to treat this control as a standard window "
+"by assigning obj.role = ROLE_WINDOW (see control types dictionary for list "
+"of available roles)."
+msgstr ""
+"`event_NvDAObject_init(self, 您正在处理的对象)`: 如果您希望替换某个当前控件的"
+"属性，如角色货标签（名称），您可以使用这个方法在 NVDA 第一次遇到这个控件货初"
+"始化的时候把您的“输入”放入“account”。例如，如果一个控件拥有窗口类TForm (曾经"
+"在许多Delphi 程序见过)， 您可以通过 bj.role = ROLE_WINDOW 要求 NVDA 把它视为"
+"窗口。（查看控件类型词典获取可用角色的列表）。"
+
+#. type: Bullet: '* '
 msgid ""
 "`chooseNVDAObjectOverlayClasses(self, object, list of classes)`: This allows "
 "NVDA to use your own logic when dealing with certain objects. For example, "
@@ -1723,37 +1615,451 @@ msgstr ""
 "我们必须基于固有的对象来处理这些对象（大多数时候， Accessible 已经足够，因为"
 "大多数的覆盖对象都继承自此或是 IAccessible  的子成员货专门的类）。"
 
+#. type: Plain text
 msgid ""
-"`event_NvDAObject_init(self, object we're dealing with)`: If you wish to "
-"override certain attributes of a control such as its role or label (name), "
-"you can use this method to ask NvDA to take your \"input\" to account when "
-"meeting objects for the first time (or initialized). For instance, if the "
-"control has the window class name of TForm (seen on many Delphi "
-"applications), you can ask NVDA to treat this control as a standard window "
-"by assigning obj.role = ROLE_WINDOW (see control types dictionary for list "
-"of available roles)."
+"Note that in case of the second method, the class(s) with the given name "
+"must be present in the file, which is/are inherited from a known base object "
+"(in Python, the syntax for the inheritence is `childClass(baseClass)`, and "
+"is usually read as, \"this child class inherits from this base class\". "
+"We'll see code like this later)."
 msgstr ""
-"`event_NvDAObject_init(self, 您正在处理的对象)`: 如果您希望替换某个当前控件的"
-"属性，如角色货标签（名称），您可以使用这个方法在 NVDA 第一次遇到这个控件货初"
-"始化的时候把您的“输入”放入“account”。例如，如果一个控件拥有窗口类TForm (曾经"
-"在许多Delphi 程序见过)， 您可以通过 bj.role = ROLE_WINDOW 要求 NVDA 把它视为"
-"窗口。（查看控件类型词典获取可用角色的列表）。"
+"请注意，对于第二个方法，给定的类名必须放置在文件内。他们备继承字一个众所周知"
+"的基本对象(在 Python， 继承的语法是 `子类(基类)`， 通常也可以说成“这个子类继"
+"承自这个基类”。我们将在后面看到这样的代码）。"
 
-msgid "`logHandler.Log`: The class which implements logging facility."
-msgstr "`logHandler.Log`:一个控制日志输出的类。"
+#. type: Title ###
+#, no-wrap
+msgid "Examples of overlay classes and modified roles"
+msgstr "覆盖类和修改角色的例子"
 
+#. type: Plain text
 msgid ""
-"`tones.beep(pitch in hertz, duration in milliseconds, left channel volume, "
-"right channel volume)`: Plays a tone of specified pitch for specified "
-"duration. The first two arguments are mandatory, while the other two are "
-"optional."
-msgstr ""
-"`tones.beep(表示音高的赫兹数,持续的毫秒数,左通道音量,右通道音量)`: 按照给定的"
-"音高和时常播放提示音。前面的两个参数是必须的，而另外的两个是可选参数。"
+"Below examples illustrate the uses of the two overlay and attribute "
+"modification methods we've discussed above:"
+msgstr "下面的例子说明了我们在上面讨论的覆盖和更改属性这两个方法的用法："
 
+#. type: Plain text
+msgid "An example of the first case: modifying an atribute."
+msgstr "第一个例子：修改属性。"
+
+#. type: Plain text
+#, no-wrap
 msgid ""
-"`ui.message(message to be spoken/brailled)`: Speaks or brailles the message. "
-"This should be a string surrounded by quotes."
+"\t# Reassign some Delphi forms as window.\n"
+"\t\tdef event_NvDAObject_init(self, obj):\n"
+"\t\t\tif obj.windowClassName == \"TForm\": obj.role = ROLE_WINDOW\n"
 msgstr ""
-"`ui.message(需要语音或点字输出的消息)`: 用语音或点字输出该消息，此参数必须是"
-"带有引号的字串。"
+"\t# Reassign some Delphi forms as window.\n"
+"\t\tdef event_NvDAObject_init(self, obj):\n"
+"\t\t\tif obj.windowClassName == \"TForm\": obj.role = ROLE_WINDOW\n"
+
+#. type: Plain text
+msgid ""
+"This means that whenever we encounter a window with the class name of \"TForm"
+"\", NvDA will treat this as a normal window."
+msgstr ""
+"这样的意思是，每当我们遇到的窗口类名为“TForm”的窗口时, NvDA 会把他当作普通窗"
+"口对待。"
+
+#. type: Plain text
+msgid ""
+"Example 2 deals with an app module which has two objects for dealing with "
+"specific parts of a program, then uses chooseNVDAObjectOverlayClasses to "
+"assign the logic for each control."
+msgstr ""
+"例子2：使用带有两个对象的程序模块处理程序的特定部分，然后使用 "
+"chooseNVDAObjectOverlayClasses 来自定义每个控件的逻辑。"
+
+#. type: Plain text
+#, no-wrap
+msgid "\t#An example of overlay classes\n"
+msgstr "\t#An example of overlay classes\n"
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"\tclass enhancedEdit(IAccessible):\n"
+"\t\t# Some code to be run when window class name is MyEdit.\n"
+msgstr ""
+"\tclass enhancedEdit(IAccessible):\n"
+"\t\t# Some code to be run when window class name is MyEdit.\n"
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"\tclass MainWindow(IAccessible):\n"
+"\t\t# Another code, this time adding custom gestures for main window of the program.\n"
+msgstr ""
+"\tclass MainWindow(IAccessible):\n"
+"\t\t# Another code, this time adding custom gestures for main window of the program.\n"
+
+#. type: Plain text
+#, no-wrap
+msgid "\t# In the app module:\n"
+msgstr "\t# In the app module:\n"
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"\tdef chooseNVDAObjectOverlayClasses(self, obj, clsList):\n"
+"\t\tif obj.windowClassName == \"myEdit\": clsList.insert(0, enhancedEdit)\n"
+"\t\telif obj.windowClassName == \"TWindow\": clsList.insert(0, mainWindow)\n"
+msgstr ""
+"\tdef chooseNVDAObjectOverlayClasses(self, obj, clsList):\n"
+"\t\tif obj.windowClassName == \"myEdit\": clsList.insert(0, enhancedEdit)\n"
+"\t\telif obj.windowClassName == \"TWindow\": clsList.insert(0, mainWindow)\n"
+
+#. type: Plain text
+msgid ""
+"In both cases, the object that we wish to check must be inserted as the "
+"first element of the clsList. The effect is that these custom objects will "
+"take precedence when looking up gestures or code (behavior) for the object, "
+"and in the developer info, these custom objects will come first when MRO "
+"(Method Resolution Order) for the navigator object is displayed."
+msgstr ""
+"对于这两个函数，我们希望检查的对象必须插入到“clsList”的第一项。 这样做的好处"
+"是在为对象查找手势和代码（行为）时这些自定义对象可以获得优先权。且在开发信息"
+"中，显示导航对象的MRO（方法解决顺序）时江首先显示这些自定义控件。"
+
+#. type: Title ###
+#, no-wrap
+msgid "Input and output: scripts and UI messages"
+msgstr "输入和输出：脚本和 UI 消息"
+
+#. type: Plain text
+msgid ""
+"Another crucial component of add-ons is handling commands from users and "
+"displaying what the add-on is doing. These are done via scripts (input) and "
+"UI messages (output)."
+msgstr ""
+"插件的另外一个组成部分就是获取用户命令和显示插件正在做什么。这些可以通过脚本"
+"（输入）和 UI 消息（输出）完成。"
+
+#. type: Plain text
+msgid ""
+"A script is a method run when the user performs certain commands. For "
+"example, when you press NvDA+T, NVDA runs a script in global commands module "
+"called SayTitle. In Poedit, for instance, when a translator presses Control"
+"+Shift+A, NvDA will read translator comments added by the programmer to help "
+"clarify a given translatable string. this command is not a native NvDA "
+"command, but it is defined in the Poedit app module to perform this function."
+msgstr ""
+"脚本是一个当用户执行某个动作而执行的方法。例如，如果您按下“NVDA+T”，NVDA 会执"
+"行存放在全局命令模块的脚本“SayTitle”。在 Poedit 中，译者按下“Control+Shift"
+"+A”时， NVDA 会朗读油程序员添加的注视以帮助理清可翻译字串的用意。这不是原本"
+"的 NVDA 命令，它备添加在 Poedit 的程序模块当中以执行此功能。"
+
+#. type: Plain text
+msgid ""
+"Typically, an add-on which accepts scripts will have a list of command:"
+"function map somewhere in the module. The simplest is a gestures (commands) "
+"dictionary, a python dictionary (typically named __gestures) which holds "
+"commands as keys and scripts as values for these keys (more than one key, or "
+"command can be bound to scripts). These dictionaries are loaded when add-on "
+"loads and is cleared when either NvDA exits or the app for the app module "
+"loses focus (that is, the user has switched to another program)."
+msgstr ""
+"通常来说，可接收脚本的插件都会拥有一个命令列表:它就是放置在某个地方的功能表。"
+"最简单的就是手势（命令）词典， 极 python 词典（通常备命名为 __gestures），它"
+"可以容纳命令（作为 keys）和脚本（作为 values）（如果命令货 key 多余一个，则可"
+"以捆绑为脚本）。 这些词典江在 插件加载时载入，将在 NVDA 退出货程序模块所属程"
+"序丢失焦点时清空（就是说，用户切换到了另外一个程序）。"
+
+#. type: Plain text
+msgid ""
+"Another way to bind scripts is via runtime insertion. This is done by "
+"creating another gestures dictionary apart from __gestures dictionary which "
+"holds context-sensitive gestures such as manipulating a single control. Then "
+"the developer would use inputCore.bindGesture (or inputCore.bindGestures if "
+"more than one gestures/scripts are defined) to define certain gestures for a "
+"time, then using inputCore.clearGestures then inputCore."
+"bindGestures(__gestures) to remove the added gestures. A more elegant way, "
+"which involves scripts for specific objects, will be covered when we talk "
+"about overlay classes."
+msgstr ""
+"另外一种捆绑脚本的方法就是基于运行时的插入。可以通过创建与 __gestures 分离的"
+"其他手势词典完成，它可以用来存储对上下文敏感的手势。如操作一个单独的控件。接"
+"下来开发者会使用 inputCore.bindGesture （如果定义了多个脚本货手势则使用 "
+"inputCore.bindGestures ）来进行定义。最后在 inputCore.bindGestures 后使用 "
+"inputCore.clearGestures 来移除已添加的手势。更加优雅的方法涉及到特定对象的脚"
+"本，江在我们讲述覆盖类时讲到。"
+
+#. type: Plain text
+msgid ""
+"As of time of writing, NvDA supports input from the keyboard, braille "
+"dislays with or without braille keyboard and touchscreens."
+msgstr "NvDA 支持从键盘、点显器货点显器键盘和触摸屏输入。"
+
+#. type: Title ###
+#, no-wrap
+msgid "Example 2: A basic script dictionary"
+msgstr "例子2：基础脚本字典"
+
+#. type: Plain text
+msgid ""
+"In this example, we'll define two scripts called \"sayHello\" and say"
+"\"GoodBye\", then bind them into two separte gestures."
+msgstr ""
+"在这个例子中，我们设计了“sayHello”和“sayGoodBye”两个脚本并绑定到单独的手势中"
+"去。"
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"\t# An example fragment for script assignment.\n"
+"\timport ui\n"
+msgstr ""
+"\t# An example fragment for script assignment.\n"
+"\timport ui\n"
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"\tdef script_sayHello(self, gesture):\n"
+"\t\tui.message\"Hello!\")\n"
+msgstr ""
+"\tdef script_sayHello(self, gesture):\n"
+"\t\tui.message\"Hello!\")\n"
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"\tdef script_sayGoodBye(self, gesture):\n"
+"\t\tui.message(\"Good Bye!\")\n"
+msgstr ""
+"\tdef script_sayGoodBye(self, gesture):\n"
+"\t\tui.message(\"Good Bye!\")\n"
+
+#. type: Plain text
+#, no-wrap
+msgid ""
+"\t__gestures={\n"
+"\t\t\"kb:control+NVDA+1\":\"sayHello\",\n"
+"\t\t\"kb:Control+NVDA+2\":\"sayGoodBye\"\n"
+"\t}\n"
+msgstr ""
+"\t__gestures={\n"
+"\t\t\"kb:control+NVDA+1\":\"sayHello\",\n"
+"\t\t\"kb:Control+NVDA+2\":\"sayGoodBye\"\n"
+"\t}\n"
+
+#. type: Plain text
+msgid ""
+"Now when you press Control+NvDA+1, NvDA will say, \"Hello\", and when you "
+"press Control+NvDA+2, NVDA will say, \"Good bye.\""
+msgstr ""
+"现在，当您按下“Control+NvDA+1”，NVDA 会说“Hello”，当您按下“Control+NvDA+2”，"
+"NVDA 会说“Good bye”。"
+
+#. type: Title ###
+#, no-wrap
+msgid "Example 3: runtime script insertion/removal"
+msgstr "例子3：脚本基于运行时的插入和移除（译者注：内容暂时就到这儿为止了，期待日后官方的更新吧。另外有几个地方网址没能正常显示也是原文档的bug。翻译有何不妥，欢迎随时与我联系，请访问 NVDA 中文站获取更多 NVDA 的中文资讯和插件。电邮：vgjh2005@gmail.com，非常感谢您的阅读）。"
+
+#. type: Plain text
+#, no-wrap
+msgid "\t# Future sections #\n"
+msgstr "\t# Future sections #\n"
+
+#. type: Plain text
+msgid "Please delete this notice when appropriate sections are done."
+msgstr "Please delete this notice when appropriate sections are done."
+
+#. type: Title ##
+#, no-wrap
+msgid "Add-on components and development tips"
+msgstr "Add-on components and development tips"
+
+#. type: Plain text
+msgid ""
+"Includes introductions to input and scripts, output systems, objects, "
+"events, configuration, add-on settings and reloading plug-ins. Also includes "
+"some tips on add-on development such as debugging. It concludes with some "
+"useful examples and do's and don'ts."
+msgstr ""
+"Includes introductions to input and scripts, output systems, objects, "
+"events, configuration, add-on settings and reloading plug-ins. Also includes "
+"some tips on add-on development such as debugging. It concludes with some "
+"useful examples and do's and don'ts."
+
+#. type: Plain text
+msgid ""
+"Planned sections (please feel free to contribute your knowledge in this "
+"section):"
+msgstr ""
+"Planned sections (please feel free to contribute your knowledge in this "
+"section):"
+
+#. type: Bullet: '* '
+msgid "Introduction to NVDA objects."
+msgstr "Introduction to NVDA objects."
+
+#. type: Bullet: '* '
+msgid "Examining object attributes with Python Console."
+msgstr "Examining object attributes with Python Console."
+
+#. type: Bullet: '* '
+msgid "Fetching and setting objects."
+msgstr "Fetching and setting objects."
+
+#. type: Bullet: '* '
+msgid ""
+"Object hierarchy and differences between regular and simple review modes."
+msgstr ""
+"Object hierarchy and differences between regular and simple review modes."
+
+#. type: Bullet: '* '
+msgid "The event_NVDAObject_init and chooseNVDAObjectOverlayClasses methods."
+msgstr "The event_NVDAObject_init and chooseNVDAObjectOverlayClasses methods."
+
+#. type: Bullet: '* '
+msgid "Events and list of available events."
+msgstr "Events and list of available events."
+
+#. type: Bullet: '* '
+msgid "Next handlers."
+msgstr "Next handlers."
+
+#. type: Bullet: '* '
+msgid ""
+"Input from keyboard, braille displays, mouse and touchscreen via scripts."
+msgstr ""
+"Input from keyboard, braille displays, mouse and touchscreen via scripts."
+
+#. type: Bullet: '* '
+msgid "Script lookup process and conflicts."
+msgstr "Script lookup process and conflicts."
+
+#. type: Bullet: '* '
+msgid ""
+"Static and dynamic script bindings, gesture dictionaries and script "
+"categories."
+msgstr ""
+"Static and dynamic script bindings, gesture dictionaries and script "
+"categories."
+
+#. type: Bullet: '* '
+msgid "Braille, speech and tone output."
+msgstr "Braille, speech and tone output."
+
+#. type: Bullet: '* '
+msgid "Debugging add-ons."
+msgstr "Debugging add-ons."
+
+#. type: Bullet: '* '
+msgid "If something goes wrong (common errors and exceptions)."
+msgstr "If something goes wrong (common errors and exceptions)."
+
+#. type: Bullet: '* '
+msgid "Few working and non-working examples for each topic."
+msgstr "Few working and non-working examples for each topic."
+
+#. type: Bullet: '* '
+msgid "These plan sections may change."
+msgstr "These plan sections may change."
+
+#. type: Title ##
+#, no-wrap
+msgid "Global Plugins"
+msgstr "Global Plugins"
+
+#. type: Plain text
+msgid "A chapter devoted to global plugins."
+msgstr "A chapter devoted to global plugins."
+
+#. type: Plain text
+msgid "Planned sections:"
+msgstr "Planned sections:"
+
+#. type: Bullet: '* '
+msgid "What exactly is global plugin."
+msgstr "What exactly is global plugin."
+
+#. type: Bullet: '* '
+msgid ""
+"Importance of consulting NvDA and add-on commands to minimize command "
+"conflicts."
+msgstr ""
+"Importance of consulting NvDA and add-on commands to minimize command "
+"conflicts."
+
+#. type: Bullet: '* '
+msgid "When not to use global plugins."
+msgstr "When not to use global plugins."
+
+#. type: Bullet: '* '
+msgid "A few worked out examples."
+msgstr "A few worked out examples."
+
+#. type: Bullet: '* '
+msgid "These sections may change."
+msgstr "These sections may change."
+
+#. type: Title ##
+#, no-wrap
+msgid "App Modules"
+msgstr "App Modules"
+
+#. type: Plain text
+msgid "A chapter devoted to app modules."
+msgstr "A chapter devoted to app modules."
+
+#. type: Bullet: '* '
+msgid "What is an app module."
+msgstr "What is an app module."
+
+#. type: Bullet: '* '
+msgid "App module scripts."
+msgstr "App module scripts."
+
+#. type: Bullet: '* '
+msgid "Defining objects representing different parts of a program."
+msgstr "Defining objects representing different parts of a program."
+
+#. type: Bullet: '* '
+msgid "Silencing NVDA for a program."
+msgstr "Silencing NVDA for a program."
+
+#. type: Bullet: '* '
+msgid "How app developers can help NVDA users through accessible app designs."
+msgstr "How app developers can help NVDA users through accessible app designs."
+
+#. type: Bullet: '* '
+msgid ""
+"A few worked out examples and examples from existing app modules from NVDA "
+"core and from community."
+msgstr ""
+"A few worked out examples and examples from existing app modules from NVDA "
+"core and from community."
+
+#. type: Bullet: '* '
+msgid "These topics may change."
+msgstr "These topics may change."
+
+#. type: Title ##
+#, no-wrap
+msgid "Drivers"
+msgstr "Drivers"
+
+#. type: Plain text
+msgid "A chapter devoted to driver development."
+msgstr "A chapter devoted to driver development."
+
+#. type: Title ##
+#, no-wrap
+msgid "Misc items"
+msgstr "Misc items"
+
+#. type: Plain text
+msgid ""
+"Includes Bitbucket repo, add-ons lisst, other topics and contact information."
+msgstr ""
+"Includes Bitbucket repo, add-ons lisst, other topics and contact information."
+
+#. type: Plain text
+msgid ""
+"[1]: http://community.nvda-project.org/wiki/Development [2]: http://"
+"community.nvda-project.org/documentation/developerGuide.html"
+msgstr ""
+"[1]: http://community.nvda-project.org/wiki/Development [2]: http://"
+"community.nvda-project.org/documentation/developerGuide.html"
