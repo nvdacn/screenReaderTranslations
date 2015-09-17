@@ -10,6 +10,26 @@
 </CENTER>
 
 
+<H2>2015.4</H2>
+
+<H3>Novas Características</H3>
+
+<UL>
+<LI>NVDA agora aparece no Centro de Acceso Fácil en Windows 8 e posterior. (<A HREF="http://community.nvda-project.org/ticket/308">#308</A>)
+</UL>
+
+<H3>Corrección de fallos</H3>
+
+<UL>
+<LI>Grandes melloras de rendemento ó navegar pola barra de mensaxes en Outlook 2010/2013. (<A HREF="http://community.nvda-project.org/ticket/5268">#5268</A>)
+<LI>Nun gráfico en Microsoft Excel, ó navegar con certas teclas (como ó cambiar de folla con control+rePáx e control+avPáx) agora funciona correctamente. (<A HREF="http://community.nvda-project.org/ticket/5336">#5336</A>)
+<LI>Correxida a forma visual dos botóns no diálogo de advertencia que se amosa cando tentas actualizar NVDA a unha versión anterior. (<A HREF="http://community.nvda-project.org/ticket/5325">#5325</A>)
+<LI>En Windows 8 e posterior, NVDA agora arranca moito máis rápido cando se configurou para iniciarse despois de autentificarse en Windows. (<A HREF="http://community.nvda-project.org/ticket/308">#308</A>)
+ <UL>
+ <LI>Se habilitaches esto utilizando unha versión anterior  do NVDA, necesitarás deshabilitalo e habilitalo de novo no diálogo  Opcións Xerais para que o cambio teña efecto.
+ </UL>
+</UL>
+
 <H2>2015.3</H2>
 
 <P>
@@ -27,11 +47,9 @@ O subliñable nesta versión inclúe o apoio inicial para Windows 10; a capacida
 <LI>Novas táboas de transcripción braille: Finés de 6 pontos, Irlandés grao 1, Irlandés grao 2, Coreán grao 1 (2006), Coreán grao 2 (2006). (<A HREF="http://community.nvda-project.org/ticket/5137">#5137</A>, <A HREF="http://community.nvda-project.org/ticket/5074">#5074</A>, <A HREF="http://community.nvda-project.org/ticket/5097">#5097</A>)
 <LI>Agora sopórtase o teclado QWERTY na pantalla braille Papenmeier BRAILLEX Live Plus. (<A HREF="http://community.nvda-project.org/ticket/5181">#5181</A>)
 <LI>Apoio Experimental para o navegador web Microsoft Edge e o motor de exploración web no Windows 10. (<A HREF="http://community.nvda-project.org/ticket/5212">#5212</A>)
-</UL>
-
-<H3>Canbios</H3>
-
-<UL>
+<LI>Nova lingua: Canadá.
+<P></P>
+== Canbios ==
 <LI>Actualizado o transcriptor braille liblouis a 2.6.3. (<A HREF="http://community.nvda-project.org/ticket/5137">#5137</A>)
 <LI>Ó tentar instalar unha versión máis antiga do NVDA da que está instalada actualmente, agora avisaráseche de que esto non está recomendado e de que NVDA debería desinstalarse compretamente antes de proceder. (<A HREF="http://community.nvda-project.org/ticket/5037">#5037</A>)
 </UL>
@@ -52,14 +70,16 @@ O subliñable nesta versión inclúe o apoio inicial para Windows 10; a capacida
 <LI>As notificacións de Windows 10 Toast agora anúncianse como se esperaba. (<A HREF="http://community.nvda-project.org/ticket/5136">#5136</A>)
 <LI>O valor agora anúnciase segundo se  cambie en certas caixas combinadas (UI Automation) onde esto non funcionaba ate o de agora.
 <LI>No Modo exploración en navegadores web, ó tabular agora compórtase segundo se espera  despois de tabular a un marco de documento. (<A HREF="http://community.nvda-project.org/ticket/5227">#5227</A>)
- <UL>
- <LI>A pantalla de bloqueo do Windows 10 agora pode pecharse utilizando a pantalla tactil. (<A HREF="http://community.nvda-project.org/ticket/5220">#5220</A>)
- </UL>
+<LI>A pantalla de bloqueo do Windows 10 agora pode pecharse utilizando a pantalla tactil. (<A HREF="http://community.nvda-project.org/ticket/5220">#5220</A>)
 <LI>No Windows 7 e posteriores, o texto xa non é ilexible ó se teclear en certas aplicacións como Wordpad e Skype cunha pantalla braille. (<A HREF="http://community.nvda-project.org/ticket/4291">#4291</A>)
 <LI>Na pantalla de bloqueo do Windows 10, xa  non é posible ler o portapapeis, acesar a  aplicacións en execución co cursor de revisión, cambiar a configuración do NVDA, etc. (<A HREF="http://community.nvda-project.org/ticket/5269">#5269</A>)
-<P></P>
-== Cambios para Desenvolvedores ==
+</UL>
+
+<H3>Cambios para Desenvolvedores</H3>
+
+<UL>
 <LI>Agora podes inxectar a entrada bruta dende un teclado de sistema que non se manexa nativamente polo Windows (ex.: un teclado QWERTY nunha pantalla braille) utilizando a nova función keyboardHandler.injectRawKeyboardInput . (<A HREF="http://community.nvda-project.org/ticket/4576">#4576</A>)
+<LI>Engadiuse eventHandler.requestEvents para solicitar eventos particulares que estean bloqueados por defecto; ex.: amosa eventos dende un control específico ou certos eventos aínda que estean de fondo. (<A HREF="http://community.nvda-project.org/ticket/3831">#3831</A>)
 <LI>En lugar dun só atributo i18nName, synthDriverHandler.SynthSetting agora ten os atributos  displayNameWithAccelerator e displayName separados para evitar o anunciado do acelerador no grupo de opcións do sintetizador nalgunhas linguas.
  <UL>
  <LI>Por compatibilidade con versións anteriores, no constructor, displayName é opcional e deribarase de displayNameWithAccelerator se non se proporciona. Con todo, se tentas ter un acelerador para unha opción, deberían proporcionarse ámbolos dous.
