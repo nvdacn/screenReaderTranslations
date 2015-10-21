@@ -78,7 +78,7 @@ addresses = {
     },
     'he': {
         'lang': 'Hebrew',
-        'email': ['Shmuel Naaman <shmuel_naaman@yahoo.com>'],
+        'email': ['Shmuel Naaman <shmuel_naaman@yahoo.com>', 'Afik Sofir <afik.sofer@gmail.com>'],
     },
     'hi': {
         'lang': 'Hindi',
