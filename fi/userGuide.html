@@ -162,9 +162,8 @@
   <LI><A HREF="#toc111">14. Edistyneet aiheet</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">14.1. Komentorivivalitsimet</A>
-    <LI><A HREF="#toc113">14.2. Symboleiden puhumisen lisämukauttaminen</A>
     </UL>
-  <LI><A HREF="#toc114">15. Lisätietoja</A>
+  <LI><A HREF="#toc113">15. Lisätietoja</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -1386,7 +1385,7 @@ NVDA tukee seuraavia matemaattisia sisältöjä:
 
 <UL>
 <LI>MathML Mozilla Firefoxissa ja Microsoft Internet Explorerissa.
-<LI>Design Science MathType Microsoft Wordissa ja PowerPointissa.
+<LI>Design Science MathType Microsoft Wordissa ja PowerPointissa. MathTypen on oltava asennettuna, jotta tämä toimii. Kokeiluversio riittää.
 <LI>MathML Adobe Readerissa. HUOM: Tämä ei ole vielä virallinen standardi, joten tätä sisältöä tuottavaa ohjelmistoa ei ole julkisesti saatavilla.
 </UL>
 
@@ -1496,7 +1495,7 @@ NVDA:ssa on joillekin sovelluksille omia lisäkomentoja tiettyjen tehtävien hel
 <TR>
 <TD>Elementtilista-valintaikkuna</TD>
 <TD>NVDA+F7</TD>
-<TD>Avaa Elementtilista-valintaikkunan, joka näyttää kaaviot sekä kommentteja tai kaavoja sisältävät solut.</TD>
+<TD>Avaa Elementtilista-valintaikkunan, joka näyttää kaaviot, kommentteja ja kaavoja sisältävät solut, tai laskentataulukot.</TD>
 </TR>
 </TABLE>
 
@@ -2516,13 +2515,27 @@ HUOM: Tässä noudatetaan  <A HREF="#VoiceSettings">Puheäänen asetukset -valin
 </P>
 <P>
 Symbolia muutetaan valitsemalla se Symbolit-listasta.
-Korvaava teksti -kentässä voit muuttaa tekstiä, joka puhutaan kyseisen symbolin sijasta.
-Taso-yhdistelmäruudussa voit säätää alimman tason, jolla symboli puhutaan.
 </P>
+
+<UL>
+<LI>Korvaava teksti -muokkauskentässä voit muuttaa tekstiä, joka puhutaan kyseisen symbolin sijasta.
+<LI>Taso-yhdistelmäruudusta voit säätää alimman tason, jolla symboli puhutaan.
+<LI>Lähetä todellinen merkki syntetisaattorille -yhdistelmäruudusta voidaan määrittää, milloin itse symboli (vastakohtana sen korvaavalle tekstille) lähetetään syntetisaattorille.
+Tästä on hyötyä, jos symboli saa syntetisaattorin pitämään tauon tai muuttamaan äänensävyä.
+Esimerkiksi pilkku saa syntetisaattorin pitämään tauon.
+Vaihtoehtoja on kolme:
+ <UL>
+ <LI>ei koskaan: Älä koskaan lähetä todellista merkkiä syntetisaattorille.
+ <LI>aina: Lähetä aina todellinen merkki syntetisaattorille.
+ <LI>vain jos symbolitaso on alempi: Lähetä todellinen merkki vain, jos määritetty puheen symbolitaso on alempi kuin kyseiselle symbolille määritetty.
+Voit käyttää tätä esim. siten, että symbolin korvaava teksti puhutaan korkeammilla tasoilla ilman taukoja, mutta alemmilla tasoilla tauot kuitenkin kuuluvat.
+ </UL>
+</UL>
+
 <P>
 Lisää uusia symboleita painamalla Lisää-painiketta.
 Kirjoita symboli avautuvaan valintaikkunaan ja paina OK.
-Muuta tämän jälkeen sen korvaava teksti ja taso kuten muillekin symboleille.
+Muuta sitten korvaava teksti- ja taso haluamiksesi kuten muillekin symboleille.
 </P>
 <P>
 Poista aiemmin lisäämäsi symboli painamalla Poista-painiketta.
@@ -4977,7 +4990,7 @@ Seuraavassa on lista NVDA:n komentorivivalitsimista:
 <TR>
 <TD>-m</TD>
 <TD>--minimal</TD>
-<TD>Ei ääniä, ei käyttöliittymää, ei käynnistysilmoitusta jne.</TD>
+<TD>Ei ääniä, käyttöliittymää, käynnistysilmoitusta jne.</TD>
 </TR>
 <TR>
 <TD>-s</TD>
@@ -5007,20 +5020,6 @@ Seuraavassa on lista NVDA:n komentorivivalitsimista:
 </TABLE>
 
 <A NAME="toc113"></A>
-<H3>14.2. Symboleiden puhumisen lisämukauttaminen</H3>
-
-<P>
-Välimerkkien ja muiden symboleiden lukutapaa voidaan mukauttaa enemmänkin kuin mitä <A HREF="#SymbolPronunciation">Välimerkkien ja symboleiden puhuminen</A> -valintaikkunassa on mahdollista.
-Voidaan esimerkiksi määrittää, lähetetäänkö symboli syntetisaattorille sellaisenaan (esim. tauon tai äänensävyn muutoksen aikaansaamiseksi) ja lisätä omia symboleita.
-</P>
-<P>
-Tämä tehdään muokkaamalla NVDA:n käyttäjän asetushakemistossa olevaa symbolitiedostoa.
-Tiedosto on nimeltään symbols-xx.dic, jossa xx on kielikoodi.
-Tiedoston muoto on dokumentoitu Symbol pronunciation -kappaleessa kehittäjän oppaassa, joka on luettavissa <A HREF="http://community.nvda-project.org/wiki/Development">NVDA:n verkkosivuston Development-osiossa</A>.
-Monimutkaisten symboleiden määrittäminen ei ole kuitenkaan mahdollista.
-</P>
-
-<A NAME="toc114"></A>
 <H2>15. Lisätietoja</H2>
 
 <P>
