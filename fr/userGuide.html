@@ -162,9 +162,8 @@
   <LI><A HREF="#toc111">14. Fonctions avancées</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">14.1. Options de ligne de commande</A>
-    <LI><A HREF="#toc113">14.2. Personnalisation avancée de la prononciation des symboles</A>
     </UL>
-  <LI><A HREF="#toc114">15. Informations complémentaires</A>
+  <LI><A HREF="#toc113">15. Informations complémentaires</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -1386,7 +1385,7 @@ NVDA supporte les types de contenu mathématiques suivants :
 
 <UL>
 <LI>MathML sous Mozilla Firefox et Microsoft Internet Explorer.
-<LI>Design Science MathType sous Microsoft Word et PowerPoint.
+<LI>Design Science MathType sous Microsoft Word et PowerPoint. MathType doit être installé pour que cela fonctionne. La version de démonstration est suffisante.
 <LI>MathML sous Adobe Reader. Notez que ceci n'est pas un standard officiel, ce qui fait qu'actuellement, il n'existe pas de logiciels grand public pouvant produire ce contenu.
 </UL>
 
@@ -1496,7 +1495,7 @@ NVDA fournit ses propres commandes additionnelles dans quelques applications pou
 <TR>
 <TD>Liste d'éléments dialog</TD>
 <TD>NVDA+f7</TD>
-<TD>ouvre le dialogue de la liste d'éléments présentant les graphiques, les cellules avec commentaires, ou les cellules avec formules.</TD>
+<TD>ouvre le dialogue de la liste d'éléments présentant les graphiques, les cellules avec commentaires, les cellules avec formules ou les feuilles.</TD>
 </TR>
 </TABLE>
 
@@ -2515,13 +2514,27 @@ Notez que ce dialogue tient compte de l'option "Se baser sur la langue de la voi
 </P>
 <P>
 Pour modifier un symbole, sélectionnez-le d'abord dans la liste de symboles.
-Le champ "Remplacement" vous permet de modifier le texte qui doit être prononcé à la place de ce symbole.
-En utilisant le champ "Niveau", vous pouvez ajuster le niveau minimum auquel ce symbole doit être annoncé.
 </P>
+
+<UL>
+<LI>Le champ "Remplacement" vous permet de modifier le texte qui doit être prononcé à la place de ce symbole.
+<LI>En utilisant le champ "Niveau", vous pouvez ajuster le niveau minimum auquel ce symbole doit être annoncé.
+<LI>Le champ "Envoyer le symbole réel au synthétiseur" spécifie quand le symbole lui-même (au lieu de son remplacement) devrait être envoyé au synthétiseur.
+Ceci est utile si le symbole force le synthétiseur à marquer une pause ou modifie l'inflexion de la voix. 
+Par exemple, une virgule force le synthétiseur à marquer une pause.
+Il y a trois options :
+ <UL>
+ <LI>jamais : Ne jamais envoyer le symbole réel au synthétiseur.
+ <LI>toujours : Toujours envoyer le symbole réel au synthétiseur.
+ <LI>seulement au-dessous du niveau du symbole : N'envoyer le symbole réel que si le niveau de symboles configuré est inférieur au niveau assigné à ce symbole.
+ Par exemple, vous pourriez utiliser cela pour qu'un symbole ait son remplacement annoncés à hauts niveaux sans marquer de pause, tout en étant indiqué par une pause aux niveaux inférieurs.
+ </UL>
+</UL>
+
 <P>
 Vous pouvez ajouter de nouveaux symboles en pressant le bouton Ajouter.
 Dans le dialogue qui apparaît, saisissez le symbole et pressez le bouton OK.
-Puis, changez le remplacement et le niveau pour le nouveau symbole comme vous le feriez pour les autres symboles.
+Puis, changez les champs pour le nouveau symbole comme vous le feriez pour les autres symboles.
 </P>
 <P>
 Vous pouvez supprimer un symbole précédemment ajouté en pressant le bouton Supprimer.
@@ -5006,20 +5019,6 @@ Voici les options de ligne de commande de NVDA :
 </TABLE>
 
 <A NAME="toc113"></A>
-<H3>14.2. Personnalisation avancée de la prononciation des symboles</H3>
-
-<P>
-Il est possible de personnaliser la prononciation des ponctuations et autres symboles au-delà de ce que permet le dialogue <A HREF="#SymbolPronunciation">"Prononciation des symboles et ponctuations"</A>.
-Par exemple, vous pouvez indiquer si un symbole particulier doit être envoyé au synthétiseur pour créer une pause ou modifier une inflexion et vous pouvez ajouter vos propres symboles.
-</P>
-<P>
-Pour faire cela, vous devez éditer le fichier contenant les informations de prononciation des symboles dans votre répertoire utilisateur NVDA.
-Le fichier s'appelle symbols-xx.dic où xx est le code de la langue.
-Le format de ce fichier est documenté dans la section "Prononciation des Symboles" du guide de développement NVDA disponible dans <A HREF="http://community.nvda-project.org/wiki/Development">la section Développement du site NVDA</A>.
-Cependant, l'utilisateur ne peut pas définir de symboles complexes.
-</P>
-
-<A NAME="toc114"></A>
 <H2>15. Informations complémentaires</H2>
 
 <P>
