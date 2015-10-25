@@ -162,9 +162,8 @@
   <LI><A HREF="#toc111">14. + Temas Avanzados</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">14.1. Opcións de Liña de Ordes</A>
-    <LI><A HREF="#toc113">14.2. Persoalización Avanzada da Pronuncia de Símbolos</A>
     </UL>
-  <LI><A HREF="#toc114">15. Información Adicional</A>
+  <LI><A HREF="#toc113">15. Información Adicional</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -1384,7 +1383,7 @@ NVDA soporta os seguintes tipos de contidos matemáticos:
 
 <UL>
 <LI>MathML en Mozilla Firefox e Microsoft Internet Explorer.
-<LI>Design Science MathType en Microsoft Word e PowerPoint.
+<LI>Design Science MathType en Microsoft Word e PowerPoint. MathType necesita estares instalado para que esto funcione. A versión trial é suficiente.
 <LI>MathML en Adobe Reader. Ten en conta que esto non é un estándar official aínda, así que non hai actualmente software dispoñible para o público que poda producir este contido.
 </UL>
 
@@ -1494,7 +1493,7 @@ NVDA proporciona as súas proprias ordes extra para algunhas aplicacións para f
 <TR>
 <TD>Diálogo Lista de Elementos</TD>
 <TD>NVDA+f7</TD>
-<TD>abre o diálogo Lista de Elementos amosando gráficos, celdas con comentarios, ou celdas con fórmulas.</TD>
+<TD>abre o diálogo Lista de Elementos amosando gráficos, celdas con comentarios, celdas con fórmulas ou follas.</TD>
 </TR>
 </TABLE>
 
@@ -2514,13 +2513,27 @@ Ten en conta que este diálogo respeta a opción "Confiar na lingua da voz ó pr
 </P>
 <P>
 Para cambiar un símbolo, primeiro selecciónao na lísta de Símbolos.
-O campo Reemplazar permíteche cambiar o texto que debería falarse en lugar deste símbolo.
-Utilizando o campo Nivel, podes axustar o nivel máis baixo do símbolo ó cal este símbolo debería falarse.
 </P>
+
+<UL>
+<LI>O campo Reemplazar permíteche cambiar o texto que debería falarse en lugar deste símbolo.
+<LI>Utilizando o campo Nivel, podes axustar o nivel máis baixo do símbolo ó cal este símbolo debería falarse.
+<LI>O campo Enviar símbolo actual ó sintetizador especifica cando o proprio símbolo (en contraposición co seu reemplazamento) debería enviarse ó sintetizador.
+Esto é útil se o símbolo causa que o sintetizador faga unha pausa ou cambie a entoación da voz.
+Por exemplo, unha coma causa que o sintetizador faga unha pausa.
+Hai tres opcións:
+ <UL>
+ <LI>nunca: nunca envía o símbolo actual ó sintetizador.
+ <LI>Sempre: envía sempre o símbolo actual ó sintetizador.
+ <LI>só baixo Nível dos símbolos: Envía o símbolo actual só se o nível de voz do símbolo configurado é máis baixo que o nível posto por este símbolo.
+ Por exemplo, poderías utilizar esto tal que un símbolo terá o seu reemplazamento falado en níveis máis altos sen pausar, mentres aínda estea indicado cunha pausa nos níveis máis baixos.
+ </UL>
+</UL>
+
 <P>
 Podes engadir símbolos novos premendo o botón Engadir.
 No diálogo que apareza, introduce o símbolo e preme o botón Aceptar.
-Entón, cambia o reemplazo e o nível para o símbolo novo como o farías para outros símbolos.
+Entón, cambia os campos para o símbolo novo como o farías para outros símbolos.
 </P>
 <P>
 Podes eliminar un símbolo que engadiches anteriormente premendo o botón Eliminar.
@@ -5003,20 +5016,6 @@ Seguidamente van as opcións de liña de ordes para o NVDA:
 </TABLE>
 
 <A NAME="toc113"></A>
-<H3>14.2. Persoalización Avanzada da Pronuncia de Símbolos</H3>
-
-<P>
-É posible persoalizar a pronunciación da pontoación e outros símbolos máis aló do que pode facerse utilizando o <A HREF="#SymbolPronunciation">diálogo Pronunciación de Pontoación e símbolos</A>.
-Por exemplo, podes especificar se o símbolo dibuxado debería enviarse ó sintetizador (ex. para causar unha pausa ou cambio na entoación) e podes engadir símbolos persoalizados. 
-</P>
-<P>
-Para facer esto, debes editar o ficheiro de información de pronunciación de símbolos no teu directorio de configuración de usuario do NVDA.
-O ficheiro chámase symbols-xx.dic, onde xx é o código de lingua.
-O formato deste ficheiro documentóuse na sección Symbol Pronunciation da Guía de Desenrolo do NVDA, que está dispoñible dende <A HREF="http://community.nvda-project.org/wiki/Development">a Sección Desenvolvemento do sitio web do NVDA</A>.
-Polo tanto, non é posible para os usuarios definir símbolos comprexos. 
-</P>
-
-<A NAME="toc114"></A>
 <H2>15. Información Adicional</H2>
 
 <P>
