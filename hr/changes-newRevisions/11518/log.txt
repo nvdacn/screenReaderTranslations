@@ -1,0 +1,12 @@
+commit 0eb6a4d17a62f8780a777a5ec9609f52eb556ef3
+Author: James Teh <jamie@nvaccess.org>
+Date:   Mon Nov 2 08:59:21 2015 +1000
+
+    Support for editing of rich text in Mozilla applications such as Google Docs with braille support enabled in Mozilla Firefox and HTML composition in Mozilla Thunderbird.
+    
+    Other technical changes worth noting:
+    * Remove TextInfo.getEmbeddedObject and NVDAObject.embeddingTextInfo. These were only ever used by IA2, and even then, they differed depending on the implementation.
+    * nvdaHelperRemote: Introduce execInWindow to simplify/unify execution of code within the thread of a given window from an RPC call.
+    * IAccessible NVDAObject: IA2 windowHandle and states are now cached to make equality checks faster.
+    
+    Fixes #1668.
