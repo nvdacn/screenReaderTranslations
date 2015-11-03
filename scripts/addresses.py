@@ -82,7 +82,7 @@ addresses = {
     },
     'hi': {
         'lang': 'Hindi',
-        'email': ['Bhavya Shah <bhavya.shah125@gmail.com>', 'him Prasad Gautam <drishtibachak@gmail.com>', 'dipendra.lists@gmail.com'],
+        'email': ['Bhavya Shah <bhavya.shah125@gmail.com>', 'dipendra.lists@gmail.com'],
     },
     'hr': {
         'lang': 'Croatian',
@@ -130,7 +130,7 @@ addresses = {
     },
         'pa': {
         'lang':'Punjabi',
-        'email': ['Maheshinder Singh Khosla <mahesh.khosla@gmail.com>', 'Dinesh Mittal <punjabimaster259@gmail.com>', 'him Prasad Gautam <drishtibachak@gmail.com>'],
+        'email': ['Maheshinder Singh Khosla <mahesh.khosla@gmail.com>', 'Dinesh Mittal <punjabimaster259@gmail.com>'],
     },
     'pl': {
         'lang':'Polish',
