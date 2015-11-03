@@ -12,6 +12,10 @@
 
 <H2>2015.4</H2>
 
+<P>
+Tämän version merkittävimpiä uusia ominaisuuksia ovat mm. suorituskyvyn parannukset Windows 10:ssä, sisällyttäminen Windows 8:n ja uudempien Helppokäyttökeskukseen, parannukset Microsoft Exceliin (mukaan lukien laskentataulukoiden näyttäminen ja uudelleennimeäminen Elementtilistassa) sekä pääsy suojattujen laskentataulukoiden lukittuihin soluihin, ja muotoiluja tukevan tekstin muokkaaminen Mozilla Firefoxissa, Google Chromessa ja Mozilla Thunderbirdissä.
+</P>
+
 <H3>Uudet ominaisuudet</H3>
 
 <UL>
@@ -23,6 +27,13 @@
 <LI>Microsoft Excel: laskentataulukoiden näyttäminen ja uudelleennimeäminen on nyt mahdollista NVDA:n Elementtilistasta (NVDA+F7). (<A HREF="http://community.nvda-project.org/ticket/4630">#4630</A>, <A HREF="http://community.nvda-project.org/ticket/4414">#4414</A>)
 <LI>Symboleiden puhuminen -valintaikkunassa on nyt mahdollista määrittää, lähetetäänkö todelliset merkit syntetisaattoreille (esim. tauon pitämiseksi tai äänensävyn muuttamiseksi). (<A HREF="http://community.nvda-project.org/ticket/5234">#5234</A>)
 <LI>NVDA lukee nyt Microsoft Excelissä laskentataulukon tekijän soluihin määrittämät syöttöilmoitukset. (<A HREF="http://community.nvda-project.org/ticket/5051">#5051</A>)
+<LI>Tuki Baum Pronto! V4- ja VarioUltra -pistenäytöille bluetoothin kautta kytkettäessä. (<A HREF="http://community.nvda-project.org/ticket/3717">#3717</A>)
+<LI>Tuki muotoilut mahdollistavan tekstin muokkaamiselle Mozilla-sovelluksissa, kuten Firefoxissa Google Docsille pistenäyttötuen ollessa käytössä sekä Thunderbirdissä HTML-viestien luomiselle. (<A HREF="http://community.nvda-project.org/ticket/1668">#1668</A>)
+<LI>Tuki muotoilut mahdollistavan tekstin muokkaamiselle Google Chromessa ja muissa Chrome-pohjaisissa selaimissa esim. Google Docsia käytettäessä pistenäyttötuen ollessa käytössä. (<A HREF="http://community.nvda-project.org/ticket/2634">#2634</A>)
+ <UL>
+ <LI>Tämä edellyttää Chromen versiota 47 tai uudempaa.
+ </UL>
+<LI>Microsoft Excelissä on nyt mahdollista siirtyä selaustilassa suojattujen laskentataulukoiden lukittuihin soluihin. (<A HREF="http://community.nvda-project.org/ticket/4952">#4952</A>)
 </UL>
 
 <H3>Muutokset</H3>
@@ -33,7 +44,8 @@
 <LI>Liblouis-pistekirjoituskääntäjä päivitetty versioksi 2.6.4. (<A HREF="http://community.nvda-project.org/ticket/5341">#5341</A>)
 <P></P>
 <LI>Useat symbolit (matemaattiset perusmerkit mukaan lukien) on siirretty jotain-tasolle, jotta ne puhutaan oletusarvoisesti. (<A HREF="http://community.nvda-project.org/ticket/3799">#3799</A>)
-<LI>Puheessa pitäisi nyt kuulua tauko alku- ja loppusulkujen sekä lyhyen ajatusviivan (–) kohdalla, mikäli syntetisaattori tukee sitä. (<A HREF="http://community.nvda-project.org/ticket/3799">#3799</A>)
+<LI>Puheessa pitäisi nyt kuulua tauko alku- ja loppusulkujen sekä lyhyen ajatusviivan (–) kohdalla, mikäli syntetisaattori tukee tätä ominaisuutta. (<A HREF="http://community.nvda-project.org/ticket/3799">#3799</A>)
+<LI>Valittua tekstiä ei enää lueta valinnan ilmaisemisen jälkeen, vaan sitä ennen. (<A HREF="http://community.nvda-project.org/ticket/1707">#1707</A>)
 </UL>
 
 <H3>Korjatut ohjelmavirheet</H3>
@@ -44,11 +56,23 @@
 <LI>Korjattu painikkeiden visuaalinen ulkoasu varoitusvalintaikkunassa, joka näytetään yritettäessä päivittää NVDA:ta alaspäin. (<A HREF="http://community.nvda-project.org/ticket/5325">#5325</A>)
 <LI>Kun NVDA on määritetty käynnistymään Windowsiin kirjautumisen jälkeen, se käynnistyy nyt paljon aiemmin Windows 8:ssa ja uudemmissa käyttöjärjestelmissä. (<A HREF="http://community.nvda-project.org/ticket/308">#308</A>)
  <UL>
- <LI>Jos olet ottanut tämän asetuksen käyttöön aiemmassa NVDA:n versiossa, sinun on poistettava se käytöstä ja otettava sitten uudelleen käyttöön Yleiset asetukset -valintaikkunassa, jotta muutos tulee voimaan.
+ <LI>Jos olet ottanut tämän asetuksen käyttöön aiemmassa NVDA:n versiossa, sinun on poistettava se käytöstä ja otettava sitten uudelleen käyttöön Yleiset asetukset -valintaikkunassa, jotta muutos tulee voimaan. Tee seuraavasti:
+  <OL>
+  <LI>Avaa Yleiset asetukset -valintaikkuna.
+  <LI>Poista valinta Käynnistä NVDA automaattisesti Windowsiin kirjautumisen jälkeen -valintaruudusta.
+  <LI>Paina OK-painiketta.
+  <LI>Avaa Yleiset asetukset -valintaikkuna uudelleen.
+  <LI>Valitse Käynnistä NVDA automaattisesti Windowsiin kirjautumisen jälkeen -valintaruutu.
+  <LI>Paina OK-painiketta.
+  </OL>
  </UL>
 <LI>UI Automation -rajapinnan suorituskykyä paranneltu mm. Resurssienhallinnassa ja Tehtävienhallinnassa. (<A HREF="http://community.nvda-project.org/ticket/5293">#5293</A>)
 <LI>NVDA siirtyy nyt asianmukaisesti vuorovaikutustilaan liikuttaessa selaustilassa Sarkain-näppäimellä vain luku -tyyppisten ARIA-ruudukkosäädinten kohdalle Mozilla Firefoxissa ja muissa Gecko-pohjaisissa sovelluksissa. (<A HREF="http://community.nvda-project.org/ticket/5118">#5118</A>)
 <LI>NVDA ilmoittaa nyt asianmukaisesti "ei edellistä" virheellisen "ei seuraavaa" sijaan, kun objekteja ei ole enempää pyyhkäistäessä vasemmalle kosketusnäytöllä.
+<LI>Korjattu ongelmia, joita ilmeni kirjoitettaessa useita sanoja Syöte-eleet-valintaikkunan Suodata-muokkauskenttään. (<A HREF="http://community.nvda-project.org/ticket/5426">#5426</A>)
+<LI>NVDA ei jää enää jumiin joissakin tilanteissa yhdistettäessä uudelleen HumanWare Brailliant BI/B -pistenäyttöä USB:n kautta. (<A HREF="http://community.nvda-project.org/ticket/5406">#5406</A>)
+<LI>Merkkikuvaukset toimivat nyt odotetusti latinalaisille suuraakkosille kielissä, joissa käytetään yhdistelmämerkkejä. (<A HREF="http://community.nvda-project.org/ticket/5375">#5375</A>)
+<LI>NVDA:n ei pitäisi enää jäädä välillä jumiin Windows 10:n Käynnistä-valikkoa avattaessa. (<A HREF="http://community.nvda-project.org/ticket/5417">#5417</A>)
 </UL>
 
 <H2>2015.3</H2>
