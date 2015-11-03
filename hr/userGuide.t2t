@@ -1,4 +1,4 @@
-NVDA NVDA_VERSION vodič za korisnike
+NVDA NVDA_VERSION Vodič za korisnike
 
 
 %!includeconf: ../userGuide.t2tconf
@@ -540,7 +540,7 @@ MathPlayer je dostupan za besplatno preuzimanje sa adrese: http://www.dessci.com
 
 NVDA podržava slijedeće vrste matematičkog sadržaja:
 - MathML u Mozilla Firefoxu i Microsoft Internet Exploreru.
-- Design Science MathType u Microsoft Wordu i PowerPointu.
+- Design Science MathType u Microsoft Wordu i PowerPointu. MathType mora biti instaliran kako bi ova mogućnost radila. Probna inačica je dovoljna.
 - MathML u Adobe Readeru. Imajte na umu da ovo još uvijek nije službeni standard, dakle, ne postoji javno dostupan softver kojim se može izrađivati ovakav sadržaj.
 -
 
@@ -569,30 +569,93 @@ Molimo pročitajte uputstvo za upotrebu MathPlayer-a za više informacija.
 
 Kada se želite vratiti u dokument, pritisnite escape tipku.
 
-+ Tipkovnički prečaci namjenjeni za specifične aplikacije +
-NVDA u sebi ima svoje dodatne prečace za neke aplikacije da bi neke zadatke učinili lakšim ili da omoguće pristup nekim funkcionalnostima koje inače nisu pristupačne korisnicima čitača zaslona.
++ značajke specifične za neke aplikacije +
+NVDA provides its own extra features  for some applications to make certain tasks easier or to provide access to functionality which is not otherwise accessible to screen reader users.
 
 ++ Microsoft Word ++
+
++++ Automatic Column and Row Header Reading +++
+NVDA is able to automatically announce appropriate row and column headers when navigating around tables in Microsoft Word.
+This firstly requires that the Report Table row / column headers option In NVDA's Document Formatting dialog be turned on.
+Secondly, NVDA needs to know which row or column contains the headers in any given table.
+After moving to the first cell in the column or row containing the headers, use one of the following commands:
 %kc:beginInclude
-|| Naziv | Prečac | Opis |
-| Izvijesti o trenutnom komentaru | NVDA+Alt+c | Izgovara tekst komentara na poziciji kursora sustava. | 
-| Postavi zaglavlja redaka | NVDA+shift+r | Kad se jednom pritisne NVDA zna da je ovo prva čelija u stupcu koja koristi zaglavlja redaka, koja automatski trebaju biti pročitana kad se pomićete po retcima nakon tog stupca. a Kad se pritisne dvaput, postavka se briše. | 
-| Postavi zaglavlja stupaca | NVDA+shift+c | Kad jedamput pritisnete NVDA zna da je to prva čelija u retku koja sadrži zaglavlje stupaca, koja automatski trebaju biti pročitana kad se pomićete po stupcima ispod tog retka. Kad se pritisne dvaput, postavka će biti izbrisana. | 
+|| Name | Key | Description |
+| Set column headers | NVDA+shift+c | Pressing this once tells NVDA this is the first header cell in the row that contains column headers, which should be automatically announced when moving between columns below this row. Pressing twice will clear the setting. | 
+| Set row headers | NVDA+shift+r | Pressing this once tells NVDA this is the first header cell in the column that contains row headers, which should be automatically announced when moving between rows after  this column. Pressing twice will clear the setting. | 
 %kc:endInclude
+These settings will be stored in the document as bookmarks, compatible with other Screen Readers such as Jaws, meaning that other screen reader users who open this document at a later date will automatically  have the row and column headers already set. 
+
++++ Browse Mode in Microsoft Word +++
+
+Similar to the web, Browse mode can be used in Microsoft Word to allow you to use features such as Quick navigation, and the Elements List.
+%kc:beginInclude
+To toggle Browse mode on and off in Microsoft Word, press NVDA+space.
+%kc:endInclude
+For further information about Browse mode and Quick Navigation, see the [Browse Mode section #BrowseMode].
+
+++++ The Elements List ++++
+%kc:beginInclude
+While in Browse mode in Microsoft Word, you can access the Elements List by pressing NVDA+f7.
+%kc:endInclude
+The Elements List can list headings, links and annotations (which includes comments and track changes).
+
++++ Reporting Comments +++
+%kc:beginInclude
+To report any comments at the current caret position, press NVDA+alt+c.
+%kc:endInclude
+ All comments for the document  along with other track changes can also be listed in the NVDA Elements List  when selecting Annotations as the type.
 
 ++ Microsoft Excel ++
++++ Automatic Column and Row Header Reading +++
+NVDA is able to automatically announce appropriate row and column headers when navigating around Excel worksheets.
+This firstly requires that the Report Table row / column headers option In NVDA's Document Formatting dialog be turned on.
+Secondly, NVDA needs to know which row or column contains the headers.
+After moving to the first cell in the column or row containing the headers, use one of the following commands:
 %kc:beginInclude
-|| Naziv | Prečac | Opis |
-| Postavi zaglavlja stupaca | NVDA+shift+c | kad jednom pritisnete ovu tipku NVDA zna da je to prvo zaglavlje čelije u retku koje sadrži zaglavlja stupaca koja automatski trebaju biti pročitana kad se krećete po stupcima ispod toga retka. Kad se pritisne dvaput, postavka će biti obrisana. | 
-| Postavi zaglavlja redaka | NVDA+shift+r | Kad se jednom pritisne NVDA zna da je to prva ćelija zaglavlja u stupcu koja sadrži zaglavlja redaka koja se trebaju automatski pročitati kad se mićete po retcima poslije tog stupca. Kad se pritisne dvaput, postavke se brišu. | 
-| Izgovori komentare | NVDA+alt+c | Izgovara komentar na trenutnoj ćeliji ako postoji. |
-| lista elemenata | NVDA+f7 | Otvara dijalloški okvir popisa elemenata u kojem su prikazani grafovi, ćelije sa komentarima ili ćelije sa formulama. |
+|| Name | Key | Description |
+| Set column headers | NVDA+shift+c | Pressing this once tells NVDA this is the first header cell in the row that contains column headers, which should be automatically announced when moving between columns below this row. Pressing twice will clear the setting. | 
+| Set row headers | NVDA+shift+r | Pressing this once tells NVDA this is the first header cell in the column that contains row headers, which should be automatically announced when moving between rows after  this column. Pressing twice will clear the setting. | 
 %kc:endInclude
+These settings will be stored in the workbook as defined name ranges, compatible with other Screen Readers such as Jaws, meaning that other screen reader users who open this workbook at a later date will automatically  have the row and column headers already set. 
+
++++ The Elements List +++
+
+Similar to on the web, NVDA has an Elements List for Microsoft Excel, that allows you to list and access several different types of information.
+%kc:beginInclude
+To access the Elements List in Excel, press NVDA+f7.
+%kc:endInclude
+The various types of information available in the Elements List are:
+- Chart: This lists all charts in the workbook. 
+Selecting a chart and pressing enter or the Move to button focuses the chart for navigating and reading with the arrow keys.
+- Comment: This lists all cells in the workbook containing comments. 
+The cell address along with its comments are shown for each cell. 
+Pressing Enter or the Move To button when on a listed comment will move directly to that cell.
+- Formula: This lists all cells in the workbook containing a formula. 
+The cell address along with its formula are shown for each cell.
+Pressing Enter or the Move To button on a listed formula will move directly to that cell. 
+- Sheet: This lists all sheets in the workbook. 
+Pressing f2 when on a listed sheet allows you to rename the sheet. 
+Pressing Enter or the Move To button while on the listed sheet will switch to that sheet.
+-
+
++++ Reporting Comments +++
+%kc:beginInclude
+To report any comments for the currently focused cell, press NVDA+alt+c.
+%kc:endInclude
+All comments for the Workbook can also be listed in the NVDA Elements List.
+
++++ Reading Protected Cells +++
+If a workbook has been protected, it may not be possible to move focus to particular cells that have been locked for editing.
+%kc:beginInclude
+To allow moving to locked cells, switch to Browse Mode by pressing NVDA+space, and then use standard Excel movement commands such as the arrow keys to move around all cells on the current worksheet.
+%kc:endInclude
+
 
 ++ Microsoft PowerPoint ++
 %kc:beginInclude
-|| Naziv | Prečac | opis |
-| Uključi ili isključi čitanje govornikovih bilježaka | control+shift+s | Kad ste u pokrenutom prikazu slajda, ovaj prečac prebacuje između bilježaka za slajd i sadržaja za slajd. Na to utjeće samo ono što NVDA čita, ali ne i ono što je prikazano na zaslonu. | 
+|| Name | Key | Description |
+| Toggle speaker notes reading | control+shift+s | When in a running slide show, this command will toggle between the speaker notes for the slide and the content for the slide. This only affects what NVDA reads, not what is displayed on screen. | 
 %kc:endInclude
 
 ++ Foobar2000 ++
@@ -1173,12 +1236,23 @@ Jezik za koji se uređuje izgovor simbola će se prikazati u naslovnoj traci dij
 Imajte na umu da ovaj dijaloški okvir poštuje opciju "Vjeruj glasu trenutnog jezika prilikom procesiranja interpunkcije i znakova" koja se može pronaći u [Dijaloškom okviru glasovne postavke #VoiceSettings]; tj. kada je ova opcija uključena, koristi se glas tog određenog jezika bolje nego korištenje globalnog jezika.
 
 Da biste promijenili simbol, označite ga u listi simbola.
-Polje zamjena vam omogućuje promjenu onog što će biti izgovoreno umjesto zadane vrijednosti za taj znak.
-Koristeći polje razina, možete podesiti najmanji nivo na kojem će simbol biti izgovoren.
+
+- Polje zamjena vam omogućuje izmjenu teksta koji će biti izgovoren na mjestu tog simbola.
+- Koristeći polje razina, možete podesiti najmanju razinu simbola, pri kojoj će taj simbol biti izgovoren.
+- Polje "pošalji trenutni simbol govornoj jedinici", kada će sam simbol (u sprezi sa njegovom zamjenom) biti poslan govornoj jedinici.
+To je korisno kada govorna jedinica reagira na simbol pauzom ili povisivanjem modulacije glasa.
+Na primjer, zarez prouzrokuje pauzu kod govorne jedinice.
+Postoje tri mogućnosti:
+ - Nikad: Nikada ne šalji trenutni simbol govornoj jedinici.
+ - Uvijek: Uvijek pošalji simbol govornoj jedinici.
+ - samo ispod razine simbola: Pošalji trenutni simbol samo ako je podešena razina simbola niža od one postavljene za simbol.
+ Na primjer, mogli bi ste ovo koristiti da bi se simbol izgovarao na višim razinama bez pauza, a da istovremeno bude pauziran na nižim razinama.
+ -
+-
 
 Možete dodati nove simbole pritišćući gumb dodaj.
 U dijaloškom okviru koji će se pojaviti, upišite simbol i pritisnite u redu.
-Promijenite zamjenu i razinu za novi simbol kao što bi ste učinili za druge simbole.
+Promijenite sva polja za novi simbol kao što bi ste učinili za druge simbole.
 
 Možete ukloniti simbol kojeg ste prije dodali kad pritisnete gumb ukloni.
 
@@ -1564,11 +1638,11 @@ Molimo pogledajte uputstvo za upotrebu brajičnog retka kako biste ustanovili gd
 ++ Baum/Humanware/APH Brajični Retci ++
 Nekoliko [Baum-ovih http://www.baum.de/cms/en/], [HumanWare-ovih http://www.humanware.com/] i [APH-ovih http://www.aph.org/] brajičnih redaka su podržani kada su spojeni USB ili Bluetooth vezom.
 Slijedeći brajični retci su podržani:
-- Baum: SuperVario, PocketVario
+- Baum: SuperVario, PocketVario, VarioUltra (Samo preko bluetooth veze), Pronto! (samo preko bluetooth veze)
 - HumanWare: Brailliant, BrailleConnect
 - APH: Refreshabraille
 -
-Neki drugi brajični retci, koje je proizveo baum mogu također raditi, premda to nije isprobano.
+Neki brajični retci, koje je proizveo baum mogu također raditi, premda to nije isprobano.
 
 Ako brajični redak povezujete putem USB veze, prvo morate instalirati upravljačke programe koje je napravio proizvođač.
 Za APH Refreshabraille, USB način mora biti postavljen na serijski način.
@@ -2101,15 +2175,6 @@ Sljede opcije naredbenog retka za NVDA:
 | Nema | --no-sr-flag  | Ne mijenjaj glavnu zastavicu čitača ekrana u sustavu |
 | Nema | --install | Instalira NVDA, pritom pokrečući novoinstaliranu kopiju |
 | None | --install-silent | Tiho instalira NVDA (ne pokreće novu instaliranu kopiju) |
-
-++ Napredna prilagodba izgovaranja simbola ++
-Moguće je prilagoditi interpunkciju i druge simbole pored onoga što se može učiniti koristeći [izgovor simbola/interpunkcije #SymbolPronunciation] dijaloški okvir.
-Na primjer, možete odrediti hoće li se ili neće raw simbol slati govornoj jedinici (npr. kako bi prouzročio pauzu ili promjenu u modulaciji) i također možete dodavati prilagođene simbole.
-
-Kako biste to učinili, morate urediti datoteku sa informacijama o izgovoru simbola u vašoj NVDA korisničkoj mapi.
-Datoteka se zove symbols-xx.dic, gdje xx predstavlja jezični kod.
-Izgled ove datoteke opisan je u poglavlju izgovor simbola NVDA vodiča za razvojne programere koji je dostupan na [sekciji za razvojne programere na NVDA web stranici http://community.nvda-project.org/wiki/Development].
-Međutim, korisnici ne mogu dodavati kompleksne simbole.
 
 + Dodatne Informacije +
 Ako trebate više informacija ili pomoč za NVDA, molimo posjetite NVDA web stranicu na adresi NVDA_URL.
