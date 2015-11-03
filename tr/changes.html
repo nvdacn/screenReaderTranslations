@@ -12,17 +12,28 @@
 
 <H2>2015.4</H2>
 
+<P>
+Highlights of this release include performance improvements in Windows 10; inclusion in the Ease of Access Center in Windows 8 and later; enhancements for Microsoft Excel, including listing and renaming of sheets and access to locked cells in protected sheets; and support for editing of rich text in Mozilla Firefox, Google Chrome and Mozilla Thunderbird.
+</P>
+
 <H3>New Features</H3>
 
 <UL>
 <LI>NVDA now appears in the Ease of Access Center in Windows 8 and later. (<A HREF="http://community.nvda-project.org/ticket/308">#308</A>)
 <LI>When moving around cells in Excel, formatting changes are now automatically reported if the appropriate options are turned on in NVDA's Document Formatting Settings dialog. (<A HREF="http://community.nvda-project.org/ticket/4878">#4878</A>)
-<LI>A Report Emphasis option has been added to NVDA's Document formatting settings dialog. On by default, this option allows NVDA to automatically report the existance of emphasised text in documents. So far this is only supported for em and strong tags in Browse Mode for Internet Explorer and other MSHTML controls. (<A HREF="http://community.nvda-project.org/ticket/4920">#4920</A>)
-<LI>The existance of inserted and deleted text is now reported in Browse Mode for Internet Explorer and other MSHTML controls, if NVDA's Report Editor Revisions option is enabled. (<A HREF="http://community.nvda-project.org/ticket/4920">#4920</A>)
+<LI>A Report Emphasis option has been added to NVDA's Document formatting settings dialog. On by default, this option allows NVDA to automatically report the existance of emphasised text in documents. So far, this is only supported for em and strong tags in Browse Mode for Internet Explorer and other MSHTML controls. (<A HREF="http://community.nvda-project.org/ticket/4920">#4920</A>)
+<LI>The existance of inserted and deleted text is now reported in Browse Mode for Internet Explorer and other MSHTML controls if NVDA's Report Editor Revisions option is enabled. (<A HREF="http://community.nvda-project.org/ticket/4920">#4920</A>)
 <LI>When viewing track changes in NVDA's Elements List for Microsoft Word, more information such as what formatting properties were changed is now displayed. (<A HREF="http://community.nvda-project.org/ticket/4920">#4920</A>)
 <LI>Microsoft Excel: listing and renaming of sheets is now possible from NVDA's Elements List (NVDA+f7). (<A HREF="http://community.nvda-project.org/ticket/4630">#4630</A>, <A HREF="http://community.nvda-project.org/ticket/4414">#4414</A>)
 <LI>It is now possible to configure whether actual symbols are sent to speech synthesizers (e.g. to cause a pause or change in inflection) in the Symbol Pronunciation dialog. (<A HREF="http://community.nvda-project.org/ticket/5234">#5234</A>)
 <LI>In Microsoft Excel, NVDA now reports any input messages set by the sheet author on cells. (<A HREF="http://community.nvda-project.org/ticket/5051">#5051</A>)
+<LI>Support for the Baum Pronto! V4 and VarioUltra braille displays when connected via Bluetooth. (<A HREF="http://community.nvda-project.org/ticket/3717">#3717</A>)
+<LI>Support for editing of rich text in Mozilla applications such as Google Docs with braille support enabled in Mozilla Firefox and HTML composition in Mozilla Thunderbird. (<A HREF="http://community.nvda-project.org/ticket/1668">#1668</A>)
+<LI>Support for editing of rich text in Google Chrome and Chrome-based browsers such as Google Docs with braille support enabled. (<A HREF="http://community.nvda-project.org/ticket/2634">#2634</A>)
+ <UL>
+ <LI>This requires Chrome version 47 or later.
+ </UL>
+<LI>In browse mode in Microsoft Excel, you can navigate to locked cells in protected sheets. (<A HREF="http://community.nvda-project.org/ticket/4952">#4952</A>)
 </UL>
 
 <H3>Changes</H3>
@@ -33,6 +44,7 @@
 <LI>Updated liblouis braille translator to 2.6.4. (<A HREF="http://community.nvda-project.org/ticket/5341">#5341</A>)
 <LI>Several symbols (including basic mathematical symbols) have been moved to level some so that they are spoken by default. (<A HREF="http://community.nvda-project.org/ticket/3799">#3799</A>)
 <LI>If the synthesizer supports it, speech should now pause for parentheses and the en dash (–). (<A HREF="http://community.nvda-project.org/ticket/3799">#3799</A>)
+<LI>When selecting text, the text is reported before the indication of selection instead of after. (<A HREF="http://community.nvda-project.org/ticket/1707">#1707</A>)
 </UL>
 
 <H3>Bug Fixes</H3>
@@ -43,11 +55,23 @@
 <LI>Fixed the visual appearance of the buttons in the warning dialog which is displayed when you attempt to downgrade NVDA. (<A HREF="http://community.nvda-project.org/ticket/5325">#5325</A>)
 <LI>In Windows 8 and later, NVDA now starts a lot earlier when configured to start after logging on to Windows. (<A HREF="http://community.nvda-project.org/ticket/308">#308</A>)
  <UL>
- <LI>If you enabled this using a previous version of NVDA, you will need to disable it and enable it again in the General Settings dialog for the change to take effect.
+ <LI>If you enabled this using a previous version of NVDA, you will need to disable it and enable it again in order for the change to take effect. Follow this procedure:
+  <OL>
+  <LI>Open the General Settings dialog.
+  <LI>Uncheck the Automatically start NVDA after I log on to Windows checkbox.
+  <LI>Press the OK button.
+  <LI>Open the General Settings dialog again.
+  <LI>Check the Automatically start NVDA after I log on to Windows checkbox.
+  <LI>Press the OK button.
+  </OL>
  </UL>
 <LI>Performance enhancements for UI Automation including  File Explorer and Task Viewer. (<A HREF="http://community.nvda-project.org/ticket/5293">#5293</A>)
 <LI>NVDA now correctly switches to focus mode when tabbing to read-only ARIA grid controls in Browse Mode for Mozilla Firefox and other Gecko-based controls. (<A HREF="http://community.nvda-project.org/ticket/5118">#5118</A>)
 <LI>NVDA now correctly reports "no previous" instead of "no next" when there are no more objects when flicking left on a touch screen.
+<LI>Fixed problems when typing multiple words into the filter field in the Input Gestures dialog. (<A HREF="http://community.nvda-project.org/ticket/5426">#5426</A>)
+<LI>NVDA no longer freezes in some cases when reconnecting to a HumanWare Brailliant BI/B series display via USB. (<A HREF="http://community.nvda-project.org/ticket/5406">#5406</A>)
+<LI>In languages with conjunct characters, character descriptions now work as expected for upper case English characters. (<A HREF="http://community.nvda-project.org/ticket/5375">#5375</A>)
+<LI>NVDA should no longer occasionally freeze when bringing up the Start Menu in Windows 10. (<A HREF="http://community.nvda-project.org/ticket/5417">#5417</A>)
 </UL>
 
 <H2>2015.3</H2>
