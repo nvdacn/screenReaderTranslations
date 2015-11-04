@@ -12,6 +12,10 @@
 
 <H2>2015.4</H2>
 
+<P>
+このリリースのハイライトは、Windows 10 対応の改良、Windows 8 以降の「コンピューターの簡単操作センター」への対応、Microsoft Excel 対応の改良（シートの一覧と名前変更、保護されたワークシートのセルの参照）、Mozilla Firefox, Google Chrome, Mozilla Thunderbird におけるリッチテキスト編集への対応などです。
+</P>
+
 <H3>新機能</H3>
 
 <UL>
@@ -23,6 +27,13 @@
 <LI>Microsoft Excel: シートの一覧表示および名前変更がNVDAの要素リスト (NVDA+F7) でできるようになりました。(<A HREF="http://community.nvda-project.org/ticket/4630">#4630</A>, <A HREF="http://community.nvda-project.org/ticket/4414">#4414</A>)
 <LI>特定の記号を (例えば一時停止や抑揚の変更をさせたい場合に)そのまま音声合成に送るかどうかを、句読点記号読み辞書ダイアログにて設定できるようになりました。(<A HREF="http://community.nvda-project.org/ticket/5234">#5234</A>)
 <LI>Microsoft Excel において NVDA はシート作成者がセル上に設定した入力メッセージを報告するようになりました。(<A HREF="http://community.nvda-project.org/ticket/5051">#5051</A>)
+<LI>Baum Pronto! V4 および VarioUltra 点字ディスプレイが Bluetooth 接続で利用できるようになりました。(<A HREF="http://community.nvda-project.org/ticket/3717">#3717</A>)
+<LI>Firefox による Google Docs の利用や Thunderbird による HTML 編集など、リッチテキスト編集が Mozilla アプリで可能になりました。点字ディスプレイにも対応しています。(<A HREF="http://community.nvda-project.org/ticket/1668">#1668</A>)
+<LI>Google Chrome や Chrome ベースのブラウザにおいて Google Docs などのリッチテキスト編集が可能になりました。点字ディスプレイにも対応しています。(<A HREF="http://community.nvda-project.org/ticket/2634">#2634</A>)
+ <UL>
+ <LI>ただし Chrome バージョン 47 以降が必要です。
+ </UL>
+<LI>Microsoft Excel のブラウズモードで、保護されたワークシートのセルに移動できるようになりました。 (<A HREF="http://community.nvda-project.org/ticket/4952">#4952</A>)
 </UL>
 
 <H3>変更点</H3>
@@ -33,6 +44,7 @@
 <LI>liblouis 点訳エンジンが2.6.4に更新されました。(<A HREF="http://community.nvda-project.org/ticket/5341">#5341</A>)
 <LI>特定の記号 (基本的な数学記号を含む) が、最低読み上げレベル「一部」になり、初期設定で読み上げられるようになりました。(<A HREF="http://community.nvda-project.org/ticket/3799">#3799</A>)
 <LI>音声合成エンジンがサポートしている場合、カッコやダッシュで読み上げにポーズが入るようになりました。(<A HREF="http://community.nvda-project.org/ticket/3799">#3799</A>)
+<LI>テキストを選択するときに、そのテキストを「選択」の後ではなく前に報告するようになりました。(<A HREF="http://community.nvda-project.org/ticket/1707">#1707</A>)
 </UL>
 
 <H3>バグ修正</H3>
@@ -43,11 +55,23 @@
 <LI>NVDAをダウングレードしようとする際に表示される警告ダイアログ内のボタンの外観が修正されました。(<A HREF="http://community.nvda-project.org/ticket/5325">#5325</A>)
 <LI>Windows8以降にて「Windowsへのログオン後にNVDAを自動的に開始」が設定されている場合、NVDAがより高速に起動するようになりました。(<A HREF="http://community.nvda-project.org/ticket/308">#308</A>)
  <UL>
- <LI>前のバージョンのNVDAでこの機能をオンにしている場合、一般設定ダイアログにてこの項目をいったんオフにして、もう一度オンにして有効にしなおす必要があります。(<A HREF="http://community.nvda-project.org/ticket/308">#308</A>)
+ <LI>前のバージョンのNVDAでこの機能をオンにしている場合、一般設定ダイアログにてこの項目をいったんオフにして、もう一度オンにして有効にしなおす必要があります。以下のように操作してください:
+  <OL>
+  <LI>「一般設定」ダイアログを開きます
+  <LI>「Windowsへのログオン後にNVDAを自動的に開始」をチェックなしにします
+  <LI>OK ボタンを押します
+  <LI>「一般設定」ダイアログをもう一度開きます
+  <LI>「Windowsへのログオン後にNVDAを自動的に開始」をチェックします
+  <LI>OK ボタンを押します
+  </OL>
  </UL>
 <LI>ファイルエクスプローラーおよびタスクビューワーを含むUI Automationの動作の強化。(<A HREF="http://community.nvda-project.org/ticket/5293">#5293</A>)
 <LI>Mozilla Firefoxおよび他のGeckoベースのコントロールのブラウズモードにて、読み取り専用のARIA grid コントロールにタブで移動した時に、正確にフォーカスモードに切り替わるようになりました。(<A HREF="http://community.nvda-project.org/ticket/5118">#5118</A>)
 <LI>タッチスクリーンで左フリックをした時に次のオブジェクトがない場合に、「次の～がありません」ではなく、「前の～がありません」と正確に報告するようになりました。
+<LI>「入力ジェスチャー」ダイアログのフィルターで複数の単語を入力したときの不具合を修正しました。(<A HREF="http://community.nvda-project.org/ticket/5426">#5426</A>)
+<LI>HumanWare Brailliant BI/B シリーズ点字ディスプレイに USB 接続していて、接続をやり直した場合にフリーズすることがある不具合を修正しました。(<A HREF="http://community.nvda-project.org/ticket/5406">#5406</A>)
+<LI>特定の文字が使われる言語において、文字説明がアルファベット大文字で適切に動作するようになりました。(<A HREF="http://community.nvda-project.org/ticket/5375">#5375</A>)
+<LI>Windows 10 のスタートメニューが開くときに NVDA がフリーズすることがある問題に対応しました。(<A HREF="http://community.nvda-project.org/ticket/5417">#5417</A>)
 </UL>
 
 <H2>2015.3</H2>
