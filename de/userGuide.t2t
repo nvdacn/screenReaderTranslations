@@ -540,7 +540,7 @@ Mathplayer kann hier heruntergeladen werden: http://www.dessci.com/en/products/m
 
 NVDA unterstützt die folgende mathematischen Inhalte:
 - MathML in Mozilla Firefox und Microsoft Internet Explorer.
-- Design Science MathType in Microsoft Word und PowerPoint.
+- Design Science MathType in Microsoft Word und PowerPoint. Mathtype muss installiert sein. Die Testversion ist hierfür ausreichend.
 - MathML in Adobe Reader. Beachten Sie, dass Mathml noch kein offizieller Standard ist, deshalb gibt es noch keine öffentlich verfügbare Software, um solche Inhalte zu erzeugen.
 -
 
@@ -569,16 +569,43 @@ Weiter Informationen hierzu finden Sie in der Dokumentation zu mathplayer.
 
 Um die Navigation im Ausdruck zu beenden, drücken Sie esc.
 
-+ Anwendungsspezifische Befehle für NVDA +
-Für bestimmte Anwendungen stellt NVDA zusätzliche Tastenkombinationen bereit - etwa um bestimmte Aufgaben zu vereinfachen oder um Informationen zugänglich zu machen, die normalerweise für Anwender von Bildschirmleseprogrammen unerreichbar wären. 
++ anwendungsspezifische Funktionen +
+nvda stellt für bestimmte Anwendungen zusätzliche Funktionen bereit, die nicht anderweitig zugänglich sind.
 
 ++ Microsoft Word ++
+
++++ automatisches lesen von Zeilen- und Spaltenüberschriften +++
+Wenn Sie in Microsoft Word in einer Tabelle navigieren, ist NVDA in der Lage, automatisch die Zeilen- und Spaltenüberschriften zu lesen.
+Hierfür muss die Option "Spalten- und Reihenüberschriften von Tabellen ansagen" in den Einstellungen für Dokumentformatierungen aktiviert sein.
+Zum zweiten muss NVDA die Reihen Bzw. Spalten mit den Überschriften kennen. 
+Verwenden Sie einen der folgenden Befehle, nachdem Sie sich in die Zelle mit der Reihen- Bzw. Spaltenüberschrift bewegt haben:
 %kc:beginInclude
 || Name | Tastenkombination | Beschreibung |
 | aktuellen Kommentar anzeigen | NVDA+Alt+c | Zeigt den Kommentar an, der an der aktuellen Position des Systemcursors hinterlegt ist. | 
 | Spaltenüberschriften festlegen | NVDA+Umschalt+c | Wenn Sie diese Tastenkombination einmal drücken, legen sie die aktuelle Tabellenzeile als Spaltenüberschriften fest. Drücken Sie die Tastenkombination zweimal, um die Zuweisung zu löschen. | 
 | Zeilenbeschriftung festlegen | NVDA+Umschalt+r | Wenn Sie diese Tastenkombination einmal drücken, wird die aktuelle Spalte als Zeilenbeschriftung festgelegt. Drücken Sie die Tastenkonbination zweimal, um die Zuweisung zu löschen. | 
 %kc:endInclude
++
+++++ Browse Mode in Microsoft Word +++
++
++Similar to the web, Browse mode can be used in Microsoft Word to allow you to use features such as Quick navigation, and the Elements List.
++%kc:beginInclude
++To toggle Browse mode on and off in Microsoft Word, press NVDA+space.
++%kc:endInclude
++For further information about Browse mode and Quick Navigation, see the [Browse Mode section #BrowseMode].
+ 
++++++ The Elements List ++++
++%kc:beginInclude
++While in Browse mode in Microsoft Word, you can access the Elements List by pressing NVDA+f7.
++%kc:endInclude
++The Elements List can list headings, links and annotations (which includes comments and track changes).
++
+++++ Reporting Comments +++
++%kc:beginInclude
++To report any comments at the current caret position, press NVDA+alt+c.
++%kc:endInclude
++ All comments for the document  along with other track changes can also be listed in the NVDA Elements List  when selecting Annotations as the type.
++ 
 
 ++ Microsoft Excel ++
 %kc:beginInclude
@@ -1172,13 +1199,19 @@ In diesem Dialog können Sie die Aussprache von Satz-, beziehungsweise Sonderzei
 Die Sprache, in der die Aussprache von Sonderzeichen geändert wird, wird im Dialogtitel angezeigt.
 Außerdem wird die Option "beim Sprechen von Zeichen und Symbolen die Sprache der Stimme berücksichtigen" aus den  [Stimmeneinstellungen #VoiceSettings] berücksichtigt; beispielsweise wird hierbei die Sprache der eingestellten Stimme anstelle der nvda-Sprache verwendet.
 
+
 Um die aussprache eines Sonderzeichens zu verändern, wählen Sie es in der Liste der Symbole aus.
-Das Eingabefeld "Ersetzen durch" erlaubt Ihnen, den Text zu ändern, der an Stelle des Symbols angesagt wird.
-im Kombinationsfeld "Stufe" kann eingestellt werden, ab welcher Stufe Satz- und Sonderzeichen angesagt werden sollen..
+
+- Das Eingabefeld "Ersetzen durch" erlaubt Ihnen, den Text zu ändern, der an Stelle des Symbols angesagt wird.
+- im Kombinationsfeld "Stufe" kann eingestellt werden, ab welcher Stufe Satz- und Sonderzeichen angesagt werden sollen..
+- Im Konbinationsfeld "aktuelles Symbol an Sprachausgabe senden" kann eingestellt werden, ob das Symbol anstelle seines Ersatztextes an die Sprachausgabe gesendet werden soll. Diese Option kann nützlich sein, um Sprachpausen zu erzwingen. Dieses Konbinationsfeld enthält drei Optionen:
+ - niemals: das Sonderzeichen wird niemals an die Sprachausgabe gesendet.
+ - immer: Das Symbol wird immer an die Sprachausgabe gesendet.
+ - nur unterhalb der Symbolebene: Das Sonderzeichen wird nur an die Sprachausgabe gesendet, wenn die momentan eingestellte Symbolebene niedriger ist, als im Konbinationsfeld "Stufe" (siehe oben)
 
 Um Symbole hinzuzufügen, benutzen Sie den Schalter hinzufügen.
 Geben Sie im erscheinenden Dialog das Symbol ein und drücken Sie den Schalter OK.
-Ändern sie anschließend den Ersatztext und die Symbolebene nach Ihren Wünschen, wie Sie es bei den anderen Sümbolen machen würden.
+Ändern sie anschließend die anderen Optionen nach Ihren Wünschen, wie Sie es bei den anderen Sümbolen machen würden.
 
 Über den Schalter "entfernen" können Sie ein Symbol wieder löschen.
 
