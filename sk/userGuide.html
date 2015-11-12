@@ -3,10 +3,10 @@
 <HEAD>
 <META NAME="generator" CONTENT="http://txt2tags.org">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE>NVDA 2015.3-dev  Používateľská príručka</TITLE>
+<TITLE>NVDA 2015.4-dev  Používateľská príručka</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
-<H2>NVDA 2015.3-dev  Používateľská príručka</H2>
+<H2>NVDA 2015.4-dev  Používateľská príručka</H2>
 </CENTER>
 
 
@@ -162,9 +162,8 @@
   <LI><A HREF="#toc111">14. Pre pokročilých</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">14.1. parametre príkazového riadka</A>
-    <LI><A HREF="#toc113">14.2. Zmena vyslovovania symbolov pre pokročilých</A>
     </UL>
-  <LI><A HREF="#toc114">15. Ako získať viac informácií</A>
+  <LI><A HREF="#toc113">15. Ako získať viac informácií</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -1386,7 +1385,7 @@ NVDA podporuje tieto typy matematického obsahu:
 
 <UL>
 <LI>MathML v prehliadačoch Mozila firefox a Microsoft Internet Explorer.
-<LI>Matematický obsah od Design Science integrovaný v Microsoft Word a Microsoft Powerpoint.
+<LI>Matematický obsah od Design Science integrovaný v Microsoft Word a Microsoft Powerpoint. Musíte však nainštalovať MathType, skúšobná verzia je postačujúca.
 <LI>MathML v dokumentoch programu Adobe reader. Toto však zatiaľ nie je oficiálny štandard, preto neexistuje software, ktorý by vedel takéto dokumenty vyrobiť.
 </UL>
 
@@ -1496,7 +1495,7 @@ NVDA pre niektoré aplikácie implementuje svoje vlastné príkazy, čím buď u
 <TR>
 <TD>Zoznam prvkov</TD>
 <TD>NVDA+f7</TD>
-<TD>otvorí dialóg so zoznamov prvkov, v ktorom môžete vybrať zoznam grafov, buniek s komentárom alebo buniek so vzorcami.</TD>
+<TD>otvorí dialóg so zoznamom prvkov. Dostupné prvky sú grafy, bunky s komentárom, bunky so vzorcom a zoznam hárkov.</TD>
 </TR>
 </TABLE>
 
@@ -2421,6 +2420,7 @@ Takto môžete nastaviť:
 <LI>Zarovnanie textu
 <LI>Farby
 <LI>sledovanie zmien
+<LI>zvýraznenie
 <LI>Štýl textu
 <LI>Pravopisné chyby
 <LI>Číslovanie strán
@@ -2518,10 +2518,25 @@ Ak si želáte upraviť symbol, musíte ho najprv vybrať v zozname symbolov.
 Do poľa nahradiť s môžete vpísať text, ktorý sa má vysloviť vždy, keď bude NVDA čítať tento symbol.
 Zmenou výberu v zozname úrovní môžete určiť najnižšiu úroveň, na ktorej bude symbol oznamovaný.
 </P>
+
+<UL>
+<LI>V zozname "ponechať pôvodný symbol na spracovanie hlasovému výstupu" určíte, kedy má NVDA ponechať pôvodný symbol na spracovanie pre halsový výstup. toto sa netýka textu, ktorý ste zvolili v editačnom poli Nahradiť s.
+Toto je užitočné vtedy, ak hlasový výstup dokáže pri symbole urobiť prestávku alebo zmeniť intonáciu.
+Mnohé syntézy reči napríklad dokážu urobiť pauzu, ak narazia v texte na čiarku.
+Máte tri možnosti:
+<LI>nikdy: Symbol sa neodošle na spracovanie hlasovému výstupu.
+<LI>Vždy: NVDa bude vždy symbol posielať na spracovanie hlasovému výstupu.
+<LI>Od zadanej úrovne: Symbol sa odošle na spracovanie len vtedy, ak je aktuálna úroveň interpunkcie nižšia, ako je nastavená úroveň pre tento symbol.
+Takto môžete rozhodnúť, že symbol nahradíte nejakým textom pri úrovni interpunkcie všetko, ale pri úrovni nič, bude symbol odoslaný na spracovanie hlasovému výstupu. Ten ho nahradí pauzou, takže nestratíte prehľad.
+</UL>
+
+<P>
+-
+</P>
 <P>
 Nový symbol môžete pridať tak, že stlačíte tlačidlo pridať.
 v dialógu, ktorý sa otvorí, vložte nový symbol a stlačte tlačidlo OK.
-Následne nastavte nahradenie a úroveň interpunkcie tak, ako pri ostatných symboloch.
+Následne nastavte parametre tak, ako pri ostatných symboloch.
 </P>
 <P>
 Symboly, ktoré ste pridali, môžete odstrániť aktivovaním tlačidla odstrániť.
@@ -3362,7 +3377,7 @@ Toto zahŕňa:
 </P>
 
 <UL>
-<LI>Baum: SuperVario, PocketVario
+<LI>Baum: SuperVario, PocketVario, VarioUltra (len cez Bluetooth), Pronto! (len cez Bluetooth)
 <LI>HumanWare: Brailliant, BrailleConnect
 <LI>APH: Refreshabraille
 </UL>
@@ -5006,20 +5021,6 @@ NVDA v súčasnosti podporuje tieto parametre:
 </TABLE>
 
 <A NAME="toc113"></A>
-<H3>14.2. Zmena vyslovovania symbolov pre pokročilých</H3>
-
-<P>
-Pomocou dialógu <A HREF="#SymbolPronunciation">Výslovnosť interpunkčných a špeciálnych symbolov</A> je možné prispôsobiť vyslovovanie interpunkčných alebo iných špeciálnych znakov. Okrem toho je možné tabuľku symbolov upravovať ručne, čo prináša širšie možnosti.
-Napríklad je možné vybrať, či sa hlasovému výstupu bude posielať aj pôvodný symbol, či sa má vykonať pauza, alebo zmena v intonácii a podobne. Tiež je možné pridať ďalšie vlastné symboly.
-</P>
-<P>
-Tieto zmeny je potrebné zapisovať ručne do súboru s nastaveniami symbolov v priečinku s ostatnými súbormi nastavení NVDA.
-Súbor je nazvaný symbols-xx.dic, kde xx je kód jazyka.
-Formát tohoto súboru je zdokumentovaný v príručke pre vývojárov, ktorú je možné získať zo stránky NVDA v časti <A HREF="http://community.nvda-project.org/wiki/Development">vývoj (anglicky)</A>.
-Používatelia ale nemôžu pridávať vlastné komplexné symboly.
-</P>
-
-<A NAME="toc114"></A>
 <H2>15. Ako získať viac informácií</H2>
 
 <P>
