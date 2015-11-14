@@ -3,6 +3,60 @@
 
 %!includeconf: ../changes.t2tconf
 
+= 2015.4 =
+Hoogtepunten in deze versie zijn performantieverbeteringen in Windows 10; opname in het Toegankelijkheidscentrum in Windows 8 en hoger; verbeteringen voor Microsoft Excel, zoals een lijst van werkbladen en het hernoemen ervan, en toegang tot vergrendelde cellen in beveiligde werkbladen; en ondersteuning voor het bewerken van rich text in Mozilla Firefox, Google Chrome en Mozilla Thunderbird.
+
+== Nieuwe Functies ==
+- NVDA verschijnt nu in het Toegankelijkheidscentrum in Windows 8 and hoger. (#308)
+- Bij het bewegen tussen cellen in Excel, worden veranderingen in de opmaak nu automatisch gemeld als die opties zijn ingeschakeld in het  dialoogvenster documentopmaak instellingen van NVDA. (#4878)
+- Aan het dialoogvenster documentopmaak instellingen is de optie Nadruk Melden toegevoegd. Ze is standaard ingeschakeld en laat NVDA automatisch melden dat tekst benadrukt is in documenten. Momenteel is dit enkel ondersteund voor em en strong tags in Bladermodus voor Internet Explorer en andere MSHTML controls. (#4920)
+- De aanwezigheid van ingevoegde en verwijderde tekst wordt nu gemeld in Bladermodus voor Internet Explorer en andere MSHTML controls als de optie Aangebrachte wijzigingen in de tekst melden, is ingeschakeld. (#4920)
+- Bij het bekijken van gemaakte wijzigingen in de Elementenlijst van NVDA voor Microsoft Word, wordt meer informatie getoond zoals welke opmaakeigenschappen gewijzigd zijn. (#4920)
+- In Microsoft Excel zie je een lijst van werkbladen met de mogelijkheid ze te hernoemen via de Elementenlijst (NVDA+f7). (#4630, #4414)
+- Je kan nu configureren om symbolen al dan niet naar spraaksynthesizers te sturen (bijvoorbeeld om een pauze in te lassen of de intonatie te wijzigen) in het dialoogvenster Symbooluitspraak. (#5234)
+- In Microsoft Excel meldt NVDA nu de invoerberichten die de auteur van het werkblad heeft toegevoegd aan cellen. (#5051)
+- Ondersteuning voor de Baum Pronto! V4 en VarioUltra brailleleesregels via Bluetooth-aansluiting. (#3717)
+- Ondersteuning voor het bewerken van rich text in Mozilla applicaties zoals Google Docs met braille-ondersteuning ingeschakeld in Mozilla Firefox en HTML-opstelling in Mozilla Thunderbird. (#1668)
+- Ondersteuning voor het bewerken van rich text in Google Chrome en Chrome-gebaseerde browsers zoals Google Docs met braille-ondersteuning ingeschakeld. (#2634)
+ - Dit vereist Chrome versie 47 of hoger.
+- In bladermodus in Microsoft Excel kan je nu navigeren naar vergrendelde cellen in beveiligde werkbladen. (#4952)
+
+
+== Veranderingen ==
+- De optie Aangebrachte wijzigingen in de tekst melden, is nu standaard ingeschakeld in het dialoogvenster Documentopmaak instellingen. (#4920)
+- Tijdens het navigeren per karakter in Microsoft Word met de ingeschakelde optie Aangebrachte wijzigingen in de tekst melden, wordt nu minder informatie gemeld bij wijzigingen, waardoor navigatie efficiënter verloopt. Om de extra informatie te zien, gebruikt u de Elementenlijst. (#4920)
+- liblouis braillevertaler bijgewerkt naar 2.6.4. (#5341)
+- Heel wat symbolen (waaronder eenvoudige wiskundige symbolen) zijn verplaatst naar het niveau sommige zodat ze standaard worden uitgesproken. (#3799)
+- Als de synthesizer het ondersteunt, zou de spraak nu moeten pauzeren voor haakjes en het gedachtenstreepje (–). (#3799)
+- Bij het selecteren van tekst, wordt de tekst gemeld voor de aanduiding "geselecteerd" in plaats van erna. (#1707)
+
+
+== Opgeloste problemen ==
+- Major performance improvements when navigating the Outlook 2010/2013 message list. (#5268)
+- In a chart in Microsoft Excel, navigating with certain keys (such as changing sheets with control+pageUp and control+pageDown) now works correctly. (#5336)
+- Fixed the visual appearance of the buttons in the warning dialog which is displayed when you attempt to downgrade NVDA. (#5325)
+- In Windows 8 and later, NVDA now starts a lot earlier when configured to start after logging on to Windows. (#308)
+ - If you enabled this using a previous version of NVDA, you will need to disable it and enable it again in order for the change to take effect. Follow this procedure:
+  + Open the General Settings dialog.
+  + Uncheck the Automatically start NVDA after I log on to Windows checkbox.
+  + Press the OK button.
+  + Open the General Settings dialog again.
+  + Check the Automatically start NVDA after I log on to Windows checkbox.
+  + Press the OK button.
+- Performance enhancements for UI Automation including  File Explorer and Task Viewer. (#5293)
+- NVDA now correctly switches to focus mode when tabbing to read-only ARIA grid controls in Browse Mode for Mozilla Firefox and other Gecko-based controls. (#5118)
+- NVDA now correctly reports "no previous" instead of "no next" when there are no more objects when flicking left on a touch screen.
+- Fixed problems when typing multiple words into the filter field in the Input Gestures dialog. (#5426)
+- NVDA no longer freezes in some cases when reconnecting to a HumanWare Brailliant BI/B series display via USB. (#5406)
+- In languages with conjunct characters, character descriptions now work as expected for upper case English characters. (#5375)
+- NVDA should no longer occasionally freeze when bringing up the Start Menu in Windows 10. (#5417)
+- In Skype for Desktop, notifications which are displayed before a previous notification disappears are now reported. (#4841)
+- Notifications are now reported correctly in Skype for Desktop 7.12 and later. (#5405)
+- NVDA now correctly reports the focus when dismissing a context menu in some applications such as Jart. (#5302)
+- In Windows 7 and later, Color is again reported in certain applications such as Wordpad. (#5352)
+- When editing in Microsoft PowerPoint, pressing enter now reports automatically entered text such as a bullet or number. (#5360)
+
+
 = 2015.3 =
 Hoogtepunten in deze versie zijn initiële ondersteuning voor Windows 10; de mogelijkheid om lettertoetsnavigatie uit te schakelen in bladermodus (nuttig voor sommige web apps); verbeteringen in Internet Explorer; en correcties voor rommelige tekst tijdens het typen in bepaalde toepassingen als braille is ingeschakeld.
 
