@@ -1,0 +1,13 @@
+commit a5afa2c356ef4e99921ce98fef971434f38f2831
+Author: Davy Kager <mail@davykager.nl>
+Date:   Sun Oct 18 20:09:24 2015 +0200
+
+    When using a braille display and text is selected on the current line (e.g. when searching in a text editor for text which occurs on the same line), the braille display will be scrolled if appropriate.
+    
+    On a pending caret move if there is no cursor, try to scroll the braille display to the selection.
+    
+    * Move the marking of a selection to braille.Region.
+    * Add Region.brailleSelectionStart/End.
+    * If there is a selection but not a cursor, e.g. in a TextInfoRegion, scroll the braille display to the selection start.
+    
+    Fixes #5410.
