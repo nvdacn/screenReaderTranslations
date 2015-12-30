@@ -3,23 +3,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: 1.0\n"
 "POT-Creation-Date: 2014-01-12 22:25+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2015-12-30 21:01+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "[[!meta title=\"NVDA Add-on Development Guide\"]]\n"
-msgstr ""
+msgstr "[[!meta title=\"NVDA Add-on Development Guide\"]]\n"
 
 #. type: Plain text
 msgid ""
@@ -27,6 +26,9 @@ msgid ""
 "NvDA add-ons are developed, as well as explaining some useful code segments "
 "from NvDA core source code useful when writing add-ons."
 msgstr ""
+"مرحبا بكم في دليل كتابة الإضافات البرمجية. نهدف من خلال هذا الدليل تعليم "
+"المستخدم كيفية إنشاء إضافات NVDA, فضلا عن شرح ببعض من الأكواد المفيدة التي "
+"سنستقيها من مصدر الشفرة لبرنامج NVDA. "
 
 #. type: Plain text
 msgid ""
@@ -35,11 +37,14 @@ msgid ""
 "familiarize yourself with key terms and basics on getting started with add-"
 "on development."
 msgstr ""
+"للمزيد من المعلومات حول تطوير NVDA, يرجى زيارة [صفحة تطوير NVDA][1]. فضلا "
+"تأكد من المرور على [دليل تطوير NVDA][2] كي تكون معتاد على المصطلحات "
+"المستخدمة وعلى أساسيات البدأ في تطوير الإضافات. "
 
 #. type: Title ##
 #, no-wrap
 msgid "Audience"
-msgstr ""
+msgstr "من يجب عليه قراءة هذا الدليل"
 
 #. type: Plain text
 msgid ""
@@ -48,6 +53,9 @@ msgid ""
 "who are familiar with Python or other programming languages and/or familiar "
 "with NvDA source code structure."
 msgstr ""
+"تم تصميم هذا الدليل للمبتدئين الذين يودون تعلم لغة بيثون وتطوير NVDA بشكل "
+"عام, ولمن لديهم الخبرة والمبرمجين الدارسين للغة بيثون أو لغات البرمجة الأخرى "
+"أو من اعتادوا على مصدر شفرة NVDA."
 
 #. type: Plain text
 msgid ""
@@ -57,17 +65,24 @@ msgid ""
 "new to NvDA development, please checkout NVDA development Guide and Design "
 "Overview document, both of which can be found on the NVDA Community website."
 msgstr ""
+"إذا كنت حديث العهد بكتابة الإضافات البرمجية أو بتطوير NVDA, فنوصيك بتعلم لغة "
+"بيثون أولا, حيث سيعطيك ذلك الخلفية البرمجية اللازمة لفهم بقية محتوى الدليل. "
+"أما إذا كنت مبرمج لغة بيثون لكنك حديث العهد بتطوير NVDA, فنرجو منك التمعن في "
+"قراءة دليل تطوير NVDA وفي تصميم محتوى الشرح ويمكنك إيجاد كل ذلك على موقع "
+"NVDA."
 
 #. type: Title ###
 #, no-wrap
 msgid "Authors, contributions and copyright"
-msgstr ""
+msgstr "مؤلفو الدليل, والمساهمون وحقوق النشر"
 
 #. type: Plain text
 msgid ""
 "This guide was originally written by Joseph Lee and is shaped by NVDA user "
 "and developer community. We welcome your feedback and contributionn."
 msgstr ""
+"قام بكتابة هذا الدليل Joseph Lee وساهم في تطويره مستخدمو NVDA ومطوروه. نرحب "
+"بأسئلتكم واستفساراتكم ومساهمتكم."
 
 #. type: Plain text
 msgid ""
@@ -76,18 +91,18 @@ msgid ""
 "Corporation. IAccessible package is copyright IBM and Linux Foundation. "
 "Python is copyright Python Foundation. Other products mentioned are "
 "copyrighted by authors of these products."
-msgstr ""
+msgstr "Joseph Lee "
 
 #. type: Title ##
 #, no-wrap
 msgid "System requirements"
-msgstr ""
+msgstr "متطلبات النظام"
 
 #. type: Plain text
 msgid ""
 "To create an add-on for NVDA, please make sure the following system "
 "requirements are met:"
-msgstr ""
+msgstr "لإنشاء إضافة ل NVDA, يرجى التأكد من أن لديك المتطلبات التالية:"
 
 #. type: Bullet: '* '
 msgid ""
@@ -95,22 +110,24 @@ msgid ""
 "installed version will work, but we strongly recommend that you install a "
 "copy of NVDA on your development computer)."
 msgstr ""
+"توفر نسخة من NVDA على حاسوبك (سواء أكانت نسخة مثبتة أو محمولة, لكننا نوصيك "
+"بتثبيت نسخة من البرنامج على الحاسوب)."
 
 #. type: Bullet: '* '
 msgid "Python 2.7 series, version 2.7.5 32-bit for Windows."
-msgstr ""
+msgstr "سلسلة بيثون 2.7, الإصدار 2.7.5 نواة 32 بيت للويندوز. "
 
 #. type: Bullet: '* '
 msgid "SCons 2, version 2.3.0 for generating add-on packages."
-msgstr ""
+msgstr "SCons 2, الإصدار 2.3.0 لإنتاج حزم إضافات NVDA."
 
 #. type: Bullet: '* '
 msgid "Markdown 2.0.1 or later for generating add-on documentation."
-msgstr ""
+msgstr "Markdown 2.0.1 أو ما بعده لعمل ملفات المساعدة للإضافات."
 
 #. type: Bullet: '* '
 msgid "GNU Gettext package for Windows for message localization support."
-msgstr ""
+msgstr "حزمة GNU Gettext لنظام ويندوز لدعم تعريب الرسائل."
 
 #. type: Bullet: '* '
 msgid ""
@@ -118,22 +135,25 @@ msgid ""
 "Bitbucket (optional, see below). You can use various Git clients, such as "
 "Git Bash, Cygwin's Git, Tortoise Git and so forth."
 msgstr ""
+"Git 1.7.9 أو ما بعده إذا كنت تريد رفع ملف الإضافة على أحد المستودعات مثل "
+"Bitbucket  (اختياري, يرجى النظر أدناه). يمكنك استخدام تطبيقات Bitbucket "
+"مختلفة, مثل Git BashCygwin's Git, Tortoise Git وهكذا."
 
 #. type: Bullet: '* '
 msgid ""
 "The NVDA Community Add-on template for ease of add-on file and folder "
 "packaging and management (optional; [click here][3] to download the add-on "
 "template)."
-msgstr ""
+msgstr "قالب موقع إضافات NVDAلسهولة تجميع وإدارة ملف أو مجلد الإضافة "
 
 #. type: Bullet: '* '
 msgid "Additional Python modules or dependencies for your add-on."
-msgstr ""
+msgstr "وحدات أو ملحقات بيثون إضافية لعمل إضافتك البرمجية"
 
 #. type: Title ##
 #, no-wrap
 msgid "What are add-ons?"
-msgstr ""
+msgstr "ما هي الإضافات البرمجية؟"
 
 #. type: Plain text
 msgid ""
@@ -142,28 +162,38 @@ msgid ""
 "support for an application or adding support for newer braille displays or "
 "speech synthesizers."
 msgstr ""
+"الإضافة البرمجية هي عبارة عن حزمة إضافية لتوسيع ميزات وخصائص NVDA أو لدعم "
+"NVDA لمختلف التطبيقات. وربما يشمل ذلك إضافة خصائص عامة, أو تعزيز دعم أحد "
+"التطبيقات, أو إضافة دعم لأسطر إلكترونية حديثة أو آلات نطق."
 
 #. type: Plain text
 msgid "An add-on may include one or more of the following components:"
-msgstr ""
+msgstr "وربما تشمل الإضافة على واحد أو أكثر من العناصر التالية:"
 
 #. type: Bullet: '* '
 msgid ""
 "Global plugin: A global plugin adds features for NVDA which can be used "
 "anywhere, such as OCR capability."
 msgstr ""
+"الملحقات البرمجية العامة والمعروفة باسم global plugin: وهي تعمل على إضافة "
+"مزيد من الميزات ل NVDA حيث يمكن استخدامها من أي مكان, مثل إمكانية التعرف "
+"البصري على الأحرف المعروفة اختصارا ب OCR."
 
 #. type: Bullet: '* '
 msgid ""
 "App module: An app module allows enhanced support for a program, such as "
 "specific windows or controls of a program such as audio editors."
 msgstr ""
+"وحدة التطبيق appmodule: تتيح للمبرمج دعم تطبيق معين, مثل نوافذ معينة أو "
+"كائنات داخل تطبيق معين كبرامج تحرير الصوت."
 
 #. type: Bullet: '* '
 msgid ""
 "Driver: A driver allows a program to talk to hardware. Currently one can "
 "write drivers for new braille displays or speech synthesizers."
 msgstr ""
+"التعريف أو ما يعرف ب driver: وهو الذي يتيح للبرامج التعامل مع الأجهزة. "
+"وحاليا يمكن للمبرمج كتابة driver للأسطر الإلكترونية الجديدة أو آلات النطق."
 
 #. type: Plain text
 msgid ""
@@ -172,62 +202,78 @@ msgid ""
 "Manager, found in NvDA 2012.2 or later. Alternatively, one can install them "
 "from file manager if one uses NVDA 2012.3 or later installed on the computer."
 msgstr ""
+"إن كل ملف إضافة (مكون من عنصر أو أكثر من العناصر السابق ذكرها) هو عبارة عن "
+"ملف مضغوط بامتداد .nvda-addon. يمكن تثبيت هذه الإضافات إما من خلال مدير "
+"الإضافات البرمجية, الموجود بداية من إصدار NVDA2012.2 وما بعده أو يمكن "
+"تثبيتها عبر مدير الملفات الموجود ب إصدار NVDA 2012.3 وما بعده."
 
 #. type: Plain text
 msgid ""
 "Throughout this guide, we refer to standard NVDA python modules which comes "
 "with NVDA as \"NvDA Core\" to distinguish it from add-on modules."
 msgstr ""
+"وعبر هذا الدليل, سنشير إلى وحدات بيثون القياسية الخاصة ب NVDA والتي تأتي ك "
+"\"أصل NVDA\" للتفريق بينها وبين وبين وحدات الإضافات البرمجية."
 
 #. type: Title ##
 #, no-wrap
 msgid "Setting up the add-on development environment"
-msgstr ""
+msgstr "تأسيس بيئة تطوير الإضافات البرمجية"
 
 #. type: Plain text
 msgid "Follow these steps to prepare your computer for writing NVDA add-ons."
-msgstr ""
+msgstr "اتبع الخطوات التالية لإعداد حاسوبك لكتابة الإضافات البرمجية."
 
 #. type: Title ###
 #, no-wrap
 msgid "Installing dependencies"
-msgstr ""
+msgstr "تثبيت الملحقات"
 
 #. type: Bullet: '1. '
 msgid ""
 "If you don't have NVDA, download and install NVDA from NV access website."
-msgstr ""
+msgstr "إذا لم تكن لديك نسخة من NVDA, فضلا قم بتحميلها من موقع NVDA وتثبيتها."
 
 #. type: Bullet: '2. '
 msgid ""
 "Install Python 2.7.x 32-bit on your computer (if using Windows, install "
 "using the 32-bit Windows installer package)."
 msgstr ""
+"قم بتثبيت بيثون 2.7.x 32-bit على حاسوبك (إذا كنت تستخدم نظام التشغيل ويندوز, "
+"استخدم حزمة المثبت 32-bit."
 
 #. type: Bullet: '3. '
 msgid "Install Markdown and SCons using their Windows installer packages."
 msgstr ""
+"قم بتثبيت markdown و SCons مستخدما حزم التثبيت الخاصة بتلك الملحقات لنظام "
+"ويندوز."
 
 #. type: Bullet: '4. '
 msgid "If you plan to share your add-on code with others, install Git clients."
 msgstr ""
+"إذا كنت تنوي مشاركة شفرة الإضافة البرمجية مع آخرين, قم بتثبيت أحد تطبيقات "
+"Git."
 
 #. type: Bullet: '5. '
 msgid ""
 "Paste the Gettext executable files to your add-on development folder (see "
 "the next section on add-on development folder)."
 msgstr ""
+"الصق الملفات التنفيذية ل Gettext في مجلد تطوير إضافتك (يرجى النظر في القسم "
+"الخاص بمجلد تطوير الإضافة البرمجية)."
 
 #. type: Bullet: '6. '
 msgid ""
 "If you are developing support for a program, speech synthesizer or a braille "
 "display, install the needed software and/or have the hardware handy."
 msgstr ""
+"إذا كنت تعمل على تطوير دعم تطبيق ما أو آلة نطق أو سطر إلكتروني, قم بتثبيت "
+"التطبيق الجاري دعمه و/أو امتلك الجهاز الذي تريد دعمه."
 
 #. type: Title ###
 #, no-wrap
 msgid "The add-on development folder"
-msgstr ""
+msgstr "مجلد تطوير الإضافة"
 
 #. type: Plain text
 msgid ""
@@ -235,23 +281,30 @@ msgid ""
 "separate folders, one per add-on. If you chose to download the add-on "
 "template, the folder structure will be automatically created."
 msgstr ""
+"عند كتابتك للإضافات البرمجية, فإننا نوصيك بتخزين شفرة الإضافة في مجلدات "
+"منفصلة, مجلد لكل إضافة. إذا اخترت تحميل قالب الإضافات, فسيتم آليا إنشاء "
+"تركيب المجلد."
 
 #. type: Plain text
 msgid ""
 "Once you install the needed dependencies (see above), paste the Gettext "
 "package executables into this add-on folder."
 msgstr ""
+"بمجرد تثبيت الملحقات التي ستحتاجها (انظر أعلاه), الصق حزمة Gettext التنفيذية "
+"في هذا المجلد."
 
 #. type: Title ###
 #, no-wrap
 msgid "Add-on folder structure"
-msgstr ""
+msgstr "تركيب مجلد الإضافة البرمجية"
 
 #. type: Plain text
 msgid ""
 "Each add-on folder, at a minimum, must contain the following files and "
 "folders:"
 msgstr ""
+"يجب أن يحتوي كل مجلد إضافة جاري تطويرها, كحد أدنى, على الملفات والمجلدات "
+"التالية:"
 
 #. type: Plain text
 #, no-wrap
@@ -259,6 +312,8 @@ msgid ""
 " * manifest.ini to store manifesst information such as add-on name and author.\n"
 "* An \"addon\" subfolder with the add-on module directory underneath this subfolder (appModules, globalPlugins, synthDrivers, brailleDisplays). One or more module folders can be specified.\n"
 msgstr ""
+" * manifest.ini لكتابة داخله المعلومات عن الإضافة كاسم الإضافة ومؤلفها.\n"
+"* \"مجلد فرعي للإضافة\" يحتوي على مجلد لوحدة الإضافة تحت هذا المجلد (الوحدات البرمجية appmodules, الملحقات العامة global plugins, آلات النطق, الأسطر الإلكترونية). يمكن تخصيص مجلد لكل وحدة برمجية أو أكثر.\n"
 
 #. type: Plain text
 msgid ""
@@ -268,21 +323,27 @@ msgid ""
 "in the template folder for more information on customizing your add-on "
 "manifest using the template files."
 msgstr ""
+"إذا كنت تستخدم قالب الإضافات, سيتم إنشاء تركيب المجلد آليا, لذا فستحتاج فقط "
+"إلى إنشاء مجلد الإضافة الفرعي ومجلد وحدة الإضافة والشفرة البرمجية داخل هذا "
+"المجلد. انظر ملف اقرأني بمجلد قالب الإضافة لمزيد من المعلومات حول تخصيص "
+"معلوماتك عن الإضافة باستخدام ملفات القالب."
 
 #. type: Title ###
 #, no-wrap
 msgid "Packaging add-ons"
-msgstr ""
+msgstr "تحزيم الإضافة"
 
 #. type: Plain text
 msgid "There are two ways of packaging add-ons:"
-msgstr ""
+msgstr "هناك طريقتان لتعبئة الإضافة:"
 
 #. type: Bullet: '1. '
 msgid ""
 "To package your add-on manually, zip up (compress) your add-on folder as a ."
 "zip file, then rename the file extension to .nvda-addon."
 msgstr ""
+"لتعبئة إضافتك يدويا, اضغط مجلد إضافتك كملف .zip, ثم أعد تسمية امتداد الملف "
+"إلى .nvda-addon."
 
 #. type: Bullet: '2. '
 msgid ""
@@ -290,17 +351,19 @@ msgid ""
 "administrator mode (Windows Vista or later), change to your add-on folder "
 "and type `scons~."
 msgstr ""
+"لاستخدام قالب الإضافة مع SCons, افتح أي من تطبيقات الأوامر النصية وأنت في "
+"نمط ال admin (Windows Vista وما بعده), اكتب مسار مجلد إضافتك ثم اكتب `scons~."
 
 #. type: Plain text
 msgid ""
 "For more information on add-on management, see the management chapter in "
 "this guide."
-msgstr ""
+msgstr "لمزيد من المعلومات حول إدارة الإضافات, انظر فصل الإدارة بهذا الدليل."
 
 #. type: Title ##
 #, no-wrap
 msgid "Getting started: Hands-on examples"
-msgstr ""
+msgstr "الشروع في البدأ: مع التوضيح بالأمثلة"
 
 #. type: Plain text
 msgid ""
@@ -309,6 +372,10 @@ msgid ""
 "it gives you basic information to get you started with add-ons and give you "
 "tips on writing code."
 msgstr ""
+"هل أنت مستعد لبدأ مغامرتك مع الإضافات البرمجية, لكنك غير متأكد من كيفية رؤية "
+"إضافتك للنور؟ إذا كان هذا هو أنت, يرجى أن تقرأ معنا هذا الفصل, حيث سيزودك "
+"بالمعلومات الأساسية للبدأ في إنشاء الإضافات كما سيعطيك إشارات عن كيفية كتابة "
+"الشفرة البرمجية. "
 
 #. type: Plain text
 msgid ""
@@ -317,58 +384,66 @@ msgid ""
 "configuration folder (available from Start Menu/Screen if NVDA is installed) "
 "to store our example Python files."
 msgstr ""
+"ملحوظة: في هذا الفصل, لن نستخدم الحزمة الحقيقية للإضافة البرمجية. ولكننا "
+"سنستخدم مجلد الملحقات- عدد من المجلدات الفرعية بمجلد إعدادات المستخدم الخاص "
+"بك ب NVDA (موجود بقائمة ابدأ, إذا كان NVDA على حاسوبك كنسخة مثبتة) لتخزين "
+"ملفات أمثلة بثيون التي سنشرحها."
 
 #. type: Plain text
 msgid ""
 "To edit .py files, you need a word processor which can handle .py files. The "
 "best one we recommend is Notepad++."
 msgstr ""
+"لتحرير ملفات .py, ستحتاج إلى معالج نصوص يمكنه التعامل مع ملفات .py. وأفضل "
+"البرامج التي نوصي بها هو Notepad++."
 
 #. type: Title ###
 #, no-wrap
 msgid "How add-on code is organized"
-msgstr ""
+msgstr "كيفية تنظيم كود أو شفرة الإضافة"
 
 #. type: Plain text
 #, no-wrap
 msgid " Your add-on code is stored in one or more Python files (.py file). Despite different kinds of add-ons out there, they all have similar layout.\n"
-msgstr ""
+msgstr "يتم تخزين كود إضافتك في ملف أو أكثر من ملفات ال بيثون (ملف .py). على الرغم من مختلف الإضافات الموجودة, إلا أنها تتشابه في الإطار.\n"
 
 #. type: Plain text
 #, no-wrap
 msgid " First, you start by writing an optional header for your add-on, such as your name, a brief sentence or two on what the add-on is for and so on. Although this is optional, it is recommend that you write the header as a reminder to keep track of what you are doing with your add-on.\n"
-msgstr ""
+msgstr "أولا, عليك البدأ بكتابة عنوان اختياري لإضافتك, ككتابة اسمك, أو جملة مختصرة أو جملتين عن وظيفة الإضافة, وهكذا. على الرغم من أن هذا الأأمر اختياري, إلا أننا نوصي بكتابة العنوان كي تتبع مسار ما تفعله بالإضافة.\n"
 
 #. type: Plain text
 #, no-wrap
 msgid " Next, you tell NVDA the modules you need for your add-on file. This is done by writing `import module` where module is the name of the module you wish to use in your code. For example, if you want to hear tones while writing your add-on, write `import tones`. Typically you may need to import two or more modules for your specific add-on (see below on list of modules you need for the type of add-on module you are writing).\n"
-msgstr ""
+msgstr "ثانيا, اخبر NVDA بالوحدات modules التي ستحتاجها لملف إضافتك. ويتم ذلك بكتابة `import module` حيث تستبدل كلمة module بالوحدة التي ستحتاجها في الكود. على سبيل المثال, إذا كنت تريد سماع نغمات أثناء كتابتك للإضافة, اكتب `import tones`. ربما يحتاج كود إضافتك إلى استيراد أكثر من وحدة (انظر أدناه قائمة ببعض الوحدات التي ربما تحتاج إليها عند كتابة إضافتك).\n"
 
 #. type: Plain text
 #, no-wrap
 msgid " after declaring the modules you need or import, you write your add-on code (defining classes, variables, methods and so on). The most important section is the add-on class code, which will determine the type of add-on module your code will be assigned to.\n"
-msgstr ""
+msgstr "بعد تقرير الوحدات التي ستحتاجها أو ستستوردها, اكتب كود إضافتك (بتحديد الطبقات classes, والمتغيرات variables, والطرق methods وهكذا). إن القسم الأكثر أهمية عند كتابة الإضافة هو كود الطبقات, والتي بمقتضاها سيتحدد نوع الوحدات التي ستحتاجها عند كتابة الكود.\n"
 
 #. type: Plain text
 #, no-wrap
 msgid " For instance, if you wish to add support for a program, after importing appModuleHandler and other needed modules, you would write:\n"
-msgstr ""
+msgstr "على سبيل المثال, إذا كنت تريد إضافة مزيد من الدعم لأحد التطبيقات, فإنك بعد استيراد وحدة appmodulehandler والوحدات البرمجية الأخرى, فستكتب:\n"
 
 #. type: Plain text
 #, no-wrap
 msgid " `class appModule(appModuleHandler.AppModule):`\n"
-msgstr ""
+msgstr " `class appModule(appModuleHandler.AppModule):`\n"
 
 #. type: Plain text
 msgid ""
 "After that, all you are writing is Python code (see the Python documentation "
 "on how to write Python programs)."
 msgstr ""
+"بعد ذلك, كل ما ستكتبه هو عبارة عن كود بيثون (انظر ملفات المساعدة الخاصة بلغة "
+"بيثون لمعرفة كيفية كتابة برامج بلغة بيثون)."
 
 #. type: Title ###
 #, no-wrap
 msgid "Running your add-on in this example chapter"
-msgstr ""
+msgstr "تشغيل إضافتك في مثال هذا الفصل"
 
 #. type: Plain text
 msgid ""
@@ -378,11 +453,15 @@ msgid ""
 "folder: appModules folder for app module examples, and globalPlugins folder "
 "for global plugins."
 msgstr ""
+"لتنفيذ مثال إضافتك من هذا الفصل, افتح مجلد إعدادات المستخدم ل NVDA (من قائمة/"
+"قائمة ابدأ, ابحث عن مجلد استكشاف مجلد).إعدادات NVDA\" ثم الصق ملف ال .py "
+"الخاص بإضافتك في المجلد المناسب: مجلد appmodules لأمثلة الوحدات البرمجية, "
+"ومجلد global plugins لأمثلة الملحقات العامة."
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 1: Hear a tone when pressing NVDA+A"
-msgstr ""
+msgstr "مثال 1: سماع صوت صفير عند الضغط على NVDA+A"
 
 #. type: Plain text
 msgid ""
@@ -390,6 +469,9 @@ msgid ""
 "tone for 1 second from any program. Since we want to use this everywhere, it "
 "must be a global plugin."
 msgstr ""
+"هيا نبدأ بمثال بسيط: إذا ضغطت على NvDA+A, ستسمع صوت صفير لثانية واحدة من أي "
+"برنامج. حيث أننا نريد استخدام هذه الإضافة من أي مكان, فيجب أن تكون ملحق عام "
+"global plugin. "
 
 #. type: Plain text
 msgid ""
@@ -399,17 +481,23 @@ msgid ""
 "a short descriptive name). Then open the newly created .py file in the word "
 "processor."
 msgstr ""
+"أولا, افتح مجلد إعدادات المستخدم لديك, ثم افتح مجلد global plugins. قم "
+"بإنشاء ملف .py جديد وسميه باسم وليكن example1.py (نوصي بشدة أنه عندما تريد "
+"تسمية ملف إضافتك, أن تعطي له اسم معبر وقصير). ثم افتح ملف .py الجديد في "
+"معالج النصوص لديك."
 
 #. type: Plain text
 msgid ""
 "The below code implements our example. Put this in your .py file as exactly "
 "as shown:"
 msgstr ""
+"الكود أدناه سيقوم بتنفيذ المثال الذي أشرنا إليه. اكتبه في ملف .py كما هو "
+"موضح:"
 
 #. type: Plain text
 #, no-wrap
 msgid "\t# Add-on development first example\n"
-msgstr ""
+msgstr "\t# Add-on development first example\n"
 
 #. type: Plain text
 #, no-wrap
@@ -417,11 +505,13 @@ msgid ""
 "\timport globalPluginHandler\n"
 "\timport tones # We want to hear beeps.\n"
 msgstr ""
+"\timport globalPluginHandler\n"
+"\timport tones # We want to hear beeps.\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "\tclass GlobalPlugin(globalPluginHandler.GlobalPlugin):\n"
-msgstr ""
+msgstr "\tclass GlobalPlugin(globalPluginHandler.GlobalPlugin):\n"
 
 #. type: Plain text
 #, no-wrap
@@ -429,6 +519,8 @@ msgid ""
 "\t\tdef script_doBeep(self, gesture):\n"
 "\t\t\ttones.beep(440, 1000) # Beep a standard middle A for 1 second.\n"
 msgstr ""
+"\t\tdef script_doBeep(self, gesture):\n"
+"\t\t\ttones.beep(440, 1000) # Beep a standard middle A for 1 second.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -437,17 +529,21 @@ msgid ""
 "\t\t\t\"kb:NVDA+A\":\"doBeep\"\n"
 "\t\t}\n"
 msgstr ""
+"\t\t__gestures={\n"
+"\t\t\t\"kb:NVDA+A\":\"doBeep\"\n"
+"\t\t}\n"
 
 #. type: Plain text
 msgid ""
 "In Python, you put comments by putting hash sign (#) at the start of the "
 "comment line."
 msgstr ""
+"في لغة بيثون, تضع تعليقات بكتابة علامة الشباك (#) في بداية سطر التعليق."
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 1 code explanation"
-msgstr ""
+msgstr "شرح لكود مثال 1"
 
 #. type: Plain text
 msgid ""
@@ -455,18 +551,22 @@ msgid ""
 "But you might be wondering what that above code means, so let's step through "
 "the code, one piece at a time."
 msgstr ""
+"أول مثال بين أيدينا يجعلنا نسمع صوت صفير لثانية واحدة عند الضغط على NVDA+a. "
+"لكنك ربما تتساءل ماذا يعني الكود المكتوب أعلاه, لذا هيا نشرحه سويا, سطر سطر."
 
 #. type: Bullet: '1. '
 msgid ""
 "At the top of the file, we wrote a header which tells us that this is an "
 "example add-on."
-msgstr ""
+msgstr "أول سطر في الملف وضعنا فيه عنوان يفيد بأن هذا مثال لعمل إضافة. "
 
 #. type: Bullet: '2. '
 msgid ""
 "Since this is a global plugin, we need to import a crucial module: global "
 "plugin handler, so we wrote `import globalPluginHandler`."
 msgstr ""
+"حيث أن هذا من الملحقات العامة, فإننا نحتاج إلى استيراد وحدة هامة للغاية ألا "
+"وهي: global plugin handler, لذا كتبنا `import globalPluginHandler`."
 
 #. type: Bullet: '3. '
 msgid ""
@@ -474,6 +574,9 @@ msgid ""
 "a built-in module from NVDA. Whenever you wish to use a method from a given "
 "module, import the needed module(s)."
 msgstr ""
+"ثم كتبنا `import tones` كي نستورد (لتحميل, أو كي تحتوي الإضافة على) وحدة صوت "
+"الصفير, وهي وحدة موجودة بداخل تصميم NVDA. عندما تريد استخدام طريقة من وحدة, "
+"قم باستيراد الوحدة التي تحتاجها."
 
 #. type: Bullet: '4. '
 msgid ""
@@ -482,6 +585,8 @@ msgid ""
 "A class, in programming, describes an object, such as a person, a desk, a "
 "program and others."
 msgstr ""
+"ثم حددنا طبقة class تسمى GlobalPlugin. والنص الموجود بين الأقواس المربعة "
+"يخبرنا من أين تأتي هذه الطبقة (وسيرد شرح ذلك بالتفصيل بعد قليل)."
 
 #. type: Bullet: '5. '
 msgid ""
@@ -494,6 +599,15 @@ msgid ""
 "you'll be writing, including our doBeep script takes one or more arguments. "
 "More on scripts later as we journey through the guide."
 msgstr ""
+"داخل الطبقة class, كتبنا طريقة (وظيفة function) تسمى `script_doBeep`. وهذه "
+"الوظيفة هي مثال أو طريقة, سيتم تنفيذها أو تشغيلها عند ضغط أمر معين. داخل هذه "
+"الوظيفة, كتبنا `tones.beep(440, 1000)` كي نقول ل NVDA بأن يصدر صوت نغمة أو "
+"صفارة لثانية. في البرمجة, يمكن للوظيفة function أن تأخذ دلائلarguments, أو "
+"مجموعة a set أو وسائط parameters والتي تخبر الوظيفة بما ستفعله اعتماد على "
+"القيم المعطاة لها (وسنتطرق لذلك بمزيد من الشرح لاحقا). في الحقيقة, تأخذ "
+"العديد من الطرق أو الوظائف التي سنكتبها, ومن بينها الوظيفة التي نشرحها حاليا "
+"doBeep دليل argument أو أكثر. وسنتحدث بمزيد من الشرح عن الوظائف عبر قراءتنا "
+"لهذا الدليل."
 
 #. type: Bullet: '6. '
 msgid ""
@@ -501,6 +615,8 @@ msgid ""
 "(script) bindings for our doBeep script. Here, we told NVDA to assign NVDA+A "
 "command for doBeep script."
 msgstr ""
+"وأخيرا, كتبنا قاموس بسيط (تجميع) لتخزين الأمر الذي سنستخدمه في تشغيل "
+"الوظيفة. وهنا, طلبنا من NVDA تعيين الاختصار NVDA+A للوظيفة doBeep."
 
 #. type: Plain text
 msgid ""
@@ -508,17 +624,23 @@ msgid ""
 "hear a middle A tone for 1 second. Once you are comfortable with the add-on "
 "code and how it is laid out, you can delete the newly created .py file."
 msgstr ""
+"احفظ الملف, ثم أعد تشغيل NVDA. الآن كلما تضغط على NvDA+A, ستسمع صوت صفير "
+"لثانية واحدة. بمجرد شعورك بالراحة للكود المكتوب ومدى تنظيمه, يمكنك حذف ملف "
+"ال .py الجديد."
 
 #. type: Title ###
 #, no-wrap
 msgid "I don't understand those above terms"
-msgstr ""
+msgstr "لم أفهم المصطلحات المذكورة آنفا"
 
 #. type: Plain text
 msgid ""
 "For some, the terms \"class\", \"method\" and so on might be new. Let's go "
 "over what these terms are, as they are fundamental for add-on development:"
 msgstr ""
+"تبدو بعض المصطلحات التي أشرنا إليها مثل \"class\", \"method\" وهكذا غريبة "
+"على الكثير منا. هيا نتطرق لذه المصطلحات بمزيد من الشرح والإيضاح نظرا "
+"لأهميتها القصوى في كتابة الإضافات:"
 
 #. type: Bullet: '* '
 msgid ""
@@ -527,6 +649,10 @@ msgid ""
 "and other programs - in fact, a number of programmers are skilled at coming "
 "up with classes."
 msgstr ""
+"class: ال class هي التي تصف كائن ما. يمكن لل class وصف أي شيء, كأن تصف شخص, "
+"أو مكتب, أو إضافة من إضافات NVDA وأشياء أخرى. إن ال classes من الأشياء "
+"الأساسية ل NVDA والبرامج الأخرى- في الحقيقة, يتميز عدد من المبرمجين بإنتاج "
+"ال classes."
 
 #. type: Bullet: '* '
 msgid ""
@@ -534,6 +660,9 @@ msgid ""
 "doing something, such as generating tones, calculating huge numbers, loading "
 "NVDA add-ons and so on. Some people call them \"functions.\""
 msgstr ""
+"method: الطريقة أو method هي عبارة عن برنامج قصير أو عادة ينفذها البرنامج "
+"لفعل شيء معين, كإصدار صوت, أو حساب عدد ضخم من الأرقام, أو تحميل إضافات NVDA "
+"إلخ. بعض الأشخاص يسمونها \"functions.\""
 
 #. type: Bullet: '* '
 msgid ""
@@ -544,6 +673,13 @@ msgid ""
 "be executed (usually \"self\"; more on that later) and the gesture for the "
 "script (see below)."
 msgstr ""
+"script: ال script هو عبارة عن الطريقة أو ال method التي تعمل عند إجراء "
+"المستخدم لأوامر محددة كالضغط على مفاتيح معينة على لوحة المفاتيح. على سبيل "
+"المثال, عندما تضغط على NVDA+f12, سيقوم NVDA بتنفيذ script الإعلان عن الوقت "
+"والتاريخ, الموجود بأحد وحدات أصل NVDA تسمى Global Commands. يأخذ ال script "
+"دليلين arguments: حيث سيتم تنفيذ ال script (وعادة ما يكون هذا ال argument هو "
+"\"self\"; وسنشرح ذلك بالتفصيل لاحقا) و argument الإشارة لل script (gesture) "
+"(انظر أدناه)."
 
 #. type: Bullet: '* '
 msgid ""
@@ -552,6 +688,9 @@ msgid ""
 "on. An add-on file may define one or more variables (for example, to store "
 "common constants such as strings)."
 msgstr ""
+"variable: المتغير هو عبارة عن شيء ما يمكن أن يتغير, كأن يكون اسم شخص, اسم "
+"إضافة نقوم بتشغيلها, وإصدار NVDA الذي تستخدمه وهكذا. يمكن أن يتحدد بالإضافة "
+"متغير أو أكثر (على سبيل المثال, لتخزين الثوابت الشائعة كالنصوص)."
 
 #. type: Bullet: '* '
 msgid ""
@@ -559,19 +698,22 @@ msgid ""
 "write add-ons, we are in fact writing additional modules that NVDA can use "
 "while it is running."
 msgstr ""
+"module: ال module هي عبارة عن مجموعة من الطرق methods والمتغيرات variablesفي "
+"ملف. عند كتابة الإضافات, فنحن في حقيقة الأمر نكتب وحدات modules إضافية حيث "
+"يمكن ل NVDA استخدامها أثناء تشغيله."
 
 #. type: Plain text
 msgid "There are other terms that we'll get to know shortly."
-msgstr ""
+msgstr "توجد مصطلحات سنتطرق لها بعد قليل."
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 2: Generate a tone when switching to Notepad"
-msgstr ""
+msgstr "مثال 2: إصدار صفير عند الانتقال لنافذة notepad"
 
 #. type: Plain text
 msgid "Most of the below code comes from NvDA Developer Guide."
-msgstr ""
+msgstr "معظم الكود الذي سنذكرها لاحقا مأخوذ من دليل تطوير NVDA."
 
 #. type: Plain text
 msgid ""
@@ -581,6 +723,12 @@ msgid ""
 "the executable for a program. For example, an app module for Notepad would "
 "be named notepad.py."
 msgstr ""
+"لا يسمح لك NVDA بإضافة ملحقات عامة global plugins فقط, لكنه يسمح للمبرمج "
+"أيضا كتابة أكواد لتحسين استخدام البرامج الأخرى عبر ما يسمى بالوحدات البرمجية "
+"appmodules. فالوحدة البرمجية appmodule هي أيضا عبارة عن ملف بيثون إلا أنه, "
+"في هذه المرة, سيكون اسم الملف .py هو اسم الملف التنفيذي للبرنامج الجاري عليه "
+"التحسين. فعلى سبيل المثال, الوحدة البرمجية التي تصمم لدعم notepad سيكون "
+"اسمها notepad.py."
 
 #. type: Plain text
 msgid ""
@@ -589,11 +737,15 @@ msgid ""
 "below code in notepad.py, which in turn should be placed in appModules "
 "folder in your user configuration folder in order for it to run."
 msgstr ""
+"يعطينا الكود المكتوب أدناه, والمأخوذ من دليل تطوير NVDA, مثال قصير لوحدة "
+"برمجية مماثلة: إصدار صوت صفير قصير عند الانتقال ل notepad. ضع الكود أدناه في "
+"ملف اسمه notepad.py, والذي يجب وضعه في مجلد appmodules الموجود بمجلد إعدادات "
+"المستخدم ب NVDA كي يمكن تشغيله."
 
 #. type: Plain text
 #, no-wrap
 msgid "\t# An example app module.\n"
-msgstr ""
+msgstr "\t# An example app module.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -601,11 +753,13 @@ msgid ""
 "\timport appModuleHandler\n"
 "\timport tones\n"
 msgstr ""
+"\timport appModuleHandler\n"
+"\timport tones\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "\tclass AppModule(appModuleHandler.AppModule):\n"
-msgstr ""
+msgstr "\tclass AppModule(appModuleHandler.AppModule):\n"
 
 #. type: Plain text
 #, no-wrap
@@ -614,25 +768,29 @@ msgid ""
 "\t\t\ttones.beep(256, 200)\n"
 "\t\t\tnextHandler()\n"
 msgstr ""
+"\t\tdef event_gainFocus(self, obj, nextHandler):\n"
+"\t\t\ttones.beep(256, 200)\n"
+"\t\t\tnextHandler()\n"
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 2 code explanation"
-msgstr ""
+msgstr "شرح كود مثال 2"
 
 #. type: Plain text
 msgid ""
 "We're seeing more new code here. Let's go over this, again piece by piece:"
-msgstr ""
+msgstr "نستخدم في هذا المثال مزيد من الأكواد, لذا هيا نشرحها بالتفصيل سطر سطر:"
 
 #. type: Bullet: '1. '
 msgid ""
 "Unlike the first example, the crucial module we need is appModuleHandler."
 msgstr ""
+"على عكس المثال الأول, فإن الوحدة الرئيسية التي سنستخدمها هي appModuleHandler."
 
 #. type: Bullet: '2. '
 msgid "The class that we are using is AppModule."
-msgstr ""
+msgstr "وال class التي نستخدمها هي AppModule."
 
 #. type: Bullet: '3. '
 msgid ""
@@ -641,6 +799,10 @@ msgid ""
 "arguments, the object for which the event needs to be dealt with, or, as "
 "many people say, \"fired.\""
 msgstr ""
+"وبخلاف المثال السابق, فإننا نستخدم أحداث events, وهي طرق يتم تنفيذها عند "
+"ظهور أحداث معينة كأن تتغير أسماء الكائنات. فالأحداث events تأخذ الكائن كأحد "
+"دلائلها arguments, الكائن الذي من أجله يحتاج الحدث للتعامل معه, أو, كما يقول "
+"الكثيرون, \"fired.\""
 
 #. type: Bullet: '4. '
 msgid ""
@@ -648,21 +810,26 @@ msgid ""
 "method is used in event methods to tell NvDA to pass the event so it can be "
 "taken care of, such as saying the name of a control after beeping."
 msgstr ""
+"وداخل طريقة الحدث event method, نرى استدعاء ل `nextHandler`. تستخدم هذه "
+"الطريقة method في طرق الأحداث event methods لإخبار NVDA بمرور الحدث event "
+"حتى يتم أخذه في الاعتبار, كنطق اسم أحد الكائنات بعد الصفير."
 
 #. type: Title ###
 #, no-wrap
 msgid "More new terms please"
-msgstr ""
+msgstr "مزيد من المصطلحات الجديدة رجاء"
 
 #. type: Plain text
 msgid "Other terms you may see include:"
-msgstr ""
+msgstr "ربما لاحظت مزيد من المصطلحات الأخرى التي لم تسمع بها من قبل ومن بينها:"
 
 #. type: Bullet: '* '
 msgid ""
 "Event: An event is a method that'll be run when some events happen, such as "
 "when a program is on focused, when names of controls change and so on."
 msgstr ""
+"event:الحدث event هو وظيفة ستنفذ فور حدوث بعض الأحداث events, مثل الوصول "
+"بمؤشر النظام لبرنامج معين, أو عند تغير اسم أحد الكائنات إلخ."
 
 #. type: Bullet: '* '
 msgid ""
@@ -670,6 +837,9 @@ msgid ""
 "method from another method. For example, in our first example, we're calling "
 "tones.beep method from our script method."
 msgstr ""
+"Call: نقول بأن الوظيفة function تستدعي طرق أخرى methods عندما ننفذ الطريقة "
+"الثانية من طريقة أخرى.على سبيل المثال, في مثالنا الأول, استدعينا الطريقة "
+"tones.beep من الطريقة script."
 
 #. type: Bullet: '* '
 msgid ""
@@ -679,6 +849,10 @@ msgid ""
 "abbreviated to obj. In NVDA, an object may refer to controls or parts of a "
 "program."
 msgstr ""
+"Object: الكائن object هو مثال لل class مما يعني أن ال class تحيى عند تشغيل "
+"برنامج. فعبر إضافاتك البرمجية, أثناء كتابتك لل classes وعند تشغيل الإضافات, "
+"فإن ال classess التي كتبتها تظهر ككائنات objects, وعادة ما تختصر في كلمة obj."
+"في NVDA, تشير كلمة object للكائنات أو أجزاء من البرنامج."
 
 #. type: Bullet: '* '
 msgid ""
@@ -690,6 +864,12 @@ msgid ""
 "NVDA object (see below), or in the add-on development, the instance of an "
 "add-on. Many of your methods will have self as the first argument."
 msgstr ""
+"Self: في لغة بيثون, تعني الكلمة \"self\"ال class الحالية (إذا حددنا class, "
+"كأن نكتب إضافة), أو تعني ال class التي يتم تحديد ال method من أجلها. على "
+"سبيل المثال, في ال class التي تسمى numbers, فإن ال method add ستأخذ self "
+"كأول argument, لنتذكر بأن method add هي جزء من class numbers.في تطوير NVDA, "
+"عادة ما تعني كلمة self كائن NVDA الحالي (انظر أدناه), أو في تطوير الإضافات, "
+"مثال للإضافة. العديد من ال methods ستأخذ self كأول argument."
 
 #. type: Plain text
 msgid ""
@@ -699,23 +879,27 @@ msgid ""
 "plugins and app modules will become more clear when we talk about them in "
 "more detail throughout this guide."
 msgstr ""
+"وكما ذكرنا في المثال السابق, إذا شعرت بالراحة للكود المكتوب,ربما تريد حذف "
+"كود الوحدة البرمجية notepad إلا إذا كنت تريد سماع صوت كلما انتقلت لنافذة "
+"notepad. سيتضح الفرق جليا بين ال global plugin وبين ال appmodule أكثر عندما "
+"نتطرق لذلك بمزيد من الشرح عبر هذا الدليل."
 
 #. type: Title ###
 #, no-wrap
 msgid "A few tips for beginners"
-msgstr ""
+msgstr "تلميحات بسيطة للمبتدئين"
 
 #. type: Plain text
 msgid "Here are a few useful tips passed on by add-on writers:"
-msgstr ""
+msgstr "هذه بعض التلميحات المفيدة قدمها كتاب الإضافات البرمجية:"
 
 #. type: Bullet: '* '
 msgid "Start with easy add-ons, such as saying a message, tones and so on."
-msgstr ""
+msgstr "ابدأ بإضافات سهلة كقراءة رسالة, أو سماع نغمة وهكذا."
 
 #. type: Bullet: '* '
 msgid "Write and test one method at a time."
-msgstr ""
+msgstr "اكتب واختبر method واحدة في كل مرة"
 
 #. type: Bullet: '* '
 msgid ""
@@ -723,6 +907,9 @@ msgid ""
 "synthesizers or braille displays you wish to support (e.g. read "
 "documentation, try using them, etc.)."
 msgstr ""
+"إذا كنت تكتب appmodules أو drivers, كن مستخدم جيد للبرامج, أو آلات النطق, أو "
+"الأسطر الإلكترونية التي تريد دعمها (كأن تقرأ ملفات المساعدة الخاصة بتلك "
+"البرامج وآلات النطق والأجهزة, وتجربة استخدام تلك الأشياء, وهكذا.)."
 
 #. type: Bullet: '* '
 msgid ""
@@ -730,11 +917,14 @@ msgid ""
 "in NvDA and other add-ons first before assigning a new command in your add-"
 "on to avoid command conflicts."
 msgstr ""
+"عند تحديد الأوامر ( وبخاصة الأوامر المستخدمة في الملحقات العامة), استرجع "
+"الأوامر الموجودة ب NVDA والإضافات البرمجية الأخرى أولا قبل تعيين أوامر جديدة "
+"بإضافاتك لتجنب التشابه."
 
 #. type: Title ##
 #, no-wrap
 msgid "Useful modules from NVDA core"
-msgstr ""
+msgstr "وحدات مفيدة من كود NVDA"
 
 #. type: Plain text
 msgid ""
@@ -743,17 +933,19 @@ msgid ""
 "section explains them and some functions in those modules that would be "
 "useful."
 msgstr ""
+"عبر كتابتك للإضافات البرمجية, ستتعرف على بعض الوحدات المفيدة من كود NVDA "
+"ستساعدك كثيرا. سيتناول هذا القسم بالشرح هذه الوحدات والوظائف الموجودة بها."
 
 #. type: Title ###
 #, no-wrap
 msgid "List of useful NVDA core modules and methods"
-msgstr ""
+msgstr "قائمة بوحدات modules وطرق methods موجودة ب nvda."
 
 #. type: Plain text
 msgid ""
 "The following lists available NVDA core modules and some useful methods "
 "found in those modules:"
-msgstr ""
+msgstr "تسرد القائمة التالية بعض الوحدات modules والطرق methods المفيدة:"
 
 #. type: Bullet: '* '
 msgid ""
@@ -761,6 +953,9 @@ msgid ""
 "subsystem. The addonHandler.initTranslation() method is used to initialize "
 "internationalization support for your add-on."
 msgstr ""
+"Addon Handler (addonHandler.py): الوحدة module التي تنفذ النظام الفرعي "
+"للإضافة. تستخدم الطريقة method addonHandler.initTranslation() لبدأ ترجمة "
+"الإضافة للغات أخرى."
 
 #. type: Bullet: '* '
 msgid ""
@@ -768,6 +963,10 @@ msgid ""
 "such as obtaining focus and navigator object, setting focus and so on. See "
 "the next list on useful methods from this module."
 msgstr ""
+"NVDA basic API (api.py): هي مجموعة من ال methods المستخدمة في NVDA, كالحصول "
+"على الكائن النشط ومؤشر NVDA (obtaining focus and navigator object),  ووضع "
+"االمؤشر (setting focus) وهكذا. انظر القائمة التالية حول ال methods المفيدة "
+"التي تشتمل عليها هذه الوحدة module."
 
 #. type: Bullet: '* '
 msgid ""
@@ -775,12 +974,17 @@ msgid ""
 "charge of handling app modules (see chapter on app modules for more "
 "information)."
 msgstr ""
+"App Module subsystem (appModuleHandler.py, appModules): هو النظام الفرعي "
+"المسؤول عن معالجة الوحدات البرمجية appmodules (راجع الفصل الخاص بالوحدات "
+"البرمجية appmodules لمزيد من المعلومات)."
 
 #. type: Bullet: '* '
 msgid ""
 "ARIA support (aria.py): Implements support for Accessible Rich Internet "
 "Applications (ARIA)."
 msgstr ""
+"ARIA support (aria.py): وهي لتنفيذ دعم تطبيقات الإنترنت الغنية والمتوافقة مع "
+"قارآت الشاشة (ARIA)."
 
 #. type: Bullet: '* '
 msgid ""
@@ -788,6 +992,9 @@ msgid ""
 "scriptable objects (see the chapter on NvDA objects and overlay objects for "
 "more information)."
 msgstr ""
+"Base object collection (baseObject.py): تحتوي على قاعدة بالكائنات objects "
+"كالكائنات الوظيفية scriptable objects (انظر الفصل الخاص بكائنات NVDA و "
+"overlay objects لمزيد من المعلومات)."
 
 #. type: Bullet: '* '
 msgid ""
@@ -795,28 +1002,38 @@ msgid ""
 "braille output to and input from braille displays, needed by braille display "
 "driver add-ons."
 msgstr ""
+"Braille input and output subsystem (braille.py, brailleInput.py): التحكم في "
+"إدخال وإخراج البرايل, التي تحتاجها إضافات برنامج السطر الإلكتروني."
 
 #. type: Bullet: '* '
 msgid ""
 "Build-in modules (builtin.py): Allows access to builtin modules when working "
 "with add-ons."
 msgstr ""
+"Build-in modules (builtin.py): تتيح الوصول إلى الوحدات modules الداخلية "
+"bultin عند العمل مع الإضافات البرمجية."
 
 #. type: Bullet: '* '
 msgid ""
 "Configuration (config): Manages configuration and profiles (profiles are "
 "available in 2013.3 or later)."
 msgstr ""
+"Configuration (config): لإدارة الإعدادات والأوضاع (الأوضاع متاحة منذ إصدار "
+"NVDA2013.3 وما بعده)."
 
 #. type: Bullet: '* '
 msgid ""
 "Controls and states collection (controltypes.py): Includes dictionaries on "
 "control types (roles) and possible states that a control can be in."
 msgstr ""
+"Controls and states collection (controltypes.py): تشمل قواميس عن أنواع "
+"الكائنات control types (roles) والحالات التي يمكن أن يكون عليها الكائن."
 
 #. type: Bullet: '* '
 msgid "Events (eventHandler.py): Handles various events such as gaining focus."
 msgstr ""
+"Events (eventHandler.py): التعامل مع الأحداث events المختلفة كاكتساب المؤشر "
+"gaining focus."
 
 #. type: Bullet: '* '
 msgid ""
@@ -824,18 +1041,25 @@ msgid ""
 "available while using NVDA (see section on script scope for more "
 "information)."
 msgstr ""
+"Global Commands collection (globalCommands.py): قامئة بالأوامر العامة "
+"المتاحة أثناء استخدام NVDA (انظر القسم الخاص ب script scope لمزيد من "
+"المعلومات)."
 
 #. type: Bullet: '* '
 msgid ""
 "Global Plugin subsystem (globalPluginHandler.py): The module needed for "
 "controlling global plugins."
 msgstr ""
+"Global Plugin subsystem (globalPluginHandler.py): الوحدة التي نحتاجها للتحكم "
+"في الملحقات العامة."
 
 #. type: Bullet: '* '
 msgid ""
 "NVDA GUI (gui): A collection of classes used by NVDA to display its messages "
 "graphically. Includes GUI's for NVDA menu, add-on manager and others."
 msgstr ""
+"NVDA GUI (gui): مجموعة ال classes التي يستخدمها NVDA لعرض رسائله بشكل رسومي. "
+"وتشمل الواجهة الرسومية لقائمة NVDA, ومدير الإضافات البرمجية وأشياء أخرى."
 
 #. type: Bullet: '* '
 msgid ""
@@ -843,38 +1067,47 @@ msgid ""
 "communicating over serial and other hardware ports, useful during driver add-"
 "on development."
 msgstr ""
+"Hardware port utilities (hwPortUtils.py): مجموعة الخدمات للاتصال عبر المنفذ "
+"التسلسلي serial والمنافذ الأخرى للأجهزة, مفيدة عند عمل إضافة ل driver."
 
 #. type: Bullet: '* '
 msgid ""
 "IAccessible support (IAccessibleHandler.py, IAccessible objects): Used for "
 "supporting IAccessible controls."
 msgstr ""
+"IAccessible support (IAccessibleHandler.py, IAccessible objects): تستخدم "
+"للتحكم في كائنات IAccessible."
 
 #. type: Bullet: '* '
 msgid "Input management (inputCore.py): Manages input from the user."
-msgstr ""
+msgstr "Input management (inputCore.py): إدارة مدخلات المستخدم."
 
 #. type: Bullet: '* '
 msgid ""
 "Java Access Bridge support (JABHandler.py): A collection of methods used for "
 "supporting JAB subsystem used for Java applications."
 msgstr ""
+"Java Access Bridge support (JABHandler.py): مجموعة طرق methods لدعم النظام "
+"الفرعي لجسر الاتصال بجافا المستخدم في تطبيقات جافا."
 
 #. type: Bullet: '* '
 msgid ""
 "Keyboard input (keyboardHandler.py): Supports entering commands from the "
 "keyboard."
 msgstr ""
+"Keyboard input (keyboardHandler.py): لدعم إدخال الأوامر من لوحة المفاتيح."
 
 #. type: Bullet: '* '
 msgid ""
 "Logging facility (logHandler.py): Allows a module to write logs to be viewed "
 "by a developer or a user via Log Viewer."
 msgstr ""
+"Logging facility (logHandler.py): السماح للوحدة module بكتابة ملفات تقريرية "
+"كي يعرضها المطورون والمستخدمون عبر عارض التقارير log viewer."
 
 #. type: Bullet: '* '
 msgid "Mouse support (mouseHandler.py): Supports mouse commands."
-msgstr ""
+msgstr "Mouse support (mouseHandler.py): دعم إدخال الأوامر عبر الفأرة."
 
 #. type: Bullet: '* '
 msgid ""
@@ -882,61 +1115,75 @@ msgid ""
 "controls used in many applications and standards such as UIA (User Interface "
 "Automation)."
 msgstr ""
+"NvDA objects collection (NVDAObjects): مجموعة الكائنات التي يستخدمها NVDA في "
+"العديد من التطبيقات."
 
 #. type: Bullet: '* '
 msgid ""
 "Scripts support (scriptHandler.py): Handles scripts, methods executed due to "
 "the user pressing keyboard commands and other input."
 msgstr ""
+"Scripts support (scriptHandler.py): التعامل مع الوظائف scripts, والطرق "
+"methods التي تنفذ بعد ضغط المستخدم على أوامر لوحة المفاتيح والمدخلات الأخرى."
 
 #. type: Bullet: '* '
 msgid "Speech output (speech.py): Controls speech output."
-msgstr ""
+msgstr "Speech output (speech.py): التحكم في اصوت الخارج."
 
 #. type: Bullet: '* '
 msgid ""
 "Synthesizer driver support (synthDriverHandler.py): This is the core module "
 "needed for speech synthesizer add-ons."
 msgstr ""
+"Synthesizer driver support (synthDriverHandler.py): الوحدة التي نحتاجها "
+"لإضافات آلات النطق."
 
 #. type: Bullet: '* '
 msgid ""
 "Widget text access (textInfos): Allows access to text for widget and "
 "documents."
 msgstr ""
+"Widget text access (textInfos): السماح بالوصول للقطع النصية والمستندات."
 
 #. type: Bullet: '* '
 msgid ""
 "Touchscreen support (touchHandler.py): Provides support for touchscreen "
 "input (installed versions only)."
 msgstr ""
+"Touchscreen support (touchHandler.py): لدعم إدخال الأوامر عبر شاشة اللمس (في "
+"النسخ المثبتة فقط)."
 
 #. type: Bullet: '* '
 msgid "Tone output (tones.py): Allows the user to hear tones."
-msgstr ""
+msgstr "Tone output (tones.py): السماح للمستخدم بسماع صوت صفير."
 
 #. type: Bullet: '* '
 msgid ""
 "User interface messages (ui.py): Includes ui.message method used to speak or "
 "braille certain text."
 msgstr ""
+"User interface messages (ui.py): تشمل طريقة ui.message والتي تستخدم للتحدث "
+"أو لكتابة نص معين على السطر الإلكتروني."
 
 #. type: Bullet: '* '
 msgid ""
 "Virtual buffers (virtualBuffers): Handles virtual buffer documents such as "
 "websites."
 msgstr ""
+"Virtual buffers (virtualBuffers): التعامل مع مستندات الذاكرة التخيلية كمواقع "
+"الإنترنت."
 
 #. type: Plain text
 msgid ""
 "The modules without .py extension are directories, containing specialist "
 "modules."
 msgstr ""
+"الوحدات التي لا تتبع بامتداد .py هي مجلدات, تحتوي على وحدات modules متخصصة."
 
 #. type: Title ###
 #, no-wrap
 msgid "Useful methods"
-msgstr ""
+msgstr "طرق مفيدة methods"
 
 #. type: Plain text
 msgid ""
@@ -944,26 +1191,30 @@ msgid ""
 "on how they're implemented, see the NvDA source code documentation. For "
 "worked out examples, see the section of this guide on add-on components."
 msgstr ""
+"وهذه قائمة بال methods المفيدة عند كتابة الإضافات. لمزيد من المعلومات حول "
+"كيفية تنفيذ هذه الطرق methods, انظر ملف المساعدة لمصدر شفرة NVDA."
 
 #. type: Plain text
 msgid "From addonHandler:"
-msgstr ""
+msgstr "From addonHandler:"
 
 #. type: Bullet: '* '
 msgid ""
 "`addonHandler.initTranslation()`: Sets up the translation subsystem for add-"
 "ons via Gettext."
 msgstr ""
+"`addonHandler.initTranslation()`: تأسس النظام الفرعي لترجمة الإضافات عبر "
+"Gettext."
 
 #. type: Plain text
 msgid "From api.py:"
-msgstr ""
+msgstr "From api.py:"
 
 #. type: Bullet: '* '
 msgid ""
 "`api.getFocusObject()`: Retrieves the focused control (returns the object "
 "with focus)."
-msgstr ""
+msgstr "`api.getFocusObject()`: استرجاع الكائن النشط (العودة بالكائن النشط)"
 
 #. type: Bullet: '* '
 msgid ""
@@ -971,30 +1222,37 @@ msgid ""
 "set to follow system focus, the focus and navigator object will be the same, "
 "otherwise a different object is returned."
 msgstr ""
+"`api.getNavigatorObject()`:إحضار الكائن المحدد بمؤشر NVDA. إذا كان NVDA معد "
+"لاتباع مؤشر النظام, فإن الكائن المحدد بمؤشر النظام والكائن المحدد بمؤشر NVDA "
+"سيكونان واحد, ما عدا ذلك ستعود ال method بكائن مختلف."
 
 #. type: Bullet: '* '
 msgid ""
 "`api.getForegroundObject()`: Returns the foreground window of the current "
 "application (the parent of this object is the application itself)."
 msgstr ""
+"`api.getForegroundObject()`: يعود بالنافذة الأمامية للتطبيق الحالي (والذي "
+"يتفرع منه هذا الكائن هو التطبيق نفسه)."
 
 #. type: Bullet: '* '
 msgid ""
 "These have a corresponding method to set certain object as the focus or "
 "navigator object."
 msgstr ""
+"لدى هذه الطرق طريقة مقابلة corresponding method لتحديد كائن معين أن يكون هو "
+"الكائن النشط أو الكئن المحدد بمؤشر NVDA."
 
 #. type: Plain text
 msgid "From logHandler:"
-msgstr ""
+msgstr "From logHandler:"
 
 #. type: Bullet: '* '
 msgid "`logHandler.Log`: The class which implements logging facility."
-msgstr ""
+msgstr "`logHandler.Log`: وهي ال class التي تنفذ إمكانية تسجيل الدخول. "
 
 #. type: Plain text
 msgid "From tones:"
-msgstr ""
+msgstr "From tones:"
 
 #. type: Bullet: '* '
 msgid ""
@@ -1003,16 +1261,23 @@ msgid ""
 "duration. The first two arguments are mandatory, while the other two are "
 "optional."
 msgstr ""
+"`tones.beep(الحدة وتقاس بالهرتز, المدة بالملوثانية, صوت السماعة اليسرى, صوت "
+"السماعة اليمنى)`: تشغيل نغمة بحدة معينة تحددها أنت لمدة تحددها أنت أيضا. ال "
+"دليلان الأوليان arguments إجباريان, بينما الاثنان الآخران يمكن وضعهما "
+"اختياريا."
 
 #. type: Plain text
 msgid "From ui:"
-msgstr ""
+msgstr "From ui:"
 
 #. type: Bullet: '* '
 msgid ""
 "`ui.message(message to be spoken/brailled)`: Speaks or brailles the message. "
 "This should be a string surrounded by quotes."
 msgstr ""
+"`ui.message(الرسالة التي سيتحدث بها البرنامج أو التي ستظهر على السطر "
+"الإلكتروني)`: نطق أو كتابة الرسالة على السطر الإلكتروني. ينبغي أن تكون هذه "
+"الرسالة نصية محاطة بعلامتي تنصيص."
 
 #. type: Plain text
 msgid ""
@@ -1021,11 +1286,14 @@ msgid ""
 "examples below on how these methods and others are used throughout the life "
 "of an add-on."
 msgstr ""
+"هناك العديد من الطرق المفيدة التي لم نذكرها, لكن ما ذكرناه هو أهمها. انظر "
+"شفرة NVDA لمزيد من الطرق methods, أو انظر الأمثلة أدناه لمعرفة كيفية تطبيق "
+"هذه الطرق methods وغيرها."
 
 #. type: Title ##
 #, no-wrap
 msgid "Add-on module components and development tips"
-msgstr ""
+msgstr "عناصر وحدة الإضافة البرمجية وتنبيهات للمطورين"
 
 #. type: Plain text
 msgid ""
@@ -1033,6 +1301,9 @@ msgid ""
 "input and output, working with different NvDA objects, reacting to events, "
 "storing configuration and more."
 msgstr ""
+"تتكون وحدة الإضافة البرمجية من عدد من العناصر. وتشمل التعامل مع المدخلات "
+"والمخرجات, التعامل مع كائنات NVDA (objects) المختلفة, رد الفعل على الأحداث "
+"events, وحفظ الإعدادات وأشياء أخرى."
 
 #. type: Plain text
 msgid ""
@@ -1040,6 +1311,9 @@ msgid ""
 "development, such as NVDA objects, scripts, event handling and additional "
 "topics with examples."
 msgstr ""
+"يعرض هذا الفصل من الدليل المكونات والمفاهيم الرئيسية التي تستخدم في تطوير "
+"الإضافات, ككائنات NVDA, والوظائف scripts, والتعامل مع الأحداث events "
+"وموضوعات إضافية مع الدعم بالأمثلة."
 
 #. type: Plain text
 msgid ""
@@ -1047,11 +1321,14 @@ msgid ""
 "This chapter is intended as an extension of that document. Consult the NVDA "
 "development guide for a brief introductions."
 msgstr ""
+"لاحظ أن دليل تطوير NVDA يعرض للمفاهيم التي سنذكرها أدناه. إلا أن هذا الفصل "
+"هو امتداد لهذا الدليل. ارجع إلى دليل تطوير NVDA لقراءة مقدمات مختصرة حول هذه "
+"المفاهيم."
 
 #. type: Title ###
 #, no-wrap
 msgid "Working with objects on screen"
-msgstr ""
+msgstr "العمل مع الكائنات على الشاشة objects"
 
 #. type: Plain text
 msgid ""
@@ -1059,6 +1336,9 @@ msgid ""
 "a program is running. For example, if a class called button has been "
 "defined, the button on a screen is the object of this button class."
 msgstr ""
+"الكائن object هو مثال ل class التي تحيى عند تشغيل البرنامج. على سبيل المثال, "
+"إذا عرفنا class تسمى زر, فإن الزر الذي يظهر على الشاشة هو كئان ال class "
+"المسماة زر."
 
 #. type: Plain text
 msgid ""
@@ -1070,6 +1350,14 @@ msgid ""
 "the parent of this list might be the Windows Explorer window. The object "
 "that you're examining right now is termed \"navigator object.\""
 msgstr ""
+"في NVDA, الكائن هو تجسيد لادوات البرنامج. ويشمل ذلك الأزرار, ومربعات "
+"التحديد, ومربعات التحرير, وأشرطة الأدوات, وأشرطة السحب وحتى نافذة التطبيق "
+"ذاتها. ترتب هذه الكائنات في شكل شجري, أو علاقة آباء بأبنائهم إذ ربما يحتوي "
+"الكائن على كائنات تندرج تحته أو بمفهوم الآباء والأبناء, تكون الكائنات "
+"المندرجة تحت هذا الكائن هي الأبناء, على سبيل المثال, الكائن قائمة بمستكشف "
+"ويندوز ربما يحتوي على عنصر قائمة أو أكثر, ويكون الأب لكائن القائمة هو نافذة "
+"مستكشف ويندوز. الكائن الذي تفحصه الآن هو ما يعرف اصطلاحا في NVDA بمؤشر NVDA "
+"\"navigator object.\""
 
 #. type: Plain text
 msgid ""
@@ -1081,6 +1369,13 @@ msgid ""
 "the object, reacting to events for the object (gains focus, value changed, "
 "etc.) and so on."
 msgstr ""
+"تحتوي كائنات NVDA \"nvda objects\" (وتسمى اختصارا ب objects) على عدد من "
+"الخصائص المفيدة. ومن بين تلك الخصائص اسم الكائن, وقيمته (محدد, مضغوط عليه, "
+"قابل للنقر عليه, نص نافذة التحرير, وهكذا.), نوع الكائن role (مربع تحديد "
+"checkbox, نافذة window, كائن مدرج embedded object, وهكذا., وموقعه location "
+"(أبعاد الشاشة)وخصائص أخرى كثيرة. تحتوي كائنات NVDA أيضا على العديد من ال "
+"methods المفيدة لتطويرها, كتغيير قيمة الكائن, رد الفعل على أحداث الكائن "
+"(اكتساب المؤشر gains focus, تغير القيمة value changed, وهكذا.) إلخ."
 
 #. type: Plain text
 msgid ""
@@ -1092,6 +1387,13 @@ msgid ""
 "handler for the object you're using (e.g. if you're working with an "
 "IAccessible object, impore NVDAObjects.IAccessible.)."
 msgstr ""
+"في العديد من المواقف, ربما ينتمي كائن NVDA ل class لكائنات مرتبطة ببعضها. "
+"ويزودنا NVDA بطرق للتعامل مع classes كل كائن. ومن بين هذه ال classes "
+"IAccessible, JAB, UIA إلخ. وتوجد تعريفات لهذه ال classes وclass كل كائن "
+"بمجلد nvdaobjects بمصدر شفرة NVDA, ولاستخدامها في إضافاتك, استورد المعالج "
+"المناسب لكل class كائن \"object class handler\" للكائن الذي تستخدمه (على "
+"سبيل المثال إذا كنت تعمل على كائن IAccessible, استورد \"import NVDAObjects."
+"IAccessible.).\""
 
 #. type: Plain text
 msgid ""
@@ -1101,23 +1403,32 @@ msgid ""
 "interceptor is virtual buffer, which allows NVDA to work with complex "
 "documents such as PDF documents."
 msgstr ""
+"وهناك اثنان من ال classes للكائنات تستحقا الإشارة إليهما: virtual buffer و "
+"tree interceptors. فال class tree interceptors تسمح ل NVDA بالعمل مع شجرة من "
+"الكائنات على أنهم جميعا كائن واحد.وهناك حالة خاصة من class tree interceptors "
+"وهي virtual buffer, والتي تسمح ل NVDA بالتعامل مع المستندات المعقدة كمستندات "
+"pdf."
 
 #. type: Title ###
 #, no-wrap
 msgid "Examining object hierarchy"
-msgstr ""
+msgstr "فحص الترتيب الشجري للكائن"
 
 #. type: Plain text
 msgid ""
 "There are a number of ways which you can use to see the hierarchy of an "
 "object for a given program:"
 msgstr ""
+"هناك العديد من الطرق التي يمكن استخدامها لرؤية الترتيب الشجري لكائن ما في "
+"برنامج ما:"
 
 #. type: Bullet: '1. '
 msgid ""
 "Using object navigation commands (NvDA+Numpad 2/4/5/6/8) with simple review "
 "mode turned off."
 msgstr ""
+"استخدام أوامر مؤشر NVDA (NvDA+Numpad 2/4/5/6/8) مع تعطيل نمط الاستعراض "
+"البسيط."
 
 #. type: Bullet: '2. '
 msgid ""
@@ -1125,6 +1436,9 @@ msgid ""
 "attributes. If you want to see all available properties, from mPython "
 "Console, type dir(obj)."
 msgstr ""
+"باستخدام أوامر بيثون, باستخدام خصائص obj.next/previous/parent/firstChild/"
+"lastChild. إذا كنت تريد رؤية كل الخصائص المتوفرة للكائن, من أوامر بيثون, "
+"اكتب dir(obj)."
 
 #. type: Plain text
 msgid ""
@@ -1133,11 +1447,14 @@ msgid ""
 "press NvDA+F1 to launch log viewer. The root of all objects in Windows is "
 "the desktop, or shell object."
 msgstr ""
+"إذا كنت تريد رؤية وصف أكثر تفصيل للكائن المحدد بمؤشر NVDA \"navigator object"
+"\", عندما يكون مؤشر NVDA واقع تحت الكائن الذي تريده, اضغط NVDA+f1 لفتح عارض "
+"التقارير. وجذع كل الكائنات بويندوز هو سطح المكتب أو shell object."
 
 #. type: Title ###
 #, no-wrap
 msgid "Focus vs. navigator object"
-msgstr ""
+msgstr "مؤشر النظام في مقابل مؤشر NVDA"
 
 #. type: Plain text
 msgid ""
@@ -1145,6 +1462,9 @@ msgid ""
 "them. These may include changing the focused object, synchronizing navigator "
 "and focus objects, changing the role of an object and so on."
 msgstr ""
+"ربما تحتاج عند كتابة إضافتك للتعامل مع كائنات objects مختلفة وتطويرها. وربما "
+"يشمل ذلك تغيير الكائن المحدد بمؤشر النظام focused object, تزامن مؤشر النظام "
+"مع مؤشر NVDA, تغيير نوع الكائن وهكذا."
 
 #. type: Plain text
 msgid ""
@@ -1155,6 +1475,13 @@ msgid ""
 "and the navigator object. For instance, you might be focused on an edit "
 "field while examining the title bar as the navigator object."
 msgstr ""
+"إن ال focus object هو الكائن المحدد بمؤشر النظام. وهذا المؤشر يرتبط بلوحة "
+"المفاتيح بمعنى أن الذي يحدد بلوحة المفاتيح هو الكائن المحدد بمؤشر النظام. في "
+"المقابل, فإن ال navigator object, هو الكائن الذي تهتم به. ونظرا لأن الكائنات "
+"المحددة بمؤشر NVDA يمكن أن تتحرك في أي مكان, فإنه يمكنك فحص كائنين معا: "
+"الكائن المحدد بمؤشر النظام وكائن مؤشر NVDA الذي يتبعه. على سبيل المثال, يمكن "
+"أن يكون التركيز على مربع تحديد في حين أنك تفحص شريط العنوان ك navigator "
+"object."
 
 #. type: Plain text
 msgid ""
@@ -1163,17 +1490,23 @@ msgid ""
 "to use the name \"obj\". To fetch the navigator object (which might be "
 "different from the focused object), use `obj = api.getNavigatorObject()`."
 msgstr ""
+"إذا كنت تريد إحضار الكائن المحدد بمؤشر النظام, the focus object, `someObj = "
+"api.getFocusObject()`. الكلمة someObj تستبدل بأسماء مختلفة وجرت العادة "
+"استخدام \"obj\". لإحضار الكائن المحدد بمؤشر NVDA (والذي يمكن أن يكون مختلف "
+"عن الكائن المحدد بمؤشر النظام), استخدم `obj = api.getNavigatorObject()`."
 
 #. type: Title ###
 #, no-wrap
 msgid "Other useful object-related goodies"
-msgstr ""
+msgstr "أشياء أخرى جيدة مرتبطة بالكائن"
 
 #. type: Plain text
 msgid ""
 "Here are some other methods which works with NVDA objects, all located in "
 "api.py module:"
 msgstr ""
+"وها هي بعض ال methods المفيدة التي تعمل مع كائنات NVDA وكلها موجودة بالوحدة "
+"api.py "
 
 #. type: Bullet: '* '
 msgid ""
@@ -1181,6 +1514,9 @@ msgid ""
 "some child object of the foreground window), use `obj = api."
 "getForegroundObject()`."
 msgstr ""
+"إذا أردت الحصول على الكائن الأمامي foreground object (مفيد عندما تريد أن "
+"تنظر إلى الكائن المندرج تحت النافذة الأمامية), استخدم `obj = api."
+"getForegroundObject()`."
 
 #. type: Bullet: '* '
 msgid ""
@@ -1189,23 +1525,31 @@ msgid ""
 "type `obj.childCount`. The value 0 means that there are no more child "
 "objects."
 msgstr ""
+"من نافذة أوامر بيثون, لرؤية عدد الكائنات المندرجة تحت النافذة الأمامية (على "
+"سبيل المثال, أبناء, أو قطع النافذة الأمامية), اكتب `obj.childCount`. تعني "
+"القيمة 0 بأنه لا يوجد كائن مندرج تحت هذه النافذة."
 
 #. type: Bullet: '* '
 msgid ""
 "To set some object as the new focus or navigator object, use `api."
 "setFocusObject(obj)` or `api.setNavigatorObject(obj)`."
 msgstr ""
+"لوضع كائن كي يكون هو الكائن المحدد بمؤشر النظام focus object أو كي يكون مؤشر "
+"NVDA navigator object, استخدم `api.setFocusObject(obj)` أو `api."
+"setNavigatorObject(obj)`."
 
 #. type: Bullet: '* '
 msgid ""
 "You can fetch various properties of an object by specifying obj.property "
 "where property is the attribute you wish to see (e.g. obj.value)."
 msgstr ""
+"يمكنك الحصول على خصائص مختلفة للكائن بتحديد obj.property حيث ستستبدل كلمة "
+"property بالخاصية التي تريد رؤيتها (على سبيل المثال obj.value)."
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 1: Finding the value of a slider in a program"
-msgstr ""
+msgstr "مثال 1: العصور على قيمة شريط سحب في برنامج"
 
 #. type: Plain text
 msgid ""
@@ -1214,15 +1558,19 @@ msgid ""
 "properties, you know that the toolbar is the last child of the foreground "
 "object."
 msgstr ""
+"هب أن أحد المستخدمين طلب منك أن تكتب appmodule تمكنه من خلالها معرفة قيمة "
+"شريط سحب slider في برنامج. بعد النظر إلى الترتيب الشجري لكائنات البرنامج "
+"والخصائص الأخرى, تعلم بأن شريط الأدوات هو الكائن الأخير المندرج تحت للكائن "
+"الأمامي foreground."
 
 #. type: Plain text
 msgid "Here is the code to implement this feature:"
-msgstr ""
+msgstr "ها هو الكود الذي سيمكنك من تنفيذ هذه المهمة:"
 
 #. type: Plain text
 #, no-wrap
 msgid "\t# Object example 1\n"
-msgstr ""
+msgstr "\t# Object example 1\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1230,11 +1578,13 @@ msgid ""
 "\timport api\n"
 "\timport appModuleHandler\n"
 msgstr ""
+"\timport api\n"
+"\timport appModuleHandler\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "\t\tsliderChildIndex = -1 # The variable to store the child index.\n"
-msgstr ""
+msgstr "\t\tsliderChildIndex = -1 # The variable to store the child index.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1244,6 +1594,10 @@ msgid ""
 "\t\t\tsliderVal = fg.children[self.sliderChildIndex].value\n"
 "\t\t\treturn sliderVal\n"
 msgstr ""
+"\t\tdef getSliderValue(self):\n"
+"\t\t\tfg = api.getForegroundObject()\n"
+"\t\t\tsliderVal = fg.children[self.sliderChildIndex].value\n"
+"\t\t\treturn sliderVal\n"
 
 #. type: Plain text
 msgid ""
@@ -1252,6 +1606,10 @@ msgid ""
 "index would be minus 1, or the very last child; we could have used fg."
 "lastChild)."
 msgstr ""
+"في هذا الكود, تستخدم ال method `fg.children[index]` كي تعطينا الكائن المندرج "
+"تحت الكائن الحالي مع رقمه (هنا, وحيث أننا قلنا بأن شريط الأدوات هو آخر كائن "
+"مندرج, فإن رقمه سيكون -1, وإذا أردنا أن نحصل على رقم آخر كائن مندرج, فإننا "
+"سنستخدم ال method fg.lastChild)."
 
 #. type: Plain text
 msgid ""
@@ -1259,6 +1617,9 @@ msgid ""
 "the first child of the actual slider control? One way to fix this is to "
 "check the object's role. The modified code looks like this:"
 msgstr ""
+"إلا أنه توجد مشكلة في هذا الكود وهي: ماذا لو كانت قيمة شريط السحب في أول "
+"كائن مندرج تحت شريط السحب؟ هناك طريقة واحدة يمكنك من خلالها معالجة هذه "
+"المشكلة وهي فحص نوع الكائن. لذا فيصبح الكود المعدل كالتالي: "
 
 #. type: Plain text
 #, no-wrap
@@ -1269,6 +1630,11 @@ msgid ""
 "\t\tslider = fg.lastChild\n"
 "\t\tif slider.role == ROLE_SLIDER: return slider.firstChild.value\n"
 msgstr ""
+"\tdef getSliderValue(self):\n"
+"\t\tfrom controltypes import ROLE_SLIDER # It is possible to import from within a method.\n"
+"\t\tfg = api.getForegroundObject()\n"
+"\t\tslider = fg.lastChild\n"
+"\t\tif slider.role == ROLE_SLIDER: return slider.firstChild.value\n"
 
 #. type: Plain text
 msgid ""
@@ -1277,37 +1643,43 @@ msgid ""
 "the two equals signs for equality, as opposed to just one equals sign for "
 "assignment."
 msgstr ""
+"لذا, عندما نكون على يقين من أننا نعمل مع شريط سحب, فإن ال method ستعود بقيمة "
+"أول كائن مندرج تحت شريط السحب (إذا كانت هذه هي القضية). لاحظ أن علامتي يساوي "
+"للتساوي بين القيم, في مقابل علامة اليساوي الواحدة للتعيين."
 
 #. type: Plain text
 msgid ""
 "There are other examples you can try to familiarize yourself with object "
 "navigation and manipulation:"
 msgstr ""
+"توجد أمثلة أخرى يمكنك الاستعانة بها للتآلف مع الكائنات وحركتها وتطورها:"
 
 #. type: Bullet: '* '
 msgid ""
 "Obtaining the name of an object that is located somewhere else in the "
 "program."
-msgstr ""
+msgstr "الحصول على اسم الكائن الموجود في مكان آخر بالبرنامج"
 
 #. type: Bullet: '* '
 msgid "Moving the navigator to the foreground object."
-msgstr ""
+msgstr "نقل مؤشر NVDA navigator للكائن الحالي"
 
 #. type: Bullet: '* '
 msgid "Setting focus to another program."
-msgstr ""
+msgstr "تنشيط مؤشر النظام the focus لبرنامج آخر"
 
 #. type: Plain text
 msgid ""
 "For real-life examples on objects in NvDA, consult the NvDA source code or "
 "source codes of various community add-ons."
 msgstr ""
+"لمزيد من الأمثلة حول كائنات NVDA, ارجع إلى مصدر شفرة NVDA أو مصدر شفرة "
+"الإضافات البرمجية الأخرى التي قام بكتابتها المطورون."
 
 #. type: Title ###
 #, no-wrap
 msgid "Specialist objects and overriding object properties at runtime"
-msgstr ""
+msgstr "كائنات متخصصة وتجاوز خصائص الكائن في وقت التنفيذ"
 
 #. type: Plain text
 msgid ""
@@ -1315,12 +1687,17 @@ msgid ""
 "example, some parts of a program may need custom gestures, or one may need "
 "to change the role of a window to that of a button."
 msgstr ""
+"في بعض الأحيان, يكون غير كافي أن تتعامل مع السلوك الافتراضي للكائن. على سبيل "
+"المثال, قد تحتاج بعض أجزاء من برنامج لاختصارات مخصصة, أو قد يحتاج المطور "
+"لتغيير نوع الكائن من نافذة إلى زر."
 
 #. type: Plain text
 msgid ""
 "NVDA provides two methods for creating specialist, or overlay objects (or "
 "classes), each suited for different needs:"
 msgstr ""
+"ويزودنا NVDA باثنين من ال methods لإنشاء كائنات متراكبة أو متخصصة (أو "
+"classes), لكل method ما يناسبها:"
 
 #. type: Bullet: '* '
 msgid ""
@@ -1333,6 +1710,13 @@ msgid ""
 "by assigning obj.role = ROLE_WINDOW (see control types dictionary for list "
 "of available roles)."
 msgstr ""
+"`event_NvDAObject_init(self, object we're dealing with)`: إذا كنت تريد تجاوز "
+"خصائص معينة لكائن كنوعه أو اسمه, فيمكنك استخدام هذه ال method كي تطلب من "
+"NVDA أن يأخذ في الاعتبار \"ما أدخلته\" عند مصادفة الكائنات لأول مرة (أو عند "
+"البدأ). على سبيل المثال, إذا كان لدى الكائن اسم نافذة ال class \"windowclass"
+"\" TForm (تراها في معظم تطبيقات Delphi ), يمكن أن تطلب من NVDA أن يتعامل مع "
+"هذا الكائن كنافذة قياسية بكتابة obj.role = ROLE_WINDOW (انظر قاموس أنواع "
+"الكائنات لقائمة بالأنواع المتاحة)."
 
 #. type: Bullet: '* '
 msgid ""
@@ -1347,6 +1731,15 @@ msgid ""
 "objects inherit from, or is the child or specialist class of IAccessible "
 "objects)."
 msgstr ""
+"`chooseNVDAObjectOverlayClasses(self, object, list of classes)`: هذه ال "
+"method تسمح ل NVDA باستخدام منطقك عندما تتعامل مع كائنات معينة. على سبيل "
+"المثال, هذا مفيد عندما تريد تعيين اختصارات لأجزاء معينة من برنامج في وحدتك "
+"البرمجية appmodule (في الواقع, تنشئ العديد من الوحدات البرمجية appmodules "
+"كائنات للتعامل مع أجزاء معينة من برنامج, ثم تستخدم "
+"chooseNvDAObjectOverlayClassesلاختيار الكائن الصحيح عند توافر شروط أو ظروف "
+"محددة). يجب أن تعتمد هذه الكائنات المنشأة على كائن صلب نريد أن نتعامل معه "
+"(تقريبا تكفي IAccessible, لذا فمعظم الكائنات المتراكبة تورث من, أو تندرج تحت "
+"أو class متخصصة كائنات IAccessible)."
 
 #. type: Plain text
 msgid ""
@@ -1356,21 +1749,25 @@ msgid ""
 "is usually read as, \"this child class inherits from this base class\". "
 "We'll see code like this later)."
 msgstr ""
+"لاحظ أنه في حالة ال method الثانية, يجب أن تكون ال class بالاسم المعرفة به "
+"موجودة في الملف, وتكون موروثة من قاعدة كائن معروفة (في بيثون, يكون البناء "
+"الوراثي للكائن بكتابة `childClass(baseClass)`, وترجمتها, \"هذا الكائن "
+"المندرج موروث من هذه القاعدة\". سنرى كود مشابه لذلك فيما بعد)."
 
 #. type: Title ###
 #, no-wrap
 msgid "Examples of overlay classes and modified roles"
-msgstr ""
+msgstr "أمثلة على classes متراكبة وأنواع كائنات معدلة"
 
 #. type: Plain text
 msgid ""
 "Below examples illustrate the uses of the two overlay and attribute "
 "modification methods we've discussed above:"
-msgstr ""
+msgstr "توضح الأمثلة التالية استخدامات الطريقتان methods التان ذكرناهما أعلاه:"
 
 #. type: Plain text
 msgid "An example of the first case: modifying an atribute."
-msgstr ""
+msgstr "مثال على الحالة الأولى: تعديل خاصية."
 
 #. type: Plain text
 #, no-wrap
@@ -1379,12 +1776,17 @@ msgid ""
 "\t\tdef event_NvDAObject_init(self, obj):\n"
 "\t\t\tif obj.windowClassName == \"TForm\": obj.role = ROLE_WINDOW\n"
 msgstr ""
+"\t# Reassign some Delphi forms as window.\n"
+"\t\tdef event_NvDAObject_init(self, obj):\n"
+"\t\t\tif obj.windowClassName == \"TForm\": obj.role = ROLE_WINDOW\n"
 
 #. type: Plain text
 msgid ""
 "This means that whenever we encounter a window with the class name of \"TForm"
 "\", NvDA will treat this as a normal window."
 msgstr ""
+"يعني هذا الكود, أنه كلما صادفنا نافذة تسمى \"TForm\", فإن NVDA سيتعامل معها "
+"كنافذة عادية."
 
 #. type: Plain text
 msgid ""
@@ -1392,11 +1794,14 @@ msgid ""
 "specific parts of a program, then uses chooseNVDAObjectOverlayClasses to "
 "assign the logic for each control."
 msgstr ""
+"يتعامل مثال 2 مع وحدة برمجية appmodule تحتوي على كائنين يتعاملان مع أجزاء "
+"محددة من برنامج, ثم سنستخدم chooseNVDAObjectOverlayClasses لتعيين المنطق لكل "
+"كائن."
 
 #. type: Plain text
 #, no-wrap
 msgid "\t#An example of overlay classes\n"
-msgstr ""
+msgstr "\t#An example of overlay classes\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1404,6 +1809,8 @@ msgid ""
 "\tclass enhancedEdit(IAccessible):\n"
 "\t\t# Some code to be run when window class name is MyEdit.\n"
 msgstr ""
+"\tclass enhancedEdit(IAccessible):\n"
+"\t\t# Some code to be run when window class name is MyEdit.\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1411,11 +1818,13 @@ msgid ""
 "\tclass MainWindow(IAccessible):\n"
 "\t\t# Another code, this time adding custom gestures for main window of the program.\n"
 msgstr ""
+"\tclass MainWindow(IAccessible):\n"
+"\t\t# Another code, this time adding custom gestures for main window of the program.\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "\t# In the app module:\n"
-msgstr ""
+msgstr "\t# In the app module:\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1424,6 +1833,9 @@ msgid ""
 "\t\tif obj.windowClassName == \"myEdit\": clsList.insert(0, enhancedEdit)\n"
 "\t\telif obj.windowClassName == \"TWindow\": clsList.insert(0, mainWindow)\n"
 msgstr ""
+"\tdef chooseNVDAObjectOverlayClasses(self, obj, clsList):\n"
+"\t\tif obj.windowClassName == \"myEdit\": clsList.insert(0, enhancedEdit)\n"
+"\t\telif obj.windowClassName == \"TWindow\": clsList.insert(0, mainWindow)\n"
 
 #. type: Plain text
 msgid ""
@@ -1433,11 +1845,16 @@ msgid ""
 "and in the developer info, these custom objects will come first when MRO "
 "(Method Resolution Order) for the navigator object is displayed."
 msgstr ""
+"في كلا الحالتين, يجب أن يكون الكائن الذي نريد التأكد منه أول عنصر مدرج "
+"بالقائمة. ذلك لأن هذه الكائنات المخصصة ستكون لها الأولوية عند البحث عن "
+"اختصارات أو (سلوك الكود), للكائن, وفي معلومات المطور, ستأتي هذه الكائنات "
+"المخصصة أولا عند عرض ترتيب قرارات الطريقة المعروفة اختصار باسم MRO(method "
+"resolution order)."
 
 #. type: Title ###
 #, no-wrap
 msgid "Input and output: scripts and UI messages"
-msgstr ""
+msgstr "إدخال وإخراج: وظائف ورسائل واجهة المستخدم scripts and ui messages"
 
 #. type: Plain text
 msgid ""
@@ -1445,6 +1862,8 @@ msgid ""
 "displaying what the add-on is doing. These are done via scripts (input) and "
 "UI messages (output)."
 msgstr ""
+"من عناصر تكوين الإضافات البرمجية الهامة التعامل مع الأوامر التي ينفذها "
+"المستخدم بعرض ما تفعله الإضافة. يتم ذلك من خلال scripts(input) و ui(output)."
 
 #. type: Plain text
 msgid ""
@@ -1455,6 +1874,12 @@ msgid ""
 "clarify a given translatable string. this command is not a native NvDA "
 "command, but it is defined in the Poedit app module to perform this function."
 msgstr ""
+"ال script هو عبارة عن method تنفذ عند ضغط المستخدم لأمر معين. على سبيل "
+"المثال, عند الضغط على NvDA+Tينفذ NVDA وظيفة script موجودة بوحدة الأوامر "
+"العامة global commands module تسمى SayTitle. في برنامج poedit, على سبيل "
+"المثال, عندما يضغط المترجم على Control+Shift+A, سيقرأ NVDA تعليقات للمترجم "
+"أضافها كاتب البرنامج لمساعدته على توضيح الغرض من الرسالة. هذا الأمر غير "
+"متعلق بأحد وظائف NVDA, لكنه معرف بوحدة برنامج poedit لإجراء هذه الوظيفة."
 
 #. type: Plain text
 msgid ""
@@ -1466,6 +1891,12 @@ msgid ""
 "loads and is cleared when either NvDA exits or the app for the app module "
 "loses focus (that is, the user has switched to another program)."
 msgstr ""
+"عادة ما يكون لدى الإضافة التي تقبل وظائف scripts قائمة أوامر: خريطة وظائف "
+"map function بالوحدة. وأبسط الطرق لذلك هي قاموس بالإشارات gestures "
+"(الأوامر), قاموس بيثون غالبا ما يسمى __gestures) الذي يعتبر الأوامر كمفاتيح "
+"والوظائف كقيم لهذه المفاتيح (يمكن إرفاق أكثر من أمر أو مفتاح لأداء الوظائف). "
+"يتم تحميل هذه القواميس بمجرد تحميل الإضافة ومسحها بمجرد الخروج من NVDA أو "
+"الانتقال إلى تطبيق آخر غير تطبيق الإضافة المستخدمة."
 
 #. type: Plain text
 msgid ""
@@ -1479,23 +1910,35 @@ msgid ""
 "involves scripts for specific objects, will be covered when we talk about "
 "overlay classes."
 msgstr ""
+"وهناك طريقة أخرى لإرفاق وظائف بالاختصارات وهي وقت الإدراج runtime insertion. "
+"يتم ذلك بإنشاء قاموس منفصل عن قاموس __gestures يتعامل مع اختصارات السياق "
+"والحساسية كتطوير كائن. ثم بعدها يستخدم المطور inputCore.bindGesture (أو "
+"inputCore.bindGestures إذا عرفنا أكثر من وظيفة أو اختصار script/gesture) "
+"لتعريف اختصارات معينة لوقت معين, ثم استخدام inputCore.clearGestures ثم "
+"inputCore.bindGestures(__gestures) لإزالة الاختصارات المضافة. سيتم شرح طريقة "
+"أكثر فاعلية تتضمن وظائف لكائنات معينة عند التحدث عن الطبقات المتراكبة "
+"overlay classes."
 
 #. type: Plain text
 msgid ""
 "As of time of writing, NvDA supports input from the keyboard, braille "
 "dislays with or without braille keyboard and touchscreens."
 msgstr ""
+"يدعم NVDA في الوقت الراهن الاختصارات المدخلة عبر لوحة المفاتيح, أو الأسطر "
+"الإلكترونية سواء بلوحة مفاتيح أو بدون وعبر شاشات اللمس."
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 2: A basic script dictionary"
-msgstr ""
+msgstr "مثال2: قاموس لوظيفة"
 
 #. type: Plain text
 msgid ""
 "In this example, we'll define two scripts called \"sayHello\" and say"
 "\"GoodBye\", then bind them into two separte gestures."
 msgstr ""
+"في هذا المثال, سنعرف وظيفتان واحدة باسم \"sayHello\" و say\"GoodBye\", ثم "
+"إرفاقهما باختصارين منفصلين."
 
 #. type: Plain text
 #, no-wrap
@@ -1503,6 +1946,8 @@ msgid ""
 "\t# An example fragment for script assignment.\n"
 "\timport ui\n"
 msgstr ""
+"\t# An example fragment for script assignment.\n"
+"\timport ui\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1510,6 +1955,8 @@ msgid ""
 "\tdef script_sayHello(self, gesture):\n"
 "\t\tui.message\"Hello!\")\n"
 msgstr ""
+"\tdef script_sayHello(self, gesture):\n"
+"\t\tui.message\"Hello!\")\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1517,6 +1964,8 @@ msgid ""
 "\tdef script_sayGoodBye(self, gesture):\n"
 "\t\tui.message(\"Good Bye!\")\n"
 msgstr ""
+"\tdef script_sayGoodBye(self, gesture):\n"
+"\t\tui.message(\"Good Bye!\")\n"
 
 #. type: Plain text
 #, no-wrap
@@ -1526,31 +1975,37 @@ msgid ""
 "\t\t\"kb:Control+NVDA+2\":\"sayGoodBye\"\n"
 "\t}\n"
 msgstr ""
+"\t__gestures={\n"
+"\t\t\"kb:control+NVDA+1\":\"sayHello\",\n"
+"\t\t\"kb:Control+NVDA+2\":\"sayGoodBye\"\n"
+"\t}\n"
 
 #. type: Plain text
 msgid ""
 "Now when you press Control+NvDA+1, NvDA will say, \"Hello\", and when you "
 "press Control+NvDA+2, NVDA will say, \"Good bye.\""
 msgstr ""
+"الآن عندما نضغط على Control+NvDA+1 فإن NVDA سيقول \"Hello\", وعند الضغط على "
+"Control+NvDA+2, سيقول NVDA \"Good bye.\""
 
 #. type: Title ###
 #, no-wrap
 msgid "Example 3: runtime script insertion/removal"
-msgstr ""
+msgstr "مثال3: إدراج الوظيفة أو إزالتها"
 
 #. type: Plain text
 #, no-wrap
 msgid "\t# Future sections #\n"
-msgstr ""
+msgstr "\t# Future sections #\n"
 
 #. type: Plain text
 msgid "Please delete this notice when appropriate sections are done."
-msgstr ""
+msgstr "يرجى حذف هذه الملحوظة بعد إتمام الأقسام المناسبة."
 
 #. type: Title ##
 #, no-wrap
 msgid "Add-on components and development tips"
-msgstr ""
+msgstr "عناصر الإضافة البرمجية وتنبيهات للمطورين"
 
 #. type: Plain text
 msgid ""
@@ -1559,172 +2014,186 @@ msgid ""
 "some tips on add-on development such as debugging. It concludes with some "
 "useful examples and do's and don'ts."
 msgstr ""
+"يشمل ذلك القسم مقدمات للإدخال والوظائف, وأنظمة الإخراج, والكائنات, والأحداث, "
+"والإعدادات, وإعدادات الإضافات, وإعادة تحميل الملحقات. كما يشمل أيضا بعض "
+"التنبيهات عند تطوير الإضافة كمعالجة الأخطاء. كما نختتمه ببعض الأمثلة المفيدة "
+"وما يجب فعله وما لا يجب."
 
 #. type: Plain text
 msgid ""
 "Planned sections (please feel free to contribute your knowledge in this "
 "section):"
-msgstr ""
+msgstr "أقسام مخطط لها (يرجى المشاركة بمساهماتك في هذا القسم)."
 
 #. type: Bullet: '* '
 msgid "Introduction to NVDA objects."
-msgstr ""
+msgstr "مقدمة حول كائنات NVDA."
 
 #. type: Bullet: '* '
 msgid "Examining object attributes with Python Console."
-msgstr ""
+msgstr "فحص خصائص الكائن بأوامر بيثون."
 
 #. type: Bullet: '* '
 msgid "Fetching and setting objects."
-msgstr ""
+msgstr "إحضار وإعداد الكائنات."
 
 #. type: Bullet: '* '
 msgid ""
 "Object hierarchy and differences between regular and simple review modes."
-msgstr ""
+msgstr "ترتيب الكائنات والفرق بين الأنماط المعتادة ونمط الاستعراض البسيط."
 
 #. type: Bullet: '* '
 msgid "The event_NVDAObject_init and chooseNVDAObjectOverlayClasses methods."
-msgstr ""
+msgstr "methods event_NVDAObject_init and chooseNVDAObjectOverlayClasses "
 
 #. type: Bullet: '* '
 msgid "Events and list of available events."
-msgstr ""
+msgstr "الأحداث وقائمة بالأحداث المتوفرة."
 
 #. type: Bullet: '* '
 msgid "Next handlers."
-msgstr ""
+msgstr "المعاملات التالية next handlers"
 
 #. type: Bullet: '* '
 msgid ""
 "Input from keyboard, braille displays, mouse and touchscreen via scripts."
 msgstr ""
+"الإدخال من لوحة المفاتيح, والأسطر الإلكترونية, والفأرة, وشاشات اللمس عبر "
+"الوظائف scripts."
 
 #. type: Bullet: '* '
 msgid "Script lookup process and conflicts."
-msgstr ""
+msgstr "عملية البحث عن الوظيفة والتصادمات."
 
 #. type: Bullet: '* '
 msgid ""
 "Static and dynamic script bindings, gesture dictionaries and script "
 "categories."
-msgstr ""
+msgstr "الاختصارات الثابتة والمتحركة, وقواميس الاختصارات وفئات الوظائف."
 
 #. type: Bullet: '* '
 msgid "Braille, speech and tone output."
-msgstr ""
+msgstr "الأخراج عبر البرايل, والنطق والصفير."
 
 #. type: Bullet: '* '
 msgid "Debugging add-ons."
-msgstr ""
+msgstr "معالجة الأخطاء البرمجية بالإضافة."
 
 #. type: Bullet: '* '
 msgid "If something goes wrong (common errors and exceptions)."
-msgstr ""
+msgstr "إذا حدث خطأ (الأخطاء الشائعة والاستثناآت)."
 
 #. type: Bullet: '* '
 msgid "Few working and non-working examples for each topic."
-msgstr ""
+msgstr "أمثلة تعمل وأخرى لا تعمل لكل موضوع."
 
 #. type: Bullet: '* '
 msgid "These plan sections may change."
-msgstr ""
+msgstr "قد تتغير هذه الأقسام المخطط لها."
 
 #. type: Title ##
 #, no-wrap
 msgid "Global Plugins"
-msgstr ""
+msgstr "الملحقات العامة"
 
 #. type: Plain text
 msgid "A chapter devoted to global plugins."
-msgstr ""
+msgstr "فصل مخصص للملحقات العامة"
 
 #. type: Plain text
 msgid "Planned sections:"
-msgstr ""
+msgstr "الأقسام المخطط لها في هذا الفصل"
 
 #. type: Bullet: '* '
 msgid "What exactly is global plugin."
-msgstr ""
+msgstr "ما هي الملحقات البرمجية."
 
 #. type: Bullet: '* '
 msgid ""
 "Importance of consulting NvDA and add-on commands to minimize command "
 "conflicts."
-msgstr ""
+msgstr "أهمية مراجعة أوامر NVDA وأوامر الإضافات البرمجية لتقليل التصادم."
 
 #. type: Bullet: '* '
 msgid "When not to use global plugins."
-msgstr ""
+msgstr "متى لا تستخدم الملحقات العامة."
 
 #. type: Bullet: '* '
 msgid "A few worked out examples."
-msgstr ""
+msgstr "أمثلة توضيحية."
 
 #. type: Bullet: '* '
 msgid "These sections may change."
-msgstr ""
+msgstr "قد تتغير هذه الأقسام."
 
 #. type: Title ##
 #, no-wrap
 msgid "App Modules"
-msgstr ""
+msgstr "الوحدات البرمجية"
 
 #. type: Plain text
 msgid "A chapter devoted to app modules."
-msgstr ""
+msgstr "فصل خاص بالوحدات البرمجية appmodules."
 
 #. type: Bullet: '* '
 msgid "What is an app module."
-msgstr ""
+msgstr "ما هي الوحدة البرمجية"
 
 #. type: Bullet: '* '
 msgid "App module scripts."
-msgstr ""
+msgstr "وظائف الوحدات البرمجية."
 
 #. type: Bullet: '* '
 msgid "Defining objects representing different parts of a program."
-msgstr ""
+msgstr "تحديد الكائنات التي تمثل أجزاء مختلفة من تطبيق ما."
 
 #. type: Bullet: '* '
 msgid "Silencing NVDA for a program."
-msgstr ""
+msgstr "كتم صوت NVDA لتطبيق ما."
 
 #. type: Bullet: '* '
 msgid "How app developers can help NVDA users through accessible app designs."
 msgstr ""
+"كيف يمكن لمطوري البرامج مساعدة مستخدمي NVDA عبر تصميم البرامج بطريقة متوافقة "
+"مع قارآت الشاشة."
 
 #. type: Bullet: '* '
 msgid ""
 "A few worked out examples and examples from existing app modules from NVDA "
 "core and from community."
 msgstr ""
+"أمثلة توضيحية من وحدات برمجية موجودة بالفعل من NVDA كود ومن مطوري إضافات "
+"NVDA."
 
 #. type: Bullet: '* '
 msgid "These topics may change."
-msgstr ""
+msgstr "قد تتغير هذه الموضوعات."
 
 #. type: Title ##
 #, no-wrap
 msgid "Drivers"
-msgstr ""
+msgstr "التعريفات drivers"
 
 #. type: Plain text
 msgid "A chapter devoted to driver development."
-msgstr ""
+msgstr "فصل خاص بتطوير التعريفات drivers."
 
 #. type: Title ##
 #, no-wrap
 msgid "Misc items"
-msgstr ""
+msgstr "عناصر متفرقة"
 
 #. type: Plain text
 msgid ""
 "Includes Bitbucket repo, add-ons lisst, other topics and contact information."
 msgstr ""
+"تشمل مستودع مستودع bucket, قائمة الإضافات البرمجية, وموضوعات أخرى ومعلومات "
+"التواصل."
 
 #. type: Plain text
 msgid ""
 "[1]: http://community.nvda-project.org/wiki/Development [2]: http://"
 "community.nvda-project.org/documentation/developerGuide.html"
 msgstr ""
+"[1]: http://community.nvda-project.org/wiki/Development [2]: http://"
+"community.nvda-project.org/documentation/developerGuide.html"
