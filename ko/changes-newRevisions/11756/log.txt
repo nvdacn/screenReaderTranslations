@@ -1,0 +1,11 @@
+commit 4f61e03128b0e0a74063dc3d9a25d0f23649a7bb
+Author: James Teh <jamie@nvaccess.org>
+Date:   Tue Dec 15 15:16:02 2015 +1000
+
+    Enhanced I/O for braille displays:
+    
+    * hwIo.Serial extends pyserial to call a callable when data is received instead of drivers having to poll every 50 ms.
+    * Data is written to thread-safe braille display drivers in the background, thus avoiding blocking the main thread.
+    * hwIo.Hid provides support for braille displays communicating via USB HID.
+    
+    Re #5609.
