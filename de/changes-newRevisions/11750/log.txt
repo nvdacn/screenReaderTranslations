@@ -1,0 +1,10 @@
+commit 8a15cd173bc397a9c4e8bea11b5e44181f97ed20
+Author: James Teh <jamie@nvaccess.org>
+Date:   Thu Dec 10 08:45:06 2015 +1000
+
+    Reporting of mouse shape changes again works as expected.
+    
+    * Cursor events end up firing on the desktop window, so shouldAcceptEvent had to be taught this.
+    * The previous code relied on counting core ticks, but now that core ticks are on-demand, this needed to be updated to use a timer.
+    
+    Fixes #5595.
