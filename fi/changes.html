@@ -17,6 +17,10 @@
 <UL>
 <LI>Uusia pistetaulukoita: puolalainen 8 pisteen tietokonemerkistö, mongoli. (<A HREF="http://community.nvda-project.org/ticket/5537">#5537</A>, <A HREF="http://community.nvda-project.org/ticket/5574">#5574</A>)
 <LI>Voit poistaa pistekohdistimen käytöstä ja muuttaa sen muotoa uusia Pistekirjoitusasetukset-valintaikkunan Näytä kohdistin- ja Kohdistimen muoto -asetuksia käyttäen. (<A HREF="http://community.nvda-project.org/ticket/5198">#5198</A>)
+<LI>NVDA voi nyt yhdistää HIMS Smart Beetle -pistenäyttöön bluetoothin kautta. (<A HREF="http://community.nvda-project.org/ticket/5607">#5607</A>)
+<LI>NVDA voi valinnaisesti alentaa muiden äänien voimakkuutta, kun se on asennettuna Windows 8:ssa tai uudemmassa käyttöjärjestelmässä. Tämä voidaan määrittää Syntetisaattorin asetukset -valintaikkunan Taustaäänen vaimennuksen tila -asetusta käyttäen tai painamalla NVDA+Shift+D. (<A HREF="http://community.nvda-project.org/ticket/3830">#3830</A>, <A HREF="http://community.nvda-project.org/ticket/5575">#5575</A>)
+<LI>Tuki APH Refreshabraille -pistenäytölle HID-tilassa ja Baum VarioUltralle sekä Pronto!:lle USB:n kautta yhdistettäessä. (<A HREF="http://community.nvda-project.org/ticket/5609">#5609</A>)
+<LI>Tuki HumanWare Brailliant BI/B -pistenäytöille, kun protokollaksi on määritetty OpenBraille. (<A HREF="http://community.nvda-project.org/ticket/5612">#5612</A>)
 </UL>
 
 <H3>Muutokset</H3>
@@ -25,6 +29,7 @@
 <LI>Korostuksen ilmoittaminen ei ole nyt oletusarvoisesti käytössä. (<A HREF="http://community.nvda-project.org/ticket/4920">#4920</A>)
 <LI>Microsoft Excelissä käytettävän elementtilistan Kaavat-vaihtoehdon pikanäppäimeksi on NVDA:n englanninkielisessä käyttöliittymässä muutettu Alt+R, jotta se ei ole sama kuin Filter-muokkauskentällä. (<A HREF="http://community.nvda-project.org/ticket/5527">#5527</A>)
 <LI>Liblouis-pistekirjoituskääntäjä päivitetty versioksi 2.6.5. (<A HREF="http://community.nvda-project.org/ticket/5574">#5574</A>)
+<LI>Teksti-sanaa ei enää puhuta siirrettäessä kohdistusta tai tarkastelukohdistinta tekstiobjekteihin. (<A HREF="http://community.nvda-project.org/ticket/5452">#5452</A>)
 </UL>
 
 <H3>Korjatut ohjelmavirheet</H3>
@@ -44,6 +49,30 @@
 <LI>Lukeminen ei enää pysähdy sanan tai rivin sisällä olevien elementtien, kuten linkkien, kohdalla liikutettaessa hiirtä Mozilla-sovellusten muokattavissa tekstikentissä. (<A HREF="http://community.nvda-project.org/ticket/2160">#2160</A>, <A HREF="http://community.nvda-project.org/ticket/5535">#5535</A>)
 <LI>Shoprite.com-verkkosivua on nyt mahdollista lukea selaustilassa Internet Explorerissa sen sijaan, että sivu ilmoitettaisiin tyhjäksi. (Erityisesti väärin muotoillut lang-määreet käsitellään nyt sulavasti.) (<A HREF="http://community.nvda-project.org/ticket/5569">#5569</A>)
 <LI>Jäljitettäviä muutoksia, kuten lisäyksiä, ei enää ilmoiteta Microsoft Wordissa, kun niiden merkintöjä ei näytetä. (<A HREF="http://community.nvda-project.org/ticket/5566">#5566</A>)
+<LI>Kun kohdistus on vaihtopainikkeen kohdalla, NVDA ilmoittaa, kun sen tila muuttuu painetusta ei-painetuksi. (<A HREF="http://community.nvda-project.org/ticket/5441">#5441</A>)
+<LI>Hiiren muodon muutosten ilmoittaminen toimii taas odotetusti. (<A HREF="http://community.nvda-project.org/ticket/5595">#5595</A>)
+<LI>Sitovia välilyöntejä käsitellään nyt tavallisina välilyönteinä rivin sisennystä puhuttaessa. Tämä saattoi aiemmin aiheuttaa sen, että "3 väli" -ilmoituksen asemesta sanottiin jotain sellaista kuin "väli väli väli". (<A HREF="http://community.nvda-project.org/ticket/5610">#5610</A>)
+<LI>Kun moderni Microsoftin syöttömenetelmän ehdotuslista suljetaan , kohdistus palautetaan asianmukaisesti joko syöttömenetelmään tai kohdeasiakirjaan. (<A HREF="http://community.nvda-project.org/ticket/4145">#4145</A>)
+</UL>
+
+<P>
++== Muutokset kehittäjille (englanniksi) ==
+</P>
+
+<UL>
+<LI>The new audioDucking.AudioDucker class allows code which outputs audio to indicate when background audio should be ducked. (<A HREF="http://community.nvda-project.org/ticket/3830">#3830</A>)
+<LI>nvwave.WavePlayer's constructor now has a wantDucking keyword argument which specifies whether background audio should be ducked while audio is playing. (<A HREF="http://community.nvda-project.org/ticket/3830">#3830</A>)
+ <UL>
+ <LI>When this is enabled (which is the default), it is essential that WavePlayer.idle be called when appropriate.
+ </UL>
+<LI>Enhanced I/O for braille displays: (<A HREF="http://community.nvda-project.org/ticket/5609">#5609</A>)
+ <UL>
+ <LI>Thread-safe braille display drivers can declare themselves as such using the BrailleDisplayDriver.isThreadSafe attribute. A driver must be thread-safe to benefit from the following features.
+ <LI>Data is written to thread-safe braille display drivers in the background, thus improving performance.
+ <LI>hwIo.Serial extends pyserial to call a callable when data is received instead of drivers having to poll.
+ <LI>hwIo.Hid provides support for braille displays communicating via USB HID.
+ <LI>hwPortUtils and hwIo can optionally provide detailed debug logging, including devices found and all data sent and received.
+ </UL>
 </UL>
 
 <H2>2015.4</H2>
@@ -270,7 +299,7 @@ Tämän version keskeisimpiä ominaisuuksia ovat mm. selaustila Microsoft Word -
 <LI>Jos Eclipse-kehitysympäristön puunäkymissä aiemmin aktiivisena ollut kohde on valintaruutu, sitä ei enää virheellisesti lueta kohdistuksen siirtyessä uuteen kohteeseen. (<A HREF="http://community.nvda-project.org/ticket/4586">#4586</A>)
 <LI>Seuraava väärin kirjoitettu sana luetaan automaattisesti Microsoft Wordin kieliasun tarkistuksen valintaikkunassa, kun edellistä sanaa muutetaan tai kun se ohitetaan pikanäppäintä käyttäen. (<A HREF="http://community.nvda-project.org/ticket/1938">#1938</A>)
 <LI>Tekstin lukeminen onnistuu taas moitteettomasti esim. Tera Term Pro:n pääteikkunassa ja Balabolkan asiakirjoissa. (<A HREF="http://community.nvda-project.org/ticket/4229">#4229</A>)
-<LI>Kun tekstiä muokataan Internet Explorerissa ja muissa MSHTML-asiakirjoissa kehyksessä oltaessa, kohdistus palaa nyt asianmukaisesti muokattavana olevaan asiakirjaan viimeisteltäessä korean ja muiden itäaasialaisten kielten syöttämistä. (<A HREF="http://community.nvda-project.org/ticket/4045">#4045</A>)
+<LI>Kun tekstiä muokataan Internet Explorerissa ja muissa MSHTML-asiakirjoissa kehyksessä oltaessa, kohdistus palaa nyt asianmukaisesti muokattavana olevaan asiakirjaan viimeisteltäessä korean ja muiden Itä-Aasialaisten kielten syöttämistä. (<A HREF="http://community.nvda-project.org/ticket/4045">#4045</A>)
 <LI>Kun Syöte-eleet-valintaikkunassa valitaan lisättävälle näppäineleelle näppäimistöasettelua, Esc-näppäimen painaminen sulkee nyt odotetusti vain kyseisen valikon koko valintaikkunan sijasta. (<A HREF="http://community.nvda-project.org/ticket/3617">#3617</A>)
 <LI>Kun lisäosa poistetaan, sen hakemisto poistetaan nyt oikein NVDA:n uudelleenkäynnistyksen jälkeen. Aiemmin NVDA piti käynnistää uudelleen kahdesti. (<A HREF="http://community.nvda-project.org/ticket/3461">#3461</A>)
 <LI>Korjattu merkittäviä ongelmia käytettäessä Skype 7.0:n työpöytäversiota. (<A HREF="http://community.nvda-project.org/ticket/4218">#4218</A>)
@@ -543,7 +572,7 @@ Tämän version keskeisimpiä ominaisuuksia ovat mm. selaustila Microsoft Word -
 <LI>Ylimääräisiä "mc-ref"-tekstiä sisältäviä grafiikoita ei enää hahmonneta selaustilassa Adobe Readerissa. (<A HREF="http://community.nvda-project.org/ticket/3645">#3645</A>)
 <LI>NVDA ei enää ilmoita Microsoft Excelissä kaikkia soluja alleviivatuiksi niiden muotoilutiedoissa. (<A HREF="http://community.nvda-project.org/ticket/3669">#3669</A>)
 <LI>Selaustila-asiakirjoissa ei enää näytetä tarkoituksettomia merkkejä, kuten esim. Unicode-yksityiskäyttöalueella olevia. Nämä estivät joissakin tapauksissa hyödyllisempien nimien näyttämisen. (<A HREF="http://community.nvda-project.org/ticket/2963">#2963</A>).
-<LI>Itäaasialaisten merkkien syöttämiseen tarkoitettu syöttömenetelmä toimii nyt PuTTY:ssä. (<A HREF="http://community.nvda-project.org/ticket/3432">#3432</A>)
+<LI>Itä-Aasialaisten merkkien syöttämiseen tarkoitettu syöttömenetelmä toimii nyt PuTTY:ssä. (<A HREF="http://community.nvda-project.org/ticket/3432">#3432</A>)
 <LI>Asiakirjassa liikkumisesta peruutetun Lue kaikki -toiminnon jälkeen ei enää ole seurauksena ajoittain NVDA:n virheellinen ilmoitus kentästä poistumisesta (kuten alempana asiakirjassa olevasta taulukosta, jota  Lue kaikki -toiminto ei ehtinyt puhua). (<A HREF="http://community.nvda-project.org/ticket/3688">#3688</A>)
 <LI>Kun selaustilan pikanavigointikomentoja käytetään Lue kaikki -toiminnon aikana pikaluvun ollessa käytössä, NVDA ilmoittaa nyt tarkemmin uuden kentän, (ts. sanoo otsikkoa otsikoksi sen sijaan, että lukisi vain sen tekstin). (<A HREF="http://community.nvda-project.org/ticket/3689">#3689</A>)
 <LI>Säilön loppuun tai alkuun siirtävät pikanavigointikomennot noudattavat nyt Käytä pikalukua Lue kaikki -toiminnossa -asetusta (ts. ne eivät enää keskeytä käynnissä olevaa Lue kaikki -toimintoa). (<A HREF="http://community.nvda-project.org/ticket/3675">#3675</A>)
