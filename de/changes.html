@@ -17,6 +17,10 @@
 <UL>
 <LI>neue Braille-Übersetzungstabellen: polnisches 8-Punkt-Computerbraille, mongolisch. (<A HREF="http://community.nvda-project.org/ticket/5537">#5537</A> <A HREF="http://community.nvda-project.org/ticket/5574">#5574</A>)
 <LI>Mit Hilfe zweier neuer Optionen im Braille-Einstellungsdialog kann nun die Form des Cursors auf der Braillezeile geändert Bzw. die Anzeige des Cursors ganz abgeschaltet werden. (<A HREF="http://community.nvda-project.org/ticket/5198">#5198</A>)
+<LI>NVDA kann nun mittels Bluetooth mit HIMS Smart Beetle Braillezeilen kommunizieren. (<A HREF="http://community.nvda-project.org/ticket/5607">#5607</A>)
+<LI>Ab Windows 8 und neuer kann NVDA die Lautstärke anderer Audio-Quellen optional reduzieren. Dies kann im Dialog Sprachausgabe mit der Option "Lautstärke anderer Audio-Quellen reduzieren" oder NVDA+Umschalt+d eingestellt werden. (<A HREF="http://community.nvda-project.org/ticket/3830">#3830</A>, <A HREF="http://community.nvda-project.org/ticket/5575">#5575</A>)
+<LI>Unterstützung für folgende Braillezeilen: APH Refreshabraille im HID-Modus, Baum VarioUltra und Pronto! wenn diese mittels USB angeschlossen werden.  (<A HREF="http://community.nvda-project.org/ticket/5609">#5609</A>)
+<LI>Unterstützung für HumanWare Brailliant BI/B-Braillezeilen bei ausgewähltem OpenBraille-Protokoll.  (<A HREF="http://community.nvda-project.org/ticket/5612">#5612</A>)
 </UL>
 
 <H3>Änderungen</H3>
@@ -25,6 +29,7 @@
 <LI>Die ansage betonter Texte ist nun standardmäßig ausgeschaltet. (<A HREF="http://community.nvda-project.org/ticket/4920">#4920</A>)
 <LI>Die Tastenkombination für den Auswahlschalter "Formel" in der Elementliste von Excel wurde in alt+r geändert. Jetzt kollidiert sie nicht mehr mit alt+f für das Suchfeld. (<A HREF="http://community.nvda-project.org/ticket/5527">#5527</A>)
 <LI>Liblouis Braille-Übersetzer auf 2.6.5 aktualisiert. (<A HREF="http://community.nvda-project.org/ticket/5574">#5574</A>)
+<LI>Das Wort "Text" wird nun nicht länger ausgegeben, wenn der Fokus oder der NVDA-Cursor zu Text-Objekten bewegt wird. (<A HREF="http://community.nvda-project.org/ticket/5452">#5452</A>)
 <P></P>
 == Fehlerbehebungen ==
 <LI>In Itunes 12 wird der Lese-Modus  korrekt aktualisiert, wenn eine Seite im itunes Store neu geladen wird. (<A HREF="http://community.nvda-project.org/ticket/5191">#5191</A>)
@@ -41,6 +46,30 @@
 <LI>Wenn Sie in Mozilla-Anwendungen die Maus innerhalb von Eingabefeldern bewegen, wird das Lesen nicht bei Elementen unterbrochen, die sich innerhalb der zu lesenden Einheit (Wort, Zeile etc.) befinden. (<A HREF="http://community.nvda-project.org/ticket/2160">#2160</A>, <A HREF="http://community.nvda-project.org/ticket/5535">#5535</A>)
 <LI>Wenn Sie die Webseite shoprite.com mit dem Internet Explorer aufsuchen, wird deren Inhalt nun erwartungsgemäß angezeigt. (Hierbei werden insbesondere ungültig gesetzte Sprachenauszeichnungen besser verarbeitet.) (<A HREF="http://community.nvda-project.org/ticket/5569">#5569</A>)
 <LI>in Microsoft Word werden Änderungen am Dokument nur dann durch NVDA mitgeteilt, wenn sie auch tatsächlich im Dokument ausgezeichnet werden. Hierzu zählen beispielsweise Meldungen über eingefügten oder gelöschten Text. (<A HREF="http://community.nvda-project.org/ticket/5566">#5566</A>)
+<LI>Wenn ein Umschalter fokusiert wird, gibt NVDA aus, wenn dieser von gedrückt zu nicht gedrückt wechselt. (<A HREF="http://community.nvda-project.org/ticket/5441">#5441</A>)
+<LI>Die Ansage bei Änderung der Form des Mauszeigers funktioniert nun ordnungsgemäß. (<A HREF="http://community.nvda-project.org/ticket/5595">#5595</A>)
+<LI>Bei der Ansage von Zeileneinrückungen werden geschützte Leerzeichen nun wie normale Leerzeichen behandelt. Dies führte zuvor zu Ansagen wie "Leerzeichen Leerzeichen Lerzeichen" anstatt von 3 Leerzeichen. (<A HREF="http://community.nvda-project.org/ticket/5610">#5610</A>)
+<LI>When closing a modern Microsoft input method candidate list, focus is correctly restored to either the input composition or the underlying document. (<A HREF="http://community.nvda-project.org/ticket/4145">#4145</A>) (en)
+</UL>
+
+<P>
+== Änderungen für Entwickler == (en)
+</P>
+
+<UL>
+<LI>The new audioDucking.AudioDucker class allows code which outputs audio to indicate when background audio should be ducked. (<A HREF="http://community.nvda-project.org/ticket/3830">#3830</A>)
+<LI>nvwave.WavePlayer's constructor now has a wantDucking keyword argument which specifies whether background audio should be ducked while audio is playing. (<A HREF="http://community.nvda-project.org/ticket/3830">#3830</A>)
+ <UL>
+ <LI>When this is enabled (which is the default), it is essential that WavePlayer.idle be called when appropriate.
+ </UL>
+<LI>Enhanced I/O for braille displays: (<A HREF="http://community.nvda-project.org/ticket/5609">#5609</A>)
+ <UL>
+ <LI>Thread-safe braille display drivers can declare themselves as such using the BrailleDisplayDriver.isThreadSafe attribute. A driver must be thread-safe to benefit from the following features.
+ <LI>Data is written to thread-safe braille display drivers in the background, thus improving performance.
+ <LI>hwIo.Serial extends pyserial to call a callable when data is received instead of drivers having to poll.
+ <LI>hwIo.Hid provides support for braille displays communicating via USB HID.
+ <LI>hwPortUtils and hwIo can optionally provide detailed debug logging, including devices found and all data sent and received.
+ </UL>
 </UL>
 
 <H2>2015.4</H2>
