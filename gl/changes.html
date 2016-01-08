@@ -17,6 +17,10 @@
 <UL>
 <LI>Novas táboas de transcripción braille: braille polaco computerizado de 8 pontos, mongol. (<A HREF="http://community.nvda-project.org/ticket/5537">#5537</A>), <A HREF="http://community.nvda-project.org/ticket/5574">#5574</A>)
 <LI>Podes desactivar o cursor braille e cambiar a súa forma usando as novas opcións Amosar cursor e Forma do cursor no diálogo Opcións de Braille. (<A HREF="http://community.nvda-project.org/ticket/5198">#5198</A>)
+<LI>NVDA agora pode conectar ca pantalla braille HIMS Smart Beetle  a través do Bluetooth. (<A HREF="http://community.nvda-project.org/ticket/5607">#5607</A>)
+<LI>NVDA pode baixar opcionalmente o volume doutros sons cando se instale en Windows 8 e posteriores. Esto pode configurarse usando a opción Modo de atenuación do audio no diálogo Opcións Xerais do NVDA ou premendo NVDA+shift+d. (<A HREF="http://community.nvda-project.org/ticket/3830">#3830</A>, <A HREF="http://community.nvda-project.org/ticket/5575">#5575</A>)
+<LI>Soporte para a APH Refreshabraille en modo HID e para a Baum VarioUltra e a Pronto! cando se conecten a través do USB. (<A HREF="http://community.nvda-project.org/ticket/5609">#5609</A>)
+<LI>Soporte para as pantallas braille HumanWare Brailliant BI/B cando o protocolo se pon en OpenBraille. (<A HREF="http://community.nvda-project.org/ticket/5612">#5612</A>)
 </UL>
 
 <H3>Cambios</H3>
@@ -24,6 +28,8 @@
 <UL>
 <LI>O anunciado de émfasis agora está deshabilitado por omisión. (<A HREF="http://community.nvda-project.org/ticket/4920">#4920</A>)
 <LI>No diálogo Lista de Elementos en Microsoft Excel, o atallo de teclado para Fórmulas foi cambiado a alt+r así é diferente ó atallo de teclado para o Filtro de campos. (<A HREF="http://community.nvda-project.org/ticket/5527">#5527</A>)
+<LI>Actualizado o transcriptor braille liblouis a 2.6.5. (<A HREF="http://community.nvda-project.org/ticket/5574">#5574</A>)
+<LI>A palabra "texto" xa non se anuncia cando se mova o foco ou o cursor de revisión a obxectos de texto. (<A HREF="http://community.nvda-project.org/ticket/5452">#5452</A>)
 </UL>
 
 <H3>Corrección de Fallos</H3>
@@ -42,7 +48,29 @@
 <LI>No texto editable en aplicacións de Mozilla, movendo o rato le de novo a liña, a palabra, etc. apropriada coma se esperaba en cambio de todo o contido. (<A HREF="http://community.nvda-project.org/ticket/5535">#5535</A>)
 <LI>Ó se mover o rato en texto editable en aplicacións de Mozilla, a lectura 		xa non se detén en elementos coma ligas dentro da palabra ou liña que se estea a ler. (<A HREF="http://community.nvda-project.org/ticket/2160">#2160</A>, <A HREF="http://community.nvda-project.org/ticket/5535">#5535</A>)
 <LI>En Internet Explorer, o sitio web shoprite.com agora pode lerse en modo exploración en lugar de anuncialo coma en branco. (Específicamente, os atributos lang mal formados agora manéllanse graciosamente.) (<A HREF="http://community.nvda-project.org/ticket/5569">#5569</A>)
-<LI>En Microsoft Word, o seguemento de cambios como "insertado" xa non se anuncia cando a marca de seguemento de cambios non se amosa. (<A HREF="http://community.nvda-project.org/ticket/5566">#5566</A>)
+<LI>No Microsoft Word, o seguemento de cambios como "insertado" xa non se anuncia cando a marca de seguemento de cambios non se amosa. (<A HREF="http://community.nvda-project.org/ticket/5566">#5566</A>)
+<LI>Cando se enfoque un botón conmutable , NVDA agora anuncia cando se cambie de premedo a non premedo. (<A HREF="http://community.nvda-project.org/ticket/5441">#5441</A>)
+<LI>O anunciado da forma do rato agora funciona novamente como se agardaba. (<A HREF="http://community.nvda-project.org/ticket/5595">#5595</A>)
+<LI>Ó se falar a sangría de liña, os espazos de non separación agora trátanse como espazos normais. Con anterioridade, esto podía causar anunciamentos como "espazo espazo espazo" en lugar de "3 espazos". (<A HREF="http://community.nvda-project.org/ticket/5610">#5610</A>)
+<LI>Ó se pechar unha lista de métodos candidatos de entrada no Microsoft moderno, o foco restáurase correctamente ou a composición de entrada ou o documento subrayado. (<A HREF="http://community.nvda-project.org/ticket/4145">#4145</A>)
+</UL>
+
+<H3>Cambios para Desenvolvedores</H3>
+
+<UL>
+<LI>A nova clase audioDucking.AudioDucker permite código que saca audio para indicar onde debería atenuarse o audio de fondo. (<A HREF="http://community.nvda-project.org/ticket/3830">#3830</A>)
+<LI>O constructor do nvwave.WavePlayer agora ten a palabra chave wantDucking como argumento que especifica se o audio de fondo debería se atenuar mentres se reproduce audio. (<A HREF="http://community.nvda-project.org/ticket/3830">#3830</A>)
+ <UL>
+ <LI>Cando esto estea habilitado (o que está predeterminado), é esencial que WavePlayer.idle se chame cando sexa apropriado.
+ </UL>
+<LI>Mellorada a Entrada/saída para pantallas braille: (<A HREF="http://community.nvda-project.org/ticket/5609">#5609</A>)
+ <UL>
+ <LI>Os controladores Thread-safe de pantallas braille poden decrararse en si usando o atributo BrailleDisplayDriver.isThreadSafe. Un controlador thread-safe debe beneficiarse das seguintes características.
+ <LI>Os datos escríbense ó controlador de pantallas braille thread-safe en segundo plano, mellorando así o rendemento.
+ <LI>hwIo.Serial extende pyserial para chamar unha chamada cando os datos se reciban en lugar de que os controladores teñan que procuralos.
+ <LI>hwIo.Hid proporciona soporte para que as pantallas braille se comuniquen a través do USB HID.
+ <LI>hwPortUtils e hwIo poden proporcionar opcionalmente o rexistro detallado de depuración, incluindo dispositivos atopados e todos os datos enviados e recibidos.
+ </UL>
 </UL>
 
 <H2>2015.4</H2>
