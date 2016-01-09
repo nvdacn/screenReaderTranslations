@@ -38,14 +38,14 @@
 - Wenn ein Umschalter fokusiert wird, gibt NVDA aus, wenn dieser von gedrückt zu nicht gedrückt wechselt. (#5441)
 - Die Ansage bei Änderung der Form des Mauszeigers funktioniert nun ordnungsgemäß. (#5595)
 - Bei der Ansage von Zeileneinrückungen werden geschützte Leerzeichen nun wie normale Leerzeichen behandelt. Dies führte zuvor zu Ansagen wie "Leerzeichen Leerzeichen Lerzeichen" anstatt von 3 Leerzeichen. (#5610)
-- When closing a modern Microsoft input method candidate list, focus is correctly restored to either the input composition or the underlying document. (#4145) (en)
+- Beim Schließen der Kandidatenliste bei der Eingabe komplexer Sonderzeichen wird der Fokus korrekt wiederhergestellt. (#4145)
 
 
 == Änderungen für Entwickler == (en)
-- The new audioDucking.AudioDucker class allows code which outputs audio to indicate when background audio should be ducked. (#3830)
-- nvwave.WavePlayer's constructor now has a wantDucking keyword argument which specifies whether background audio should be ducked while audio is playing. (#3830)
- - When this is enabled (which is the default), it is essential that WavePlayer.idle be called when appropriate.
-- Enhanced I/O for braille displays: (#5609)
+- Sie können die neue Klasse audioDucking.audioDucker verwenden, wenn Sie beim Abspielen von Audiomaterial die Lautstärke anderer Audioquellen reduzieren wollen. (#3830)
+- Der Konstruktor von nvwave.WavePlayer besitzt nun ein Arguzment namens wantDucking, mit dessen Hilfe Sie angeben können, ob während der Wiedergabe die Lautstärke anderer Audioquellen reduziert werden soll. (#3830)
+ - Wenn die Funktion aktiviert ist (Standard), sollte zu gegebener Zeit WavePlayer.idle aufgerufen werden.
+- die Brailleausgabe wurde verbessert: (#5609)
  - Thread-safe braille display drivers can declare themselves as such using the BrailleDisplayDriver.isThreadSafe attribute. A driver must be thread-safe to benefit from the following features.
  - Data is written to thread-safe braille display drivers in the background, thus improving performance.
  - hwIo.Serial extends pyserial to call a callable when data is received instead of drivers having to poll.
