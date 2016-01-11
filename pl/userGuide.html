@@ -7,7 +7,6 @@
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
 <H2>﻿Podręcznik Użytkownika - NVDA 2016.1-dev</H2>
-<FONT SIZE="4"><I>Podręcznik Użytkownika - NVDA 2016.1-dev</I></FONT><BR>
 </CENTER>
 
 
@@ -161,7 +160,7 @@
     <LI><A HREF="#toc106">12.6. hedo ProfiLine USB</A>
     <LI><A HREF="#toc107">12.7. hedo MobilLine USB</A>
     <LI><A HREF="#toc108">12.8. HumanWare Brailliant BI/B Series</A>
-    <LI><A HREF="#toc109">12.9. HIMS Braille Sense/Braille EDGE Series</A>
+    <LI><A HREF="#toc109">12.9. HIMS Braille Sense/Braille EDGE/Smart Beetle Series</A>
     <LI><A HREF="#toc110">12.10. HIMS SyncBraille</A>
     <LI><A HREF="#toc111">12.11. Monitory brajlowskie Seika</A>
     <LI><A HREF="#toc112">12.12. Nowsze modele Papenmeier BRAILLEX</A>
@@ -261,14 +260,16 @@ Dokładne brzmienie licencji znajdziesz online: <A HREF="http://www.gnu.org/lice
 <H2>2. Wymagania Systemowe</H2>
 
 <UL>
-<LI>Systemy operacyjne: wsparcie wszystkich 32-bitowych i 64-bitowych wersji systemu Windows XP, Windows Vista, Windows 7, Windows 8 i Windows 10 (w tym systemów operacyjnych dla serwerów).
+<LI>Systemy operacyjne: wsparcie wszystkich 32-bitowych i 64-bitowych wersji systemu Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1 i Windows 10 (w tym systemów operacyjnych dla serwerów).
  <UL>
  <LI>Dla 32-bitowego Windows XP, NVDA wymaga Service Pack 2 lub wyższego.
  <LI>Dla Windows Server 2003, NVDA wymaga Service Pack 1 lub wyższego.
+ <LI>Dla Windows Vista, NVDA wymaga Service Pack 2 i poprawki <A HREF="https://support.microsoft.com/en-us/kb/2763674">KB2763674</A>.
+ Oba te komponenty powinny być zainstalowane, jeśli zastosowano wszystkie dostępne aktualizacje przez usługę Windows Update.
  </UL>
 <LI>Pamięć operacyjna: przynajmniej 256 MB
 <LI>Procesor: częstotliwość przynajmniej 1.0 GHz
-<LI>Około 50 MB wolnego miejsca na dysku.
+<LI>Około 90 MB wolnego miejsca na dysku.
 </UL>
 
 <A NAME="toc9"></A>
@@ -309,8 +310,8 @@ Poza brakiem możliwości automatycznego startu po zalogowaniu do systemu, przen
 <UL>
 <LI>Brak obsługi aplikacji uruchomionych z prawami administratora, chyba że NVDA również został uruchomiony z takimi uprawnieniami (niezalecane).
 <LI>Brak odczytu ekranu kontroli konta użytkownika, podczas uruchamiania programu z uprawnieniami administratora.
-<LI>Windows 8: brak obsługi ekranu dotykowego.
-<LI>Windows 8: brak trybu czytania i wypowiadania wpisywanych znaków w aplikacjach Windows Store.
+<LI>Windows 8 i nowsze: brak obsługi ekranu dotykowego.
+<LI>Windows 8 i nowsze: brak trybu czytania i wypowiadania wpisywanych znaków w aplikacjach Windows Store.
 </UL>
 
 <A NAME="toc11"></A>
@@ -1023,7 +1024,7 @@ Do przeglądania tekstu są dostępne następujące polecenia:
 <TD>NVDA+f10</TD>
 <TD>NVDA+f10</TD>
 <TD>brak</TD>
-<TD>Kopiuje do schowka tekst od początku zaznaczenia do aktualnego punktu przeglądu.</TD>
+<TD>Kopiuje do systemowego schowka tekst od początku zaznaczenia do aktualnego punktu przeglądu, włączając w to znak, na którym znajduje się punkt przeglądu.</TD>
 </TR>
 <TR>
 <TD>Informacje o formatowaniu</TD>
@@ -1559,15 +1560,15 @@ Różne typy informacji na liście elementów to:
 </P>
 
 <UL>
-<LI>Wykres: wymienia wszystkie wykresy w skoroszycie. 
+<LI>Wykresy: wymienia wszystkie wykresy w skoroszycie. 
 Wybranie wykresu i naciśnięcie Enter lub przycisku "idź do" przeniesie punkt uwagi do tego wykresu, umożliwiając nawigację i odczyt strzałkami.
-<LI>komentarz: wszystkie komórki w skoroszycie zawierające komentarze. 
+<LI>komentarze: wszystkie komórki w skoroszycie zawierające komentarze. 
 Są wyświetlanea dres komórki i jej komentarze. 
 Naciśnięcie Enter lub przycisku idź do, przeniesie punkt uwagi do wybranej komórki.
-<LI>Formuła: Wymienia wszystkie komórki w skoroszycie, które zawierają formułę. 
+<LI>Formuły: Wymienia wszystkie komórki w skoroszycie, które zawierają formułę. 
 Wyświetlany jest adres komórki, oraz zawarta w niej formuła.
 Naciśnięcie Enter lub przycisku idź do, przeniesie punkt uwagi do wybranej komórki.
-<LI>Arkusz: wyświetla wszystkie arkusze w skoroszycie. 
+<LI>Arkusze: wyświetla wszystkie arkusze w skoroszycie. 
 Naciśnięcie F2 na liście arkuszy pozwala zmienić nazwę arkusza. 
 Naciśnięcie Enter lub przycisku idź do, przeniesie punkt uwagi do wybranego arkusza.
 </UL>
@@ -1719,7 +1720,7 @@ Jeśli zmienisz język, NVDA zapyta, czy chcesz zrestartować program.
 Naciśnij Ok, a program uruchomi się ponownie.
 </P>
 
-<H5>Zapisz ustawienia przed wyjściem</H5>
+<H5>Zapisz ustawienia przy wyjściu</H5>
 
 <P>
 Ta opcja, to pole wyboru. Jeśli jest zaznaczone, to NVDA automatycznie zapisze aktualne ustawienia przy wyjściu z programu.
@@ -1754,14 +1755,14 @@ Jeśli ta opcja jest włączona, NVDA uruchomi się automatycznie zaraz po zalog
 Opcja jest dostępna tylko dla zainstalowanych kopii NVDA.
 </P>
 
-<H5>Użyj NVDA na ekranie logowania windows (wymagane są uprawnienia administratora)</H5>
+<H5>Użyj NVDA na ekranie logowania windows (wymaga uprawnień administratora)</H5>
 
 <P>
 Jeśli logujesz się do systemu podając nazwę użytkownika i hasło, to zaznaczenie tej opcji sprawi, że NVDA będzie uruchamiał się automatycznie na ekranie logowania do systemu.
 Ta opcja jest dostępna tylko dla zainstalowanych kopii NVDA.
 </P>
 
-<H5>Używaj obecnie zapisanych ustawień na ekranie logowania i innych zabezpieczonych ekranach (wymagane są uprawnienia administratora)</H5>
+<H5>Używaj obecnie zapisanych ustawień na ekranie logowania i innych zabezpieczonych ekranach (wymaga uprawnień administratora)</H5>
 
 <P>
 Naciśnięcie przycisku "Używaj zapisanych ustawień NVDA na ekranie logowania i innych zabezpieczonych ekranach" kopiuje  zapisane wcześniej ustawienia użytkownika do katalogu systemowej konfiguracji NVDA, której NVDA używa na ekranie logowania do Windows, ekranie kontroli konta użytkownika (UAC), oraz innych zabezpieczonych ekranach.
@@ -1803,6 +1804,21 @@ Może to być przydatne dla kogoś chcącego używać NVDA tylko z monitorem bra
 <P>
 Ta opcja pozwala na wybór karty dźwiękowej, przez którą będzie słychać wybrany syntezator NVDA.
 </P>
+
+<H5>Tryb przyciszania audio</H5>
+
+<P>
+Skrót klawiszowy: NVDA+shift+d
+</P>
+<P>
+W Windows 8 i nowszych, ta opcja pozwala wybrać, czy NVDA powinien obniżać głośność innych aplikacji, gdy NVDA mówi, albo przez cały czas, gdy NVDA jest uruchomione.
+</P>
+
+<UL>
+<LI>Bez przyciszania: NVDA nie będzie nigdy obniżać głośności innych dźwięków. 
+<LI>Przycisz podczas generowania mowy i dźwięku: NVDA obniży głośność innych dźwięków tylko wtedy, gdy NVDA mówi albo generuje dźwięk. Może to nie działać dla wszystkich syntezatorów. 
+<LI>Zawsze przyciszaj: NVDA będzie obniżał głośność innych dźwięków przez cały czas, gdy NVDA jest uruchomione.
+</UL>
 
 <A NAME="VoiceSettings"></A>
 <H4>9.1.3. Ustawienia Głosu (NVDA+kontrol+v)</H4>
@@ -2035,10 +2051,24 @@ Jeśli wprowadzanie nie jest możliwe na monitorze posiadającym klawiaturę, b�
 Ta opcja umożliwia wyświetlenie słowa pod kursorem w formie nieskróconego brajla komputerowego.
 </P>
 
+<H5>Pokaż kursor</H5>
+
+<P>
+Ta opcja pozwala włączać i wyłączać kursor brajlowski.
+Ma zastosowanie do kursora systemu i kursora przeglądu, ale nie dotyczy oznaczania zaznaczenia.
+</P>
+
 <H5>Tempo migania kursora</H5>
 
 <P>
 Ta opcja jest polem liczbowym, które pozwala zmienić częstotliwość migania kursora wyrażoną w milisekundach.
+</P>
+
+<H5>Kształt kursora</H5>
+
+<P>
+Ta opcja pozwala wybrać kształt (wzorzec punktowy) kursora brajlowskiego.
+Opcja nie ma wpływu na znacznik zaznaczania.
 </P>
 
 <H5>Czas wygasania komunikatów</H5>
@@ -3465,7 +3495,7 @@ Wśród nich:
 </P>
 
 <UL>
-<LI>Baum: SuperVario, PocketVario, VarioUltra (tylko Bluetooth), Pronto! (tylko Bluetooth)
+<LI>Baum: SuperVario, PocketVario, VarioUltra, Pronto!
 <LI>HumanWare: Brailliant, BrailleConnect
 <LI>APH: Refreshabraille
 </UL>
@@ -3474,8 +3504,7 @@ Wśród nich:
 Niektóre inne monitory produkowane przez Baum mogą również działać, ale nie zostało to przetestowane.
 </P>
 <P>
-Aby podłączyć monitor przez USB, musisz najpierw zainstalować sterowniki USB dostarczane przez producenta.
-Dla APH Refreshabraille, tryb USB musi być ustawiony na tryb szeregowy (serial).
+Przy połączeniu przez USB do monitorów innych niż VarioUltra, Pronto! lub Refreshabraille z trybem USB ustawionym na HID, musisz najpierw zainstalować sterowniki USB dostarczone przez producenta.
 </P>
 <P>
 Poniżej skróty klawiszowe dla tego monitora, które działają w nvda.
@@ -3640,6 +3669,8 @@ Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia:
 <P>
 Serie monitorów Brailliant BI i B produkcji <A HREF="http://www.humanware.com/">HumanWare</A>, włącznie z BI 32, BI 40 and B 80, są obsługiwane przy połączeniu przez USB i bluetooth.
 Dla połączenia przez USB, musisz najpierw zainstalować sterowniki USB dostarczane przez producenta.
+Przy połączeniu przez USB z protokołem ustawionym na HumanWare, trzeba najpierw zainstalować sterowniki USB dostarczone przez producenta.
+Sterowniki USB nie są wymagane, jeśli protokół jest ustawiony na OpenBraille.
 </P>
 <P>
 Poniżej skróty klawiszowe dla tego monitora, które działają w nvda.
@@ -3734,14 +3765,12 @@ Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia:
 </TABLE>
 
 <A NAME="toc109"></A>
-<H3>12.9. HIMS Braille Sense/Braille EDGE Series</H3>
+<H3>12.9. HIMS Braille Sense/Braille EDGE/Smart Beetle Series</H3>
 
 <P>
-NVDA obsługuje monitory Braille Sense i Braille EDGE produkcji <A HREF="http://www.hims-inc.com/">Hims</A> przy połączeniu przez USB i bluetooth. 
+NVDA obsługuje monitory Braille Sense, Braille EDGE i Smart Beetle produkcji <A HREF="http://www.hims-inc.com/">Hims</A> przy połączeniu przez USB i bluetooth. 
 Aby korzystać z połączenia USB, musisz zainstalować sterowniki USB HIMS w swoim systemie.
-Możesz je pobrać z Centrum zasobów HIMS: <A HREF="http://www.hims-inc.com/resource-center/">http://www.hims-inc.com/resource-center/</A>
-Na tej stronie, wybierz swoje urządzenie i pobierz sterownik z sekcji Window-eyes.
-Strona wymienia tylko Window-eyes, jest to jednak sterownik USB ogólnego przeznaczenia i będzie pracował również z NVDA.
+Możesz je pobrać z tej strony: <A HREF="http://www.himsintl.com/?c=2/13&amp;uid=2319">http://www.himsintl.com/?c=2/13&amp;uid=2319</A>
 </P>
 <P>
 Poniżej skróty klawiszowe dla tych monitorów, które działają w nvda.
