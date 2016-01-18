@@ -1,33 +1,43 @@
 [[!meta title="Processes"]]
 
-## Addon author process ##
+The following describes processes to be followed by add-on authors, translators and reviewers in maintaing new and existing add-ons.
 
-1. Developer writes addon
-2. Developer submits addon to community
-3. Addon is placed on pending queue
-4. Check that the addon adds interesting/useful features. Maybe can be merged with an existing addon?
-5. If community considers addon to be useful, accept. Addon status  is now dev
+## For add-on authors
+
+1. An add-on author will write an add-on (workaroudn for apps, global pugins and so on).
+2. Developer submits addon to community for review. At least one reviewer (currently Noelia Martinez and Joseph Lee) will be assigned to review an add-on
+3. Addon is placed on pending queue. During this time communication between add-on author(s), reviewer(s) and users/testers is important.
+4. The review process will consist of checking code for localization and security issues, one or more testers testing the add-on in real life and so on. If an existing add-on is bein reviewed, only changes between this version and the previous version will be considered.
+5. If community considers addon to be useful, accept. Addon status  is now dev and will be available from development section of community add-ons website. If no repository exists for the add-on, a Bitbucket repository (under nvdaaddonteam) will be created.
 6. Author code code code.
-7. Author ask for feedback
-8. Community reviewers, other contributors give code feedback/string feedback
-9. Author considers suggestions and implements the work, and ask again, until no more requested changes
+7. Author ask for feedback.
+8. Community reviewers, other contributors give code feedback/string feedback.
+9. Author considers suggestions and implements the work, and ask again, until no more requested changes.
 10. Author requests release sign off by community reviewer.
 11. Time passes,
 12. Author merge stable into master, since stable contains language updates.
 13. Author continues, adds extra features on master or topic branches, goto 6.
 
 
-## Process for community reviewer ##
+## For community add-on reviewers
 
 1. Community reviewer checks strings and readme a final time.
 2. Community reviewer makes stable branch, bump version.
 3. Copy readme.md to srt/website/addon/addonName.mdwn
-4. Run mr addon2settings
-5. System provides strings from stable branch to translators
+4. Run mr addon2settings.
+5. System provides strings from stable branch to translators.
 6. Translations are merged into stable branch by system, (every week).
 7. If two weeks pass and there are no new translations, reviewer makes a release from stable branch.
+8. Quarterly maintenance releases, containing localization updates will be released around end of January, April, July and October (currently managed by Joseph Lee).
 
-## Notes ##
+### Quarterly add-on updates
+
+1. Approximately two to three weeks before quarterly update release date, release manager will go through existing add-ons looking for changes to be noted. This includes localization updates. The release date will be around end of January, April, July and October unless major issues arise.
+2. Any add-ons that should be released as part of the quarterly update will be added to the release queue.
+3. Any new add-ons where review period (two weeks) will be over before quarterly update release will be added to the release queue. They can be removed if critical issues are found, at which review period resets.
+4. On the release day, release manager will build add-on packages for add-ons in the release queue and will send out an announcement once the packages are ready.
+
+## Notes
 
 1. If the addon author is also a community reviewer, s/he can not be the community reviewer for his/her addon.
 2. For addons, master branch is equivalent to NVDA next, i.e. considered for testing purposes. Stable branch is considered to have had some testing and should be relatively error free/ok to run on your system.
