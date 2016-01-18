@@ -10,6 +10,69 @@
 </CENTER>
 
 
+<H2>2016.1</H2>
+
+<H3>New Features</H3>
+
+<UL>
+<LI>New braille translation tables: Polish 8 dot computer braille, Mongolian. (<A HREF="http://community.nvda-project.org/ticket/5537">#5537</A>, <A HREF="http://community.nvda-project.org/ticket/5574">#5574</A>)
+<LI>You can turn off the braille cursor and change its shape using the new Show cursor and Cursor shape options in the Braille Settings dialog. (<A HREF="http://community.nvda-project.org/ticket/5198">#5198</A>)
+<LI>NVDA can now connect to a HIMS Smart Beetle braille display via Bluetooth. (<A HREF="http://community.nvda-project.org/ticket/5607">#5607</A>)
+<LI>NVDA can optionally lower the volume of other sounds when installed on Windows 8 and later. This can be configured using the Audio ducking mode option in the NVDA Synthesizer dialog or by pressing NVDA+shift+d. (<A HREF="http://community.nvda-project.org/ticket/3830">#3830</A>, <A HREF="http://community.nvda-project.org/ticket/5575">#5575</A>)
+<LI>Support for the APH Refreshabraille in HID mode and the Baum VarioUltra and Pronto! when connected via USB. (<A HREF="http://community.nvda-project.org/ticket/5609">#5609</A>)
+<LI>Support for HumanWare Brailliant BI/B braille displays when the protocol is set to OpenBraille. (<A HREF="http://community.nvda-project.org/ticket/5612">#5612</A>)
+</UL>
+
+<H3>Changes</H3>
+
+<UL>
+<LI>Reporting of emphasis is now disabled by default. (<A HREF="http://community.nvda-project.org/ticket/4920">#4920</A>)
+<LI>In the Elements List dialog in Microsoft Excel, the shortcut for Formulas has been changed to alt+r so that it is different to the shortcut for the Filter field. (<A HREF="http://community.nvda-project.org/ticket/5527">#5527</A>)
+<LI>Updated liblouis braille translator to 2.6.5. (<A HREF="http://community.nvda-project.org/ticket/5574">#5574</A>)
+<LI>The word "text" is no longer reported when moving the focus or review cursor to text objects. (<A HREF="http://community.nvda-project.org/ticket/5452">#5452</A>)
+</UL>
+
+<H3>Bug Fixes</H3>
+
+<UL>
+<LI>In iTunes 12, browse mode now updates correctly when a new page loads in the iTunes Store. (<A HREF="http://community.nvda-project.org/ticket/5191">#5191</A>)
+<LI>In Internet Explorer and other MSHTML controls, moving to specific heading levels with single letter navigation now behaves as expected when the level of a heading is overridden for accessibility purposes (specifically, when aria-level overrides the level of an h tag). (<A HREF="http://community.nvda-project.org/ticket/5434">#5434</A>)
+<LI>In Spotify, focus no longer frequently lands on "unknown" objects. (<A HREF="http://community.nvda-project.org/ticket/5439">#5439</A>)
+<LI>Focus is now restored correctly when returning to Spotify from another application. (<A HREF="http://community.nvda-project.org/ticket/5439">#5439</A>)
+<LI>When toggling between browse mode and focus mode, the mode is reported in braille as well as speech. (<A HREF="http://community.nvda-project.org/ticket/5239">#5239</A>)
+<LI>The Start buttn on the Taskbar is no longer reported as a list and/or as selected in some versions of Windows. (<A HREF="http://community.nvda-project.org/ticket/5178">#5178</A>)
+<LI>Messages such as "inserted" are no longer reported when composing messages in Microsoft Outlook. (<A HREF="http://community.nvda-project.org/ticket/5486">#5486</A>)
+<LI>When using a braille display and text is selected on the current line (e.g. when searching in a text editor for text which occurs on the same line), the braille display will be scrolled if appropriate. (<A HREF="http://community.nvda-project.org/ticket/5410">#5410</A>)
+<LI>NVDA no longer silently exits when closing a Windows command console with alt+f4 in Windows 10. (<A HREF="http://community.nvda-project.org/ticket/5343">#5343</A>)
+<LI>In the Elements List in browse mode, when you change the type of element, the Filter by field is now cleared. (<A HREF="http://community.nvda-project.org/ticket/5511">#5511</A>)
+<LI>In editable text in Mozilla applications, moving the mouse again reads the appropriate line, word, etc. as expected instead of the entire content. (<A HREF="http://community.nvda-project.org/ticket/5535">#5535</A>)
+<LI>When moving the mouse in editable text in Mozilla applications, reading no longer stops at elements such as links within the word or line being read. (<A HREF="http://community.nvda-project.org/ticket/2160">#2160</A>, <A HREF="http://community.nvda-project.org/ticket/5535">#5535</A>)
+<LI>In Internet Explorer, the shoprite.com website can now be read in browse mode instead of reporting as blank. (Specifically, malformed lang attributes are now handled gracefully.) (<A HREF="http://community.nvda-project.org/ticket/5569">#5569</A>)
+<LI>In Microsoft Word, tracked changes such as "inserted" are no longer reported when track changes markup is not displayed. (<A HREF="http://community.nvda-project.org/ticket/5566">#5566</A>)
+<LI>When a toggle button is focused, NVDA now reports when it is changed from pressed to not pressed. (<A HREF="http://community.nvda-project.org/ticket/5441">#5441</A>)
+<LI>Reporting of mouse shape changes again works as expected. (<A HREF="http://community.nvda-project.org/ticket/5595">#5595</A>)
+<LI>When speaking line indentation, non-breaking spaces are now treated as normal spaces. Previously, this could cause announcements such as "space space space" instead  of "3 space". (<A HREF="http://community.nvda-project.org/ticket/5610">#5610</A>)
+<LI>When closing a modern Microsoft input method candidate list, focus is correctly restored to either the input composition or the underlying document. (<A HREF="http://community.nvda-project.org/ticket/4145">#4145</A>)
+</UL>
+
+<H3>Changes for Developers</H3>
+
+<UL>
+<LI>The new audioDucking.AudioDucker class allows code which outputs audio to indicate when background audio should be ducked. (<A HREF="http://community.nvda-project.org/ticket/3830">#3830</A>)
+<LI>nvwave.WavePlayer's constructor now has a wantDucking keyword argument which specifies whether background audio should be ducked while audio is playing. (<A HREF="http://community.nvda-project.org/ticket/3830">#3830</A>)
+ <UL>
+ <LI>When this is enabled (which is the default), it is essential that WavePlayer.idle be called when appropriate.
+ </UL>
+<LI>Enhanced I/O for braille displays: (<A HREF="http://community.nvda-project.org/ticket/5609">#5609</A>)
+ <UL>
+ <LI>Thread-safe braille display drivers can declare themselves as such using the BrailleDisplayDriver.isThreadSafe attribute. A driver must be thread-safe to benefit from the following features.
+ <LI>Data is written to thread-safe braille display drivers in the background, thus improving performance.
+ <LI>hwIo.Serial extends pyserial to call a callable when data is received instead of drivers having to poll.
+ <LI>hwIo.Hid provides support for braille displays communicating via USB HID.
+ <LI>hwPortUtils and hwIo can optionally provide detailed debug logging, including devices found and all data sent and received.
+ </UL>
+</UL>
+
 <H2>2015.4</H2>
 
 <P>
@@ -21,8 +84,8 @@ Highlights of this release include performance improvements in Windows 10; inclu
 <UL>
 <LI>NVDA now appears in the Ease of Access Center in Windows 8 and later. (<A HREF="http://community.nvda-project.org/ticket/308">#308</A>)
 <LI>When moving around cells in Excel, formatting changes are now automatically reported if the appropriate options are turned on in NVDA's Document Formatting Settings dialog. (<A HREF="http://community.nvda-project.org/ticket/4878">#4878</A>)
-<LI>A Report Emphasis option has been added to NVDA's Document formatting settings dialog. On by default, this option allows NVDA to automatically report the existance of emphasised text in documents. So far, this is only supported for em and strong tags in Browse Mode for Internet Explorer and other MSHTML controls. (<A HREF="http://community.nvda-project.org/ticket/4920">#4920</A>)
-<LI>The existance of inserted and deleted text is now reported in Browse Mode for Internet Explorer and other MSHTML controls if NVDA's Report Editor Revisions option is enabled. (<A HREF="http://community.nvda-project.org/ticket/4920">#4920</A>)
+<LI>A Report Emphasis option has been added to NVDA's Document formatting settings dialog. On by default, this option allows NVDA to automatically report the existence of emphasised text in documents. So far, this is only supported for em and strong tags in Browse Mode for Internet Explorer and other MSHTML controls. (<A HREF="http://community.nvda-project.org/ticket/4920">#4920</A>)
+<LI>The existence of inserted and deleted text is now reported in Browse Mode for Internet Explorer and other MSHTML controls if NVDA's Report Editor Revisions option is enabled. (<A HREF="http://community.nvda-project.org/ticket/4920">#4920</A>)
 <LI>When viewing track changes in NVDA's Elements List for Microsoft Word, more information such as what formatting properties were changed is now displayed. (<A HREF="http://community.nvda-project.org/ticket/4920">#4920</A>)
 <LI>Microsoft Excel: listing and renaming of sheets is now possible from NVDA's Elements List (NVDA+f7). (<A HREF="http://community.nvda-project.org/ticket/4630">#4630</A>, <A HREF="http://community.nvda-project.org/ticket/4414">#4414</A>)
 <LI>It is now possible to configure whether actual symbols are sent to speech synthesizers (e.g. to cause a pause or change in inflection) in the Symbol Pronunciation dialog. (<A HREF="http://community.nvda-project.org/ticket/5234">#5234</A>)
@@ -405,7 +468,7 @@ Highlights of this release include browse mode for documents in Microsoft Word a
 <LI>Microsoft Word: The first character past the end of a table (including a new blank line) is no longer incorrectly considered to be inside the table. (<A HREF="http://community.nvda-project.org/ticket/4152">#4152</A>)
 <LI>Microsoft Word 2010 spell check dialog: The actual misspelled word is reported rather than  inappropriately reporting just the first bold word. (<A HREF="http://community.nvda-project.org/ticket/3431">#3431</A>)
 <LI>In browse mode in Internet Explorer and other MSHTML controls, tabbing or using single letter navigation to move to form fields again reports the label in many cases where it didn't (specifically, where HTML label elements are used). (<A HREF="http://community.nvda-project.org/ticket/4170">#4170</A>)
-<LI>Microsoft Word: Reporting the existance and placement of comments is more accurate. (<A HREF="http://community.nvda-project.org/ticket/3528">#3528</A>)
+<LI>Microsoft Word: Reporting the existence and placement of comments is more accurate. (<A HREF="http://community.nvda-project.org/ticket/3528">#3528</A>)
 <LI>Navigation of certain dialogs in MS Office products such as Word, Excel and Outlook has been improved by no longer reporting particular control container toolbars which are not useful to the user. (<A HREF="http://community.nvda-project.org/ticket/4198">#4198</A>) 
 <LI>Task panes such as clipboard manager or File recovery no longer accidentilly seem to gain focus when opening an application such as Microsoft Word or Excel, which was sometimes causing the user to have to switch away from and back to the application to use the document or spreadsheet.  (<A HREF="http://community.nvda-project.org/ticket/4199">#4199</A>)
 <LI>NVDA no longer fails to run on recent Windows Operating Systems if the user's Windows language is set to Serbian (Latin). (<A HREF="http://community.nvda-project.org/ticket/4203">#4203</A>)
@@ -569,7 +632,7 @@ Highlights of this release include browse mode for documents in Microsoft Word a
 <LI>There is now an Input Gestures dialog to allow simpler customization of the input gestures (such as keys on the keyboard) for NVDA commands. (<A HREF="http://community.nvda-project.org/ticket/1532">#1532</A>)
 <LI>You can now have different settings for different situations using configuration profiles. Profiles can be activated manually or automatically (e.g. for a particular application). (<A HREF="http://community.nvda-project.org/ticket/87">#87</A>, <A HREF="http://community.nvda-project.org/ticket/667">#667</A>, <A HREF="http://community.nvda-project.org/ticket/1913">#1913</A>)
 <LI>In Microsoft Excel, cells that are links are now announced as links. (<A HREF="http://community.nvda-project.org/ticket/3042">#3042</A>)
-<LI>In Microsoft Excel, the existance of comments on a cell is now reported to the user. (<A HREF="http://community.nvda-project.org/ticket/2921">#2921</A>)
+<LI>In Microsoft Excel, the existence of comments on a cell is now reported to the user. (<A HREF="http://community.nvda-project.org/ticket/2921">#2921</A>)
 </UL>
 
 <H3>Bug Fixes</H3>
@@ -758,7 +821,7 @@ Please see the <A HREF="keyCommands.html">Commands Quick Reference</A> document 
 <LI>Basic support for editing and reading Microsoft PowerPoint presentations. (<A HREF="http://community.nvda-project.org/ticket/501">#501</A>)
 <LI>Basic support for reading and writing messages in Lotus Notes 8.5. (<A HREF="http://community.nvda-project.org/ticket/543">#543</A>)
 <LI>Support for automatic language switching when reading documents in Microsoft Word. (<A HREF="http://community.nvda-project.org/ticket/2047">#2047</A>) 
-<LI>In Browse mode for MSHTML (e.g. Internet Explorer) and Gecko (e.g. Firefox), the existance of long descriptions are now announced. It's also possible to open the long description in a new window by pressing NVDA+d. (<A HREF="http://community.nvda-project.org/ticket/809">#809</A>)
+<LI>In Browse mode for MSHTML (e.g. Internet Explorer) and Gecko (e.g. Firefox), the existence of long descriptions are now announced. It's also possible to open the long description in a new window by pressing NVDA+d. (<A HREF="http://community.nvda-project.org/ticket/809">#809</A>)
 <LI>Notifications in Internet Explorer 9 and above are now spoken (such as content blocking or file downloads). (<A HREF="http://community.nvda-project.org/ticket/2343">#2343</A>)
 <LI>Automatic reporting of table row and column headers is now supported for browse mode documents in Internet Explorer and other MSHTML controls. (<A HREF="http://community.nvda-project.org/ticket/778">#778</A>)
 <LI>New language: Aragonese, Irish
@@ -1047,7 +1110,7 @@ Highlights of this release include features for more fluent reading of braille; 
 <LI>Bold, italic and underline are now indicated in braille using signs appropriate to the configured translation table. (<A HREF="http://community.nvda-project.org/ticket/538">#538</A>)
 <LI>Much more information is now reported in Microsoft Word documents, including:
  <UL>
- <LI>Inline information such as footnote and endnote numbers, heading levels, the existance of comments, table nesting levels, links, and text color;
+ <LI>Inline information such as footnote and endnote numbers, heading levels, the existence of comments, table nesting levels, links, and text color;
  <LI>Reporting when entering document sections such as the comments story, footnotes and endnotes stories, and header and footer stories.
  </UL>
 <LI>Braille now indicates selected text using dots 7 and 8. (<A HREF="http://community.nvda-project.org/ticket/889">#889</A>)
