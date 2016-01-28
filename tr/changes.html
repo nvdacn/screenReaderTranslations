@@ -53,6 +53,11 @@
 <LI>Reporting of mouse shape changes again works as expected. (<A HREF="http://community.nvda-project.org/ticket/5595">#5595</A>)
 <LI>When speaking line indentation, non-breaking spaces are now treated as normal spaces. Previously, this could cause announcements such as "space space space" instead  of "3 space". (<A HREF="http://community.nvda-project.org/ticket/5610">#5610</A>)
 <LI>When closing a modern Microsoft input method candidate list, focus is correctly restored to either the input composition or the underlying document. (<A HREF="http://community.nvda-project.org/ticket/4145">#4145</A>)
+<LI>In Microsoft Office 2013 and later, when the ribbon is set to show only tabs, items in the ribbon are again reported as expected when a tab is activated. (<A HREF="http://community.nvda-project.org/ticket/5504">#5504</A>)
+<LI>Fixes and improvements to touch screen gesture detection and binding. (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
+<LI>Touch screen hovers are no longer reported in input help. (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
+<LI>NVDA no longer fails to list comments in the Elements List for Excel if a comment is  on a merged cell. (<A HREF="http://community.nvda-project.org/ticket/5704">#5704</A>)
+<LI>In a very rare case, NVDA no longer fails to read sheet content in Excel with report row and column headers enabled (<A HREF="http://community.nvda-project.org/ticket/5705">#5705</A>)
 </UL>
 
 <H3>Changes for Developers</H3>
@@ -70,6 +75,18 @@
  <LI>hwIo.Serial extends pyserial to call a callable when data is received instead of drivers having to poll.
  <LI>hwIo.Hid provides support for braille displays communicating via USB HID.
  <LI>hwPortUtils and hwIo can optionally provide detailed debug logging, including devices found and all data sent and received.
+ </UL>
+<LI>There are several new properties accessible from touch screen gestures: (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
+ <UL>
+ <LI>MultitouchTracker objects now contain a childTrackers property which contains the MultiTouchTrackers the tracker was composed of. For example, 2 finger double tap has child trackers for two 2-finger taps. The 2-finger taps themselves have child trackers for two taps.
+ <LI>MultiTouchTracker objects now also contain a rawSingleTouchTracker property if the tracker was the result of one single finger doing a tap, flick or hover. The SingleTouchTracker allows access to the underlying ID assigned to the finger by the operating system and whether or not the finger is still in contact at the current time.
+ <LI>TouchInputGestures now have x and y properties, removing the need to access the tracker for trivial cases.
+ <LI>TouchInputGesturs now contain a preheldTracker property, which is a MultitouchTracker object representing the other fingers held while this action was being performed.
+ </UL>
+<LI>Two new touch screen gestures can be emitted: (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
+ <UL>
+ <LI>Plural tap and holds (e.g. double tap and hold)
+ <LI>A generalized identifier with finger count removed for holds (e.g. hold+hover for 1finger_hold+hover).
  </UL>
 </UL>
 
