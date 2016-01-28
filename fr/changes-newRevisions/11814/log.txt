@@ -1,0 +1,22 @@
+commit d7014ebc378cabd117b0465ce1da94cef43f74a1
+Author: Michael Curran <mick@nvaccess.org>
+Date:   Tue Dec 15 15:58:57 2015 +1000
+
+    Fixes and improvements related to touch screen gestures.
+    
+    * All taps that overlap in time are correctly merged into one multi-finger tap. Previously tap A and B would be merged only if B started after A's start but before its end.
+    * Taps are only merged into plural (double, tripple, quadruple) taps if there are no other unknown trackers at the time. This stops a tap quickly followed by a tripple tap for example, from incorrectly turning into a quadruple tap.
+    * Plural tap and holds (e.g. double tap and hold) are now detected.
+    * Hover downs are no longer fired when part of a tapAndHold.
+    * Hovers are no longer reported in input help.
+    * MultitouchTracker objects now contain a childTrackers property which contains the multiTouchTrackers it is made up of (I.e. 2 finger double tap contains 2 2-finger taps. The 2-finger taps themselves contain 2 taps).
+    * MultiTouchTracker objects now also contain a rawSingleTouchTracker property, if this tracker is the result of one single finger doing a tap, flick or hover. The SingleTouchTracker allows access to the underlying Operating System assigned ID for the finger and whether or not the finger is still in contact at the current time.
+    * Added doc strings to MultiTouchTracker and SingleTouchTracker classes explaining all available properties
+    * Provide __slots__ on MultiTouchTracker and SingleTouchTracker classes to decrease their size.
+    * The Touch input Gesture class's doc string now explains all possible actions that can occur
+    * Touch input gestures now have x and y properties, removing the need to access the tracker in very simple cases.
+    * Gesturs now contain a preheldTracker property, which is a multitouchTracker object representing the other held fingers while this action was being performed.
+    * Gesture identifier IDs are now output in Python set order ensuring correct comparisons, allowing gestures such as "1finger_hold+hover" to be correctly bound.
+    * A generalized identifier with finger count removed is now included for holds (e.g. hold+hover for 1finger_hold+hover).
+    
+    Fixes #5652.
