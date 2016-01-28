@@ -51,8 +51,15 @@
 <LI>Bei der Ansage von Zeileneinrückungen werden geschützte Leerzeichen nun wie normale Leerzeichen behandelt. Dies führte zuvor zu Ansagen wie "Leerzeichen Leerzeichen Lerzeichen" anstatt von 3 Leerzeichen. (<A HREF="http://community.nvda-project.org/ticket/5610">#5610</A>)
 <LI>Beim Schließen der Kandidatenliste bei der Eingabe komplexer Sonderzeichen wird der Fokus korrekt wiederhergestellt. (<A HREF="http://community.nvda-project.org/ticket/4145">#4145</A>)
 <LI>Wenn die Menübänder in Office 2013 und neuer so wingestellt werden, dass sie nur Registerkarten anzeigen, werden sie von NVDA wie erwartet dargestellt, wenn eine Registerkarte aktiviert wird. (<A HREF="http://community.nvda-project.org/ticket/5504">#5504</A>)
-<P></P>
-== Änderungen für Entwickler ==
+<LI>Korrekturen und Verbesserungen beim Erkennen und Einbinden von Touch-Screen-Gesten: (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
+<LI>Wischgesten werden in der Eingabehilfe nicht mehr erkannt. (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
+<LI>Wenn sich in Microsoft Excel ein Kommentar auf eine verbundene Zelle bezieht, wird er korrekt erkannt. (<A HREF="http://community.nvda-project.org/ticket/5704">#5704</A>)
+<LI>Fehler behoben, wonach NVDA in sehr seltenen Fällen den Inhalt von Tabellenblättern in Excel nicht angezeigt hat. (<A HREF="http://community.nvda-project.org/ticket/5705">#5705</A>)
+</UL>
+
+<H3>Änderungen für Entwickler</H3>
+
+<UL>
 <LI>Sie können die neue Klasse audioDucking.audioDucker verwenden, wenn Sie beim Abspielen von Audiomaterial die Lautstärke anderer Audioquellen reduzieren wollen. (<A HREF="http://community.nvda-project.org/ticket/3830">#3830</A>)
 <LI>Der Konstruktor von nvwave.WavePlayer besitzt nun ein Arguzment namens wantDucking, mit dessen Hilfe Sie angeben können, ob während der Wiedergabe die Lautstärke anderer Audioquellen reduziert werden soll. (<A HREF="http://community.nvda-project.org/ticket/3830">#3830</A>)
  <UL>
@@ -65,6 +72,18 @@
  <LI>hwIo.Serial extends pyserial to call a callable when data is received instead of drivers having to poll.
  <LI>hwIo.Hid provides support for braille displays communicating via USB HID.
  <LI>hwPortUtils and hwIo can optionally provide detailed debug logging, including devices found and all data sent and received.
+ </UL>
+<LI>neue Eigenschaften für Touch-screen-Gesten: (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
+ <UL>
+ <LI>Das Objekt MultitouchTracker enthält nun eine Eigenschaft namens childTrackers. Hier werden die einzelnen Teile einer Mehrfachgeste gespeichert. Ein doppeltes Tippen mit zwei Fingern enthält zum Beispiel zwei zweifinger-Tippgesten. Die Zweifinger-Tippgesten enthalten ihrerseits zwei Tippgesten.
+ <LI>MultiTouchTracker Objekte enthalten außerdem eine Eigenschaft rawSingleTouchTracker, falls der Tracker das Ergebnis einer Geste ist, die mit einem Finger ausgeführt wird. Der Tracker gestattet Ihnen den Zugriff auf die vom Betriebssystem zurückgegebene ID des Fingers. Er erlaub Ihnen außerdem festzustellen, ob der Finger momentan (noch) den Bildschirm berührt.
+ <LI>TouchInputGestures enthalten nun X- und Y-Koordinaten. Dadurch ist es nicht länge nötig, auf den Tracker zuzugreifen.
+ <LI>TouchInputGesturs enthalten nun eine Eigenschaft namens preheldTracker.  Diese Eigenschaft gibt über Finger auskunft, die auf dem Bildschirm gehalten werden.
+ </UL>
+<LI>es werden zwei neue Touchscreen-Gesten erkannt: (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
+ <UL>
+ <LI>mehrfachgesten mit Tippen und Halten (z.B. zweifaches Tippen und Halten). 
+ <LI>die Angabe losgelassener Finger wurde verallgemeinert (z.b. halten+Wischen für ein Halten und Wischen mit einem Finger).
  </UL>
 </UL>
 
