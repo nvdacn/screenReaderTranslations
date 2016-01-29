@@ -51,8 +51,13 @@
 <LI>Jäljitettäviä muutoksia, kuten lisäyksiä, ei enää ilmoiteta Microsoft Wordissa, kun niiden merkintöjä ei näytetä. (<A HREF="http://community.nvda-project.org/ticket/5566">#5566</A>)
 <LI>Kun kohdistus on vaihtopainikkeen kohdalla, NVDA ilmoittaa, kun sen tila muuttuu painetusta ei-painetuksi. (<A HREF="http://community.nvda-project.org/ticket/5441">#5441</A>)
 <LI>Hiiren muodon muutosten ilmoittaminen toimii taas odotetusti. (<A HREF="http://community.nvda-project.org/ticket/5595">#5595</A>)
-<LI>Sitovia välilyöntejä käsitellään nyt tavallisina välilyönteinä rivin sisennystä puhuttaessa. Tämä saattoi aiemmin aiheuttaa sen, että "3 väli" -ilmoituksen asemesta sanottiin jotain sellaista kuin "väli väli väli". (<A HREF="http://community.nvda-project.org/ticket/5610">#5610</A>)
+<LI>Sitovat välilyönnit käsitellään nyt tavallisina välilyönteinä rivin sisennystä puhuttaessa. Tämä saattoi aiemmin aiheuttaa sen, että "3 väli" -ilmoituksen asemesta sanottiin jotain sellaista kuin "väli väli väli". (<A HREF="http://community.nvda-project.org/ticket/5610">#5610</A>)
 <LI>Kun moderni Microsoftin syöttömenetelmän ehdotuslista suljetaan , kohdistus palautetaan asianmukaisesti joko syöttömenetelmään tai kohdeasiakirjaan. (<A HREF="http://community.nvda-project.org/ticket/4145">#4145</A>)
+<LI>Kun Microsoft Office 2013:n ja uudempien valintanauha on määritetty näyttämään pelkät välilehdet, valintanauhan kohteet luetaan taas odotetusti välilehteä aktivoitaessa. (<A HREF="http://community.nvda-project.org/ticket/5504">#5504</A>)
+<LI>Korjauksia ja parannuksia kosketusnäyttöeleiden tunnistamiseen ja komentoihin liittämiseen. (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
+<LI>Kosketuseleitä, joissa sormea painetaan ja pidetään näytöllä, ei puhuta syöteohjeessa. (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
+<LI>Kommenttilistan näyttäminen Excelin elementtilistassa ei enää epäonnistu, jos kommentti on yhdistetyssä solussa. (<A HREF="http://community.nvda-project.org/ticket/5704">#5704</A>)
+<LI>Laskentataulukon sisällön lukeminen ei enää epäonnistu hyvin harvoissa tapauksissa, kun rivi- ja sarakeotsikoiden ilmoittaminen on käytössä. (<A HREF="http://community.nvda-project.org/ticket/5705">#5705</A>)
 </UL>
 
 <P>
@@ -72,6 +77,18 @@
  <LI>hwIo.Serial extends pyserial to call a callable when data is received instead of drivers having to poll.
  <LI>hwIo.Hid provides support for braille displays communicating via USB HID.
  <LI>hwPortUtils and hwIo can optionally provide detailed debug logging, including devices found and all data sent and received.
+ </UL>
+<LI>There are several new properties accessible from touch screen gestures: (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
+ <UL>
+ <LI>MultitouchTracker objects now contain a childTrackers property which contains the MultiTouchTrackers the tracker was composed of. For example, 2 finger double tap has child trackers for two 2-finger taps. The 2-finger taps themselves have child trackers for two taps.
+ <LI>MultiTouchTracker objects now also contain a rawSingleTouchTracker property if the tracker was the result of one single finger doing a tap, flick or hover. The SingleTouchTracker allows access to the underlying ID assigned to the finger by the operating system and whether or not the finger is still in contact at the current time.
+ <LI>TouchInputGestures now have x and y properties, removing the need to access the tracker for trivial cases.
+ <LI>TouchInputGesturs now contain a preheldTracker property, which is a MultitouchTracker object representing the other fingers held while this action was being performed.
+ </UL>
+<LI>Two new touch screen gestures can be emitted: (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
+ <UL>
+ <LI>Plural tap and holds (e.g. double tap and hold)
+ <LI>A generalized identifier with finger count removed for holds (e.g. hold+hover for 1finger_hold+hover).
  </UL>
 </UL>
 
