@@ -1,0 +1,8 @@
+commit b41ea09975ebcafbf9cfdaa2b19069c08ed91fc7
+Author: Michael Curran <mick@nvaccess.org>
+Date:   Wed Jan 20 15:05:32 2016 +1000
+
+    Fixed problems with braille display output when entering Korean characters.
+    
+    NVDAHelper.handleInputCompositionStart: the new input composition NVDAObject's parent is set to the most correct focus (i.e. objectWithFocus). However, if this is equal to NVDA's focus object, use that instead, in order to still maintain any possible state.
+    Fixes #5640.
