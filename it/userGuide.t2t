@@ -764,6 +764,16 @@ Ciò può venir incontro a quegli utenti che preferiscono avvalersi esclusivamen
 ==== Periferica audio da utilizzare ====
 Questa opzione permette di selezionare la scheda audio che NVDA utilizzerà per mandare i messaggi al sintetizzatore.
 
+%kc:setting
+==== Modalità attenuazione audio ====
+Tasto: NVDA+shift+d
+
+Questa funzione, disponibile a partire da Windows8 in poi, consente di decidere se NVDA debba abbassare il volume delle altre applicazioni quando NVDA sta parlando, o per tutto il tempo in cui NVDA è in esecuzione.
+- Nessuna attenuazione: NVDA non abbasserà mai il volume di altre applicazioni.
+- Attenua quando vengono riprodotti altri suoni: NVDA abbasserà il volume di altri flussi audio soltanto quando la sintesi vocale sta parlando. Si noti che potrebbe non funzionare per tutti i sintetizzatori.
+- Attenua sempre: NVDA manterrà gli altri flussi audio sempre con un volume più basso per tutto il tempo in cui NVDA è in esecuzione.
+-
+
 +++ Impostazioni voce (NVDA+control+v) +++[VoiceSettings]
 La finestra impostazioni della voce, situata sul menu preferenze, contiene numerose opzioni per modificare il suono della sintesi vocale. 
 Per informazioni su come modificare molti di questi parametri da qualunque punto ci si trovi, si veda la sezione [modificare al volo le Impostazioni del sintetizzatore  #SynthSettingsRing].
@@ -1649,14 +1659,13 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 ++ Display Braille Baum/Humanware/APH  ++
 Molti Display Braille della [Baum http://www.baum.de/cms/en/], [HumanWare http://www.humanware.com/] e [APH http://www.aph.org/] sono supportati sia tramite USB che Bluetooth.
 Essi includono:
-- Baum: SuperVario, PocketVario, VarioUltra (Solo Bluetooth), Pronto! (solo Bluetooth)
+- Baum: SuperVario, PocketVario, VarioUltra, Pronto!
 - HumanWare: Brailliant, BrailleConnect
 - APH: Refreshabraille
 -
 Altre barre Braille della Baum potrebbero funzionare, tuttavia non sono stati fatti test in tal senso.
 
-Nel caso di connessione tramite USB, è necessario installare i driver forniti dal produttore.
-Per i modelli APH Refreshabraille, il parametro USB Mode deve essere settato su Serial.
+Nel caso di connessione tramite USB, è necessario installare i driver forniti dal produttore, tranne per i modelli VarioUltra,  Pronto! e Refreshabraille con modalità USB impostata su HID, che funzioneranno autonomamente.
 
 Seguono i tasti che sono stati assegnati con NVDA.
 Si legga la documentazione della propria barra Braille per ottenere informazioni su dove sono situati i vari tasti.
@@ -1713,7 +1722,8 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
  
 ++ HumanWare Brailliant BI/B Series ++
 Le Barre Braille Brailliant Serie BI e B prodotte dalla [HumanWare http://www.humanware.com/], comprese BI 32, BI 40 e B 80, sono supportate quando connesse tramite USB o Bluetooth.
-In caso di connessione tramite USB, è necessario prima installare i driver sviluppati dal produttore.
+In caso di connessione tramite USB con protocollo impostato su Humanware, è necessario prima installare i driver sviluppati dal produttore.
+Non è richiesto alcun driver USB invece nel caso in cui il protocollo sia impostato su OpenBraille.
 
 Di seguito, ecco l'elenco dell'assegnazione dei tasti  per questa riga braille con NVDA.
 Si legga la documentazione della propria barra Braille per ottenere informazioni su dove sono situati i vari tasti.
