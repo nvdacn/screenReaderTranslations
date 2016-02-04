@@ -162,7 +162,7 @@
     <LI><A HREF="#toc106">12.6. hedo ProfiLine USB</A>
     <LI><A HREF="#toc107">12.7. hedo MobilLine USB</A>
     <LI><A HREF="#toc108">12.8. HumanWare製Brailliant BI/Bシリーズ</A>
-    <LI><A HREF="#toc109">12.9. HIMS製 Braille Sense/Braille EDGE シリーズ</A>
+    <LI><A HREF="#toc109">12.9. HIMS製 Braille Sense/Braille EDGE/Smart Beetle シリーズ</A>
     <LI><A HREF="#toc110">12.10. HIMS製 SyncBraille</A>
     <LI><A HREF="#toc111">12.11. 清華 点字ディスプレイ</A>
     <LI><A HREF="#toc112">12.12. Papenmeier BRAILLEX 新型機種</A>
@@ -263,10 +263,12 @@ NVDAはGNU 一般公衆利用許諾契約書 (Version 2) によって保護さ�
 
 <UL>
 <LI>オペレーティングシステム: すべての32ビット版および64ビット版Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1 および Windows 10 (サーバー用オペレーティングシステムを含む)
-<LI>Windows XP 32ビット版はサービスパック2以降に対応
-<LI>Windows Server 2003 はサービスパック1以降に対応
-<LI>Windows Vista はサービスパック2および<A HREF="https://support.microsoft.com/en-us/kb/2763674">KB2763674</A>の更新が必要です。
+ <UL>
+ <LI>Windows XP 32ビット版はサービスパック2以降に対応
+ <LI>Windows Server 2003 はサービスパック1以降に対応
+ <LI>Windows Vista はサービスパック2および<A HREF="https://support.microsoft.com/en-us/kb/2763674">KB2763674</A>の更新が必要です。
 利用可能な Windows Update がすべて適用されていれば、これらはインストール済みです。
+ </UL>
 <LI>メモリー: 256MB以上のRAM
 <LI>プロセッサーのスピード: 1.0GHz以上
 <LI>90MB程度のディスク空き容量
@@ -1763,11 +1765,11 @@ OKボタンを押すとNVDAが再起動します。
 このオプションはインストールされたNVDAでのみ有効です。
 </P>
 
-<H5>現在保存されている情報をログオンまたはその他のセキュアスクリーンで使用</H5>
+<H5>現在保存されている情報をログオンまたはその他のセキュアスクリーンで使用 (管理者権限が必要)</H5>
 
 <P>
 このボタンを押すと、現在保存されているNVDAのユーザー設定をNVDAのシステムフォルダーにコピーします。この設定は、ログオンやユーザーアクセスコントロール (UAC) 、その他のセキュアスクリーンにおけるNVDAで利用されます。
-すべての設定を確実にコピーするため、最初にNVDA+Ctrl+CまたはNVDAメニュー内の設定情報の保存を実行してください。
+すべての設定を確実にコピーするため、事前にNVDA+Ctrl+CまたはNVDAメニュー内の設定情報の保存を実行してください。
 このオプションはインストールされたNVDAでのみ有効です。
 </P>
 
@@ -1805,6 +1807,21 @@ NVDAでサポートされている音声エンジンの一覧は、<A HREF="#Sup
 <P>
 このオプションでは、NVDAが選択された音声エンジンを使って読み上げを出力するサウンドカードを選択できます。
 </P>
+
+<H5>音のダッキング</H5>
+
+<P>
+キー: NVDA+Shift+D
+</P>
+<P>
+Windows 8 以降では、NVDA の音声やサウンドの出力のときに限って、またはNVDAを実行している間ずっと、他のアプリの音量を低くすることができます。
+</P>
+
+<UL>
+<LI>ダッキングなし: NVDA 以外の音量は変化しません。
+<LI>音声とサウンドの出力時にダッキング: NVDA が音声やサウンドを出力している間だけ、NVDA 以外の音量が低くなります。この選択肢は音声合成エンジンによっては正しく動作しません。
+<LI>常にダッキング: NVDA を実行している間はずっと、NVDA 以外の音量が低くなります。
+</UL>
 
 <A NAME="VoiceSettings"></A>
 <H4>9.1.3. 音声設定 (NVDA+Ctrl+V)</H4>
@@ -3479,7 +3496,7 @@ USBまたはbluetooth接続されたいくつかの<A HREF="http://www.baum.de/c
 </P>
 
 <UL>
-<LI>Baum社: SuperVario, PocketVario, VarioUltra (Bluetooth のみ), Pronto! (Bluetooth のみ)
+<LI>Baum社: SuperVario, PocketVario, VarioUltra, Pronto!
 <LI>HumanWare社: Brailliant, BrailleConnect
 <LI>APH: Refreshabraille
 </UL>
@@ -3488,8 +3505,7 @@ USBまたはbluetooth接続されたいくつかの<A HREF="http://www.baum.de/c
 その他のいくつかのBaum社製ディスプレイでも動作する可能性がありますが、テストは行っていません。
 </P>
 <P>
-USBで接続する場合は、製造元が提供するUSBドライバーを最初にインストールしてください。
-APH製のRefreshabrailleを使用する場合、USBモードをシリアルにセットしなければなりません。
+VarioUltra, Pronto!, Refreshabraille 以外の機器を USB 接続する場合で、USB モードを HID に設定するときには、事前に製造元が提供するUSBドライバーをインストールしてください。
 </P>
 <P>
 以下は、これらのディスプレイ上で使用できるNVDA用のキー割り当てです。
@@ -3653,7 +3669,8 @@ APH製のRefreshabrailleを使用する場合、USBモードをシリアルに�
 
 <P>
 USBまたはBluetooth接続された<A HREF="http://www.humanware.com/">HumanWare</A>製の BI 32、BI 40及びB 80を含むBrailliant BI及びBシリーズディスプレーがサポートされました。
-USB接続されている場合、最初に製造元から提供されたUSBドライバーをインストールする必要があります。
+USB接続で HumanWare プロトコルを使用する場合は、事前に製造元から提供されたUSBドライバーをインストールする必要があります。
+プロトコルとして OpenBraille を使用する場合は USB ドライバーは不要です。
 </P>
 <P>
 以下は、このディスプレイ上で使用できるNVDA用のキー割り当てです。
@@ -3748,14 +3765,12 @@ USB接続されている場合、最初に製造元から提供されたUSBド�
 </TABLE>
 
 <A NAME="toc109"></A>
-<H3>12.9. HIMS製 Braille Sense/Braille EDGE シリーズ</H3>
+<H3>12.9. HIMS製 Braille Sense/Braille EDGE/Smart Beetle シリーズ</H3>
 
 <P>
-<A HREF="http://www.hims-inc.com/">HIMS</A> 社の Braille Sense と Braille EDGE ディスプレイを USB またはブルートゥースで接続すれば NVDA で利用できます。
+<A HREF="http://www.hims-inc.com/">HIMS</A> 社の Braille Sense, Braille EDGE, Smart Beetle ディスプレイを USB またはブルートゥースで接続すれば NVDA で利用できます。
 USB 接続のときは HIMS 社が提供する USB ドライバーをインストールしておく必要があります。
-これは HIMS Resource Center からダウンロードできます: <A HREF="http://www.hims-inc.com/resource-center/">http://www.hims-inc.com/resource-center/</A>
-このページで、お使いの機種を選択して、Window-Eyes のセクションからドライバーをダウンロードしてください。
-このセクションでは Window-Eyes について書かれていますが、提供されている USB ドライバーは汎用的なものであり NVDA で利用できます。
+ダウンロード: <A HREF="http://www.himsintl.com/?c=2/13&amp;uid=2319">http://www.himsintl.com/?c=2/13&amp;uid=2319</A>
 </P>
 <P>
 NVDA で利用するときのキー割り当ては以下のとおりです。
