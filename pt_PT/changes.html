@@ -15,6 +15,10 @@ Tradução de Rui Fontes, a partir da versão 2015.1, adaptação por Rui Batist
 
 <H2>2016.1</H2>
 
+<P>
+Os destaques desta versão são a possibilidade do NVDA, opcionalmente, baixar o volume do som de outros programas, melhorias na apresentação da saída em Braille e  no suporte a algumas linhas Braille, várias correções significativas no suporte ao Microsoft Office e correções no modo de navegação no iTunes.
+</P>
+
 <H3>Novas Funcionalidades</H3>
 
 <UL>
@@ -56,6 +60,15 @@ Tradução de Rui Fontes, a partir da versão 2015.1, adaptação por Rui Batist
 <LI>O anúncio da alteração da forma do rato voltou a funcionar como devido. (<A HREF="http://community.nvda-project.org/ticket/5595">#5595</A>)
 <LI>Ao anunciar a indentação da linha, os espaços não separáveis são tratados como espaços normais. Antes, isto podia causar anúncios como "espaço espaço espaço" em vez de "3 espaços". (<A HREF="http://community.nvda-project.org/ticket/5610">#5610</A>)
 <LI>Ao fechar uma lista de candidatos modern Microsoft input method, o foco é correctamente restaurado para a janela de composição ou para o documento. (<A HREF="http://community.nvda-project.org/ticket/4145">#4145</A>)
+<LI>No Microsoft Office 2013 e superiores, quando os frisos estão configurados para mostrar apenas tabs,os  itens dos frisos são novamente anunciados, como devido, quando algum tab é activado. (<A HREF="http://community.nvda-project.org/ticket/5504">#5504</A>)
+<LI>Correções e melhorias na deteção de toques no ecrã e suas associações. (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
+<LI>O gesto de deslizar deixou de ser mencionado na ajuda. (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
+<LI>O NVDA já não falha ao listar comentários na Lista de Elementos para o Microsoft Excel, mesmo que um comentário esteja numa célula mesclada. (<A HREF="http://community.nvda-project.org/ticket/5704">#5704</A>)
+<LI>O NVDA já não falha ao ler o conteúdode uma folha do Microsoft Excel com a opção "Anunciar títulos da linha/coluna da tabela" activada. (<A HREF="http://community.nvda-project.org/ticket/5705">#5705</A>)
+<LI>No Google Chrome, ao navigar dentro de uma área de composição, introduzindo caracteres do Extremo Oriente, o NVDA funciona como esperado. (<A HREF="http://community.nvda-project.org/ticket/4080">#4080</A>)
+<LI>Quando se pesquisa dentro da Apple Music no iTunes, o modo de navegação para o documento dos resultados já é actualizado devidamente. (<A HREF="http://community.nvda-project.org/ticket/5659">#5659</A>)
+<LI>No Microsoft Excel, ao pressionar shift+f11 para criar uma nova folha, agora é anunciada a posição actual em vez de ficar calado.(<A HREF="http://community.nvda-project.org/ticket/5689">#5689</A>)
+<LI>Corrigidos problemas com a saída de Braille ao introduzir caracteres Coreanos. (<A HREF="http://community.nvda-project.org/ticket/5640">#5640</A>)
 </UL>
 
 <H3>Alterações para Desenvolvedores</H3>
@@ -73,6 +86,18 @@ Tradução de Rui Fontes, a partir da versão 2015.1, adaptação por Rui Batist
  <LI>hwIo.Serial estende pyserial para chamar um chamável quando são recebiddos dados em vez de o driver ter de os captar.
  <LI>hwIo.Hid suporta que as linhas Braille comuniquem via USB HID.
  <LI>hwPortUtils e hwIo podem, opcionalmente, proporcionar logs detalhados incluindo dispositivos encontrados e todos os dados recebidos e enviados.
+ </UL>
+<LI>There are several new properties accessible from touch screen gestures: (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
+ <UL>
+ <LI>MultitouchTracker objects now contain a childTrackers property which contains the MultiTouchTrackers the tracker was composed of. For example, 2 finger double tap has child trackers for two 2-finger taps. The 2-finger taps themselves have child trackers for two taps.
+ <LI>MultiTouchTracker objects now also contain a rawSingleTouchTracker property if the tracker was the result of one single finger doing a tap, flick or hover. The SingleTouchTracker allows access to the underlying ID assigned to the finger by the operating system and whether or not the finger is still in contact at the current time.
+ <LI>TouchInputGestures now have x and y properties, removing the need to access the tracker for trivial cases.
+ <LI>TouchInputGesturs now contain a preheldTracker property, which is a MultitouchTracker object representing the other fingers held while this action was being performed.
+ </UL>
+<LI>Two new touch screen gestures can be emitted: (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
+ <UL>
+ <LI>Plural tap and holds (e.g. double tap and hold)
+ <LI>A generalized identifier with finger count removed for holds (e.g. hold+hover for 1finger_hold+hover).
  </UL>
 </UL>
 
