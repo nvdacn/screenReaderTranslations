@@ -4,8 +4,8 @@
 #This file is covered by the GNU General Public License.
 
 complexSymbols:
-# identifier	regexp
-# Sentence endings.
+# identificator	expresie regulată
+# Sfârșit de frază
 . sentence ending	(?<=[^\s.])\.(?=[\"'”’)\s]|$)
 ! sentence ending	(?<=[^\s!])\!(?=[\"'”’)\s]|$)
 ? sentence ending	(?<=[^\s?])\?(?=[\"'”’)\s]|$)
@@ -13,35 +13,37 @@ complexSymbols:
 ; phrase ending	(?<=[^\s;]);(?=\s|$)
 : phrase ending	(?<=[^\s:]):(?=\s|$)
 # Others
-decimal point	(?<![^\d -])\.(?=\d)
+decimal point	(?<![^\d -])\,(?=\d)
 in-word '	(?<=[^\W_])['’]
-negative number	(?<!\w)-(?=[$£€¥.]?\d)
+in-word -	(?<=[^\W_])[-]
+negative number	(?<!\w)-(?=[ $£€¥.]?\d)
 
 symbols:
 # identifier	replacement[[	level][	preserve]][	# display name]
 
 # Complex symbols
-. sentence ending	punct	all	always
-! sentence ending	semn de exclamare	all	always
-? sentence ending	semn de întrebare	all	always
-; phrase ending	punct și virgulă	most	always
-: phrase ending	două puncte	most	always
-decimal point		none	always
-in-word '	apostrof	all	norep
-negative number	minus	none	norep
+. sentence ending	punct	all	always	# . sfârșit de propoziție
+! sentence ending	semn de exclamare	# ! sfârșit de propoziție
+? sentence ending	semn de întrebare	all	always	# ? sfârșit de propoziție
+; phrase ending	punct și virgulă	# ; sfârșit de propoziție
+: phrase ending	două puncte	most	always	# : sfârșit de propoziție
+decimal point		# virgulă pentru zecimale
+in-word '	apostrof	# ' în cuvânt
+in-word -	cratimă	all	norep	# - de compunere cuvinte
+negative number	minus	none	norep	# - înaintea unei cifre
 
 # Whitespace
-\0	nul	char	# null
+\0	nul	char	# caracterul vid
 \t	tab
-\n	linie nouă	char
+\n	trecere linie nouă	char
 \f	întrerupere pagină	none
-\r	tasta Enter	char
+\r	linie nouă	char
  	spațiu	char
- 	spațiu incasabil	char	# no-break space
+ 	spațiu	char	# spațiu incasabil
 
 # Standard punctuation/symbols
-!	semn exclamare	all
-"	dublu apostrof	most
+!	semn exclamare	most	norep
+"	ghilimele	most
 \#	diez	some
 $	dolar	all	norep
 £	liră	all	norep
@@ -51,21 +53,21 @@ $	dolar	all	norep
 ₹	rupie	some	norep
 %	procent	some
 &	ampersand	some
-'	apostrof	all
+'	apostrof vertical	most
 (	paranteză stânga	most	always
 )	paranteză dreapta	most	always
 *	asterisc	some
 +	plus	some
 ,	virgulă	all	always
--	liniuță	most
+-	cratimă
 .	punct	some
 /	per	some
-:	două puncte	most	norep
-;	punct și virgulă	most
+:	două puncte	some	norep
+;	punct și virgulă	some
 <	mai mic	some
 >	mai mare	some
 =	egal	some
-?	semn întrebare	all
+?	semn întrebare	most	norep
 @	a rond	some
 [	paranteză pătrată stânga	most
 ]	paranteză pătrată dreapta	most
@@ -74,7 +76,7 @@ $	dolar	all	norep
 _	liniuță joasă	most
 `	accent grav	most
 {	acoladă stânga	most
-}	acoladă dreapta brace	most
+}	acoladă dreapta	most
 |	bară verticală	most
 ~	tilda	most
 
@@ -85,10 +87,10 @@ _	liniuță joasă	most
 	bulină	some
 “	ghilimele inverse închise	most
 ”	ghilimele închise	most
-‘	ghilimele simple inverse închise	most
-’	ghilimele simple închise	most
-–	liniuță dublă	most	always
-—	liniuță triplă	most
+‘	apostrof invers	most
+’	apostrof	most
+–	cratimă dublă	most	always
+—	linie de dialog	most
 ●	cerc negru	most
 ¨	tremă	most
 ‎	marcaj stânga la dreapta	char
@@ -133,7 +135,7 @@ _	liniuță joasă	most
 ∋	conține ca element pe	none
 ∌	nu conține ca element pe	none
 ∍	conține ca element pe mic	none
-∎	chiu ee dî	none
+∎	q e d	none
 ∏	produs	none
 
 # Miscellaneous Mathematical Operators
@@ -159,7 +161,7 @@ _	liniuță joasă	most
 ∷	proporțional	none
 ≤	mai mic sau egal cu	none
 ≥	mai mare sau egal cu	none
-⊂	submulțime a	none
-⊃	superset a	none
+⊂	submulțime a lui	none
+⊃	superset a lui	none
 ⊆	submulțime sau egală cu	none
 ⊇	superset sau egal cu	none
