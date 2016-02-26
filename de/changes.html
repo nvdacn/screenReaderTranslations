@@ -59,8 +59,8 @@ Schwerpunkte dieser Version sind u.a. eine Option zum Reduzieren der Lautstärke
 <LI>Das Ein- und Ausschalten des Lesemodus wird nun auch in Braille angezeigt. (<A HREF="http://community.nvda-project.org/ticket/5239">#5239</A>)
 <LI>Der Schalter "Start" auf der Taskleiste wird nicht mehr als Liste Bzw. als "Ausgewählt" ausgegeben. (<A HREF="http://community.nvda-project.org/ticket/5178">#5178</A>)
 <LI>Wenn Sie in Microsoft Outlook Nachrichten schreiben, werden meldungen wie "eingefügt" nicht mehr angezeigt. (<A HREF="http://community.nvda-project.org/ticket/5486">#5486</A>)
-<LI>Wenn Sie in einem Editorfenster Text markieren, wird die Braillezeile ggf. korrekt weitergescrollt. (<A HREF="http://community.nvda-project.org/ticket/5410">#5410</A>)
-<LI>nvda wird nicht mehr abstürzen, wenn Sie eine Eingabeaufforderung in Windows 10 mit alt+f4 schließen. (<A HREF="http://community.nvda-project.org/ticket/5343">#5343</A>)
+<LI>Wenn Sie in einem Editorfenster Text markieren, scrollt die Braillezeile ggf. korrekt weiter. (<A HREF="http://community.nvda-project.org/ticket/5410">#5410</A>)
+<LI>nvda stürzt  nicht mehr ab, wenn Sie eine Eingabeaufforderung in Windows 10 mit alt+f4 schließen. (<A HREF="http://community.nvda-project.org/ticket/5343">#5343</A>)
 <LI>Wenn Sie in der Elementliste im Lesemodus den Elementtyp ändern, wird das Suchfeld automatisch geleert. (<A HREF="http://community.nvda-project.org/ticket/5511">#5511</A>)
 <LI>Wenn Sie in Mozilla-Anwendungen die Maus auf ein Eingabefeld bewegen, wird nicht mehr der gesamte Feldinhalt gelesen, sondern (wie erwartet) das Wort, die Zeile etc. unter dem Mauszeiger. (<A HREF="http://community.nvda-project.org/ticket/5535">#5535</A>)
 <LI>Wenn Sie in Mozilla-Anwendungen die Maus innerhalb von Eingabefeldern bewegen, wird das Lesen nicht bei Elementen unterbrochen, die sich innerhalb der zu lesenden Einheit (Wort, Zeile etc.) befinden. (<A HREF="http://community.nvda-project.org/ticket/2160">#2160</A>, <A HREF="http://community.nvda-project.org/ticket/5535">#5535</A>)
@@ -70,12 +70,16 @@ Schwerpunkte dieser Version sind u.a. eine Option zum Reduzieren der Lautstärke
 <LI>Die Ansage bei Änderung der Form des Mauszeigers funktioniert nun ordnungsgemäß. (<A HREF="http://community.nvda-project.org/ticket/5595">#5595</A>)
 <LI>Bei der Ansage von Zeileneinrückungen werden geschützte Leerzeichen nun wie normale Leerzeichen behandelt. Dies führte zuvor zu Ansagen wie "Leerzeichen Leerzeichen Lerzeichen" anstatt von 3 Leerzeichen. (<A HREF="http://community.nvda-project.org/ticket/5610">#5610</A>)
 <LI>Beim Schließen der Kandidatenliste bei der Eingabe komplexer Sonderzeichen wird der Fokus korrekt wiederhergestellt. (<A HREF="http://community.nvda-project.org/ticket/4145">#4145</A>)
-<LI>Wenn die Menübänder in Office 2013 und neuer so wingestellt werden, dass sie nur Registerkarten anzeigen, werden sie von NVDA wie erwartet dargestellt, wenn eine Registerkarte aktiviert wird. (<A HREF="http://community.nvda-project.org/ticket/5504">#5504</A>)
+<LI>Wenn die Menübänder in Office 2013 und neuer so eingestellt werden, dass sie nur Registerkarten anzeigen, werden sie von NVDA wie erwartet dargestellt, wenn eine Registerkarte aktiviert wird. (<A HREF="http://community.nvda-project.org/ticket/5504">#5504</A>)
 <LI>Korrekturen und Verbesserungen beim Erkennen und Einbinden von Touch-Screen-Gesten: (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
 <LI>Wischgesten werden in der Eingabehilfe nicht mehr erkannt. (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
 <LI>Wenn sich in Microsoft Excel ein Kommentar auf eine verbundene Zelle bezieht, wird er korrekt erkannt. (<A HREF="http://community.nvda-project.org/ticket/5704">#5704</A>)
-<LI>Fehler behoben, wonach NVDA in sehr seltenen Fällen den Inhalt von Tabellenblättern in Excel nicht angezeigt hat. (<A HREF="http://community.nvda-project.org/ticket/5705">#5705</A>)
+<LI>Fehler behoben, wonach NVDA in sehr seltenen Fällen den Inhalt von Tabellenblättern in Excel nicht angezeigt hat, während die Option "Spalten- und Reihenüberschriften von Tabellen ansagen" aktiviert ist. (<A HREF="http://community.nvda-project.org/ticket/5705">#5705</A>)
 <LI>Fehler bei der Braille-Anzeige von koreanischen Zeichen behoben. (<A HREF="http://community.nvda-project.org/ticket/5640">#5640</A>)
+<LI>(en) )In Google Chrome, navigating within an Input composition when entering east Asian characters now works as expected. (<A HREF="http://community.nvda-project.org/ticket/4080">#4080</A>)
+<LI>(en) When searching Apple Music in iTunes, browse mode for the search results document is now updated as expected. (<A HREF="http://community.nvda-project.org/ticket/5659">#5659</A>)
+<LI>(en) In Microsoft Excel, pressing shift+f11 to create a new sheet now reports your new position instead of reporting nothing. (<A HREF="http://community.nvda-project.org/ticket/5689">#5689</A>)
+<LI>(en) Fixed problems with braille display output when entering Korean characters. (<A HREF="http://community.nvda-project.org/ticket/5640">#5640</A>)
 </UL>
 
 <H3>Änderungen für Entwickler</H3>
@@ -88,18 +92,18 @@ Schwerpunkte dieser Version sind u.a. eine Option zum Reduzieren der Lautstärke
  </UL>
 <LI>die Brailleausgabe wurde verbessert: (<A HREF="http://community.nvda-project.org/ticket/5609">#5609</A>)
  <UL>
- <LI>Thread-safe braille display drivers can declare themselves as such using the BrailleDisplayDriver.isThreadSafe attribute. A driver must be thread-safe to benefit from the following features.
- <LI>Data is written to thread-safe braille display drivers in the background, thus improving performance.
- <LI>hwIo.Serial extends pyserial to call a callable when data is received instead of drivers having to poll.
- <LI>hwIo.Hid provides support for braille displays communicating via USB HID.
- <LI>hwPortUtils and hwIo can optionally provide detailed debug logging, including devices found and all data sent and received.
+ <LI>(en) Thread-safe braille display drivers can declare themselves as such using the BrailleDisplayDriver.isThreadSafe attribute. A driver must be thread-safe to benefit from the following features.
+ <LI>(en) Data is written to thread-safe braille display drivers in the background, thus improving performance.
+ <LI>(en) hwIo.Serial extends pyserial to call a callable when data is received instead of drivers having to poll.
+ <LI>(en) hwIo.Hid provides support for braille displays communicating via USB HID.
+ <LI>(en) hwPortUtils and hwIo can optionally provide detailed debug logging, including devices found and all data sent and received.
  </UL>
 <LI>neue Eigenschaften für Touch-screen-Gesten: (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
  <UL>
  <LI>Das Objekt MultitouchTracker enthält nun eine Eigenschaft namens childTrackers. Hier werden die einzelnen Teile einer Mehrfachgeste gespeichert. Ein doppeltes Tippen mit zwei Fingern enthält zum Beispiel zwei zweifinger-Tippgesten. Die Zweifinger-Tippgesten enthalten ihrerseits zwei Tippgesten.
  <LI>MultiTouchTracker Objekte enthalten außerdem eine Eigenschaft rawSingleTouchTracker, falls der Tracker das Ergebnis einer Geste ist, die mit einem Finger ausgeführt wird. Der Tracker gestattet Ihnen den Zugriff auf die vom Betriebssystem zurückgegebene ID des Fingers. Er erlaub Ihnen außerdem festzustellen, ob der Finger momentan (noch) den Bildschirm berührt.
  <LI>TouchInputGestures enthalten nun X- und Y-Koordinaten. Dadurch ist es nicht länge nötig, auf den Tracker zuzugreifen.
- <LI>TouchInputGesturs enthalten nun eine Eigenschaft namens preheldTracker.  Diese Eigenschaft gibt über Finger auskunft, die auf dem Bildschirm gehalten werden.
+ <LI>TouchInputGestures enthalten nun eine Eigenschaft namens preheldTracker.  Diese Eigenschaft gibt über Finger auskunft, die auf dem Bildschirm gehalten werden.
  </UL>
 <LI>es werden zwei neue Touchscreen-Gesten erkannt: (<A HREF="http://community.nvda-project.org/ticket/5652">#5652</A>)
  <UL>
