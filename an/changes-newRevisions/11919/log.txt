@@ -1,0 +1,15 @@
+commit 838973ba71fd1860d71733df3f675faeb77c3820
+Author: James Teh <jamie@nvaccess.org>
+Date:   Wed Mar 2 16:47:18 2016 +1000
+
+    Switch to building with Visual Studio 2015. This is mandatory; no other version will work.
+    
+    * Upgrade to Scons 2.4.1 providing support for VC2015
+    * Ignore warning c4091: unnamed typedef enums (in Windows SDK 7.1a dbghelp.h).
+    * fix warnings c4302, c4311, and c4312 (trunkation or extending when casting from a 32 bit type to a 64 bit type or the other way around):
+     * VBuf docHandles are now unsigned longs instead of ints.
+     * Replace all explicit casts from unsigned long to handles (HANDLE, HWND) with UlongToHandle.
+     * Replace all explicit casts from  handles (HANDLE, HWND) to unsigned long with HandleToUlong.
+    * MSHTML vbufBackend: fix syntax of string concatination with a define to be compatibal with VC2015. Strings can now have a suffix letter, thus two strings that should be joined must now contain a space between them.
+    
+    Fixes #5592.
