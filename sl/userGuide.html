@@ -7,7 +7,6 @@
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
 <H2>﻿NVDA 2016.2-dev Uporabniški Vodič</H2>
-<FONT SIZE="4"><I>NVDA 2016.2-dev Uporabniški Vodič</I></FONT><BR>
 </CENTER>
 
 
@@ -161,14 +160,17 @@
     <LI><A HREF="#toc106">12.6. hedo ProfiLine USB</A>
     <LI><A HREF="#toc107">12.7. hedo MobilLine USB</A>
     <LI><A HREF="#toc108">12.8. HumanWare Brailliant BI/B Series</A>
-    <LI><A HREF="#toc109">12.9. BRLTTY</A>
+    <LI><A HREF="#toc109">12.9. HIMS Braille Sense/Braille EDGE/Smart Beetle Serija</A>
+    <LI><A HREF="#toc110">12.10. HIMS SyncBraille</A>
+    <LI><A HREF="#toc111">12.11. Brajeve Vrstice Seika</A>
+    <LI><A HREF="#toc112">12.12. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc110">13. Brajeve okrajšave stanja in tipov kontrolnika</A>
-  <LI><A HREF="#toc111">14. Napredne Vsebine</A>
+  <LI><A HREF="#toc113">13. Brajeve okrajšave stanja in tipov kontrolnika</A>
+  <LI><A HREF="#toc114">14. Napredne Vsebine</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">14.1. Možnosti Ukazne Vrstice</A>
     </UL>
-  <LI><A HREF="#toc113">15. Druge Informacije</A>
+  <LI><A HREF="#toc116">15. Druge Informacije</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -254,14 +256,16 @@ Več podrobnosti je na voljo <A HREF="http://www.gnu.org/licenses/old-licenses/g
 <H2>2. Sistemske Zahteve</H2>
 
 <UL>
-<LI>Operacijski Sistemi: vse 32-bitne in 64-bitne različice sistema Windows XP, Viste, 7, 8 in 10 (vključno s Strežniškimi različicami)
+<LI>Operacijski Sistemi: vse 32-bitne in 64-bitne različice sistema Windows XP, Viste, 7, 8, 8.1 in 10 (vključno s Strežniškimi različicami)
  <UL>
  <LI>V 32-bitni različici sistema Windows XP mora biti nameščen vsaj drugi paket popravkov (SP2) za uporabo z NVDA.
  <LI>V 32-bitni različici sistema Windows Server 2003 mora biti nameščen vsaj prvi paket popravkov (SP1) za uporabo z NVDA.
+ <LI>Za nemoteno delovanje v sistemu Windows Vista, mora biti v sistemu nameščen drugi paket popravkov in popravek <A HREF="https://support.microsoft.com/en-us/kb/2763674">KB2763674</A>.
+  Vse to bi moralo že biti nameščeno v sistemu prek Okenskih nadgradenj (Windows Update), če so bile nameščene vse posodobitve, ki so na voljo.
  </UL>
 <LI>Pomnilnik: 256 MB RAMa ali več
 <LI>Procesorska hitrost: 1,0  GHz ali hitrejši
-<LI>Približno 50 MB prostora na disku
+<LI>Približno 90 MB prostora na disku
 </UL>
 
 <A NAME="toc9"></A>
@@ -302,8 +306,8 @@ Ločeno od tega, da se NVDA ne more samodejno zagnati pred in/ali po prijavi, im
 <UL>
 <LI>Nezmožnost biti v interakciji s programi, ki tečejo s skrbniškimi pravicami, dokler seveda tudi NVDA sama ne teče z istimi pravicami (ni priporočljivo).
 <LI>Nezmožnost branja zaslonov Nadzora Uporabniškega računa (NURR), ko se poskuša zagnati program s skrbniškimi pravicami.
-<LI>Windows 8: nezmožnost podpirati vnos preko zaslona na dotik.
-<LI>Windows 8: nezmožnost oskrbeti značilnosti, kot so recimo Brskalniško delovanje in izgovor natipkanih znakov v Trgovini Windows programčkov.
+<LI>Windows 8 in kasnejši: nezmožnost podpirati vnos preko zaslona na dotik.
+<LI>Windows 8 in kasnejši: nezmožnost oskrbeti značilnosti, kot so recimo Brskalniško delovanje in izgovor natipkanih znakov v Trgovini Windows programčkov.
 </UL>
 
 <A NAME="toc11"></A>
@@ -1017,7 +1021,7 @@ Za pregled besedila so na voljo naslednji ukazi:
 <TD>NVDA+f10</TD>
 <TD>NVDA+f10</TD>
 <TD>brez</TD>
-<TD>Preslika od položaja pregledne utripalke v danem trenutku določenega z ukazom  Preslikava od pregledne utripalke, do trenutnega položaja pregledne utripalke. Po pritisku te tipke se bo besedilo preslikalo v odložišče Oken.</TD>
+<TD>Preslika vsebino od položaja pregledne utripalke v danem trenutku že prej določenega z ukazom  Preslikava od pregledne utripalke, do vključno trenutnega položaja pregledne utripalke. Po pritisku te tipke se bo besedilo preslikalo v odložišče Oken.</TD>
 </TR>
 <TR>
 <TD>Sporoči oblikovanje besedila</TD>
@@ -1551,15 +1555,15 @@ V Seznamu Elementov lahko pridete do teh informacij:
 </P>
 
 <UL>
-<LI>Grafikon: Ta razvrsti vse grafikone v delovnem zvezksu
+<LI>Grafikoni: Ta razvrsti vse grafikone na aktivnem delovnem listu
 Izbira grafikona in pritisk tipke Enter ali gumba Premakni se na, v ospredje postavi grafikon, da se lahko pomikate po njem in ga berete s puščicami. 
-<LI>Komentar: Ta izbor razvrsti vse celice v delovnem zvezku s komentarji.
+<LI>Komentarji: Ta izbor razvrsti vse celice na aktivnem delovnem listu s komentarji.
 Naslov celice skupaj s komentarjem se prikazuje za vsako celico.
 Pritisk tipke Enter ali gumba Premakni se na nad izbranim komentarjem, vas bo premaknil na natančno to celico.
-<LI>Formula: Ta izbor razvrsti vse celice v delovnem zvezku, ki vsebujejo formule.
+<LI>Formule: Ta izbor razvrsti vse celice na delovnem listu, ki vsebujejo formule.
 Naslov celice se prikazuje skupaj s formulo in to velja za vsako celico.
 Pritisk tipke Enter ali gumba Premakni se na, nad izbrano formulo, vas bo pomaknil neposredno v celico s to vsebino.
-<LI>Delovni list: Ta izbor razvrsti vse delovne liste v delovnem zvezku.
+<LI>Delovni listi: Ta izbor razvrsti vse delovne liste v delovnem zvezku.
 Izbrani list lahko s pritiskom tipke f2 preimenujete.
 Pritisk tipke Enter ali gumba Premakni se na, vas bo pomaknil na ta list.
 </UL>
@@ -1701,7 +1705,7 @@ Vsebuje naslednje možnosti:
 <H5>Jezik</H5>
 
 <P>
-Spustni seznam, kjer izbirate jezik, v katerem naj se prikazuje NVDA uporabniški vmesnik in sporočila.
+To je spustni seznam, kjer izbirate jezik, v katerem naj se prikazuje NVDA uporabniški vmesnik in sporočila.
 Na voljo je veliko jezikov, privzeto pa NVDA upošteva sistemski jezik "Windows".
 Možnost Privzeto pove NVDA, da naj uporabi jezik operacijskega sistema, ki je trenutno nastavljen.
 </P>
@@ -1711,7 +1715,7 @@ NVDA vas bo vprašala, če jo želite ponovno zagnati, v primeru, da spremenite 
 Pritisnite V redu in NVDA se bo ponovno naložila.
 </P>
 
-<H5>Shrani Konfiguracijo ob Izhodu</H5>
+<H5>Shrani konfiguracijo ob izhodu</H5>
 
 <P>
 Ta možnost v obliki izbirnika, ko je izbrana, pove NVDA, da naj ob izhodu trenutno konfiguracijo samodejno shrani.
@@ -1746,18 +1750,18 @@ Toda, če želite poslati poročilo o napaki, potem je to uporabna možnost.
 Ta možnost je na voljo samo v nameščenih kopijah NVDA.
 </P>
 
-<H5>Uporabljaj NVDA na prijavnem zaslonu v Okna (potrebujete skrbniške pravice)</H5>
+<H5>Uporabljaj NVDA na Prijavnem zaslonu v Okna (potrebujete skrbniške pravice)</H5>
 
 <P>
 Če se v Okna prijavljate z uporabniškim imenom in geslom, se ob vključitvi te možnosti NVDA zaganja samodejno na prijavnem zaslonu.
 Ta možnost je na voljo samo v nameščenih kopijah NVDA.
 </P>
 
-<H5>Uporabljaj trenutno shranjene nastavitve na prijavnem zaslonu in drugih "varnih" namizjih</H5>
+<H5>Uporabljaj trenutno shranjene nastavitve na prijavnem zaslonu in drugih "varnih" namizjih (potrebujete skrbniške pravice)</H5>
 
 <P>
 Pritisk tega gumba preslika trenutno shranjene uporabniške nastavitve v imenik sistemskih nastavitev za NVDA, tako bo NVDA uporabljala te nastavitve, ko bo tekla ob prijavi, ob NUR Nadzoru uporabniških računov in drugih varnih namizjih v Oknih.
-Da se bodo zagotovo preslikale vse vaše nastavitve, najprej shranite vaše nastavitve s control+NVDA+c ali shranite konfiguracijo v meniju NVDA.
+Da se bodo zagotovo preslikale vse vaše nastavitve, najprej shranite vaše nastavitve s control+NVDA+c ali shranite konfiguracijo v meniju NVDA z ukazom Shrani konfiguracijo.
 Ta možnost je na voljo samo v nameščenih kopijah NVDA.
 </P>
 
@@ -1795,6 +1799,21 @@ To je uporabno za tiste, ki želijo NVDA uporabljati samo z brajem ali za videč
 <P>
 Ta možnost vam omogoča izbiro zvočne kartice, preko katere naj NVDA napoti zvok govorne sinteze.
 </P>
+
+<H5>Delovanje Stišanja Zvokov</H5>
+
+<P>
+Tipka: NVDA+shift+d
+</P>
+<P>
+V sistemu Windows 8 in novejših vam ta možnost omogoča, da NVDA zniža glasnost ostalih zvokov, ko NVDA govori ali stalno, ko NVDA teče.
+</P>
+
+<UL>
+<LI>Brez Stišanja: NVDA ne bo nikoli stišala (znižala glasnosti) ostalih zvokov.
+<LI>Stišaj, ko NVDA govori ali oddaja lastne zvoke: NVDA bo znižala glasnost ostalih zvokov samo takratk, ko bo sama govorila ali oddajala lastne zvoke.
+<LI>Vedno stišaj: Ostali zvoki se bodo predvajali na naižji glasnosti ves čas medtem, ko bo NVDA v pogonu.
+</UL>
 
 <A NAME="VoiceSettings"></A>
 <H4>9.1.3. Nastavitve Glasu(NVDA+control+v)</H4>
@@ -2027,10 +2046,24 @@ Opozarjamo, da je ta možnost uporabna samo, če imate na vaši brajevi vrstici 
 Ta možnost omogoča prikaz besede, ki se nahaja pod utripalko, v pravi računalniški brajici.
 </P>
 
-<H5>Utripalkina Hitrost Utripanja</H5>
+<H5>Prikaži Utripalko</H5>
+
+<P>
+Ta možnost omogoča vključitev in izkljčitev brajeve utripalke.
+To velja za sistemsko kazalko in pregledno utripalko, ne velja pa za indikator izbire.
+</P>
+
+<H5>Hitrost Utripanja Utripalke</H5>
 
 <P>
 Ta možnost je številčno polje, ki vam omogoča spremembo hitrosti utripanja utripalke v milisekundah.
+</P>
+
+<H5>Oblika Utripalke</H5>
+
+<P>
+Ta možnost vam omogoča izbiro oblike (vzorca pik), ki bo prikazoval položaj brajeve utripalke.
+Ta možnost ne vpliva na indikator izbire.
 </P>
 
 <H5>Prikaz Sporočila (v sekundah)</H5>
@@ -3224,7 +3257,7 @@ Samo za Focus 80:
 <P>
 Tako ALVA BC640 kot BC680 brajeva vrstica iz <A HREF="http://www.optelec.com/">podjetja Optelec</A> sta podprti, ko se na računalnik priključita prek USB ali bluetooth povezave.
 Za uporabo teh vrstic ne potrebujete nobenih posebnih gonilnikov, ki bi morali biti nameščeni v sistem.
-Potrebno je samo, da se vrstica prključi in nastavi NVDA.
+Potrebno je samo, da se vrstica priključi in nastavi NVDA.
 </P>
 <P>
 Modeli teh vrstic z brajevo tipkovnico pretvarjajo brajeve vnose v besedilo sami.
@@ -3457,7 +3490,7 @@ To vključuje:
 </P>
 
 <UL>
-<LI>Baum: SuperVario, PocketVario, VarioUltra (samo Bluetooth), Pronto! (samo Bluetooth)
+<LI>Baum: SuperVario, PocketVario, VarioUltra, Pronto!
 <LI>HumanWare: Brailliant, BrailleConnect
 <LI>APH: Refreshabraille
 </UL>
@@ -3466,8 +3499,7 @@ To vključuje:
 Verjetno dela še nekaj drugih vrstic izdelovalca Baum, vendar niso bile testirane.
 </P>
 <P>
-Če boste vrstice priljučili prek USB povezave, boste morali najprej namestiti gonilnik, ki ga je oskrbel izdelovalec.
-Za pravilno delovanje APH Refreshabraille mora biti delovanje USB nastavljeno na serijski način.
+Če boste vrstice priključili prek USB povezave (razen VarioUltra, Pronto!) ali pa boste priključili vrstico prek vključenega delovanja "HID", boste morali najprej namestiti gonilnik, ki ga je oskrbel izdelovalec.
 </P>
 <P>
 Sledeče tipke so prirejene za delovanje skupaj z NVDA.
@@ -3631,7 +3663,8 @@ Prosimo, oglejte si dokumentacijo za točen opis položaja posamezne tipke.
 
 <P>
 Brailliant BI in B seriji vrstic iz podjetja <A HREF="http://www.humanware.com/">HumanWare</A>, vključno z BI 32, BI 40 in B 80, sta podprti, ko jih rpiključimo prek USB ali bluetooth povezave.
-Če jih v sistem želite priključiti prek USB povezave, morate najprej namestiti gonilnik, ki ga je oskrbel izdelovalec.
+Če jih v sistem želite priključiti prek USB povezave in protokola HumanWare, morate najprej namestiti gonilnik, ki ga je oskrbel izdelovalec.
+USB gonilnikov ne potrebujete, če bo vrstica delala prek protokola OpenBraille.
 </P>
 <P>
 Sledeče tipke so prirejene za delovanje z NVDA.
@@ -3726,7 +3759,322 @@ Prosimo, poglejte si dokumentacijo vrstice za opis točnega položaja posamezne 
 </TABLE>
 
 <A NAME="toc109"></A>
-<H3>12.9. BRLTTY</H3>
+<H3>12.9. HIMS Braille Sense/Braille EDGE/Smart Beetle Serija</H3>
+
+<P>
+NVDA podpira Braille Sense, Braille EDGE in vrstice Smart Beetle is podjetja <A HREF="http://www.hims-inc.com/">Hims</A> ko jih priključite prek USB ali bluetooth. 
+Če jih priključujete prek USB, boste morali v sistem namestiti USB gonilnike, ki jih je dobavilo podjetje HIMS.
+Te lahko prenesete s te spletne strani: <A HREF="http://www.himsintl.com/?c=2/13&amp;uid=2319">http://www.himsintl.com/?c=2/13&amp;uid=2319</A>
+</P>
+<P>
+Sledijo tipke, ki so pripete k posameznim NVDA ukazom.
+Prosimo, oglejte si dokumentacijo posamezne vrstice, za točno lokacijo posamezne tipke.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Ime</TH>
+<TH>Tipka</TH>
+</TR>
+<TR>
+<TD>Zavrti brajevo vrstico nazaj</TD>
+<TD>left side scroll down</TD>
+</TR>
+<TR>
+<TD>Zavrti brajevo vrstico naprej</TD>
+<TD>right side scroll down</TD>
+</TR>
+<TR>
+<TD>Pomakni brajevo vrstico v predhodno vrstico</TD>
+<TD>left side scroll up</TD>
+</TR>
+<TR>
+<TD>Pomakni brajevo vrstico v naslednjo vrstico</TD>
+<TD>right side scroll up</TD>
+</TR>
+<TR>
+<TD>Usmeri na brajevo celico</TD>
+<TD>routing</TD>
+</TR>
+<TR>
+<TD>tipka shift+tab</TD>
+<TD>dot1+dot2+space</TD>
+</TR>
+<TR>
+<TD>tipka alt</TD>
+<TD>dot1+dot3+dot4+Space</TD>
+</TR>
+<TR>
+<TD>tipka escape</TD>
+<TD>dot1+dot5+Space</TD>
+</TR>
+<TR>
+<TD>tipka tab</TD>
+<TD>dot4+dot5+Space</TD>
+</TR>
+<TR>
+<TD>tipka enter</TD>
+<TD>dot8</TD>
+</TR>
+<TR>
+<TD>tipka vračalka</TD>
+<TD>dot7</TD>
+</TR>
+<TR>
+<TD>tipka puščicaGor</TD>
+<TD>dot1+Space</TD>
+</TR>
+<TR>
+<TD>tipka puščicaDol</TD>
+<TD>dot4+Space</TD>
+</TR>
+<TR>
+<TD>capsLock</TD>
+<TD>dot1+dot3+dot6+space</TD>
+</TR>
+<TR>
+<TD>tipka shift+alt+tab</TD>
+<TD>advance2+advance3+advance1</TD>
+</TR>
+<TR>
+<TD>tipkaalt+tab</TD>
+<TD>advance2+advance3</TD>
+</TR>
+<TR>
+<TD>tipka konec</TD>
+<TD>dot4+dot6+space</TD>
+</TR>
+<TR>
+<TD>tipka Control+konec</TD>
+<TD>dot4+dot5+dot6+space</TD>
+</TR>
+<TR>
+<TD>tipka začetek</TD>
+<TD>dot1+dot3+space</TD>
+</TR>
+<TR>
+<TD>tipka control+začetek</TD>
+<TD>dot1+dot2+dot3+space</TD>
+</TR>
+<TR>
+<TD>tipka puščicaLevo</TD>
+<TD>dot3+space</TD>
+</TR>
+<TR>
+<TD>tipka control+shift+puščicaLevo</TD>
+<TD>dot2+dot8+space+advance1</TD>
+</TR>
+<TR>
+<TD>tipka control+puščicaLevo</TD>
+<TD>dot2+space</TD>
+</TR>
+<TR>
+<TD>tipka shift+alt+puščicaLevo</TD>
+<TD>dot2+dot7+advance1</TD>
+</TR>
+<TR>
+<TD>tipka alt+puščicaLevo</TD>
+<TD>dot2+dot7</TD>
+</TR>
+<TR>
+<TD>tipka puščicaDesno</TD>
+<TD>dot6+space</TD>
+</TR>
+<TR>
+<TD>tipka control+shift+puščicaDesno</TD>
+<TD>dot5+dot8+space+advance1</TD>
+</TR>
+<TR>
+<TD>tipka control+puščicaDesno</TD>
+<TD>dot5+space</TD>
+</TR>
+<TR>
+<TD>tipka shift+alt+puščicaDesno</TD>
+<TD>dot5+dot7+advance1</TD>
+</TR>
+<TR>
+<TD>tipka alt+puščicaDesno</TD>
+<TD>dot5+dot7</TD>
+</TR>
+<TR>
+<TD>tipka stranGor</TD>
+<TD>dot1+dot2+dot6+space</TD>
+</TR>
+<TR>
+<TD>tipka control+stranGor</TD>
+<TD>dot1+dot2+dot6+dot8+space</TD>
+</TR>
+<TR>
+<TD>tipka control+shift+puščicaGor</TD>
+<TD>dot2+dot3+dot8+space+advance1</TD>
+</TR>
+<TR>
+<TD>tipka control+puščicaGor</TD>
+<TD>dot2+dot3+space</TD>
+</TR>
+<TR>
+<TD>tipka shift+alt+puščicaGor</TD>
+<TD>dot2+dot3+dot7+advance1</TD>
+</TR>
+<TR>
+<TD>tipka alt+puščicaGor</TD>
+<TD>dot2+dot3+dot7</TD>
+</TR>
+<TR>
+<TD>tipka shift+puščicaGor</TD>
+<TD>left side scroll down + space</TD>
+</TR>
+<TR>
+<TD>tipka stranDol</TD>
+<TD>dot3+dot4+dot5+space</TD>
+</TR>
+<TR>
+<TD>tipka control+stranDol</TD>
+<TD>dot3+dot4+dot5+dot8+space</TD>
+</TR>
+<TR>
+<TD>tipka control+shift+puščicaDol</TD>
+<TD>dot5+dot6+dot8+space+advance1</TD>
+</TR>
+<TR>
+<TD>tipka control+puščicaDol</TD>
+<TD>dot5+dot6+space</TD>
+</TR>
+<TR>
+<TD>tipka shift+alt+puščicaDol</TD>
+<TD>dot5+dot6+dot7+advance1</TD>
+</TR>
+<TR>
+<TD>tipka alt+puščicaDol</TD>
+<TD>dot5+dot6+dot7</TD>
+</TR>
+<TR>
+<TD>tipka shift+puščicaDol</TD>
+<TD>right side scroll down + space</TD>
+</TR>
+<TR>
+<TD>tipka briši</TD>
+<TD>dot1+dot3+dot5+space</TD>
+</TR>
+<TR>
+<TD>tipka f1</TD>
+<TD>dot1+dot2+dot5+space</TD>
+</TR>
+<TR>
+<TD>tipka f3</TD>
+<TD>dot1+dot2+dot4+dot8</TD>
+</TR>
+<TR>
+<TD>tipka f4</TD>
+<TD>dot7+advance3</TD>
+</TR>
+<TR>
+<TD>tipka windows+b</TD>
+<TD>dot1+dot2+advance1</TD>
+</TR>
+<TR>
+<TD>tipka windows+d</TD>
+<TD>dot1+dot4+dot5+advance1</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc110"></A>
+<H3>12.10. HIMS SyncBraille</H3>
+
+<P>
+NVDA podpira vrstico SyncBraille iz <A HREF="http://www.hims-inc.com/">HIMS</A>.
+V sistem boste morali namestiti USB gonilnike, ki jih je pripravilo podjetje HIMS.
+</P>
+<P>
+Sledijo kombinacije tipk, ki so pripete k NVDA ukazom.
+Prosimo, oglejte si dokumentacijo vrstice za točno lokacijo posamezne tipke.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Ime</TH>
+<TH>Tipka</TH>
+</TR>
+<TR>
+<TD>Zavrti brajevo vrstico nazaj</TD>
+<TD>left side scroll down</TD>
+</TR>
+<TR>
+<TD>Zavrti brajevo vrstico naprej</TD>
+<TD>right side scroll down</TD>
+</TR>
+<TR>
+<TD>Usmeri na brajevo celico</TD>
+<TD>routing</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc111"></A>
+<H3>12.11. Brajeve Vrstice Seika</H3>
+
+<P>
+Brajeve vrstice Seika v različici 3, 4 in 5 (40 celic) in Seika80 (80 celic) iz podjetja <A HREF="http://www.nippontelesoft.com/">Nippon Telesoft</A> NVDA podpira.
+Več informacij o teh vrsticah lahko najdete na <A HREF="http://www.seika-braille.com/">http://www.seika-braille.com/</A>.
+Obvezno morate najprej namestiti USB gonilnike, ki ste jih prejeli s strani proizvajalca.
+</P>
+<P>
+Sledijo tipke, ki so pripete k NVDA ukazom.
+Prosimo, oglejte si dokumentacijo vrstic za opis točne lokacije, kjer lahko posamezne tipke najdete.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Ime</TH>
+<TH>Tipka</TH>
+</TR>
+<TR>
+<TD>Zavrti brajevo vrstico nazaj</TD>
+<TD>left</TD>
+</TR>
+<TR>
+<TD>Zavrti brajevo vrstico naprej</TD>
+<TD>right</TD>
+</TR>
+<TR>
+<TD>Pomakni brajevo vrstico v predhodno vrstico</TD>
+<TD>b3</TD>
+</TR>
+<TR>
+<TD>Pomakni brajevo vrstico v naslednjo vrstico</TD>
+<TD>b4</TD>
+</TR>
+<TR>
+<TD>Preklapljaj zvezanost braja na</TD>
+<TD>b5</TD>
+</TR>
+<TR>
+<TD>Izgovori vse</TD>
+<TD>b6</TD>
+</TR>
+<TR>
+<TD>tab</TD>
+<TD>b1</TD>
+</TR>
+<TR>
+<TD>shift+tab</TD>
+<TD>b2</TD>
+</TR>
+<TR>
+<TD>alt+tab</TD>
+<TD>b1+b2</TD>
+</TR>
+<TR>
+<TD>NVDA Meni</TD>
+<TD>left+right</TD>
+</TR>
+<TR>
+<TD>Usmeri na brajevo celico</TD>
+<TD>routing</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc112"></A>
+<H3>12.12. BRLTTY</H3>
 
 <P>
 <A HREF="http://mielke.cc/brltty/">BRLTTY</A> je program neodvisen od NVDA, ki pa ga vseeno lahko uporabimo zaradi podpore večjega števila brajevih vrstic.
@@ -3770,7 +4118,7 @@ Prosimo, poglejte <A HREF="http://mielke.cc/brltty/doc/KeyTables/">BRLTTY dokume
 </TR>
 </TABLE>
 
-<A NAME="toc110"></A>
+<A NAME="toc113"></A>
 <H2>13. Brajeve okrajšave stanja in tipov kontrolnika</H2>
 
 <P>
@@ -3911,7 +4259,7 @@ Definirani so tudi sledeči indikatorji stanj kontrolnikov:
 </TR>
 </TABLE>
 
-<A NAME="toc111"></A>
+<A NAME="toc114"></A>
 <H2>14. Napredne Vsebine</H2>
 
 <A NAME="CommandLineOptions"></A>
@@ -4045,7 +4393,7 @@ NVDA pozna naslednje možnosti ukazne vrstice:
 </TR>
 </TABLE>
 
-<A NAME="toc113"></A>
+<A NAME="toc116"></A>
 <H2>15. Druge Informacije</H2>
 
 <P>
