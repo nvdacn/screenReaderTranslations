@@ -1,0 +1,14 @@
+commit 284e670719b0a3e054bceef8a696df3c741ed5b3
+Author: Renaud Paquay <rpaquay@google.com>
+Date:   Wed Feb 3 10:34:38 2016 -0800
+
+    NVDA no longer reports extraneous information when switching windows in a Java application with multiple windows such as IntelliJ or Android Studio.
+    
+    Previously, NVDA incorrectly assumed a vmid mapped to a single hwnd. However, a Java application can have many top level frames, each mapping to its own hwnd.
+    To fix this:
+    * Use getTopLevelObject and getHWNDFromAccessibleContext to retrieve the hwnd of a given vmid/accessible context.
+    * Fallback to using a "last known" hwnd cache when the above fails.
+    * Keep track of the hwnd when firing event_gainFocus and event_caret so that we don't need to retrieve the hwnd using both methods above when processing those events.
+    * Use jab context only for equality, ignore window handles. Given comparing accessible context for equality does not require valid windows handles, and given that retrieving window handles for accessible context is not 100% reliable, we implement the JAB(Window)._isEqual method to be similar to UIA(Window): Compare the accessible components, and ignore the window handles.
+    
+    Fixes #5732. Closes #5733 (PR).
