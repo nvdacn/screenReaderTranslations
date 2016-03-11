@@ -5,6 +5,7 @@ import re
 import subprocess
 from addresses import addresses, email
 import poChecker
+from db import DB
 
 SRT_PATH = "/home/nvdal10n/mr/srt"
 SCRIPTS_PATH = os.path.join(SRT_PATH, "scripts")
@@ -49,6 +50,17 @@ for po in poFiles:
         import traceback
         body += "\n\n\nError checking %s:\n%s" % (po, traceback.format_exc())
         hasAlert = True
+
+# Check any settings files in this commit.
+files = re.findall(r'(?<=[AM]\s)/[^/]+/settings', body)
+for f in files:
+    f = f[1:]
+    path = os.path.join(SRT_PATH, f)
+    try:
+        DB(path)
+    except Exception as e:
+        hasAlert = True
+        body += "\n\n\nError in %s: %s" % (f, e)
 
 # Convert any t2t files in this commit.
 # The t2t conversion code operates per language.
