@@ -28,7 +28,7 @@ else
     fi
 
     # process each t2t file individually to make it easier to spot errors in output.
-    ls -1 *.t2t | while read file; do
+    for file in *.t2t; do
         if ! output=$(txt2tags -q $file 2>&1); then
             result=3
             echo $lang: Error processing $file:
