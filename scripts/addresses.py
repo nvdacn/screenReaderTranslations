@@ -144,6 +144,10 @@ addresses = {
         'lang': 'Portuguese',
         'email': ['Diogo Costa <diogojoca@gmail.com>', 'Rui Batista <ruiandrebatista@gmail.com>', 'Rui Fontes <rui.fontes@tiflotecnia.com>'],
     },
+    'ro': {
+        'lang': 'Romanian',
+        'email': ['Dan Punga <dan.punga@gmail.com>'],
+    },
     'ru': {
         'lang': 'Russian',
         'email': ['Ruslan Kolodyazhni <eye0@rambler.ru>', 'Ruslan Shukhanov <ru2020slan@yandex.ru>', 'Beqa Gozalishvili <beqaprogger@gmail.com>', "Aleksandr Lin'kov <kvark128@yandex.ru>", 'alexander Yashin <a.jaszyn@ya.ru>'],
