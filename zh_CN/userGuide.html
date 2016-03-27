@@ -3,11 +3,10 @@
 <HEAD>
 <META NAME="generator" CONTENT="http://txt2tags.org">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE>NVDA 2015.4-dev 用户指南</TITLE>
+<TITLE>NVDA 2016.2-dev 用户指南</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
-<H2>﻿NVDA 2015.4-dev 用户指南</H2>
-<FONT SIZE="4"><I>NVDA 2015.4-dev 用户指南</I></FONT><BR>
+<H2>﻿NVDA 2016.2-dev 用户指南</H2>
 </CENTER>
 
 
@@ -161,7 +160,7 @@
     <LI><A HREF="#toc106">12.6. hedo ProfiLine USB</A>
     <LI><A HREF="#toc107">12.7. hedo MobilLine USB</A>
     <LI><A HREF="#toc108">12.8. HumanWare Brailliant BI/B Series</A>
-    <LI><A HREF="#toc109">12.9. HIMS Braille Sense/Braille EDGE Series</A>
+    <LI><A HREF="#toc109">12.9. HIMS Braille Sense/Braille EDGE/Smart Beetle Series</A>
     <LI><A HREF="#toc110">12.10. HIMS SyncBraille</A>
     <LI><A HREF="#toc111">12.11. Seika Braille Displays</A>
     <LI><A HREF="#toc112">12.12. Papenmeier BRAILLEX Newer Models</A>
@@ -248,7 +247,7 @@ NVDA 支持多种语言的简写或非简写点字和电脑点字。
 <H3>1.5. 许可证与著作权</H3>
 
 <P>
- NVDA版权归 2006-2015  NVDA 贡献者。
+ NVDA版权归 2006-2016  NVDA 贡献者。
 </P>
 <P>
 NVDA 受到《GNU 通用公共许可证条款(第二版)》的保护。 
@@ -264,9 +263,11 @@ NVDA 受到《GNU 通用公共许可证条款(第二版)》的保护。
 <LI>操作系统： 所有32位或者64位的Windows XP、 Windows Vista、 Windows 7、Windows 8和 Windows 10(包括服务器系统)。
 <LI>对于 Windows XP 32位版本，NVDA 要求 SP2 以上。
 <LI>对于 Windows Server 2003版本， NVDA 要求 SP1 或者更高。
+<LI>对于 Windows Vista， NVDA 要求 Service Pack 2 和 <A HREF="https://support.microsoft.com/en-us/kb/2763674">KB2763674</A>更新。
+如果这两个更新项目在 Windows Update 军可用，所有的更新都必须执行。
 <LI>内存：需要 256MB 或以上 
 <LI>处理器速率：1.0Ghz或以上 
-<LI>约需要50 MB 的磁盘空间。
+<LI>约需要90 MB 的磁盘空间。
 </UL>
 
 <A NAME="toc9"></A>
@@ -1029,7 +1030,7 @@ NVDA 允许您按照字、词、行的方式朗读<A HREF="#ScreenReview">屏幕
 <TD>NVDA+f</TD>
 <TD>NVDA+f</TD>
 <TD>无</TD>
-<TD>朗读浏览光标当前所在位置的文本的格式信息。</TD>
+<TD>朗读浏览光标当前所在位置的文本的格式信息，连按两次可使用浏览模式在格式信息之间导航。</TD>
 </TR>
 </TABLE>
 
@@ -1552,7 +1553,7 @@ NVDA 可在您浏览 Excel 工作表时自动读出恰当的行列标题。
 <UL>
 <LI>图表： 这里列举了工作表的所有图表。
 使用光标键选择一个图表后按下“回车键”或点击“移动到”按钮可聚焦到所选的图表。
-<LI>这里列举了所有包含注释的单元格。
+-注释：这里列举了所有包含注释的单元格。
 单元格地址和其所属的注释都会被显示在这里。
 按下“回车键”或点击“移动到”按钮可以直接移动到所选注释的单元格内。
 <LI>公式：这里列举了工作表中所有包含公式的单元格。
@@ -1795,6 +1796,21 @@ NVDA 支持的合成器列表可以在<A HREF="#SupportedSpeechSynths">支持的
 此选项允许您选择 NVDA 控制合成气进行语音输出时使用的声卡。
 </P>
 
+<H5>音频闪避模式</H5>
+
+<P>
+按键: NVDA+shift+d
+</P>
+<P>
+在 Windows 8 或以上版本的操作系统中，此选项允许您选择，是否在 NVDA 朗读时，亦或是在 NVDA 运行时，减小其他程序的声音。
+</P>
+
+<UL>
+<LI>从不闪避： NVDA 将不会减小其他声音的音量。
+<LI>输出语音或声音时闪避：仅当在 NVDA 朗读或播放声音时减小其他声音的音量。这可能不能作用于所有合成器。
+<LI>总是闪避：在 NVDA 运行的全过程中，其他音频音量会被保持在一个较低的水平上。
+</UL>
+
 <A NAME="VoiceSettings"></A>
 <H4>9.1.3. 语音设置 (NVDA+control+v)</H4>
 
@@ -2026,10 +2042,25 @@ NVDA现在只支持电脑盲文点字的输入，因此，只有八点点字表�
 此选项允许把光标下面的单词用没有缩写的电脑盲文点字进行显示。
 </P>
 
-<H5>光标闪烁频率</H5>
+<H5>显示光标</H5>
+
+<P>
+此选项允许您对点字光标进行开关
+该设置会应用到系统输入焦点和浏览光标，而并不会作用于选择指示器。
+换言之，此选项对选择指示器无效。
+</P>
+
+<H5>光标闪烁频率(以毫秒为单位)</H5>
 
 <P>
 此选项是一个数字区域，允许您以毫秒为单位更改光标的闪烁速度。
+</P>
+
+<H5>光标形状</H5>
+
+<P>
+此选项允许您选择点字光标的形状(极点字样式)。
+此选项对选择指示器无效。
 </P>
 
 <H5>消息显示时间(以秒为单位)</H5>
@@ -3455,7 +3486,7 @@ These include:
 </P>
 
 <UL>
-<LI>Baum: SuperVario, PocketVario, VarioUltra (Bluetooth only), Pronto! (Bluetooth only)
+<LI>Baum: SuperVario, PocketVario, VarioUltra, Pronto!
 <LI>HumanWare: Brailliant, BrailleConnect
 <LI>APH: Refreshabraille
 </UL>
@@ -3464,8 +3495,7 @@ These include:
 Some other displays manufactured by Baum may also work, though this has not been tested.
 </P>
 <P>
-If connecting via USB, you must first install the USB drivers provided by the manufacturer.
-For the APH Refreshabraille, the USB mode must be set to serial.
+If connecting via USB to displays other than the VarioUltra, Pronto! or Refreshabraille with USB mode set to HID, you must first install the USB drivers provided by the manufacturer.
 </P>
 <P>
 Following are the key assignments for this display with NVDA.
@@ -3629,7 +3659,8 @@ Please see the display's documentation for descriptions of where these keys can 
 
 <P>
 The Brailliant BI and B series of displays from <A HREF="http://www.humanware.com/">HumanWare</A>, including the BI 32, BI 40 and B 80, are supported when connected via USB or bluetooth.
-If connecting via USB, you must first install the USB drivers provided by the manufacturer.
+If connecting via USB with the protocol set to HumanWare, you must first install the USB drivers provided by the manufacturer.
+USB drivers are not required if the protocol is set to OpenBraille.
 </P>
 <P>
 Following are the key assignments for this display with NVDA.
@@ -3724,14 +3755,13 @@ Please see the display's documentation for descriptions of where these keys can 
 </TABLE>
 
 <A NAME="toc109"></A>
-<H3>12.9. HIMS Braille Sense/Braille EDGE Series</H3>
+<H3>12.9. HIMS Braille Sense/Braille EDGE/Smart Beetle Series</H3>
 
 <P>
 NVDA supports Braille Sense and Braille EDGE displays from <A HREF="http://www.hims-inc.com/">Hims</A> when connected via USB or bluetooth. 
+NVDA supports Braille Sense, Braille EDGE and Smart Beetle displays from <A HREF="http://www.hims-inc.com/">Hims</A> when connected via USB or bluetooth. 
 If connecting via USB, you will need to install the USB drivers from HIMS on your system.
-You can download these from the HIMS Resource Center: <A HREF="http://www.hims-inc.com/resource-center/">http://www.hims-inc.com/resource-center/</A>
-On this page, select your device and download the driver in the Window-Eyes section.
-Although the section only mentions Window-Eyes, this is a general USB driver which will work with NVDA as well.
+You can download these from this page: <A HREF="http://www.himsintl.com/?c=2/13&amp;uid=2319">http://www.himsintl.com/?c=2/13&amp;uid=2319</A>
 </P>
 <P>
 Following are the key assignments for these displays with NVDA.
