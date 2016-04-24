@@ -37,7 +37,7 @@ As características principais são:
 ++ Suporte de Sintetizadores de Voz ++
 Para além de fornecer as mensagens e interface em diversos idiomas, o NVDA também pode permitir ao utilizador a leitura em qualquer idioma, desde  que tenha um sintetizador de voz, que o possa falar.
 
-O NVDA trás incluso o [eSpeak http://espeak.sourceforge.net/], um sintetizador de voz livre, de código aberto e multi-idioma. 
+O NVDA trás incluso o [eSpeak NG https://github.com/espeak-ng/espeak-ng], um sintetizador de voz livre, de código aberto e multi-idioma. 
 
 A informação sobre outros sintetizadores de voz, que o NVDA suporta, pode ser encontrada na secção [Sintetizadores de Voz Suportados #SupportedSpeechSynths].
 
@@ -299,7 +299,7 @@ Quando estiver numa tabela, os seguintes comandos de teclado também estarão di
 | Mover para a linha seguinte | Ctrl+Alt+Seta Abaixo | Move o cursor do sistema para a linha seguinte (permanecendo na mesma coluna) |
 %kc:endInclude
 
-++ Navegação Por Objectos ++
+++ Navegação Por Objectos ++[ObjectNavigation]
 Por norma, trabalhará com aplicações que usam comandos que movem o [foco #SystemFocus] e o [cursor #SystemCaret].
 Contudo, poderá querer explorar algumas vezes a aplicação actual ou o sistema operativo, sem mover o foco ou o cursor.
 Também poderá querer trabalhar com [objectos #Objects] que não podem ser acedidos normalmente através do teclado.
@@ -372,7 +372,7 @@ Os comandos seguintes estão disponíveis para a revisão de texto:
 | Ler continuamente com a revisão | Mais do bloco numérico | NVDA+shift+a | Varrer para baixo com três dedos (modo de texto) | Lê a partir da posição actual do cursor de revisão e move-o até ao final do texto |
 | Copiar a partir do cursor de revisão | NVDA+F9 | NVDA+F9 | Nenhum | Inicia a cópia do texto a partir da posição actual do cursor de revisão. A cópia actual não será efectuada, até que informe o NVDA até onde é que pretende copiar |
 | Copiar até ao cursor de revisão | NVDA+F10 | NVDA+F10 | Nenhum | Copia a partir da posição definida, com a cópia a partir do cursor de revisão, até a posição actual do mesmo. Após pressionar esta tecla, o texto será copiado para a área de transferência do Windows |
-| Anunciar formatação de texto | NVDA+f | NVDA+f | Nenhum | Anuncia a formatação do texto onde o cursor de revisão está posicionado actualmente |
+| Anunciar formatação de texto | NVDA+f | NVDA+f | Nenhum | Anuncia a formatação do texto onde o cursor de revisão está posicionado actualmente. Pressionamdo duas vezes, as informações serão mostradas numa janela. |
 %kc:endInclude
 
 Nota: As teclas do bloco numérico exigem que a tecla NumLock esteja desactivada, para que possam trabalhar adequadamente.
@@ -442,7 +442,7 @@ Apesar de um rato físico ou de um touchpad terem de ser utilizados para navegar
 | Navegar para o objecto sob o rato | NVDA+Asterisco do bloco numérico | NVDA+shift+n | Define o objecto de navegação para o o objecto localizado na posição do rato |
 %kc:endInclude
 
-+ Modo de Navegação +
++ Modo de Navegação +[BrowseMode]
 Os documentos complexos, só de leitura, tais como páginas de Internet, são apresentados pelo NVDA, através da utilização do modo de navegação.
 Isto inclui os documentos no Mozilla Firefox, Microsoft Internet Explorer, Mozilla Thunderbird, mensagens em HTML do Microsoft Outlook, Google Chrome, Adobe Reader e Adobe Flash.
 O modo de navegação também está disponível como opção para o Microsoft Word.
@@ -501,12 +501,13 @@ As teclas seguintes, por si mesmas, saltam para o próximo elemento disponível.
 - 1 até 6: títulos de 1 até 6 respectivamente
 - a: anotação (comentário, revisão do editor, etc.)
 -
+
 Para se mover para o início ou fim de elementos contentores como listas ou tabelas, que contêm outros elementos:
 || Nome | Comando de Teclado | Descrição |
 | Mover para o início do contentor  | shift+vírgula | Move para o início do contentor (lista, tabela etc) onde o cursor está posicionado |
 | Mover para depois do fim do contentor | Vírgula | Move para  depois do fim do contentor (lista, tabela etc) onde o cursor está posicionado |
-
 %kc:endInclude
+
 Algumas aplicações web como GMail, Twitter e Facebook usam letras como atalhos.
 Se quiser usar esses atalhos, mantendo a possibilidade de usar as teclas de cursor para ler em modo de navegação, pode, temporariamente, desactivar a navegação por caracter do NVDA.
 %kc:beginInclude
@@ -628,12 +629,12 @@ Tal como no conteúdo Web, o NVDA proporciona no Excel uma Lista de Elementos qu
 Para aceder à Lista de Elementos no Microsoft Excel, pressione NVDA+f7.
 %kc:endInclude
 Os vários tipos de informações disponíveis na Lista de Elementos são:
-- Gráficos: Lista todos os gráficos existentes em todo o livro.
+- Gráficos: Lista todos os gráficos existentes na folha activa.
 Seleccionando um gráfico e pressionando enter ou o botão "Mover Para", foca o gráfico para navegação e leitura com as setas.
-- Comentários: Lista todas as células no livro aberto que contenham comentários. 
+- Comentários: Lista todas as células da folha actual que contenham comentários. 
 Para cada célula é mostrado o endereço e o comentário. 
 Pressionando Enter ou o botão "Mover para" num dos comentários listados, move directamente para essa célula.
-- Fórmulas: Lista todas as células no livro aberto que contenham fórmulas.
+- Fórmulas: Lista todas as células da folha actual que contenham fórmulas.
 Para cada célula é mostrado o endereço e a fórmula. 
 Pressionando Enter ou o botão "Mover para" numa das fórmulas listadas, move directamente para essa célula
 - Folhas: Lista todas as folhas do livro aberto. 
@@ -641,11 +642,11 @@ Pressionando f2 numa folha listada permitirá renomear a folha.
 Pressionando Enter ou o botão "Mover Para" numa das folhas listadas, muda-se para essa folha.
 -
 
-++++ Anunciar Comentários +++
-+%kc:beginInclude
++++ Anunciar Comentários +++
+%kc:beginInclude
 Para anunciar qualquer comentárionuma célula, pressionar NVDA+alt+c
 %kc:endInclude
-Todos os comentários para o livro aberto podem ser listados na Lista de Elementos do NVDA.
+Todos os comentários para a folha actual podem ser listados na Lista de Elementos do NVDA.
 
 +++ Leitura de Células Protegidas +++
 Se um livro, ou folha, foi protegido, pode não ser possível mover o foco para algumas células que foram bloqueadas para edição.
@@ -780,8 +781,8 @@ Pode utilizar as setas, para ouvir os diversos itens.
 As setas Acima e Esquerda sobem pela lista, enquanto as Setas Abaixo e Direita descem pela lista.
 
 ==== Variante ====
-Se está a utilizar o eSpeak que acompanha o NVDA, esta é uma caixa de combinação que lhe permite seleccionar a Variante do sintetizador, com a qual este deve falar.
-As variantes do eSpeak são parecidas com as vozes, mas proporcionam atributos ligeiramente diferentes da voz principal.
+Se está a utilizar o eSpeak NG que acompanha o NVDA, esta é uma caixa de combinação que lhe permite seleccionar a Variante do sintetizador, com a qual este deve falar.
+As variantes do eSpeak NG são parecidas com as vozes, mas proporcionam atributos ligeiramente diferentes da voz principal.
 Algumas variantes irão soar como um homem, outras como uma mulher e outras, ainda, como um sapo.
 
 ==== Velocidade ====
@@ -796,12 +797,12 @@ Trata-se de uma barra deslizante, que vai de 0 a 100 (sendo 0 a entoação mais 
 Esta opção é uma barra deslizante, que vai de 0 a 100 (sendo o 0 o volume mais baixo e 100 o mais alto).
 
 ==== Inflexão ====
-Uma barra deslizante que lhe permite escolher a inflexão (sobida e descida da entoação) que o sintetizador irá utilizar para falar. (Até ao momento, somente o eSpeak fornece esta funcionalidade).
+Uma barra deslizante que lhe permite escolher a inflexão (sobida e descida da entoação) que o sintetizador irá utilizar para falar. (Até ao momento, somente o eSpeak NG fornece esta funcionalidade).
 
 ==== Alterar o idioma, automaticamente (quando suportado) ====
 Esta caixa de verificação permite-lhe definir se o NVDA deverá ou não mudar o  idioma do sintetizador, enquanto fala, caso o texto que está a ser lido especificar o seu idioma.
 Esta opção está activa, por padrão.
-Actualmente, apenas o eSpeak e o Vocalizer suportam a alteração automática de idioma.
+Actualmente, apenas o eSpeak NG e o Vocalizer suportam a alteração automática de idioma.
 
 ==== Alterar o dialecto, automaticamente (quando suportado) ====
 Se a opção Alterar o idioma automaticamente estiver activa, esta caixa de verificação permite-lhe definir se o dialecto também deverá ser alterado, ou se serão efectuadas apenas alterações de idioma propriamente dito.
@@ -1109,7 +1110,7 @@ Para métodos de entrada em que a selecção pode ser mudada com as setas direcc
 Note que, mesmo com esta opção desactivada, o cursor de revisão será igualmente posicionado no candidato seleccionado, permitindo-lhe usar a navegação por objectos / revisão, para ler manualmente este ou outros candidatos.
 
 ==== Incluir Sempre Descrições Curtas de Caracteres para Candidatos ====
-Esta opção, Que está activada por padrão, permite-lhe escolher se o NVDA deverá, ou não, fornecer uma descrição curta para cada caracter num candidato, seja quando estiver seleccionado ou quando for  lido automaticamente, a quando do aparecimento da lista de candidatos.
+Esta opção, Que está activada por padrão, permite-lhe escolher se o NVDA deverá, ou não, fornecer uma descrição curta para cada caracter num candidato, seja quando estiver seleccionado ou quando for  lido automaticamente, quando do aparecimento da lista de candidatos.
 Note que, para idiomas como o chinês, o anúncio de  descrições extra, para o candidato seleccionado, não é afectado por esta opção.
 Esta opção poderá ser útil para métodos de entrada coreanos ou japoneses.
 
@@ -1452,22 +1453,22 @@ Este item, uma vez activado, recarrega todos os plugins globais e módulos de ap
 Esta secção contém informação sobre os sintetizadores de voz suportados pelo NVDA.
 Para uma lista ainda mais extença de sintetizadores de voz, gratuitos e comerciais, que pode comprar e descarregar para usar com o NVDA, por favor, consulte a página [http://www.nvda-project.org/wiki/ExtraVoices http://www.nvda-project.org/wiki/ExtraVoices].
 
-++ eSpeak ++
-O sintetizador [eSpeak http://espeak.sourceforge.net/] é incluído directamente no NVDA e não necessita instalar nenhum outro driver ou componente especial.
-Por padrão, o NVDA inicia usando o Espeak.
+++ eSpeak NG ++
+O sintetizador [eSpeak NG https://github.com/espeak-ng/espeak-ng] é incluído directamente no NVDA e não necessita instalar nenhum outro driver ou componente especial.
+Por padrão, o NVDA inicia usando o eSpeak NG.
 Tendo em conta que este sintetizador está incluído no NVDA, é uma óptima escolha para quando se executa o NVDA num dispositivo USB ou CD, noutros sistemas.
 
-Cada voz que vem com o eSpeak fala num idioma diferente.
-Existem cerca de 43 idiomas suportados pelo eSpeak.
+Cada voz que vem com o eSpeak NG fala num idioma diferente.
+Existem cerca de 43 idiomas suportados pelo eSpeak NG.
 
 Existem também muitas variantes que se podem escolher, para alterar o som da voz.
 
 ++ Microsoft Speech API Versão 4 (SAPI 4) ++
 O SAPI 4 é um padrão antigo da Microsoft para os softwares de síntese de voz.
-Muitos sintetizadores de voz que cumprem com este padrão podem ser comprados ou descarregados, em várias empresas ou páginas da Internet.
-Quando este sintetizador é utilizado com o NVDA, as vozes disponíveis (que se podem aceder a partir da caixa de [diálogo Definições de Voz #VoiceSettings] ou pelo [Anel de Definições de Voz #SynthSettingsRing]) são todas as vozes de todos os motores SAPI 4 que se encontram instalados no seu sistema.
+O NVDA mantém o suporte para  este protocolo para os utilizadores que ainda tenham sintetizadores SAPI 4 instalados.
+No entanto, a Microsoft já não dá suporte a este protocolo e os componentes necessários já não estão disponíveis na Microsoft.
 
-Se possui sintetizadores SAPI 4 instalados, mas o sintetizador não aparece na lista do NVDA, instale por favor o suporte binário de execução do SAPI 4.0 (runtime binaries), disponível em http://activex.microsoft.com/activex/controls/sapi/spchapi.exe.
+Quando este sintetizador é utilizado com o NVDA, as vozes disponíveis (que se podem aceder a partir da caixa de diálogo Definições de Voz #VoiceSettings] ou pelo Anel de Definições de Voz #SynthSettingsRing]) são todas as vozes de todos os motores SAPI 4 que se encontram instalados no seu sistema.
 
 ++ Microsoft Speech API version 5 (SAPI 5) ++
 O SAPI 5 é um padrão da Microsoft para os softwares de síntese de voz.
@@ -2093,14 +2094,14 @@ Por favor consulte a documentação [EcoBraille em ftp://ftp.once.es/pub/utt/bib
 ++ BRLTTY ++
 O [BRLTTY http://mielke.cc/brltty/] é um programa adicional que pode ser usado para suportar muitas mais linhas Braille.
 Para utilizá-lo, terá que instalar o [BRLTTY para o Windows http://brl.thefreecat.org/brltty/].
-Deverá efectuar o download e instalar o último pacote de instalação, que se denominará, por exemplo, brltty-win-4.2-2.exe.
+Para isso, deverá efectuar o download e instalar o último pacote de instalação, que se denominará, por exemplo, brltty-win-4.2-2.exe.
 Quando configurar a linha e porta a utilizar, certifique-se de prestar muita atenção às instruções, especialmente se está a utilizar uma linha USB e já tem as drivers do fabricante instaladas.
 
 Para as linhas com teclado Braille, actualmente, o BRLTTY trata da escrita em Braille.
 Por isso, a tabela de conversão da escrita do NVDA é irrelevante
 
 Seguem-se as associações de teclas do BRLTTY com o NVDA.
-Por favor consulte na documentação do BRLTTY as [tabelas de teclas do BRLTTY http://mielke.cc/brltty/doc/KeyTables/] para informação sobre como os comandos do BRLTTY são mapiados nas linhas braille.
+Por favor consulte na documentação do BRLTTY as [tabelas de associação teclas do BRLTTY http://mielke.cc/brltty/doc/KeyBindings/] para informação sobre como os comandos do BRLTTY são mapiados nas linhas braille.
 %kc:beginInclude
 || Nome | Comando BRLTTY |
 | Mover a linha braille para trás | fwinlt (go left one window) |
