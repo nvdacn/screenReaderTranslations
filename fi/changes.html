@@ -44,7 +44,7 @@
 <LI>Korjattu Adobe Flashin kaatuminen Mozilla Firefoxissa joissakin tapauksissa. (<A HREF="http://community.nvda-project.org/ticket/5367">#5367</A>)
 <LI>Valintaikkunoiden tai sovellusten sisällä olevia asiakirjoja voidaan nyt lukea selaustilassa Google Chromessa ja Chrome-pohjaisissa selaimissa. (<A HREF="http://community.nvda-project.org/ticket/5818">#5818</A>)
 <LI>NVDA:n voi nyt pakottaa Google Chromessa ja Chrome-pohjaisissa selaimissa selaustilaan verkkopohjaisissa valintaikkunoissa tai -sovelluksissa oltaessa. (<A HREF="http://community.nvda-project.org/ticket/5818">#5818</A>)
-<LI>Kohdistuksen siirtäminen tiettyihin säätimiin (erityisesti sellaisiin, joissa käytetään aria-activedescendant-määrettä) ei vaihda enää virheellisesti selaustilaan Internet Explorerissa ja muissa MSHTML-säätimissä. Tätä ilmeni esim. Gmailissa siirryttäessä viestiä kirjoitettaessa  osoitekenttien ehdotuksiin. (<A HREF="http://community.nvda-project.org/ticket/5676">#5676</A>)
+<LI>Kohdistuksen siirtäminen tiettyihin säätimiin (erityisesti sellaisiin, joissa käytetään aria-activedescendant-attribuuttia) ei vaihda enää virheellisesti selaustilaan Internet Explorerissa ja muissa MSHTML-säätimissä. Tätä ilmeni esim. Gmailissa siirryttäessä viestiä kirjoitettaessa  osoitekenttien ehdotuksiin. (<A HREF="http://community.nvda-project.org/ticket/5676">#5676</A>)
 </UL>
 
 <H3>Muutokset kehittäjille (englanniksi)</H3>
@@ -96,7 +96,7 @@ Tämän version merkittävimpiä uusia ominaisuuksia ovat mahdollisuus valinnais
 <LI>Kun elementtiä muutetaan selaustilan Elementtilistassa, Suodata-kenttä tyhjennetään. (<A HREF="http://community.nvda-project.org/ticket/5511">#5511</A>)
 <LI>Hiiren liikuttaminen lukee odotetusti koko sisällön sijasta jälleen asianmukaisen rivin, sanan jne. Mozilla-sovellusten muokattavissa tekstikentissä. (<A HREF="http://community.nvda-project.org/ticket/5535">#5535</A>)
 <LI>Lukeminen ei enää pysähdy sanan tai rivin sisällä olevien elementtien, kuten linkkien, kohdalla liikutettaessa hiirtä Mozilla-sovellusten muokattavissa tekstikentissä. (<A HREF="http://community.nvda-project.org/ticket/2160">#2160</A>, <A HREF="http://community.nvda-project.org/ticket/5535">#5535</A>)
-<LI>Shoprite.com-verkkosivua on nyt mahdollista lukea selaustilassa Internet Explorerissa sen sijaan, että sivu ilmoitettaisiin tyhjäksi. (Erityisesti väärin muotoillut lang-määreet käsitellään nyt sulavasti.) (<A HREF="http://community.nvda-project.org/ticket/5569">#5569</A>)
+<LI>Shoprite.com-verkkosivua on nyt mahdollista lukea selaustilassa Internet Explorerissa sen sijaan, että sivu ilmoitettaisiin tyhjäksi. (Erityisesti väärin muotoillut lang-attribuutit käsitellään nyt sulavasti.) (<A HREF="http://community.nvda-project.org/ticket/5569">#5569</A>)
 <LI>Jäljitettäviä muutoksia, kuten lisäyksiä, ei enää ilmoiteta Microsoft Wordissa, kun niiden merkintöjä ei näytetä. (<A HREF="http://community.nvda-project.org/ticket/5566">#5566</A>)
 <LI>Kun kohdistus on vaihtopainikkeen kohdalla, NVDA ilmoittaa, kun sen tila muuttuu painetusta ei-painetuksi. (<A HREF="http://community.nvda-project.org/ticket/5441">#5441</A>)
 <LI>Hiiren muodon muutosten ilmoittaminen toimii taas odotetusti. (<A HREF="http://community.nvda-project.org/ticket/5595">#5595</A>)
@@ -378,10 +378,10 @@ Tämän version keskeisimpiä ominaisuuksia ovat mm. selaustila Microsoft Word -
 <LI>Korjattu ongelma, joka aiheutti sen, että NVDA:n Lue päiväys/aika -komento ei joissakin tapauksissa noudattanut käyttäjän määrittämiä alue- ja kieliasetuksia. (<A HREF="http://community.nvda-project.org/ticket/2987">#2987</A>)
 <LI>Tarpeetonta, joskus useammalle riville jakaantuvaa tekstiä ei enää näytetä selaustilassa tietyille grafiikoille (esim. Google-ryhmistä löytyville). (Tätä tapahtui erityisesti base64-koodatuille kuville.) (<A HREF="http://community.nvda-project.org/ticket/4793">#4793</A>)
 <LI>NVDA:n ei pitäisi enää jäädä jumiin muutama sekunti sen jälkeen, kun kohdistus siirretään pois Windows 8:n Metro-sovelluksesta, sillä sen suoritus keskeytetään. (<A HREF="http://community.nvda-project.org/ticket/4572">#4572</A>)
-<LI>Aktiivisten alueiden aria-atomic-määrettä noudatetaan nyt Mozilla Firefoxissa, vaikka itse atomic-elementti muuttuu. Tämä vaikutti aiemmin vain alempiin elementteihin. (<A HREF="http://community.nvda-project.org/ticket/4794">#4794</A>) 
+<LI>Aktiivisten alueiden aria-atomic-attribuuttia noudatetaan nyt Mozilla Firefoxissa, vaikka itse atomic-elementti muuttuu. Tämä vaikutti aiemmin vain alempiin elementteihin. (<A HREF="http://community.nvda-project.org/ticket/4794">#4794</A>) 
 <LI>Päivitykset näytetään selaustilassa, ja aktiiviset alueet ilmoitetaan asiakirjaan upotettujen ARIA-sovellusten sisällä olevissa selaustila-asiakirjoissa Internet Explorerissa tai muissa MSHTML-säätimissä. (<A HREF="http://community.nvda-project.org/ticket/4798">#4798</A>)
 <LI>Kun teksti muuttuu tai sitä lisätään text-relevant -tyyppisiin aktiivisiin alueisiin Internet Explorerissa ja muissa MSHTML-säätimissä, vain muutettu tai lisätty teksti puhutaan säilöelementin kaiken tekstin sijasta. (<A HREF="http://community.nvda-project.org/ticket/4800">#4800</A>)
-<LI>Internet Explorerissa ja muissa MSHTML-säätimissä aria-labeledby-määreellä ilmaistava elementtien sisältö korvaa oikein alkuperäisen sisällön, jos se on tarkoituksenmukaista. (<A HREF="http://community.nvda-project.org/ticket/4575">#4575</A>)
+<LI>Internet Explorerissa ja muissa MSHTML-säätimissä aria-labeledby-attribuutilla ilmaistava elementtien sisältö korvaa oikein alkuperäisen sisällön, jos se on tarkoituksenmukaista. (<A HREF="http://community.nvda-project.org/ticket/4575">#4575</A>)
 <LI>Väärin kirjoitettu sana luetaan nyt Microsoft Outlook 2013:ssa oikeinkirjoitusta tarkistettaessa. (<A HREF="http://community.nvda-project.org/ticket/4848">#4848</A>)
 <LI>Visibility:hidden-attribuutilla piilotetuissa elementeissä olevaa sisältöä ei enää näytetä asiaankuulumattomasti selaustilassa Internet Explorerissa ja muissa MSHTML-säätimissä. <A HREF="http://community.nvda-project.org/ticket/3776">#3776</A>)
 <LI>Lomakesäätimien title-attribuutti ei enää ole asiaankuulumattomasti etusijalla muihin nimiliitoksiin nähden Internet Explorerissa ja muissa MSHTML-säätimissä. (<A HREF="http://community.nvda-project.org/ticket/4491">#4491</A>)
@@ -424,7 +424,7 @@ Tämän version keskeisimpiä ominaisuuksia ovat mm. selaustila Microsoft Word -
 <UL>
 <LI>Kun kohdistus siirretään takaisin selaustila-asiakirjaan (esim. siirtymällä Alt+sarkain-näppäinyhdistelmällä jo avoimelle verkkosivulle), tarkastelukohdistin sijoitetaan oikein näennäiskohdistimen kohdalle aktiivisen säätimen (esim. lähellä olevan linkin) sijasta. (<A HREF="http://community.nvda-project.org/ticket/4369">#4369</A>)
 <LI>Tarkastelukohdistin seuraa nyt asianmukaisesti näennäiskohdistinta PowerPoint-diaesityksissä. (<A HREF="http://community.nvda-project.org/ticket/4370">#4370</A>)
-<LI>Aktiivisen alueen uusi sisältö luetaan Mozilla Firefoxissa ja muissa Gecko-pohjaisissa selaimissa, vaikka sisällöllä on käyttökelpoinen ARIA-live-määre, joka eroaa ylemmän tason aktiivisen alueen määreestä. Esim. assertive-määreellä merkitty sisältö lisätään polite-määreellä merkittyyn aktiiviseen alueeseen. (<A HREF="http://community.nvda-project.org/ticket/4169">#4169</A>).
+<LI>Aktiivisen alueen uusi sisältö luetaan Mozilla Firefoxissa ja muissa Gecko-pohjaisissa selaimissa, vaikka sisällöllä on käyttökelpoinen ARIA-live-attribuutti, joka eroaa ylemmän tason aktiivisen alueen attribuutista. Esim. assertive-attribuutilla merkitty sisältö lisätään polite-attribuutilla merkittyyn aktiiviseen alueeseen. (<A HREF="http://community.nvda-project.org/ticket/4169">#4169</A>).
 <LI>Tapaukset, joissa asiakirjan sisällä on toinen asiakirja, eivät enää estä osan sisällön käyttöä (tarkemmin sanottuna sisäkkäisiä kehyksiä) Internet Explorerissa ja muissa MSHTML-säätimissä. (<A HREF="http://community.nvda-project.org/ticket/4418">#4418</A>)
 <LI>NVDA ei enää kaadu yritettäessä käyttää joissakin tapauksissa Handy Tech -pistenäyttöä. (<A HREF="http://community.nvda-project.org/ticket/3709">#3709</A>)
 <LI>Virheellistä "Latauskohtaa ei löydy" -valintaikkunaa ei enää näytetä useissa tapauksissa, kuten käynnistettäessä NVDA:ta työpöydän pikakuvakkeesta tai pikanäppäimellä Windows Vistassa. (<A HREF="http://community.nvda-project.org/ticket/4235">#4235</A>)
@@ -648,7 +648,7 @@ Tämän version keskeisimpiä ominaisuuksia ovat mm. selaustila Microsoft Word -
 <LI>Säilön loppuun tai alkuun siirtävät pikanavigointikomennot noudattavat nyt Käytä pikalukua Lue kaikki -toiminnossa -asetusta (ts. ne eivät enää keskeytä käynnissä olevaa Lue kaikki -toimintoa). (<A HREF="http://community.nvda-project.org/ticket/3675">#3675</A>)
 <LI>NVDA:n Syöte-eleet-valintaikkunassa lueteltujen kosketuseleiden nimet ovat nyt käyttäjäystävällisiä ja lokalisoituja. (<A HREF="http://community.nvda-project.org/ticket/3624">#3624</A>)
 <LI>NVDA ei enää aiheuta tiettyjen ohjelmien kaatumista siirrettäessä hiiri niiden rich edit (TRichEdit) -säädinten päälle. Tällaisia ohjelmia ovat mm. Jarte 5.1 sekä BRfácil. (<A HREF="http://community.nvda-project.org/ticket/3693">#3693</A>, <A HREF="http://community.nvda-project.org/ticket/3603">#3603</A>, <A HREF="http://community.nvda-project.org/ticket/3581">#3581</A>)
-<LI>Tiettyjä säilöjä (kuten esim. ARIA:n esittelymääreellä merkittyjä taulukoita) ei enää lueta Internet Explorerissa ja muissa MSHTML-säätimissä. (<A HREF="http://community.nvda-project.org/ticket/3713">#3713</A>)
+<LI>Tiettyjä säilöjä (kuten esim. ARIA:n esittelyattribuutilla merkittyjä taulukoita) ei enää lueta Internet Explorerissa ja muissa MSHTML-säätimissä. (<A HREF="http://community.nvda-project.org/ticket/3713">#3713</A>)
 <LI>NVDA ei enää toista virheellisesti rivien ja sarakkeiden tietoja taulukon solusta useita kertoja Microsoft Wordissa. (<A HREF="http://community.nvda-project.org/ticket/3702">#3702</A>)
 <LI>Erillisissä tekstilohkoissa olevia numeroita ei enää lueta yhtenä lukuna sellaisissa kielissä, joissa käytetään välilyöntiä numeroiden ryhmittelyyn/tuhaterottimena (kuten esim. ranska ja saksa). Tämä oli erityisen ongelmallista numeroita sisältävissä taulukon soluissa. (<A HREF="http://community.nvda-project.org/ticket/3698">#3698</A>)
 <LI>Pistenäytön päivittäminen ei enää toisinaan epäonnistu, kun järjestelmäkohdistinta liikutetaan Microsoft Word 2013:ssa. (<A HREF="http://community.nvda-project.org/ticket/3784">#3784</A>)
@@ -659,10 +659,10 @@ Tämän version keskeisimpiä ominaisuuksia ovat mm. selaustila Microsoft Word -
 <LI>ARIA:n aktiivisten alueiden tukea paranneltu Firefoxissa ja muissa Mozilla Gecko -sovelluksissa:
  <UL>
  <LI>Tuki aria-atomic-päivityksille ja aria-busy-päivitysten suodattamiselle. (<A HREF="http://community.nvda-project.org/ticket/2640">#2640</A>)
- <LI>Vaihtoehtoinen teksti (kuten alt-määre tai aria-label) näytetään nyt, mikäli muuta tekstiä ei ole käytettävissä. (<A HREF="http://community.nvda-project.org/ticket/3329">#3329</A>)
+ <LI>Vaihtoehtoinen teksti (kuten alt-attribuutti tai aria-label) näytetään nyt, mikäli muuta tekstiä ei ole käytettävissä. (<A HREF="http://community.nvda-project.org/ticket/3329">#3329</A>)
  <LI>Aktiivisten alueiden päivityksiä ei enää hylätä, mikäli ne tapahtuvat samaan aikaan kohdistuksen liikkuessa. (<A HREF="http://community.nvda-project.org/ticket/3777">#3777</A>)
  </UL>
-<LI>Tiettyjä esityselementtejä ei enää virheellisesti näytetä selaustilassa Firefoxissa ja muissa Mozilla Gecko -sovelluksissa (erityisesti, kun elementti on merkitty aria-presentation-määreellä, mutta sen kohdalle on myös mahdollista siirtyä järjestelmäkohdistimella). (<A HREF="http://community.nvda-project.org/ticket/3781">#3781</A>)
+<LI>Tiettyjä esityselementtejä ei enää virheellisesti näytetä selaustilassa Firefoxissa ja muissa Mozilla Gecko -sovelluksissa (erityisesti, kun elementti on merkitty aria-presentation-attribuutilla, mutta sen kohdalle on myös mahdollista siirtyä järjestelmäkohdistimella). (<A HREF="http://community.nvda-project.org/ticket/3781">#3781</A>)
 <LI>Suorituskykyä paranneltu liikuttaessa Microsoft Word -asiakirjassa kirjoitusvirheiden lukemisen ollessa käytössä. (<A HREF="http://community.nvda-project.org/ticket/3785">#3785</A>)
 <LI>Useita korjauksia saavutettavien Java-sovellusten tukeen:
  <UL>
@@ -1058,7 +1058,7 @@ Tämän version uusia ominaisuuksia ovat mm. tuki aasialaisten kielten merkkien 
 <LI>Pistenäyttöä päivitetään nyt selaustilassa, mikäli näytettävä teksti muuttuu. (<A HREF="http://community.nvda-project.org/ticket/2074">#2074</A>)
 <LI>Suoraan NVDA:n kautta puhuvien tai pistenäytöllä tekstiä näyttävien sovellusten viestit ohitetaan oltaessa Windowsin suojatussa ruudussa, kuten lukitusnäytössä.
 <LI>Selaustilassa ei ole enää mahdollista siirtyä pois asiakirjan lopusta oikealla nuolinäppäimellä oltaessa viimeisen merkin kohdalla tai siirtymällä säilöelementin loppuun sen ollessa viimeinen kohde kyseisessä asiakirjassa. (<A HREF="http://community.nvda-project.org/ticket/2463">#2463</A>)
-<LI>Ylimääräistä sisältöä ei enää virheellisesti puhuta luettaessa valintaikkunoiden tekstiä verkkosovelluksissa (erityisesti ARIA-valintaikkunoissa, joissa ei ole aria-describedby-määrettä). (<A HREF="http://community.nvda-project.org/ticket/2390">#2390</A>)
+<LI>Ylimääräistä sisältöä ei enää virheellisesti puhuta luettaessa valintaikkunoiden tekstiä verkkosovelluksissa (erityisesti ARIA-valintaikkunoissa, joissa ei ole aria-describedby-attribuuttia). (<A HREF="http://community.nvda-project.org/ticket/2390">#2390</A>)
 <LI>NVDA ei enää virheellisesti lue tai paikanna tiettyjä muokkauskenttiä MSHTML-asiakirjoissa (esim. Internet Explorerissa), jos verkkosivun tekijä on käyttänyt ARIA-roolia. (<A HREF="http://community.nvda-project.org/ticket/2435">#2435</A>)
 <LI>Askelpalautin-näppäin käsitellään nyt oikein Windowsin komentokehotteessa kirjoitettuja sanoja luettaessa. (<A HREF="http://community.nvda-project.org/ticket/2586">#2586</A>)
 <LI>Solujen koordinaatit näytetään taas pistenäytöllä Microsoft Excelissä.
@@ -1066,8 +1066,8 @@ Tämän version uusia ominaisuuksia ovat mm. tuki aasialaisten kielten merkkien 
 <LI>Tiettyjen listaruutujen (erityisesti ARIA-tyyppisten) kohteita ei näytetä enää virheellisesti selaustilassa Mozilla-sovelluksissa.
 <LI>Sellaiset säätimet, jotka näytettiin virheellisillä nimillä tai vain tyhjänä tilana, näytetään nyt asianmukaisilla nimillä selaustilassa Mozilla-sovelluksissa.
 <LI>Tyhjää tilaa jätetty jonkin verran huomiotta selaustilassa Mozilla-sovelluksissa.
-<LI>Sellaiset grafiikat, jotka on selkeästi merkitty esityksellisiksi alt=""-määreellä, ohitetaan nyt asianmukaisesti selaustilassa verkkoselaimissa.
-<LI>NVDA piilottaa nyt verkkoselaimissa sisällön, joka on merkitty ruudunlukuohjelmilta piilotetuksi (erityisesti aria-hidden-määrettä käytettäessä). (<A HREF="http://community.nvda-project.org/ticket/2117">#2117</A>)
+<LI>Sellaiset grafiikat, jotka on selkeästi merkitty esityksellisiksi alt=""-attribuutilla, ohitetaan nyt asianmukaisesti selaustilassa verkkoselaimissa.
+<LI>NVDA piilottaa nyt verkkoselaimissa sisällön, joka on merkitty ruudunlukuohjelmilta piilotetuksi (erityisesti aria-hidden-attribuuttia käytettäessä). (<A HREF="http://community.nvda-project.org/ticket/2117">#2117</A>)
 <LI>Negatiiviset rahasummat (esim. -123 $) luetaan nyt oikein miinusmerkkisinä symbolitasosta riippumatta. (<A HREF="http://community.nvda-project.org/ticket/2625">#2625</A>)
 <LI>NVDA ei enää ala Lue kaikki -toiminnon aikana käyttämään oletuskieltä tilanteissa, joissa lause ei pääty pisteeseen. (<A HREF="http://community.nvda-project.org/ticket/2630">#2630</A>)
 <LI>Fontin tiedot tunnistetaan nyt oikein Adobe Reader 10.1:ssä ja uudemmissa. (<A HREF="http://community.nvda-project.org/ticket/2175">#2175</A>)
@@ -1410,7 +1410,7 @@ Tämän version tärkeimpiä uusia ominaisuuksia ovat merkittävät välimerkkej
 <LI>Skypen Ekstrat-valikko luetaan nyt oikein. (<A HREF="http://community.nvda-project.org/ticket/648">#648</A>)
 <LI>Äänikoordinaattien voimakkuutta säädetään ruudun kirkkauden mukaan -valintaruudun valitsemisen Hiiriasetukset-valintaikkunasta ei pitäisi enää aiheuttaa äänimerkkien huomattavaa hidastumista liikutettaessa hiirtä ruudulla Windows Vistassa ja Windows 7:ssä, kun Aero-tehosteet ovat käytössä. (<A HREF="http://community.nvda-project.org/ticket/1183">#1183</A>)
 <LI>Kun NVDA on määritetty käyttämään kannettaville tarkoitettua näppäimistöasettelua, NVDA+delete-komento toimii nyt kuten käyttöohjeessa on mainittu nykyisen navigointiobjektin mittojen lukemiseen. (<A HREF="http://community.nvda-project.org/ticket/1498">#1498</A>)
-<LI>NVDA noudattaa nyt asianmukaisesti aria-selected-määrettä Internet Explorer -asiakirjoissa.
+<LI>NVDA noudattaa nyt asianmukaisesti aria-selected-attribuuttia Internet Explorer -asiakirjoissa.
 <LI>Kohdistuksen tilannekohtaiset tiedot luetaan nyt NVDA:n siirtyessä selaustila-asiakirjoissa automaattisesti vuorovaikutustilaan. Jos esimerkiksi listaruutu tulee aktiiviseksi, se ilmoitetaan ensin ennen muita tietoja. (<A HREF="http://community.nvda-project.org/ticket/1491">#1491</A>)
 <LI>ARIA-listaruudut käsitellään nyt listakohteiden sijasta listoina Internet Explorerissa ja muissa MSHTML-säätimissä.
 <LI>Kun kohdistus siirtyy vain luku -tyyppiä olevaan muokattavaan tekstisäätimeen, NVDA ilmoittaa nyt sen olevan sellainen. (<A HREF="http://community.nvda-project.org/ticket/1436">#1436</A>)
