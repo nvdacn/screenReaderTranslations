@@ -37,7 +37,7 @@ NVDA bol dodnes okrem angličtiny lokalizovaný do týchto 47 jazykov: Afrikán�
 ++ Podpora hlasového výstupu ++
 Bez ohľadu na poskytovanie hlásení, a rozhraní v niekoľkých jazykoch, NVDA ponúka možnosť čítania textov v akomkoľvek jazyku, pokiaľ je dostupný hlasový výstup pre daný jazyk.
 
-NVDA je distribuovaný s viacjazyčným voľne šíriteľným/Open-Source hlasovým výstupom [eSpeak http://espeak.sourceforge.net/].
+NVDA je distribuovaný s viacjazyčným voľne šíriteľným/Open-Source hlasovým výstupom [eSpeak NG https://github.com/espeak-ng/espeak-ng].
 
 Informácie o ďalších hlasových výstupoch, ktoré NVDA podporuje môžete nájsť v časti [Podporované hlasové výstupy #SupportedSpeechSynths].
 
@@ -372,7 +372,7 @@ Na navigáciu v texte je možné použiť nasledovné príkazy:
 | Plynulé čítanie prezeracím kurzorom | numpadPlus | NVDA+shift+a | Švihnutie dolu troma prstami (textový režim) | Číta od aktuálnej pozície prezeracieho kurzora a posúva sa smerom dolu. |
 | Začiatok bloku kopírovania prezeracím kurzorom | NVDA+f9 | NVDA+f9 | Nie je | Označí aktuálnu pozíciu ako začiatok bloku na kopírovanie do schránky. Kopírovanie sa neuskutoční kým neurčíte koniec bloku kopírovania. |
 | Koniec bloku kopírovania prezeracím kurzorom | NVDA+f10 | NVDA+f10 | Nie je | Skopíruje text od značky nastavenej ako začiatok kopírovania prezeracím kurzorom po aktuálnu pozíciu vrátane do schránky Windows. |
-| formátovanie textu | NVDA+f | NVDA+f | Nie je | Oznámi formátovanie textu na pozícii prezeracieho kurzora |
+| formátovanie textu | NVDA+f | NVDA+f | Nie je | Oznámi formátovanie textu na pozícii prezeracieho kurzora. Po dvojitom stlačení zobrazí informáciu v režime prehliadania.|
 %kc:endInclude
 
 Všimnite si: Pri týchto operáciách musí byť numerický blok vypnutý.
@@ -442,7 +442,7 @@ Aj napriek tomu, že sa na tento druh navigácie bežne používa myš alebo tra
 | Objektová navigácia na myš | NVDA+numpad hviezdička | NVDA+shift+n | Nastaví objektovú navigáciu na prvok, na ktorého umiestnenie ukazuje kurzor myši |
 %kc:endInclude
 
-+ Režim prehliadania +
++ Režim prehliadania +[BrowseMode]
 Súhrnnejšie dokumenty, ako napríklad web stránky, nám NVDA dokáže zobraziť v TZV. režime prehliadania.
 Toto zahŕňa dokumenty v programoch Mozilla Firefox, Microsoft Internet Explorer, Mozilla Thunderbird, HTML správy v programe Microsoft Outlook, Google Chrome, Adobe Reader a Adobe Flash.
 Režim prehliadania môžete aktivovať aj v dokumentoch programu Microsoft Word.
@@ -629,12 +629,12 @@ Podobne ako na internete, aj v programe MS Excel môžete používať zoznam prv
 Zoznam prvkov v programe MS Excel vyvoláte skratkou NVDA+F7.
 %kc:endInclude
 V zozname prvkov si môžete zobraziť tieto časti dokumentu:
-- Grafy: Zobrazuje všetky grafy v dokumente.
+- Grafy: Zobrazuje všetky grafy v aktívnom hárku.
 Keď vyberiete graf, stlačíte na ňom enter, alebo aktivujete tlačidlo "prejsť na", fokus sa presunie na požadovaný graf. V grafe sa potom pohybujte šípkami.
-- Komentáre: Zobrazí všetky bunky, ktoré obsahujú komentár.
+- Komentáre: Zobrazí všetky bunky v aktívnom hárku, ktoré obsahujú komentár.
 NVDA pre každú bunku prečíta jej súradnice a text komentára.
 Ak stlačíte enter, alebo aktivujete tlačidlo prejsť na, fokus sa presunie na vybratú bunku.
-- Vzorce: Zobrazí všetky bunky, ktoré obsahujú vzorec.
+- Vzorce: Zobrazí všetky bunky v aktívnom hárku, ktoré obsahujú vzorec.
 NVDA pre každú bunku prečíta jej súradnice a vzorec.
 Ak stlačíte enter, alebo aktivujete tlačidlo prejsť na, fokus sa presunie na vybratú bunku.
 - Hárky: Zobrazí zoznam hárkov v dokumente.
@@ -784,8 +784,8 @@ Za pomoci šípok môžete tento zoznam prehliadať a vypočuť si všetky hlasy
 Hornou a ľavou šípkou sa presuniete na predchádzajúci hlas, dolnou a pravou šípkou sa môžete presunúť na nasledujúci hlas.
 
 ==== Variant ====
-Ak používate hlasový výstup eSpeak, toto je zoznamový rámik, ktorý nastavuje variant hlasu.
-Varianty hlasu výstupu eSpeak môžeme chápať takmer ako ďalšie hlasy, pretože dodávajú hlasu úplne iné vlastnosti.
+Ak používate hlasový výstup eSpeak NG, toto je zoznamový rámik, ktorý nastavuje variant hlasu.
+Varianty hlasu výstupu eSpeak NG môžeme chápať takmer ako ďalšie hlasy, pretože dodávajú hlasu úplne iné vlastnosti.
 Niektoré varianty budú znieť ako mužský, iné ako ženský hlas a niektoré dokonca úplne inak.
 
 ==== Tempo ====
@@ -800,12 +800,12 @@ Nula je najnižší tón a sto najvyšší tón reči.
 Posuvník, ktorým v rozmedzí od nula po sto nastavíte hlasitosť hlasu od najtichšieho po najhlasnejší.
 
 ==== Intonácia ====
-Posuvník, ktorého hodnota hovorí hlasovému výstupu do akej miery má byť intonácia uplatnená smerom na hor i smerom na dol. V súčasnosti intonáciu podporuje len hlasový výstup eSpeak.
+Posuvník, ktorého hodnota hovorí hlasovému výstupu do akej miery má byť intonácia uplatnená smerom na hor i smerom na dol. V súčasnosti intonáciu podporuje len hlasový výstup eSpeak NG.
 
 ==== Automaticky prepínať jazyk ====
 Ak je začiarknuté, NVDA bude automaticky počas čítania meniť jazyk. Jazyk určí podľa jazykových značiek v texte.
 Predvolene je toto začiarknuté.
-Automatické prepínanie jazyka momentálne podporuje len hlasový výstup eSpeak.
+Automatické prepínanie jazyka momentálne podporuje len hlasový výstup eSpeak NG.
 
 ==== Automaticky prepínať dialekt ====
 Ak je začiarknuté automaticky prepínať jazyk, toto umožňuje zmeny aj dialektu jazyka hlasového výstupu.
@@ -1463,22 +1463,22 @@ Po aktivovaní tejto položky NVDA znovu načíta pluginy a aplikačné moduly b
 Táto časť obsahuje informácie o hlasových výstupoch, ktoré môžete používať s NVDA.
 Zoznam niektorých konkrétnych hlasových výstupov, ktoré je možné používať s NVDA je na stránke [http://www.NVDA-project.org/wiki/ExtraVoices http://www.NVDA-project.org/wiki/ExtraVoices] (anglicky).
 
-++ eSpeak ++
-Hlasový výstup [eSpeak http://espeak.sourceforge.net/] je priamo zabudovaný do NVDA a nie je závislý na iných špeciálnych ovládačoch alebo iných komponentoch, ktoré by bolo potrebné doinštalovať.
-NVDA sa predvolene spúšťa s hlasovým výstupom eSpeak.
+++ eSpeak NG++
+Hlasový výstup [eSpeak NG https://github.com/espeak-ng/espeak-ng] je priamo zabudovaný do NVDA a nie je závislý na iných špeciálnych ovládačoch alebo iných komponentoch, ktoré by bolo potrebné doinštalovať.
+NVDA sa predvolene spúšťa s hlasovým výstupom eSpeak NG.
 Tento hlas by mal pracovať na každom systéme, kde beží NVDA, čo znamená, že NVDA môžete spúšťať na ľubovoľnom počítači dokonca aj z USB kľúča alebo iného prenosného média.
 
-Každý hlas hlasového výstupu eSpeak hovorí iným jazykom.
-eSpeak pozostáva z viacej než 43 hlasov pre rôzne jazyky.
+Každý hlas hlasového výstupu eSpeak NG hovorí iným jazykom.
+eSpeak NG pozostáva z viacej než 43 hlasov pre rôzne jazyky.
 
 Existuje tiež množstvo variantov, ktorými je možné zmeniť vlastnosti zvuku aktuálneho hlasu.
 
 ++ Microsoft Speech API verzia 4 (SAPI 4) ++
 SAPI 4 je starší štandard vyvinutý v spoločnosti Microsoft, ktorý slúži na obsluhu softwarových hlasových výstupov v systéme Windows.
-Množstvo hlasových výstupov kompatibilných s týmto štandardom je možné kúpiť alebo stiahnuť zadarmo od rôznych dodávateľov alebo z rôznych webových stránok.
-Po použití ovládača hlasových výstupov SAPI 4 bude( zoznam hlasov( prístupný z [dialógu Nastavenia hlasu #VoiceSettings] alebo v [kruhu nastavení hlasového výstupu #SynthSettingsRing]) obsahovať všetky SAPI 4 hlasy nainštalované v systéme.
+NVDA stále podporuje tento hlasový výstup.
+Spoločnosť Microsoft však už ukončila podporu pre SAPI4 a potrebné komponenty viac neponúka na svojej webovej stránke.
 
-Ak máte nainštalované SAPI4 hlasy a niektorý z hlasových výstupov nie je zobrazený v zozname hlasov, skúste nainštalovať balík SAPI 4.0 runtime zo stránky http://activex.microsoft.com/activex/controls/sapi/spchapi.exe.
+Po použití ovládača hlasových výstupov SAPI 4 bude( zoznam hlasov( prístupný z [dialógu Nastavenia hlasu #VoiceSettings] alebo v [kruhu nastavení hlasového výstupu #SynthSettingsRing]) obsahovať všetky SAPI 4 hlasy nainštalované v systéme.
 
 ++ Microsoft Speech API verzia 5 (SAPI 5) ++
 SAPI 5 je štandard vyvinutý v spoločnosti Microsoft, ktorý slúži na obsluhu softwarových hlasových výstupov v systéme Windows.
@@ -2105,7 +2105,7 @@ Riadky, ktoré podporujú písanie pomocou vstavanej klávesnice sa riadia nasta
 Nastavenie vstupnej prekladovej tabuľky v NVDA preto nemá na vstup z braillovskej klávesnice tohto typu riadku žiadny vplyv.
 
 Nasledujú brltty klávesové skratky pre NVDA.
-Prosím prečítajte si [dokumentáciu klávesov brltty http://mielke.cc/brltty/doc/KeyTables/] pre viac informácií o tom, ako sú príkazy brltty mapované na tlačidlá skutočných zobrazovačov.
+Prosím prečítajte si [dokumentáciu skratiek  brltty http://mielke.cc/brltty/doc/KeyBindings/] pre viac informácií o tom, ako sú príkazy brltty mapované na tlačidlá skutočných zobrazovačov.
 %kc:beginInclude
 || Názov | príkaz brltty |
 | posunúť riadok späť | fwinlt (go left one window) |
