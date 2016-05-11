@@ -1,0 +1,8 @@
+commit 99361d78c66f3ecb4f89ff275bbbc1622aac9b1c
+Author: Michael Curran <mick@nvaccess.org>
+Date:   Wed Apr 13 14:17:48 2016 +1000
+
+    In Microsoft word, NVDA no longer incorrectly reports text with an outline level (but not a built-in heading style) as a heading.
+    
+    NVDAHelper winword support: only expose a paragraph as a heading if the paragraph's style matches one of the builtin heading styles. This keeps heading reporting consistant with heading quicknav (which uses range.goto).
+    Fixes #5186.
