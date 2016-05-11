@@ -1,0 +1,13 @@
+commit cd754167de8d411209b56031502ff37d1de4d6c6
+Author: James Teh <jamie@nvaccess.org>
+Date:   Fri May 6 15:33:01 2016 +1000
+
+    In Microsoft Excel, NVDA no longer ignores a column header for a cell when there is a blank row between the cell and the header.
+    Also, coordinates are now announced before headers to eliminate ambiguity between headers and content.
+    
+    * Don't limit entirely to region. Rather:
+    * Don't allow matching on row or column headers in a different region horizontally.
+    * Always search for column and row headers  by row (I.e. the closest row first).
+    * Refuse to find column headers when on a column header, or row headers when on a row header.
+    
+    Fixes #5396.
