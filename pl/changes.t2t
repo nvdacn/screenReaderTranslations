@@ -4,19 +4,24 @@
 %!includeconf: ../changes.t2tconf
 
 = 2016.2 =
+Najważniejsze zmiany w tej wersji to możliwość zgłaszania błędów pisowni podczas wpisywania; obsługa zgłaszania błędów gramatycznych w Microsoft Word; poprawki obsługi Microsoft Office.
 
 == Nowości ==
 - W trybie czytania w Internet Explorer i innych kontrolkach MSHTML, używanie nawigacji literami aby przejść do adnotacji (a i shift+a) teraz przemieszcza do wstawionego i usuniętego tekstu. (#5691)
 - W Microsoft Excel, NVDA zgłasza teraz poziom grupy komórek, oraz informacje, czy są rozwinięte czy zwinięte. (#5690)
-- Dwukrotne naciśnięcie komendy odczytania formatowania tekstu, prezentuje informacje w trybie czytania, więc mogą być łatwo przejrzane. (#4908)
+- Dwukrotne naciśnięcie komendy odczytania formatowania tekstu (NVDA+f), prezentuje informacje w trybie czytania, więc mogą być łatwo przejrzane. (#4908)
 - W Microsoft Excel 2010 i nowszych, cieniowanie komórki i wypełnienie gradientowe są teraz zgłaszane. Automatyczne ogłaszanie jest kontrolowane przez opcję sygnalizuj kolory w ustawieniach formatowania dokumentów NVDA. (#3683)
 - Nowa tablica brajlowska: Greka koine. (#5393)
 - W podglądzie logów, możesz teraz zapisać log używając klawisza control+s. (#4532)
+- Gdy włączone jest informowanie o błędach pisowni i jest  obsługiwane przez kontrolkę z punktem uwagi, NVDA wygeneruje dźwięk ostrzegawczy aby poinformować o błędzie przy wpisywaniu. Można to wyłączyć nową opcją "Odtwarzaj dźwięk przy błędach pisowni podczas wpisywania" w oknie ustawień klawiatury NVDA. (#2024)
+- Błędy gramatyczne są teraz zgłaszane w Microsoft Word. Można to wyłączyć przy użyciu nowej opcji "Zgłaszaj błędy gramatyczne"  w oknie ustawień formatowania dokumentów NVDA. (#5877)
 
 
 == Zmiany ==
 - W trybie czytania i polach edycji, NVDA traktuje teraz numpad Enter tak samo jak główny klawisz enter. (#5385)
 - NVDA używa teraz syntezatora eSpeak NG. (#5651)
+- W Microsoft Excel, NVDA nie ignoruje nagłówka kolumny dla komórek oddzielonych pustą linią od nagłówków. (#5396)
+- W Microsoft Excel, współrzędne są oznajmiane przed nagłówkami dla uniknięcia dwuznaczności między nagłówkami i treścią. (#5396)
 
 
 == Poprawki błędów ==
@@ -32,6 +37,9 @@
 - W Google Chrome i przeglądarkach bazujących na Chrome, dokumenty w oknach dialogowych lub aplikacjach mogą być odczytywane w trybie czytania. (#5818)
 - W Google Chrome i przeglądarkach bazujących na Chrome, możesz zmusić NVDA do przejścia w tryb czytania w sieciowych oknach dialogowych lub aplikacjach. (#5818)
 - W Internet Explorer i innych kontrolkach MSHTML, przesunięcie punktu uwagi do niektórych kontrolek (szczególnie takich, gdzie użyty jest aria-activedescendant) nie przełącza nieprawidłowo do trybu czytania. Miało to miejsce np. podczas przejścia do podpowiedzi w polach adresowych w trakcie tworzenia wiadomości w Gmail. (#5676)
+- W Microsoft Word, NVDA nie zawiesza się w dużych tabelach przy włączonym zgłaszaniu nagłówków tabel. (#5878)
+- W Microsoft word, NVDA nie zgłasza nieprawidłowo jako nagłówek tekstu z poziomem konspektu (ale nie wbudowanym stylem nagłówka). (#5186)
+- W trybie czytaniaW Microsoft Word, komendy przejścia do początku i końca kontenera (przecinek i Shift+przecinek) działają teraz dla tabel. (#5883)
 
 
 == Zmiany dla programistów ==
