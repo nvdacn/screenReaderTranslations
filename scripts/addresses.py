@@ -126,7 +126,7 @@ addresses = {
     },
     'nl': {
         'lang':'Duch',
-        'email': ['Bram Duvigneau <bram@bramd.nl>', 'Bart Simons <bart@bartsimons.be>', 'A Campen <a.campen@wxs.nl>', 'Leonard de Ruijter <mail@leonardder.nl>'],
+        'email': ['Bram Duvigneau <bram@bramd.nl>', 'Bart Simons <bart@bartsimons.be>', 'A Campen <a.campen@wxs.nl>', 'Leonard de Ruijter <leonard@babbage.com>'],
     },
         'pa': {
         'lang':'Punjabi',
