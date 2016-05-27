@@ -188,6 +188,10 @@ addresses = {
         'lang':'Vietnamese',
         'email': ['Nguyen Van Dung <dungnv1984@gmail.com>'],
     },
+    'ur': {
+        'lang':'Urdu',
+        'email': ['Waqas Ramzan <waqas.techlover@gmail.com>'],
+    },
     'zh_CN': {
         'lang':'Simplified Chinese',
         'email': ['vgjh2005@gmail.com'],
