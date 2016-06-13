@@ -114,7 +114,11 @@ addresses = {
     },
     'ko': {
         'lang':'Korean',
-        'email': ['Joseph Lee <joseph.lee22590@gmail.com>', 'Chang-Hoan Jang <462356@gmail.com>', 'Dong Hee Park <hi@aheu.org>'],
+        'email': ['Joseph Lee <joseph.lee22590@gmail.com>', 'Chang-Hwan Jang <462356@gmail.com>', 'Dong Hee Park <hi@aheu.org>'],
+    },
+    'lt': {
+        'lang':'Lithuanian',
+        'email': ['Paulius Leveris <paulius.leveris@gmail.com>'],
     },
     'nb_NO': {
         'lang':'Norwegian bokmal',
