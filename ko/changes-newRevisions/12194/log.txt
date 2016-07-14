@@ -1,0 +1,12 @@
+commit 05c9d777b6c898cc099b1c8ca4a662d6dc8fca15
+Author: Michael Curran <mick@nvaccess.org>
+Date:   Fri Jul 8 14:06:28 2016 +1000
+
+       Improve object navigation in Microsoft Word dialogs, allowing navigation to many more controls.
+    
+         * SDM objects with an SDMChild object (focused sub window e.g. richedit) have their firstChild and lasdChild properties pointing at the SDMChild, and their presentation type is layout.
+        * SDMChild objects now have their parent property forced to point at the original SDM object, and also copy the SDM object's keyboardShortcut.
+            * IAccessible NVDAObject: only choose to use SDM support if this object is the client or within it (not another part of the window such as the title bar). This stops object navigation to parent on non-client objects hitting the client.
+        * IAccessibleHandler.accNavigate: if accNavigate is called with one of the spacial or logical sibling directions, and CHILDID_SELF is used, then any child ID given back is actually for the parent IAccessible, not the IAccessible it was called on.
+    
+    Fixes #6036
