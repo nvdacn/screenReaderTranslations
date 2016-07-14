@@ -1,0 +1,8 @@
+commit 8f68f7d011bbe49ac009397979f9ca8785f4e9f6
+Author: James Teh <jamie@nvaccess.org>
+Date:   Mon May 30 13:47:30 2016 +1000
+
+    Fixed a rare issue when scanning for serial ports on some systems which made some braille display drivers unusable.
+    
+    hwPortUtils.listComPorts: In some rare cases, the PortName registry value doesn't exist. Just skip the port if this occurs.
+    Fixes #6015.
