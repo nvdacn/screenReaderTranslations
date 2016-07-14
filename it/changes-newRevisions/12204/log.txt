@@ -1,0 +1,9 @@
+commit 6a0f341df85bac3130e54e5a6ffa0a385e5b8d54
+Author: Michael Curran <mick@nvaccess.org>
+Date:   Sat Jul 9 19:08:45 2016 +1000
+
+    No longer fail to read the content of messages in the Windows 10 Mail app.
+    
+    UIATextInfo.getTextWithFields: if LookupError is thrown by _getControlFieldForObject, break out of the ancester loop, as this means the object isn't actually within the text.
+    
+    Fixes #5635.
