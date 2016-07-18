@@ -154,7 +154,7 @@ addresses = {
     },
     'ro': {
         'lang': 'Romanian',
-        'email': ['Dan Punga <dan.punga@gmail.com>'],
+        'email': ['Dan Punga <dan.punga@gmail.com>, Florian Ionascu <florianionascu@hotmail.com>'],
     },
     'ru': {
         'lang': 'Russian',
@@ -190,7 +190,7 @@ addresses = {
     },
     'uk': {
         'lang':'Ukrainian',
-        'email': ['Volodymyr Pyrig <vlodko@torba.com>'],
+        'email': ['Volodymyr Pyrig <vp88.mobile@gmail.com>'],
     },
     'vi': {
         'lang':'Vietnamese',
