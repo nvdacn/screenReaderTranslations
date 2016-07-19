@@ -22,7 +22,7 @@ addresses = {
     },
     'ar': {
         'lang':'Arabic',
-        'email': ['Fatma Mehanna <fatma.mehanna@gmail.com>', 'Shaimaa Ibrahim <shamse1@gmail.com>'],
+        'email': ['Fatma Mehanna <fatma.mehanna@gmail.com>', 'Shaimaa Ibrahim <shamse1@gmail.com>, Abdelkrim Bensaid <abdelkrim.bensaid@free.fr>'],
     },
     'bg': {
         'lang':'Bulgarian',
@@ -66,7 +66,7 @@ addresses = {
     },
     'fr': {
         'lang':'French',
-        'email': ['Michel such <michel.such@free.fr>', 'Patrick ZAJDA <patrick@zajda.fr>', 'Remy Ruiz <remyruiz@gmail.com>', 'Bachir Benanou <ben_bach@yahoo.fr>'],
+        'email': ['Michel such <michel.such@free.fr>', 'Patrick ZAJDA <patrick@zajda.fr>', 'Remy Ruiz <remyruiz@gmail.com>', 'Bachir Benanou <ben_bach@yahoo.fr>, Abdelkrim Bensaid <abdelkrim.bensaid@free.fr>'],
     },
     'ga': {
         'lang': 'Gaeilge',
@@ -133,7 +133,7 @@ addresses = {
         'email': ['him Prasad Gautam <drishtibachak@gmail.com>'],
     },
     'nl': {
-        'lang':'Duch',
+        'lang':'Dutch',
         'email': ['Bram Duvigneau <bram@bramd.nl>', 'Bart Simons <bart@bartsimons.be>', 'A Campen <a.campen@wxs.nl>', 'Leonard de Ruijter <leonard@babbage.com>'],
     },
         'pa': {
@@ -154,7 +154,7 @@ addresses = {
     },
     'ro': {
         'lang': 'Romanian',
-        'email': ['Dan Punga <dan.punga@gmail.com>, Florian Ionascu <florianionascu@hotmail.com>'],
+        'email': ['Dan Punga <dan.punga@gmail.com>, Florian Ionascu <florianionascu@hotmail.com>, Nicuşor Untilă <nicusoruntila@yahoo.com>'],
     },
     'ru': {
         'lang': 'Russian',
@@ -192,13 +192,13 @@ addresses = {
         'lang':'Ukrainian',
         'email': ['Volodymyr Pyrig <vp88.mobile@gmail.com>'],
     },
-    'vi': {
-        'lang':'Vietnamese',
-        'email': ['Nguyen Van Dung <dungnv1984@gmail.com>'],
-    },
     'ur': {
         'lang':'Urdu',
         'email': ['Waqas Ramzan <waqas.techlover@gmail.com>'],
+    },
+    'vi': {
+        'lang':'Vietnamese',
+        'email': ['Nguyen Van Dung <dungnv1984@gmail.com>'],
     },
     'zh_CN': {
         'lang':'Simplified Chinese',
