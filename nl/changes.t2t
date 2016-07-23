@@ -9,27 +9,32 @@
 - U kunt nu bladermodus gebruiken om PDF-documenten te lezen in Microsoft Edge. (#5740)
 - Doorhalen en dubbel doorhalen worden nu gemeld indien van toepassing in Microsoft Word. (#5800)
 - In Microsoft Word wordt nu de titel van een tabel gemeld als die voorzien is. Als er een beschrijving is, kunt u die bereiken met het commando open lange beschrijving (NVDA+d) in bladermodus. (#5943)
-- In Microsoft Word meldt NVDA nu positie informatie bij wisselen tussen paragrafen (alt+shift+pijlOmlaag en alt+shift+pijlOmhoog). (#5945)
-- In Microsoft Word, regelafstand wordt nu gemeld via NVDA's report formatting command, when changing it met various Microsoft word sneltoetsen, en when moving to tekst met different regelafstand if Report Line Spacing is turned on in NVDA's Document Formatting Settings. (#2961)
+- In Microsoft Word meldt NVDA nu positie-informatie bij wisselen tussen paragrafen (alt+shift+pijlOmlaag en alt+shift+pijlOmhoog). (#5945)
+- In Microsoft Word wordt regelafstand nu gemeld via het NVDA-commando Opmaak melden, als u die wijzigt met de voorziene sneltoetsen van Microsoft word, en als u naar tekst gaat met een andere regelafstand als Regelafstand melden is ingeschakeld in NVDA-instellingen voor Documentopmaak. (#2961)
 - In Internet Explorer worden HTML5 structuurelementen nu herkend. (#5591)
+- Reporting of comments (such as in Microsoft Word) can now be disabled via a Report Comments checkbox in NVDA's Document Formatting settings dialog. (#5108)
 
 
 == Veranderingen ==
 - NVDA meldt nu kleuren using een basic well-understood set of 9 kleur hues en 3 shades, met brightness en paleness variaties. This is rather than using more subjective en less understood kleurnamen. (#6029)
-- Het bestaande NVDA+F9 then NVDA+F10 gedrag has been modified to select tekst on de eerste press of F10. When F10 is pressed tweemaal (snel na elkaar) de tekst is gekopieerd naar het klembord. (#4636)
+- Het bestaande NVDA+F9 then NVDA+F10 gedrag has been modified to select tekst on de eerste press of F10. Als F10 tweemaal (snel na elkaar) wordt gedrukt, wordt de tekst gekopieerd naar het klembord. (#4636)
 
 
 == Opgeloste Problemen ==
-- In bladermodus in Microsoft Word, copying to het klembord nu preserves formatting. (#5956)
+- In bladermodus in Microsoft Word blijft de opmaak nu behouden bij het kopiëren naar het klembord. (#5956)
 - In Microsoft Word meldt NVDA nu appropriately bij gebruik van Word's eigen tabelnavigatie commands (alt+home, alt+end, alt+pageUp en alt+pageDown) en tabelselectiecommando's (shift toegevoegd aan de navigatiecommando's). (#5961)
 - In Microsoft Word dialoogvensters, NVDA's objectnavigatie has been greatly verbeterd. (#6036)
-- In sommige toepassingen zoals Visual Studio 2015 worden sneltoetsen (b.v. control+c om te Kipiëren) nu gemeld zoals verwacht. (#6021)
+- In sommige toepassingen zoals Visual Studio 2015 worden sneltoetsen (b.v. control+c om te kopiëren) nu gemeld zoals verwacht. (#6021)
 - Een zeldzaam issue opgelost when scanning for seriële poorten op sommige systemen which made some braille display drivers unusable. (#6015)
-- Reporting kleuren in Microsoft Word is nu more accurate as changes in Microsoft Office Themes are nu taken into account. (#5997)
+- Kleuren melden in Microsoft Word is nu more accurate as changes in Microsoft Office Themes are nu taken into account. (#5997)
 - Bladermodus voor Microsoft Edge en ondersteuning voor Start Menu zoeksuggesties, is opnieuw beschikbaar on Windows 10 builds after April 2016. (#5955)
 - In Microsoft Word, automatic tabel header reading works better when dealing met merged cellen. (#5926)
 - In de Windows 10 Mail app, NVDA niet langer fails to read de inhoud van berichten. (#5635) 
 - When speak commandotoetsen is on, lock toetsen zoals caps lock are niet langer tweemaal aangekondigd. (#5490)
+- Windows User Account Control dialogs are again read correctly in the Windows 10 Anniversary update. (#5942)
+- In the Web Conference Plugin (such as used on out-of-sight.net) NVDA no longer beeps and speaks progress bar updates related to microphone input. (#5888)
+- Performing a Find Next or Find Previous command in Browse Mode will now correctly do a  case sensitive search if the original Find was case sensitive. (#5522)
+- When editing dictionary entries, feedback is now given for invalid regular expressions. NVDA no longer crashes if a dictionary file contains an invalid regular expression. (#4834)
 
 
 = 2016.2.1 =
@@ -45,8 +50,8 @@ Hoogtepunten in deze versie zijn de mogelijkheid om spelfouten aan te geven tijd
 == Nieuwe Functies ==
 - In bladermodus in Internet Explorer en andere MSHTML controls, bij gebruik van lettertoetsnavigatie a en shift+a (om naar aantekeningen te springen), gaat u nu ook naar ingevoegde en verwijderde tekst. (#5691)
 - In Microsoft Excel meldt NVDA nu het niveau van een groep van cellen, en ook of het is samen- of uitgevouwen. (#5690)
-- Pressing het commando Report tekst formatting (NVDA+f) tweemaal presents de informatie in bladermodus zodat het kan worden reviewed. (#4908)
-- In Microsoft Excel 2010 en hoger worden cel shading en gradient fill nu gemeld. Automatic reporting is controlled by de optie Report kleuren in NVDA's Document Formatting preferences. (#3683)
+- Pressing het commando Tekstopmaak melden (NVDA+f) tweemaal presents de informatie in bladermodus zodat het kan worden reviewed. (#4908)
+- In Microsoft Excel 2010 en hoger worden cel shading en gradient fill nu gemeld. Automatisch melden wordt gecontrolleerd door de optie Kleuren melden in NVDA-instellingen voor Documentopmaak. (#3683)
 - Nieuwe brailletabel: Koine Greek. (#5393)
 - In de Log Viewer kunt u de log nu opslaan met de sneltoets control+s. (#4532)
 - Als het melden van spelfouten is ingeschakeld en ondersteund in de control die focus heeft, zal NVDA een geluid afspelen om u op een spelfout te wijzen tijdens het typen. Dit kunt u uitschakelen met de nieuwe optie "Geluid bij spelfouten tijdens typen" in het dialoogvenster Toetsenbordinstellingen van NVDA. (#2024)
@@ -394,12 +399,12 @@ Deze zijn niet vertaald. We verwijzen naar [de Engelstalige versie van dit docum
 - Microsoft Powerpoint: bij het verplaatsen van vormen binnen een dia met de pijltoetsen wordt nu de huidige locatie van de vorm gemeld (#4214) inclusief:
  - De afstand tussen de vorm en elke diarand wordt gemeld
  - Als de vorm overlapt met een andere vorm of erdoor wordt overlapt, dan wordt de overlapte afstand en de andere vorm gemeld. 
- - Om deze informatie op te vragen zonder een vorm te verplaatsen, drukt u het commando report location (NVDA+delete)
- - When selecting een vorm, if it is covered by een andere vorm, zal NVDA melden dat it is obscured.
-- Het report location commando (NVDA+delete) is in sommige situaties meer inhoudsafhankelijk. (#4219):
+ - Om deze informatie op te vragen zonder een vorm te verplaatsen, drukt u het commando locatie melden (NVDA+delete)
+ - Bij het selecteren van een vorm, if it is covered by een andere vorm, zal NVDA melden dat it is obscured.
+- Het commando Locatie melden (NVDA+delete) is in sommige situaties meer inhoudsafhankelijk. (#4219):
  - In standaard invoervelden en bladermodus wordt de cursorpositie gemeld als een percentage through de content, samen met zijn schermcoördinaten.
  - Bij vormen in Powerpoint Presentaties wordt positie van de vorm gemeld relatief ten opzichte van de dia en andere vormen.
- - Pressing dit commando tweemaal will produce het oudere gedrag of reporting de locatie informatie voor de hele control.
+ - Dit commando tweemaal drukken, resulooteert in het oudere gedrag dat de locatie-informatie meldt voor de hele control.
 - Nieuwe taal: Catalaans.
 
 
