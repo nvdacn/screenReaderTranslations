@@ -2907,7 +2907,7 @@ Pour activer la visionneuse de parole de n'importe où, Veuillez assigner un ges
 <H3>10.3. Gestionnaire de modules complémentaires</H3>
 
 <P>
-Le Gestionnaire de modules complémentaires, accessible en sélectionnant "Gestion des Modules Complémentaires" dans le menu "Outils" du menu NVDA, permet d'installer ou de désinstaller des paquets de modules complémentaires pour NVDA.
+Le Gestionnaire de modules complémentaires, accessible en sélectionnant "Gestion des Modules Complémentaires" dans le menu "Outils" du menu NVDA, permet d'installer, désinstaller, activer ou désactiver des paquets de modules complémentaires pour NVDA.
 Ces paquets sont fournis par la communauté et contiennent du code qui peut ajouter ou modifier des fonctionnalités dans NVDA ou proposer le support de plages braille ou synthèses vocales suplémentaires.
 </P>
 <P>
@@ -2935,12 +2935,19 @@ Ce module complémentaire aura l'état "Installé" dans la liste jusqu'à ce que
 <P>
 Pour supprimer un module complémentaire, sélectionnez-le dans la liste et cliquez sur le bouton "Supprimer".
 NVDA vous demandera de confirmer la désinstallation.
-Comme pour l'installation, NVDA doit être relancé pour que le module complémentaire soit complètement supprimé.
-Son statut dans la liste sera "Supprimé".
+Comme pour l'installation, NVDA doit être redémarré pour que le module complémentaire soit complètement supprimé.
+Jusqu'au redémarrage, ce module aura le statut Supprimé dans la liste.
+</P>
+<P>
+Pour désactiver un module, pressez le bouton désactiver.
+Pour activer un module précédemment désactivé, pressez le bouton activer.
+Vous pouvez désactiver un module si le statut du module indique qu'il est en cours d'exécution ou activé, ou l'activer si le module est suspendu ou désactivé.
+Pour chaque appui sur le bouton Activer/Désactiver, le statut du module change pour indiquer ce qui arrivera au redémarrage de NVDA.
+Comme lorsque vous installez ou supprimez un module, vous devez redémarrer NVDA pour que les changements prennent effet.
 </P>
 <P>
 Le gestionnaire a également un bouton "Fermer" pour fermer le dialogue.
-Si vous avez installé ou supprimé des modules complémentaires, NVDA vous demandera d'abord si vous voulez le redémarrer pour que vos changements prennent effet.
+Si vous avez installé, supprimé ou changé le statut des modules complémentaires, NVDA vous demandera d'abord si vous voulez le redémarrer pour que vos changements prennent effet.
 </P>
 <P>
 Jusqu'à maintenant, il était possible d'étendre les fonctionnalités de NVDA en copiant des plugins ou pilotes dans votre répertoire de configuration utilisateur.
@@ -3289,11 +3296,15 @@ Veuillez consulter la documentation du terminal pour savoir où se situent ces t
 </TR>
 <TR>
 <TD>Défilement arrière de l'affichage braille</TD>
-<TD>t1</TD>
+<TD>t1 ou etouch1</TD>
 </TR>
 <TR>
 <TD>Amener l'affichage braille à la ligne précédente</TD>
 <TD>t2</TD>
+</TR>
+<TR>
+<TD>Aller au focus courant</TD>
+<TD>t3</TD>
 </TR>
 <TR>
 <TD>Amener l'affichage braille à la ligne suivante</TD>
@@ -3301,11 +3312,31 @@ Veuillez consulter la documentation du terminal pour savoir où se situent ces t
 </TR>
 <TR>
 <TD>Défilement avant de l'affichage braille</TD>
-<TD>t5</TD>
+<TD>t5 ou etouch3</TD>
 </TR>
 <TR>
 <TD>Aller à la cellule braille</TD>
 <TD>routing</TD>
+</TR>
+<TR>
+<TD>Aller à la première ligne en mode revue</TD>
+<TD>t1+t2</TD>
+</TR>
+<TR>
+<TD>Aller à la dernière ligne en mode revue</TD>
+<TD>t4+t5</TD>
+</TR>
+<TR>
+<TD>Bascule du suivi braille</TD>
+<TD>t1+t3</TD>
+</TR>
+<TR>
+<TD>Annonce du titre</TD>
+<TD>etouch2</TD>
+</TR>
+<TR>
+<TD>Annonce de la barre d'état</TD>
+<TD>etouch4</TD>
 </TR>
 <TR>
 <TD>Touche maj+tab</TD>
@@ -3344,6 +3375,10 @@ Veuillez consulter la documentation du terminal pour savoir où se situent ces t
 <TD>spEnter</TD>
 </TR>
 <TR>
+<TD>date et heure</TD>
+<TD>sp1+sp2</TD>
+</TR>
+<TR>
 <TD>Menu NVDA</TD>
 <TD>sp1+sp3</TD>
 </TR>
@@ -3352,12 +3387,32 @@ Veuillez consulter la documentation du terminal pour savoir où se situent ces t
 <TD>sp1+sp4</TD>
 </TR>
 <TR>
+<TD>Touche windows+b (focus sur la zone de notification)</TD>
+<TD>sp3+sp4</TD>
+</TR>
+<TR>
 <TD>Touche Windows</TD>
 <TD>sp2+sp3</TD>
 </TR>
 <TR>
 <TD>Touche alt+tab</TD>
 <TD>sp2+sp4</TD>
+</TR>
+<TR>
+<TD>Touche contrôle+début</TD>
+<TD>t3+spUp</TD>
+</TR>
+<TR>
+<TD>Touche contrôle+fin</TD>
+<TD>t3+spDown</TD>
+</TR>
+<TR>
+<TD>Touche home</TD>
+<TD>t3+spLeft</TD>
+</TR>
+<TR>
+<TD>Touche fin</TD>
+<TD>t3+spRight</TD>
 </TR>
 </TABLE>
 
