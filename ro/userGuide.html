@@ -2544,6 +2544,7 @@ Puteți configura anunțarea pentru:
 <LI>atribute font
 <LI>aliniere text
 <LI>culori
+<LI>comentarii
 <LI>revizii de editor
 <LI>accentuare
 <LI>stil text
@@ -2905,12 +2906,12 @@ Pentru a activa monitorul de vorbire de oriunde, trebuie să-i atribuiți un ges
 <H3>10.3. Managerul de extensii add-on</H3>
 
 <P>
-Managerul de extensii add-on, accesat din meniul de „Instrumente”, elementul „Administrare extensii add-on”, vă permite instalarea sau dezinstalarea de pachete cu extensii add-on pentru NVDA.
+Managerul de extensii add-on, accesat din meniul de „Instrumente”, elementul „Administrare extensii add-on”, vă permite instalarea, dezinstalarea, activarea și dezactivarea de pachete cu extensii add-on pentru NVDA.
 Aceste pachete sunt furnizate de comunitate și conțin cod specific care poate adăuga sau schimba funcționalități ale NVDA, sau chiar pot furniza compatibilitate pentru afișaje Braille adiționale sau sintetizatoare de vorbire.
 </P>
 <P>
 Managerul de extensii add-on conține o listă care afișează toate extensiile add-on curent instalate în configurația dumneavoastră de utilizator a NVDA.
-Sunt afișate un nume pentru pachet, versiune și autor pentru fiecare extensie add-on, iar informații suplimentare cum ar fi o descriere sau un URL pot fi văzute prin selectarea extensiei add-on și apăsarea butonului „Despre extensia add-on”.
+Sunt afișate un nume pentru pachet, stare, versiune și autor pentru fiecare extensie add-on, iar informații suplimentare cum ar fi o descriere sau un URL pot fi văzute prin selectarea extensiei add-on și apăsarea butonului „Despre extensia add-on”.
 Dacă pentru extensia add-on selectată este disponibilă asistența, o puteți accesa apăsând butonul „Ajutor extensii add-on”
 </P>
 <P>
@@ -2937,8 +2938,15 @@ La fel ca pentru instalare, NVDA trebuie repornit pentru ca extensia add-on să 
 Până când faceți asta, în lista cu extensii add-on va apărea indicatorul de stare „eliminat” în dreptul pachetului add-on respectiv.
 </P>
 <P>
+Pentru a dezactiva un add-on, apăsați butonul de dezactivare.
+Pentru a activa un add-on anterior dezactivat, apăsați butonul de activare.
+Puteți dezactiva un add-on dacă starea acestuia este „rulează” sau „activat”, sau îl puteți activa dacă acesta este „suspendat” sau „dezactivat”.
+Pentru fiecare apăsare a butonului activează/dezactivează, starea add-on-ului se schimbă pentru a indica ce se va întâmpla când NVDA repornește.
+La fel ca atunci când instalați sau înlăturați add-on-uri, trebuie să reporniți NVDA pentru ca modificările să fie luate în considerare.
+</P>
+<P>
 Managerul are și un buton „Închide” pentru închiderea ferestrei.
-Dacă ați instalat sau înlăturat extensii add-on, NVDA vă va întreba mai întâi dacă doriți să îl reporniți pentru ca schimbările să fie aplicate.
+Dacă ați instalat, înlăturat sau modificat starea unei extensii add-on, NVDA vă va întreba mai întâi dacă doriți să îl reporniți pentru ca schimbările să fie aplicate.
 </P>
 <P>
 În trecut funcționalitatea NVDA putea fi extinsă prin copierea de extensii sau drivere individuale în dosarul cu configurația utilizatorului a NVDA.
@@ -3287,11 +3295,15 @@ Vă rugăm să consultați Documentația afișajului pentru informații despre l
 </TR>
 <TR>
 <TD>Derulează afișajul braille înapoi</TD>
-<TD>t1</TD>
+<TD>t1 sau etouch1</TD>
 </TR>
 <TR>
 <TD>Mută afișajul braille la rândul anterior</TD>
 <TD>t2</TD>
+</TR>
+<TR>
+<TD>Mută la focalizarea curentă</TD>
+<TD>t3</TD>
 </TR>
 <TR>
 <TD>Mută afișajul braille la rândul următor</TD>
@@ -3299,11 +3311,31 @@ Vă rugăm să consultați Documentația afișajului pentru informații despre l
 </TR>
 <TR>
 <TD>Derulează afișajul braille înainte</TD>
-<TD>t5</TD>
+<TD>t5 sau etouch3</TD>
 </TR>
 <TR>
 <TD>Mută la celula braille</TD>
 <TD>routing</TD>
+</TR>
+<TR>
+<TD>Mută la linia de sus în examinare</TD>
+<TD>t1+t2</TD>
+</TR>
+<TR>
+<TD>Mută la linia de jos în examinare</TD>
+<TD>t4+t5</TD>
+</TR>
+<TR>
+<TD>Comută braille asociat la</TD>
+<TD>t1+t3</TD>
+</TR>
+<TR>
+<TD>Raportează titlu</TD>
+<TD>etouch2</TD>
+</TR>
+<TR>
+<TD>Raportează bara de stare</TD>
+<TD>etouch4</TD>
 </TR>
 <TR>
 <TD>tasta shift+tab</TD>
@@ -3342,6 +3374,10 @@ Vă rugăm să consultați Documentația afișajului pentru informații despre l
 <TD>spEnter</TD>
 </TR>
 <TR>
+<TD>Raportează data/timp</TD>
+<TD>sp1+sp2</TD>
+</TR>
+<TR>
 <TD>Meniu NVDA</TD>
 <TD>sp1+sp3</TD>
 </TR>
@@ -3350,12 +3386,32 @@ Vă rugăm să consultați Documentația afișajului pentru informații despre l
 <TD>sp1+sp4</TD>
 </TR>
 <TR>
+<TD>tasta windows+b (focalizează pe zona de notificare a sistemului)</TD>
+<TD>sp3+sp4</TD>
+</TR>
+<TR>
 <TD>tasta windows</TD>
 <TD>sp2+sp3</TD>
 </TR>
 <TR>
 <TD>tasta alt+tab</TD>
 <TD>sp2+sp4</TD>
+</TR>
+<TR>
+<TD>tasta control+home</TD>
+<TD>t3+spUp</TD>
+</TR>
+<TR>
+<TD>tasta control+end</TD>
+<TD>t3+spDown</TD>
+</TR>
+<TR>
+<TD>tasta home</TD>
+<TD>t3+spLeft</TD>
+</TR>
+<TR>
+<TD>tasta end</TD>
+<TD>t3+spRight</TD>
 </TR>
 </TABLE>
 
@@ -4785,11 +4841,11 @@ Vă rugăm să consultați <A HREF="ftp://ftp.once.es/pub/utt/bibliotecnia/Linea
 <TD>F2</TD>
 </TR>
 <TR>
-<TD>Switch to previous review mode</TD>
+<TD>Comută la anteriorul mod de examinare</TD>
 <TD>F3</TD>
 </TR>
 <TR>
-<TD>Comută la anteriorul mod de examinare</TD>
+<TD>Mută la obiectul anterior</TD>
 <TD>F4</TD>
 </TR>
 <TR>
