@@ -7,7 +7,7 @@
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
 <H2>﻿ 2016.3-dev 用戶指南</H2>
-<FONT SIZE="4"><I>（最後更新日期：2016年7月20日）</I></FONT><BR>
+<FONT SIZE="4"><I>（最後更新日期：2016年8月2日）</I></FONT><BR>
 </CENTER>
 
 
@@ -1313,14 +1313,14 @@ NVDA 在預設狀況下，會自動切換到焦點模式。
 <TH>說明</TH>
 </TR>
 <TR>
-<TD>移動到清單或表格的開頭位置</TD>
+<TD>移到開頭</TD>
 <TD>shift+,</TD>
-<TD>移動到清單或表格的開頭位置</TD>
+<TD>移動到此清單或表格的開頭位置</TD>
 </TR>
 <TR>
-<TD>跳過此清單或表格</TD>
+<TD>跳開此清單或表格</TD>
 <TD>,</TD>
-<TD>跳過此清單或表格</TD>
+<TD>跳離開此清單或表格</TD>
 </TR>
 </TABLE>
 
@@ -2537,6 +2537,7 @@ NVDA目前只支援電腦點字輸入，所以在此下拉方塊只呈現那些�
 <LI>字體屬性
 <LI>對齊方式
 <LI>顏色
+<LI>註解
 <LI>修訂
 <LI>強調
 <LI>文字樣式
@@ -2891,13 +2892,13 @@ NVDA允許您使用修改「設定檔」來達成前述的功能。
 <H3>10.3. 管理附加元件</H3>
 
 <P>
-NVDA 功能表的「工具」子功能表中，「管理附加元件」可讓您安裝或移除NVDA附加元件。
+NVDA 功能表的「工具」子功能表中，「管理附加元件」可讓您安裝或移除，啟用和禁用NVDA附加元件。
 此附加元件是由參與的開發社群人員所提供，它包括一些客製化的程式碼，有可能會更動NVDA的功能，甚至可提供額外的點字顯示器或語音合成軟體之支援。
 </P>
 <P>
-「管理附加元件」包含了一個所有目前安裝於您的 NVDA 使用者設定之附加元件清單，清單中同時顯示的有附加元件的名稱、版次及作者。
-若要知道該附加元件更詳細的資訊，可點選「關於附加元件」按鈕。
-針對選取的附加元件，若有提供說明，則可按附加元件的「說明」按鈕。
+「管理附加元件」包含了一個所有目前安裝於您的 NVDA 使用者設定之附加元件清單，
+清單中同時顯示的有附加元件的名稱、版次及作者。
+若要進一步瞭解相關資訊，如內容描述、 URL等，可在選取的附加元件上，按「說明」按鈕。
 </P>
 <P>
 欲瀏覽或下載線上可供使用的附加元件，請按「取得附加元件」按鈕，則會開啟 NVDA
@@ -2923,8 +2924,15 @@ NVDA會請您確認是否要移除。
 等執行完以上步驟，「移除」的狀態才會出現在附加元件清單中。
 </P>
 <P>
+要停用附加元件，需按「停用」按鈕。 
+要啟用先前停用的附加元件，須按「啟用」按鈕。
+若附加元件的狀態顯示為正在執行或啟用，你可以停用附加元件，若顯示為暫停或停用，你可以啟用它。
+每次按下「啟用/停用」按鈕，附加元件的狀態會顯示NVDA重新啟動後的變更。
+就像是當你在安裝或移除附加元件一樣，你需要重新啟動NVDA來使變更生效。
+</P>
+<P>
 「管理附加元件」的對話方塊也有一個「關閉」的按鈕，以供關閉此對話方塊。
-不管您是安裝或移除附加元件，NVDA 都會先詢問您是否要重新啟動來使變更生效。
+不管您是安裝、移除或改變附加元件的狀態，NVDA都會先詢問您是否要重新啟動來使變更生效。
 </P>
 <P>
 在以往的版本，是允許藉由複製個別外掛元件或驅動程式到您的NVDA使用者設定檔目錄來延伸NVDA的功能。
@@ -3273,11 +3281,15 @@ Nuance Vocalizer 是一個商業化的高品質語音合成軟體，它是由 Nu
 </TR>
 <TR>
 <TD>Scroll braille display back</TD>
-<TD>t1</TD>
+<TD>t1 or etouch1</TD>
 </TR>
 <TR>
 <TD>Move braille display to previous line</TD>
 <TD>t2</TD>
+</TR>
+<TR>
+<TD>Move to current focus</TD>
+<TD>t3</TD>
 </TR>
 <TR>
 <TD>Move braille display to next line</TD>
@@ -3285,11 +3297,31 @@ Nuance Vocalizer 是一個商業化的高品質語音合成軟體，它是由 Nu
 </TR>
 <TR>
 <TD>Scroll braille display forward</TD>
-<TD>t5</TD>
+<TD>t5 or etouch3</TD>
 </TR>
 <TR>
 <TD>Route to braille cell</TD>
 <TD>routing</TD>
+</TR>
+<TR>
+<TD>Move to top line in review</TD>
+<TD>t1+t2</TD>
+</TR>
+<TR>
+<TD>Move to bottom line in review</TD>
+<TD>t4+t5</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>t1+t3</TD>
+</TR>
+<TR>
+<TD>Report title</TD>
+<TD>etouch2</TD>
+</TR>
+<TR>
+<TD>Report status bar</TD>
+<TD>etouch4</TD>
 </TR>
 <TR>
 <TD>shift+tab 鍵</TD>
@@ -3328,6 +3360,10 @@ Nuance Vocalizer 是一個商業化的高品質語音合成軟體，它是由 Nu
 <TD>spEnter</TD>
 </TR>
 <TR>
+<TD>Report date/time</TD>
+<TD>sp1+sp2</TD>
+</TR>
+<TR>
 <TD>NVDA 功能表</TD>
 <TD>sp1+sp3</TD>
 </TR>
@@ -3336,12 +3372,32 @@ Nuance Vocalizer 是一個商業化的高品質語音合成軟體，它是由 Nu
 <TD>sp1+sp4</TD>
 </TR>
 <TR>
+<TD>windows+b key (focus system tray)</TD>
+<TD>sp3+sp4</TD>
+</TR>
+<TR>
 <TD>windows 鍵</TD>
 <TD>sp2+sp3</TD>
 </TR>
 <TR>
 <TD>alt+tab 鍵</TD>
 <TD>sp2+sp4</TD>
+</TR>
+<TR>
+<TD>control+home key</TD>
+<TD>t3+spUp</TD>
+</TR>
+<TR>
+<TD>control+end key</TD>
+<TD>t3+spDown</TD>
+</TR>
+<TR>
+<TD>home key</TD>
+<TD>t3+spLeft</TD>
+</TR>
+<TR>
+<TD>end key</TD>
+<TD>t3+spRight</TD>
 </TR>
 </TABLE>
 
