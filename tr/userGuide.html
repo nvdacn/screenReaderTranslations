@@ -2550,7 +2550,7 @@ Buradaki birçok onay kutusu belge içinde imleci hareket ettirirken hangi tür 
 <LI>Metin hizzalaması
 <LI>Renkler
 <LI>Açıklamalar
-<LI>editör değişiklikleri
+<LI>Editör değişiklikleri
 <LI>Vurgu
 <LI>Metin sitilleri
 <LI>Yazım hataları
@@ -2911,7 +2911,7 @@ Konuşma görüntüleyiciyi herhangi bir yerden açıp kapatmak için <A HREF="#
 <H3>10.3. Eklenti Yöneticisi</H3>
 
 <P>
-NVDA Araçlar menüsü altında, Eklentileri Yönet ögesini seçerek ulaşacağınız Eklenti Yöneticisi, NVDA için geliştirilmiş eklenti paketlerini kurmanıza ve kaldırmanıza olanak tanır.
+NVDA Araçlar menüsü altında, Eklentileri Yönet ögesini seçerek ulaşacağınız Eklenti Yöneticisi, NVDA için geliştirilmiş eklenti paketlerini kurmanıza, etkinleştirip devre dışı bırakmanıza ve kaldırmanıza olanak tanır.
 BU paketler camia tarafından sağlanırlar ve NVDA'nın özelliklerini geliştiren ya da değiştiren kodlar barındırırlar. Hatta extra kabartma ekran ya da sentezleyici için destek sağlayabilirler.
 </P>
 <P>
@@ -2943,8 +2943,15 @@ Kurarken olduğu gibi, eklentinin tamamen kaldırılması için NVDA yeniden ba�
 Bu yapılana kadar, eklenti durumu Kaldır olarak gösterilecektir.
 </P>
 <P>
+Bir eklentiyi devre dışı bırakmak için devre dışı bırak düğmesine basın.
+Daha önce devre dışı bırakılmış olan eklentiyi etkinleştirmek için  etkinleştir düğmesine basın.
+Eklenti durumu etkin olarak gösteriliyorsa devre dışı bırakabilir; devre dışı ise tekrar etkinleştirebilirsiniz.
+Etkinleştir / devre dışı bırak düğmesine her basıldığında, NVDA yeniden başladığında ne olacağını belirtmek için eklenti statüsü değişir .
+Aynı Eklenti kurduğunuzda ya da kaldırdığınızdaki gibi, değişikliklerin etkili olması için NVDA'yı yeniden başlatmanız gerekecektir.
+</P>
+<P>
 Yönetici, iletişim kutusunu kapatmak için kullanacağınız Kapat düğmesini de içerir.
-Bir eklenti kurduysanız ya da kaldırdıysanız, NVDA değişikliklerin etkili olması için yeniden başlatmak isteyip istemediğinizi soracaktır.
+Bir eklenti kurduysanız,  kaldırdıysanız ya da statüsünü değiştirdiyseniz, NVDA değişikliklerin etkili olması için yeniden başlatmak isteyip istemediğinizi soracaktır.
 </P>
 <P>
 Önceki sürümlerde NVDA'nın işlevlerini zenginleştiren çeşitli plug-in ya da sürücüleri NVDA konfigürasyon dizininde ilgili klasörlere kopyalayarak kullanmak mümkündü.
@@ -3291,24 +3298,44 @@ Lütfen bu tuşların nerede bulunacağıyla ilgili Braille ekran yardım belgel
 <TH>Kısayol Tuşu</TH>
 </TR>
 <TR>
-<TD>Braille ekranı geri kaydır back</TD>
-<TD>t1</TD>
+<TD>Scroll braille display back</TD>
+<TD>t1 or etouch1</TD>
 </TR>
 <TR>
 <TD>Braille ekran önceki satır</TD>
 <TD>t2</TD>
 </TR>
 <TR>
+<TD>Move to current focus</TD>
+<TD>t3</TD>
+</TR>
+<TR>
 <TD>Braille ekran sonraki satır</TD>
 <TD>t4</TD>
 </TR>
 <TR>
-<TD>Braille ekranı ileri kaydır</TD>
-<TD>t5</TD>
+<TD>Scroll braille display forward</TD>
+<TD>t5 or etouch3</TD>
 </TR>
 <TR>
 <TD>Odağı braille konumuna taşı</TD>
 <TD>routing</TD>
+</TR>
+<TR>
+<TD>Move to top line in review</TD>
+<TD>t1+t2</TD>
+</TR>
+<TR>
+<TD>Toggle braille tethered to</TD>
+<TD>t1+t3</TD>
+</TR>
+<TR>
+<TD>Report title</TD>
+<TD>etouch2</TD>
+</TR>
+<TR>
+<TD>Report status bar</TD>
+<TD>etouch4</TD>
 </TR>
 <TR>
 <TD>shift+tab tuşu</TD>
@@ -3347,6 +3374,10 @@ Lütfen bu tuşların nerede bulunacağıyla ilgili Braille ekran yardım belgel
 <TD>spEnter</TD>
 </TR>
 <TR>
+<TD>Report date/time</TD>
+<TD>sp1+sp2</TD>
+</TR>
+<TR>
 <TD>NVDA Menüsü</TD>
 <TD>sp1+sp3</TD>
 </TR>
@@ -3355,12 +3386,32 @@ Lütfen bu tuşların nerede bulunacağıyla ilgili Braille ekran yardım belgel
 <TD>sp1+sp4</TD>
 </TR>
 <TR>
+<TD>windows+b key (focus system tray)</TD>
+<TD>sp3+sp4</TD>
+</TR>
+<TR>
 <TD>windows tuşu</TD>
 <TD>sp2+sp3</TD>
 </TR>
 <TR>
 <TD>alt+tab tuşu</TD>
 <TD>sp2+sp4</TD>
+</TR>
+<TR>
+<TD>control+home key</TD>
+<TD>t3+spUp</TD>
+</TR>
+<TR>
+<TD>control+end key</TD>
+<TD>t3+spDown</TD>
+</TR>
+<TR>
+<TD>home key</TD>
+<TD>t3+spLeft</TD>
+</TR>
+<TR>
+<TD>end key</TD>
+<TD>t3+spRight</TD>
 </TR>
 </TABLE>
 
