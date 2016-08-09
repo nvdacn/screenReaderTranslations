@@ -370,7 +370,7 @@ Die folgenden Tastenkombinationen zum Betrachten von Text sind verfügbar:
 | Zum nächsten Zeichen springen | Num 3 | NVDA+Pfeiltaste nach rechts | Nach rechts streichen (Textmodus) | Zieht den NVDA-Cursor zum nächsten Zeichen der aktuellen Zeile im Text. |
 | Zum Zeilenende springen | Umschalt+Nummerntaste 3 | NVDA+Ende | Keine | Zieht den NVDA-Cursor zum Zeilenende im Text. |
 | Alles ansagen | Nummerntaste Plus | NVDA+Umschalt+A | Nach unten streichen mit drei Fingern (Textmodus) | Liest von der aktuellen Cursor-Position des NVDA-Cursors den Text vor und bewegt ihn mit. |
-| vom NVDA-Cursor markieren und kopieren | NVDA+f9 | NVDA+f9 | keine | setzt eine Startmarke an der aktuellen Position des NVDA-Cursors. |
+| vom NVDA-Cursor markieren und kopieren | NVDA+f9 | NVDA+f9 | keine | setzt eine Startmarke an der aktuellen Position des NVDA-Cursors ab der markiert oder kopiert werden soll. Die Aktion (markieren/kopieren) wird nicht ausgeführt, bis Sie NVDA den Textende mitgeteilt haben. |
 | bis zum NVDA-Cursor markieren und kopieren | NVDA+f10 | NVDA+f10 | keine | Wird die Tastenkombination einmal gedrückt, markiert NVDA den Text zwischen der zuvor gesetzten Startmarke und der aktuellen Position des NVDA-Cursors. Wird die Tastenkombination zweimal gedrückt, so kopiert NVDA den Text zwischen der zuvor gesetzten Startmarke und der aktuellen Position des NVDA-Cursors in die Zwischenablage |
 | Textformatierung ausgeben | NVDA+F | NVDA+F | Keine | Gibt die Formatierungen unter dem NVDA-Cursor aus. Bei zweimaligen Drücken der Tastenkombination wird die Ausgabe im Lesemodus dargestellt. |
 %kc:endInclude
@@ -1060,7 +1060,7 @@ Wenn eingeschaltet, verfolgt der NVDA-Cursor bei Bewegungen die Maus.
 ==== Einfacher Darstellungsmodus ====
 Bei eingeschaltetem Modus filtert NVDA nicht wichtige Objekte aus der Hierarchie der navigierbaren Objekte heraus. Dabei werden zum Beispiel unsichtbare Objekte und Objekte, welche nur zu Gestaltungszwecken eingebaut wurden, übersprungen.
 
-Um den einfachen Darstellungsmodus global ein- und auszuschalten, können Sie den entsprechenden Befehl an eine Tastenkombination zuweisen. Verwenden Sie hierfür den Dialog [Eingaben #InputGestures].
+Um den einfachen Darstellungsmodus per Tastenkombination  ein- und auszuschalten, können Sie den entsprechenden Befehl an eine Tastenkombination zuweisen. Verwenden Sie hierfür den Dialog [Eingaben #InputGestures].
 
 +++ Einstellungen zur Objektdarstellung (NVDA+STRG+O) +++
 Zu finden im Menü Einstellungen unter Objektpräsentation.
@@ -1203,7 +1203,7 @@ Konfigurieren können Sie die Meldungen von:
 - Farben
 - Kommentare
 - Dokumentänderungen
-- betonten Text
+- betonter Text
 - Layout
 - Rechtschreibfehler
 - Seitenwechsel
@@ -1434,7 +1434,7 @@ Wenn Sie in das Fenster des Betrachters klicken, unterbricht NVDA augenblicklich
 Um den Sprachbetrachter per Tastenkombination ein- beziehungsweise auszuschalten, müssen Sie diesem mittels des []Dialog Eingaben #InputGestures] eine eigene Tastenkombination zuweisen.
 
 ++ Erweiterungen verwalten ++
-Im "Erweiterungen verwalten", den Sie über das Untermenü Extras im NVDA-Menü erreichen, können Sie Erweiterungspakete für NVDA installieren, deinstallieren, aktivieren oder deaktivieren. 
+Im Dialog "Erweiterungen verwalten", den Sie über das Untermenü Extras im NVDA-Menü erreichen, können Sie Erweiterungspakete für NVDA installieren, deinstallieren, aktivieren oder deaktivieren. 
 Diese Pakete werden von der NVDA-Nutzergemeinde bereit gestellt und können zusätzlichen Code enthalten, um NVDA-Funktionen zu verändern oder zu erweitern. Es ist auf diese Weise sogar möglich, neue Braillezeilen- oder Sprachausgabentreiber hinzuzufügen.
 
 Die Erweiterungsverwaltung enthält eine Liste aller Erweiterungen, die bereits in Ihrer benutzerspezifischen Konfiguration installiert sind.
@@ -1444,7 +1444,7 @@ Falls für diese Erweiterung eine Hilfedatei verfügbar ist, können Sie diese m
 Um weitere Erweiterungen herunterzuladen und zu installieren, klicken Sie auf den Schalter "Erweiterungen herunterladen...".
 Hiermit wird die Webseite für NVDA-Erweiterungen http://addons.nvda-project.org geöffnet.
 Falls NVDA installiert ist und gerade verwendet wird, können Sie Erweiterungen direkt vom Browser aus installieren.
-Anderenfalls müssen Sie die Erweiterung speichern und wie unten beschrieben vorgehen, um eine Erweiterung zu installieren.
+Andernfalls müssen Sie die Erweiterung speichern und wie unten beschrieben vorgehen, um eine Erweiterung zu installieren.
 
 Um eine Erweiterung zu installieren, klicken Sie auf den Schalter "Installieren...".
 Jetzt können Sie auf Ihrem Rechner oder im Netzwerk nach der gewünschten Erweiterung (einer Datei mit der Endung ".nvda-addon") suchen.
@@ -1462,7 +1462,8 @@ Solange Sie den Neustart von NVDA nicht durchführen, wird im Erweiterungs-Manag
 
 Um eine Erweiterung zu deaktivieren, drücken Sie den Schalter "deaktivieren"
 Um eine zuvor deaktivierte Erweiterung wieder zu aktivieren, verwenden Sie den Schalter "aktivieren".
-Sie können monentan laufende sowie aktivierte Erweiterungen deaktivieren. Sie können solche Erweiterungen aktivieren, deren Status als "stillgelegt" Bzw. "deaktiviert" angezeigt wird.
+Sie können momentan laufende sowie aktivierte Erweiterungen deaktivieren. Sie können solche Erweiterungen aktivieren, deren Status als "stillgelegt" Bzw. "deaktiviert" angezeigt wird.
+Nach jedem Tastendruck des aktivieren/deaktivieren- Schalters zeigt der Status der Erweiterung an, was nach dem Neustart von NVDA passiert.
 Ähnlich wie beim Installieren oder Entfernen von Erweiterungen müssen Sie NVDA neu starten, damit die Änderungen wirksam werden.
 
 Die Erweiterungsverwaltung enthält außerdem noch den Schalter "schließen", um den Dialog zu schließen.
@@ -1615,7 +1616,7 @@ Bitte lesen Sie in der Dokumentation der Braillezeile für weitere Details.
 | Braillezeile zur vorherigen Zeile ziehen | T2 |
 | zum Fokus bewegen | t3 |
 | Braillezeile zur nächsten Zeile ziehen | T4 |
-| Braillezeile weiterscrollen | T5 oder ethouch3 |
+| Braillezeile weiterscrollen | T5 oder etouch3 |
 | Zum aktuellen Modul auf der Brailezeile springen | Routing |
 | NVDA-Cursor zur ersten Zeile bewegen | t1+t2 |
 | NVDA-Cursor zur letzten Zeile bewegen | t4+t5 |
