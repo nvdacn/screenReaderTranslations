@@ -13,7 +13,158 @@
 Traduzido por Marlin Rodrigues da Silva e Cleverson Casarin Uliana
 </P>
 
+<H2>2016.3</H2>
+
+<P>
+ Os destaques desta versão incluem a possibilidade de desabilitar coplementos individualmente; suporte para campos de formulário no Microsoft Excel; implementações significativas no anúncio das cores; correções e implementações relacionadas a várias linhas braille; e correções e implementações no suporte para o Microsoft Word.
+</P>
+
+<H3>Novas Características</H3>
+
+<UL>
+<LI>Browse mode can now be used to read PDF documents in Microsoft Edge in the Windows 10 Anniversary Update. (<A HREF="http://github.com/nvaccess/nvda/issues/5740">#5740</A>)
+<LI>Taxaddo e taxado duplo agora são anunciados no Microsoft Word quando apropriado. (<A HREF="http://github.com/nvaccess/nvda/issues/5800">#5800</A>)
+<LI>No Microsoft Word, o título das tabelas agora é anunciado caso algum haja sido atribuído. Caso exista uma descrição, esta pode ser acessada usando o comando para abrir descrição longa (NVDA+d) no modo de navegação. (<A HREF="http://github.com/nvaccess/nvda/issues/5943">#5943</A>)
+<LI>No Microsoft Word, o NVDA agora anuncia a informação da posição ao mover-se por parágrafos (alt+shift+seta abaixo e alt+shift+seta acima). (<A HREF="http://github.com/nvaccess/nvda/issues/5945">#5945</A>)
+<LI>In Microsoft Word, line spacing is now reported via NVDA's report formatting command, when changing it with various Microsoft word shortcut keys, and when moving to text with different line spacing if Report Line Spacing is turned on in NVDA's Document Formatting Settings. (<A HREF="http://github.com/nvaccess/nvda/issues/2961">#2961</A>)
+<LI>No Internet Explorer, elementos estruturais de HTML5 agora são reconhecidos. (<A HREF="http://github.com/nvaccess/nvda/issues/5591">#5591</A>)
+<LI>O anúncio de comentários (tal como no Microsoft Word) agora pode ser desabilitado por meio da caixa de seleção Anunciar Comentários no Diálogo de Formatação de Documentos do NVDA. (<A HREF="http://github.com/nvaccess/nvda/issues/5108">#5108</A>)
+<LI>Agora é possível desabilitar complementos individualmente no Gestor de Complementos. (<A HREF="http://github.com/nvaccess/nvda/issues/3090">#3090</A>)
+<LI>Teclas de comando adicionais foram atribuídas para as linhas braille das séries ALVA BC640/680. (<A HREF="http://github.com/nvaccess/nvda/issues/5206">#5206</A>)
+<LI>There is now a command to move the braille display to the current focus. Currently, only the ALVA BC640/680 series has a key assigned to this command, but it can be assigned manually for other displays in the Input Gestures dialog if desired. (<A HREF="http://github.com/nvaccess/nvda/issues/5250">#5250</A>)
+<LI>No Microsoft Excel, agora é possível interagir com form campos de formulário. Você move para um campo de formulário usando a Lista de Elementos ou a navegação por caractere no modo de navegação. (<A HREF="http://github.com/nvaccess/nvda/issues/4953">#4953</A>)
+<LI>Você agora pode atribuir um gesto de entrada para alternar o modo de revisão simples usando o Diálogo de Gestos de Entrada. (<A HREF="http://github.com/nvaccess/nvda/issues/6173">#6173</A>)
+</UL>
+
+<H3>Changes</H3>
+
+<UL>
+<LI>NVDA now reports colors using a basic well-understood set of 9 color hues and 3 shades, with brightness and paleness variations. This is rather than using more subjective and less understood color names. (<A HREF="http://github.com/nvaccess/nvda/issues/6029">#6029</A>)
+<LI>The existing NVDA+F9 then NVDA+F10 behavior has been modified to select text on the first press of F10. When F10 is pressed twice (in quick succession) the text is copied to the clipboard. (<A HREF="http://github.com/nvaccess/nvda/issues/4636">#4636</A>)
+<LI>Updated eSpeak NG to version Master 11b1a7b (22 June 2016). (<A HREF="http://github.com/nvaccess/nvda/issues/6037">#6037</A>)
+</UL>
+
+<H3>Bug Fixes</H3>
+
+<UL>
+<LI>In browse mode in Microsoft Word, copying to the clipboard now preserves formatting. (<A HREF="http://github.com/nvaccess/nvda/issues/5956">#5956</A>)
+<LI>In Microsoft Word, NVDA now reports appropriately when using Word's own table navigation commands (alt+home, alt+end, alt+pageUp and alt+pageDown) and table selection commands (shift added to the navigation commands). (<A HREF="http://github.com/nvaccess/nvda/issues/5961">#5961</A>)
+<LI>In Microsoft Word dialog boxes, NVDA's object navigation has been greatly improved. (<A HREF="http://github.com/nvaccess/nvda/issues/6036">#6036</A>)
+<LI>In some applications such as Visual Studio 2015, shortcut keys (e.g. control+c for Copy) are now reported as expected. (<A HREF="http://github.com/nvaccess/nvda/issues/6021">#6021</A>)
+<LI>Fixed a rare issue when scanning for serial ports on some systems which made some braille display drivers unusable. (<A HREF="http://github.com/nvaccess/nvda/issues/6015">#6015</A>)
+<LI>Reporting colors in Microsoft Word is now more accurate as changes in Microsoft Office Themes are now taken into account. (<A HREF="http://github.com/nvaccess/nvda/issues/5997">#5997</A>)
+<LI>Browse mode for Microsoft Edge and support for Start Menu search suggestions is again available on Windows 10 builds after April 2016. (<A HREF="http://github.com/nvaccess/nvda/issues/5955">#5955</A>)
+<LI>In Microsoft Word, automatic table header reading works better when dealing with merged cells. (<A HREF="http://github.com/nvaccess/nvda/issues/5926">#5926</A>)
+<LI>In the Windows 10 Mail app, NVDA no longer fails to read the content of messages. (<A HREF="http://github.com/nvaccess/nvda/issues/5635">#5635</A>) 
+<LI>When speak command keys is on, lock keys such as caps lock are no longer announced twice. (<A HREF="http://github.com/nvaccess/nvda/issues/5490">#5490</A>)
+<LI>Windows User Account Control dialogs are again read correctly in the Windows 10 Anniversary update. (<A HREF="http://github.com/nvaccess/nvda/issues/5942">#5942</A>)
+<LI>In the Web Conference Plugin (such as used on out-of-sight.net) NVDA no longer beeps and speaks progress bar updates related to microphone input. (<A HREF="http://github.com/nvaccess/nvda/issues/5888">#5888</A>)
+<LI>Performing a Find Next or Find Previous command in Browse Mode will now correctly do a  case sensitive search if the original Find was case sensitive. (<A HREF="http://github.com/nvaccess/nvda/issues/5522">#5522</A>)
+<LI>When editing dictionary entries, feedback is now given for invalid regular expressions. NVDA no longer crashes if a dictionary file contains an invalid regular expression. (<A HREF="http://github.com/nvaccess/nvda/issues/4834">#4834</A>)
+<LI>If NVDA is unable to communicate with a braille display (e.g. because it has been disconnected), it will automatically disable use of the display. (<A HREF="http://github.com/nvaccess/nvda/issues/1555">#1555</A>)
+<LI>Slightly improved performance of filtering in the Browse Mode Elements List in some cases. (<A HREF="http://github.com/nvaccess/nvda/issues/6126">#6126</A>)
+<LI>In Microsoft Excel, the background pattern names reported by NVDA now match those used by Excel. (<A HREF="http://github.com/nvaccess/nvda/issues/6092">#6092</A>)
+<LI>Improved support for the Windows 10 logon screen, including announcement of alerts and activating of the password field with touch. (<A HREF="http://github.com/nvaccess/nvda/issues/6010">#6010</A>)
+<LI>NVDA now correctly detects the secondary routing buttons on ALVA BC640/680 series braille displays. (<A HREF="http://github.com/nvaccess/nvda/issues/5206">#5206</A>)
+<LI>NVDA can again report Windows Toast notifications in recent builds of Windows 10. (<A HREF="http://github.com/nvaccess/nvda/issues/6096">#6096</A>)
+<LI>NVDA no longer occasionally stops recognising key presses on Baum compatible and HumanWare Brailliant B braille displays. (<A HREF="http://github.com/nvaccess/nvda/issues/6035">#6035</A>)
+<LI>If reporting of line numbers is enabled in NVDA's Document Formatting preferences, line numbers are now shown on a braille display. (<A HREF="http://github.com/nvaccess/nvda/issues/5941">#5941</A>)
+<LI>When speech mode is off, reporting objects (such as pressing NVDA+tab to report the focus) now appears in the Speech Viewer as expected. (<A HREF="http://github.com/nvaccess/nvda/issues/6049">#6049</A>)
+</UL>
+
+<H3>Changes for Developers</H3>
+
+<UL>
+<LI>Logging information directly from a property no longer results in the property  being called recursively over and over again. (<A HREF="http://github.com/nvaccess/nvda/issues/6122">#6122</A>)
+</UL>
+
+<H2>2016.2.1</H2>
+
+<P>
+This release fixes crashes in Microsoft Word:
+</P>
+
+<UL>
+<LI>NVDA no longer causes Microsoft Word to crash immediately after it starts in Windows XP. (<A HREF="http://github.com/nvaccess/nvda/issues/6033">#6033</A>)
+<LI>Removed reporting of grammar errors, as this causes crashes in Microsoft Word. (<A HREF="http://github.com/nvaccess/nvda/issues/5954">#5954</A>, <A HREF="http://github.com/nvaccess/nvda/issues/5877">#5877</A>)
+</UL>
+
+<H2>2016.2</H2>
+
+<P>
+Highlights of this release include the ability to indicate spelling errors while typing; support for reporting grammar errors in Microsoft Word; and improvements and fixes to Microsoft Office support.
+</P>
+
+<H3>New Features</H3>
+
+<UL>
+<LI>In browse mode in Internet Explorer and other MSHTML controls, using first letter navigation to move by annotation (a and shift+a) now moves to inserted and deleted text. (<A HREF="http://github.com/nvaccess/nvda/issues/5691">#5691</A>)
+<LI>In Microsoft Excel, NVDA now reports the level of a group of cells, as well as whether it is collapsed or expanded. (<A HREF="http://github.com/nvaccess/nvda/issues/5690">#5690</A>)
+<LI>Pressing the Report text formatting command (NVDA+f) twice presents the information in browse mode so it can be reviewed. (<A HREF="http://github.com/nvaccess/nvda/issues/4908">#4908</A>)
+<LI>In Microsoft Excel 2010 and later, cell shading and gradient fill is now reported. Automatic reporting is controlled by the Report colors option in NVDA's Document Formatting preferences. (<A HREF="http://github.com/nvaccess/nvda/issues/3683">#3683</A>)
+<LI>New braille translation table: Koine Greek. (<A HREF="http://github.com/nvaccess/nvda/issues/5393">#5393</A>)
+<LI>In the Log Viewer, you can now save the log using the shortcut key control+s. (<A HREF="http://github.com/nvaccess/nvda/issues/4532">#4532</A>)
+<LI>If reporting of spelling errors is enabled and supported in the focused control, NVDA will play a sound to alert you of a spelling error made while typing. This can be disabled using the new "Play sound for spelling errors while typing" option in NVDA's Keyboard Settings dialog. (<A HREF="http://github.com/nvaccess/nvda/issues/2024">#2024</A>)
+<LI>Grammar errors are now reported in Microsoft Word. This can be disabled using the new "Report grammar errors" option in NVDA's Document Formatting preferences dialog. (<A HREF="http://github.com/nvaccess/nvda/issues/5877">#5877</A>)
+</UL>
+
+<H3>Alterações</H3>
+
+<UL>
+<LI>In browse mode and editable text fields, NVDA now treats numpadEnter the same as the main enter key. (<A HREF="http://github.com/nvaccess/nvda/issues/5385">#5385</A>)
+<LI>O NVDA mudou para o sintetizador eSpeak NG. (<A HREF="http://github.com/nvaccess/nvda/issues/5651">#5651</A>)
+<LI>In Microsoft Excel, NVDA no longer ignores a column header for a cell when there is a blank row between the cell and the header. (<A HREF="http://github.com/nvaccess/nvda/issues/5396">#5396</A>)
+<LI>In Microsoft Excel, coordinates are now announced before headers to eliminate ambiguity between headers and content. (<A HREF="http://github.com/nvaccess/nvda/issues/5396">#5396</A>)
+</UL>
+
+<H3>Correção de Falhas</H3>
+
+<UL>
+<LI>In browse mode, when attempting to use single letter navigation to move to an element which isn't supported for the document, NVDA reports that this isn't supported rather than reporting that there is no element in that direction. (<A HREF="http://github.com/nvaccess/nvda/issues/5691">#5691</A>)
+<LI>When listing sheets in the Elements List in Microsoft Excel, sheets containing only charts are now included. (<A HREF="http://github.com/nvaccess/nvda/issues/5698">#5698</A>)
+<LI>O NVDA já não anuncia informações estranhas  quano se alterna a janela numa applicação Java  com múltiplas janelas tais como o IntelliJ ou Android Studio. (<A HREF="http://github.com/nvaccess/nvda/issues/5732">#5732</A>)
+<LI>Em editores baseados no Scintilla tais como o Notepad++, o braille agora se atualiza corretamente quando o cursor é movido usando uma linha braille. (<A HREF="http://github.com/nvaccess/nvda/issues/5678">#5678</A>)
+<LI>O NVDA já não  trava algumas vezes quando a saída braille é habilitada. (<A HREF="http://github.com/nvaccess/nvda/issues/4457">#4457</A>)
+<LI>In Microsoft Word, paragraph indentation is now always reported in the measurement unit chosen by the user (e.g. centimeters or inches). (<A HREF="http://github.com/nvaccess/nvda/issues/5804">#5804</A>)
+<LI>Ao usar uma linha braille, muitas mensagens do NVDA que anteriormente eram apenas faladas, agora são também exibidas em braille. (<A HREF="http://github.com/nvaccess/nvda/issues/5557">#5557</A>)
+<LI>Em aplicativos Java acessíveis, o nível dos itens em árvores agora é anunciado. (<A HREF="http://github.com/nvaccess/nvda/issues/5766">#5766</A>)
+<LI>Corrigidos travamentos do Adobe Flash no Mozilla Firefox em alguns casos. (<A HREF="http://github.com/nvaccess/nvda/issues/5367">#5367</A>)
+<LI>No Google Chrome e navegadores baseados no Chrome, documentos dentro de dálogos ou aplicativos agora podem ser lidos no modo de navegação. (<A HREF="http://github.com/nvaccess/nvda/issues/5818">#5818</A>)
+<LI>In Google Chrome and Chrome-based browsers, you can now force NVDA to switch to browse mode in web dialogs or applications. (<A HREF="http://github.com/nvaccess/nvda/issues/5818">#5818</A>)
+<LI>In Internet Explorer and other MSHTML controls, moving focus to certain controls (specifically, where aria-activedescendant is used) no longer incorrectly switches to browse mode. This occurred, for example, when moving to suggestions in address fields when composing a message in Gmail. (<A HREF="http://github.com/nvaccess/nvda/issues/5676">#5676</A>)
+<LI>In Microsoft Word, NVDA no longer freezes in large tables when reporting of table row/column headers is enabled. (<A HREF="http://github.com/nvaccess/nvda/issues/5878">#5878</A>)
+<LI>In Microsoft word, NVDA no longer incorrectly reports text with an outline level (but not a built-in heading style) as a heading. (<A HREF="http://github.com/nvaccess/nvda/issues/5186">#5186</A>)
+<LI>In browse mode in Microsoft Word, the Move past end/to start of container commands (comma and shift+comma) now work for tables. (<A HREF="http://github.com/nvaccess/nvda/issues/5883">#5883</A>)
+</UL>
+
+<H3>Alterações Específicas para Desenvolvedores</H3>
+
+<P>
+Alguns itens ou termos desta seção não serão traduzidos, uma vez que são demasiado técnicos e relevantes apenas para desenvolvedores. Todavia, os itens que possam ser relevantes para usuários comuns, serão traduzidos.
+</P>
+
+<UL>
+<LI>NVDA's C++ components are now built with Microsoft Visual Studio 2015. (<A HREF="http://github.com/nvaccess/nvda/issues/5592">#5592</A>)
+<LI>You can now present a text or HTML message to the user in browse mode using ui.browseableMessage. (<A HREF="http://github.com/nvaccess/nvda/issues/4908">#4908</A>)
+<LI>In the User Guide, when a %kc:setting command is used for a setting which has a common key for all layouts, the key may now be placed after a full-width colon (：) as well as the regular colon (:). (<A HREF="http://github.com/nvaccess/nvda/issues/5739">#5739</A>)
+</UL>
+
 <H2>2016.1</H2>
+
+<P>
+Os destaques desta versão incluem a possibilidade de reduzir opcionalmente o volume de outros sons; implementações para a saída braille e o suporte às linhas braille; várias correções significativa no suporte ao Microsoft Office; e correções ao modo de navegação  no iTunes.
+</P>
+
+<H3>Novas Características</H3>
+
+<UL>
+<LI>Novas tabelas de tradução braille: Polonês de 8 pontos (braille de computador), Mongol. (<A HREF="http://github.com/nvaccess/nvda/issues/5537">#5537</A>, <A HREF="http://github.com/nvaccess/nvda/issues/5574">#5574</A>)
+<LI>Você agora pode desativar o cursor braille e alterar seu formato usando as novas opções Mostrar cursor e Formato do cursor no Diálogo de Opções de Braille. (<A HREF="http://github.com/nvaccess/nvda/issues/5198">#5198</A>)
+<LI>O NVDA agora pode conectar-se à linha braille HIMS Smart Beetle via Bluetooth. (<A HREF="http://github.com/nvaccess/nvda/issues/5607">#5607</A>)
+<LI>NVDA can optionally lower the volume of other sounds when installed on Windows 8 and later. This can be configured using the Audio ducking mode option in the NVDA Synthesizer dialog or by pressing NVDA+shift+d. (<A HREF="http://github.com/nvaccess/nvda/issues/3830">#3830</A>, <A HREF="http://github.com/nvaccess/nvda/issues/5575">#5575</A>)
+<LI>Suporte para a linha APH Refreshabraille em modo oculto e para a Baum VarioUltra e Pronto! quando conectadas via USB. (<A HREF="http://github.com/nvaccess/nvda/issues/5609">#5609</A>)
+<LI>Suporte para as linhas braille HumanWare Brailliant BI/B quando o protocolo está definido para OpenBraille. (<A HREF="http://github.com/nvaccess/nvda/issues/5612">#5612</A>)
+</UL>
 
 <H3>Alterações</H3>
 
