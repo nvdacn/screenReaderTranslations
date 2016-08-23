@@ -38,35 +38,38 @@ Le principali caratteristiche di questa versione si focalizzano sulla possibilit
 <LI>NVDA ora annuncia colori di base con una serie completa di 9 toni e 3 sfumature di colore, con le variazioni di luminosità e intensità. Questo risulta più comprensibile rispetto ad utilizzare  nomi di colori più soggettivi e meno intelligibili. (<A HREF="http://github.com/nvaccess/nvda/issues/6029">#6029</A>)
 <LI>Modificato il funzionamento della combinazione nvda+f9/f10. Adesso una pressione della combinazione nvda-f10 selezionerà il testo, e una doppia pressione lo copierà negli appunti. (<A HREF="http://github.com/nvaccess/nvda/issues/4636">#4636</A>)
 <LI>Aggiornata eSpeak NG alla versione Master 11b1a7b (22 Giugno 2016). (<A HREF="http://github.com/nvaccess/nvda/issues/6037">#6037</A>)
-<P></P>
-== Bug Fixes ==
-<LI>In browse mode in Microsoft Word, copying to the clipboard now preserves formatting. (<A HREF="http://github.com/nvaccess/nvda/issues/5956">#5956</A>)
-<LI>In Microsoft Word, NVDA now reports appropriately when using Word's own table navigation commands (alt+home, alt+end, alt+pageUp and alt+pageDown) and table selection commands (shift added to the navigation commands). (<A HREF="http://github.com/nvaccess/nvda/issues/5961">#5961</A>)
-<LI>In Microsoft Word dialog boxes, NVDA's object navigation has been greatly improved. (<A HREF="http://github.com/nvaccess/nvda/issues/6036">#6036</A>)
-<LI>In some applications such as Visual Studio 2015, shortcut keys (e.g. control+c for Copy) are now reported as expected. (<A HREF="http://github.com/nvaccess/nvda/issues/6021">#6021</A>)
-<LI>Fixed a rare issue when scanning for serial ports on some systems which made some braille display drivers unusable. (<A HREF="http://github.com/nvaccess/nvda/issues/6015">#6015</A>)
-<LI>Reporting colors in Microsoft Word is now more accurate as changes in Microsoft Office Themes are now taken into account. (<A HREF="http://github.com/nvaccess/nvda/issues/5997">#5997</A>)
-<LI>Browse mode for Microsoft Edge and support for Start Menu search suggestions is again available on Windows 10 builds after April 2016. (<A HREF="http://github.com/nvaccess/nvda/issues/5955">#5955</A>)
-<LI>In Microsoft Word, automatic table header reading works better when dealing with merged cells. (<A HREF="http://github.com/nvaccess/nvda/issues/5926">#5926</A>)
-<LI>In the Windows 10 Mail app, NVDA no longer fails to read the content of messages. (<A HREF="http://github.com/nvaccess/nvda/issues/5635">#5635</A>) 
-<LI>When speak command keys is on, lock keys such as caps lock are no longer announced twice. (<A HREF="http://github.com/nvaccess/nvda/issues/5490">#5490</A>)
-<LI>Windows User Account Control dialogs are again read correctly in the Windows 10 Anniversary update. (<A HREF="http://github.com/nvaccess/nvda/issues/5942">#5942</A>)
-<LI>In the Web Conference Plugin (such as used on out-of-sight.net) NVDA no longer beeps and speaks progress bar updates related to microphone input. (<A HREF="http://github.com/nvaccess/nvda/issues/5888">#5888</A>)
-<LI>Performing a Find Next or Find Previous command in Browse Mode will now correctly do a  case sensitive search if the original Find was case sensitive. (<A HREF="http://github.com/nvaccess/nvda/issues/5522">#5522</A>)
-<LI>When editing dictionary entries, feedback is now given for invalid regular expressions. NVDA no longer crashes if a dictionary file contains an invalid regular expression. (<A HREF="http://github.com/nvaccess/nvda/issues/4834">#4834</A>)
-<LI>If NVDA is unable to communicate with a braille display (e.g. because it has been disconnected), it will automatically disable use of the display. (<A HREF="http://github.com/nvaccess/nvda/issues/1555">#1555</A>)
-<LI>Slightly improved performance of filtering in the Browse Mode Elements List in some cases. (<A HREF="http://github.com/nvaccess/nvda/issues/6126">#6126</A>)
-<LI>In Microsoft Excel, the background pattern names reported by NVDA now match those used by Excel. (<A HREF="http://github.com/nvaccess/nvda/issues/6092">#6092</A>)
-<LI>Improved support for the Windows 10 logon screen, including announcement of alerts and activating of the password field with touch. (<A HREF="http://github.com/nvaccess/nvda/issues/6010">#6010</A>)
-<LI>NVDA now correctly detects the secondary routing buttons on ALVA BC640/680 series braille displays. (<A HREF="http://github.com/nvaccess/nvda/issues/5206">#5206</A>)
-<LI>NVDA can again report Windows Toast notifications in recent builds of Windows 10. (<A HREF="http://github.com/nvaccess/nvda/issues/6096">#6096</A>)
-<LI>NVDA no longer occasionally stops recognising key presses on Baum compatible and HumanWare Brailliant B braille displays. (<A HREF="http://github.com/nvaccess/nvda/issues/6035">#6035</A>)
-<LI>If reporting of line numbers is enabled in NVDA's Document Formatting preferences, line numbers are now shown on a braille display. (<A HREF="http://github.com/nvaccess/nvda/issues/5941">#5941</A>)
-<LI>When speech mode is off, reporting objects (such as pressing NVDA+tab to report the focus) now appears in the Speech Viewer as expected. (<A HREF="http://github.com/nvaccess/nvda/issues/6049">#6049</A>)
-<LI>In the Outlook 2016 message list,  associated draft information is no longer reported. (<A HREF="http://github.com/nvaccess/nvda/issues/6219">#6219</A>)
 </UL>
 
-<H3>Changes for Developers</H3>
+<H3>Bug corretti</H3>
+
+<UL>
+<LI>In modalità navigazione in Microsoft Word, verrà conservata la formattazione del contenuto quando viene copiato negli appunti. (<A HREF="http://github.com/nvaccess/nvda/issues/5956">#5956</A>)
+<LI>In Microsoft Word, NVDA ora riporta correttamente le informazioni quando si utilizzano i comandi di Word per esplorare le tabelle (alt+home, alt+end, alt+paginaSu e alt+paginaGiù) e quelli per la selezione di tabelle (shift aggiunto ai comandi di navigazione). (<A HREF="http://github.com/nvaccess/nvda/issues/5961">#5961</A>)
+<LI>Nelle finestre di dialogo di Microsoft Word, è stata enormemente migliorata la navigazione ad oggetti di NVDA. (<A HREF="http://github.com/nvaccess/nvda/issues/6036">#6036</A>)
+<LI>In alcune applicazioni quali Visual Studio 2015, i tasti di scelta rapida (ad esempio control+c per copiare) vengono annunciati come ci si aspetta. (<A HREF="http://github.com/nvaccess/nvda/issues/6021">#6021</A>)
+<LI>Risolto un bug molto raro  che si presentava durante la scansione per la ricerca di display braille collegati a porte seriali che rendeva i driver di tali braille non più utilizzabili. (<A HREF="http://github.com/nvaccess/nvda/issues/6015">#6015</A>)
+<LI>Ora risulta molto più accurato il riconoscimento dei colori in Microsoft Word in quanto viene tenuto conto anche del tema utilizzato per Microsoft Office. (<A HREF="http://github.com/nvaccess/nvda/issues/5997">#5997</A>)
+<LI>Risultano di nuovo funzionanti sia il supporto alla modalità navigazione in Microsoft Edge  sia la lettura dei risultati e dei suggerimenti di ricerca nel menu avvio in Windows10, con Build successive ad aprile 2016. (<A HREF="http://github.com/nvaccess/nvda/issues/5955">#5955</A>)
+<LI>In Microsoft Word, la lettura automatica delle intestazioni tabella funziona meglio anche in concomitanza di unione di celle. (<A HREF="http://github.com/nvaccess/nvda/issues/5926">#5926</A>)
+<LI>Nell'app Mail di Windows 10, NVDA non commette più errori durante la lettura dei messaggi. (<A HREF="http://github.com/nvaccess/nvda/issues/5635">#5635</A>) 
+<LI>Quando la funzione leggi tasti di comando è attiva, il tasto Blocca Maiuscole non viene più annunciato due volte. (<A HREF="http://github.com/nvaccess/nvda/issues/5490">#5490</A>)
+<LI>Vengono letti di nuovo correttamente  i controlli nella finestra utente in Windows 10 Anniversary update. (<A HREF="http://github.com/nvaccess/nvda/issues/5942">#5942</A>)
+<LI>Nel plugin Web Conference (ad esempio quello usato in out-of-sight.net) NVDA non leggerà di continuo le barre di progresso inerenti il segnale d'ingresso del microfono. (<A HREF="http://github.com/nvaccess/nvda/issues/5888">#5888</A>)
+<LI>Quando si effettua una ricerca in modalità navigazione, sia successiva che precedente, NVDA distingue ora correttamente tra maiuscole e minuscole se la ricerca lo richiede. (<A HREF="http://github.com/nvaccess/nvda/issues/5522">#5522</A>)
+<LI>Quando si modifica un valore del dizionario, vengono forniti degli avvisi nel caso di espressioni regolari non corrette. Inoltre NVDA non crasha più nel caso sia presente un file dizionario con espressioni regolari non corrette al proprio interno. (<A HREF="http://github.com/nvaccess/nvda/issues/4834">#4834</A>)
+<LI>Se NVDA non è più in grado di comunicare con un Display Braille, (ad esempio perché è stato disconnesso), verrà automaticamente disattivato l'utilizzo del display braille senza provocare errori. (<A HREF="http://github.com/nvaccess/nvda/issues/1555">#1555</A>)
+<LI>Migliorate leggermente le prestazioni di filtraggio nella finestra elenco elementi della modalità navigazione. (<A HREF="http://github.com/nvaccess/nvda/issues/6126">#6126</A>)
+<LI>In Microsoft Excel, i valori dei nomi di sfondo annunciati da NVDA sono identici a quelli di Excel. (<A HREF="http://github.com/nvaccess/nvda/issues/6092">#6092</A>)
+<LI>Migliorato il supporto alla schermata di Logon in Windows 10, compresi gli annunci per gli avvisi e l'attivazione dei campi password in modalità touch. (<A HREF="http://github.com/nvaccess/nvda/issues/6010">#6010</A>)
+<LI>NVDA riconosce ora correttamente la seconda fila di cursor routing nei modelli ALVA BC640/680. (<A HREF="http://github.com/nvaccess/nvda/issues/5206">#5206</A>)
+<LI>NVDA annuncia nuovamente le notifiche che appaiono nelle versioni più recenti di Windows 10. (<A HREF="http://github.com/nvaccess/nvda/issues/6096">#6096</A>)
+<LI>Risolto un problema che occasionalmente non permetteva più a NVDA di riconoscere le pressioni dei tasti nei display braille Baum e HumanWare. (<A HREF="http://github.com/nvaccess/nvda/issues/6035">#6035</A>)
+<LI>Se viene attivata la lettura dei numeri di riga nelle impostazioni formattazione documento di NVDA, i numeri di riga vengono mostrati anche sulle barre braille. (<A HREF="http://github.com/nvaccess/nvda/issues/5941">#5941</A>)
+<LI>Quando la modalità voce è spenta, comandi come NVDA+tab per la lettura del focus vengono visualizzati correttamente nel visualizzatore sintesi vocale. (<A HREF="http://github.com/nvaccess/nvda/issues/6049">#6049</A>)
+<LI>Nell'elenco messaggi di Outlook 2016, non vengono più annunciate informazioni associate con le bozze. (<A HREF="http://github.com/nvaccess/nvda/issues/6219">#6219</A>)
+</UL>
+
+<H3>Cambiamenti per sviluppatori (in inglese)</H3>
 
 <UL>
 <LI>Logging information directly from a property no longer results in the property  being called recursively over and over again. (<A HREF="http://github.com/nvaccess/nvda/issues/6122">#6122</A>)
@@ -75,12 +78,12 @@ Le principali caratteristiche di questa versione si focalizzano sulla possibilit
 <H2>2016.2.1</H2>
 
 <P>
-This release fixes crashes in Microsoft Word:
+Questa versione risolve alcuni crash in Microsoft Word:
 </P>
 
 <UL>
-<LI>NVDA no longer causes Microsoft Word to crash immediately after it starts in Windows XP. (<A HREF="http://github.com/nvaccess/nvda/issues/6033">#6033</A>)
-<LI>Removed reporting of grammar errors, as this causes crashes in Microsoft Word. (<A HREF="http://github.com/nvaccess/nvda/issues/5954">#5954</A>, <A HREF="http://github.com/nvaccess/nvda/issues/5877">#5877</A>)
+<LI>NVDA non causa più crash all'avvio di Microsoft Word in Windows Xp. (<A HREF="http://github.com/nvaccess/nvda/issues/6033">#6033</A>)
+<LI>Rimossa la funzione di rilevazione errori di grammatica, in quanto era la causa dei crash in Microsoft Word. <A HREF="http://github.com/nvaccess/nvda/issues/5877">#5877</A>)
 </UL>
 
 <H2>2016.2</H2>
