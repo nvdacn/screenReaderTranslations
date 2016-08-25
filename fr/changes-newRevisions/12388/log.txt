@@ -1,0 +1,9 @@
+commit be357ce3e4ac096a82d930adb315f037ede068f0
+Author: James Teh <jamie@nvaccess.org>
+Date:   Tue Aug 23 05:32:45 2016 +0100
+
+    In Google Chrome and Chrome-based browsers in a language other than English, browse mode no longer fails to work in many documents.
+    
+    Chrome incorrectly localises the name returned by IAccessibleAction::name, but this means it contains a space for some actions in some languages; e.g. "click" is "fai clic" in Italian. This results in the buffer producing an invalid XML attribute name, which breaks reading of affected content. We now filter the XML so this doesn't happen.
+    
+    Issue #6249. PR #6295.
