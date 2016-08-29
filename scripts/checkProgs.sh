@@ -52,5 +52,3 @@ elif [ "$XGETTEXT" == "" ]; then
 fi
 
 MYDIR=$(getAbsPath $0)
-source "${MYDIR}/systemData.sh"
-

@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-source systemData.sh
-
-
 printFileHeader() {
 echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">'
 echo '<HTML><HEAD>'
@@ -35,7 +32,8 @@ awk '{printf("<tr><td>%s</td><td>%.2f%%</td><td>%d</td></tr>\n", $1, ($3==0)?0:(
 }
 
 printFileHeader
-for lang in ${updatePoLangs[*]}; do
+for lang in ../*/nvda.po; do
+lang=`cut -d / -f 2 <<< $lang`
 printLangHeader $lang
 find ../${lang}/ -iname "*.po" | sort | while read file; do
 printRow $file
