@@ -158,7 +158,7 @@
     <LI><A HREF="#toc103">12.2. Optelec ALVA BC640/680</A>
     <LI><A HREF="#toc104">12.3. Terminais Handy Tech</A>
     <LI><A HREF="#toc105">12.4. MDV Lilli</A>
-    <LI><A HREF="#toc106">12.5. Baum/Humanware/APH Braille Displays</A>
+    <LI><A HREF="#toc106">12.5. Linhas Braille Baum/Humanware/APH/Orbit</A>
     <LI><A HREF="#toc107">12.6. hedo ProfiLine USB</A>
     <LI><A HREF="#toc108">12.7. hedo MobilLine USB</A>
     <LI><A HREF="#toc109">12.8. HumanWare Brailliant BI/B Series</A>
@@ -2552,37 +2552,51 @@ A maioria das caixas de verificação, neste diálogo, permitem-lhe configurar q
 Por exemplo, se seleccionar a caixa de verificação para anunciar o nome do tipo de letra, de cada vez que anda pelo texto com tipos de letra diferentes, o nome do tipo de letra será anunciado. 
 </P>
 <P>
+As várias opções estão organizadas em grupos.
 Pode configurar o anúncio de:
 </P>
 
 <UL>
-<LI>Nome do tipo de letra
-<LI>Tamanho do tipo de letra
-<LI>Atributos do tipo de letra
-<LI>Alinhamento de texto
-<LI>Cores
-<LI>Revisões do editor
-<LI>Comentários
-<LI>Ênfase
-<LI>Estilo de texto
-<LI>Erros ortográficos
-<LI>Números de página
-<LI>Números de linha
-<LI>Indentação da linha
-<LI>Indentação do parágrafo (i.e. indentação suspensa, indentação da primeira linha)
-<LI>Espaçamento das linhas (simples, duplo, etc)
+<LI>Tipo de letra:
+ <UL>
+ <LI>Nome do tipo de letra
+ <LI>Tamanho do tipo de letra
+ <LI>Atributos do tipo de letra
+ <LI>Ênfase
+ <LI>Estilo
+ <LI>Cores
+ </UL>
+<LI>Informação do documento:
+ <UL>
+ <LI>Comentários
+ <LI>Revisões do editor
+ <LI>Erros ortográficos
+ </UL>
+<LI>Paginação :
+ <UL>
+ <LI>Números de página
+ <LI>Números de linha
+ <LI>Indentação da linha <A HREF="#lineIndentationOptions">(Desligado, Voz, Sons, ou ambos)</A>
+ <LI>Indentação do parágrafo (i.e. indentação suspensa, indentação da primeira linha)
+ <LI>Espaçamento das linhas (simples, duplo, etc)
+ <LI>Alinhamento
+ </UL>
+<LI>Informação de tabelas
  <UL>
  <LI>Tabelas
+ <LI>Títulos de linha e coluna
+ <LI>Coordenadas da célula
  </UL>
-<LI>Títulos de linha e coluna na tabela
-<LI>Coordenadas da célula na tabela
-<LI>Links
-<LI>Títulos
-<LI>Listas
-<LI>Blocos de citação
-<LI>Marcadores
-<LI>Frames
-<LI>Se clicável
+<LI>Elementos
+ <UL>
+ <LI>Títulos
+ <LI>Links
+ <LI>Listas
+ <LI>Blocos de citação
+ <LI>Marcadores
+ <LI>Frames
+ <LI>Se clicável
+ </UL>
 </UL>
 
 <P>
@@ -2600,6 +2614,21 @@ Por padrão, o NVDA irá detectar a formatação na posição do cursor do siste
 <P>
 Active esta opção, enquanto verifica documentos em aplicações como o Microsoft Word, em que a formatação seja importante.
 </P>
+
+<H5>Anúnncio da indentação das linhas</H5>
+
+<P>
+Esta opção permite configurar como a indentação no início da linha é anunciada.
+A caixa combinada tem 4 opções:
+</P>
+
+<UL>
+<LI>Desligado: O NVDA não anunciará a indentação;
+<LI>Voz: Quando a indentação variar, o NVDA anunciará algo como "doze espaços" ou "quatro tabs";
+<LI>Sons: Quando a indentação variar, os sons indicarão o nível de alteração na indentação;
+O som aumentará a tonalidade cada espaço e para cada Tab aumentará o equivalente a 4 espaços;
+<LI>Voz e sons: O NVDA usará, em simultâneo, os dois métodos acima descritos.
+</UL>
 
 <A NAME="toc76"></A>
 <H4>9.1.13. Dicionários de voz</H4>
@@ -2912,6 +2941,11 @@ Para os programadores com visão ou para as pessoas que estão a demonstrar o NV
 <P>
 Para activar o Visualizador de Discurso, marque o item de menu "Visualizador de Discurso", em Ferramentas no Menu do NVDA.
 Ao desmarcar este item, desactiva-o.
+</P>
+<P>
+A janela do Visualizador de discurso contém uma caixa de verificação chamada "Mostrar o Visualizador de discurso no arranque".
+Se esta caixa estiver marcada, o Visualizador de discurso será aberto juntamente com o NVDA.
+A janela do Visualizador de discurso tentará sempre abrir no mesmo local e com as mesmas dimensões que tinha quando foi fechada.
 </P>
 <P>
 Enquanto o Visualizador de Discurso estiver activo, o mesmo actualizar-se-á, constantemente, para lhe apresentar o texto mais recente que estáa ser falado.
@@ -3569,24 +3603,31 @@ Por favor consulte a documentação desta linha braille para obter a descrição
 </TABLE>
 
 <A NAME="toc106"></A>
-<H3>12.5. Baum/Humanware/APH Braille Displays</H3>
+<H3>12.5. Linhas Braille Baum/Humanware/APH/Orbit</H3>
 
 <P>
-São suportadas várias linhas braille da <A HREF="http://www.baum.de/cms/en/">Baum</A>, <A HREF="http://www.humanware.com/">HumanWare</A> e <A HREF="http://www.aph.org/">APH</A> quando conectadas via USB ou bluetooth.
+São suportadas várias linhas braille da <A HREF="http://www.baum.de/cms/en/">Baum</A>, <A HREF="http://www.humanware.com/">HumanWare</A>, <A HREF="http://www.aph.org/">APH</A> e <A HREF="http://www.orbitresearch.com/">Orbit</A> quando ligadas via USB, porta série ou bluetooth.
 Incluem-se:
 </P>
 
 <UL>
-<LI>Baum: SuperVario, PocketVario, VarioUltra e Pronto!
-<LI>HumanWare: Brailliant e BrailleConnect
-<LI>APH: Refreshabraille
+<LI>Baum: SuperVario, PocketVario, VarioUltra, Pronto!, SuperVario2 e Vario 340;
+<LI>HumanWare: Brailliant, BrailleConnect e Brailliant2;
+<LI>APH: Refreshabraille;
+<LI>Orbit: Orbit Reader 20
 </UL>
 
 <P>
 Outras linhas braille fabricadas pela Baum poderão igualmente funcionar, porém tal não foi testado.
 </P>
 <P>
-Se está a ligar a linha via USB, excepto para as VarioUltra, Pronto! ou Refreshabraille with modo USB configurado para HID, deverá, primeiro, instalar os drivers USB, fornecidos pelo fabricante.
+Se for ligar uma linha, que não use o modo HID, via USB, deverá, primeiro, instalar os drivers USB fornecidos pelo fabricante.
+As VarioUltra e Pronto! usam HID.
+As Refreshabraille e Orbit Reader 20 podem usar HID, se devidamente configuradas.
+</P>
+<P>
+O modo USB serial da Orbit Reader 20 só é actualmente suportado no Windows 10.
+Regra geral, deve ser usado o modo USB HID.
 </P>
 <P>
 Seguem-se as associações de teclas para estas linhas Braille com o NVDA.
