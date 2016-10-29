@@ -289,10 +289,10 @@ Na tym etapie możesz zdecydować czy chcesz zainstalować program na dysku, utw
 <P>
 Jeśli na aktualnym komputerze planujesz zawsze używać NVDA, prawdopodobnie najlepszym wyjściem będzie instalacja programu w systemie.
 Zainstalowana wersja umożliwia dostęp do funkcjonalności nieobecnych w kopii tymczasowej takich jak start wraz z systemem, dostęp do UAC i ekranów logowania. Po instalacji na twoim pulpicie i w menu start zostaną także utworzone skróty umożliwiające szybkie uruchomienie screenreadera.
-Przy pomocy zainstalowanej wersji będziesz mógł/mogła również utworzyć przenośną kopię programu w dowolnym momencie. 
+Przy pomocy zainstalowanej wersji możesz również utworzyć przenośną kopię programu w dowolnym momencie. 
 </P>
 <P>
-Jeśli chcesz nosić NVDA ze sobą na Pen Drive lub innym zapisywalnym nośniku, powinieneś wybrać utworzenie kopii przenośnej.
+Jeśli chcesz nosić NVDA ze sobą na Pen Drive lub innym zapisywalnym nośniku, wybierz utworzenie kopii przenośnej.
 Kopia przenośna umożliwia również instalację NVDA na dowolnym komputerze w późniejszym czasie.
 Jeżeli jednak chcesz skopiować NVDA na nośnik tylko do odczytu, taki jak płyta CD, powinieneś skopiować sam pakiet instalacyjny.
 Uruchomienie wersji przenośnej z nośnika tylko do odczytu, nie jest w tym momencie obsługiwane.
@@ -2553,42 +2553,59 @@ Większość pól wyboru w tym oknie dialogowym służy do konfiguracji, jaki ro
 Jeśli np. zaznaczysz pole wyboru "Odczytuj nazwy czcionek", to za każdym razem gdy kursor znajdzie się na tekście z inną czcionką, nazwa tej czcionki zostanie odczytana.
 </P>
 <P>
+Opcje formatowania dokumentu są pogrupowane.
 Możemy w ten sposób skonfigurować odczytywanie:
 </P>
 
 <UL>
-<LI>Nazw czcionek
-<LI>Rozmiaru czcionki
-<LI>Atrybutów czcionki
-<LI>Wyrównania tekstu
-<LI>Kolorów
-<LI>Komentarzy
-<LI>Zmian edycyjnych
-<LI>Podkreślenia
-<LI>Stylu tekstu
-<LI>Błędów pisowni
-<LI>Numerów stron
-<LI>Numerów linii
-<LI>Wcięć
-<LI>Wcięć akapitu (np. wysunięcie, wcięcie pierwszej linii)
-<LI>Interlinii (pojedyncza, podwójna etc)
-<LI>Tabel
-<LI>Nagłówków kolumn i wierszy tabeli
-<LI>Współrzędnych komórek tabeli
-<LI>Linków
-<LI>Nagłówków
-<LI>List
-<LI>Cytatów
-<LI>Punktów orientacyjnych
-<LI>Ramek
-<LI>Gdy coś jest klikalne
+<LI>Czcionki
+ <UL>
+ <LI>Nazw czcionek
+ <LI>Rozmiaru czcionki
+ <LI>Atrybutów czcionki
+ <LI>Podkreślenia
+ <LI>Stylu tekstu
+ <LI>Kolorów
+ </UL>
+<LI>Informacje o dokumencie
+ <UL>
+ <LI>Komentarzy
+ <LI>Zmian edycyjnych
+ <LI>Błędów pisowni
+ </UL>
+<LI>strony i odstępy
+ <UL>
+ <LI>Numerów stron
+ <LI>Numerów linii
+ <LI>Wcięć linii <A HREF="#lineIndentationOptions">(Wyłączone, Mowa, Dźwięki, Mowa i dźwięki)</A>
+ <LI>Wcięć akapitu (np. wysunięcie, wcięcie pierwszej linii)
+ <LI>Interlinii (pojedyncza, podwójna etc)
+ <LI>Wyrównania tekstu
+ </UL>
+<LI>Informacje o tabeli
+ <UL>
+ <LI>Tabel
+ <LI>Nagłówków kolumn i wierszy tabeli
+ <LI>Współrzędnych komórek tabeli
+ </UL>
+<LI>Elementy
+ <UL>
+ <LI>Nagłówków
+ <LI>Linków
+ <LI>List
+ <LI>Cytatów
+ <LI>Punktów orientacyjnych
+ <LI>Ramek
+ <LI>Gdy element jest klikalny
+-
+ </UL>
 </UL>
 
 <P>
 Aby przełączać te ustawienia z każdego miejsca, proszę określić własne zdarzenia wejścia w <A HREF="#InputGestures">oknie zdarzenia wejścia</A>.
 </P>
 
-<H5>Uwzględniaj formatowanie za kursorem</H5>
+<H5>Zgłaszaj formatowanie za kursorem</H5>
 
 <P>
 Jeśli opcja jest włączona, to NVDA spróbuje wykryć wszystkie zmiany formatowania w odczytywanej linii, nawet jeśli to pogorszy wydajność NVDA.
@@ -2597,7 +2614,7 @@ Jeśli opcja jest włączona, to NVDA spróbuje wykryć wszystkie zmiany formato
 Domyślnie NVDA wykryje formatowanie na pozycji Kursora Systemu / punktu Przeglądu, a w niektórych przypadkach może wykryć formatowanie reszty wierszy, ale tylko wtedy gdy nie będzie to powodować spadku wydajności.
 </P>
 <P>
-Włącz tę opcję, by przeprowadzić korektę dokumentów w aplikacjach takich jak Microsoft Word, gdzie formatowanie jest bardzo ważne.
+Włącz tę opcję, by przeprowadzić korektę dokumentów w aplikacjach takich jak Wordpad, gdzie formatowanie jest bardzo ważne.
 </P>
 
 <H5>Zgłaszaj wcięcia linii</H5>
@@ -2924,8 +2941,13 @@ Polecenia te są dostępne w menu Log.
 Dla widzących twórców oprogramowania, albo osób demonstrujących działanie NVDA szerszej publiczności osób widzących, dostępne jest ruchome okno wyświetlające to, co NVDA aktualnie wypowiada.
 </P>
 <P>
-Aby włączyć podgląd mowy, zaznacz pozycję "Podgląd Mowy" w menu w menu Narzędzia. 
-Aby wyłączyć tą opcję usuń zaznaczenie "Podgląd Mowy" w menu .
+Aby włączyć podgląd mowy, zaznacz pozycję "Podgląd Mowy" w menu Narzędzia. 
+Aby wyłączyć tę opcję, usuń zaznaczenie "Podgląd Mowy" w menu .
+</P>
+<P>
+Okno podglądu mowy zawiera pole wyboru "Pokaż podgląd mowy przy starcie".
+Jeśli jest zaznaczone, podgląd mowy otworzy się po starcie NVDA.
+Okno podglądu mowy będzie zawsze pojawiało się w tym samym miejscu i w takich samych rozmiarach, jakie ustawione były w chwili jego zamknięcia .
 </P>
 <P>
 Gdy podgląd mowy jest włączony, jego okienko stale się odświeża by pokazać aktualnie wypowiadany tekst.
@@ -3591,8 +3613,8 @@ Wśród nich:
 </P>
 
 <UL>
-<LI>Baum: SuperVario, PocketVario, VarioUltra, Pronto!
-<LI>HumanWare: Brailliant, BrailleConnect
+<LI>Baum: SuperVario, PocketVario, VarioUltra, Pronto!, SuperVario2, Vario 340
+<LI>HumanWare: Brailliant, BrailleConnect, Brailliant2
 <LI>APH: Refreshabraille
 <LI>Orbit: Orbit Reader 20
 </UL>
