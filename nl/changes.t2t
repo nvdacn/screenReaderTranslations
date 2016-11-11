@@ -3,6 +3,58 @@
 
 %!includeconf: ../changes.t2tconf
 
+= 2016.4 =
+Hoogepunten in deze versie zijn verbeterde ondersteuning voor Microsoft Edge; bladermodus in de Windows 10 Mail app; en significante verbeteringen aan de dialoogvensters van NVDA.
+
+== Nieuwe Functies ==
+- NVDA kan nu indicate line indentation using tones. This can be configured using de "Line indentation reporting" combo box in NVDA's dialoogvenster Document Formatting preferences. (#5906)
+- Ondersteuning voor de Orbit Reader 20 brailleleesregel. (#6007)
+- Een optie to open het speech viewer window on startup has been added. This can be enabled via a check box in het speech viewer window. (#5050)
+- When re-opening het speech viewer window, de location en dimensions will nu be restored. (#5050)
+- Cross-reference fields in Microsoft Word are nu treated like hyperlinks. They are gemeld as links en can be activated. (#6102)
+- Initial ondersteuning voor de upcoming version van de Kindle app. (#6247)
+- Ondersteuning voor de Baum SuperVario2, Baum Vario 340 en HumanWare Brailliant2 brailleleesregels. (#6116)
+- Initiële ondersteuning voor de Anniversary update van Microsoft Edge. (#6271)
+- Bladermodus is nu gebruikt when reading emails in de Windows 10 mail app. (#6271)
+
+
+== Changes ==
+- Updated liblouis braille translator to 3.0.0. This includes significant enhancements to Unified English Braille. (#6109, #4194, #6220, #6140)
+- In de Add-ons Manager hebben de knoppen  Disable add-on en Enable add-on nu toetsenbordsneltoetsen (resp. alt+d en alt+e). (#6388)
+- Various padding en alignment issues in dialoogvenstrs van NVDA have been resolved. (#6317, #5548, #6342, #6343, #6349)
+- Het dialoogvenster document formatting has been adjusted so that de contents scrolls. (#6348)
+- De layout van het dialoogvenster Symbol Pronunciation is aangepast zodat de volledige breedte van het dialoogvenster is gebruikt voor de symbolenlijst. (#6101)
+- In bladermodus in web browsers, het invoerveld (e en shift+e) en form field (f en shift+f) single letter navigation commands can nu be gebruikt to move to read-only edit fields. (#4164)
+- In NVDA's Document Formatting settings, "Announce formatting changes na de cursor" has been renamed to "Report formatting changes after de cursor", as it affects braille as well as speech. (#6336)
+- Adjusted the appearance van het NVDA "Welcome dialog". (#6350)
+- In dialoogvensters van NVDA zijn de "ok" en "cancel" knuppen nu rechhts uitgelijnd. (#6333)
+- Spin Controls are nu gebruikt voor numeric input fields such as de instelling "Capital pitch change percentage" in het dialoogvenster Voice Settings. You can enter de gewenste waarde or use de up en down pijltoetsen om de waarde aan te passen. (#6099)
+- De manier waarop IFrames worden gemeld, is consistenter gemaakt in alle browsers. IFrames worden nu gemeld als "frame" in Firefox. (#6047)
+
+
+== Opgeloste problemen ==
+- Een zeldzame fout opgelost when exiting NVDA terwijl de speech viewer open is. (#5050)
+- Image maps nu render as expected in bladermodus in Mozilla Firefox. (#6051)
+- While in het dialoogvenster dictionary, pressing de enter toets nu saves any changes you have made en closes hte dialoogvenster. Previously, pressing enter did nothing. (#6206)
+- Messages worden nu getoond in braille when changing input modes voor an input method (native input/alphanumeric, full shaped/half shaped, etc.). (#5892, #5893)
+- When disabling en then immediately re-enabling an add-on or vice versa, de add-on status nu correctly reverts to what it was previously. (#6299)
+- When using Microsoft Word, page number fields in headers can nu be read. (#6004)
+- The mouse can nu be gebruikt to move focus tussen de symbolenlijst en de invoervelden in heet dialoogvenster symbol pronunciation. (#6312)
+- In bladermodus in Microsoft Word, Fixed an issue that stops de elementenlijst from appearing when a document contains an invalid hyperlink. (#5886)
+- After being closed via de task bar or de alt+F4 shortcut, the speech viewer check box in het NVDA-menu will nu reflect the actual visibility van het venster. (#6340)
+- The reload plugins command no longer causes problems voor triggered configuration profiles, new documents in web browsers en screen review. (#2892, #5380)
+- In de talenlijst van het dialoogvenster Algemene Instellingen, worden talen als Aragonese nu correct getoond in Windows 10. (#6259)
+- Emulated system toetsenbordtoetsen (e.g. een knop op een brailleleesregel which emulates pressing de tabtoets) are nu presented in de configured NVDA taal in input help en het dialoogvenster Input Gestures. Previously, they were altijd presented in het Engels. (#6212)
+- Changing de NVDA-taal (from het dialoogvenster Algemen Instellingen) nu has no effect until NVDA is restarted. (#4561)
+- It is no longer possible to leave het Patroonveld blank voor a new speech dictionary entry. (#6412)
+- Fixed a rare issue when scanning voor serial ports on some systems which made sommige brailleleesregel drivers unusable. (#6462)
+- Numbered bullets are nu read from table cells in Microsoft Word when moving by cell. (#6446)
+
+
+== Veranderingen voor Ontwikkelaars ==
+Deze zijn niet vertaald. We verwijzen naar [de Engelstalige versie van dit document ../en/changes.html].
+
+
 = 2016.3 =
 Hoogtepunten in deze versie zijn de mogelijkheid om individuele add-ons uit te schakelen; ondersteuning voor formuliervelden in Microsoft Excel; significante verbeteringen bij het melden van kleuren; correcties en verbeteringen voor verschillende brailleleesregels; en gecorrigeerde en verbeterde ondersteuning voor Microsoft Word.
 
@@ -453,7 +505,7 @@ Deze zijn niet vertaald. We verwijzen naar [de Engelstalige versie van dit docum
 - In Google Chrome wordt de titel van het document opnieuw gemeld bij het wisselen van tabblad. In NVDA 2014.2 gebeurde dit in sommige gevallen niet. (#4222)
 - In Google Chrome en Chrome-gebaseerde browsers wordt het webadres van het document niet langer gemeld bij het lezen van het document. (#4223)
 - When running say all als de No speech synthesizer is geselecteerd (nuttig voor automated testing), say all will nu complete in plaats van te stoppen na de eerste regels. (#4225)
-- Microsoft Outlook's Signature dialog: het Signature editing veld is nu toegankelijk, allowing for full cursor tracking en format detection. (#3833) 
+- Microsoft Outlook's Signature dialog: het Signature editing veld is nu toegankelijk, wt full cursor tracking en format detection mogelijk maakt. (#3833) 
 - Microsoft Word: bij het lezen van de laatste regel van een tabelcel, wordt niet langer de hele tabelcel gelezen. (#3421)
 - Microsoft Word: bij het lezen van de eerste of de laatste regel van een inhoudsopgave, wordt niet langer de hele inhoudsopgave gelezen. (#3421)
 - When speaking typed words en in sommige andere gevallen, worden woorden niet langer onterecht onderbroken bij markeringen zoals klinkertekens en virama in Indische talen. (#4254)
