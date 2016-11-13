@@ -12,16 +12,22 @@
 
 <H2>2016.4</H2>
 
+<P>
+Highlights of this release include improved support for Microsoft Edge; browse mode in the Windows 10 Mail app; and significant improvements to NVDA's dialogs.
+</P>
+
 <H3>New Features</H3>
 
 <UL>
-<LI>NVDA can now indicate line indentation using tones. This can be configured using the "Report line indentation with" combo box in NVDA's Document Formatting preferences dialog. (<A HREF="http://github.com/nvaccess/nvda/issues/5906">#5906</A>)
+<LI>NVDA can now indicate line indentation using tones. This can be configured using the "Line indentation reporting" combo box in NVDA's Document Formatting preferences dialog. (<A HREF="http://github.com/nvaccess/nvda/issues/5906">#5906</A>)
 <LI>Support for the Orbit Reader 20 braille display. (<A HREF="http://github.com/nvaccess/nvda/issues/6007">#6007</A>)
 <LI>An option to open the speech viewer window on startup has been added. This can be enabled via a check box in the speech viewer window. (<A HREF="http://github.com/nvaccess/nvda/issues/5050">#5050</A>)
 <LI>When re-opening the speech viewer window, the location and dimensions will now be restored. (<A HREF="http://github.com/nvaccess/nvda/issues/5050">#5050</A>)
-<LI>Cross Reference fields in Microsoft Word are now treated like hyperlinks. They are reported as links, and can be activated. (<A HREF="http://github.com/nvaccess/nvda/issues/6102">#6102</A>)
+<LI>Cross-reference fields in Microsoft Word are now treated like hyperlinks. They are reported as links and can be activated. (<A HREF="http://github.com/nvaccess/nvda/issues/6102">#6102</A>)
 <LI>Initial support for the upcoming version of the Kindle app. (<A HREF="http://github.com/nvaccess/nvda/issues/6247">#6247</A>)
 <LI>Support for the Baum SuperVario2, Baum Vario 340 and HumanWare Brailliant2 braille displays. (<A HREF="http://github.com/nvaccess/nvda/issues/6116">#6116</A>)
+<LI>Initial support for the Anniversary update of Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/6271">#6271</A>)
+<LI>Browse mode is now used when reading emails in the Windows 10 mail app. (<A HREF="http://github.com/nvaccess/nvda/issues/6271">#6271</A>)
 </UL>
 
 <H3>Changes</H3>
@@ -31,38 +37,41 @@
 <LI>In the Add-ons Manager, the Disable add-on and Enable add-on buttons now have keyboard shortcuts (alt+d and alt+e, respectively). (<A HREF="http://github.com/nvaccess/nvda/issues/6388">#6388</A>)
 <LI>Various padding and alignment issues in NVDA's dialogs have been resolved. (<A HREF="http://github.com/nvaccess/nvda/issues/6317">#6317</A>, <A HREF="http://github.com/nvaccess/nvda/issues/5548">#5548</A>, <A HREF="http://github.com/nvaccess/nvda/issues/6342">#6342</A>, <A HREF="http://github.com/nvaccess/nvda/issues/6343">#6343</A>, <A HREF="http://github.com/nvaccess/nvda/issues/6349">#6349</A>)
 <LI>The document formatting dialog has been adjusted so that the contents scrolls. (<A HREF="http://github.com/nvaccess/nvda/issues/6348">#6348</A>)
-<LI>Adjusted the layout of the symbols pronunciation dialog so the full width of the dialog is used for the symbols list. (<A HREF="http://github.com/nvaccess/nvda/issues/6101">#6101</A>)
-<LI>In browse mode in web browsers, the edit field (e and shift+e) and form field (f and shift+f) single letter navigation commands now move to read-only edit fields. (<A HREF="http://github.com/nvaccess/nvda/issues/4164">#4164</A>)
+<LI>Adjusted the layout of the Symbol Pronunciation dialog so the full width of the dialog is used for the symbols list. (<A HREF="http://github.com/nvaccess/nvda/issues/6101">#6101</A>)
+<LI>In browse mode in web browsers, the edit field (e and shift+e) and form field (f and shift+f) single letter navigation commands can now be used to move to read-only edit fields. (<A HREF="http://github.com/nvaccess/nvda/issues/4164">#4164</A>)
 <LI>In NVDA's Document Formatting settings, "Announce formatting changes after the cursor" has been renamed to "Report formatting changes after the cursor", as it affects braille as well as speech. (<A HREF="http://github.com/nvaccess/nvda/issues/6336">#6336</A>)
 <LI>Adjusted the appearance of the NVDA "Welcome dialog". (<A HREF="http://github.com/nvaccess/nvda/issues/6350">#6350</A>)
 <LI>NVDA dialog boxes now have their "ok" and "cancel" buttons aligned to the right of the dialog. (<A HREF="http://github.com/nvaccess/nvda/issues/6333">#6333</A>)
-<LI>Spin Controls are now used for numerical input fields. (<A HREF="http://github.com/nvaccess/nvda/issues/6099">#6099</A>)
+<LI>Spin Controls are now used for numeric input fields such as the "Capital pitch change percentage" setting  in the Voice Settings dialog. You can enter the desired value or use the up and down arrow keys to adjust the value. (<A HREF="http://github.com/nvaccess/nvda/issues/6099">#6099</A>)
+<LI>The way IFrames are reported has been made more consistent accross browsers. IFrames are now reported as "frame" in Firefox. (<A HREF="http://github.com/nvaccess/nvda/issues/6047">#6047</A>)
 </UL>
 
 <H3>Bug Fixes</H3>
 
 <UL>
-<LI>Fixed a rare issue when exiting NVDA while the speech viewer is open causing an error. (<A HREF="http://github.com/nvaccess/nvda/issues/5050">#5050</A>)
+<LI>Fixed a rare error when exiting NVDA while the speech viewer is open. (<A HREF="http://github.com/nvaccess/nvda/issues/5050">#5050</A>)
 <LI>Image maps now render as expected in browse mode in Mozilla Firefox. (<A HREF="http://github.com/nvaccess/nvda/issues/6051">#6051</A>)
-<LI>Fixed an issue causing a warning in the NVDA log file when caps-lock is toggled. (<A HREF="http://github.com/nvaccess/nvda/issues/6127">#6127</A>)
-<LI>While in the dictionary dialog, pressing the enter key now saves changes and exits. (<A HREF="http://github.com/nvaccess/nvda/issues/6206">#6206</A>)
+<LI>While in the dictionary dialog, pressing the enter key now saves any changes you have made and closes the dialog. Previously, pressing enter did nothing. (<A HREF="http://github.com/nvaccess/nvda/issues/6206">#6206</A>)
 <LI>Messages are now displayed in braille when changing input modes for an input method (native input/alphanumeric, full shaped/half shaped, etc.). (<A HREF="http://github.com/nvaccess/nvda/issues/5892">#5892</A>, <A HREF="http://github.com/nvaccess/nvda/issues/5893">#5893</A>)
 <LI>When disabling and then immediately re-enabling an add-on or vice versa, the add-on status now correctly reverts to what it was previously. (<A HREF="http://github.com/nvaccess/nvda/issues/6299">#6299</A>)
-<LI>When using Microsoft Word, page-number fields in headers can now be read. (<A HREF="http://github.com/nvaccess/nvda/issues/6004">#6004</A>)
+<LI>When using Microsoft Word, page number fields in headers can now be read. (<A HREF="http://github.com/nvaccess/nvda/issues/6004">#6004</A>)
 <LI>The mouse can now be used to move focus between the symbol list and the edit fields in the symbol pronunciation dialog. (<A HREF="http://github.com/nvaccess/nvda/issues/6312">#6312</A>)
-<LI>Fixed an issue that stops the the elements list from appearing when Microsoft Word contains an invalid hyperlink. (<A HREF="http://github.com/nvaccess/nvda/issues/5886">#5886</A>)
-<LI>After being closed via the task bar or the alt+F4 shortcut, the speech viewer checkbox status in the NVDA menu will now reflect the actual visibility of the window. (<A HREF="http://github.com/nvaccess/nvda/issues/6340">#6340</A>)
+<LI>In browse mode in Microsoft Word, Fixed an issue that stops the elements list from appearing when a document contains an invalid hyperlink. (<A HREF="http://github.com/nvaccess/nvda/issues/5886">#5886</A>)
+<LI>After being closed via the task bar or the alt+F4 shortcut, the speech viewer check box in the NVDA menu will now reflect the actual visibility of the window. (<A HREF="http://github.com/nvaccess/nvda/issues/6340">#6340</A>)
 <LI>The reload plugins command no longer causes problems for triggered configuration profiles, new documents in web browsers and screen review. (<A HREF="http://github.com/nvaccess/nvda/issues/2892">#2892</A>, <A HREF="http://github.com/nvaccess/nvda/issues/5380">#5380</A>)
 <LI>In the list of languages in NVDA's General Settings dialog, languages such as Aragonese are now displayed correctly on Windows 10. (<A HREF="http://github.com/nvaccess/nvda/issues/6259">#6259</A>)
 <LI>Emulated system keyboard keys (e.g. a button on a braille display which emulates pressing the tab key) are now presented in the configured NVDA language in input help and the Input Gestures dialog. Previously, they were always presented in English. (<A HREF="http://github.com/nvaccess/nvda/issues/6212">#6212</A>)
 <LI>Changing the NVDA language (from the General Settings dialog) now has no effect until NVDA is restarted. (<A HREF="http://github.com/nvaccess/nvda/issues/4561">#4561</A>)
-<LI>The "pattern" field for a new dictionary entry is no longer allowed to be left blank. (<A HREF="http://github.com/nvaccess/nvda/issues/6412">#6412</A>)
+<LI>It is no longer possible to leave the Pattern field blank for a new speech dictionary entry. (<A HREF="http://github.com/nvaccess/nvda/issues/6412">#6412</A>)
+<LI>Fixed a rare issue when scanning for serial ports on some systems which made some braille display drivers unusable. (<A HREF="http://github.com/nvaccess/nvda/issues/6462">#6462</A>)
+<LI>Numbered bullets are now read from table cells in Microsoft Word when moving by cell. (<A HREF="http://github.com/nvaccess/nvda/issues/6446">#6446</A>)
 </UL>
 
 <H3>Changes for Developers</H3>
 
 <UL>
 <LI>It is now possible to provide app modules for executables containing a dot (.) in their names. Dots are replaced with underscores (_). (<A HREF="http://github.com/nvaccess/nvda/issues/5323">#5323</A>)
+<LI>The new gui.guiHelper module includes utilities to simplify the creation of wxPython GUIs, including automatic management of spacing. This facilitates better visual appearance and consistency, as well as easing creation of new GUIs for blind developers. (<A HREF="http://github.com/nvaccess/nvda/issues/6287">#6287</A>)
 </UL>
 
 <H2>2016.3</H2>
