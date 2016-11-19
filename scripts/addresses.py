@@ -118,7 +118,7 @@ addresses = {
     },
     'lt': {
         'lang':'Lithuanian',
-        'email': ['Paulius Leveris <paulius.leveris@gmail.com>'],
+        'email': ['Paulius Leveris <paulius.leveris@gmail.com>', 'Rimas Kudelis <rq@akl.lt>'],
     },
     'lv': {
         'lang':'Latvian',
