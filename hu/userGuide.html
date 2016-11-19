@@ -159,7 +159,7 @@
     <LI><A HREF="#toc101">12.2. Optelec ALVA BC640/680</A>
     <LI><A HREF="#toc102">12.3. Handy Tech kijelzők</A>
     <LI><A HREF="#toc103">12.4. MDV Lilli</A>
-    <LI><A HREF="#toc104">12.5. Baum/Humanware/APH Braille kijelzők</A>
+    <LI><A HREF="#toc104">12.5. Baum/Humanware/APH/Orbit Braille kijelzők</A>
     <LI><A HREF="#toc105">12.6. hedo ProfiLine USB</A>
     <LI><A HREF="#toc106">12.7. hedo MobilLine USB</A>
     <LI><A HREF="#toc107">12.8. HumanWare Brailliant BI/B sorozat</A>
@@ -347,6 +347,7 @@ Azon túl, hogy az NVDA hordozható változatban és ideiglenes példányban nem
 <LI>Az NVDA nem képes felolvasni a felhasználói fiók felügyeleti (UAC) képernyőket, ha egy alkalmazást rendszergazdai jogokal próbálunk meg elindítani.  
 <LI>Windows 8-ban az NVDA ilyenkor nem képes támogatni az érintőképernyőről történő bevitelt.
 <LI>Windows 8-ban ilyenkor az NVDA nem képes a Windows Store alkalmazásokban visszaolvasni a begépelt karaktereket, és böngésző módban felolvasni a tartalmakat.
+<LI>A hangerő-igazítás a hordozható verzióban nem támogatott.
 </UL>
 
 <A NAME="toc12"></A>
@@ -1602,6 +1603,9 @@ Az enter billentyű lenyomásával, vagy az Ugrás gomb aktiválásával lehet a
 <LI>Munkalap: Kilistázza a munkafüzet összes munkalapját.
 Egy kiválasztott munkalapot az F2 billentyű lenyomása után át lehet nevezni.
 Az enter billentyű lenyomásával, vagy az Ugrás gomb aktiválásával lehet a kiválasztott munkalapra navigálni.
+<LI>Űrlapmezők: Kilistázza az összes űrlapmezőt az aktív munkalapon.
+Az elemlistában elérhető az űrlapmezőkhöz tartozó alternatív szöveg, ill. azon cellák koordinátái, melyek az adott űrlapmezőt tartalmazzák.
+A kijelölt űrlapmezőre navigáláshoz nyomja meg az entert, vagy az ugrás gombot.
 </UL>
 
 <A NAME="toc55"></A>
@@ -2297,6 +2301,9 @@ A beállítás engedélyezésével az áttekintő kurzor mindig az egér alatt l
 <P>
 A beállítás engedélyezésével az NVDA kiszűri a közvetlenül nem hozzáférhető és használható objektumokat, egyszerűbbé téve ezzel a navigálást a navigátor kurzorral.
 </P>
+<P>
+Az egyszerű áttekitnőmód bekapcsolásához rendeljen hozzá billentyűparancsot a Beviteli parancsok párbeszédablakon.
+</P>
 
 <A NAME="toc72"></A>
 <H4>9.1.9. Objektumok megjelenítése (NVDA+control+o)</H4>
@@ -2483,36 +2490,53 @@ Ha bekapcsolja ezt a beállítást, akkor a fókuszmód és a böngészőmód k�
 
 <P>
 E párbeszédpanel a beállítások menü Dokumentumformázás... parancsával nyitható meg. Az itt található jelölőnégyzetekkel lehet beállítani, hogy az NVDA milyen formázási információkat olvasson fel, ha egy Word vagy Wordpad dokumentumban mozog a nyíl billentyűkkel. pl.: ha bejelöli a betűtípus bemondása jelölőnégyzetet, az NVDA bemondja a betűtípus nevét, ha a kurzorral új betűtípusú szövegrészre lép.
-Be lehet állítani a: 
+</P>
+<P>
+A dokumentumformázási opciók csoportokba vannak sorolva.
 </P>
 
 <UL>
-<LI>betűtípus,
-<LI>betűméret,
-<LI>betűtípus állapota,
-<LI>színek jelzése,
-<LI>szövegigazítás,
-<LI>szerkesztői változások jelzése,
-<LI>Kiemelések jelzése,
-<LI>helyesírási hibák,
-<LI>oldalszámok,
-<LI>Sorszámok,
-<LI>Sorigazítás,
-<LI>Bekezdés igazítás (pl. változó sorigazítás, első sorigazítás),
-<LI>táblázatok,
-<LI>táblázat fejlécei,
-<LI>táblázatcella koordinátái,
-<LI>címsorok,
-<LI>hivatkozások,
-<LI>listák,
-<LI>idézetblokkok,
-<LI>jelző pontok
-<LI>kattintható elemek
+<LI>Betűtípus
+ <UL>
+ <LI>Betűtípus neve
+ <LI>Betűméret
+ <LI>Betűtípus paraméterek (dőlt, áthúzott, felső index stb.)
+ <LI>Kiemelés
+ <LI>Stílus (Címsor 1, Címsor 2 stb.)
+ <LI>Színek
+ </UL>
+<LI>Dokumentum
+ <UL>
+ <LI>Megjegyzések
+ <LI>Szerkesztői változások
+ <LI>Helyesírási hibák
+ </UL>
+<LI>Oldalak és sorköz
+ <UL>
+ <LI>Oldalszámok
+ <LI>Sorszámok
+ <LI>Sorok behúzásának jelzése <A HREF="#lineIndentationOptions">(Kikapcsolva, Beszéd, Hangjelzés, Beszéd és hangjelzés)</A>
+ <LI>Bekezdés-behúzás (függő behúzás, első sor behúzás stb.)
+ <LI>Sorköz (szimpla, dupla stb.)
+ <LI>Bekezdés-igazítás (balra zárt, jobbra zárt stb.)
+ </UL>
+<LI>Táblázat
+ <UL>
+ <LI>Táblázatok
+ <LI>Sor/oszlop fejlécek
+ <LI>Cellakoordináták
+ </UL>
+<LI>Elemek
+ <UL>
+ <LI>Címsorok
+ <LI>Hivatkozások
+ <LI>Listák
+ <LI>Idézetblokkok
+ <LI>Jelzőpontok
+ <LI>Keretek
+ <LI>Kattintható
+ </UL>
 </UL>
-
-<P>
-bemondását.
-</P>
 
 <H5>A kurzor pozíciójánál lévő formázások változásának jelzése (a beszéd késését okozhatja)</H5>
 
@@ -2521,8 +2545,23 @@ E jelölőnégyzet bejelölésével az NVDA a sorok felolvasásakor bemondja a f
 </P>
 <P>
 Alapértelmezettként az NVDA az aktuális karakter formázásait észleli (rendszer vagy áttekintő kurzor használatakor), esetenként az egész sorra kiterjedő formázást is, ha az nem vezet az NVDA működésének lelassulásához.
-Engedélyezze ezt a lehetőséget pl. Microsoft Word esetén, ahol fontos a formázás.
+Engedélyezze ezt a lehetőséget pl. Wordpad esetén, ahol fontos a formázás.
 </P>
+
+<H5>Sorok behúzásának jelzése</H5>
+
+<P>
+Ezzel az opcióval beállíthatja, hogyan jelezze az NVDA a sorok behúzását.
+A kombinált listamezőben négy lehetőség közül választhat:
+</P>
+
+<UL>
+<LI>Kikapcsolva: Az NVDA nem jelzi a sorok behúzását.
+<LI>Beszéd: Az NVDA bemondja a sorok elején található szóközök és tabok számát, pl.: "12 szóköz" vagy "4 tab" akkor is, ha vegyesen állnak "tab 2 szóköz 3 tab"
+<LI>Hangjelzés: Az NVDA hangjelzéssel jelzi a sorok behúzását. A behúzás mértékére a hangjelzés magasságából lehet következtetni.
+Minden szóköz egy egységgel magasítja a hangot, egy tab 4 egységgel. Tehát ha van a sor elején 2 szóköz és egy tab, a hang 6 egységnyi magasan szólal meg.
+<LI>Beszéd és hangjelzés: Az NVDA mindkét fenti módszerrel jelzi a sorok elején található tabokat és szóközöket.
+</UL>
 
 <A NAME="toc76"></A>
 <H4>9.1.13. Kivételszótárak</H4>
@@ -2755,16 +2794,21 @@ E funkció engedélyezéséhez jelölje be a beszédnéző lehetőséget az eszk
 <P>
 A beszédnéző használatakor a lebegő ablak tartalma folyamatosan frissül, attól függően, mit mond épp a beszédszintetizátor. Ha azonban az ablakon belülre kattint, az ablak tartalma nem frissül, lehetővé téve annak tartalmát áttekinteni vagy másolni.
 </P>
+<P>
+A Beszédnéző ablaka tartalmaz egy "A beszédnéző megnyitása az NVDA indulásakor" címkéjű jelölőnégyzetet.
+Ha be van jelölve, akkor a Beszédnéző az NVDA indulásakor automatikusan megnyílik.
+A beszédnéző ablaka mindig megőrzi a legutolsó bezáráskor érvényes méretét és pozícióját a képernyőn. Mindig ott és úgy nyílik meg, ahol, és ahogy a legutolsó bezáráskor hagyta.
+</P>
 
 <A NAME="toc89"></A>
 <H3>10.3. Bővítmények kezelése</H3>
 
 <P>
-A bővítmény kezelőben (amelyet az NVDA menü -eszközök almenüjében érhet el) megnézheti a feltelepített bővítmények listáját, hozzáathat egy újat, vagy eltávolíthatja őket a programból.
+A bővítmény kezelőben (amelyet az NVDA menü -eszközök almenüjében érhet el) megnézheti a feltelepített bővítmények listáját, hozzáathat egy újat, letilthatja/engedélyezheti, vagy eltávolíthatja őket a programból.
 Ezeket az NVDA közössége készíti, amivel a program funkcióit igyekeznek kibővíteni. Lehet ez egy egyszerűbb script (időjárás jelentés lekérdező program), vagy egy új beszédszintetizátor támogatása is.
 </P>
 <P>
-A bővítmény kezelő egy listában jeleníti meg a már feltelepített bővítményeket. A csomag nevét és annak verzióját már a listából is megtudhatja, a kiegészítő hosszabb leírását a "bővítmény névjegye" gomb aktiválásával érheti el.
+A bővítmény kezelő egy listában jeleníti meg a már feltelepített bővítményeket. A csomag nevét, státuszát  és  verzióját már a listából is megtudhatja, a kiegészítő hosszabb leírását a "bővítmény névjegye" gomb aktiválásával érheti el.
 Ha tartozik a kiegészítőhöz súgó, azt a "bővítmény súgója" gomb aktiválásával érheti el.
 </P>
 <P>
@@ -2775,6 +2819,13 @@ Figyelem! Az ön és adatainak biztonsága érdekében csak olyan bővítményt 
 </P>
 <P>
 Egy bővítmény eltávolításához válassza ki azt a kurzor mozgató billentyűk segítségével, majd aktiválja az "eltávolítás" gombot. Ekkor az NVDA rákérdez még egyszer a bővítmény eltávolítása előtt. A művelet befejezéséhez a program újraindításaszükséges, addig a listában az "eltávolítás" jelenik meg a kiegészítő  státuszaként.
+</P>
+<P>
+Egy bővítmény letiltásához nyomja meg a Bővítmény letiltása gombot.
+Egy korábban letiltott bővítmény engedélyezéséhez nyomja meg a bővítmény engedélyezése gombot.
+Akkor tilthat le egy bővítményt, ha annak állapota fut vagy engedélyezés. Akkor engedélyezhet egy bővítményt, ha annak állapota  felfüggesztve vagy letiltás.
+A Bővítmény letiltása/engedélyezése gomb minden egyes lenyomásakor a kijelölt bővítmény állapota is megváltozik. Ez az állapot jelzi, hogy mi fog történni a bővítménnyel az NVDA újraindítása után.
+A bővítmények letiltása és engedélyezése, a telepítéshez és az eltávolításhoz hasonlóan, csak az NVDA újraindítása után lép életbe.
 </P>
 
 <A NAME="toc90"></A>
@@ -2919,11 +2970,15 @@ Az alábbiakban felsoroljuk azokat a kijelzőn lévő parancsbillentyűket (és 
 </TR>
 <TR>
 <TD>Egy kijelzőnyivel visszalépés</TD>
-<TD>t1</TD>
+<TD>t1 vagy etouch1</TD>
 </TR>
 <TR>
 <TD>A kijelzőt az előző sorhoz helyezi</TD>
 <TD>t2</TD>
+</TR>
+<TR>
+<TD>Mozgatás a jelenlegi fókuszhoz</TD>
+<TD>t3</TD>
 </TR>
 <TR>
 <TD>A kijelzőt a következő sorhoz helyezi</TD>
@@ -2931,11 +2986,19 @@ Az alábbiakban felsoroljuk azokat a kijelzőn lévő parancsbillentyűket (és 
 </TR>
 <TR>
 <TD>Egy kijelzőnyivel visszalép</TD>
-<TD>t5</TD>
+<TD>t5 vagy etouch3</TD>
 </TR>
 <TR>
 <TD>A kurzor az aktuális braille cellához helyezése</TD>
 <TD>routing</TD>
+</TR>
+<TR>
+<TD>A kurzor a legfelső sorhoz helyezése áttekintő módban</TD>
+<TD>t1+t2</TD>
+</TR>
+<TR>
+<TD>A kurzor legalsó sorhoz helyezése áttekintő módban</TD>
+<TD>t4+t5</TD>
 </TR>
 <TR>
 <TD>shift+tab billentyű</TD>
@@ -3120,10 +3183,10 @@ Az alábbiakban felsoroljuk azokat a kijelzőn lévő parancsbillentyűket (és 
 </TABLE>
 
 <A NAME="toc104"></A>
-<H3>12.5. Baum/Humanware/APH Braille kijelzők</H3>
+<H3>12.5. Baum/Humanware/APH/Orbit Braille kijelzők</H3>
 
 <P>
-Néhány <A HREF="http://www.baum.de/cms/en/">Baum</A>, <A HREF="http://www.humanware.com/">HumanWare</A> és <A HREF="http://www.aph.org/">APH</A> kijelzővel az NVDA képes együttműködni, ha ezek usb vagy bluetooth kapcsolódással csatlakoznak a számítógéphez.
+Néhány <A HREF="http://www.baum.de/cms/en/">Baum</A>, <A HREF="http://www.humanware.com/">HumanWare</A>, <A HREF="http://www.aph.org/">APH</A> és and <A HREF="http://www.orbitresearch.com/">Orbit</A> kijelzővel az NVDA képes együttműködni, ha ezek usb vagy bluetooth kapcsolódással csatlakoznak a számítógéphez.
 A következőket tartalmazzák:
 </P>
 
@@ -3131,6 +3194,7 @@ A következőket tartalmazzák:
 <LI>Baum: SuperVario, PocketVario, VarioUltra, Pronto!
 <LI>HumanWare: Brailliant, BrailleConnect
 <LI>APH: Refreshabraille
+<LI>Orbit: Orbit Reader 20
 </UL>
 
 <P>
