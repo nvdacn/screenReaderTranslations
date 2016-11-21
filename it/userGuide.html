@@ -159,7 +159,7 @@
     <LI><A HREF="#toc103">12.2. Optelec ALVA BC640/680</A>
     <LI><A HREF="#toc104">12.3. Modelli Handy Tech</A>
     <LI><A HREF="#toc105">12.4. MDV Lilli</A>
-    <LI><A HREF="#toc106">12.5. Display Braille Baum/Humanware/APH</A>
+    <LI><A HREF="#toc106">12.5. Display Braille Baum/Humanware/APH/Orbit Reader</A>
     <LI><A HREF="#toc107">12.6. hedo ProfiLine USB</A>
     <LI><A HREF="#toc108">12.7. hedo MobilLine USB</A>
     <LI><A HREF="#toc109">12.8. HumanWare Brailliant BI/B Series</A>
@@ -315,6 +315,7 @@ Oltre al fatto di non poter essere eseguite all'avvio automatico del sistema o d
 <LI>Impossibilità di leggere le schermate del controllo Utente (UAC), quando si cerca di avviare un'applicazione con privilegi amministrativi.
 <LI>Windows 8 e successivi: impossibilità di gestire la scrittura o qualsiasi operazione effettuata tramite Touch Screen.
 <LI>Windows 8 e successivi: impossibilità di fornire le caratteristiche di ripetizione dei caratteri digitati e l'utilizzo della modalità navigazione in Windows Store.
+<LI>Windows 8 e successivi: la funzione di attenuazione audio non è supportata.
 </UL>
 
 <A NAME="toc11"></A>
@@ -1832,6 +1833,11 @@ Questa funzione, disponibile a partire da Windows8 in poi, consente di decidere 
 <LI>Attenua sempre: NVDA manterrà gli altri flussi audio sempre con un volume più basso per tutto il tempo in cui NVDA è in esecuzione.
 </UL>
 
+<P>
+Questa funzione è disponibile soltanto se NVDA è stato installato nel sistema.
+Non è possibile supportare l'attenuazione audio in versioni portable o temporanee di NVDA.
+</P>
+
 <A NAME="VoiceSettings"></A>
 <H4>9.1.3. Impostazioni voce (NVDA+control+v)</H4>
 
@@ -2549,42 +2555,58 @@ la maggior parte delle caselle di controllo in questa finestra di dialogo servon
 Ad esempio, se attiviamo la casella di controllo "Leggi il nome del font", NVDA annuncerà tale cambiamento ogni qualvolta se ne incontrerà uno, muovendosi con i tasti cursore in un documento.
 </P>
 <P>
+Le opzioni di formattazione documento sono divise in gruppi.
 è possibile configurare la lettura automatica dei seguenti elementi:
 </P>
 
 <UL>
-<LI>nome carattere
-<LI>dimensione carattere
-<LI>attributi carattere
-<LI>Allineamento testo
-<LI>Colori
-<LI>Commenti
-<LI>Revisioni
-<LI>Testo enfatizzato
-<LI>stile del testo
-<LI>Errori ortografici
-<LI>Numeri di pagina
-<LI>Numeri di riga
-<LI>Rientro righe
-<LI>Rientro paragrafi (ad esempio rientro prima riga)
-<LI>Spaziatura righe (singola, doppia etc)
-<LI>tabelle
-<LI>intestazioni riga/colonna delle tabelle
-<LI>Coordinate delle celle delle tabelle
-<LI>collegamenti
-<LI>intestazioni
-<LI>elenchi
-<LI>Blocchi tra virgolette
-<LI>Sezioni
-<LI>Frame
-<LI>Quando qualcosa è cliccabile
+<LI>Carattere
+ <UL>
+ <LI>nome carattere
+ <LI>dimensione carattere
+ <LI>attributi carattere
+ <LI>Testo enfatizzato
+ <LI>Stile
+ <LI>Colori
+ </UL>
+<LI>Informazioni documento
+ <UL>
+ <LI>Commenti
+ <LI>Revisioni
+ <LI>Errori ortografici
+ </UL>
+<LI>Pagine e spaziatura
+ <UL>
+ <LI>Numeri di pagina
+ <LI>Numeri di riga
+ Annuncio rientro righe (disattivo, voce, toni, voce e toni)
+ <LI>Rientro paragrafi (ad esempio rientro prima riga)
+ <LI>Spaziatura righe (singola, doppia etc)
+ <LI>Allineamento
+ </UL>
+<LI>Informazioni tabella
+ <UL>
+ <LI>tabelle
+ <LI>intestazioni riga/colonna delle tabelle
+ <LI>Coordinate delle celle delle tabelle
+ </UL>
+<LI>Elementi
+ <UL>
+ <LI>collegamenti
+ <LI>intestazioni
+ <LI>elenchi
+ <LI>Blocchi tra virgolette
+ <LI>Sezioni
+ <LI>Frame
+ <LI>Quando qualcosa è cliccabile
+ </UL>
 </UL>
 
 <P>
 Per modificare queste impostazioni da qualsiasi luogo ci si trovi, servirsi della finestra <A HREF="#InputGestures">tasti e gesti di immissione</A> ed assegnare un gesto o tasto rapido personalizzato per quella funzione.
 </P>
 
-<H5>Leggi i cambiamenti di formattazione dopo il cursore</H5>
+<H5>Notifica cambiamenti di formattazione dopo il cursore</H5>
 
 <P>
 Se abilitata, questa impostazione istruisce NVDA a intercettare tutti i cambiamenti di formattazione in una riga e a leggerli, anche se questo porerà ad un rallentamento nelle prestazioni di NVDA.
@@ -2593,8 +2615,24 @@ Se abilitata, questa impostazione istruisce NVDA a intercettare tutti i cambiame
 Da impostazioni predefinite, NVDA ricava le informazioni di formattazione dalla posizione del cursore di sistema / cursore di controllo, ed in alcune circostanze può riuscire ad intercettare i cambiamenti di formattazione nell'intera riga, a patto che questo non vada a  causare un rallentamento dello Screen Reader.
 </P>
 <P>
-Abilitare questa opzione quando si vogliono correggere documenti e si usano applicazioni come Microsoft Word, dove la formattazione risulta importante.
+Abilitare questa opzione quando si vogliono correggere documenti e si usano applicazioni come Wordpad, dove la formattazione risulta importante.
 </P>
+
+<A NAME="lineIndentationOptions"></A>
+<H5>Annuncia rientro righe</H5>
+
+<P>
+Questa opzione consente di configurare come NVDA debba annunciare i rientri all'inizio delle righe.
+La casella combinata "annuncia rientro righe con," è costituita da quattro opzioni:
+</P>
+
+<UL>
+<LI>Disattivato: NVDA non tratterà i rientri righe in modo speciale.
+<LI>Voce: se è selezionata l'opzione voce, man mano che i rientri aumentano, NVDA dirà qualcosa tipo "dodici spazi" o "quattro tab."
+<LI>Beep: se è selezionato beep, man mano che i rientri aumentano, dei beep indicheranno il quantitativo di cambiamenti dei rientri.
+Il segnale acustico aumenterà di altezza ad ogni spazio, mentre per una tabulazione, aumenterà in altezza per l'equivalente di quattro spazi.
+<LI>Sia voce che beep: con questa opzione attiva i rientri saranno letti utilizzando entrambi i metodi spiegati sopra.
+</UL>
 
 <A NAME="toc76"></A>
 <H4>9.1.13. Dizionari</H4>
@@ -2907,6 +2945,11 @@ Per sviluppatori vedenti di programmi o persone che stanno dimostrando le funzio
 <P>
 Per abilitare il visualizzatore sintesi vocale, attivare la voce apposita che si trova nel menu strumenti di NVDA.
 Disabilitare la voce di menu per disattivare tale caratteristica.
+</P>
+<P>
+La finestra del visualizzatore sintesi vocale contiene una casella di controllo etichettata "Mostra il visualizzatore sintesi vocale all'avvio".
+Se selezionata, il visualizzatore sintesi vocale si aprirà all'avvio di NVDA.
+La finestra tenterà di aprirsi con le medesime dimensioni e conservando l'esatta posizione dell'ultima volta in cui è stata chiusa.
 </P>
 <P>
 Mentre il visualizzatore sintesi vocale è attivo, il contenuto della finestra si aggiornerà in tempo reale per mostrare di continuo le informazioni che NVDA invia al sintetizzatore.
@@ -3564,24 +3607,31 @@ Si legga la documentazione della propria barra Braille per ottenere informazioni
 </TABLE>
 
 <A NAME="toc106"></A>
-<H3>12.5. Display Braille Baum/Humanware/APH</H3>
+<H3>12.5. Display Braille Baum/Humanware/APH/Orbit Reader</H3>
 
 <P>
-Molti Display Braille della <A HREF="http://www.baum.de/cms/en/">Baum</A>, <A HREF="http://www.humanware.com/">HumanWare</A> e <A HREF="http://www.aph.org/">APH</A> sono supportati sia tramite USB che Bluetooth.
+Molti Display Braille della <A HREF="http://www.baum.de/cms/en/">Baum</A>, <A HREF="http://www.humanware.com/">HumanWare</A>, <A HREF="http://www.aph.org/">APH</A> e <A HREF="http://www.orbitresearch.com/">Orbit</A> sono supportati sia tramite USB, Bluetooth o porta seriale.
 Essi includono:
 </P>
 
 <UL>
-<LI>Baum: SuperVario, PocketVario, VarioUltra, Pronto!
-<LI>HumanWare: Brailliant, BrailleConnect
+<LI>Baum: SuperVario, PocketVario, VarioUltra, Pronto!, SuperVario2, Vario 340
+<LI>HumanWare: Brailliant, BrailleConnect, Brailliant2
 <LI>APH: Refreshabraille
+<LI>Orbit: Orbit Reader 20
 </UL>
 
 <P>
 Altre barre Braille della Baum potrebbero funzionare, tuttavia non sono stati fatti test in tal senso.
 </P>
 <P>
-Nel caso di connessione tramite USB, è necessario installare i driver forniti dal produttore, tranne per i modelli VarioUltra,  Pronto! e Refreshabraille con modalità USB impostata su HID, che funzioneranno autonomamente.
+Nel caso di connessione tramite USB con display braille che non utilizzano la tecnologia HID (human interface device), è necessario installare i driver forniti dal produttore.
+I modelli VarioUltra e Pronto! utilizzano HID.
+I modelli Refreshabraille e Orbit Reader 20 possono utilizzare HID se configurati correttamente.
+</P>
+<P>
+La modalità di connessione porta seriale su USB del modello Orbit Reader 20 è supportata soltanto in Windows10.
+è consigliabile servirsi della modalità USB HID quando possibile.
 </P>
 <P>
 Seguono i tasti che sono stati assegnati con NVDA.
