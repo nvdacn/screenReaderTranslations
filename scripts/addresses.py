@@ -154,7 +154,7 @@ addresses = {
     },
     'ro': {
         'lang': 'Romanian',
-        'email': ['Dan Punga <dan.punga@gmail.com>, Florian Ionascu <7ro2014@gmail.com>, Nicuşor Untilă <nicusoruntila@yahoo.com>'],
+        'email': ['Dan Pungă <dan.punga@gmail.com>, Florian Ionașcu <florianionascu@hotmail.com>, Nicuşor Untilă <nicusoruntila@yahoo.com>'],
     },
     'ru': {
         'lang': 'Russian',
