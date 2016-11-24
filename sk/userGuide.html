@@ -157,7 +157,7 @@
     <LI><A HREF="#toc103">12.2. Optelec ALVA BC640/680</A>
     <LI><A HREF="#toc104">12.3. Zobrazovače od spoločnosti Handy Tech</A>
     <LI><A HREF="#toc105">12.4. MDV Lilli</A>
-    <LI><A HREF="#toc106">12.5. Zobrazovače Baum/Humanware/APH</A>
+    <LI><A HREF="#toc106">12.5. Zobrazovače Baum/Humanware/APHp/Orbit</A>
     <LI><A HREF="#toc107">12.6. hedo ProfiLine USB</A>
     <LI><A HREF="#toc108">12.7. hedo MobilLine USB</A>
     <LI><A HREF="#toc109">12.8. HumanWare Brailliant BI/B</A>
@@ -313,6 +313,7 @@ Okrem toho, že nie je možné automaticky spustiť NVDA počas prihlásenia ale
 <LI>Nemožnosť čítať obrazovku na prepnutie užívateľského účtu (UAC) pri pokuse spustiť aplikáciu s právami administrátora.
 <LI>Nefunguje používanie dotykovej klávesnice v systéme Windows 8 a novších.
 <LI>Nie je možné využívať režim prehliadania a čítanie napísaných znakov vo Windows Store v systéme Windows od verzie 8.
+<LI>V systémoch windows 8 a novších nie je možné využívať automatickéstíšenie.
 </UL>
 
 <A NAME="toc11"></A>
@@ -1836,6 +1837,11 @@ od verzie Windows 8 môžete určiť, či má NVDA stišovať zvuk ostatných ap
 <LI>Vždy stíšiť: NVDA stíši všetky zvuky ostatných programov po štarte   až do ukončenia NVDA.
 </UL>
 
+<P>
+Táto možnosť je dostupná, len ak je NVDA nainštalované.
+Nemôžete ju využiť, ak NVDA beží v portable režime alebo z dočasnej kópie.
+</P>
+
 <A NAME="toc66"></A>
 <H4>9.1.3. Nastavenia hlasu (NVDA+ctrl+v)</H4>
 
@@ -2555,35 +2561,63 @@ Väčšina začiarkavacých políčok slúži na nastavenie typu formátovania, 
 Napríklad ak začiarknete oznamovanie písma, NVDA oznámi keď systémový kurzor bude ukazovať na iný typ písma.
 </P>
 <P>
+Dialóg je rozdelený do skupín.
 Takto môžete nastaviť:
 </P>
 
 <UL>
-<LI>Názov písma
-<LI>Veľkosť písma
-<LI>Vlastnosti písma
-<LI>Zarovnanie textu
+<LI>písmo
+ <UL>
+ <LI>Názov písma
+ <LI>Veľkosť písma
+ <LI>Vlastnosti písma
+ </UL>
+<LI>Zvýraznenie
+ <UL>
+ <LI>štýl
+ </UL>
 <LI>Farby
-<LI>komentáre
-<LI>sledovanie zmien
-<LI>zvýraznenie
-<LI>Štýl textu
-<LI>pravopisné chyby
-<LI>Číslovanie strán
+<LI>Informácie o dokumente
+ <UL>
+ <LI>Komentáre
+ <LI>Zmeny
+ <LI>Pravopisné chyby
+ </UL>
+<LI>Riadkovanie a strany
+  <UL>
+  <LI>Číslovanie strán
+  </UL>
 <LI>Číslovanie riadkov
-<LI>Odsadenie textu
-<LI>Odsadenie odseku (napríklad vysunutý riadok a odsadenie prvého riadka)
-<LI>riadkovanie (jednoduché, dvojité...)
-<LI>Tabuľky
-<LI>Hlavičky riadku a stĺpca tabuľky
-<LI>Súradnice buniek tabuľky
-<LI>Odkazy
-<LI>Nadpisy
-<LI>Zoznamy
-<LI>Citácie
-<LI>Oblasti stránky
-<LI>Rámce
-<LI>prvky prikliknutí
+ <UL>
+ <LI>Odsadenie riadka <A HREF="#lineIndentationOptions">(vypnuté, reč, pípanie alebo reč a pípanie)</A>
+ <LI>Odsadenie odseku (vysunutý text, odsadenie prvého riadka)
+ <LI>Riadkovanie (jednoduché, dvojité, ...)
+ <LI>zarovnanie
+ </UL>
+<LI>Informácie o tabuľke
+ <UL>
+ <LI>Tabuľky
+ <LI>Hlavičky riadkov stĺpcov tabuľky
+ <LI>súradnice buniek tabuľky
+ </UL>
+<LI>Prvky
+ <UL>
+ <LI>nadpisy
+  <UL>
+  <LI>odkazy
+   <UL>
+   <LI>zoznamy
+    <UL>
+    <LI>citácie
+    </UL>
+   </UL>
+  </UL>
+ <LI>oblasti stránky
+  <UL>
+  <LI>rámce
+  </UL>
+ <LI>pri kliknutí
+ </UL>
 </UL>
 
 <P>
@@ -2599,8 +2633,23 @@ Ak je zapnuté, NVDA sa pokúsi nájsť zmeny formátovania v celom riadku a po�
 Predvolene NVDA deteguje formátovacie možnosti na mieste systémového / prezeracieho kurzora a voliteľne môže detegovať formátovacie možnosti v celom aktuálnom riadku ak to nespôsobí príliš veľké spomalenie.
 </P>
 <P>
-Túto voľbu odporúčame použiť, keď kontrolujete dokumenty v aplikáciách ako Microsoft Word a formátovanie je pre vás dôležité.
+Túto voľbu odporúčame použiť, keď kontrolujete dokumenty v aplikáciách ako Wordpad a formátovanie je pre vás dôležité.
 </P>
+
+<H5>odsadenie riadka</H5>
+
+<P>
+určuje, ako budú oznamované medzeri na začiatku riadka.
+Môžete si vybrať zo štyroch možností:
+</P>
+
+<UL>
+<LI>Vypnuté: Medzeri na začiatku riadka nebudú hlásené
+<LI>Reč: ak sa zmení odsadenie riadka, budete počuť napríklad "12 medzera" alebo "4 tab"
+<LI>Pípať: Zmeny odsadenia sú oznamované pípaním.
+Tón sa zvyšuje pri každej medzere, pri každom tabulátore sa zvyšuje štvornásobne.
+<LI>Oznamovať a pípať: Oznamuje odsadenie riadka hlasom aj pípaním podľa pravidiel uvedených vyššie.
+</UL>
 
 <A NAME="toc76"></A>
 <H4>9.1.13. Rečové slovníky</H4>
@@ -2913,6 +2962,11 @@ Pre vidiacich vývojárov software alebo pre ľudí, ktorí predstavujú NVDA vi
 <P>
 Zobrazovač reči je možné aktivovať začiarknutím rovnomennej položky v podmenu nástroje.
 Deaktivovať ho môžete odčiarknutím tej istej položky.
+</P>
+<P>
+v okne zobrazovača reči nájdete aj začiarkávacie pole "spustiť pri štarte Zobrazovač reči".
+ak ho začiarknete, zobrazovač reči sa spustí vždy po spustení NVDA.
+Okno sa bude otvárať vždy na tom mieste a s tými hodnotami, s akými ste ho naposledy zatvorili.
 </P>
 <P>
 Zatiaľ, čo je zobrazovač reči aktívny, Jeho obsah sa neustále aktualizuje s práve čítaným textom.
@@ -3570,24 +3624,31 @@ Prosím, prečítajte si dokumentáciu dodanú spolu so zariadením na zistenie 
 </TABLE>
 
 <A NAME="toc106"></A>
-<H3>12.5. Zobrazovače Baum/Humanware/APH</H3>
+<H3>12.5. Zobrazovače Baum/Humanware/APHp/Orbit</H3>
 
 <P>
-Podporované sú niektoré riadky od <A HREF="http://www.baum.de/cms/en/">Baum</A>, <A HREF="http://www.humanware.com/">HumanWare</A> a <A HREF="http://www.aph.org/">APH</A> pripojené cez USB alebo bluetooth.
+Podporované sú niektoré riadky od <A HREF="http://www.baum.de/cms/en/">Baum</A>, <A HREF="http://www.humanware.com/">HumanWare</A>, <A HREF="http://www.aph.org/">APH</A> a <A HREF="http://www.orbitresearch.com/">Orbit</A> pripojené cez USB,  bluetooth alebo sériový port.
 Toto zahŕňa:
 </P>
 
 <UL>
-<LI>Baum: SuperVario, PocketVario, VarioUltra, Pronto!
-<LI>HumanWare: Brailliant, BrailleConnect
+<LI>Baum: SuperVario, PocketVario, VarioUltra, Pronto!, SuperVario2, Vario 340
+<LI>HumanWare: Brailliant, BrailleConnect, Brailliant2
 <LI>APH: Refreshabraille
+<LI>Orbit: Orbit Reader 20
 </UL>
 
 <P>
 Niektoré ďalšie riadky od Baum by mohli tiež fungovať, no zatiaľ toto nebolo dostatočne odskúšané.
 </P>
 <P>
-Ak pripájate niektorý z týchto riadkov cez USB, mali by Ste najprv nainštalovať ovládače od výrobcu. Toto sa netýka zariadení VarioUltra, Pronto! a Refreshabraille, ktoré pripájate v režime HID.
+Ak pripájate niektorý z  riadkov cez USB a riadok nepodporuje režim HID, musíte najskôr nainštalovať ovládače dodávané od výrobcu.
+Riadky VarioUltra a Pronto! pou69vaj[ HID.
+Riadky Refreshabraille a Orbit Reader môžete nastaviť tak, aby používali technológiu HID.
+</P>
+<P>
+USB sériový režim je podporovaný  pri riadkoch Orbit Reader 20 len v systéme Windows 10.
+Odporúčame vám ale používať režim HID.
 </P>
 <P>
 Nasleduje zoznam klávesových príkazov pre tieto typy riadkov.
