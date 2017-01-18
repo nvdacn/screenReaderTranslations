@@ -198,7 +198,7 @@ addresses = {
     },
     'vi': {
         'lang':'Vietnamese',
-        'email': ['Nguyen Van Dung <dungnv1984@gmail.com>'],
+        'email': ['Dang Hoai Phuc <danghoaiphuc@gmail.com>, Nguyen Van Dung <dungnv1984@gmail.com>'],
     },
     'zh_CN': {
         'lang':'Simplified Chinese',
