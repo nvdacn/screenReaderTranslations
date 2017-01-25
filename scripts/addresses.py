@@ -124,6 +124,10 @@ addresses = {
         'lang':'Latvian',
         'email': ['Verners Šteinbergs <verners_lnb@inbox.lv>'],
     },
+    'my': {
+        'lang':'Burmese',
+        'email': ['Benedict La hkun <lkbenedict@gmail.com>'],
+    },
     'nb_NO': {
         'lang':'Norwegian bokmal',
         'email': ['David Hole <balubathebrave@gmail.com>', 'Bjornar Seppola <bjornar@seppola.net>'],
