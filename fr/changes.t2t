@@ -4,6 +4,7 @@ Quoi de Neuf dans NVDA
 %!includeconf: ../changes.t2tconf
 
 = 2017.1 =
+Les points forts de cette version incluent l'annonce des sections et des colonnes de texte sous Microsoft Word; Le support de la lecture, navigation et annotation des livres sous Kindle pour PC; et un support amélioré de Microsoft Edge.
 
 == Nouvelles Fonctionnalités ==
 - Sous Microsoft Word le type de saut de section, et le numéro de section peuvent maintenant être signalés. Ceci s'active grâce à l'option "annoncer les numéros de page" dans le dialogue Mise en Forme des Documents. (#5946)
@@ -11,12 +12,18 @@ Quoi de Neuf dans NVDA
 - Le changement automatique de langue est maintenant supporté sous Wordpad. (#6555)
 - La commande de recherche de NVDA (NVDA+control+f) est maintenant supportée en mode navigation sous Microsoft Edge. (#6580)
 - La navigation rapide vers les boutons en mode navigation (b et maj+b) est maintenant supportée sous Microsoft Edge. (#6577)
+- Quand on copie une feuille sous Microsoft Excel, les titres de lignes et colonnes définis sont conservés. (#6628)
+- Support de la lecture et de la navigation pour les livres sous Kindle pour PC version 1.19, incluant l'accès aux liens, notes de bas de page, graphiques, texte surligné et notes de l'utilisateur. Veuillez consulter la section Kindle pour PC du guide de l'utilisateur NVDA pour plus d'information. (#6247, #6638)
+- La navigation dans les tableaux en mode navigation est maintenant supportée sous Microsoft Edge. (#6594)
+- Sous Microsoft Excel, la commande d'annonce de position du curseur de revue (ordinateur de bureau : NVDA+pavnumEffacement, ordinateur portable : NVDA+effacement) annonce maintenant le nom de la feuille de calcul et la position de la cellule. (#6613)
+- Ajout d'une option au dialogue de sortie permettant de redémarrer avec le journal en mode débogage. (#6689)
  
  
 == Changements ==
-- La vitesse minimale de clignotement du curseur braille est maintenant de 200ms. Les profils ou configurations avec des valeurs inférieures seront augmentées à 200ms. (#6470)
+- La vitesse minimale de clignotement du curseur braille est maintenant de 200ms. Si une valeur inférieure a été définie, elle sera augmentée à 200ms. (#6470)
 - Une case à cocher a été ajoutée au dialogue paramètres braille pour permettre l'activation ou la désactivation du clignotement du curseur braille. Précédemment, une valeur de 0 était utilisée pour réaliser cela. (#6470)
 - Les fichiers de profils et de configurations sont maintenant automatiquement mis à jour pour satisfaire aux changements de schéma. En cas d'erreur durant la mise à jour, une notification est affichée, la configuration est réinitialisée, et l'ancien fichier de configuration est disponible dans le journal de NVDA au niveau 'Info'. (#6470)
+- Mise à jour de eSpeak NG (commit e095f008, 10 Janvier 2017). (#6717)
 
 
 == Corrections de Bogues ==
@@ -30,6 +37,12 @@ Quoi de Neuf dans NVDA
 - Le lanceur de NVDA n'affichera plus un dialogue d'avertissement quand il ne peut jouer le son de démarrage en raison de l'indisponibilité d'un dispositif audio. (#6289)
 - Dans le ruban de Microsoft Excel, les contrôles indisponibles sont maintenant annoncés comme tel. (#6430)
 - NVDA m'annoncera plus "Fenêtre" quand on minimise les fenêtres. (#6671)
+- Support de l'écho clavier par caractères dans les applications Universal Windows Platform (incluant Microsoft Edge) sous Windows 10 Creators Update. (#6017)
+- Le suivi de la souris fonctionne maintenant pour tous les écrans sur les ordinateurs avec plusieurs moniteurs. (#6598)
+
+
+== Changements pour les Ddéveloppeurs ==
+- Les fichiers de profils et de configurations sont maintenant automatiquement mis à jour pour satisfaire aux changements de schéma. En cas d'erreur durant la mise à jour, une notification est affichée, la configuration est réinitialisée, et l'ancien fichier de configuration est disponible dans le journal de NVDA au niveau 'Info'. (#6470)
 
 
 = 2016.4 =
