@@ -698,6 +698,42 @@ In una conversazione:
 | Annuncia messaggio | NVDA+control+1-0 | Legge il messaggio e vi sposta il cursore di controllo, a seconda del numero premuto. Ad esempio NVDA+control+2 legge il secondo messaggio più recente. |
 %kc:endInclude
 
+++ Kindle per PC ++
+NVDA supporta la lettura e la navigazione dei libri in Amazon Kindle per PC.
+Questa funzionalità è disponibile solo nei libri Kindle che supportano la "formattazione avanzata dei caratteri", cosa che è possibile controllare alla pagina dettagli per il libro. La stragrande maggioranza dei testi supporta questa funzione.
+
+Per la lettura dei libri viene usata la modalità navigazione.
+Si attiverà automaticamente non appena si apre un libro, o si posiziona il focus nell'area contenente il testo.
+Sempre automaticamente verranno girate le pagine sia con lo spostamento del cursore, sia con la modalità dire tutto.
+%kc:beginInclude
+è possibile utilizzare manualmente i tasti pagina su o pagina giù per spostarsi tra le pagine.
+%kc:endInclude
+
+La navigazione veloce con le lettere è supportata per link e grafici, ma soltanto per la pagina corrente.
+ La navigazione per link comprende anche le note a piè di pagina.
+ 
++++ Selezionare il testo +++
+Kindle consente di eseguire varie operazioni sul testo selezionato, come l'ottenimento di una definizione dal dizionario, l'aggiunta di note ed evidenziazioni, copiare il testo negli appunti e la ricerca sul web.
+Per fare questo, per prima cosa selezionare il testo come sempre in modalità navigazione (ad esempio tenendo premuto shift e spostandosi con i tasti freccia).
+%kc:beginInclude
+Dopo aver selezionato il testo, premere il tasto applicazioni o maiusc+f10 per visualizzare le opzioni disponibili per operare con la selezione.
+%kc:endInclude
+Se si esegue questa operazione senza aver selezionato alcun testo, verranno visualizzate le opzioni inerenti la parola sotto al cursore.
+
++++ Note dell'utente +++
+È possibile aggiungere una nota riguardo una parola o un passaggio di testo.
+Per fare questo, per prima cosa selezionare il testo più rilevante, successivamente accedere alle opzioni di selezione come spiegato nel paragrafo precedente.
+Quindi, scegliere Aggiungi Nota.
+
+Durante la lettura in modalità navigazione, NVDA chiamerà questo genere di note con il termine "commenti".
+
+Per visualizzare, modificare o eliminare una nota:
+
++ Spostare il cursore sul testo contenente la nota.
++ Accedere alle opzioni inerenti la selezione come descritto sopra.
++ Scegliere Modifica Nota.
++
+
 + Configurare NVDA +
 
 ++ Preferenze ++
@@ -915,6 +951,10 @@ Questa opzione permette la visualizzazione della parola sotto il cursore nel for
 ==== Mostra cursore ====
 Questa opzione permette di attivare o disattivare la visualizzazione del cursore braille.
 Si applica al cursore di sistema e al cursore di controllo, ma non agli indicatori di selezione.
+
+==== Cursore lampeggiante ====
+Questa opzione consente al cursore braille di lampeggiare.
+Se il lampeggìo viene disattivato, il cursore braille sarà sempre visibile, senza che i puntini corrispondenti si alzino e abbassino ritmicamente.
 
 ==== Velocità lampeggio cursore (ms) ====
 Si tratta di un campo numerico che permette di modificare la velocità di lampeggio del cursore in millisecondi.
@@ -2260,6 +2300,7 @@ Ecco l'elenco dei parametri a riga di comando di NVDA:
 | -m | --minimal | Niente suoni, niente interfaccia, niente messaggio all'avvio etc |
 | -s | --secure | Modalità protetta (disabilita Python console) |
 | None | --disable-addons | I componenti aggiuntivi non avranno alcun effetto |
+| None | --debug-logging | Abilita il debug nei log solo per la presente istanza. Questa impostazione ha la precedenza su qualsiasi altro livello di log ( ""--loglevel"", -l). |
 | None | --no-sr-flag  | Non modifica il flag Screen Reader per il sistema |
 | None | --install | Installa NVDA (avviando la copia appena installata) |
 | None | --install | Silent Installa NVDA (non avviando la copia appena installata) |
