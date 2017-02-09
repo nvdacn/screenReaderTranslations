@@ -12,6 +12,10 @@
 
 <H2>2017.1</H2>
 
+<P>
+Lo reseñable de esta versión incluye el anunciado de secciones y columnas de texto en Microsoft Word; el Soporte para lectura, navegación y anotación de libros en Kindle para PC; y el soporte mejorado para Microsoft Edge.
+</P>
+
 <H3>Nuevas Características</H3>
 
 <UL>
@@ -21,6 +25,10 @@
 <LI>La orden buscar de NVDA (NVDA+control+f) ahora se soporta en modo exploración para Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/6580">#6580</A>)
 <LI>La navegación rápida por botones en modo exploración (b y shift+b) ahora se soporta en Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/6577">#6577</A>)
 <LI>Cuando se copìa una hoja en Microsoft Excel, se recuerdan los encabezados de columna y de fila configurados. (<A HREF="http://github.com/nvaccess/nvda/issues/6628">#6628</A>)
+<LI>Soporte para leer y navegar libros en Kindle para PC versión 1.19, incluyendo el acceso a enlaces, notas al pie, gráficos, texto resaltado y notas de usuario. Por favor consulta la sección Kindle para PC de la Guía de Usuario de NVDA para información adicional. (<A HREF="http://github.com/nvaccess/nvda/issues/6247">#6247</A>, <A HREF="http://github.com/nvaccess/nvda/issues/6638">#6638</A>)
+<LI>Ahora se soporta la navegación de tablas en modo exploración en Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/6594">#6594</A>)
+<LI>En Microsoft Excel, la orden anunciar localizaciónm del cursor de revisión (escritorio: NVDA+suprimir del teclado numérico, portátil: NVDA+suprimir) ahora anuncia el nombre de la hoja de cálculo y de la localización de la celda. (<A HREF="http://github.com/nvaccess/nvda/issues/6613">#6613</A>)
+<LI>Añadida una opción al diálogo Salir para reiniciar con el nivel depuración en el registro. (<A HREF="http://github.com/nvaccess/nvda/issues/6689">#6689</A>)
 </UL>
 
 <H3>Cambios</H3>
@@ -28,8 +36,9 @@
 <UL>
 <LI>La velocidad mínima del parpadeo del cursor braille ahora es 200ms. Los perfiles o las configuraciones con valores por debajo de este se incrementarán en 200ms. (<A HREF="http://github.com/nvaccess/nvda/issues/6470">#6470</A>)
 <LI>Se ha añadido una casilla de verificación al diálogo opciones braille para permitir habilitar o deshabilitar el parpadeo del cursor braille. Anteriormente se utilizaba un valor de cero para lograr esto. (<A HREF="http://github.com/nvaccess/nvda/issues/6470">#6470</A>)
-<LI>Los ficheros de perfiles y configuración ahora se actualizan automáticamente para cumplir con los requisitos de las modificaciones del esquema. Si hay un error durante la actualización, se muestra una notificación, se reinicia la configuración, y el fichero de configuración antiguo está disponible en el registro de NVDA en el nivel 'Info'. (<A HREF="http://github.com/nvaccess/nvda/issues/6470">#6470</A>)
-<LI>Soporte para leer y navegar libros en Kindle para PC versión 1.19, incluyendo el acceso a enlaces, notas al pie, gráficos, texto resaltado y notas de usuario. Por favor consulta la sección Kindle para PC de la Guía de Usuario de NVDA para información adicional. (<A HREF="http://github.com/nvaccess/nvda/issues/6247">#6247</A>, <A HREF="http://github.com/nvaccess/nvda/issues/6638">#6638</A>)
+<LI>Actualizado eSpeak NG (commit e095f008, 10 de enero de 2017). (<A HREF="http://github.com/nvaccess/nvda/issues/6717">#6717</A>)
+<LI>Debido a cambios en la actualización Windows 10 Creators, el modo "Atenuar siempre" ya no está disponible en las opciones de Atenuación de audio de NVDA. Todavía está disponible en versiones más antiguas de windows 10. (<A HREF="http://github.com/nvaccess/nvda/issues/6684">#6684</A>)
+<LI>Debido a cambios en la Actualización Windows 10 Creators, el modo "Atenuar cuando salgan voz y sonidos" ya no puede asegurarse de que el audio se haya atenuado completamente antes de comenzar a hablar, ni mantendrá el audio atenuado el tiempo suficiente después de hablar para detener el rebote rápido en el volumen. Estos cambios no afectan a versiones más antiguas de windows 10. (<A HREF="http://github.com/nvaccess/nvda/issues/6684">#6684</A>)
 </UL>
 
 <H3>Corrección de Fallos</H3>
@@ -45,7 +54,15 @@
 <LI>El lanzador de NVDA ya no mostrará un diálogo de advertencia cuando no pueda reproducir el sonido de inicio debido a que no esté disponible el dispositivo de audio. (<A HREF="http://github.com/nvaccess/nvda/issues/6289">#6289</A>)
 <LI>Los controles en la cinta de Microsoft Excel que no estén disponibles ahora se anuncian como tales. (<A HREF="http://github.com/nvaccess/nvda/issues/6430">#6430</A>)
 <LI>NVDA ya no anunciará "panel" cuando se minimicen ventanas. (<A HREF="http://github.com/nvaccess/nvda/issues/6671">#6671</A>)
-<LI>Soporte de la verbalización de caracteres al escribir en aplicaciones UWP (incluyendo Microsoft Edge) en la actualización Windows 10 Creators. (<A HREF="http://github.com/nvaccess/nvda/issues/6017">#6017</A>)
+<LI>Los caracteres que se escriben ahora se verbalizan en aplicaciones UWP (incluyendo Microsoft Edge) en la actualización Windows 10 Creators. (<A HREF="http://github.com/nvaccess/nvda/issues/6017">#6017</A>)
+<LI>El seguimiento del ratón ahora funciona en todas las pantallas en ordenadores con varios monitores. (<A HREF="http://github.com/nvaccess/nvda/issues/6598">#6598</A>)
+<LI>NVDA ya no se volverá inusable después de salir de Windows Media Player mientras se enfoca un control deslizador. (<A HREF="http://github.com/nvaccess/nvda/issues/5467">#5467</A>)
+</UL>
+
+<H3>Cambios para Desarrolladores</H3>
+
+<UL>
+<LI>Los ficheros de perfiles y configuración ahora se actualizan automáticamente para cumplir con los requisitos de las modificaciones del esquema. Si hay un error durante la actualización, se muestra una notificación, se reinicia la configuración, y el fichero de configuración antiguo está disponible en el registro de NVDA en el nivel 'Info'. (<A HREF="http://github.com/nvaccess/nvda/issues/6470">#6470</A>)
 </UL>
 
 <H2>2016.4</H2>
