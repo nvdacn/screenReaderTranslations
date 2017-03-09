@@ -10,6 +10,61 @@
 </CENTER>
 
 
+<H2>2017.1</H2>
+
+<P>
+Highlights of this release include reporting of sections and text columns in Microsoft Word; Support for reading, navigating and annotating books in Kindle for PC; and improved support for Microsoft Edge. 本次改版重點包括：讀出微軟 Word 內的分節及分欄的配置；支援在PC上讀出Kindle電子書的導航與註解；續改進對Microsoft Edge瀏覽器的支援。
+</P>
+
+<H3>New Features</H3>
+
+<UL>
+<LI>In Microsoft Word, the types of section breaks and section numbers can now be reported. This is enabled with the "Report page numbers" option in the Document Formatting dialog. (<A HREF="http://github.com/nvaccess/nvda/issues/5946">#5946</A>) 可讀出微軟Word內的分節符號、分欄及頁碼資訊，此可透過將NVDA功能表中-&gt;「偏好設定」-&gt;「文件格式」-&gt;「頁碼」勾選來啟用。
+<LI>In Microsoft Word, text columns can now be reported. This is enabled with the "Report page numbers" option in the document formatting dialog. (<A HREF="http://github.com/nvaccess/nvda/issues/5946">#5946</A>)
+<LI>Automatic language switching is now supported in WordPad. (<A HREF="http://github.com/nvaccess/nvda/issues/6555">#6555</A>) 已可支援WordPad的自動語言切換功能。
+<LI>The NVDA find command (NVDA+control+f) is now supported in browse mode in Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/6580">#6580</A>) 已可支援在微軟Edge瀏覽模式下尋找的功能，按組合鍵(NVDA+control+f)。
+<LI>Quick navigation for buttons in browse mode (b and shift+b) is now supported in Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/6577">#6577</A>) 已可支援在微軟Edge瀏覽模式下單鍵瀏覽「按鈕」的功能，按 (b或shift+b)。
+<LI>When copying a sheet in Microsoft Excel, column and row headers are remembered. (<A HREF="http://github.com/nvaccess/nvda/issues/6628">#6628</A>) 當在微軟Excel複製工作表，其欄標題與列標題均可隨之被記住。
+<LI>Support for reading and navigating books in Kindle for PC version 1.19, including access to links, footnotes, graphics, highlighted text and user notes. Please see the Kindle for PC section of the NVDA User Guide for further information. (<A HREF="http://github.com/nvaccess/nvda/issues/6247">#6247</A>, <A HREF="http://github.com/nvaccess/nvda/issues/6638">#6638</A>) 支援在PC應用程式（版次1.19）上讀出Kindle電子書的導航與註解，包括：連結、footnotes、圖片、強調標記及讀者加註。
+<LI>Browse mode table navigation is now supported in Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/6594">#6594</A>) 已可支援微軟Edge在瀏覽模式的表格之導航。
+<LI>In Microsoft Excel, the report review cursor location command (desktop: NVDA+numpadDelete, laptop: NVDA+delete) now reports the name of the worksheet and the cell location. (<A HREF="http://github.com/nvaccess/nvda/issues/6613">#6613</A>) 已可支援微軟Excel讀出瀏覽游標所在的位置資訊，如按一下(桌機：NVDA+數字鍵盤Delete，筆電：NVDA+delete)讀出工作表名稱，按兩下，讀出視窗尺寸大小。
+<LI>Added an option to the exit dialog to restart with debug level logging. (<A HREF="http://github.com/nvaccess/nvda/issues/6689">#6689</A>)
+</UL>
+
+<H3>Changes</H3>
+
+<UL>
+<LI>The minimum braille cursor blink rate is now 200 ms. If this was previously set lower, it will be increased to 200 ms. (<A HREF="http://github.com/nvaccess/nvda/issues/6470">#6470</A>)
+<LI>A check box has been added to the braille settings dialog to allow enabling/disabling braille cursor blinking. Previously a value of zero was used to achieve this. (<A HREF="http://github.com/nvaccess/nvda/issues/6470">#6470</A>)
+<LI>Updated eSpeak NG (commit e095f008, 10 January 2017). (<A HREF="http://github.com/nvaccess/nvda/issues/6717">#6717</A>)
+<LI>Due to changes In the Windows 10 Creators Update, the "Always duck" mode is no longer available in NVDA's Audio ducking settings. It is still available on older windows 10 releases. (<A HREF="http://github.com/nvaccess/nvda/issues/6684">#6684</A>)
+<LI>Due to changes in the  Windows 10 Creators Update, the "Duck when outputting speech and sounds" mode can no longer ensure audio has ducked fully before starting to speak, nor will it keep audio ducked long enough after speaking to stop rappid bouncing in volume. These changes do not   affect older windows 10 releases. (<A HREF="http://github.com/nvaccess/nvda/issues/6684">#6684</A>)
+</UL>
+
+<H3>Bug Fixes</H3>
+
+<UL>
+<LI>Fixed freeze in Microsoft Word when moving by paragraph through a large document while in browse mode. (<A HREF="http://github.com/nvaccess/nvda/issues/6368">#6368</A>)
+<LI>Tables in Microsoft Word that have been copied from Microsoft Excel are no longer treeted as layout tables and therefore are no longer ignored. (<A HREF="http://github.com/nvaccess/nvda/issues/5927">#5927</A>)
+<LI>When trying to type in Microsoft Excel while in protected view, NVDA now makes a sound rather than speaking characters that were not actually typed. (<A HREF="http://github.com/nvaccess/nvda/issues/6570">#6570</A>)
+<LI>Pressing escape in Microsoft Excel no longer incorrectly switches to browse mode, unless the user has previously switched to browse mode explicitly with NVDA+space and then entered focus mode by pressing enter on a form field. (<A HREF="http://github.com/nvaccess/nvda/issues/6569">#6569</A>) 
+<LI>NVDA no longer freezes in Microsoft Excel spreadsheets where an entire row or column is merged. (<A HREF="http://github.com/nvaccess/nvda/issues/6216">#6216</A>)
+<LI>Reporting of cropped/overflowed text in Microsoft Excel cells should now be more accurate. (<A HREF="http://github.com/nvaccess/nvda/issues/6472">#6472</A>)
+<LI>NVDA now reports when a check box is read-only. (<A HREF="http://github.com/nvaccess/nvda/issues/6563">#6563</A>)
+<LI>The NVDA launcher will no longer show a warning dialog when it can't play the logo sound due to no audio device being available. (<A HREF="http://github.com/nvaccess/nvda/issues/6289">#6289</A>)
+<LI>Controls in the Microsoft Excel Ribbon that are unavailable are now reported as such. (<A HREF="http://github.com/nvaccess/nvda/issues/6430">#6430</A>)
+<LI>NVDA will no longer announce "pane" when minimizing windows. (<A HREF="http://github.com/nvaccess/nvda/issues/6671">#6671</A>)
+<LI>Typed characters are now spoken in Universal Windows Platform (UWP) apps (including Microsoft Edge) in the Windows 10 Creators Update. (<A HREF="http://github.com/nvaccess/nvda/issues/6017">#6017</A>)
+<LI>Mouse tracking now works across all screens on computers with multiple monitors. (<A HREF="http://github.com/nvaccess/nvda/issues/6598">#6598</A>)
+<LI>NVDA no longer becomes unusable after exiting Windows Media Player while focused on a slider control. (<A HREF="http://github.com/nvaccess/nvda/issues/5467">#5467</A>)
+</UL>
+
+<H3>Changes for Developers</H3>
+
+<UL>
+<LI>Profiles and configuration files are now automatically upgraded to meet the requirements of schema modifications. If there is an error during upgrade, a notification is shown, the configuration is reset and the old configuration file is available in the NVDA log at 'Info' level. (<A HREF="http://github.com/nvaccess/nvda/issues/6470">#6470</A>)
+</UL>
+
 <H2>2016.4</H2>
 
 <P>
@@ -27,6 +82,7 @@ Highlights of this release include improved support for Microsoft Edge; browse m
 <LI>Support for the Baum SuperVario2, Baum Vario 340 and HumanWare Brailliant2 braille displays. (<A HREF="http://github.com/nvaccess/nvda/issues/6116">#6116</A>) 支援Baum SuperVario2，Baum Vario 340和HumanWare Brailliant2點字顯示器。
 <LI>Initial support for the Anniversary update of Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/6271">#6271</A>) 開始支持Microsoft Edge的年度更新版。
 <LI>Browse mode is now used when reading emails in the Windows 10 mail app. (<A HREF="http://github.com/nvaccess/nvda/issues/6271">#6271</A>) 在Windows 10 mail app中閱讀電子郵件時，可使用瀏覽模式。
+<LI>New language: Lithuanian.
 </UL>
 
 <H3>Changes</H3>
@@ -80,6 +136,10 @@ Highlights of this release include improved support for Microsoft Edge; browse m
 
 <H2>2016.3</H2>
 
+<P>
+Highlights of this release include the ability to disable individual add-ons; support for form fields in Microsoft Excel; significant improvements to reporting of colors; fixes and improvements related to several braille displays; and fixes and improvements to support for Microsoft Word.
+</P>
+
 <H3>New Features</H3>
 
 <UL>
@@ -93,6 +153,8 @@ Highlights of this release include improved support for Microsoft Edge; browse m
 <LI>Add-ons manager: It is now possible to disable individual add-ons. (<A HREF="http://github.com/nvaccess/nvda/issues/3090">#3090</A>)附加元件已可透過「管理附加元件」作個別停用之設定。
 <LI>Additional key assignments have been added for ALVA BC640/680 series braille displays. (<A HREF="http://github.com/nvaccess/nvda/issues/5206">#5206</A>)
 <LI>There is now a command to move the braille display to the current focus. Currently, only the ALVA BC640/680 series has a key assigned to this command, but it can be assigned manually for other displays in the Input Gestures dialog if desired. (<A HREF="http://github.com/nvaccess/nvda/issues/5250">#5250</A>)
+<LI>In Microsoft Excel, you can now interact with form fields. You move to form fields using the Elements List or single letter navigation in browse mode. (<A HREF="http://github.com/nvaccess/nvda/issues/4953">#4953</A>)
+<LI>You can now assign an input gesture to toggle simple review mode using the Input Gestures dialog. (<A HREF="http://github.com/nvaccess/nvda/issues/6173">#6173</A>)
 </UL>
 
 <H3>Changes</H3>
@@ -127,6 +189,10 @@ Highlights of this release include improved support for Microsoft Edge; browse m
 <LI>NVDA now correctly detects the secondary routing buttons on ALVA BC640/680 series braille displays. (<A HREF="http://github.com/nvaccess/nvda/issues/5206">#5206</A>)
 <LI>NVDA can again report Windows Toast notifications in recent builds of Windows 10. (<A HREF="http://github.com/nvaccess/nvda/issues/6096">#6096</A>)
 <LI>NVDA no longer occasionally stops recognising key presses on Baum compatible and HumanWare Brailliant B braille displays. (<A HREF="http://github.com/nvaccess/nvda/issues/6035">#6035</A>)
+<LI>If reporting of line numbers is enabled in NVDA's Document Formatting preferences, line numbers are now shown on a braille display. (<A HREF="http://github.com/nvaccess/nvda/issues/5941">#5941</A>)
+<LI>When speech mode is off, reporting objects (such as pressing NVDA+tab to report the focus) now appears in the Speech Viewer as expected. (<A HREF="http://github.com/nvaccess/nvda/issues/6049">#6049</A>)
+<LI>In the Outlook 2016 message list,  associated draft information is no longer reported. (<A HREF="http://github.com/nvaccess/nvda/issues/6219">#6219</A>)
+<LI>In Google Chrome and Chrome-based browsers in a language other than English, browse mode no longer fails to work in many documents. (<A HREF="http://github.com/nvaccess/nvda/issues/6249">#6249</A>)
 </UL>
 
 <H3>Changes for Developers</H3>
