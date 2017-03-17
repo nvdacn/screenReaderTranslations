@@ -9,6 +9,38 @@
 <H2>Quoi de Neuf dans NVDA</H2>
 </CENTER>
 
+<P>
++= 2017.2 =
+</P>
+
+<H3>Nouvelles Fonctionnalités</H3>
+
+<UL>
+<LI>Sous Microsoft Excel, l'information de bordure de cellule peut maintenant être annoncée en utilisant `NVDA+f`. (<A HREF="http://github.com/nvaccess/nvda/issues/3044">#3044</A>)
+<LI>Ajout du support des attributs aria-current. (<A HREF="http://github.com/nvaccess/nvda/issues/6358">#6358</A>)
+<LI>Support du changement de langue automatique sous Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/6852">#6852</A>)
+</UL>
+
+<H3>Corrections de Bogues</H3>
+
+<UL>
+<LI>Les éléments de menu dans les pages web (Cases à cocher et boutons radio dans les menus) peuvent maintenant être activés en mode navigation. (<A HREF="http://github.com/nvaccess/nvda/issues/6735">#6735</A>)
+<LI>L'annonce du nom des feuilles Excel est maintenant traduit. (<A HREF="http://github.com/nvaccess/nvda/issues/6848">#6848</A>)
+<LI>L'appui sur échap quand le dialogue de confirmation d'effacement de profil est actif ferme maintenant le dialogue. (<A HREF="http://github.com/nvaccess/nvda/issues/6851">#6851</A>)
+<LI>Correction de quelques plantages sous Mozilla Firefox et autres applications Gecko quand le multi-process est activé. (<A HREF="http://github.com/nvaccess/nvda/issues/6885">#6885</A>)
+<LI>L'annonce de la couleur d'arrière-plan en revue d'écran est maintenant plus fiable quand le texte est affiché avec un arrière-plan transparent. (<A HREF="http://github.com/nvaccess/nvda/issues/6467">#6467</A>) 
+<LI>Amélioration du support de aria-describedby sous Internet Explorer 11, incluant son support dans les cadres et quand de multiples IDs sont fournis. (<A HREF="http://github.com/nvaccess/nvda/issues/5784">#5784</A>)
+<LI>Sous la mise à jour Windows Creaters, l'atténuation audio de NVDA fonctionne de nouveau comme sous les versions précédentes de Windows (Tous les modes sont de nouveau disponibles). (<A HREF="http://github.com/nvaccess/nvda/issues/6933">#6933</A>)
+<LI>NVDA n'échouera plus à annoncer ou naviguer vers certains contrôles (UIA) pour lesquels un raccourci clavier n'est pas défini. (<A HREF="http://github.com/nvaccess/nvda/issues/6779">#6779</A>)
+<LI>Deux espaces ne sont plus ajoutés dans les informations de raccourcis clavier pour certains contrôles (UIA). (<A HREF="http://github.com/nvaccess/nvda/issues/6790">#6790</A>)
+</UL>
+
+<H3>Changements pour les Développeurs</H3>
+
+<UL>
+<LI>Les arguments de ligne de commande sont maintenant traités par le module Python argparser, au lieu de optparser. Cela permet de traiter certaines options telles que -r et -q de manière exclusive. (<A HREF="http://github.com/nvaccess/nvda/issues/6865">#6865</A>)
+<LI>core.callLater ajoute maintenant le callback à la queue principale de NVDA après le délai donné, plutôt que de réveiller le noyau et de l'exécuter directement. This stops possible freezes due to the  core accidentally going to sleep after processing a callback, in the midle of  a modal call such as the desplaying of a message box. (<A HREF="http://github.com/nvaccess/nvda/issues/6797">#6797</A>) 
+</UL>
 
 <H2>2017.1</H2>
 
