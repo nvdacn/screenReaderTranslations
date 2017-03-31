@@ -32,13 +32,21 @@
 <LI>NVDA:n äänenvoimakkuuden hiljennys toimii Windowsin Creators Update -versiossa taas kuten aiemmissa Windows-versioissa (ts. vaihtoehdot "hiljennä puhuttaessa ja ääntä toistettaessa", "hiljennä aina" sekä "ei hiljennystä" ovat kaikki käytettävissä). (<A HREF="http://github.com/nvaccess/nvda/issues/6933">#6933</A>)
 <LI>Tiettyihin UIA-säätimiin siirtyminen tai niiden ilmoittaminen ei enää epäonnistu NVDA:ta käyttäen, kun niihin ei ole määritetty pikanäppäintä. (<A HREF="http://github.com/nvaccess/nvda/issues/6779">#6779</A>)
 <LI>Pikanäppäintietoihin ei enää lisätä kahta välilyöntiä tietyissä UIA-säätimissä. (<A HREF="http://github.com/nvaccess/nvda/issues/6790">#6790</A>)
+<LI>Tietyt HIMS-pistenäyttöjen näppäinyhdistelmät (esim. välilyönti+piste 4) eivät enää lakkaa ajoittain toimimasta. (<A HREF="http://github.com/nvaccess/nvda/issues/3157">#3157</A>)
+<LI>Korjattu ongelma avattaessa sarjaporttia tietyn muun kuin englanninkielisissä järjestelmissä, mikä aiheutti joissakin tapauksissa sen, ettei pistenäyttöjen kytkeminen onnistunut. (<A HREF="http://github.com/nvaccess/nvda/issues/6845">#6845</A>)
 </UL>
 
 <H3>Muutokset kehittäjille (englanniksi)</H3>
 
 <UL>
 <LI>Commandline arguments are now processed with Python's argparser module, rather than optparser. This allows certain options such as -r and -q to be handled exclusively. (<A HREF="http://github.com/nvaccess/nvda/issues/6865">#6865</A>)
-<LI>core.callLater now queues the callback to NVDA's main queue after the given delay, rather than waking the core and executing it directly. This stops possible freezes due to the  core accidentally going to sleep after processing a callback, in the midle of  a modal call such as the desplaying of a message box. (<A HREF="http://github.com/nvaccess/nvda/issues/6797">#6797</A>) 
+<LI>core.callLater now queues the callback to NVDA's main queue after the given delay, rather than waking the core and executing it directly. This stops possible freezes due to the  core accidentally going to sleep after processing a callback, in the midle of  a modal call such as the desplaying of a message box. (<A HREF="http://github.com/nvaccess/nvda/issues/6797">#6797</A>)
+<LI>The InputGesture.identifiers property has been changed so that it is no longer normalized. (<A HREF="http://github.com/nvaccess/nvda/issues/6945">#6945</A>)
+ <UL>
+ <LI>Subclasses no longer need to normalize identifiers before returning them from this property.
+ <LI>If you want normalized identifiers, there is now an InputGesture.normalizedIdentifiers property which normalizes the identifiers returned by the identifiers property .
+ </UL>
+<LI>The InputGesture.logIdentifier property is now deprecated. Callers should use InputGesture.identifiers[0] instead. (<A HREF="http://github.com/nvaccess/nvda/issues/6945">#6945</A>)
 </UL>
 
 <H2>2017.1</H2>
