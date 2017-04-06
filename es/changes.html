@@ -18,6 +18,8 @@
 <LI>Ahora se puede anunciar la información de borde de celdas en Microsoft Excel utilizando `NVDA+f`. (<A HREF="http://github.com/nvaccess/nvda/issues/3044">#3044</A>)
 <LI>Añadido el soporte para atributos aria-current. (<A HREF="http://github.com/nvaccess/nvda/issues/6358">#6358</A>)
 <LI>Se soporta el cambio autumático de idiomas en Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/6852">#6852</A>)
+<LI>Se soporta la Calculadora de Windows en Windows 10 Enterprise LTSB (Long-Term Servicing Branch) y Server. (<A HREF="http://github.com/nvaccess/nvda/issues/6914">#6914</A>)
+<LI>Al realizar la orden leer línea actual tres veces rápidamente se deletrea la línea con descripciones de caracteres. (<A HREF="http://github.com/nvaccess/nvda/issues/6893">#6893</A>)
 </UL>
 
 <H3>Corrección de Fallos</H3>
@@ -34,6 +36,8 @@
 <LI>Ya no se añaden dos espacios vacíos en la información de atajos de teclado para ciertos controles (UIA). (<A HREF="http://github.com/nvaccess/nvda/issues/6790">#6790</A>)
 <LI>Ciertas combinaciones de teclas en las pantallas HIMS (ej.: espacio+punto4) ya no fallan intermittentemente. (<A HREF="http://github.com/nvaccess/nvda/issues/3157">#3157</A>)
 <LI>Corregido un problema al abrir un puerto serie en sistemas que utilizan ciertos idiomas distintos al inglés que causaban que fallase la conexión a pantallas braille en algunos casos. (<A HREF="http://github.com/nvaccess/nvda/issues/6845">#6845</A>)
+<LI>Se reduce la posibilidad de que el fichero de configuración se dañe al apagarse Windows. Los ficheros de configuración ahora se escriben en un fichero temporal antes de reemplazar el actual. (<A HREF="http://github.com/nvaccess/nvda/issues/3165">#3165</A>)
+<LI>Al realizar la orden leer línea actual dos veces rápidamente para deletrearla, ahora se utiliza el idioma apropiado para los caracteres deletreados. (<A HREF="http://github.com/nvaccess/nvda/issues/6726">#6726</A>)
 </UL>
 
 <H3>Cambios para Desarrolladores</H3>
@@ -47,6 +51,13 @@
  <LI>Si quieres normalizar identificadores, ahora hay una propiedad InputGesture.normalizedIdentifiers la cual normaliza los identificadores devueltos por la propiedad identifiers.
  </UL>
 <LI>La propiedad InputGesture.logIdentifier ahora está obsoleta. Las llamadas deberían utilizar InputGesture.identifiers[0] en su lugar. (<A HREF="http://github.com/nvaccess/nvda/issues/6945">#6945</A>)
+<LI>Se eliminó código obsoleto:
+ <UL>
+ <LI>las constantes `speech.REASON_*`, deberían utilizarse en su lugar `controlTypes.REASON_*`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>)
+ <LI>`i18nName` para opciones de sintetizador, `displayName` y `displayNameWithAccelerator` deberían utilizarse en su lugar. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/5185">#5185</A>)
+ <LI>`config.validateConfig`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/667">#667</A>)
+ <LI>`config.save`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>)
+ </UL>
 </UL>
 
 <H2>2017.1</H2>
