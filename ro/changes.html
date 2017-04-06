@@ -18,6 +18,8 @@
 <LI>Informația marginii celulei poate fi acum raportată în Microsoft Excel prin utilizarea `NVDA+f`. (<A HREF="http://github.com/nvaccess/nvda/issues/3044">#3044</A>)
 <LI>A fost adăugat suportul pentru atributele curente-aria. (<A HREF="http://github.com/nvaccess/nvda/issues/6358">#6358</A>)
 <LI>Comutarea automată a limbii este suportată în Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/6852">#6852</A>)
+<LI>Calculatorul Windows este suportat pe Windows 10 Enterprise LTSB (Long-Term Servicing Branch) și Server. (<A HREF="http://github.com/nvaccess/nvda/issues/6914">#6914</A>)
+<LI>Efectuarea comenzii de citire a liniei curente de trei ori rapid citește linia cu descrierea caracterelor. (<A HREF="http://github.com/nvaccess/nvda/issues/6893">#6893</A>)
 </UL>
 
 <H3>Rezolvări Defecte</H3>
@@ -34,6 +36,8 @@
 <LI>Două spații goale nu mai sunt adăugate în informația scurtăturii pentru anumite comenzi (UIA). (<A HREF="http://github.com/nvaccess/nvda/issues/6790">#6790</A>)
 <LI>Anumite combinații ale afișajelor HIMS (e.g. spațiu+punct4) nu mai eșuează intermitent. (<A HREF="http://github.com/nvaccess/nvda/issues/3157">#3157</A>)
 <LI>A fost corectată  o situație la deschiderea  unui port serial pe sistemele utilizatoare de anumite limbi, altele decât engleza, care au cauzat eșuarea în unele cazuri a conectării la afișajele braille. (<A HREF="http://github.com/nvaccess/nvda/issues/6845">#6845</A>)
+<LI>A fost redusă șansa de corupere a fișierului de configurare când Windows-ul  se închide. Fișierele de configurare sunt acum scrise într-o filă temporară înainte de înlocuirea fișierului actual de configurare. (<A HREF="http://github.com/nvaccess/nvda/issues/3165">#3165</A>)
+<LI>La efectuarea comenzii de citire a liniei curente de două ori rapid pentru citirea liniei, limba apropiată este acum utilizată pentru caracterele citite. (<A HREF="http://github.com/nvaccess/nvda/issues/6726">#6726</A>)
 </UL>
 
 <H3>Modificări pentru Dezvoltatori</H3>
@@ -41,6 +45,15 @@
 <UL>
 <LI>Argumentele Commandline sunt procesate acum cu modulul argparser al Python-ului, mai degrabă decât optparser-ul. Aceasta permite anumite opțiuni cum ar fi -r și -q pentru a fi manipulate în mod exclusiv. (<A HREF="http://github.com/nvaccess/nvda/issues/6865">#6865</A>)
 <LI>core.callLater pune callback-ul la  coada principală a NVDA-ului după întârzierea dată, mai degrabă decât trezirea nucleului și executarea lui în mod direct. Aceasta oprește posibilele blocări datorită nucleului care intră în repaus accidental după procesarea unui callback în mijlocul unui apel de model cum ar fi afișarea unei casete de mesaj. (<A HREF="http://github.com/nvaccess/nvda/issues/6797">#6797</A>) 
+<LI>Proprietatea InputGesture.identifiers a fost modificată, astfel încât aceasta nu mai este normalizată. (<A HREF="http://github.com/nvaccess/nvda/issues/6945">#6945</A>)
+<LI>Subclasele nu mai sunt nevoite să normalizeze identificatoarele înainte de revenirea la ele de la această proprietate.
+<LI>Dacă vreți identificatoare normalizate, există acum o proprietate numită InputGesture.normalizedIdentifiers care normalizează identificatoarele returnate de proprietatea lor.
+<LI>Proprietatea InputGesture.logIdentifier este acum depreciată. Apelanții ar trebui să utilizeze InputGesture.identifiers[0] în locul ei. (<A HREF="http://github.com/nvaccess/nvda/issues/6945">#6945</A>)
+Codul depreciat a fost eliminat:
+<LI>În schimb, constantele `speech.REASON_*` și `controlTypes.REASON_*` ar trebui să fie folosite. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>)
+<LI>În schimb, setarea pentru sintetizator `i18nName`, `displayName` și `displayNameWithAccelerator` ar trebui să fie folosite. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>)
+<LI>`config.validateConfig`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/667">#667</A>)
+<LI>`config.save`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>)
 </UL>
 
 <H2>2017.1</H2>
