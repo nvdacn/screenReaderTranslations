@@ -3,116 +3,131 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2017-03-16 23:26+1000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2017-04-12 11:21+0200\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Simone Dal Maso <simone.dalmaso@gmail.com>\n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.7\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "[[!meta title=\"Console Timer\"]]\n"
-msgstr ""
+msgstr "[[!meta title=\"Console Timer\"]]\n"
 
 #. type: Plain text
 #, no-wrap
 msgid ""
 "*   Author: Derek Riemer\n"
 "* Download [Stable Version][1]\n"
-msgstr ""
+msgstr "*   Autore: Derek Riemer\n"
 
 #. type: Title #
 #, no-wrap
 msgid "consoleTimer"
-msgstr ""
+msgstr "consoleTimer"
 
 #. type: Plain text
 msgid ""
-"consoleTimer was written by derek riemer, and is GPL V2, as required by "
-"being an NVDA addon."
+"consoleTimer was written by derek riemer, and is GPL V2, as required by being an "
+"NVDA addon."
 msgstr ""
+"consoleTimer è stato scritto da derek riemer, ed è sotto licenza GPL V2, come "
+"richiesto dalla struttura dei componenti aggiuntivi di NVDA."
 
 #. type: Bullet: '* '
 msgid "[Source available on Github:](https://github.com/derekriemer/consoleTimer)"
 msgstr ""
+"[Sorgenti disponibili su Github:](https://github.com/derekriemer/consoleTimer)"
 
 #. type: Title ##
 #, no-wrap
 msgid "Background"
-msgstr ""
+msgstr "Perché questo componente"
 
 #. type: Plain text
 msgid ""
 "When using command lines over ssh, usually, there's network lag. This lag is "
-"expected, however, the way NVDA handles cursor movement is not friendly with "
-"lag in terminals, because this operation is a synchrinous opperation. This "
-"causes NVDA to wrongly report the wrong letter when moving to another letter "
-"with the arrow keys. For example, if the user is on the p of grep, and they "
-"press right arrow, they may hear \"t\" instead of space. This is due to NVDA "
-"not waiting long enough to actually properly handle this cursor movement.  "
-"This addon was written because I do lots of server administration, and I "
-"wanted cursor navigation to work."
+"expected, however, the way NVDA handles cursor movement is not friendly with lag in "
+"terminals, because this operation is a synchrinous opperation. This causes NVDA to "
+"wrongly report the wrong letter when moving to another letter with the arrow keys. "
+"For example, if the user is on the p of grep, and they press right arrow, they may "
+"hear \"t\" instead of space. This is due to NVDA not waiting long enough to "
+"actually properly handle this cursor movement.  This addon was written because I do "
+"lots of server administration, and I wanted cursor navigation to work."
 msgstr ""
+"Quando si utilizza la riga di comando tramite ssh, solitamente si avverte un "
+"ritardo provocato dalle connessioni di rete. Ciò è assolutamente normale, il "
+"problema però è che NVDA non riesce a gestire in maniera soddisfacente lo "
+"spostamento del cursore, il che può portare NVDA ad annunciare una lettera diversa "
+"rispetto alla posizione del cursore. Per esempio, se l'utente si trova alla lettera "
+"r della parola arpa, premendo la freccia destra dovrebbe sentire \"p\", invece si "
+"sente ripetere la lettera R, sebbene il cursore sia andato alla lettera p. Questo "
+"avviene perché NVDA non attende per un tempo sufficientemente lungo l'aggiornamento "
+"della posizione del cursore. Questo componente aggiuntivo è stato scritto quindi "
+"perché l'autore effettua spesso manutenzione su server ssh ed aveva bisogno di una "
+"soluzione funzionale."
 
 #. type: Title ##
 #, no-wrap
 msgid "TLDR usage instructions"
-msgstr ""
+msgstr "Istruzioni per l'uso"
 
 #. type: Plain text
 msgid ""
-"When in a console, if NVDA is missing or repeating letters as you move "
-"around, simply press nvda+shift+pageup to teach it to be more patient, or if "
-"it is too laggy, press nvda+shift+page down to teach it to be less "
-"patient. This addon will have no affect outside terminals, and the patience "
-"changes by .01 for every keypress."
+"When in a console, if NVDA is missing or repeating letters as you move around, "
+"simply press nvda+shift+pageup to teach it to be more patient, or if it is too "
+"laggy, press nvda+shift+page down to teach it to be less patient. This addon will "
+"have no affect outside terminals, and the patience changes by .01 for every "
+"keypress."
 msgstr ""
+"Quando ci si trova in una console, se NVDA sbaglia ad annunciare le lettere quando "
+"ci si sposta con le frecce, premere NVDA+shift+pagina su per aumentare il ritardo "
+"in modo che NVDA sia più paziente, o NVDA+shift+pagina giù per diminuire il ritardo "
+"nel recepire le informazioni. Il componente non ha alcun effetto al di fuori dei "
+"terminali, e le unità di spostamento sono di .01."
 
 #. type: Title ##
 #, no-wrap
 msgid "How to make this work with custom terminals"
-msgstr ""
+msgstr "Come far funzionare il componente su terminali personalizzati"
 
 #. type: Plain text
 msgid ""
-"If you are a developer who wants NVDA to recognize a section or portion of "
-"your app as a terminal, and it isn't already, you should implement an "
-"appModule for this purpose, to gain the relevant behavior, I.E. announcement "
-"of new text written to stdout, etc. Please raise a ticket against "
-"[NVDA](https://github.com/nvaccess/nvda/issues/new), and we can help you get "
-"your terminal appModule into the screen reader. Support for Putty, Cygwin "
-"(Mintty), and secureCRT is already implemtned. Apps such as R may be "
-"implemented in the future.  If your app is properly recognized as a terminal "
-"by NVDA, (The termminal behavior is properly injected at runtime), this "
-"addon should just work. If it doesn't, please let me know via an issue. How "
-"to write an app module is out of scope for this document, but is well "
-"documented in the [NVDA Developer "
-"Guide](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html). "
-"This example illustrates [an appModule to teach NVDA that the terminal "
-"window on PuTTY is a "
-"terminal](https://github.com/nvaccess/nvda/blob/master/source/appModules/putty.py). "
-"Also, [Here's an example implementation for "
-"MinTTY](https://github.com/nvaccess/nvda/blob/master/source/appModules/mintty.py). "
-"The most important thing to make sure happens is that "
+"If you are a developer who wants NVDA to recognize a section or portion of your app "
+"as a terminal, and it isn't already, you should implement an appModule for this "
+"purpose, to gain the relevant behavior, I.E. announcement of new text written to "
+"stdout, etc. Please raise a ticket against [NVDA](https://github.com/nvaccess/nvda/"
+"issues/new), and we can help you get your terminal appModule into the screen "
+"reader. Support for Putty, Cygwin (Mintty), and secureCRT is already implemtned. "
+"Apps such as R may be implemented in the future.  If your app is properly "
+"recognized as a terminal by NVDA, (The termminal behavior is properly injected at "
+"runtime), this addon should just work. If it doesn't, please let me know via an "
+"issue. How to write an app module is out of scope for this document, but is well "
+"documented in the [NVDA Developer Guide](https://www.nvaccess.org/files/nvda/"
+"documentation/developerGuide.html). This example illustrates [an appModule to teach "
+"NVDA that the terminal window on PuTTY is a terminal](https://github.com/nvaccess/"
+"nvda/blob/master/source/appModules/putty.py). Also, [Here's an example "
+"implementation for MinTTY](https://github.com/nvaccess/nvda/blob/master/source/"
+"appModules/mintty.py). The most important thing to make sure happens is that "
 "NVDAObjects.behaviors.Terminal is injected to the class list."
 msgstr ""
 
 #. type: Plain text
 #, no-wrap
 msgid "[[!tag dev stable]]\n"
-msgstr ""
+msgstr "[[!tag dev stable]]\n"
 
 #. type: Plain text
 msgid "[1]: http://addons.nvda-project.org/files/get.php?file=cont"
-msgstr ""
+msgstr "[1]: http://addons.nvda-project.org/files/get.php?file=cont"
 
 #. type: Plain text
 msgid "[2]: https://derekriemer.com/node/44"
-msgstr ""
+msgstr "[2]: https://derekriemer.com/node/44"
