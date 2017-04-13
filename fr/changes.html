@@ -22,6 +22,12 @@
 <LI>Effectuer la commande de lecture de la ligne courante trois fois rapidement épelle la ligne en code international. (<A HREF="http://github.com/nvaccess/nvda/issues/6893">#6893</A>)
 </UL>
 
+<H3>Changements</H3>
+
+<UL>
+<LI>Quand on navigue en revue simple dans les applications utilisant UI Automation, davantage de conteneurs vides sont ignorés rendant la navigation plus facile. (<A HREF="http://github.com/nvaccess/nvda/issues/6948">#6948</A>, <A HREF="http://github.com/nvaccess/nvda/issues/6950">#6950</A>) 
+</UL>
+
 <H3>Corrections de Bogues</H3>
 
 <UL>
@@ -38,6 +44,8 @@
 <LI>Correction d'un problème à l'ouverture d'un port série sur des systèmes utilisant certaines langues autres que l'Anglais qui rendait la connexion à un terminal braille impossible dans certains cas. (<A HREF="http://github.com/nvaccess/nvda/issues/6845">#6845</A>)
 <LI>Réduction des chances que le fichier de configuration soit corrompu à la fermeture de Windows. Les fichiers de configuration sont maintenant écrits dans un fichier temporaire avant de remplacer le fichier de configuration réel. (<A HREF="http://github.com/nvaccess/nvda/issues/3165">#3165</A>)
 <LI>Quand on effectue la commande de lecture de la ligne courante deux fois rapidement pour épeler la ligne, la langue appropriée est maintenant utilisée pour épeler les caractères. (<A HREF="http://github.com/nvaccess/nvda/issues/6726">#6726</A>)
+<LI>Naviguer par ligne sous Microsoft Edge est maintenant jusqu'à trois fois plus rapide sous Windows 10 Creaters Update. (<A HREF="http://github.com/nvaccess/nvda/issues/6994">#6994</A>)
+<LI>NVDA n'annonce plus "Web Runtime grouping" quand on met le focus sur un document Microsoft Edge sous Windows 10 Creaters Update (<A HREF="http://github.com/nvaccess/nvda/issues/6948">#6948</A>)
 </UL>
 
 <H3>Changements pour les Développeurs</H3>
@@ -57,6 +65,13 @@
  <LI>`i18nName` pour les paramètres synthétiseur, remplacées par `displayName` et `displayNameWithAccelerator`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/5185">#5185</A>)
  <LI>`config.validateConfig`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/667">#667</A>)
  <LI>`config.save`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>)
+ </UL>
+<LI>La liste des complétions dans le menu contextuel d'autocomplétion de la Console Python ne montre plus aucun chemin menant au symbole final à compléter. (<A HREF="http://github.com/nvaccess/nvda/issues/7023">#7023</A>)
+<LI>Il y a maintenant une architecture de test unitaire pour NVDA. (<A HREF="http://github.com/nvaccess/nvda/issues/7026">#7026</A>)
+ <UL>
+ <LI>Les tests unitaires et l'infrastructure sont situés dans le répertoire tests/unit. veuillez consulter le docstring dans le fichier tests\unit\<U>init</U>.py pour plus de détails.
+ <LI>Vous pouvez exécuter les tests en utilisant "scons tests". Veuillez consulter la section "Running Tests" de readme.md pour plus de détails.
+ <LI>Si vous soumettez une pull request pour NVDA, vous devriez d'abord exécuter les tests et vous assurer qu'ils passent.
  </UL>
 </UL>
 
