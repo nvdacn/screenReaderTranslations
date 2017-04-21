@@ -10,7 +10,7 @@
 </CENTER>
 
 
-<H2>2017.1</H2>
+<H2>2017.2</H2>
 
 <P>
 Af væsentlige forbedringer i denne version af NVDA kan nævnes rapportering af sektion- og tekstkolonner i Microsoft Word, støtte for læsning, navigering of annotering af bøger i Kindle for PC, og forbedret understøttelse af Microsoft Edge.
@@ -19,44 +19,37 @@ Af væsentlige forbedringer i denne version af NVDA kan nævnes rapportering af 
 <H3>Nye Funktioner</H3>
 
 <UL>
-<LI>I Microsoft Word, typen af et sektionsskift og et sektionsnummer kan nu blive rapporteret. Dette kan slås til ved brug af indstillingen "Sider" i indstillingerne for dokumentformatering.  (<A HREF="http://github.com/nvaccess/nvda/issues/5946">#5946</A>)
-<LI>Tekstkolonner kan nu rapporteres i Microsoft Word. Dette kan slås til ved brug af indstillingen  "Sider" i indstillingerne for dokumentformatering. (<A HREF="http://github.com/nvaccess/nvda/issues/5946">#5946</A>)
-<LI>Automatisk skift af sprog er nu understøttet i Wordpad. (<A HREF="http://github.com/nvaccess/nvda/issues/6555">#6555</A>)
-<LI>NVDA-kommandoen Find (NVDA+CTRL+F) er nu understøttet i Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/6580">#6580</A>)
-<LI>Bogstavnavigation for knapper i gennemsynstilstand (B og skift+B) er nu understøttet i Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/6577">#6577</A>)
-<LI>Når der kopieres et ark i Microsoft Excel, vil kolonne- og rækkeoverskrifter blive husket. (<A HREF="http://github.com/nvaccess/nvda/issues/6628">#6628</A>)
-<LI>Støtte for navigation og læsning af bøger i Kindle for PC version 1.9.1. Dette indeholder adgang til links, fodnoter, grafik, fremhævet tekst og brugernotater. Se venligst afsnittet Kindle for PC i NVDAs brugervejledning for yderligere informationer. (<A HREF="http://github.com/nvaccess/nvda/issues/6247">#6247</A>, <A HREF="http://github.com/nvaccess/nvda/issues/6638">#6638</A>)
-<LI>Tabelnavigation i gennemsynstilstand er nu understøttet i Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/6594">#6594</A>)
-<LI>I Microsoft Excel, kommandoen rapporter læsemarkørens position (desktop: NVDA+numpadDelete, laptop: NVDA+delete) oplyser nu navnet på arket samt cellepositionen. (<A HREF="http://github.com/nvaccess/nvda/issues/6613">#6613</A>)
-<LI>Tilføjede en mulighed i Afslut NVDA dialogen, så NVDA kan genstartes med debug-logningsniveau. (<A HREF="http://github.com/nvaccess/nvda/issues/6689">#6689</A>)
+<LI>Information for cellekanter i Microsoft Excel kan nu rapporteres med NVDA+F. (<A HREF="http://github.com/nvaccess/nvda/issues/3044">#3044</A>)
+<LI>Tilføjede støtte for aria.current attributter. (<A HREF="http://github.com/nvaccess/nvda/issues/6358">#6358</A>)
+<LI>Støtter automatisk skift af sprog i Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/6852">#6852</A>)
+<LI>Støtter Windows Lommeregner på Windows 10 Enterprise LTSB (Long-Term Servicing Branch) og Server. (<A HREF="http://github.com/nvaccess/nvda/issues/6914">#6914</A>)
+<LI>Ved at udføre kommandoen til at læse den aktuelle linje tre gange hurtigt, vil linjen blive stavet ved brug af tegnbeskrivelser. (<A HREF="http://github.com/nvaccess/nvda/issues/6893">#6893</A>)
 </UL>
 
 <H3>Ændringer</H3>
 
 <UL>
-<LI>Minimum blinkhastighed er nu 200 MS. Profiler, hvor værdien er mindre end 200, vil blive forøget til dette. (<A HREF="http://github.com/nvaccess/nvda/issues/6470">#6470</A>)
-<LI>En tjekboks er blevet tilføjet til dialogen punktindstillinger der tillader, at blinkhastigheden kan slås til og fra. Tidligere var værdien 0 brugt til at opnå dette. (<A HREF="http://github.com/nvaccess/nvda/issues/6470">#6470</A>)
-<LI>Opdaterede eSpeak NG (commit e095f008, 10 January 2017). (<A HREF="http://github.com/nvaccess/nvda/issues/6717">#6717</A>)
-<LI>På grund af ændringer i Windows 10 Creators Update er lyddæmpningstilstanden "Altid dæmp" ikke længere tilgængelig i NVDAs indstillinger for lyddæmpning. Denne indstilling kan stadig benyttes i ældre versioner af Windows 10. (<A HREF="http://github.com/nvaccess/nvda/issues/6684">#6684</A>)
-<LI>På grund af ændringer i Windows 10 Creators Update kan tilstanden "Dæmp når der udsendes tale og lyde" ikke længre sikre, at lyden er helt dæmpet før der udsendes tale, og vil desuden heller ikke bevare lyden dæmpet længe nok når der ikke længere udsendes tale. Dette vil forhindre hurtige ændringer af lydniveauet. Disse ændringer påvirker ikke ældre versioner af Windows 10. (<A HREF="http://github.com/nvaccess/nvda/issues/6684">#6684</A>)
+<LI>Når simpel læsning benyttes til at navigere i applikationer der gør brug af UI Automation, bliver flere non-content beholdere ignoreret så navigation bliver lettere. (<A HREF="http://github.com/nvaccess/nvda/issues/6948">#6948</A>, <A HREF="http://github.com/nvaccess/nvda/issues/6950">#6950</A>)
 </UL>
 
 <H3>Fejlrettelser</H3>
 
 <UL>
-<LI>Rettede en fejl i Microsoft Word der frøs NVDA, når man flyttede mellem afsnit i gennemsynstilstand. (<A HREF="http://github.com/nvaccess/nvda/issues/6368">#6368</A>)
-<LI>Tabeller, der kopieres fra Microsoft Excel ind i Microsoft Word, vil ikke længere blive behandlet som layout-tabeller og derfor ikke længere ignoreret. (<A HREF="http://github.com/nvaccess/nvda/issues/5927">#5927</A>)
-<LI>Når der indtastes i beskyttet visning i Microsoft Word, vil NVDA nu afspille en lyd i stedet for at udtale tegn, der ikke blev skrevet. (<A HREF="http://github.com/nvaccess/nvda/issues/6570">#6570</A>)
-<LI>Ved et tryk på Esc vil NVDA ikke længere ved en fejl skift til gennemsynstilstand, med mindre brugeren udtrykkeligt har skiftet til gennemsynstilstand ved at trykke på NVDA+mellemrum, og herefter skiftet til fokustilstand med tasten enter på et formularfelt. (<A HREF="http://github.com/nvaccess/nvda/issues/6569">#6569</A>)
-<LI>NVDA fryser ikke længere i Excel regneark, når en hel række eller en kolonne flettes. (<A HREF="http://github.com/nvaccess/nvda/issues/6216">#6216</A>)
--Rapportering af beskåret eller overløbende tekst af celler i Microsoft Excel skulle være mere præcis. (<A HREF="http://github.com/nvaccess/nvda/issues/6472">#6472</A>)
-<LI>NVDA vil nu rapportere, hvis en tjekboks er skrivebeskyttet. (<A HREF="http://github.com/nvaccess/nvda/issues/6563">#6563</A>)
-<LI>NVDA-starteren vil ikke længere vise en advarselsdialog, hvis logo-lyden ikke kan afspilles på grund af manglende lydenhed. (<A HREF="http://github.com/nvaccess/nvda/issues/6289">#6289</A>)
-<LI>Utilgængelige kontrolelementer på Microsoft Excel-båndet vil nu blive rapporteret ligeledes. (<A HREF="http://github.com/nvaccess/nvda/issues/6430">#6430</A>)
-<LI>NVDA vil ikke længere annoncere "Rude" når vinduer minimeres. (<A HREF="http://github.com/nvaccess/nvda/issues/6671">#6671</A>)
-<LI>Indtastede tegn udtales nu i Universal Windows Platform (UWP) apps (herunder Microsoft Edge) i Windows 10 Creators Update. (<A HREF="http://github.com/nvaccess/nvda/issues/6017">#6017</A>)
-<LI>Musefølgning virker nu på tværs af alle skærme på computere med flere tilkoblede skærme. (<A HREF="http://github.com/nvaccess/nvda/issues/6598">#6598</A>)
-<LI>NVDA bliver ikke længere ubrugelig, når Windows Media Player afsluttes og en skyderkontrol har fokus. (<A HREF="http://github.com/nvaccess/nvda/issues/5467">#5467</A>)
+<LI>Menupunkter på websider (menupunkt, checkboks og radioknapper) kan nu aktiveres i gennemsynstilstand. (<A HREF="http://github.com/nvaccess/nvda/issues/6735">#6735</A>)
+<LI>Rapportering af ark i Excel er nu oversat. (<A HREF="http://github.com/nvaccess/nvda/issues/6848">#6848</A>)
+<LI>Når dialogen "Bekræft sletning" i indstillingsprofiler er aktiv, kan tasten Esc benyttes til at afvise dialogen. (<A HREF="http://github.com/nvaccess/nvda/issues/6851">#6851</A>)
+<LI>Rettede nogle nedbrud i Mozilla Firefox og andre Gecko-applikationer, hvor funktionen multi-process er slået til. (<A HREF="http://github.com/nvaccess/nvda/issues/6885">#6885</A>)
+<LI>Rapportering af baggrundsfarven er nu mere præcis i skærmlæsning, når tekst tegnes med en gennemsigtig baggrund. (<A HREF="http://github.com/nvaccess/nvda/issues/6467">#6467</A>)
+<LI>Forbedrede støtte for aria.describedby i Internet Explorer 11, herunder i iframes og når mere end et ID er angivet. (<A HREF="http://github.com/nvaccess/nvda/issues/5784">#5784</A>)
+<LI>NVDAs lyddæmpning virker nu i Windows Creaters Update som den gjorde i tidligere Windows versioner (Dæmp når der udsendes tale og lyde, Altid dæmp, og Ingen lyddæmpning er tilgængelige). (<A HREF="http://github.com/nvaccess/nvda/issues/6933">#6933</A>)
+<LI>NVDA vil ikke længere undgå at navigere eller rapportere bestemte (UIA) kontroller hvor en tastaturgenvej ikke er defineret. (<A HREF="http://github.com/nvaccess/nvda/issues/6779">#6779</A>)
+<LI>To tomme mellemrum er ikke længere tilføjet for informationer om tastaturgenveje for bestemte(UIA) kontroller. (<A HREF="http://github.com/nvaccess/nvda/issues/6790">#6790</A>)
+<LI>Bestemte tastekombinationer på HIMS displays (f.eks. mellemrum+4) vil ikke længere tilfældigt fejle. (<A HREF="http://github.com/nvaccess/nvda/issues/3157">#3157</A>)
+<LI>Rettede en fejl der gjorde, at tilkobling af et punktdisplay kunne fejle i nogle tilfæld, når en serielport åbnes på et system der benyttede et andet sprog end engelsk. (<A HREF="http://github.com/nvaccess/nvda/issues/6845">#6845</A>)
+<LI>Reducerede chancen for at beskadige konfigurationsfilen, når Windows lukkes ned. Konfigurationsfiler skrives nu til en midlertidig fil før den erstatter den aktuelle konfigurationsfil. (<A HREF="http://github.com/nvaccess/nvda/issues/3165">#3165</A>)
+<LI>Når kommandoen til at læse den aktuelle linje udføres to gange hurtigt, vil det tilpassende sprog benyttes til udtalen af tegn. (<A HREF="http://github.com/nvaccess/nvda/issues/6726">#6726</A>)
+<LI>Navigation ved brug af linjer er nu 3x hurtigere i Microsoft Edge i Windows Creaters Update. (<A HREF="http://github.com/nvaccess/nvda/issues/6994">#6994</A>)
+<LI>NVDA vil ikke længere rapportere "Web Runtime grouping", når der bliver fokuseret  på et dokument i Microsoft Edge i Windows Creaters Update. (<A HREF="http://github.com/nvaccess/nvda/issues/6948">#6948</A>)
 </UL>
 
 <H3>Ændringer for udviklere</H3>
