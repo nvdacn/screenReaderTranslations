@@ -124,6 +124,17 @@ Os destaques desta versão incluem o anúncio de seções e colunas de texto no 
 <LI>O executável do NVDA  já não mostra um diálogo de alerta quando não é possível tocar o som de entrada devido à indisponibilidade de dispositivos de áudio. (<A HREF="http://github.com/nvaccess/nvda/issues/6289">#6289</A>)
 <LI>No Ribomm do Microsoft Excel, controles que encontram-se indisponíveis agora são anunciados como tal. (<A HREF="http://github.com/nvaccess/nvda/issues/6430">#6430</A>)
 <LI>O NVDA já não anuncia "painel" quando uma janela é minimizada. (<A HREF="http://github.com/nvaccess/nvda/issues/6671">#6671</A>)
+<LI>O NVDA já não se torna inutilizável depois de encerrar o Windows Media Player enquanto um controle deslizante é focado. (<A HREF="http://github.com/nvaccess/nvda/issues/5467">#5467</A>)
+</UL>
+
+<H3>Alterações Específicas para Desenvolvedores</H3>
+
+<P>
+Alguns itens ou termos desta seção não serão traduzidos, uma vez que são demasiado técnicos e relevantes apenas para desenvolvedores. Todavia, os itens que possam ser relevantes para usuários comuns, serão traduzidos.
+</P>
+
+<UL>
+<LI>Profiles and configuration files are now automatically upgraded to meet the requirements of schema modifications. If there is an error during upgrade, a notification is shown, the configuration is reset and the old configuration file is available in the NVDA log at 'Info' level. (<A HREF="http://github.com/nvaccess/nvda/issues/6470">#6470</A>)
 </UL>
 
 <H2>2016.4</H2>
@@ -159,6 +170,43 @@ Os destaques desta versão incluem melhoras no suporte para o Microsoft Edge; mo
 <LI>As caixas de diálogo do NVDA agora têm seus botões "ok" e "cancelar" alinhados à direita do diálogo. (<A HREF="http://github.com/nvaccess/nvda/issues/6333">#6333</A>)
 <LI>Controles de rotação agora são usados em campos de entrada numérica tais como o da opção "Percentagem para mudança de tom em maiúsculas" no Diálogo de opções de voz. Você pode inserir o valor desejado ou usar as setas para cima e para baixo para definir o valor. (<A HREF="http://github.com/nvaccess/nvda/issues/6099">#6099</A>)
 <LI>Foi tornado mais consistente o modo como IFrames (documentos embutidos dentro de documentos) são anunciadas nos navegadores web. IFrames agora são anunciadas como "frame" no Firefox. (<A HREF="http://github.com/nvaccess/nvda/issues/6047">#6047</A>)
+</UL>
+
+<H3>Correção de Falhas</H3>
+
+<UL>
+<LI>Corrigido um erro raro que ocorria quando se encerrava o NVDA com o exibidor de fala aberto. (<A HREF="http://github.com/nvaccess/nvda/issues/5050">#5050</A>)
+<LI>Image maps now render as expected in browse mode in Mozilla Firefox. (<A HREF="http://github.com/nvaccess/nvda/issues/6051">#6051</A>)
+<LI>Estando no diálogo do dicionário, ao pressionar a tecla  enter, agora salva qualquer alteração que você tenha feito e fecha o diálogo. Anteriormente, pressionando-se enter, nada acontecia. (<A HREF="http://github.com/nvaccess/nvda/issues/6206">#6206</A>)
+<LI>Mensagens agora são exibidas em braille quando se altera os modos de entrada para um método de entrada (entrada nativa/alfanumérica, formato cheio/meio formato, etc.). (<A HREF="http://github.com/nvaccess/nvda/issues/5892">#5892</A>, <A HREF="http://github.com/nvaccess/nvda/issues/5893">#5893</A>)
+<LI>Ao desativar e depois reativar imediatamente um complemento ou vice versa, o status do complemento agora é revertido corretamente para o que  apresentava anteriormente. (<A HREF="http://github.com/nvaccess/nvda/issues/6299">#6299</A>)
+<LI>No Microsoft Word, os campos dos números de páginas nos cabeçalhos agora podem ser lidos. (<A HREF="http://github.com/nvaccess/nvda/issues/6004">#6004</A>)
+<LI>O mouse agora pode ser usado para mover o foco entre a lista de símbolos e os campos de edição no diálogo de pronúncia de sinais. (<A HREF="http://github.com/nvaccess/nvda/issues/6312">#6312</A>)
+<LI>Foi corrigido um problema que fazia com que no Microsoft Word, em modo de navegação, a lista de elementos parasse de aparecer quando um documento continha um hyperlink inválido. (<A HREF="http://github.com/nvaccess/nvda/issues/5886">#5886</A>)
+<LI>Depois de ser encerrado através da barra  de tarefas ou com alt+f4, a caixa de seleção do exibidor de fala no menu do NVDA agora reflete a visibilidade atual da janela. (<A HREF="http://github.com/nvaccess/nvda/issues/6340">#6340</A>)
+<LI>O comando recarregar plugins já não causa problemas para perfis de configuração disparados, novos documentos em navegadores web e exploração de tela. (<A HREF="http://github.com/nvaccess/nvda/issues/2892">#2892</A>, <A HREF="http://github.com/nvaccess/nvda/issues/5380">#5380</A>)
+<LI>Na lista de idiomas do Diálogo de Opções Gerais do NVDA, idiomas tais como o aragonês agora são exibidos corretamente no Windows 10. (<A HREF="http://github.com/nvaccess/nvda/issues/6259">#6259</A>)
+<LI>Emulações de teclas do sistema, (como um bottão numa linha braille  que emula o pressionamento da tecla tab) agora são apresentadas no idioma para o qual o NVDA está configurado na ajuda de entrada e no Diálogo de Gestos para Entrada. Anteriormente, estas eram sempre apresentadas em inglês. (<A HREF="http://github.com/nvaccess/nvda/issues/6212">#6212</A>)
+<LI>Alterando-se o idioma do NVDA (a partir do Diálogo de Opções Gerais) agora não há qualquer efeito até que o NVDA seja reiniciado. (<A HREF="http://github.com/nvaccess/nvda/issues/4561">#4561</A>)
+<LI>Já não é possível deixar o campo original em brancco para uma nova entrada de dicionário. (<A HREF="http://github.com/nvaccess/nvda/issues/6412">#6412</A>)
+<LI>Corrigido um raro problema que ocorria ao buscar por portas seriais em alguns sistemas e deixava alguns drivers de linhas braille inutilizáveis. (<A HREF="http://github.com/nvaccess/nvda/issues/6462">#6462</A>)
+<LI>No Microsoft Word, os marcadores numerados nas células das tabelas agora são lidos ao mover-se por células. (<A HREF="http://github.com/nvaccess/nvda/issues/6446">#6446</A>)
+<LI>Agora é possível assinar gestos para comandos dos drivers das linhas braille Handy Tech no Diálogo de Gestos para Entrada do NVDA. (<A HREF="http://github.com/nvaccess/nvda/issues/6461">#6461</A>)
+<LI>No Microsoft Excel, ao pressionar enter ou enter do bloco numérico estando navegando por uma apresentação, agora anuncia corretamente a navegação para a próxima linha. (<A HREF="http://github.com/nvaccess/nvda/issues/6500">#6500</A>)
+<LI>O iTunes já não trava quando se usa o modo de navegação para a iTunes Store, Apple Music, etc. (<A HREF="http://github.com/nvaccess/nvda/issues/6502">#6502</A>)
+<LI>Ccorrigidos travamentos no Mozilla 64 bit e aplicativos baseados no Chrome. (<A HREF="http://github.com/nvaccess/nvda/issues/6497">#6497</A>)
+<LI>No Firefox com o recurso multi-processos ativado, o modo de navegação e os campos de texto editáveis agora funcionam corretamente. (<A HREF="http://github.com/nvaccess/nvda/issues/6380">#6380</A>)
+</UL>
+
+<H3>Alterações Específicas para Desenvolvedores</H3>
+
+<P>
+Alguns itens ou termos desta seção não serão traduzidos, uma vez que são demasiado técnicos e relevantes apenas para desenvolvedores. Todavia, os itens que possam ser relevantes para usuários comuns, serão traduzidos.
+</P>
+
+<UL>
+<LI>Agora é possível criar app modules para executáveis que contenham um ponto (.) em seus nomes. Os pontos são substituídos por sublinhados (_). (<A HREF="http://github.com/nvaccess/nvda/issues/5323">#5323</A>)
+<LI>The new gui.guiHelper module includes utilities to simplify the creation of wxPython GUIs, including automatic management of spacing. This facilitates better visual appearance and consistency, as well as easing creation of new GUIs for blind developers. (<A HREF="http://github.com/nvaccess/nvda/issues/6287">#6287</A>)
 </UL>
 
 <H2>2016.3</H2>
