@@ -93,6 +93,14 @@ Os destaques desta versão incluem o anúncio de seções e colunas de texto no 
 - O executável do NVDA  já não mostra um diálogo de alerta quando não é possível tocar o som de entrada devido à indisponibilidade de dispositivos de áudio. (#6289)
 - No Ribomm do Microsoft Excel, controles que encontram-se indisponíveis agora são anunciados como tal. (#6430)
 - O NVDA já não anuncia "painel" quando uma janela é minimizada. (#6671)
+- O NVDA já não se torna inutilizável depois de encerrar o Windows Media Player enquanto um controle deslizante é focado. (#5467)
+
+
+== Alterações Específicas para Desenvolvedores ==
+
+
+Alguns itens ou termos desta seção não serão traduzidos, uma vez que são demasiado técnicos e relevantes apenas para desenvolvedores. Todavia, os itens que possam ser relevantes para usuários comuns, serão traduzidos.
+- Profiles and configuration files are now automatically upgraded to meet the requirements of schema modifications. If there is an error during upgrade, a notification is shown, the configuration is reset and the old configuration file is available in the NVDA log at 'Info' level. (#6470)
 
 
 = 2016.4 =
@@ -121,6 +129,38 @@ Os destaques desta versão incluem melhoras no suporte para o Microsoft Edge; mo
 - As caixas de diálogo do NVDA agora têm seus botões "ok" e "cancelar" alinhados à direita do diálogo. (#6333)
 - Controles de rotação agora são usados em campos de entrada numérica tais como o da opção "Percentagem para mudança de tom em maiúsculas" no Diálogo de opções de voz. Você pode inserir o valor desejado ou usar as setas para cima e para baixo para definir o valor. (#6099)
 - Foi tornado mais consistente o modo como IFrames (documentos embutidos dentro de documentos) são anunciadas nos navegadores web. IFrames agora são anunciadas como "frame" no Firefox. (#6047)
+
+
+== Correção de Falhas ==
+- Corrigido um erro raro que ocorria quando se encerrava o NVDA com o exibidor de fala aberto. (#5050)
+- Image maps now render as expected in browse mode in Mozilla Firefox. (#6051)
+- Estando no diálogo do dicionário, ao pressionar a tecla  enter, agora salva qualquer alteração que você tenha feito e fecha o diálogo. Anteriormente, pressionando-se enter, nada acontecia. (#6206)
+- Mensagens agora são exibidas em braille quando se altera os modos de entrada para um método de entrada (entrada nativa/alfanumérica, formato cheio/meio formato, etc.). (#5892, #5893)
+- Ao desativar e depois reativar imediatamente um complemento ou vice versa, o status do complemento agora é revertido corretamente para o que  apresentava anteriormente. (#6299)
+- No Microsoft Word, os campos dos números de páginas nos cabeçalhos agora podem ser lidos. (#6004)
+- O mouse agora pode ser usado para mover o foco entre a lista de símbolos e os campos de edição no diálogo de pronúncia de sinais. (#6312)
+- Foi corrigido um problema que fazia com que no Microsoft Word, em modo de navegação, a lista de elementos parasse de aparecer quando um documento continha um hyperlink inválido. (#5886)
+- Depois de ser encerrado através da barra  de tarefas ou com alt+f4, a caixa de seleção do exibidor de fala no menu do NVDA agora reflete a visibilidade atual da janela. (#6340)
+- O comando recarregar plugins já não causa problemas para perfis de configuração disparados, novos documentos em navegadores web e exploração de tela. (#2892, #5380)
+- Na lista de idiomas do Diálogo de Opções Gerais do NVDA, idiomas tais como o aragonês agora são exibidos corretamente no Windows 10. (#6259)
+- Emulações de teclas do sistema, (como um bottão numa linha braille  que emula o pressionamento da tecla tab) agora são apresentadas no idioma para o qual o NVDA está configurado na ajuda de entrada e no Diálogo de Gestos para Entrada. Anteriormente, estas eram sempre apresentadas em inglês. (#6212)
+- Alterando-se o idioma do NVDA (a partir do Diálogo de Opções Gerais) agora não há qualquer efeito até que o NVDA seja reiniciado. (#4561)
+- Já não é possível deixar o campo original em brancco para uma nova entrada de dicionário. (#6412)
+- Corrigido um raro problema que ocorria ao buscar por portas seriais em alguns sistemas e deixava alguns drivers de linhas braille inutilizáveis. (#6462)
+- No Microsoft Word, os marcadores numerados nas células das tabelas agora são lidos ao mover-se por células. (#6446)
+- Agora é possível assinar gestos para comandos dos drivers das linhas braille Handy Tech no Diálogo de Gestos para Entrada do NVDA. (#6461)
+- No Microsoft Excel, ao pressionar enter ou enter do bloco numérico estando navegando por uma apresentação, agora anuncia corretamente a navegação para a próxima linha. (#6500)
+- O iTunes já não trava quando se usa o modo de navegação para a iTunes Store, Apple Music, etc. (#6502)
+- Ccorrigidos travamentos no Mozilla 64 bit e aplicativos baseados no Chrome. (#6497)
+- No Firefox com o recurso multi-processos ativado, o modo de navegação e os campos de texto editáveis agora funcionam corretamente. (#6380)
+
+
+== Alterações Específicas para Desenvolvedores ==
+
+
+Alguns itens ou termos desta seção não serão traduzidos, uma vez que são demasiado técnicos e relevantes apenas para desenvolvedores. Todavia, os itens que possam ser relevantes para usuários comuns, serão traduzidos.
+- Agora é possível criar app modules para executáveis que contenham um ponto (.) em seus nomes. Os pontos são substituídos por sublinhados (_). (#5323)
+- The new gui.guiHelper module includes utilities to simplify the creation of wxPython GUIs, including automatic management of spacing. This facilitates better visual appearance and consistency, as well as easing creation of new GUIs for blind developers. (#6287)
 
 
 = 2016.3 =
