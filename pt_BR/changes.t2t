@@ -28,16 +28,37 @@ Traduzido por Marlin Rodrigues da Silva e Cleverson Casarin Uliana
 - Corrigidos alguns travamentos no Mozilla Firefox e outros aplicativos Gecko quando o recurso multi-processos era ativado. (#6885)
 - O anúncio da cor de fundo na exploração de tela agora é mais acurado nos casos em que o texto é desenhado com o fundo transparente. (#6467)
 - Melhorado o suporte para aria-describedby no Internet Explorer 11, incluindo suporte dentro de iframes e quando múltiplas IDs são fornecidas. (#5784)
-- In the Windows 10 Creators Update, NVDA's audio ducking again works as in previous Windows releases (I.e. Duck with speech and sounds, always duck, and no ducking are all available). (#6933)
-- NVDA will no longer fail to navigate to or report certain (UIA) controls where a keyboard shortcut is not defined. (#6779)
+- No Windows 10 Creators Update, a redução de áudio do NVDA volta a funcionar como em versões anteriores do Windows (isto é, Duck with speech and sounds, always duck, and no ducking are all available). (#6933)
+- O NVDA já não falha ao navegar para ou anunciar certos controles (UIA) que não possuem atalho de teclado definido. (#6779)
 - Já não são adicionados dois espaços vazios em informações de atalhos de tecladdo para certos controles (UIA). (#6790)
 - Certas combinações de teclas nas linhas braille HIMS (como espaço+ponto 4) já não apresentam falha temporária. (#3157)
-- Fixed an issue when opening a serial port on systems using certain languages other than English which caused connecting to braille displays to fail in some cases. (#6845)
-- Reduced the chance of configuration file being corrupted when Windows shuts down. Configuration files are now written to a temporary file before replacing the actual configuration file. (#3165)
-- When performing the read current line command twice quickly to spell the line, the appropriate language is now used for the spelled characters. (#6726)
-- Navigating by line in Microsoft Edge is now up to three times faster in the Windows 10 Creators Update. (#6994)
-- NVDA no longer announces "Web Runtime grouping" when focusing Microsoft Edge documents in the Windows 10 Creators Update. (#6948)
+- Corrigido um problema de quando se abria uma porta serial em sistemas que usam certos idiomas que não o Inglês, que faziam com que a conecção das linhas braille falhasse em alguns casos. (#6845)
+- Reduzida a chance de corromper-se o arquivo de configuração quando o Windows é fechado abruptamente. O arquivo de Configuração agora é escrito num arquivo temporário antes de substituir o arquivo atual. (#3165)
+- Quando se executa o comando ler linha atual duas vezes rapidamente para soletrar a linha, o idioma apropriado agora é usado para os caracteres soletrados. (#6726)
+- A navegação por linha no Microsoft Edge agora é mais que três vezes mais rápida na atualização Creators Update do Windows 10. (#6994)
+- O NVDA já não anuncia "Web Runtime grouping" ao focar documentos no Microsoft Edge no Windows 10 Creators Update. (#6948)
 
+
+== Alterações Específicas para Desenvolvedores ==
+
+
+Alguns itens ou termos desta seção não serão traduzidos, uma vez que são demasiado técnicos e relevantes apenas para desenvolvedores. Todavia, os itens que possam ser relevantes para usuários comuns, serão traduzidos.
+- Commandline arguments are now processed with Python's argparse module, rather than optparse. This allows certain options such as -r and -q to be handled exclusively. (#6865)
+- core.callLater now queues the callback to NVDA's main queue after the given delay, rather than waking the core and executing it directly. This stops possible freezes due to the  core accidentally going to sleep after processing a callback, in the midle of  a modal call such as the desplaying of a message box. (#6797)
+- The InputGesture.identifiers property has been changed so that it is no longer normalized. (#6945)
+ - Subclasses no longer need to normalize identifiers before returning them from this property.
+ - If you want normalized identifiers, there is now an InputGesture.normalizedIdentifiers property which normalizes the identifiers returned by the identifiers property .
+- The InputGesture.logIdentifier property is now deprecated. Callers should use InputGesture.identifiers[0] instead. (#6945)
+- Deprecated code removed:
+ - `speech.REASON_*` constants: `controlTypes.REASON_*` should be used instead. (#6846)
+ - `i18nName` for synth settings: `displayName` and `displayNameWithAccelerator` should be used instead. (#6846, #5185)
+ - `config.validateConfig`. (#6846, #667)
+ - `config.save`. (#6846, #667)
+- The list of completions in the autocomplete context menu of the PythonConsole no longer shows  any objec path leading up to the final symbol being completed. (#7023)
+- There is now a unit testing framework for NVDA. (#7026)
+ - Unit tests and infrastructure are located in the tests/unit directory. See the docstring in the tests\unit\__init__.py file for details.
+ - You can run tests using "scons tests". See the "Running Tests" section of readme.md for details.
+ - If you are submitting a pull request for NVDA, you should first run the tests and ensure they pass.
 
 
 = 2017.1 =
@@ -54,6 +75,24 @@ Os destaques desta versão incluem o anúncio de seções e colunas de texto no 
 - A navegação por tabelas agora é suportada em modo de navegação no Microsoft Edge. (#6594)
 - No Microsoft Excel, o comando anunciar localização do cursor de exploração (desktop: NVDA+numpadDelete, laptop: NVDA+delete) agora anuncia o nome da folha de cálculos e a localização da célula. (#6613)
 - Adicionada uma opção ao diálogo de encerramento para reiniciar com o nível do log em depuração. (#6689)
+
+
+== Alterações ==
+- Atualizado o eSpeak NG para a versão e095f008, 10 de Janeiro de 2017. (#6717)
+- Devido às alterações no Windows 10 Creators Update, o modo "Sempre reduzir" não está mais disponível nas configurações de redução de áudio do NVDA. A opção continua disponível em versões anteriores do windows 10. (#6684)
+
+
+== Correção de Falhas ==
+- Corrigido travamento que ocorria no Microsoft Word ao mover-se por parágrafo num documento extenso em modo de navegação. (#6368)
+- Tabelas que foram copiadas do Microsoft Excel Para o Microsoft Word já não são tratadas como tabelas de apresentação e, com efeito, não são ignoradas. (#5927)
+- Ao tentar digitar no Microsoft Excel estando em visualização protegida, o NVDA agora reproduz um som ao invés de falar os caracteres que não foram digitados. (#6570)
+- Pressionando-se escape no Microsoft Excel, já não faz alternar inapropriadamente para o modo de navegação, a menos que o usuário tenha alternado anteriormente para o modo de navegação explicitamente com NVDA+espaço e em seguida, entrado no modo de foco pressionando enter num campo de formulário. (#6569) 
+- O NVDA já não trava em apresentações do Microsoft Excel quando se mescla uma linha ou coluna inteira. (#6216)
+- O anúncio de texto truncado/sobreposto em células do Microsoft Excel agora deve ser mais acurado. (#6472)
+- O NVDA agora anuncia quando uma caixa de seleção é somente leitura. (#6563)
+- O executável do NVDA  já não mostra um diálogo de alerta quando não é possível tocar o som de entrada devido à indisponibilidade de dispositivos de áudio. (#6289)
+- No Ribomm do Microsoft Excel, controles que encontram-se indisponíveis agora são anunciados como tal. (#6430)
+- O NVDA já não anuncia "painel" quando uma janela é minimizada. (#6671)
 
 
 = 2016.4 =
