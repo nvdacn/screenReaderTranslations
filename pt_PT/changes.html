@@ -13,6 +13,72 @@
 Tradução de Rui Fontes
 </P>
 
+<H2>2017.2</H2>
+
+<H3>Novas Funcionalidades</H3>
+
+<UL>
+<LI>Informações sobre as linhas de grelha das células passam a poder ser anunciadas no Microsoft Excel, usando NVDA + f. (<A HREF="http://github.com/nvaccess/nvda/issues/3044">#3044</A>)
+<LI>Adicionado suporte para "Aria-current attributes". (<A HREF="http://github.com/nvaccess/nvda/issues/6358">#6358</A>)
+<LI>Adicionado suporte à mudança automática de idiomas no Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/6852">#6852</A>)
+<LI>Adicionado suporte à Calculadora do Windows 10 Enterprise LTSB (Long-Term Servicing Branch) e Server. (<A HREF="http://github.com/nvaccess/nvda/issues/6914">#6914</A>)
+<LI>Ao executar, três vezes rapidamente, o comando "Anunciar linha do objecto de navegação, Insert+8 do numérico, a linha é soletrada com descrição dos caracteres. (<A HREF="http://github.com/nvaccess/nvda/issues/6893">#6893</A>)
+<LI>Novo idioma: Birmanês.
+</UL>
+
+<H3>Alterações</H3>
+
+<UL>
+<LI>Ao navegar por aplicações, com UI Automation,, usando a navegação simples, mais controlos sem conteúdo são ignorados, tornando a navegação mais fácil. (<A HREF="http://github.com/nvaccess/nvda/issues/6948">#6948</A>, <A HREF="http://github.com/nvaccess/nvda/issues/6950">#6950</A>) 
+</UL>
+
+<H3>Correcções</H3>
+
+<UL>
+<LI>Itens de menu (como caixas de verificação e botões de opção) em páginas Web já podem ser activados no modo de navegação. (<A HREF="http://github.com/nvaccess/nvda/issues/6735">#6735</A>)
+<LI>O anúncio do nome de folhas do Excel já se encontra traduzido. (<A HREF="http://github.com/nvaccess/nvda/issues/6848">#6848</A>)
+<LI>Pressionar Escape na janela para confirmação de eliminação de um perfil activo passa a fechar a janela. (<A HREF="http://github.com/nvaccess/nvda/issues/6851">#6851</A>)
+<LI>Corrigidos alguns travamentos no Mozilla Firefox e outras aplicações baseadas em Gecko nas quais o multi-processamento esteja activado. (<A HREF="http://github.com/nvaccess/nvda/issues/6885">#6885</A>)
+<LI>O anúncio das cores de fundo na revisão de ecrã está mais eficaz quando o texto é desenhado sobre um fundo transparente. (<A HREF="http://github.com/nvaccess/nvda/issues/6467">#6467</A>) 
+<LI>Melhorado o suporte para aria-describedby no Internet Explorer 11, incluindo suporte em iframes e quando múltiplos IDs são fornecidos. (<A HREF="http://github.com/nvaccess/nvda/issues/5784">#5784</A>)
+<LI>Na versão Creators Update do Windows 10, a diminuição do volume do NVDA já funciona como nas versões anteriores do Windows (I.e. Dininuir com voz e sons, diminuir sempre e não dininuir estão disponíveis). (<A HREF="http://github.com/nvaccess/nvda/issues/6933">#6933</A>)
+<LI>O NVDA já não falha ao navegar para, ou a anunciar, certos controlos (UIA) sem atalho de teclado. (<A HREF="http://github.com/nvaccess/nvda/issues/6779">#6779</A>)
+<LI>Já não são adicionados dois espaços na informação de atalhos de teclado para certos controlos (UIA). (<A HREF="http://github.com/nvaccess/nvda/issues/6790">#6790</A>)
+<LI>Certas combinações de teclas nas linhas da HIMS (por exemplo, espaço+ponto4) já não falham intermitentemente. (<A HREF="http://github.com/nvaccess/nvda/issues/3157">#3157</A>)
+<LI>Resolvido um problema ao abrir uma porta série, em sistemas, em alguns idiomas diferentes do inglês, que causavam problemas, em certos casos, falhas na ligação a dispositivos Braille. (<A HREF="http://github.com/nvaccess/nvda/issues/6845">#6845</A>)
+<LI>Reduzidas as hipóteses de corrupção do ficheiro de configurações quando o Windows é desligado. O ficheiro de configurações é agora escrito para um ficheiro temporário antes de substituir o ficheiro corrente de configurações. (<A HREF="http://github.com/nvaccess/nvda/issues/3165">#3165</A>)
+<LI>Ao pressionar duas vezes o comando para ler a linha actual, a soletração já é feita usando o idioma correcto. (<A HREF="http://github.com/nvaccess/nvda/issues/6726">#6726</A>)
+<LI>Navegar por linha no Microsoft Edge é agora até três vezes mais rápidono Windows 10 Creators Update. (<A HREF="http://github.com/nvaccess/nvda/issues/6994">#6994</A>)
+<LI>O NVDA já não anuncia "Web Runtime grouping" ao focar documentos do Microsoft Edge no Windows 10 Creators Update (<A HREF="http://github.com/nvaccess/nvda/issues/6948">#6948</A>)
+</UL>
+
+<H3>Alterações para desenvolvedores</H3>
+
+<UL>
+<LI>Commandline arguments are now processed with Python's argparser module, rather than optparser. This allows certain options such as -r and -q to be handled exclusively. (<A HREF="http://github.com/nvaccess/nvda/issues/6865">#6865</A>)
+<LI>core.callLater now queues the callback to NVDA's main queue after the given delay, rather than waking the core and executing it directly. This stops possible freezes due to the  core accidentally going to sleep after processing a callback, in the midle of  a modal call such as the desplaying of a message box. (<A HREF="http://github.com/nvaccess/nvda/issues/6797">#6797</A>)
+<LI>The InputGesture.identifiers property has been changed so that it is no longer normalized. (<A HREF="http://github.com/nvaccess/nvda/issues/6945">#6945</A>)
+ <UL>
+ <LI>Subclasses no longer need to normalize identifiers before returning them from this property.
+ <LI>If you want normalized identifiers, there is now an InputGesture.normalizedIdentifiers property which normalizes the identifiers returned by the identifiers property .
+ </UL>
+<LI>The InputGesture.logIdentifier property is now deprecated. Callers should use InputGesture.identifiers[0] instead. (<A HREF="http://github.com/nvaccess/nvda/issues/6945">#6945</A>)
+<LI>Deprecated code removed:
+ <UL>
+ <LI>`speech.REASON_*` constants, `controlTypes.REASON_*` should be used instead. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>)
+ <LI>`i18nName` for synth settings, `displayName` and `displayNameWithAccelerator` should be used instead. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/5185">#5185</A>)
+ <LI>`config.validateConfig`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/667">#667</A>)
+ <LI>`config.save`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>)
+ </UL>
+<LI>The list of completions in the autocomplete context menu of the PythonConsole no longer shows  any objec path leading up to the final symbol being completed. (<A HREF="http://github.com/nvaccess/nvda/issues/7023">#7023</A>)
+<LI>There is now a unit testing framework for NVDA. (<A HREF="http://github.com/nvaccess/nvda/issues/7026">#7026</A>)
+ <UL>
+ <LI>Unit tests and infrastructure are located in the tests/unit directory. See the docstring in the tests\unit\<U>init</U>.py file for details.
+ <LI>You can run tests using "scons tests". See the "Running Tests" section of readme.md for details.
+ <LI>If you are submitting a pull request for NVDA, you should first run the tests and ensure they pass.
+ </UL>
+</UL>
+
 <H2>2017.1</H2>
 
 <P>
