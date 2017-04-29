@@ -3,23 +3,23 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2017-03-16 23:26+1000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2017-04-29 14:13+0100\n"
+"Last-Translator: Nikola Jović <wwenikola123@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.10\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "[[!meta title=\"Console Timer\"]]\n"
-msgstr ""
+msgstr "[[!meta title=\"Console Timer\"]]\n"
 
 #. type: Plain text
 #, no-wrap
@@ -27,26 +27,33 @@ msgid ""
 "*   Author: Derek Riemer\n"
 "* Download [Stable Version][1]\n"
 msgstr ""
+"*   Autor: Derek Riemer\n"
+"* Preuzmi[stabilnu verziju][1]\n"
 
 #. type: Title #
 #, no-wrap
 msgid "consoleTimer"
-msgstr ""
+msgstr "consoleTimer"
 
 #. type: Plain text
 msgid ""
 "consoleTimer was written by derek riemer, and is GPL V2, as required by "
 "being an NVDA addon."
 msgstr ""
+"consoleTimer je napisao Derek Riemer, i slaže se sa GPL V2 licencom, što "
+"zahteva NVDA dodatak."
 
 #. type: Bullet: '* '
-msgid "[Source available on Github:](https://github.com/derekriemer/consoleTimer)"
+msgid ""
+"[Source available on Github:](https://github.com/derekriemer/consoleTimer)"
 msgstr ""
+"[Izvorni kod dostupan na Githubu:](https://github.com/derekriemer/"
+"consoleTimer)"
 
 #. type: Title ##
 #, no-wrap
 msgid "Background"
-msgstr ""
+msgstr "Pozadina"
 
 #. type: Plain text
 msgid ""
@@ -60,59 +67,90 @@ msgid ""
 "This addon was written because I do lots of server administration, and I "
 "wanted cursor navigation to work."
 msgstr ""
+"Kada se koriste komandne linije preko ssh, obično, postoji mrežno kašnjenje. "
+"Ovo kašnjenje je očekivano, ali, način na koji NVDA čita kursor u "
+"terminalima nije pristupačan za kašnjenje, zato što je ovo stalna operacija. "
+"Zbog ovoga dolazi do čitanja pogrešnog slova kada se krećete sa strelicama. "
+"Na primer, ako je korisnik na slovu p reči grep, i ako pristisne strelicu na "
+"desno, možda će čuti\"t\" umesto razmaka. Ovo se dešava zbog toga što NVDA "
+"ne čeka dovoljno dugo da uspešno prijavi pomeranje kursora.  Ovaj dodatak je "
+"napisan zbog toga što radim puno administracije servera, i želeo sam da "
+"navigacija kursorom radi."
 
 #. type: Title ##
 #, no-wrap
 msgid "TLDR usage instructions"
-msgstr ""
+msgstr "TLDR Uputstvo za korišćenje"
 
 #. type: Plain text
 msgid ""
 "When in a console, if NVDA is missing or repeating letters as you move "
 "around, simply press nvda+shift+pageup to teach it to be more patient, or if "
-"it is too laggy, press nvda+shift+page down to teach it to be less "
-"patient. This addon will have no affect outside terminals, and the patience "
-"changes by .01 for every keypress."
+"it is too laggy, press nvda+shift+page down to teach it to be less patient. "
+"This addon will have no affect outside terminals, and the patience changes "
+"by .01 for every keypress."
 msgstr ""
+"Kada ste u konzoli, ako NVDA ne prijavljuje ili ponavlja slova kada se "
+"krećete, pritisnite NVDA+šift+page up da ga naučite da bude strpljiviji, ili "
+"ako je previše spor, pritisnite NVDA+šift+page down da ga naučite da bude "
+"manje strpljiviji. Ovaj dodatak nema efekta van terminala, i strpljenje se "
+"menja za .01 za svaki pritisak komande."
 
 #. type: Title ##
 #, no-wrap
 msgid "How to make this work with custom terminals"
-msgstr ""
+msgstr "Kako da ovo radi sa prilagođenim terminalima"
 
 #. type: Plain text
 msgid ""
 "If you are a developer who wants NVDA to recognize a section or portion of "
 "your app as a terminal, and it isn't already, you should implement an "
 "appModule for this purpose, to gain the relevant behavior, I.E. announcement "
-"of new text written to stdout, etc. Please raise a ticket against "
-"[NVDA](https://github.com/nvaccess/nvda/issues/new), and we can help you get "
-"your terminal appModule into the screen reader. Support for Putty, Cygwin "
+"of new text written to stdout, etc. Please raise a ticket against [NVDA]"
+"(https://github.com/nvaccess/nvda/issues/new), and we can help you get your "
+"terminal appModule into the screen reader. Support for Putty, Cygwin "
 "(Mintty), and secureCRT is already implemtned. Apps such as R may be "
 "implemented in the future.  If your app is properly recognized as a terminal "
 "by NVDA, (The termminal behavior is properly injected at runtime), this "
 "addon should just work. If it doesn't, please let me know via an issue. How "
 "to write an app module is out of scope for this document, but is well "
-"documented in the [NVDA Developer "
-"Guide](https://www.nvaccess.org/files/nvda/documentation/developerGuide.html). "
-"This example illustrates [an appModule to teach NVDA that the terminal "
-"window on PuTTY is a "
-"terminal](https://github.com/nvaccess/nvda/blob/master/source/appModules/putty.py). "
-"Also, [Here's an example implementation for "
-"MinTTY](https://github.com/nvaccess/nvda/blob/master/source/appModules/mintty.py). "
-"The most important thing to make sure happens is that "
-"NVDAObjects.behaviors.Terminal is injected to the class list."
+"documented in the [NVDA Developer Guide](https://www.nvaccess.org/files/nvda/"
+"documentation/developerGuide.html). This example illustrates [an appModule "
+"to teach NVDA that the terminal window on PuTTY is a terminal](https://"
+"github.com/nvaccess/nvda/blob/master/source/appModules/putty.py). Also, "
+"[Here's an example implementation for MinTTY](https://github.com/nvaccess/"
+"nvda/blob/master/source/appModules/mintty.py). The most important thing to "
+"make sure happens is that NVDAObjects.behaviors.Terminal is injected to the "
+"class list."
 msgstr ""
+"Ako ste programer koji želi da NVDA prepozna deo vaše aplikacije kao "
+"terminal, i ako već nije, trebalo bi da napravite dodatak aplikacije za ovo, "
+"kako bi se NVDA pravilno ponašao, to jest automatsko čitanje novog teksta "
+"koji se pojavi u stdout, i tako dalje. Molimo postavite tiket za [NVDA]"
+"(https://github.com/nvaccess/nvda/issues/new), i možemo da vam pomognemo da "
+"dodate vaš dodatak u čitač ekrana. Podrška za Putty, Cygwin (Mintty), i "
+"secureCRT je već ubačena. Aplikacije kao što su R mogu biti dodati u "
+"budućnosti.  Ako je vaša aplikacija uspešno prepoznata kao terminal, "
+"(ponašanje terminala je uspešno kada se pokrene), ovaj dodatak bi trebalo da "
+"radi. Ako ne radi, molimo prijavite grešku. Kako napisati dodatak za "
+"aplikacije je van opsega ovog dokumenta, ali je lepo objašnjeno u[NVDA "
+"uputstvu za programere](https://www.nvaccess.org/files/nvda/documentation/"
+"developerGuide.html). Ovaj primer pokazuje[dodatak za aplikaciju koji "
+"pokazuje programu NVDA da je terminal prozor aplikacije PuTTY ](https://"
+"github.com/nvaccess/nvda/blob/master/source/appModules/putty.py). Takođe, "
+"[ovo je primer za aplikaciju MinTTY](https://github.com/nvaccess/nvda/blob/"
+"master/source/appModules/mintty.py). Naj važnija stvar je da NVDAObjects."
+"behaviors.Terminal je upisana u listu klasa."
 
 #. type: Plain text
 #, no-wrap
 msgid "[[!tag dev stable]]\n"
-msgstr ""
+msgstr "[[!tag dev stable]]\n"
 
 #. type: Plain text
 msgid "[1]: http://addons.nvda-project.org/files/get.php?file=cont"
-msgstr ""
+msgstr "[1]: http://addons.nvda-project.org/files/get.php?file=cont"
 
 #. type: Plain text
 msgid "[2]: https://derekriemer.com/node/44"
-msgstr ""
+msgstr "[2]: https://derekriemer.com/node/44"
