@@ -17,11 +17,17 @@
 <UL>
 <LI>Unterstützung für Aria-Current-Attribute hinzugefügt. (<A HREF="http://github.com/nvaccess/nvda/issues/6358">#6358</A>)
 <LI>Microsoft Edge unterstützt jetzt auch den automatischen Sprachenwechsel. (<A HREF="http://github.com/nvaccess/nvda/issues/6852">#6852</A>)
+<LI>Unterstützung für den Windows-Rechner in Windows 10 LTSB hinzugefügt. (<A HREF="http://github.com/nvaccess/nvda/issues/6914">#6914</A>)
+<LI>Wird die Tastenkombination zum Lesen der aktuellen Zeile dreimal hintereinander gedrückt, so wird die Zeile phonetisch buchstabiert. (<A HREF="http://github.com/nvaccess/nvda/issues/6893">#6893</A>)
+<LI>neue Sprache: Birmanisch
 </UL>
 
-<H3>behobene Fehler</H3>
+<H3>Änderungen</H3>
 
 <UL>
+<LI>Die Navigation in UIA-Anwendungen wurde vereinfacht. (<A HREF="http://github.com/nvaccess/nvda/issues/6948">#6948</A>, <A HREF="http://github.com/nvaccess/nvda/issues/6950">#6950</A>) 
+<P></P>
+== behobene Fehler ==
 <LI>Menüeinträge auf Webseiten, die Kontrollkästchen Bzw. Auswahlschalter enthalten, können jetzt im Lesemodus aktiviert werden. (<A HREF="http://github.com/nvaccess/nvda/issues/6735">#6735</A>)
 <LI>Die Ansage von Namen von Excel-Arbeitsblättern wird nun übersetzt. (<A HREF="http://github.com/nvaccess/nvda/issues/6848">#6848</A>)
 <LI>Pressing ESC while the configuration profile "Confirm Deletion" prompt is active now dismisses the dialog. (<A HREF="http://github.com/nvaccess/nvda/issues/6851">#6851</A>)
@@ -32,7 +38,11 @@
 <LI>NVDA zeigt nun auch solche (UIA)-Steuerelemente korrekt an, deren Tastenkombination nicht (richtig) definiert wurde. (<A HREF="http://github.com/nvaccess/nvda/issues/6779">#6779</A>)
 <LI>An die Tastenkombination von (UIA)-Steuerelementen werden nicht mehr fälschlicherweise zwei Leerzeichen angehängt. (<A HREF="http://github.com/nvaccess/nvda/issues/6790">#6790</A>)
 <LI>Manche Tastenkombinationen auf HIMS-Braillezeilen (wie z.B. Leertaste+Punkt 4) funktionieren nun korrekt. (<A HREF="http://github.com/nvaccess/nvda/issues/3157">#3157</A>)
-<LI>Auf einigen (nicht-englischen) Systemen funktioniert nun die Verbindung mit seriellen Braillezeilen korrekt.(<A HREF="http://github.com/nvaccess/nvda/issues/6845">#6845</A>)
+<LI>Auf einigen (nicht-englischen) Systemen funktioniert nun die Verbindung mit seriellen Braillezeilen korrekt. (<A HREF="http://github.com/nvaccess/nvda/issues/6845">#6845</A>)
+<LI>Beim Herunterfahren von Windows werden Konfigurationsdateien zunächst temporär gespeichert, bevor sie ersetzt werden. Die verringert die Wahrscheinlichkeit für Beschädigungen der Konfigurationsdateien. (<A HREF="http://github.com/nvaccess/nvda/issues/3165">#3165</A>)
+<LI>Beim Buchstabieren der aktuellen Zeile wird nun die aktuell eingestellte Sprache verwendet. (<A HREF="http://github.com/nvaccess/nvda/issues/6726">#6726</A>)
+<LI>In Windows 10 Creators Update funktioniert die zeilenweise Navigation in Microsoft Edge nun bis zu dreimal so schnell wie zuvor. (<A HREF="http://github.com/nvaccess/nvda/issues/6994">#6994</A>)
+<LI>Beim Verwenden von Microsoft Edge in Windows 10 Creators Update wird nicht mehr "web Runtime Grouping" angezeigt. (<A HREF="http://github.com/nvaccess/nvda/issues/6948">#6948</A>)
 </UL>
 
 <H3>Änderungen für Entwickler</H3>
@@ -46,6 +56,20 @@
  <LI>If you want normalized identifiers, there is now an InputGesture.normalizedIdentifiers property which normalizes the identifiers returned by the identifiers property .
  </UL>
 <LI>The InputGesture.logIdentifier property is now deprecated. Callers should use InputGesture.identifiers[0] instead. (<A HREF="http://github.com/nvaccess/nvda/issues/6945">#6945</A>)
+<LI>Deprecated code removed:
+ <UL>
+ <LI>`speech.REASON_*` constants: `controlTypes.REASON_*` should be used instead. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>)
+ <LI>`i18nName` for synth settings: `displayName` and `displayNameWithAccelerator` should be used instead. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/5185">#5185</A>)
+ <LI>`config.validateConfig`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/667">#667</A>)
+ <LI>`config.save`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/667">#667</A>)
+ </UL>
+<LI>The list of completions in the autocomplete context menu of the PythonConsole no longer shows  any objec path leading up to the final symbol being completed. (<A HREF="http://github.com/nvaccess/nvda/issues/7023">#7023</A>)
+<LI>There is now a unit testing framework for NVDA. (<A HREF="http://github.com/nvaccess/nvda/issues/7026">#7026</A>)
+ <UL>
+ <LI>Unit tests and infrastructure are located in the tests/unit directory. See the docstring in the tests\unit\<U>init</U>.py file for details.
+ <LI>You can run tests using "scons tests". See the "Running Tests" section of readme.md for details.
+ <LI>If you are submitting a pull request for NVDA, you should first run the tests and ensure they pass.
+ </UL>
 </UL>
 
 <H2>2017.1</H2>
