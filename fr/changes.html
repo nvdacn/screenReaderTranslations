@@ -12,28 +12,32 @@
 
 <H2>2017.2</H2>
 
+<P>
+Les points forts de cette versions incluent le support intégral de l'atténuation audio sous Windows 10 Creators Update; la correction de plusieurs problèmes de sélection en mode navigation, incluant les problèmes pour sélectionner tout; des améliorations significatives dans le support de Microsoft Edge; et des améliorations sur le web tels que l'indication des éléments marqués comme en cours (en utilisant aria-current).
+</P>
+
 <H3>Nouvelles Fonctionnalités</H3>
 
 <UL>
 <LI>Sous Microsoft Excel, l'information de bordure de cellule peut maintenant être annoncée en utilisant `NVDA+f`. (<A HREF="http://github.com/nvaccess/nvda/issues/3044">#3044</A>)
-<LI>Ajout du support des attributs aria-current. (<A HREF="http://github.com/nvaccess/nvda/issues/6358">#6358</A>)
+<LI>Dans les navigateurs web, NVDA indique maintenant quand un élément a été marqué comme courant (spécifiquement, en utilisant l'attribut aria-current). (<A HREF="http://github.com/nvaccess/nvda/issues/6358">#6358</A>)
 <LI>Le changement de langue automatique est maintenant supporté sous Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/6852">#6852</A>)
 <LI>Ajout du support de la Calculatrice Windows sous Windows 10 Enterprise LTSB (Long-Term Servicing Branch) et Server. (<A HREF="http://github.com/nvaccess/nvda/issues/6914">#6914</A>)
 <LI>Effectuer la commande de lecture de la ligne courante trois fois rapidement épelle la ligne en code international. (<A HREF="http://github.com/nvaccess/nvda/issues/6893">#6893</A>)
 <LI>Nouvelle langue : Birman.
+<LI>Les flèches haute et basse et les symboles de fractions unicodes sont maintenant annoncés correctement. (<A HREF="http://github.com/nvaccess/nvda/issues/3805">#3805</A>)
 </UL>
 
 <H3>Changements</H3>
 
 <UL>
-<LI>Quand on navigue en revue simple dans les applications utilisant UI Automation, davantage de conteneurs vides sont ignorés rendant la navigation plus facile. (<A HREF="http://github.com/nvaccess/nvda/issues/6948">#6948</A>, <A HREF="http://github.com/nvaccess/nvda/issues/6950">#6950</A>) 
+<LI>Quand on navigue en revue simple dans les applications utilisant UI Automation, davantage d'objets irrelevants sont ignorés rendant la navigation plus facile. (<A HREF="http://github.com/nvaccess/nvda/issues/6948">#6948</A>, <A HREF="http://github.com/nvaccess/nvda/issues/6950">#6950</A>) 
 </UL>
 
 <H3>Corrections de Bogues</H3>
 
 <UL>
-<LI>Les éléments de menu dans les pages web (Cases à cocher et boutons radio dans les menus) peuvent maintenant être activés en mode navigation. (<A HREF="http://github.com/nvaccess/nvda/issues/6735">#6735</A>)
-<LI>L'annonce du nom des feuilles Excel est maintenant traduit. (<A HREF="http://github.com/nvaccess/nvda/issues/6848">#6848</A>)
+<LI>Les éléments de menu dans les pages web peuvent maintenant être activés en mode navigation. (<A HREF="http://github.com/nvaccess/nvda/issues/6735">#6735</A>)
 <LI>L'appui sur échap quand le dialogue de confirmation d'effacement de profil est actif ferme maintenant le dialogue. (<A HREF="http://github.com/nvaccess/nvda/issues/6851">#6851</A>)
 <LI>Correction de quelques plantages sous Mozilla Firefox et autres applications Gecko quand le multi-process est activé. (<A HREF="http://github.com/nvaccess/nvda/issues/6885">#6885</A>)
 <LI>L'annonce de la couleur d'arrière-plan en revue d'écran est maintenant plus fiable quand le texte est affiché avec un arrière-plan transparent. (<A HREF="http://github.com/nvaccess/nvda/issues/6467">#6467</A>) 
@@ -49,6 +53,10 @@
 <LI>NVDA n'annonce plus "Web Runtime grouping" quand on met le focus sur un document Microsoft Edge sous Windows 10 Creators Update (<A HREF="http://github.com/nvaccess/nvda/issues/6948">#6948</A>)
 <LI>Toutes les versions existantes de SecureCRT sont maintenant supportées. (<A HREF="http://github.com/nvaccess/nvda/issues/6302">#6302</A>)
 <LI>Adobe Acrobat Reader ne se plante plus dans certains documents PDF (en particulier, ceux qui contiennent des attributs ActualText vides). (<A HREF="http://github.com/nvaccess/nvda/issues/7021">#7021</A>, <A HREF="http://github.com/nvaccess/nvda/issues/7034">#7034</A>)
+<LI>En mode navigation sous Microsoft Edge, les tableaux interactifs (ARIA grids) ne sont plus ignorés quand on navigue entre les tableaux par t and maj+t. (<A HREF="http://github.com/nvaccess/nvda/issues/6977">#6977</A>)
+<LI>En mode navigation, l'appui sur maj+début après une sélection avant désélectionne maintenant jusqu'au début de la ligne comme prévu. (<A HREF="http://github.com/nvaccess/nvda/issues/5746">#5746</A>)
+<LI>En mode navigation, sélectionner tout (contrôle+a) n'échoue plus à sélectionner tout le texte si le curseur n'est pas au début du texte. (<A HREF="http://github.com/nvaccess/nvda/issues/6909">#6909</A>)
+<LI>Correction de quelques autres problèmes rares de sélection en mode navigation. (<A HREF="http://github.com/nvaccess/nvda/issues/7131">#7131</A>)
 </UL>
 
 <H3>Changements pour les Développeurs</H3>
@@ -67,7 +75,7 @@
  <LI>Les constantes `speech.REASON_*`, remplacées par `controlTypes.REASON_*`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>)
  <LI>`i18nName` pour les paramètres synthétiseur, remplacées par `displayName` et `displayNameWithAccelerator`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/5185">#5185</A>)
  <LI>`config.validateConfig`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/667">#667</A>)
- <LI>`config.save`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/647">#647</A>)
+ <LI>`config.save`: remplacé par `config.conf.save`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/667">#667</A>)
  </UL>
 <LI>La liste des complétions dans le menu contextuel d'autocomplétion de la Console Python ne montre plus aucun chemin menant au symbole final à compléter. (<A HREF="http://github.com/nvaccess/nvda/issues/7023">#7023</A>)
 <LI>Il y a maintenant une architecture de test unitaire pour NVDA. (<A HREF="http://github.com/nvaccess/nvda/issues/7026">#7026</A>)
