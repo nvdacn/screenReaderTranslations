@@ -12,32 +12,36 @@
 
 <H2>2017.2</H2>
 
+<P>
+Основные новшества этого выпуска включают в себя полную поддержку функции приглушения сторонних звуков в Windows 10 Creators Update, исправления некоторых проблем с выделением текста в режиме обзора, включая проблему выделения всего текста, значительные улучшения в поддержке Microsoft Edge, а также индикацию на web-страницах элементов коллекции помеченных как текущие (использующих атрибуты aria-current).
+</P>
+
 <H3>Новое</H3>
 
 <UL>
 <LI>Команда чтения форматирования (NVDA+f) в Microsoft Excel теперь сообщает информацию о границах ячеек. (<A HREF="http://github.com/nvaccess/nvda/issues/3044">#3044</A>)
-<LI>Добавлена поддержка атрибутов aria-current. (<A HREF="http://github.com/nvaccess/nvda/issues/6358">#6358</A>)
+<LI>В web-браузерах, NVDA теперь указывает когда элемент коллекции отмечен как текущий (с помощью атрибута aria-current). (<A HREF="http://github.com/nvaccess/nvda/issues/6358">#6358</A>)
 <LI>В Microsoft Edge теперь поддерживается функция автоматического переключения языка активного синтезатора. (<A HREF="http://github.com/nvaccess/nvda/issues/6852">#6852</A>)
 <LI>В Windows 10 Server и Enterprise LTSB (редакции с длительным сроком поддержки) добавлена поддержка стандартного калькулятора Windows. (<A HREF="http://github.com/nvaccess/nvda/issues/6914">#6914</A>)
 <LI>Тройной быстрый вызов команды чтения строки под курсором приложения, теперь осуществляет чтение фонетических описаний всех буквенных символов этой строки. (<A HREF="http://github.com/nvaccess/nvda/issues/6893">#6893</A>)
-<LI>Новый язык интерфейса: бирманский.
+<LI>Новый язык интерфейса NVDA: бирманский.
+<LI>NVDA теперь корректно сообщает unicode символы дробей и стрелок вверх/вниз. (<A HREF="http://github.com/nvaccess/nvda/issues/3805">#3805</A>)
 </UL>
 
 <H3>Изменения</H3>
 
 <UL>
-<LI>При использовании облегчённого режима просмотра в приложениях UI Automation, контейнеры без содержимого теперь игнорируются, тем самым упрощая объектную навигацию. (<A HREF="http://github.com/nvaccess/nvda/issues/6948">#6948</A>, <A HREF="http://github.com/nvaccess/nvda/issues/6950">#6950</A>)
+<LI>При использовании облегчённого режима просмотра в приложениях UI Automation, теперь игнорируется большее число бесполезных объектов, упрощая тем самым объектную навигацию. (<A HREF="http://github.com/nvaccess/nvda/issues/6948">#6948</A>, <A HREF="http://github.com/nvaccess/nvda/issues/6950">#6950</A>)
 </UL>
 
 <H3>Исправления</H3>
 
 <UL>
-<LI>Элементы меню на web-страницах (элементы-флажки и элементы-радиокнопки) теперь могут быть активированы в режиме обзора. (<A HREF="http://github.com/nvaccess/nvda/issues/6735">#6735</A>)
-<LI>Чтение названия листа в Microsoft Excel (NVDA+delete на цифровом блоке) теперь осуществляется на языке интерфейса NVDA. (<A HREF="http://github.com/nvaccess/nvda/issues/6848">#6848</A>)
+<LI>Элементы меню на web-страницах теперь могут быть активированы в режиме обзора. (<A HREF="http://github.com/nvaccess/nvda/issues/6735">#6735</A>)
 <LI>Нажатие escape в диалоге подтверждения удаления профиля конфигурации, теперь отменяет удаление и закрывает этот диалог. (<A HREF="http://github.com/nvaccess/nvda/issues/6851">#6851</A>)
 <LI>Исправлены некоторые сбои при работе в Mozilla Firefox и в других Gecko-приложениях при включённом режиме многопроцессности. (<A HREF="http://github.com/nvaccess/nvda/issues/6885">#6885</A>)
 <LI>При отрисовки текста на прозрачном фоне, определение цвета фона в позиции просмотрового курсора теперь стало более точным. (<A HREF="http://github.com/nvaccess/nvda/issues/6467">#6467</A>)
-<LI>В Internet Explorer 11 улучшена поддержка атрибута aria-describedby, в том числе внутри элементов iframe и при наличии множества идентификаторов. (<A HREF="http://github.com/nvaccess/nvda/issues/5784">#5784</A>)
+<LI>В Internet Explorer 11 улучшена поддержка описания элементов управления на web-страницах (а именно поддержка атрибутов aria-describedby внутри элементов iframe и при наличии нескольких идентификаторов). (<A HREF="http://github.com/nvaccess/nvda/issues/5784">#5784</A>)
 <LI>Функция приглушения сторонних звуков теперь снова работает в Windows 10 Creaters Update, также как и в предыдущих выпусках Windows (то есть теперь доступны все режимы - "Приглушать при выводе речи и звуков", "Всегда приглушать" и "Не приглушать"). (<A HREF="http://github.com/nvaccess/nvda/issues/6933">#6933</A>)
 <LI>В NVDA больше не происходит ошибка при навигации по некоторым (UIA) элементам управления, если для них не определены комбинации горячих клавиш. (<A HREF="http://github.com/nvaccess/nvda/issues/6779">#6779</A>)
 <LI>В некоторые (UIA) элементы управления больше не добавляются два лишних пробела к информации о комбинации горячих клавиш. (<A HREF="http://github.com/nvaccess/nvda/issues/6790">#6790</A>)
@@ -49,6 +53,10 @@
 <LI>В Windows 10 Creaters Update, NVDA больше не произносит фразу "Web Runtime grouping" при фокусировке на документах Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/6948">#6948</A>)
 <LI>Теперь NVDA поддерживает все существующие версии SecureCRT. (<A HREF="http://github.com/nvaccess/nvda/issues/6302">#6302</A>)
 <LI>Adobe Acrobat Reader больше не падает при открытии некоторых PDF-документов (а именно документов с пустыми атрибутами ActualText). (<A HREF="http://github.com/nvaccess/nvda/issues/7021">#7021</A>, <A HREF="http://github.com/nvaccess/nvda/issues/7034">#7034</A>)
+<LI>В режиме обзора в Microsoft Edge, NVDA больше не пропускает интерактивные таблицы (ARIA grids) при переходе по таблицам клавишами быстрой навигации t и shift+t. (<A HREF="http://github.com/nvaccess/nvda/issues/6977">#6977</A>)
+<LI>Нажатие shift+home в режиме обзора после выделения от начала строки, теперь как и ожидается снимает это выделение. (<A HREF="http://github.com/nvaccess/nvda/issues/5746">#5746</A>)
+<LI>Выделение всего текста в режиме обзора (control+a) теперь корректно работает даже если каретка не находится в начале выделяемого текста. (<A HREF="http://github.com/nvaccess/nvda/issues/6909">#6909</A>)
+<LI>Исправлены некоторые редкие проблемы выделения текста в режиме обзора. (<A HREF="http://github.com/nvaccess/nvda/issues/7131">#7131</A>)
 </UL>
 
 <H3>Изменения для разработчиков</H3>
@@ -67,12 +75,12 @@
  <LI>Константы `speech.REASON_*`. Вместо них теперь следует использовать `controlTypes.REASON_*`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>)
  <LI>`i18nName` для настройки синтезатора. Вместо него теперь следует использовать `displayName` и `displayNameWithAccelerator`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/5185">#5185</A>)
  <LI>`config.validateConfig`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/667">#667</A>)
- <LI>`config.save`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/667">#667</A>)
+ <LI>`config.save`. Вместо него теперь следует использовать `config.conf.save`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/667">#667</A>)
  </UL>
 <LI>Список окончаний в контекстном меню автозаполнения python консоли теперь показывает только варианты завершения для последнего атрибута, без полного пути до него. (<A HREF="http://github.com/nvaccess/nvda/issues/7023">#7023</A>)
-<LI>В исходном коде NVDA теперь осуществляется модульное тестирование. (<A HREF="http://github.com/nvaccess/nvda/issues/7026">#7026</A>)
+<LI>Для исходного кода NVDA теперь проводится модульное тестирование. (<A HREF="http://github.com/nvaccess/nvda/issues/7026">#7026</A>)
  <UL>
- <LI>Модульные тесты и необходимая инфраструктура расположены в каталоге tests/unit. Подробности смотрите в строках документации файла tests\unit\<U>init</U>.py.
+ <LI>Unit-тесты и необходимая инфраструктура расположены в каталоге tests/unit. Подробности смотрите в строках документации файла tests\unit\<U>init</U>.py.
  <LI>Вы можете запустить тесты командой "scons tests". Подробности смотрите в разделе "Running Tests" файла readme.md.
  <LI>Если вы отправляете pull request для NVDA, то вы должны сначала запустить тесты и убедиться в их успешном прохождении.
  </UL>
