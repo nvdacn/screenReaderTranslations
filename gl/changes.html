@@ -12,15 +12,20 @@
 
 <H2>2017.2</H2>
 
+<P>
+O subliñable desta versión inclúe o soporte compreto para a atenuación de audio na actualización Windows 10 Creators; correccións para varios problemas coa seleción no modo exploración, incluindo problemas con selecionar todo; meyoras significativas no soporte de Microsoft Edge; e melloras na web coma o indicado de elementos marcados como actual (usando aria-current).
+</P>
+
 <H3>Novas Características</H3>
 
 <UL>
 <LI>Agora pódese anunciar a información do borde das celdas en Microsoft Excel usando `NVDA+f`. (<A HREF="http://github.com/nvaccess/nvda/issues/3044">#3044</A>)
-<LI>Engadido o soporte para atributos aria-current. (<A HREF="http://github.com/nvaccess/nvda/issues/6358">#6358</A>)
+<LI>Nos navegadores web, NVDA agora indica cando un elemento se marcou como actual (específicamente, usando o atributo aria-current). (<A HREF="http://github.com/nvaccess/nvda/issues/6358">#6358</A>)
 <LI>Agora sopórtase o cambio autumático de linguas no Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/6852">#6852</A>)
 <LI>Engadido o soporte para a Calculadora de Windows no Windows 10 Enterprise LTSB (Long-Term Servicing Branch) e Server. (<A HREF="http://github.com/nvaccess/nvda/issues/6914">#6914</A>)
 <LI>Ao se realizar a orde ler liña actual tres veces rápidamente deletréase a liña con descripcións de caracteres. (<A HREF="http://github.com/nvaccess/nvda/issues/6893">#6893</A>)
 <LI>Nova lingua: birmano.
+<LI>Agora fálanse apropriadamente as frechas arriba e abaixo  e os símbolos de fracción unicode. (<A HREF="http://github.com/nvaccess/nvda/issues/3805">#3805</A>)
 </UL>
 
 <H3>Cambios</H3>
@@ -48,7 +53,13 @@
 <LI>Navegar por liñas no Microsoft Edge agora é ata tres veces máis rápido na Actualización Windows 10 Creators. (<A HREF="http://github.com/nvaccess/nvda/issues/6994">#6994</A>)
 <LI>NVDA xa non anuncia "Web Runtime grouping" ao se enfocar documentos no Microsoft Edge na Actualización Windows 10 Creators (<A HREF="http://github.com/nvaccess/nvda/issues/6948">#6948</A>)
 <LI>Agora sopórtanse todas as versións existentes de SecureCRT. (<A HREF="http://github.com/nvaccess/nvda/issues/6302">#6302</A>)
-<LI>Adobe Acrobat Reader xa non se rompe en certos documentos PDF (específicamente, en aqueles que conteñan  atributos empty ActualText). (<A HREF="http://github.com/nvaccess/nvda/issues/7021">#7021</A>, <A HREF="http://github.com/nvaccess/nvda/issues/7034">#7034</A>)
+<LI>Adobe Acrobat Reader xa non se rompe en certos documentos PDF (especcialmente, en aqueles que conteñan  atributos empty ActualText). (<A HREF="http://github.com/nvaccess/nvda/issues/7021">#7021</A>, <A HREF="http://github.com/nvaccess/nvda/issues/7034">#7034</A>)
+<LI>Agora sopórtanse todas as versións existentes do SecureCRT.  (<A HREF="http://github.com/nvaccess/nvda/issues/6302">#6302</A>)
+<LI>Adobe Acrobat Reader xa non se rompe en certos documentos PDF (especialmente, en aqueles que conteñen atributos ActualText valdeiros). (<A HREF="http://github.com/nvaccess/nvda/issues/7021">#7021</A>, <A HREF="http://github.com/nvaccess/nvda/issues/7034">#7034</A>)
+<LI>No modo exploración en Microsoft Edge, as táboas interactivas (ARIA grids) xa non se saltan cando se navegan con t e shift+t. (<A HREF="http://github.com/nvaccess/nvda/issues/6977">#6977</A>)
+<LI>No modo exploración, ao premer shift+inicio despois de selecionar cara adiante agora deseleciona ata o comezo da liña segundo se esperaba. (<A HREF="http://github.com/nvaccess/nvda/issues/5746">#5746</A>)
+<LI>No modo exploración, selecionar todo (control+a) xa non falla para selecionar texto se o cursor do sistema non está ao comezo do texto. (<A HREF="http://github.com/nvaccess/nvda/issues/6909">#6909</A>)
+<LI>Correxidos algúns outros problemas extranos de seleción no modo exploración. (<A HREF="http://github.com/nvaccess/nvda/issues/7131">#7131</A>)
 </UL>
 
 <H3>Cambios para Desenvolvedores</H3>
@@ -62,7 +73,7 @@
  <LI>Se queres normalizar identificadores, agora hai unha propiedade InputGesture.normalizedIdentifiers a que normaliza os identificadores devoltos pola propiedade identifiers.
  </UL>
 <LI>A propiedade InputGesture.logIdentifier agora está obsoleta. As chamadas deberían utilizar InputGesture.identifiers[0] no seu lugar. (<A HREF="http://github.com/nvaccess/nvda/issues/6945">#6945</A>)
-<LI>Borrouse código obsoleto:
+<LI>Borrouse algún código obsoleto:
  <UL>
  <LI>As constantes `speech.REASON_*`, deberían usarse a cambio `controlTypes.REASON_*`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>)
  <LI>`i18nName` para opcións de sintetizador, `displayName` e `displayNameWithAccelerator` deberían usarse a cambio. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/5185">#5185</A>)
