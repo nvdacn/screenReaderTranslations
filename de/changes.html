@@ -12,25 +12,34 @@
 
 <H2>2017.2</H2>
 
+<P>
+Highlights of this release include full support for audio ducking in the Windows 10 Creators Update; fixes for several selection issues in browse mode, including problems with select all; significant improvements in Microsoft Edge support; and improvements on the web such as indication of elements marked as current (using aria-current).
+</P>
+
 <H3>neue Funktionen</H3>
 
 <UL>
+<LI>In Microsoft Excel können nun Informationen über Zellrahmen mittels NVDA+f abgefragt werden. (<A HREF="http://github.com/nvaccess/nvda/issues/3044">#3044</A>)
 <LI>Unterstützung für Aria-Current-Attribute hinzugefügt. (<A HREF="http://github.com/nvaccess/nvda/issues/6358">#6358</A>)
 <LI>Microsoft Edge unterstützt jetzt auch den automatischen Sprachenwechsel. (<A HREF="http://github.com/nvaccess/nvda/issues/6852">#6852</A>)
 <LI>Unterstützung für den Windows-Rechner in Windows 10 LTSB hinzugefügt. (<A HREF="http://github.com/nvaccess/nvda/issues/6914">#6914</A>)
 <LI>Wird die Tastenkombination zum Lesen der aktuellen Zeile dreimal hintereinander gedrückt, so wird die Zeile phonetisch buchstabiert. (<A HREF="http://github.com/nvaccess/nvda/issues/6893">#6893</A>)
 <LI>neue Sprache: Birmanisch
+<LI>Unicode auf- und Ab-Pfeile sowie Bruchzeichen werden nun korrekt ausgesprochen. (<A HREF="http://github.com/nvaccess/nvda/issues/3805">#3805</A>)
 </UL>
 
 <H3>Änderungen</H3>
 
 <UL>
-<LI>Die Navigation in UIA-Anwendungen wurde vereinfacht. (<A HREF="http://github.com/nvaccess/nvda/issues/6948">#6948</A>, <A HREF="http://github.com/nvaccess/nvda/issues/6950">#6950</A>) 
-<P></P>
-== behobene Fehler ==
+<LI>Die Navigation mit dem NVDA-Cursor bei aktivierter Option ""einfacher Darstellungsmodus" in UIA-Anwendungen wurde vereinfacht. (<A HREF="http://github.com/nvaccess/nvda/issues/6948">#6948</A>, <A HREF="http://github.com/nvaccess/nvda/issues/6950">#6950</A>) 
+</UL>
+
+<H3>behobene Fehler</H3>
+
+<UL>
 <LI>Menüeinträge auf Webseiten, die Kontrollkästchen Bzw. Auswahlschalter enthalten, können jetzt im Lesemodus aktiviert werden. (<A HREF="http://github.com/nvaccess/nvda/issues/6735">#6735</A>)
 <LI>Die Ansage von Namen von Excel-Arbeitsblättern wird nun übersetzt. (<A HREF="http://github.com/nvaccess/nvda/issues/6848">#6848</A>)
-<LI>Pressing ESC while the configuration profile "Confirm Deletion" prompt is active now dismisses the dialog. (<A HREF="http://github.com/nvaccess/nvda/issues/6851">#6851</A>)
+<LI>Die Rückfrage zur Löschung eines Konfigurationsprofils kann nun mit Escape beantwortet, also abgebrochen werden. (<A HREF="http://github.com/nvaccess/nvda/issues/6851">#6851</A>)
 <LI>Fix some crashes in Mozilla Firefox and other Gecko applications where the multi-process feature is enabled. (<A HREF="http://github.com/nvaccess/nvda/issues/6885">#6885</A>)
 <LI>Reporting of the background color in screen review is now more accurate when  text was drawn with a transparant background (<A HREF="http://github.com/nvaccess/nvda/issues/6467">#6467</A>) 
 <LI>Improved support for aria-describedby in Internet Explorer 11, including support within iframes and when multiple IDs are provided. (<A HREF="http://github.com/nvaccess/nvda/issues/5784">#5784</A>)
@@ -39,15 +48,14 @@
 <LI>An die Tastenkombination von (UIA)-Steuerelementen werden nicht mehr fälschlicherweise zwei Leerzeichen angehängt. (<A HREF="http://github.com/nvaccess/nvda/issues/6790">#6790</A>)
 <LI>Manche Tastenkombinationen auf HIMS-Braillezeilen (wie z.B. Leertaste+Punkt 4) funktionieren nun korrekt. (<A HREF="http://github.com/nvaccess/nvda/issues/3157">#3157</A>)
 <LI>Auf einigen (nicht-englischen) Systemen funktioniert nun die Verbindung mit seriellen Braillezeilen korrekt. (<A HREF="http://github.com/nvaccess/nvda/issues/6845">#6845</A>)
-<LI>Beim Herunterfahren von Windows werden Konfigurationsdateien zunächst temporär gespeichert, bevor sie ersetzt werden. Die verringert die Wahrscheinlichkeit für Beschädigungen der Konfigurationsdateien. (<A HREF="http://github.com/nvaccess/nvda/issues/3165">#3165</A>)
+<LI>Beim Herunterfahren von Windows werden Konfigurationsdateien zunächst temporär gespeichert, bevor sie ersetzt werden. Dies verringert die Wahrscheinlichkeit für Beschädigungen der Konfigurationsdateien. (<A HREF="http://github.com/nvaccess/nvda/issues/3165">#3165</A>)
 <LI>Beim Buchstabieren der aktuellen Zeile wird nun die aktuell eingestellte Sprache verwendet. (<A HREF="http://github.com/nvaccess/nvda/issues/6726">#6726</A>)
 <LI>In Windows 10 Creators Update funktioniert die zeilenweise Navigation in Microsoft Edge nun bis zu dreimal so schnell wie zuvor. (<A HREF="http://github.com/nvaccess/nvda/issues/6994">#6994</A>)
 <LI>Beim Verwenden von Microsoft Edge in Windows 10 Creators Update wird nicht mehr "web Runtime Grouping" angezeigt. (<A HREF="http://github.com/nvaccess/nvda/issues/6948">#6948</A>)
-</UL>
-
-<H3>Änderungen für Entwickler</H3>
-
-<UL>
+<LI>Alle existierenden Versionen von SecureCRT werden nun unterstützt. (<A HREF="http://github.com/nvaccess/nvda/issues/6302">#6302</A>)
+<LI>Adobe Acrobat Reader stürtzt nicht mehr bei bestimmten PDF-Dokumenten ab (speziell jene, die ein lehres ActualText-Atribut haben). (<A HREF="http://github.com/nvaccess/nvda/issues/7021">#7021</A>, <A HREF="http://github.com/nvaccess/nvda/issues/7034">#7034</A>)
+<P></P>
+== Änderungen für Entwickler ==
 <LI>Die Befehlszeile von NVDA wird nun mit Hilfe des Moduls Argparser abgearbeitet. Dadurch werden Optionen wie -R oder -Q exklusiv abgearbeitet. (<A HREF="http://github.com/nvaccess/nvda/issues/6865">#6865</A>)
 <LI>core.callLater now queues the callback to NVDA's main queue after the given delay, rather than waking the core and executing it directly. This stops possible freezes due to the  core accidentally going to sleep after processing a callback, in the midle of  a modal call such as the desplaying of a message box. (<A HREF="http://github.com/nvaccess/nvda/issues/6797">#6797</A>)
 <LI>The InputGesture.identifiers property has been changed so that it is no longer normalized. (<A HREF="http://github.com/nvaccess/nvda/issues/6945">#6945</A>)
