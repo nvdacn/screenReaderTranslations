@@ -4,22 +4,26 @@
 %!includeconf: ../changes.t2tconf
 
 = 2017.2 =
+Highlights of this release include full support for audio ducking in the Windows 10 Creators Update; fixes for several selection issues in browse mode, including problems with select all; significant improvements in Microsoft Edge support; and improvements on the web such as indication of elements marked as current (using aria-current).
 
 == neue Funktionen ==
+- In Microsoft Excel können nun Informationen über Zellrahmen mittels NVDA+f abgefragt werden. (#3044)
 - Unterstützung für Aria-Current-Attribute hinzugefügt. (#6358)
 - Microsoft Edge unterstützt jetzt auch den automatischen Sprachenwechsel. (#6852)
 - Unterstützung für den Windows-Rechner in Windows 10 LTSB hinzugefügt. (#6914)
 - Wird die Tastenkombination zum Lesen der aktuellen Zeile dreimal hintereinander gedrückt, so wird die Zeile phonetisch buchstabiert. (#6893)
 - neue Sprache: Birmanisch
+- Unicode auf- und Ab-Pfeile sowie Bruchzeichen werden nun korrekt ausgesprochen. (#3805)
 
 
 == Änderungen ==
-- Die Navigation in UIA-Anwendungen wurde vereinfacht. (#6948, #6950) 
+- Die Navigation mit dem NVDA-Cursor bei aktivierter Option ""einfacher Darstellungsmodus" in UIA-Anwendungen wurde vereinfacht. (#6948, #6950) 
+
 
 == behobene Fehler ==
 - Menüeinträge auf Webseiten, die Kontrollkästchen Bzw. Auswahlschalter enthalten, können jetzt im Lesemodus aktiviert werden. (#6735)
 - Die Ansage von Namen von Excel-Arbeitsblättern wird nun übersetzt. (#6848)
-- Pressing ESC while the configuration profile "Confirm Deletion" prompt is active now dismisses the dialog. (#6851)
+- Die Rückfrage zur Löschung eines Konfigurationsprofils kann nun mit Escape beantwortet, also abgebrochen werden. (#6851)
 - Fix some crashes in Mozilla Firefox and other Gecko applications where the multi-process feature is enabled. (#6885)
 - Reporting of the background color in screen review is now more accurate when  text was drawn with a transparant background (#6467) 
 - Improved support for aria-describedby in Internet Explorer 11, including support within iframes and when multiple IDs are provided. (#5784)
@@ -28,11 +32,12 @@
 - An die Tastenkombination von (UIA)-Steuerelementen werden nicht mehr fälschlicherweise zwei Leerzeichen angehängt. (#6790)
 - Manche Tastenkombinationen auf HIMS-Braillezeilen (wie z.B. Leertaste+Punkt 4) funktionieren nun korrekt. (#3157)
 - Auf einigen (nicht-englischen) Systemen funktioniert nun die Verbindung mit seriellen Braillezeilen korrekt. (#6845)
-- Beim Herunterfahren von Windows werden Konfigurationsdateien zunächst temporär gespeichert, bevor sie ersetzt werden. Die verringert die Wahrscheinlichkeit für Beschädigungen der Konfigurationsdateien. (#3165)
+- Beim Herunterfahren von Windows werden Konfigurationsdateien zunächst temporär gespeichert, bevor sie ersetzt werden. Dies verringert die Wahrscheinlichkeit für Beschädigungen der Konfigurationsdateien. (#3165)
 - Beim Buchstabieren der aktuellen Zeile wird nun die aktuell eingestellte Sprache verwendet. (#6726)
 - In Windows 10 Creators Update funktioniert die zeilenweise Navigation in Microsoft Edge nun bis zu dreimal so schnell wie zuvor. (#6994)
 - Beim Verwenden von Microsoft Edge in Windows 10 Creators Update wird nicht mehr "web Runtime Grouping" angezeigt. (#6948)
-
+- Alle existierenden Versionen von SecureCRT werden nun unterstützt. (#6302)
+- Adobe Acrobat Reader stürtzt nicht mehr bei bestimmten PDF-Dokumenten ab (speziell jene, die ein lehres ActualText-Atribut haben). (#7021, #7034)
 
 == Änderungen für Entwickler ==
 - Die Befehlszeile von NVDA wird nun mit Hilfe des Moduls Argparser abgearbeitet. Dadurch werden Optionen wie -R oder -Q exklusiv abgearbeitet. (#6865)
