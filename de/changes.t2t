@@ -3,8 +3,44 @@
 
 %!includeconf: ../changes.t2tconf
 
+= 2017.3 =
+
+== neue Funktionen ==
+- In den Braille-Einsteiiungen gibt es eine neue Option, die die dauerhafte Anzeige von Blitzmeldungen ermöglicht. (#6669)
+- In der Nachrichtenliste von Microsoft Outlook werden markierte Nachrichten als solche angezeigt. (#6374)
+- in Microsoft Powerpoint wird beim Bearbeiten einer Folie eine Form genau beschrieben, wenn Sie sie bearbeiten (Beispiele sind u. a. Dreieck, Kreis, Video oder Pfeil); zuvor wurde eine Form lediglich als 'Form' angezeigt. (#7111)
+
+
+== Änderungen ==
+- Mit Hilfe des Scripts script_restart kann NVDA schnell neu gestartet werden. (#6396)
+- Das Tastaturschma kann nun im Willkommensbildschirm von NVDA eingestellt werden. (#6863)
+- Die Namen von Sprungmarken werden in Braille wie folgt abgekürzt: (#3975)
+ - "Sprungmarke": "lmk"
+ - "Logo": "bnnr"
+ - "Ergänzung": "comp"
+ - "Inhalt": "cinf"
+ - "Haupt": "main"
+ - "navigation": "nav"
+ - "Suche": "srch"
+ - "Formular": "frm"
+ - "region": "rgn"
+ - Beispiel: "Sprungmarke Navigation" wird geändert in "lmk nav"
+
+
+== Fehlerkorrekturen ==
+- Editierbare Div-Elemente in Chrome haben nicht mehr ihre Beschriftung als Wert. (#7153)
+- Das Drücken von "Ende" im Lesemodus in Microsoft Word führt nicht mehr zu einem Laufzeitfehler. (#7009)
+- Der Lesemodus von Microsoft Edge wird auch dann vollständig unterstützt, wenn das angezeigte Dokument die Aria-Klasse Document besitzt. (#6998)
+- Im Lesemodus können Sie selbst dann mit Umschalt+Ende den Rest der Zeile markieren, wenn sich der Cursor bereits auf dem letzten Zeichen befindet. (#7157)
+- Wenn ein Dialogfenster eine Fortschrittsanzeige enthält, wird bei Änderungen an der Fortschrittsanzeige auch der Text des Dialogfensters aktualisiert. Das bedeutet z. B., dass Sie das Fortschreiten der Zeit zum Herunterladen beim Aktualisieren von NVDA verfolgen können. (#6862)
+
+
+== Änderungen für Entwickler ==
+- Die Zeitstempel im Protokoll enthalten jetzt auch Millisekunden. (#7163)
+
+
 = 2017.2 =
-Highlights of this release include full support for audio ducking in the Windows 10 Creators Update; fixes for several selection issues in browse mode, including problems with select all; significant improvements in Microsoft Edge support; and improvements on the web such as indication of elements marked as current (using aria-current).
+Schwerpunkte dieser Version sind u.a. eine volle Unterstützung von Audio-Ducking unter Windows 10 Creators Update; Fehlerkorrekturen beim Markieren von Text im Lesemodus; Verbesserungen in der Unterstützung von Microsoft Edge; sowie Verbesserungen bei der Anzeige von Webdokumenten, die das Aria-Current-Attribut verwenden.
 
 == Neue Funktionen ==
 - In Microsoft Excel können nun Informationen über Zellrahmen mittels NVDA+F abgefragt werden. (#3044)
@@ -24,9 +60,9 @@ Highlights of this release include full support for audio ducking in the Windows
 - Menüeinträge auf Webseiten, die Kontrollkästchen Bzw. Auswahlschalter enthalten, können jetzt im Lesemodus aktiviert werden. (#6735)
 - Die Ansage von Namen von Excel-Arbeitsblättern wird nun übersetzt. (#6848)
 - Die Rückfrage zur Löschung eines Konfigurationsprofils kann nun mit Escape beantwortet, also abgebrochen werden. (#6851)
-- Fix some crashes in Mozilla Firefox and other Gecko applications where the multi-process feature is enabled. (#6885)
-- Reporting of the background color in screen review is now more accurate when  text was drawn with a transparant background (#6467) 
-- Improved support for aria-describedby in Internet Explorer 11, including support within iframes and when multiple IDs are provided. (#5784)
+- Probleme mit Abstürzen in Firefox und anderen Gecko-Anwendungen behoben, die in mehreren Prozessen ausgeführt werden. (#6885)
+- Die Erkennung von Hintergrundfarben wurde verbessert; dies betrifft Elemente, die auf einen transparenten hintergrund gezeichnet werden. (#6467) 
+- Unterstützung des Aria-Desribedby-Attributs in Internet Explorer 11 verbessert, Dies betrifft eingebettete Rahmen und objekte, die mehrere Ids besitzen. (#5784)
 - Im Windows 10 Creators Update sind alle Audioducking-Funktionen wieder verfügbar. (#6933)
 - NVDA zeigt nun auch solche (UIA)-Steuerelemente korrekt an, deren Tastenkombination nicht (richtig) definiert wurde. (#6779)
 - An die Tastenkombination von (UIA)-Steuerelementen werden nicht mehr fälschlicherweise zwei Leerzeichen angehängt. (#6790)
@@ -38,20 +74,25 @@ Highlights of this release include full support for audio ducking in the Windows
 - Beim Verwenden von Microsoft Edge in Windows 10 Creators Update wird nicht mehr "Web Runtime Grouping" angezeigt. (#6948)
 - Alle existierenden Versionen von SecureCRT werden nun unterstützt. (#6302)
 - Adobe Acrobat Reader stürtzt nicht mehr bei bestimmten PDF-Dokumenten ab (speziell jene, die ein lehres ActualText-Atribut haben). (#7021, #7034)
+- Im Lesemodus von Microsoft Edge werden interaktive Tabellen (Aria-Gitternetze) nicht mehr übersprungen, wenn Sie mit den Schnelltasten T und Umschalt+T navigieren. (#6977)
+- Wenn Sie im Lesemodus Umschalt+Pos1 drücken, nachdem Sie einen Text vorwärts markiert haben, wird nun die Zeile wie erwartet rückwärts demarkiert. (#5746)
+- Im Lesemodus funktioniert das Markieren des gesamten Dokuments mit Strg+A auch dann, wenn sich der Systemcursor nicht am Anfang des Dokuments befindet. (#6909)
+- Einige weitere Fehler beim Markieren im Lesemodus wurden behoben.. (#7131)
+
 
 == Änderungen für Entwickler ==
 - Die Befehlszeile von NVDA wird nun mit Hilfe des Moduls Argparser abgearbeitet. Dadurch werden Optionen wie -R oder -Q exklusiv abgearbeitet. (#6865)
-- core.callLater now queues the callback to NVDA's main queue after the given delay, rather than waking the core and executing it directly. This stops possible freezes due to the  core accidentally going to sleep after processing a callback, in the midle of  a modal call such as the desplaying of a message box. (#6797)
+- core.calllater fügt jetzt die Rückruffunktion nach einer angegebenen Zeitspanne in eine Warteschlange ein, anstatt sie  direkt auszuführen. Dadurch wird verhindert, dass NVDA beim Anzeigen modaler Dialoge (wie Meldungsfenster) hängen bleibt. (#6797)
 - The InputGesture.identifiers property has been changed so that it is no longer normalized. (#6945)
  - Subclasses no longer need to normalize identifiers before returning them from this property.
  - If you want normalized identifiers, there is now an InputGesture.normalizedIdentifiers property which normalizes the identifiers returned by the identifiers property .
 - The InputGesture.logIdentifier property is now deprecated. Callers should use InputGesture.identifiers[0] instead. (#6945)
-- Deprecated code removed:
- - `speech.REASON_*` constants: `controlTypes.REASON_*` should be used instead. (#6846)
- - `i18nName` for synth settings: `displayName` and `displayNameWithAccelerator` should be used instead. (#6846, #5185)
+- Veralteter Code wurd entfernt:
+ - `speech.REASON_*`-Konstanten: Verwenden sie stattdessen die Konstanten `controlTypes.REASON_*`. (#6846)
+ - `i18nName` für Sprachausgabeneinstellungen: Verwenden Sie stattdessen `displayName` und `displayNameWithAccelerator`. (#6846, #5185)
  - `config.validateConfig`. (#6846, #667)
  - `config.save`. (#6846, #667)
-- The list of completions in the autocomplete context menu of the PythonConsole no longer shows  any objec path leading up to the final symbol being completed. (#7023)
+- Die Liste mit Vorschlägen zur Autovervollständigung im Kontextmenü der Python-Konsole zeigt keine führenden Objektpfade mehr vor den Symbolnamen an. (#7023)
 - There is now a unit testing framework for NVDA. (#7026)
  - Unit tests and infrastructure are located in the tests/unit directory. See the docstring in the tests\unit\__init__.py file for details.
  - You can run tests using "scons tests". See the "Running Tests" section of readme.md for details.
