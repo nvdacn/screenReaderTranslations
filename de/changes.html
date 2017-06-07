@@ -10,10 +10,56 @@
 </CENTER>
 
 
+<H2>2017.3</H2>
+
+<H3>neue Funktionen</H3>
+
+<UL>
+<LI>In den Braille-Einsteiiungen gibt es eine neue Option, die die dauerhafte Anzeige von Blitzmeldungen ermöglicht. (<A HREF="http://github.com/nvaccess/nvda/issues/6669">#6669</A>)
+<LI>In der Nachrichtenliste von Microsoft Outlook werden markierte Nachrichten als solche angezeigt. (<A HREF="http://github.com/nvaccess/nvda/issues/6374">#6374</A>)
+<LI>in Microsoft Powerpoint wird beim Bearbeiten einer Folie eine Form genau beschrieben, wenn Sie sie bearbeiten (Beispiele sind u. a. Dreieck, Kreis, Video oder Pfeil); zuvor wurde eine Form lediglich als 'Form' angezeigt. (<A HREF="http://github.com/nvaccess/nvda/issues/7111">#7111</A>)
+</UL>
+
+<H3>Änderungen</H3>
+
+<UL>
+<LI>Mit Hilfe des Scripts script_restart kann NVDA schnell neu gestartet werden. (<A HREF="http://github.com/nvaccess/nvda/issues/6396">#6396</A>)
+<LI>Das Tastaturschma kann nun im Willkommensbildschirm von NVDA eingestellt werden. (<A HREF="http://github.com/nvaccess/nvda/issues/6863">#6863</A>)
+<LI>Die Namen von Sprungmarken werden in Braille wie folgt abgekürzt: (<A HREF="http://github.com/nvaccess/nvda/issues/3975">#3975</A>)
+ <UL>
+ <LI>"Sprungmarke": "lmk"
+ <LI>"Logo": "bnnr"
+ <LI>"Ergänzung": "comp"
+ <LI>"Inhalt": "cinf"
+ <LI>"Haupt": "main"
+ <LI>"navigation": "nav"
+ <LI>"Suche": "srch"
+ <LI>"Formular": "frm"
+ <LI>"region": "rgn"
+ <LI>Beispiel: "Sprungmarke Navigation" wird geändert in "lmk nav"
+ </UL>
+</UL>
+
+<H3>Fehlerkorrekturen</H3>
+
+<UL>
+<LI>Editierbare Div-Elemente in Chrome haben nicht mehr ihre Beschriftung als Wert. (<A HREF="http://github.com/nvaccess/nvda/issues/7153">#7153</A>)
+<LI>Das Drücken von "Ende" im Lesemodus in Microsoft Word führt nicht mehr zu einem Laufzeitfehler. (<A HREF="http://github.com/nvaccess/nvda/issues/7009">#7009</A>)
+<LI>Der Lesemodus von Microsoft Edge wird auch dann vollständig unterstützt, wenn das angezeigte Dokument die Aria-Klasse Document besitzt. (<A HREF="http://github.com/nvaccess/nvda/issues/6998">#6998</A>)
+<LI>Im Lesemodus können Sie selbst dann mit Umschalt+Ende den Rest der Zeile markieren, wenn sich der Cursor bereits auf dem letzten Zeichen befindet. (<A HREF="http://github.com/nvaccess/nvda/issues/7157">#7157</A>)
+<LI>Wenn ein Dialogfenster eine Fortschrittsanzeige enthält, wird bei Änderungen an der Fortschrittsanzeige auch der Text des Dialogfensters aktualisiert. Das bedeutet z. B., dass Sie das Fortschreiten der Zeit zum Herunterladen beim Aktualisieren von NVDA verfolgen können. (<A HREF="http://github.com/nvaccess/nvda/issues/6862">#6862</A>)
+</UL>
+
+<H3>Änderungen für Entwickler</H3>
+
+<UL>
+<LI>Die Zeitstempel im Protokoll enthalten jetzt auch Millisekunden. (<A HREF="http://github.com/nvaccess/nvda/issues/7163">#7163</A>)
+</UL>
+
 <H2>2017.2</H2>
 
 <P>
-Highlights of this release include full support for audio ducking in the Windows 10 Creators Update; fixes for several selection issues in browse mode, including problems with select all; significant improvements in Microsoft Edge support; and improvements on the web such as indication of elements marked as current (using aria-current).
+Schwerpunkte dieser Version sind u.a. eine volle Unterstützung von Audio-Ducking unter Windows 10 Creators Update; Fehlerkorrekturen beim Markieren von Text im Lesemodus; Verbesserungen in der Unterstützung von Microsoft Edge; sowie Verbesserungen bei der Anzeige von Webdokumenten, die das Aria-Current-Attribut verwenden.
 </P>
 
 <H3>Neue Funktionen</H3>
@@ -40,9 +86,9 @@ Highlights of this release include full support for audio ducking in the Windows
 <LI>Menüeinträge auf Webseiten, die Kontrollkästchen Bzw. Auswahlschalter enthalten, können jetzt im Lesemodus aktiviert werden. (<A HREF="http://github.com/nvaccess/nvda/issues/6735">#6735</A>)
 <LI>Die Ansage von Namen von Excel-Arbeitsblättern wird nun übersetzt. (<A HREF="http://github.com/nvaccess/nvda/issues/6848">#6848</A>)
 <LI>Die Rückfrage zur Löschung eines Konfigurationsprofils kann nun mit Escape beantwortet, also abgebrochen werden. (<A HREF="http://github.com/nvaccess/nvda/issues/6851">#6851</A>)
-<LI>Fix some crashes in Mozilla Firefox and other Gecko applications where the multi-process feature is enabled. (<A HREF="http://github.com/nvaccess/nvda/issues/6885">#6885</A>)
-<LI>Reporting of the background color in screen review is now more accurate when  text was drawn with a transparant background (<A HREF="http://github.com/nvaccess/nvda/issues/6467">#6467</A>) 
-<LI>Improved support for aria-describedby in Internet Explorer 11, including support within iframes and when multiple IDs are provided. (<A HREF="http://github.com/nvaccess/nvda/issues/5784">#5784</A>)
+<LI>Probleme mit Abstürzen in Firefox und anderen Gecko-Anwendungen behoben, die in mehreren Prozessen ausgeführt werden. (<A HREF="http://github.com/nvaccess/nvda/issues/6885">#6885</A>)
+<LI>Die Erkennung von Hintergrundfarben wurde verbessert; dies betrifft Elemente, die auf einen transparenten hintergrund gezeichnet werden. (<A HREF="http://github.com/nvaccess/nvda/issues/6467">#6467</A>) 
+<LI>Unterstützung des Aria-Desribedby-Attributs in Internet Explorer 11 verbessert, Dies betrifft eingebettete Rahmen und objekte, die mehrere Ids besitzen. (<A HREF="http://github.com/nvaccess/nvda/issues/5784">#5784</A>)
 <LI>Im Windows 10 Creators Update sind alle Audioducking-Funktionen wieder verfügbar. (<A HREF="http://github.com/nvaccess/nvda/issues/6933">#6933</A>)
 <LI>NVDA zeigt nun auch solche (UIA)-Steuerelemente korrekt an, deren Tastenkombination nicht (richtig) definiert wurde. (<A HREF="http://github.com/nvaccess/nvda/issues/6779">#6779</A>)
 <LI>An die Tastenkombination von (UIA)-Steuerelementen werden nicht mehr fälschlicherweise zwei Leerzeichen angehängt. (<A HREF="http://github.com/nvaccess/nvda/issues/6790">#6790</A>)
@@ -54,24 +100,31 @@ Highlights of this release include full support for audio ducking in the Windows
 <LI>Beim Verwenden von Microsoft Edge in Windows 10 Creators Update wird nicht mehr "Web Runtime Grouping" angezeigt. (<A HREF="http://github.com/nvaccess/nvda/issues/6948">#6948</A>)
 <LI>Alle existierenden Versionen von SecureCRT werden nun unterstützt. (<A HREF="http://github.com/nvaccess/nvda/issues/6302">#6302</A>)
 <LI>Adobe Acrobat Reader stürtzt nicht mehr bei bestimmten PDF-Dokumenten ab (speziell jene, die ein lehres ActualText-Atribut haben). (<A HREF="http://github.com/nvaccess/nvda/issues/7021">#7021</A>, <A HREF="http://github.com/nvaccess/nvda/issues/7034">#7034</A>)
-<P></P>
-== Änderungen für Entwickler ==
+<LI>Im Lesemodus von Microsoft Edge werden interaktive Tabellen (Aria-Gitternetze) nicht mehr übersprungen, wenn Sie mit den Schnelltasten T und Umschalt+T navigieren. (<A HREF="http://github.com/nvaccess/nvda/issues/6977">#6977</A>)
+<LI>Wenn Sie im Lesemodus Umschalt+Pos1 drücken, nachdem Sie einen Text vorwärts markiert haben, wird nun die Zeile wie erwartet rückwärts demarkiert. (<A HREF="http://github.com/nvaccess/nvda/issues/5746">#5746</A>)
+<LI>Im Lesemodus funktioniert das Markieren des gesamten Dokuments mit Strg+A auch dann, wenn sich der Systemcursor nicht am Anfang des Dokuments befindet. (<A HREF="http://github.com/nvaccess/nvda/issues/6909">#6909</A>)
+<LI>Einige weitere Fehler beim Markieren im Lesemodus wurden behoben.. (<A HREF="http://github.com/nvaccess/nvda/issues/7131">#7131</A>)
+</UL>
+
+<H3>Änderungen für Entwickler</H3>
+
+<UL>
 <LI>Die Befehlszeile von NVDA wird nun mit Hilfe des Moduls Argparser abgearbeitet. Dadurch werden Optionen wie -R oder -Q exklusiv abgearbeitet. (<A HREF="http://github.com/nvaccess/nvda/issues/6865">#6865</A>)
-<LI>core.callLater now queues the callback to NVDA's main queue after the given delay, rather than waking the core and executing it directly. This stops possible freezes due to the  core accidentally going to sleep after processing a callback, in the midle of  a modal call such as the desplaying of a message box. (<A HREF="http://github.com/nvaccess/nvda/issues/6797">#6797</A>)
+<LI>core.calllater fügt jetzt die Rückruffunktion nach einer angegebenen Zeitspanne in eine Warteschlange ein, anstatt sie  direkt auszuführen. Dadurch wird verhindert, dass NVDA beim Anzeigen modaler Dialoge (wie Meldungsfenster) hängen bleibt. (<A HREF="http://github.com/nvaccess/nvda/issues/6797">#6797</A>)
 <LI>The InputGesture.identifiers property has been changed so that it is no longer normalized. (<A HREF="http://github.com/nvaccess/nvda/issues/6945">#6945</A>)
  <UL>
  <LI>Subclasses no longer need to normalize identifiers before returning them from this property.
  <LI>If you want normalized identifiers, there is now an InputGesture.normalizedIdentifiers property which normalizes the identifiers returned by the identifiers property .
  </UL>
 <LI>The InputGesture.logIdentifier property is now deprecated. Callers should use InputGesture.identifiers[0] instead. (<A HREF="http://github.com/nvaccess/nvda/issues/6945">#6945</A>)
-<LI>Deprecated code removed:
+<LI>Veralteter Code wurd entfernt:
  <UL>
- <LI>`speech.REASON_*` constants: `controlTypes.REASON_*` should be used instead. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>)
- <LI>`i18nName` for synth settings: `displayName` and `displayNameWithAccelerator` should be used instead. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/5185">#5185</A>)
+ <LI>`speech.REASON_*`-Konstanten: Verwenden sie stattdessen die Konstanten `controlTypes.REASON_*`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>)
+ <LI>`i18nName` für Sprachausgabeneinstellungen: Verwenden Sie stattdessen `displayName` und `displayNameWithAccelerator`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/5185">#5185</A>)
  <LI>`config.validateConfig`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/667">#667</A>)
  <LI>`config.save`. (<A HREF="http://github.com/nvaccess/nvda/issues/6846">#6846</A>, <A HREF="http://github.com/nvaccess/nvda/issues/667">#667</A>)
  </UL>
-<LI>The list of completions in the autocomplete context menu of the PythonConsole no longer shows  any objec path leading up to the final symbol being completed. (<A HREF="http://github.com/nvaccess/nvda/issues/7023">#7023</A>)
+<LI>Die Liste mit Vorschlägen zur Autovervollständigung im Kontextmenü der Python-Konsole zeigt keine führenden Objektpfade mehr vor den Symbolnamen an. (<A HREF="http://github.com/nvaccess/nvda/issues/7023">#7023</A>)
 <LI>There is now a unit testing framework for NVDA. (<A HREF="http://github.com/nvaccess/nvda/issues/7026">#7026</A>)
  <UL>
  <LI>Unit tests and infrastructure are located in the tests/unit directory. See the docstring in the tests\unit\<U>init</U>.py file for details.
