@@ -180,8 +180,9 @@
   <LI><A HREF="#toc123">14. Fonctions avancées</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">14.1. Options de ligne de commande</A>
+    <LI><A HREF="#SystemWideParameters">14.2. Paramètres Système</A>
     </UL>
-  <LI><A HREF="#toc125">15. Informations complémentaires</A>
+  <LI><A HREF="#toc126">15. Informations complémentaires</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -389,6 +390,11 @@ Cliquez sur "OK" pour fermer ce dialogue.
 Si NVDA a été installé à l'aide de l'installateur, alors il suffit, soit de frapper la combinaison contrôle+alt+n, soit de choisir dans le menu Démarrer / Programmes / NVDA / NVDA. 
 De plus, Vous pouvez taper NVDA dans le dialogue "Exécuter" puis appuyer sur "Entrée".
 Vous pouvez aussi ajouter quelques <A HREF="#CommandLineOptions">options de ligne de commande</A> vous permettant de redémarrer NVDA (-r), quitter (-q), désactiver les modules complémentaires (--disable-addons), etc.
+</P>
+<P>
+Pour les copies installées, NVDA enregistre la configuration dans le dossier de données applicatives roaming  de l'utilisateur courant par défaut (ex : "C:\Users\&lt;user&gt;\AppData\Roaming").
+Il est possible de modifier cela de manière à ce que NVDA charge sa configuration depuis le dossier de données applicatives local.
+Consultez la section concernant les <A HREF="#SystemWideParameters">paramètres système</A> pour plus de détails.
 </P>
 <P>
 Pour démarrer la copie portable, rendez-vous dans le dossier où NVDA a été décompressé, et appuyez sur "Entrée" ou double-cliquez sur nvda.exe.
@@ -5406,7 +5412,45 @@ Voici les options de ligne de commande de NVDA :
 </TR>
 </TABLE>
 
-<A NAME="toc125"></A>
+<A NAME="SystemWideParameters"></A>
+<H3>14.2. Paramètres Système</H3>
+
+<P>
+NVDA permet de définir certaines valeurs dans la base de registres du système ce qui modifie le comportement général de NVDA.
+Ces valeurs sont stockées dans la base de registres sous l'une des clés suivantes :
+</P>
+
+<UL>
+<LI>Systèmes 32-bits : "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
+<LI>Systèmes 64-bits : "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+</UL>
+
+<P>
+Les valeurs suivantes peuvent être définies dans ces clés de registre :
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nom</TH>
+<TH>Type</TH>
+<TH>valeurs Possibles</TH>
+<TH>Description</TH>
+</TR>
+<TR>
+<TD>configInLocalAppData</TD>
+<TD>DWORD</TD>
+<TD>0 (défaut) pour désactiver, 1 pour activer</TD>
+<TD>si activé, enregistre la configuration utilisateur NVDA dans le dossier applicatif local au lieu de roaming</TD>
+</TR>
+<TR>
+<TD>serviceDebug</TD>
+<TD>DWORD</TD>
+<TD>0 (défaut) pour désactiver, 1 pour activer</TD>
+<TD>si activé, désactive le mode sécurisé dans les bureaux sécurisés de Windows, permettant l'utilisation de la console Python et de la visionneuse de journaux. En raison d'implications majeures de sécurité, l'utilisation de cette option est fortement déconseillée</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc126"></A>
 <H2>15. Informations complémentaires</H2>
 
 <P>
