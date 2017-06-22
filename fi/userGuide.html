@@ -180,8 +180,9 @@
   <LI><A HREF="#toc123">14. Edistyneet aiheet</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">14.1. Komentorivivalitsimet</A>
+    <LI><A HREF="#SystemWideParameters">14.2. Järjestelmänlaajuiset parametrit</A>
     </UL>
-  <LI><A HREF="#toc125">15. Lisätietoja</A>
+  <LI><A HREF="#toc126">15. Lisätietoja</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -389,6 +390,11 @@ Valintaikkuna suljetaan Painamalla OK.
 Jos asensit NVDA:n omalla asennusohjelmallaan, voit käynnistää sen joko painamalla Control+Alt+N tai valitsemalla Käynnistä-valikosta Ohjelmat -&gt; NVDA -&gt; NVDA.
 Voit käynnistää sen myös kirjoittamalla Suorita-valintaikkunaan NVDA ja painamalla Enter.
 Lisäksi on mahdollista syöttää joitakin <A HREF="#CommandLineOptions">komentorivivalitsimia</A>, joilla NVDA voidaan käynnistää uudelleen (-r), sulkea se (-q), poistaa lisäosat käytöstä (--disable-addons) jne.
+</P>
+<P>
+NVDA:n asennettu versio tallentaa asetukset oletusarvoisesti nykyisen käyttäjän sovellustietojen Roaming-kansioon (esim. "C:\Users\&lt;Käyttäjä&gt;\AppData\Roaming").
+Tämä on mahdollista muuttaa niin, että asetukset ladataan em. sijainnin asemesta paikallisten sovellustietojen kansiosta.
+Katso lisätietoja <A HREF="#SystemWideParameters">järjestelmänlaajuisten parametrien</A> kappaleesta.
 </P>
 <P>
 Käynnistä massamuistiversio menemällä hakemistoon, johon olet purkanut sen ja painamalla Enter nvda.exe-tiedoston kohdalla tai kaksoisnapsauttamalla sitä hiiren vasemmalla painikkeella.
@@ -5133,7 +5139,7 @@ Jotta pistenäytölle sopisi mahdollisimman paljon tietoa, seuraavat lyhenteet o
 <TD>linkki</TD>
 </TR>
 <TR>
-<TD>ltl</TD>
+<TD>lst</TD>
 <TD>luettelo</TD>
 </TR>
 <TR>
@@ -5407,7 +5413,45 @@ Seuraavassa on luettelo NVDA:n komentorivivalitsimista:
 </TR>
 </TABLE>
 
-<A NAME="toc125"></A>
+<A NAME="SystemWideParameters"></A>
+<H3>14.2. Järjestelmänlaajuiset parametrit</H3>
+
+<P>
+Windowsin rekisterissä on mahdollista muuttaa joitakin arvoja, jotka vaikuttavat  NVDA:n järjestelmänlaajuiseen toimintaan.
+Arvot tallennetaan johonkin seuraavista rekisteriavaimista:
+</P>
+
+<UL>
+<LI>32-bittiset järjestelmät: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
+<LI>64-bittiset järjestelmät: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+</UL>
+
+<P>
+Seuraavien rekisteriavainten määrittäminen on mahdollista:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nimi</TH>
+<TH>Tyyppi</TH>
+<TH>Mahdolliset arvot</TH>
+<TH>Kuvaus</TH>
+</TR>
+<TR>
+<TD>configInLocalAppData</TD>
+<TD>DWORD</TD>
+<TD>0 (oletus) poistaa käytöstä, 1 ottaa käyttöön</TD>
+<TD>Jos tämä asetus otetaan käyttöön, NVDA:n asetukset tallennetaan paikallisten sovellustietojen kansioon.</TD>
+</TR>
+<TR>
+<TD>serviceDebug</TD>
+<TD>DWORD</TD>
+<TD>0 (oletus) poistaa käytöstä, 1 ottaa käyttöön</TD>
+<TD>Jos tämä asetus otetaan käyttöön, suojattu tila poistetaan käytöstä Windowsin suojatuilla työpöydillä, mikä mahdollistaa Python-konsolin ja lokintarkastelun käytön. Tämän asetuksen käyttöä ei suositella tietoturvan merkittävän heikkenemisen vuoksi.</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc126"></A>
 <H2>15. Lisätietoja</H2>
 
 <P>
