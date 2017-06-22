@@ -180,8 +180,9 @@
   <LI><A HREF="#toc123">14. Napredne teme</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">14.1. Opcije komandne linije</A>
+    <LI><A HREF="#SystemWideParameters">14.2. Sistemski parametri</A>
     </UL>
-  <LI><A HREF="#toc125">15. Dodatne informacije</A>
+  <LI><A HREF="#toc126">15. Dodatne informacije</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -389,6 +390,11 @@ Pritisnite OK da zatvorite ovaj dijalog.
 Ako ste instalirali NVDA, pokretanje NVDA možete ostvariti prečicom control+alt+n, ili izborom NVDA u start meniju.
 Takođe možete upisati NVDA u dialog za otvaranje i pritisnuti enter.
 Takođe možete dodati<A HREF="#CommandLineOptions">opcije komandne linije</A> koje vam dozvoljavaju da ponovo pokrenete NVDA(-r), izađete(-q), onemogućite dodatke(--disable-addons), i tako dalje.
+</P>
+<P>
+Za instalirane kopije, NVDA NVDA čuva podešavanja u roaming app data folderu trenutnog korisnika po podrazumevanim podešavanjima(Na primer "C:\Users\&lt;korisnik&gt;\AppData\Roaming").
+Moguće je promeniti ovo tako da NVDA učitava svoja podešavanja iz foldera local u folderu app data.
+Pogledajte deo o <A HREF="parametrima#SystemWideParameters">sistemskim</A> za više detalja.
 </P>
 <P>
 Da pokrenete prenosivu kopiju, potrebno je ući u folder u kojem ste napravili prenosivu kopiju, i pritisnite enter ili kliknite dva puta na datoteku nvda.exe.
@@ -784,7 +790,7 @@ Slično, alatna traka sadrži kontrole, pa morate ući u alatnu traku da pristup
 <P>
 Objekat koji se trenutno pregleda se zove navigacioni objekat.
 Kada stignete do nekog objekta, možete pregledati njegov sadržaj koristeći<A HREF="teksta#ReviewingText">komande za pregled</A> dok ste u<A HREF="objekata#ObjectReview">režimu pregleda</A>.
-Po podrazumevanim podešavanjima, navigacioni objekat se pomera zajedno sa sistemskim fokusom, ali ovo se može isključiti i uključiti.
+Po podrazumevanim podešavanjima, navigacioni objekat se pomera zajedno sa sistemskim fokusom, ali ovo se može promeniti.
 </P>
 <P>
 Napomena da brajev red prati[fokus#SystemFocus] i<A HREF="#SystemCaret">kursor</A> po podrazumevanim podešavanjima, a ne navigaciju objekata i pregled teksta.
@@ -5305,7 +5311,7 @@ Slede opcije komandne linije za NVDA:
 <TD>Ne menjaj globalnu oznaku čitača ekrana na sistemu|</TD>
 </TR>
 <TR>
-<TD>None</TD>
+<TD>Nema</TD>
 <TD>--install</TD>
 <TD>Instalira NVDA(i pokreće novo instaliranu kopiju)</TD>
 </TR>
@@ -5316,7 +5322,44 @@ Slede opcije komandne linije za NVDA:
 </TR>
 </TABLE>
 
-<A NAME="toc125"></A>
+<A NAME="SystemWideParameters"></A>
+<H3>14.2. Sistemski parametri</H3>
+
+<P>
+NVDA dozvoljava promenu određenih vrednosti u sistemskoj registry bazi koje menjaju ponašanje programa NVDA.
+Ove vrednosti se čuvaju u registry bazi u jednom od sledećih ključeva:
+</P>
+
+<UL>
+<LI>32-bitni system: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
+<LI>64-bitni system: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+</UL>
+
+<P>
+Sledeće vrednosti se mogu podesiti u ovom registry ključu:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Ime</TH>
+<TH>Vrsta</TH>
+<TH>Moguće vrednosti</TH>
+<TH>Opis</TH>
+</TR>
+<TR>
+<TD>configInLocalAppData</TD>
+<TD>DWORD</TD>
+<TD>0 (Podrazumevano) da onemogućite, 1 da omogućite| Ako je omogućeno, Čuva NVDA podešavanja u local folderu foldera app data umesto roaming foldera|</TD>
+</TR>
+<TR>
+<TD>serviceDebug</TD>
+<TD>DWORD</TD>
+<TD>0 (Podrazumevano) da onemogućite, 1 da omogućite</TD>
+<TD>Ako je omogućeno, onemogućava bezbedni režim na Windows secure računarima, dozvoljavajući korišćenje Python konzole i pregleda dnevnika. Zbog nekoliko velikih bezbednosnih rizika, korišćenje ove opcije nije preporučeno|</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc126"></A>
 <H2>15. Dodatne informacije</H2>
 
 <P>
