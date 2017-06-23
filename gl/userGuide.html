@@ -180,8 +180,9 @@
   <LI><A HREF="#toc123">14. Temas Avanzados</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">14.1. Opcións de Liña de Ordes</A>
+    <LI><A HREF="#SystemWideParameters">14.2. Parámetros do Sistema</A>
     </UL>
-  <LI><A HREF="#toc125">15. Información Adicional</A>
+  <LI><A HREF="#toc126">15. Información Adicional</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -389,6 +390,11 @@ Preme Aceptar para pechar este diálogo.
 Se instalaches o NVDA co instalador, entón iniciar NVDA é tan sinxelo coma ou premer control+alt+n, ou elexir NVDA dende o menú NVDA no Menú Inicio, submenú Programas. 
 Adicionalmente podes teclear NVDA no diálogo Executar e premer Intro. 
 Tamén podes pasar algunhas <A HREF="#CommandLineOptions">opcións de liña de ordes</A> as que che permiten reiniciar o NVDA (-r), saír (-q), deshabilitar complementos (--disable-addons), etc.
+</P>
+<P>
+Para as copias instaladas, NVDA almacena a configuración no cartafol roaming application data do usuario actual por omisión (ex.: "C:\Users\&lt;user&gt;\AppData\Roaming").
+É posible cambiar esto de xeito que o NVDA cargue a súa configuración dende o cartafol local de datos de aplicación no seu lugar.
+Consulta a seción acerca de <A HREF="#SystemWideParameters">parámetros do sistema</A> para máis detalles.
 </P>
 <P>
 Para iniciar a versión portátil, vai ao directorio onde descomprimiches ao NVDA, e preme intro ou fai doble clic sobre nvda.exe.
@@ -5403,7 +5409,45 @@ Seguidamente van as opcións de liña de ordes para o NVDA:
 </TR>
 </TABLE>
 
-<A NAME="toc125"></A>
+<A NAME="SystemWideParameters"></A>
+<H3>14.2. Parámetros do Sistema</H3>
+
+<P>
+NVDA permite configurar algúns valores no rexistro do sistema que alteran o comportamento de todo o sistema do NVDA.
+Estos valores almacénanse no rexistro do sistema baixo unha das seguintes claves:
+</P>
+
+<UL>
+<LI>Sistema de 32 bits: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
+<LI>Sistema de 64 bits: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+</UL>
+
+<P>
+Os seguintes valores poden configurarse baixo estas claves do rexistro:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nome</TH>
+<TH>Tipo</TH>
+<TH>Valores Posibles</TH>
+<TH>Descripción</TH>
+</TR>
+<TR>
+<TD>configInLocalAppData</TD>
+<TD>DWORD</TD>
+<TD>0 (predeterminado) para deshabilitado, 1 para habilitado</TD>
+<TD>Se está habilitado, almacena a configuración do usuario do NVDA no cartafol local de datos de aplicación en lugar da roaming application data</TD>
+</TR>
+<TR>
+<TD>serviceDebug</TD>
+<TD>DWORD</TD>
+<TD>0 (predeterminado) para deshabilitar, 1 para habilitar</TD>
+<TD>Se se habilita, deshabilita o modo seguro nos escritorios seguros do windows, permitindo o uso da consola de Python e do visualizador do Rexistro. Debido a varias implicacións importantes de seguridade, o uso desta opción está altamente desaconsellada</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc126"></A>
 <H2>15. Información Adicional</H2>
 
 <P>
