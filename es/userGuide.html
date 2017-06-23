@@ -180,8 +180,9 @@
   <LI><A HREF="#toc123">14. Temas Avanzados</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">14.1. Opciones de Línea de Órdenes</A>
+    <LI><A HREF="#SystemWideParameters">14.2. Parámetros del Sistema</A>
     </UL>
-  <LI><A HREF="#toc125">15. Información Adicional</A>
+  <LI><A HREF="#toc126">15. Información Adicional</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -389,6 +390,11 @@ Pulsa Aceptar para cerrar este diálogo.
 Si has instalado NVDA con el instalador, entonces iniciar NVDA es tan fácil como o pulsar control+Alt+n, o elegir NVDA desde el menú NVDA en Menú Inicio, submenú Programas. 
 Adicionalmente puedes teclear NVDA en el diálogo Ejecutar y pulsar Intro. 
 También puedes pasar algunas <A HREF="#CommandLineOptions">opciones de línea de órdenes</A> las cuales te permiten reiniciar NVDA (-r), salir (-q), deshabilitar complementos (--disable-addons), etc.
+</P>
+<P>
+Para las copias instaladas, NVDA almacena la configuración en la carpeta roaming application data del usuario actual por omisión (ej.: "C:\Users\&lt;user&gt;\AppData\Roaming").
+Es posible cambiar esto de forma que NVDA cargue su configuración desde la carpeta local de datos de aplicación en su lugar.
+Consulta la sección acerca de <A HREF="#SystemWideParameters">parámetros del sistema</A> para más detalles.
 </P>
 <P>
 Para iniciar la versión portátil, ve al directorio donde descomprimiste NVDA, y pulsa intro o haz doble clic sobre nvda.exe.
@@ -808,7 +814,7 @@ Del mismo modo, en una barra de herramientas conteniendo controles, debes movert
 <P>
 El objeto actualmente en revisión se llama navegador de objetos.
 Una vez que navegues a un objeto, puedes revisar su contenido utilizando las <A HREF="#ReviewingText">órdenes de revisión de texto</A> mientras se esté en <A HREF="#ObjectReview">modo revisión de objetos</A>.
-De forma predeterminada, el navegador de objetos se mueve junto con el foco  del Sistema, aunque este comportamiento puede activarse y desactivarse.
+De forma predeterminada, el navegador de objetos se mueve junto con el foco  del Sistema aunque este comportamiento puede activarse y desactivarse.
 </P>
 <P>
 Ten en cuenta que el braille sigue al <A HREF="#SystemFocus">foco</A> y al <A HREF="#SystemCaret">cursor del sistema</A> de forma predeterminada, en lugar de al navegador de objetos y revisión de texto.
@@ -5407,7 +5413,45 @@ Seguidamente van las opciones de línea de órdenes para NVDA:
 </TR>
 </TABLE>
 
-<A NAME="toc125"></A>
+<A NAME="SystemWideParameters"></A>
+<H3>14.2. Parámetros del Sistema</H3>
+
+<P>
+NVDA permite configurar algunos valores en el registro del sistema que alteran el comportamiento de todo el sistema de NVDA.
+Estos valores se almacenan en el registro del sistema bajo una de las siguientes claves:
+</P>
+
+<UL>
+<LI>Sistema de 32 bits: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
+<LI>Sistema de 64 bits: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+</UL>
+
+<P>
+Los siguientes valores pueden configurarse bajo estas claves del registro:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nombre</TH>
+<TH>Tipo</TH>
+<TH>Valores Posibles</TH>
+<TH>Descripción</TH>
+</TR>
+<TR>
+<TD>configInLocalAppData</TD>
+<TD>DWORD</TD>
+<TD>0 (predeterminado) para deshabilitado, 1 para habilitado</TD>
+<TD>Si está habilitado, almacena la configuración de usuario de NVDA en la carpeta local de datos de aplicación en lugar de la roaming application data</TD>
+</TR>
+<TR>
+<TD>serviceDebug</TD>
+<TD>DWORD</TD>
+<TD>0 (predeterminado) para deshabilitar, 1 para habilitar</TD>
+<TD>Si se habilita, deshabilita el modo seguro en los escritorios seguros de windows, permitiendo la utilización de la consola de Python y del visualizador del Registro. Debido a varias implicaciones importantes de seguridad, la utilización de esta opción está altamente desaconsejada</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc126"></A>
 <H2>15. Información Adicional</H2>
 
 <P>
