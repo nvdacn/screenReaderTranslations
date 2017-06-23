@@ -180,18 +180,19 @@
   <LI><A HREF="#toc123">14. Erweiterte Themen</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">14.1. Befehlszeilenoptionen</A>
+    <LI><A HREF="#SystemWideParameters">14.2. Systemparameter</A>
     </UL>
-  <LI><A HREF="#toc125">15. Weitere Informationen</A>
-  <LI><A HREF="#toc126">16. Anhang</A>
+  <LI><A HREF="#toc126">15. Weitere Informationen</A>
+  <LI><A HREF="#toc127">16. Anhang</A>
     <UL>
-    <LI><A HREF="#toc127">16.1. Hinweise zu Java</A>
+    <LI><A HREF="#toc128">16.1. Hinweise zu Java</A>
       <UL>
-      <LI><A HREF="#toc128">16.1.1. Aktivieren der Java-Zugänglichkeitsschnittstelle unter Windows XP</A>
-      <LI><A HREF="#toc129">16.1.2. Aktivieren der Zugänglichkeitsschnittstellen unter Windows Vista und neuer</A>
+      <LI><A HREF="#toc129">16.1.1. Aktivieren der Java-Zugänglichkeitsschnittstelle unter Windows XP</A>
+      <LI><A HREF="#toc130">16.1.2. Aktivieren der Zugänglichkeitsschnittstellen unter Windows Vista und neuer</A>
       </UL>
-    <LI><A HREF="#toc130">16.2. Mit der Tastaturmaus von Windows navigieren</A>
+    <LI><A HREF="#toc131">16.2. Mit der Tastaturmaus von Windows navigieren</A>
       <UL>
-      <LI><A HREF="#toc131">16.2.1. Klicken mit Hilfe der Tastaturmaus von Windows</A>
+      <LI><A HREF="#toc132">16.2.1. Klicken mit Hilfe der Tastaturmaus von Windows</A>
       </UL>
     </UL>
   </UL>
@@ -401,6 +402,11 @@ Klicken Sie auf "OK", um den Dialog zu schließen.
 Wenn Sie NVDA bereits installiert haben, können Sie es entweder vom Desktop aus mit Steuerung+Alt+N aufrufen oder wählen Sie NVDA aus dem Startmenü unter Programme "NVDA" aus.
 Optional können Sie auch im Dialog "Ausführen..." (Windows-Taste+R) den Befehl "NVDA" (ohne Anführungszeichen) eingeben und mit der Eingabetaste aufrufen.
 Sie können außerdem einige <A HREF="#CommandLineOptions">Befehlszeilenoptionen</A> angeben. Hiermit können Sie z. .B. NVDA neu starten (-r), NVDA beenden (-q), oder die Erweiterungen deaktivieren (--disable-addons).
+</P>
+<P>
+Bei installierten Versionen von NVDA werden die Konfigurationsdateien normalerweise im Roaming-Verzeichnis des aktuell angemeldeteen Benutzers gespeichert (z. B. "C:\Users\&lt;Benutzer&gt;\AppData\Roaming").
+Sie können NVDA jedoch so einstellen, dass die Konfigurationsdateien stattdessen im Lokalen Verzeichnis des aktuellen Benutzers gespeichert werden.
+Weitere Informationen dazu finden Sie im Abschnitt <A HREF="#SystemWideParameters">Systemparameter</A>.
 </P>
 <P>
 Um die Portable Version von NVDA zu starten, wechseln Sie in den Ordner, in welchem Sie die Dateien entpackt haben und starten anschließend die Datei "NVDA.exe" mit der Eingabetaste oder mit einem Doppelklick.
@@ -5417,7 +5423,45 @@ Folgende Kommandozeilenoptionen werden akzeptiert:
 </TR>
 </TABLE>
 
-<A NAME="toc125"></A>
+<A NAME="SystemWideParameters"></A>
+<H3>14.2. Systemparameter</H3>
+
+<P>
+Sie können einige Werte in der Registrierdatenbank von Windows verwenden, um das Verhalten von NVDA zu beeinflussen.
+Diese Werte werden unter einem der folgenden Schlüssel gespeichert:
+</P>
+
+<UL>
+<LI>32-bit-Systeme: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
+<LI>64-bit-systeme: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+</UL>
+
+<P>
+Die folgenden Werte können geändert werden:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Typ</TH>
+<TH>mögliche Werte</TH>
+<TH>Beschreibung</TH>
+</TR>
+<TR>
+<TD>configInLocalAppData</TD>
+<TD>DWORD</TD>
+<TD>0 (Standard) zum Deaktivieren, 1 zum Aktivieren</TD>
+<TD>Wenn diese Einstellung aktiviert ist, werden die Konfigurationsdateien im lokalen Verzeichnis des aktuell angemeldeten Benutzers gespeichert. Standardmäßig werden sie im Roaming-Verzeichnis gespeichert.</TD>
+</TR>
+<TR>
+<TD>serviceDebug</TD>
+<TD>DWORD</TD>
+<TD>0 (Standard) zum Deaktivieren, 1 zum Aktivieren</TD>
+<TD>Das Aktivieren dieser Einstellung wird nicht empfohlen. Diese Einstellung deaktiviert den sicheren Modus in der Windows-Anmeldung. Gleichzeitig wird der Protokollbetrachter und die Python-Konsole aktiviert.</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc126"></A>
 <H2>15. Weitere Informationen</H2>
 
 <P>
@@ -5426,10 +5470,10 @@ Dort finden Sie u. a. neben der Community und dem Technischen Support auch die z
 Diese Seite stellt auch die Informationen zur Weiterentwicklung von NVDA bereit.
 </P>
 
-<A NAME="toc126"></A>
+<A NAME="toc127"></A>
 <H2>16. Anhang</H2>
 
-<A NAME="toc127"></A>
+<A NAME="toc128"></A>
 <H3>16.1. Hinweise zu Java</H3>
 
 <P>
@@ -5443,7 +5487,7 @@ Da es sich bei NVDA um eine 32-Bit-Anwendung handelt, müssen auch 32-Bit-Versio
 <LI>Um zu testen, ob Java und Java Access Bridge funktionieren, können Sie die Java-Systemsteuerung unter dem Eintrag Java (32-Bit) in der Systemsteuerung aufrufen. Wenn jetzt alle Dialogelemente richtig angezeigt werden, sind Java und Java Access Bridge korrekt installiert.
 </OL>
 
-<A NAME="toc128"></A>
+<A NAME="toc129"></A>
 <H4>16.1.1. Aktivieren der Java-Zugänglichkeitsschnittstelle unter Windows XP</H4>
 
 <P>
@@ -5458,7 +5502,7 @@ Unter Windows XP müssen Sie die Kommandozeile verwenden, um die Zugänglichkeit
 Wenn Sie eine Meldung wie "The Java Access Bridge has been enabled" erhalten haben, wurde die Zugänglichkeitsschnittstelle erfolgreich aktiviert. Wiederholen Sie die Ausführung dieses Befehls für jeden Benutzer Ihres Rechners, der die Zugänglichkeitsschnittstellen benötigt.
 </P>
 
-<A NAME="toc129"></A>
+<A NAME="toc130"></A>
 <H4>16.1.2. Aktivieren der Zugänglichkeitsschnittstellen unter Windows Vista und neuer</H4>
 
 <P>
@@ -5476,7 +5520,7 @@ Unter Windows Vista und neuer können Sie das Center für erleichterte Bedienung
 Wiederholen Sie die obigen Schritte für jeden Benutzer, der die Java-Zugänglichkeitsschnittstellen benötigt.
 </P>
 
-<A NAME="toc130"></A>
+<A NAME="toc131"></A>
 <H3>16.2. Mit der Tastaturmaus von Windows navigieren</H3>
 
 <P>
@@ -5520,7 +5564,7 @@ Um die Ausgabe via Braillezeile zu erhalten, müssen folgende Vorraussetzungen g
 <LI>Im Dialog NVDA-Cursor muss die Option "Mauszeiger verfolgen" eingeschaltet sein.
 </UL>
 
-<A NAME="toc131"></A>
+<A NAME="toc132"></A>
 <H4>16.2.1. Klicken mit Hilfe der Tastaturmaus von Windows</H4>
 
 <P>
