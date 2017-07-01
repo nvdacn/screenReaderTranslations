@@ -180,8 +180,9 @@
   <LI><A HREF="#toc123">14. Teme za napredne korisnike</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">14.1. Opcije naredbenog retka</A>
+    <LI><A HREF="#SystemWideParameters">14.2. Cijelosustavni parametri</A>
     </UL>
-  <LI><A HREF="#toc125">15. Dodatne Informacije</A>
+  <LI><A HREF="#toc126">15. Dodatne Informacije</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -389,6 +390,11 @@ Pritisnite U redu da bi ste zatvorili ovaj dijaloški okvir.
 Ako ste instalirali NVDA pomoću instalacijskog programa, tada je pokretanje NVDA jednostavno kao i  pritisak kontrol+alt+f5, Ili odabirom NVDA iz NVDA izbornika U podizborniku programi u start izborniku.
 Dodatno, možete upisati "nvda", u dijaloški okvir pokreni i pritisnuti enter da biste pokrenuli NVDA.
 Možete također dodati nekoliko <A HREF="#CommandLineOptions">opcija naredbenog retka</A> koje vam omogućuju ponovno pokretanje NVDA (-r), izlaz (-q), onemogućavanje dodataka (--disable-addons) itd.
+</P>
+<P>
+U instaliranim kopijama, NVDA posprema konfiguraciju u roaming application data mapu trenutnog korisnika podrazumijevano (npr. "C:\Users\&lt;user&gt;\AppData\Roaming").
+To je moguće promijeniti, tako da NVDA učitava svoje postavke iz mape local application data.
+Za više detalja, pročitajte poglavlje o <A HREF="#SystemWideParameters">cjelosustavnim parametrima</A>.
 </P>
 <P>
 Da biste pokrenuli prijenosnu inačicu, uđite u mapu u kojoj ste raspakirali NVDA i pritisnite enter ili dva puta kliknite na datoteku nvda.exe.
@@ -5411,7 +5417,45 @@ Sljede opcije naredbenog retka za NVDA:
 </TR>
 </TABLE>
 
-<A NAME="toc125"></A>
+<A NAME="SystemWideParameters"></A>
+<H3>14.2. Cijelosustavni parametri</H3>
+
+<P>
+NVDA omogućava izmjenu nekih postavki u registru, koje mijenjaju cijelosistemsko ponašanje NVDA.
+Te su vrijednosti pospremljene u registru pod sljedećim ključevima:
+</P>
+
+<UL>
+<LI>32-bitni sustav: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
+<LI>64-bitni sustav: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+</UL>
+
+<P>
+Sljedeće vrijednosti mogu biti postavljene pod ovim ključem:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Naziv</TH>
+<TH>Vrijednost</TH>
+<TH>moguće vrijednosti</TH>
+<TH>Opis</TH>
+</TR>
+<TR>
+<TD>configInLocalAppData</TD>
+<TD>DWORD</TD>
+<TD>0 (podrazumijevano) za onemogućavanje, 1 za omogućavanje</TD>
+<TD>Ako je omogućeno, posprema konfiguraciju u mapu local application data umjesto u mapu roaming application data</TD>
+</TR>
+<TR>
+<TD>serviceDebug</TD>
+<TD>DWORD</TD>
+<TD>0 (podrazumijevano) za onemogućavanje, 1 za omogućavanje</TD>
+<TD>ako je omogućeno, onemogućuje sigurni način na sigurnoj radnoj površini, što omogućava korisniku korištenje Python konzole i preglednika zapisnika. zbog velikih sigurnosnih implikacija, korištenje ove opcije se ne preporučuje</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc126"></A>
 <H2>15. Dodatne Informacije</H2>
 
 <P>
