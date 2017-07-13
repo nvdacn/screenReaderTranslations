@@ -17,7 +17,7 @@
 <UL>
 <LI>Se ha añadido una opción Braille para "mostrar mensajes indefinidamente". (<A HREF="http://github.com/nvaccess/nvda/issues/6669">#6669</A>)
 <LI>En la lista de mensajes de Microsoft Outlook, se anuncia si un mensaje está marcado. (<A HREF="http://github.com/nvaccess/nvda/issues/6374">#6374</A>)
-<LI>En Microsoft Powerpoint, ahora se anuncia el tipo exacto de una forma cuando se edita una diapositiva (Ejemplos incluyen: triángulo, círculo, vídeo, flecha), en lugar de sólo 'forma'. (<A HREF="http://github.com/nvaccess/nvda/issues/7111">#7111</A>)
+<LI>En Microsoft PowerPoint, ahora se anuncia el tipo exacto de una forma cuando se edita una diapositiva tal como triángulo, círculo, vídeo, flecha, en lugar de sólo 'forma'. (<A HREF="http://github.com/nvaccess/nvda/issues/7111">#7111</A>)
 <LI>El contenido matemático (proporcionado como MathML) ahora se soporta en Google Chrome. (<A HREF="http://github.com/nvaccess/nvda/issues/7184">#7184</A>)
 <LI>NVDA ahora puede hablar utilizando las nuevas voces Windows OneCore (también conocidas como voces mobile) incluidas en Windows 10. Accede a ellas seleccionando Voces Windows OneCore en el diálogo Sintetizadores de NVDA. (<A HREF="http://github.com/nvaccess/nvda/issues/6159">#6159</A>)
 <LI>Los ficheros de configuración de usuario de NVDA ahora pueden almacenarse en la carpeta local de datos de aplicaciones de usuario. Esto se habilita a través de una opción en el registro. Consulta 'Parámetros del Sistema' en la guía del usuario para más detalles. (<A HREF="http://github.com/nvaccess/nvda/issues/6812">#6812</A>)
@@ -28,6 +28,8 @@
 <LI>Ahora se reproduce un sonido para indicar la aparición de sugerencias en ciertos campos de búsqueda de Windows 10 (Ej.: pantalla de inicio, Opciones de búsqueda, campos de Windows 10 mail para/CC). (<A HREF="http://github.com/nvaccess/nvda/issues/6241">#6241</A>)
 <LI>Se anuncian automáticamente las notificaciones en Skype for Business Desktop, tales como cuando alguien inicia una conversación contigo.  (<A HREF="http://github.com/nvaccess/nvda/issues/7281">#7281</A>)
 <LI>Se anuncian automáticamente las notificaciones en Microsoft Edge, tales como cuando se inicia una descarga. (<A HREF="http://github.com/nvaccess/nvda/issues/7281">#7281</A>)
+<LI>Ahora puedes escribir tanto en braille contraído como sin contraer en una pantalla braille con un teclado braille. Consulta la sección Entrada Braille de la Guía del Usuario para detalles. (<A HREF="http://github.com/nvaccess/nvda/issues/2439">#2439</A>)
+<LI>Ahora puedes introducir caracteres braille Unicode desde el teclado braille en una pantalla braille seleccionando Braille Unicode como la tabla de entrada en Opciones de Braille. (<A HREF="http://github.com/nvaccess/nvda/issues/6449">#6449</A>)
 </UL>
 
 <H3>Cambios</H3>
@@ -48,7 +50,9 @@
  <LI>"region": "rgn"
  <LI>Ejemplo: "punto de referencia de navegación" sería "pdr nav"
  </UL>
-<LI>Espeak-ng se ha actualizado a la versión 1.49.1 (<A HREF="http://github.com/nvaccess/nvda/issues/7280">#7280</A>).
+<LI>Actualizado Espeak-ng a 1.49.1 (<A HREF="http://github.com/nvaccess/nvda/issues/7280">#7280</A>).
+<LI>Las listas de tablas de entrada y de salida en el diálogo Opciones de Braille ahora se ordenan alfabéticamente. (<A HREF="http://github.com/nvaccess/nvda/issues/6113">#6113</A>)
+<LI>Actualizado el transcriptor braille liblouis a 3.2.0. (<A HREF="http://github.com/nvaccess/nvda/issues/6935">#6935</A>)
 </UL>
 
 <H3>Corrección de Errores</H3>
@@ -58,12 +62,14 @@
 <LI>Pulsar fin mientras se esté en modo exploración de un documento vacío de Microsoft Word ya no provoca un error en tiempo de ejecución. (<A HREF="http://github.com/nvaccess/nvda/issues/7009">#7009</A>)
 <LI>El modo exploración ahora se soporta correctamente en Microsoft Edge cuando a un documento se le haya dado un rol ARIA específico de documento. (<A HREF="http://github.com/nvaccess/nvda/issues/6998">#6998</A>)
 <LI>En modo exploración, ahora puedes seleccionar o deseleccionar hasta el fin de la línea utilizando shift+fin incluso cuando el cursor esté sobre el último carácter de la línea. (<A HREF="http://github.com/nvaccess/nvda/issues/7157">#7157</A>)
-<LI>Si un diálogo contiene una barra de progreso, el texto del diálogo ahora se actualiza cuando la barra de progreso cambie. Esto significa, por ejemplo, que el tiempo restante ahora puede leerse en el diálogo de NVDA "Descargando Actualizaciones". (<A HREF="http://github.com/nvaccess/nvda/issues/6862">#6862</A>)
+<LI>Si un diálogo contiene una barra de progreso, el texto del diálogo ahora se actualiza en braille cuando la barra de progreso cambie. Esto significa, por ejemplo, que el tiempo restante ahora puede leerse en el diálogo de NVDA "Descargando Actualizaciones". (<A HREF="http://github.com/nvaccess/nvda/issues/6862">#6862</A>)
 <LI>NVDA ahora anunciará cambios de selección para ciertos cuadros combinados de Windows 10 tales como AutoReproducción en Opciones. (<A HREF="http://github.com/nvaccess/nvda/issues/6337">#6337</A>).
 <LI>Ya no se anuncia información injustificada al entrar en diálogos de reuniones / citas en Microsoft Outlook. (<A HREF="http://github.com/nvaccess/nvda/issues/7216">#7216</A>)
 <LI>Pitidos indeterminados para barras de progreso de diálogo tales como el actualizador sólo cuando la salida de la barra de progreso se configure para incluir pitidos. (<A HREF="http://github.com/nvaccess/nvda/issues/6759">#6759</A>)
-<LI>En Microsoft Excel 2007 y 2003, las celdas se anuncian de nuevo al navegar a través de una hoja de cálculo. (<A HREF="http://github.com/nvaccess/nvda/issues/8243">#8243</A>)
-<LI>En la actualización Windows 10 Creators y posterior, se asegura de que el modo exploración se active automáticamente al leer correos electrónicos en Windows 10 Mail. (<A HREF="http://github.com/nvaccess/nvda/issues/7289">#7289</A>)
+<LI>En Microsoft Excel 2003 y 2007, las celdas se anuncian de nuevo al navegar a través de una hoja de cálculo. (<A HREF="http://github.com/nvaccess/nvda/issues/8243">#8243</A>)
+<LI>En la actualización Windows 10 Creators y posterior, el modo exploración se activa de nuevo automáticamente al leer correos electrónicos en Windows 10 Mail. (<A HREF="http://github.com/nvaccess/nvda/issues/7289">#7289</A>)
+<LI>En la mayoría de pantallas braille con un teclado braille, el punto 7 ahora borra la última celda o carácter braille introducido, y el punto 8 pulsa la tecla intro. (<A HREF="http://github.com/nvaccess/nvda/issues/6054">#6054</A>)
+<LI>En el texto editable, al mover el cursor (ej.: con las teclas del cursor o retroceso), la respuesta hablada de NVDA ahora es más precisa en muchos casos, especialmente en Chrome y aplicaciones de terminal. (<A HREF="http://github.com/nvaccess/nvda/issues/6424">#6424</A>)
 </UL>
 
 <H3>Cambios para Desarrolladores</H3>
