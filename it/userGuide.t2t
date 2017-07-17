@@ -42,7 +42,8 @@ NVDA viene distribuito con [eSpeak NG https://github.com/espeak-ng/espeak-ng], u
 Per informazioni sul funzionamento di altre Sintesi Vocali con NVDA si veda la sezione [Sintesi Vocali Supportate #SupportedSpeechSynths].
 
 ++ Supporto Braille ++
-NVDA è in grado di gestire alcuni Display Braille, permettendo agli utenti che ne possiedono uno di usufruire anche di questa tecnologia.
+NVDA è in grado di gestire moltissimi Display Braille, permettendo agli utenti che ne possiedono uno di usufruire anche di questa tecnologia.
+è anche possibile immettere il testo direttamente dalla riga braille purché munita di tastiera, sfruttando la modalità classica o quella a braille contratto, diffuso soprattutto in Stati Uniti e Inghilterra.
 Per il funzionamento di barre Braille con NVDA fare riferimento alla sezione [Display Braille supportati #SupportedBrailleDisplays].
 
 NVDA inoltre supporta moltissimi tipi di tabelle braille, permettendo quindi un utilizzo del Braille nella lingua scelta dall'utente. Molte lingue sono fornite di tabelle grado 1 e grado 2, Braille contratto o Computer Braille.
@@ -134,9 +135,13 @@ Premere a questo punto il pulsante OK per chiudere questa finestra.
 ++ Avviare NVDA ++
 Se si è installato NVDA tramite l'installer, per avviarlo basta premere semplicemente control+alt+n, o scegliere la voce NVDA dal menu NVDA sotto programmi del menu avvio. 
 In alternativa è possibile digitare NVDA dalla finestra di dialogo  esegui e premere invio.
- Inoltre risulta possibile servirsi di alcuni [parametri a riga di comando #CommandLineOptions] che permettono di riavviare NVDA (-r), uscire (-q), disattivare i componenti aggiuntivi (--disable-addons) etc.
- 
-Per avviare la versione portable, spostarsi nella cartella nella quale si è scompattato NVDA e premere invio o far doppio click su NVDA.exe.
+Inoltre risulta possibile servirsi di alcuni [parametri a riga di comando #CommandLineOptions] che permettono di riavviare NVDA (-r), uscire (-q), disattivare i componenti aggiuntivi (--disable-addons) etc.
+
+Nelle versioni installate, NVDA salva i file di configurazione nella cartella roaming application data del profilo utente (ad esempio "C:\Users\<user>\AppData\Roaming").
+è possibile modificare questo parametro in modo tale che NVDA carichi la configurazione dalla cartella local application data.
+Vedere la sezione inerente [parametri di sistema #SystemWideParameters] per maggiori dettagli.
+
+ Per avviare la versione portable, spostarsi nella cartella nella quale si è scompattato NVDA e premere invio o far doppio click su NVDA.exe.
  
 Appena NVDA si avvia, si udiranno una serie di suoni ascendenti (segno che NVDA si sta caricando). Si dovrebbe poi sentire il messaggio“NVDA attivato. 
 A seconda della velocità del proprio computer o che si stia lanciando NVDA da una chiavetta USB o da qualsiasi altro supporto lento, NVDA potrebbe richiedere più tempo per avviarsi. 
@@ -502,6 +507,7 @@ I seguenti tasti premuti da soli portano al campo successivo, tenendo premuto Sh
 - o: oggetto incorporato
 - numeri da 1 a 6: intestazioni da 1 a 6
 - a: annotazioni (commenti, revisioni degli autori, etc.)
+- w: errori di ortografia
 -
 Per spostarsi all'inizio e alla fine degli elementi contenuti in elenchi e tabelle,:
 || Nome | Tasto | Descrizione |
@@ -573,6 +579,78 @@ Si prega di consultare la documentazione di MathPlayer per ulteriori informazion
 
 Quando si desidera tornare al documento, è sufficiente premere il tasto Esc.
 
++ Braille +
+Se si possiede un Display Braille, NVDA sarà in grado di mostrare le informazioni sulla riga braille.
+Nel caso inoltre la barra braille sia dotata di tastiera perkins, è anche possibile servirsi della stessa per immettere il testo, sia in modalità standard che contratta (utile in Stati Uniti e Regno Unito).
+
+Si prega di fare riferimento alla sezione [display braille supportati #SupportedBrailleDisplays] per ulteriori informazioni.
+è possibile modificare i parametri braille andando nella [finestra di dialogo impostazioni Braille #BrailleSettings].
+
+++ Tipo di controlli, stato e abbreviazioni per i punti di riferimento ++
+Per far stare più informazioni possibili su di un display braille, sono state definite le seguenti abbreviazioni per indicare il tipo di controllo e di stato, come pure i punti di riferimento.
+|| Abbreviazionene | tipo di controllo |
+| btn | bottone |
+| cbo | casella combinata |
+| chk | casella di controllo |
+| dlg | finestra di dialogo |
+| edt | campo editazione |
+| gra | grafico |
+| cN | numero colonna n di una tabella, ad esempio  c1, c2. |
+| rN | numero riga n di una tabella, ad esempio  r1, r2. |
+| hN | intestazione di livello n, ad esempio h1, h2. |
+| lnk | link |
+| vlnk | link visitato |
+| lst | elenco |
+| prf | punto di riferimento |
+| mnu | menu |
+| mnubar | barra dei menu |
+| rbtn | pulsante radio |
+| tb | tabella |
+| tv | visualizzazione ad albero |
+| lv N | un elemento in visualizzazione ad albero con livello di gerarchia N|
+| ``-----`` | separatore |
+
+Sono altresì definiti i seguenti indicatori di stato:
+|| Abbreviazione | indicatore di stato |
+| ... | visualizzato quando un oggetto supporta l'autocompletamento |
+| ( ) | visualizzato quando un oggetto (ad esempio una casella di controllo) non è selezionato |
+| (x) | visualizzato quando un oggetto (ad esempio una casella di controllo) è selezionato |
+| (-) | visualizzato quando un oggetto (come una casella di controllo) risulta parzialmente attivato |
+| - | visualizzato quando un oggetto (ad esempio un elemento di una visualizzazione ad albero) è riducibile |
+| + | visualizzato quando un oggetto (ad esempio un elemento di una visualizzazione ad albero) è espandibile |
+| clk | visualizzato quando un oggetto è cliccabile |
+| ro | visualizzato quando un oggetto (ad esempio un campo editazione) è di sola lettura |
+| sel | visualizzato quando un oggetto è selezionato |
+| submnu | visualizzato quando un oggetto contiene un popup (in genere un sottomenu) |
+
+Infine, sono state definite le seguenti abbreviazioni per i punti di riferimento:
+|| Abbreviazione | Punto di riferimento |
+| bnnr | banner |
+| cinf | Informazioni contenuto |
+| cmpl | complementare |
+| form | form |
+| main | principale |
+| navi | navigazione |
+| srch | ricerca |
+| rgn | regione |
+
+++ Immissione Braille ++
++NVDA supports entry of both uncontracted and contracted braille via a braille keyboard.
++You can select the translation table used to translate braille into text using the [Input table #BrailleInputTable] setting in the Braille Settings dialog.
++
++When uncontracted braille is being used, text is inserted as soon as it is entered.
++When using contracted braille, text is inserted when you press space or enter at the end of a word.
++Note that translation can only reflect the braille word you are typing and cannot consider existing text.
++For example, if you are using a braille code that begins numbers with a number sign and you press backspace to move to the end of a number, you will need to type the number sign again to enter additional numbers.
++
++%kc:beginInclude
++Pressing dot 7 erases the last entered braille cell or character.
++Dot 8 translates any braille input and presses the enter key.
++Pressing dot 7 + dot 8 translates any braille input, but without adding a space or pressing enter.
++%kc:endInclude
++
+
+
 + Funzioni speciali per le applicazioni +
 NVDA fornisce alcuni comandi o funzioni per certe applicazioni in modo da facilitare gli utenti nello svolgimento di operazioni che, altrimenti, risulterebbero molto complesse e poco accessibili.
 
@@ -602,7 +680,7 @@ Per ulteriori informazioni sulla modalità navigazione e sulla navigazione veloc
 %kc:beginInclude
 Quando ci si trova in modalità navigazione in Microsoft Word, si può accedere all'elenco elementi tramite la combinazione di tasti NVDA+f7
 %kc:endInclude
-L'elenco degli elementi può elencare titoli, link e annotazioni (che comprende commenti e il tenere traccia delle modifiche).
+L'elenco degli elementi può elencare titoli, link, annotazioni (che comprende commenti e il tener traccia delle modifiche) e gli errori, per il momento limitato agli errori di ortografia.
 
 +++ Leggere i commenti +++
 %kc:beginInclude
@@ -1160,6 +1238,13 @@ Se ad esempio un'applicazione che contiene una barra di avanzamento viene minimi
   
 Permette di attivare o disattivare  la lettura di alcuni contenuti, in particolare nelle applicazioni che fanno uso di terminali o la cronologia delle chat.
   
+==== Emette un beep alla comparsa di suggerimenti automatici====
+Attiva o disattiva l'annuncio dei suggerimenti automatici, e se attivato, verrà emesso un segnale acustico da NVDA per indicarne la presenza.
+I suggerimenti automatici sono elenchi di valori suggeriti in base a ciò che è stato scritto in determinati campi editazione o documenti.
+Ad esempio, quando si inserisce del testo nel campo di ricerca del menu avvio presente da Windows Vista in poi, Windows visualizza una serie di suggerimenti basati su ciò che è stato digitato.
+Per alcuni campi editazione come i campi di ricerca presenti in varie app di Windows10, NVDA notificherà la presenza di un elenco di suggerimenti che appare quando si digita il testo.
+L'elenco dei suggerimenti automatici si chiuderà non appena ci si sposta dal campo editazione corrente, e per alcuni campi, NVDA sarà in grado di avvertire l'utente.
+
 +++ Impostazioni composizione nell'immissione +++
 Le impostazioni sulla composizione nell'immissione si trovano nel menu preferenze.
 Questa finestra di dialogo permette di controllare la modalità con cui NVDA annuncia la composizione di caratteri asiatici, come IME o servizi di immissione testo.
@@ -2331,7 +2416,18 @@ Ecco l'elenco dei parametri a riga di comando di NVDA:
 | None | --install | Installa NVDA (avviando la copia appena installata) |
 | None | --install | Silent Installa NVDA (non avviando la copia appena installata) |
 
- 
+++ Parametri di sistema++[SystemWideParameters] 
+NVDA consente di impostare alcuni valori nel registro di sistema che andranno ad influenzare il comportamento dello screen reader.
+Tali valori sono registrati nel registro in una delle seguenti chiavi:
+- sistemi a 32-bit: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
+- Sistemi a 64-bit: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+-
+
+Di seguito vengono elencati i valori modificabili con queste chiavi di registro:
+|| Nome | Tipo | Valori ammessi | Descrizione |
+| configInLocalAppData | DWORD | 0 (predefinito) per disabilitare, 1 per abilitare | Se attivato, salva la configurazione utente di NVDA nella cartella locale dell'applicazione invece che in roaming application data |
+| serviceDebug | DWORD | 0 (predefinito) per disabilitare, 1 per abilitare | Se attivato, disattiva la modalità protetta di Windows Secure Desktop, permettendo l'utilizzo della console python e la visualizzazione dei log. A causa di alcune importanti implicazioni per la sicurezza, l'uso di questa opzione è fortemente sconsigliata |
+
 + Ulteriori Informazioni +
 Se si vogliono trovare maggiori informazioni o richiedere assistenza riguardo NVDA, si prega di visitare o il sito internazionale in lingua inglese su NVDA_URL, oppure quello relativo alla comunità italiana all'indirizzo www.nvda.it.
 In entrambe i siti web sarà possibile reperire documentazione aggiuntiva, supporto tecnico e risorse varie come forum o mailing list. In particolare, per quanto concerne il sito italiano, esiste una lista di discussione alla quale chiunque può iscriversi mandando un messaggio a: nvda-request@spazioausili.net e nell'oggetto del messaggio scrivere la parola "subscribe" senza le virgolette. Rispondere poi al messaggio di conferma.
