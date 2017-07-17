@@ -8,9 +8,11 @@ Ultimo Aggiornamento del manuale originale: 10 febbraio2017, traduzione a cura d
 = Indice =[toc]
 %%toc
 + Introduzione +
+Benvenuti in NVDA!
+
 NVDA (NonVisual desktop access) è uno screen reader completamente libero e gratuito per i sistemi operativi Windows.
 Il prodotto permette ad un non vedente di interagire con il computer, ricevendo le informazioni attraverso una sintesi vocale o un display braille e permettendo quindi l'accesso al sistema operativo ed a numerose applicazioni di terze parti senza costi aggiuntivi, allo stesso modo delle persone vedenti. 
-Lo screen reader è sviluppato da [NV Access http://www.nvaccess.org/], con contributi dalle varie comunità.
+Lo screen reader è sviluppato da [NV Access https://www.nvaccess.org/], con contributi dalle varie comunità.
 
 ++Caratteristiche principali++
 NVDA permette alle persone non vedenti di accedere ed interagire con il sistema operativo Windows e con diverse applicazioni di terze parti.
@@ -635,21 +637,19 @@ Infine, sono state definite le seguenti abbreviazioni per i punti di riferimento
 | rgn | regione |
 
 ++ Immissione Braille ++
-+NVDA supports entry of both uncontracted and contracted braille via a braille keyboard.
-+You can select the translation table used to translate braille into text using the [Input table #BrailleInputTable] setting in the Braille Settings dialog.
-+
-+When uncontracted braille is being used, text is inserted as soon as it is entered.
-+When using contracted braille, text is inserted when you press space or enter at the end of a word.
-+Note that translation can only reflect the braille word you are typing and cannot consider existing text.
-+For example, if you are using a braille code that begins numbers with a number sign and you press backspace to move to the end of a number, you will need to type the number sign again to enter additional numbers.
-+
-+%kc:beginInclude
-+Pressing dot 7 erases the last entered braille cell or character.
-+Dot 8 translates any braille input and presses the enter key.
-+Pressing dot 7 + dot 8 translates any braille input, but without adding a space or pressing enter.
-+%kc:endInclude
-+
+NVDA supporta l'immissione di caratteri tramite la tastiera stile perkins presente sui Display Braille.
+è possibile selezionare la tabella di traduzione per inserire il testo tramite la casella combinata [immissione braille #BrailleInputTable] nella finestra impostazioni braille.
 
+Quando viene utilizzato il braille non contratto (ossia quello classico presente in Italia), il testo viene inserito nel momento in cui si digitano i caratteri.
+Quando invece si usa il braille contratto, il testo viene inserito alla pressione della barra spaziatrice oppure premendo invio alla fine di una parola.
+Si noti che il processo di traduzione funziona soltanto sulla parola digitata, non può quindi prendere in considerazione altro testo eventualmente esistente.
+Per esempio, se si utilizza un codice braille che prevede il segnanumero e poi un numero, nel caso si prema backspace sarà necessario ridigitare il segnanumero per inserire altre cifre.
+
+%kc:beginInclude
+Punto 7 elimina l'ultimo carattere o segno braille.
+Punto 8 elabora il braille inserito e aggiunge un invio.
+Tasto 7 + tasto 8 elabora il braille inserito, senza l'aggiunta di un invio o di uno spazio..
+%kc:endInclude
 
 + Funzioni speciali per le applicazioni +
 NVDA fornisce alcuni comandi o funzioni per certe applicazioni in modo da facilitare gli utenti nello svolgimento di operazioni che, altrimenti, risulterebbero molto complesse e poco accessibili.
@@ -985,7 +985,7 @@ Se si vogliono modificare i parametri della voce senza dover aprire la finestra 
 | Diminuire il parametro corrente del sintetizzatore | NVDA+Control+Freccia giù | NVDA+Shift+Control+Freccia giù | Diminuisce il valore del parametro sul quale si è posizionati. Ad esempio si diminuisce la velocità, poi ci si sposta all'impostazione successiva, si diminuisce il volume etc |
 %kc:endInclude
 
-+++ Impostazioni Braille +++
++++ Impostazioni Braille [BrailleSettings]+++
 La finestra di dialogo inerente le impostazioni Braille si raggiunge andando al menu preferenze e selezionando l'opzione impostazioni Braille.
 
 ==== Display Braille ====
@@ -1015,10 +1015,9 @@ In questa casella combinata, vengono elencate tabelle braille per svariate lingu
 La tabella scelta verrà utilizzata per tradurre il testo in braille da presentare poi sulla barra.
 è possibile spostarsi da una tabella braille all'altra utilizzando le frecce.
 
-==== Tabella scrittura ====
+==== Tabella scrittura ====[BrailleInputTable]
 Similmente all'opzione vista in precedenza, l'impostazione successiva è chiamata Tabella braille scrittura.
 La tabella selezionata verrà utilizzata per tradurre i caratteri braille inseriti tramite tastiera perkins in testo.
-NVDA per il momento supporta l'immissione di tipo computer braille, perciò verrà usato soltanto il braille a otto punti.
 Ci si può spostare da una tabella all'altra utilizzando le frecce.
 
 Si noti che questa opzione è utile solo se il display braille possiede una tastiera in stile Perkins e se il driver supporta tale caratteristica.
@@ -1682,7 +1681,7 @@ Per usare queste voci, è necessaria l'installazione di due componenti:
 In Windows10 sono presenti nuove voci conosciute come "OneCore", oppure come "mobile".
 Tali voci sono disponibili in diverse lingue e risultano più reattive rispetto alle classiche Sapi5.
 
-Per installare voci in lingue aggiuntive, si veda questo articolo Microsoft: https://support.office.com/en-us/article/How-to-download-Text-to-Speech-languages-for-Windows-4c83a8d8-7486-42f7-8e46-2b0fdf753130
+Per installare voci in lingue aggiuntive, si veda questo articolo Microsoft: https://support.microsoft.com/en-us/help/22797/windows-10-narrator-tts-voices
 
 Si noti che le velocità più elevate che sono presenti in Narrator non sono attualmente disponibili in NVDA.
 Inoltre, la velocità che viene selezionata nelle impostazioni di Windows influenza anche quella di NVDA.
