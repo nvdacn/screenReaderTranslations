@@ -136,6 +136,10 @@ Nếu bạn đã cài NVDA thì bạn có thể khởi động nó bằng cách 
 Thêm vào đó bạn có thể gõ nvda vào cửa sổ Run và nhấn enter.
 Bạn cũng có thể đưa thêm vào một số [tùy chọn của dòng lệnh #CommandLineOptions] khi chạy NVDA chẳng hạn như khởi động lại NVDA (-r), thoát (-q), vô hiệu hóa add-ons (--disable-addons)
 
+Đối với bản cài đặt, mặc định NVDA lưu các cấu hình người dùng trong thư mục roaming application data của người dùng hiện tại (ví dụ: "C:\Users\<user>\AppData\Roaming").
+Hiện đã có thể thay đổi để NVDA tải và sử dụng cấu hình từ thư mục local application data.
+Hãy tham khảo thêm phần [các tham số hệ thống #SystemWideParameters].
+
 Nếu khởi động bản NVDA chạy trực tiếp thì bạn tìm đến thư mục của bản chạy, sau đó tìm tập tin nvda.exe và kích hoạt nó.
 
 Khi NVDA khởi động bạn sẽ nghe thấy một tiếng nhạc thông báo là NVDA đang khởi động.
@@ -502,6 +506,7 @@ Dưới đây là các phím cho phép chuyển nhanh đến các đối tượn
 - o: embedded object (đối tượng nhúng)
 - 1 to 6: headings at levels 1 to 6 respectively (tương ứng từ tiêu đề cấp 1 đến 6)
 - a: annotation (chú thích, phần chỉnh sửa, vvv.)
+- w: lỗi chính tả
 -
 Còn đây là các phím để chuyển về đầu hoặc cuối các đối tượng chứa như danh sách (list) hay bảng (table):
 || Chức năng | Phím tắt | Mô tả |
@@ -602,7 +607,7 @@ Xem thêm thông tin về chế độ duyệt và duyệt nhanh trong phần [Ch
 %kc:beginInclude
 Trong khi dùng chế độ duyệt trong Word, bạn có thể duyệt các thành phần bằng cách nhấn NVDA+f7.
 %kc:endInclude
-Các thành phần là các tiêu đề, các liên kết  hay các chú thích ( bao gồm các phần bình luận và các thay đổi).
+Danh sách các thành phần có thể liệt kê các tiêu đề, liên kết, chú thích ( bao gồm phần bình luận, thay đổi) và các lỗi (hiện chỉ giới hạn ở các lỗi chính tả).
 
 +++ Thông Báo Chú Thích +++
 %kc:beginInclude
@@ -1159,6 +1164,13 @@ Nếu bạn thu nhỏ hay thoát khỏi cửa sổ có thanh tiến trình, NVDA
 Phím bật/tắt: NVDA+5
 
 Bật tắt chế độ thông báo màn hình khi nội dung thay đổi động như các màn hình trò chuyện (chat) hay màn hình console như dòng lệnh của Windows (windows command line).
+
+==== Phát âm thanh khi xuất hiện gợi ý tự động ====
+Bật/tắt thông báo gợi ý tự động. Nếu bật, NVDA sẽ phát âm thanh báo. 
+Các gợi ý tự động là một danh sách gồm những mục giống hoặc tương tự nội dung được gõ vào một ô hoặc tài liệu nào đó.
+Ví dụ: khi bạn gõ vào ô tìm kiếm trên start menu trên Windows Vista trở đi, nó sẽ tự động liệt kê những gợi ý tương tự cho bạn.
+Có một số ô nhập liệu như ô tìm kiếm trong những ứng dụng Windows 10, NVDA có thể thông báo có danh sách gợi ý xuất hiện khi bạn gõ nội dung.
+Danh sách gợi ý tự động sẽ tắt khi bạn di chuyển focus khỏi ô nhập liệu. Trong một số trường hợp, NVDA cũng sẽ thông báo tình trạng này.
 
 +++ Thiết Lập Phương Thức Nhập +++
 Hộp thoại Thiết lập phương thức nhập có thể tìm thấy trong mục Tùy chọn thực đơn NVDA.
@@ -2330,6 +2342,18 @@ Sau đây là các tùy chọn dòng lệnh cho NVDA:
 | Không có | --no-sr-flag  | Không thay đổi flag trình đọc màn hình hệ thống toàn cục |
 | Không có | --install | Cài NVDA (cài một bản mới của NVDA) |
 | Không có | --install-silent | Cài đặt NVDA ở chế độ im lặng |
+
+++ Các Tham Số Hệ Thống ++[SystemWideParameters]
+NVDA cho phép thiết lập một số giá trị trong registry hệ thống để thay thế cách hoạt động ở mức hệ thống của NVDA.
+Những khóa chứa các giá trị này trong registry bao gồm:
+- Hệ thống 32-bit: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
+- Hệ thống 64-bit: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+-
+
+Sau đây là những giá trị có thể thiết lập cho khóa nói trên:
+|| Tên | Kiểu | Giá trị có thể dùng | Mô tả |
+| configInLocalAppData | DWORD | 0 (mặc định) để tắt, 1 để bật | Nếu bật, sẽ lưu cấu hình người dùng trong thư mục local application data, thay vì roaming application data |
+| serviceDebug | DWORD | 0 (mặc định) để tắt, 1 để bật | Nếu bật, sẽ tắt chế độ bảo vệ của màn hình bảo vệ Windows, cho phép sử dụng Python console và trình xem bản ghi. Do một số lý do an toàn cho máy tính, chức năng này không được khuyến khích sử dụng. |
 
 + Thông Tin Thêm +
 Nếu bạn cần thêm thông tin hoặc trợ giúp liên quan đến NVDA, vui lòng xem trang web của NVDA tại NVDA_URL.
