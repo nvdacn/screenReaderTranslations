@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NVDA Community Addons website\n"
 "POT-Creation-Date: 2017-06-03 04:36+1000\n"
-"PO-Revision-Date: 2017-07-04 00:31+0400\n"
+"PO-Revision-Date: 2017-07-30 14:41+0400\n"
 "Last-Translator: Ruslan Kolodyazhni <eye0@rambler.ru>\n"
 "Language-Team: Translators <LL@li.org>\n"
 "Language: ru\n"
@@ -34,6 +34,9 @@ msgid ""
 "Welcome to Tone Master! I've created this little NVDA add-on just for fun, "
 "but also for you to have fun while using it."
 msgstr ""
+"Добро пожаловать в Tone Master! Я создал это маленькое дополнение NVDA "
+"просто для удовольствия, надеюсь, что вы также получите удовольствие при его "
+"использовании."
 
 #. type: Plain text
 msgid ""
@@ -45,6 +48,13 @@ msgid ""
 "result sounds like those ringtones on old mobile phones, it may still be "
 "funny."
 msgstr ""
+"Я всегда хотел создавать музыкальные мелодии с помощью NVDA, а не просто "
+"слушать пипикание индикаторов выполнения и ошибок NVDA. Однако, это не так "
+"уж легко сделать, поэтому сначала я хотел это упростить. Вот почему я "
+"написал Tone Master. Только представьте, насколько это может быть "
+"интересным, услышать в исполнении NVDA пьесы Моццарта, или Бетховена, или "
+"может быть величайшие хиты Роллинг Стоунз. Хотя конечный результат звучит "
+"как рингтоны старого мобильного телефона, это может быть смешно."
 
 #. type: Plain text
 msgid ""
@@ -52,11 +62,15 @@ msgid ""
 "tone data files. These files can be edited with your favorite text editor "
 "and then saved for playback with NVDA. Read on for instructions!"
 msgstr ""
+"Tone Master упрощает процесс воспроизведения последовательностей сигналов "
+"путём реализации файлов данных сигналов. Эти файлы можно редактировать вашим "
+"текстовым редактором и затем сохранить их для воспроизведения с помощью "
+"NVDA. Читайте дальше для получения инструкций!"
 
 #. type: Title ##
 #, no-wrap
 msgid "Tone data files"
-msgstr ""
+msgstr "Файлы данных сигналов"
 
 #. type: Plain text
 msgid ""
@@ -67,6 +81,12 @@ msgid ""
 "able to play it successfully, you have to follow simple rules described "
 "below."
 msgstr ""
+"Прежде чем воспроизвести вашу первую мелодию с помощью Tone Master, вы "
+"сначала должны создать и загрузить файл данных сигналов. Файлы данных "
+"сигналов представляют собой простые текстовые файлы с расширением .tdf. Tone "
+"Master использует эти файлы для обработки и воспроизведения "
+"последовательностей сигналов. Для создания успешно воспроизводящегося файла "
+"данных сигналов для Tone Master, следуйте простым правилам, описанным ниже."
 
 #. type: Bullet: '1. '
 msgid ""
@@ -76,34 +96,43 @@ msgid ""
 "three parameters are necessary to specify, otherwise Tone Master will not be "
 "able to play your tone data."
 msgstr ""
+"Каждая строка файла .tdf *должна* содержать три параметра, разделяемые "
+"двоеточием (:). Первый параметр - это высота сигнала, второй параметр - это "
+"длительность сигнала, и третий  - это длительность между каждым сигналом. "
+"Необходимо указать все три параметра, иначе Tone Master не сможет "
+"проигрывать ваши данные сигналов."
 
 #. type: Bullet: '2. '
 msgid ""
 "Pitch and duration parameters must be specified as signed integers, and the "
 "silence must be specified as floating point real value."
 msgstr ""
+"Параметры высоты и длительности должны быть указаны целыми числами, а "
+"реальное значение параметра тишины должно указываться десятичной дробью."
 
 #. type: Bullet: '3. '
 msgid ""
 "A hash sign (#) at the beginning of any line in .tdf file will be treeted as "
 "a comment and will be ignored by Tone Master."
 msgstr ""
+"Знак решётка (#) в начале любой строки файла .tdf будет трактоваться как "
+"комментарий, и Tone Master его проигнорирует."
 
 #. type: Plain text
 msgid "Example: Play a sequence of 3 tones"
-msgstr ""
+msgstr "Пример: Проиграть последовательность из 3 сигналов"
 
 #. type: Plain text
 msgid "1500:100:0.5"
-msgstr ""
+msgstr "1500:100:0.5"
 
 #. type: Plain text
 msgid "1000:100:0.09"
-msgstr ""
+msgstr "1000:100:0.09"
 
 #. type: Plain text
 msgid "500:100:0.7"
-msgstr ""
+msgstr "500:100:0.7"
 
 #. type: Plain text
 msgid ""
@@ -112,6 +141,10 @@ msgid ""
 "and the silence is 0.09. The last tone in a sequence has pitch 500, duration "
 "100, and the silence is 0.7."
 msgstr ""
+"В этом примере, первый сигнал последовательности имеет высоту 1500, "
+"длительность 100 и тишину  0.5. У второго сигнала - высота 1000, "
+"длительность 100, и тишина 0.09. Последний сигнал последовательности имеет "
+"высоту 500, длительность 100, и тишину 0.7."
 
 #. type: Plain text
 msgid ""
@@ -120,6 +153,10 @@ msgid ""
 "the next one, and you will get unexpectable results. That's why I made it to "
 "be necessary."
 msgstr ""
+"Обратите внимание на то, что параметр тишины необходимо указывать всегда, "
+"даже когда он не нужен, потому что если не указывать, NVDA будет заменять "
+"предыдущий сигнал одним из следующих, и вы будете получать неожидаемые "
+"результаты. Вот почему я сделал это необходимым."
 
 #. type: Plain text
 msgid ""
@@ -127,49 +164,65 @@ msgid ""
 "editing the example file included with this add-on. It's located in the "
 "\"tones\" subfolder, where all your .tdf files must be located as well."
 msgstr ""
+"Для более подробного ознакомления с синтаксисом файлов данных сигналов, "
+"пожалуйста, посмотрите и попробуйте изменить, например, файл этого "
+"дополнения. Он расположен в папке \"tones\", где так же должны быть "
+"расположены все ваши файлы .tdf."
 
 #. type: Title ##
 #, no-wrap
 msgid "Shortcut keys"
-msgstr ""
+msgstr "Горячие клавиши"
 
 #. type: Bullet: '* '
 msgid "Alt+NVDA+T: Plays currently loaded tone data if everything is ok."
 msgstr ""
+"Alt+NVDA+T: Воспроизводит текущие загруженные данные сигналов, если всё в "
+"порядке."
 
 #. type: Bullet: '* '
 msgid ""
 "Alt+Shift+NVDA+T: Stops playback for currently loaded tone data if any tone "
 "data is playing."
 msgstr ""
+"Alt+Shift+NVDA+T: Останавливает воспроизведение текущих данных сигналов, "
+"если воспроизводятся любые данные сигналов."
 
 #. type: Bullet: '* '
 msgid ""
 "Alt+NVDA+N: Creates and opens a new blank tone data file in Notepad for "
 "editing."
 msgstr ""
+"Alt+NVDA+N: Создаёт и открывает для редактирования в блокноте новый пустой "
+"файл данных сигналов."
 
 #. type: Bullet: '* '
 msgid ""
 "Alt+NVDA+L: Opens a dialog that lets you choose one of your available tone "
 "data files to be loaded for playback."
 msgstr ""
+"Alt+NVDA+L: Открывает диалог выбора, позволяющий загрузить один из доступных "
+"файлов данных сигналов для воспроизведения."
 
 #. type: Bullet: '* '
 msgid ""
 "Alt+NVDA+E: Opens currently loaded tone data file in Notepad for editing."
 msgstr ""
+"Alt+NVDA+E: Открывает текущий загруженный файл данных сигналов в блокноте "
+"для редактирования."
 
 #. type: Bullet: '* '
 msgid ""
 "Alt+NVDA+O: Opens a folder with tone data files where you should also save "
 "them in order to be located by Tone Master."
 msgstr ""
+"Alt+NVDA+O: Открывает папку с файлами данных сигналов, где вы должны их "
+"сохранять для того, чтобы они были доступны в расположении Tone Master."
 
 #. type: Title ##
 #, no-wrap
 msgid "Other notes"
-msgstr ""
+msgstr "Другие примечания"
 
 #. type: Plain text
 msgid ""
@@ -177,6 +230,9 @@ msgid ""
 "where these files are located by going into the NVDA menu, Tools SubMenu, "
 "Tone Master SubMenu."
 msgstr ""
+"Вы также можете создавать, редактировать и загружать файлы данных сигналов, "
+"или открывать папку сигналов, где эти файлы находятся, зайдя в меню NVDA, "
+"подменю Сервис, подменю Tone Master."
 
 #. type: Plain text
 msgid ""
@@ -187,18 +243,30 @@ msgid ""
 "for you, and it will also be opened in Notepad for editing. Press Escape at "
 "the file name prompt to cancel new file creation."
 msgstr ""
+"Когда появится диалог для создания нового файла данных сигналов, введите имя "
+"без расширения .tdf. Tone Master автоматически добавит расширение. Если имя "
+"не было указано, Tone Master будет использовать имя по умолчанию \"untitled."
+"tdf\". Tone Master автоматически создаст и загрузит новый файл, а также "
+"откроет его в блокноте для редактирования. Нажмите клавишу Escape на запрос "
+"имени файла для отмены создания нового файла."
 
 #. type: Plain text
 msgid ""
 "Note: Tone Master uses Notepad for editing tone data files, since it comes "
 "with Windows by default and therefore any computer should have it available."
 msgstr ""
+"Примечание: Для редактирования файлов данных сигналов Tone Master использует "
+"блокнот, поскольку он поставляется с Windows по умолчанию и поэтому они "
+"будут доступны на любом компьютере."
 
 #. type: Plain text
 msgid ""
 "When the dialog for loading tone data file is open, use the arrow keys to "
 "select a file to load and then press Enter. Press Escape to cancel loading."
 msgstr ""
+"Когда открыт диалог для загрузки файла данных сигналов, используйте клавиши "
+"со стрелками, чтобы выбрать файл для загрузки, затем нажмите клавишу Enter. "
+"Нажмите клавишу Escape, чтобы отменить загрузку."
 
 #. type: Plain text
 msgid ""
@@ -208,6 +276,12 @@ msgid ""
 "possible. Then you can edit the file, save your progress, and after each "
 "save you can use play command to hear your last result."
 msgstr ""
+"Когда вы откроете папку с файлами .tdf, вы можете загружать их в свой "
+"текстовый редактор для просмотра и редактирования. Однако, я рекомендую, по "
+"возможности,  изначально загружать их в Tone Master, чтобы прослушивать "
+"результаты налету. Затем вы можете редактировать файл, сохранять вашу "
+"работу, и после каждого сохранения вы сможете использовать команду "
+"воспроизведения для прослушивания последнего результата."
 
 #. type: Title ##
 #, no-wrap
@@ -220,6 +294,9 @@ msgid ""
 "selecting another one and trying to play it results in tone data not being "
 "played."
 msgstr ""
+"Исправлено: Addressed major issue where selecting an empty tone data, then "
+"selecting another one and trying to play it results in tone data not being "
+"played."
 
 #. type: Title ##
 #, no-wrap
@@ -231,30 +308,41 @@ msgid ""
 "Added: An option to create new tone data file and open it in Notepad for "
 "editing."
 msgstr ""
+"Добавлено: Возможность создать новый файл данных сигналов и открыть его в "
+"блокноте для редактирования."
 
 #. type: Bullet: '* '
 msgid "Added: An option to edit currently loaded tone data file in Notepad."
 msgstr ""
+"Добавлено: Возможность редактирования текущего загруженного файла данных "
+"сигналов блокнотом."
 
 #. type: Bullet: '* '
 msgid "Improved: Error messages are now more user-friendly."
-msgstr ""
+msgstr "Улучшено: Сообщения об ошибках теперь более удобны для пользователей."
 
 #. type: Bullet: '* '
 msgid ""
 "Improved: Certain addon features such as opening tones folder or editing "
 "tone data files in Notepad are now disallowed on secure screens."
 msgstr ""
+"Улучшено: Некоторые функции дополнения, такие как открытие папок сигналов "
+"или редактирование файлов данных сигналов блокнотом теперь запрещены на "
+"защищенных экранах."
 
 #. type: Bullet: '* '
 msgid ""
 "Improved: User will be notified by NVDA if tone data playback is stopped."
 msgstr ""
+"Улучшено: Пользователь будет уведомлён средствами NVDA об остановке "
+"воспроизведения файла данных."
 
 #. type: Bullet: '* '
 msgid ""
 "Fixed: Disallowed playback of tone data while the one is already playing."
 msgstr ""
+"Исправлено: Запрещено воспроизведение другого файла данных сигналов, когда "
+"один уже воспроизводится."
 
 #. type: Title ##
 #, no-wrap
