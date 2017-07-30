@@ -124,6 +124,10 @@ addresses = {
         'lang':'Latvian',
         'email': ['Verners Šteinbergs <verners_lnb@inbox.lv>'],
     },
+    'mk': {
+        'lang':'Macedonian',
+        'email': ['zvonimir stanecic <zvonimirek222@yandex.com>'],
+    },
     'my': {
         'lang':'Burmese',
         'email': ['Benedict La hkun <lkbenedict@gmail.com>'],
