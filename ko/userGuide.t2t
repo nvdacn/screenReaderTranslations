@@ -8,9 +8,11 @@ NVDA NVDA_VERSION 사용설명서
 %%toc
 
 + 머리말 +
+NVDA에 오신것을 환영합니다!
+
 NVDA(NonVisual Desktop Access)는 마이크로소프트 윈도우용 무료 오픈소스 스크린 리더입니다.
 NVDA는 음성과 점자를 통해 정보를 제공하기 때문에 시각장애인들이 정안인들보다 더 많은 비용 지출 없이도 윈도우가 동작하는 컴퓨터를 사용할 수 있게 합니다.
-NVDA는 [NV Access http://www.nvaccess.org/]와 커뮤니티의 후원을 받아 개발되고 있습니다.
+NVDA는 [NV Access https://www.nvaccess.org/]와 커뮤니티의 후원을 받아 개발되고 있습니다.
 
 ++ 일반적인 특징 ++
 시각장애인들은 NVDA를 통해 윈도우 운영체제 및 그 밖의 다양한 응용 프로그램들을 사용할 수 있습니다.
@@ -136,6 +138,10 @@ NVDA를 인스톨러로 설치한 경우 control+alt+n을 누르거나 시작 �
 그밖에 실행 대화상자(윈도우키+R)에서 nvda를 입력하고 엔터키를 눌러도 됩니다.
 또한 [실행 옵션 #CommandLineOptions]을 사용하여 NVDA 재시작 (-r), 종료 (-q), 추가 기능 미사용 (--disable-addons) 등을 지정할 수 있습니다.
 
+설치 버전 사용시 사용자 설정은 roaming application data 폴더(예: "C:\Users\<user>\AppData\Roaming")에 저장됩니다.
+그러나 이것을 local application data로 경로를 변경할 수 있습니다.
+자세한 내용은 [시스템 환경 옵션 #SystemWideParameters]을 참조하세요.
+
 휴대용 버전에서 NVDA를 실행하려면 NVDA를 풀어 놓았던 디렉토리로 이동한 후 nvda.exe에서 엔터키를 누르거나 더블 클릭합니다.
 
 NVDA가 시작하면 곧바로 맨처음에 점차 높은 음으로 띠리링 소리가 들립니다(그리고 나서 "NVDA가 로딩 중입니다"라고 알려줍니다).
@@ -242,7 +248,7 @@ NVDA 메뉴가 열리면 방향키를 이용하여 메뉴를 탐색할 수 있�
 | 입력 도움말 모드 시작 및 종료 | NVDA+1 | NVDA+1 | 없음 | 만약 이 모드에서 어떤 키를 누른다면 NVDA는 그 키를 읽어줍니다. 만약 입력된 키가 nvda 명령어라면 누른 키에관한 설명을 알려줍니다. |
 | NVDA 종료 | NVDA+q | NVDA+q | 없음 | NVDA를 종료합니다. |
 | NVDA 기능키 무시 | NVDA+f2 | NVDA+f2 | 없음 | 다음에 입력될 키가 NVDA 단축키라 할지라도 NVDA는 이 키를 무시하고 활성화된 응용프로그램에게 넘겨줍니다. |
-| 응용 프로그램에서의 NVDA 활성화/비활성화 전환 | NVDA+shift+s | NVDA+shift+z | 없음 | 슬립모드는 현재 응용프로그램 창에서 모든 NVDA 명령어와 음성출력/점자 디스플레이 출력을 비활성화 합니다. 이 기능은 음성출력이나 화면읽기 기능을 제공하는 프로그램에서 유용합니다. 이 키를 다시 누르면 셀프보이스가 비활성화 됩니다. |
+| 응용 프로그램에서의 NVDA 활성화/비활성화 전환 | NVDA+shift+s | NVDA+shift+z | 없음 | 슬립모드는 현재 응용프로그램 창에서 모든 NVDA 명령어와 음성출력/점자 디스플레이 출력을 비활성화 합니다. 이 기능은 음성출력이나 화면읽기 기능을 제공하는 프로그램에서 유용합니다. 이 키를 다시 누르면 NVDA 명령을 다시 사용할 수 있습니다. |
 %kc:endInclude
 
 ++ 시스템 정보 알림 ++
@@ -501,7 +507,8 @@ NVDA에서는 브라우즈 모드를 사용하여 웹 페이지처럼 복잡한 
 - d: 랜드마크(landmark)
 - o: 임베디드 객체(embedded object)
 - 1 - 6: 1~6 레벨의 각각의 헤딩
-- a: 주석 (코멘트, 편집 변경 사항 등)
+- a: 주석 (annotation, 즉 코멘트, 편집 변경 사항 등)
+- w: 철자 오류 (spelling error)
 -
 목록이나 표처럼 여러 항목(하위 요소)을 지닌 요소의 처음과 끝으로 이동하려면:
 || 이름 | 키 | 설명 |
@@ -602,7 +609,7 @@ NVDA는 몇몇 프로그램에서 특정 작업을 좀 더 쉽게 수행하도�
 %kc:beginInclude
 마이크로소프트 워드 사용중 브라우즈 모드에서 NVDA+f7을 눌러 요소 목록을 호출할 수 있습니다.
 %kc:endInclude
-요소 목록 대화상자를 통해 헤딩, 링크 또는 주석(문서 주석 및 track 변경) 목록을 볼 수 있습니다.
+요소 목록 대화상자를 통해 헤딩, 링크, 주석(문서 주석 및 track 변경) 및 텍스트 오류 (현재 철자 오류 목록) 목록을 볼 수 있습니다.
 
 +++ 문서 위치 주석 알리기 +++
 %kc:beginInclude
@@ -1160,7 +1167,13 @@ NVDA가 마우스의 움직임에 따라서 텍스트를 읽도록 설정된 경
 
 터미널과 채팅 프로그램의 history 제어 등 특정 객체에서 새로운 컨텐츠 읽기 온/오프를 토글합니다.
 
-검색 결과 나타날때 사운드로 알림
+==== 검색 결과 나타날때 사운드로 알림 ====
+검색 결과가 나타날때 이것을 사운드로 알려줄지를 토글합니다.
+검색 결과, 또는 자동 권장(auto-suggestion)이란 특정 편집창 또는 문서에서 텍스트 검색시 나타나는 결과 목록을 말합니다.
+예를 들어 윈도우 비스타 이상에서 시작 메뉴의 검색 편집창에 텍스트를 입력시 윈도우는 입력된 텍스트를 기반으로 검색 결과 목록을 보여줍니다.
+특히 윈도우 10과 여러  앱 사용시 특정 편집창에서 텍스트를 입력시 NVDA는 검색 결과가 나타났다고 알려줄 수 있습니다.
+검색창을 빠져나갈때 검색 결과 목록은 사라지며 이때 여러 편집창에서 이것을 사운드로 알려줄 수 있습니다.
+
 +++ 입력 구성 알림 설정 +++
 설정 메뉴에 있는 "입력 구성 알림 설정" 대화상자에서는 텍스트 서비스 및 IME를 이용한 아시아 언어 입력을 NVDA가 어떻게 처리할 것인지 설정할 수 있습니다.
 주의: 각 입력 방식에 따라 설정값을 조정하시기 바랍니다.
@@ -1473,9 +1486,9 @@ NvDA의 일반 설정을 제외한 나머지 설정값을 프로필에 적용시
 이때 프로필 설정에 있는 프로필 엑션 적용 임시 해제 박스를 선택해 주십시오.
 
 ++ 환경설정 파일 저장 위치 ++
-NVDA 휴대용 버전은 설정값들, 외부 앱마주얼 및 드라이버를 NVDA 디렉토리 안에 있는 userConfig 디렉토리에 저장합니다.
+NVDA 휴대용 버전은 설정값들과 추가 기능들을 NVDA 디렉토리 안에 있는 userConfig 디렉토리에 저장합니다.
 
-NVDA 설치 버전은 설정값들, 외부 앱마주얼 및 드라이버를 각 사용자 폴더 안에 있는 NVDA 디렉토리에 저장합니다.
+NVDA 설치 버전은 설정값들과 추가 기능들을 각 사용자 폴더 안에 있는 NVDA 디렉토리에 저장합니다.
 즉 시스템의 각 사용자가 자신만의 NVDA 환경설정을 가질 수 있음을 의미합니다.
 NVDA 설치 버전용 설정 디렉토리를 찾으려면 윈도우즈 시작 메뉴에서 프로그램 -> NVDA -> "NVDA 사용자 환경 폴더 탐색" 항목을 선택하세요.
 
@@ -1593,6 +1606,17 @@ Microsoft Speech Platform은 보통 서버 기반의 음성 애플리케이션 �
  예를 들면, MSSpeech_TTS_en-US_ZiraPro.msi 파일은 미국식 영어 음성입니다.
  -
 -
+
+++ 윈도우 OneCore ++
+윈도우 10 사용시 OneCore(또는 Mobile)라는 음성 엔진을 사용할 수 있습니다.
+여러 언어를 지원하고 각 언어마다 다른 보이스를 제공하며 마이크로소프트 SAPI 5 엔진보다 반응 속도가 빠릅니다.
+
+각 언어별 보이스 목록과 설치 방법에 대해서는 다음 마이크로소프트 웹사이트를 참조하세요: https://support.microsoft.com/en-us/help/22797/windows-10-narrator-tts-voices
+
+현재 NVDA에서 음성 속도를 조절할때 Narrator에서 제공하는 빠른 속도는 제공되지 않습니다.
+또한 전체적인 속도 설정은 설정(Settings) 앱의 설정을 따릅니다.
+설정앱에서 변경된 값은 NVDA에도 적용됩니다.
+이 이슈들은 새 윈도우 버전을 통해서 변경되지 않는한 NVDA에서 해결할 수 없으며 우리는 추후 윈도우 업데이트에서 변경될것이라 희망합니다.
 
 ++ Audiologic Tts3 ++
 이것은 상용 이탈리아어 음성 엔진입니다.
@@ -2321,6 +2345,18 @@ nvda -q
 | 없음 | --install | NVDA 설치후 자동 실행 |
 | 없음 | --install-silent | 조용하게 NVDA 설치 (자동 실행 차단) |
 
++++ System wide parameters++[SystemWideParameters]
++NVDA allows some values to be set in the system registry which alter the system wide behavior of NVDA.
++These values are stored in the registry under one of the following keys:
++- 32-bit system: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
++- 64-bit system: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
++-
++
++The following values can be set under this registry key:
++|| Name | Type | Possible values | Description |
++| configInLocalAppData | DWORD | 0 (default) to disable, 1 to enable | If enabled, stores the NVDA user configuration in the local application data instead of the roaming application data |
++| serviceDebug | DWORD | 0 (default) to disable, 1 to enable | If enabled, disables secure mode on windows secure desktops, allowing the use of the Python console and Log viewer. Due to several major security implications, the use of this option is strongly discouraged |
++
 + 사용설명서 외 추가 정보 +
 NVDA에 관하여 더 많은 정보와 도움이 필요하다면 NVDA 웹 사이트 NVDA_URL를 방문해 주세요.
 여기에서 추가 문서와 기술 지원 정보 및 커뮤니티 리소스를 찾아 보실 수 있습니다.
