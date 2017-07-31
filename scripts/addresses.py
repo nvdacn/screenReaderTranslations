@@ -126,7 +126,7 @@ addresses = {
     },
     'mk': {
         'lang':'Macedonian',
-        'email': ['zvonimir stanecic <zvonimirek222@yandex.com>'],
+        'email': ['zvonimir stanecic <zvonimirek222@yandex.com>', 'Kiko Lazarev <kristijan.lazarev@gmail.com>'],
     },
     'my': {
         'lang':'Burmese',
