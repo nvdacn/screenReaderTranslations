@@ -637,19 +637,19 @@ NVDA가 지원하는 점자 디스플레이에 대한 정보는 [지원하는 �
 | srch | search |
 | rgn | region |
 
-++ Braille Input ++
-NVDA supports entry of both uncontracted and contracted braille via a braille keyboard.
-You can select the translation table used to translate braille into text using the [Input table #BrailleInputTable] setting in the Braille Settings dialog.
+++ 점자 입력 ++
+점자 키보드를 사용하여 정자 및 약자 점자 입력이 가능합니다.
+점자 설정 대화상자에 있는 [점자 입력 표기법 #BrailleInputTable] 설정을 통해 텍스트 입력시 사용될 점자 코드를 선택할 수 있습니다.
 
-When uncontracted braille is being used, text is inserted as soon as it is entered.
-When using contracted braille, text is inserted when you press space or enter at the end of a word.
-Note that translation can only reflect the braille word you are typing and cannot consider existing text.
-For example, if you are using a braille code that begins numbers with a number sign and you press backspace to move to the end of a number, you will need to type the number sign again to enter additional numbers.
+정자 점자로 텍스트 입력시 점형이 입력되었을때 곧바로 텍스트가 입력됩니다.
+약자 점자를 사용할때에는 단어의 끝에서 스페이스 또는 엔터를 누르면 텍스트가 입력됩니다.
+이때 현재 입력되는 점형은 현재 단어를 입력시에만(즉 앞뒤 단어에는 적용되지 않음) 적용됨을 유의하시기 바랍니다.
+예를 들어 숫자를 입력시 숫자표 점형과 숫자를 입력하고 최신 입력된 숫자를 지우고 새 숫자를 입력할때 다시 숫자표 점형과 숫자를 입력하여야 합니다.
 
 %kc:beginInclude
-Pressing dot 7 erases the last entered braille cell or character.
-Dot 8 translates any braille input and presses the enter key.
-Pressing dot 7 + dot 8 translates any braille input, but without adding a space or pressing enter.
+7점을 눌러 최신 입력된 점형 또는 글자를 지웁니다.
+8점을 눌러 엔터를 누르는 동시에 점형을 역점역(텍스트 입력)합니다.
+7점과 8점을 눌러 엔터를 누르지 않고 텍스트를 입력합니다.
 %kc:endInclude
 
 + 응용프로그램별 NVDA 기능 +
@@ -2298,6 +2298,16 @@ NVDA 점자 설정 대화상자에서 본 디스플레이가 연결된 시리얼
 | 점자 연계 커서 | A |
 %kc:endInclude
 
+++ SuperBraille ++
+타이완에서 보급되는 SuperBraille 디스플레이를 USB 또는 시리얼 포트로 연결하여 사용할 수 있습니다.
+본 디스플레이는 키보드와 스크롤 키가 없음으로 일반 컴퓨터 키보드를 통해 디스플레이를 제어해야 합니다.
+이와 더불어 타이완에서 보급되는 타 스크린 리더와의 호환성을 이유로 디스플레이를 스크롤할 수 있는 일반 키보드 명령이 할당되었습니다.
+%kc:beginInclude
+|| 이름 | 키 |
+| 점자 디스플레이 뒤로 스크롤 | numpadMinus |
+| 점자 디스플레이 앞으로 스크롤 | numpadPlus |
+%kc:endInclude
+
 ++ BRLTTY ++
 외부 프로그램인 [BRLTTY http://www.brltty.com/]을 사용하여 다른 점자 디스플레이를 사용할 수 있습니다.
 이를 사용하기 위해서는 [BRLTTY for Windows http://www.brltty.com/download.html]를 설치해야 합니다.
@@ -2305,7 +2315,6 @@ NVDA 점자 설정 대화상자에서 본 디스플레이가 연결된 시리얼
 점자 디스플레이와 연결 포트 설정시 주의하시기 바랍니다 - 특히 USB 디스플레이를 사용하고자 하실때 회사에서 보급한 드라이버를 설치하셨다면 더욱 주의하시기 바랍니다.
 
 BRLTTY 사용시 점자 키보드가 탑제된 디스플레이를 사용한다면 BRLTTY 자체에서 점자 입력을 지원함으로 NVDA의 점자 입력 설정을 무시하셔도 됩니다.
-
 
 다음은 NVDA에 할당된 BRLTTY 기능키 목록입니다.
 밑 기능키가 사용하는 점자 디스플레이에 어떻게 적용되었는지 보시려면 [BRLTTY key tables documentation http://mielke.cc/brltty/doc/KeyBindings/]을 참조하십시요.
@@ -2317,6 +2326,7 @@ BRLTTY 사용시 점자 키보드가 탑제된 디스플레이를 사용한다�
 | 점자 디스플레이를 다음 줄로 이동 | lndn (한 줄 아래로 이동) |
 | 점자 셀로 이동 | route (커서를 글자로 이동) |
 %kc:endInclude
+
 
 + 고급 사용자 기능 +
 
