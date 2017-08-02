@@ -83,7 +83,7 @@
   <LI><A HREF="#toc46">8. 점자 지원</A>
     <UL>
     <LI><A HREF="#toc47">8.1. 컨트롤, 스테이트 및 랜드마크 표시용 점자 기호 목록</A>
-    <LI><A HREF="#toc48">8.2. Braille Input</A>
+    <LI><A HREF="#toc48">8.2. 점자 입력</A>
     </UL>
   <LI><A HREF="#toc49">9. 응용프로그램별 NVDA 기능</A>
     <UL>
@@ -179,13 +179,14 @@
     <LI><A HREF="#toc121">13.13. 베이펀마이어 브레일렉스 구형 모델</A>
     <LI><A HREF="#toc122">13.14. 휴먼웨어 브레일노트</A>
     <LI><A HREF="#toc123">13.15. EcoBraille</A>
-    <LI><A HREF="#toc124">13.16. BRLTTY</A>
+    <LI><A HREF="#toc124">13.16. SuperBraille</A>
+    <LI><A HREF="#toc125">13.17. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc125">14. 고급 사용자 기능</A>
+  <LI><A HREF="#toc126">14. 고급 사용자 기능</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">14.1. 실행 명령</A>
     </UL>
-  <LI><A HREF="#toc127">15. 사용설명서 외 추가 정보</A>
+  <LI><A HREF="#toc128">15. 사용설명서 외 추가 정보</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -1659,22 +1660,22 @@ NVDA가 지원하는 점자 디스플레이에 대한 정보는 <A HREF="#Suppor
 </TABLE>
 
 <A NAME="toc48"></A>
-<H3>8.2. Braille Input</H3>
+<H3>8.2. 점자 입력</H3>
 
 <P>
-NVDA supports entry of both uncontracted and contracted braille via a braille keyboard.
-You can select the translation table used to translate braille into text using the <A HREF="#BrailleInputTable">Input table</A> setting in the Braille Settings dialog.
+점자 키보드를 사용하여 정자 및 약자 점자 입력이 가능합니다.
+점자 설정 대화상자에 있는 <A HREF="#BrailleInputTable">점자 입력 표기법</A> 설정을 통해 텍스트 입력시 사용될 점자 코드를 선택할 수 있습니다.
 </P>
 <P>
-When uncontracted braille is being used, text is inserted as soon as it is entered.
-When using contracted braille, text is inserted when you press space or enter at the end of a word.
-Note that translation can only reflect the braille word you are typing and cannot consider existing text.
-For example, if you are using a braille code that begins numbers with a number sign and you press backspace to move to the end of a number, you will need to type the number sign again to enter additional numbers.
+정자 점자로 텍스트 입력시 점형이 입력되었을때 곧바로 텍스트가 입력됩니다.
+약자 점자를 사용할때에는 단어의 끝에서 스페이스 또는 엔터를 누르면 텍스트가 입력됩니다.
+이때 현재 입력되는 점형은 현재 단어를 입력시에만(즉 앞뒤 단어에는 적용되지 않음) 적용됨을 유의하시기 바랍니다.
+예를 들어 숫자를 입력시 숫자표 점형과 숫자를 입력하고 최신 입력된 숫자를 지우고 새 숫자를 입력할때 다시 숫자표 점형과 숫자를 입력하여야 합니다.
 </P>
 <P>
-Pressing dot 7 erases the last entered braille cell or character.
-Dot 8 translates any braille input and presses the enter key.
-Pressing dot 7 + dot 8 translates any braille input, but without adding a space or pressing enter.
+7점을 눌러 최신 입력된 점형 또는 글자를 지웁니다.
+8점을 눌러 엔터를 누르는 동시에 점형을 역점역(텍스트 입력)합니다.
+7점과 8점을 눌러 엔터를 누르지 않고 텍스트를 입력합니다.
 </P>
 
 <A NAME="toc49"></A>
@@ -5211,7 +5212,31 @@ NVDA 점자 설정 대화상자에서 본 디스플레이가 연결된 시리얼
 </TABLE>
 
 <A NAME="toc124"></A>
-<H3>13.16. BRLTTY</H3>
+<H3>13.16. SuperBraille</H3>
+
+<P>
+타이완에서 보급되는 SuperBraille 디스플레이를 USB 또는 시리얼 포트로 연결하여 사용할 수 있습니다.
+본 디스플레이는 키보드와 스크롤 키가 없음으로 일반 컴퓨터 키보드를 통해 디스플레이를 제어해야 합니다.
+이와 더불어 타이완에서 보급되는 타 스크린 리더와의 호환성을 이유로 디스플레이를 스크롤할 수 있는 일반 키보드 명령이 할당되었습니다.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>이름</TH>
+<TH>키</TH>
+</TR>
+<TR>
+<TD>점자 디스플레이 뒤로 스크롤</TD>
+<TD>numpadMinus</TD>
+</TR>
+<TR>
+<TD>점자 디스플레이 앞으로 스크롤</TD>
+<TD>numpadPlus</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc125"></A>
+<H3>13.17. BRLTTY</H3>
 
 <P>
 외부 프로그램인 <A HREF="http://www.brltty.com/">BRLTTY</A>을 사용하여 다른 점자 디스플레이를 사용할 수 있습니다.
@@ -5254,7 +5279,7 @@ BRLTTY 사용시 점자 키보드가 탑제된 디스플레이를 사용한다�
 </TR>
 </TABLE>
 
-<A NAME="toc125"></A>
+<A NAME="toc126"></A>
 <H2>14. 고급 사용자 기능</H2>
 
 <A NAME="CommandLineOptions"></A>
@@ -5406,7 +5431,7 @@ nvda -q
 +
 </P>
 
-<A NAME="toc127"></A>
+<A NAME="toc128"></A>
 <H2>15. 사용설명서 외 추가 정보</H2>
 
 <P>
