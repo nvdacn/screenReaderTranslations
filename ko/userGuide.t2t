@@ -45,6 +45,7 @@ eSpeak NG 이외에 NVDA가 지원하는 음성 엔진에 대한 정보를 보�
 
 ++ 점자 디스플레이 지원 ++
 점자 사용자라면 점자 디스플레이를 통해 NvDA가 제공하는 정보를 읽을 수 있습니다.
+또한 점자 키보드를 사용하여 정자 및 약자 입력도 가능합니다.
 NVDA가 지원하는 점자 디스플레이에 대한 정보는 [지원하는 점자 디스플레이 #SupportedBrailleDisplays] 섹션을 참조하세요.
 
 NVDA는 다국어 점자 정자, 약자 및 컴퓨터 점자 코드를 지원합니다.
@@ -580,6 +581,77 @@ NVDA는 다음 수학 컨텐츠를 지원합니다:
 
 상위 문서로 빠져나가려면 escape키를 누르십시오.
 
++ 점자 지원 +
+점자 사용자라면 점자 디스플레이를 통해 NvDA가 제공하는 정보를 읽을 수 있습니다.
+또한 점자 키보드를 사용하여 정자 및 약자 입력도 가능합니다.
+
+NVDA가 지원하는 점자 디스플레이에 대한 정보는 [지원하는 점자 디스플레이 #SupportedBrailleDisplays] 섹션을 참조하세요.
+점자 관련 설정에 대해서는 [점자 설정 대화상자 #BrailleSettings] 섹션을 참조하세요.
+
+++ 컨트롤, 스테이트 및 랜드마크 표시용 점자 기호 목록 ++
+점자디스플레이에 최대한의 정보를 보여줄 수 있도록 컨트롤, 스테이트 및 랜드마크 정보를 다음과 같이 표기하였습니다.
+
+|| 점자 기호 | 컨트롤 |
+| btn | 버튼 |
+| cbo | 콤보박스 |
+| chk | 체크박스 |
+| dlg | 대화상자 |
+| edt | 편집창 |
+| gra | 그래픽 |
+| cN | 표 행 번호 n(예: c1, c2) |
+| rN | table 열 n(예: r1, r2) |
+| hN | 헤딩 레벨 n(예: h1, h2) |
+| lnk | 링크 |
+| vlnk | 방문한 링크 |
+| lst | 목록 |
+| lmk | 랜드마크 |
+| mnu | 메뉴 |
+| mnubar | 메뉴바 |
+| rbtn | 라디오 버튼 |
+| tb | 표 |
+| tv | 트리뷰 |
+| lv N | 트리뷰 레벨 n |
+| ``-----`` | 구분선 |
+
+각 컨트롤의 스테이트는 다음과 같이 표기됩니다.
+|| 점자 기호 | 스테이트 |
+| ... | 자동 끝내기 지원 |
+| ( ) | 선택되지 않은 컨트롤(예: 체크박스 해제) |
+| (x) | 선택된 컨트롤(예: 체크박스 선택) |
+| (-) | 부분 선택된 컨트로(예: 체크박스 부분 선택) |
+| - | 축소할 수 있는 컨트롤(예: 트리뷰 레벨 빠져나가기) |
+| + | 확장할 수 있는 컨트롤(예: 트리뷰 확장하기) |
+| clk | 클릭가능한 컨트롤 |
+| ro | 읽기 전용 컨트롤(예: 읽기 전용 편집창) |
+| sel | 특정 컨트롤 선택 |
+| submnu | 하위 메뉴를 지닌 컨트롤 |
+
+또한 랜드마크 표기용 텍스트는 다음과 같습니다:
+|| 점자 기호 | 랜드마크 |
+| bnnr | banner |
+| cinf | content info |
+| cmpl | complementary |
+| form | form |
+| main | main |
+| navi | navigation |
+| srch | search |
+| rgn | region |
+
+++ Braille Input ++
+NVDA supports entry of both uncontracted and contracted braille via a braille keyboard.
+You can select the translation table used to translate braille into text using the [Input table #BrailleInputTable] setting in the Braille Settings dialog.
+
+When uncontracted braille is being used, text is inserted as soon as it is entered.
+When using contracted braille, text is inserted when you press space or enter at the end of a word.
+Note that translation can only reflect the braille word you are typing and cannot consider existing text.
+For example, if you are using a braille code that begins numbers with a number sign and you press backspace to move to the end of a number, you will need to type the number sign again to enter additional numbers.
+
+%kc:beginInclude
+Pressing dot 7 erases the last entered braille cell or character.
+Dot 8 translates any braille input and presses the enter key.
+Pressing dot 7 + dot 8 translates any braille input, but without adding a space or pressing enter.
+%kc:endInclude
+
 + 응용프로그램별 NVDA 기능 +
 NVDA는 몇몇 프로그램에서 특정 작업을 좀 더 쉽게 수행하도록 또는 스크린 리더 사용자들에게 달리 접근할 방법이 없는 특정한 기능을 사용할 수 있도록 별도의 기능을 제공합니다.
 
@@ -914,7 +986,7 @@ NVDA는 보이스 설정에 접근하지 않아도 어느 곳에서나 보이스
 | 현재 선택된 음성 설정값 감소 | NVDA+control+downArrow | NVDA+shift+control+downArrow | 선택된 현재 음성 설정의 값을 감소시킵니다. 예) 음성 속도 감소, 이전 음성 엔진 선택, 음성 크기 감소 |
 %kc:endInclude
 
-+++ 점자 설정 +++
++++ 점자 설정 +++[BrailleSettings]
 이 대화상자는 설정 메뉴 - 점자 설정 옵션에서 불러 낼 수 있습니다.
 
 ==== 점자 디스플레이 ====
@@ -943,10 +1015,9 @@ NVDA가 지원하는 점자 디스플레이에 관한 더 상세한 정보를 �
 이 옵션에서 텍스트를 점자로 변환할때 사용될 표기법을 선택할 수 있습니다.
 이 콤보박스에는 다양한 언어, 표준 및 각 그레이드의 점자테이블이 있습니다. 목록 안에 있는 점자 테이블에서 점자테이블로 이동하려면 화살표키를 사용하세요.
 
-==== 점자 입력 표기법 (Input Table) ====
+==== 점자 입력 표기법 (Input Table) ====[BrailleInputTable]
 점자 출력 표기법과는 별도로 이 옵션에서 점자 입력 표기법얼 설정할 수 있습니다.
 선택된 표기법은 점자디스플레이에 장착된 점자 키보드에서 텍스트를 입력시 텍스트 변환용으로 쓰입니다.
-현재 NVDA는 컴퓨터 점자를 통한 텍스트 입력을 지원함으로 8점 컴퓨터 점자 표기법들만 나열하고 있습니다.
 목록 안에 있는 점자 테이블에서 점자테이블로 이동하려면 화살표키를 사용하세요.
 
 참고로 모든 디스플레이가 점자 입력을 지원하지 않습니다 (점자디스플레이 드라이버에 따라 유무함).
@@ -1662,8 +1733,6 @@ Nuance 보컬라이저는 뉴언스에서 개발하고 Tiflotecnia에서 NVDA용
 | 오른쪽 위즈윌로 뒤로 이동 | rightWizWheelUp |
 | 오른쪽 위즈윌로 앞으로 이동 | rightWizWheelDown |
 | 점자 셀로 이동 | routing |
-| backspace key | 7점 |
-| enter 키 | 8점 |
 | shift+tab 키 | 1점+2점+스페이스 |
 | tab key | 4점+5점+스페이스 |
 | 상 방향키 | 1점+스페이스 |
@@ -1906,8 +1975,6 @@ http://www.himsintl.com/?c=2/13&uid=2319에 접속하여 본 드라이버를 다
 | alt 키 | 1점+3점+4점+스페이스 |
 | escape 키 | 1점+5점+스페이스 |
 | tab key | 4점+5점+스페이스 |
-| enter 키 | 8점 |
-| backspace key | 7점 |
 | 상 방향키 | 1점+스페이스 |
 | 하 방향키 | 4점+스페이스 |
 | capsLock | 1점+3점+6점+스페이스 |
@@ -2053,8 +2120,6 @@ Live 모델에서 두번째 스위치 명령을 실행하려면 EAB를 옮기고
 
 || 이름 | 키 |
 %kc:beginInclude
-| backspace key | 7점 |
-| enter key | 8점 |
 | escape key | space+7점 |
 | 윗쪽 방향키 | space+2점 |
 | 왼쪽 방향키 | space+1점 |
@@ -2252,55 +2317,6 @@ BRLTTY 사용시 점자 키보드가 탑제된 디스플레이를 사용한다�
 | 점자 디스플레이를 다음 줄로 이동 | lndn (한 줄 아래로 이동) |
 | 점자 셀로 이동 | route (커서를 글자로 이동) |
 %kc:endInclude
-
-+ 컨트롤, 스테이트 및 랜드마크 표시용 점자 기호 목록 +
-점자디스플레이에 최대한의 정보를 보여줄 수 있도록 컨트롤, 스테이트 및 랜드마크 정보를 다음과 같이 표기하였습니다.
-
-|| 점자 기호 | 컨트롤 |
-| btn | 버튼 |
-| cbo | 콤보박스 |
-| chk | 체크박스 |
-| dlg | 대화상자 |
-| edt | 편집창 |
-| gra | 그래픽 |
-| cN | 표 행 번호 n(예: c1, c2) |
-| rN | table 열 n(예: r1, r2) |
-| hN | 헤딩 레벨 n(예: h1, h2) |
-| lnk | 링크 |
-| vlnk | 방문한 링크 |
-| lst | 목록 |
-| lmk | 랜드마크 |
-| mnu | 메뉴 |
-| mnubar | 메뉴바 |
-| rbtn | 라디오 버튼 |
-| tb | 표 |
-| tv | 트리뷰 |
-| lv N | 트리뷰 레벨 n |
-| ``-----`` | 구분선 |
-
-각 컨트롤의 스테이트는 다음과 같이 표기됩니다.
-|| 점자 기호 | 스테이트 |
-| ... | 자동 끝내기 지원 |
-| ( ) | 선택되지 않은 컨트롤(예: 체크박스 해제) |
-| (x) | 선택된 컨트롤(예: 체크박스 선택) |
-| (-) | 부분 선택된 컨트로(예: 체크박스 부분 선택) |
-| - | 축소할 수 있는 컨트롤(예: 트리뷰 레벨 빠져나가기) |
-| + | 확장할 수 있는 컨트롤(예: 트리뷰 확장하기) |
-| clk | 클릭가능한 컨트롤 |
-| ro | 읽기 전용 컨트롤(예: 읽기 전용 편집창) |
-| sel | 특정 컨트롤 선택 |
-| submnu | 하위 메뉴를 지닌 컨트롤 |
-
-또한 랜드마크 표기용 텍스트는 다음과 같습니다:
-|| 점자 기호 | 랜드마크 |
-| bnnr | banner |
-| cinf | content info |
-| cmpl | complementary |
-| form | form |
-| main | main |
-| navi | navigation |
-| srch | search |
-| rgn | region |
 
 + 고급 사용자 기능 +
 
