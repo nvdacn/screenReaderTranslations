@@ -1,8 +1,0 @@
-commit b0eceb5ae63395ceadc627e8d5c0aad154edf580
-Author: James Teh <jamie@nvaccess.org>
-Date:   Mon Nov 9 09:55:00 2015 +1000
-
-    NVDA now correctly reports the focus when dismissing a context menu in some applications such as Jart.
-    
-    It seems that some applications fire menuEnd on an invalid/non-foreground/non-topmost window, so just allow menuEnd (and some other events which behave similarly) unconditionally in eventHandler.shouldAcceptEvent and let IAccessibleHandler do the filtering/translation.
-    Fixes #5302.
