@@ -592,26 +592,55 @@ NVDA가 지원하는 점자 디스플레이에 대한 정보는 [지원하는 �
 점자디스플레이에 최대한의 정보를 보여줄 수 있도록 컨트롤, 스테이트 및 랜드마크 정보를 다음과 같이 표기하였습니다.
 
 || 점자 기호 | 컨트롤 |
+| app | application |
+| bqt | 인용 구역(block quote) |
 | btn | 버튼 |
+| drbtn | drop down button |
+| spnbtn | spin button |
+| splbtn | split button |
+| tgbtn | toggle button |
 | cbo | 콤보박스 |
 | chk | 체크박스 |
 | dlg | 대화상자 |
+| doc | document |
 | edt | 편집창 |
+| pwdedt | password edit |
+| embedded | embedded object |
+| enote | end note |
+| fnote | foot note |
 | gra | 그래픽 |
 | cN | 표 행 번호 n(예: c1, c2) |
 | rN | table 열 n(예: r1, r2) |
+| grp | grouping |
 | hN | 헤딩 레벨 n(예: h1, h2) |
+| hlp | help baloon |
+| lmk | landmark |
 | lnk | 링크 |
 | vlnk | 방문한 링크 |
 | lst | 목록 |
-| lmk | 랜드마크 |
 | mnu | 메뉴 |
 | mnubar | 메뉴바 |
+| mnubtn | menu button |
+| mnuitem | menu item |
+| pnl | panel |
+| prgbar | progress bar |
 | rbtn | 라디오 버튼 |
-| tb | 표 |
+| scrlbar | scroll bar |
+| sect | section |
+| stbar | status bar |
+| tabctl | tab control |
+| tbl | 표 |
+| cN | table column number n, e.g. c1, c2. |
+| rN | table row number n, e.g. r1, r2. |
+| term | terminal |
+| tlbar | tool bar |
+| tltip | tool tip |
 | tv | 트리뷰 |
+| tvbtn | tree view button |
+| tvitem | tree view item |
 | lv N | 트리뷰 레벨 n |
-| ``-----`` | 구분선 |
+| wnd | window |
+| ⠤⠤⠤⠤⠤ | 구분선 |
 
 각 컨트롤의 스테이트는 다음과 같이 표기됩니다.
 || 점자 기호 | 스테이트 |
@@ -621,9 +650,19 @@ NVDA가 지원하는 점자 디스플레이에 대한 정보는 [지원하는 �
 | (-) | 부분 선택된 컨트로(예: 체크박스 부분 선택) |
 | - | 축소할 수 있는 컨트롤(예: 트리뷰 레벨 빠져나가기) |
 | + | 확장할 수 있는 컨트롤(예: 트리뷰 확장하기) |
+| *** | displayed when a protected control or document is encountered |
 | clk | 클릭가능한 컨트롤 |
+| cmnt | displayed when there is a comment for a spreadsheet cell or piece of text in a document |
+| frml | displayed when there is a formula on a spreadsheet cell |
+| invalid | displayed when an invalid entry has been made |
+| ldesc | displayed when an object (usually a graphic) has a long description |
+| mln | displayed when an edit field allows typing multiple lines of text such as comment fields on websites |
+| req | displayed when a required form field is encountered |
 | ro | 읽기 전용 컨트롤(예: 읽기 전용 편집창) |
 | sel | 특정 컨트롤 선택 |
+| nsel | displayed when an object is not selected |
+| sorted asc | displayed when an object is sorted ascending |
+| sorted desc | displayed when an object is sorted descending |
 | submnu | 하위 메뉴를 지닌 컨트롤 |
 
 또한 랜드마크 표기용 텍스트는 다음과 같습니다:
@@ -1034,12 +1073,17 @@ NVDA가 지원하는 점자 디스플레이에 관한 더 상세한 정보를 �
 ==== 점자 커서 깜박이 ====
 이 옵션을 사용하여 점자 커서 깜박이를 설정합니다.
 깜박이가 꺼지면 점자 커서 점형이 디스플레이에 항상 보여지게 됩니다.
+텍스트 선택시에는 본 설정이 적용되지 않습니다(7점과 8점이 항상 출력됨).
 
 ==== 커서 깜박이 시간 ====
 이 수치 필드에서는 커서의 깜박이 속도를 1000분의 1초 단위로 변경할 수 있습니다.
 
-==== 커서 모양 ====
-본 옵션을 사용하여 점자 커서 모양(점형)을 설정할 수 있습니다.
+==== 포커스 커서 모양 ====
+본 옵션을 사용하여 포커스와 연계되었을때의 점자 커서 모양(점형)을 설정할 수 있습니다.
+본 옵션은 텍스트 선택 커서 출력에는 적용되지 않습니다.
+
+==== 리뷰 커서 모양 ====
+본 옵션을 사용하여 리뷰 커서와 연계되었을때의 점자 커서 모양(점형)을 설정할 수 있습니다.
 본 옵션은 텍스트 선택 커서 출력에는 적용되지 않습니다.
 
 ==== 알림 메시지 출력 시간 ====
