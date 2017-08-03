@@ -10,7 +10,7 @@ FROM_DISPLAY = "NVDA localisation <%s>" % FROM_ADDR
 addresses = {
     'default': {
         'lang': '',
-        'email': ['Mesar hameed <mesar.hameed@gmail.com>', 'James Teh <jamie@nvaccess.org>'],
+        'email': ['nvdal10n@exbi.nvaccess.org'],
     },
     'am': {
         'lang':'Amharic',
@@ -223,8 +223,11 @@ addresses = {
 }
 
 
-def email(rcpts, subject, body):
-    rcpts.extend(addresses['default']['email'])
+def email(rcpts, subject, body, includeAdmin=False):
+    if includeAdmin:
+        rcpts.extend(addresses['default']['email'])
+    if not rcpts:
+        return
     msg = MIMEText(body, _charset="utf8")
     msg["From"] = FROM_DISPLAY
     msg["To"] = COMMASPACE.join(rcpts)

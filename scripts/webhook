@@ -78,7 +78,7 @@ for lang in t2tLangs:
 # Automated commits shouldn't introduce errors, so any errors were there before.
 if hasAlert and author != "CommitBot":
     subject = "[alert] " + subject
-email(rcpts, subject, body)
+email(rcpts, subject, body, includeAdmin=hasAlert)
 
 f = open('/tmp/webhook.log', 'a')
 f.write("--- start ---\n")
