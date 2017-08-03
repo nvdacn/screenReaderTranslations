@@ -4,10 +4,11 @@
 %!includeconf: ../changes.t2tconf
 
 = 2017.3 =
+Highlights of this release include input of contracted braille, support for new Windows OneCore voices available on Windows 10, in-built support for Windows 10 OCR, and many significant improvements regarding Braille and the web.
 
 == Nove značajke ==
 - Dodana je postavka u brajičnim postavkama za "vječno prikazivanje poruka". (#6669)
-- U Popisu poruka u Microsoft Outlooku izgovara ozastavićenje poruke. (#6374)
+- In Microsoft Outlook message lists, NVDA now reports if a message is flagged. (#6374)
 - U Microsoft Powerpointu, sada se izgovara točan tip oblika prilikom uređivanja slajda (primjeri uključuju: trokut, krug, video, strelica), bolje nego samo 'oblik'. (#7111)
 - Matematički sadržaj (dostupan kao MathML) sada je podržan u Google Chromeu. (#7184)
 - NVDA sada može govoriti uz pomoć Windows OneCore glasova (znanih kao mobile glasovi), koji su uključeni u Windowse 10. Pristupate im označavanjem opcije Windows OneCore glasovi u NVDA dijaloškom okviru Govorna jedinica. (#6159)
@@ -17,31 +18,38 @@
 - Dodana podrška za kontrolu odabirnika datuma koja se može pronaći u Microsoft Outlookovom dijaloškom okviru za termine. (#7217)
 - Trenutno označeni prijedlog sada se izgovara u Windows 10 pošti u poljima to/cc te u Windows 10 polju uređivanja u Postavkama. (#6241)
 - Sada se reproducira zvučni signal, koji izvještava o prisutnosti prijedloga u većini polja za pretragu u Windowsima 10 (NPR. početni zaslon, pretraga u postavkama, polja to/CC u Windows 10 pošti). (#6241)
-- Automatski izgovara obavijesti u Skype for Business Desktop, kao na primjer, kada netko želi započeti razgovor s vama.  (#7281)
+- NVDA now automatically reports notifications in Skype for Business Desktop, such as when someone starts a conversation with you. (#7281)
+- Automatically report incoming chat messages while in a Skype for Business conversation. (#7286)
 - Automatsko čitanje obavijesti u Microsoft Edgeu, poput početka preuzimanja.  (#7281)
 - Sada možete pisati kratkopisom i punim pismom na brajičnoj tipkovnici vašeg brajevog redka. Pogledajte poglavlje brajični unos u korisničkom vodiču. (#2439)
 - Sada možete upisivati Unicode brajične znakove na brajičnoj tipkovnici, označujući Unicode braille kao brajičnu tablicu. (#6449)
 - Dodana podrška za SuperBraille brajični redak koji se koristi na Tajwanu. (#7352)
+- New braille translation tables: Danish 8 dot computer braille, Lithuanian, Persian 8 dot computer braille, Persian grade 1, Slovenian 8 dot computer braille. (#6188, #6550, #6773, #7367)
+- Improved English (U.S.) 8 dot computer braille table, including support for bullets, the euro sign and accented letters. (#6836)
+- NVDA can now use the OCR functionality included in Windows 10 to recognize the text of images or inaccessible applications. (#7361)
+ - The language can be set from the new Windows 10 OCR dialog in NVDA Preferences.
+ - To recognize the content of the current navigator object, press NVDA+r.
+ - See the Content Recognition section of the User Guide for further details.
+- You can now choose what context information is shown on a braille display when an object gets focus using the new "Focus context presentation" setting in the Braille Settings dialog. (#217)
+ - For example, the "Fill display for context changes" and "Only when scrolling back" options can make working with lists and menus more efficient, since the items won't continually change their position on the display.
+ - See the section on the "Focus context presentation" setting in the User Guide for further details and examples.
+- In Firefox and Chrome, NVDA now supports complex dynamic grids such as spreadsheets where only some of the content might be loaded or displayed (specifically, the aria-rowcount, aria-colcount, aria-rowindex and aria-colindex attributes introduced in ARIA 1.1). (#7410)
 
 
 == Izmjene ==
-- Nedodijeljena gesta (script_restart) je dodana kako bi NVDA mogao biti brzo pokrenut. (#6396)
+- Nedodijeljena komanda (script_restart) je dodana kako bi NVDA mogao biti brzo pokrenut. (#6396)
 - Izgled tipkovnice sada može biti odabran iz dijaloškog okvira dobrodošlice. (#6863)
-- Prilikom korištenja brajičnog retka, kratice za orijentire su dodijeljene kako slijedi: (#3975)
- - "orijentir": "lmk"
- - "baner": "bnnr"
- - "komplementarni": "comp"
- - "informacija o sadržaju": "cinf"
- - "glavni": "main"
- - "navigacijski": "nav"
- - "pretraga": "srch"
- - "obrazac": "frm"
- - "regija": "rgn"
- - Na primjer: "navigacijski orijentir" postaje "lmk nav"
+- Many more control types and states have been abbreviated for braille. Landmarks have also been abbreviated. Please see "Control Type, State and Landmark Abbreviations" under Braille in the User Guide for a complete list. (#7188, #3975)
 - Espeak-ng je nadograđen na verziju 1.49.1 (#7280).
 - Popisi ulaznih i izlaznih brajičnih tablica u dijaloškom okviru brajičnih postavki, sada su sortirani po abecednom redu. (#6113)
 - Obnovljen liblouis brajični prevoditelj na verziju 3.2.0. (#6935)
-
+- The default braille table is now Unified English Braille Code grade 1. (#6952)
+- By default, NVDA now only shows the parts of the context information that have changed on a braille display when an object gets focus. (#217)
+ - Previously, it always showed as much context information as possible, regardless of whether you have seen the same context information before.
+ - You can revert to the old behaviour by changing the new "Focus context presentation" setting in the Braille Settings dialog to "Always fill display".
+- Table navigation commands are no longer available for layout tables in Browse Mode unless reporting of layout tables is enabled. (#7382)
+- In Firefox and Chrome, Browse Mode table navigation commands now skip over hidden table cells. (#6652, #5655)
+- The NVDA logo has been updated. The updated NVDA logo is a stylised blend of the letters NVDA in white, on a solid purple background. This ensures it will be visible on any colour background, and uses the purple from the NV Access logo. (#7446)
 
 == Ispravke grešaka ==
 - Div elementi koji se uređivaju, u Chromeu kao njihova vrijednost, ne izgovara se njihova oznaka prilikom čitanja u načinu pregleda. (#7153)
@@ -63,6 +71,10 @@
 - Kretanje po naslovima u Microsoft Edgeu sada je značajno brže. (#7343)
 - U Microsoft Edgeu, u načinu pregleda ne preskaće velik dio web stranice, kao što je to slučaj sa Wordpress 2015 temom. (#7143)
 - U Microsoft Edgeu, orjentiri su ispravno prevedeni na jezike, koji ne spadaju pod engleski. (#7328)
+- Braille now correctly follows the selection when selecting text beyond the width of the display. For example, if you select multiple lines with shift+downArrow, braille now shows the last line you selected. (#5770)
+- In Firefox, NVDA no longer spuriously reports "section" several times when opening details for a tweet on twitter.com. (#5741)
+- Support for content recognizers such as OCR and image description tools can be easily implemented using the new contentRecog package. (#7361)
+- The Python json package is now included in NVDA binary builds. (#3050)
 
 
 == Izmjene za razvojne programere ==
