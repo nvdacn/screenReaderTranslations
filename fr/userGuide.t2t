@@ -592,38 +592,80 @@ Vous pouvez configurer le braille en utilisant le [dialogue Paramètres Braille 
 Dans le but de loger autant d'informations que possible sur un afficheur braille, les abbréviations suivantes ont été définies pour indiquer le type et l'état des contrôles ainsi que les repères.
 
 || Abbréviation | Type de contrôle |
+| app | application |
+| cit | citation |
 | btn | bouton |
+| btnlstd | bouton de liste déroulante |
+| btnrot | bouton rotatif |
+| btnp | bouton partagé |
+| basc | bascule |
 | lstd | liste déroulante |
 | càc | case à cocher |
 | dlg | dialogue |
+| doc | document |
 | éd | zone d'édition |
+| édmdp | édition de mot de passe |
+| objemb | objet embarqué |
+| notef | note de fin |
+| noteb | note de bas de page |
 | gra | graphique |
 | cN | colonne de tableau n° n, ex : c1, c2. |
 | lN | ligne de tableau n° n, ex : l1, l2. |
+| grp | groupage |
 | tN | titre de niveau n, ex : t1, t2. |
-| ln | lien |
+| aide | bulle d'aide |
+| rep | repère |
+  ln | lien |
 | lnv | lien visité |
 | lst | liste |
-| rep | repère |
 | mnu | menu |
 | bmnu | barre de menu |
+| btnmnu | bouton de menu |
+| élmnu | élément de menu |
+| pnn | panneau |
+| bprg | barre de progression |
 | btnr | bouton radio |
 | tb | table |
+| bdéf | barre de défilement |
+| sect | section |
+| bét | barre d'état |
+| cong | Contrôle d'onglet |
+| tbl | table |
+| cN | colonne n d'un tableau, ex : c1, c2. |
+| lN | ligne n d'un tableau, ex : l1, l2. |
+| term | terminal |
+| botl | barre d'outils |
+| sug | suggestion |
 | arb | arborescence |
+| btnarb | bouton d'arborescence |
+| élarb | élément d'arborescence |
 | nv N | un élément d'arborescence a un niveau hiérarchique N|
-| ``-----`` | séparateur |
+| fen | fenêtre |
+| ⠤⠤⠤⠤⠤ | séparateur |
 
 Les indicateurs d'état suivants sont également définis :
 || Abbréviation | État du contrôle |
 | ... | affiché quand un objet supporte l'autocomplétion |
-| ( ) | affiché quand un objet tel qu'une case à cocher n'est pas coché |
-| (x) | affiché quand un objet tel qu'une case à cocher est coché |
-| (-) | affiché quand un objet tel qu'une case à cocher est semi-coché |
+| ⢎⣿⡱ | affiché quand un objet (ex : une bascule) est enfoncé |
+| ⢎⣀⡱ | affiché quand un objet (ex : une bascule) n'est pas enfoncé |
+| ⣏⣿⣹ | affiché quand un objet (ex : une case à cocher) est coché |
+| ⣏⣸⣹ | affiché quand un objet (ex : une case à cocher) est semi-coché |
+| ⣏⣀⣹ | affiché quand un objet (ex : une case à cocher) n'est pas coché |
 | - | affiché quand un objet tel qu'un élément d'arborescence peut être réduit |
 | + | affiché quand un objet tel qu'un élément d'arborescence peut être développé |
+| *** | affiché quand on rencontre un contrôle ou un document protégé |
 | clq | affiché quand un objet est cliquable |
+| cmnt | affiché quand il y a un commentaire pour une cellule de feuille de travail ou un document |
+| frml | affiché quand il y a une formule dans une cellule de feuille de travail |
+| invalide | affiché lors d'une saisie invalide |
+| ldesc | affiché quand un objet, généralement un graphique, a une description longue |
+| mlgn | affiché quand un champ d'édition permet la frappe de plusieurs lignes de texte comme les zones de commentaire sur les sites web |
+| obl | affiché quand on rencontre un champ de saisie obligatoire |
 | ls | affiché quand un objet tel qu'une zone d'édition est en lecture seule |
 | sél | affiché quand un objet est sélectionné |
+| nsél | affiché quand un objet n'est pas sélectionné |
+| tcro | affiché quand un objet est trié en ordre croissant |
+| tdéc | affiché quand un objet est trié en ordre décroissant |
 | smnu | affiché quand un objet a un sous-menu |
  
 Enfin, les abbréviations de repères suivantes sont définies :
@@ -650,6 +692,31 @@ Par exemple, si vous utilisez un code braille dont les nombres doivent commencer
 L'appui sur le point 7 efface la dernière cellule ou le dernier caractère braille entré.
 Le point 8 traduit toute saisie braille puis presse la touche entrer.
 L'appui simultané sur les points 7 et 8 traduit toute saisie braille sans ajouter d'espace ou presser la touche entrer.
+%kc:endInclude
+
++ Reconnaissance de Contenu +
+Quand les auteurs ne fournissent pas assez d'informations pour qu'un utilisateur de revue d'écran puisse déterminer le contenu de quelque chose, divers outils peuvent être utilisés pour tenter de reconnaître le contenu à partir d'une image.
+NVDA supporte la fonctionnalité de reconnaissance optique de caractères (OCR) disponible sous Windows 10 pour reconnaître le texte dans les images.
+Des outils de reconnaissance de contenu additionnels peuvent être fournis dans des modules complémentaires de NVDA.
+
+Quand vous utilisez une commande de reconnaissance de contenu, NVDA reconnaît le contenu de [l'objet navigateur courant #ObjectNavigation].
+Par défaut, l'objet navigateur suit le focus système ou le curseur du mode navigation, il vous suffit donc généralement d'amener le focus ou le curseur de navigation à l'endroit désiré.
+Par exemple, si vous amenez le curseur de navigation sur un graphique, la reconnaissance reconnaîtra le contenu de ce graphique par défaut.
+Cependant, vous pouvez utiliser directement la navigation par objet pour, par exemple, reconnaître tout le contenu d'une fenêtre d'application.
+
+Une fois la reconnaissance terminée, le résultat sera présenté dans un document similaire au mode navigation, vous permettant de lire les informations avec les touches curseur, etc.
+L'appui sur la touche Entrer ou Espace activera (clic normal) le texte sous le curseur si possible.
+L'appui sur échap quitte et efface le résultat de reconnaissance.
+
+++ Reconnaissance Optique de Caractères de Windows 10 ++[Win10Ocr]
+Windows 10 inclut la reconnaissance optique de caractères pour beaucoup de langues.
+NVDA peut l'utiliser pour extraire le texte d'images ou d'applications inaccessibles.
+
+Vous pouvez définir la langue à utiliser pour la reconnaissance de texte dans le dialogue [Reconnaissance Optique De Caractères de Windows 10 #Win10OcrSettings].
+Des langues additionnelles peuvent être installées en ouvrant le menu Démarrer, choisir Paramètres, Sélectionner Heure et Langue -> Région & Langue puis choisir Ajouter une langue.
+
+%kc:beginInclude
+Pour reconnaître le texte dans l'objet navigateur courant en utilisant la reconnaissance optique de caractères de Windows 10, pressez NVDA+r.
 %kc:endInclude
 
 + Fonctionnalités spécifiques à certaines applications +
@@ -1074,6 +1141,32 @@ En faisant défiler l'affichage, vous pourrez lire le reste du mot.
 
 Activer cette option peut rendre la lecture plus fluide mais vous obligera à faire défiler plus souvent.
 
+==== Présentation contextuelle du focus ====
+Cette option vous permet de choisir quelles informations contextuelles NVDA affiche en braille quand un objet prend le focus.
+Les informations contextuelles font référence à la hiérarchie d'objets contenant le focus.
+Par exemple, quand vous focalisez un élément de liste, celui-ci fait partie d'une liste.
+Cette liste pourrait être contenue dans un dialogue, etc.
+Veuillez consulter la section [navigation par objets #ObjectNavigation] pour plus d'informations sur la hiérarchie qui s'applique aux objets dans NVDA.
+
+Quand l'option est sur "Afficher lors des changements contextuels", NVDA essaie d'afficher autant d'informations contextuelles que possible sur le terminal braille, mais seulement pour les parties du contexte qui ont changé.
+Dans l'exemple ci-dessus, cela signifie que quand le focus sera sur la liste, NVDA affichera l'élément de liste sur le terminal braille.
+De plus, s'il y a assez de place libre sur le terminal braille, NVDA essaiera de montrer que l'élément de liste fait partie d'une liste.
+Si vous commencer à vous déplacer dans la liste avec les flèches, on supose que vous savez que vous êtes toujours dans la liste
+Ainsi, pour les autres éléments de la liste que vous focaliserez, NVDA affichera seulement l'élément de liste focalisé sur le terminal.
+Si vous voulez lire à nouveau le contexte (ex : si vous êtes dans une liste et que la liste fait partie d'un dialogue), vous devrez activer le défilement arrière de votre terminal braille.
+
+Quand l'option est sur "Toujours afficher", NVDA essaiera d'afficher autant d'informations contextuelles que possible sur le terminal braille, même si vous avez déjà vu les mêmes informations précédemment.
+L'avantage est que NVDA essaiera de mettre autant d'informations que possible sur le terminal.
+Cependant, l'inconvénient est que le focus ne démarre pas toujours à la même position sur l'afficheur braille.
+Cela peut rendre difficile le parcours d'une longue liste d'éléments, car vous devrez en permanence déplacer vos doigts pour trouver le début de chaque élément.
+C'était le comportement par défaut jusqu'à NVDA 2017.2.
+ 
+Quand l'option est sur "Seulement lors du défilement arrière", NVDA ne montre jamais les informations contextuelles sur le terminal.
+Ainsi, dans l'exemple ci-dessus, NVDA affichera que vous avez focalisé un élément de liste.
+Cependant, si vous voulez lire le contexte (ex : que vous êtes  dans une liste et que la liste fait partie d'un dialogue), vous devrez activer le défilement arrière de votre terminal.
+
+Pour modifier l'option de présentation contextuelle du focus de n'importe où, veuillez assigner un geste de commande personnalisé en utilisant [le dialogue Gestes de Commandes #InputGestures].
+
 +++ Paramètres du clavier (NVDA+contrôle+k) +++
 Ce dialogue se trouve dans le menu "Préférences", sous "Paramètres du clavier...". 
 Il comprend les options suivantes :
@@ -1384,6 +1477,12 @@ La liste déroulante "Annoncer les retraits de ligne par" a quatre options .
 La hauteur du son montera pour chaque espace, et pour une tabulation, la hauteur montera de l'équivalent de 4 espaces.
 - Parole et sons : Cette option indique les retraits en utilisant les deux méthodes ci-dessus.
 -
+
++++ Reconnaissance Optique de Caractères de Windows 10 Settings +++[Win10OcrSettings]
+Ce dialogue peut être atteint depuis le menu Préférences de NVDA et vous permet de configurer la [reconnaissance optique de caractères de Windows 10 #Win10Ocr].
+
+==== Langue de Reconnaissance ====
+Cette liste déroulante vous permet de choisir la langue à utiliser pour la reconnaissance de texte.
 
 +++ Dictionnaires de prononciation +++
 Le menu "Dictionnaires de prononciation" du menu "Préférences" contient des dialogues qui vous permettent de gérer la manière dont NVDA prononce certains mots ou phrases. 
