@@ -47,7 +47,6 @@ space \x000c 0    #
 space \x000D 0    # cr
 space \x00A0 a    # no-break space
 
-
 include latinLetterDef6Dots.uti
 
 uplow Çç 12346		# c cédille
@@ -83,6 +82,13 @@ uplow \X0152\X0153 246          # oe liés
 # uplow \X00D1\x00F1 1345,12456   # n tilde
 # uplow \x00D5\x00F5 13,46        # o tilde
 
+# override zero
+undefined 0
+digit 0 3456
+include digits6DotsPlusDot6.uti
+litdigit 0 3456
+include litdigits6DotsPlusDot6.uti
+
 punctuation , 2			    # virgule
 punctuation ; 23		    # point-virgule
 punctuation : 25		    # deux-points
@@ -114,8 +120,8 @@ punctuation \X275E 2356     # heavy double comma quotation mark ornament
 punctuation \X275F 2356     # heavy low single comma quotation mark ornament
 punctuation \X2760 2356     # heavy low double comma quotation mark ornament
 
-sign \X200e 0           # (left to right mark)
-sign \X200f 0           # (right to left mark)
+noback sign \X200e 0           # (left to right mark)
+noback sign \X200f 0           # (right to left mark)
 
 # tirets et traits d'union
 punctuation - 36        # hyphen-minus
@@ -170,14 +176,14 @@ sign \X00A6 45      # broken bar
 sign \X00A8 46      # diaeresis
 sign \X00AA 16      # feminine ordinal indicator
 sign \X00AC 256     # not sign
-sign \X00AD 0       # soft hyphen
+noback sign \X00AD 0       # soft hyphen
 sign \X00AE 5-1235  # registered sign
 sign \X00B1 235-36  # plus-minus sign
 sign \X00B2 45      # superscript two
 sign \X00B3 456     # superscript three
 sign \X00B5 45-134  # micro sign
 sign \X00B6 456     # pilcrow sign
-sign \X00B7 0       # middle dot
+noback sign \X00B7 0       # middle dot
 sign \X00B9 4       # superscript one
 sign \X00BA 26      # masculine ordinal indicator
 
@@ -234,10 +240,6 @@ include braille-patterns.cti
 # other signs: 8 and 6 dots
 include fr-bfu-comp68.cti
 
-# override zero
-litdigit 0 3456
-include litdigits6DotsPlusDot6.uti
-
 # Braille indicators
 numsign 6             # number sign, just a dots operand
 capsletter 46
@@ -253,9 +255,9 @@ begemphphrase bold 456-456
 endemphphrase bold before 456
 
 midword \X2019 3     # right single quotation mark
-midnum \s 3						# espace entre les chiffres
+midnum \s 0						# espace entre les chiffres
 midnum , 2
-midnum . 256
+midnum . 3
 midnum - 36
 hyphen - 36
 midnum + 235					# plus
