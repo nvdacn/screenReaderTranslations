@@ -639,6 +639,7 @@ Damit möglichst viele Daten auf der Braillezeile Platz finden, wurden folgende 
 | ba | Baumansicht |
 | EN | Ein Eintrag in einer Baumansicht in der Ebene N |
 | ----- | Trennlinie |
+
 Für die folgenden Statusanzeigen wurden ebenfalls Abkürzungen festgelegt:
 || Abkürzung | Status |
 | ... | Wird angezeigt, wenn ein Objekt automatische Vervollständigung unterstützt. |
@@ -688,6 +689,31 @@ Wenn Sie beispielsweise den Cursor an das Ende einer Zahl bewegt haben, müssen 
 Drücken Sie den Punkt 7, um das letzte Zeichen zu löschen.
 Drücken Sie den Punkt 8, um einen Zeilenvorschub einzufügen.
 Drücken Sie Punkt 7 und Punkt 8, um die eingegebenen Braillezeichen zu übersetzen, ohne einen Zeilenvorschub oder ein Leerzeichen einzufügen.
+%kc:endInclude
+
++ Inhaltserkennung +
+Wenn Entwickler von anwendungen unzureichende Informationen zur Zugänglichkeit bereitstellen, können Sie zahlreiche Werkzeuge verwenden, um z. B. Text aus einem Bild auszulesen.
+NVDA unterstützt die in Windows 10 enthaltene Texterkennung, um Text aus Bildern auszulesen.
+Über NVDA-Erweiterungen können zusätzliche Werkzeuge zur Inhaltserkennung bereitgestellt werden.
+
+Wenn Sie ein Werkzeug zur Inhaltserkennung verwenden, bezieht sich die Erkennung grundsätzlich auf das aktuelle [Navigatorobjekt #ObjectNavigation].
+Da der Navigator standardmäßig an den Fokus Bzw. den Lesemodus gekoppelt ist, können Sie normalerweise einfach den Fokus an die gewünschte Stelle innerhalb der Anwendung oder im Dokument bewegen.
+Wenn Sie den Cursor im Lesemodus auf eine Grafik bewegen, wird die Inhaltserkennung diese Grafik erkennen.
+Sie können jedoch trotzdem die Objektnavigation verwenden, um z. B. den Inhalt eines ganzen Anwendungsfensters zu erkennen.
+
+Wenn die Erkennung abgeschlossen ist, wird das Erkennungsergebnis in einem Dokumentfenster ähnlich dem Lesemodus angezeigt, in dem Sie das Erkennungsergebnis mit den Pfeiltasten lesen können.
+Drücken Sie die Leertaste oder die eingabetaste, um den Text (üblicherweise durch Klicken) zu aktivieren.
+Drücken Sie Esc, um das Erkennungsergebnis zu schließen.
+
+++ Windows 10 OCR ++[Win10Ocr]
+windows 10 enthält eine optische Zeichenerkennung für viele Sprachen.
+Sie können diese zeichenerkennung verwenden, um Text aus Grafiken oder unzugänglichen Anwendungen auszulesen.
+
+Sie können die Erkennungssprache einstellen, indem Sie den Dialog [Windows 10 OCR #Win10OcrSettings] in den NVDA-Einstellungen aufrufen.
+Zusätzliche Sprachen können Sie in den Einstellungen von Windows unter Zeit und Sprache --> Region und Sprache --> Sprache hinzufügen installieren.
+
+%kc:beginInclude
+Drücken Sie NVDA+r, um den Text im aktuellen Navigatorobjekt mit Hilfe der Windows 10 OCR zu erkennen.
 %kc:endInclude
 
 + Anwendungsspezifische Funktionen +
@@ -1072,13 +1098,18 @@ Dies betrifft den System- und den NVDA-Cursor, nicht jedoch die Kennzeichnung vo
 ==== blinkender Cursor ====
 Mit Hilfe dieser Option können Sie das Blinken des Braillecursors ein-/ausschalten.
 Wenn das Blinken des Cursors deaktiviert ist, wird er ständig angezeigt.
+Die Anzeige für Markierungen wird dadurch nicht beeinflust, Markierungen werden immer durch statische Punkte 7 und 8 angezeigt.
 
 ==== Cursor-Blinkrate ====
 Diese Option ist ein numerisches Feld, in dem sich die Cursor-Blinkrate in Millisekunden anpassen lässt.
 
-==== Cursorform ====
-Mit Hilfe dieser option können Sie die Form (das Punktmuster) des Cursors auf der Braillezeile einstellen.
-Die Kennzeichnung für markierten Text ist von dieser Option nicht betroffen.
+==== Cursorform für Fokus ====
+Hiermit legen Sie die Cursorform (das Punktmuster) fest, das verwendet werden soll, wenn die Braillezeile an den Fokus gekoppelt wird.
+Die Anzeige für Markierungen wird dadurch nicht beeinflust, Markierungen werden immer durch statische Punkte 7 und 8 angezeigt.
+
+==== Cursor Shape for Review ====
+Hiermit legen Sie die Cursorform (das Punktmuster) fest, das verwendet werden soll, wenn die Braillezeile an den NVDA-Cursor gekoppelt wird.
+Die Anzeige für Markierungen wird dadurch nicht beeinflust, Markierungen werden immer durch statische Punkte 7 und 8 angezeigt.
 
 ==== Anzeigedauer für Meldungen (in Sekunden) ====
 Dieses numerische Eingabefeld legt fest, wie lange Meldungen von NVDA auf der Braillezeile angezeigt werden sollen. Wenn eine Meldung erscheint, kann diese durch Drücken einer Routingtaste geschlossen werden. Durch Drücken einer Navigationstaste kann die anzeigedauer einer Meldung verlängert werden.
@@ -1111,6 +1142,32 @@ Wenn diese Option ausgeschaltet ist, zeigt NVDA so viel wie möglich vom Wort an
 NVDA zeigt dann den Rest des Wortes im nächsten Bereich an.
 
 Das einschalten dieser Option kann Ihnen ein flüssigeres Lesen ermöglichen, bewirkt aber, dass Sie die Braillezeile öfter weiterschalten müssen.
+
+==== Kontext anzeigen ====
+Mit dieser Option können Sie festlegen wann Kontextinformationen angezeigt werden sollen, wenn ein Objekt den Fokus erhält.
+Kontextinformationen sind z. B. Informationen über übergeordnete Objekte.
+For example, when you focus a list item, this list item is part of a list.
+Wenn ein Listeneintrag den Fokus erhält sind damit die namen der Liste, des Dialogfensters oder der aktuellen Anwendung gemeint.
+Weitere Informationen über die Objekthierarchie finden Sie im Abschnitt über [Objektnavigation #ObjectNavigation].
+
+Bei der Einstellung "bei Änderungen" wird die Kontextinformation nur dann angezeigt, wenn sich der Kontext ändert.
+Für das obige Beispiel bedeutet das, dass NVDA zunächst so viel Information wie möglich auf der Braillezeile anzeigt, sobald ein Listeneintrag den Fokus erhalten hat.
+Sollte noch Platz auf der Braillezeile vorhanden sein, so wird außerdem der Name der Liste angezeigt.
+Wenn Sie sich mit den Pfeiltasten durch die Liste bewegen, wird angenommen, dass Sie die liste nicht verlassen.
+Dies bedeutet, dass nur noch die Listeneinträge auf der Braillezeile angezeigt werden.
+Um die Kontextinformationen anzuzeigen können Sie die Braillezeile zurückscrollen.
+
+Bei der Einstellung "immer" wird NVDA immer so viel Kontextinformation wie möglich auf der Braillezeile anzeigen.
+Dies hat den Vorteil, dass immer so viel Information wie möglich auf der Braillezeile angezeigt wird.
+Andererseits kann es zu einer "springenden Anzeige" kommen, wenn sich die Position des fokussierten objekts auf der Braillezeile ständig ändert.
+Dies kann beim Navigieren durch lange Listen zu Problemen führen, weil Sie mit Ihrem Finger immer wieder den Anfang des Eintrags aufsuchen müssen.
+Dies ist das Standardverhalten von NVDA 2017.2 und älter.
+
+Bei der Einstellung "nur beim scrollen" wird NVDA niemals auaomatisch Kontextinformationen anzeigen.
+Für das obige Beispiel bedeutet dies, dass nVDA immer nur den aktuellen listeneintrag anzeigt.
+Wenn Sie dennoch Kontextinformationen (wie z. B. den Namen der Liste) angezeigt bekommen möchten, müssen Sie die Braillezeile zurückscrollen.
+
+Um die Einstellung von überall aus zu ändern, weisen Sie eine Tastenkombination mit Hilfe des Dialogs [Eingaben #InputGestures] zu.
 
 +++ Tastatureinstellungen (NVDA+Steuerung+K) +++
 Dieses Dialogfeld finden Sie im Menü Einstellungen unter Tastatureinstellungen.
@@ -1422,6 +1479,12 @@ Das Kombinationsfeld enthält vier Einträge:
 Die Einrückung um einen Tabulator entspricht hierbei der Einrückung um vier Leerzeichen.
 - beides: dies ist eine Kombination der beiden obigen Optionen.
 -
+
++++ Einstellungen für die Texterkennung in Windows 10 +++[Win10OcrSettings]
+Diesen Dialog finden Sie in den NVDA-Einstellungen. Er erlaubt die Konfiguration der [Optischen Zeichenerkennung für Windows 10 #Win10Ocr].
+
+==== Erkennungssprache ====
+In diesem Kombinationsfeld können Sie die Sprache festlegen, die für die Zeichenerkennung verwendet werden soll.
 
 +++ Aussprachewörterbücher +++
 Im Menü Einstellungen finden Sie den Eintrag Aussprachewörterbücher. Dieses Menü enthält Dialoge mit deren Hilfe Sie festlegen können, wie NVDA einzelne Wörter oder Satzteile ausspricht.
@@ -2495,4 +2558,4 @@ Generell gilt, dass Sie bei aktivierter Tastaturmaus die Tasten 5 und Plus (+) d
 -
 
 
-Ende des Dokuments.
+
