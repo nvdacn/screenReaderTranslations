@@ -39,6 +39,8 @@
 # Uncontracted Unified French Table
 # ----------------------------------
 
+undefined 0
+
 space \s 0      	# blank 32
 space \t 9 tab    # 9
 space \x001B 1b   # escape
@@ -48,6 +50,7 @@ space \x000D 0    # cr
 space \x00A0 a    # no-break space
 
 include latinLetterDef6Dots.uti
+
 
 uplow Çç 12346		# c cédille
 uplow Éé 123456		# e accent aigu
@@ -82,12 +85,31 @@ uplow \X0152\X0153 246          # oe liés
 # uplow \X00D1\x00F1 1345,12456   # n tilde
 # uplow \x00D5\x00F5 13,46        # o tilde
 
-# override zero
-undefined 0
-digit 0 3456
-include digits6DotsPlusDot6.uti
-litdigit 0 3456
-include litdigits6DotsPlusDot6.uti
+# Define digits and litdigits
+# Don't include digits6DotsPlusDot6.uti and litdigits6DotsPlusDot6.uti
+# because of problems with french 0 (3456) and NVDA
+
+digit        0      3456
+digit        1      16
+digit        2      126
+digit        3      146
+digit        4      1456
+digit        5      156
+digit        6      1246
+digit        7      12456
+digit        8      1256
+digit        9      246
+
+litdigit        0      3456
+litdigit        1      16
+litdigit        2      126
+litdigit        3      146
+litdigit        4      1456
+litdigit        5      156
+litdigit        6      1246
+litdigit        7      12456
+litdigit        8      1256
+litdigit        9      246
 
 punctuation , 2			    # virgule
 punctuation ; 23		    # point-virgule
@@ -257,7 +279,7 @@ endemphphrase bold before 456
 midword \X2019 3     # right single quotation mark
 midnum \s 0						# espace entre les chiffres
 midnum , 2
-midnum . 3
+decpoint . 256
 midnum - 36
 hyphen - 36
 midnum + 235					# plus
