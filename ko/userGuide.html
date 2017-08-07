@@ -85,9 +85,9 @@
     <LI><A HREF="#toc47">8.1. 컨트롤, 스테이트 및 랜드마크 표시용 점자 기호 목록</A>
     <LI><A HREF="#toc48">8.2. 점자 입력</A>
     </UL>
-  <LI><A HREF="#toc49">9. Content Recognition</A>
+  <LI><A HREF="#toc49">9. 문자 인식</A>
     <UL>
-    <LI><A HREF="#Win10Ocr">9.1. Windows 10 OCR</A>
+    <LI><A HREF="#Win10Ocr">9.1. 윈도우 10 OCR</A>
     </UL>
   <LI><A HREF="#toc51">10. 응용프로그램별 NVDA 기능</A>
     <UL>
@@ -132,7 +132,7 @@
       <LI><A HREF="#toc81">11.1.10. 입력 구성 알림 설정</A>
       <LI><A HREF="#toc82">11.1.11. 브라우즈 모드 설정 (NVDA+control+b)</A>
       <LI><A HREF="#DocumentFormattingSettings">11.1.12. 문서 서식 설정 (NVDA+control+d)</A>
-      <LI><A HREF="#Win10OcrSettings">11.1.13. Windows 10 OCR Settings</A>
+      <LI><A HREF="#Win10OcrSettings">11.1.13. 윈도우 10 OCR 설정</A>
       <LI><A HREF="#toc85">11.1.14. 음성 발음 사전</A>
       <LI><A HREF="#SymbolPronunciation">11.1.15. 구두점/기호 발음 설정</A>
       <LI><A HREF="#InputGestures">11.1.16. 단축키 설정</A>
@@ -1849,38 +1849,37 @@ NVDA가 지원하는 점자 디스플레이에 대한 정보는 <A HREF="#Suppor
 </P>
 
 <A NAME="toc49"></A>
-<H2>9. Content Recognition</H2>
+<H2>9. 문자 인식</H2>
 
 <P>
-When authors don't provide sufficient information for a screen reader user to determine the content of something, various tools can be used to attempt to recognize the content from an image.
-NVDA supports the optical character recognition (OCR) functionality built into Windows 10 to recognize text from images.
-Additional content recognizers can be provided in NVDA add-ons.
+어떤 문서나 이미지의 내용을 스크린 리더 사용자가 쉽게 읽을 수 없을때 여러 도구를 사용하여 이미지의 내용을 인식하고 읽을 수 있습니다.
+만약 윈도우 10을 사용한다면 NVDA는 윈도우 자체에서 제공하는 문자 인식(OCR)을 활용하여 이미지의 내용을 인식할 수 있습니다.
+또한 추가 기능을 통해 더 많은 인식 엔진을 사용할 수 있습니다.
 </P>
 <P>
-When you use a content recognition command, NVDA recognizes content from the current <A HREF="#ObjectNavigation">navigator object</A>.
-By default, the navigator object follows the system focus or browse mode cursor, so you can usually just move the focus or browse mode cursor where desired.
-For example, if you move the browse mode cursor to a graphic, recognition will recognize content from the graphic by default.
-However, you may wish to use object navigation directly to, for example, recognize the content of an entire application window.
+문자 인식 명령을 실행하면 현재 <A HREF="#ObjectNavigation">탐색 객체</A>의 내용을 인식합니다.
+기본적으로 탐색 객체는 시스템 포커스와 브라우즈 모드 커서를 딸아가기 때문에 대부분의 경우 커서를 원하는 위치에 두고 인식 명령을 실행하면 됩니다.
+예를 들어 어떤 사이트를 브라우즈 모드를 사용하여 탐색하다가 그래픽을 만나면 브라우즈 커서가 위치한 그래픽에서 곧바로 인식 명령을 식행하면 됩니다.
+그러나 특별한 경우(예: 프로그램 창의 내용을 인식하고 싶을때) 객체 탐색 명령을 사용하여 원하는 객체로 이동하여 문자 인식 명령을 실행해야 합니다.
 </P>
 <P>
-Once recognition is complete, the result will be presented in a document similar to browse mode, allowing you to read the information with cursor keys, etc.
-Pressing enter or space will activate (normally click) the text at the cursor if possible.
-Pressing escape dismisses the recognition result.
+문자 인식이 성공하면 인식 내용은 브라우즈 모드 문서와 같은 창에 뜨며 이때 브라우즈 모드와 같은 방법(예: 방향키로 문서 읽기 등)을 사용하여 내용을 확인할 수 있습니다.
+인식 결과 문서를 탐색하던중 스페이스나 엔터를 누르면 커서에 위치한 글자가 포함된 객체가 활성화됩니다(일반적으로 클릭이 됨).
+인식 내용을 닫으려면 escape키를 누르세요.
 </P>
 
 <A NAME="Win10Ocr"></A>
-<H3>9.1. Windows 10 OCR</H3>
+<H3>9.1. 윈도우 10 OCR</H3>
 
 <P>
-Windows 10 includes OCR for many languages.
-NVDA can use this to recognize text from images or inaccessible applications.
+윈도우 10 OCR(여러 언어 지원)과 NVDA를 사용하여 그래픽이나 접근성이 부족한 앱의 내용을 인식할 수 있습니다.
 </P>
 <P>
-You can set the language to use for text recognition in the <A HREF="#Win10OcrSettings">Windows 10 OCR</A> settings dialog.
-Additional languages can be installed by opening the Start menu, choosing Settings, selecting Time &amp; Language -&gt; Region &amp; Language and then choosing Add a language.
+<A HREF="#Win10OcrSettings">윈도우 10 OCR</A> 설정 대화상자를 통해 문자 인식 언어를 선택할 수 있습니다.
+인식 언어를 추가하려면 시작 메뉴에서 설정을 선택후 시간 및 언어 &gt; 지역 및 언어 &gt; 언어 추가를 선택합니다.
 </P>
 <P>
-To recognize the text in the current navigator object using Windows 10 OCR, press NVDA+r.
+윈도우 10 OCR을 사용하여 현재 탐색 객체의 내용을 인식하려면 NVDA+r을 누르십시오.
 </P>
 
 <A NAME="toc51"></A>
@@ -3137,16 +3136,16 @@ WordPad처럼 서식이 중요한 애플리케이션에서 문서를 읽으면�
 </UL>
 
 <A NAME="Win10OcrSettings"></A>
-<H4>11.1.13. Windows 10 OCR Settings</H4>
+<H4>11.1.13. 윈도우 10 OCR 설정</H4>
 
 <P>
-This dialog can be accessed from the NVDA Preferences menu and allows you to configure <A HREF="#Win10Ocr">Windows 10 OCR</A>.
+NVDA 설정 메뉴에 있는 윈도우 10 OCR 대화상자를 통해 <A HREF="#Win10Ocr">Windows 10 OCR</A> 옵션을 설정할 수 있브니다.
 </P>
 
-<H5>Recognition language</H5>
+<H5>문자 인식 언어</H5>
 
 <P>
-This combo box allows you to choose the language to be used for text recognition.
+본 콤보박스를 사용하여 문자 인식에 사용될 언어를 선택합니다.
 </P>
 
 <A NAME="toc85"></A>
