@@ -43,7 +43,7 @@ NVDA wird standardmäßig mit der freien multilingualen Sprachausgabe [eSpeak NG
 
 Informationen über weitere unterstützte Sprachausgaben, können Sie im Abschnitt "[Unterstützte Sprachausgaben #SupportedSpeechSynths]" nachlesen.
 
-++ Unterstützung von Braille-Ausgaben ++
+++ Unterstützung von Braillezeilen ++
 Für Anwender, die eine Braillezeile besitzen, kann NVDA die Informationen in Brailleschrift ausgeben.
 Die Eingabe von Kurz-, Voll- und Basisschrift über die Brailletastatur Ihrer Braillezeile wird ebenfalls unterstützt.
 Für weitere Informationen schauen Sie bitte im Abschnitt "[Unterstützte Braillezeilen #SupportedBrailleDisplays]" nach.
@@ -638,7 +638,7 @@ Damit möglichst viele Daten auf der Braillezeile Platz finden, wurden folgende 
 | ba | Baumansicht |
 | EN | Ein Eintrag in einer Baumansicht in der Ebene N |
 | fnst | Fenster |
-| ----- | Trennlinie |
+| ``⠤⠤⠤⠤⠤`` | Trennlinie |
 
 Für die folgenden Statusanzeigen wurden ebenfalls Abkürzungen festgelegt:
 || Abkürzung | Status |
@@ -701,16 +701,16 @@ Da der Navigator standardmäßig an den Fokus Bzw. den Lesemodus gekoppelt ist, 
 Wenn Sie den Cursor im Lesemodus auf eine Grafik bewegen, wird die Inhaltserkennung diese Grafik erkennen.
 Sie können jedoch trotzdem die Objektnavigation verwenden, um z. B. den Inhalt eines ganzen Anwendungsfensters zu erkennen.
 
-Wenn die Erkennung abgeschlossen ist, wird das Erkennungsergebnis in einem Dokumentfenster ähnlich dem Lesemodus angezeigt, in dem Sie das Erkennungsergebnis mit den Pfeiltasten lesen können.
+Wenn die Erkennung abgeschlossen ist, wird das Erkennungsergebnis in einem Dokument ähnlich dem Lesemodus angezeigt, in dem Sie das Erkennungsergebnis mit den Pfeiltasten lesen können.
 Drücken Sie die Leertaste oder die eingabetaste, um den Text (üblicherweise durch Klicken) zu aktivieren.
-Drücken Sie Esc, um das Erkennungsergebnis zu schließen.
+Drücken Sie Escape, um das Erkennungsergebnis zu schließen.
 
 ++ Windows 10 OCR ++[Win10Ocr]
 windows 10 enthält eine optische Zeichenerkennung für viele Sprachen.
 Sie können diese zeichenerkennung verwenden, um Text aus Grafiken oder unzugänglichen Anwendungen auszulesen.
 
 Sie können die Erkennungssprache einstellen, indem Sie den Dialog [Windows 10 OCR #Win10OcrSettings] in den NVDA-Einstellungen aufrufen.
-Zusätzliche Sprachen können Sie in den Einstellungen von Windows unter Zeit und Sprache --> Region und Sprache --> Sprache hinzufügen installieren.
+Zusätzliche Sprachen können Sie in den Einstellungen von Windows unter Zeit und Sprache -> Region und Sprache -> Sprache hinzufügen installieren.
 
 %kc:beginInclude
 Drücken Sie NVDA+r, um den Text im aktuellen Navigatorobjekt mit Hilfe der Windows 10 OCR zu erkennen.
@@ -1131,7 +1131,7 @@ Dies bedeutet, dass sie die Braillezeile nicht am ende jeder Zeile weiterscrolle
 Dies erlaubt Ihnen ein flüssigeres lesen größerer Textmengen.
 Diese Option ist standardmäßig deaktiviert.
 
-==== Wenn möglich, verhindere das umbrechen von Wörtern ====
+==== Wortumbruch verhindern (falls möglich) ====
 Wenn diese Option aktiviert ist, trennt NVDA ein Wort nicht, das für die Darstellung auf der Braillezeile zu lang ist.
 Stattdessen bleibt der verbliebene Platz lehr.
 Wenn Sie dann auf den nächsten Bereich weiterbewegen, können Sie das Wort im ganzen lesen.
@@ -1146,24 +1146,24 @@ Das einschalten dieser Option kann Ihnen ein flüssigeres Lesen ermöglichen, be
 ==== Kontext anzeigen ====
 Mit dieser Option können Sie festlegen wann Kontextinformationen angezeigt werden sollen, wenn ein Objekt den Fokus erhält.
 Kontextinformationen sind z. B. Informationen über übergeordnete Objekte.
-For example, when you focus a list item, this list item is part of a list.
-Wenn ein Listeneintrag den Fokus erhält sind damit die namen der Liste, des Dialogfensters oder der aktuellen Anwendung gemeint.
+Ein Beispiel: Wenn Sie einen Listeneintrag fokusieren, ist dieser ein Teil einer Liste.
+Diese Liste könnte ein Teil eines Dialogs oder ähnlichem sein.
 Weitere Informationen über die Objekthierarchie finden Sie im Abschnitt über [Objektnavigation #ObjectNavigation].
 
 Bei der Einstellung "bei Änderungen" wird die Kontextinformation nur dann angezeigt, wenn sich der Kontext ändert.
 Für das obige Beispiel bedeutet das, dass NVDA zunächst so viel Information wie möglich auf der Braillezeile anzeigt, sobald ein Listeneintrag den Fokus erhalten hat.
 Sollte noch Platz auf der Braillezeile vorhanden sein, so wird außerdem der Name der Liste angezeigt.
-Wenn Sie sich mit den Pfeiltasten durch die Liste bewegen, wird angenommen, dass Sie die liste nicht verlassen.
+Wenn Sie sich mit den Pfeiltasten durch die Liste bewegen, wird angenommen, dass Sie wissen, dass Sie sich innerhalb einer Liste befinden.
 Dies bedeutet, dass nur noch die Listeneinträge auf der Braillezeile angezeigt werden.
 Um die Kontextinformationen anzuzeigen können Sie die Braillezeile zurückscrollen.
 
-Bei der Einstellung "immer" wird NVDA immer so viel Kontextinformation wie möglich auf der Braillezeile anzeigen.
+Bei der Einstellung "immer" wird NVDA immer so viel Kontextinformation wie möglich auf der Braillezeile anzeigen, selbst wenn Sie diese Information schon vorher bekommen haben.
 Dies hat den Vorteil, dass immer so viel Information wie möglich auf der Braillezeile angezeigt wird.
 Andererseits kann es zu einer "springenden Anzeige" kommen, wenn sich die Position des fokussierten objekts auf der Braillezeile ständig ändert.
 Dies kann beim Navigieren durch lange Listen zu Problemen führen, weil Sie mit Ihrem Finger immer wieder den Anfang des Eintrags aufsuchen müssen.
 Dies ist das Standardverhalten von NVDA 2017.2 und älter.
 
-Bei der Einstellung "nur beim scrollen" wird NVDA niemals auaomatisch Kontextinformationen anzeigen.
+Bei der Einstellung "nur beim scrollen" wird NVDA niemals automatisch Kontextinformationen anzeigen.
 Für das obige Beispiel bedeutet dies, dass nVDA immer nur den aktuellen listeneintrag anzeigt.
 Wenn Sie dennoch Kontextinformationen (wie z. B. den Namen der Liste) angezeigt bekommen möchten, müssen Sie die Braillezeile zurückscrollen.
 
@@ -1336,9 +1336,9 @@ Schaltet die Ansage von neuen Inhalten in bestimmten Programmen wie Terminals un
 ==== Klang bei automatischen Vorschlägen abspielen ====
 Wenn diese Option aktiviert ist, spielt nVDA einen Klang ab, wenn eine Vorschlagsliste erscheint beziehungsweise ausgeblendet wird.
 Vorschlagslisten sind Listen mit vorgeschlagenen Einträgen basierend auf Text, den Sie in bestimmte  Eingabefelder oder Dokumente eingeben.
-Ein Beispiel für ein solches Eingabefeld ist das Suchfeld im Startmenü in Windows Vista oder neuer.
+Ein Beispiel für ein solches Eingabefeld ist das Suchfeld im Startmenü in Windows Vista oder neuer. Wenn Sie dort einen Suchbegriff eingeben, zeigt Ihnen Windows eine Liste mit Suchvorschlägen, die auf Ihrem Suchbegriff basieren.
 Weitere Beispiele für Eingabefelder mit Vorschlagslisten sind Suchfelder in diversen Windows-10-Anwendungen.
-Die Vorschlagsliste wird geschlossen, sobald Sie mit dem Fokus das Eingabefeld verlassen.
+Die Vorschlagsliste wird geschlossen, sobald Sie mit dem Fokus das Eingabefeld verlassen. NVDA kann Sie manchmal darüber informieren, sobald dies geschieht.
 
 +++ Einstellungen für Eingabemethoden +++
 Sie finden diesen Menüpunkt im Menü Einstellungen.
@@ -1658,9 +1658,9 @@ Manchmal ist es hilfreich, temporär alle Auslöser zu deaktivieren.
 Dies erreichen Sie über die Option "Alle Auslöser temporär deaktivieren" im Dialog Konfigurationsprofile."
 
 ++ Speicherorte für Konfigurationsdateien ++
-In der portablen Version von NVDA werden sämtliche Einstellungen, die Erweiterungen, die benutzerdefinierten Anwendungsmodule und die angepassten Treiber im Ordner "userConfig" unterhalb des Stammordners von NVDA abgelegt.
+In der portablen Version von NVDA werden sämtliche Einstellungen und Erweiterungen im Ordner "userConfig" unterhalb des Stammordners von NVDA abgelegt.
 
-Bei den installierten Versionen von NVDA werden sämtliche Einstellungen und Erweiterungen, die benutzerdefinierten Anwendungsmodule und die angepassten Treiber in einem speziellen Ordner in dem Ordner des angemeldeten Benutzers in dessen Windows-Profil abgelegt.
+Bei den installierten Versionen von NVDA werden sämtliche Einstellungen und Erweiterungen in einem speziellen Ordner in dem Ordner des angemeldeten Benutzers in dessen Windows-Profil abgelegt.
 Dies bedeutet, dass jeder Benutzer im System so seine individuellen Einstellungen verwalten kann.
 Um an das Einstellungsverzeichnis einer installierten Version von NVDA zu gelangen, öffnen Sie das Startmenü und gehen auf "Programme -> NVDA -> Verzeichnis der Benutzereinstellungen durchsuchen...".
 
@@ -2051,7 +2051,6 @@ Bitte sehen Sie in der Dokumentation Ihrer Braillezeile nach, wo die entsprechen
 | Tabulator-Taste | Leertaste+Punkt4+Punkt6 |
 | Alt-Taste | Leertaste+Punkt1+Punkt3+Punkt4 (Leertaste+m) |
 | Escape-Taste | Leertaste+Punkt1+Punkt5 (Leertaste+e) |
-| Eingabetaste | Punkt8 |
 | Windows-Taste+D (Alle Anwendungen minimieren) | C1+C4+C5 (Befehl D) |
 | Windows-Taste | Leertaste+Punkt3+Punkt4 |
 | Alt+Tabulatortaste | Leertaste+Punkt2+Punkt3+Punkt4+Punkt5 (Leertaste+T) |
