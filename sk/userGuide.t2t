@@ -136,6 +136,10 @@ Ak už máte nainštalovaný NVDA podľa pokynov inštalátora, spustiť NVDA je
 Tiež môžete NVDA spustiť napísaním "NVDA" do okna Spustiť v ponuke štart.
 Pomocou [parametrov príkazového riadka #CommandLineOptions] môžete reštartovať NVDA (-r), Ukončiť NVDA (-q), zakázať doplnky (--disable-addons) a podobne.
 
+Nainštalovaná verzia NVDA si ukladá súbory s konfiguráciou do priečinka Roaming určeného pre konkrétneho používateľa (teda "C:\Users\<user>\AppData\Roaming").
+Môžete NVDA nastaviť tak, aby si Načítalo konfiguráciu z lokálneho adresára.
+Podrobnosti nájdete v časti [Systémové parametre #SystemWideParameters] for more details.
+
 Na spustenie prenosnej verzie vstúpte do priečinka, kam ste si NVDA rozbalili a stlačte enter, alebo kliknite na súbor NVDA.exe.
 
 Hneď ako sa NVDA spustí, prvé čo budete počuť je rad stúpajúcich tónov, ktoré vám hovoria, že sa NVDA práve spúšťa.
@@ -147,8 +151,9 @@ Informácie o tom, ako chybu ohlásiť nájdete na stránkach NVDA.
 
 Keď sa NVDA spustí prvý krát, objaví sa uvítacie okno informujúce o použití tzv. klávesu NVDA a základné informácie o ponuke NVDA.
 Viac podrobností si môžete prečítať v nasledujúcich odsekoch.
-Ďalej toto okno obsahuje tri začiarkavacie políčka.
-Prvé políčko umožní zvoliť, či chcete používať capslock ako modifikačný kláves NVDA.
+Ďalej toto okno obsahuje jeden zoznamový rámik a tri začiarkavacie políčka.
+V zozname môžete určiť rozloženie klávesnice, ktoré chcete používať.
+Prvé začiarkávacie políčko umožní zvoliť, či chcete používať capslock ako modifikačný kláves NVDA.
 Druhé začiarkávacie pole rozhoduje o tom, či sa má NVDA spúšťať po prihlásení do systému Windows a je prístupné len v nainštalovanej verzii NVDA.
 Tretie začiarkavacie políčko umožňuje nastaviť, či sa uvítacie okno má zobraziť po každom štarte NVDA.
 
@@ -501,6 +506,7 @@ Za pomoci nasledujúcich klávesov sa môžete posúvať na nasledujúci prvok v
 - o: vnorený objekt
 - 1-6: nadpis príslušnej úrovne
 - a: anotácie (komentár, zmena alebo úprava)
+- w:  chyba
 -
 Rýchly prechod na začiatok alebo koniec skupín prvkov, ako napríklad zoznamov a tabuliek:
 || Názov | Klávesová skratka | popis |
@@ -542,7 +548,7 @@ Musíte však mať vo vašom počítači nainštalovanú aplikáciu  MathPlayer 
 MathPlayer si môžete zdarma stiahnuť z tejto adresy: http://www.dessci.com/en/products/mathplayer/
 
 NVDA podporuje tieto typy matematického obsahu:
-- MathML v prehliadačoch Mozilla Firefox a Microsoft Internet Explorer.
+- MathML v prehliadačoch Mozilla Firefox, Microsoft Internet Explorer a google Chrome.
 - Matematický obsah od Design Science integrovaný v Microsoft Word a Microsoft Powerpoint. Musíte však nainštalovať MathType, skúšobná verzia je postačujúca.
 - MathML v dokumentoch programu Adobe Reader. Toto však zatiaľ nie je oficiálny štandard, preto neexistuje software, ktorý by vedel takéto dokumenty vyrobiť.
 -
@@ -601,7 +607,7 @@ Viac informácií nájdete v kapitole  [Režim prehliadania #BrowseMode].
 %kc:beginInclude
 Ak máte aktívny režim prehliadania v programe Microsoft Word, zoznam prvkov vyvoláte skratkou NVDA+F7.
 %kc:endInclude
-V zozname prvkov môžete prezerať nadpisy, odkazy, komentáre a revízie dokumentu.
+V zozname prvkov môžete prezerať nadpisy, odkazy, komentáre a revízie dokumentu a tiež  chyby (v súčasnosti len pravopisné).
 
 +++ Čítanie komentárov +++
 %kc:beginInclude
@@ -966,6 +972,9 @@ Neovplyvňuje však zobrazenie vybratého textu.
 ==== Zobrazovať správy (sek) ====
 Táto numerická hodnota určuje ako dlho majú na riadku byť zobrazované správy NVDA.
 Nastavením hodnoty na 0 úplne vypnete zobrazovanie týchto správ.
+
+==== zobraziť správy bez obmedzenia ====
+Ak začiarknete túto možnosť, správy budú na riadku zobrazené bez časového obmedzenia.
 
 %kc:setting
 ==== Braillovský kurzor zviazaný s ====[BrailleTether]
@@ -1588,6 +1597,17 @@ Aby Ste mohli používať tieto hlasy, je potrebné nainštalovať dva komponent
  Napríklad súbor MSSpeech_TTS_en-US_ZiraPro.msi obsahuje dáta pre americký hlas.
  -
 -
+
+++ Hlasy OneCore ++
+Operačný systém windows 10 obsahuje hlasy označené ako "one core" alebo "mobile".
+hlasy sú dostupné pre mnoho jazykov (vrátane Slovenčiny a Češtiny) a často majú lepšiu odozvu ako hlasy v rozhraní Sapi5.
+
+Podrobný postup, ako nainštalovať hlaspre konkrétny jazyk nájdete v tomto článku: https://support.office.com/sk-sk/article/Prevzatie-jazykov-prevod-textu-na-re%c4%8d-pre-Windows-4c83a8d8-7486-42f7-8e46-2b0fdf753130?omkt=sk-SK&ui=sk-SK&rs=sk-SK&ad=SK
+
+V súčasnosti má použitie týchto hlasov dve obmedzenia. NVDA nepodporuje všetky dostupné rýchlosti, ktoré dokáže využívať Narator.
+Taktiež rýchlosť, ktorú nastavíte v nastaveniach reči v systéme Windows, ovplyvňuje rýchlosť syntézy aj pre NVDA.
+tieto problémy zatiaľ nie je možné vyriešiť na strane NVDA.
+Dúfame, že budú vyriešené v niektorej z nasledujúcich aktualizácii windows.
 
 ++ Audiologic Tts3 ++
 Toto je komerčný hlasový výstup, ktorý hovorí len talianskym hlasom.
@@ -2224,8 +2244,8 @@ Prosím prečítajte si [dokumentáciu skratiek  brltty http://mielke.cc/brltty/
 | Prejsť na znak v brailly | route (bring cursor to character) |
 %kc:endInclude
 
-+ Skratky pre prvky a typy stavov v braillovskom zobrazení +
-Aby sa na braillovský riadok dostalo čo najviac informácií, pre prvky a stavy sa používajú tieto skratky.
++ Skratky pre prvky, oblasti stránky a typy stavov v braillovskom zobrazení +
+Aby sa na braillovský riadok dostalo čo najviac informácií, pre prvky, oblasti stránky a stavy sa používajú tieto skratky.
 
 || skratka | typ prvku |
 | btn | tlačidlo |
@@ -2238,8 +2258,9 @@ Aby sa na braillovský riadok dostalo čo najviac informácií, pre prvky a stav
 | rN | riadok v tabuľke, kde N je číslo riadka, napríklad r1, r2. |
 | hN | nadpis úrovne, pričom N udáva úroveň, napríklad h1, h2 |
 | lnk | odkaz |
-| lst | zoznam |
 | vlnk | navštívený odkaz |
+| lst | zoznam |
+| lmk | oblasť stránky |
 | mnu | menu |
 | mnubar | panel ponúk |
 | rbtn | prepínač |
@@ -2260,6 +2281,20 @@ Skratkami sú tiež označené tieto stavy:
 | ro | Zobrazuje sa, ak je objekt (napríklad editačné pole) len na čítanie |
 | sel | zobrazuje sa, ak je objekt vybratý |
 | submnu | zobrazuje sa, ak objekt obsahuje podmenu |
+
+Pre oblasti stránky sa používajú tieto skratky:
+
+
+
+|| skratka | Oblasť stránky |
+| bnnr | banner |
+| cinf | Info o bsahu |
+| cmpl | doplnková |
+| form | formulár |
+| main | hlavná |
+| navi | navigácia |
+| srch | vyhľadávanie |
+| rgn | oblasť |
 
 + Pre pokročilých +
 
@@ -2303,6 +2338,18 @@ NVDA v súčasnosti podporuje tieto parametre:
 | nie je | --no-sr-flag  | Nezmení predvolené označenie čítača obrazovky v systéme |
 | Nie je | --install | Nainštaluje NVDA a spustí nainštalovanú kópiu |
 | nie je | --install-silent | Nainštaluje NVDA s predvolenými parametrami bez používateľského rozhrania, ale nespustí nainštalovanú kópiu|
+
+++ Systémové parametre ++[SystemWideParameters]
+Niektoré Nastavenia NVDA je možné zmeniť v editore registrov.
+Hodnoty sú uložené v nasledujúcich kľúčoch:
+- 32-bitový systém: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
+- 64-bitový systém: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+-
+
+V súčasnosti je možné upraviť tieto hodnoty:
+|| Názov | Typ | dostupné hodnoty | Popis |
+| configInLocalAppData | DWORD | 0 (predvolená hodnota) =vypnuté, 1 =zapnuté | Ak je zapnuté, ukladá konfigurácaiu data do lokálneho používateľského adresára a nie do priečinka roaming. |
+| serviceDebug | DWORD | 0 (predvolené) =vypnuté, 1 =zapnuté | Ak je povolené, vypne bezpečný  režim na prihlasovacích a zabezpečených obrazovkách. Vďaka tomu je potom možné používať na týchto miestach Python konzolu aj zobrazovač logu. Toto nastavenie však predstavuje vysoké bezpečnostné ryziko. |
 
 + Ako získať viac informácií +
 Ak hľadáte ďalšie informácie o NVDA, o jeho vývoji, alebo hľadáte pomoc, navštívte stránku projektu na adrese NVDA_URL.
