@@ -592,38 +592,77 @@ Všetky nastavenia týkajúce sa braillovských riadkov a tabuliek nájdete v č
 Aby sa na braillovský riadok dostalo čo najviac informácií, pre prvky, oblasti stránky a stavy sa používajú tieto skratky.
 
 || skratka | typ prvku |
+| app | aplikácia |
++| bqt | citácia |
 | btn | tlačidlo |
+| drbtn | Tlačidlo s kontextovou ponukou |
+| spnbtn | výberové tlačidlo |
+| splbtn | kruhové tlačidlo |
+| tgbtn | prepínacie tlačidlo |
 | cbo | zoznamový rámik |
 | chk | začiarkávacie políčko |
+| doc | dokument |
 | dlg | dialóg |
+| pwdedt | Heslové editačné pole |
+| embedded | vnorený objekt  |
+| enote | koncová poznámka |
+| fnote | poznámka pod čiarou |
 | edt | editačné textové pole |
 | gra | grafika |
-| cN | stĺpec v tabuľke, kde N je číslo stĺpca, napríklad c1, c2. |
-| rN | riadok v tabuľke, kde N je číslo riadka, napríklad r1, r2. |
+| grp | zoskupenie |
 | hN | nadpis úrovne, pričom N udáva úroveň, napríklad h1, h2 |
+| hlp | bublinková nápoveda |
+| lmk | oblasť stránky|
 | lnk | odkaz |
 | vlnk | navštívený odkaz |
 | lst | zoznam |
-| lmk | oblasť stránky |
 | mnu | menu |
 | mnubar | panel ponúk |
+| mnubtn | tlačidlo ponuky |
+| mnuitem | položka menu |
+| pnl | panel |
+| prgbar | indikátor priebehu |
 | rbtn | prepínač |
-| tb | tabuľka |
+| scrlbar | posúvač |
+| sect | sekcia |
+| stbar | stavový riadok |
+| tabctl | zoznam záložiek |
+| tbl | tabuľka |
+| cN | stĺpec v tabuľke, kde N je číslo stĺpca, napríklad c1, c2. |
+| rN | riadok v tabuľke, kde N je číslo riadka, napríklad r1, r2. |
+| term | terminál |
+| tlbar | panel nástrojov |
+| tltip | kontextová nápoveda |
 | tv | stromové zobrazenie |
+| tvbtn | tlačidlo stromového zobrazenia |
+| tvitem | položka stromového zobrazenia |
 | lv N | položka v stromovom zobrazení, N udáva hierarchickú úroveň |
-| ``-----`` | oddeľovač |
+| wnd | okno |
+| ⠤⠤⠤⠤⠤ | od
 
 Skratkami sú tiež označené tieto stavy:
 || skratka | stav prvku |
 | ... | zobrazuje sa, ak prvok podporuje automatické dopĺňanie |
-| ( ) | Zobrazuje sa, ak objekt (napríklad začiarkávacie pole) nie je začiarknutý |
-| (x) | zobrazuje sa, ak objekt (napríklad začiarkávacie pole) je začiarknutý |
-| (-) | zobrazuje sa, ak objekt (napríklad začiarkávacie pole) je čiastočne začiarknutý |
+| ⢎⣿⡱ | Zobrazí sa, ak je objekt (napríklad prepínacie tlačidlo) stlačený |
+| ⢎⣀⡱ | Zobrazí sa, ak objekt (napríklad prepínacie tlačidlo) nie je stlačený |
+| ⣏⣿⣹ | Zobrazí sa, ak je objekt (napríklad začiarkávacie políčko)  začiarknutý |
+| ⣏⣸⣹ | zobrazí sa, ak je objekt (napríklad začiarkávacie políčko) čiastočne začiarknutý |
+| ⣏⣀⣹ | zobrazí sa,ak objekt (napríklad začiarkávacie políčko) nie je začiarknutý |
 | - | Zobrazuje sa, ak sa dá objekt (napríklad vetva v stromovom zobrazení) zbaliť |
 | + | zobrazuje sa, ak sa dá objekt (napríklad vetva v stromovom zobrazení) rozbaliť |
+| *** | Označuje chránený dokument alebo prvok|
 | clk | zobrazuje sa, ak je objekt klikateľný |
+| cmnt | Označuje komentár v dokumente alebo bunke tabuľky|
+| frml | Označuje vzorec v bunke tabuľky |
+| invalid | Označuje nesprávne zadanú informáciu|
+| ldesc | Označuje, že objekt (zvyčajne obrázok) obsahuje dlhý popis|
+| mln | Označuje viacriadkové editačné pole, najčastejšie vo webových dokumentoch|
+| req | Označuje povinné pole vo formulári |
 | ro | Zobrazuje sa, ak je objekt (napríklad editačné pole) len na čítanie |
 | sel | zobrazuje sa, ak je objekt vybratý |
+| nsel | zobrazí sa,ak objekt nie je vybratý |
+| sorted asc | Zobrazí sa, ak je objekt zobrazený vzostupne|
+| sorted desc | zobrazí sa,ak je objekt zobrazený zostupne|
 | submnu | zobrazuje sa, ak objekt obsahuje podmenu |
 
 Pre oblasti stránky sa používajú tieto skratky:
@@ -651,7 +690,32 @@ Bod 8 preloží zadaný text a stlačí kláves Enter.
 Body 7+8: preloží zadaný text, ale nevloží medzeru ani nový riadok.
 %kc:endInclude
 
-++ Vylepšenia pre aplikácie +
++Optické rozpoznávanie textu+
+Ak nie sú k dispozícii užitočné textové informácie, je možné použiť nástroje na optické  rozpoznávanie textu z obrázka.
+NVDA dokáže rozpoznávať text z obrázka pomocou optického rozpoznávania (OCR) vstavaného v operačnom systéme Windows 10.
+Ďalšie spôsoby rozpoznávania textu môžu byť integrované pomocou doplnkov.
+
+Ak vyvoláte rozpoznanie textu, NVDA bude analyzovať aktuálny [navigačný objekt #ObjectNavigation].
+Predvolene navigačný objekt sleduje systémový kurzor alebo kurzor v režime prehliadania, takže vo väčšine prípadov stačí presunúť kurzor na požadované miesto.
+Ak napríklad presuniete kurzor na obrázok, bude rozpoznaný text z obrázka.
+Ak chcete cez OCR rozpoznať celé okno aplikácie, budete musieť použiť objektovú navigáciu.
+
+Keď je rozpoznávanie dokončené, text sa zobrazí v režime prehliadania a môžete ho čítať šípkami.
+objekt pod kurzorom môžete aktivovať (zvyčajne kliknúť naň) medzerou alebo klávesom enter.
+Klávesom ESC zatvoríte okno s rozpoznaným textom.
+
+++ Windows 10 OCR ++[Win10Ocr]
+priamo v systéme windows 10 je k dispozícii optické rozpoznávanie textu pre mnohé jazyky. V súčasnosti nie je dostupné pre Slovenčinu, len pre Češtinu.
+NVDA môže pomocou OCR rozpoznať text v obrázku alebo v neprístupnom okne aplikácie.
+
+jazyk rozpoznávania nastavíte v dialógu [Rozpoznávanie textu OCR #Win10OcrSettings].
+Doplnkové jazyky pre rozpoznávanie (Napríklad Češtinu) nainštalujete z menu štart > nastavenia > čas a jazyk > miestne a jazykové nastavenia > Pridanie jazyka.
+
+%kc:beginInclude
+rozpoznanie textu v aktuálnom navigačnom objekte vyvoláte skratkou NVDA+R.
+%kc:endInclude
+
++ Vylepšenia pre aplikácie +
 NVDA pre niektoré aplikácie implementuje svoje vlastné príkazy, čím buď umožňuje ľahšie vykonávať niektoré úlohy, alebo sprístupňuje časti aplikácií, ktoré nie sú inak prístupné používateľom odkázaným na čítač obrazovky.
 
 ++ Microsoft Word ++
@@ -1033,12 +1097,16 @@ toto sa týka systémového kurzora a tiež prezeracieho kurzora. Toto nastaveni
 ==== Blikajúci kurzor ====
 Umožňuje aktivovať blikajúci kurzor na braillovskom riadku.
 Ak nezačiarknete túto možnosť, kurzor bude stále zobrazený.
-
+Táto možnosť neovplyvňuje zobrazenie vybratého textu. Označenie sa zobrazuje ako body 7+8 bez blikania.
 ==== Rýchlosť blikania kurzora (ms)====
 Ide o číselnú hodnotu, ktorá určuje frekvenciu blikania kurzora braillovského zobrazovača v milisekundách.
 
-==== Tvar kurzora ====
-toto nastavenie určuje tvar kurzora (teda kombináciu bodov).
+==== Tvar kurzora pre fokus= ===
+toto nastavenie určuje tvar kurzora (teda kombináciu bodov), ktoré sa zobrazujú, ak je braillovský kurzor zviazaný so systémovým kurzorom.
+Neovplyvňuje však zobrazenie vybratého textu.
+
+==== Tvar kurzora pre prezerací kurzor = ===
+toto nastavenie určuje tvar kurzora (teda kombináciu bodov), ktoré sa zobrazujú, ak je braillovský kurzor zviazaný s prezeracím kurzorom.
 Neovplyvňuje však zobrazenie vybratého textu.
 
 ==== Zobrazovať správy (sek) ====
@@ -1072,6 +1140,32 @@ Ak túto možnosť odčiarknete, zobrazí sa na konci riadka kúsok slova, ktor�
 Zvyšok slova bude až na ďalšom riadku.
 
 Začiarknutím tejto možnosti docielite plynulejšie čítanie, na druhej strane budete musieť riadok posúvať častejšie.
+
+==== prezentácia kontextu ====
+toto nastavenie určuje, aké kontextové informácie sa zobrazia na riadku pri objekte, ktorý má fokus.
+Kontextové informácie môžu informovať o hierarchii objektov.
+Ak napríklad presuniete fokus na položku v zozname, táto položka je súčasťou zoznamu.
+Tento zoznam sa nachádza v nejakom dialógu a tak ďalej.
+Hierarchia objektov je podrobne vysvetlená v časti [Objektová navigácia #ObjectNavigation].
+
+Ak nastavíte možnosť "len zmeny", NVDA bude zobrazovať informácie o kontexte aktuálneho objektu, ale len ak dôjde ku zmene kontextu.
+Ak v našom príklade prejdete na položku v zozname, na riadku sa zobrazí informácia o tom, že ide o položku.
+Ak na riadku ostane ešte voľné miesto, NVDA zobrazí aj informáciu o tom, že položka je súčasťou zoznamu.
+Ak sa začnete v zozname pohybovať šípkami, NVDA predpokladá, že viete, že sa nachádzate v zozname.
+Preto túto informáciu viac nezobrazí a na riadku nájdete len meno aktuálnej položky.
+ak si chcete prečítať kontextovú informáciu znovu, musíte zobrazenie na riadku posunúť späť.
+
+ak nastavíte možnosť "vždy zobraziť", NVDA bude zobrazovať všetky kontextové informácie aj v prípade, že už boli zobrazené.
+Výhodou je, že na riadku takto uvidíte vždy čo najviac kontextových informácií.
+Nevýhodou však môže byť, že na riadku bude vždy rozdiel  v tom, kde sa  začína fokus.
+pri tomto nastavení je ťažké napríklad rýchlo prechádzať dlhý zoznam položiek, lebo musíte vždy prstom hľadať kde sa nová položka začína.
+Toto bolo predvolené nastavenie do verzie NVDA 2017.2.
+
+Poslednou možnosťou je nastavenie "len pri návrate späť". V tomto prípade sa nebudú zobrazovať žiadne kontextové informácie.
+V našom príklade sa teda dozviete len to, že ste napoložke v zozname.
+ak si chcete prečítať celú kontextovú informáciu (že ste v zozname a tento je súčasťou dialógu), musíte posunúť zobrazenie na riadku späť.
+
+Ak chcete toto nastavenie meniť kedykoľvek z klávesnice, môžete si k nemu priradiť klávesovú skratku v dialógu [Klávesové skratky  #InputGestures].
 
 +++ Nastavenia klávesnice (NVDA+ctrl+k) +++
 Toto nastavenie nájdeme v možnostiach programu NVDA, pod položkou nastavenia klávesnice.
@@ -1383,6 +1477,12 @@ Môžete si vybrať zo štyroch možností:
 Tón sa zvyšuje pri každej medzere, pri každom tabulátore sa zvyšuje štvornásobne.
 - Oznamovať a pípať: Oznamuje odsadenie riadka hlasom aj pípaním podľa pravidiel uvedených vyššie.
 -
+
++++ rozpoznávanie textu OCR +++
+Tento dialóg nájdete v ponuke možnosti v menu  NVDA. Môžete v ňom nastaviť parametre pre rozpoznávanie textu pomocou rozhrania [Windows 10 OCR #Win10Ocr].
+
+==== jazyk rozpoznávania ====
+V tomto zozname môžete vybrať jazyk, ktorý sa bude používať na rozpoznávanie textu.
 
 +++ Rečové slovníky +++
 Ponuka Rečové slovníky (vnorená v ponuke Možnosti) obsahuje dialógy, v ktorých môžete nastaviť ako bude NVDA vyslovovať konkrétne slová alebo frázy.
@@ -2295,6 +2395,16 @@ Pre popis a umiestnenie tlačidiel si prosím pozrite [Návod k zobrazovačom Ec
 | Fokus alebo systémový kurzor na pozíciu prezeracieho kurzora | F9 |
 | Súradnice kurzora v režime prezerania | F0 |
 | Prepnúť nastavenie braillovský kurzor zviazaný s | A |
+%kc:endInclude
+
+++ SuperBraille ++
+Braillovský riadok SuperBraille, populárny hlavne v Tajvane, je možné pripojiť cez USB alebo sériový port.
+Tento riadok nemá žiadne tlačidlá a preto sa na prácu s ním používa klávesnica počítača.
+Aby bolo možné zaisťiť prácu s riadkom a tiež kompatibilitu s inými čítačmi obrazovky v Tajvane, sú k dispozícii tieto klávesové skratky.
+%kc:beginInclude
+|| Názov | Klávesová skratka |
+| Posunúť zobrazenie späť | mínus na numerickej klávesnici |
+| Posunúť zobrazenie vpred | plus na numerickej klávesnici | 
 %kc:endInclude
 
 ++ BRLTTY ++
