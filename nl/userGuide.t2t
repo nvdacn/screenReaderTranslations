@@ -2512,14 +2512,17 @@ Hieronder volgen de commandoregelopties voor NVDA:
 | Geen | --install | Installeert NVDA (de zojuist geïnstalleerde kopie wordt gestart) |
 | Geen | --install-silent | Silently stille installatie van  NVDA (de zojuist geïnstalleerde kopie wordt niet gestart) |
 
-++ Meer uitgebreide aanpassing van de uitspraak van leestekens en  symbolen ++
-Behalve in het [dialoogvenster Uitspraak van Interpunctie en Symbolen #SymbolPronunciation] zijn er nog andere mogelijkheden om de uitspraak van leestekens te beïnvloeden.
-U kunt bij voorbeeld  aangeven dat bepaalde tekens onbewerkt aan de synthesizer worden doorgegeven ( om een pauze in te lassen of het intonatiepatroon te beïnvloeden, etc.) en u kunt aangepaste symbolen toevoegen. 
+++ Systeem-brede Parameters ++[SystemWideParameters]
+U kunt voor NVDA enkele waarden in het systeemregister instellen die systeembreed het gedrag van NVDA beïnvloeden.
+Deze waarden worden in het register onder een van de volgende sleutels opgeslagen:
+- 32-bit system: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
+- 64-bit system: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+-
 
-Hiertoe moet u het bestand met de uitspraakdefinities voor symbolen bewerken. 
-Het bestand met de naam  “symbols-xx.dic”, waar xx de gebruikte taalcode is, bevindt zich in de gebruikersconfiguratiemap.
-Informatie over de opmaak van dit bestand leest u in  de paragraaf over de Uitspraak van Interpunctie/Symbolen  in de NVDA Handleiding voor Ontwikkelaars (alleen in het Engels). De handleiding vindt u [in de rubriek voor ontwikkelaars op de NVDA-Website http://community.nvda-project.org/wiki/Development].
-Door gebruikers kunnen echter geen complexe symbolen worden gedefinieerd.
+De volgende waarden kunnen onder deze registersleutel worden ingesteld:
+|| Naam | Type | Mogelijke waarden | Beschrijving |
+| configInLocalAppData | DWORD | 0 (default) to disable, 1 to enable | Indien ingeschakeld (enabled), wordt de NVDA gebruikersconfiguratie in de lokale application data opgeslagen in plaats van de roaming application data |
+| serviceDebug | DWORD | 0 (default) to disable, 1 to enable | Indien ingeschakeld (enabled), wordt veilige modus voor windows secure desktops, die gebruik van Python consool en Log viewer moglijk maakt, buiten werking gesteld. Aangezien dit een aantal belangrijke veiligheidsrisico's met zich meebrent,wordt gebruik van deze optie ten zeerste afgeraden |
 
 + Verdere informatie +
 Voor nadere informatie over NVDA of voor hulp kunt u terecht op de website NVDA_URL.
