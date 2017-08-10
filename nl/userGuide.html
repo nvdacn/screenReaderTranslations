@@ -185,7 +185,7 @@
   <LI><A HREF="#toc124">17. Geavanceerde Onderwerpen</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">17.1. Commandoregelopties</A>
-    <LI><A HREF="#toc126">17.2. Meer uitgebreide aanpassing van de uitspraak van leestekens en  symbolen</A>
+    <LI><A HREF="#SystemWideParameters">17.2. Systeem-brede Parameters</A>
     </UL>
   <LI><A HREF="#toc127">18. Verdere informatie</A>
   </UL>
@@ -5795,19 +5795,43 @@ Hieronder volgen de commandoregelopties voor NVDA:
 </TR>
 </TABLE>
 
-<A NAME="toc126"></A>
-<H3>17.2. Meer uitgebreide aanpassing van de uitspraak van leestekens en  symbolen</H3>
+<A NAME="SystemWideParameters"></A>
+<H3>17.2. Systeem-brede Parameters</H3>
 
 <P>
-Behalve in het <A HREF="#SymbolPronunciation">dialoogvenster Uitspraak van Interpunctie en Symbolen</A> zijn er nog andere mogelijkheden om de uitspraak van leestekens te beïnvloeden.
-U kunt bij voorbeeld  aangeven dat bepaalde tekens onbewerkt aan de synthesizer worden doorgegeven ( om een pauze in te lassen of het intonatiepatroon te beïnvloeden, etc.) en u kunt aangepaste symbolen toevoegen. 
+U kunt voor NVDA enkele waarden in het systeemregister instellen die systeembreed het gedrag van NVDA beïnvloeden.
+Deze waarden worden in het register onder een van de volgende sleutels opgeslagen:
 </P>
+
+<UL>
+<LI>32-bit system: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
+<LI>64-bit system: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+</UL>
+
 <P>
-Hiertoe moet u het bestand met de uitspraakdefinities voor symbolen bewerken. 
-Het bestand met de naam  “symbols-xx.dic”, waar xx de gebruikte taalcode is, bevindt zich in de gebruikersconfiguratiemap.
-Informatie over de opmaak van dit bestand leest u in  de paragraaf over de Uitspraak van Interpunctie/Symbolen  in de NVDA Handleiding voor Ontwikkelaars (alleen in het Engels). De handleiding vindt u <A HREF="http://community.nvda-project.org/wiki/Development">in de rubriek voor ontwikkelaars op de NVDA-Website</A>.
-Door gebruikers kunnen echter geen complexe symbolen worden gedefinieerd.
+De volgende waarden kunnen onder deze registersleutel worden ingesteld:
 </P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Naam</TH>
+<TH>Type</TH>
+<TH>Mogelijke waarden</TH>
+<TH>Beschrijving</TH>
+</TR>
+<TR>
+<TD>configInLocalAppData</TD>
+<TD>DWORD</TD>
+<TD>0 (default) to disable, 1 to enable</TD>
+<TD>Indien ingeschakeld (enabled), wordt de NVDA gebruikersconfiguratie in de lokale application data opgeslagen in plaats van de roaming application data</TD>
+</TR>
+<TR>
+<TD>serviceDebug</TD>
+<TD>DWORD</TD>
+<TD>0 (default) to disable, 1 to enable</TD>
+<TD>Indien ingeschakeld (enabled), wordt veilige modus voor windows secure desktops, die gebruik van Python consool en Log viewer moglijk maakt, buiten werking gesteld. Aangezien dit een aantal belangrijke veiligheidsrisico's met zich meebrent,wordt gebruik van deze optie ten zeerste afgeraden</TD>
+</TR>
+</TABLE>
 
 <A NAME="toc127"></A>
 <H2>18. Verdere informatie</H2>
