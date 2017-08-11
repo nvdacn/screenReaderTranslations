@@ -136,6 +136,10 @@ Pritisnite V redu, da zaprete to pogovorno okno.
 Kot dodatno možnost lahko uporabite pogovorno okno Zaženi, kjer vnesete NVDA in pritisnete Enter.
 Lahko uporabite tudi [možnosti v ukazni vrstici, #CommandLineOptions] ki vam omogočajo ponovni zagon NVDA (-r), izhod iz NVDA (-q), onemogočanje dodatkov (--disable-addons), in drugo.
 
+Za nameščene kopije, NVDA privzeto hrani konfiguracijo v mapi sleddenja programskih datotek trenutnega uporabnika (npr. "C:\Users\<uporabnik>\AppData\Roaming").
+To je možno spremeniti na način, da NVDA naloži svojo konfiguracijo iz mape z lokalnimi programskimi podatki.
+Oglejte si razdelek o [splošnih sistemskih parametrih #SystemWideParameters] za več podrobnosti.
+
 Za zagon prenosljive kopije pojdite v imenik, kjer ste ustvarili prenosljivo kopijo NVDA in pritisnite Enter nad NVDA.exe ali to ikono dvakrat kliknite.
 
 Ko se bo NVDA zagnala, boste slišali višajoč skupek tonov,  (ki povedo, da se NVDA nalaga).
@@ -147,8 +151,9 @@ Prosimo, preglejte NVDA spletno mesto, da izveste, kako to narediti.
 
 Ko se NVDA zažene prvič, vas bo pozdravilo pogovorno okno, ki vas bo oskrbelo z nekaj osnovnimi informacijami o NVDA prikrojevalni tipki in o NVDA meniju.
 (Prosimo, glejte nadaljne razdelke o teh temah.)
-Pogovorno okno vsebuje tudi tri izbirnike.
-Prvi sprašuje, če naj NVDA obravnava Capslock kot NVDA prikrojevalno tipko.
+Pogovorno okno vsebuje tudi spustni seznam in tri izbirnike.
+Na spustnem seznamu lahko določite, katero obliko tipkovnice boste uporabljali.
+Prvi izbirnik sprašuje, če naj NVDA obravnava Capslock kot NVDA prikrojevalno tipko.
 Drugi določa ali naj se NVDA po prijavi v Windows zažene samodejno in je na voljo samo za namestitvene kopije NVDA.
 Tretji sprašuje, če naj se to pogovorno okno pokaže vedno, ko se NVDA zažene.
 
@@ -501,6 +506,7 @@ Sledeče tipke samostojno preskakujejo na naslednji mogoč element, medtem, ko z
 - o: vdelan predmet
 - 1 to 6: naslovi od 1 do 6 (vsak zase)
 - a: zabeležka (komentar, uredniški popravek itd.)
+- w: napaka črkovanja
 -
 Za premik na začetek ali konec vsebinskih elementov, kot so seznami in tabele:
 || Ime | Tipka | Opis |
@@ -542,7 +548,7 @@ To pomeni, da mora biti MathPlayer 4 nameščen na vaš računalnik.
 MathPlayer je na voljo kot brezplačen prenos s: http://www.dessci.com/en/products/mathplayer/
 
 NVDA podpira naslednje tipe matematične vsebine:
-- MathML v Mozilli Firefox in Internet Explorerju.
+- MathML v Mozilli Firefox, Internet Explorerju in Google Chromu.
 - Design Science MathType v Microsoftovem Wordu and PowerPointu. Da bo ta funkcija pravilno delovala, morate v sistem namestiti tudi MathType. Omejena različica bo zadostovala.
 - MathML V Adobovem Readerju. Opozarjamo, da to še ni uraden standard, tako trenutno ni na voljo nobenega primernega programa, kjer bi se lahko ustvarila taka vsebina.
 -
@@ -601,7 +607,7 @@ Za več informacij o Brskalniškem delovanju in Hitrem krmiljenju, si oglejte [r
 %kc:beginInclude
 Medtem, ko uporabljate Brskalniško delovanje v Microsoft Wordu, lahko do Seznama Elementov dostopate z ukazom NVDA+f7.
 %kc:endInclude
-Seznam Elementov lahko razvrsti naslove, povezave in zabeležke, kar vključuje komentarje in sledenje spremembam.
+Seznam Elementov lahko razvrsti naslove, povezave, zabeležke, kar vključuje komentarje in sledenje spremembam in napake (trenutno omejeno na napake črkovanja).
 
 +++ Sporočanje Komentarjev +++
 %kc:beginInclude
@@ -967,6 +973,9 @@ Ta možnost ne vpliva na indikator izbire.
 Ta možnost je številčno polje, ki nadzira, koliko dolgo bodo sporočila NVDA prikazana na brajevi vrstici.
 Nastavitev tega polja na 0 onemogoči prikaz teh sporočil.
 
+==== Kaži Sporočila v Nedogled ====
+Ta možnost omogoča sporočilom NVDA, da bodo prikazana na brajevi vrstici, toliko časa, dokler jih ne boste ročno zavrgli v obliki drugega sporočila, s premikom žarišča ipd.
+
 %%fixMe %kc:setting
 ==== Braj se Omeji na ====[BrailleTether]
 Tipka: NVDA+control+t
@@ -1155,6 +1164,13 @@ To je možnost, ki ko je izbrana, pove NVDA, naj podaja informacijo o poteku nap
 Tipka: NVDA+5
 
 Vklaplja možnost naznanila nove vsebine v posameznih predmetih, kot so terminali in kontrolnik zgodovine v programih za klepetanje.
+
+==== Zaigraj zvok, ko se pokažejo samodejni predlogi ====
+Preklaplja možnost naznanitve prikaza samodejnih predlogov in če je stikalo vključeno, bo NVDA zaigrala zvok in tako nakazala pojavitev predlogov.
+Samodejni predlogi so seznami predlaganih vnosov, ki temeljijo na predhodno vnešenem besedilu v ta polja za urejanje in dokumente.
+Na primer, ko vnašate besedilo v iskalno polje v začetnem meniju sistema Windows Vista in novejših, Okna prikažejo seznam predlogov temelječih na tem, kar ste natipkali.
+V nekaterih poljih za urejanje, kot so iskalna polja v različnih Windows 10 aplikacijah, vas lahko NVDA obvesti, da se je prikazal seznam predlogov med tem, ko ste vnašali besedilo.
+Seznam samodejnih predlogov bo izginil, ko se boste enkrat premaknili iz polja za urejanje in za nekatera polja, vas lahko NVDA obvesti o tem, ko se to zgodi.
 
 +++ Nastavitve za Vnos Večznakovnih Znakov +++
 Pogovorno okno nastavitev vnosa večznakovnih znakov lahko najdete v meniju nastavitev.
@@ -1588,6 +1604,17 @@ Za uporabo teh glasov boste morali v sistem namestiti ti dve komponenti:
  Na primer, datoteka MSSpeech_TTS_en-US_ZiraPro.msi je glas, ki govori ameriško Angleščino.
  -
 -
+
+++ Glasovi Windows OneCore ++
+Operacijski sistem Windows 10 vključuje nove glasove, poznane kot "OneCore" ali "mobile" glasove.
+Glasovi so na voljo za razzlične jezike in ti so bolj odzivni kot so Microsoftovi glasovi, ki so na voljo z uporabo MMicrosoft Speech API različico 5.
+
+Za namestitev glasov za dodatne jezike, si oglejte ta Microsoftov članek (verjetno v Angleščini): https://support.office.com/en-us/article/How-to-download-Text-to-Speech-languages-for-Windows-4c83a8d8-7486-42f7-8e46-2b0fdf753130
+
+Prosimo, vzemite v zakup, da višje hitrosti, ki so na voljo ob uporabi Pripovedovalca (Narratorja), trenutno niso na voljo za NVDA.
+Pomnite tudi, da hitrost, ki jo izberete v nastavitvah sistema Windows, vpliva na hitrost, določeno v NVDA.
+To sta vrzeli, ki jih ne moremo zakrpati brez sprememb v samem sistemu Windows.
+Upamo, da bosta odpravljeni v prihodnjih posodobitvah sistema Windows.
 
 ++ Audiologic Tts3 ++
 To je plačljiva govorna sinteza namenjena predvsem za italijanski jezik
@@ -2224,8 +2251,8 @@ Prosimo, poglejte [BRLTTY dokumentacijo tabele povezanih tipk http://mielke.cc/b
 | usmeri na brajevo celico | route (bring cursor to character) |
 %kc:endInclude
 
-+ Brajeve okrajšave stanja in tipov kontrolnika +
-Zaradi največjega možnega števila prikaza informacij na brajevi vrstici so v NVDA definirane okrajšave za indikacijo različnih tipov kontrolnikov in njihovih stanj.
++ Brajeve okrajšave mejnikov, stanja in tipov kontrolnika +
+Zaradi posredovanja največjega možnega števila informacij na brajevo vrstico naenkrat so v NVDA definirane okrajšave za indikacijo različnih tipov kontrolnikov in njihovih stanj, tako kot mejnikov.
 
 || Okrajšava | Tip kontrolnika |
 | gmb | gumb |
@@ -2238,8 +2265,9 @@ Zaradi največjega možnega števila prikaza informacij na brajevi vrstici so v 
 | vN | n številka vrstice v tabeli, npr. v1, v2. |
 | nN | naslov na nivoju n, npr. n1, n2. |
 | pvz | povezava |
-| szm | seznam |
 | opvz | obiskana povezava |
+| szm | seznam |
+| mjn | mejnik |
 | mni | meni |
 | mnivrs | menijska vrstica |
 | rgmb | radijski gumb |
@@ -2260,6 +2288,17 @@ Definirani so tudi sledeči indikatorji stanj kontrolnikov:
 | sb | se prikaže, ko je predmet (npr. polje za urejanje besedila) samo za branje |
 | ozn | se prikaže, ko je predmet označen |
 | podmni | se prikaže ob predmetu s pojavnim oknom (običajno podmeni) |
+
+Na koncu so definirane še sledeče okrajšave za mejnike:
+|| Okrajšava | Mejnik |
+| psc | pasica |
+| vsbn | vsebinski |
+| dpln | dopolnilni |
+| izpl | izpolnjevalni |
+| glvn | glavni |
+| krml | krmilni |
+| iskl | iskalni |
+| obmč | območni |
 
 + Napredne Vsebine +
 
@@ -2303,6 +2342,18 @@ NVDA pozna naslednje možnosti ukazne vrstice:
 | None | --no-sr-flag  | Ne zamenjaj stanja globalne sistemske zastavice za bralnik zaslona. |
 | None | --install | Namesti NVDA (na novo nameščeno kopijo NVDA tudi zažene). |
 | None | --install-silent | Tiho namesti NVDA (na novo nameščene kopije NVDA ne zažene). |
+
+++ Splošni sistemski parametri++[SystemWideParameters]
+NVDA dovoli, da se nekatere vrednosti lahko nastavijo v sistemskem registru, ki določa vedenje NVDA na ravni splošnega sistema.
+Te vrednosti se hranijo v registru pod enim izmed teh ključev:
+- 32-bitni sistem: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
+- 64-bitni sistem: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+-
+
+Sledeče vrednosti se torej lahko nastavijo v tem registerskem ključu:
+|| Ime | Tip | Možne vrednosti | Opis |
+| configInLocalAppData | DWORD | 0 (privzeto) za izključitev, 1 to vključitev | Če je omogočeno, hrani NVDA uporabniško konfiguracijo kot lokalne programske podatke namesto the kot programske podatke, ki sledijo uporabniku |
+| serviceDebug | DWORD | 0 (privzeto) za izključitev, 1 za vključitev | Če je omogočeno, onemogoči varni način delovanja na windows varnih namizjih, tako dovoljujoč uporabo Python konzole in Pregledovalnika dnevnika. Zaradi nekaterih večjih varnostnih posledic, uporabo te možnosti strogo odsvetujemo |
 
 + Druge Informacije +
 Če potrebujete več informacij ali pomoč pri uporabi NVDA, prosimo, obiščite spletno mesto NVDA na NVDA_URL.
