@@ -8,9 +8,11 @@
 %%toc
 
 + Giriş +
-, Görsel olmayan Masaüstü Erişimi anlamına gelen (NVDA) Microsoft Windows işletim sistemi için ücretsiz ve açık kaynak bir ekran okuma programıdır.
+NVDA'ya hoş geldiniz!
+
+Görsel olmayan Masaüstü Erişimi anlamına gelen (NVDA) Microsoft Windows işletim sistemi için ücretsiz ve açık kaynak bir ekran okuma programıdır.
 NVDA Sentetik bir ses ya da braille ile geri bildirim sağlayarak, kör ya da az görenlerin extra bir ücret ödemeden Windows işletim sistemi kurulu bilgisayarları kullanabilmesini mümkün kılar.
-NVDA [NV Access tarafından http://www.nvaccess.org/], camiadan ilgili birçok insanın katkısıyla geliştirilmektedir.
+NVDA [NV Access tarafından https://www.nvaccess.org/], camiadan ilgili birçok insanın katkısıyla geliştirilmektedir.
 
 ++ Genel Özellikler ++
 NVDA, kör ve az görenlerin Windows işletim sistemi ve sistemde kurulu birçok farklı uygulamaya erişimine ve bunlarla etkileşimine imkan vermektedir.
@@ -648,6 +650,31 @@ Mesela, rakam işaretiyle başlayıp girdiğiniz bazı rakamlardan sonra geri si
 7. nokta basarak son braille hücreyi ya da girilen karakteri silersiniz.
 8. nokta braille girişi çevirir ve enter tuşuna basar.
 7. ve 8. noktalara birlikte basarsanız aralık ya da enter tuşuna basılmaksızın braille girişi metne çevrilir.
+%kc:endInclude
+
++ Content Recognition +
+When authors don't provide sufficient information for a screen reader user to determine the content of something, various tools can be used to attempt to recognize the content from an image.
+NVDA supports the optical character recognition (OCR) functionality built into Windows 10 to recognize text from images.
+Additional content recognizers can be provided in NVDA add-ons.
+
+When you use a content recognition command, NVDA recognizes content from the current [navigator object #ObjectNavigation].
+By default, the navigator object follows the system focus or browse mode cursor, so you can usually just move the focus or browse mode cursor where desired.
+For example, if you move the browse mode cursor to a graphic, recognition will recognize content from the graphic by default.
+However, you may wish to use object navigation directly to, for example, recognize the content of an entire application window.
+
+Once recognition is complete, the result will be presented in a document similar to browse mode, allowing you to read the information with cursor keys, etc.
+Pressing enter or space will activate (normally click) the text at the cursor if possible.
+Pressing escape dismisses the recognition result.
+
+++ Windows 10 OCR ++[Win10Ocr]
+Windows 10 includes OCR for many languages.
+NVDA can use this to recognize text from images or inaccessible applications.
+
+You can set the language to use for text recognition in the [Windows 10 OCR #Win10OcrSettings] settings dialog.
+Additional languages can be installed by opening the Start menu, choosing Settings, selecting Time & Language -> Region & Language and then choosing Add a language.
+
+%kc:beginInclude
+To recognize the text in the current navigator object using Windows 10 OCR, press NVDA+r.
 %kc:endInclude
 
 + Uygulamaya Özgü Özellikler +
@@ -1383,6 +1410,12 @@ Satır girintilerinin bildirimi seçim kutusunda dört seçenek bulunmaktadır.
 - Konuşarak ve ses çalarak: Bu seçenek girintinin yukarıdaki iki yolla da bildirimini sağlar.
 -
 
++++ Windows 10 OCR Ayarları +++[Win10OcrSettings]
+This dialog can be accessed from the NVDA Preferences menu and allows you to configure [Windows 10 OCR #Win10Ocr].
+
+==== Recognition language ====
+This combo box allows you to choose the language to be used for text recognition.
+
 +++ Konuşma Sözlükleri +++
 Tercihler menüsünde bulunan konuşma sözlükleri menüsü, belirli sözcük veya öbeklerin NVDA tarafından nasıl söyleneceğini ayarlayabileceğiniz iletişim kutularını içermektedir.
 şu an itibariyle 3 farklı konuşma sözlüğü bulunmaktadır.
@@ -1680,7 +1713,7 @@ Bu sesleri kullanabilmek için iki bileşeni indirip kurmanız gerekmektedir:
 Windows 10 "OneCore" ya da "mobile" sesler olarak bilinen yeni sesler içerir .
 Bir çok dil için sesler mevcuttur, dahası Sapi 5 kullanan önceki Microsoft seslerine kıyasla daha hızlı tepki vermektedirler.
 
-Ek diller için sesler yüklemek isterseniz, bu Microsoft makalesine bakın: https://support.office.com/en-us/article/How-to-download-Text-to-Speech-languages-for-Windows-4c83a8d8-7486-42f7-8e46-2b0fdf753130
+Lütfen kullanılabilen sesler ve yükleme talimatları için bu Microsoft makalesine bakın: https://support.microsoft.com/en-us/help/22797/windows-10-narrator-tts-voices
 
 Lütfen dikkat,  Naratör için geçerli olan daha hızlı konuşma    NVDA ile henüz geçerli değildir.
 Ayrıca, Windows Ayarlarında seçtiğiniz hız NVDA konuşma hızını da etkiler.
@@ -2294,6 +2327,16 @@ Please see the [EcoBraille documentation ftp://ftp.once.es/pub/utt/bibliotecnia/
 | Move System focus or caret to current review position | F9 |
 | Report review cursor location | F0 |
 | Toggle braille tethered to | A |
+%kc:endInclude
+
+++ SuperBraille ++
+The SuperBraille device, mostly available in Taiwan, can be connected to by either USB or serial.
+As the SuperBraille does not have any physical typing keys or scrolling buttons, all input must be performed via a standard computer keyboard.
+Due to this, and to maintain compatibility with other screen readers in Taiwan, two key bindings for scrolling the braille display have been provided:
+%kc:beginInclude
+|| Name | Key |
+| Scroll braille display back | numpadMinus |
+| Scroll braille display forward | numpadPlus | 
 %kc:endInclude
 
 ++ BRLTTY ++
