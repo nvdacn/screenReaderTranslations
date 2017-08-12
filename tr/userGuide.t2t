@@ -652,29 +652,29 @@ Mesela, rakam işaretiyle başlayıp girdiğiniz bazı rakamlardan sonra geri si
 7. ve 8. noktalara birlikte basarsanız aralık ya da enter tuşuna basılmaksızın braille girişi metne çevrilir.
 %kc:endInclude
 
-+ Content Recognition +
-When authors don't provide sufficient information for a screen reader user to determine the content of something, various tools can be used to attempt to recognize the content from an image.
-NVDA supports the optical character recognition (OCR) functionality built into Windows 10 to recognize text from images.
-Additional content recognizers can be provided in NVDA add-ons.
++ İçerik Tanıma +
+Yazarlar bir şeyin içeriğiyle ilgili ekran okuyucuların algılayabileceği tarzda yeterli bilgi sunmadıklarında, bir görüntünün içeriğinin tanınması için çeşitli araçlar kullanılabilir.
+NVDA görüntülerin içerisindeki metnin tanınması için Windows 10'la sunulan (OCR) işlevini optik karakter tanımayı destekler .
+Başka içerik tanıma araçları NVDA eklentisi olarak sunulmaktadır.
 
-When you use a content recognition command, NVDA recognizes content from the current [navigator object #ObjectNavigation].
-By default, the navigator object follows the system focus or browse mode cursor, so you can usually just move the focus or browse mode cursor where desired.
-For example, if you move the browse mode cursor to a graphic, recognition will recognize content from the graphic by default.
-However, you may wish to use object navigation directly to, for example, recognize the content of an entire application window.
+İçerik tanıma komutu kullandığınızda, NVDA [nesne sunucusu #ObjectNavigation] tarafından odaklanan nesne içeriğini  tanımaya çalışır.
+Varsayılan olarak, nesne sunucusu  sistem odağı ya da  tarama kipi imlecini takip eder, dolayısıyla yalnızca odağı ya da tarama kipi imlecini  istediğiniz noktaya getirip tanıma işlemini başlatabilirsiniz.
+Mesela, tarama kipi imlecini bir grafiğe taşıdıktan sonra, tanıma işlemi bu grafikle sunulan içeriği için yapılır.
+Bununla birlikte, nesne sunucusunu doğrudan tanıma işlemi yapılacak nesne üzerine de götürüp tanıma işlemini başlatabilirsiniz.
 
-Once recognition is complete, the result will be presented in a document similar to browse mode, allowing you to read the information with cursor keys, etc.
-Pressing enter or space will activate (normally click) the text at the cursor if possible.
-Pressing escape dismisses the recognition result.
+Tanıma işlemi tamamlandıktan sonra, sonuç tarama kipinde gösterilir ve yön tuşlarını kullanarak içerik üzerinde dolaşabilirsiniz.
+Enter ya da aralığa basarsanız, mümkünse üzerinde bulunduğunuz metni etkinleştirebilirsiniz.
+Escape tuşuyla tanıma sonucunu kapatabilirsiniz.
 
 ++ Windows 10 OCR ++[Win10Ocr]
-Windows 10 includes OCR for many languages.
-NVDA can use this to recognize text from images or inaccessible applications.
+Windows 10 birçok dil için OCR içerir.
+NVDA bu aracı imajlardaki metni ya da erişilebilir olmayan uygulamalardaki kontrolleri tanımak için kullanabilir.
 
-You can set the language to use for text recognition in the [Windows 10 OCR #Win10OcrSettings] settings dialog.
-Additional languages can be installed by opening the Start menu, choosing Settings, selecting Time & Language -> Region & Language and then choosing Add a language.
+[Windows 10 OCR #Win10OcrSettings] ayarları iletişim kutusundan metin tanıma için kullanılacak dili seçebilirsiniz.
+başlat menüsü, ayarlar, zaman ve dil, bölge ve dil altında dil ekle düğmesi kullanılarak ek diller yüklenebilir.
 
 %kc:beginInclude
-To recognize the text in the current navigator object using Windows 10 OCR, press NVDA+r.
+Windows 10 OCR kullanarak geçerli nesne içindeki metni tanımak için, NVDA+r tuşlarına basın.
 %kc:endInclude
 
 + Uygulamaya Özgü Özellikler +
@@ -1099,7 +1099,33 @@ Ekranı kaydırdığınızda bölünmüş sözcüğün kalanını okuyabilirsini
 
 Bunu etkinleştirmek daha akıcı bir okuma olanağı sunmakla birlikte, ekranı kaydırmak için ilgili tuşlara daha fazla basmanızı gerektirecektir.
 
-+++ Klavye Ayarları (NVDA+kontrol+k) +++
+==== Odak bağlam sunumu ====
+Bu seçenek bir nesne üzerine gittiğinizde NVDA'nın braille ekranda hangi bağlamı göstereceğini seçmenizi sağlar.
+Bağlam bilgisi odağı içeren nesnelerin hiyerarşisini ifade eder.
+Mesela, bir liste öğesine odaklanırsanız, bu liste öğesi bir listede yer alır.
+Bu liste, iletişim kutusu, vb tarafından içerilmiş olabilir.
+Lütfen NVDA nesneleri için geçerli olan hiyerarşi hakkında daha fazla bilgi için ilgili bölüme başvurun [nesne dolaşımı #ObjectNavigation].
+
+Bağlam değişimi için ekranı doldur seçeneği seçilmişse, NVDA braille ekranda mümkün olduğunca çok bilgi görüntülemek için çalışır, ama içeriğin yalnızca değişen bölümleri için.
+Yukarıdaki örnek üzerinden, bu demektir ki listeye gittiğinizde NVDA braille ekranda liste öğesini gösterir.
+Ayrıca, braille ekranda yeterince yer kaldıysa NVDA öğenin bir listenin parçası olduğunu da göstermeye çalışır.
+Sonra liste üzerinde yön tuşlarıyla hareket etmeye başlarsanız, bir liste içinde olduğunuzu bildiğiniz varsayılır.
+Dolayısıyla, geri kalan liste üyeleri için NVDA sadece üzerinde olduğunuz öğeyi gösterir.
+Bağlamı tekrar okumak için (yani bir listede olduğunuzu ve bu listenin bir iletişim kutusunun parçası olduğunu), braille ekranı tekrar geri kaydırmanız gerekecektir.
+
+Bu seçenek her zaman ekranı doldur olarak ayarlandıysa, NVDA bu bilgiyi daha önce görüp görmediğinizden bağımsız olarak braille ekranda bağlam bilgisini her zaman göstermeye çalışacaktır.
+Bunun avantajı braille ekranda mümkün olduğunca fazla bilgi gösterilmesidir.
+Ancak, dezavantajı ise, odağın başının gösterildiği yer farklılaşabilir.
+Bu, parmağınızı sürekli hareket ettirmek durumunda kalacağınız için uzun bir listede aradığınız bir öğeyi bulmanızı zorlaştırabilir.
+Bu, NVDA 2017.2 ve Öncesi için  varsayılan davranıştı.
+
+Odak bağlam sunum tercihini bağlam bilgisini sadece geri kaydırırken göster olarak ayarlarsanız, NVDA bağlam bilgisini varsayılan olarak bir daha göstermez.
+Dolayısıyla, yukarıdaki örnekte, NVDA yalnızca liste öğesini gösterecektir.
+Ancak, bağlamı tekrar okumak için (yani bir listede olduğunuzu ve bu listenin bir iletişim kutusunun parçası olduğunu), braille ekranı geri kaydırmanız gerekecektir.
+
+Herhangi bir yerdeyken odak bağlam sunumunu değiştirmek için, [Girdi Hareketleri iletişim  kutusu #InputGestures] kullanarak özel bir girdi hareketi oluşturun.
+
++++ Kılavye Ayarları (NVDA+kontrol+k) +++
 Bu iletişim kutusu tercihler menüsü içindeki "Klavye Ayarları..." altında bulunur.
 içinde aşağıdaki seçenekler mevcuttur:
 
