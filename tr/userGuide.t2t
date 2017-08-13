@@ -592,38 +592,82 @@ Braille ayarlarını  [Braille Ayarları iletişim kutusu #BrailleSettings] içi
 Braille ekranaa mümkün olduğunca fazla bilgi sığdırmak amacıyla, kontrol türünü  ve durumunu göstermenin yanı sıra sınırimlerinin bildirimi   için aşağıdaki kısaltmalar tanımlanmıştır.
 
 || Kısaltma | Kontrol türü |
+| uyg | uygulama |
+| lnt | alıntı bloğu |
 | dğm | düğme |
++| drdğm | açılır düğme |
+| döndğm | dönen düğme |
+| blmdğm | bölünmüş düğme |
+| gçşdğm | geçiş düğmesi |
 | sk | seçim kutusu |
 | ok | onay kutusu |
 | ik | iletişim kutusu |
+| bel | belge |
 | Yza | yazı alanı |
+| prlyza | şifre yazı alanı |
+| gömülü | gömülü nesne |
+| sonnot | son not |
+| dnot | dip not |
 | gra | grafik |
 | sütN | tablo sütun numarası n, Örn, Süt1, süt2. |
 | satN | tablo satır numarası n, Örn, sat1, sat2. |
+| grp | gruplandırma |
 | bN | başlık seviyesi n, Örn, b1, b2. |
+| yrd | yardım balonu |
+| snrimi | sınırimi |
 | bln | bağlantı |
 | zbln | ziyaret edilmiş bağlantı |
 | lst | liste |
 | snrimi | sınırimi |
 | mnu | menu |
 | mçb | menü çubuğu |
+| mnüdğm | menü düğmesi |
+| mnüöğe | menü öğesi |
+| pnl | panel |
++| aşmçb | aşama çubuğu |
 | sd | seçim düğmesi |
 | tb | tablo |
 | ag | ağaçgörünümü |
+| kydçb | kaydırma çubuğu |
+| blm | bölüm |
+| drmçb | durum çubuğu |
+| skmdntm | sekme denetimi |
+| tbl | tablo |
+| sütN | tablo sütun numarası n, örneğin süt1, süt2. |
+| satN | tablo satır numarası n, örneğin sat1, sat2. |
+| term | terminal |
+| arçb | araç çubuğu |
+| ipu | araç ipucu |
+| ag | ağaç görünümü |
+| ağçdğm | ağaç görünümü düğmesi |
+| ağçg | ağaç görünümü öğesi |
 |  sv N | ağaç görünüm öğesinin hiyerarşik seviyesi N |
-| ``-----`` | ayraç |
+| pnc | pencere |
+| ⠤⠤⠤⠤⠤ | ayraç |
 
 Aşağıdaki durum belirtenleri de tanımlanmıştır:
 || Kısaltma | Kontrol durumu |
 | ... | bir nesne otomatik tamamlamayı destekliyorsa  gösterilir |
-| ( ) | onay kutusu vb nesneler onaylı değilse gösterilir |
-| (x) | bir nesne (örneğin bir onay kutusu) işaretli olduğunda gösterilir |
-| (-) | bir nesne (örneğin bir onay kutusu) yarı işaretli olduğunda gösterilir |
+| ⢎⣿⡱ | bir nesneye, örneğin bir geçiş düğmesine basılmışsa gösterilir |
+| ⢎⣀⡱ | bir nesneye, örneğin bir geçiş düğmesine basılı değilse gösterilir |
+| ⣏⣿⣹ | bir nesne (örneğin bir onay kutusu) işaretli olduğunda gösterilir |
+| ⣏⣸⣹ | bir nesne (örneğin bir onay kutusu) yarı işaretli olduğunda gösterilir |
+| ⣏⣀⣹ | onay kutusu vb nesneler onaylı değilse gösterilir |
 | - | Bir nesne örn bir ağaç görünüm öğesi daraltılabilir olduğunda gösterilir |
 | + | Bir nesne örn, bir ağaç görünüm öğesi genişletilebilir olduğunda gösterilir |
+| *** | korunmuş bir kontrol ya da belge görüntülendiğinde gösterilir |
 | tkl | bir nesne tıklanabilirse gösterilir |
+| yrm | bir çalışma sayfası ya da bir belge içinde yorumla karşılaşıldığında gösterilir |
+| frml | çalışma sayfasındaki hücrede formül varsa gösterilir |
+| geçersiz | geçersiz bir giriş olduğunda gösterilir |
+| uzntrf | bir nesneyle, genellikle bir grafikle ilgili uzun tarif varsa gösterilir |
+| çkstryza | çok satırlı bir yazı alanıyla karşılaşıldığında gösterilir, örneğin bazı web sayfalarındaki yorum alanları |
+| grkl | zorunlu giriş gerektiren form alanlarıyla karşılaşıldığında gösterilir |
 | so | bir nesne örn bir yazı alanı salt okunursa gösterilir |
 | seç | Bir nesne seçildiğinde gösterilir |
+| sçldğl | nesne seçili değilse gösterilir |
+| A'dan Z'ye | a'dan z'ye sıralı bir nesneyle karşılaşıldığında gösterilir |
++| Z'den A'ya | z'den a'ya sıralı bir nesneyle karşılaşıldığında gösterilir |
 | altmnu | Bir nesne açılan (genellikle bir alt-menü) olduğunda gösterilir |
 
 Son olarak, sınırimleri için aşağıdaki kısaltmalar tanımlanmıştır:
@@ -1059,13 +1103,18 @@ Sistem imleci ve inceleme imleci için uygulanır; seçimin belirtilmesi için g
 ==== İmleç Sinyali ====
 Bu seçenek, braille imlecin yanıp sönmesini sağlar.
 Sinyal kapatıldıysa, braille imleç yukarıda sabitlenir.
+Seçim göstergesi bu tercihten etkilenmez, her zaman 7 ve 8 nokta yukarıdadır.
 
 ==== İmleç inip çıkma hızı ====
 Bu seçenek, imleç inip çıkma hızının milisaniyede ne kadar hızlı olacağını değiştirmenizi sağlayan rakamsal bir alandır.
 
-==== İmleç Şekli ====
-Bu seçenek, braille imlecin şeklini belirlemenizi sağlar.
-Seçim belirteci bu seçenekle etkilenmez.
+==== odak için imleç Şekli ====
+Bu seçenek, odak tarafından taşındığı durumda braille imlecin şeklini belirlemenizi sağlar.
+Seçim belirteci bu tercihten etkilenmez, her zaman 7 ve 8 nokta yukarıdadır.
+
+==== İnceleme için imleç Şekli ====
+Bu seçenek, inceleme imleci  tarafından taşındığı durumda braille imlecin şeklini belirlemenizi sağlar.
+Seçim belirteci bu tercihten etkilenmez, her zaman 7 ve 8 nokta yukarıdadır.
 
 ==== Mesaj Zaman Aşımı Saniyesi ====
 Bu seçenek, sistem mesajlarının braille ekranda ne kadar uzun süre gösterileceğini kontrol eden bir rakamsal alandır.
