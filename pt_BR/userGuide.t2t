@@ -567,6 +567,67 @@ Por favor consulte a documentação do MathPlayer para informações adicionais.
 
 Quando quiser retornar ao documento, simplesmente pressione a tecla escape.
 
++ Abreviaturas para Tipos e Estados dos Controles em Braille +
+Com vistas a fornecer tanta informação quanto possível numa linha braille, as seguintes abreviaturas foram definidas para indicar os tipos e estados dos controles.
+|| Abreviatura | Tipo de controle |
+| btn | botão |
+| cbo | caixa de combinação |
+| chk | caixa de seleção |
+| dlg | diálogo |
+| edt | campo de edição de texto |
+| gra | gráfico |
+| cN |  coluna numa tabela n, isto é, c1, c2. |
+| rN | número da linha numa tabela n, isto é, r1, r2. |
+| hN | nível do cabeçalho n, isto é, h1, h2. |
+| lnk | link |
+| lst | lista |
+| vlnk | link visitado |
+| mnu | menu |
+| mnubar | barra de menu |
+| rbtn | botão de opção |
+| tb | tabela |
+| tv | vista em árvore |
+| lv N | um item de vista em árvore contendo um nível hierárquico N |
+| ``-----`` | separador |
+
+Os seguintes indicadores de estado também foram definidos:
+|| Abreviatura | Estado do controle |
+| ... | exibido quando um objeto suporta auto completar |
+| ( ) | exibido quando um objeto (por exemplo uma caixa de seleção) não está marcada |
+| (x) | exibido quando um objeto (por exemplo uma caixa de seleção) está marcada |
+| (-) | exibido quando um objeto (por exemplo uma caixa de seleção) está meio marcada |
+| - | exibido quando um objeto (por exemplo um item de vista em árvore) é recolhível |
+| + | exibido quando um objeto (por exemplo um item de vista em árvore) é expandível |
+| clk | exibido quando um objeto é clicável |
+| ro | exibido quando um objeto (por exemplo um campo de edição de texto) é somente leitura |
+| sel | exibido quando um objeto está selecionado |
+| submnu | exibido quando um objeto possui popup (usualmente um submenu) |
+
++ Reconhecimento de  Conteúdo +
+Quando os autores não fornecem informações suficientes para os usuários de leitores de telas com vistas a determinar o conteúdo de alguma coisa, várias ferramentas podem ser usadas para tentar reconhecer o conteúdo de uma imagem.
+O NVDA suporta a funcionalidade de reconhecimento óptico de caracteres (OCR) integrada no Windows 10 para reconhecer textos oriúndos de imagens.
+Reconhecedores adicionais de conteúdo podem ser fornecidos  através de complementos para o NVDA.
+
+Quando você usa um comando de reconhecimento de conteúdo, o NVDA reconhece o conteúdo do [objeto de navegação #ObjectNavigation] atual.
+Por padrão, a navegação de objetos segue o  foco do sistema ou o cursor do modo de navegação, de modo que você pode, usualmente, apenas mover o foco ou o cursor do modo de navegação para onde desejar.
+Por exemplo, caso mova o cursor do modo de navegação para um gráfico, o reconhecimento irá reconhecer o conteúdo do gráfico por padrão.
+Todavia, você pode pretender usar a navegação de objetos diretamente para reconhecer, por exemplo, o conteúdo de toda a janela de um aplicativo.
+
+Uma vez que o reconhecimento esteja completo, o resultado será apresentado num documento similar ao modo de navegação, permitindo-lhe ler a informação com as setas, etc.
+Pressionando enter ou espaço, ativará (como um clique normal) se possível, o texto sob o cursor.
+Pressionando escape, desaparecerá o resultado do reconhecimento.
+
+++ O OCR do Windows 10 ++[Win10Ocr]
+O Windows 10 inclui OCR para vários idiomas.
+O NVDA pode usá-lo para reconhecer textos contidos em imagens ou aplicativos inacessíveis.
+
+É possível definir o idioma a ser usado para o reconhecimento de textos  no diálogo de opções do [Windows 10 OCR #Win10OcrSettings].
+Idiomas Adicionais podem ser instalados abrindo o Menu iniciar, configurações, selecionando hora e Idioma -> Região e Idioma e em seguida, selecionando Adicionar um idioma.
+
+%kc:beginInclude
+Para reconhecer o texto no objeto de navegação atual usando o OCR do Windows 10, pressione NVDA+r.
+%kc:endInclude
+
 + Comandos do NVDA PARA Aplicações Específicas +
 O NVDA fornece seus próprios comandos adicionais para alguns aplicativos, com vistas a executar mais facilmente determinadas tarefas, ou para proporcionar acesso a funcionalidades que de outra forma não são acessíveis aos usuários de leitores de telas.
 
@@ -2142,46 +2203,10 @@ Por favor consulte as [tabelas de documentação de teclas para o BRLTTY http://
 | Guiar para a cela braille | route (lleva o cursor ao caractere) |
 %kc:endInclude
 
-+ Abreviaturas para Tipos e Estados dos Controles em Braille +
-Com vistas a fornecer tanta informação quanto possível numa linha braille, as seguintes abreviaturas foram definidas para indicar os tipos e estados dos controles.
-|| Abreviatura | Tipo de controle |
-| btn | botão |
-| cbo | caixa de combinação |
-| chk | caixa de seleção |
-| dlg | diálogo |
-| edt | campo de edição de texto |
-| gra | gráfico |
-| cN |  coluna numa tabela n, isto é, c1, c2. |
-| rN | número da linha numa tabela n, isto é, r1, r2. |
-| hN | nível do cabeçalho n, isto é, h1, h2. |
-| lnk | link |
-| lst | lista |
-| vlnk | link visitado |
-| mnu | menu |
-| mnubar | barra de menu |
-| rbtn | botão de opção |
-| tb | tabela |
-| tv | vista em árvore |
-| lv N | um item de vista em árvore contendo um nível hierárquico N |
-| ``-----`` | separador |
-
-Os seguintes indicadores de estado também foram definidos:
-|| Abreviatura | Estado do controle |
-| ... | exibido quando um objeto suporta auto completar |
-| ( ) | exibido quando um objeto (por exemplo uma caixa de seleção) não está marcada |
-| (x) | exibido quando um objeto (por exemplo uma caixa de seleção) está marcada |
-| (-) | exibido quando um objeto (por exemplo uma caixa de seleção) está meio marcada |
-| - | exibido quando um objeto (por exemplo um item de vista em árvore) é recolhível |
-| + | exibido quando um objeto (por exemplo um item de vista em árvore) é expandível |
-| clk | exibido quando um objeto é clicável |
-| ro | exibido quando um objeto (por exemplo um campo de edição de texto) é somente leitura |
-| sel | exibido quando um objeto está selecionado |
-| submnu | exibido quando um objeto possui popup (usualmente um submenu) |
-
 + Tópicos Avançados +
 
 ++ Opções de Linha de Comando ++[CommandLineOptions]
-O NVDA pode aceitar uma ou mais opções adicionais quando iniciado que alteram seu comportamento.
+Quando iniciado, o NVDA pode aceitar uma ou mais opções adicionais que alteram seu comportamento.
 É possível passar tantas opções quanto você precisar.
 Essas opções  podem ser passadas ao iniciar a partir de um atalho (nas propriedades do atalho), a partir do diálogo executar (menu iniciar ->Executar ou Windows+r) ou a partir de um console de comando do Windows.
 As opções devem ser separadas do nome do arquivo executável do NVDA e de outras opções por espaços.
