@@ -548,6 +548,116 @@ Bővebb információkért olvassa el a MathPlayer súgóját.
 
 Amennyiben szeretne visszatérni a fődokumentumba, nyomja meg az escape billentyűt.
 
++ Braille +
+Ha rendelkezik braille kijelzővel, az NVDA képes információkat megjeleníteni rajta.
+Amennyiben a kijelzője rendelkezik Perkins-féle billentyűzettel, lehetőség van braille bevitelére rövidírással és teljes írással egyaránt.
+
+A támogatott braille kijelzőkkel kapcsolatos információkért nézze meg a [Támogatott Braille kijelzők #SupportedBrailleDisplays] fejezetet.
+A [braille beállítások párbeszédablakon #BrailleSettings] találja a braille-lal kapcsolatos beállításokat.
+
+++ Braille vezérlőtípus-, állapot- és jelzőpontrövidítések ++
+Ahhoz, hogy a braille kijelzőn minél több információ elférjen, a következő rövidítéseket alkalmazzuk a vezérlőelemek típusának, állapotának, ill. a jelzőpontok feltüntetésére. 
+
+|| Rövidítés | Vezérlőtípus |
+| app | alkalmazás |
+| idéz | idézetblokk |
+| gb | gomb |
+| lngb | lenyílógomb |
+| lgb | léptetőgomb |
+| ogb | osztott gomb |
+| tgb | többállapotú gomb |
+| klm | kombinált listamező |
+| jn | jelölőnégyzet |
+| pbp | párbeszédpanel |
+| dok | dokumentum |
+| szm | szerkesztőmező |
+| jlsz | jelszó szerkesztőmező |
+| beobj | beágyazott objektum |
+| végj | végjegyzet |
+| lábj | lábjegyzet |
+| ábra | ábra |
+| csop | elemcsoport |
+| cN | címsor n. szintű, pl. c1, c2. |
+| súgó | súgóbuborék |
+| jp | jelzőpont |
+| hv | hivatkozás |
+| mhv | meglátogatott hivatkozás |
+| lm | lista |
+| mnü | menü |
+| mnüs | menüsor |
+| mnügb | menügomb |
+| mnüe | menüelem |
+| tlt | panel |
+| foly | folyamatjelző |
+| rgb | választógomb |
+| gs | gördítősáv |
+| szksz | szakasz |
+| ás | állapotsor |
+| fül | fül |
+| tbl | táblázat |
+| oN | N. számú táblázatoszlop, pl. o1, o2. |
+| sN | N. számú táblázatsor, pl. s1, s2. |
+| psor | parancssor |
+| et | eszköztár |
+| etip | eszköztipp |
+| fn | fanézet |
+| fngb | körvonalgomb |
+| fne | fanézetelem |
+| lv N | N. szintű fanézetelem |
+| ablk | ablak |
+| ????? | elválasztó |
+
+Az állapotjelzők rövidítései:
+|| Rövidítés | Vezérlő állapot |
+| ... | automatikus kiegészítést támogató elem |
+| ??? | az elem (pl. többállapotú gomb) lenyomva |
+| ??? | az elem (pl. többállapotú gomb) nincs lenyomva |
+| ??? | az elem (pl. jelölőnégyzet) be van jelölve |
+| ??? | az elem (pl. jelölőnégyzet) félig be van jelölve |
+| ??? | az elem (pl. jelölőnégyzet) nincs bejelölve |
+| - | az elem (pl. fanézetelem) nyitva |
+| + | az elem (pl. fanézetelem) zárva |
+| *** | védett elem vagy dokumentum |
+| kat | kattintható elem |
+| megj | megjegyzést tartalmazó táblázatcella, vagy szövegrész |
+| képl | képletet tartalmazó táblázatcella |
+| érvn | érvénytelen bejegyzés |
+| hleir | egy elem (általában ábra) hosszú leírással rendelkezik |
+| tbsor | többsoros szerkesztőmező, pl. kommentek szerkesztőmezője a weboldalakon |
+| köt | kötelezően kitöltendő űrlapmező |
+| ol | csak olvasható elem (pl. szerkesztőmező) |
+| kv | kijelölt elem |
+| nkij | nem kijelölt elem |
+| rendn | növekvő rendezés |
+| rendcs | csökkenő rendezés |
+| amnü | az elem felugró almenüt tartalmaz |
+
+Végül a jelzőpontok különböző típusainak rövidítései:
+|| Rövidítés | Jelzőpont |
+| főcím | főcím |
+| tart | tartalom lábléc |
+| kieg | kiegészítő |
+| űrlap | űrlap |
+| fő | fő |
+| nav | navigáció |
+| kers | keresés |
+| tlt | terület |
+
+++ Braille bevitel ++
+Rövidírással és teljes írással is bevihet szöveget a braille billentyűzet segítségével, az NVDA mindkét változatot támogatja.
+A megfelelő braille fordítótábla kiválasztásához használja a [Beviteli tábla #BrailleInputTable] kombinált listamezőt a Braille beállítások párbeszédablakon.
+
+Ha teljes írással visz be szöveget, az már a bevitellel párhuzamosan beillesztésre kerül. A bevitt braille karaktereket az NVDA a beállított fordítótábla segítségével azonnal átalakítja szöveggé.
+Rövidírásos bevitel esetén a szöveg csak akkor kerül beillesztésre, ha szóközt vagy entert üt a szó végén.
+Vegye figyelembe, hogy a fordítás csak az éppen bevitt braille szóval foglalkozik, a billentyűzeten korábban bevitt karakterek nem használhatók fel újra.
+Pl. ha egymás után két ugyanazzal a braille-karakterrel kezdődő szót akar bevinni, akkor hiába lép vissza a backspace-szel az első karakterhez, mindenképpen be kell vinnie az új szót az elejétől.
+
+%kc:beginInclude
+7. pont: törli az utoljára bevitt braille cellát vagy karaktert.
+8. pont: lefordítja a braille bevitelt és lenyomja az entert.
+7. + 8. pont: lefordítja a braille bevitelt a szóköz vagy az enter leütése nélkül.
+%kc:endInclude
+
 + Tartalom felismerése +
 Ha a fejlesztők nem adnak elegendő információt a képernyőolvasók felhasználóinak ahhoz, hogy értelmezni tudjanak egy adott tartalmat, különböző eszközök állnak rendelkezésre egy kép tartalmának felismerésére.
 Az NVDA támogatja a Windows 10 beépített optikai karakterfelismerés (OCR) funkcióját, használatával képes felismerni a képek szöveges tartalmát.
