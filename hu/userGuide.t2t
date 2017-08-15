@@ -548,6 +548,31 @@ Bővebb információkért olvassa el a MathPlayer súgóját.
 
 Amennyiben szeretne visszatérni a fődokumentumba, nyomja meg az escape billentyűt.
 
++ Tartalom felismerése +
+Ha a fejlesztők nem adnak elegendő információt a képernyőolvasók felhasználóinak ahhoz, hogy értelmezni tudjanak egy adott tartalmat, különböző eszközök állnak rendelkezésre egy kép tartalmának felismerésére.
+Az NVDA támogatja a Windows 10 beépített optikai karakterfelismerés (OCR) funkcióját, használatával képes felismerni a képek szöveges tartalmát.
+További tartalom-felismerők találhatók az NVDA kiegészítői közt.
+
+Amennyiben tartalom-felismerő parancsot használ az NVDA megkísérli felismerni a navigátor kurzornál található tartalmat #ObjectNavigation].
+Alapértelmezés szerint a navigátor kurzor a rendszerkurzort vagy a böngészőmód kurzorát követi, így a megszokott navigációs parancsokkal léphet a felismerni kívánt tartalomra.
+Pl. ha a böngészőmódban egy ábrára navigál, a felismerési parancs az ábra tartalmát kísérli meg értelmezni.
+Az elemnavigációt is használhatja, pl. ha egy alkalmazás ablakában akar tartalmat felismertetni.
+
+Ha a felismerés elkészült, akkor a böngészőmódban megszokott navigációs parancsokkal megtekintheti az eredményt.
+Enter vagy szóköz: Aktiválja a kurzornál lévő szöveget, ha lehetséges.
+Esc: Bezárja a felismerés eredményét.
+
+++ Windows 10 OCR ++[Win10Ocr]
+A Windows 10 tartalmaz OCR-t számtalan nyelvhez.
+Az NVDA ezt tudja használni képek és nem akadálymentes alkalmazások szöveges tartalmának felismerésére.
+
+A felismeréshez használt nyelvet beállíthatja a [Windows 10 OCR #Win10OcrSettings] beállítások párbeszédablakon.
+További nyelveket adhat hozzá, ha a gépházban kiválasztja az idő és nyelv menüben a régió és nyelv opciót, és ott megnyomja az Új nyelv hozzáadása gombot.
+
+%kc:beginInclude
+A navigátor kurzornál található elem tartalmának felismeréséhez Windows 10 OCR segítségével használja az NVDA+r billentyűparancsot.
+%kc:endInclude
+
 + Alkalmazásfüggő NVDA billentyűparancsok +
 Az NVDA néhány alkalmazásban saját billentyűparanccsal rendelkezik, melyek megkönnyítik a szoftverek akadálymentes használatát.
 
@@ -868,7 +893,7 @@ a listában a nyíl billentyűkkel léphetünk bemeneti braille tábláról beme
 Vegyük figyelembe, hogy ez a beállítás csak akkor használható, ha a braille kijelzőnek van Perkins-stílusú braile billentyűzete, és a braille kijelző eszközillesztő programja támogatja ezt a funkciót.
 Ha a braille kijelzőnek van bilentyűzete, de ez a  funkció nem érhető el, ezt a [támogatott Braille kijelzők #SupportedBrailleDisplays] című szakaszban jelezzük.
 
-==== Port ====
+===== Port =====
 
 Ha ez a parancs elérhető, segítségével meghatározható, hogy a kiválasztott braille kijelző milyen porton keresztül, illetve milyen csatlakozási móddal legyen használható a gép és a kijelző közötti kommunikáció során.
 Ez egy kombinált listamező, amely a braille kijelzőhöz elérhető választási lehetőségeket tartalmazza.
@@ -890,6 +915,12 @@ Ez a beállítás azt jelenti, hogy a kurzor alatt lévő karaktert mindenképp 
 Ezzel az opcióval a braille kurzort lehet ki- és bekapcsolni.
 A rendszerkurzor és az áttekintő kurzor esetében működik, a kijelölésjelzővel viszont nem.
 
+===== Villogó kurzor =====
+
+Ez az opció lehetővé teszi a kurzor villogásának imitálását a braille kurzorral. Ez egy braille kijelzőn úgy néz ki, hogy a kurzor alakjának megfelelő pontkombináció kiemelkedik kitapintható állapotba, majd visszasűllyed a villogási sebességként beállított értéknek megfelelő ritmusban.
+Ha a villogás ki van kapcsolva, akkor a braille kurzor folyamatosan a kitapintható pozícióban van.
+A kijelölések jelzésére nincs kihatással ez az opció, az mindig a 7. és 8. pont villogás nélkül.
+
 ===== A kurzor villogási sebessége =====
 
 Ebben a mezőben megadhatja, hogy a kurzor hány ezred másodpercenként villogjon
@@ -899,15 +930,32 @@ Ebben a mezőben megadhatja, hogy a kurzor hány ezred másodpercenként villogj
 Ebben a legördülő mezőben kiválaszthatja    a kurzor pont alakú jelzését a braille kijelzőn.
 A  beállításnak nincs ráhatása a kijelölés jelzésére.
 
+===== Az áttekintő kurzor alakja =====
+
+Ezzel az opcióval beállíthatja a braille kurzor alakját olyankor,amikor a braille kurzor az áttekintő kurzort követi.
+A kijelölések jelzésére nincs kihatással ez az opció, az mindig a 7. és 8. pont villogás nélkül.
+
 ===== Üzenet megjelenésének időtartama(másodperc) =====
 
 Itt beállíthatja, hogy a felugró üzenetek hány másodpercig jelenjenek meg a kijelzőn.
+
+===== Üzenetek megjelenítése időkorlát nélkül =====
+
+Ez az opció lehetővé teszi, hogy az NVDA üzenetek ne tűnjenek el automatikusan a braille kijelzőről bizonyos idő után. 
 
 %kc:setting
 ===== A kurzor követése =====
 Billentyűparancs: NVDA+control+t
 
 Itt  beállítható, mi jelenjen meg a braille kijelzőn. A két beállítási lehetőség: KURZOR, és az áttekintő kurzor követése. A kurzor megjeleníti a kurzornál lévő elemeket, míg az áttekintő kurzor megjeleníti a képernyő tartalmát. A különböző beállítások között a Control+NVDA+T billentyűparancsal váltogathat.
+
+===== Bekezdésenkénti olvasás =====
+
+Ha ez az opció be van kapcsolva, akkor a braille megjelenítés bekezdésenként és nem soronként történik.
+Ezzel egyetemben az előző/következő sorra ugrás navigációs parancsa is bekezdésenként fog lépkedni.
+Ez azt jelenti, hogy nem kell minden sor végén görgetni a kijelzőt,, amennyiben egy sornál hosszabb szöveget is meg tud jeleníteni.
+Gördülékenyebben olvashatók így nagy mennyiségű szövegek.
+Ez az opció alapértelmezés szerint ki van kapcsolva.
 
 ===== Ne válassza el a szavakat, ha lehet =====
 
@@ -1212,6 +1260,12 @@ A kombinált listamezőben négy lehetőség közül választhat:
 Minden szóköz egy egységgel magasítja a hangot, egy tab 4 egységgel. Tehát ha van a sor elején 2 szóköz és egy tab, a hang 6 egységnyi magasan szólal meg.
 - Beszéd és hangjelzés: Az NVDA mindkét fenti módszerrel jelzi a sorok elején található tabokat és szóközöket.
 -
+
++++ Windows 10 OCR beállítások +++[Win10OcrSettings]
+Ezt a párbeszédablakot az NVDA beállítások menüjéből érheti el, itt konfigurálhatja a Windows 10 OCR funkciót. [Windows 10 OCR #Win10Ocr].
+
+==== Felismerési nyelv ====
+E kombinált listamezőben kiválaszthatja a szöveg felismeréséhez használt nyelvet.
 
 +++ Kivételszótárak +++
 
