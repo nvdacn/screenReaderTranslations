@@ -592,30 +592,58 @@ Puetz configurar o braille fendo servir o  [dialogo d'Opcions d'o Braille #Brail
 Con a finalidat de tener a mayor cantidat d'información posible en una pantalla braille s'ha definiu as siguients abreviaduras pa endicar a mena de control y estaus asinas como puntos de referencia.
 
 || Abreviadura | Tipo de Control |
+| apl | aplicación |
+| cit | cita |
 | btn | botón |
+| btdsp | botón desplegable |
+| btrot | botón rotatorio |
+| btdiv | botón divisor |
+| btcom | botón conmutable |
 | qco | quadro combinau |
 | cv | caixeta de verificación |
 | dlg | dialogo |
+| doc | documento |
 | ce | campo de texto editable |
+| pwdedt | edición de clau |
+| integrau | obchecto integrau |
+| notaf | nota final |
+| notap | nota a lo piet |
 | gra | grafico |
-| cN | numero de columna de tabla n, p. eix.: c1, c2. |
-| rN | numero de ringlera de tabla n, p. eix.: r1, r2. |
-| hN | capitero de libel n, p. eix.: h1, h2. |
+| grp | grupo |
+| CaN | capitero de libel n, p. eix.: h1, h2. |
+| ady | globo d'aduya |
+| pdr | punto de referencia |
 | vnc | vinclo |
 | vncv | vinclo visitau |
 | lst | lista |
-| pdr | punto de referencia |
 | mnu | menú |
 | bmn | barra de menú |
+| btmn | botón de menú |
+| elmn | elemento de menú |
+| pnl | panel |
+| barprg | barra de progreso |
 | btno | botón d'opción |
+| bardsp | barra de desplazamiento |
+| secc | sección |
+| barst | barra d'estau |
+| ctrtab | control tab |
 | tb | tabla |
-| arb | envista d'arbol |
+| cN | numero de columna de tabla n, -. eix. c1, c2. |
+| rN | numero de ringlera de tabla n, p.eix. r1, r2. |
+| term | terminal |
+| barfer | barra de ferramientas |
+| cons | consello |
+| earb | envista d'arbol |
+| elear | elemento d'envista d'arbol |
 | lb N | un elemento de vista en arbol que tien un libel hierarquico N|
+| fns | finestra |
 | ``-----`` | separador |
 
 Os siguients indicadors d'estau  tamién son definius:
 || Abreviadura | Estau de Control |
 | ... | amostrau quan un obchecto suporta autocompletau |
+| ⢎⣿⡱ | Amostrau quan bell obchecto (p. eix. bell botón conmutable) ye pretau |
+| ⢎⣀⡱ | Amostrau quan bell obchecto (p. eix. bell botón conmutable) no ye pretau |
 | ( ) | amostrau quan un obchecto (p. eix.: una caixeta de verificación) no ye marcau |
 | (x) | amostrau quan un obchecto (p. eix.: una caixeta de verificación) ye marcau |
 | (-) | amostrau quan un obchecto (p. eix.: una caixeta de verificación) ye  parcialment marcau |
@@ -1058,13 +1086,18 @@ S'aplica a o cursor d'o sistema y a o cursor de revisión, pero no pas a o endic
 ==== Cursor esparpellant ====
 Ista opción permite que o cursor braille esparpelle.
 Si o esparpello ye desenchegau, o cursor braille será constantment en a posición d'alto.
+L'indicador de selección no ye afectau por ista opción, siempre ye con os puntos 7 y 8 sin esparpellar.
 
 ==== Velocidat d'esparpello d'o cursor (ms) ====
 Ista opción ye un campo numerico que te permite cambiar a velocidat de esparpello d'o cursor en milisegundos.
 
-==== Forma d'o cursor ====
-Ista opción te permit esleyir a forma (patrón de puntos) d'o cursor braille.
-O endicador d'a selección no ye afectau por ista opción.
+==== Forma d'o cursor pa o foco ====
+Ista opción te permit esleyir a forma (patrón de puntos) d'o cursor braille quan o braille siga a o foco.
+L'indicador de selección no ye afectau por ista opción, siempre ye con os puntos 7 y 8 sin esparpellar.
+
+==== Forma d'o Cursor pa la Revisión ====
+Ista opción te permite esleyir a forma (patrón de puntos) d'o cursor braille quan o braille siga a la revisión.
+L'indicador de selección no ye afectau por ista opción, siempre ye con os puntos 7 y 8 sin esparpellar.
 
 ==== Durada d'o Mensache (en seg) ====
 Ista opción ye un campo numerico que controla entre quánto tiempo s'amuestra os mensaches d'o sistema en a linia braille.
@@ -1097,6 +1130,32 @@ Si isto ye desactivau, tanto como siga posible d'a parola  s'amostrará pero a r
 En que te'n desplaces por a pantalla allora podrás leyer a resta d'a parola.
 
 Activar-la pue permitir una lectura mas fluida pero por un regular requier que te'n desplaces mas por a pantalla.
+
+==== Presentación d'o Contexto d'o Foco ====
+Ista opción te permite trigar qué información d'o contexto amostrará o NVDA en a linia braille quan bel obchecto obtienga o foco.
+A información d'o contexto se refier a la hierarquía d'obchectos que contiengan o foco.
+Por eixemplo, quan enfoques bell elemento de lista, ixe elemento de lista fa parti d'una lista.
+Ixa lista podría estar contenida en un dialogo, etc.
+Por favor, mira-te a sección arredol d'a [navegación d'obchectos #ObjectNavigation] pa mas información sobre a hierarquía que s'aplica a os obchectos en o NVDA.
+
+Quan se configure en replenar a pantalla pa cambeos d'o contexto, o NVDA mirará d'amostrar tanta información de contexto como le siga posible en a linia braille, pero nomás pa las partis d'o contexto que haigan cambiadas.
+Pa l'eixemplo d'alto, ixo significa que en que o foco cambeye por a lista, o NVDA amostrará l'elemento d'a lista en a linia braille.
+Amás, si queda prau espacio en a linia braille, o NVDA mirará d'amostrar que l'elemento de lista fa parti d'una lista.
+Si, contino, prencipias a mover-te-ne por a lista con as teclas de cursor, se suposa que yes conscient d'estar agún en a lista.
+Por tanto, pa os elementos de lista restants que enfoques o NVDA nomás amostrará l'elemento d'a lista enfocau en a linia.
+Pa leyer o contexto de nuevas (ye decir, que yes en una lista y que a lista fa parti d'un dialogo), habrás a desplazar a tuya pantalla braille enta zaga.
+
+Quan ista opción siga configurada a replenar siempre a pantalla, o NVDA mirará d'amostrar tanta información de contexto como síga posible en a linia braille, independientment de si has visto a mesma información de contexto dinantis.
+Ixo tien l'avantalla que o NVDA achustará tanta información como siga posible en a pantalla.
+Por tanto, a desavantalla ye que siempre bi ha una diferencia en a posición que i prencipia l'enfoque en a linia braille.
+Ixo puet fer dificil navegar por una lista larga d'elementos,  por eixemplo, ya que habrás a mover continament o dido pa trobar o escomencipio de l'elemento.
+Ixe yera o comportamiento predeterminau pa o NVDA 2017.2 y anteriors.
+
+Quan configures a opción de presentación d'o contexto d'o foco en amostrar nomás a información d'o contexto en desplazar-se-ne enta zaga, o NVDA nunca no amuestra a información d'o contexto en a linia braille por defecto.
+Asinas, en l'eixemplo anterior, o NVDA amostrará que enfoqués un elemento de lista.
+Por tanto, pa leyer o contexto (ye decir, que yes en una lista y que ixa lista fa parti d'un dialogo), habrás a desplazar a linia braille enta zaga.
+
+Pa cambiar a presentación d'o contexto d'o foco dende qualsiquier puesto, por favor asigna un cenyo personalizau fendo servir o [dialogo de cenyos de dentrada #InputGestures].
 
 +++ Opcions de Teclau (NVDA+control+k)+++
 Iste quadro de dialogo se troba en o menú Preferencias, baixo "Opcions de teclau...". 
