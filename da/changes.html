@@ -12,6 +12,10 @@
 
 <H2>2017.3</H2>
 
+<P>
+Af væsentlige forbedringer i denne version kan nævnes indtastning ved brug af forkortet punktskrift, støtte for de nye Windows OneCore stemmer i Windows 10, indbygget understøttelse for Windows 10 OCR (tekstgenkendelse), samt mange andre forbedringer til punkt og web.
+</P>
+
 <H3>Nye Funktioner</H3>
 
 <UL>
@@ -31,6 +35,24 @@
 <LI>Du kan nu indtaste i både forkortet og uforkortet punktskrift på et punktdisplay med et punkttastatur. Se afsnittet "Indtastning med punkt" for flere informationer. (<A HREF="http://github.com/nvaccess/nvda/issues/2439">#2439</A>)
 <LI>Du kan nu indtaste Unicode punkttegn fra punkttastaturet på et punktdisplay ved at vælge Unicode-punkt  som indtastningstabel i dialogen "Punktindstillinger". (<A HREF="http://github.com/nvaccess/nvda/issues/6449">#6449</A>)
 <LI>Understøtter nu punktdisplayet SuperBraille der bruges i Taiwan. (<A HREF="http://github.com/nvaccess/nvda/issues/7352">#7352</A>)
+<LI>Ny punktoversættelsestabeller: Dansk  8-punkt computerpunkt, litauisk, persisk 8-punkt computerpunkt, persisk uforkortet, slovensk 8-punkt computerpunkt. (<A HREF="http://github.com/nvaccess/nvda/issues/6188">#6188</A>, <A HREF="http://github.com/nvaccess/nvda/issues/6550">#6550</A>, <A HREF="http://github.com/nvaccess/nvda/issues/6773">#6773</A>, <A HREF="http://github.com/nvaccess/nvda/issues/7367">#7367</A>)
+<LI>Forbedrede punkttabellen for engelsk (U.S) 8-punkt computerpunkt, således at tabellen understøtter punkttegn, eurotegnet såvel som accenterede bogstaver. (<A HREF="http://github.com/nvaccess/nvda/issues/6836">#6836</A>)
+<LI>NVDA kan nu benytte tekstgenkendelsesfunktionaliteten indbygget i Windows 10 til genkendelse af tekst i billeder eller utilgængelige applikationer. (<A HREF="http://github.com/nvaccess/nvda/issues/7361">#7361</A>)
+ <UL>
+ <LI>Sproget til tekstgenkendelse kan indstilles i dialogen Windows 10 OCR i NVDAs indstillinger.
+ <LI>For at udføre tekstgenkendelse på det aktuelle navigatorobjekt, tryk NVDA+R.
+  <UL>
+  <LI>Se sektionen om tekstgenkendelse i brugervejledningen for yderligere oplysninger.
+  </UL>
+ </UL>
+<LI>Du kan nu vælge hvordan sammenhængende informationer vises på et punktdisplay når et objekt har fokus ved brug af indstillingen "Præsentation af fokus sammenhæng" i NVDAs punktindstillinger. (<A HREF="http://github.com/nvaccess/nvda/issues/217">#217</A>)
+ <UL>
+ <LI>F.eks. muligheden "fyld display med sammenhængsændringer" og "kun når der rulles" kan gøre arbejde med lister meget nemmere, da punkterne ikke vil ændre deres position hele tiden.
+  <UL>
+  <LI>Se afsnittet "Præsentation af fokus sammenhæng" for yderligere informationer og eksempler.
+  </UL>
+ </UL>
+<LI>NVDA understøtter nu komplekse dynamiske net såsom regneark, hvor kun noget af indholdet er indlæst og vist (specifikt aria-rowcount, aria-colcount, aria-rowindex og aria-colindex attributter introduceret i ARIA 1.1). (<A HREF="http://github.com/nvaccess/nvda/issues/7410">#7410</A>)
 </UL>
 
 <H3>Ændringer</H3>
@@ -38,22 +60,18 @@
 <UL>
 <LI>En ubunden bevægelse (script_restart) er nu blevet tilføjet således NVDA hurtigt kan genstartes. (<A HREF="http://github.com/nvaccess/nvda/issues/6396">#6396</A>)
 <LI>Tastaturlayoutet kan nu indstilles fra NVDAs velkomstdialog. (<A HREF="http://github.com/nvaccess/nvda/issues/6863">#6863</A>)
-<LI>Navnene på landmærker er forkortet i punktskrift således: (<A HREF="http://github.com/nvaccess/nvda/issues/3975">#3975</A>)
- <UL>
- <LI>"landmærke:" "lmk"
- <LI>"banner": "bnnr"
- <LI>"komplementært": "kmpl"
- <LI>"information om indhold": "iind"
- <LI>"hovedindhold": "hind"
- <LI>"navigation": "navi"
- <LI>"søg": "søg"
- <LI>"formular": "form"
- <LI>"omrråde": "omr"
- <LI>Eksempel: "navigation landmærke" bliver "lmk navi"
- </UL>
+<LI>Mange flere kontroltyper og tilstande har nu tilknyttede forkortelser i punktskrift. Disse kan findes under afsnittet "Punktforkortelser for felttyper, felttilstande og landmærker" i brugervejledningen. (<A HREF="http://github.com/nvaccess/nvda/issues/7188">#7188</A>, <A HREF="http://github.com/nvaccess/nvda/issues/3975">#3975</A>)
 <LI>Opdaterede eSpeak NG til 1.49.1. (<A HREF="http://github.com/nvaccess/nvda/issues/7280">#7280</A>)
 <LI>Listerne over indtastning- og oversættelsestabeller sorteres nu alfabetisk. (<A HREF="http://github.com/nvaccess/nvda/issues/6113">#6113</A>)
 <LI>Opdaterede Liblouis Braille Translator til 3.2.0. (<A HREF="http://github.com/nvaccess/nvda/issues/6935">#6935</A>)
+<LI>Den punkttabel der benytte som standard er nu Unified English Braille Code grade 1. (<A HREF="http://github.com/nvaccess/nvda/issues/6952">#6952</A>)
+<LI>Som standard vil NVDA nu kun vise sammenhængende information på et punktdisplay når de ændres, og når et objekt har fokus. (<A HREF="http://github.com/nvaccess/nvda/issues/217">#217</A>)
+ <UL>
+ <LI>Tidligere blev der vist så meget information som muligt, uanset om du havde set informationen før.
+ <LI>Du kan vende tilbage til den tidligere adfærd ved at ændre indstillingen "Præsentation af fokus sammenhæng" i NVDAs punktindstillinger.
+ <LI>Når punkt benyttes kan markøren konfigures til at tage en anden form, når den tøjres til fokus eller læsning. (<A HREF="http://github.com/nvaccess/nvda/issues/7112">#7112</A>)
+ </UL>
+<LI>NVDA-logoet er blevet opdateret. Det opdaterede NVDA-logo er en stiliseret blanding af bogstaverne NVDA i hvid, på en solid lilla baggrund. Dette sikrer, at det vil være synligt på enhver farvet baggrund, og bruger lilla fra NV Access logo. (# 7446) 
 </UL>
 
 <H3>Fejlrettelser</H3>
@@ -78,6 +96,10 @@
 <LI>Udførelse af bogstavnavigation mellem overskrifter er nu markant hurtigere i Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/7343">#7343</A>)
 <LI>Navigation i gennemsynstilstand i Microsoft Edge springer ikke længere over store dele af hjemmesider (f.eks. temaet Wordpress 2015 på hjemmesider skabt af Wordpress). (<A HREF="http://github.com/nvaccess/nvda/issues/7143">#7143</A>)
 <LI>Landmærker er nu rigtigt lokaliserede i andre sprog end engelsk, når Microsoft Edge benyttes som browser. (<A HREF="http://github.com/nvaccess/nvda/issues/7328">#7328</A>)
+<LI>Punkt følger nu korrekt markeringen af tekst, når der markeres mere tekst end der er bredde på displayet. F.eks. vælger du flere linjer med skift+pil ned, vil den sidst valgte linje vises. (<A HREF="http://github.com/nvaccess/nvda/issues/5770">#5770</A>)
+<LI>I Firefox rapporterer NVDA ikke længere "sektion" flere gange, når der åbnes detaljer for en tweet på twitter.com. (# 5741)
+<LI>Navigering af layouttabeller ved brug af tastaturkomandoer i gennemsynstilstand er ikke længere muligt, med mindre at rapportering af layouttabeller er slået til. (<A HREF="http://github.com/nvaccess/nvda/issues/7382">#7382</A>)
+<LI>NVDA vil nu springe over skjulte tabelceller i Chrome og Firefox, når tabelkommandoer benyttes i gennemsynstilstand. (<A HREF="http://github.com/nvaccess/nvda/issues/6652">#6652</A>, <A HREF="http://github.com/nvaccess/nvda/issues/5655">#5655</A>)
 </UL>
 
 <H3>Ændringer for udviklere</H3>
