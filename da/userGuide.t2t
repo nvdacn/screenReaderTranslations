@@ -615,8 +615,8 @@ For at få plads til så meget som muligt på et punktdisplay bruger NVDA følge
 | lmk | landmærke |
 | lnk | link |
 | blnk | besøgt link |
-| lst | list 
-|| mnu | menu |
+| lst | list|
+| mnu | menu |
 | mnuln | menulinje |
 | mnuknp | menuknap |
 | mnupnkt | menupunkt |
@@ -661,7 +661,7 @@ Desuden er følgende indikatorer for tilstande defineret:
 | sb | Bliver vist, når et objekt, fx. et editfelt, er skrivebeskyttet |
 | vlg | Bliver vist, når et objekt er valgt |
 | ivlg | Bliver vist, når et objekt er valgt |
-| sorteret  st | vises, når et objekt har stigende sortering |
+| sorteret st | vises, når et objekt har stigende sortering |
 | sorteret fa | vises, når et objekt har faldende sortering |
 | umnu | Bliver vist, når et objekt har en pop-up-funktion, som regel en undermenu |
  
@@ -1093,18 +1093,23 @@ Med denne indstilling kan du få ordet under markøren vist i uforkortet compute
 
 ==== Vis markør ====
 Denne indstilling lader dig slå punktmarkøren til og fra.
-Denne indstilling anvendes til brug af system- og læsemarkøren, men ikke udvælgelses-indikatoren.
+Denne indstilling anvendes til brug af system- og læsemarkøren, men ikke udvælgelsesindikatoren.
 
 ==== Blinkende markør ====
 Denne indstilling gør punktmarkøren i stand til at blinke.
 Hvis dette er slået fra, vil markøren konstant forblive i "op" positionen.
+Udvælgelsesindikatoren er ikke påvirket af denne indstilling, men vil altid forblive punkt 7 og 8 uden disse punkter blinker.
 
 ==== Blinkhastighed for markør (MS) ====
 Denne indstilling er et felt til indtastning af en talværdi. Her har du mulighed for at indtaste markørens blinkhastighed i millisekunder.
 
-==== Markørform ====
-Denne indstilling lader dig vælge formen (punktmønstret) til brugen af din punktmarkør.
-Udvælgelsesindikatoren påvirkes ikke af denne indstilling.
+==== Markørform til fokus ====
+Denne indstilling lader dig vælge formen (punktmønstret) til brugen af punktmarkøren, når punktmarkøren er tøjret til fokus.
+Udvælgelsesindikatoren påvirkes ikke af denne indstilling,  men vil altid forblive punkt 7 og 8 uden disse punkter blinker.
+
+==== Markørform til læsning ====
+Denne indstilling lader dig vælge formen (punktmønstret) til brugen af punktmarkøren, når punktmarkøren er tøjret til fokus.
+Udvælgelsesindikatoren påvirkes ikke af denne indstilling,  men vil altid forblive punkt 7 og 8 uden disse punkter blinker.
 
 ==== Besked vises i (sek) ====
 Denne indstilling er et felt til indtastning af en talværdi, som styrer, hvor længe NVDA-meddelelser vises på punktdisplayet.
@@ -1138,7 +1143,7 @@ Når du så ruller displayet videre, kan du læse resten af ordet.
 
 Hvis du slår denne indstilling til, kan det give en mere flydende læsning, men generelt medfører det, at du skal skifte linje på displayet hyppigere.
 
-==== Præsentation af fokus sammenhæng ====
+==== fokuskontekstpræsentation ====
 Denne indstilling giver dig mulighed for at vælge, hvilke kontekstoplysninger NVDA vil vise på punktdisplayet, når et objekt får fokus.
 Kontekstoplysninger refererer til hierarkiet af objekter, der indeholder fokus.
 For eksempel, når du fokuserer et listeobjekt, er dette liste element en del af en liste.
@@ -1474,6 +1479,12 @@ Denne combo boks har fire muligheder.
 Tonens toneleje vil forøges ved hvert mellemrum, og for tab vil tonen forøges fire mellemrum.
 - Både Tale og Toner: Denne mulighed vil læse indrykningen ved brug af begge metoder.
 -
+
++++ Indstillinger for Windows 10 tekstgenkendelse +++[Win10OcrSettings]
+Denne dialog kan tilgås fra NVDA-menuen under indstillinger og lader dig konfigurere [Windows 10 Tekstgenkendelse #Win10Ocr]
+
+==== Sprog til tekstgenkendelse ====
+Denne comboboks lader dig vælge det ønskede sprog til brugen af tekstgenkendelse.
 
 +++ Udtaleordbøger  +++
 Menuen Udtaleordbøger, som findes i menuen Indstillinger, indeholder dialogbokse, der giver mulighed for at styre,  hvordan NVDA udtaler bestemte ord eller tekstbidder. 
@@ -2461,7 +2472,7 @@ De mulige kommandolinjeparametre til NVDA er følgende:
 | Ingen | --install | Installerer NVDA og starter den nyinstallerede kopi |
 | Ingen | --install-silent | Tavs installation af NVDA (Starter ikke den nyinstallerede kopi) |
 
-++ Systemspecifikke parametre++[SystemWideParameters]
+++ Systemspecifikke parametre++[System]
 NVDA tillader, at nogle værdier ændres i systemregistreringsdatabasen. Disse ændringer påvirker NVDAs adfærd på et systemspecifikt niveau.
 Disse værdier er gemt i registreringsdatabasen under en af følgende nøgler:
 - 32-bit system: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
