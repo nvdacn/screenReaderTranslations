@@ -41,8 +41,9 @@ else
 
     rm -f keyCommands.t2t
 
-    mfiles=`svn status -q | awk '{printf(" %s", $2)}'`
 
+    svn add -q *.html *.txt >& /dev/null
+    mfiles=`svn status -q | awk '{printf(" %s", $2)}'`
     if [ "$mfiles" != "" ]; then
         svn commit -q -m "${lang}: updated $mfiles" $mfiles
     fi
