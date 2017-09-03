@@ -3,23 +3,23 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2017-06-03 04:36+1000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2017-09-03 14:15+0200\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Nicolai Svendsen <chojiro1990@gmail.com>\n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.0.3\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "[[!meta title=\"Console Timer\"]]\n"
-msgstr ""
+msgstr "[[!meta title=\"Console Timer\"]]\n"
 
 #. type: Plain text
 #, no-wrap
@@ -27,27 +27,33 @@ msgid ""
 "*   Author: Derek Riemer\n"
 "* Download [Stable Version][1]\n"
 msgstr ""
+"*   Forfatter: Derek Riemer\n"
+"* Download [Stabil Version][1]\n"
 
 #. type: Title #
 #, no-wrap
 msgid "consoleTimer"
-msgstr ""
+msgstr "consoleTimer"
 
 #. type: Plain text
 msgid ""
 "consoleTimer was written by derek riemer, and is GPL V2, as required by "
 "being an NVDA addon."
 msgstr ""
+"consoleTimer blev skrevet af derek riemer, og er GPL V2, som krævet ved at "
+"være en NVDA addon."
 
 #. type: Bullet: '* '
 msgid ""
 "[Source available on Github:](https://github.com/derekriemer/consoleTimer)"
 msgstr ""
+"[Kildekode tilgængelig på Github:](https://github.com/derekriemer/"
+"consoleTimer)"
 
 #. type: Title ##
 #, no-wrap
 msgid "Background"
-msgstr ""
+msgstr "Baggrund"
 
 #. type: Plain text
 msgid ""
@@ -61,11 +67,21 @@ msgid ""
 "This addon was written because I do lots of server administration, and I "
 "wanted cursor navigation to work."
 msgstr ""
+"Når du bruger kommandolinjer over ssh, er der normalt netværksforsinkelse. "
+"Denne forsinkelse forventes, men NVDAs håndtering af markørbevægelse er ikke "
+"venlig overfor forsinkelser i terminaler, fordi denne operation er en "
+"synkron operation. Dette medfører, at NVDA fejlagtigt rapporterer det "
+"forkerte bogstav, når du flytter til et andet bogstav med piletasterne. For "
+"eksempel, hvis brugeren er på p på grep, og der trykker på højre pil, kan de "
+"høre \"t\" i stedet for mellemrum. Dette skyldes, at NVDA ikke venter "
+"tilstrækkeligt lang tid til at håndtere denne bevægelse korrekt. Denne "
+"tilføjelse blev skrevet, fordi jeg arbejder med masser af "
+"serveradministration, og jeg ønskede, at markørnavigation skulle fungere."
 
 #. type: Title ##
 #, no-wrap
 msgid "TLDR usage instructions"
-msgstr ""
+msgstr "TLDR Brugsanvisning"
 
 #. type: Plain text
 msgid ""
@@ -75,11 +91,17 @@ msgid ""
 "This addon will have no affect outside terminals, and the patience changes "
 "by .01 for every keypress."
 msgstr ""
+"Når du er i en konsol, og når NVDA ikke rapportere eller gentager bogstaver, "
+"mens du bevæger dig rundt, skal du blot trykke på NVDA+Skift+Side op for at "
+"lære programmet at være mere tålmodigt, eller hvis det er for langsomt, skal "
+"du trykke på NVDA+Skift+Side ned for at lære det at være mindre tålmodigt. "
+"Denne tilføjelse vil ikke have nogen indflydelse uden for terminalerne, og "
+"tålmodigheden ændres med .01 for hvert tastetryk."
 
 #. type: Title ##
 #, no-wrap
 msgid "How to make this work with custom terminals"
-msgstr ""
+msgstr "Sådan får du denne tilføjelse til at arbejde sammen med brugerdefinerede terminaler"
 
 #. type: Plain text
 msgid ""
@@ -103,16 +125,34 @@ msgid ""
 "make sure happens is that NVDAObjects.behaviors.Terminal is injected to the "
 "class list."
 msgstr ""
+"Hvis du er en udvikler, der ønsker, at NVDA skal genkende et afsnit eller en "
+"del af din app som en terminal, og det ikke allerede er tilfældet, skal du "
+"implementere et appModule til dette formål for at få den relevante adfærd, f."
+"eks. meddelelse om ny tekst skrevet til stdout osv. Vær venlig at rapportere "
+"problemet til [NVDA](https://github.com/nvaccess/nvda/issues/new), og vi kan "
+"hjælpe dig med at få dit terminal appModule ind i skærmlæseren. Støtte til "
+"Putty, Cygwin (Mintty) og secureCRT er allerede i NVDA. Apps som R kan blive "
+"implementeret i fremtiden. Hvis din app er korrekt genkendt som en terminal "
+"af NVDA, (den terminale adfærd er korrekt injiceret i runtime), bør denne "
+"tilføjelse bare fungere. Hvis det ikke er tilfældet, så skriv til mig ved at "
+"oprette et problem. Hvordan man skriver et appmodul er uden for dette "
+"dokument, men er veldokumenteret i [NVDA Developer Guide] (https://www."
+"nvaccess.org/files/nvda/documentation/developerGuide.html). Dette eksempel "
+"illustrerer [en appModule for at undervise NVDA, at terminalvinduet på PuTTY "
+"er en terminal](https://github.com/nvaccess/nvda/blob/master/source/"
+"appModules/putty.py). Også [her er et eksempel for MinTTY](https://github."
+"com/nvaccess/nvda/blob/master/source/appModules/mintty.py). Det vigtigste at "
+"sikre sig, er at NVDAObjects.behaviors.Terminal injiceres i klasselisten."
 
 #. type: Plain text
 #, no-wrap
 msgid "[[!tag dev stable]]\n"
-msgstr ""
+msgstr "[[!tag dev stable]]\n"
 
 #. type: Plain text
 msgid "[1]: https://addons.nvda-project.org/files/get.php?file=cont"
-msgstr ""
+msgstr "[1]: https://addons.nvda-project.org/files/get.php?file=cont"
 
 #. type: Plain text
 msgid "[2]: https://derekriemer.com/node/44"
-msgstr ""
+msgstr "[2]: https://derekriemer.com/node/44"
