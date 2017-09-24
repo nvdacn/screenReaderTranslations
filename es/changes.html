@@ -19,6 +19,8 @@
 <LI>En Firefox, Chrome e Internet Explorer, la navegación rápida por campos de edición y campos de formulario ahora incluye contenido de texto enriquecido editable (ej.: contentEditable). (<A HREF="http://github.com/nvaccess/nvda/issues/5534">#5534</A>)
 <LI>En navegadores web, la Lista de Elementos ahora puede listar campos de formulario y botones. (<A HREF="http://github.com/nvaccess/nvda/issues/588">#588</A>)
 <LI>Soporte inicial para Windows 10 en ARM64. (<A HREF="http://github.com/nvaccess/nvda/issues/7508">#7508</A>)
+<LI>Soporte preliminar para la lectura y la navegación interactiva de contenido matemático para libros Kindle con matemáticas accessibles. (<A HREF="http://github.com/nvaccess/nvda/issues/7536">#7536</A>)
+<LI>Añadido soporte para el lector de libros digitales Azardi. (<A HREF="http://github.com/nvaccess/nvda/issues/5848">#5848</A>)
 </UL>
 
 <H3>Cambios</H3>
@@ -29,6 +31,7 @@
 <LI>En modo exploración, al tabular o moverse con las órdenes de teclas de navegación rápida ya no anuncia saliendo de contenedores tales como listas y tablas, Lo cual hace la navegación más eficaz. (<A HREF="http://github.com/nvaccess/nvda/issues/2591">#2591</A>)
 <LI>En modo exploración para Firefox y Chrome, ahora se anuncian los nombres de grupos de campos de formulario al moverse dentro de ellos con la navegación rápida o cuando se tabula. (<A HREF="http://github.com/nvaccess/nvda/issues/3321">#3321</A>)
 <LI>En modo exploración, las órdenes de navegación rápida para objetos integrados (o y shift+o) ahora incluyen elementos de audio y vídeo así como elementos con los roles aria application y dialog. (<A HREF="http://github.com/nvaccess/nvda/issues/7239">#7239</A>)
+<LI>Se ha actualizado Espeak-ng (a commit 01919cd48a566cdf34347784b2e74554b376e900), esto resuelve algunos problemas con la producción de versiones. (<A HREF="http://github.com/nvaccess/nvda/issues/7385">#7385</A>)
 </UL>
 
 <H3>Corrección de Errores</H3>
@@ -38,12 +41,20 @@
 <LI>NVDA ya no se vuelve notablemente más lento cuando estén abiertas muchas pestañas en los navegadores web Firefox o Chrome. (<A HREF="http://github.com/nvaccess/nvda/issues/3138">#3138</A>)
 <LI>El enrutamiento de cursor para las pantallas MDV Lilli Braille ya no mueve incorrectamente una celda braille antes de donde debería estar. (<A HREF="http://github.com/nvaccess/nvda/issues/7469">#7469</A>)
 <LI>En Internet Explorer y otros documentos MSHTML, el atributo HTML5 requerido ahora se soporta para indicar el estado requerido de un campo de formulario. (<A HREF="http://github.com/nvaccess/nvda/issues/7321">#7321</A>)
+<LI>Las pantallas braille ahora se actualizan al escribir caracteres arábigos en un documento WordPad alineado a la izquierda (<A HREF="http://github.com/nvaccess/nvda/issues/511">#511</A>).
+<LI>Las etiquetas accesibles para controles en Mozilla Firefox ahora se anuncian más fácilmente en modo exploración cuando la etiqueta no aparezca como contenido por sí misma. (<A HREF="http://github.com/nvaccess/nvda/issues/4773">#4773</A>)
+<LI>En la actualización windows 10 Creators, NVDA puede acceder de nuevo a Firefox después de un reinicio de NVDA. (<A HREF="http://github.com/nvaccess/nvda/issues/7269">#7269</A>)
+<LI>Cuando se reinicie NVDA con Mozilla Firefox enfocado, el modo exploración estará disponible nuevamente, aunque es posible que tengas que pulsar alt+tab y volver a pulsarlo de nuevo. (<A HREF="http://github.com/nvaccess/nvda/issues/5758">#5758</A>)
+<LI>Ahora es posible acceder a contenido matemático en Google Chrome en un sistema sin Mozilla Firefox instalado. (<A HREF="http://github.com/nvaccess/nvda/issues/7308">#7308</A>)
+<LI>El sistema operativo y otras aplicaciones deberían ser más estables directamente después de instalar NVDA antes de reiniciar, en comparación con las instalaciones  de versiones anteriores de NVDA. (<A HREF="http://github.com/nvaccess/nvda/issues/7563">#7563</A>)
 </UL>
 
 <H3>Cambios para Desarrolladores</H3>
 
 <UL>
 <LI>"scons tests" ahora busca que las cadenas traducibles tengan comentarios para los traductores. También puedes ejecutar esto sólo con "scons checkPot". (<A HREF="http://github.com/nvaccess/nvda/issues/7492">#7492</A>)
+<LI>Ahora hay un nuevo módulo extensionPoints que proporciona un framework genérico para permitir la extensibilidad de código en puntos específicos en el código. Esto permite que las partes interesadas se registren para ser notificadas cuando ocurra alguna acción (extensionPoints.Action), para modificar un tipo específico de dato (extensionPoints.Filter) o para participar en la decisión de si se hará algo (extensionPoints.Decider). (<A HREF="http://github.com/nvaccess/nvda/issues/3393">#3393</A>)
+<LI>Ahora puedes registrarte para ser notificado acerca de los cambios de perfiles de configuración a través de la acción config.configProfileSwitched. (<A HREF="http://github.com/nvaccess/nvda/issues/3393">#3393</A>)
 </UL>
 
 <H2>2017.3</H2>
