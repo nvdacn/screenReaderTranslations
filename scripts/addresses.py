@@ -86,7 +86,7 @@ addresses = {
     },
     'hr': {
         'lang': 'Croatian',
-        'email': ['Hrvoje Katic <hrvojekatic@gmail.com>', 'Zvonimir Stanecic <zvonimirek222@yandex.com>', 'Mario Percinic <mario.percinic@gmail.com>', 'Tea Turkovic <tturkovi@gmail.com>'],
+        'email': ['Hrvoje Katic <hrvojekatic@gmail.com>', 'Zvonimir Stanecic <zvonimirek222@webczatnet.pl>', 'Mario Percinic <mario.percinic@gmail.com>', 'Tea Turkovic <tturkovi@gmail.com>'],
     },
     'hu': {
         'lang': 'Hungarian',
@@ -126,7 +126,7 @@ addresses = {
     },
     'mk': {
         'lang':'Macedonian',
-        'email': ['zvonimir stanecic <zvonimirek222@yandex.com>', 'Kiko Lazarev <kristijan.lazarev@gmail.com>'],
+        'email': ['zvonimir stanecic <zvonimirek222@webczatnet.pl>', 'Kiko Lazarev <kristijan.lazarev@gmail.com>'],
     },
     'my': {
         'lang':'Burmese',
@@ -150,7 +150,7 @@ addresses = {
     },
     'pl': {
         'lang':'Polish',
-        'email': ['Grzegorz Zlotowicz <grzezlo@wp.pl>', 'Patryk Faliszewski <patric3031@wp.pl>', 'Zvonimir Stanecic <zvonimirek222@yandex.com>', 'Grzegorz Zlotowicz <g.zlotowicz@dzdn.pl>', 'Hubert Meyer <killer@tyflonet.com>' ],
+        'email': ['Grzegorz Zlotowicz <grzezlo@wp.pl>', 'Patryk Faliszewski <patric3031@wp.pl>', 'Zvonimir Stanecic <zvonimirek222@webczatnet.pl>', 'Grzegorz Zlotowicz <g.zlotowicz@dzdn.pl>', 'Hubert Meyer <killer@tyflonet.com>' ],
     },
     'pt_BR': {
         'lang': 'Brazilian Portuguese',
@@ -178,7 +178,7 @@ addresses = {
     },
     'sr': {
         'lang':'Serbian',
-        'email': ['Nikola Jovic <wwenikola123@gmail.com>', 'Janko Valencik <janko.valencik@alfanum.co.rs>', 'Zvonimir <zvonimirek222@yandex.com>', 'Danijela Popovic <vlajna95@gmail.com>'],
+        'email': ['Nikola Jovic <wwenikola123@gmail.com>', 'Janko Valencik <janko.valencik@alfanum.co.rs>', 'Zvonimir <zvonimirek222@webczatnet.pl>', 'Danijela Popovic <vlajna95@gmail.com>'],
     },
     'sv': {
         'lang':'Swedish',
