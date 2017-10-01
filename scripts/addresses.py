@@ -116,6 +116,10 @@ addresses = {
         'lang':'Korean',
         'email': ['Joseph Lee <joseph.lee22590@gmail.com>', 'Chang-Hwan Jang <462356@gmail.com>', 'Dong Hee Park <hi@aheu.org>'],
     },
+    'ky': {
+        'lang':'Kyrgiz',
+        'email': ['Bermet Zhakypbekova <bermet.zhakypbekova@gmail.com>'],
+    },
     'lt': {
         'lang':'Lithuanian',
         'email': ['Paulius Leveris <paulius.leveris@gmail.com>', 'Rimas Kudelis <rq@akl.lt>'],
