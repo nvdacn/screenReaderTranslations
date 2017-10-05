@@ -21,6 +21,8 @@
 <LI>Grundlegende Unterstützung für Windows 10 auf ARM64. (<A HREF="http://github.com/nvaccess/nvda/issues/7508">#7508</A>)
 <LI>Grundlegende Unterstützung beim Lesen von und Navigieren in mathematischen Inhalten in Kindle-Büchern. (<A HREF="http://github.com/nvaccess/nvda/issues/7536">#7536</A>)
 <LI>Unterstützung für Azardi e-book reader. (<A HREF="http://github.com/nvaccess/nvda/issues/5848">#5848</A>)
+<LI>Beim Aktualisieren von NVDA-Erweiterungen werden Versionsinformationen angegeben. (<A HREF="http://github.com/nvaccess/nvda/issues/5324">#5324</A>)
+<LI>Neue Kommandozeilenparameter zum Erstellen einer portablen Version von NVDA wurden hinzugefügt. (<A HREF="http://github.com/nvaccess/nvda/issues/6329">#6329</A>)
 </UL>
 
 <H3>Änderungen</H3>
@@ -32,6 +34,8 @@
 <LI>In Firefox und Chrome werden die Namen von Gruppen angezeigt, wenn Sie zu einem Formularfeld springen. (<A HREF="http://github.com/nvaccess/nvda/issues/3321">#3321</A>)
 <LI>Die Schnellnavigationstasten für eingebettete Objekte (O und Umschalt+O) berücksichtigen Audio- und Video-Elemente ebenso wie Web-Anwendungen und Web-Dialoge. (<A HREF="http://github.com/nvaccess/nvda/issues/7239">#7239</A>)
 <LI>Espeak-ng wurde auf Revision 01919cd48a566cdf34347784b2e74554b376e900 aktualisiert, Dadurch werden einige Probleme in der Aussprache behoben. (<A HREF="http://github.com/nvaccess/nvda/issues/7385">#7385</A>)
+<LI>Bei dreimaligem Drücken der Tastenkombination zum Lesen der statuszeile wird diese in die zwischenablage kopiert. (<A HREF="http://github.com/nvaccess/nvda/issues/1785">#1785</A>)
+<LI>Beim Zuweisen von NVDA-Befehlen an Braillezeilentasten kann die Zuweisung auf ein bestimmtes Braillezeilenmodell beschränkt werden (z. B. Baum Varioultra, Baum Pronto). (<A HREF="http://github.com/nvaccess/nvda/issues/7517">#7517</A>)
 </UL>
 
 <H3>Fehlerkorrekturen</H3>
@@ -55,6 +59,14 @@
 <LI>Beim Ausführen von "scons tests" wird geprüft, ob sämtliche übersetzbaren Zeichenketten Kommentare besitzen. Dieser Test kann auch separat ausgeführt werden. Benutzen Sie dafür den Befehl "scons checkPot". (<A HREF="http://github.com/nvaccess/nvda/issues/7492">#7492</A>)
 <LI>There is now a new extensionPoints module which provides a generic framework to enable code extensibility at specific points in the code. This allows interested parties to register to be notified when some action occurs (extensionPoints.Action), to modify a specific kind of data (extensionPoints.Filter) or to participate in deciding whether something will be done (extensionPoints.Decider). (<A HREF="http://github.com/nvaccess/nvda/issues/3393">#3393</A>)
 <LI>You can now register to be notified about configuration profile switches via the config.configProfileSwitched Action. (<A HREF="http://github.com/nvaccess/nvda/issues/3393">#3393</A>)
+<LI>Braille display gestures that emulate system keyboard key modifiers (such as control and alt) can now be combined with other emulated system keyboard keys without explicit definition. (<A HREF="http://github.com/nvaccess/nvda/issues/6213">#6213</A>) 
+ <UL>
+ <LI>For example: if you have a key on your display bound to the alt key and another display key to downArrow, combining these keys will result in the emulation of alt+downArrow.
+ </UL>
+<LI>The braille.BrailleDisplayGesture class now has an extra model property. If provided, pressing a key will generate an additional, model specific gesture identifier. This allows a user to bind gestures limited to a specific braille display model. 
+ <UL>
+ <LI>See the baum driver as an example for this new functionality.
+ </UL>
 </UL>
 
 <H2>2017.3</H2>
