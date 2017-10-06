@@ -21,6 +21,8 @@
 <LI>Suport inițial pentru Windows 10 pe ARM64. (<A HREF="http://github.com/nvaccess/nvda/issues/7508">#7508</A>)
 <LI>Suport prematur pentru citirea și navigarea interactivă a conținutului matematic pentru cărțile Kindle cu matematica accesibilă. (<A HREF="http://github.com/nvaccess/nvda/issues/7536">#7536</A>)
 <LI>A fost adăugat suportul pentru cititorul de cărți electronice Azardi. (<A HREF="http://github.com/nvaccess/nvda/issues/5848">#5848</A>)
+<LI>Acum, este raportată informația versiunii suplimentelor când se face o actualizare. (<A HREF="http://github.com/nvaccess/nvda/issues/5324">#5324</A>)
+<LI>A fost adăugat suportul pentru noii parametri ai liniei de comandă pentru a crea o copie portabilă a NVDA-ului. (<A HREF="http://github.com/nvaccess/nvda/issues/6329">#6329</A>)
 </UL>
 
 <H3>Modificări</H3>
@@ -32,6 +34,8 @@
 <LI>În modul de navigare pentru Firefox și Chrome, numele grupurilor de câmpuri formular sunt anunțate atunci când se deplasează la ele cu navigarea rapidă sau când se tabulează. (<A HREF="http://github.com/nvaccess/nvda/issues/3321">#3321</A>)
 <LI>În modul de navigare, comanda navigării rapide pentru obiectele încorporate )O și shift+o) include acum elementele audio și video, precum și elementele cu aplicația și dialogul rolurilor aria. (<A HREF="http://github.com/nvaccess/nvda/issues/7239">#7239</A>)
 <LI>A fost actualizat Espeak NG (la commit-ul 01919cd48a566cdf34347784b2e74554b376e900), aceasta rezolvă niște probleme cu producerea lansărilor de compilări. (<A HREF="http://github.com/nvaccess/nvda/issues/7385">#7385</A>)
+<LI>La a treia activare a comenzii de citire a barei de stare, conținutul va fi copiat pe planșetă. (<A HREF="http://github.com/nvaccess/nvda/issues/1785">#1785</A>)
+<LI>Când se atribuie gesturi la taste pentru un afișaj Baum, le puteți limita la modelul afișajului braille în uz (ex: VarioUltra sau Pronto). (<A HREF="http://github.com/nvaccess/nvda/issues/7517">#7517</A>)
 </UL>
 
 <H3>Rezolvări Defecte</H3>
@@ -55,6 +59,14 @@
 <LI>"scons tests" nu verifică dacă string-urile ce pot fi traduse au comentariile traducătorului. Puteți rula asta singur cu "scons checkPot". (<A HREF="http://github.com/nvaccess/nvda/issues/7492">#7492</A>)
 <LI>Acum există un nou modul de extensie care oferă un framework generic pentru a activa extensibilitatea codului la punctele specifice din el. Acest lucru permite părților interesate să se înregistreze pentru a fi notificate atunci când are loc o acțiune (extensionPoints.Action), să modifice un anumit tip de date (extensionPoints.Filter) sau să participe la luarea unei decizii atunci când se va face ceva (extensionPoints.Decider). (<A HREF="http://github.com/nvaccess/nvda/issues/3393">#3393</A>)
 <LI>Acum vă puteți înregistra pentru a fi notificat atunci când configurarea profilului se comută prin acțiunea config.configProfileSwitched. (<A HREF="http://github.com/nvaccess/nvda/issues/3393">#3393</A>)
+<LI>Gesturile afișajului braille care simulează modificatoare de taste ale tastaturii sistemului (cum ar fi control și alt) pot fi combinate acum cu alte taste ale tastaturii simulate fără definiție explicită. (<A HREF="http://github.com/nvaccess/nvda/issues/6213">#6213</A>) 
+ <UL>
+ <LI>De exemplu: dacă aveți o tastă pe afișaj legată la tasta alt și o altă tastă de afișaj pentru a putea apăsa săgeată jos, combinarea acestor taste va rezulta simularea alt+săgeată jos.
+ </UL>
+<LI>Clasa braille.BrailleDisplayGesture are acum o proprietate extra model. Dacă e furnizată, apăsarea unei taste va genera un identificator de gest suplimentar, specific pentru model. Aceasta îi permite unui utilizator să lege gesturile limitate la un model specific de afișaje braille. 
+ <UL>
+ <LI>Încercați driver-ul Baum ca exemplu pentru această nouă funcționalitate.
+ </UL>
 </UL>
 
 <H2>2017.3</H2>
