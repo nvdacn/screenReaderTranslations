@@ -50,7 +50,7 @@ addresses = {
     },
     'es': {
         'lang': 'Spanish',
-        'email': ['Juan C. buno <oprisniki@gmail.com>', 'Noelia Martinez <nrm1977@gmail.com>'],
+        'email': ['Juan C. buno <oprisniki@gmail.com>', 'Noelia Martinez <nrm1977@gmail.com>', 'Remy Ruiz <remyruiz@gmail.com>'],
     },
     'es_CO': {
         'lang': 'Spanish Colombia',
