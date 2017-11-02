@@ -1,21 +1,27 @@
-Mitä uutta NVDA:ssa
+﻿Mitä uutta NVDA:ssa
 
 
 %!includeconf: ../changes.t2tconf
 
 = 2017.4 =
+Tämän version merkittävimpiä ominaisuuksia ovat mm. useat verkkoselauksen tuen korjaukset ja parannukset, mukaan lukien oletusarvoinen selaustila verkkopohjaisille valintaikkunoille ja parempi lomakekenttäryhmien nimien ilmaiseminen selaustilassa, tuki uusille Windows 10:n teknologioille, kuten Windows Defenderin sovellussuojalle ja ARM64-alustalle, sekä automaattinen ruudun suunnan ja akun tilan ilmoittaminen.  
+Huomaa, että tämä versio ei enää tue Windows XP:tä tai Vistaa. Vähimmäisvaatimus on nyt Windows 7 Service Pack 1-päivityksellä.
 
 == Uudet ominaisuudet ==
 - Selaustilassa on nyt mahdollista siirtyä kiintopisteiden alkuun tai niiden ohi säilön loppuun/alkuun siirtäviä komentoja (pilkku/Shift+pilkku) käyttäen. (#5482)
 - Muokkaus- ja lomakekenttiin siirtävillä pikaselauskomennoilla on nyt Firefoxissa, Chromessa ja Internet Explorerissa mahdollista siirtyä muokattavaan monimuotoiseen tekstisisältöön (esim. contentEditable). (#5534)
 - Elementtilista voi nyt näyttää verkkoselaimissa  luettelon lomakekentistä ja painikkeista. (#588)
 - Perustuki Windows 10:lle ARM64-alustalla. (#7508)
-- Alkeellinen tuki Kindle-kirjojen esteettömän matemaattisen sisällön lukemiselle ja vuorovaikutteiselle selaamiselle. (#7536)
+- Varhainen tuki Kindle-kirjojen esteettömän matemaattisen sisällön lukemiselle ja vuorovaikutteiselle selaamiselle. (#7536)
 - Lisätty tuki Azardi-e-kirjalukijalle. (#5848)
 - Lisäosien versiotiedot ilmoitetaan nyt päivitettäessä. (#5324)
 - Lisätty uusia komentoriviparametreja NVDA:n massamuistiversion luomiseen. (#6329)
-- Tuki Windows Defenderin sovellussuojassa ajettavalle Microsoft Edgelle. (#7600)
-- NVDA ilmoittaa nyt kannettavaa tai tablettia käytettäessä, kun laturi kytketään/irrotetaan, ja kun näytön suunta muuttuu. (#4574, #4612)
+- Tuki Windows Defenderin sovellussuojassa ajettavalle Microsoft Edgelle Windows 10:n Fall Creators -päivityksessä. (#7600)
+- NVDA ilmoittaa nyt kannettavaa tai tablettia käytettäessä, kun laturi kytketään/irrotetaan ja kun näytön suunta muuttuu. (#4574, #4612)
+- Uusi kieli: makedonia.
+- Uusia pistetaulukoita: vietnamilainen taso 1, kroatialainen taso 1. (#7518, #7565)
+- Lisätty tuki Handy Techin Actilino-pistenäytölle. (#7590)
+- Pistekirjoituksen syöttöä tuetaan nyt Handy Techin pistenäytöissä. (#7590)
 
 
 == Muutokset ==
@@ -24,10 +30,16 @@ Mitä uutta NVDA:ssa
 - Sarkaimella ja pikaselausnäppäimillä siirtyminen ei enää ilmoita selaustilassa siirtymistä pois säilöistä, kuten luetteloista ja taulukoista, mikä tekee navigoinnista tehokkaampaa. (#2591)
 - Lomakekenttäryhmien nimi ilmoitetaan nyt selaustilassa, kun niihin siirrytään pikaselauskomennoilla tai sarkaimella Firefoxissa ja Chromessa. (#3321)
 - Upotettuihin objekteihin selaustilassa siirtävä pikaselauskomento (O ja Shift+O) siirtää nyt ääni- ja videoelementteihin sekä sellaisiin, jotka on merkitty application- ja dialog-ARIA-rooleilla. (#7239)
-- Espeak-ng on päivitetty versioksi 01919cd48a566cdf34347784b2e74554b376e900. Tämä ratkaisee joitakin virallisen version tuottamisessa olleita ongelmia. (#7385)
+- Espeak-ng on päivitetty versioksi 1.49.2, jossa on korjattu joitakin virallisen version tuottamisessa olleita ongelmia. (#7385)
 - Tilarivin teksti kopioidaan leikepöydälle kolmannella Lue tilarivi -komennon painalluksella. (#1785)
 - Kun syötekomentoja liitetään Baum-pistenäytön näppäimiin, ne voidaan rajoittaa vain käytössä olevaan näyttöön (esim. VarioUltra tai Pronto). (#7517)
-- Selaustilan elementtilistan Suodata-kentän pikanäppäin on muutettu NVDA:n englanninkielisessä käyttöliittymässä Alt+F:stä Alt+E:ksi. (#7569)
+- Selaustilan elementtilistan Suodata-kentän pikanäppäin on muutettu englanninkielisessä käyttöliittymässä Alt+F:stä Alt+E:ksi. (#7569)
+- Lisätty selaustilaan määrittämätön syötekomento, jolla asettelutaulukoiden ilmaiseminen voidaan ottaa lennossa käyttöön tai poistaa se käytöstä. Komento löytyy Syötekomennot-valintaikkunan Selaustila-kategoriasta. (#7634)
+- Päivitetty liblouis-pistekirjoituskääntäjä versioksi 3.3.0. (#7565)
+- Puhesanastovalintaikkunan säännöllisen lausekkeen valintapainikkeen pikanäppäin on vaihdettu englanninkielisessä käyttöliittymässä Alt+R:stä Alt+E:ksi. (#6782)
+- Puhesanastotiedostot on nyt versioitu ja siirretty speechDicts/voiceDicts.v1-hakemistoon. (#7592)
+- Versioitujen tiedostojen (käyttäjän asetukset ja puhesanastot) muutoksia ei enää tallenneta, kun NVDA:ta ajetaan käynnistimestään. (#7688)
+- Handy Techin Braillino- ja Bookworm- sekä vanhalla laiteohjelmistolla varustettuja Modular-pistenäyttöjä ei enää tueta suoraan asennuksen jälkeen. Asenna Handy Techin yleisajuri ja NVDA:n lisäosa käyttääksesi niitä. (#7590)
 
 
 == Korjatut ohjelmavirheet ==
@@ -42,6 +54,7 @@ Mitä uutta NVDA:ssa
 - Matemaattisen sisällön käyttäminen on mahdollista Google Chromessa järjestelmissä, joissa ei ole asennettuna Mozilla Firefoxia. (#7308)
 - Käyttöjärjestelmän ja muiden sovellusten pitäisi olla vakaampia heti NVDA:n asennuksen jälkeen ennen uudelleenkäynnistystä verrattaessa aiempien NVDA-versioiden asennuksiin. (#7563)
 - Mikäli navigointiobjekti on hävinnyt sisällöntunnistuskomentoa (esim. NVDA+R) käytettäessä, NVDA antaa nyt virheilmoituksen sen sijaan, että asiasta ei ilmoiteta lainkaan. (#7567)
+- Korjattu taaksepäin vierittämisen toiminnallisuus Freedom Scientificin pistenäytöissä, joissa on pitkä vasemmanpuoleinen vieritysnäppäin. (#7713)
 
 
 == Muutokset kehittäjille (englanniksi) ==
