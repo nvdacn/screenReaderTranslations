@@ -59,11 +59,9 @@ Questo si applica a copie originali e modificate del software ed a qualsiasi pro
 Per maggiori informazioni è possibile [Leggere l'intera licenza. http://www.gnu.org/licenses/old-licenses/gpl-2.0.html]
 
 + Requisiti di sistema +
-- Sistemi operativi: tutte le versioni a 32 e 64 bit dei Sistemi Windows XP, Windows Vista,  Windows 7, Windows8, Windows8.1 e Windows10 (Incluse le edizioni Server).
- - Per Windows XP 32-bit, NVDA richiede Service Pack 2 o superiore.
- - Per Windows Server 2003, NVDA richiede Service Pack 1 o superiore.
- - Per Windows Vista, NVDA richiede il Service Pack 2 e [KB2763674 https://support.microsoft.com/en-us/kb/2763674] update.
- Generalmente questi due componenti sono già installati se sono stati eseguiti tutti gli aggiornamenti di Windows Vista tramite Windows Update.
+- Sistemi operativi: tutte le versioni a 32 e 64 bit dei Sistemi Windows 7, Windows8, Windows8.1, Windows10 e tutte le edizioni Server a partire da Windows Server 2008 r2.
+ - Per Windows 7, NVDA richiede Service Pack 1 o successivo.
+ - Per Windows Server 2008 R2, NVDA richiede Service Pack 1 o successivo.
 - Memoria: 256 mb di Ram o superiore
 - Velocità processore: 1.0 ghz o superiore.
 - Circa 90 Megabytes di spazio disco.
@@ -505,8 +503,8 @@ I seguenti tasti premuti da soli portano al campo successivo, tenendo premuto Sh
 - s: separatore
 - m: frame
 - g: grafico
-- d: Sezione
-- o: oggetto incorporato
+- d: Punto di riferimento
+- o: oggetto incorporato (audio e video player, applicazione, finestra di dialogo, etc.)
 - numeri da 1 a 6: intestazioni da 1 a 6
 - a: annotazioni (commenti, revisioni degli autori, etc.)
 - w: errori di ortografia
@@ -525,7 +523,7 @@ Per attivare o disattivare la navigazione a lettere singole per il documento cor
 
 ++ Lista degli elementi ++
 La lista degli elementi consente l'accesso ad un elenco di vari tipi di elementi presenti sul documento, a seconda dell'applicazione in uso.
-Per esempio, in una pagina web potremmo trovare un elenco dei link, delle intestazioni o delle sezioni presenti nel documento.
+Per esempio, in una pagina web potremmo trovare un elenco dei link, delle intestazioni, campi editazione, pulsanti o punti di riferimento presenti nel documento.
 I pulsanti radio permettono di ciclare tra questi tipi di informazioni.
 è presente anche un campo editazione, utile a filtrare tale lista per permettere una ricerca più rapida.
 Una volta selezionato l'elemento, si possono utilizzare i bottoni che si trovano nella finestra di dialogo, per spostarvisi o attivarlo.
@@ -535,8 +533,9 @@ Una volta selezionato l'elemento, si possono utilizzare i bottoni che si trovano
 %kc:endInclude
 
 ++ Oggetti incorporati ++
-Le pagine web possono essere strutturate con diverse tecnologie al proprio interno, ad esempio contenuti di tipo Adobe Flash, Sun Java, applicazioni o finestre di dialogo. 
+Le pagine web possono essere strutturate con diverse tecnologie al proprio interno, ad esempio contenuti di tipo Adobe Flash, Sun Java e html5, applicazioni o finestre di dialogo. 
 Quando NVDA incontra tali elementi in modalità navigazione, lo screen reader li annuncerà rispettivamente come oggetti, applicazioni o finestre di dialogo.
+è possibile spostarsi rapidamente tra gli oggetti premendo i comandi di navigazione veloce o oppure Shift-o.
 Sarà possibile interagire con tali elementi premendo il tasto Invio
 Se risulterà accessibile, premere il tasto tab o comunque muoversi all'interno di esso come se si trattasse di una normale applicazione. 
 è stato previsto un tasto caldo per tornare alla pagina originale che contiene l'oggetto:
@@ -545,15 +544,18 @@ Se risulterà accessibile, premere il tasto tab o comunque muoversi all'interno 
 | Ritornare alla modalità navigazione | NVDA+control+spazio | Sposta il focus dall'oggetto incorporato alla modalità navigazione |
 %kc:endInclude
 
-+ Lettura della matematica +
++ Lettura della matematica +[ReadingMath]
 NVDA è in grado di leggere ed interagire con la matematica nei contenuti che fanno uso del software MathPlayer4, prodotto da Design Science.
 Ciò richiede che MathPlayer4 sia installato sul computer.
 MathPlayer può essere scaricato gratuitamente dal seguente sito web: http://www.dessci.com/en/products/mathplayer/
 
 NVDA supporta la matematica nei seguenti formati:
 - MathML in Mozilla Firefox, Microsoft Internet Explorer e Google Chrome.
-- MathType Design Science  in Microsoft Word e PowerPoint. Si noti che MathType dev'essere installato affinché il supporto funzioni correttamente, è sufficiente anche la versione di prova.
-- MathML in Adobe Reader. (Si noti che questo non è ancora uno standard ufficiale, per cui attualmente non esiste per il pubblico un software disponibile che possa produrre questo contenuto).
+- MathType Design Science in Microsoft Word e PowerPoint.
+Si noti che MathType dev'essere installato affinché il supporto funzioni correttamente, è sufficiente anche la versione di prova.
+- MathML in Adobe Reader.
+Si noti che questo non è ancora uno standard ufficiale, per cui attualmente non esiste per il pubblico un software disponibile che possa produrre questo contenuto.
+- Math in Kindle per PC per libri con matematica accessibile.
 -
 
 Durante la lettura di un documento, NVDA sarà in grado di leggere qualsiasi contenuto di tipo matematico supportato.
@@ -577,7 +579,7 @@ Da impostazioni predefinite, il cursore di controllo segue il cursore di sistema
 
 A questo punto, è possibile utilizzare i comandi MathPlayer come i tasti freccia per esplorare l'espressione.
 Ad esempio, ci si potrà spostare attraverso l'espressione con i tasti freccia sinistra e destra, per poi evidenziare una parte dell'espressione, come una frazione utilizzando il tasto freccia verso il basso.
-Si prega di consultare la documentazione di MathPlayer per ulteriori informazioni.
+Si prega di consultare la documentazione di MathPlayer sui comandi di navigazione per ulteriori informazioni: https://www.dessci.com/en/products/mathplayer/navigation_commands.htm 
 
 Quando si desidera tornare al documento, è sufficiente premere il tasto Esc.
 
@@ -817,6 +819,9 @@ Sempre automaticamente verranno girate le pagine sia con lo spostamento del curs
 La navigazione veloce con le lettere è supportata per link e grafici, ma soltanto per la pagina corrente.
  La navigazione per link comprende anche le note a piè di pagina.
  
+NVDA fornisce un supporto iniziale per la lettura e la navigazione interattiva di contenuti matematici per i libri accessibili per la matematica.
+Si prega di consultare la sezione [lettura della matematica #ReadingMath] per ulteriori informazioni.
+
 +++ Selezionare il testo +++
 Kindle consente di eseguire varie operazioni sul testo selezionato, come l'ottenimento di una definizione dal dizionario, l'aggiunta di note ed evidenziazioni, copiare il testo negli appunti e la ricerca sul web.
 Per fare questo, per prima cosa selezionare il testo come sempre in modalità navigazione (ad esempio tenendo premuto shift e spostandosi con i tasti freccia).
@@ -838,6 +843,14 @@ Per visualizzare, modificare o eliminare una nota:
 + Accedere alle opzioni inerenti la selezione come descritto sopra.
 + Scegliere Modifica Nota.
 +
+
+++ Azardi ++
+%kc:beginInclude
+Quando ci si trova nella visualizzazione della tabella dei libri aggiunti:
+|| Nome | Tasto | Descrizione |
+| Invio | invio |Apre il libro selezionato. |
+| Menu di contesto | applicazioni | Apre il menu di contesto per il libro selezionato. |
+%kc:endInclude
 
 + Configurare NVDA +
 
