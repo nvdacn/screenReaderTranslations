@@ -43,6 +43,7 @@ Informacje o innych syntezatorach mowy, które obsługuje NVDA można znaleźć 
 
 ++ Obsługa brajla ++
 Użytkownicy, którzy posiadają monitor brajlowski, mogą za pomocą NVDA odczytywać w brajlu informacje z ekranu. 
+Obsługiwane jest również wprowadzanie brajla z klawiatury brajlowskiej przy pomocy skrótów brajlowskich lub w formie nieskróconej.
 Zobacz więcej informacji na temat obsługiwanych monitorów brajlowskich w rozdziale [Obsługiwane monitory brajlowskie #SupportedBrailleDisplays].
 
 NVDA obsługuje kody brajla dla wielu języków, w tym brajl zwykły, skróty brajlowskie i brajl komputerowy.
@@ -136,6 +137,10 @@ W celu uruchomienia programu zainstalowanego za pomocą instalatora wybierz NVDA
 Możesz również wpisać NVDA w oknie Uruchom w menu Start i nacisnąć klawisz Enter, a program zostanie uruchomiony.
 Możesz również podać pewne [parametry linii komend #CommandLineOptions], które pozwalają zrestartować NVDA (-r), zakończyć (-q), wyłączyć dodatki (--disable-addons), etc.
 
+Dla kopii zainstalowanych, NVDA domyślnie przechowuje konfigurację w podfolderze roaming folderu dane aplikacji aktualnego użytkownika (np. "C:\Users\<uzytkownik>\AppData\Roaming").
+Można to zmienić w taki sposób, że NVDA wczyta konfigurację z lokalnego folderu danych aplikacji.
+Więcej w rozdziale o [Parametrach systemu #SystemWideParameters].
+
 Aby uruchomić wersję przenośną NVDA, przejdź do katalogu, w którym zostały wypakowane pliki, zaznacz plik  "nvda.exe" i naciśnij klawisz Enter lub dwukrotnie kliknij na nim lewym przyciskiem myszy.
 
 Po uruchomieniu NVDA usłyszysz coraz wyższe dźwięki wskazujące, że program się ładuje.
@@ -147,8 +152,9 @@ Więcej informacji o zgłaszaniu problemów znajdziesz na stronie projektu.
 
 Przy pierwszym uruchomieniu, NVDA wyświetli ekran powitalny z podstawowymi informacjami o klawiszu NVDA i o menu programu.
 (Więcej na ten temat znajduje się w sekcjach poniżej.)
-Okienko zawiera również 3 pola wyboru.
-Pierwsze pozwala ustalić, czy NVDA będzie używał klawisza CapsLock jako klawisza komend NVDA.
+Okienko zawiera również listę rozwijaną i 3 pola wyboru.
+Lista rozwijana pozwala wybrać układ klawiatury.
+Pierwsze pole wyboru pozwala ustalić, czy NVDA będzie używał klawisza CapsLock jako klawisza komend NVDA.
 Drugie pozwala włączyć automatyczne uruchamianie programu po zalogowaniu do systemu i jest dostępny tylko dla zainstalowanych kopii NVDA.
 Trzecie pole wyboru określa, czy to okienko dialogowe ma się pojawiać przy każdym uruchomieniu programu.
 
@@ -501,6 +507,7 @@ Naciśnięcie litery przechodzi do następnego elementu odpowiedniego typu, nato
 - O: obiekt zagnieżdżony
 - Cyfry 1 do 6: nagłówki poziomu odpowiednio  od 1 do 6
 - A: adnotacja (komentarz, zmiana edytorska, itd.)
+- w: błąd pisowni
 -
 Aby przejść na początek lub koniec elementów takich jak listy i tabele:
 || Działanie | Skrót | Opis |
@@ -542,7 +549,7 @@ Wymaga to zainstalowania MathPlayer 4 na komputerze.
 MathPlayer jest bezpłatnie dostępny do pobrania z : http://www.dessci.com/en/products/mathplayer/
 
 NVDA obsługuje następujące rodzaje treści matematycznej:
-- MathML w Mozilla Firefox i Microsoft Internet Explorer.
+- MathML w Mozilla Firefox, Microsoft Internet Explorer i Google Chrome.
 - Design Science MathType w Microsoft Word and PowerPoint. Aby to działało, MathType musi być zainstalowany. Wersja próbna jest wystarczająca.
 - MathML w Adobe Reader. Nie jest to jeszcze oficjalny standard, nie istnieje publicznie dostępne oprogramowanie mogące wytwarzać taką treść.
 -
@@ -571,6 +578,77 @@ Dla przykładu: możesz przechodzić po wyrażeniu strzałkami lewo i prawo,  i 
 Więcej informacji zawiera dokumentacja MathPlayer.
 
 Aby powrócić do dokumentu, naciśnij klawisz Esc.
+
++ Brajl +
+Jeśli posiadasz monitor brajlowski, NVDA może wyświetlać informacje w brajlu.
+Jeśli twój monitor ma klawiaturę brajlowską, możesz wprowadzać brajla skrótami lub w wersji nieskróconej.
+
+Więcej informacji o obsługiwanych monitorach zawiera rozdział [Obsługiwane monitory brajlowskie #SupportedBrailleDisplays].
+Możesz skonfigurować ustawienia brajlowskie przy użyciu [Okna ustawień brajla #BrailleSettings].
+
++ Brajlowskie skróty typu i stanu kontrolki oraz punktów orientacyjnych +
+Aby zmieścić jak najwięcej informacji na monitorze brajlowskim, zdefiniowano poniższe skróty określające typ i stan kontrolki oraz punkty orientacyjne.
+
+|| Skrót | Typ kontrolki |
+| btn | Przycisk |
+| cbo | Lista rozwijana |
+| chk | Pole wyboru |
+| dlg | Dialog |
+| edt | Pole edycji tekstu |
+| gra | Grafika |
+| cN | Kolumna tabeli o numerze n, np. c1, c2. |
+| rN | Wiersz tabeli o numerze n, np. r1, r2. |
+| hN | Nagłówek poziomu N, np. h1, h2. |
+| lnk | Link |
+| vln | Odwiedzony link |
+| lst | Lista |
+| puo | punkt orientacyjny |
+| mnu | Menu |
+| mnubar | Pasek menu |
+| rbtn | Przycisk opcji |
+| tb | Tabela |
+| tv | Widok drzewa |
+| lv N | Widok drzewa ma chierarchiczny poziom N|
+| ``-----`` | Separator |
+
+Zdefiniowano także poniższe oznaczenia stanu:
+|| Skrót | Stan kontrolki |
+| ... | Wyświetlane, gdy obiekt obsługuje autouzupełnianie |
+| ( ) | Wyświetlane, gdy obiekt (np. pole wyboru) jest niezaznaczony |
+| (x) | Wyświetlane, gdy obiekt (np. pole wyboru) jest zaznaczony |
+| (-) | Wyświetlane, gdy obiekt (np. pole wyboru) jest częściowo zaznaczony |
+| - | Wyświetlane, gdy obiekt (np. drzewo) można zwinąć |
+| + | Wyświetlane, gdy obiekt (np. drzewo) można rozwinąć |
+| clk | Wyświetlane, gdy obiekt jest klikalny |
+| ro | Wyświetlane, gdy obiekt (np. pole edycji) jest tylko do odczytu |
+| sel | Wyświetlane, gdy obiekt jest wybrany |
+| submnu | Wyświetlane, gdy obiekt posiada wyskakujące menu (zwykle podmenu) |
+
+Zdefiniowane zostały poniższe skróty dla punktów orientacyjnych:
+|| Skrót | Punkt orientacyjny |
+| bnnr | banner |
+| tinf | informacje o treści |
+| uzup | uzupełniające |
+| form | formularz |
+| główne | główne |
+| nawi | nawigacja |
+| szuk | szukaj |
+| obszar | obszar |
+
+++ Braille Input ++
+NVDA obsługuje wprowadzanie brajla skrótami lub w wersji nieskróconej przy użyciu klawiatury brajlowskiej.
+Możesz wybrać tablicę tłumaczenia wprowadzanego brajla na tekst przy użyciu opcji [Tablica wejścia #BrailleInputTable] w oknie ustawień brajla.
+
+Jeśli używany jest brajl nieskrócony, tekst jest wstawiany od razu po wprowadzeniu.
+Jeśli używane są skróty brajlowskie, tekst jest wstawiany po naciśnięciu spacji lub Entera na końcu słowa.
+Tłumaczenie może uwzględniać tylko wpisywane słowo i nie bierze pod uwagę istniejącego tekstu.
+Dla przykładu, jeśli używasz kodu brajlowskiego, który rozpoczyna liczby znakiem cyfry i naciśniesz Backspace kasując początek liczby, będziesz musiał wpisać znak cyfry ponownie aby wprowadzić następne cyfry.
+
+%kc:beginInclude
+Naciśnięcie punktu 7 kasuje ostatni znak lub komórkę brajla.
+Punkt 8 tłumaczy wprowadzony brajl i naciska klawisz enter.
+Naciśnięcie punktó 7 + punktu 8  tłumaczy wprowadzony brajl, ale bez dodawania spacji lub naciskania entera.
+%kc:endInclude
 
 + Funkcje specyficzne dla aplikacji +
 NVDA udostępnia dodatkowe funkcje dla niektórych aplikacji, aby uczynić niektóre zadania łatwiejszymi lób udostępnić daną funkcjonalność, która w innym przypadku byłaby niedostępna dla użytkownika oprogramowania czytającego ekran.
@@ -601,7 +679,7 @@ Więcej informacji o trybie czytania i szybkiej nawigacji , znajduje się w rozd
 %kc:beginInclude
 W trybie czytania w Microsoft Word możesz uzyskać dostęp do listy elementów naciskając NVDA+F7.
 %kc:endInclude
-Lista elementów wyświetla nagłówki, linki i adnotacje (zawierające komentarze i śledzenie zmian).
+Lista elementów wyświetla nagłówki, linki, adnotacje (zawierające komentarze i śledzenie zmian), oraz błędy (aktualnie ograniczone do błędów pisowni).
 
 +++ Zgłaszanie komentarzy +++
 %kc:beginInclude
@@ -906,7 +984,7 @@ Jeśli chcesz szybko zmienić ustawienia mowy bez wchodzenia do okna dialogowego
 | Zmniejsz parametr ustawień głosu | NVDA+Ctrl+Strzałka w dół | NVDA+Ctrl+Shift+Strzałka w dół | Zmniejsza aktualnie wybrany parametr ustawień syntezatora. Na przykład: zmniejsza szybkość, wybiera poprzedni głos, zmniejsza głośność. |
 %kc:endInclude
 
-+++ Ustawienia brajla +++
++++ Ustawienia brajla +++[BrailleSettings]
 Okno "Ustawienia Brajla" wywoływane jest w menu Ustawienia.
 
 ==== Monitor brajlowski ====
@@ -936,10 +1014,9 @@ Możesz tu znaleźć tablice brajlowskie dla różnych języków, standardów i 
 Wybrana tablica będzie używana do translacji tekstu przed jego wyświetleniem na twoim monitorze brajlowskim.
 Między elementami tej listy przełączaj się przy użyciu klawiszy strzałek.
 
-==== Tabela wprowadzania ====
+==== Tabela wprowadzania ====[BrailleInputTable]
 W uzupełnieniu do poprzedniego ustawienia, następnym znajdującym się po nim jest lista rozwijana "Tabela wprowadzania".
 Wybrana tablica będzie używana do translacji na postać tekstu komputerowego znaków wprowadzanych na klawiaturze twojego monitora brajlowskiego.
-NVDA aktualnie obsługuje wprowadzanie w brajlu komputerowym, więc dostępne są jedynie 8-punktowe tablice brajlowskie.
 Między elementami tej listy przełączaj się przy użyciu klawiszy strzałek.
 
 Zwróć uwagę, że ta funkcja jest przydatna tylko wówczas, gdy twój monitor brajlowski posiada klawiaturę w stylu Perkins, a funkcja wprowadzania jest obsługiwana przez sterownik monitora brajlowskiego.
@@ -964,8 +1041,11 @@ Ta opcja pozwala wybrać kształt (wzorzec punktowy) kursora brajlowskiego.
 Opcja nie ma wpływu na znacznik zaznaczania.
 
 ==== Czas wygasania komunikatów ====
-To ustawienie jest polem liczbowym określające w sekundach, jak długo na monitorze brajlowskim są wyświetlane komunikaty programu NVDA.
+To ustawienie jest polem liczbowym określającym w sekundach, jak długo na monitorze brajlowskim są wyświetlane komunikaty programu NVDA.
 Wprowadzenie wartości 0, wyłącza całkowicie wyświetlanie tych komunikatów.
+
+==== Pokazuj wiadomości w nieskończoność ====
+Ta opcja powoduje, że wiadomości NVDA są w nieskończoność wyświetlane na monitorze brajlowskim.
 
 %kc:setting
 ==== Brajl związany z ====[BrailleTether]
@@ -1155,6 +1235,13 @@ Jeśli zminimalizujesz okno zawierające pasek postępu albo przełączysz się 
 Skrót Klawiszowy: NVDA+5
 
 Przełącza ogłaszanie nowej treści w niektórych obiektach takich jak terminale albo okienko historii w komunikatorach.
+
+==== Odtwórz dźwięk, gdy pojawiają się automatyczne podpowiedzi ====
+Przełącza oznajmianie pojawiania się automatycznych podpowiedzi. Gdy włączone, NVDA odtworzy dźwięk aby to oznajmić.
+Automatyczne podpowiedzi są listą sugerowanych wpisów opartą o tekst wprowadzony w niektórych polach edycyjnych i dokumentach.
+Dla przykładu, jeśli wprowadzisz tekst do pola wyszukiwania w Menu start w Windows Vista i nowszych, system wyświetli listę podpowiedzi bazującą na tym co zostało wpisane.
+Dla niektórych pól edycyjnych takich jak pola wyszukiwania w różnych aplikacjach Windows 10, NVDA może powiadomić, że po wpisaniu tekstu pojawiła się lista podpowiedzi.
+Lista podpowiedzi zostanie zamknięta po wyjściu z pola edycji i dla niektórych pól, NVDA może również o tym powiadomić.
 
 +++ Ustawienia układu wprowadzania +++
 Okno ustawień układu wprowadzania wywoływane jest z menu Ustawienia.
@@ -1585,9 +1672,20 @@ Aby użyć tych głosów, musisz zainstalować dwa komponenty:
 - Microsoft Speech Platform - Runtime Languages (Wersja 11): http://www.microsoft.com/download/en/details.aspx?id=27224
  - Ta strona zawiera wiele plików dla rozpoznawania mowy i zamiany tekstu na mowę.
  Wybierz pliki TTS (Text-to-speech - tekst na mowę) zawierające dane dla potrzebnych języków i głosów.
- Dla przykładu, plik  MSSpeech_TTS_en-US_ZiraPro.msi jest to głos w języku Angielski (stany zjednoczone).
+ Dla przykładu, plik  MSSpeech_TTS_en-US_ZiraPro.msi jest to głos w języku Angielskim (stany zjednoczone).
  -
 -
+
+++ Głosy Windows OneCore ++
+Windows 10 zawiera nowe głosy znane jako "OneCore" lub głosy "mobilne".
+Dostarczone są głosy dla wielu języków, są bardziej responsywne niż głosy Microsoft dostępne przy użyciu Microsoft Speech API version 5.
+
+Aby zainstalować głosy dla języków dodatkowych, zobacz ten artykuł Microsoft: https://support.office.com/en-us/article/How-to-download-Text-to-Speech-languages-for-Windows-4c83a8d8-7486-42f7-8e46-2b0fdf753130
+
+Proszę zauważyć, że większe prędkości dostępne w Narratorze nie są aktualnie dostępne w NVDA.
+Ponadto, prędkość określona w ustawieniach Windows ma wpływ na prędkość ustawioną w NVDA.
+Są to problemy, których nie możemy rozwiązać bez zmian w samym Windows.
+Mamy nadzieję, że zostaną naprawione w przyszłej aktualizacji systemu Windows.
 
 ++ Audiologic Tts3 ++
 Jest to komercyjny syntezator mowy dla języka włoskiego.
@@ -1634,8 +1732,6 @@ Zajrzyj do dokumentacji monitora, aby dowiedzieć się gdzie znajdują się opis
 | Przejdź wstecz używając akcji prawego pokrętła | RightWizWheelUp |
 | Przejdź w przód używając akcji prawego pokrętła | RightWizWheelDown |
 | Przywołaj do komórki brajla | Routing |
-| Klawisz Backspace | Punkt 7 |
-| Klawisz Enter | Punkt 8 |
 | Klawisz Shift+Tab | Brajlowska spacja+Punkt 1+Punkt 2 |
 | Klawisz Tab | Brajlowska spacja+Punkt 4+Punkt 5 |
 | Klawisz strzałki w górę | Brajlowska spacja+Punkt 1 |
@@ -1877,8 +1973,6 @@ Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia:
 | Klawisz Alt | Punkt 1+Punkt 3+Punkt 4+Spacja |
 | Klawisz Escape | Punkt 1+Punkt 5+Spacja |
 | Klawisz Tab | Punkt 4+Punkt 5+Spacja |
-| Klawisz Enter | Punkt 8 |
-| Klawisz Backspace | Punkt 7 |
 | Klawisz Strzałka w górę | Punkt 1+Spacja |
 | Klawisz Strzałka w dół | Punkt 4+Spacja |
 | CapsLock | Punkt 1+Punkt 3+Punkt 6+Spacja |
@@ -2025,8 +2119,6 @@ Obydwa wewnętrzne klawisze to Spacja.
 
 || Działanie | Klawisz skrótu |
 %kc:beginInclude
-| Klawisz Backspace | Punkt 7 |
-| Klawisz Enter | Punkt 8 |
 | Klawisz Escape | Spacja+Punkt 7 |
 | Klawisz Strzałka w górę | Spacja+Punkt 2 |
 | Klawisz Strzałka w lewo | Spacja+Punkt 1 |
@@ -2160,8 +2252,8 @@ Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia:
 | Klawisz Ctrl+Home | Spacja+Punkt 1+Punkt 2+Punkt 3 |
 | Klawisz Ctrl+End | Spacja+Punkt 4+Punkt 5+Punkt 6 |
 | Klawisz Spacja | Spacja |
-| Klawisz Enter | Spacja+Punkt 8 |
-| Klawisz Backspace | Spacja+Punkt 7 |
+| Enter | Spacja+Punkt 8 |
+| Backspace | Spacja+Punkt 7 |
 | Klawisz Tab | Spacja+Punkt 2+Punkt 3+Punkt 4+Punkt 5 (Spacja+t) |
 | Klawisz Shift+Tab | Spacja+Punkt 1+Punkt 2+Punkt 5+Punkt 6 |
 | Klawisz Windows | Spacja+Punkt 2+Punkt 4+Punkt 5+Punkt 6 (Spacja+w) |
@@ -2224,43 +2316,6 @@ Zobacz [tabele klawiszy w dokumentacji brltty http://mielke.cc/brltty/doc/KeyBin
 | Przywołaj do komórki brajla | route (przenieś kursor do znaku) |
 %kc:endInclude
 
-+ Brajlowskie skróty typu i stanu kontrolki +
-Aby zmieścić jak najwięcej informacji na monitorze brajlowskim, zdefiniowano poniższe skróty określające typ i stan kontrolki.
-
-|| Skrót | Typ kontrolki |
-| btn | Przycisk |
-| cbo | Lista rozwijana |
-| chk | Pole wyboru |
-| dlg | Dialog |
-| edt | Pole edycji tekstu |
-| gra | Grafika |
-| cN | Kolumna tabeli o numerze n, np. c1, c2. |
-| rN | Wiersz tabeli o numerze n, np. r1, r2. |
-| hN | Nagłówek poziomu N, np. h1, h2. |
-| lnk | Link |
-| lst | Lista |
-| vlnk | Odwiedzony link |
-| mnu | Menu |
-| mnubar | Pasek menu |
-| rbtn | Przycisk opcji |
-| tb | Tabela |
-| tv | Widok drzewa |
-| lv N | Widok drzewa ma chierarchiczny poziom N|
-| ``-----`` | Separator |
-
-Zdefiniowano także poniższe oznaczenia stanu:
-|| Skrót | Stan kontrolki |
-| ... | Wyświetlane, gdy obiekt obsługuje autouzupełnianie |
-| ( ) | Wyświetlane, gdy obiekt (np. pole wyboru) jest niezaznaczony |
-| (x) | Wyświetlane, gdy obiekt (np. pole wyboru) jest zaznaczony |
-| (-) | Wyświetlane, gdy obiekt (np. pole wyboru) jest częściowo zaznaczony |
-| - | Wyświetlane, gdy obiekt (np. drzewo) można zwinąć |
-| + | Wyświetlane, gdy obiekt (np. drzewo) można rozwinąć |
-| clk | Wyświetlane, gdy obiekt jest klikalny |
-| ro | Wyświetlane, gdy obiekt (np. pole edycji) jest tylko do odczytu |
-| sel | Wyświetlane, gdy obiekt jest wybrany |
-| submnu | Wyświetlane, gdy obiekt posiada wyskakujące menu (zwykle podmenu) |
-
 + Dla zaawansowanych +
 
 ++ Parametry linii komend ++[CommandLineOptions]
@@ -2303,6 +2358,18 @@ Poniżej wymieniono wszystkie opcje linii poleceń dla NVDA:
 | Brak | --no-sr-flag  | Nie zmieniaj globalnej flagi systemowej czytnika ekranu |
 | None | --install | Po cichu instaluje NVDA i uruchamia zainstalowaną kopię |
 | Brak | --install-silent | Po cichu instaluje NVDA (nie uruchamia zainstalowanej kopii) |
+
+++ Parametry systemu ++[SystemWideParameters]
+NVDA pozwala ustawić pewne wartości w rejestrze Windows, zmieniające zachowanie NVDA dla całego systemu.
+Wartości te są ustawiane w poniższych kluczach:
+- systemy 32-bitowe: "HKEY_LOCAL_MACHINE\SOFTWARE\nvda"
+- systemy 64-bitowe: "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\nvda"
+-
+
+Następujące wartości mogą zostać ustawione w tym kluczu rejestru:
+|| Nazwa | Typ | Dozwolone wartości | Opis |
+| configInLocalAppData | DWORD | 0 (domyślnie) aby wyłączyć, 1 aby włączyć | Gdy włączone, przechowuje konfigurację użytkownika NVDA w lokalnym folderze danych aplikacji, zamiast w podfolderze Roaming danych aplikacji |
+| serviceDebug | DWORD | 0 (domyślnie) aby wyłączyć, 1 aby włączyć | Gdy aktywne, wyłącza tryb bezpieczny na ekranach bezpiecznego pulpitu Windows, pozwalając na używanie konsoli Pythona i podglądu logów. W związku z kilkoma poważnymi implikacjami bezpieczeństwa, użycie tej opcji jest mocno niezalecane |
 
 + Dodatkowe informacje +
 Jeśli potrzebujesz dodatkowych informacji lub pomocy odnośnie NVDA znajdziesz ją na stronie internetowej NVDA NVDA_URL.
