@@ -188,13 +188,12 @@
     <LI><A HREF="#toc128">14.16. SuperBraille</A>
     <LI><A HREF="#toc129">14.17. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc130">15. Tipi di controlli braille, punti di riferimento e abbreviazioni di stato</A>
-  <LI><A HREF="#toc131">16. Argomenti avanzati</A>
+  <LI><A HREF="#toc130">15. Argomenti avanzati</A>
     <UL>
-    <LI><A HREF="#CommandLineOptions">16.1. Opzioni a riga di comando</A>
-    <LI><A HREF="#SystemWideParameters">16.2. Parametri di sistema</A>
+    <LI><A HREF="#CommandLineOptions">15.1. Opzioni a riga di comando</A>
+    <LI><A HREF="#SystemWideParameters">15.2. Parametri di sistema</A>
     </UL>
-  <LI><A HREF="#toc134">17. Ulteriori Informazioni</A>
+  <LI><A HREF="#toc133">16. Ulteriori Informazioni</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -5558,10 +5557,6 @@ Si prega di consultare la <A HREF="ftp://ftp.once.es/pub/utt/bibliotecnia/Lineas
 </TR>
 </TABLE>
 
-<P>
-+%kc:endInclude
-</P>
-
 <A NAME="toc128"></A>
 <H3>14.16. SuperBraille</H3>
 
@@ -5591,9 +5586,9 @@ A causa di ciò, e per mantenere una buona compatibilità con altri screen reade
 
 <P>
 <A HREF="http://www.brltty.com">BRLTTY</A> è un programma a parte del quale è possibile avvalersi per avere supporto per molte altre barre braille. 
-Per poterlo utilizzare, è necessario installare <A HREF="http://www.brltty.com/download.thm">BRLTTY per Windows</A>.
+Per poterlo utilizzare, è necessario installare <A HREF="http://www.brltty.com/download.htm">BRLTTY per Windows</A>.
 Si deve scaricare ed installare l'ultimo pacchetto Installer, che è chiamato, ad esempio, brltty-win-4.2-2.exe. 
-Quando si configura la Barra Braille e la porta da utilizzare, si prega di fare attenzione alle istruzioni presentate a schermo, specialmente in caso si possieda un modello USB e sono già installati nel sistema i Drivers prodotti dalla casa madre.
+Quando si configura la Barra Braille e la porta da utilizzare, si prega di fare attenzione alle istruzioni presentate a schermo, specialmente in caso si possieda un modello USB e sono già installati nel sistema i Driver prodotti dalla casa madre.
 </P>
 <P>
 Per i display che possiedono già una tastiera braille, Brltty gestisce autonomamente la procedura di immissione e traduzione del testo dal braille.
@@ -5632,198 +5627,10 @@ Si legga la <A HREF="http://mielke.cc/brltty/doc/KeyBindings/">tabella dei tasti
 </TABLE>
 
 <A NAME="toc130"></A>
-<H2>15. Tipi di controlli braille, punti di riferimento e abbreviazioni di stato</H2>
-
-<P>
-Per fare in modo di fornire il maggior numero di informazioni in un display braille, sono state definite le seguenti abbreviazioni per illustrare i tipi di controllo, lo stato degli elementi e per i punti di riferimento.
-</P>
-
-<TABLE BORDER="1" CELLPADDING="4">
-<TR>
-<TH>Abbreviazione</TH>
-<TH>Tipo controllo</TH>
-</TR>
-<TR>
-<TD>btn</TD>
-<TD>bottone</TD>
-</TR>
-<TR>
-<TD>cbo</TD>
-<TD>casella combinata</TD>
-</TR>
-<TR>
-<TD>chk</TD>
-<TD>casella di controllo</TD>
-</TR>
-<TR>
-<TD>dlg</TD>
-<TD>dialogo</TD>
-</TR>
-<TR>
-<TD>edt</TD>
-<TD>campo di testo editabile</TD>
-</TR>
-<TR>
-<TD>gra</TD>
-<TD>grafico</TD>
-</TR>
-<TR>
-<TD>cN</TD>
-<TD>numero colonna tabella n, ad esempio c1, c2.</TD>
-</TR>
-<TR>
-<TD>rN</TD>
-<TD>numero riga tabella n, ad esempio r1, r2.</TD>
-</TR>
-<TR>
-<TD>hN</TD>
-<TD>intestazione di livello n, ad esempio h1, h2.</TD>
-</TR>
-<TR>
-<TD>lnk</TD>
-<TD>link</TD>
-</TR>
-<TR>
-<TD>lst</TD>
-<TD>elenco</TD>
-</TR>
-<TR>
-<TD>prf</TD>
-<TD>punto di riferimento</TD>
-</TR>
-<TR>
-<TD>vlnk</TD>
-<TD>link visitato</TD>
-</TR>
-<TR>
-<TD>mnu</TD>
-<TD>menu</TD>
-</TR>
-<TR>
-<TD>mnubar</TD>
-<TD>barra dei menu</TD>
-</TR>
-<TR>
-<TD>rbtn</TD>
-<TD>pulsante radio</TD>
-</TR>
-<TR>
-<TD>tb</TD>
-<TD>tabella</TD>
-</TR>
-<TR>
-<TD>tv</TD>
-<TD>visualizzazione ad albero</TD>
-</TR>
-<TR>
-<TD>lv N</TD>
-<TD>un elemento della visualizzazione ad albero possiede un livello gerarchico pari a N|</TD>
-</TR>
-<TR>
-<TD><CODE>-----</CODE></TD>
-<TD>separatore</TD>
-</TR>
-</TABLE>
-
-<P>
-Sono inoltre definiti i seguenti indicatori di stato:
-</P>
-
-<TABLE BORDER="1" CELLPADDING="4">
-<TR>
-<TH>Abbreviazione</TH>
-<TH>indicatore di stato</TH>
-</TR>
-<TR>
-<TD>...</TD>
-<TD>visualizzato quando un oggetto supporta l'autocompletamento</TD>
-</TR>
-<TR>
-<TD>( )</TD>
-<TD>visualizzato quando un oggetto, come una casella di controllo, non è marcato</TD>
-</TR>
-<TR>
-<TD>(x)</TD>
-<TD>visualizzato quando un oggetto, come una casella di controllo, è marcato</TD>
-</TR>
-<TR>
-<TD>(-)</TD>
-<TD>visualizzato quando un oggetto, come una casella di controllo, è parzialmente attivato</TD>
-</TR>
-<TR>
-<TD>-</TD>
-<TD>visualizzato quando un oggetto, come l'elemento di una visualizzazione ad albero, risulta non espandibile</TD>
-</TR>
-<TR>
-<TD>+</TD>
-<TD>visualizzato quando un oggetto, come l'elemento di una visualizzazione ad albero, risulta espandibile</TD>
-</TR>
-<TR>
-<TD>clk</TD>
-<TD>visualizzato quando un oggetto risulta cliccabile</TD>
-</TR>
-<TR>
-<TD>ro</TD>
-<TD>visualizzato quando un oggetto, come un campo di testo editabile, risulta di sola lettura</TD>
-</TR>
-<TR>
-<TD>sel</TD>
-<TD>visualizzato quando un oggetto risulta selezionato</TD>
-</TR>
-<TR>
-<TD>submnu</TD>
-<TD>visualizzato quando un oggetto contiene un popup, in genere un sottomenu</TD>
-</TR>
-</TABLE>
-
-<P>
-Inoltre, sono presenti alcune abbreviazioni per gestire i punti di riferimento:
-</P>
-
-<TABLE BORDER="1" CELLPADDING="4">
-<TR>
-<TH>Abbreviazione</TH>
-<TH>Punto di riferimento</TH>
-</TR>
-<TR>
-<TD>bnnr</TD>
-<TD>banner</TD>
-</TR>
-<TR>
-<TD>cinf</TD>
-<TD>content info</TD>
-</TR>
-<TR>
-<TD>cmpl</TD>
-<TD>complementare</TD>
-</TR>
-<TR>
-<TD>form</TD>
-<TD>form</TD>
-</TR>
-<TR>
-<TD>main</TD>
-<TD>principale</TD>
-</TR>
-<TR>
-<TD>navi</TD>
-<TD>navigazione</TD>
-</TR>
-<TR>
-<TD>srch</TD>
-<TD>ricerca</TD>
-</TR>
-<TR>
-<TD>rgn</TD>
-<TD>regione</TD>
-</TR>
-</TABLE>
-
-<A NAME="toc131"></A>
-<H2>16. Argomenti avanzati</H2>
+<H2>15. Argomenti avanzati</H2>
 
 <A NAME="CommandLineOptions"></A>
-<H3>16.1. Opzioni a riga di comando</H3>
+<H3>15.1. Opzioni a riga di comando</H3>
 
 <P>
 NVDA è in grado di accettare alcune opzioni a riga di comando per modificarne il comportamento all'avvio.
@@ -5974,7 +5781,7 @@ Ecco l'elenco dei parametri a riga di comando di NVDA:
 </TABLE>
 
 <A NAME="SystemWideParameters"></A>
-<H3>16.2. Parametri di sistema</H3>
+<H3>15.2. Parametri di sistema</H3>
 
 <P>
 NVDA consente di impostare alcuni valori nel registro di sistema che andranno ad influenzare il comportamento dello screen reader.
@@ -6011,8 +5818,8 @@ Di seguito vengono elencati i valori modificabili con queste chiavi di registro:
 </TR>
 </TABLE>
 
-<A NAME="toc134"></A>
-<H2>17. Ulteriori Informazioni</H2>
+<A NAME="toc133"></A>
+<H2>16. Ulteriori Informazioni</H2>
 
 <P>
 Se si vogliono trovare maggiori informazioni o richiedere assistenza riguardo NVDA, si prega di visitare o il sito internazionale in lingua inglese su <A HREF="https://github.com/nvaccess/nvda/">https://github.com/nvaccess/nvda/</A>, oppure quello relativo alla comunità italiana all'indirizzo <A HREF="http://www.nvda.it">www.nvda.it</A>.
