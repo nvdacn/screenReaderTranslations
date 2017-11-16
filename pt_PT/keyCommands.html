@@ -147,7 +147,7 @@ Para alternar entre modos de toque, realize um toque com três dedos.
 <TD>Anunciar a Barra de Estado</TD>
 <TD>NVDA+end</TD>
 <TD>NVDA+shift+end</TD>
-<TD>Lê a Barra de Estado, se for encontrada. Também move o objecto de navegação para esta localização. Se pressionar duas vezes soletra a informação.</TD>
+<TD>Lê a Barra de Estado, se for encontrada. Também move o objecto de navegação para esta localização. Se pressionar duas vezes soletra a informação. Se pressionar três vezes, copiará a informação para a área de transferência</TD>
 </TR>
 </TABLE>
 
@@ -579,7 +579,7 @@ As teclas seguintes, por si mesmas, saltam para o próximo elemento disponível.
 <LI>M: Frame
 <LI>G: Gráfico
 <LI>D: Marca
-<LI>O: Objecto embutido
+<LI>O: Objecto embutido (reprodutores de áudio e vídeo, diálogos, aplicações, etc)
 <LI>1 até 6: títulos de 1 até 6 respectivamente
 <LI>a: anotação (comentário, revisão do editor, etc.)
 <LI>w: erro ortográfico
@@ -641,6 +641,7 @@ Para activar e desactivar a navegação por caracter para o documento actual, pr
 </TR>
 </TABLE>
 
+<A NAME="ReadingMath"></A>
 <H2>Leitura de conteúdo Matemático</H2>
 
 <H3>Navegação Interactiva</H3>
@@ -854,6 +855,30 @@ Pode mudar manualmente para a página seguinte com Page Down ou para a anterior 
 <P>
 Após ter seleccionado o texto, pressione Aplicações ou shift+f10 para ver as opções disponíveis para essa selecção.
 </P>
+
+<H3>Azardi</H3>
+
+<P>
+Na tabela de livros adicionados:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nome</TH>
+<TH>Comando</TH>
+<TH>Descrição</TH>
+</TR>
+<TR>
+<TD>Enter</TD>
+<TD>enter</TD>
+<TD>Abre o livro seleccionado.</TD>
+</TR>
+<TR>
+<TD>Menu de contexto</TD>
+<TD>aplicações</TD>
+<TD>Abre o menu de contexto para o livro seleccionado.</TD>
+</TR>
+</TABLE>
 
 <H2>Configurar O NVDA</H2>
 
@@ -1091,7 +1116,7 @@ Após ter seleccionado o texto, pressione Aplicações ou shift+f10 para ver as 
 <A NAME="SupportedBrailleDisplays"></A>
 <H2>Linhas Braille Suportadas</H2>
 
-<H3>Freedom Scientific Focus/PAC Mate Series</H3>
+<H3>Freedom Scientific: Séries Focus e PM</H3>
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -1266,7 +1291,7 @@ Apenas para a Focus 80:
 </TR>
 </TABLE>
 
-<H3>Optelec ALVA BC640/680</H3>
+<H3>Optelec: ALVA BC640 e 680</H3>
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -1395,7 +1420,7 @@ Apenas para a Focus 80:
 </TR>
 </TABLE>
 
-<H3>Terminais Handy Tech</H3>
+<H3>Handy Tech</H3>
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -1404,19 +1429,19 @@ Apenas para a Focus 80:
 </TR>
 <TR>
 <TD>Deslocar a linha braille para trás</TD>
-<TD>left, up</TD>
+<TD>left, up, B3</TD>
 </TR>
 <TR>
 <TD>Deslocar a linha braille para a frente</TD>
-<TD>right, down</TD>
+<TD>right, down, B6</TD>
 </TR>
 <TR>
 <TD>Mover a linha braille para a linha anterior</TD>
-<TD>b4</TD>
+<TD>B4</TD>
 </TR>
 <TR>
 <TD>Mover a linha braille para a linha seguinte</TD>
-<TD>b5</TD>
+<TD>B5</TD>
 </TR>
 <TR>
 <TD>Encaminhar para a célula braille</TD>
@@ -1424,39 +1449,59 @@ Apenas para a Focus 80:
 </TR>
 <TR>
 <TD>Tecla shift+tab</TD>
-<TD>esc</TD>
+<TD>esc, triple action key up+down</TD>
 </TR>
 <TR>
 <TD>Tecla alt</TD>
-<TD>b2+b4+b5</TD>
+<TD>B2+B4+B5</TD>
 </TR>
 <TR>
 <TD>Tecla escape</TD>
-<TD>b4+b6</TD>
+<TD>B4+B6</TD>
 </TR>
 <TR>
 <TD>Tecla tab</TD>
-<TD>enter</TD>
+<TD>enter, right triple action key up+down</TD>
 </TR>
 <TR>
 <TD>Tecla enter</TD>
-<TD>esc+enter</TD>
+<TD>esc+enter, left+right triple action key up+down, joystickAction</TD>
 </TR>
 <TR>
 <TD>Tecla Seta Acima</TD>
-<TD>leftSpace</TD>
+<TD>joystickUp</TD>
 </TR>
 <TR>
 <TD>Tecla seta Abaixo</TD>
-<TD>rightSpace</TD>
+<TD>joystickDown</TD>
+</TR>
+<TR>
+<TD>Tecla Seta à esquerda</TD>
+<TD>joystickLeft</TD>
+</TR>
+<TR>
+<TD>Tecla seta à direita</TD>
+<TD>joystickRight</TD>
 </TR>
 <TR>
 <TD>Menu do NVDA</TD>
-<TD>b2+b4+b5+b6</TD>
+<TD>B2+B4+B5+B6</TD>
 </TR>
 <TR>
-<TD>Configuração Handy Tech</TD>
-<TD>b4+b8</TD>
+<TD>Alternar Braille segue:</TD>
+<TD>B2</TD>
+</TR>
+<TR>
+<TD>Alternar cursor Braille</TD>
+<TD>B1</TD>
+</TR>
+<TR>
+<TD>Alternar Apresentação do contexto do foco:</TD>
+<TD>B7</TD>
+</TR>
+<TR>
+<TD>Alternar teclado Braille</TD>
+<TD>space+B1+B3+B4 (espaço+B maiúsculo)</TD>
 </TR>
 </TABLE>
 
@@ -1505,7 +1550,7 @@ Apenas para a Focus 80:
 </TR>
 </TABLE>
 
-<H3>Linhas Braille Baum/Humanware/APH/Orbit</H3>
+<H3>Baum, HumanWare, APH e Orbit</H3>
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -1639,7 +1684,7 @@ Para linhas braille que tenham um joistick:
 </TR>
 </TABLE>
 
-<H3>HumanWare Brailliant BI/B Series</H3>
+<H3>HumanWare séries Brailliant BI e B</H3>
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -1728,7 +1773,7 @@ Para linhas braille que tenham um joistick:
 </TR>
 </TABLE>
 
-<H3>HIMS Braille Sense/Braille EDGE/Smart Beetle</H3>
+<H3>HIMS: Séries Braille Sense, Braille EDGE e Smart Beetle</H3>
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -1950,7 +1995,7 @@ Para linhas braille que tenham um joistick:
 </TR>
 </TABLE>
 
-<H3>Seika Braille Displays</H3>
+<H3>Seika</H3>
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -2003,7 +2048,7 @@ Para linhas braille que tenham um joistick:
 </TR>
 </TABLE>
 
-<H3>Modelos recentes da Papenmeier BRAILLEX</H3>
+<H3>Papenmeier BRAILLEX (Modelos recentes)</H3>
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -2115,7 +2160,7 @@ Para linhas braille que tenham um joistick:
 </TR>
 </TABLE>
 
-<H3>Modelos Antigos da Papenmeier BRAILLEX</H3>
+<H3>Papenmeier BRAILLEX (Modelos antigos)</H3>
 
 <P>
 Dispositivos com EAB
