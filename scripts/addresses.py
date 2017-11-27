@@ -162,7 +162,7 @@ addresses = {
     },
     'pt_PT': {
         'lang': 'Portuguese',
-        'email': ['Diogo Costa <diogojoca@gmail.com>', 'Rui Batista <ruiandrebatista@gmail.com>', 'Rui Fontes <rui.fontes@tiflotecnia.com>'],
+        'email': ['Diogo Costa <diogojoca@gmail.com>', 'Rui Batista <ruiandrebatista@gmail.com>', 'Rui Fontes <rui.fontes@tiflotecnia.com>', 'Ângelo Abrantes <ampa4374@gmail.com>'],
     },
     'ro': {
         'lang': 'Romanian',
