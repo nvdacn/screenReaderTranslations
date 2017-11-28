@@ -132,6 +132,10 @@ addresses = {
         'lang':'Macedonian',
         'email': ['zvonimir stanecic <zvonimirek222@webczatnet.pl>', 'Kiko Lazarev <kristijan.lazarev@gmail.com>'],
     },
+    'mn': {
+        'lang':'Mongolian',
+        'email': ['Mongol NVDA-Translation <mongoliannvdatranslation@gmail.com>'],
+    },
     'my': {
         'lang':'Burmese',
         'email': ['Benedict La hkun <lkbenedict@gmail.com>'],
