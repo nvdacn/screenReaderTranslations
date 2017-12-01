@@ -317,12 +317,12 @@ Por exemplo, O primeiro objecto contido numa lista será o primeiro item dessa l
 - children: Uma lista de todos os objectos contidos neste objecto. Por exemplo, todos os itens de menu de um determinado menu.
 -
 
-Existem também algunas propriedades de navegação simplificada, tais como, "simpleParent", "simpleNext", "simpleFirstChild" e "simpleLastChild".
+Existem também algumas propriedades de navegação simplificada, tais como, "simpleParent", "simpleNext", "simpleFirstChild" e "simpleLastChild".
 São como as respectivas propriedades de navegação descritas acima, mas o NVDA filtra objectos não necessários.
 Estas propriedades são usadas quando o modo de revisão simples do NVDA está ligado, o que acontece por padrão.
 Estas propriedades simples podem ser mais fáceis de usar, mas as propriedades de navegação real representam mais fielmente a estrutura do sistema operativo.
 
-Ao desenvolver plugins, na maior parte das vezes não é importante saber qual a ferramenta ou API por trás de um objecto do NVDA, já que o plugin apenas acederá as propriedades padrão, tais como nome, função e valor.
+Ao desenvolver plugins, na maior parte das vezes, não é importante saber qual a ferramenta ou API por trás de um objecto do NVDA, já que o plugin apenas acederá as propriedades padrão, tais como nome, função e valor.
 No entanto, à medida que os plugins forem mais avançados, é possível ir mais fundo nos objectos do NVDA para descobrir informação específica da ferramenta ou API utilizada.
 
 Os Plugins usam os Objectos do NVDA de três maneiras:
@@ -420,7 +420,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 ++ Eventos ++
 Quando o  NVDA detecta certos eventos de uma  API ou do sistema Operativo, abstrai-se desse evento e corre o seu próprio evento nos plugins e nos Objectos NVDA.
 
-Apesar da maioria dos eventos estarem relacionados com  um Objecto NVDA específico (por exemplo, name change, gain focus, state change, etc.), esses evento podem ser tratados em vários níveis.
+Apesar da maioria dos eventos estarem relacionados com  um Objecto NVDA específico (por exemplo, name change, gain focus, state change, etc.), esses eventos podem ser tratados em vários níveis.
 Quando um evvento é processado, é interrompida a sua progressão na cadeia.
 Contudo, o código  do evento pode fazê-lo prosseguir, se necessário.
 
@@ -602,7 +602,7 @@ Todos os outros campos serão ignorados.
 +++ Mensagens Localizadas+++
 Cada uma das directorias de  idioma deve conter  informação gettext, que é o sistema usado para  traduzir o restante do NVDA, interface e mensagens anunciadas.
 Tal como no NVDA, um ficheiro gettext database compilado, nvda.mo, deve ser colocado na directoria LC_MESSAGES da pasta respeitante a cada idioma.
-Para permitir que os plugins do Add-on acedam às mensagens gettext, via chamadas às funções _(), deve inicializar as traduções no ínicio de cada módulo Python chamando addonHandler.initTranslations().
+Para permitir que os plugins do Add-on acedam às mensagens gettext, via chamadas às funções _(), deve inicializar as traduções no início de cada módulo Python chamando addonHandler.initTranslations().
 Para mais informações sobre gettext e tradução do NVDA em geral, por favor, consulte
 http://www.nvda-project.org/wiki/TranslatingNVDA
 
