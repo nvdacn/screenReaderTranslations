@@ -7,19 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2017-06-03 04:36+1000\n"
-"PO-Revision-Date: 2017-10-03 22:59+0200\n"
+"PO-Revision-Date: 2017-12-02 02:30+0100\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Bernd Dorer <bdorer@mailbox.org>\n"
+"Last-Translator: Adriani Botez <adriani.botez@gmail.com>\n"
 "Language-Team: \n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #. type: Plain text
 #, no-wrap
 msgid "[[!meta title=\"Console Timer\"]]\n"
-msgstr ""
+msgstr "[[!meta title=\"Console Timer\"]]\n"
 
 #. type: Plain text
 #, no-wrap
@@ -33,13 +33,15 @@ msgstr ""
 #. type: Title #
 #, no-wrap
 msgid "consoleTimer"
-msgstr ""
+msgstr "consoleTimer"
 
 #. type: Plain text
 msgid ""
 "consoleTimer was written by derek riemer, and is GPL V2, as required by "
 "being an NVDA addon."
 msgstr ""
+"consoleTimer wurde von derek riemer geschrieben und ist GPL V2, da es sich "
+"um eine NVDA-Erweiterung handelt."
 
 #. type: Bullet: '* '
 msgid ""
@@ -65,11 +67,23 @@ msgid ""
 "This addon was written because I do lots of server administration, and I "
 "wanted cursor navigation to work."
 msgstr ""
+"Bei der Verwendung von Befehlszeilen über ssh kommt es normalerweise zu "
+"einer Verzögerung im Netzwerk. Diese Verzögerung wird erwartet, jedoch ist "
+"die Handhabung der Cursorbewegung von NVDA nicht mit der Verzögerung in den "
+"Terminals kompatibel. Dies liegt daran, dass diese Operation synchron ist. "
+"Dies führt dazu, dass NVDA den falschen Buchstaben meldet, wenn Sie mit den "
+"Pfeiltasten zu einem anderen Buchstaben wechseln. Zum Beispiel, wenn Sie auf "
+"dem p von grep sind und Sie drücken Pfeil nach rechts, können sie hören \"t"
+"\" anstelle von Leerzeichen. Dies ist darauf zurückzuführen, dass NVDA nicht "
+"lange genug gewartet hat, um diese Cursorbewegung tatsächlich richtig zu "
+"interpretieren.  Diese Erweiterung habe ich erstellt, weil ich sehr viel mit "
+"Serveradministration zu tun habe und eine funktionierende Cursor-Navigation "
+"sehr wichtig ist."
 
 #. type: Title ##
 #, no-wrap
 msgid "TLDR usage instructions"
-msgstr ""
+msgstr "TLDR Anwenderinstruktionen"
 
 #. type: Plain text
 msgid ""
@@ -79,11 +93,18 @@ msgid ""
 "This addon will have no affect outside terminals, and the patience changes "
 "by .01 for every keypress."
 msgstr ""
+"Wenn Sie sich in einer Konsole befinden und NVDA beim Rumbewegen fehlschlägt "
+"oder Buchstaben wiederholt werden, drücken Sie einfach nvda+shift+pageup. "
+"Somit bringen Sie NVDA bei, geduldiger zu sein, umd die Cursorbewegung "
+"rihchtig zu interpretieren. Wenn NVDA zu langsam ist, drücken Sie nvda+shift"
+"+page down. So können sie NVDA beibringen schneller zu reagieren. Diese "
+"Erweiterung hat keine Auswirkungen auf externe Terminals und die Wartezeit "
+"von NVDA ändert sich bei jedem Tastendruck um .01."
 
 #. type: Title ##
 #, no-wrap
 msgid "How to make this work with custom terminals"
-msgstr ""
+msgstr "Wie kann dies mit benutzerdefinierten Terminals funktionieren?"
 
 #. type: Plain text
 msgid ""
@@ -107,6 +128,27 @@ msgid ""
 "make sure happens is that NVDAObjects.behaviors.Terminal is injected to the "
 "class list."
 msgstr ""
+"Wenn Sie ein Entwickler sind und NVDA zeigen möchten, dass ein Abschnitt "
+"oder einen Teil Ihrer Anwendung als Terminal zu erkennen ist, dann sollten "
+"Sie ein appModule für diesen Zweck implementieren. Somit erhalten Sie das "
+"entsprechende Verhalten (z.B. Ansagen von neuem Text, der in stdout "
+"geschrieben wurde, etc.). Bitte erstellen Sie ein Ticket gegen [NVDA]"
+"(https://github.com/nvaccess/nvda/issues/new) und wir können Sie gerne dabei "
+"unterstützen Ihr Terminal appModule in den Screenreader zu implementieren. "
+"Die Unterstützung für Putty, Cygwin (Mintty) und secureCRT ist bereits "
+"implementiert. Apps wie R können in Zukunft implementiert werden.  Wenn Ihre "
+"Anwendung von NVDA richtig als Terminal erkannt wird (Das Verhalten des "
+"Terminals wird zur Laufzeit korrekt injiziert), sollte diese Erweiterung "
+"einfach funktionieren. Sollte dies nicht der Fall sein, lassen Sie es mich "
+"bitte wissen. Das Schreiben eines App-Moduls ist in diesem Dokument nicht "
+"darstellbar, wird aber im [NVDA Entwicklerhandbuch] (https://www.nvaccess."
+"org/files/nvda/documentation/developerGuide.html) ausführlich dokumentiert. "
+"[Dieses Beispiel veranschaulicht ein appModul, um NVDA beizubringen, dass "
+"das Terminalfenster auf PuTTY ein Terminal ist](https://github.com/nvaccess/"
+"nvda/blob/master/source/appModules/putty.py). Außerdem, [Hier ist eine "
+"Beispielimplementierung für MinTTY](https://github.com/nvaccess/nvda/blob/"
+"master/source/appModules/mintty.py). Es ist sehr wichtig, dass NVDAObjects."
+"Behaviors.Terminal in die Klassenliste eingefügt ist."
 
 #. type: Plain text
 #, no-wrap
