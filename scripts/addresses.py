@@ -42,7 +42,7 @@ addresses = {
     },
     'de': {
         'lang':'German',
-        'email': ['Bernd Dorer <bdorer@mailbox.org>', 'David Parduhn <xkill85@gmx.net>', 'Rene Linke <rene.linke@hamburg.de>'],
+        'email': ['Bernd Dorer <bdorer@mailbox.org>', 'David Parduhn <xkill85@gmx.net>', 'Rene Linke <rene.linke@hamburg.de>', 'Adriani Botez <adriani.botez@gmail.com>'],
     },
     'el': {
         'lang': 'Greek',
@@ -170,7 +170,7 @@ addresses = {
     },
     'ro': {
         'lang': 'Romanian',
-        'email': ['Dan Pungă <dan.punga@gmail.com>', 'Florian Ionașcu <florianionascu@hotmail.com>', 'Alexandru Matei <alexandrumateistelian@gmail.com>', 'Nicuşor Untilă <nicusoruntila@yahoo.com>'],
+        'email': ['Dan Pungă <dan.punga@gmail.com>', 'Florian Ionașcu <florianionascu@hotmail.com>', 'Alexandru Matei <alexandrumateistelian@gmail.com>', 'Nicuşor Untilă <nicusoruntila@yahoo.com>', 'Adriani Ionut Botez <ionutz_tero@yahoo.com>'],
     },
     'ru': {
         'lang': 'Russian',
