@@ -162,7 +162,7 @@ addresses = {
     },
     'pt_BR': {
         'lang': 'Brazilian Portuguese',
-        'email': ['Cleverson Casarin Uliana <clever97@gmail.com>', 'Marlin Rodrigues <marlincgrodrigues@yahoo.com.br>'],
+        'email': ['Cleverson Casarin Uliana <clever97@gmail.com>', 'Marlin Rodrigues <marlincgrodrigues@yahoo.com.br>', 'Tiago Melo Casal <tcasal@intervox.nce.ufrj.br>'],
     },
     'pt_PT': {
         'lang': 'Portuguese',
