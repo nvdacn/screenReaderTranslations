@@ -12,12 +12,25 @@
 
 <H2>2018.1</H2>
 
+<H3>Änderungen</H3>
+
+<UL>
+<LI>Die Treiber für HIMS Braille Sense/Braille EDGE/Smart Beetle und Hims Sync Braille Display wurden durch einen einzelnen Treiber ersetzt, der automatisch aktiviert wird, sofern Sie eine Syncbraille-zeile verwenden. (<A HREF="http://github.com/nvaccess/nvda/issues/7459">#7459</A>) 
+ <UL>
+ <LI>Einige Tasten, insbesondere die Scroll-Tasten, wurden neu zugewiesen, um den von Hims-Produkten verwendeten Konventionen zu entsprechen.
+ </UL>
+</UL>
+
 <H3>Fehlerkorrekturen</H3>
 
 <UL>
 <LI>Sollte der Pfad des Ordners, in dem NVDA installiert ist, nicht-ASCII-Zeichen enthalten, schlägt die Anzeige der Formatierungsinformationen im lesemodus nicht mehr fehl, wenn Sie NVDA+F zweimal drücken. (<A HREF="http://github.com/nvaccess/nvda/issues/7474">#7474</A>)
 <LI>Der Fokus wird nun korrekt gesetzt, wenn Sie von einer anderen Anwendung zu Spotify zurückkehren. (<A HREF="http://github.com/nvaccess/nvda/issues/7689">#7689</A>)
 <LI>Wenn unter Windows 10 Fall Creators Update der ordnerschutz aktiviert ist, schlägt die Aktualisierung von NVDA nicht mehr fehl. (<A HREF="http://github.com/nvaccess/nvda/issues/7696">#7696</A>)
+<LI>Die Scrolltasten von Hims Smart Beetle funktionieren nun korrekt. (<A HREF="http://github.com/nvaccess/nvda/issues/6086">#6086</A>)
+<LI>Eine leichte Leistungssteigerung bei der Darstellung umfangreicher Inhalte in Mozilla Firefox 58 und höher. (<A HREF="http://github.com/nvaccess/nvda/issues/7719">#7719</A>)
+<LI>Beim Lesen von Mails in microsoft Outlook, die Tabellen enthalten, kommt es nicht mehr zu fehlern. (<A HREF="http://github.com/nvaccess/nvda/issues/6827">#6827</A>)
+<LI>Braillezeilen-Tasten, die andere Tastenanschläge emulieren, können auch dann kombiniert werden, wenn sie auf ein bestimmtes Braillezeilenmodell beschränkt sind. (<A HREF="http://github.com/nvaccess/nvda/issues/7783">#7783</A>)
 </UL>
 
 <H3>Änderungen für Entwickler</H3>
@@ -27,6 +40,7 @@
  <UL>
  <LI>Wird diese Einstellung auf False gesetzt, werden auch Liblouis-Regeln verarbeitet, die mehrere Durchläufe erfordern. Standardmäßig ist true voreingestellt.  
  </UL>
+<LI>Ein neues Wörterbuch (Braille.RENAMED_DRIVERS) wurde hinzugefügt, um einen reibungslosen übergang für Benutzer zu ermöglichen, die Treiber verwenden, die durch andere ersetzt worden sind. (<A HREF="http://github.com/nvaccess/nvda/issues/7459">#7459</A>)
 </UL>
 
 <H2>2017.4</H2>
@@ -239,7 +253,6 @@ Schwerpunkte dieser Version sind u. a. eine volle Unterstützung von Audio-Ducki
 
 <UL>
 <LI>Menüeinträge auf Webseiten, die Kontrollkästchen oder Auswahlschalter enthalten, können jetzt im Lesemodus aktiviert werden. (<A HREF="http://github.com/nvaccess/nvda/issues/6735">#6735</A>)
-<LI>Die Ansage von Namen von Excel-Arbeitsblättern wird nun übersetzt. (<A HREF="http://github.com/nvaccess/nvda/issues/6848">#6848</A>)
 <LI>Die Rückfrage zur Löschung eines Konfigurationsprofils kann nun mit Escape beantwortet, also abgebrochen werden. (<A HREF="http://github.com/nvaccess/nvda/issues/6851">#6851</A>)
 <LI>Probleme mit Abstürzen in Firefox und anderen Gecko-Anwendungen behoben, die in mehreren Prozessen ausgeführt werden. (<A HREF="http://github.com/nvaccess/nvda/issues/6885">#6885</A>)
 <LI>Die Erkennung von Hintergrundfarben wurde verbessert; dies betrifft Elemente, die auf einen transparenten hintergrund gezeichnet werden. (<A HREF="http://github.com/nvaccess/nvda/issues/6467">#6467</A>) 
