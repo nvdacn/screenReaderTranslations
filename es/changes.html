@@ -12,12 +12,25 @@
 
 <H2>2018.1</H2>
 
+<H3>Cambios</H3>
+
+<UL>
+<LI>Se han reemplazado los controladores de pantallas braille HIMS Braille Sense/Braille EDGE/Smart Beetle y Hims Sync por un único controlador. El nuevo controlador se activará automáticamente para los antiguos usuarios del controlador syncBraille. (<A HREF="http://github.com/nvaccess/nvda/issues/7459">#7459</A>) 
+ <UL>
+ <LI>Algunas teclas, especialmente las teclas de desplazamiento, se han reasignado para seguir las convenciones utilizadas por los productos de Hims. Consulta la guía del usuario para más detalles.
+ </UL>
+</UL>
+
 <H3>Corrección de Fallos</H3>
 
 <UL>
 <LI>Los mensajes explorables tales como mostrar el formato actual al pulsar NVDA+f dos veces rápidamente, ya no fallan cuando NVDA se instala en una ruta con caracteres no ASCII. (<A HREF="http://github.com/nvaccess/nvda/issues/7474">#7474</A>)
 <LI>El foco ahora se restaura una vez más correctamente cuando se regresa a Spotify desde otra aplicación. (<A HREF="http://github.com/nvaccess/nvda/issues/7689">#7689</A>)
 <LI>NVDA ya no falla al actualizar en sistemas con el Control de Acceso de Carpetas habilitado (disponible en la actualización Windows 10 Fall Creators). (<A HREF="http://github.com/nvaccess/nvda/issues/7696">#7696</A>)
+<LI>La detección de las teclas de desplazamiento en las pantallas Hims Smart Beetle ya no es poco fiable. (<A HREF="http://github.com/nvaccess/nvda/issues/6086">#6086</A>)
+<LI>Una ligera mejora en el rendimiento al procesar grandes cantidades de contenido en Mozilla Firefox 58 y posterior. (<A HREF="http://github.com/nvaccess/nvda/issues/7719">#7719</A>)
+<LI>Se evitan errores mientras se leen correos electrónicos que contienen tablas en Microsoft Outlook (<A HREF="http://github.com/nvaccess/nvda/issues/6827">#6827</A>)
+<LI>Los gestos de las pantallas braille que emulan las teclas modificadoras del teclado del sistema ahora pueden combinarse también con otras teclas emuladas del teclado del sistema si uno o más de los gestos involucrados son específicos del modelo. (<A HREF="http://github.com/nvaccess/nvda/issues/7783">#7783</A>)
 </UL>
 
 <H3>Cambios para Desarrolladores</H3>
@@ -27,6 +40,7 @@
  <UL>
  <LI>Esta bandera está predeterminada a true. Si es false, se utilizarán las reglas liblouis multi pass para la salida braille.
  </UL>
+<LI>Se ha añadido un nuevo diccionario (braille.RENAMED_DRIVERS) para permitir una transición sin  problemas a los usuarios que utilizan controladores que hayan sido substituidos por otros. (<A HREF="http://github.com/nvaccess/nvda/issues/7459">#7459</A>)
 </UL>
 
 <H2>2017.4</H2>
@@ -72,6 +86,7 @@ Por favor ten en cuenta que esta versión de NVDA ya no soporta Windows XP o Win
 <LI>La tecla rápida para el botón de opción Expresión regular en el diálogo diccionario se cambió de alt+r a alt+e. (<A HREF="http://github.com/nvaccess/nvda/issues/6782">#6782</A>)
 <LI>Los ficheros de los diccionarios del habla ahora se versionaron y se han movido al directorio 'speechDicts/voiceDicts.v1'. (<A HREF="http://github.com/nvaccess/nvda/issues/7592">#7592</A>)
 <LI>Las modificaciones de los ficheros versionados (configuración del usuario, diccionarios del habla) ya no se guardan cuando NVDA se ejecuta desde el lanzador. (<A HREF="http://github.com/nvaccess/nvda/issues/7688">#7688</A>)
+<LI>Las pantallas braille Braillino, Bookworm y Modular (con firmware antiguo) de Handy Tech ya no se soportan al sacarlas de la caja. Instala el controlador universal de Handy Tech y el complemento de NVDA para utilizar las pantallas. (<A HREF="http://github.com/nvaccess/nvda/issues/7590">#7590</A>)
 </UL>
 
 <H3>Corrección de Fallos</H3>
@@ -89,7 +104,6 @@ Por favor ten en cuenta que esta versión de NVDA ya no soporta Windows XP o Win
 <LI>El sistema operativo y otras aplicaciones deberían ser más estables directamente después de instalar NVDA antes de reiniciar, en comparación con las instalaciones  de versiones anteriores de NVDA. (<A HREF="http://github.com/nvaccess/nvda/issues/7563">#7563</A>)
 <LI>Al utilizar una orden de reconocimiento de contenido (ej.: NVDA+r), ahora NVDA anuncia un mensaje de error en lugar de no hacer nada si el navegador de objetos ha desaparecido. (<A HREF="http://github.com/nvaccess/nvda/issues/7567">#7567</A>)
 <LI>La funcionalidad desplazamiento hacia atrás se ha corregido para pantallas de freedom Scientific que contengan un balancín izquierdo. (<A HREF="http://github.com/nvaccess/nvda/issues/7713">#7713</A>)
-<LI>Las pantallas braille Braillino, Bookworm y Modular (con firmware antiguo) de Handy Tech ya no se soportan al sacarlas de la caja. Instala el controlador universal de Handy Tech y el complemento de NVDA para utilizar las pantallas. (<A HREF="http://github.com/nvaccess/nvda/issues/7590">#7590</A>)
 </UL>
 
 <H3>Cambios para Desarrolladores</H3>
