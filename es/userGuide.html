@@ -178,22 +178,21 @@
     <LI><A HREF="#toc118">14.6. hedo ProfiLine USB</A>
     <LI><A HREF="#toc119">14.7. hedo MobilLine USB</A>
     <LI><A HREF="#toc120">14.8. HumanWare Brailliant Series BI/B</A>
-    <LI><A HREF="#toc121">14.9. Series de la HIMS Braille Sense/Braille EDGE/Smart Beetle</A>
-    <LI><A HREF="#toc122">14.10. HIMS SyncBraille</A>
-    <LI><A HREF="#toc123">14.11. Pantallas Braille Seika</A>
-    <LI><A HREF="#toc124">14.12. Modelos modernos de Papenmeier BRAILLEX</A>
-    <LI><A HREF="#toc125">14.13. Modelos Antiguos Papenmeier Braille BRAILLEX</A>
-    <LI><A HREF="#toc126">14.14. HumanWare BrailleNote</A>
-    <LI><A HREF="#toc127">14.15. EcoBraille</A>
-    <LI><A HREF="#toc128">14.16. SuperBraille</A>
-    <LI><A HREF="#toc129">14.17. BRLTTY</A>
+    <LI><A HREF="#toc121">14.9. Series de las HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille</A>
+    <LI><A HREF="#toc122">14.10. Pantallas Braille Seika</A>
+    <LI><A HREF="#toc123">14.11. Modelos modernos de Papenmeier BRAILLEX</A>
+    <LI><A HREF="#toc124">14.12. Modelos Antiguos Papenmeier Braille BRAILLEX</A>
+    <LI><A HREF="#toc125">14.13. HumanWare BrailleNote</A>
+    <LI><A HREF="#toc126">14.14. EcoBraille</A>
+    <LI><A HREF="#toc127">14.15. SuperBraille</A>
+    <LI><A HREF="#toc128">14.16. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc130">15. Temas Avanzados</A>
+  <LI><A HREF="#toc129">15. Temas Avanzados</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">15.1. Opciones de Línea de Órdenes</A>
     <LI><A HREF="#SystemWideParameters">15.2. Parámetros del Sistema</A>
     </UL>
-  <LI><A HREF="#toc133">16. Información Adicional</A>
+  <LI><A HREF="#toc132">16. Información Adicional</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -4533,12 +4532,12 @@ Por favor conhsulta la documentación de la pantalla para descripciones de dónd
 </TABLE>
 
 <A NAME="toc121"></A>
-<H3>14.9. Series de la HIMS Braille Sense/Braille EDGE/Smart Beetle</H3>
+<H3>14.9. Series de las HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille</H3>
 
 <P>
-NVDA soporta las pantallas Braille Sense, Braille EDGE y Smart Beetle de <A HREF="http://www.hims-inc.com/">Hims</A> cuando se conectan a través de USB o bluetooth. 
+NVDA soporta las pantallas Braille Sense, Braille EDGE, Smart Beetle y Sync Braille de <A HREF="http://www.hims-inc.com/">Hims</A> cuando se conectan a través de USB o bluetooth. 
 Si se conectan a través de USB, necesitarás instalar los controladores USB de HIMS en el sistema.
-Puedes descargarlos desde esta página: <A HREF="http://www.himsintl.com/?c=2/13&amp;uid=2319">http://www.himsintl.com/?c=2/13&amp;uid=2319</A>
+Puedes descargarlos de aquí: <A HREF="http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip">http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip</A>
 </P>
 <P>
 Seguidamente van las asignaciones de teclas para estas pantallas con NVDA.
@@ -4551,176 +4550,220 @@ Por favor consulta la documentación de las pantallas para descripciones de dón
 <TH>Tecla</TH>
 </TR>
 <TR>
-<TD>Desplazar atrás pantalla braille</TD>
-<TD>desplazador izquierdo abajo</TD>
-</TR>
-<TR>
-<TD>Desplazar adelante pantalla braille</TD>
-<TD>desplazador derecho abajo</TD>
-</TR>
-<TR>
-<TD>Mover pantalla braille a la línea anterior</TD>
-<TD>desplazador izquierdo arriba</TD>
-</TR>
-<TR>
-<TD>Mover pantalla braille a la línea siguiente</TD>
-<TD>desplazador derecho arriba|</TD>
-</TR>
-<TR>
 <TD>Ir a la celda braille</TD>
 <TD>sensores</TD>
 </TR>
 <TR>
-<TD>tecla shift+tab</TD>
-<TD>punto1+punto2+Espacio</TD>
+<TD>Desplazar pantalla braille atrás</TD>
+<TD>leftSideScrollUp, rightSideScrollUp, leftSideScroll</TD>
+</TR>
+<TR>
+<TD>Desplazar pantalla braille adelante</TD>
+<TD>leftSideScrollDown, rightSideScrollDown, rightSideScroll</TD>
+</TR>
+<TR>
+<TD>Mover pantalla braille a línea anterior</TD>
+<TD>leftSideScrollUp+rightSideScrollUp</TD>
+</TR>
+<TR>
+<TD>Mover pantalla braille a línea siguiente</TD>
+<TD>leftSideScrollDown+rightSideScrollDown</TD>
+</TR>
+<TR>
+<TD>Mover a línea anterior en revisión</TD>
+<TD>rightSideUpArrow</TD>
+</TR>
+<TR>
+<TD>Mover a línea siguiente en revisión</TD>
+<TD>rightSideDownArrow</TD>
+</TR>
+<TR>
+<TD>Mover a carácter  anterior en revisión</TD>
+<TD>rightSideLeftArrow</TD>
+</TR>
+<TR>
+<TD>Mover a carácter siguiente en revisión</TD>
+<TD>rightSideRightArrow</TD>
+</TR>
+<TR>
+<TD>Mover a foco actual</TD>
+<TD>leftSideScrollUp+leftSideScrollDown, rightSideScrollUp+rightSideScrollDown, leftSideScroll+rightSideScroll</TD>
+</TR>
+<TR>
+<TD>Tecla control</TD>
+<TD>smartbeetle:f1, brailleedge:f3</TD>
+</TR>
+<TR>
+<TD>Tecla windows</TD>
+<TD>f7, smartbeetle:f2</TD>
 </TR>
 <TR>
 <TD>tecla alt</TD>
-<TD>punto1+punto3+punto4+Espacio</TD>
+<TD>punto1+punto3+punto4+espacio, f2, smartbeetle:f3, brailleedge:f4</TD>
 </TR>
 <TR>
-<TD>tecla escape</TD>
-<TD>punto1+punto5+Espacio</TD>
+<TD>tecla shift</TD>
+<TD>f5</TD>
+</TR>
+<TR>
+<TD>tecla insert</TD>
+<TD>punto2+punto4+espacio, f6</TD>
+</TR>
+<TR>
+<TD>tecla aplicaciones</TD>
+<TD>punto1+punto2+punto3+punto4+espacio, f8</TD>
+</TR>
+<TR>
+<TD>tecla bloqueo de mayúsculas</TD>
+<TD>punto1+punto3+punto6+espacio</TD>
 </TR>
 <TR>
 <TD>tecla tab</TD>
-<TD>punto4+punto5+Espacio</TD>
+<TD>punto4+punto5+espacio, f3, brailleedge:f2</TD>
 </TR>
 <TR>
-<TD>tecla flecha arriba</TD>
-<TD>punto1+Espacio</TD>
+<TD>teclas shift+alt+tab</TD>
+<TD>f2+f3+f1</TD>
 </TR>
 <TR>
-<TD>Tecla flecha abajo</TD>
-<TD>punto4+Espacio</TD>
+<TD>teclas alt+tab</TD>
+<TD>f2+f3</TD>
 </TR>
 <TR>
-<TD>bloq mayúsculas</TD>
-<TD>punto1+punto3+punto6+Espacio</TD>
-</TR>
-<TR>
-<TD>tecla shift+alt+tab</TD>
-<TD>avance2+avance3+avance1</TD>
-</TR>
-<TR>
-<TD>tecla alt+tab</TD>
-<TD>avance2+avance3</TD>
+<TD>teclas shift+tab</TD>
+<TD>punto1+punto2+espacio</TD>
 </TR>
 <TR>
 <TD>tecla fin</TD>
-<TD>punto4+punto6+Espacio</TD>
+<TD>punto4+punto6+espacio</TD>
 </TR>
 <TR>
-<TD>tecla Control+fin</TD>
-<TD>punto4+punto5+punto6+Espacio</TD>
+<TD>teclas control+fin</TD>
+<TD>punto4+punto5+punto6+espacio</TD>
 </TR>
 <TR>
 <TD>tecla inicio</TD>
-<TD>punto1+punto3+Espacio</TD>
+<TD>punto1+punto3+espacio, smartbeetle:f4</TD>
 </TR>
 <TR>
-<TD>tecla control+inicio</TD>
-<TD>punto1+punto2+punto+Espacio</TD>
+<TD>teclas control+inicio</TD>
+<TD>punto1+punto2+punto3+espacio</TD>
+</TR>
+<TR>
+<TD>teclas alt+f4</TD>
+<TD>punto1+punto3+punto5+punto6+espacio</TD>
 </TR>
 <TR>
 <TD>tecla flecha izquierda</TD>
-<TD>punto3+Espacio</TD>
+<TD>punto3+espacio, leftSideLeftArrow</TD>
 </TR>
 <TR>
-<TD>tecla control+shift+flecha izquierda</TD>
-<TD>punto2+punto8+espacio+avance1</TD>
+<TD>teclas control+shift+flecha izquierda</TD>
+<TD>punto2+punto8+espacio+f1</TD>
 </TR>
 <TR>
-<TD>tecla control+flecha izquierda</TD>
-<TD>punto2+Espacio</TD>
+<TD>teclas control+flecha izquierda</TD>
+<TD>punto2+espacio</TD>
 </TR>
 <TR>
-<TD>tecla shift+alt+flecha izquierda</TD>
-<TD>punto2+punto7+avance1</TD>
+<TD>teclas shift+flecha izquierda</TD>
+<TD>punto2+punto7+f1</TD>
 </TR>
 <TR>
-<TD>tecla alt+flecha izquierda</TD>
+<TD>teclas alt+flecha izquierda</TD>
 <TD>punto2+punto7</TD>
 </TR>
 <TR>
 <TD>tecla flecha derecha</TD>
-<TD>punto6+Espacio</TD>
+<TD>punto6+espacio, leftSideRightArrow</TD>
 </TR>
 <TR>
-<TD>tecla control+shift+flecha derecha</TD>
-<TD>punto5+punto+Espacio+avance1</TD>
+<TD>teclas control+shift+flecha derecha</TD>
+<TD>punto5+punto8+espacio+f1</TD>
 </TR>
 <TR>
-<TD>tecla control+flecha derecha</TD>
+<TD>teclas control+flecha derecha</TD>
 <TD>punto5+espacio</TD>
 </TR>
 <TR>
-<TD>tecla shift+alt+flecha derecha</TD>
-<TD>punto5+punto7+avance1</TD>
+<TD>teclas shift+alt+flecha derecha</TD>
+<TD>punto5+punto7+f1</TD>
 </TR>
 <TR>
-<TD>tecla alt+flecha derecha</TD>
+<TD>teclas alt+flecha derecha</TD>
 <TD>punto5+punto7</TD>
 </TR>
 <TR>
-<TD>tecla RePág</TD>
+<TD>tecla rePág</TD>
 <TD>punto1+punto2+punto6+espacio</TD>
 </TR>
 <TR>
-<TD>tecla control+rePág</TD>
+<TD>teclas control+rePág</TD>
 <TD>punto1+punto2+punto6+punto8+espacio</TD>
 </TR>
 <TR>
-<TD>tecla control+shift+flecha arriba</TD>
-<TD>punto2+punto3+punto8+espacio+avance1</TD>
+<TD>tecla flecha arriba</TD>
+<TD>punto1+espacio, leftSideUpArrow</TD>
 </TR>
 <TR>
-<TD>tecla control+flecha arriba</TD>
+<TD>teclas control+shift+flecha arriba</TD>
+<TD>punto2+punto3+punto8+espacio+f1</TD>
+</TR>
+<TR>
+<TD>teclas control+flecha arriba</TD>
 <TD>punto2+punto3+espacio</TD>
 </TR>
 <TR>
-<TD>tecla shift+alt+flecha arriba</TD>
-<TD>punto2+punto3+punto7+avance1</TD>
+<TD>teclas shift+alt+flecha arriba</TD>
+<TD>punto2+punto3+punto7+f1</TD>
 </TR>
 <TR>
-<TD>tecla alt+flecha arriba</TD>
+<TD>teclas alt+flecha arriba</TD>
 <TD>punto2+punto3+punto7</TD>
 </TR>
 <TR>
-<TD>tecla shift+flecha arriba</TD>
-<TD>desplazador izquierdo abajo + espacio</TD>
+<TD>teclas shift+flecha arriba</TD>
+<TD>leftSideScrollDown+espacio</TD>
 </TR>
 <TR>
 <TD>tecla avPág</TD>
 <TD>punto3+punto4+punto5+espacio</TD>
 </TR>
 <TR>
-<TD>tecla control+avPág</TD>
+<TD>teclas control+avPág</TD>
 <TD>punto3+punto4+punto5+punto8+espacio</TD>
 </TR>
 <TR>
-<TD>tecla control+shift+flecha abajo</TD>
-<TD>punto5+punto6+punto8+espacio+avance1</TD>
+<TD>tecla flecha abajo</TD>
+<TD>punto4+espacio, leftSideDownArrow</TD>
 </TR>
 <TR>
-<TD>tecla control+flecha abajo</TD>
+<TD>teclas control+shift+flecha abajo</TD>
+<TD>punto5+punto6+punto8+espacio+f1</TD>
+</TR>
+<TR>
+<TD>teclas control+flecha abajo</TD>
 <TD>punto5+punto6+espacio</TD>
 </TR>
 <TR>
-<TD>tecla shift+alt+flecha abajo</TD>
-<TD>punto5+punto6+punto7+avance1</TD>
+<TD>teclas shift+alt+flecha abajo</TD>
+<TD>punto5+punto6+punto7+f1</TD>
 </TR>
 <TR>
-<TD>tecla alt+flecha abajo</TD>
+<TD>teclas alt+flecha abajo</TD>
 <TD>punto5+punto6+punto7</TD>
 </TR>
 <TR>
-<TD>tecla shift+flecha abajo</TD>
-<TD>desplazador derecho abajo + espacio</TD>
+<TD>teclas shift+flecha abajo</TD>
+<TD>espacio+rightSideScrollDown</TD>
+</TR>
+<TR>
+<TD>tecla escape</TD>
+<TD>punto1+punto5+espacio, f4, brailleedge:f1</TD>
 </TR>
 <TR>
 <TD>tecla suprimir</TD>
-<TD>punto1+punto3+punto5+espacio</TD>
+<TD>punto1+punto3+punto5+espacio, punto1+punto4+punto5+espacio</TD>
 </TR>
 <TR>
 <TD>tecla f1</TD>
@@ -4732,51 +4775,28 @@ Por favor consulta la documentación de las pantallas para descripciones de dón
 </TR>
 <TR>
 <TD>tecla f4</TD>
-<TD>punto7+avance3</TD>
+<TD>punto7+f3</TD>
 </TR>
 <TR>
-<TD>tecla windows+b</TD>
-<TD>punto1+punto2+avance1</TD>
+<TD>teclas windows+b</TD>
+<TD>punto1+punto2+f1</TD>
 </TR>
 <TR>
-<TD>tecla windows+d</TD>
-<TD>punto1+punto4+punto5+avance1</TD>
+<TD>teclas windows+d</TD>
+<TD>punto1+punto4+punto5+f1</TD>
+</TR>
+<TR>
+<TD>teclas control+insert</TD>
+<TD>smartbeetle:f1+rightSideScroll</TD>
+</TR>
+<TR>
+<TD>teclas alt+insert</TD>
+<TD>smartbeetle:f3+rightSideScroll</TD>
 </TR>
 </TABLE>
 
 <A NAME="toc122"></A>
-<H3>14.10. HIMS SyncBraille</H3>
-
-<P>
-NVDA soporta la pantalla SyncBraille de <A HREF="http://www.hims-inc.com/">HIMS</A>.
-Necesitarás instalar los controladores USB de HIMS en el sistema.
-</P>
-<P>
-Seguidamente van las asignaciones de teclas para esta pantalla con NVDA.
-Por favor consulta la documentación de la pantalla para descripciones de dónde se pueden encontrar estas teclas.
-</P>
-
-<TABLE BORDER="1" CELLPADDING="4">
-<TR>
-<TH>Nombre</TH>
-<TH>Tecla</TH>
-</TR>
-<TR>
-<TD>Desplazar pantalla braille hacia atrás</TD>
-<TD>desplazador abajo de la izquierda</TD>
-</TR>
-<TR>
-<TD>Desplazar pantalla braille hacia adelante</TD>
-<TD>desplazador abajo de la derecha</TD>
-</TR>
-<TR>
-<TD>Ir a la celda braille</TD>
-<TD>sensores</TD>
-</TR>
-</TABLE>
-
-<A NAME="toc123"></A>
-<H3>14.11. Pantallas Braille Seika</H3>
+<H3>14.10. Pantallas Braille Seika</H3>
 
 <P>
 Se soportan las pantallas braille Seika Versión 3, 4 y 5 (40 celdas) y Seika80 (80 celdas) de <A HREF="http://www.nippontelesoft.com/">Nippon Telesoft</A>.
@@ -4839,8 +4859,8 @@ Por favor consulta la documentación de las pantallas para descripciones de dón
 </TR>
 </TABLE>
 
-<A NAME="toc124"></A>
-<H3>14.12. Modelos modernos de Papenmeier BRAILLEX</H3>
+<A NAME="toc123"></A>
+<H3>14.11. Modelos modernos de Papenmeier BRAILLEX</H3>
 
 <P>
 Se soportan las siguientes pantallas Braille: 
@@ -5061,8 +5081,8 @@ Las teclas interiores se mapean a espacio.
 </TR>
 </TABLE>
 
-<A NAME="toc125"></A>
-<H3>14.13. Modelos Antiguos Papenmeier Braille BRAILLEX</H3>
+<A NAME="toc124"></A>
+<H3>14.12. Modelos Antiguos Papenmeier Braille BRAILLEX</H3>
 
 <P>
 Se soportan las siguientes pantallas Braille: 
@@ -5336,8 +5356,8 @@ BRAILLEX 2D Screen:
 </TR>
 </TABLE>
 
-<A NAME="toc126"></A>
-<H3>14.14. HumanWare BrailleNote</H3>
+<A NAME="toc125"></A>
+<H3>14.13. HumanWare BrailleNote</H3>
 
 <P>
 NVDA soporta los anotadores electrónicos BrailleNote de <A HREF="http://www.humanware.com">Humanware</A> cuando actúen como un terminal braille para un lector de pantalla.
@@ -5469,8 +5489,8 @@ Por favor consulta la documentación del BrailleNote para encontrar dónde se lo
 </TR>
 </TABLE>
 
-<A NAME="toc127"></A>
-<H3>14.15. EcoBraille</H3>
+<A NAME="toc126"></A>
+<H3>14.14. EcoBraille</H3>
 
 <P>
 NVDA soporta pantallas EcoBraille de <A HREF="http://www.once.es/">ONCE</A>.
@@ -5567,8 +5587,8 @@ Por favor consulta la <A HREF="ftp://ftp.once.es/pub/utt/bibliotecnia/Lineas_Bra
 </TR>
 </TABLE>
 
-<A NAME="toc128"></A>
-<H3>14.16. SuperBraille</H3>
+<A NAME="toc127"></A>
+<H3>14.15. SuperBraille</H3>
 
 <P>
 El dispositivo SuperBraille, disponible principalmente en Taiwan, puede conectarse o por USB o por serie.
@@ -5591,8 +5611,8 @@ Debido a esto, y para mantener compatibilidad con otros lectores de pantalla en 
 </TR>
 </TABLE>
 
-<A NAME="toc129"></A>
-<H3>14.17. BRLTTY</H3>
+<A NAME="toc128"></A>
+<H3>14.16. BRLTTY</H3>
 
 <P>
 <A HREF="http://www.brltty.com/">BRLTTY</A> es un programa por separado que puede utilizarse para soportar muchas pantallas braille.
@@ -5636,7 +5656,7 @@ Por favor consulta las <A HREF="http://mielke.cc/brltty/doc/KeyBindings/">listas
 </TR>
 </TABLE>
 
-<A NAME="toc130"></A>
+<A NAME="toc129"></A>
 <H2>15. Temas Avanzados</H2>
 
 <A NAME="CommandLineOptions"></A>
@@ -5828,7 +5848,7 @@ Los siguientes valores pueden configurarse bajo estas claves del registro:
 </TR>
 </TABLE>
 
-<A NAME="toc133"></A>
+<A NAME="toc132"></A>
 <H2>16. Información Adicional</H2>
 
 <P>
