@@ -179,22 +179,21 @@
     <LI><A HREF="#toc118">14.6. hedo ProfiLine USB</A>
     <LI><A HREF="#toc119">14.7. hedo MobilLine USB</A>
     <LI><A HREF="#toc120">14.8. HumanWare séries Brailliant BI e B</A>
-    <LI><A HREF="#toc121">14.9. HIMS: Séries Braille Sense, Braille EDGE e Smart Beetle</A>
-    <LI><A HREF="#toc122">14.10. HIMS SyncBraille</A>
-    <LI><A HREF="#toc123">14.11. Seika</A>
-    <LI><A HREF="#toc124">14.12. Papenmeier BRAILLEX (Modelos recentes)</A>
-    <LI><A HREF="#toc125">14.13. Papenmeier BRAILLEX (Modelos antigos)</A>
-    <LI><A HREF="#toc126">14.14. HumanWare BrailleNote</A>
-    <LI><A HREF="#toc127">14.15. EcoBraille</A>
-    <LI><A HREF="#toc128">14.16. SuperBraille</A>
-    <LI><A HREF="#toc129">14.17. BRLTTY</A>
+    <LI><A HREF="#toc121">14.9. HIMS: Séries Braille Sense, Braille EDGE, Smart Beetle e Sync Braille</A>
+    <LI><A HREF="#toc122">14.10. Seika</A>
+    <LI><A HREF="#toc123">14.11. Papenmeier BRAILLEX (Modelos recentes)</A>
+    <LI><A HREF="#toc124">14.12. Papenmeier BRAILLEX (Modelos antigos)</A>
+    <LI><A HREF="#toc125">14.13. HumanWare BrailleNote</A>
+    <LI><A HREF="#toc126">14.14. EcoBraille</A>
+    <LI><A HREF="#toc127">14.15. SuperBraille</A>
+    <LI><A HREF="#toc128">14.16. BRLTTY</A>
     </UL>
-  <LI><A HREF="#toc130">15. tópicos Avançados</A>
+  <LI><A HREF="#toc129">15. tópicos Avançados</A>
     <UL>
     <LI><A HREF="#CommandLineOptions">15.1. Opções de linha de comandos</A>
     <LI><A HREF="#SystemWideParameters">15.2. Parâmetros do Sistema</A>
     </UL>
-  <LI><A HREF="#toc133">16. Mais Informações</A>
+  <LI><A HREF="#toc132">16. Mais Informações</A>
   </UL>
 
 <A NAME="toc2"></A>
@@ -4525,12 +4524,12 @@ Por favor consulte a documentação da sua linha braille para obter a descriçã
 </TABLE>
 
 <A NAME="toc121"></A>
-<H3>14.9. HIMS: Séries Braille Sense, Braille EDGE e Smart Beetle</H3>
+<H3>14.9. HIMS: Séries Braille Sense, Braille EDGE, Smart Beetle e Sync Braille</H3>
 
 <P>
-O NVDA suporta as linhas Braille Sense, Braille EDGE e Smart Beetle da <A HREF="http://www.hims-inc.com/">Hims</A> quando conectadas via USB ou bluetooth. 
+O NVDA suporta as linhas Braille Sense, Braille EDGE, Smart Beetle e Sync Braille da <A HREF="http://www.hims-inc.com/">Hims</A> quando conectadas via USB ou bluetooth. 
 Se ligar a linha via USB, necessitará de instalar os drivers USB, da HIMS, no seu sistema.
-Pode fazer o download dos drivers nesta página: <A HREF="http://www.himsintl.com/?c=2/13&amp;uid=2319">http://www.himsintl.com/?c=2/13&amp;uid=2319</A>
+Pode fazer o download dos drivers de <A HREF="http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip">http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip</A>
 </P>
 <P>
 Seguem-se as associações de teclas para estas linhas braille com o NVDA.
@@ -4543,232 +4542,252 @@ Por favor consulte a documentação da sua linha braille para obter a descriçã
 <TH>Tecla de atalho</TH>
 </TR>
 <TR>
-<TD>Deslocar a linha braille para trás</TD>
-<TD>left side scroll down</TD>
-</TR>
-<TR>
-<TD>deslocar a linha braille para a frente</TD>
-<TD>right side scroll down</TD>
-</TR>
-<TR>
-<TD>Move a linha braille para a linha anterior</TD>
-<TD>left side scroll up</TD>
-</TR>
-<TR>
-<TD>Move a linha braille para a linha seguinte</TD>
-<TD>right side scroll up</TD>
-</TR>
-<TR>
 <TD>Encaminhar para a célula braille</TD>
 <TD>routing</TD>
 </TR>
 <TR>
+<TD>Deslocar a linha Braille para trás</TD>
+<TD>leftSideScrollUp, rightSideScrollUp, leftSideScroll</TD>
+</TR>
+<TR>
+<TD>deslocar a linha braille para a frente</TD>
+<TD>leftSideScrollDown, rightSideScrollDown, rightSideScroll</TD>
+</TR>
+<TR>
+<TD>Move a linha braille para a linha anterior</TD>
+<TD>leftSideScrollUp+rightSideScrollUp</TD>
+</TR>
+<TR>
+<TD>Move a linha braille para a linha seguinte</TD>
+<TD>leftSideScrollDown+rightSideScrollDown</TD>
+</TR>
+<TR>
+<TD>Move a linha Braille para a linha anterior em revisão</TD>
+<TD>rightSideUpArrow</TD>
+</TR>
+<TR>
+<TD>Move a linha Braille para a linha seguinte em revisão</TD>
+<TD>rightSideDownArrow</TD>
+</TR>
+<TR>
+<TD>Move para o caracter anterior em revisão</TD>
+<TD>rightSideLeftArrow</TD>
+</TR>
+<TR>
+<TD>Move para o caracter seguinte em revisão</TD>
+<TD>rightSideRightArrow</TD>
+</TR>
+<TR>
+<TD>Move para o foco actual</TD>
+<TD>leftSideScrollUp+leftSideScrollDown, rightSideScrollUp+rightSideScrollDown, leftSideScroll+rightSideScroll</TD>
+</TR>
+<TR>
+<TD>Tecla control</TD>
+<TD>smartbeetle: f1, brailleedge: f3</TD>
+</TR>
+<TR>
+<TD>Tecla Windows</TD>
+<TD>f7, smartbeetle: f2</TD>
+</TR>
+<TR>
+<TD>Tecla Alt</TD>
+<TD>Ponto1+ponto3+ponto4+Espaço, f2, smartbeetle: f3, brailleedge: f4</TD>
+</TR>
+<TR>
+<TD>Tecla Shift</TD>
+<TD>f5</TD>
+</TR>
+<TR>
+<TD>Tecla Insert</TD>
+<TD>Ponto2+ponto4+Espaço, f6</TD>
+</TR>
+<TR>
+<TD>Tecla Aplicações</TD>
+<TD>Ponto1+ponto2+ponto3+ponto4+Espaço, f8</TD>
+</TR>
+<TR>
+<TD>Tecla CapsLock</TD>
+<TD>Ponto1+ponto3+ponto6+Espaço</TD>
+</TR>
+<TR>
+<TD>Tecla Tab</TD>
+<TD>Ponto4+ponto5+Espaço, f3, brailleedge: f2</TD>
+</TR>
+<TR>
+<TD>Teclas Shift+Alt+Tab</TD>
+<TD>f2+f3+f1</TD>
+</TR>
+<TR>
+<TD>Teclas Alt+Tab</TD>
+<TD>f2+f3</TD>
+</TR>
+<TR>
 <TD>Teclas shift+tab</TD>
-<TD>ponto 1+ponto 2+space</TD>
+<TD>Ponto1+ponto2+espaço</TD>
 </TR>
 <TR>
-<TD>Tecla alt</TD>
-<TD>ponto 1+ponto 3+ponto 4+Space</TD>
+<TD>Tecla End</TD>
+<TD>Ponto4+ponto6+Espaço|</TD>
 </TR>
 <TR>
-<TD>Tecla escape</TD>
-<TD>ponto 1+ponto 5+Space</TD>
+<TD>Teclas Control+End</TD>
+<TD>Ponto4+ponto5+ponto6+Espaço</TD>
 </TR>
 <TR>
-<TD>Tecla tab</TD>
-<TD>ponto 4+ponto 5+Space</TD>
+<TD>Tecla Home</TD>
+<TD>Ponto1+ponto3+Espaço, smartbeetle: f4</TD>
 </TR>
 <TR>
-<TD>Tecla seta cima</TD>
-<TD>ponto 1+Space</TD>
+<TD>Teclas Control+Home</TD>
+<TD>ponto1+ponto2+ponto3+Espaço</TD>
 </TR>
 <TR>
-<TD>Tecla seta baixo</TD>
-<TD>ponto 4+Space</TD>
+<TD>Teclas Alt+F4</TD>
+<TD>Ponto1+ponto3+ponto5+ponto6+Espaço</TD>
 </TR>
 <TR>
-<TD>capsLock</TD>
-<TD>ponto 1+ponto 3+ponto 6+space</TD>
+<TD>Tecla Seta à esquerda</TD>
+<TD>Ponto3+Espaço, leftSideLeftArrow</TD>
 </TR>
 <TR>
-<TD>Teclas shift+alt+tab</TD>
-<TD>advance2+advance3+advance1</TD>
+<TD>Teclas Control+Shift+Seta à esquerda</TD>
+<TD>Ponto2+ponto8+Espaço+F1</TD>
 </TR>
 <TR>
-<TD>Teclas alt+tab</TD>
-<TD>advance2+advance3</TD>
+<TD>Teclas control+Seta à esquerda</TD>
+<TD>Ponto2+Espaço</TD>
 </TR>
 <TR>
-<TD>Tecla end</TD>
-<TD>ponto 4+ponto 6+space</TD>
+<TD>Teclas Shift+Alt+Seta à esquerda</TD>
+<TD>Ponto2+ponto7+F1</TD>
 </TR>
 <TR>
-<TD>Teclas Control+end</TD>
-<TD>ponto 4+ponto 5+ponto 6+space</TD>
+<TD>Teclas Alt+Seta à esquerda</TD>
+<TD>Ponto2+ponto7</TD>
 </TR>
 <TR>
-<TD>Tecla home</TD>
-<TD>ponto 1+ponto 3+space</TD>
+<TD>Tecla Seta à direita</TD>
+<TD>Ponto6+Espaço, leftSideRightArrow</TD>
 </TR>
 <TR>
-<TD>Teclas control+home</TD>
-<TD>ponto 1+ponto 2+ponto 3+space</TD>
+<TD>Teclas Control+Shift+Seta à direita</TD>
+<TD>Ponto5+ponto8+Espaço+F1</TD>
 </TR>
 <TR>
-<TD>Tecla seta esquerda</TD>
-<TD>ponto 3+space</TD>
+<TD>Teclas Control+Seta à direita</TD>
+<TD>Ponto5+Espaço</TD>
 </TR>
 <TR>
-<TD>Teclas control+shift+seta esquerda</TD>
-<TD>ponto 2+ponto 8+espaço+advance1</TD>
+<TD>Teclas Shift+Alt+Seta à direita| Ponto5+ponto7+F1</TD>
 </TR>
 <TR>
-<TD>Teclas control+Seta esquerda</TD>
-<TD>ponto 2+space</TD>
-</TR>
-<TR>
-<TD>Teclas shift+alt+seta esquerda</TD>
-<TD>ponto 2+ponto 7+advance1</TD>
-</TR>
-<TR>
-<TD>Teclas alt+Seta esquerda</TD>
-<TD>ponto 2+ponto 7</TD>
-</TR>
-<TR>
-<TD>Tecla seta direita</TD>
-<TD>ponto 6+space</TD>
-</TR>
-<TR>
-<TD>Teclas control+shift+seta direita</TD>
-<TD>ponto 5+ponto 8+espaço+advance1</TD>
-</TR>
-<TR>
-<TD>Teclas control+seta direita</TD>
-<TD>ponto 5+space</TD>
-</TR>
-<TR>
-<TD>Teclas shift+alt+Seta direita</TD>
-<TD>ponto 5+ponto 7+advance1</TD>
-</TR>
-<TR>
-<TD>Teclas alt+seta direita</TD>
-<TD>ponto 5+ponto 7</TD>
+<TD>Teclas Alt+Seta à direita</TD>
+<TD>Ponto5+ponto7</TD>
 </TR>
 <TR>
 <TD>Tecla pageUp</TD>
-<TD>ponto 1+ponto 2+ponto 6+space</TD>
+<TD>Ponto1+ponto2+ponto6+Espaço</TD>
 </TR>
 <TR>
-<TD>Teclas control+pageUp</TD>
-<TD>ponto 1+ponto 2+ponto 6+ponto 8+space</TD>
+<TD>Teclas Control+PageUp</TD>
+<TD>Ponto1+ponto2+ponto6+ponto8+Espaço</TD>
 </TR>
 <TR>
-<TD>Teclas control+shift+Seta cima</TD>
-<TD>ponto 2+ponto 3+ponto 8+espaço+advance1</TD>
+<TD>Tecla Seta acima</TD>
+<TD>Ponto1+Espaço, leftSideUpArrow</TD>
 </TR>
 <TR>
-<TD>Teclas control+Seta cima</TD>
-<TD>ponto 2+ponto 3+space</TD>
+<TD>Teclas Control+Shift+Seta acima</TD>
+<TD>Ponto2+ponto3+ponto8+Espaço+F1</TD>
 </TR>
 <TR>
-<TD>Teclas shift+alt+seta cima</TD>
-<TD>ponto 2+ponto 3+ponto 7+advance1</TD>
+<TD>Teclas Control+Seta acima</TD>
+<TD>Ponto2+ponto3+Espaço</TD>
 </TR>
 <TR>
-<TD>Teclas alt+seta cima</TD>
-<TD>ponto 2+ponto 3+ponto 7</TD>
+<TD>Teclas Shift+Alt+Seta acima</TD>
+<TD>Ponto2+ponto3+ponto7+F1</TD>
 </TR>
 <TR>
-<TD>Teclas shift+seta cima</TD>
-<TD>left side scroll down + space</TD>
+<TD>Teclas Alt+Seta acima</TD>
+<TD>Ponto2+ponto3+ponto7</TD>
+</TR>
+<TR>
+<TD>Teclas Shift+Seta acima</TD>
+<TD>leftSideScrollDown+Espaço</TD>
 </TR>
 <TR>
 <TD>Tecla pageDown</TD>
-<TD>ponto 3+ponto 4+ponto 5+space</TD>
+<TD>Ponto3+ponto4+ponto5+Espaço</TD>
 </TR>
 <TR>
-<TD>Teclas control+pagedown</TD>
-<TD>ponto 3+ponto 4+ponto 5+ponto 8+space</TD>
+<TD>Teclas Control+pageDown</TD>
+<TD>Ponto3+ponto4+ponto5+ponto8+Espaço</TD>
 </TR>
 <TR>
-<TD>Teclas control+shift+seta cima</TD>
-<TD>ponto 5+ponto 6+ponto 8+espaço+advance1</TD>
+<TD>Tecla Seta abaixo</TD>
+<TD>Ponto4+Espaço, leftSideDownArrow</TD>
 </TR>
 <TR>
-<TD>Teclas control+seta baixo</TD>
-<TD>ponto 5+ponto 6+space</TD>
+<TD>Teclas Control+Shift+Seta abaixo</TD>
+<TD>Ponto5+ponto6+ponto8+Espaço+F1</TD>
 </TR>
 <TR>
-<TD>Teclas shift+alt+seta baixo</TD>
-<TD>ponto 5+ponto 6+ponto 7+advance1</TD>
+<TD>Teclas Control+Seta abaixo</TD>
+<TD>Ponto5+ponto6+Espaço</TD>
 </TR>
 <TR>
-<TD>Teclas alt+seta baixo</TD>
-<TD>ponto 5+ponto 6+ponto 7</TD>
+<TD>Teclas Shift+Alt+Seta abaixo</TD>
+<TD>ponto5+ponto6+ponto7+F1</TD>
 </TR>
 <TR>
-<TD>Teclas shift+seta baixo</TD>
-<TD>right side scroll down + space</TD>
+<TD>Teclas Alt+Seta abaixo</TD>
+<TD>Ponto5+ponto6+ponto7</TD>
 </TR>
 <TR>
-<TD>Tecla delete</TD>
-<TD>ponto 1+ponto 3+ponto 5+space</TD>
+<TD>Teclas Shift+Seta abaixo</TD>
+<TD>Espaço+rightSideScrollDown</TD>
 </TR>
 <TR>
-<TD>Tecla f1</TD>
-<TD>ponto 1+ponto 2+ponto 5+space</TD>
+<TD>Tecla Escape</TD>
+<TD>Ponto1+ponto5+Espaço, F4, brailleedge: F1</TD>
 </TR>
 <TR>
-<TD>Tecla f3</TD>
-<TD>ponto 1+ponto 2+ponto 4+ponto 8</TD>
+<TD>Tecla Delete</TD>
+<TD>Ponto1+ponto3+ponto5+Espaço, Ponto1+ponto4+ponto5+Espaço</TD>
 </TR>
 <TR>
-<TD>Tecla f4</TD>
-<TD>ponto 7+advance3</TD>
+<TD>Tecla F1</TD>
+<TD>Ponto1+ponto2+ponto5+Espaço</TD>
 </TR>
 <TR>
-<TD>Teclas windows+b</TD>
-<TD>ponto 1+ponto 2+advance1</TD>
+<TD>Tecla F3</TD>
+<TD>Ponto1+ponto2+ponto4+ponto8</TD>
 </TR>
 <TR>
-<TD>Teclas windows+d</TD>
-<TD>ponto 1+ponto 4+ponto 5+advance1</TD>
+<TD>Tecla F4</TD>
+<TD>Ponto7+F3</TD>
+</TR>
+<TR>
+<TD>Teclas Windows+B</TD>
+<TD>Ponto1+ponto2+F1</TD>
+</TR>
+<TR>
+<TD>Teclas Windows+D</TD>
+<TD>Ponto1+Ponto4+ponto5+F1</TD>
+</TR>
+<TR>
+<TD>Teclas Control+Insert</TD>
+<TD>smartbeetle: F1+rightSideScroll</TD>
+</TR>
+<TR>
+<TD>Teclas Alt+Insert</TD>
+<TD>smartbeetle: F3+rightSideScroll</TD>
 </TR>
 </TABLE>
 
 <A NAME="toc122"></A>
-<H3>14.10. HIMS SyncBraille</H3>
-
-<P>
-O NVDA suporta a linha SyncBraille da <A HREF="http://www.hims-inc.com/">HIMS</A>.
-Necessitará de instalar os drivers USB do fabricante no seu sistema.
-</P>
-<P>
-Seguem-se as associações de teclas para esta linha braille com o NVDA.
-Por favor consulte a documentação da linha braille para obter a descrição de onde estas teclas podem ser encontradas.
-</P>
-
-<TABLE BORDER="1" CELLPADDING="4">
-<TR>
-<TH>Nome</TH>
-<TH>Tecla de atalho</TH>
-</TR>
-<TR>
-<TD>Deslocar a linha braille para trás</TD>
-<TD>left side scroll down</TD>
-</TR>
-<TR>
-<TD>Deslocar a linha braille para a frente</TD>
-<TD>right side scroll down</TD>
-</TR>
-<TR>
-<TD>Reencaminhar para a célula braille</TD>
-<TD>routing</TD>
-</TR>
-</TABLE>
-
-<A NAME="toc123"></A>
-<H3>14.11. Seika</H3>
+<H3>14.10. Seika</H3>
 
 <P>
 As linhas braille Seika versão 3, 4 e 5 (40 células) e Seika80 (80 células) da <A HREF="http://www.nippontelesoft.com/">Nippon Telesoft</A> são suportadas.
@@ -4831,8 +4850,8 @@ Por favor consulte a documentação desta linha braille para obter a descrição
 </TR>
 </TABLE>
 
-<A NAME="toc124"></A>
-<H3>14.12. Papenmeier BRAILLEX (Modelos recentes)</H3>
+<A NAME="toc123"></A>
+<H3>14.11. Papenmeier BRAILLEX (Modelos recentes)</H3>
 
 <P>
 São suportadas as seguintes linhas braille:
@@ -5053,8 +5072,8 @@ Ambas as teclas interiores estão definidas para Espaço.
 </TR>
 </TABLE>
 
-<A NAME="toc125"></A>
-<H3>14.13. Papenmeier BRAILLEX (Modelos antigos)</H3>
+<A NAME="toc124"></A>
+<H3>14.12. Papenmeier BRAILLEX (Modelos antigos)</H3>
 
 <P>
 Os seguintes modelos são suportados:
@@ -5330,8 +5349,8 @@ BRAILLEX 2D Screen:
 </TR>
 </TABLE>
 
-<A NAME="toc126"></A>
-<H3>14.14. HumanWare BrailleNote</H3>
+<A NAME="toc125"></A>
+<H3>14.13. HumanWare BrailleNote</H3>
 
 <P>
 O NVDA suporta os notetakers BrailleNote da <A HREF="http://www.humanware.com">Humanware</A> quando usados como linha Braille.
@@ -5463,8 +5482,8 @@ Por favor consulte a documentação do BrailleNote para saber a localização da
 </TR>
 </TABLE>
 
-<A NAME="toc127"></A>
-<H3>14.15. EcoBraille</H3>
+<A NAME="toc126"></A>
+<H3>14.14. EcoBraille</H3>
 
 <P>
 O NVDA suporta as linhas Braille EcoBraille da <A HREF="http://www.once.es/">ONCE</A>.
@@ -5561,8 +5580,8 @@ Por favor consulte a documentação <A HREF="ftp://ftp.once.es/pub/utt/bibliotec
 </TR>
 </TABLE>
 
-<A NAME="toc128"></A>
-<H3>14.16. SuperBraille</H3>
+<A NAME="toc127"></A>
+<H3>14.15. SuperBraille</H3>
 
 <P>
 O dispositivo SuperBraille, quase exclusivamente usado em Taiwan, pode ser ligado por USB ou porta série.
@@ -5585,8 +5604,8 @@ Por isso, e para manter a compatibilidade com outros leitores de ecrã em Taiwan
 </TR>
 </TABLE>
 
-<A NAME="toc129"></A>
-<H3>14.17. BRLTTY</H3>
+<A NAME="toc128"></A>
+<H3>14.16. BRLTTY</H3>
 
 <P>
 O <A HREF="http://www.brltty.com/">BRLTTY</A> é um programa adicional que pode ser usado para suportar muito mais linhas Braille.
@@ -5630,7 +5649,7 @@ Por favor consulte na documentação do BRLTTY as <A HREF="http://mielke.cc/brlt
 </TR>
 </TABLE>
 
-<A NAME="toc130"></A>
+<A NAME="toc129"></A>
 <H2>15. tópicos Avançados</H2>
 
 <A NAME="CommandLineOptions"></A>
@@ -5822,7 +5841,7 @@ Os seguintes valores podem ser configurados nestas chaves:
 </TR>
 </TABLE>
 
-<A NAME="toc133"></A>
+<A NAME="toc132"></A>
 <H2>16. Mais Informações</H2>
 
 <P>
