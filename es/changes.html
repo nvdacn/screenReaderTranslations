@@ -19,9 +19,15 @@
  <UL>
  <LI>Algunas teclas, especialmente las teclas de desplazamiento, se han reasignado para seguir las convenciones utilizadas por los productos de Hims. Consulta la guía del usuario para más detalles.
  </UL>
-<LI>Al escribir con el teclado en pantalla a través de la interacción táctil, por omisión ahora debes hacer doble tap en cada tecla del mismo modo en que activarías cualquier otro control.
+<LI>Al escribir con el teclado en pantalla a través de la interacción táctil, por omisión ahora debes hacer doble tap en cada tecla del mismo modo en que activarías cualquier otro control. (<A HREF="http://github.com/nvaccess/nvda/issues/7309">#7309</A>)
  <UL>
  <LI>Para utilizar el modo de "escritura táctil" existente donde basta con quitar el dedo de la tecla para activarla, habilita esta opción en el nuevo diálogo Opciones de Interacción Táctil que se encuentra en el menú Preferencias. (<A HREF="http://github.com/nvaccess/nvda/issues/7309">#7309</A>)
+ </UL>
+<LI>Ahora es posible interactuar con gráficos en Microsoft Word y Microsoft PowerPoint, similar al soporte existente para gráficos en Microsoft Excel. (<A HREF="http://github.com/nvaccess/nvda/issues/7046">#7046</A>)
+ <UL>
+ <LI>En Microsoft Word: cuando se esté en modo exploración, pon el cursor en un gráfico integrado y pulsa intro para interactuar con él.
+ <LI>En Microsoft Powerpoint cuando se edite una diapositiva: tabula a un objeto gráfico, y pulsa intro o espacio para interactuar con el gráfico.
+ <LI>Para detener la interacción con un gráfico, pulsa escape.
  </UL>
 </UL>
 
@@ -30,15 +36,17 @@
 <UL>
 <LI>Los mensajes explorables tales como mostrar el formato actual al pulsar NVDA+f dos veces rápidamente, ya no fallan cuando NVDA se instala en una ruta con caracteres no ASCII. (<A HREF="http://github.com/nvaccess/nvda/issues/7474">#7474</A>)
 <LI>El foco ahora se restaura una vez más correctamente cuando se regresa a Spotify desde otra aplicación. (<A HREF="http://github.com/nvaccess/nvda/issues/7689">#7689</A>)
-<LI>NVDA ya no falla al actualizar en sistemas con el Control de Acceso de Carpetas habilitado (disponible en la actualización Windows 10 Fall Creators). (<A HREF="http://github.com/nvaccess/nvda/issues/7696">#7696</A>)
+<LI>En la actualización Windows 10 Fall Creators, NVDA ya no falla al actualizar cuando el acceso controlado a la carpeta está habilitado desde Windows Defender Security Center. (<A HREF="http://github.com/nvaccess/nvda/issues/7696">#7696</A>)
 <LI>La detección de las teclas de desplazamiento en las pantallas Hims Smart Beetle ya no es poco fiable. (<A HREF="http://github.com/nvaccess/nvda/issues/6086">#6086</A>)
 <LI>Una ligera mejora en el rendimiento al procesar grandes cantidades de contenido en Mozilla Firefox 58 y posterior. (<A HREF="http://github.com/nvaccess/nvda/issues/7719">#7719</A>)
-<LI>Se evitan errores mientras se leen correos electrónicos que contienen tablas en Microsoft Outlook (<A HREF="http://github.com/nvaccess/nvda/issues/6827">#6827</A>)
+<LI>En Microsoft Outlook,  leer correos electrónicos que contengan tablas ya no causa errores. (<A HREF="http://github.com/nvaccess/nvda/issues/6827">#6827</A>)
 <LI>Los gestos de las pantallas braille que emulan las teclas modificadoras del teclado del sistema ahora pueden combinarse también con otras teclas emuladas del teclado del sistema si uno o más de los gestos involucrados son específicos del modelo. (<A HREF="http://github.com/nvaccess/nvda/issues/7783">#7783</A>)
 <LI>En Mozilla Firefox, el modo exploración ahora funciona correctamente en ventanas emergentes creadas por extensiones tales como LastPass y bitwarden. (<A HREF="http://github.com/nvaccess/nvda/issues/7809">#7809</A>)
 <LI>NVDA ya no se bloquea a veces en cada cambio del foco si Firefox o Chrome han dejado de responder debido a una congelación o un cuelgue. (<A HREF="http://github.com/nvaccess/nvda/issues/7818">#7818</A>)
 <LI>En clientes de twitter tales como Chicken Nugget, NVDA ya no ignorará los últimos 20 caracteres de tuits con 280 caracteres al leerlos. (<A HREF="http://github.com/nvaccess/nvda/issues/7828">#7828</A>)
 <LI>NVDA ahora utiliza el idioma correcto al anunciar los símbolos cuando se seleccione texto. (<A HREF="http://github.com/nvaccess/nvda/issues/7687">#7687</A>)
+<LI>En versiones recientes de Office 365, es nuevamente posible navegar gráficos de Excel utilizando las teclas de flechas. (<A HREF="http://github.com/nvaccess/nvda/issues/7046">#7046</A>)
+<LI>En salidas de voz y graille, los estados de los controles ahora siempre se anuncian en el mismo orden, sin importar si son positivos o negativos. Correcciones <A HREF="http://github.com/nvaccess/nvda/issues/7076">#7076</A>
 </UL>
 
 <H3>Cambios para Desarrolladores</H3>
@@ -50,6 +58,8 @@
  </UL>
 <LI>Se ha añadido un nuevo diccionario (braille.RENAMED_DRIVERS) para permitir una transición sin  problemas a los usuarios que utilizan controladores que hayan sido substituidos por otros. (<A HREF="http://github.com/nvaccess/nvda/issues/7459">#7459</A>)
 <LI>Actualizado el paquete comtypes a 1.1.3. (<A HREF="http://github.com/nvaccess/nvda/issues/7831">#7831</A>)
+<LI>Implementado un sistema genérico en braille.BrailleDisplayDriver para tratar con las pantallas que envían paquetes de confirmación/acuse de recibo. Consulta el controlador de las pantallas braille handyTech como un ejemplo. (<A HREF="http://github.com/nvaccess/nvda/issues/7590">#7590</A>, <A HREF="http://github.com/nvaccess/nvda/issues/7721">#7721</A>)
+<LI>Se puede utilizar una nueva variable "isAppX" en el módulo config para detectar si NVDA se está ejecutando como una aplicación Windows Desktop Bridge Store. (<A HREF="http://github.com/nvaccess/nvda/issues/7851">#7851</A>)
 </UL>
 
 <H2>2017.4</H2>
