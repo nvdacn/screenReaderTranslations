@@ -12,33 +12,52 @@
 
 <H2>2018.1</H2>
 
-<H3>izmjene</H3>
+<H3>Nove značajke</H3>
+
+<UL>
+<LI>Sada je moguće ulaziti u interakciju sa grafovima u Microsoft Wordu i Microsoft PowerPointu, slično kao i kod podrške grafova u Microsoft Excelu. (<A HREF="http://github.com/nvaccess/nvda/issues/7046">#7046</A>)
+ <UL>
+ <LI>U Microsoft Wordu:  kada se nalazite u načinu pregleda, kursorima dođite do grafa i pritisnite enter.
+ <LI>U Microsoft PowerPointu prilikom uređivanja slajda: pritišćite tabulator do objekta grafa, i pritisnite enter ili razmak kako biste ušli u interakciju s grafom.
+ <LI>Kako biste prestali biti u interakciju s grafom, Pritisnite escape.
+ </UL>
+<LI>Novi jezik: kirgizki.
+</UL>
+
+<H3>Changes</H3>
 
 <UL>
 <LI>The HIMS Braille Sense/Braille EDGE/Smart Beetle and Hims Sync Braille display drivers have been replaced by one driver. The new driver will automatically be activated for former syncBraille driver users. (<A HREF="http://github.com/nvaccess/nvda/issues/7459">#7459</A>) 
  <UL>
  <LI>Some keys , notably scroll keys, have been reassigned to follow the conventions used by Hims products. Consult the user guide for more details.
  </UL>
-<LI>When typing with the on-screen keyboard via touch interaction, by default  you now need to double tap each key the same way you would activate any other control.
+<LI>When typing with the on-screen keyboard via touch interaction, by default you now need to double tap each key the same way you would activate any other control. (<A HREF="http://github.com/nvaccess/nvda/issues/7309">#7309</A>)
  <UL>
- <LI>To use the existing "touch typing" mode where simply lifting your finger off the key is enough to activate it, Enable this option in the new Touch Interaction settings dialog found in the Preferences menu. (<A HREF="http://github.com/nvaccess/nvda/issues/7309">#7309</A>)
+ <LI>To use the existing "touch typing" mode where simply lifting your finger off the key is enough to activate it, Enable this option in the new Touch Interaction settings dialog found in the Preferences menu.
+ </UL>
+<LI>It is no longer necessary to explicitly tether braille to focus or review, as this will happen automatically by default. (<A HREF="http://github.com/nvaccess/nvda/issues/2385">#2385</A>) 
+ <UL>
+ <LI>Note that automatic tethering to review will only occur when using a review cursor or object navigation command. Scrolling will not activate this new behavior.
  </UL>
 </UL>
 
 <H3>Bug Fixes</H3>
 
 <UL>
-<LI>Browseable messages such as showing  current formatting when pressing NVDA+f twice quickly, no longer fails when NVDA is installed on a path with non-ASCII characters. (<A HREF="http://github.com/nvaccess/nvda/issues/7474">#7474</A>)
+<LI>Browseable messages such as showing current formatting when pressing NVDA+f twice quickly no longer fails when NVDA is installed on a path with non-ASCII characters. (<A HREF="http://github.com/nvaccess/nvda/issues/7474">#7474</A>)
 <LI>Focus is now once again restored correctly when returning to Spotify from another application. (<A HREF="http://github.com/nvaccess/nvda/issues/7689">#7689</A>)
-<LI>NVDA no longer fails to update on systems with Controlled Folder Access enabled (available in the Windows 10 Fall Creaters update). (<A HREF="http://github.com/nvaccess/nvda/issues/7696">#7696</A>)
+<LI>In Windows 10 Fall Creaters Update, NVDA no longer fails to update when Controlled Folder Access is enabled from Windows Defender Security Center. (<A HREF="http://github.com/nvaccess/nvda/issues/7696">#7696</A>)
 <LI>Detection of scroll keys on Hims Smart Beetle displays is no longer unreliable. (<A HREF="http://github.com/nvaccess/nvda/issues/6086">#6086</A>)
 <LI>A slight performance improvement when rendering large amounts of content in Mozilla Firefox 58 and later. (<A HREF="http://github.com/nvaccess/nvda/issues/7719">#7719</A>)
-<LI>Prevent errors while reading emails containing tables in Microsoft Outlook (<A HREF="http://github.com/nvaccess/nvda/issues/6827">#6827</A>)
+<LI>In Microsoft Outlook, reading emails containing tables no longer causes errors. (<A HREF="http://github.com/nvaccess/nvda/issues/6827">#6827</A>)
 <LI>Braille display gestures that emulate system keyboard key modifiers can now also be combined with other emulated system keyboard keys if one or more of the involved gestures are model specific. (<A HREF="http://github.com/nvaccess/nvda/issues/7783">#7783</A>)
 <LI>In Mozilla Firefox, browse mode now works correctly in pop-ups created by extensions such as LastPass and bitwarden. (<A HREF="http://github.com/nvaccess/nvda/issues/7809">#7809</A>)
 <LI>NVDA no longer sometimes freezes on every focus change if Firefox or Chrome have stopped responding such as due to a freeze or crash. (<A HREF="http://github.com/nvaccess/nvda/issues/7818">#7818</A>)
 <LI>In twitter clients such as Chicken Nugget, NVDA will no longer ignore the last 20 characters of 280 character tweets when reading them. (<A HREF="http://github.com/nvaccess/nvda/issues/7828">#7828</A>)
 <LI>NVDA now uses the correct language when announcing symbols when text is selected. (<A HREF="http://github.com/nvaccess/nvda/issues/7687">#7687</A>)
+<LI>In recent versions of Office 365, it is again possible to navigate Excel charts using the arrow keys. (<A HREF="http://github.com/nvaccess/nvda/issues/7046">#7046</A>)
+-  In speech and braille output, control states will now always be reported in the same order, regardless whether they are positive or negative. Fixes <A HREF="http://github.com/nvaccess/nvda/issues/7076">#7076</A>
+<LI>In apps such as Windows 10 Mail, NVDA will no longer fail to announce deleted characters when pressing backspace. (<A HREF="http://github.com/nvaccess/nvda/issues/7456">#7456</A>)
 </UL>
 
 <H3>Changes for developers</H3>
@@ -50,7 +69,7 @@ Informacije za razvojne programere nisu prevedene, molimo ’pogledajte <A HREF=
 <H2>2017.4</H2>
 
 <P>
-Novosti u ovoj inačici uključuju poboljšanja u web podršci, ukljupujući podrazumijevani način pregleda za web dijaloge bolje izgovaranje grupa polja u načinu pregleda, Podrška za nove Windows 10 tehnologije Windows 10 zaštitnik aplikacija i windows 10 za ARM64, te automatsko čitanje statusa baterije i orijentacije ekrana.  
+Novosti u ovoj inačici uključuju poboljšanja u web podršci, uključujući podrazumijevani način pregleda za web dijaloge bolje izgovaranje grupa polja u načinu pregleda, Podrška za nove Windows 10 tehnologije Windows 10 zaštitnik aplikacija i windows 10 za ARM64, te automatsko čitanje statusa baterije i orijentacije ekrana.  
 Imajte na umu, da ova inačica NVDA ne podržava windows xp ili Windows Vistu. Minimalna podržana inačica operativnog sustava windows je windows 7 sa servisnim paketom 1.
 </P>
 
