@@ -9,13 +9,15 @@ Quoi de Neuf dans NVDA
 - Les pilotes pour les terminaux HIMS Braille Sense/Braille EDGE/Smart Beetle et Hims Sync Braille ont été remplacés par un pilote unique. Le nouveau pilote sera automatiquement activé pour les utilisateurs des anciens pilotes. (#7459) 
  - Certaines touches, en particulier les touches de défilement, ont été réassignées pour respecter les conventions utilisées par les produits Hims. Veuillez consulter le guide de l'utilisateur pour plus de détails.
 - Quand vous tapez sur le clavier à l'écran via l'interaction tactile, par défaut vous devez maintenant taper deux fois chaque touche comme vous le feriez pour activer tout autre contrôle.
- - pour utiliser le mode "frappe au toucher" où simplement lever son doigt de la touche suffit pour l'activer, activer cette option dans le nouveau dialogue Interaction Tactile du menu Préférences. (#7309)
+ - Pour utiliser le mode "frappe au toucher" où simplement lever son doigt de la touche suffit pour l'activer, activer cette option dans le nouveau dialogue Interaction Tactile du menu Préférences. (#7309)
 - Il est maintenant possible d'interagir avec les diagrammes sous Microsoft Word et Microsoft Powerpoint, de la même manière que sous Microsoft Excel. (#7046)
  - sous Microsoft Word : En mode navigation, amener le curseur à un diagramme inclus et presser Entrer pour interagir avec lui.
  - Sous Microsoft Powerpoint en édition d'une diapositive : Tabuler jusqu'à un objet diagramme, et presser Entrer ou Espace pour interagir avec lui.
  - Pour cesser d'interagir avec un diagramme, presser échap.
- 
- 
+- Il n'est plus nécessaire de joindre le braille au focus ou au curseur de revue explicitement car cela se fera automatiquement par défaut. (#2385)
+ - Notez que le suivi automatique du curseur de revue ne se produira que si vous utilisez le curseur de revue ou la commande de navigation par objet. Le défilement n'activera pas ce nouveau comportement.
+
+
 == Corrections de Bogues ==
 - Les messages navigables tels que ceux affichant le formatage en cours, lors de l'appui sur NVDA+f deux fois rapidement, ne dysfonctionnent plus si NVDA est installé sur un chemin comprenant des caractères non-ASCII. (#7474)
 - Le focus est maintenant restauré correctement lors du retour à Spotify à partir d'une autre application. (#7689)
@@ -39,7 +41,7 @@ Quoi de Neuf dans NVDA
 - Le package comtypes a été mis à jour à la version 1.1.3. (#7831)
 - Implémentation d'un système générique dans braille.BrailleDisplayDriver pour communiquer avec les terminaux qui envoient des paquets de confirmation. Consultez le pilote braille handyTech comme exemple. (#7590, #7721)
 - Une nouvelle variable "isAppX" dans le module config peut être utilisée pour détecter si NVDA s'exécute comme une application Windows Desktop Bridge Store. (#7851)
-
+- Pour les implémentations de document telles que NVDAObjects ou browseMode qui ont un textInfo, il existe maintenant une nouvelle classe documentBase.documentWithTableNavigation dont on peut hériter pour obtenir des scripts de navigation dans les tableaux standard. Veuillez vous référer à cette classe pour voir quelles méthodes helper doivent être fournies par votre implémentation pour que la navigation dans les tableaux fonctionne. (#7849)
 
 
 = 2017.4 =
