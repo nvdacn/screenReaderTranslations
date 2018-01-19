@@ -230,7 +230,7 @@ Tärkeimpiä ominaisuuksia ovat:
 <LI>Tuki useille pistenäytöille, mukaan lukien pistekirjoituksen syöttäminen tietokonemerkistöä käyttäen näytöissä, joissa on pistenäppäimistö
 <LI>Mahdollisuus käyttää USB-muistitikulta tai muulta siirrettävältä tietovälineeltä ilman asennusta
 <LI>Helppokäyttöinen puhuva asennusohjelma
-<LI>Käännökset 51 kielelle
+<LI>Käännökset 52 kielelle
 <LI>Tuki uusille Windows-käyttöjärjestelmille, sekä 32- että 64-bittiset versiot mukaan lukien
 <LI>Mahdollisuus käyttää Windowsin kirjautumisikkunassa ja muissa suojatuissa ruuduissa
 <LI>Säätimien ja tekstin puhuminen kosketuseleitä käytettäessä
@@ -243,7 +243,7 @@ Tärkeimpiä ominaisuuksia ovat:
 
 <P>
 On tärkeää, että ihmiset kaikkialla maailmassa voivat käyttää samoja teknologioita riippumatta siitä, mitä kieltä he puhuvat.
-NVDA on käännetty englannin lisäksi seuraaville 51 kielelle: afrikaans, albania, amhara, arabia, aragonia, brasilianportugali, bulgaria, burma, espanja, farsi, galego, georgia, heprea, hindi, hollanti, iiri, islanti, italia, japani, kannada, katalaani, kolumbianespanja, korea, kreikka, kroatia, liettua, makedonia, mandariinikiina, nepali, norja, perinteinen kiina, portugali, punjabi, puola, ranska, romania, ruotsi, saksa, serbia, slovakki, sloveeni, suomi, tamili, tanska, thai, tšekki, turkki, ukraina, unkari, venäjä ja vietnam.
+NVDA on käännetty englannin lisäksi seuraaville 52 kielelle: afrikaans, albania, amhara, arabia, aragonia, brasilianportugali, bulgaria, burma, espanja, farsi, galego, georgia, heprea, hindi, hollanti, iiri, islanti, italia, japani, kannada, katalaani, kirgiisi, kolumbianespanja, korea, kreikka, kroatia, liettua, makedonia, mandariinikiina, nepali, norja, perinteinen kiina, portugali, punjabi, puola, ranska, romania, ruotsi, saksa, serbia, slovakki, sloveeni, suomi, tamili, tanska, thai, tšekki, turkki, ukraina, unkari, venäjä ja vietnam.
 </P>
 
 <A NAME="SpeechSynthesizerSupport"></A>
@@ -853,8 +853,10 @@ Kun siirryt objektiin, voit tarkastella sitä <A HREF="#ReviewingText">tekstinta
 Navigointiobjekti liikkuu oletusarvoisesti järjestelmäkohdistuksen mukana, mutta tämä asetus voidaan poistaa myös käytöstä.
 </P>
 <P>
-Huomaa, että pistenäyttö seuraa oletusarvoisesti objektinavigoinnin ja tekstintarkastelukohdan sijasta <A HREF="#SystemFocus">kohdistusta</A> ja <A HREF="#SystemCaret">kohdistinta</A>.
-Jos kuitenkin haluat pistenäytön seuraavan objektinavigointia ja tekstintarkastelukohtaa, näyttö on <A HREF="#BrailleTether">määritettävä seuraamaan</A> tarkastelukohdistinta.
+Huomaa, että pistenäyttö seuraa oletusarvoisesti <A HREF="#SystemFocus">kohdistusta</A> ja <A HREF="#SystemCaret">järjestelmäkohdistinta</A> sekä objektinavigointia ja tarkastelukohdistinta.
+Jos haluat sen seuraavan vain kohdistusta ja järjestelmäkohdistinta, näyttö on <A HREF="#BrailleTether">määritettävä seuraamaan</A> kohdistusta.
+Tällöin näyttö ei seuraa objektinavigointia tai tarkastelukohdistinta.
+Mikäli sen sijaan haluat pistenäytön seuraavan objektinavigointia ja tarkastelukohdistinta, näyttö on <A HREF="#BrailleTether">määritettävä seuraamaan</A> tarkastelukohdistinta.
 </P>
 <P>
 Käytä seuraavia komentoja objekteittain liikkumiseen:
@@ -2705,7 +2707,9 @@ Tällä asetuksella NVDA:n ilmoitukset näytetään pistenäytöllä pysyvästi.
 Pikanäppäin: NVDA+Ctrl+T
 </P>
 <P>
-Tällä asetuksella voidaan valita, seuraako pistenäyttö järjestelmän kohdistusta vai navigointiobjektia/tarkastelukohdistinta.
+Tällä asetuksella voidaan valita, seuraako pistenäyttö kohdistusta, navigointiobjektia/tarkastelukohdistinta vai molempia.
+NVDA seuraa oletusarvoisesti kohdistusta ja kohdistinta, kun "automaattisesti"-vaihtoehto on valittuna.
+Kun navigointiobjektin tai tarkastelukohdistimen sijainti muuttuu käyttäjän toimesta, NVDA seuraa tällöin tilapäisesti tarkastelukohdistinta, kunnes kohdistuksen tai kohdistimen sijainti muuttuu.
 </P>
 
 <A NAME="BrailleSettingsReadByParagraph"></A>
