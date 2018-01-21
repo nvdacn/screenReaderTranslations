@@ -25,16 +25,17 @@ Ses points forts sont :
 - La prise en charge de nombreux afficheurs braille, incluant la saisie du braille informatique pour les afficheurs disposant d'un clavier braille ;
 - La possibilité de s'exécuter entièrement depuis une clé USB ou tout autre média portable sans avoir à installer ;
 - Un installateur parlant facile à utiliser ;
-- Une traduction dans 51 langues ;
+- Une traduction dans 52 langues ;
 - La prise en charge des environnements Windows modernes, incluant les versions 32 et 64 bits ;
 - L'accès à l'écran de connexion à Windows et aux autres écrans sécurisés ;
+- L'annonce des contrôles et du texte durant l'utilisation de gestes tactiles
 - La prise en charge des interfaces d'accessibilité communes telles que, Microsoft Active Accessibility, Java Access Bridge, IAccessible2 et UI Automation (UI Automation n'est supporté qu'à partir de Windows 7) ;
 - Support de l'invite de commandes Windows et des applications en mode console.
 -
 
 ++ Internationalisation ++[Internationalization]
 Il est important que chacun, partout dans le monde, quelle que soit sa langue, ait le même accès aux technologies. 
-À ce jour, NVDA a été traduit en 51 langues : l'afrikaans, l'albanais, l'Amharique, l'allemand, l'arabe, l'aragonais, le Birman, le bulgare, le catalan, le chinois traditionnel et simplifié, le coréen, le croate, le danois, l'espagnol, l'espagnol colombien, l'éthiopien, le farsi, le finnois, le français, le galicien, le grec, le géorgien, l'hébreu, le hongrois, l'hindi, l'irlandais, l'islandais, l'italien, le japonais, le lithuanien, le macédonien, le néerlandais, le népalais, le norvégien, le polonais, le portugais, le portugais brésilien, le punjabi, le roumain, le russe, le serbe, le slovaque, le slovène, le suédois, le tamoul, le tchèque, le thaï, le turc, l'ukrainien et le vietnamien.
+À ce jour, NVDA a été traduit en 52 langues : l'afrikaans, l'albanais, l'Amharique, l'allemand, l'arabe, l'aragonais, le Birman, le bulgare, le catalan, le chinois traditionnel et simplifié, le coréen, le croate, le danois, l'espagnol, l'espagnol colombien, l'éthiopien, le farsi, le finnois, le français, le galicien, le grec, le géorgien, l'hébreu, le hongrois, l'hindi, l'irlandais, l'islandais, l'italien, le japonais, le kyrgyz, le lithuanien, le macédonien, le néerlandais, le népalais, le norvégien, le polonais, le portugais, le portugais brésilien, le punjabi, le roumain, le russe, le serbe, le slovaque, le slovène, le suédois, le tamoul, le tchèque, le thaï, le turc, l'ukrainien et le vietnamien.
 
 ++ Support des synthèses vocales ++[SpeechSynthesizerSupport]
 En plus de proposer ses messages et son interface en plusieurs langues, NVDA permet également à l'utilisateur de lire les contenus dans n'importe quelle langue, dans la mesure où il possède un synthétiseur parlant cette langue.
@@ -338,8 +339,10 @@ L'objet en cours de revue s'appelle l'objet navigateur.
 Quand vous atteignez un objet, vous pouvez examiner son contenu en utilisant les [commandes de revue de texte #ReviewingText] en étant en [mode Revue d'objet #ObjectReview].
 Par défaut, l'objet navigateur suit le focus système, mais ce comportement peut être désactivé.
 
-Note : Par défaut, le braille suit le [focus #SystemFocus] et le [curseur système #SystemCaret] plutôt que la navigation par objet ou la revue de texte.
-Si vous voulez suivre la navigation par objet ou la revue de texte, vous devez [configurer le braille pour qu'il soit attaché #brailleTether] à la revue.
+Note : Par défaut, le braille suit le [focus #SystemFocus], le [curseur système #SystemCaret] ainsi que la navigation par objet et la revue de texte.
+Si vous voulez qu'il ne suive que le focus et le curseur, vous devez [configurer le braille pour qu'il suive #BrailleTether] le focus.
+Dans ce cas, le braille ne suivra pas la navigation par objet et la revue de texte.
+Si vous voulez que le braille suive la navigation par objet et la revue de texte, vous devrez [configurer le braille pour qu'il suive #BrailleTether] la revue.
 
 Pour naviguer par objet, utilisez les commandes suivantes :
 
@@ -488,7 +491,6 @@ De plus, vous pouvez aussi passer manuellement NVDA en mode formulaire, après q
 | Ouvrir description longue | NVDA+d | Ouvre une nouvelle fenêtre contenant une longue description de l'élément sur lequel vous êtes s'il en a une. | 
 %kc:endInclude
 
-
 ++ Les touches de navigation rapide ++[SingleLetterNavigation]
 En mode navigation, pour une navigation plus rapide, NVDA dispose de raccourcis clavier où l'appui d'une seule touche amène à certains champs dans le document.
 Notez que toutes ces commandes ne sont pas disponibles dans tous les types de documents.
@@ -523,8 +525,8 @@ Pour se déplacer au début ou à la fin des éléments contenants comme les lis
 || Nom | Touche | Description |
 | Aller au début du conteneur | maj+virgule | Se déplace au début du conteneur (liste, tableau etc.) où le curseur est positionné |
 | Aller après la fin du conteneur | virgule | Se déplace après la fin du conteneur (liste, tableau etc.) où le curseur se trouve |
-
 %kc:endInclude
+
 Quelques applications web comme Gmail, Twitter et Facebook utilisent de simple lettres comme touches de raccourci.
 Si vous voulez les utiliser tout en restant capable d'utiliser vos touches curseur en mode navigation, vous pouvez désactiver temporairement les touches de navigation rapide de NVDA.
 %kc:beginInclude
@@ -1142,10 +1144,12 @@ Indiquer 0 désactive l'affichage de ces messages.
 Cette option permet aux messages de NVDA de rester affichés sur l'afficheur braille indéfiniment.
 
 %kc:setting
-==== braille suit ====
+==== braille suit ====[BrailleTether]
 Raccourci clavier : NVDA+contrôle+t
 
-Cette option vous permet de choisir si le braille suivra le focus système ou le curseur de l'objet navigateur.
+Cette option vous permet de choisir si le braille suivra le focus système, le curseur de l'objet navigateur ou les deux.
+Quand "automatiquement" est sélectionné, NVDA suivra le curseur système et le focus par défaut.
+Dans ce cas, quand la position de l'objet de navigation ou du curseur de revue est modifiée par une action explicite de l'utilisateur, NVDA suivra temporairement la revue, jusqu'à ce que le focus ou le curseur système change.
 
 ==== Lecture par paragraphe ====[BrailleSettingsReadByParagraph]
 Si cette option est activée, le braille sera affiché par paragraphe au lieu d'être affiché par ligne.
@@ -1233,13 +1237,13 @@ Si cette option est activée, la parole sera interrompue à chaque fois que la t
 ==== Permettre le survol en mode dire tout ====[KeyboardSettingsSkimReading]
 Si cette option est activée, certaines commandes de navigation (telles que les touches de navigation rapide en mode navigation ou l'exploration par ligne ou par paragraphe) n'arrêtent pas dire tout, qui reprend plutôt la lecture à la nouvelle position.
 
-==== Émettre un bip à la frappe d'un caractère minuscule quand le verrouillage majuscule est activé ====[VoiceSettingsBeepLowercase]
+==== Émettre un bip à la frappe d'un caractère minuscule quand le verrouillage majuscule est activé ====[KeyboardSettingsBeepLowercase]
 Quand cette case est cochée, un bip d'avertissement est émis si on entre une lettre en combinaison avec la touche "maj" alors que le verrouillage majuscule est activé.
 Généralement, cela n'est pas intentionnel et provient du fait que l'on a oublié que le verrouillage majuscule était activé.
 Cela peut donc être utile d'en être averti.
 
 %kc:setting
-==== Dire les touches de commandes ====[VoiceSettingsSpeakCommandKeys]
+==== Dire les touches de commandes ====[KeyboardSettingsSpeakCommandKeys]
 Raccourci clavier : NVDA+4
 
 Quand cette case est cochée, NVDA annonce, lors de leur frappe, toutes les touches ne correspondant pas à des caractères. Ceci inclut les combinaisons de touches telles que "contrôle" plus une autre lettre.
@@ -1402,7 +1406,7 @@ Après que les données de lecture ou de précomposition ont été combinées en
 Cette option permet de choisir si oui ou non NVDA doit annoncer tous les symboles quand ils apparaissent dans la chaîne de composition.
 Cette option est activée par défaut.
 
-+++ Paramètres du mode navigation (NVDA+contrôle+b) +++BrowseModeSettings]
++++ Paramètres du mode navigation (NVDA+contrôle+b) +++[BrowseModeSettings]
 Le dialogue des paramètres du mode navigation se trouve dans le menu des "Préférences", sous "Mode Navigation...".
 
 Ce dialogue comporte les options suivantes :
@@ -1432,7 +1436,7 @@ Cette option est désactivée par défaut.
 
 Pour activer/désactiver l'inclusion des tables de disposition de n'importe où, veuillez assigner un geste personnalisé en utilisant [le dialogue Gestes de commandes #InputGestures].
 
-==== Configurer l'annonce de champs tels que liens et titres ====
+==== Configurer l'annonce de champs tels que liens et titres ====[BrowseModeLinksAndHeadings]
 Veuillez consulter les options dans le dialogue [Mise en forme des Documents #DocumentFormattingSettings] pour configurer les champs qui sont annoncés durant la navigation tels que les liens, les titres et les tableaux.
 
 ==== Mode formulaire automatique au changement de focus ====[BrowseModeSettingsAutoPassThroughOnFocusChange]
