@@ -136,11 +136,12 @@
       <LI><A HREF="#ReviewCursorSettings">11.1.9. Paramètres du curseur de revue</A>
       <LI><A HREF="#ObjectPresentationSettings">11.1.10. Paramètres de présentation des objets</A>
       <LI><A HREF="#InputCompositionSettings">11.1.11. Paramètres de Saisie</A>
-      <LI><A HREF="#DocumentFormattingSettings">11.1.12. Mise en forme des documents (NVDA+contrôle+d)</A>
-      <LI><A HREF="#Win10OcrSettings">11.1.13. Reconnaissance Optique de Caractères de Windows 10</A>
-      <LI><A HREF="#SpeechDictionaries">11.1.14. Dictionnaires de prononciation</A>
-      <LI><A HREF="#SymbolPronunciation">11.1.15. Prononciation des ponctuations et symboles</A>
-      <LI><A HREF="#InputGestures">11.1.16. Gestes de commandes</A>
+      <LI><A HREF="#BrowseModeSettings">11.1.12. Paramètres du mode navigation (NVDA+contrôle+b)</A>
+      <LI><A HREF="#DocumentFormattingSettings">11.1.13. Mise en forme des documents (NVDA+contrôle+d)</A>
+      <LI><A HREF="#Win10OcrSettings">11.1.14. Reconnaissance Optique de Caractères de Windows 10</A>
+      <LI><A HREF="#SpeechDictionaries">11.1.15. Dictionnaires de prononciation</A>
+      <LI><A HREF="#SymbolPronunciation">11.1.16. Prononciation des ponctuations et symboles</A>
+      <LI><A HREF="#InputGestures">11.1.17. Gestes de commandes</A>
       </UL>
     <LI><A HREF="#SavingAndReloading">11.2. Sauvegarder et recharger la configuration</A>
     <LI><A HREF="#ConfigurationProfiles">11.3. Profils de configuration</A>
@@ -182,7 +183,7 @@
     <LI><A HREF="#HedoProfiLine">14.6. Hedo ProfiLine USB</A>
     <LI><A HREF="#HedoMobilLine">14.7. Hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.8. HumanWare Séries Brailliant BI/B</A>
-    <LI><A HREF="#toc123">14.9. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Series</A>
+    <LI><A HREF="#toc124">14.9. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Series</A>
     <LI><A HREF="#Seika">14.10. Seika braille Displays</A>
     <LI><A HREF="#Papenmeier">14.11. Nouveaux modèles de Papenmeier brailleX</A>
     <LI><A HREF="#PapenmeierOld">14.12. Papenmeier braille brailleX modèles anciens</A>
@@ -229,9 +230,10 @@ Ses points forts sont :
 <LI>La prise en charge de nombreux afficheurs braille, incluant la saisie du braille informatique pour les afficheurs disposant d'un clavier braille ;
 <LI>La possibilité de s'exécuter entièrement depuis une clé USB ou tout autre média portable sans avoir à installer ;
 <LI>Un installateur parlant facile à utiliser ;
-<LI>Une traduction dans 51 langues ;
+<LI>Une traduction dans 52 langues ;
 <LI>La prise en charge des environnements Windows modernes, incluant les versions 32 et 64 bits ;
 <LI>L'accès à l'écran de connexion à Windows et aux autres écrans sécurisés ;
+<LI>L'annonce des contrôles et du texte durant l'utilisation de gestes tactiles
 <LI>La prise en charge des interfaces d'accessibilité communes telles que, Microsoft Active Accessibility, Java Access Bridge, IAccessible2 et UI Automation (UI Automation n'est supporté qu'à partir de Windows 7) ;
 <LI>Support de l'invite de commandes Windows et des applications en mode console.
 </UL>
@@ -241,7 +243,7 @@ Ses points forts sont :
 
 <P>
 Il est important que chacun, partout dans le monde, quelle que soit sa langue, ait le même accès aux technologies. 
-À ce jour, NVDA a été traduit en 51 langues : l'afrikaans, l'albanais, l'Amharique, l'allemand, l'arabe, l'aragonais, le Birman, le bulgare, le catalan, le chinois traditionnel et simplifié, le coréen, le croate, le danois, l'espagnol, l'espagnol colombien, l'éthiopien, le farsi, le finnois, le français, le galicien, le grec, le géorgien, l'hébreu, le hongrois, l'hindi, l'irlandais, l'islandais, l'italien, le japonais, le lithuanien, le macédonien, le néerlandais, le népalais, le norvégien, le polonais, le portugais, le portugais brésilien, le punjabi, le roumain, le russe, le serbe, le slovaque, le slovène, le suédois, le tamoul, le tchèque, le thaï, le turc, l'ukrainien et le vietnamien.
+À ce jour, NVDA a été traduit en 52 langues : l'afrikaans, l'albanais, l'Amharique, l'allemand, l'arabe, l'aragonais, le Birman, le bulgare, le catalan, le chinois traditionnel et simplifié, le coréen, le croate, le danois, l'espagnol, l'espagnol colombien, l'éthiopien, le farsi, le finnois, le français, le galicien, le grec, le géorgien, l'hébreu, le hongrois, l'hindi, l'irlandais, l'islandais, l'italien, le japonais, le kyrgyz, le lithuanien, le macédonien, le néerlandais, le népalais, le norvégien, le polonais, le portugais, le portugais brésilien, le punjabi, le roumain, le russe, le serbe, le slovaque, le slovène, le suédois, le tamoul, le tchèque, le thaï, le turc, l'ukrainien et le vietnamien.
 </P>
 
 <A NAME="SpeechSynthesizerSupport"></A>
@@ -851,8 +853,10 @@ Quand vous atteignez un objet, vous pouvez examiner son contenu en utilisant les
 Par défaut, l'objet navigateur suit le focus système, mais ce comportement peut être désactivé.
 </P>
 <P>
-Note : Par défaut, le braille suit le <A HREF="#SystemFocus">focus</A> et le <A HREF="#SystemCaret">curseur système</A> plutôt que la navigation par objet ou la revue de texte.
-Si vous voulez suivre la navigation par objet ou la revue de texte, vous devez <A HREF="#brailleTether">configurer le braille pour qu'il soit attaché</A> à la revue.
+Note : Par défaut, le braille suit le <A HREF="#SystemFocus">focus</A>, le <A HREF="#SystemCaret">curseur système</A> ainsi que la navigation par objet et la revue de texte.
+Si vous voulez qu'il ne suive que le focus et le curseur, vous devez <A HREF="#BrailleTether">configurer le braille pour qu'il suive</A> le focus.
+Dans ce cas, le braille ne suivra pas la navigation par objet et la revue de texte.
+Si vous voulez que le braille suive la navigation par objet et la revue de texte, vous devrez <A HREF="#BrailleTether">configurer le braille pour qu'il suive</A> la revue.
 </P>
 <P>
 Pour naviguer par objet, utilisez les commandes suivantes :
@@ -2691,13 +2695,16 @@ Indiquer 0 désactive l'affichage de ces messages.
 Cette option permet aux messages de NVDA de rester affichés sur l'afficheur braille indéfiniment.
 </P>
 
+<A NAME="BrailleTether"></A>
 <H5>braille suit</H5>
 
 <P>
 Raccourci clavier : NVDA+contrôle+t
 </P>
 <P>
-Cette option vous permet de choisir si le braille suivra le focus système ou le curseur de l'objet navigateur.
+Cette option vous permet de choisir si le braille suivra le focus système, le curseur de l'objet navigateur ou les deux.
+Quand "automatiquement" est sélectionné, NVDA suivra le curseur système et le focus par défaut.
+Dans ce cas, quand la position de l'objet de navigation ou du curseur de revue est modifiée par une action explicite de l'utilisateur, NVDA suivra temporairement la revue, jusqu'à ce que le focus ou le curseur système change.
 </P>
 
 <A NAME="BrailleSettingsReadByParagraph"></A>
@@ -2845,7 +2852,7 @@ Si cette option est activée, la parole sera interrompue à chaque fois que la t
 Si cette option est activée, certaines commandes de navigation (telles que les touches de navigation rapide en mode navigation ou l'exploration par ligne ou par paragraphe) n'arrêtent pas dire tout, qui reprend plutôt la lecture à la nouvelle position.
 </P>
 
-<A NAME="VoiceSettingsBeepLowercase"></A>
+<A NAME="KeyboardSettingsBeepLowercase"></A>
 <H5>Émettre un bip à la frappe d'un caractère minuscule quand le verrouillage majuscule est activé</H5>
 
 <P>
@@ -2854,7 +2861,7 @@ Généralement, cela n'est pas intentionnel et provient du fait que l'on a oubli
 Cela peut donc être utile d'en être averti.
 </P>
 
-<A NAME="VoiceSettingsSpeakCommandKeys"></A>
+<A NAME="KeyboardSettingsSpeakCommandKeys"></A>
 <H5>Dire les touches de commandes</H5>
 
 <P>
@@ -3158,8 +3165,11 @@ Après que les données de lecture ou de précomposition ont été combinées en
 Cette option permet de choisir si oui ou non NVDA doit annoncer tous les symboles quand ils apparaissent dans la chaîne de composition.
 Cette option est activée par défaut.
 </P>
+
+<A NAME="BrowseModeSettings"></A>
+<H4>11.1.12. Paramètres du mode navigation (NVDA+contrôle+b)</H4>
+
 <P>
-+++ Paramètres du mode navigation (NVDA+contrôle+b) +++BrowseModeSettings]
 Le dialogue des paramètres du mode navigation se trouve dans le menu des "Préférences", sous "Mode Navigation...".
 </P>
 <P>
@@ -3212,6 +3222,7 @@ Cette option est désactivée par défaut.
 Pour activer/désactiver l'inclusion des tables de disposition de n'importe où, veuillez assigner un geste personnalisé en utilisant <A HREF="#InputGestures">le dialogue Gestes de commandes</A>.
 </P>
 
+<A NAME="BrowseModeLinksAndHeadings"></A>
 <H5>Configurer l'annonce de champs tels que liens et titres</H5>
 
 <P>
@@ -3250,7 +3261,7 @@ Par exemple, si l'option est activée, si la lettre j est pressée, elle sera in
 </P>
 
 <A NAME="DocumentFormattingSettings"></A>
-<H4>11.1.12. Mise en forme des documents (NVDA+contrôle+d)</H4>
+<H4>11.1.13. Mise en forme des documents (NVDA+contrôle+d)</H4>
 
 <P>
 Ce dialogue se trouve dans le menu des "Préférences", sous "Mise en forme des documents...".
@@ -3342,7 +3353,7 @@ La hauteur du son montera pour chaque espace, et pour une tabulation, la hauteur
 </UL>
 
 <A NAME="Win10OcrSettings"></A>
-<H4>11.1.13. Reconnaissance Optique de Caractères de Windows 10</H4>
+<H4>11.1.14. Reconnaissance Optique de Caractères de Windows 10</H4>
 
 <P>
 Ce dialogue peut être atteint depuis le menu Préférences de NVDA et vous permet de configurer la <A HREF="#Win10Ocr">reconnaissance optique de caractères de Windows 10</A>.
@@ -3356,7 +3367,7 @@ Cette liste déroulante vous permet de choisir la langue à utiliser pour la rec
 </P>
 
 <A NAME="SpeechDictionaries"></A>
-<H4>11.1.14. Dictionnaires de prononciation</H4>
+<H4>11.1.15. Dictionnaires de prononciation</H4>
 
 <P>
 Le menu "Dictionnaires de prononciation" du menu "Préférences" contient des dialogues qui vous permettent de gérer la manière dont NVDA prononce certains mots ou phrases. 
@@ -3404,7 +3415,7 @@ Les expressions régulières ne sont pas expliquées dans ce manuel, mais on tro
 </P>
 
 <A NAME="SymbolPronunciation"></A>
-<H4>11.1.15. Prononciation des ponctuations et symboles</H4>
+<H4>11.1.16. Prononciation des ponctuations et symboles</H4>
 
 <P>
 Ce dialogue vous permet de modifier la façon dont les ponctuations et autres symboles sont prononcés ainsi que le niveau de symbole auquel ils sont annoncés.
@@ -3445,7 +3456,7 @@ Quand vous avez fini, cliquez sur le bouton "OK" pour sauvegarder vos modificati
 </P>
 
 <A NAME="InputGestures"></A>
-<H4>11.1.16. Gestes de commandes</H4>
+<H4>11.1.17. Gestes de commandes</H4>
 
 <P>
 Dans ce dialogue, vous pouvez configurer les gestes de commandes (raccourcis clavier, boutons d'un afficheur braille etc.) pour les commandes NVDA.
@@ -4647,7 +4658,7 @@ Veuillez consulter la documentation du terminal pour savoir où se situent ces t
 </TR>
 </TABLE>
 
-<A NAME="toc123"></A>
+<A NAME="toc124"></A>
 <H3>14.9. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Series</H3>
 
 <P>
