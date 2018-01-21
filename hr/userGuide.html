@@ -853,8 +853,10 @@ Jednom kad se nađete na objektu, možete pregledati njegov sadržaj koristeći 
 Podrazumjeva se da se navigator objekta pokreće jednako kao i fokus sustava, ali se takvo ponašanje može uključiti ili isključiti.
 </P>
 <P>
-Imajte na umu da brajica prati <A HREF="#SystemFocus">fokus</A> i <A HREF="#SystemCaret">kursor</A> više nego objektnu navigaciju i pregled teksta.
-Ako umjesto toga želite da brajica prati pregled teksta i objektnu navigaciju, trebat ćete <A HREF="#BrailleTether">podesiti brajicu usmjerenu na</A> pregled.
+Imajte na umu, da brajica podrazumijevano prati <A HREF="#SystemFocus">fokus</A> i <A HREF="#SystemCaret">kursor</A> isto kao i pregled teksta i objektnu navigaciju.
+ako želite da brajica prati fokus i kursor, trebate <A HREF="#BrailleTether">konfigurirati brajicu da prati</A> fokus.
+U tom slučaju, brajica neće pratiti objektnu navigaciju i pregled teksta.
+Ako umjesto toga želite da brajica prati pregled teksta i objektnu navigaciju, trebate <A HREF="#BrailleTether">konfigurati brajicu usmjerenu na</A> pregled.
 </P>
 <P>
 Da biste se kretali po objektima, koristite sljedeće prečace:
@@ -2695,13 +2697,15 @@ Ova opcija omogućuje neograničeno prikazivanje poruka, koje šalje NVDA na bra
 </P>
 
 <A NAME="BrailleTether"></A>
-<H5>Brajica usmjerena na</H5>
+<H5>usmjerenje brajice</H5>
 
 <P>
 Prečac: NVDA+kontrol+t
 </P>
 <P>
-Ova opcija omogućuje odabir brajičnog praćenja fokusa ili brajičnog praćenja objekta navigatora/preglednog kursor.
+Ova opcija odlučuje hoće li biti praćen fokus sustava, objekt navigatora/kursor pregleda, ili oboje.
+Kada je opcija "automatski" označena, NVDA će podrazumjevano pratiti sustavni pregled i fokus.
+U tom slučaju kada se pozicija preglednog kursora i/ili objektne navigacije promjeni pod utjecajem korisnikove interakcije, NVDA će se preusmjeriti privremeno na pregled, sve dok se fokus ili pregled ne promijeni.
 </P>
 
 <A NAME="BrailleSettingsReadByParagraph"></A>
