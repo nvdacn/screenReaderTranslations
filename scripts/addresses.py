@@ -42,7 +42,7 @@ addresses = {
     },
     'de': {
         'lang':'German',
-        'email': ['Bernd Dorer <bdorer@mailbox.org>', 'David Parduhn <xkill85@gmx.net>', 'Rene Linke <rene.linke@hamburg.de>', 'Adriani Botez <adriani.botez@gmail.com>', 'Karl Eick <hozosch@web.de>'],
+        'email': ['Bernd Dorer <bdorer@mailbox.org>', 'David Parduhn <xkill85@gmx.net>', 'Rene Linke <rene.linke@hamburg.de>', 'Adriani Botez <adriani.botez@gmail.com>', 'Karl Eick <hozosch@web.de>', 'Robert Hänggi <aarjay.robert@gmail.com>'],
     },
     'el': {
         'lang': 'Greek',
