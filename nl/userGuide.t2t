@@ -343,9 +343,11 @@ Het object dat op een gegeven moment bekeken wordt in objectnavigatie wordt het 
 Wanneer u naar een object navigeert, kuntu de inhoud ervan bekijken met de [commando's voorhet Nalezen van Tekst #ReviewingText] terwijl u zich in de [objectoverzichtmodus #ObjectReview] bevindt.
 Standaard wordt in NVDA de object navigator tegelijk met de systeemfocus verplaatst, maar deze koppeling kan aan- en uitgezet worden.
 
-Braille volgt normaal gesproken de [focus #SystemFocus] en [systeemcursor #SystemCaret] en niet de objectnavigatie en de review cursor.
-Als de braille uitvoer de objectnavigatie en tekst review moet volgen, [configureert u braille om de review cursor te volgen #BrailleTether].
-
+Merk op dat braille standaard zowel de [focus #SysteemFocus] en [Systeem- / tekstcursor #SysteemCursor] volgt alsmede objectnavigatie en tekstreview (tekst lezen).
+Als u wilt dat alleen focus en systeemcursor gevolgd worden, moet u de braillevolgmodusfocus (tethered) #BrailleKoppelen] inschakelen.
+In dit geval zal braille objectnavigatie en tekstreview niet volgen.
+Als u wilt dat objectnavigatie en tekstreview juist wel gevolgd worden, moet u de braillevolgmodus instellen op review #BrailleKoppelen].
+ 
 Voor objectnavigatie zijn de volgende toetscombinaties beschikbaar:
 
 %kc:beginInclude
@@ -1139,10 +1141,12 @@ Als u "0" als waarde invult, worden geen meldingen getoond.
 Met deze optie kunnen NVDA-meldingen voor onbepaalde tijd op de brailleleesregel worden getoond.
 
 %kc:setting
-==== Braille koppelen aan ====[Koppelen]
+==== Braille koppelen ====[BrailleKoppelen]
 Toets: NVDA+control+t
 
-Hiermee kunt u bepalen of de leesregel de systeemfocus dan wel de navigatorobject- / reviewcursor moet volgen
+Hiermee kunt u bepalen of de leesregel de systeemfocus, het navigatorobject / de reviewcursor of beide moet volgen
+Wanneer u "automatisch" selecteert, zal NVDA de systeemfocus en systeemcursor standaard volgen.
+In dit geval zal  NVDA, bij wisseling van positie met betrekking tot navigatorobject of de reviewcursor door toedoen van de gebruiker, tijdelijk overgaan naar de review-modus, tot de focus of de systeemcursor verandert.
 
 ==== Lezen per alinea ====[BrailleïnstellingenLezenPerAlinea]
 Als deze optie is ingeschakeld, zal braille per alinea in plaats van per regel worden weergegeven.
