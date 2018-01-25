@@ -44,6 +44,10 @@ addresses = {
         'lang':'German',
         'email': ['Bernd Dorer <bdorer@mailbox.org>', 'David Parduhn <xkill85@gmx.net>', 'Rene Linke <rene.linke@hamburg.de>', 'Adriani Botez <adriani.botez@gmail.com>', 'Karl Eick <hozosch@web.de>', 'Robert Hänggi <aarjay.robert@gmail.com>'],
     },
+    'de_CH': {
+        'lang':'Swiss German',
+        'email': ['Robert Hänggi <aarjay.robert@gmail.com>'],
+    },
     'el': {
         'lang': 'Greek',
         'email': ['Irene Nakas <irnakas@gmail.com>', 'Nikos Demetriou <nikosdemetriou@googlemail.com>', 'access@e-rhetor.com'],
