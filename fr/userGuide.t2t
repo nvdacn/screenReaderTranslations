@@ -1904,13 +1904,18 @@ Pour le Focus 80 seulement :
 | Défiler vers l'avant | barreBumperBas, barreBumperBas |
 %kc:endInclude
 
-++ Les terminaux Optelec ALVA BC640/680 ++[OptelecALVA]
+++ Séries Optelec ALVA 6/convertisseur de protocole ++[OptelecALVA]
 Les terminaux BC640 et BC680 de chez [Optelec http://www.optelec.com/] sont pris en charge quand ils sont connectés en USB ou Bluetooth.
+Par ailleurs, vous pouvez connecter un terminal Optelec plus ancien, tel qu'un Braille Voyager, en utilisant un convertisseur de protocole fourni par Optelec.
 Vous n'avez besoin d'aucun pilote particulier pour utiliser ces terminaux.
 Il suffit de brancher le terminal et de configurer NVDA pour l'utiliser.
 
-Bien que ces afficheurs disposent d'un clavier braille, ils gèrent eux-mêmes la saisie du braille.
-L'option table d'entrée n'est donc pas applicable.
+Note : NVDA pourrait être incapable d'utiliser un terminal ALVA BC6 via Bluetooth s'il est appairé en utilisant l'utilitaire ALVA Bluetooth.
+Si vous avez appairé votre terminal en utilisant cet utilitaire et que NVDA est incapable de le détecter, nous vous recommandons d'appairer votre terminal ALVA de façon standard en utilisant les paramètres Bluetooth de Windows.
+
+Note : Bien que certains de ces terminaux aient un clavier braille, ils prennent en charge la conversion braille vers texte par eux-mêmes par défaut.
+Cela signifie que le système de saisie du braille de NVDA n'est pas utilisé dans la situation par défaut (le paramètre table de saisie braille n'a pas d'effet).
+Pour les terminaux ALVA avec un microprogramme récent, il est possible de désactiver cette simulation de clavier HID en utilisant un geste de commande.
 
 Voici les assignations de touches pour ces terminaux avec NVDA.
 Veuillez consulter la documentation du terminal pour savoir où se situent ces touches.
@@ -1922,6 +1927,7 @@ Veuillez consulter la documentation du terminal pour savoir où se situent ces t
 | Amener l'affichage braille à la ligne suivante | t4 |
 | Défilement avant de l'affichage braille | t5 ou etouch3 |
 | Aller à la cellule braille | routing |
+| Activer/désactiver la simulation de clavier HID | t1+spEnter |
 | Aller à la première ligne en mode revue | t1+t2 |
 | Aller à la dernière ligne en mode revue | t4+t5 |
 | Bascule du suivi braille | t1+t3 |
@@ -1935,17 +1941,19 @@ Veuillez consulter la documentation du terminal pour savoir où se situent ces t
 | Flèche bas | spDown |
 | Flèche gauche | spLeft |
 | Flèche droite | spRight |
-| Entrer | spEnter |
+| Entrer | spEnter, enter |
 | date et heure | sp1+sp2 |
 | Menu NVDA | sp1+sp3 |
 | Touche Windows+d (Minimiser toutes les applications) | sp1+sp4 |
 | Touche Windows+b (focus sur la zone de notification) | sp3+sp4 |
-| Touche Windows | sp2+sp3 |
+| Touche Windows | sp2+sp3, windows |
 | Touche alt+tab | sp2+sp4 |
 | Touche contrôle+début | t3+spUp |
 | Touche contrôle+fin | t3+spDown |
 | Touche home | t3+spLeft |
 | Touche fin | t3+spRight |
+| touche alt | alt |
+| touche contrôle | control |
 %kc:endInclude
 
 ++ Les terminaux Handy Tech ++[HandyTech]
