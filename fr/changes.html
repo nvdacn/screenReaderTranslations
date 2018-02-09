@@ -12,6 +12,10 @@
 
 <H2>2018.1</H2>
 
+<P>
+Points forts de cette version : support des graphiques sous Microsoft word et Powerpoint, le support de nouveaux terminaux braille : Eurobraille et le convertisseur de protocole Optelec, support amélioré des terminaux braille Hims et Optelec, améliorations de performances pour Mozilla Firefox 58 et au-delà, et bien d'autres choses.
+</P>
+
 <H3>Nouvelles Fonctionnalités</H3>
 
 <UL>
@@ -28,6 +32,8 @@
  <UL>
  <LI>Les fonctionnalités de saisie braille de NVDA peuvent être utilisées avec  ceux-ci ainsi qu'avec les autres terminaux BC6 possédant le firmware 3.0.0 et au-delà.
  </UL>
+<LI>Support initial de Google Sheets avec le mode Braille activé. (<A HREF="http://github.com/nvaccess/nvda/issues/7935">#7935</A>)
+<LI>Support des terminaux braille Eurobraille Esys, Esytime et Iris . (<A HREF="http://github.com/nvaccess/nvda/issues/7488">#7488</A>)
 </UL>
 
 <H3>Changements</H3>
@@ -62,8 +68,9 @@
 <LI>Dans les clients Twitter tels que Chicken Nugget, NVDA n'ignorera plus les 20 derniers caractères des tweets de 280 caractères lors de la lecture. (<A HREF="http://github.com/nvaccess/nvda/issues/7828">#7828</A>)
 <LI>NVDA utilise maintenant la langue appropriée pour l'annonce des symboles quand du texte est sélectionné. (<A HREF="http://github.com/nvaccess/nvda/issues/7687">#7687</A>)
 <LI>Dans les versions récentes d'Office 365, il est de nouveau possible de naviguer dans les diagrammes Excel en utilisant les flèches. (<A HREF="http://github.com/nvaccess/nvda/issues/7046">#7046</A>)
-<LI>En sortie vocale et braille, l'état des contrôles sera maintenant toujours indiqués dans le même ordre, qu'il soit positif ou négatif. Fixes <A HREF="http://github.com/nvaccess/nvda/issues/7076">#7076</A>
+<LI>En sortie vocale et braille, l'état des contrôles sera maintenant toujours indiqués dans le même ordre, qu'il soit positif ou négatif. <A HREF="http://github.com/nvaccess/nvda/issues/7076">#7076</A>
 <LI>Dans les applications telles que Windows 10 Mail, NVDA ne manquera plus d'annoncer les caractères effacés lors de l'appui sur retour-arrière. (<A HREF="http://github.com/nvaccess/nvda/issues/7456">#7456</A>)
+<LI>Toutes les touches du terminal braille Hims Braille Sense Polaris fonctionnent maintenant comme prévu. (<A HREF="http://github.com/nvaccess/nvda/issues/7865">#7865</A>)
 </UL>
 
 <H3>Changements pour les Développeurs</H3>
@@ -79,6 +86,7 @@
 <LI>Une nouvelle variable "isAppX" dans le module config peut être utilisée pour détecter si NVDA s'exécute comme une application Windows Desktop Bridge Store. (<A HREF="http://github.com/nvaccess/nvda/issues/7851">#7851</A>)
 <LI>Pour les implémentations de document telles que NVDAObjects ou browseMode qui ont un textInfo, il existe maintenant une nouvelle classe documentBase.documentWithTableNavigation dont on peut hériter pour obtenir des scripts de navigation dans les tableaux standard. Veuillez vous référer à cette classe pour voir quelles méthodes helper doivent être fournies par votre implémentation pour que la navigation dans les tableaux fonctionne. (<A HREF="http://github.com/nvaccess/nvda/issues/7849">#7849</A>)
 <LI>Le fichier batch scons prend maintenant mieux en compte la présence de Python 3, en utilisant le launcher pour lancer spécifiquement python 2.7 32 bit. (<A HREF="http://github.com/nvaccess/nvda/issues/7541">#7541</A>)
+<LI>hwIo.Hid prend maintenant un paramètre additionnel exclusive, dont la valeur par défaut est True. Si initialisé à False, les autres applications peuvent accéder au périphérique quand il est connecté à NVDA. (<A HREF="http://github.com/nvaccess/nvda/issues/7859">#7859</A>)
 </UL>
 
 <H2>2017.4</H2>
