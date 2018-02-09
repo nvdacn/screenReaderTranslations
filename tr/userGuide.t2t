@@ -1834,14 +1834,6 @@ Daha fazla bilgi için, lütfen Audiologic web sayfasını www.audiologic.it adr
 
 Bu sentezleyici [kodlama işlevini #VoiceSettingsUseSpelling] desteklemez.
 
-++ NVDA İçin Nuance Vocalizer ++[Vocalizer]
-Nuance Vocalizer Nuance Communications Inc. tarafından geliştirilen ticari ve yüksek kalitede bir konuşma sentezleyicidir ve Tiflotecnia, Lda. tarafından NVDA için paketlenmiştir.
-İçinde 50'nin üzerinde ses seçeneği bulunmaktadır ve 30'dan fazla dil desteklenmektedir.
-Tüm seentezleyici bileşenleri ve ses seçenekleri eklenti paketleri olarak oluşturulmuştur ve NVDA taşınabilir kopyalarıyla kullanılabilmektedir.
-
-Daha fazla bilgi için, web sitesini ziyaret edebilirsiniz [www.nvda-vocalizer.com http://www.vocalizer-nvda.com/].
-Bu ürünün satışının belli bir yüzdesi NVDA'nın geliştirilmesi için NV Access firmasına bağışlanmaktadır.
-
 + Desteklenen braille ekranlar +[SupportedBrailleDisplays]
 Bu bölümde NVDA tarafından desteklenen braille ekran bilgileri yer almaktadır.
 
@@ -1904,13 +1896,18 @@ For Focus 80 only:
 | Scroll braille display forward | leftBumperBarDown, rightBumperBarDown |
 %kc:endInclude
 
-++ Optelec ALVA BC640/680 ++[OptelecALVA]
+++ Optelec ALVA 6 serisi/protokol dönüştürücü ++[OptelecALVA]
 USB veya bluetooth ile bağlandıklarında, [Optelec http://www.optelec.com/] tarafından üretilen ALVA BC640 ve BC680 ekranlarının her ikisi de desteklenmektedir.
+Alternatif olarak, Braille Voyager gibi eski bir Optelec ekranı da Optelec tarafından sağlanan protokol dönüştürücüyü kullanarak bağlayabilirsiniz.
 Bu ekranları kullanmak için belirli bir sürücüye gereksiniminiz bulunmamaktadır.
 Yalnızca ekranı takın ve kullanmak için NVDA'yı ayarlayın.
 
-Bu ekranların üzerinde braille klavye olmasının yanında, braille metin çevirisi de bu ekranlar tarafından yapılır.
-Dolayısıyla, NVDA'nın braille girdi tablo ayarı bu ekranları etkilemez.
+Not: NVDA, ALVA Bluetooth yardımcı programı kullanılarak eşleştirildiği zaman Bluetooth üzerinden ALVA BC6 ekranı  kullanamayabilir.
+Bu program  üzerinden eşleştirme yaptığınızda ve NVDA cihazınızı algılayamazsa,  ALVA ekranınızı   Windows bluetooth  ayarlarını kullanarak eşleştirmenizi tavsiye ederiz.
+
+Not: Bu ekranların bazılarında braille klavye olmasının yanında, braille metin çevirisi de varsayılan olarak bu ekranlar tarafından yapılır.
+Dolayısıyla, varsayılan durumda NVDA'nın braille giriş sistemi, mesela girdi tablosu ayarı bu ekranları etkilemez.
+Son versiyon üretici yazılımıyla gelen ALVA ekranlar için, bir girdi hareketiyle bu HID klavye simülasyonunu devre dışı bırakmak mümkündür.
 
 Aşağıda bu ekranla kullanılabilecek tuş kombinasyonları yer almaktadır.
 Lütfen bu tuşların nerede bulunacağıyla ilgili Braille ekran yardım belgelerine bakın.
@@ -1922,6 +1919,7 @@ Lütfen bu tuşların nerede bulunacağıyla ilgili Braille ekran yardım belgel
 | Braille ekran sonraki satır | t4 |
 | Scroll braille display forward | t5 or etouch3 |
 | Odağı braille konumuna taşı | routing |
+| HID klavye simülasyonunu açıp kapama | t1+spEnter |
 | Move to top line in review | t1+t2 |
 | Move to bottom line in review | t4+t5 |
 | Toggle braille tethered to | t1+t3 |
@@ -1935,17 +1933,19 @@ Lütfen bu tuşların nerede bulunacağıyla ilgili Braille ekran yardım belgel
 | Aşağı ok tuşu | spDown |
 | Sol ok tuşu | spLeft |
 | Sağ ok tuşu | spRight |
-| enter tuşu | spEnter |
+| enter tuşu | spEnter, enter|
 | Report date/time | sp1+sp2 |
 | NVDA Menüsü | sp1+sp3 |
 | windows+d tuşu (Tüm uygulamaları küçült) | sp1+sp4 |
 | windows+b key (focus system tray) | sp3+sp4 |
-| windows tuşu | sp2+sp3 |
+| windows tuşu | sp2+sp3, windows |
 | alt+tab tuşu | sp2+sp4 |
 | control+home key | t3+spUp |
 | control+end key | t3+spDown |
 | home key | t3+spLeft |
 | end key | t3+spRight |
+| alt key | alt |
+| control key | control |
 %kc:endInclude
 
 ++ Handy Tech Displays ++[HandyTech]
@@ -2103,7 +2103,7 @@ Tuşların yeri ve tarifi için Braille ekranın dokümantasyonunu inceleyin.
 | Hepsini oku | c1+c2+c3+c4+c5+c6 |
 %kc:endInclude
 
-++ HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Serileri ++
+++ HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Serileri ++[Hims]
 USB ya da bluetooth üzerinden bağlandıklarında, NVDA [Hims http://www.hims-inc.com/] tarafından üretilen Braille Sense, Braille EDGE, Smart Beetle ve Sync Braille kabartma ekranları  destekler. 
 USB üzerinden bağlıyorsanız, sisteminize HIMS tarafından dağıtılan USB sürücülerini kurmanız gerekir.
 Bu sayfadan indirebilirsiniz: http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip
@@ -2452,6 +2452,86 @@ Due to this, and to maintain compatibility with other screen readers in Taiwan, 
 || Name | Key |
 | Scroll braille display back | numpadMinus |
 | Scroll braille display forward | numpadPlus | 
+%kc:endInclude
+
+++ Eurobraille Esys/Esytime/Iris displays ++[Eurobraille]
+The Esys, Esytime and Iris displays from [Eurobraille http://www.eurobraille.fr/] are supported by NVDA.
+Esys and Esytime-Evo devices are supported when connected via USB or bluetooth.
+Older Esytime devices only support USB.
+Iris displays can only be connected via a serial port.
+Therefore, for these displays, you should select the port to which the display is connected after you have chosen this driver in the Braille Settings dialog.
+
+Iris and Esys displays have a braille keyboard with 10 keys.
+Of the two keys placed like a space bar, the left key is corresponding to the backspace key and the right key to the space key.
+
+Following are the key assignments for these displays with NVDA.
+Please see the display's documentation for descriptions of where these keys can be found.
+%kc:beginInclude
+|| Name | Key |
+| Scroll braille display back | switch1-6left, l1 |
+| Scroll braille display forward | switch1-6Right, l8 |
+| Move to current focus | switch1-6Left+switch1-6Right, l1+l8 |
+| Route to braille cell | routing, doubleRouting|
+| Move to previous line in review | joystick1Up |
+| Move to next line in review | joystick1Down |
+| Move to previous character in review | joystick1Left |
+| Move to next character in review | joystick1Right |
+| Switch to previous review mode | joystick1Left+joystick1Up |
+| Switch to next review mode | joystick1Right+joystick1Down |
+| Erase the last entered braille cell or character | backSpace |
+| Translate any braille input and press the enter key | backSpace+space |
+| insert key | dot3+dot5+space, l7 |
+| delete key | dot3+dot6+space |
+| home key | dot1+dot2+dot3+space, joystick2Left+joystick2Up |
+| end key | dot4+dot5+dot6+space, joystick2Right+joystick2Down |
+| leftArrow key | dot2+space, joystick2Left, leftArrow |
+| rightArrow key | dot5+space, joystick2Right, rightArrow |
+| upArrow key | dot1+space, joystick2Up, upArrow |
+| downArrow key | dot6+space, joystick2Down, downArrow |
+| enter key | joystick2Center |
+| pageUp key | dot1+dot3+space |
+| pageDown key | dot4+dot6+space |
+| numpad1 key | dot1+dot6+backspace |
+| numpad2 key | dot1+dot2+dot6+backspace |
+| numpad3 key | dot1+dot4+dot6+backspace |
+| numpad4 key | dot1+dot4+dot5+dot6+backspace |
+| numpad5 key | dot1+dot5+dot6+backspace |
+| numpad6 key | dot1+dot2+dot4+dot6+backspace |
+| numpad7 key | dot1+dot2+dot4+dot5+dot6+backspace |
+| numpad8 key | dot1+dot2+dot5+dot6+backspace |
+| numpad9 key | dot2+dot4+dot6+backspace |
+| numpadInsert key | dot3+dot4+dot5+dot6+backspace |
+| numpadDecimal key | dot2+backspace |
+| numpadDivide key | dot3+dot4+backspace |
+| numpadMultiply key | dot3+dot5+backspace |
+| numpadMinus key | dot3+dot6+backspace |
+| numpadPlus key | dot2+dot3+dot5+backspace |
+| numpadEnter key | dot3+dot4+dot5+backspace |
+| escape key | dot1+dot2+dot4+dot5+space, l2 |
+| tab key | dot2+dot5+dot6+space, l3 |
+| shift+tab key | dot2+dot3+dot5+space |
+| printScreen key | dot1+dot3+dot4+dot6+space |
+| pause key | dot1+dot4+space |
+| applications key | dot5+dot6+backspace |
+| f1 key | dot1+backspace |
+| f2 key | dot1+dot2+backspace |
+| f3 key | dot1+dot4+backspace |
+| f4 key | dot1+dot4+dot5+backspace |
+| f5 key | dot1+dot5+backspace |
+| f6 key | dot1+dot2+dot4+backspace |
+| f7 key | dot1+dot2+dot4+dot5+backspace |
+| f8 key | dot1+dot2+dot5+backspace |
+| f9 key | dot2+dot4+backspace |
+| f10 key | dot2+dot4+dot5+backspace |
+| f11 key | dot1+dot3+backspace |
+| f12 key | dot1+dot2+dot3+backspace |
+| windows key | dot1+dot2+dot3+dot4+backspace |
+| capsLock key | dot7+backspace, dot8+backspace |
+| numLock key | dot3+backspace, dot6+backspace |
+| shift key | dot7+space, l4 |
+| control key | dot7+dot8+space, dot1+dot7+dot8+space, dot4+dot7+dot8+space, l5 |
+| alt key | dot8+space, dot1+dot8+space, dot4+dot8+space, l6 |
+| ToggleHID keyboard input simulation | esytime):l1+joystick1Down, esytime):l8+joystick1Down |
 %kc:endInclude
 
 ++ BRLTTY ++[BRLTTY]
