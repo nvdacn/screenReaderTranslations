@@ -4,6 +4,7 @@ Ce este nou în NVDA
 %!includeconf: ../changes.t2tconf
 
 = 2018.1 =
+Caracteristicile principale ale acestei versiuni includ suport pentru diagramele din Microsoft Word și Microsoft PowerPoint, suport pentru afișajele  braille noi incluzând Eurobraille și convertorul de protocol Optelec, suport îmbunătățit pentru afișajele braille Hims și Optelec, îmbunătățiri de performanță pentru Mozilla Firefox 58 sau mai nou și multe altele.
 
 == Noi funcționalități ==
 - Acum, este posibilă interacțiunea cu diagramele din Microsoft Word și Microsoft  PowerPoint, similară cu suportul existent pentru diagramele din Microsoft Excel. (#7046)
@@ -11,10 +12,12 @@ Ce este nou în NVDA
  - La editarea unui diapozitiv din Microsoft PowerPoint: duceți-vă  cu tasta tab la un obiect diagramă, apoi apăsați enter sau spațiu pentru a interacționa cu diagrama.
   - Pentru a opri interacțiunea cu o diagramă, apăsați escape.
 - Limbă nouă: Kirghiză.
-- Se adaugă suportul pentru VitalSource Bookshelf. (#7155)
+- S-a adăugat suportul pentru VitalSource Bookshelf. (#7155)
 - S-a adăugat suportul pentru convertorul de protocol Optelec, un dispozitiv care permite utilizarea afișajelor Braille Voiager și Satelite utilizând protocolul de comunicare ALVA BC6. (#6731)
 - Acum, este posibilă folosirea intrarea braille cu un afișaj braille ALVA 640 Comfort. (#7733)
  - Funcționalitatea de intrare braille a NVDA-ului poate fi utilizată cu acestea, precum și cu alte afișaje BC6 cu firmware 3.0.0 și mai nou.
+- Suport inițial pentru Google Sheets cu modul braille activat. (#7935)
+- Suport pentru afișajele Eurobraille Esys, Esytime și Iris. (#7488)
 
 
 == Modificări ==
@@ -41,6 +44,7 @@ O ușoară îmbunătățire a performanței la afișarea cantităților mari de 
 - În versiunile recente ale Office 365, este posibilă din nou navigarea prin diagramele Excel folosind săgețile. (#7046)
 - În ieșirile de vorbire și braille, stările controalelor nu vor fi întotdeauna raportate în aceeași ordine, indiferent dacă sunt pozitive sau negative. Reparări #7076
 - În aplicații precum Windows 10 Mail, NVDA nu va mai eșua să anunțe caracterele șterse la apăsarea tastei backspace. (#7456)
+- Toate tastele de pe afișajele Hims Braille Sense Polaris funcționează după cum era de așteptat. (#7865)
 
 
 == Modificări pentru Dezvoltatori ==
@@ -51,6 +55,8 @@ O ușoară îmbunătățire a performanței la afișarea cantităților mari de 
 - S-a implementat un sistem generic braille.BrailleDisplayDriver pentru a face față afișajelor care trimit pachete de confirmare. Luați ca exemplu driver-ul afișajului braille HandyTech. (#7590, #7721)
 - În modulul config, o nouă variabilă „isAppX” poate fi utilizată pentru a detecta dacă NVDA rulează ca o aplicație Windows Desktop Bridge Store. (#7851)
 - Pentru implementările documentelor precum NVDAObjects sau browseMode care au un textInfo, acum există o clasă documentBase.documentWithTableNavigation care poate fi folosită pentru a obține scripturi standard pentru navigarea prin tabel. Vă rugăm să faceți referire la această clasă pentru a vedea care dintre metodele ajutătoare trebuie să fie furnizate de implementarea dumneavoastră pentru ca navigarea prin tabel să funcționeze. (#7849)
+- Fișierul scons batch este mai compatibil acum cu Python 3, făcând utilizarea lansatorului pentru lansarea exactă a python 2.7 pe 32 de biți. (#7541)
+- hwIo.Hid ia un parametru adițional exclusiv care este implicit pe True. Dacă este setat pe False, le este permis altor aplicații să comunice cu un dispozitiv, atâta timp cât este conectat la NVDA. (#7859)
 
 
 = 2017.4 =
