@@ -12,6 +12,10 @@
 
 <H2>2018.1</H2>
 
+<P>
+Highlights of this release include  support for charts in Microsoft word and PowerPoint, support for new braille displays including Eurobraille and the Optelec protocol converter, improved support for Hims and Optelec braille displays, performance improvements for Mozilla Firefox 58 and higher, and much more.
+</P>
+
 <H3>New Features</H3>
 
 <UL>
@@ -22,12 +26,14 @@
  <LI>To stop interacting with a chart, press escape.
  </UL>
 <LI>New language: Kyrgyz.
-<LI>Add support for VitalSource Bookshelf. (<A HREF="http://github.com/nvaccess/nvda/issues/7155">#7155</A>)
+<LI>Added support for VitalSource Bookshelf. (<A HREF="http://github.com/nvaccess/nvda/issues/7155">#7155</A>)
 <LI>Added support for the Optelec protocol converter, a device that allows one to use Braille Voyager and Satellite displays using the ALVA BC6 communication protocol. (<A HREF="http://github.com/nvaccess/nvda/issues/6731">#6731</A>)
 <LI>It is now possible to use braille input with an ALVA 640 Comfort braille display. (<A HREF="http://github.com/nvaccess/nvda/issues/7733">#7733</A>) 
  <UL>
  <LI>NVDA's braille input functionality can be used with these as well as other BC6 displays with firmware 3.0.0 and above.
  </UL>
+<LI>Early support for Google Sheets with Braille mode enabled. (<A HREF="http://github.com/nvaccess/nvda/issues/7935">#7935</A>)
+<LI>Support for Eurobraille Esys, Esytime and Iris braille displays. (<A HREF="http://github.com/nvaccess/nvda/issues/7488">#7488</A>)
 </UL>
 
 <H3>Changes</H3>
@@ -62,8 +68,9 @@
 <LI>In twitter clients such as Chicken Nugget, NVDA will no longer ignore the last 20 characters of 280 character tweets when reading them. (<A HREF="http://github.com/nvaccess/nvda/issues/7828">#7828</A>)
 <LI>NVDA now uses the correct language when announcing symbols when text is selected. (<A HREF="http://github.com/nvaccess/nvda/issues/7687">#7687</A>)
 <LI>In recent versions of Office 365, it is again possible to navigate Excel charts using the arrow keys. (<A HREF="http://github.com/nvaccess/nvda/issues/7046">#7046</A>)
-<LI>In speech and braille output, control states will now always be reported in the same order, regardless whether they are positive or negative. Fixes <A HREF="http://github.com/nvaccess/nvda/issues/7076">#7076</A>
+<LI>In speech and braille output, control states will now always be reported in the same order, regardless whether they are positive or negative. (<A HREF="http://github.com/nvaccess/nvda/issues/7076">#7076</A>)
 <LI>In apps such as Windows 10 Mail, NVDA will no longer fail to announce deleted characters when pressing backspace. (<A HREF="http://github.com/nvaccess/nvda/issues/7456">#7456</A>)
+<LI>All keys on the Hims Braille Sense Polaris displays are now working as expected. (<A HREF="http://github.com/nvaccess/nvda/issues/7865">#7865</A>)
 </UL>
 
 <H3>Changes for developers</H3>
@@ -78,12 +85,14 @@
 <LI>Implemented a generic system in braille.BrailleDisplayDriver to deal with displays which send confirmation/acknowledgement packets. See the handyTech braille display driver as an example. (<A HREF="http://github.com/nvaccess/nvda/issues/7590">#7590</A>, <A HREF="http://github.com/nvaccess/nvda/issues/7721">#7721</A>)
 <LI>A new "isAppX" variable in the config module can be used to detect if NVDA is running as a Windows Desktop Bridge Store app. (<A HREF="http://github.com/nvaccess/nvda/issues/7851">#7851</A>)
 <LI>For document implementations such as NVDAObjects or browseMode that have a textInfo, there is now a new documentBase.documentWithTableNavigation class that can be inherited from to gain standard table navigation scripts. Please refer to this class to see which helper methods must be provided by your implementation for table navigation to work. (<A HREF="http://github.com/nvaccess/nvda/issues/7849">#7849</A>)
+<LI>The scons batch file now better handles when  Python 3 is also installed, making use of the launcher to specifically launch python 2.7 32 bit. (<A HREF="http://github.com/nvaccess/nvda/issues/7541">#7541</A>)
+<LI>hwIo.Hid now takes an additional parameter exclusive, which defaults to True. If set to False, other applications are allowed to communicate with a device while it is connected to NVDA. (<A HREF="http://github.com/nvaccess/nvda/issues/7859">#7859</A>)
 </UL>
 
 <H2>2017.4</H2>
 
 <P>
-Highlights of this release include many  fixes and enhancements to web support including browse mode for web dialogs by default, better reporting of field group labels in browse mode, support for new Windows 10 technologies such as Windows Defender Application Guard and Windows 10 on ARM64, and automatic reporting of screen orientation and battery status.  
+Highlights of this release include many  fixes and enhancements to web support including browse mode for web dialogs by default, better reporting of field group labels in browse mode, support for new Windows 10 technologies such as Windows Defender Application Guard and Windows 10 on ARM64, and automatic reporting of screen orientation and battery status.
 Please note that this version of NVDA no longer supports Windows XP or Windows Vista. The minimum requirement for NVDA is now windows 7 with Service Pack 1.
 </P>
 
