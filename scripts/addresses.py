@@ -154,7 +154,7 @@ addresses = {
     },
     'nl': {
         'lang':'Dutch',
-        'email': ['Bram Duvigneau <bram@bramd.nl>', 'Bart Simons <bart@bartsimons.be>', 'A Campen <a.campen@wxs.nl>', 'Leonard de Ruijter <leonard_dev@babbage.com>'],
+        'email': ['Bram Duvigneau <bram@bramd.nl>', 'Bart Simons <bart@bartsimons.be>', 'A Campen <a.campen@wxs.nl>', 'Leonard de Ruijter <alderuijter@gmail.com>'],
     },
         'pa': {
         'lang':'Punjabi',
