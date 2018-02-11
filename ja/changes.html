@@ -12,6 +12,10 @@
 
 <H2>2018.1</H2>
 
+<P>
+このリリースのハイライトは、Microsoft Word と PowerPoint におけるグラフの操作、Eurobraille 点字ディスプレイや Optelec プロトコルコンバーターへの対応、HIMS や Optelec の点字ディスプレイ対応の改善、Mozilla Firefox 58 以降への対応の改善などです。
+</P>
+
 <H3>新機能</H3>
 
 <UL>
@@ -28,6 +32,8 @@
  <UL>
  <LI>その他の BC6 ディスプレイをファームウェア 3.0.0 以上で使用する場合にも、 NVDA の点字文字入力は利用できます。
  </UL>
+<LI>Google スプレッドシートの点字サポートへの実験的な対応 (<A HREF="http://github.com/nvaccess/nvda/issues/7935">#7935</A>)
+<LI>Eurobraille Esys, Esytime および Iris 点字ディスプレイへの対応 (<A HREF="http://github.com/nvaccess/nvda/issues/7488">#7488</A>)
 </UL>
 
 <H3>変更点</H3>
@@ -62,8 +68,9 @@
 <LI>Chiken Nugget のような Twitter クライアントにおいて、NVDA が280文字のツイートの最後の20文字を読み飛ばす不具合を修正しました。(<A HREF="http://github.com/nvaccess/nvda/issues/7828">#7828</A>)
 <LI>テキストが選択されたときに NVDA が記号の報告を適切な言語で行うようになりました。(<A HREF="http://github.com/nvaccess/nvda/issues/7687">#7687</A>)
 <LI>最近のバージョンの Office 365 版 Excel においてグラフを矢印キーで操作できなかった不具合を修正しました。(<A HREF="http://github.com/nvaccess/nvda/issues/7046">#7046</A>)
-<LI>音声および点字ディスプレイ出力において、コントロールの状態が、「あり」と「なし」の違いにかかわらず、常に同じ順序で報告されるようになりました。 <A HREF="http://github.com/nvaccess/nvda/issues/7076">#7076</A> の修正です。
+<LI>音声および点字ディスプレイ出力において、コントロールの状態が、「あり」と「なし」の違いにかかわらず、常に同じ順序で報告されるようになりました。(<A HREF="http://github.com/nvaccess/nvda/issues/7076">#7076</A>)
 <LI>Windows 10 Mail などのアプリにおいてバックスペースが押されたときに NVDA が削除された文字の報告をできなかった不具合を修正しました。(<A HREF="http://github.com/nvaccess/nvda/issues/7456">#7456</A>)
+<LI>Hims Braille Sense Polaris ディスプレイのすべてのキーが期待通りに動作するようになりました。(<A HREF="http://github.com/nvaccess/nvda/issues/7865">#7865</A>)
 </UL>
 
 <H3>開発者向けの変更</H3>
@@ -78,6 +85,8 @@
 <LI>braille.BrailleDisplayDriver に確認とアクナレッジメントのパケットを送信するための汎用のシステムが実装されました。使用例として handyTech ドライバーを参照してください。(<A HREF="http://github.com/nvaccess/nvda/issues/7590">#7590</A>, <A HREF="http://github.com/nvaccess/nvda/issues/7721">#7721</A>)
 <LI>config モジュールに新しい変数 isAppX が追加されました。NVDA が Windows Desktop Bridge ストアアプリとして実行されているかどうかを判断できます。(<A HREF="http://github.com/nvaccess/nvda/issues/7851">#7851</A>)
 <LI>NVDAObjects や browseMode など textInfo を持つドキュメントの実装について、標準のテーブルナビゲーションスクリプトを取得するための継承元として documentBase.documentWithTableNavigation クラスが追加されました。新たに実装されたドキュメントをテーブルナビゲーションに対応させるためには、このクラスを参照して、どのヘルパーメソッドを提供するべきかを検討してください。(<A HREF="http://github.com/nvaccess/nvda/issues/7849">#7849</A>)
+<LI>Python 3 がインストールされている場合に scons バッチファイルが Python ランチャーを適切に使用し、Python 2.7 32ビット版を呼び出すように改善されました。(<A HREF="http://github.com/nvaccess/nvda/issues/7541">#7541</A>)
+<LI>hwIo.Hid が exclusive パラメーターを受け取るようになりました。この値のデフォルトは True です。 False の場合にはデバイスが NVDA に接続されていても他のアプリとの通信が許可されます。(<A HREF="http://github.com/nvaccess/nvda/issues/7859">#7859</A>)
 </UL>
 
 <H2>2017.4</H2>
