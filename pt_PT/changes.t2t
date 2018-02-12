@@ -5,7 +5,11 @@
 Traduzido pela Equipa portuguesa do NVDA
 
 = 2018.1 =
-
+Os destaques desta versão são:
+- Suporte para gráficos no Microsoft word e PowerPoint
+- Suporte para mais linhas Braille, Eurobraille e Optelec ALVA protocol converter
+- Suporte melhorado para as linhas Braille HIMS e Optelec
+- Melhorias no desempenho do NVDA no Mozilla Firefox 58 e superiores.
 
 == Novas Funcionalidades ==
 - Já é possível interagir com gráficos no Microsoft Word e Microsoft PowerPoint, de maneira similar ao suporte existente para gráficos no Microsoft Excel. (#7046)
@@ -17,6 +21,8 @@ Traduzido pela Equipa portuguesa do NVDA
 - Adicionado suporte para o Optelec protocol converter, um dispositivo que permite usar as linhas Braille Voyager e Satellite com o protocolo de comunicações das ALVA BC6. (#6731)
 - Já é possível escrever em Braille com as linhas Braille ALVA 640 Comfort. (#7733) 
  - A funcionalidade de escrita Braille do NVDA pode ser usada com este modelo e com outros da série BC6 com o firmware 3.0.0 ou superior.
+- Suporte parcial para o Google Sheets com o modo Braille activado. (#7935)
+- Suporte para as linhas Braille Eurobraille Esys, Esytime and Iris. (#7488)
 
 
 == Alterações ==
@@ -43,6 +49,7 @@ Traduzido pela Equipa portuguesa do NVDA
 - Em versões recentes do Office 365, volta a ser possível navegar com as setas nos gráficos do Excel. (#7046)
 -  Em voz e em Braille, o estado dos controlos são sempre anunciados na mesma ordem, independentemente de serem positivos ou negativos. Corrige o bug #7076
 - Em aplicações como o Windows 10 Mail, o NVDA já anuncia os caracteres apagados com backspace. (#7456)
+- Todas as teclas do HIMS Braille Sense Polaris já funcionam como esperado. (#7865)
 
 
 == Alterações para Desenvolvedores ==
@@ -53,6 +60,8 @@ Traduzido pela Equipa portuguesa do NVDA
 - Implemented a generic system in braille.BrailleDisplayDriver to deal with displays which send confirmation/acknowledgement packets. See the handyTech braille display driver as an example. (#7590, #7721)
 - A new "isAppX" variable in the config module can be used to detect if NVDA is running as a Windows Desktop Bridge Store app. (#7851)
 - For document implementations such as NVDAObjects or browseMode that have a textInfo, there is now a new documentBase.documentWithTableNavigation class that can be inherited from to gain standard table navigation scripts. Please refer to this class to see which helper methods must be provided by your implementation for table navigation to work. (#7849)
+- The scons batch file now better handles when  Python 3 is also installed, making use of the launcher to specifically launch python 2.7 32 bit. (#7541)
+- hwIo.Hid now takes an additional parameter exclusive, which defaults to True. If set to False, other applications are allowed to communicate with a device while it is connected to NVDA. (#7859)
 
 
 = 2017.4 =
