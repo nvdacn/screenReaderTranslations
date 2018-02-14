@@ -25,7 +25,7 @@ Najważniejsze właściwości NVDA to:
 - wsparcie dla wielu monitorów Brajlowskich uwzględniające możliwość wprowadzania tekstu na monitorach z klawiaturą brajlowską,
 - możliwość uruchamiania z pamięci USB lub innych nośników przenośnych bez konieczności instalacji,
 - łatwy w użyciu udźwiękowiony instalator,
-- tłumaczenie na 51 języków,
+- tłumaczenie na 52 języki,
 - wsparcie dla współczesnych systemów operacyjnych Windows, zarówno 32, jak i 64 bitowych,
 - możliwość dostępu do ekranu logowania w systemie oraz innych zabezpieczonych ekranów,
 - oznajmianie kontrolek i tekstu podczas używania gestów dotykowych
@@ -35,7 +35,7 @@ Najważniejsze właściwości NVDA to:
 
 ++ Wersje językowe ++[Internationalization]
 Ważne jest, by ludzie z całego świata, bez względu na ojczysty język, mogli mieć równy dostęp do technologii.
-Poza angielskim NVDA został przetłumaczony na 51 języków, w tym: afrykanerski, albański, amharski, arabski, aragoński, birmański, bułgarski, chiński tradycyjny i uproszczony, chorwacki, czeski, duński, fiński, francuski, galicyjski, grecki,   gruziński, hebrajski, hindi,  hiszpański, hiszpański kolumbijski, holenderski,  irlandzki, islandzki,  japoński, kannada, kataloński, koreański, litewski, macedoński, mandaryński, nepalski, niemiecki, norweski, pendżabski, perski, polski, portugalski, portugalski brazylijski, rosyjski, rumuński,  serbski, słowacki, słoweński, szwedzki, tajski, tamilski, turecki, ukraiński, węgierski, wietnamski i włoski.
+Poza angielskim NVDA został przetłumaczony na 52 języki, w tym: afrykanerski, albański, amharski, arabski, aragoński, birmański, bułgarski, chiński tradycyjny i uproszczony, chorwacki, czeski, duński, fiński, francuski, galicyjski, grecki,   gruziński, hebrajski, hindi,  hiszpański, hiszpański kolumbijski, holenderski,  irlandzki, islandzki,  japoński, kannada, kataloński, kirgizki, koreański, litewski, macedoński, mandaryński, nepalski, niemiecki, norweski, pendżabski, perski, polski, portugalski, portugalski brazylijski, rosyjski, rumuński,  serbski, słowacki, słoweński, szwedzki, tajski, tamilski, turecki, ukraiński, węgierski, wietnamski i włoski.
 
 ++ Obsługa syntezatora mowy ++[SpeechSynthesizerSupport]
 NVDA oferuje wiele wersji językowych interfejsu i daje możliwość odczytywania treści w każdym języku wspieranym przez zainstalowany w systemie syntezator mowy.
@@ -1149,6 +1149,7 @@ Skrót Klawiszowy: NVDA+Ctrl+T
 
 Ta opcja pozwala wybrać, czy monitor brajlowski będzie podążać za punktem uwagi, czy obiektem nawigatora/punktem przeglądu, albo oboma.
 Gdy ustawione jest "automatycznie", NVDA będzie domyślnie podążać za punktem uwagi i kursorem systemu.
+W takim przypadku, gdy pozycja obiektu nawigatora lub kursora przeglądu się zmieni na skutek interakcji użytkownika, NVDA tymczasowo powiąże brajl z kursorem przeglądu, do czasu, gdy zmieni się pozycja punktu uwagi lub kursora systemowego.
 
 ==== czytaj akapitami ====[BrailleSettingsReadByParagraph]
 Gdy zaznaczysz to pole, monitor brajlowski będzie wyświetlać tekst akapitami, nie liniami. 
@@ -1833,14 +1834,6 @@ Aby uzyskać więcej informacji, odwiedź stronę Audiologic: www.audiologic.it.
 
 Ten syntezator nie obsługuje [Wykrywania wymowy #VoiceSettingsUseSpelling].
 
-++ Nuance Vocalizer dla NVDA ++[Vocalizer]
-Nuance Vocalizer jest to komercyjny, wysokiej jakości syntezator mowy rozwijany przez firmę Nuance Communications, Inc. i przygotowany dla NVDA przez Tiflotecnia, Lda.
-Zawiera ponad 50 różnych głosów, które możesz zainstalować, mówiących ponad 30 językami.
-Wszystkie komponenty syntezatora i głosy są umieszczone w pakietach dodatków, co pozwala używać ich w przenośnych kopiach NVDA.
-
-Możesz uzyskać więcej informacji o Nuance Vocalizer dla NVDA i dowiedzieć się jak je nabyć na stronie [www.vocalizer-nvda.com http://www.vocalizer-nvda.com/].
-Procent ze sprzedaży tego produktu jest przekazywany dla NV Access jako dotacja na dalszy rozwój NVDA.
-
 + Obsługiwane monitory brajlowskie +[SupportedBrailleDisplays]
 Ten rozdział zawiera informacje na temat monitorów brajlowskich wspieranych przez NVDA.
 
@@ -1903,16 +1896,21 @@ Tylko dla Focus 80:
 | Przewiń wyświetlacz na przód | LeftBumperBarDown, RightBumperBarDown |
 %kc:endInclude
 
-++ Optelec ALVA BC640/680 ++[OptelecALVA]
+++ Optelec ALVA  serie 6 / konwerter protokołu ++[OptelecALVA]
 Zarówno model ALVA BC640 i BC680 firmy [Optelec http://www.optelec.com/] są obsługiwane przy połączeniu przez USB i bluetooth.
-Nie wymagają instalacji żadnych sterowników dla prawidłowego działania.
+Alternatywnie, można podłączyć starszą linijkę Optelec, np. Braille Voyager, przy użyciu konwertera protokołu dostarczanego przez Optelec.
+Linijki nie wymagają instalacji żadnych sterowników dla prawidłowego działania.
 Wystarczy podłączyć monitor i skonfigurować NVDA aby z niego korzystał.
 
-Monitory te posiadają klawiaturę brajlowską, ale same wykonują proces zamiany brajla na tekst.
-Ustawienia tabeli wprowadzania brajla w NVDA nie mają w związku z tym zastosowania.
+Uwaga: NVDA może nie być w stanie używać linijki ALVA BC6 podłączonej przez bluetooth, gdy jest ona sparowana przy pomocy narzędzia ALVA Bluetooth utility.
+Jeśli sparowano urządzenie przy pomocy tego narzędzia i NVDA nie może go wykryć, zalecamy sparowanie linijki ALVA w zwykły sposób przy użyciu ustawień Bluetooth Windows.
 
-Poniżej klawisze monitora, których możesz używać z NVDA. 
-Aby je odnaleźć, zajrzyj do dokumentacji urządzenia:
+Niektóre z tych monitorów posiadają klawiaturę brajlowską, ale same wykonują proces zamiany brajla na tekst.
+Ustawienia tabeli wprowadzania brajla w NVDA nie mają w związku z tym zastosowania.
+Dla monitorów ALVA z najnowszym firmware, możliwe jest wyłączenie tej symulacji klawiatury HID przy pomocy zdarzenia wejścia.
+
+Poniżej klawisze monitoraów, których możesz używać z NVDA. 
+Aby je odnaleźć, zajrzyj do dokumentacji urządzenia.
 %kc:beginInclude
 || Działanie | Klawisz skrótu |
 | Przewiń brajl do tyłu | T1 albo Etouch1 |
@@ -1921,6 +1919,7 @@ Aby je odnaleźć, zajrzyj do dokumentacji urządzenia:
 | Przenieś monitor do następnej linii | T4 |
 | Przewiń brajl do przodu | T5 lub Etouch3 |
 | Przywołaj do komórki brajla | Routing |
+| Przełącz symulację klawiatury HID | t1+spEnter |
 | Przenieś do pierwszej linii w przeglądzie | T1+T2 |
 | Przenieś do ostatniej linii w przeglądzie | T4+T5 |
 | Przełącz brajl związany z | T1+T3 |
@@ -1934,17 +1933,19 @@ Aby je odnaleźć, zajrzyj do dokumentacji urządzenia:
 | Klawisz Strzałka w dół | Sp Down |
 | Klawisz Strzałka w lewo | Sp Left |
 | Klawisz Strzałka w prawo | Sp Right |
-| Klawisz Enter | Sp Enter |
+| Klawisz Enter | Sp Enter, enter |
 | Odczytaj datę/czas | Sp1+Sp2 |
 | Menu NVDA | Sp1+Sp3 |
 | Klawisz Windows+D (minimalizuje wszystkie okna) | Sp1+Sp4 |
 | Klawisz Windows+B (przejdź do zasobnika systemowego) | Sp3+Sp4 |
-| Klawisz Windows | Sp2+Sp3 |
+| Klawisz Windows | Sp2+Sp3, windows |
 | Klawisz Alt+Tab | Sp2+Sp4 |
 | Klawisz Ctrl+Home | T3+Sp Up |
 | Klawisz Ctrl+End | T3+Sp Down |
 | Klawisz Home | T3+Sp Left |
 | Klawisz End | T3+Sp Right |
+| Klawisz alt | alt |
+| Klawisz control | control |
 %kc:endInclude
 
 ++ Monitory Handy Tech ++[HandyTech]
@@ -2102,7 +2103,7 @@ Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia:
 | Czytaj wszystko | C1+C2+C3+C4+C5+C6 |
 %kc:endInclude
 
-++ HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Series ++
+++ HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Series ++[Hims]
 NVDA obsługuje monitory Braille Sense, Braille EDGE, Smart Beetle i Sync Braille produkcji [Hims http://www.hims-inc.com/] przy połączeniu przez USB i bluetooth. 
 Aby korzystać z połączenia USB, musisz zainstalować sterowniki USB HIMS w swoim systemie.
 Możesz je pobrać stąd: http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip
@@ -2451,6 +2452,86 @@ W związku z powyższym i dla zachowania kompatybilności z innymi czytnikami ek
 || Nazwa | Klawisz |
 | Przewiń wyświetlacz brajlowski wstecz | numpadMinus |
 | Przewiń wyświetlacz brajlowski w przód | numpadPlus | 
+%kc:endInclude
+
+++ Eurobraille Esys/Esytime/Iris displays ++[Eurobraille]
+Monitory brajlowskie Esys, Esytime and Iris  produkcji [Eurobraille http://www.eurobraille.fr/] są obsługiwane przez NVDA.
+Esys and Esytime-Evo są obsługiwane po podłączeniu przez USB lub bluetooth.
+Starsze urządzenia Esytime  obsługują tylko USB.
+Monitory Iris mogą być podłączone tylko przez  port szeregowy.
+Dlatego też, dla tych monitorów należy wybrać port, do którego jest podłączone urządzenie po wybraniu tego sterownika w ustawieniach brajla.
+
+Monitory Iris and Esys  posiadają klawiaturę brajlowską z 10 klawiszami.
+Z dwóch klawiszy umieszczonych jak spacja, lewy klawisz odpowiada backspace, a prawy to spacja.
+
+Poniżej skróty klawiszowe NVDA dla tych monitorów.
+Informacji na temat rozmieszczenia tych klawiszy, znajdują się w dokumentacji monitora.
+%kc:beginInclude
+|| Nazwa | Klawisz |
+| Przewiń wyświetlacz wstecz | switch1-6Lewo, l1 |
+| Przewiń wyświetlacz do przodu | switch1-6 Prawo, l8 |
+| Przejdź do punktu uwagi | switch1-6Lewo+switch1-6Prawo, l1+l8 |
+| Przywołaj do komórki brajla | routing, doubleRouting|
+| Przejdź do poprzedniej linii w przeglądzie | joystick1Góra |
+| Przejdź do następnej linii w przeglądzie | joystick1Dół |
+| Przejdź do poprzedniego znaku w przeglądzie | joystick1Lewo |
+| Przejdź do następnego znaku w przeglądzie | joystick1Prawo |
+| Przełącz do poprzedniego trybu przeglądania | joystick1Lewo+joystick1Góra |
+| Przełącz do następnego trybu przeglądania | joystick1Prawo+joystick1Dół |
+| Usuń ostatni znak lub komórkę brajla | backSpace |
+| Przetłumacz wprowadzony brajl i naciśnij enter | backSpace+spacja |
+| Klawisz insert | punkt3+punkt5+spacja, l7 |
+| Klawisz delete | punkt3+punkt6+spacja |
+| Klawisz home | punkt1+punkt2+punkt3+spacja, joystick2Lewo+joystick2Góra |
+| Klawisz end | punkt4+punkt5+punkt6+spacja, joystick2Prawo+joystick2Dół |
+| Klawisz strzałka w lewo | punkt2+spacja, joystick2Lewo, strzałka w lewo |
+| Klawisz strzałka w prawo | punkt5+spacja, joystick2Prawo, strzałka w prawo |
+| Klawisz  strzałka w górę | punkt1+spacja, joystick2Góra, strzałka w górę |
+| Klawisz  strzałka w dół| punkt6+spacja, joystick2Dół, strzałka w dół |
+| Klawisz enter | joystick2Środek |
+| Klawisz pageUp | punkt1+punkt3+spacja |
+| Klawisz pageDown | punkt4+punkt6+spacja |
+| Klawisz numpad1 | punkt1+punkt6+backspace |
+| Klawisz numpad2 | punkt1+punkt2+punkt6+backspace |
+| Klawisz numpad3 | punkt1+punkt4+punkt6+backspace |
+| Klawisz numpad4 | punkt1+punkt4+punkt5+punkt6+backspace |
+| Klawisz numpad5 | punkt1+punkt5+punkt6+backspace |
+| Klawisz numpad6 | punkt1+punkt2+punkt4+punkt6+backspace |
+| Klawisz numpad7 | punkt1+punkt2+punkt4+punkt5+punkt6+backspace |
+| Klawisz numpad8 | punkt1+punkt2+punkt5+punkt6+backspace |
+| Klawisz numpad9 | punkt2+punkt4+punkt6+backspace |
+| Klawisz numpadInsert | punkt3+punkt4+punkt5+punkt6+backspace |
+| Klawisz numpad kropka | punkt2+backspace |
+| Klawisz  numpad slash | punkt3+punkt4+backspace |
+| Klawisz  numpad gwiazdka | punkt3+punkt5+backspace |
+| Klawisz  numpad minus| punkt3+punkt6+backspace |
+| Klawisz numpad Plus | punkt2+punkt3+punkt5+backspace |
+| Klawisz numpad enter | punkt3+punkt4+punkt5+backspace |
+| Klawisz escape | punkt1+punkt2+punkt4+punkt5+spacja, l2 |
+| Klawisz tab | punkt2+punkt5+punkt6+spacja, l3 |
+| Klawisz shift+tab | punkt2+punkt3+punkt5+spacja |
+| Klawisz  printScreen | punkt1+punkt3+punkt4+punkt6+spacja |
+| Klawisz pause | punkt1+punkt4+spacja |
+| Klawisz aplikacji | punkt5+punkt6+backspace |
+| Klawisz f1 | punkt1+backspace |
+| Klawisz f2 | punkt1+punkt2+backspace |
+| Klawisz f3 | punkt1+punkt4+backspace |
+| Klawisz f4 | punkt1+punkt4+punkt5+backspace |
+| Klawisz f5 | punkt1+punkt5+backspace |
+| Klawisz f6 | punkt1+punkt2+punkt4+backspace |
+| Klawisz f7 | punkt1+punkt2+punkt4+punkt5+backspace |
+| Klawisz f8 | punkt1+punkt2+punkt5+backspace |
+| Klawisz f9 | punkt2+punkt4+backspace |
+| Klawisz f10 | punkt2+punkt4+punkt5+backspace |
+| Klawisz f11 | punkt1+punkt3+backspace |
+| Klawisz f12 | punkt1+punkt2+punkt3+backspace |
+| Klawisz windows | punkt1+punkt2+punkt3+punkt4+backspace |
+| Klawisz capsLock | punkt7+backspace, punkt8+backspace |
+| Klawisz numLock | punkt3+backspace, punkt6+backspace |
+| Klawisz shift | punkt7+spacja, l4 |
+| Klawisz control | punkt7+punkt8+spacja, punkt1+punkt7+punkt8+spacja, punkt4+punkt7+punkt8+spacja, l5 |
+| Klawisz alt | punkt8+spacja, punkt1+punkt8+spacja, punkt4+punkt8+spacja, l6 |
+| Przełącz symulację klawiatury HID | esytime):l1+joystick1Dół, esytime):l8+joystick1Dół |
 %kc:endInclude
 
 ++ BRLTTY ++[BRLTTY]
