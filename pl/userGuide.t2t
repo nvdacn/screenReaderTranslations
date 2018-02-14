@@ -28,6 +28,7 @@ Najważniejsze właściwości NVDA to:
 - tłumaczenie na 51 języków,
 - wsparcie dla współczesnych systemów operacyjnych Windows, zarówno 32, jak i 64 bitowych,
 - możliwość dostępu do ekranu logowania w systemie oraz innych zabezpieczonych ekranów,
+- oznajmianie kontrolek i tekstu podczas używania gestów dotykowych
 - wsparcie dla wspólnych interfejsów dostępności, takich jak Microsoft Active Accessibility, Java Access Bridge, iAccessible2, UI Automation. UI Automation jest obsługiwany tylko pod kontrolą systemów Windows 7 i wyższych,
 - wsparcie dla wiersza poleceń systemu Windows i aplikacji konsolowych.
 -
@@ -338,9 +339,11 @@ Obiekt aktualnie przeglądany, jest nazywany obiektem nawigatora.
 Gdy dotrzesz do obiektu, możesz przejrzeć jego treść, używając [poleceń przeglądania tekstu, #ReviewingText] gdy znajdujesz się w [trybie przeglądania obiektu #ObjectReview].
 Domyślnie obiekt nawigatora podąża za punktem uwagi, ale to zachowanie można włączać i wyłączać.
 
-Monitor brajlowski domyślnie podąża za [punktem uwagi #SystemFocus] i [kursorem systemowym #SystemCaret] zamiast za obiektem nawigatora i przeglądaniem tekstu.
-Jeśli chcesz spowodować podążanie brajla za obiektem nawigatora lub przeglądaniem tekstu musisz [ustawić powiązanie brajla z #BrailleTether] przeglądaniem.
-
+Monitor brajlowski domyślnie podąża za [punktem uwagi #SystemFocus] i [kursorem systemowym #SystemCaret] oraz obiektem nawigatora i kursorem przeglądu tekstu.
+Jeśli chcesz spowodować podążanie brajla tylko za obiektem nawigatora lub przeglądaniem tekstu, musisz [ustawić powiązanie brajla z #BrailleTether] punktem uwagi.
+W takim przypadku, brajl nie będzie podążał za obiektem nawigacyjnym i kursorem przeglądu.
+Aby brajl podążał za obiektem nawigatora i przeglądem tekstu, należy [skonfigurować powiązanie brajla z #BrailleTether] przeglądem.
+ 
 Poniżej znajdują się skróty klawiszowe do nawigacji w hierarchii obiektów:
 
 %kc:beginInclude
@@ -488,7 +491,6 @@ Dodatkowo możesz wymusić tryb formularza, który pozostanie wówczas aktywny d
 | Otwórz długi opis | NVDA+d | Otwiera nowe okno zawierające długi opis elementu, na którym się znajdujesz (jeśli dla tego elementu długi opis został zdefiniowany) | 
 %kc:endInclude
 
-
 ++ Nawigacja pojedynczymi literami ++[SingleLetterNavigation]
 Podczas pracy w trybie czytania można używać pojedynczych liter do przechodzenia pomiędzy kolejnymi elementami określonego typu. 
 Zauważ, że nie wszystkie te komendy są dostępne we wszystkich typach dokumentów.
@@ -523,8 +525,8 @@ Aby przejść na początek lub koniec elementów takich jak listy i tabele:
 || Działanie | Skrót | Opis |
 | Przejdź na początek kontenera | Shift+, | Przechodzi na początek kontenera (listy, tabeli etc.), na którym ustawiony jest kursor |
 | Przejdź poza koniec kontenera | Przecinek | Przenosi poza koniec kontenera (listy, tabeli, etc.) na którym znajdował się kursor |
-
 %kc:endInclude
+
 Niektóre aplikacje webowe takie jak Gmail, Twitter czy Facebook, używają pojedynczych liter jako klawiszy skrótu.
 Jeśli chcesz używać tych skrótów i móc jednocześnie posługiwać się klawiszami strzałek do odczytu treści w trybie czytania, możesz tymczasowo wyłączyć nawigację pojedynczymi literami NVDA.
 %kc:beginInclude
@@ -1142,10 +1144,11 @@ Wprowadzenie wartości 0, wyłącza całkowicie wyświetlanie tych komunikatów.
 Ta opcja powoduje, że wiadomości NVDA są w nieskończoność wyświetlane na monitorze brajlowskim.
 
 %kc:setting
-==== Brajl związany z ====[BrailleTether]
+==== Powiązanie brajla ====[BrailleTether]
 Skrót Klawiszowy: NVDA+Ctrl+T
 
-Ta opcja pozwala wybrać, czy monitor brajlowski będzie podążać za punktem uwagi, czy obiektem nawigatora/punktem przeglądu.
+Ta opcja pozwala wybrać, czy monitor brajlowski będzie podążać za punktem uwagi, czy obiektem nawigatora/punktem przeglądu, albo oboma.
+Gdy ustawione jest "automatycznie", NVDA będzie domyślnie podążać za punktem uwagi i kursorem systemu.
 
 ==== czytaj akapitami ====[BrailleSettingsReadByParagraph]
 Gdy zaznaczysz to pole, monitor brajlowski będzie wyświetlać tekst akapitami, nie liniami. 
@@ -1233,13 +1236,13 @@ Jeśli włączona, ta opcja przerywa mowę za każdym razem, gdy naciśnięto kl
 ==== Zezwalaj na przeglądanie w trybie czytaj wszystko ====[KeyboardSettingsSkimReading]
 Jeśli włączona, niektóre polecenia nawigacyjne (takie jak klawisze szybkiej nawigacji w trybie czytania albo przechodzenie po liniach i akapitach) nie przerywają odczytywania tekstu od kursora do końca dokumentu, a zamiast tego odczyt tekstu przeskakuje do nowej pozycji i jest kontynuowany.
 
-==== Dźwięk dla małych liter przy włączonym CapsLock ====[VoiceSettingsBeepLowercase]
+==== Dźwięk dla małych liter przy włączonym CapsLock ====[KeyboardSettingsBeepLowercase]
 Jeśli opcja jest włączona, krótki dźwięk zostanie wygenerowany za każdym razem, gdy wciśnięto literę z shiftem przy włączonym CapsLock.
 Na ogół wpisywanie liter z shiftem przy włączonym CapsLock nie jest zamierzone i wynika z niewiedzy, że CapsLock jest włączony.
 A zatem ostrzeżenie o tym fakcie może się okazać pomocne.
 
 %kc:setting
-==== Czytaj klawisze poleceń ====[VoiceSettingsSpeakCommandKeys]
+==== Czytaj klawisze poleceń ====[KeyboardSettingsSpeakCommandKeys]
 Skrót Klawiszowy: NVDA+4
 
 Jeśli zaznaczysz to pole, NVDA będzie wypowiadać naciskane klawisze, którym nie odpowiadają znaki pisarskie, na przykład klawisze funkcyjne lub kombinacje Ctrl+litera.
@@ -1432,7 +1435,7 @@ Ta opcja jest domyślnie wyłączona.
 
 Aby przełączać dołączanie tabel układu treści z każdego miejsca, należy przypisać temu poleceniu własne zdarzenie wejścia przy użyciu okna [Zdarzenia wejścia #InputGestures].
 
-==== Konfiguracja ogłaszania pól, takich jak linki i nagłówki ====
+==== Konfiguracja ogłaszania pól, takich jak linki i nagłówki ====[BrowseModeLinksAndHeadings]
 Proszę przejrzeć opcję w [Ustawieniach formatowania dokumentu #DocumentFormattingSettings] aby skonfigurować informacje, które są ogłaszane w trakcie nawigacji, takie jak linki, nagłówki i tabele.
 
 ==== Automatyczny tryb formularza przy zmianie punktu uwagi ====[BrowseModeSettingsAutoPassThroughOnFocusChange]
