@@ -233,6 +233,7 @@ Najważniejsze właściwości NVDA to:
 <LI>tłumaczenie na 51 języków,
 <LI>wsparcie dla współczesnych systemów operacyjnych Windows, zarówno 32, jak i 64 bitowych,
 <LI>możliwość dostępu do ekranu logowania w systemie oraz innych zabezpieczonych ekranów,
+<LI>oznajmianie kontrolek i tekstu podczas używania gestów dotykowych
 <LI>wsparcie dla wspólnych interfejsów dostępności, takich jak Microsoft Active Accessibility, Java Access Bridge, iAccessible2, UI Automation. UI Automation jest obsługiwany tylko pod kontrolą systemów Windows 7 i wyższych,
 <LI>wsparcie dla wiersza poleceń systemu Windows i aplikacji konsolowych.
 </UL>
@@ -851,8 +852,10 @@ Gdy dotrzesz do obiektu, możesz przejrzeć jego treść, używając <A HREF="#R
 Domyślnie obiekt nawigatora podąża za punktem uwagi, ale to zachowanie można włączać i wyłączać.
 </P>
 <P>
-Monitor brajlowski domyślnie podąża za <A HREF="#SystemFocus">punktem uwagi</A> i <A HREF="#SystemCaret">kursorem systemowym</A> zamiast za obiektem nawigatora i przeglądaniem tekstu.
-Jeśli chcesz spowodować podążanie brajla za obiektem nawigatora lub przeglądaniem tekstu musisz <A HREF="#BrailleTether">ustawić powiązanie brajla z</A> przeglądaniem.
+Monitor brajlowski domyślnie podąża za <A HREF="#SystemFocus">punktem uwagi</A> i <A HREF="#SystemCaret">kursorem systemowym</A> oraz obiektem nawigatora i kursorem przeglądu tekstu.
+Jeśli chcesz spowodować podążanie brajla tylko za obiektem nawigatora lub przeglądaniem tekstu, musisz <A HREF="#BrailleTether">ustawić powiązanie brajla z</A> punktem uwagi.
+W takim przypadku, brajl nie będzie podążał za obiektem nawigacyjnym i kursorem przeglądu.
+Aby brajl podążał za obiektem nawigatora i przeglądem tekstu, należy <A HREF="#BrailleTether">skonfigurować powiązanie brajla z</A> przeglądem.
 </P>
 <P>
 Poniżej znajdują się skróty klawiszowe do nawigacji w hierarchii obiektów:
@@ -2698,13 +2701,14 @@ Ta opcja powoduje, że wiadomości NVDA są w nieskończoność wyświetlane na 
 </P>
 
 <A NAME="BrailleTether"></A>
-<H5>Brajl związany z</H5>
+<H5>Powiązanie brajla</H5>
 
 <P>
 Skrót Klawiszowy: NVDA+Ctrl+T
 </P>
 <P>
-Ta opcja pozwala wybrać, czy monitor brajlowski będzie podążać za punktem uwagi, czy obiektem nawigatora/punktem przeglądu.
+Ta opcja pozwala wybrać, czy monitor brajlowski będzie podążać za punktem uwagi, czy obiektem nawigatora/punktem przeglądu, albo oboma.
+Gdy ustawione jest "automatycznie", NVDA będzie domyślnie podążać za punktem uwagi i kursorem systemu.
 </P>
 
 <A NAME="BrailleSettingsReadByParagraph"></A>
@@ -2852,7 +2856,7 @@ Jeśli włączona, ta opcja przerywa mowę za każdym razem, gdy naciśnięto kl
 Jeśli włączona, niektóre polecenia nawigacyjne (takie jak klawisze szybkiej nawigacji w trybie czytania albo przechodzenie po liniach i akapitach) nie przerywają odczytywania tekstu od kursora do końca dokumentu, a zamiast tego odczyt tekstu przeskakuje do nowej pozycji i jest kontynuowany.
 </P>
 
-<A NAME="VoiceSettingsBeepLowercase"></A>
+<A NAME="KeyboardSettingsBeepLowercase"></A>
 <H5>Dźwięk dla małych liter przy włączonym CapsLock</H5>
 
 <P>
@@ -2861,7 +2865,7 @@ Na ogół wpisywanie liter z shiftem przy włączonym CapsLock nie jest zamierzo
 A zatem ostrzeżenie o tym fakcie może się okazać pomocne.
 </P>
 
-<A NAME="VoiceSettingsSpeakCommandKeys"></A>
+<A NAME="KeyboardSettingsSpeakCommandKeys"></A>
 <H5>Czytaj klawisze poleceń</H5>
 
 <P>
@@ -3222,6 +3226,7 @@ Ta opcja jest domyślnie wyłączona.
 Aby przełączać dołączanie tabel układu treści z każdego miejsca, należy przypisać temu poleceniu własne zdarzenie wejścia przy użyciu okna <A HREF="#InputGestures">Zdarzenia wejścia</A>.
 </P>
 
+<A NAME="BrowseModeLinksAndHeadings"></A>
 <H5>Konfiguracja ogłaszania pól, takich jak linki i nagłówki</H5>
 
 <P>
