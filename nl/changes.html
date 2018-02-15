@@ -10,6 +10,75 @@
 </CENTER>
 
 
+<H2>2018.1</H2>
+
+<P>
+Hoogtepunten in deze versie zijn ondersteuning voor grafieken in Microsoft Word en PowerPoint, toegevoegde ondersteuning voor brailleleesregels waaronder Eurobraille en de  Optelec protocol converter, verbeterde ondersteuning voor Hims en Optelec brailleleesregels, prestatieverbeteringen voor Mozilla Firefox 58 en nieuwer, en nog veel meer.
+</P>
+
+<H3>Nieuwe Functies</H3>
+
+<UL>
+<LI>Het is nu mogelijk om te werken met grafieken in Microsoft Word en Microsoft PowerPoint op een vergelijkbare manier als in Microsoft Excel. (<A HREF="http://github.com/nvaccess/nvda/issues/7046">#7046</A>)
+ <UL>
+ <LI>In Microsoft Word: navigeer in bladermodus naar een ingebedde grafiek en druk op enter om interactie met deze grafiek te starten.
+ <LI>In Microsoft PowerPoint tijdens het bewerken van een dia: tab naar een grafiekobject en druk op enter of spatie voor interactie met de grafiek.
+ <LI>OM de interactie met een grafiek af te breken, druk op escape.
+ </UL>
+<LI>Nieuwe taal: Kirgizisch.
+<LI>Ondersteuning toegevoegd voor VitalSource Bookshelf. (<A HREF="http://github.com/nvaccess/nvda/issues/7155">#7155</A>)
+<LI>Ondersteuning toegevoegd voor de Optelec protocol converter, een apparaat dat iemand in staat stelt om een Braille Voyager of Satellite leesregel aan te sturen via het ALVA BC6 communicatieprotocol. (<A HREF="http://github.com/nvaccess/nvda/issues/6731">#6731</A>)
+<LI>Het is nu mogelijk om braille-invoer te gebruiken met een ALVA 640 Comfort brailleleesregel. (<A HREF="http://github.com/nvaccess/nvda/issues/7733">#7733</A>) 
+ <UL>
+ <LI>De braille-invoerfunctionaliteit van NVDA kan gebruikt worden met deze en andere BC6 leesregelsmet firmware 3.0.0 en nieuwer.
+ </UL>
+<LI>Vroege ondersteuning toegevoegd voor Google Sheets met de braille-modus ingeschakeld. (<A HREF="http://github.com/nvaccess/nvda/issues/7935">#7935</A>)
+<LI>Ondersteuning voor Eurobraille Esys, Esytime en Iris brailleleesregels. (<A HREF="http://github.com/nvaccess/nvda/issues/7488">#7488</A>)
+</UL>
+
+<H3>Veranderingen</H3>
+
+<UL>
+<LI>De drivers voor HIMS Braille Sense/Braille EDGE/Smart Beetle en Hims Sync Braille leesregels zijn vervangen door één driver. De nieuwe driver wordt automatisch geactiveerd voor voormalige  syncBraille driver gebruikers. (<A HREF="http://github.com/nvaccess/nvda/issues/7459">#7459</A>) 
+ <UL>
+ <LI>Sommige toetsen, met name de scrolltoetsen, zijn opnieuw toegewezen om beter aan te sluiten bij hoe deze toetsen gebruikt worden binnen producten van Hims. Raadpleeg de gebruikershandleiding voor meer details.
+ </UL>
+<LI>Bij het typen op een schermtoetsenbord via aanraakinteractie is het nu standaard zo dat u dubbel moet tikken op een toets om deze te activeren, op de zelfde manier waarop u een ander element zou activeren. (<A HREF="http://github.com/nvaccess/nvda/issues/7309">#7309</A>)
+ <UL>
+ <LI>Om de bestaande modus ("direct typen met aanraken") te gebruiken waarbij het simpelweg optillen van uw vinger genoeg is om de toets te activeren, moet u deze optie inschakelen in  het nieuwe instellingenvenster aanraakinteractie in het optiesmenu.
+ </UL>
+<LI>Het is niet langer nodig om braille expliciet te koppelen aan de focus of de leescursor, aangezien dit vanaf nu standaard automatisch gebeurd. (<A HREF="http://github.com/nvaccess/nvda/issues/2385">#2385</A>) 
+ <UL>
+ <LI>Houd er rekening mee  dat het koppelen aan de leescursor alleen gebeurt bij het gebruik van een commando voor het bedienen van de leescursor of objectnavigatie. Scrollen activeert dit nieuwe gedrag dus niet.
+ </UL>
+</UL>
+
+<H3>Opgeloste Problemen</H3>
+
+<UL>
+<LI>Het tonen van meldingen in de bladermodus, zoals het bekijken van opmaakinformatie door middel van het twee keer snel indrukken van NVDA+f, gaat niet langer verkeerd wanneer NVDA geïnstalleerd is in een map waarvan de naam niet-ASCII-tekens bevat. (<A HREF="http://github.com/nvaccess/nvda/issues/7474">#7474</A>)
+<LI>De focus wordt opnieuw correct hersteld  bij het terugkeren naar Spotify vanuit een andere applicatie. (<A HREF="http://github.com/nvaccess/nvda/issues/7689">#7689</A>)
+<LI>In de Windows 10 Fall Creaters Update gaat het bijwerken van NVDA niet langer verkeerd wanneer Beheerde maptoegang is ingeschakeld vanuit het Windows Defender beveiligingscentrum. (<A HREF="http://github.com/nvaccess/nvda/issues/7696">#7696</A>)
+<LI>Het detecteren van de scrolltoetsen van Hims Smart Beetle leesregels is niet langer onbetrouwbaar. (<A HREF="http://github.com/nvaccess/nvda/issues/6086">#6086</A>)
+<LI>Een lichte prestatieverbetering bij het weergeven van grote hoeveelheden inhoud in Mozilla Firefox 58 en nieuwer. (<A HREF="http://github.com/nvaccess/nvda/issues/7719">#7719</A>)
+<LI>In Microsoft Outlook veroorzaakt het lezen van tabellen niet langer fouten. (<A HREF="http://github.com/nvaccess/nvda/issues/6827">#6827</A>)
+<LI>Invoerhandelingen van brailleleesregels die modifier-toetsen emuleren, kunnen nu ook gecombineerd worden met andere geëmuleerde systeemtoetsen wanneer één van de invoerhandelingen specifiek is voor een bepaald model leesregel. (<A HREF="http://github.com/nvaccess/nvda/issues/7783">#7783</A>)
+<LI>Bladermodus in Mozilla Firefox werkt nu naar behoren in pop-ups die getoond worden door extensies als LastPass en bitwarden. (<A HREF="http://github.com/nvaccess/nvda/issues/7809">#7809</A>)
+<LI>NVDA loopt niet langer vast bij iedere focuswijziging wanneer Firefox of Chrome niet meer reageert, bijvoorbeeld vanwege een bevriezingsprobleem of vastloper. (<A HREF="http://github.com/nvaccess/nvda/issues/7818">#7818</A>)
+<LI>In Twitter-clients zoals Chicken Nugget zal NVDA de laatste 20 karakters niet langer negeren bij het lezen van tweets met  280 karakters. (<A HREF="http://github.com/nvaccess/nvda/issues/7828">#7828</A>)
+<LI>NVDA gebruikt nu de juiste taal voor het melden van symbolen bij het selecteren van tekst. (<A HREF="http://github.com/nvaccess/nvda/issues/7687">#7687</A>)
+<LI>In recente versies van Office 365 is het opnieuw mogelijk om door Excel-grafieken te navigeren met de pijltjestoetsen. (<A HREF="http://github.com/nvaccess/nvda/issues/7046">#7046</A>)
+<LI>In spraak- en braille-uitvoer worden de diverse statusindicatoren nu altijd in de zelfde volgorde getoond, ongeacht of ze positief of negatief zijn. (<A HREF="http://github.com/nvaccess/nvda/issues/7076">#7076</A>)
+<LI>In apps zoals Windows 10 Mail heeft NVDA bij het gebruik van backspace niet langer problemen met het melden van verwijderde karakters. (<A HREF="http://github.com/nvaccess/nvda/issues/7456">#7456</A>)
+<LI>Alle toetsen op de Hims Braille Sense Polaris leesregels werken nu zoals verwacht. (<A HREF="http://github.com/nvaccess/nvda/issues/7865">#7865</A>)
+</UL>
+
+<H3>Veranderingen voor Ontwikkelaars</H3>
+
+<P>
+Deze zijn niet vertaald. We verwijzen naar <A HREF="../en/changes.html">de Engelstalige versie van dit document</A>.
+</P>
+
 <H2>2017.4</H2>
 
 <P>
