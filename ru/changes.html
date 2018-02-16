@@ -12,6 +12,10 @@
 
 <H2>2018.1</H2>
 
+<P>
+Основные новшества этого выпуска включают в себя поддержку диаграмм в Microsoft word и Powerpoint, поддержку новых брайлевских дисплеев Eurobraille и Optelec protocol converter, улучшенную поддержку дисплеев Hims и Optelec, улучшение производительности в Mozilla Firefox 58 и многое другое.
+</P>
+
 <H3>Новое</H3>
 
 <UL>
@@ -22,6 +26,14 @@
  <LI>Для прекращения взаимодействия с диаграммой нажимайте клавишу escape.
  </UL>
 <LI>Новый язык интерфейса: Киргизский.
+<LI>Добавлена поддержка для приложения VitalSource Bookshelf. (<A HREF="http://github.com/nvaccess/nvda/issues/7155">#7155</A>)
+<LI>Добавлена поддержка Optelec protocol converter. Это устройство позволяет использовать брайлевские дисплеи Braille Voyager и Satellite посредством протокола связи ALVA BC6. (<A HREF="http://github.com/nvaccess/nvda/issues/6731">#6731</A>)
+<LI>На брайлевском дисплее ALVA 640 Comfort теперь возможно использовать брайлевский ввод. (<A HREF="http://github.com/nvaccess/nvda/issues/7733">#7733</A>)
+ <UL>
+ <LI>Функциональность брайлевского ввода можно использовать как на этом, так и на других дисплеях BC6 с прошивкой версии 3.0.0 и более поздней версии.
+ </UL>
+<LI>Добавлена первоначальная поддержка Таблиц Google с включённым режимом брайля. (<A HREF="http://github.com/nvaccess/nvda/issues/7935">#7935</A>)
+<LI>Добавлена поддержка брайлевских дисплеев Eurobraille Esys, Esytime и Iris. (<A HREF="http://github.com/nvaccess/nvda/issues/7488">#7488</A>)
 </UL>
 
 <H3>Изменения</H3>
@@ -58,6 +70,7 @@
 <LI>В последних версиях Office 365, теперь снова можно перемещаться по диаграммам Excel с помощью клавиш-стрелок. (<A HREF="http://github.com/nvaccess/nvda/issues/7046">#7046</A>)
 <LI>В брайлевском и речевом выводе, NVDA теперь сообщает состояния элементов управления в одном и томже порядке, независимо от их разновидности. (<A HREF="http://github.com/nvaccess/nvda/issues/7076">#7076</A>)
 <LI>В таких приложениях как Windows 10 Mail, NVDA теперь корректно сообщает удаляемый символ при использовании клавиши backspace. (<A HREF="http://github.com/nvaccess/nvda/issues/7456">#7456</A>)
+<LI>Все клавиши на дисплеях Hims Braille Sense Polaris теперь работают так, как и ожидается. (<A HREF="http://github.com/nvaccess/nvda/issues/7865">#7865</A>)
 </UL>
 
 <H3>Изменения для разработчиков</H3>
@@ -72,6 +85,8 @@
 <LI>В braille.BrailleDisplayDriver для взаимодействия с дисплеями посылающими пакеты с подтверждениями, реализована система обобщений. За примером обратитесь к драйверу дисплеев handyTech. (<A HREF="http://github.com/nvaccess/nvda/issues/7590">#7590</A>, <A HREF="http://github.com/nvaccess/nvda/issues/7721">#7721</A>)
 <LI>Новая переменная "isAppX" в модуле config может быть использована для детектирования работы NVDA как приложения Windows Desktop Bridge Store. (<A HREF="http://github.com/nvaccess/nvda/issues/7851">#7851</A>)
 <LI>Для реализаций документов, таких как NVDAObjects или browseMode которые имеют textInfo, теперь имеется новый класс documentBase.DocumentWithTableNavigation, который может быть унаследован, чтобы получить стандартные скрипты навигации по таблице. Пожалуйста, обратитесь к этому классу, чтобы узнать, какие вспомогательные методы должны быть предоставлены вашей реализацией для навигации по таблице. (<A HREF="http://github.com/nvaccess/nvda/issues/7849">#7849</A>)
+<LI>Пакетный файл scons теперь лучше обрабатывает ситуацию, когда имеется установленный Python 3, используя python launcher для запуска 32-х разрядной версии Python 2.7. (<A HREF="http://github.com/nvaccess/nvda/issues/7541">#7541</A>)
+<LI>Конструктор класса hwIo.Hid теперь принимает дополнительный параметр exclusive, значение по умолчанию которого установлено в True. Если установить значение в False, то другим приложениям будет разрешено связываться с устройством, когда оно подключено к NVDA. (<A HREF="http://github.com/nvaccess/nvda/issues/7859">#7859</A>)
 </UL>
 
 <H2>2017.4</H2>
