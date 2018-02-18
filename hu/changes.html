@@ -10,6 +10,69 @@
 </CENTER>
 
 
+<H2>2018.1</H2>
+
+<P>
+Ebben a kiadásban: Diagramok támogatása a Microsoft wordben és a PowerPointban, új támogatott braille kijelzők, többek közt Eurobraille és az Optelec protocol converter, fejlesztett támogatás a Hims és Optelec braille kijelzőkhöz, fejlesztések a Mozilla Firefox 58 és újabb verzióinak használatához, és még sok más.
+</P>
+
+<H3>Újdonságok</H3>
+
+<UL>
+<LI>A Microsoft Excel után most már a Wordben és a PowerPointban is kezelhetők a diagramok. (<A HREF="http://github.com/nvaccess/nvda/issues/7046">#7046</A>)
+ <UL>
+ <LI>Microsoft Word:  böngészőmódban navigáljon egy beágyazott diagramra, az Enter bbillentyűvel aktiválhatja, azután kezelheti.
+ <LI>Microsoft PowerPoint: Diaszerkesztés közben navigáljon egy diagramobjektumra, az Enter vagy a szóköz billentyűvel aktiválhatja.
+ <LI>A diagramról kilépni az Esc gomb lenyomásával lehet.
+ </UL>
+<LI>Új nyelv: Kirgiz.
+<LI>VitalSource Bookshelf támogatása. (<A HREF="http://github.com/nvaccess/nvda/issues/7155">#7155</A>)
+<LI>Támogatás az Optelec protocol converterhez, ami lehetővé teszi a Braille Voyager és Satellite kijelzők használatát az ALVA BC6 kommunikációs protokol segítségével. (<A HREF="http://github.com/nvaccess/nvda/issues/6731">#6731</A>)
+<LI>Már az ALVA 640 Comfort braille kijelzővel is támogatott a braille-bevitel. (<A HREF="http://github.com/nvaccess/nvda/issues/7733">#7733</A>) 
+ <UL>
+ <LI>A többi BC6 kijelzővel is elérhetők az NVDA braille-beviteli szolgáltatásai. Ehhez firmware 3.0.0 vagy újabb verzió szükséges.
+ </UL>
+<LI>Kezdeti támogatás a Google Táblázatokhoz, ahol a Braille mód engedélyezett. (<A HREF="http://github.com/nvaccess/nvda/issues/7935">#7935</A>)
+<LI>Új támogatott braille kijelzők: Eurobraille Esys, Esytime és Iris. (<A HREF="http://github.com/nvaccess/nvda/issues/7488">#7488</A>)
+</UL>
+
+<H3>Változások</H3>
+
+<UL>
+<LI>A HIMS Braille Sense/Braille EDGE/Smart Beetle és Hims Sync Braille kijelzők drivereit lecserélték egy új közös driverre. Az új driver automatikusan aktiválódik a korábbi syncBraille driver felhasználók számára. (<A HREF="http://github.com/nvaccess/nvda/issues/7459">#7459</A>) 
+ <UL>
+ <LI>Néhány gomb hozzárendelését, főként a görgető gombokat, a Hims termékekben megszokottakhoz alakították. Részletekért keresse fel a felhasználói útmutató megfelelő szakaszát.
+ </UL>
+<LI>Érintőmódban a képernyő-billentyűzettel történő bevitelhez alapértelmezés szerint duplakoppintásra van szükség, pontosan úgy, ahogy más vezérlőelemek aktiválásához. Pl. az a-betű beviteléhez duplán kell koppintani a képernyő-billentyűzet a-gombján. (<A HREF="http://github.com/nvaccess/nvda/issues/7309">#7309</A>)
+ <UL>
+ <LI>Egy másik beviteli mód is rendelkezésre áll, az úgynevezett Érintéses bevitel. Ezesetben nem kell duplán koppintani a képernyő-billentyűzet gombjain a bevitelhez, a megfelelő gomb aktiválásához elég felemelni róla az ujját. Ez az opció az érintőmód menüpontban az Érintéses bevitel jelölőnégyzet bejelölésével aktiválható az NVDA Beállítások menüjéből.
+ </UL>
+<LI>Braille kijelzők: Már nem szükséges megszabni, hogy a braille az aktív elemet, vagy az áttekintő kurzort kövesse, alapértelmezés szerint a program automatikusan határozza meg, hogy épp melyiket követi. Ezzel együtt a korábbi beállítás is alkalmazható. (<A HREF="http://github.com/nvaccess/nvda/issues/2385">#2385</A>) 
+ <UL>
+ <LI>Az áttekintő kurzor automatikus követése csak valamelyik áttekintő parancs használatakor történhet, a görgetés nem aktiválja ezt az új viselkedést.
+ </UL>
+</UL>
+
+<H3>Hibajavítások</H3>
+
+<UL>
+<LI>A böngészőmódú üzenetek, mint a formátuminformációk (NVDA+f kétszeri lenyomás) már nem működnek hibásan, ha az NVDA-t nem ASCII karaktereket tartalmazó elérési úttal telepíti. (<A HREF="http://github.com/nvaccess/nvda/issues/7474">#7474</A>)
+<LI>Spotify: A program ismét megjegyzi a rendszerkurzor helyét, így ugyanoda térhetünk vissza más alkalmazásokból. (<A HREF="http://github.com/nvaccess/nvda/issues/7689">#7689</A>)
+<LI>Windows 10 Fall Creaters Update: Az NVDA már gond nélkül frissül, abban az esetben is, amikor a Windows Defender biztonsági központban a Mappákhoz való hozzáférés szabályozása opció engedélyezve van. (<A HREF="http://github.com/nvaccess/nvda/issues/7696">#7696</A>)
+<LI>Hims Smart Beetle kijelzők: A görgetőgombok észlelése már az elvártak szerint működik. (<A HREF="http://github.com/nvaccess/nvda/issues/6086">#6086</A>)
+<LI>Mozilla Firefox 58 és újabb verziói: Kicsit javult a nagyméretű tartalmak kezelése. (<A HREF="http://github.com/nvaccess/nvda/issues/7719">#7719</A>)
+<LI>Microsoft Outlook: A táblázatokat tartalmazó üzenetek olvasása már nem okoz hibát. (<A HREF="http://github.com/nvaccess/nvda/issues/6827">#6827</A>)
+<LI>Braille kijelzők: a rendszerbillentyűzet módosítóbillentyűit emuláló beviteli parancsok már kombinálhatók más emulált billentyűkkel, akkor is ha az érintett beviteli parancsok közül egy vagy több modellspecifikus. (<A HREF="http://github.com/nvaccess/nvda/issues/7783">#7783</A>)
+<LI>Mozilla Firefox: a böngészőmód már helyesen működik bizonyos bővítményekhez kapcsolódó felugró ablakokon. Ilyenek a LastPass és a bitwarden. (<A HREF="http://github.com/nvaccess/nvda/issues/7809">#7809</A>)
+<LI>Firefox és Chrome: A fókusz váltása közben az NVDA már nem fagy le olyan esetekben,amikor a böngésző valamilyen okból nem válaszol. (<A HREF="http://github.com/nvaccess/nvda/issues/7818">#7818</A>)
+<LI>Twitter kliensek, mint pl. a Chicken Nugget: az NVDA már nem hagyja figyelmen kívül a 280 karakteres tweetek utolsó 20 karakterét olvasás közben. (<A HREF="http://github.com/nvaccess/nvda/issues/7828">#7828</A>)
+<LI>Szöveg kijelölésekor az NVDA már a megfelelő nyelvet használja a szimbólumok bejelentésére. (<A HREF="http://github.com/nvaccess/nvda/issues/7687">#7687</A>)
+<LI>Office 365 legfrissebb verziói: az Exceles diagramokon ismét navigálhatunk a nyílbillentyűkkel. (<A HREF="http://github.com/nvaccess/nvda/issues/7046">#7046</A>)
+<LI>Beszéd és braille visszajelzés esetén egyaránt azonos sorrendben jelenti be a program a vezérlők állapotinformációit függetlenül attól, hogy azok bejelöltek vagy sem. (<A HREF="http://github.com/nvaccess/nvda/issues/7076">#7076</A>)
+<LI>Windows 10 alkalmazásokban, mint pl a Posta, az NVDA az elvártaknak megfelelően jelenti be a törölt karaktereket backspace használatakor. (<A HREF="http://github.com/nvaccess/nvda/issues/7456">#7456</A>)
+<LI>Hims Braille Sense Polaris kijelzők: már minden gomb az elvártak szerint működik. (<A HREF="http://github.com/nvaccess/nvda/issues/7865">#7865</A>)
+</UL>
+
 <H2>2017.4</H2>
 
 <P>
