@@ -171,26 +171,25 @@
     <LI><A HREF="#toc111">13.4. Microsoft Speech Platform</A>
     <LI><A HREF="#toc112">13.5. Windows OneCore</A>
     <LI><A HREF="#toc113">13.6. Audiologic Tts3</A>
-    <LI><A HREF="#toc114">13.7. Nuance 보컬라이저</A>
     </UL>
   <LI><A HREF="#SupportedBrailleDisplays">14. 지원하는 점자 디스플레이들</A>
     <UL>
-    <LI><A HREF="#toc116">14.1. Freedom Scientific Focus/PAC Mate</A>
-    <LI><A HREF="#toc117">14.2. Optelec ALVA BC640/680</A>
-    <LI><A HREF="#toc118">14.3. Handy Tech</A>
-    <LI><A HREF="#toc119">14.4. MDV Lilli</A>
-    <LI><A HREF="#toc120">14.5. Baum/Humanware/APH/Orbit</A>
-    <LI><A HREF="#toc121">14.6. hedo ProfiLine USB</A>
-    <LI><A HREF="#toc122">14.7. hedo MobilLine USB</A>
-    <LI><A HREF="#toc123">14.8. HumanWare Brailliant BI/B</A>
-    <LI><A HREF="#toc124">14.9. HIMS 한소네/브레일 엣지/스마트 비틀/싱크브레일</A>
-    <LI><A HREF="#toc125">14.10. Seika</A>
-    <LI><A HREF="#toc126">14.11. 베이펀마이어 브레일렉스 신형 모델</A>
-    <LI><A HREF="#toc127">14.12. 베이펀마이어 브레일렉스 구형 모델</A>
-    <LI><A HREF="#toc128">14.13. 휴먼웨어 브레일노트</A>
-    <LI><A HREF="#toc129">14.14. EcoBraille</A>
-    <LI><A HREF="#toc130">14.15. SuperBraille</A>
-    <LI><A HREF="#toc131">14.16. BRLTTY</A>
+    <LI><A HREF="#toc115">14.1. Freedom Scientific Focus/PAC Mate</A>
+    <LI><A HREF="#toc116">14.2. Optelec ALVA BC640/680</A>
+    <LI><A HREF="#toc117">14.3. Handy Tech</A>
+    <LI><A HREF="#toc118">14.4. MDV Lilli</A>
+    <LI><A HREF="#toc119">14.5. Baum/Humanware/APH/Orbit</A>
+    <LI><A HREF="#toc120">14.6. hedo ProfiLine USB</A>
+    <LI><A HREF="#toc121">14.7. hedo MobilLine USB</A>
+    <LI><A HREF="#toc122">14.8. HumanWare Brailliant BI/B</A>
+    <LI><A HREF="#Hims">14.9. HIMS 한소네/브레일 엣지/스마트 비틀/싱크브레일</A>
+    <LI><A HREF="#toc124">14.10. Seika</A>
+    <LI><A HREF="#toc125">14.11. 베이펀마이어 브레일렉스 신형 모델</A>
+    <LI><A HREF="#toc126">14.12. 베이펀마이어 브레일렉스 구형 모델</A>
+    <LI><A HREF="#toc127">14.13. 휴먼웨어 브레일노트</A>
+    <LI><A HREF="#toc128">14.14. EcoBraille</A>
+    <LI><A HREF="#toc129">14.15. SuperBraille</A>
+    <LI><A HREF="#toc130">14.16. BRLTTY</A>
     </UL>
   <LI><A HREF="#AdvancedTopics">15. 고급 사용자 기능</A>
     <UL>
@@ -846,8 +845,10 @@ NVDA는 시스템 케럿과 관련하여 다음과 같은 단축키를 제공합
 초기값으로 탐색 객체는 시스템 포커스를 따라서 이동합니다만 이러한 동작은 온/오프로 토글할 수 있습니다.
 </P>
 <P>
-주의: 점자는 초기값으로 객체 탐색이나 텍스트 리뷰를 따르지 않고 <A HREF="#SystemFocus">포커스</A>와 <A HREF="#SystemCaret">케럿</A>을 따릅니다.
-만약 점자가 포커스와 케럿 대신 객체 탐색과 텍스트 리뷰를 따르게 하고 싶으면 <A HREF="#BrailleTether">점자 표시 전환(braille to be tethered)</A>을 리뷰로 설정하세요.
+주의: 점자는 초기값으로  <A HREF="#SystemFocus">포커스</A>와 <A HREF="#SystemCaret">케럿</A> 및 객체 탐색과 텍스트 리뷰를 동시에 따릅니다.
+만약 점자를 통해 포커스와 케럿 관련 정보를 탐색하려면 <A HREF="#BrailleTether"> 점자 연계 커서를</A> 포커스로 설정하세요.
+이때 점자는 객체 탐색과 텍스트 리뷰를 따르지 않습니다.
+객체 탐색과 텍스트 리뷰를 따르게 하고 싶으면 <A HREF="#BrailleTether"> 점자 연계 커서를</A> 리뷰로 설정하세요.
 </P>
 <P>
 객체 탐색을 하려면 다음 단축키들을 사용하세요.
@@ -2643,15 +2644,18 @@ NVDA가 지원하는 점자 디스플레이에 관한 더 상세한 정보를 �
 </P>
 
 <A NAME="BrailleTether"></A>
-<H5>점자 연계 커서 (Braille Tethered to)</H5>
+<H5>점자 연계 커서 (Tether braille)</H5>
 
 <P>
 단축키: NVDA+control+t
 </P>
 <P>
-이 옵션에서는 점자 디스플레이가 시스템 포커스 또는 탐색 객체/리뷰 커서를 따라갈 것인지를 선택할 수 있습니다.
+이 옵션에서는 점자 디스플레이가 시스템 포커스, 탐색 객체/리뷰 커서, 또는 둘 다 따라갈 것인지를 선택할 수 있습니다.
+"자동 연계"를 선택하면 시스템 포커스나 케럿이 변경시 점자 커서가 변경됩니다.
+만약 객체 탐색 또는 리뷰 커서 명령을 사용하면 점자는 새 객체나 리뷰 커서 위치에 위치하며 시스템 포커스나 케럿이 변경시 점자는 다시 포커스나 케럿을 따라가게 됩니다.
 </P>
 
+<A NAME="BrailleSettingsReadByParagraph"></A>
 <H5>문단 단위로 읽기</H5>
 
 <P>
@@ -3735,19 +3739,6 @@ NVDA에서 이 음성 엔진을 사용하려면 반드시 시스템에 설치해
 이 음성 엔진은 <A HREF="#VoiceSpellingFunctionality">spelling functionality</A>을 지원하지 않습니다.
 </P>
 
-<A NAME="toc114"></A>
-<H3>13.7. Nuance 보컬라이저</H3>
-
-<P>
-Nuance 보컬라이저는 뉴언스에서 개발하고 Tiflotecnia에서 NVDA용 페키지로 개발한 상용 고음질 음성 엔진입니다.
-한번의 설치로 30개 언어, 50여개 보이스를 사용할 수 있습니다.
-음성 엔진 파일과 보이스들은 추가 기능 페키지로 되어 있어 NVDA 휴대용 버전에서도 설치 및 사용이 가능합니다.
-</P>
-<P>
-더 자세한 정보 및 구입 방법에 대해서는 <A HREF="http://www.vocalizer-nvda.com/">www.vocalizer-nvda.com</A> 사이트를 방문하시기 바랍니다.
-음성 엔진 구입시 일정 금액은 NVDA 개발 후원금으로 NV Access에 송금됩니다.
-</P>
-
 <A NAME="SupportedBrailleDisplays"></A>
 <H2>14. 지원하는 점자 디스플레이들</H2>
 
@@ -3755,7 +3746,7 @@ Nuance 보컬라이저는 뉴언스에서 개발하고 Tiflotecnia에서 NVDA용
 이 섹션에서는 NVDA와 점자 디스플레이 기능키에 대한 정보를 수록합니다.
 </P>
 
-<A NAME="toc116"></A>
+<A NAME="toc115"></A>
 <H3>14.1. Freedom Scientific Focus/PAC Mate</H3>
 
 <P>
@@ -3947,7 +3938,7 @@ Focus 80에만 해당:
 </TR>
 </TABLE>
 
-<A NAME="toc117"></A>
+<A NAME="toc116"></A>
 <H3>14.2. Optelec ALVA BC640/680</H3>
 
 <P>
@@ -4091,7 +4082,7 @@ Focus 80에만 해당:
 </TR>
 </TABLE>
 
-<A NAME="toc118"></A>
+<A NAME="toc117"></A>
 <H3>14.3. Handy Tech</H3>
 
 <P>
@@ -4196,7 +4187,7 @@ Focus 80에만 해당:
 </TR>
 </TABLE>
 
-<A NAME="toc119"></A>
+<A NAME="toc118"></A>
 <H3>14.4. MDV Lilli</H3>
 
 <P>
@@ -4252,7 +4243,7 @@ NVDA에서는 <A HREF="http://www.mdvbologna.it/">MDV</A>에서 출시한 Lilli 
 </TR>
 </TABLE>
 
-<A NAME="toc120"></A>
+<A NAME="toc119"></A>
 <H3>14.5. Baum/Humanware/APH/Orbit</H3>
 
 <P>
@@ -4340,7 +4331,7 @@ Orbit Reader 20 사용시 USB 시리얼 모드를 사용하려면 윈도우 10�
 </TR>
 </TABLE>
 
-<A NAME="toc121"></A>
+<A NAME="toc120"></A>
 <H3>14.6. hedo ProfiLine USB</H3>
 
 <P>
@@ -4387,7 +4378,7 @@ Orbit Reader 20 사용시 USB 시리얼 모드를 사용하려면 윈도우 10�
 </TR>
 </TABLE>
 
-<A NAME="toc122"></A>
+<A NAME="toc121"></A>
 <H3>14.7. hedo MobilLine USB</H3>
 
 <P>
@@ -4434,7 +4425,7 @@ NVDA에서는  <A HREF="http://www.hedo.de/">hedo Reha-Technik</A> 에서 출시
 </TR>
 </TABLE>
 
-<A NAME="toc123"></A>
+<A NAME="toc122"></A>
 <H3>14.8. HumanWare Brailliant BI/B</H3>
 
 <P>
@@ -4533,7 +4524,7 @@ NVDA에서는  <A HREF="http://www.hedo.de/">hedo Reha-Technik</A> 에서 출시
 </TR>
 </TABLE>
 
-<A NAME="toc124"></A>
+<A NAME="Hims"></A>
 <H3>14.9. HIMS 한소네/브레일 엣지/스마트 비틀/싱크브레일</H3>
 
 <P>
@@ -4797,7 +4788,7 @@ NVDA에서는  <A HREF="http://www.hedo.de/">hedo Reha-Technik</A> 에서 출시
 </TR>
 </TABLE>
 
-<A NAME="toc125"></A>
+<A NAME="toc124"></A>
 <H3>14.10. Seika</H3>
 
 <P>
@@ -4861,7 +4852,7 @@ NVDA와 사용하기 전 회사에서 제공한 USB 드라이버를 설치하십
 </TR>
 </TABLE>
 
-<A NAME="toc126"></A>
+<A NAME="toc125"></A>
 <H3>14.11. 베이펀마이어 브레일렉스 신형 모델</H3>
 
 <P>
@@ -5080,7 +5071,7 @@ Live 모델에서 두번째 스위치 명령을 실행하려면 EAB를 옮기고
 </TR>
 </TABLE>
 
-<A NAME="toc127"></A>
+<A NAME="toc126"></A>
 <H3>14.12. 베이펀마이어 브레일렉스 구형 모델</H3>
 
 <P>
@@ -5357,7 +5348,7 @@ BRAILLEX 2D Screen:
 </TR>
 </TABLE>
 
-<A NAME="toc128"></A>
+<A NAME="toc127"></A>
 <H3>14.13. 휴먼웨어 브레일노트</H3>
 
 <P>
@@ -5490,7 +5481,7 @@ NvDA는 다음 브레일노트 모델을 지원합니다:
 </TR>
 </TABLE>
 
-<A NAME="toc129"></A>
+<A NAME="toc128"></A>
 <H3>14.14. EcoBraille</H3>
 
 <P>
@@ -5588,7 +5579,7 @@ NVDA 점자 설정 대화상자에서 본 디스플레이가 연결된 시리얼
 </TR>
 </TABLE>
 
-<A NAME="toc130"></A>
+<A NAME="toc129"></A>
 <H3>14.15. SuperBraille</H3>
 
 <P>
@@ -5612,7 +5603,7 @@ NVDA 점자 설정 대화상자에서 본 디스플레이가 연결된 시리얼
 </TR>
 </TABLE>
 
-<A NAME="toc131"></A>
+<A NAME="toc130"></A>
 <H3>14.16. BRLTTY</H3>
 
 <P>
