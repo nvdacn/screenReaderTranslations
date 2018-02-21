@@ -3,16 +3,20 @@
 <HEAD>
 <META NAME="generator" CONTENT="http://txt2tags.org">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE>Có Gì Mới trong NVDA</TITLE>
+<TITLE>What's New in NVDA</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
-<H2>Có Gì Mới trong NVDA</H2>
+<H2>What's New in NVDA</H2>
 </CENTER>
 
 
 <H2>2018.1</H2>
 
-<H3>Tính Năng Mới</H3>
+<P>
+Highlights of this release include  support for charts in Microsoft word and PowerPoint, support for new braille displays including Eurobraille and the Optelec protocol converter, improved support for Hims and Optelec braille displays, performance improvements for Mozilla Firefox 58 and higher, and much more.
+</P>
+
+<H3>New Features</H3>
 
 <UL>
 <LI>It is now possible to interact with charts in Microsoft Word and Microsoft PowerPoint, similar to the existing support for charts in Microsoft Excel. (<A HREF="http://github.com/nvaccess/nvda/issues/7046">#7046</A>)
@@ -22,6 +26,14 @@
  <LI>To stop interacting with a chart, press escape.
  </UL>
 <LI>New language: Kyrgyz.
+<LI>Added support for VitalSource Bookshelf. (<A HREF="http://github.com/nvaccess/nvda/issues/7155">#7155</A>)
+<LI>Added support for the Optelec protocol converter, a device that allows one to use Braille Voyager and Satellite displays using the ALVA BC6 communication protocol. (<A HREF="http://github.com/nvaccess/nvda/issues/6731">#6731</A>)
+<LI>It is now possible to use braille input with an ALVA 640 Comfort braille display. (<A HREF="http://github.com/nvaccess/nvda/issues/7733">#7733</A>) 
+ <UL>
+ <LI>NVDA's braille input functionality can be used with these as well as other BC6 displays with firmware 3.0.0 and above.
+ </UL>
+<LI>Early support for Google Sheets with Braille mode enabled. (<A HREF="http://github.com/nvaccess/nvda/issues/7935">#7935</A>)
+<LI>Support for Eurobraille Esys, Esytime and Iris braille displays. (<A HREF="http://github.com/nvaccess/nvda/issues/7488">#7488</A>)
 </UL>
 
 <H3>Changes</H3>
@@ -56,8 +68,9 @@
 <LI>In twitter clients such as Chicken Nugget, NVDA will no longer ignore the last 20 characters of 280 character tweets when reading them. (<A HREF="http://github.com/nvaccess/nvda/issues/7828">#7828</A>)
 <LI>NVDA now uses the correct language when announcing symbols when text is selected. (<A HREF="http://github.com/nvaccess/nvda/issues/7687">#7687</A>)
 <LI>In recent versions of Office 365, it is again possible to navigate Excel charts using the arrow keys. (<A HREF="http://github.com/nvaccess/nvda/issues/7046">#7046</A>)
--  In speech and braille output, control states will now always be reported in the same order, regardless whether they are positive or negative. Fixes <A HREF="http://github.com/nvaccess/nvda/issues/7076">#7076</A>
+<LI>In speech and braille output, control states will now always be reported in the same order, regardless whether they are positive or negative. (<A HREF="http://github.com/nvaccess/nvda/issues/7076">#7076</A>)
 <LI>In apps such as Windows 10 Mail, NVDA will no longer fail to announce deleted characters when pressing backspace. (<A HREF="http://github.com/nvaccess/nvda/issues/7456">#7456</A>)
+<LI>All keys on the Hims Braille Sense Polaris displays are now working as expected. (<A HREF="http://github.com/nvaccess/nvda/issues/7865">#7865</A>)
 </UL>
 
 <H3>Changes for developers</H3>
@@ -72,6 +85,8 @@
 <LI>Implemented a generic system in braille.BrailleDisplayDriver to deal with displays which send confirmation/acknowledgement packets. See the handyTech braille display driver as an example. (<A HREF="http://github.com/nvaccess/nvda/issues/7590">#7590</A>, <A HREF="http://github.com/nvaccess/nvda/issues/7721">#7721</A>)
 <LI>A new "isAppX" variable in the config module can be used to detect if NVDA is running as a Windows Desktop Bridge Store app. (<A HREF="http://github.com/nvaccess/nvda/issues/7851">#7851</A>)
 <LI>For document implementations such as NVDAObjects or browseMode that have a textInfo, there is now a new documentBase.documentWithTableNavigation class that can be inherited from to gain standard table navigation scripts. Please refer to this class to see which helper methods must be provided by your implementation for table navigation to work. (<A HREF="http://github.com/nvaccess/nvda/issues/7849">#7849</A>)
+<LI>The scons batch file now better handles when  Python 3 is also installed, making use of the launcher to specifically launch python 2.7 32 bit. (<A HREF="http://github.com/nvaccess/nvda/issues/7541">#7541</A>)
+<LI>hwIo.Hid now takes an additional parameter exclusive, which defaults to True. If set to False, other applications are allowed to communicate with a device while it is connected to NVDA. (<A HREF="http://github.com/nvaccess/nvda/issues/7859">#7859</A>)
 </UL>
 
 <H2>2017.4</H2>
@@ -140,18 +155,18 @@ Lưu ý, từ phiên bản NVDA này trở đi, sẽ không còn hỗ trợ cho 
 <H3>Thay Đổi cho Nhà Phát Triển</H3>
 
 <UL>
-<LI>"scons tests" now checks that translatable strings have translator comments. You can also run this alone with "scons checkPot". (<A HREF="http://github.com/nvaccess/nvda/issues/7492">#7492</A>)
-<LI>There is now a new extensionPoints module which provides a generic framework to enable code extensibility at specific points in the code. This allows interested parties to register to be notified when some action occurs (extensionPoints.Action), to modify a specific kind of data (extensionPoints.Filter) or to participate in deciding whether something will be done (extensionPoints.Decider). (<A HREF="http://github.com/nvaccess/nvda/issues/3393">#3393</A>)
-<LI>You can now register to be notified about configuration profile switches via the config.configProfileSwitched Action. (<A HREF="http://github.com/nvaccess/nvda/issues/3393">#3393</A>)
-<LI>Braille display gestures that emulate system keyboard key modifiers (such as control and alt) can now be combined with other emulated system keyboard keys without explicit definition. (<A HREF="http://github.com/nvaccess/nvda/issues/6213">#6213</A>) 
+<LI>"scons tests" sẽ kiểm tra những chuỗi dịch có chú thích của người dịch không. Bạn có thể chạy độc lập với "scons checkPot". (<A HREF="http://github.com/nvaccess/nvda/issues/7492">#7492</A>)
+<LI>Có mô đun extensionPoints mới cung cấp framework để bật khả năng mở rộng mã tại điểm cụ thể của mã. Điều này giúp các chương trình khác muốn đăng ký để được thông báo khi có action xuất hiện (extensionPoints.Action), để chỉnh sửa các loại dữ liệu (extensionPoints.Filter) hoặc tham gia quá trình quyết định một việc sẽ được hoàn tất (extensionPoints.Decider). (<A HREF="http://github.com/nvaccess/nvda/issues/3393">#3393</A>)
+<LI>Đã có thể đăng ký thông báo khi thay đổi hồ sơ cấu hình với config.configProfileSwitched Action. (<A HREF="http://github.com/nvaccess/nvda/issues/3393">#3393</A>)
+<LI>Các cư chỉ/phím tắt của màn hình nổi đã có thể mô phỏng các phím bổ trợ của hệ thống (như control và alt) mà không cần phải định nghĩa riêng. (<A HREF="http://github.com/nvaccess/nvda/issues/6213">#6213</A>) 
  <UL>
- <LI>For example, if you have a key on your display bound to the alt key and another display key to downArrow, combining these keys will result in the emulation of alt+downArrow.
+ <LI>Ví dụ: nếu trên màn hình nổi bạn có gán một phím với alt và một phím với mũi tên xuống, thì có thể nhấn alt+mũi tên xuống.
  </UL>
-<LI>The braille.BrailleDisplayGesture class now has an extra model property. If provided, pressing a key will generate an additional, model specific gesture identifier. This allows a user to bind gestures limited to a specific braille display model. 
+<LI>Lớp braille.BrailleDisplayGesture đã có thêm thuộc tính model. Nếu khai báo, khi nhấn sẽ tạo ra thêm phím. Điều này giúp người dùng gán phím tắt cho cụ thể dòng màn hình nổi nào đó. 
  <UL>
- <LI>See the baum driver as an example for this new functionality.
+ <LI>Xem thêm driver baum để biết thêm tính năng này.
  </UL>
-<LI>NVDA is now compiled with Visual Studio 2017 and the Windows 10 SDK. (<A HREF="http://github.com/nvaccess/nvda/issues/7568">#7568</A>)
+<LI>NVDA hiện nay được biên dịch với Visual Studio 2017 và Windows 10 SDK. (<A HREF="http://github.com/nvaccess/nvda/issues/7568">#7568</A>)
 </UL>
 
 <H2>2017.3</H2>
