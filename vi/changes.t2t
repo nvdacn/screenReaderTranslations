@@ -1,17 +1,23 @@
-Có Gì Mới trong NVDA
+What's New in NVDA
 
 
 %!includeconf: ../changes.t2tconf
 
 = 2018.1 =
+Highlights of this release include  support for charts in Microsoft word and PowerPoint, support for new braille displays including Eurobraille and the Optelec protocol converter, improved support for Hims and Optelec braille displays, performance improvements for Mozilla Firefox 58 and higher, and much more.
 
-
-== Tính Năng Mới ==
+== New Features ==
 - It is now possible to interact with charts in Microsoft Word and Microsoft PowerPoint, similar to the existing support for charts in Microsoft Excel. (#7046)
  - In Microsoft Word:  When in browse mode, cursor to an embedded chart and press enter to interact with it.
  - In Microsoft PowerPoint when editing a slide: tab to a chart object, and press enter or space to interact with the chart.
  - To stop interacting with a chart, press escape.
 - New language: Kyrgyz.
+- Added support for VitalSource Bookshelf. (#7155)
+- Added support for the Optelec protocol converter, a device that allows one to use Braille Voyager and Satellite displays using the ALVA BC6 communication protocol. (#6731)
+- It is now possible to use braille input with an ALVA 640 Comfort braille display. (#7733) 
+ - NVDA's braille input functionality can be used with these as well as other BC6 displays with firmware 3.0.0 and above.
+- Early support for Google Sheets with Braille mode enabled. (#7935)
+- Support for Eurobraille Esys, Esytime and Iris braille displays. (#7488)
 
 
 == Changes ==
@@ -36,8 +42,9 @@ Có Gì Mới trong NVDA
 - In twitter clients such as Chicken Nugget, NVDA will no longer ignore the last 20 characters of 280 character tweets when reading them. (#7828)
 - NVDA now uses the correct language when announcing symbols when text is selected. (#7687)
 - In recent versions of Office 365, it is again possible to navigate Excel charts using the arrow keys. (#7046)
--  In speech and braille output, control states will now always be reported in the same order, regardless whether they are positive or negative. Fixes #7076
+- In speech and braille output, control states will now always be reported in the same order, regardless whether they are positive or negative. (#7076)
 - In apps such as Windows 10 Mail, NVDA will no longer fail to announce deleted characters when pressing backspace. (#7456)
+- All keys on the Hims Braille Sense Polaris displays are now working as expected. (#7865)
 
 
 == Changes for developers ==
@@ -48,6 +55,8 @@ Có Gì Mới trong NVDA
 - Implemented a generic system in braille.BrailleDisplayDriver to deal with displays which send confirmation/acknowledgement packets. See the handyTech braille display driver as an example. (#7590, #7721)
 - A new "isAppX" variable in the config module can be used to detect if NVDA is running as a Windows Desktop Bridge Store app. (#7851)
 - For document implementations such as NVDAObjects or browseMode that have a textInfo, there is now a new documentBase.documentWithTableNavigation class that can be inherited from to gain standard table navigation scripts. Please refer to this class to see which helper methods must be provided by your implementation for table navigation to work. (#7849)
+- The scons batch file now better handles when  Python 3 is also installed, making use of the launcher to specifically launch python 2.7 32 bit. (#7541)
+- hwIo.Hid now takes an additional parameter exclusive, which defaults to True. If set to False, other applications are allowed to communicate with a device while it is connected to NVDA. (#7859)
 
 
 = 2017.4 =
@@ -106,14 +115,14 @@ Lưu ý, từ phiên bản NVDA này trở đi, sẽ không còn hỗ trợ cho 
 
 
 == Thay Đổi cho Nhà Phát Triển ==
-- "scons tests" now checks that translatable strings have translator comments. You can also run this alone with "scons checkPot". (#7492)
-- There is now a new extensionPoints module which provides a generic framework to enable code extensibility at specific points in the code. This allows interested parties to register to be notified when some action occurs (extensionPoints.Action), to modify a specific kind of data (extensionPoints.Filter) or to participate in deciding whether something will be done (extensionPoints.Decider). (#3393)
-- You can now register to be notified about configuration profile switches via the config.configProfileSwitched Action. (#3393)
-- Braille display gestures that emulate system keyboard key modifiers (such as control and alt) can now be combined with other emulated system keyboard keys without explicit definition. (#6213) 
- - For example, if you have a key on your display bound to the alt key and another display key to downArrow, combining these keys will result in the emulation of alt+downArrow.
-- The braille.BrailleDisplayGesture class now has an extra model property. If provided, pressing a key will generate an additional, model specific gesture identifier. This allows a user to bind gestures limited to a specific braille display model. 
- - See the baum driver as an example for this new functionality.
-- NVDA is now compiled with Visual Studio 2017 and the Windows 10 SDK. (#7568)
+- "scons tests" sẽ kiểm tra những chuỗi dịch có chú thích của người dịch không. Bạn có thể chạy độc lập với "scons checkPot". (#7492)
+- Có mô đun extensionPoints mới cung cấp framework để bật khả năng mở rộng mã tại điểm cụ thể của mã. Điều này giúp các chương trình khác muốn đăng ký để được thông báo khi có action xuất hiện (extensionPoints.Action), để chỉnh sửa các loại dữ liệu (extensionPoints.Filter) hoặc tham gia quá trình quyết định một việc sẽ được hoàn tất (extensionPoints.Decider). (#3393)
+- Đã có thể đăng ký thông báo khi thay đổi hồ sơ cấu hình với config.configProfileSwitched Action. (#3393)
+- Các cư chỉ/phím tắt của màn hình nổi đã có thể mô phỏng các phím bổ trợ của hệ thống (như control và alt) mà không cần phải định nghĩa riêng. (#6213) 
+ - Ví dụ: nếu trên màn hình nổi bạn có gán một phím với alt và một phím với mũi tên xuống, thì có thể nhấn alt+mũi tên xuống.
+- Lớp braille.BrailleDisplayGesture đã có thêm thuộc tính model. Nếu khai báo, khi nhấn sẽ tạo ra thêm phím. Điều này giúp người dùng gán phím tắt cho cụ thể dòng màn hình nổi nào đó. 
+ - Xem thêm driver baum để biết thêm tính năng này.
+- NVDA hiện nay được biên dịch với Visual Studio 2017 và Windows 10 SDK. (#7568)
 
 
 = 2017.3 =
