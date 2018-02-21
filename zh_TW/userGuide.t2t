@@ -1834,14 +1834,6 @@ Windows 10 含有新的語音，一般稱之為「OneCore」或「mobile」語�
 
 此合成器並不支援 [拼字功能 #VoiceSettingsUseSpelling] 。
 
-++ NVDA 專用的 Nuance Vocalizer ++[Vocalizer]
-Nuance Vocalizer 是一個商業化的高品質語音合成器，它是由 Nuance Communications公司開發，並由 Tiflotecnia 公司專為 NVDA 製作成套件。
-此語音合成器包含超過50種語音，30種以上的語言。
-所有合成器的元件及語音皆透過附加元件安裝，在可攜式版的NVDA也能完整使用。
-
-您可透過以下網址獲取更多資訊，及如何購買： [www.vocalizer-nvda.com http://www.vocalizer-nvda.com/]。
-銷售營業額的某一百分比將會捐贈給 NVAccess，以支助 NDAV 報讀軟體的更多功能開發。
-
 + 支援的點顯器 +[SupportedBrailleDisplays]
 這一節的內容包含 NVDA 支援的點顯器的資訊。
 
@@ -1904,13 +1896,18 @@ Nuance Vocalizer 是一個商業化的高品質語音合成器，它是由 Nuanc
 | 點字游標向後捲動 | 左邊 BumperBar 向下, 右邊 BumperBar 向下 |
 %kc:endInclude
 
-++ Optelec ALVA BC640/680 ++[OptelecALVA]
+++ Optelec ALVA 6 系列/協議轉換器 ++[OptelecALVA]
 [Optelec http://www.optelec.com/] 的 ALVA BC640 與 BC680 兩種點顯器都可被 NVDA 支援。
+或者可以使用Optelec提供的協議轉換器連接接舊的Optelec點顯器，例如Braille Voyager。
 使用這些顯示器並不需要安裝任何特定的驅動程式，
 只要插上顯示器然後設定 NVDA 即可使用。
 
-當這些顯示器有點字鍵盤，他們可自行將點字轉譯成文字。
-因此，NVDA的輸入轉譯表設定就沒有關聯了。
+附註：使用ALVA藍牙工具程式配對時，NVDA可能無法在藍牙上使用ALVA BC6點顯器。
+當使用此工具程式配對了裝置，同時NVDA無法檢測到此裝置時，建議使用Windows藍牙設置來以常規的方式配對ALVA顯示器。
+
+附註：雖然有些點顯器有點字鍵盤，但預設情況下點字會翻譯為文字。
+這表示NVDA的點字輸入系統在預設情況下是未使用的（例如：輸入點字轉譯表設置為無效）。
+對於使用最新韌體的ALVA點顯器，可以使用輸入手勢來停用此HID鍵盤模擬。
 
 下列為此顯示器在NVDA的按鍵配置。
 這些按鍵的實際位置，請參閱顯示器的說明文件。
@@ -1920,32 +1917,35 @@ Nuance Vocalizer 是一個商業化的高品質語音合成器，它是由 Nuanc
 | Move braille display to previous line | t2 |
 | Move to current focus | t3 |
 | Move braille display to next line | t4 |
-| Scroll braille display forward | t5 or etouch3  |
+| Scroll braille display forward | t5 or etouch3 |
 | Route to braille cell | routing |
+| Toggle HID keyboard simulation | t1+spEnter |
 | Move to top line in review | t1+t2 |
 | Move to bottom line in review | t4+t5 |
 | Toggle braille tethered to | t1+t3 |
 | Report title | etouch2 |
 | Report status bar | etouch4 |
-| shift+tab 鍵 | sp1 |
-| alt 鍵 | sp2 |
-| escape 鍵 | sp3 |
-| tab 鍵 | sp4 |
-| 向上鍵 | spUp |
-| 向下鍵 | spDown |
-| 向左鍵 | spLeft |
-| 向右鍵 | spRight |
-| enter 鍵 | spEnter |
+| shift+tab key | sp1 |
+| alt key | sp2 |
+| escape key | sp3 |
+| tab key | sp4 |
+| upArrow key | spUp |
+| downArrow key | spDown |
+| leftArrow key | spLeft |
+| rightArrow key | spRight |
+| enter key | spEnter, enter|
 | Report date/time | sp1+sp2 |
-| NVDA 功能表 | sp1+sp3 |
-| windows+d 鍵 (minimise all applications) | sp1+sp4 |
+| NVDA Menu | sp1+sp3 |
+| windows+d key (minimize all applications) | sp1+sp4 |
 | windows+b key (focus system tray) | sp3+sp4 |
-| windows 鍵 | sp2+sp3 |
-| alt+tab 鍵 | sp2+sp4 |
+| windows key | sp2+sp3, windows |
+| alt+tab key | sp2+sp4 |
 | control+home key | t3+spUp |
 | control+end key | t3+spDown |
 | home key | t3+spLeft |
 | end key | t3+spRight |
+| alt key | alt |
+| control key | control |
 %kc:endInclude
 
 ++ Handy Tech 顯示器 ++[HandyTech]
@@ -2103,7 +2103,7 @@ NVDA可以支援由 [hedo Reha-Technik http://www.hedo.de/] 出品的點顯器Th
 | Say all | c1+c2+c3+c4+c5+c6 |
 %kc:endInclude
 
-++ HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille 點顯器系列 ++
+++ HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille 點顯器系列 ++[Hims]
 NVDA 透過 USB 或藍芽連結時，支援 Braille Sense、Braille EDGE、Smart Beetle 和 Sync Braille，顯示在 [Hims http://www.hims-inc.com/]
 如果是透過 USB連接，您需要安裝由 HIMS 所提供的驅動程式安裝在您的電腦系統上。 
 您可以從此連結下載: http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip
@@ -2452,6 +2452,86 @@ NVDA支援EcoBraille點顯器，請參閱[ONCE http://www.once.es/].
 || 名稱 | 按鍵 |
 | 往後捲動點顯器 | 數字鍵盤減號 |
 | 往前捲動點顯器 | 數字鍵盤加號 | 
+%kc:endInclude
+
+++ Eurobraille Esys/Esytime/Iris 點顯器 ++[Eurobraille]
+The Esys, Esytime and Iris displays from [Eurobraille http://www.eurobraille.fr/] are supported by NVDA.
+Esys and Esytime-Evo devices are supported when connected via USB or bluetooth.
+Older Esytime devices only support USB.
+Iris displays can only be connected via a serial port.
+Therefore, for these displays, you should select the port to which the display is connected after you have chosen this driver in the Braille Settings dialog.
+
+Iris and Esys displays have a braille keyboard with 10 keys.
+Of the two keys placed like a space bar, the left key is corresponding to the backspace key and the right key to the space key.
+
+Following are the key assignments for these displays with NVDA.
+Please see the display's documentation for descriptions of where these keys can be found.
+%kc:beginInclude
+|| Name | Key |
+| Scroll braille display back | switch1-6left, l1 |
+| Scroll braille display forward | switch1-6Right, l8 |
+| Move to current focus | switch1-6Left+switch1-6Right, l1+l8 |
+| Route to braille cell | routing, doubleRouting|
+| Move to previous line in review | joystick1Up |
+| Move to next line in review | joystick1Down |
+| Move to previous character in review | joystick1Left |
+| Move to next character in review | joystick1Right |
+| Switch to previous review mode | joystick1Left+joystick1Up |
+| Switch to next review mode | joystick1Right+joystick1Down |
+| Erase the last entered braille cell or character | backSpace |
+| Translate any braille input and press the enter key | backSpace+space |
+| insert key | dot3+dot5+space, l7 |
+| delete key | dot3+dot6+space |
+| home key | dot1+dot2+dot3+space, joystick2Left+joystick2Up |
+| end key | dot4+dot5+dot6+space, joystick2Right+joystick2Down |
+| leftArrow key | dot2+space, joystick2Left, leftArrow |
+| rightArrow key | dot5+space, joystick2Right, rightArrow |
+| upArrow key | dot1+space, joystick2Up, upArrow |
+| downArrow key | dot6+space, joystick2Down, downArrow |
+| enter key | joystick2Center |
+| pageUp key | dot1+dot3+space |
+| pageDown key | dot4+dot6+space |
+| numpad1 key | dot1+dot6+backspace |
+| numpad2 key | dot1+dot2+dot6+backspace |
+| numpad3 key | dot1+dot4+dot6+backspace |
+| numpad4 key | dot1+dot4+dot5+dot6+backspace |
+| numpad5 key | dot1+dot5+dot6+backspace |
+| numpad6 key | dot1+dot2+dot4+dot6+backspace |
+| numpad7 key | dot1+dot2+dot4+dot5+dot6+backspace |
+| numpad8 key | dot1+dot2+dot5+dot6+backspace |
+| numpad9 key | dot2+dot4+dot6+backspace |
+| numpadInsert key | dot3+dot4+dot5+dot6+backspace |
+| numpadDecimal key | dot2+backspace |
+| numpadDivide key | dot3+dot4+backspace |
+| numpadMultiply key | dot3+dot5+backspace |
+| numpadMinus key | dot3+dot6+backspace |
+| numpadPlus key | dot2+dot3+dot5+backspace |
+| numpadEnter key | dot3+dot4+dot5+backspace |
+| escape key | dot1+dot2+dot4+dot5+space, l2 |
+| tab key | dot2+dot5+dot6+space, l3 |
+| shift+tab key | dot2+dot3+dot5+space |
+| printScreen key | dot1+dot3+dot4+dot6+space |
+| pause key | dot1+dot4+space |
+| applications key | dot5+dot6+backspace |
+| f1 key | dot1+backspace |
+| f2 key | dot1+dot2+backspace |
+| f3 key | dot1+dot4+backspace |
+| f4 key | dot1+dot4+dot5+backspace |
+| f5 key | dot1+dot5+backspace |
+| f6 key | dot1+dot2+dot4+backspace |
+| f7 key | dot1+dot2+dot4+dot5+backspace |
+| f8 key | dot1+dot2+dot5+backspace |
+| f9 key | dot2+dot4+backspace |
+| f10 key | dot2+dot4+dot5+backspace |
+| f11 key | dot1+dot3+backspace |
+| f12 key | dot1+dot2+dot3+backspace |
+| windows key | dot1+dot2+dot3+dot4+backspace |
+| capsLock key | dot7+backspace, dot8+backspace |
+| numLock key | dot3+backspace, dot6+backspace |
+| shift key | dot7+space, l4 |
+| control key | dot7+dot8+space, dot1+dot7+dot8+space, dot4+dot7+dot8+space, l5 |
+| alt key | dot8+space, dot1+dot8+space, dot4+dot8+space, l6 |
+| ToggleHID keyboard input simulation | esytime):l1+joystick1Down, esytime):l8+joystick1Down |
 %kc:endInclude
 
 ++ BRLTTY ++[BRLTTY]
