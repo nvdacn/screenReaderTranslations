@@ -171,26 +171,26 @@
     <LI><A HREF="#MicrosoftSpeechPlatform">13.4. 微軟 Speech Platform</A>
     <LI><A HREF="#OneCore">13.5. 微軟 OneCore 語音</A>
     <LI><A HREF="#Audiologic">13.6. Audiologic Tts3</A>
-    <LI><A HREF="#Vocalizer">13.7. NVDA 專用的 Nuance Vocalizer</A>
     </UL>
   <LI><A HREF="#SupportedBrailleDisplays">14. 支援的點顯器</A>
     <UL>
     <LI><A HREF="#FreedomScientificFocus">14.1. Freedom Scientific Focus/PAC Mate 系列</A>
-    <LI><A HREF="#OptelecALVA">14.2. Optelec ALVA BC640/680</A>
+    <LI><A HREF="#OptelecALVA">14.2. Optelec ALVA 6 系列/協議轉換器</A>
     <LI><A HREF="#HandyTech">14.3. Handy Tech 顯示器</A>
     <LI><A HREF="#MDVLilli">14.4. MDV Lilli</A>
     <LI><A HREF="#Baum">14.5. Baum/Humanware/APH/Orbit 點顯器</A>
     <LI><A HREF="#HedoProfiLine">14.6. hedo ProfiLine USB</A>
     <LI><A HREF="#HedoMobilLine">14.7. hedo MobilLine USB</A>
     <LI><A HREF="#HumanWareBrailliant">14.8. HumanWare Brailliant BI/B 系列</A>
-    <LI><A HREF="#toc124">14.9. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille 點顯器系列</A>
+    <LI><A HREF="#Hims">14.9. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille 點顯器系列</A>
     <LI><A HREF="#Seika">14.10. Seika Braille Displays</A>
     <LI><A HREF="#Papenmeier">14.11. Papenmeier BRAILLEX 較新模組</A>
     <LI><A HREF="#PapenmeierOld">14.12. Papenmeier Braille BRAILLEX 較舊模組</A>
     <LI><A HREF="#HumanWareBrailleNote">14.13. HumanWare BrailleNote</A>
     <LI><A HREF="#EcoBraille">14.14. EcoBraille 點顯器</A>
     <LI><A HREF="#SuperBraille">14.15. 超點</A>
-    <LI><A HREF="#BRLTTY">14.16. BRLTTY</A>
+    <LI><A HREF="#Eurobraille">14.16. Eurobraille Esys/Esytime/Iris 點顯器</A>
+    <LI><A HREF="#BRLTTY">14.17. BRLTTY</A>
     </UL>
   <LI><A HREF="#AdvancedTopics">15. 進階主題</A>
     <UL>
@@ -3858,19 +3858,6 @@ Windows 10 含有新的語音，一般稱之為「OneCore」或「mobile」語�
 此合成器並不支援 <A HREF="#VoiceSettingsUseSpelling">拼字功能</A> 。
 </P>
 
-<A NAME="Vocalizer"></A>
-<H3>13.7. NVDA 專用的 Nuance Vocalizer</H3>
-
-<P>
-Nuance Vocalizer 是一個商業化的高品質語音合成器，它是由 Nuance Communications公司開發，並由 Tiflotecnia 公司專為 NVDA 製作成套件。
-此語音合成器包含超過50種語音，30種以上的語言。
-所有合成器的元件及語音皆透過附加元件安裝，在可攜式版的NVDA也能完整使用。
-</P>
-<P>
-您可透過以下網址獲取更多資訊，及如何購買： <A HREF="http://www.vocalizer-nvda.com/">www.vocalizer-nvda.com</A>。
-銷售營業額的某一百分比將會捐贈給 NVAccess，以支助 NDAV 報讀軟體的更多功能開發。
-</P>
-
 <A NAME="SupportedBrailleDisplays"></A>
 <H2>14. 支援的點顯器</H2>
 
@@ -4072,16 +4059,22 @@ Nuance Vocalizer 是一個商業化的高品質語音合成器，它是由 Nuanc
 </TABLE>
 
 <A NAME="OptelecALVA"></A>
-<H3>14.2. Optelec ALVA BC640/680</H3>
+<H3>14.2. Optelec ALVA 6 系列/協議轉換器</H3>
 
 <P>
 <A HREF="http://www.optelec.com/">Optelec</A> 的 ALVA BC640 與 BC680 兩種點顯器都可被 NVDA 支援。
+或者可以使用Optelec提供的協議轉換器連接接舊的Optelec點顯器，例如Braille Voyager。
 使用這些顯示器並不需要安裝任何特定的驅動程式，
 只要插上顯示器然後設定 NVDA 即可使用。
 </P>
 <P>
-當這些顯示器有點字鍵盤，他們可自行將點字轉譯成文字。
-因此，NVDA的輸入轉譯表設定就沒有關聯了。
+附註：使用ALVA藍牙工具程式配對時，NVDA可能無法在藍牙上使用ALVA BC6點顯器。
+當使用此工具程式配對了裝置，同時NVDA無法檢測到此裝置時，建議使用Windows藍牙設置來以常規的方式配對ALVA顯示器。
+</P>
+<P>
+附註：雖然有些點顯器有點字鍵盤，但預設情況下點字會翻譯為文字。
+這表示NVDA的點字輸入系統在預設情況下是未使用的（例如：輸入點字轉譯表設置為無效）。
+對於使用最新韌體的ALVA點顯器，可以使用輸入手勢來停用此HID鍵盤模擬。
 </P>
 <P>
 下列為此顯示器在NVDA的按鍵配置。
@@ -4118,6 +4111,10 @@ Nuance Vocalizer 是一個商業化的高品質語音合成器，它是由 Nuanc
 <TD>routing</TD>
 </TR>
 <TR>
+<TD>Toggle HID keyboard simulation</TD>
+<TD>t1+spEnter</TD>
+</TR>
+<TR>
 <TD>Move to top line in review</TD>
 <TD>t1+t2</TD>
 </TR>
@@ -4138,51 +4135,51 @@ Nuance Vocalizer 是一個商業化的高品質語音合成器，它是由 Nuanc
 <TD>etouch4</TD>
 </TR>
 <TR>
-<TD>shift+tab 鍵</TD>
+<TD>shift+tab key</TD>
 <TD>sp1</TD>
 </TR>
 <TR>
-<TD>alt 鍵</TD>
+<TD>alt key</TD>
 <TD>sp2</TD>
 </TR>
 <TR>
-<TD>escape 鍵</TD>
+<TD>escape key</TD>
 <TD>sp3</TD>
 </TR>
 <TR>
-<TD>tab 鍵</TD>
+<TD>tab key</TD>
 <TD>sp4</TD>
 </TR>
 <TR>
-<TD>向上鍵</TD>
+<TD>upArrow key</TD>
 <TD>spUp</TD>
 </TR>
 <TR>
-<TD>向下鍵</TD>
+<TD>downArrow key</TD>
 <TD>spDown</TD>
 </TR>
 <TR>
-<TD>向左鍵</TD>
+<TD>leftArrow key</TD>
 <TD>spLeft</TD>
 </TR>
 <TR>
-<TD>向右鍵</TD>
+<TD>rightArrow key</TD>
 <TD>spRight</TD>
 </TR>
 <TR>
-<TD>enter 鍵</TD>
-<TD>spEnter</TD>
+<TD>enter key</TD>
+<TD>spEnter, enter|</TD>
 </TR>
 <TR>
 <TD>Report date/time</TD>
 <TD>sp1+sp2</TD>
 </TR>
 <TR>
-<TD>NVDA 功能表</TD>
+<TD>NVDA Menu</TD>
 <TD>sp1+sp3</TD>
 </TR>
 <TR>
-<TD>windows+d 鍵 (minimise all applications)</TD>
+<TD>windows+d key (minimize all applications)</TD>
 <TD>sp1+sp4</TD>
 </TR>
 <TR>
@@ -4190,11 +4187,11 @@ Nuance Vocalizer 是一個商業化的高品質語音合成器，它是由 Nuanc
 <TD>sp3+sp4</TD>
 </TR>
 <TR>
-<TD>windows 鍵</TD>
-<TD>sp2+sp3</TD>
+<TD>windows key</TD>
+<TD>sp2+sp3, windows</TD>
 </TR>
 <TR>
-<TD>alt+tab 鍵</TD>
+<TD>alt+tab key</TD>
 <TD>sp2+sp4</TD>
 </TR>
 <TR>
@@ -4212,6 +4209,14 @@ Nuance Vocalizer 是一個商業化的高品質語音合成器，它是由 Nuanc
 <TR>
 <TD>end key</TD>
 <TD>t3+spRight</TD>
+</TR>
+<TR>
+<TD>alt key</TD>
+<TD>alt</TD>
+</TR>
+<TR>
+<TD>control key</TD>
+<TD>control</TD>
 </TR>
 </TABLE>
 
@@ -4660,7 +4665,7 @@ NVDA可以支援由 <A HREF="http://www.hedo.de/">hedo Reha-Technik</A> 出品�
 </TR>
 </TABLE>
 
-<A NAME="toc124"></A>
+<A NAME="Hims"></A>
 <H3>14.9. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille 點顯器系列</H3>
 
 <P>
@@ -5742,8 +5747,290 @@ NVDA支援EcoBraille點顯器，請參閱<A HREF="http://www.once.es/">ONCE</A>.
 </TR>
 </TABLE>
 
+<A NAME="Eurobraille"></A>
+<H3>14.16. Eurobraille Esys/Esytime/Iris 點顯器</H3>
+
+<P>
+The Esys, Esytime and Iris displays from <A HREF="http://www.eurobraille.fr/">Eurobraille</A> are supported by NVDA.
+Esys and Esytime-Evo devices are supported when connected via USB or bluetooth.
+Older Esytime devices only support USB.
+Iris displays can only be connected via a serial port.
+Therefore, for these displays, you should select the port to which the display is connected after you have chosen this driver in the Braille Settings dialog.
+</P>
+<P>
+Iris and Esys displays have a braille keyboard with 10 keys.
+Of the two keys placed like a space bar, the left key is corresponding to the backspace key and the right key to the space key.
+</P>
+<P>
+Following are the key assignments for these displays with NVDA.
+Please see the display's documentation for descriptions of where these keys can be found.
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Name</TH>
+<TH>Key</TH>
+</TR>
+<TR>
+<TD>Scroll braille display back</TD>
+<TD>switch1-6left, l1</TD>
+</TR>
+<TR>
+<TD>Scroll braille display forward</TD>
+<TD>switch1-6Right, l8</TD>
+</TR>
+<TR>
+<TD>Move to current focus</TD>
+<TD>switch1-6Left+switch1-6Right, l1+l8</TD>
+</TR>
+<TR>
+<TD>Route to braille cell</TD>
+<TD>routing, doubleRouting|</TD>
+</TR>
+<TR>
+<TD>Move to previous line in review</TD>
+<TD>joystick1Up</TD>
+</TR>
+<TR>
+<TD>Move to next line in review</TD>
+<TD>joystick1Down</TD>
+</TR>
+<TR>
+<TD>Move to previous character in review</TD>
+<TD>joystick1Left</TD>
+</TR>
+<TR>
+<TD>Move to next character in review</TD>
+<TD>joystick1Right</TD>
+</TR>
+<TR>
+<TD>Switch to previous review mode</TD>
+<TD>joystick1Left+joystick1Up</TD>
+</TR>
+<TR>
+<TD>Switch to next review mode</TD>
+<TD>joystick1Right+joystick1Down</TD>
+</TR>
+<TR>
+<TD>Erase the last entered braille cell or character</TD>
+<TD>backSpace</TD>
+</TR>
+<TR>
+<TD>Translate any braille input and press the enter key</TD>
+<TD>backSpace+space</TD>
+</TR>
+<TR>
+<TD>insert key</TD>
+<TD>dot3+dot5+space, l7</TD>
+</TR>
+<TR>
+<TD>delete key</TD>
+<TD>dot3+dot6+space</TD>
+</TR>
+<TR>
+<TD>home key</TD>
+<TD>dot1+dot2+dot3+space, joystick2Left+joystick2Up</TD>
+</TR>
+<TR>
+<TD>end key</TD>
+<TD>dot4+dot5+dot6+space, joystick2Right+joystick2Down</TD>
+</TR>
+<TR>
+<TD>leftArrow key</TD>
+<TD>dot2+space, joystick2Left, leftArrow</TD>
+</TR>
+<TR>
+<TD>rightArrow key</TD>
+<TD>dot5+space, joystick2Right, rightArrow</TD>
+</TR>
+<TR>
+<TD>upArrow key</TD>
+<TD>dot1+space, joystick2Up, upArrow</TD>
+</TR>
+<TR>
+<TD>downArrow key</TD>
+<TD>dot6+space, joystick2Down, downArrow</TD>
+</TR>
+<TR>
+<TD>enter key</TD>
+<TD>joystick2Center</TD>
+</TR>
+<TR>
+<TD>pageUp key</TD>
+<TD>dot1+dot3+space</TD>
+</TR>
+<TR>
+<TD>pageDown key</TD>
+<TD>dot4+dot6+space</TD>
+</TR>
+<TR>
+<TD>numpad1 key</TD>
+<TD>dot1+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpad2 key</TD>
+<TD>dot1+dot2+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpad3 key</TD>
+<TD>dot1+dot4+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpad4 key</TD>
+<TD>dot1+dot4+dot5+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpad5 key</TD>
+<TD>dot1+dot5+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpad6 key</TD>
+<TD>dot1+dot2+dot4+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpad7 key</TD>
+<TD>dot1+dot2+dot4+dot5+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpad8 key</TD>
+<TD>dot1+dot2+dot5+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpad9 key</TD>
+<TD>dot2+dot4+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpadInsert key</TD>
+<TD>dot3+dot4+dot5+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpadDecimal key</TD>
+<TD>dot2+backspace</TD>
+</TR>
+<TR>
+<TD>numpadDivide key</TD>
+<TD>dot3+dot4+backspace</TD>
+</TR>
+<TR>
+<TD>numpadMultiply key</TD>
+<TD>dot3+dot5+backspace</TD>
+</TR>
+<TR>
+<TD>numpadMinus key</TD>
+<TD>dot3+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>numpadPlus key</TD>
+<TD>dot2+dot3+dot5+backspace</TD>
+</TR>
+<TR>
+<TD>numpadEnter key</TD>
+<TD>dot3+dot4+dot5+backspace</TD>
+</TR>
+<TR>
+<TD>escape key</TD>
+<TD>dot1+dot2+dot4+dot5+space, l2</TD>
+</TR>
+<TR>
+<TD>tab key</TD>
+<TD>dot2+dot5+dot6+space, l3</TD>
+</TR>
+<TR>
+<TD>shift+tab key</TD>
+<TD>dot2+dot3+dot5+space</TD>
+</TR>
+<TR>
+<TD>printScreen key</TD>
+<TD>dot1+dot3+dot4+dot6+space</TD>
+</TR>
+<TR>
+<TD>pause key</TD>
+<TD>dot1+dot4+space</TD>
+</TR>
+<TR>
+<TD>applications key</TD>
+<TD>dot5+dot6+backspace</TD>
+</TR>
+<TR>
+<TD>f1 key</TD>
+<TD>dot1+backspace</TD>
+</TR>
+<TR>
+<TD>f2 key</TD>
+<TD>dot1+dot2+backspace</TD>
+</TR>
+<TR>
+<TD>f3 key</TD>
+<TD>dot1+dot4+backspace</TD>
+</TR>
+<TR>
+<TD>f4 key</TD>
+<TD>dot1+dot4+dot5+backspace</TD>
+</TR>
+<TR>
+<TD>f5 key</TD>
+<TD>dot1+dot5+backspace</TD>
+</TR>
+<TR>
+<TD>f6 key</TD>
+<TD>dot1+dot2+dot4+backspace</TD>
+</TR>
+<TR>
+<TD>f7 key</TD>
+<TD>dot1+dot2+dot4+dot5+backspace</TD>
+</TR>
+<TR>
+<TD>f8 key</TD>
+<TD>dot1+dot2+dot5+backspace</TD>
+</TR>
+<TR>
+<TD>f9 key</TD>
+<TD>dot2+dot4+backspace</TD>
+</TR>
+<TR>
+<TD>f10 key</TD>
+<TD>dot2+dot4+dot5+backspace</TD>
+</TR>
+<TR>
+<TD>f11 key</TD>
+<TD>dot1+dot3+backspace</TD>
+</TR>
+<TR>
+<TD>f12 key</TD>
+<TD>dot1+dot2+dot3+backspace</TD>
+</TR>
+<TR>
+<TD>windows key</TD>
+<TD>dot1+dot2+dot3+dot4+backspace</TD>
+</TR>
+<TR>
+<TD>capsLock key</TD>
+<TD>dot7+backspace, dot8+backspace</TD>
+</TR>
+<TR>
+<TD>numLock key</TD>
+<TD>dot3+backspace, dot6+backspace</TD>
+</TR>
+<TR>
+<TD>shift key</TD>
+<TD>dot7+space, l4</TD>
+</TR>
+<TR>
+<TD>control key</TD>
+<TD>dot7+dot8+space, dot1+dot7+dot8+space, dot4+dot7+dot8+space, l5</TD>
+</TR>
+<TR>
+<TD>alt key</TD>
+<TD>dot8+space, dot1+dot8+space, dot4+dot8+space, l6</TD>
+</TR>
+<TR>
+<TD>ToggleHID keyboard input simulation</TD>
+<TD>esytime):l1+joystick1Down, esytime):l8+joystick1Down</TD>
+</TR>
+</TABLE>
+
 <A NAME="BRLTTY"></A>
-<H3>14.16. BRLTTY</H3>
+<H3>14.17. BRLTTY</H3>
 
 <P>
 <A HREF="http://www.brltty.com/">BRLTTY</A> 是一個可以用來支援許多點顯器的應用程式。
