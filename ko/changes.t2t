@@ -4,16 +4,29 @@ NVDA 변경 이력
 %!includeconf: ../changes.t2tconf
 
 = 2018.1 =
+Highlights of this release include  support for charts in Microsoft word and PowerPoint, support for new braille displays including Eurobraille and the Optelec protocol converter, improved support for Hims and Optelec braille displays, performance improvements for Mozilla Firefox 58 and higher, and much more.
+
+== 새로 추가된 기능 ==
+- Microsoft Excel에서만 지원하던 차트 탐색 기능을 Word와 PowerPoint로도 확대함. (#7046)
+ - Microsoft Word 사용 시 브라우즈 모드를 사용하여 차트로 이동 후 엔터를 눌러 차트에 접근할 수 있음.
+ - Microsoft PowerPoint에서 슬라이드 편집 중 차트 객체로 이동하여 엔터나 스페이스를 눌러 차트에 접근할 수 있음.
+ - 차트에서 빠져나가려면 escape 키를 눌러야 함.
+- 새 NVDA 언어: 키르기즈스탄어 추가..
+- VitalSource Bookshelf 지원 추가. (#7155)
+- Alva Braille Voyager/Satellite 디스플레이에 사용되는 프로토컬을 BC6 버전으로 변환하는 장치인 Optelec 프로토컬 컨버터 지원 추가. (#6731)
+- It is now possible to use braille input with an ALVA 640 Comfort braille display. (#7733) 
+ - NVDA's braille input functionality can be used with these as well as other BC6 displays with firmware 3.0.0 and above.
+- Google Sheets 점자 모드 지원 추가(기초 단계임). (#7935)
+- Support for Eurobraille Esys, Esytime and Iris braille displays. (#7488)
+
 
 == 변경된 기능 ==
 - 힘스 한소네/브레일 엣지/스마트 비틀과 힘스 싱크브레일 점자 디스플레이 드라이버를 하나로 통일함. 이로 인해 싱크브레일 사용시 새 드라이버가 동작되도록 함. (#7459) 
  - 이로 인해 특정 명령(특히 스크롤 키 명령)이 통힐됨.
 - 터치 키보드 사용하여 글자 입력 시 다른 객체처럼 한 손가락을 두번 태핑해야 함. (#7309)
  - 이전 입력 방식(터치 타이핑)을 사용하려면 NVDA 설정 메뉴에 추가된 터치 기능 설정 대화상자를 통해 설정 바람.
-- Microsoft Excel에서만 지원하던 차트 탐색 기능을 Word와 PowerPoint로도 확대함. (#7046)
- - Microsoft Word 사용 시 브라우즈 모드를 사용하여 차트로 이동 후 엔터를 눌러 차트에 접근할 수 있음.
- - Microsoft PowerPoint에서 슬라이드 편집 중 차트 객체로 이동하여 엔터나 스페이스를 눌러 차트에 접근할 수 있음.
- - 차트에서 빠져나가려면 escape 키를 눌러야 함.
+- It is no longer necessary to explicitly tether braille to focus or review, as this will happen automatically by default. (#2385) 
+ - Note that automatic tethering to review will only occur when using a review cursor or object navigation command. Scrolling will not activate this new behavior.
 
 
 == 버그 수정 ==
@@ -31,6 +44,12 @@ NVDA 변경 이력
 - 최신 Office 365 사용 시 방향키를 이용한 Excel 차트 탐색 기능이 복원됨. (#7046)
 -  In speech and braille output, control states will now always be reported in the same order, regardless whether they are positive or negative. Fixes #7076
 - In apps such as Windows 10 Mail, NVDA will no longer fail to announce deleted characters when pressing backspace. (#7456)
+- All keys on the Hims Braille Sense Polaris displays are now working as expected. (#7865)
+- NVDA no longer fails to start on Windows 7 complaining about an internal api-ms dll, when a particular version of the Visual Studio 2017 redistributables have been installed by another application. (#7975)
+
+
+== 개발자를 위한 내용 ==
+개발자를 위한 내용에 대해서는 영어판 changes.html 문서를 참조하세요.
 
 
 = 2017.4 =
