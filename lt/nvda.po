@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NVDA bzr main:11331\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-02 00:10+1000\n"
+"POT-Creation-Date: 2018-03-09 00:10+1000\n"
 "PO-Revision-Date: 2017-10-31 20:48-0700\n"
 "Last-Translator: Rimas Kudelis <rq@akl.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
@@ -531,17 +531,29 @@ msgstr "{number} iš {total}"
 msgid "lv %s"
 msgstr "lyg %s"
 
+#. Translators: Displayed in braille for the table cell row numbers when a cell spans multiple rows.
+#. Occurences of %s are replaced with the corresponding row numbers.
+#, python-brace-format
+msgid "r{rowNumber}-{rowSpan}"
+msgstr ""
+
 #. Translators: Displayed in braille for a table cell row number.
 #. %s is replaced with the row number.
-#, python-format
-msgid "r%s"
-msgstr "eil%s"
+#, python-brace-format
+msgid "r{rowNumber}"
+msgstr ""
+
+#. Translators: Displayed in braille for the table cell column numbers when a cell spans multiple columns.
+#. Occurences of %s are replaced with the corresponding column numbers.
+#, python-brace-format
+msgid "c{columnNumber}-{columnSpan}"
+msgstr ""
 
 #. Translators: Displayed in braille for a table cell column number.
 #. %s is replaced with the column number.
-#, python-format
-msgid "c%s"
-msgstr "c%s"
+#, python-brace-format
+msgid "c{columnNumber}"
+msgstr ""
 
 #. Translators: Displayed in braille at the end of a control field such as a list or table.
 #. %s is replaced with the control's role.
@@ -5861,10 +5873,22 @@ msgstr "pažymėtas tekstas pašalintas"
 msgid "row %s"
 msgstr "%s-oji eilutė"
 
+#. Translators: Speaks the row span added to the current row number (example output: through 5).
+#. Translators: Speaks the column span added to the current column number (example output: through 5).
+#, fuzzy, python-format
+msgid "through %s"
+msgstr "perbrauktas"
+
 #. Translators: Speaks current column number (example output: column 3).
 #, python-format
 msgid "column %s"
 msgstr "%s-asis stulpelis"
+
+#. Translators: Speaks the row and column span added to the current row and column numbers
+#. (example output: through row 5 column 3).
+#, fuzzy, python-brace-format
+msgid "through row {row} column {column}"
+msgstr "iš {rowCount} eilučių ir {columnCount} stulpelių"
 
 #. Translators: Speaks number of columns and rows in a table (example output: with 3 rows and 2 columns).
 #, python-brace-format
@@ -7843,21 +7867,23 @@ msgstr "įdiegtas"
 msgid "remove"
 msgstr "pašalintas"
 
-#. Translators: The status shown for an addon when its disabled.
-msgid "disable"
-msgstr "išjungtas"
+#. Translators: The status shown for an addon when it requires a restart to become disabled
+msgid "Disabled after restart"
+msgstr ""
 
-#. Translators: The status shown for an addon when its enabled.
-msgid "enable"
-msgstr "įjungtas"
+#. Translators: The status shown for an addon when it requires a restart to become enabled
+msgid "Enabled after restart"
+msgstr ""
 
 #. Translators: The status shown for an addon when its currently suspended do to addons being disabled.
-msgid "suspended"
-msgstr "suspenduotas"
+#, fuzzy
+msgid "disabled"
+msgstr "išjungtas"
 
 #. Translators: The status shown for an addon when its currently running in NVDA.
-msgid "running"
-msgstr "vykdomas"
+#, fuzzy
+msgid "enabled"
+msgstr "įjungtas"
 
 #. Translators: The label for a button in Add-ons Manager dialog to enable or disable the selected add-on.
 msgid "&Enable add-on"
@@ -10770,6 +10796,18 @@ msgstr "Dviejų eilučių intervalas"
 #. Translators: a message when switching to 1.5 line spaceing  in Microsoft word
 msgid "1.5 line spacing"
 msgstr "Pusantros eilutės intervalas"
+
+#~ msgid "r%s"
+#~ msgstr "eil%s"
+
+#~ msgid "c%s"
+#~ msgstr "c%s"
+
+#~ msgid "suspended"
+#~ msgstr "suspenduotas"
+
+#~ msgid "running"
+#~ msgstr "vykdomas"
 
 #~ msgid "ALVA BC640/680 series"
 #~ msgstr "„ALVA BC640/680“ serijos"

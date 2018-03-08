@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NVDA master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-02 00:10+1000\n"
+"POT-Creation-Date: 2018-03-09 00:10+1000\n"
 "PO-Revision-Date: 2017-10-31 20:52-0700\n"
 "Last-Translator: हिम प्रसाद गौतम\n"
 "Language-Team: \n"
@@ -567,17 +567,29 @@ msgstr ""
 msgid "lv %s"
 msgstr ""
 
+#. Translators: Displayed in braille for the table cell row numbers when a cell spans multiple rows.
+#. Occurences of %s are replaced with the corresponding row numbers.
+#, python-brace-format
+msgid "r{rowNumber}-{rowSpan}"
+msgstr ""
+
 #. Translators: Displayed in braille for a table cell row number.
 #. %s is replaced with the row number.
-#, fuzzy, python-format
-msgid "r%s"
-msgstr "cap %s"
+#, python-brace-format
+msgid "r{rowNumber}"
+msgstr ""
+
+#. Translators: Displayed in braille for the table cell column numbers when a cell spans multiple columns.
+#. Occurences of %s are replaced with the corresponding column numbers.
+#, python-brace-format
+msgid "c{columnNumber}-{columnSpan}"
+msgstr ""
 
 #. Translators: Displayed in braille for a table cell column number.
 #. %s is replaced with the column number.
-#, fuzzy, python-format
-msgid "c%s"
-msgstr "cap %s"
+#, python-brace-format
+msgid "c{columnNumber}"
+msgstr ""
 
 #. Translators: Displayed in braille at the end of a control field such as a list or table.
 #. %s is replaced with the control's role.
@@ -6207,10 +6219,22 @@ msgstr "انتخاب حذف کردہ"
 msgid "row %s"
 msgstr "سطر %d"
 
+#. Translators: Speaks the row span added to the current row number (example output: through 5).
+#. Translators: Speaks the column span added to the current column number (example output: through 5).
+#, fuzzy, python-format
+msgid "through %s"
+msgstr "بذریعہ"
+
 #. Translators: Speaks current column number (example output: column 3).
 #, fuzzy, python-format
 msgid "column %s"
 msgstr "کالم %d"
+
+#. Translators: Speaks the row and column span added to the current row and column numbers
+#. (example output: through row 5 column 3).
+#, fuzzy, python-brace-format
+msgid "through row {row} column {column}"
+msgstr "مع %s کالم و %s سطریں"
 
 #. Translators: Speaks number of columns and rows in a table (example output: with 3 rows and 2 columns).
 #, fuzzy, python-brace-format
@@ -8249,23 +8273,23 @@ msgstr "NVDA خروج کریں"
 msgid "remove"
 msgstr ""
 
-#. Translators: The status shown for an addon when its disabled.
-#, fuzzy
-msgid "disable"
-msgstr "جدول"
+#. Translators: The status shown for an addon when it requires a restart to become disabled
+msgid "Disabled after restart"
+msgstr ""
 
-#. Translators: The status shown for an addon when its enabled.
-#, fuzzy
-msgid "enable"
-msgstr "جدول"
+#. Translators: The status shown for an addon when it requires a restart to become enabled
+msgid "Enabled after restart"
+msgstr ""
 
 #. Translators: The status shown for an addon when its currently suspended do to addons being disabled.
-msgid "suspended"
-msgstr ""
+#, fuzzy
+msgid "disabled"
+msgstr "جدول"
 
 #. Translators: The status shown for an addon when its currently running in NVDA.
-msgid "running"
-msgstr ""
+#, fuzzy
+msgid "enabled"
+msgstr "جدول"
 
 #. Translators: The label for a button in Add-ons Manager dialog to enable or disable the selected add-on.
 #, fuzzy
@@ -11224,6 +11248,14 @@ msgstr ""
 #. Translators: a message when switching to 1.5 line spaceing  in Microsoft word
 msgid "1.5 line spacing"
 msgstr ""
+
+#, fuzzy
+#~ msgid "r%s"
+#~ msgstr "cap %s"
+
+#, fuzzy
+#~ msgid "c%s"
+#~ msgstr "cap %s"
 
 #, fuzzy
 #~ msgid "review"
