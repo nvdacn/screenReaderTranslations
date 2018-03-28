@@ -181,7 +181,12 @@
     <LI><A HREF="#Baum">14.5. Baum/Humanware/APH/Orbit 點顯器</A>
     <LI><A HREF="#HedoProfiLine">14.6. hedo ProfiLine USB</A>
     <LI><A HREF="#HedoMobilLine">14.7. hedo MobilLine USB</A>
-    <LI><A HREF="#HumanWareBrailliant">14.8. HumanWare Brailliant BI/B 系列</A>
+    <LI><A HREF="#HumanWareBrailliant">14.8. HumanWare Brailliant BI/B 系列 / BrailleNote Touch</A>
+      <UL>
+      <LI><A HREF="#toc123">14.8.1. 所有型號的按鍵配置</A>
+      <LI><A HREF="#toc124">14.8.2. Brailliant BI 32、BI 40 和 B 80 的按鍵配置</A>
+      <LI><A HREF="#toc125">14.8.3. Brailliant BI 14 的按鍵配置</A>
+      </UL>
     <LI><A HREF="#Hims">14.9. HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille 點顯器系列</A>
     <LI><A HREF="#Seika">14.10. Seika Braille Displays</A>
     <LI><A HREF="#Papenmeier">14.11. Papenmeier BRAILLEX 較新模組</A>
@@ -2661,6 +2666,7 @@ NVDA會依照所選定的轉譯表項目，將您在柏金斯點字鍵盤上輸�
 <P>
 這個選項允許點字游標閃爍。
 如果關閉閃爍，點字游標會持續處在「浮點」的狀態。
+這種選用的方式並不會影響點字內容的呈現，它總是以不閃爍的第7及第8點來代表。
 </P>
 
 <A NAME="BrailleSettingsBlinkRate"></A>
@@ -2708,7 +2714,8 @@ NVDA會依照所選定的轉譯表項目，將您在柏金斯點字鍵盤上輸�
 </P>
 <P>
 這個選項可切換顯示在點顯器上的訊息是跟隨那種游標，有三個選項包括系統焦點、檢閱游標（導航器物件）及自動（即前述二項均有）。
-若選擇「自動」這個選項，在預設狀況是跟隨系統焦點或編輯游標。當在使用者手動變更了檢閱游標（導航器物件）的位置時，NVDA會暫時切換點字游標跟隨檢閱游標，直到焦點或編輯游標又有了改變。
+若選擇「自動」這個選項，在預設狀況是跟隨系統焦點或編輯游標。
+當在使用者手動變更了檢閱游標（導航器物件）的位置時，NVDA會暫時切換點字游標跟隨檢閱游標，直到焦點或編輯游標又有了改變。
 </P>
 
 <A NAME="BrailleSettingsReadByParagraph"></A>
@@ -3568,14 +3575,14 @@ NVDA允許您使用修改「組態設定」來達成前述的功能。
 <H4>11.3.2. 新增組態設定檔</H4>
 
 <P>
-若要新增一個設定檔，按 「新增」 按鈕。
+若要新增一個組態檔，按 「新增」 按鈕。
 </P>
 <P>
-在「新設定檔」的對話框，您可輸入想要新增組態檔的名稱。
-也可以選擇要如何使用它。
+在彈出的「新設定檔」的對話框，您可輸入想要新增組態檔的名稱。
+並選擇要如何使用它。
 如果您僅需手動啟用此新增的設定檔，此為預設選項，則選擇「手動」。
-否則選擇「觸發器」，此項目可自動觸發。
-為方便起見，如果您沒有在「名稱」，這個文字方塊內輸入文字，則會自動填入選定的啟用項目的名稱，做為該組態檔的名稱。
+否則是選定「觸發器」，此項目是自動觸發，其它的選項還有「目前的應用程式」或「全文朗讀」等。
+為方便起見，如果您沒有在「名稱」，這個文字方塊內輸入文字，則NVDA會自動填入所選擇的啟用項目的名稱，做為該組態檔的名稱。
 請見以下的 <A HREF="#ConfigProfileTriggers">「觸發器」</A>，以得知更多有關 [自動觸發]的資訊 
 </P>
 <P>
@@ -3588,10 +3595,10 @@ NVDA允許您使用修改「組態設定」來達成前述的功能。
 <P>
 您可選擇一個組態檔後，再按 「手動啟用」 按鈕，即可手動啟用這個組態檔。
 一旦啟用，其它的組態設定仍然可自動觸發，不過採用了 「手動啟用」 的設定，可蓋過其它的設定。
-例如，目前的應用程式在組態檔內有設定自動觸發報讀那些「連結」項目，但另外在手動啟用的組態檔內設定為「停用」，則遇到「連結」項時，並不會有語音提示。
-然而，如果您曾在「觸發器」的組態檔中對「語音設定」做過修改，但並沒有在手動啟用的組態檔中啟動它，則在「觸發器」組態設定的值將被使用。
+例如，目前的應用程式有設定一個自動觸發報讀那些「連結」項目的組態檔，但另外也有一個組態檔是設定為手動「停用」，則遇到「連結」項目時，並不會有語音提示。
+然而，如果您曾在「觸發器」的組態檔中對「語音」做調整，但並沒有在手動啟用的組態檔中有調整它，則在「觸發器」組態設定的值仍是適用的。
 所有修改過的設定值均會儲存在這個手動組態檔內。
-要解除一項已手動啟用的設定檔，需先選擇該項目後，再於對話框內按「手動解除」的按鈕。
+要解除一項已手動啟用的設定檔，需先選擇該項目後，再於對話框內按「手動停用」的按鈕。
 </P>
 
 <A NAME="ConfigProfileTriggers"></A>
@@ -3610,8 +3617,8 @@ NVDA允許您使用修改「組態設定」來達成前述的功能。
 </UL>
 
 <P>
-若要變更組態檔使其可自動啟用，可先選擇所要的項目，接著開啟此對話框，從前述的清單列表中選擇其中的一個項目即可。
-如果您並不想要使用這個設定檔，則可選擇「（通用配置）」。
+若要變更組態檔使其可自動啟用，需先選擇項目，接著按「觸發器的按鈕，」開啟此對話框，在對話框內從前述的清單列表中選擇項目。
+如果您並不想要使用自動觸發，可選擇「（一般設定）」的項目。
 </P>
 <P>
 按「關閉」按鈕，以回到「組態設定」的對話框。
@@ -3635,7 +3642,7 @@ NVDA允許您使用修改「組態設定」來達成前述的功能。
 
 <P>
 有時將所有的觸發器暫時停用對於操作是有幫助的。
-例如，您也許想編輯一個「手動啟用組態檔」，或「一般組態檔」，而不要受到自動觸發檔的干擾， 
+例如，您也許想編輯一個「手動啟用的組態檔」，或「一般組態檔」，而不要受到自動觸發檔的干擾， 
 那麼您可以開啟「組態設定」對話框，在「暫停所有的觸發器」的核取方塊，將其勾選，以達此目的。
 </P>
 
@@ -3730,8 +3737,9 @@ NVDA會請您確認是否要移除。
 <P>
 要停用附加元件，需按「停用」按鈕。 
 要啟用先前停用的附加元件，須按「啟用」按鈕。
-若附加元件的狀態顯示為正在執行或啟用，您可以停用附加元件，若顯示為暫停或停用，您可以啟用它。
+若附加元件的狀態顯示為「啟用」，您可以停用附加元件，若顯示為「停用」，您可以啟用它。
 每次按下「啟用/停用」按鈕，附加元件的狀態會顯示NVDA重新啟動後的變更。
+如果附加元件先前的狀態為停用，狀態將顯示「重新啟動後啟用」。如果附加元件先前為「啟用」，狀態將顯示「重新啟動後停用」。
 就像是當您在安裝或移除附加元件一樣，您需要重新啟動NVDA來使變更生效。
 </P>
 <P>
@@ -4565,17 +4573,23 @@ NVDA可以支援由 <A HREF="http://www.hedo.de/">hedo Reha-Technik</A> 出品�
 </TABLE>
 
 <A NAME="HumanWareBrailliant"></A>
-<H3>14.8. HumanWare Brailliant BI/B 系列</H3>
+<H3>14.8. HumanWare Brailliant BI/B 系列 / BrailleNote Touch</H3>
 
 <P>
-當透過USB或藍牙連接時，NVDA 可以支援 <A HREF="http://www.humanware.com/">HumanWare</A> 公司的 The Brailliant BI 及 B系列點顯器，包括 BI 32, BI 40及B 80等。
+當透過USB或藍牙連接時，NVDA 可以支援 <A HREF="http://www.humanware.com/">HumanWare</A> 公司的 The Brailliant BI 及 B系列點顯器，包括 BI 14, BI 32, BI 40及B 80等。
 如果以協定透過 USB 連接到 HumanWare 點顯器，您應先使用廠商所提供的驅動程式。 
 如果連接協定的設定是對點顯器開啟，則 USB 驅動程式並非必要。
 </P>
 <P>
-下列為此顯示器在NVDA的按鍵配置。
+也支援 BrailleNote Touch，且不需要安裝任何驅動程式。
+</P>
+<P>
+下列為 Brailliant BI/B 和 BrailleNote touch 顯示器在NVDA的按鍵配置。
 這些按鍵的實際位置，請參閱顯示器的說明文件。
 </P>
+
+<A NAME="toc123"></A>
+<H4>14.8.1. 所有型號的按鍵配置</H4>
 
 <TABLE BORDER="1" CELLPADDING="4">
 <TR>
@@ -4623,10 +4637,6 @@ NVDA可以支援由 <A HREF="http://www.hedo.de/">hedo Reha-Technik</A> 出品�
 <TD>space+dot6</TD>
 </TR>
 <TR>
-<TD>NVDA Menu</TD>
-<TD>c1+c3+c4+c5 (command n)</TD>
-</TR>
-<TR>
 <TD>shift+tab key</TD>
 <TD>space+dot1+dot3</TD>
 </TR>
@@ -4647,10 +4657,6 @@ NVDA可以支援由 <A HREF="http://www.hedo.de/">hedo Reha-Technik</A> 出品�
 <TD>dot8</TD>
 </TR>
 <TR>
-<TD>windows+d key (minimize all applications)</TD>
-<TD>c1+c4+c5 (command d)</TD>
-</TR>
-<TR>
 <TD>windows key</TD>
 <TD>space+dot3+dot4</TD>
 </TR>
@@ -4659,8 +4665,68 @@ NVDA可以支援由 <A HREF="http://www.hedo.de/">hedo Reha-Technik</A> 出品�
 <TD>space+dot2+dot3+dot4+dot5 (space+t)</TD>
 </TR>
 <TR>
+<TD>NVDA Menu</TD>
+<TD>space+dot1+dot3+dot4+dot5 (space+n)</TD>
+</TR>
+<TR>
+<TD>windows+d key (minimize all applications)</TD>
+<TD>space+dot1+dot4+dot5 (space+d)</TD>
+</TR>
+<TR>
+<TD>Say all</TD>
+<TD>space+dot1+dot2+dot3+dot4+dot5+dot6</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc124"></A>
+<H4>14.8.2. Brailliant BI 32、BI 40 和 B 80 的按鍵配置</H4>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>NVDA Menu</TD>
+<TD>c1+c3+c4+c5 (command n)</TD>
+</TR>
+<TR>
+<TD>windows+d key (minimize all applications)</TD>
+<TD>c1+c4+c5 (command d)</TD>
+</TR>
+<TR>
 <TD>Say all</TD>
 <TD>c1+c2+c3+c4+c5+c6</TD>
+</TR>
+</TABLE>
+
+<A NAME="toc125"></A>
+<H4>14.8.3. Brailliant BI 14 的按鍵配置</H4>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>up arrow key</TD>
+<TD>joystick up</TD>
+</TR>
+<TR>
+<TD>down arrow key</TD>
+<TD>joystick down</TD>
+</TR>
+<TR>
+<TD>left arrow key</TD>
+<TD>joystick left</TD>
+</TR>
+<TR>
+<TD>right arrow key</TD>
+<TD>joystick right</TD>
+</TR>
+<TR>
+<TD>enter key</TD>
+<TD>joystick action</TD>
 </TR>
 </TABLE>
 
@@ -5506,6 +5572,9 @@ NVDA 支援 BrailleNote notetakers，請參閱網址<A HREF="http://www.humanwar
 <LI>BrailleNote Apex (USB and Bluetooth connections)
 </UL>
 
+<P>
+關於 BrailleNote Touch，請參閱 <A HREF="HumanWareBrailliant">Brailliant BI 系列 / BrailleNote Touch</A> 章節。
+</P>
 <P>
 請參閱BrailleNote使用說明以獲得詳細資訊。
 在NVDA中，
