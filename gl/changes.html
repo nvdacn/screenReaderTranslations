@@ -19,12 +19,20 @@
 <LI>Agora sopórtanse as ordes de navegación de táboas de NVDA en Google Docs (co modo Braille habilitado). (<A HREF="http://github.com/nvaccess/nvda/issues/7946">#7946</A>)
 <LI>Capacidade para ler e navegar táboas en Kindle for PC. (<A HREF="http://github.com/nvaccess/nvda/issues/7977">#7977</A>)
 <LI>Soporte para as pantallas BrailleNote touch y Brailliant BI 14 a través tanto do USB coma do bluetooth. (<A HREF="http://github.com/nvaccess/nvda/issues/6524">#6524</A>)
+<LI>No Windows 10 Fall Creators Update e posteriores, o NVDA pode anunciar notificacións dende aplicacións como a Calculadora e a Windows Store. (<A HREF="http://github.com/nvaccess/nvda/issues/8045">#8045</A>)
+<LI>Novas táboas de transcripcción braille: Lithuano 8 pontos, ucranio, Mongol grado 2. (<A HREF="http://github.com/nvaccess/nvda/issues/7839">#7839</A>)
+<LI>Engadido un script para anunciar información de formato para o texto baixo unha celda braille específica. (<A HREF="http://github.com/nvaccess/nvda/issues/7106">#7106</A>)
+<LI>Ao se actualizar o NVDA, agora é posible retrasar a instalación da actualización a un momento posterior da túa elección. (<A HREF="http://github.com/nvaccess/nvda/issues/4263">#4263</A>) 
 </UL>
 
 <H3>Cambios</H3>
 
 <UL>
 <LI>Cambiouse a columna de estado no administrador de complementos para indicar se o complemento está habilitado ou deshabilitado ademais de en execución ou suspendido. (<A HREF="http://github.com/nvaccess/nvda/issues/7929">#7929</A>)
+<LI>Actualizado o transcriptor braille liblouis a 3.5.0. (<A HREF="http://github.com/nvaccess/nvda/issues/7839">#7839</A>)
+<LI>A táboa braille lituana renomeouse a Lituano 6 pontos para evitar confusións coa nova táboa de 8 pontos. (<A HREF="http://github.com/nvaccess/nvda/issues/7839">#7839</A>)
+<LI>As táboas Francés (Canadá) grao 1 e grao 2 borráronse. No seu lugar, utilizaranse as táboas Francés (unificado) 6 pontos e Grao 2 respectivamente. (<A HREF="http://github.com/nvaccess/nvda/issues/7839">#7839</A>)
+<LI>Os sensores secundarios das pantallas braille Alva BC6, EuroBraille e Papenmeier agora anuncian información de formato para o texto baixo a celda braille dese sensor. (<A HREF="http://github.com/nvaccess/nvda/issues/7106">#7106</A>)
 </UL>
 
 <H3>Correción de fallos</H3>
@@ -34,7 +42,12 @@
 <LI>O NVDA xa non falla ao ler a páxina cando se retrocede a unha páxina anterior en Microsoft Edge. (<A HREF="http://github.com/nvaccess/nvda/issues/7997">#7997</A>)
 <LI>O NVDA xa non anunciará incorrectamente o carácter final dun PIN de inicio de sesión de windows 10 segundo a máquina se desbloquee. (<A HREF="http://github.com/nvaccess/nvda/issues/7908">#7908</A>)
 <LI>As etiquetas das caixas de verificación e dos botóns de opción en Chrome e Firefox xa non se anuncian dúas veces cando se tabule ou se use a navegación rápida en modo exploración. (<A HREF="http://github.com/nvaccess/nvda/issues/7960">#7960</A>)
-<LI>Se manexa aria-current cun valor de false como false en lugares de true (<A HREF="http://github.com/nvaccess/nvda/issues/7892">#7892</A>).
+<LI>Manéxase aria-current cun valor de false como false en lugares de true (<A HREF="http://github.com/nvaccess/nvda/issues/7892">#7892</A>).
+<LI>O controlador do sintetizador Windows Onecore Voices xa non falla ao se cargar se a voz configurada se desinstalou. (<A HREF="http://github.com/nvaccess/nvda/issues/7999">#7999</A>)
+<LI>Cambiar voces no controlador do sintetizador Windows Onecore Voices agora é moito máis rápido. (<A HREF="http://github.com/nvaccess/nvda/issues/7999">#7999</A>)
+<LI>Arranxada a malformación da saída braille para varias táboas braille, incluindo signos en maiúsculas no braille danés contraído de 8 pontos. (<A HREF="http://github.com/nvaccess/nvda/issues/7526">#7526</A>, <A HREF="http://github.com/nvaccess/nvda/issues/7693">#7693</A>)
+<LI>O NVDA agora pode anunciar máis tipos de viñetas no Microsoft Word. (<A HREF="http://github.com/nvaccess/nvda/issues/6778">#6778</A>)
+<LI>Ao se premer o script anunciar información xa non move incorrectamente a posición de revisión e polo tanto ao premelo varias veces xa non da resultados diferentes. (<A HREF="http://github.com/nvaccess/nvda/issues/7869">#7869</A>)
 </UL>
 
 <H3>Cambios para Desenvolvedores</H3>
@@ -42,7 +55,14 @@
 <UL>
 <LI>A información para desenvolvedores para obxectos UIA agora contén unha listaxe dos patróns UIA dispoñibles. (<A HREF="http://github.com/nvaccess/nvda/issues/5712">#5712</A>)
 <LI>Os módulos de aplicación agora poden forzar certas ventás para usar sempre UIA implementando o método isGoodUIAWindow. (<A HREF="http://github.com/nvaccess/nvda/issues/7961">#7961</A>)
+<LI>A bandeira booleana oculta "outputPass1Only" na seción braille da configuración borrouse de novo. Liblouis xa non soporta pasar 1 só na saída. (<A HREF="http://github.com/nvaccess/nvda/issues/7839">#7839</A>)
 </UL>
+
+<H2>2018.1.1</H2>
+
+<P>
+Esta é unha versión especial do NVDA que soluciona un problema no controlador do sintetizador Onecore Windows Speech, que facía que falara cun ton e velocidade máis altos en Windows 10 Redstone 4 (1803). (<A HREF="http://github.com/nvaccess/nvda/issues/8082">#8082</A>)  
+</P>
 
 <H2>2018.1</H2>
 
