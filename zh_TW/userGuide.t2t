@@ -933,7 +933,7 @@ NVDA 將套用您目前電腦系統所使用的語言。
 
 ====關閉 NVDA時顯示對話框選項====[GeneralSettingsShowExitOptions]
 此為一核取方塊，決定當關閉 NVDA 時，是否要開啟一個對話框，來詢問接下來要採取何動作。
-若勾選此項目，彈出的對話框會詢問將採以下三個選項中的哪一項，包括：「關閉」、「重新啟動」、「重新啟動並停用附加元件」，選定後需按「確認」按鈕。
+若勾選此項目，彈出的對話框會詢問將採以下四個選項中的哪一項，包括：「關閉」、「重新啟動」、「重新啟動並停用附加元件」或「安裝有待更新的版本（如果有的話）」，選定後需按「確認」按鈕。
 若沒有勾選此項目，當關閉 NVDA 時，則直接立即關閉。
 
 ====啟動或關閉 NVDA 時播放音效====[GeneralSettingsPlaySounds]
@@ -960,6 +960,10 @@ NVDA 將套用您目前電腦系統所使用的語言。
 ==== 自動檢查NVDA的更新 ====[GeneralSettingsCheckForUpdates]
 當勾選此核取方塊，NVDA會自動檢查更新版本並通知。
 您也可透過手動來做版本更新檢查，請在NVDA功能表中的「說明」選擇「檢查更新。」
+
+==== 是否通知當啟動時有待更新的版本 ====[GeneralSettingsNotifyPendingUpdates]
+當勾選此核取方塊，NVDA會在啟動時通知有待更新的版本，提供安裝。
+也可以從「關閉NVDA」對話框（如果有啟用）、「NVDA功能表」或從「說明功能表」中重新勾選核取方塊，來手動安裝有待更新的版本。
 
 +++ 語音合成 (NVDA+Ctrl+s) +++[SynthesizerSelection]
 「語音合成」的對話框是用來選擇 NVDA 是使用何種語音合成方式報讀。
@@ -1920,6 +1924,7 @@ Windows 10 含有新的語音，一般稱之為「OneCore」或「mobile」語�
 | Move braille display to next line | t4 |
 | Scroll braille display forward | t5 or etouch3 |
 | Route to braille cell | routing |
+| Report text formatting under braille cell | secondary routing |
 | Toggle HID keyboard simulation | t1+spEnter |
 | Move to top line in review | t1+t2 |
 | Move to bottom line in review | t4+t5 |
@@ -2274,7 +2279,7 @@ live 系列僅有一個路由列，而 EAB 在每一方位僅可移動一個步�
 | Move to first contained object | dn2 |
 | Move to previous object | left2 |
 | Move to next object | right2 |
-| Report text formatting | upper routing row |
+| Report text formatting under braille cell | upper routing row |
 %kc:endInclude
 
 Trio 模組有額外的四個案件，位在點字鍵盤的前面。
@@ -2348,7 +2353,7 @@ BrxCom是一種工具，讓您可使用點字輸入並從報讀軟體獨立出�
 | Move to first contained object | dn2 |
 | Move to next object | right2 |
 | Move to previous object | left2 |
-| Report text formatting | Upper routing strip |
+| Report text formatting under braille cell | upper routing strip |
 
 BRAILLEX Tiny:
 || 名稱 | 按鍵 |
@@ -2363,7 +2368,7 @@ BRAILLEX Tiny:
 | Move to first contained object | r1+dn |
 | Move to previous object | r1+left |
 | Move to next object | r1+right |
-| Report text formatting | reportf |
+| Report text formatting under braille cell | upper routing strip |
 | Report title | l1+up |
 | Report status bar | l2+down |
 
@@ -2372,7 +2377,7 @@ BRAILLEX 2D 顯示器:
 | Report current character in review | l1 |
 | Activate current navigator object | l2 |
 | Toggle braille tethered to | r2 |
-| Report text formatting | reportf |
+| Report text formatting under braille cell | upper routing strip |
 | Move braille display to previous line | up |
 | Scroll braille display back | left |
 | Scroll braille display forward | right |
@@ -2495,7 +2500,8 @@ Please see the display's documentation for descriptions of where these keys can 
 | Scroll braille display back | switch1-6left, l1 |
 | Scroll braille display forward | switch1-6Right, l8 |
 | Move to current focus | switch1-6Left+switch1-6Right, l1+l8 |
-| Route to braille cell | routing, doubleRouting|
+| Route to braille cell | routing |
+| Report text formatting under braille cell | doubleRouting |
 | Move to previous line in review | joystick1Up |
 | Move to next line in review | joystick1Down |
 | Move to previous character in review | joystick1Left |
