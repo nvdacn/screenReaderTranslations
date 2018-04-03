@@ -33,7 +33,7 @@ addresses = {
         'email': ['Ruben Alcaraz <ruben.hangar1.8@gmail.com>', 'Dr. Mireia Ribera <mireia.ribera@gmail.com>', 'Santi Moese <santispock@gmail.com>', 'Marina Salse Rovira <salse@ub.edu>'],
     },
     'ckb': {
-        'lang':'Kurdish',
+        'lang':'Central Kurdish',
         'email': ['Ali Ustek <aliustek@gmail.com>', 'Patrick Galasso <Patrice.galasso@gmail.com>', 'Jwanro Mustafa <jwanroabdula@hotmail.com>', 'Kosrat D Ahmad <kosrat.d.ahmad@gmail.com>'],
     },
     'cs': {
