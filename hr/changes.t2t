@@ -8,24 +8,41 @@
 == Nove značajke ==
 - Širina redka i dužina stupca sada se mogu isčitati uz pomić govora i brajice. (#2642)
 - NVDA prečaci za navigaciju u tablicama sada su podržani u  Google Dokumentima (sa uključenim brajičnim načinom). (#7946)
-- Mogućnost navigacije po tablicama u Kondle za osobna računala. (#7977)
+- Mogućnost navigacije po tablicama u Kindleu za osobna računala. (#7977)
 - Podrška za BrailleNote touch i Brailliant BI 14 brajične retke preko USB i bluetooth veze. (#6524)
+- U Windows 10 zimskoj nadogradnji za tvorce i novijim, NVDA može izgovarati obavijesti iz aplikacija kao što je to KalKulator i Windows Store. (#8045)
++- New braille translation tables: Lithuanian 8 dot, Ukrainian, Mongolian grade 2. (#7839)
++- Added a script to report formatting information for the text under a specific braille cell. (#7106)
++- When updating NVDA, it is now possible to postpone the installation of the update to a later moment of choice. (#4263) 
 
 
 == Izmjene ==
 - Stupac statusa je promijenjen tako da će pokazivati je li dodatak omogućen ili onemogućen puno bolje od prijašnjeg obavještenja pokrenut ili suspendiran. (#7929)
++- Updated liblouis braille translator to 3.5.0. (#7839)
++- The Lithuanian braille table has been renamed to Lithuanian 6 dot to avoid confusion with the new 8 dot table. (#7839)
++- The French (Canada) grade 1 and grade 2 tables have been removed. Instead, the French (unified) 6 dot computer braille and Grade 2 tables will be used respectively. (#7839)
++- The secondary routing buttons on Alva BC6, EuroBraille and Papenmeier braille displays now report formatting information for the text under the braille cell of that button. (#7106)
 
 
 == ispravke grešaka ==
-- NVDA sada uspjeva pročitati fokusirane kontrole u zaslonu za prijavu Microsoft naloga u postavkama poslije upisivanja e-mail adrese. (#7997)
-- NVDA no longer fails to read the page when going back to a previous page in Microsoft Edge. (#7997)
-- NVDA will no longer incorrectly announce the final character of a windows 10 sign-in PIN as the machine unlocks. (#7908)
-- Labels of checkboxes and radio buttons in Chrome and Firefox are no longer reported twice when tabbing or using quick navigation in Browse mode. (#7960)
-- Handle aria-current with a value of false as false instead of true (#7892).
+- NVDA sada uspijeva pročitati fokusirane kontrole u zaslonu za prijavu Microsoft naloga u postavkama poslije upisivanja e-mail adrese. (#7997)
+- NVDA sada uspijeva pročitati stranicu kada se vraćate na prethodnu stranicu u  Microsoft Edge. (#7997)
+- NVDA više neće pogrešno izgovarati zadnji znak windows 10 pina za prijavu kada se računalo otključava. (#7908)
+- Oznake odabirnih okvira i izbornih gumba u Chromeu i Firefoxu više se ne izgovaraju dva put prilikom pritiska tipke tab ili pomicanjem sa strelicama. (#7960)
+- Rukovanje aria-current sa vrijednošću false kao false umjesto true (#7892).
+- Windows Onecore glasovi više se ne pokreću s greškom ako je prethodni glas bio uklonjem. (#7999)
+- Izmjena glasova u Windows Onecore glasovima sada je puno brža. (#7999)
++- Fixed malformed braille output for several braille tables, including capital signs in 8 dot contracted Danish braille. (#7526, #7693)
++- NVDA can now report more bullet types in Microsoft Word. (#6778)
++- Pressing the report formatting script no longer incorrectly moves the reviewPosition and therefore pressing it multiple times no longer gives different results. (#7869)
 
 
 == Izmjene za razvojne programere ==
 Informacije za razvojne programere nisu prevedene, molimo ’pogledajte [englesku inačicu ovog dokumenta ../en/changes.html].
+
+
+= 2018.1.1 =
+Ovo je specijalna stabilna inačica NVDA koja otklanja grešku u OneCore Windows sintetizatoru govora, koja je prouzrokovala da isto govori sa povišenim glasom i povišenom brzinom u Windows 10 Redstone 4 (1803). (#8082)  
 
 
 = 2018.1 =
