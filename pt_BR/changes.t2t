@@ -19,6 +19,7 @@ Traduzido por Marlin Rodrigues da Silva, Cleverson Casarin Uliana e Tiago Melo C
  - Você pode atribuir esses novos modificadores de alternância usando os comandos encontrados em Teclas emuladas do teclado de sistema na caixa de diálogo Gestos para entrada.
 - Suporte restaurado para linhas Handy Tech Braillino e Modular (com firmware antigo). (#8016)
 - Data e hora dos dispositivos Handy Tech suportados (como Active Braille e Active Star) serão automaticamente sincronizadas pelo NVDA quando estiverem fora de sincronia por mais de cinco segundos. (#8016)
+- Nas listas de mensagens do Microsoft Outlook, o NVDA agora informa se uma mensagem foi respondida ou encaminhada. (#6911)
 
 
 == Alterações ==
@@ -28,6 +29,9 @@ Traduzido por Marlin Rodrigues da Silva, Cleverson Casarin Uliana e Tiago Melo C
 - As tabelas em Francês (Canadá) grau 1 e 2 foram removidas. Em vez destas, serão usadas as tabelas braille em francês (unificado) de 6 pontos para computador e a Grau 2 respectivamente. (#7839)
 - Os botões secundários de rolagem nas linhas braille Alva BC6, EuroBraille e Papenmeier agora anunciam informações de formatação para o texto sob a célula braille desse botão. (#7106)
 - As tabelas de entrada braille abreviadas retornarão automaticamente ao modo não abreviado em casos não editáveis (isto é, em controles onde não há cursor ou no modo de navegação). (#7306)
+- O NVDA agora é menos verboso quando um compromisso ou horário no calendário do Outlook abrange um dia inteiro. (#7949)
+- Todas as Preferências do NVDA agora podem ser encontradas num diálogo de configurações no Menu NVDA -> Preferências -> Configurações, em vez de dispersadas por vários diálogos. (#7302)
+- O sintetizador de fala padrão quando executado no Windows 10 é agora vozes oneCore em vez de eSpeak. (#8176)
 
 
 == Correção de Falhas ==
@@ -36,8 +40,8 @@ Traduzido por Marlin Rodrigues da Silva, Cleverson Casarin Uliana e Tiago Melo C
 - O NVDA não anunciará de forma incorreta o caractere final de um PIN de login do Windows 10 à medida que a máquina desbloqueia. (#7908)
 - Os rótulos das caixas de verificação e dos botões de opção no Chrome e no Firefox já não são anunciados duas vezes quando teclando tab ou usando a navegação rápida no modo de navegação. (#7960)
 - Manipula aria-current com um valor de falso como falso em vez de verdadeiro (#7892).
-- O driver de sintetizador Windows Onecore Voices não falha mais ao carregar se a voz configurada foi desinstalada. (#7999)
-- Alterar vozes no driver de sintetizador Windows Onecore Voices agora é muito mais rápido. (#7999)
+- O driver de sintetizador Vozes Windows Onecore não falha mais ao carregar se a voz configurada foi desinstalada. (#7999)
+- Alterar vozes no driver de sintetizador Vozes Windows Onecore agora é muito mais rápido. (#7999)
 - Corrigida a saída de braille malformado para várias tabelas braille, incluindo sinais de maiúsculas em braille dinamarquês abreviado de 8 pontos. (#7526, #7693)
 - O NVDA agora pode reportar mais tipos de marcadores no Microsoft Word. (#6778)
 - Pressionando o script para anunciar formatação não move mais o reviewPosition ""[posição da exploração]"" incorretamente e, portanto, pressionando-o várias vezes não dá mais resultados diferentes. (#7869)
@@ -46,6 +50,8 @@ Traduzido por Marlin Rodrigues da Silva, Cleverson Casarin Uliana e Tiago Melo C
 - No Windows 8 e posteriores, o NVDA deixará de anunciar "desconhecido" ao abrir o menu de links rápidos (Windows+X) e selecionar itens deste menu. (#8137)
 - Modelos de gestos específicos para botões nas linhas Hims estão funcionando como publicado no guia do usuário. (#8096)
 - O NVDA tentará agora corrigir os problemas de registro do sistema COM que fazem com que programas como o Firefox e o Internet Explorer fiquem inacessíveis e comunique "Desconhecido" pelo NVDA. (#2807)
+- A contornar uma falha ""[bug]"" no gerenciador de tarefas que faz com que o NVDA não permita que os usuários acessem o conteúdo de detalhes específicos sobre processos. (#8147)
+- As vozes Microsoft SAPI5 mais recentes não ficam mais atrasadas no final da fala, tornando muito mais eficiente navegar com essas vozes. (#8174)
 
 
 == Alterações Específicas para Desenvolvedores ==
