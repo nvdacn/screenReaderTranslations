@@ -932,7 +932,7 @@ OK를 누르면 NVDA가 재시작됩니다.
 
 ==== NVDA 종료전 종료 옵션 호출 ====
 이 옵션은 NVDA 종료시 종료 옵션 대화상자를 띄울것인지를 조절합니다.
-이 옵션을 선택하면 NVDA 종료전 종료 옵션(종료, 재시작, 재시작 및 추가 기능 미사용)을 묻는 대화상자가 나타납니다.
+이 옵션을 선택하면 NVDA 종료전 종료 옵션(종료, 재시작, 재시작 및 추가 기능 미사용, 업데이트 설치)을 묻는 대화상자가 나타납니다.
 본 옵션을 해제하면 NVDA 종료 명령을 누르면 NVDA는 곧바로 종료됩니다.
 
 ==== NVDA 시작 및 종료음 재생 ====
@@ -960,6 +960,9 @@ OK를 누르면 NVDA가 재시작됩니다.
 이 옵션을 선택하면 NVDA는 자동으로 업데이트 버전을 체크하며 업데이트가 있을때 업데이트 대화상자를 띄웁니다.
 또한 NVDA 메뉴 - 도움말 - 업데이트 확인을 선택하여 수동으로 업데이트를 체크할 수 있습니다.
 
+==== NVDA 실행시 설치 준비중인 업데이트 알림 ====[GeneralSettingsNotifyPendingUpdates]
+본 옵션을 선택하면 NVDA 업데이트가 준비되어있고 NVDA를 재시작할 경우 업데이트 설치 관련 대화상자가 나타나게 됩니다.
+또한 NVDA 종료 대화상자(만약 그 옵션을 선택한 경우)내 업데이트 설치 또는 도움 메뉴에 있는 업데이트 확인을 통해서 새 버전을 설치할 수 있습니다.
 
 +++ 음성 엔진 (NVDA+control+s) +++
 설정 메뉴의 "음성엔진..."을 선택하면 음성 엔진 대화상자가 나타납니다. 음성엔진 대화상자에서는 NVDA가 사용할 음성엔진을 선택할 수 있습니다.
@@ -1759,6 +1762,7 @@ NVDA는 정말로 추가기능을 삭제할 것인지 묻습니다.
 
 실행중이거나 사용함으로 된 추가 기능을 일시 정지하려면 "사용 않함" 버튼을 누르고 이전에 정지되었거나 사용 않함으로 설정된 추가 기능을 사용하려면 "사용" 버튼을 누르세요.
 토글 버튼을 누를때마다 NVDA 재시작후의 추가 기능 사용 여부가 보여집니다.
+만약 추가 기능을 사용함으로 토글한 경후 "재시작 후 사용"으로 표시되고 반대로 추가 기능을 일시 정지시 "재시작 후 사용 않함"으로 표시됩니다.
 추가 기능 설치 및 제거와 마찬가지로 추가 기능 사용 여부 변경은 NVDA를 재시작하면 적용됩니다.
 
 또한 추가 기능 관리자는 대화상자를 닫기 위하여 닫기 버튼을 가지고 있습니다.
@@ -1921,6 +1925,7 @@ Focus 80에만 해당:
 | 점자 디스플레이를 다음 줄로 이동 | t4 |
 | 점자 디스플레이 앞으로 스크롤 | t5/etouch3 |
 | 점자 셀로 이동 | routing |
+| 점자 커서 위치의 글자 서식 알림 | secondary routing |
 | HID keyboard simulation 기능 토글 | t1+spEnter |
 | 리뷰에서 맨 윗 줄로 이동 | t1+t2 |
 | 리뷰에서 맨 아래 줄로 이동 | t4+t5 |
@@ -2074,12 +2079,15 @@ NVDA에서는  [hedo Reha-Technik http://www.hedo.de/] 에서 출시한 hedo Mob
 | 문서 끝까지 읽기 | B6 |
 %kc:endInclude
 
-++ HumanWare Brailliant BI/B ++
-[HumanWare http://www.humanware.com/]에서 출시한 Brailliant BI/B 디스플레이 (BI 32, BI 40, B 80)를 USB나 블루투스로 연결하여 NVDA와 연동하여 사용할 수 있습니다.
+++ HumanWare Brailliant BI/B/브레일노트 터치 ++[HumanWareBrailliant]
+[HumanWare http://www.humanware.com/]에서 출시한 Brailliant BI/B 디스플레이 (BI 14, BI 32, BI 40, B 80)를 USB나 블루투스로 연결하여 NVDA와 연동하여 사용할 수 있습니다.
 만약 휴먼웨어 프로토컬 사용 및 USB로 연결하려면 회사에서 제공한 USB 드라이버를 설치하십시요(OpenBraille 프로토컬 사용시 USB 드라이버 없이도 사용 가능).
+
+만약 브레일노트 터치 사용시 드라이버를 설치할 필요가 없습니다.
 
 다음은 이 디스플레이에 할당된 NVDA 기능키 목록입니다.
 각 키의 위치에 대해서는 디스플레이의 사용설명서를 참고하십시요.
++++ 모든 모델에 적용된 명령 목록 +++
 %kc:beginInclude
 || 이름 | 키 |
 | 점자 디스플레이 뒤로 스크롤 | left |
@@ -2092,18 +2100,35 @@ NVDA에서는  [hedo Reha-Technik http://www.hedo.de/] 에서 출시한 hedo Mob
 | 아래쪽 방향키 | 스페이스+4점 |
 | 왼쪽 방향키 | 스페이스+3점 |
 | 오른쪽 방향키 | 스페이스+6점 |
-| NVDA 메뉴 | c1+c3+c4+c5 (command n) |
 | shift+tab 키 | 스페이스+1점+3점 |
 | tab 키 | 스페이스+4점+6점 |
 | alt 키 | 스페이스+1점+3점+4점 (space+m) |
 | escape 키 | 스페이스+1점+5점 (space+e) |
 | enter 키 | 8점 |
-| windows+d (모든 창 최소화) | c1+c4+c5 (command d) |
 | windows key | 스페이스+3점+4점 |
 | alt+tab 키 | 스페이스+2점+3점+4점+5점 (space+t) |
+| NVDA 메뉴 | space+dot1+dot3+dot4+dot5 (space+n) |
+| windows+d (모든 창 최소화) | space+dot1+dot4+dot5 (space+d) |
+| 문서 끝까지 읽기 | space+dot1+dot2+dot3+dot4+dot5+dot6 |
+%kc:endInclude
+
++++ Brailliant BI 32, BI 40, B 80 +++ 
+%kc:beginInclude
+|| 이름 | 키 |
+| NVDA 메뉴 | c1+c3+c4+c5 (command n) |
+| windows+d (모든 창 최소화) | c1+c4+c5 (command d) |
 | 문서 끝까지 읽기 | c1+c2+c3+c4+c5+c6 |
 %kc:endInclude
 
++++ Brailliant BI 14 +++ 
+%kc:beginInclude
+|| 이름 | 키 |
+| 위쪽 방향키 | joystick up |
+| 아래쪽 방향키 | joystick down |
+| 왼쪽 방향키 | joystick left |
+| 오른쪽 방향키 | joystick right |
+| enter 키 | joystick action |
+%kc:endInclude
 
 ++ HIMS 한소네/브레일 엣지/스마트 비틀/싱크브레일 ++[Hims]
 [Hims http://www.hims-inc.com/]에서 출시한 한소네, 브레일 엣지, 스마트 비틀 및 싱크브레일을 USB나 블루투스로 연결하여 NVDA와 연동시킬 수 있습니다.
@@ -2254,7 +2279,7 @@ Live 모델에서 두번째 스위치 명령을 실행하려면 EAB를 옮기고
 | 첫 번째 하위 객체로 이동 | dn2 |
 | 이전 객체로 이동 | left2 |
 | 다음 객체로 이동 | right2 |
-| 글자 서식 알림 | upper routing row |
+| 점자 커서 위치의 글자 서식 알림 | upper routing row |
 %kc:endInclude
 
 트리오 모델에는 점자 키보드 전면에 다음의 네개의 키가 존재합니다 (왼쪽에서 오른쪽으로 나열):
@@ -2343,7 +2368,7 @@ BRAILLEX Tiny:
 | 첫 번째 하위 객체로 이동 | r1+dn |
 | 이전 객체로 이동 | r1+left |
 | 다음 객체로 이동 | r1+right |
-| 글자 서식 알림 | reportf |
+| 점자 커서 위치의 글자 서식 알림 | upper routing strip |
 | 제목 읽기 | l1+up |
 | 상태 표시줄 읽기 | l2+down |
 
@@ -2352,7 +2377,7 @@ BRAILLEX 2D Screen:
 | 리뷰에서 현재 글자 읽기 | l1 |
 | 현재 탐색 객체 활성화 | l2 |
 | 점자 연계 커서 | r2 |
-| 글자 서식 알림 | reportf |
+| 점자 커서 위치의 글자 서식 알림 | upper routing strip |
 | 점자 디스플레이를 이전 줄로 이동 | up |
 | 점자 디스플레이 뒤로 | left |
 | 점자 디스플레이 앞으로 | right |
@@ -2373,6 +2398,8 @@ NvDA는 다음 브레일노트 모델을 지원합니다:
 - 브레일노트 엠파워 (시리얼 및 블루투스로 연결 가능)
 - 브레일노트 에이펙스 (USB 및 블루투스로 연결 가능)
 -
+
+브레일노트 터치 명령에 대해서는 [Brailliant BI/브레일노트 터치 HumanWareBrailliant] 섹션에서 확인할 수 있습니다.
 
 만약 사용자의 브레일노트가 하나 이상의 연결 방식을 지원한다면 터미널 연결 옵션에서 원하는 포트를 선택하시기 바랍니다 (이 옵션에 대해서는 브레일노트 사용설명서를 참조바람).
 또한 NVDA 점자 설정 대화상자에서 원하는 연결 방식을 선택하시기 바랍니다.
@@ -2472,7 +2499,8 @@ Iris 및 Esys 디스플레이는 10개 키로 된 점자 키보드를 탑제하�
 | 점자 디스플레이 뒤로 스크롤 | switch1-6left, l1 |
 | 점자 디스플레이 앞으로 스크롤 | switch1-6Right, l8 |
 | 포커스된 객체로 이동 | switch1-6Left+switch1-6Right, l1+l8 |
-| 점자 셀로 이동 | routing, doubleRouting|
+| 점자 셀로 이동 | routing |
+| 점자 커서 위치의 글자 서식 알림 | doubleRouting |
 | Move to previous line in review | joystick1Up |
 | Move to next line in review | joystick1Down |
 | Move to previous character in review | joystick1Left |
