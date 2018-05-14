@@ -925,7 +925,7 @@ Se quiser aceder a secções que não possuem atalhos dedicados, use a opção [
 
 As secções presentes no diálogo de configurações do NVDA são detalhadas seguidamente.
 
-  +++ Gerais (NVDA+Ctrl+G) +++[GeneralSettings]
++++ Gerais (NVDA+Control+G) +++[GeneralSettings]
 A secção Geral do diálogo Configurações define o comportamento global do NVDA, tais como, o idioma da interface, se deve, ou não, pesquisar por actualizações no arranque, etc.
 A mesma contém as seguintes opções:
 
@@ -935,7 +935,7 @@ Existem diversos idiomas, contudo, a opção padrão é Predefinição do utiliz
 Esta definição indica ao software para utilizar o idioma para o qual o Windows está definido no momento.
 
 Note, por favor, que o NVDA precisa ser reiniciado, quando alterar o idioma.
-O NVDA questioná-lo-á se pretende reiniciar caso altere a selecção.
+O NVDA questioná-lo-á se pretende reiniciar caso altere a selecção e guarde a nova configuração.
 Pressione OK, e o NVDA irá reiniciar.
 
 ==== Guardar A Configuração ao Sair ====[GeneralSettingsSaveConfig]
@@ -1094,32 +1094,17 @@ Se pretender alterar, rapidamente, as configurações de voz, sem ir à secção
 | Diminuir a definição de voz actual | NVDA+control+Seta Abaixo | NVDA+shift+control+Seta Abaixo | Diminui a definição de voz actual. Ex: diminui a velocidade, escolhe a voz anterior, diminui o volume |
 %kc:endInclude
 
-+++ configurações de Braille +++[BrailleSettings]
-A caixa de diálogo das configurações de Braille pode ser encontrada no menu Preferências, mais concretamente através do item "configurações de Braille...".
++++ Braille +++[BrailleSettings]
+A secção Braille do diálogo de configurações do NVDA contém os parâmetros referentes às linhas Braille.
+Esta secção contém as seguintes opções:
 
-==== Linha Braille ====[BrailleSettingsDisplay]
-A primeira opção que encontrará, no diálogo das configurações de Braille, é uma caixa de combinação, que se denomina "Linha Braille".
-A mesma contém diversas opções, que dependem dos drivers de linhas Braille disponíveis no seu sistema.
-Utilize as setas para se mover pelas mesmas.
-
-O item Sem Braille significa que não será utilizado Braille.
-
-Por favor consulte a secção [Linhas Braille Suportadas#SupportedBrailleDisplays] para obter mais informações sobre as linhas Braille suportadas.
-
-==== Porta ====[BrailleSettingsPort]
-Esta opção, se disponível, permite escolher que porta, ou tipo de ligação, será usada para comunicar com a linha Braille que seleccionou.
-É uma caixa combinada, contendo as opções possíveis para a sua linha Braille.
-
-Por padrão, o NVDA utiliza a detecção automática da porta, o que significa que a ligação com a linha Braille será automaticamente estabelecida, após pesquisa das ligações disponíveis no sistema, quer sejam USB ou Bluetooth.
-Contudo, para algumas linhas Braille, pode explicitamente escolher qual a porta a ser usada.
-As opções são: "Automática", que indica ao NVDA para usar a detecção automática da porta; "USB", "Bluetooth" e portas série, dependendo do tipo de comunicações suportadas pelo dispositivo Braille.
-
-Esta opção não aparecerá se a sua linha Braille apenas suportar a detecção automática.
-
-Pode consultar a informação sobre a sua linha Braille na secção [Linhas Braille Suportadas #SupportedBrailleDisplays] para mais detalhes dos tipos de comunicação suportados e portas disponíveis.
+==== Alterar Linha Braille ====[BrailleSettingsChange]
+O botão "Alterar..." na secção Braille das configurações do NVDA activa o diálogo [Seleccionar Linha Braille #SelectBrailleDisplay], que permite seleccionar a linha Braille a usar.
+Quando aberto a partir do diálogo Configurações, será sobreposto a este.
+Nesta situação, quer guarde ou cancele as alterações, voltará ao diálogo de configurações.
 
 ==== Tabela de Leitura ====[BrailleSettingsOutputTable]
-A opção seguinte deste diálogo é uma caixa de combinação para seleccionar a tabela Braille utilizada na leitura da informação.
+A opção seguinte nesta secção é uma caixa de combinação para seleccionar a tabela Braille utilizada na leitura da informação.
 Nesta caixa de combinação encontrará tabelas para diferentes idiomas e tipos de Braille.
 A tabela seleccionada será usada para converter texto em Braille para ser mostrado na sua linha Braille.
 Pode-se mover de tabela Braille em tabela Braille, na lista, utilizando as Setas.
@@ -1215,9 +1200,34 @@ Assim, se quiser ler a informação de contexto, ou seja, que o item pertence a 
 
 Se quiser alterara Apresentação do contexto do Foco, rapidamente e em qualquer altura, por favor defina um comando através da opção [Definir comandos #InputGestures].
 
-+++ configurações do Teclado (NVDA+Ctrl+K) +++[KeyboardSettings]
-Esta caixa de diálogo encontra-se no menu Preferências, no item "configurações do teclado...".
-Contém as seguintes opções:
++++ Seleccionar Linha Braille (NVDA+control+a) +++[SelectBrailleDisplay]
+O diálogo Seleccionar linha Braille, que pode ser aberto activando o botão "Alterar..." na secção Braille das configurações do NVDA, permite escolher a linha Braille a ser usada.
+Após escolher a sua linha Braille, pode pressionar "OK" e o NVDA carregará os respectivos drivers.
+Se houver um erro ao carregar o driver, o NVDA notificará com uma mensagem e continuará a usar o dispositivo anterior, ou continuará sem Braille.
+
+==== Linha Braille ====[SelectBrailleDisplayDisplay]
+Esta caixa combinada contém diversas opções, que dependem dos drivers de linhas Braille disponíveis no seu sistema.
+Utilize as setas para se mover pelas mesmas.
+
+O item Sem Braille significa que não será utilizado Braille.
+
+Por favor consulte a secção [Linhas Braille Suportadas#SupportedBrailleDisplays] para obter mais informações sobre as linhas Braille suportadas.
+
+==== Porta ====[SelectBrailleDisplayPort]
+Esta opção, se disponível, permite escolher que porta, ou tipo de ligação, será usada para comunicar com a linha Braille que seleccionou.
+É uma caixa combinada, contendo as opções possíveis para a sua linha Braille.
+
+Por padrão, o NVDA utiliza a detecção automática da porta, o que significa que a ligação com a linha Braille será automaticamente estabelecida, após pesquisa das ligações disponíveis no sistema, quer sejam USB ou Bluetooth.
+Contudo, para algumas linhas Braille, pode explicitamente escolher qual a porta a ser usada.
+As opções são: "Automática", que indica ao NVDA para usar a detecção automática da porta; "USB", "Bluetooth" e portas série, dependendo do tipo de comunicações suportadas pelo dispositivo Braille.
+
+Esta opção não aparecerá se a sua linha Braille apenas suportar a detecção automática.
+
+Pode consultar a informação sobre a sua linha Braille na secção [Linhas Braille Suportadas #SupportedBrailleDisplays] para mais detalhes dos tipos de comunicação suportados e portas disponíveis.
+
++++ Teclado (NVDA+Ctrl+K) +++[KeyboardSettings]
+Esta secção das configurações do NVDA contém os parâmetros que definem como o NVDA se comporta quando usa o teclado para escrever ou para dar comandos.
+Segue uma descrição das várias opções:
 
 ==== Esquema do teclado ====[KeyboardSettingsLayout]
 Esta caixa de combinação permite-lhe escolher qual o esquema do teclado que o NVDA utiliza. Actualmente, os dois esquemas incluídos no NVDA são o Desktop, para computadores de secretária, e o Laptop, para computadores portáteis.
