@@ -919,7 +919,8 @@ Quando selecciona uma secção, são apresentadas no diálogo as respectivas op�
 Estas configurações podem ser aplicadas sem fechar o diálogo, pressionando o botão "Aplicar".
 Se quiser guardar as suas alterações e fechar o diálogo de configurações do NVDA, deve pressionar o botão "OK".
 
-Algumas das secções possuem teclas de atalho dedicadas que se pressionadas, abrirão o diálogo de configurações do NVDA na página dessa secção.
+Algumas das secções possuem teclas de atalho dedicadas.
+Pressionar estas teclas de atalho abrirá o diálogo de configurações do NVDA com a página dessa secção já seleccionada.
 Note que por padrão, nem todas as secções das configurações podem ser acedidas por comandos (como por exemplo comandos de teclado, comandos de toque, etc.).
 Se quiser aceder a secções que não possuem atalhos dedicados, use a opção [Definir comandos #InputGestures] para adicionar um comando personalizado para essa secção.
 
@@ -1242,7 +1243,7 @@ Se esta caixa de verificação estiver marcada, a tecla Insert do bloco numéric
 Se esta caixa de verificação estiver marcada, a tecla Insert do bloco intermédio (que se encontra normalmente acima das setas, perto do Home e End) pode ser usada como uma tecla modificadora do NVDA.
 
 Se nenhuma tecla for seleccionada como tecla NVDA, poderá ser impossível aceder a algumas funções do NVDA.
-Por isso, o diálogo configurações do Teclado mostrará uma mensagem de erro se todas as teclas estiverem desmarcadas ao pressionar o botão "Ok".
+Por isso, o diálogo de configurações do NVDA mostrará uma mensagem de erro se todas as teclas estiverem desmarcadas ao pressionar o botão "Ok".
 Após fechar a mensagem de erro, tem de seleccionar pelo menos uma tecla antes de pressionar "Ok" para fechar o diálogo convenientemente.
 
 %kc:setting
@@ -1266,10 +1267,10 @@ Quando activada, esta opção causará a interrupção da voz, sempre que pressi
 ==== Permitir leitura rápida durante a leitura contínua ====[KeyboardSettingsSkimReading]
 Se activada, alguns comandos de navegação, (tais como os comandos de Navegação por caracter em modo de navegação ou mover-se por linha ou parágrafo) não páram a leitura mas movem a posição de leitura para a nova posição, sendo a leitura continuada a partir desse ponto.
 
-==== Reproduzir bips, se ao escrever letras minúsculas o Caps Lock estiver activado ====[VoiceSettingsBeepLowercase]
+==== Reproduzir bips, se ao escrever letras minúsculas o Caps Lock estiver activado ====com sessão iniciada no Windows, 
 Quando activada, será ouvido um som de aviso, se uma letra for pressionada com a tecla shift, enquanto o Caps Lock estiver ligado.
 Geralmente, escrever letras com o shift enquanto o Caps Lock estiver ligado não é intencional, e costuma dever-se a não se ter reparado que o Caps Lock está ligado.
-Portanto, poderá ser bastante útil ser avisado disto.
+Portanto, é bastante útil ser avisado disto.
 
 %kc:setting
 ==== Anunciar Teclas de Comando ====[KeyboardSettingsSpeakCommandKeys]
@@ -1279,15 +1280,15 @@ Se activada, o NVDA irá anunciar todas as teclas, que não sejam caracteres ou 
 
 ==== Tocar som para erros ortográficos ao escrever ====[KeyboardSettingsAlertForSpellingErrors]
 Quando activada será reproduzido um som quando uma palavra acabada de escrever contenha um erro ortográfico.
-Esta opção só está disponível se a opção Anunciar erros ortográficos estiver marcada no diálogo Formatação de documentos #DocumentFormattingSettings] do NVDA.
+Esta opção só está disponível se a opção Anunciar erros ortográficos estiver marcada na secção [Formatação de documentos #DocumentFormattingSettings] do das configurações do NVDA.
 
 ==== Tratar teclas enviadas por outras aplicações ====[KeyboardSettingsHandleKeys]
 Esta opção permite controlar se o pressionar de teclas gerado por outras aplicações, tais como teclados no ecrã e softwares de reconhecimento de voz, devem ser processados pelo NVDA. 
 Esta opção está activada por padrão, embora alguns utilizadores possam preferir desactivá-la, como os utilizadores do "Unikey typing software" pois causará incorrecções.
 
-+++ configurações do rato (NVDA+Ctrl+M) +++
-O diálogo das configurações do rato encontra-se no menu Preferências, no item "configurações do rato...".
-Contém as seguintes opções:
++++ Rato (NVDA+Ctrl+M) +++
+A secção Rato do diálogo das configurações do NVDA permite configurar as opções relativas ao seguimento do rato, ao anúncio da posição do mesmo, etc.
+Nesta secção encontramos as seguintes opções:
 
 ==== Anunciar Alterações Na Forma do Rato ====[MouseSettingsShape]
 É uma caixa de verificação que, quando marcada, significa que o NVDA anunciará a alteração da forma do ponteiro do rato, de cada vez que esta muda.
@@ -1316,16 +1317,17 @@ Se a caixa de verificação "tocar as coordenadas de áudio quando o rato se mov
 Esta definição não está marcada por padrão.
 
 +++ Interacção táctil +++[TouchInteraction]
-Esta janela, apenas disponível em computadores com Windows 8 ou superior  e com ecrã táctil, permite configurar como o NVDA interage com os ecrãs tácteis.
+Esta secção, apenas disponível em computadores com Windows 8 ou superior  e com ecrã táctil, permite configurar como o NVDA interage com os ecrãs tácteis.
+Actualmente, esta secção apenas contém uma opção:
 
 ==== Modo de Digitação Virtual ====[TouchTypingMode]
 Esta caixa de verificação especifica qual o método que prefere usar ao escrever com o teclado táctil.
 Se a marcar, quando localiza a tecla que quer pressionar, basta levantar o dedo para o fazer.
 Se a deixar desmarcada, terá de dar dois toques para pressionar a tecla.
 
-+++ configurações do Cursor de Revisão +++[ReviewCursorSettings]
-Encontra-se no menu Preferências, em "Cursor de revisão...".
-Este diálogo contém as seguintes opções:
++++ Cursor de Revisão +++[ReviewCursorSettings]
+Esta secção é utilizada para configurar o comportamento do cursor de revisão do NVDA.
+Esta secção contém as seguintes opções:
 
 %kc:setting
 ==== Seguir Foco do Sistema ====[ReviewCursorFollowFocus]
@@ -1348,8 +1350,8 @@ Quando activada, o NVDA filtrará a hierarquia dos objectos que podem ser navega
 Para activar ou desactivar o Modo de revisão simples, em qualquer local, por favor associe um comando através da opção [Definir comandos #InputGestures].
 
 +++ Apresentação de Objectos (NVDA+Ctrl+O) +++[ObjectPresentationSettings]
-Encontra-se no menu Preferências, no item "Apresentação de Objectos...".
-Esta caixa de diálogo contém as seguintes opções:
+A secção Apresentação de objectos permite configurar o nível de informação que o NVDA dará sobre os objectos em foco, como descrição, posição, etc.
+Esta secção contém as seguintes opções:
 
 ==== Anunciar Sugestões ====[ObjectPresentationReportToolTips]
 Uma caixa de verificação que, quando marcada, indica ao NVDA para que anuncie sugestões, quando aparecem.
@@ -1378,12 +1380,12 @@ Desmarque esta caixa de verificação, se não precisar de ouvir a descrição a
 ==== Anúncio da barra de progresso ====[ObjectPresentationProgressBarOutput]
 Tecla: NVDA+u
 
-Esta opção controla o modo como o NVDA anuncia as actualizações das barras de progresso.
+Esta opção controla o modo como o NVDA anuncia a evolução das barras de progresso.
 
 Tem as seguintes opções:
 - Desligado: As barras de progresso não serão anunciadas, quando houver alguma alteração.
-- Falar: Esta opção dá ordem ao NVDA para anunciar as barras de progresso em percentagens. Cada vez que há uma alteração à Barra de Progresso, o NVDA anuncia o novo valor.
-- bip: Esta opção dá ordem ao leitor de ecrã para reproduzir um bip, cada vez que houver uma alteração à barra de progresso. O bip mais agudo informa que a barra de progresso chegou ao fim.
+- Falar: Esta opção indica ao NVDA para anunciar as barras de progresso em percentagens. Cada vez que há uma alteração à Barra de Progresso, o NVDA anuncia o novo valor.
+- bip: Esta opção instrui o leitor de ecrã para reproduzir um bip, cada vez que houver uma alteração à barra de progresso. O bip mais agudo informa que a barra de progresso chegou ao fim.
 - Falar e bip: Esta opção diz ao NVDA para reproduzir um bip e anunciar o valor, quando houver uma alteração à barra de progresso.
 -
 
@@ -1404,9 +1406,8 @@ Por exemplo, quando escrevemos na caixa de pesquisa do menu Iniciar do Windows V
 Em alguns campos de edição, como alguns campos de pesquisa em aplicações do Windows 10, o NVDA pode avisar que uma lista de sugestões aparece enquanto se escreve.
 A lista de sugestões automáticas é fechada assim que se move para fora do campo de edição, em em alguns casos o NVDA pode avisar, com um outro som, deste acontecimento.
 
-+++ configurações de Composição de Entrada +++[InputCompositionSettings]
-O diálogo de configurações de composição de entrada Pode ser encontrado no menu preferências.
-Este diálogo permite-lhe controlar como o NVDA anuncia a entrada de caracteres asiáticos, ao usar métodos de entrada como IME ou "Text Service".
++++ Composição de Entrada +++[InputCompositionSettings]
+A secção Composição de entrada permite configurar a introdução de caracteres asiáticos.
 Note que, devido ao facto dos métodos de entrada variarem substancialmente em funcionalidades disponíveis, e na forma em que fornecem informação, será provavelmente necessário configurar estas opções, de modo diferente para cada método de entrada, para conseguir a experiência de escrita mais eficiente.
 
 ==== Anunciar automaticamente todos os Candidatos Disponíveis ====[InputCompositionReportAllCandidates]
@@ -1436,9 +1437,8 @@ Esta opção permite-lhe escolher se o NVDA deve anunciar, ou não, novos símbo
 Esta opção está activada por padrão.
 
 +++ Modo de Navegação (NVDA+control+b) +++[BrowseModeSettings]
-O diálogo modo de navegação pode ser encontrado no menu Preferências, no item "Modo de Navegação...".
-
-O diálogo contém as seguintes opções:
+A secção Modo de navegação permite configurar o comportamento do NVDA ao ler documentos complexos, como páginas Web, documentos do Word e Excel e PDF.
+Esta secção contém as seguintes opções:
 
 ==== Número máximo de Caracteres Por Linha ====[BrowseModeSettingsMaxLength]
 Este campo define o comprimento máximo de uma linha, em caracteres, no modo de navegação.
@@ -1483,11 +1483,9 @@ Se esta opção estiver activa, o NVDA reproduzirá sons especiais, quando alter
 Activada por padrão, esta opção permite que escolha se os comandos, (como o pressionar de teclas) que não são um comando do NVDA, nem são considerados como uma tecla de comando, em geral, devem ser impedidos de atingir o documento que está actualmente em foco.
 Por exemplo, se a opção estiver activada, se a letra j for pressionada, seria impedida de atingir o documento, pois não é um comando rápido de navegação nem é provável que seja um comando da própria aplicação.
 
-+++ configurações de Formatação de Documentos (NVDA+Ctrl+D) +++[DocumentFormattingSettings]
-Esta caixa de diálogo está no menu Preferências, em "Formatação de Documentos...".
-
-A maioria das caixas de verificação, neste diálogo, permitem-lhe configurar qual é o tipo de formatação que pretende ouvir automaticamente, conforme se move com o cursor pelos documentos.
-Por exemplo, se seleccionar a caixa de verificação para anunciar o nome do tipo de letra, de cada vez que anda pelo texto com tipos de letra diferentes, o nome do tipo de letra será anunciado. 
++++ Formatação de Documentos (NVDA+Ctrl+D) +++[DocumentFormattingSettings]
+A maioria das caixas de verificação desta secção permitem configurar qual é o tipo de formatação que pretende ouvir automaticamente, conforme se move com o cursor pelos documentos.
+Por exemplo, se seleccionar a caixa de verificação para anunciar o nome do tipo de letra, de cada vez que anda pelo texto e chega a um tipo de letra diferente, o nome do tipo de letra será anunciado. 
 
 As várias opções estão organizadas em grupos.
 Pode configurar o anúncio de:
@@ -1525,7 +1523,6 @@ Pode configurar o anúncio de:
  -
 -
 
-
 Para alternar estas configurações a qualquer momento, por favor crie uma associação de teclas usando a opção [Definir comandos #InputGestures].
 
 ==== Anunciar Alterações de Formatação Depois do Cursor ====[DocumentFormattingDetectFormatAfterCursor]
@@ -1547,13 +1544,17 @@ O som aumentará a tonalidade cada espaço e para cada Tab aumentará o equivale
 -
 
 +++ configurações do Windows 10 OCR +++[Win10OcrSettings]
-Esta janela pode ser acedida através do menu do NVDA, Preferências e permite configurar o [Windows 10 OCR #Win10Ocr].
+Esta secção permite configurar o [Windows 10 OCR #Win10Ocr].
+Actualmente só contém uma opção:
 
 ==== Idioma de reconhecimento ====[Win10OcrSettingsRecognitionLanguage]
 Esta caixa combinada permite seleccionar qual o idioma a ser usado no reconhecimento de texto.
 
+++ Outras Opções ++[MiscSettings]
+Para além de [Configurações #NVDASettings], o submenu Opções do menu  do NVDA, contém outros itens, que são detalhados seguidamente.
+
 +++ Dicionários de voz +++[SpeechDictionaries]
-O menu dos Dicionários de voz (que se encontra no menu Preferências) contém diálogos que lhe permitem controlar o modo como o NVDA pronuncia palavras ou expressões em particular.
+O submenu dos Dicionários de voz (que se encontra no menu Opções) contém diálogos que lhe permitem controlar o modo como o NVDA pronuncia palavras ou expressões em particular.
 Existem três tipos de dicionários de voz.
 Os três tipos são:
 - Predefinido: as regras neste dicionário afectam todas as vozes, no NVDA.
@@ -1590,7 +1591,7 @@ As expressões regulares não são explicadas neste Manual do Utilizador, mas ex
 Este diálogo permite-lhe mudar o modo como a pontuação e outros símbolos são pronunciados, bem como o nível de pontuação em que eles são anunciados.
 
 O idioma para o qual a pronúncia de símbolos está a ser editada será mostrada no título do diálogo.
-Note que este diálogo respeita a opção "Usar o idioma da voz ao processar caracteres e símbolos" encontrada no diálogo [configurações da Voz #VoiceSettings], ou seja, usa o idioma da voz em vez da definição global do idioma do NVDA, quando esta opção está marcada.
+Note que este diálogo respeita a opção "Usar o idioma da voz ao processar caracteres e símbolos" encontrada na [secção Voz #SpeechSettings] do diálogo de configurações, ou seja, usa o idioma da voz em vez da definição global do idioma do NVDA, quando esta opção está marcada.
 
 Para mudar um símbolo, seleccione-o, primeiro, na lista de símbolos.
 
@@ -1621,7 +1622,7 @@ Nesta caixa de diálogo, pode personalizar os comandos, (quer do teclado, quer d
 Apenas os comandos aplicáveis imediatamente antes do diálogo ser aberto são mostrados.
 Por exemplo, se quiser personalizar comandos relacionados com o modo de navegação, deve abrir a caixa de diálogo dos comandos quando está no modo de navegação.
 
-A estrutura hierárquica deste diálogo lista todos os comandos do NVDA aplicáveis, agrupados por categoria.
+A estrutura hierárquica deste diálogo lista todos os comandos aplicáveis do NVDA, agrupados por categoria.
 Pode filtrá-los, introduzindo uma ou mais palavras do nome do comando na caixa de edição Filtrar por em qualquer ordem.
 Qualquer tecla ou gesto associado a um comando é listado dentro do ramo desse comando.
 
@@ -1636,8 +1637,8 @@ Para remover uma tecla ou gesto de um comando, seleccione-a e pressione o botão
 Quando tiver terminado, pressione o botão OK, para guardar as suas modificações, ou o botão Cancelar, para as descartar.
 
 ++ Guardar E Recarregar Configuração ++[SavingAndReloading]
-Por padrão, O NVDA guarda automaticamente as suas configurações; deste modo, se sair do NVDA e o reiniciar, estas voltarão ao ponto anterior, com os valores da configuração original.
-Note, no entanto, que pode alterar esta definição através do item "configurações gerais..." que está no menu Preferências.
+Por padrão, O NVDA guarda automaticamente as suas configuraçõesao sair.
+Note, no entanto, que pode alterar esta definição na secção Gerais do diálogo de configurações do NVDA.
 Para guardar as suas configurações manualmente, em qualquer altura, escolha o item "Guardar configuração", no Menu do NVDA.
 
 Se alguma vez se enganar, ao alterar as suas configurações, e necessitar voltar atrás para a configuração guardada, pode sempre escolher o item "Restaurar para a configuração guardada”, no menu do NVDA.
@@ -1651,12 +1652,12 @@ Os comandos de teclado do NVDA, que se seguem, também podem ser usados:
 %kc:endInclude
 
 ++ Perfis de Configuração ++[ConfigurationProfiles]
-Por vezes pode querer ter diferentes configurações para situações diferentes.
+Por vezes pode querer ter configurações diferentes para situações diferentes.
 Por exemplo, pode querer que seja reportada a indentação enquanto está a editar um documento, ou os atributos do texto enquanto está a rever um documento.
 O NVDA permite esta funcionalidade através dos Perfis de Configuração.
 
 Os perfis de configuração contêm apenas as configurações que foram alteradas durante a sua edição.
-Todas as configurações podem ser alteradas, nos perfis de configuração, à excepção das constantes na caixa de diálogo configurações Gerais, as quais se aplicam ao NVDA em geral.
+Todas as configurações podem ser alteradas, nos perfis de configuração, à excepção das constantes da secção Gerais do diálogo de configurações,, as quais se aplicam globalmente ao NVDA.
 
 Os perfis de configuração podem ser activados manualmente.
 Também podem ser activados automaticamente através de Accionadores, tais como mudança para uma aplicação.
@@ -1734,9 +1735,9 @@ Para ir para o directório das suas configurações de uma versão instalada do 
 
 As configurações para o NVDA, quando está a ser executado no ecrã de autenticação ou ecrãs UAC, são armazenadas no directório systemConfig, que se encontra no directório de instalação do NVDA.
 Por norma, não deverá alterar estas configurações.
-Para alterar a configuração do NVDA, nos ecrãs de autenticação/ecrãs UAC, configure o NVDA com as suas configurações preferidas, com sessão iniciada no Windows, guarde as configurações e pressione o botão "Utilizar as configurações actualmente guardadas no ecrã de início de sessão e noutros ecrãs" do diálogo das configurações gerais.
+Para alterar a configuração do NVDA, nos ecrãs de autenticação/ecrãs UAC, com sessão iniciada no Windows, configure o NVDA como deseja, guarde as configurações e pressione o botão "Utilizar as configurações actualmente guardadas no ecrã de início de sessão e noutros ecrãs seguros" da secção Gerais do diálogo de Configurações.
 
-+ Ferramentas Adicionais +[ExtraTools]
++ Ferramentas +[ExtraTools]
 
 ++ Visualizador de Registo ++[LogViewer]
 O Visualizador de Registo encontra-se no submenu Ferramentas do Menu do NVDA e permite-lhe ver todas as saídas de registo que têm ocorrido até agora, desde que iniciou o NVDA pela última vez.
@@ -1777,7 +1778,7 @@ Isto permite-lhe procurar por um pacote de extras para o NVDA (ficheiro .nvda-ad
 Ao pressionar abrir, inicia-se o processo de instalação.
 
 Quando um extra está a ser instalado, o NVDA pergunta-lhe se deseja realmente instalá-lo.
-Tendo em conta que a funcionalidade dos extras não é restrita no NVDA, o que em teoria pode incluir aceder a dados pessoais ou mesmo a todo o sistema, se o NVDA for uma cópia instalada, é muito importante instalar apenas extras de fontes de confiança.
+Tendo em conta que a funcionalidade dos extras não é restrita ao NVDA, o que em teoria pode incluir aceder a dados pessoais ou mesmo a todo o sistema, se o NVDA for uma cópia instalada, é muito importante instalar apenas extras de fontes de confiança.
 Uma vez o extra instalado, o NVDA terá que ser reiniciado, para que o extra possa ser executado.
 Até que o faça, o estado "instalar" será mostrado para esse extra, na lista.
 
@@ -1793,7 +1794,7 @@ Cada vez que pressionar o botão "Activar"/"Desactivar", o estado do Extra é al
 Se o extra estiver activado, o seu estado passará a "Desactivado após reinício". Se o extra estiver desactivado, o seu estado passará a "Activado após reinício".
 Tal como quando instala ou desinstala um Extra, tem de reiniciar o NVDA para que as alterações surtam efeito.
 
-O gestor tem também um botão fechar para que o gestor seja fechado.
+O gestor tem também um botão fechar para que o diálogo seja fechado.
 Se instalou, removeu ou alterou o estado de algum extra, o NVDA pedirá para reiniciar, para que as suas modificações possam ter efeito.
 
 No passado, foi possível estender as funcionalidades do NVDA, copiando plugins ou drivers individuais para a sua pasta de configurações do NVDA.
@@ -1819,21 +1820,21 @@ Por padrão, o NVDA inicia usando o eSpeak NG.
 Tendo em conta que este sintetizador está incluído no NVDA, é uma óptima escolha para quando se executa o NVDA num dispositivo USB ou CD, noutros sistemas.
 
 Cada voz que vem com o eSpeak NG fala num idioma diferente.
-Existem cerca de 43 idiomas suportados pelo eSpeak NG.
+Existem cerca de 43 idiomas suportados pelo eSpeak NG, e também muitas variantes que se podem escolher, para alterar o som da voz.
 
-Existem também muitas variantes que se podem escolher, para alterar o som da voz.
+Em máquinas com Windows 10, o sintetizador predefinido do NVDA é o Windows OneCore.
 
 ++ Microsoft Speech API Versão 4 (SAPI 4) ++[SAPI4]
 O SAPI 4 é um padrão antigo da Microsoft para os softwares de síntese de voz.
 O NVDA mantém o suporte para este protocolo para os utilizadores que ainda tenham sintetizadores SAPI 4 instalados.
 No entanto, a Microsoft já não dá suporte a este protocolo e os componentes necessários já não estão disponíveis na Microsoft.
 
-Quando este sintetizador é utilizado com o NVDA, as vozes disponíveis (que se podem aceder a partir da caixa de diálogo configurações de Voz #VoiceSettings] ou pelo Anel de configurações de Voz #SynthSettingsRing]) são todas as vozes de todos os motores SAPI 4 que se encontram instalados no seu sistema.
+Quando este sintetizador é utilizado com o NVDA, as vozes disponíveis, (que se podem aceder a partir da [secção Voz #SpechSettings] do [diálogo de configurações #NVDASettings] ou pelo Anel de configurações de Voz #SynthSettingsRing]) são todas as vozes de todos os motores SAPI 4 que se encontram instalados no seu sistema.
 
 ++ Microsoft Speech API versão 5 (SAPI 5) ++[SAPI5]
 O SAPI 5 é um padrão da Microsoft para os softwares de síntese de voz.
 Muitos sintetizadores de voz que cumprem com este padrão poderão ser comprados ou descarregados, em várias empresas ou páginas da Internet, ainda que o seu sistema já venha com, pelo menos, uma voz SAPI 5 instalada.
-Quando este sintetizador é utilizado com o NVDA, as vozes disponíveis (que se podem aceder a partir da caixa de [diálogo configurações de Voz #VoiceSettings] ou pelo [Anel de configurações de Voz #SynthSettingsRing]) são todas as vozes de todos os motores SAPI 5 que se encontram instalados no seu sistema.
+Quando este sintetizador é utilizado com o NVDA, as vozes disponíveis, (que se podem aceder a partir da [secção Voz #SpechSettings] do [diálogo de configurações #NVDASettings] ou pelo Anel de configurações de Voz #SynthSettingsRing]) são todas as vozes de todos os motores SAPI 4 que se encontram instalados no seu sistema.
 
 ++ Microsoft Speech Platform ++[MicrosoftSpeechPlatform]
 O Microsoft Speech Platform fornece vozes para vários idiomas, que são normalmente usadas no desenvolvimento de aplicações de fala, em servidores.
@@ -1854,17 +1855,17 @@ Estas vozes são disponibilizadas para vários idiomas e possuem uma resposta ma
 
 Por favor, para ver a lista de vozes disponíveis e como as instalar,, leia este artigo da Microsoft: https://support.office.com/en-us/article/How-to-download-Text-to-Speech-languages-for-Windows-4c83a8d8-7486-42f7-8e46-2b0fdf753130
 
-Por favor, note que as velocidades mais rápidas, disponíveis com o Narrador, não estão actualmente disponíveis para o NVDA.
-Note também que a velocidade seleccionada nas configurações do Windows afectam a velocidade definida no NVDA.
+Por favor, note que as velocidades mais rápidas, disponíveis com o Narrador, não estão actualmente disponíveis para o NVDA, e também que a velocidade seleccionada nas configurações do Windows afectam a velocidade definida no NVDA.
 Estes problemas não podem ser resolvidos sem alterações no Windows.
 Esperamos que eles sejam resolvidos numa próxima actualização do Windows.
+em máquinas com Windows 10 este é o sintetizador padrão.
 
 ++ Audiologic Tts3 ++[Audiologic]
 Este é um sintetizador de voz comercial especificamente para o idioma Italiano.
 O sintetizador deve estar instalado no seu sistema para que o possa utilizar com o NVDA.
 Para mais informações, por favor visite a página Internet da Audiologic em www.audiologic.it.
 
-Este sintetizador não suporta [Utilizar funcionalidade de soletrar #VoiceSettingsUseSpelling].
+Este sintetizador não suporta [Utilizar a funcionalidade de soletrar #SpeechSettingsUseSpelling].
 
 + Linhas Braille Suportadas +[SupportedBrailleDisplays]
 Esta secção contém informação sobre as linhas Braille suportadas pelo NVDA.
@@ -1983,9 +1984,9 @@ Por favor consulte a documentação da sua linha braille para obter a descriçã
 
 ++ Handy Tech ++[HandyTech]
 O NVDA suporta a maioria dos terminais da [Handy Tech http://www.handytech.de/].
-Para modelos USB mais antigos, precisará de instalar os drivers USB, da Handy Tech, no seu sistema.
+Para modelos USB mais antigos, precisará de instalar os drivers USB da HandyTech no seu sistema.
 
-Os seguintes modelos não são automaticamente suportados, mas podem ser usados usando o [Handy Tech's universal driver https://handytech.de/en/service/downloads-and-manuals/handy-tech-software/braille-display-drivers] e o extra do NVDA:
+Os seguintes modelos não são automaticamente suportados, mas podem ser usados com o [Handy Tech universal driver https://handytech.de/en/service/downloads-and-manuals/handy-tech-software/braille-display-drivers] e o extra do NVDA:
 - Braillino
 - Bookworm
 -
