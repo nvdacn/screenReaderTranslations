@@ -51,10 +51,46 @@ Le caratteristiche principali di questa versione comprendono il supporto per le 
 <LI>Tutte le preferenze di NVDA sono state raggruppate in un'unica finestra impostazioni, raggiungibile dal menu NVDA -&gt; Preferenze -&gt; Impostazioni, in modo da non disperdere le opzioni in tante finestre diverse. (<A HREF="http://github.com/nvaccess/nvda/issues/577">#577</A>)
 <LI>Quando si utilizza Windows10, ora la sintesi vocale predefinita sarà Microsoft OneCore piuttosto che Espeak. (<A HREF="http://github.com/nvaccess/nvda/issues/8176">#8176</A>)
 <P></P>
-= 2018.1 =
+== Bug corretti ==
+<LI>NVDA non commette più errori nel leggere i controlli su cui viene posizionato il focus nella finestra di login account Microsoft richiamata da impostazioni, dopo aver inserito l'indirizzo email. (<A HREF="http://github.com/nvaccess/nvda/issues/7997">#7997</A>)
+<LI>NVDA non ha più problemi nel leggere una pagina in Microsoft Edge anche quando si torna ad una pagina precedente. (<A HREF="http://github.com/nvaccess/nvda/issues/7997">#7997</A>)
+<LI>NVDA non annuncerà più l'ultima cifra del pin quando si effettua l'accesso dalla schermata di sblocco di Windows10. (<A HREF="http://github.com/nvaccess/nvda/issues/7908">#7908</A>)
+<LI>Non vengono più annunciate due volte le etichette di pulsanti radio o caselle di controllo in Chrome e Firefox in modalità navigazione quando si preme il tasto tab. (<A HREF="http://github.com/nvaccess/nvda/issues/7960">#7960</A>)
+<LI>Un elemento aria-current con un valore falso verrà annunciato come "falso" invece di "vero". (<A HREF="http://github.com/nvaccess/nvda/issues/7892">#7892</A>).
+<LI>Il sintetizzatore OneCore di Windows si caricherà ugualmente anche nel caso in cui la voce utilizzata è stata disinstallata. (<A HREF="http://github.com/nvaccess/nvda/issues/7553">#7553</A>)
+<LI>Il cambio di voce nel pacchetto voci OneCore ora avviene molto più velocemente. (<A HREF="http://github.com/nvaccess/nvda/issues/7999">#7999</A>)
+<LI>Sistemate alcune occorrenze non valide nelle tabelle braille, compresi i segni di maiuscola nella tabella 8 punti braille contratto Danese. (<A HREF="http://github.com/nvaccess/nvda/issues/7526">#7526</A>, <A HREF="http://github.com/nvaccess/nvda/issues/7693">#7693</A>)
+<LI>NVDA ora è in grado di riconoscere un numero maggiore di elenchi puntati in Microsoft Word. (<A HREF="http://github.com/nvaccess/nvda/issues/6778">#6778</A>)
+<LI>L'attivazione dello script per ottenere le informazioni di formattazione non crea più alcun problema, né modificando erroneamente la posizione del cursore di controllo, né leggendo informazioni errate nel caso in cui lo script venga attivato più volte velocemente. (<A HREF="http://github.com/nvaccess/nvda/issues/7869">#7869</A>)
+<LI>Non risulta più possibile servirsi del braille contratto in fase di immissione quando non è supportato. (<A HREF="http://github.com/nvaccess/nvda/issues/7306">#7306</A>) 
+<LI>Risolti i problemi di stabilità della connessione con i display braille Handy Tech  Easy Braille e BrailleWave. (<A HREF="http://github.com/nvaccess/nvda/issues/8016">#8016</A>)
+<LI>In Windows8 e versioni successive, NVDA non annuncerà più la parola "sconosciuto" quando si cerca di aprire il menu rapido con la combinazione di tasti Windows+x. (<A HREF="http://github.com/nvaccess/nvda/issues/8137">#8137</A>)
+<LI>I gesti e le combinazioni di tasti associati ai pulsanti dei display braille Hims ora funzionano correttamente come descritti nella guida utente. (<A HREF="http://github.com/nvaccess/nvda/issues/8096">#8096</A>)
+<LI>NVDA ora tenterà di correggere errori di registrazione Com di sistema che rendevano inaccessibili programmi quali Internet Explorer e Firefox; la conseguenza era che NVDA pronunciava sempre e solo la parola "sconosciuto" in ogni occasione. (<A HREF="http://github.com/nvaccess/nvda/issues/2807">#2807</A>)
+<LI>Sistemato un bug nel Task Manager che non consentiva agli utenti di NVDA di accedere al contenuto di specifici dettagli sui processi. (<A HREF="http://github.com/nvaccess/nvda/issues/8147">#8147</A>)
+<LI>Le nuove voci Sapi5 di Microsoft non hanno più rallentamenti alla fine di una frase, rendendo la navigazione molto più agevole. (<A HREF="http://github.com/nvaccess/nvda/issues/8174">#8174</A>)
+<LI>NVDA non leggerà più (marcatore da sinistra a destra o da destra a sinistra) quando si accede all'orologio delle ultime versioni di Windows10, sia per quel che concerne sintesi vocale che braille. (<A HREF="http://github.com/nvaccess/nvda/issues/5729">#5729</A>)
+<LI>Sistemati i problemi nel rilevamento dei tasti di scorrimento per i display braille Smart Beetle di Hims. (<A HREF="http://github.com/nvaccess/nvda/issues/6086">#6086</A>)
+<LI>In alcuni controlli di testo, in particolare nelle applicazioni Delphi, le informazioni fornite durante la navigazione e la modifica del testo risultano molto più accurate. (<A HREF="http://github.com/nvaccess/nvda/issues/636">#636</A>, <A HREF="http://github.com/nvaccess/nvda/issues/8102">#8102</A>)
+</UL>
+
+<H3>Cambiamenti per sviluppatori (in inglese)</H3>
+
+<UL>
+<LI>The developer info for UIA objects now contains a list of the UIA patterns available. (<A HREF="http://github.com/nvaccess/nvda/issues/5712">#5712</A>)
+<LI>App modules can now force certain windows to always use UIA by implementing the isGoodUIAWindow method. (<A HREF="http://github.com/nvaccess/nvda/issues/7961">#7961</A>)
+<LI>The hidden boolean flag "outputPass1Only" in the braille section of the configuration has again been removed. Liblouis no longer supports pass 1 only output. (<A HREF="http://github.com/nvaccess/nvda/issues/7839">#7839</A>)
+</UL>
+
+<H2>2018.1</H2>
+
+<P>
 Le caratteristiche principali di questa versione riguardano la gestione dei grafici in Microsoft Word e Powerpoint, il supporto a display braille quali Eurobraille e Optelec protocol converter, migliorato il supporto ai modelli Hims e Optelec, prestazioni decisamente più performanti in Firefox58 e versioni successive, e molto altro ancora.
-<P></P>
-== Novità ==
+</P>
+
+<H3>Novità</H3>
+
+<UL>
 <LI>Ora è possibile interagire con i grafici in Microsoft Word e Microsoft PowerPoint, similmente a come accade già per i grafici in Microsoft Excel. (<A HREF="http://github.com/nvaccess/nvda/issues/7046">#7046</A>)
  <UL>
  <LI>In Microsoft Word: Quando ci si trova in modalità navigazione, posizionare il cursore su un grafico e premere invio per interagire con esso.
