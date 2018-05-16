@@ -1751,14 +1751,15 @@ Gdy dodatek zostanie zainstalowany, NVDA musi zostać uruchomiony ponownie, aby 
 Do tego czasu dodatek na liście managera będzie miał status "instalacja".
 
 Aby usunąć dodatek, zaznacz go na liście i naciśnij przycisk "Usuń".
-NVDA zapyta, czy na pewno chcesz to zrobić..
+NVDA zapyta, czy na pewno chcesz to zrobić.
 Tak jak w przypadku instalacji, NVDA musi zostać ponownie uruchomiony aby dodatek został całkowicie usunięty.
 Do tego czasu, na liście managera dodatków usuwany dodatek będzie miał status "usunięty".
 
 Aby wyłączyć dodatek, użyj przycisku Wyłącz.
 Aby włączyć wyłączony wcześniej dodatek, użyj przycisku Włącz.
-Możesz wyłączyć dodatek, jeśli jego status to uruchomiony lub włączony, albo włączyć, gdy jest wstrzymany lub wyłączony.
+Możesz wyłączyć dodatek, jeśli jego status to włączony, albo włączyć, gdy jest wyłączony.
 Po każdym naciśnięciu przycisku Włącz / Wyłącz, status dodatku zmienia się i informuje, co się stanie po restarcie NVDA.
+Jeśli dodatek był poprzednio wyłączony, a  status będzie zawierać "włączony po restarcie". Jeśli dodatek był poprzednio włączony, status będzie zawierać "wyłączony po restarcie"
 Tak jak w przypadku instalacji lub usunięcia dodatku, należy uruchomić ponownie NVDA aby wprowadzone zmiany zaczęły obowiązywać.
 
 Okno managera dodatków zawiera również przycisk "Zamknij".
@@ -1919,6 +1920,7 @@ Aby je odnaleźć, zajrzyj do dokumentacji urządzenia.
 | Przenieś monitor do następnej linii | T4 |
 | Przewiń brajl do przodu | T5 lub Etouch3 |
 | Przywołaj do komórki brajla | Routing |
+| Zgłoś formatowanie tekstu pod komórką brajla | drugi routing |
 | Przełącz symulację klawiatury HID | t1+spEnter |
 | Przenieś do pierwszej linii w przeglądzie | T1+T2 |
 | Przenieś do ostatniej linii w przeglądzie | T4+T5 |
@@ -2072,13 +2074,17 @@ Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia:
 | Czytaj wszystko | B6 |
 %kc:endInclude
 
-++ HumanWare Brailliant BI/B Series ++[HumanWareBrailliant]
-Serie monitorów Brailliant BI i B produkcji [HumanWare http://www.humanware.com/], włącznie z BI 32, BI 40 and B 80, są obsługiwane przy połączeniu przez USB i bluetooth.
+++ HumanWare Brailliant BI/B Series/ BrailleNote Touch ++[HumanWareBrailliant]
+Serie monitorów Brailliant BI i B produkcji [HumanWare http://www.humanware.com/], włącznie z BI 14, BI 32, BI 40 i B 80, są obsługiwane przy połączeniu przez USB i bluetooth.
 Przy połączeniu przez USB z protokołem ustawionym na HumanWare, trzeba najpierw zainstalować sterowniki USB dostarczone przez producenta.
 Sterowniki USB nie są wymagane, jeśli protokół jest ustawiony na OpenBraille.
 
-Poniżej skróty klawiszowe dla tego monitora, które działają w NVDA.
-Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia:
+BrailleNote Touch jest również obsługiwany i nie wymaga instalacji żadnych sterowników.
+
+Poniżej skróty klawiszowe dla Brailliant BI/B i BrailleNote touch, które działają w NVDA.
+Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia.
++++ Przypisania klawiszy dla wszystkich modeli +++
+
 %kc:beginInclude
 || Działanie | Klawisz skrótu |
 | Przewiń wyświetlacz brajla wstecz | Left |
@@ -2091,19 +2097,37 @@ Aby odnaleźć opisywane klawisze, zajrzyj do dokumentacji urządzenia:
 | Klawisz Strzałka w dół | Spacja+Punkt 4 |
 | Klawisz Strzałka w lewo | Spacja+Punkt 3 |
 | Klawisz Strzałka w prawo | Spacja+Punkt 6 |
-| NVDA Menu | C1+C3+C4+C5 (komenda N) |
 | Klawisz Shift+Tab | Spacja+Punkt 1+Punkt 3 |
 | Klawisz Tab | Spacja+Punkt 4+Punkt 6 |
 | Klawisz Alt | Spacja+Punkt 1+Punkt 3+Punkt 4 (Spacja+M) |
 | Klawisz Escape | Spacja+Punkt 1+Punkt 5 (Spacja+e) |
 | Klawisz Enter | Punkt 8 |
-| Klawisz Windows+D (minimalizuje wszystkie okna) | C1+C4+C5 (komenda D) |
 | Klawisz Windows | Spacja+Punkt 3+Punkt 4 |
 | Klawisz Alt+Tab | Spacja+Punkt 2+Punkt 3+Punkt 4+Punkt 5 (Spacja+T) |
-| Czytaj wszystko | C1+C2+C3+C4+C5+C6 |
+| Menu NVDA | spacja+punkt 1+punkt 3+punkt 4+punkt 5 (spacja+n) |
+| windows+d (minimalizuje wszystkie aplikacje) | spacja+punkt 1+punkt 4+punkt 5 (spacja+d) |
+| Czytaj wszystko  | spacja+punkt 1+punkt 2+punkt 3+punkt 4+punkt 5+punkt 6 |
 %kc:endInclude
 
-++ HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille Series ++[Hims]
++++ Przypisania klawiszy dla Brailliant BI 32, BI 40 and B 80 +++ 
+%kc:beginInclude
+|| Działanie | Klawisz skrótu |
+| Menu NVDA | c1+c3+c4+c5 (command n) |
+| windows+d (minimalizuj wszystkie aplikacje) | c1+c4+c5 (command d) |
+| Czytaj wszystko | c1+c2+c3+c4+c5+c6 |
+%kc:endInclude
+
++++ Przypisania klawiszowe dla Brailliant BI 14 +++ 
+%kc:beginInclude
+|| Działanie | Klawisz skrótu |
+| Strzałka w górę | joystick góra |
+| Strzałka w dół | joystick dół |
+| Strzałka w lewo | joystick lewo |
+| Strzałka w prawo | joystick prawo |
+| Klawisz enter | joystick akcja |
+%kc:endInclude
+
+++ HIMS Braille Sense/Braille EDGE/Smart Beetle/Sync Braille ++[Hims]
 NVDA obsługuje monitory Braille Sense, Braille EDGE, Smart Beetle i Sync Braille produkcji [Hims http://www.hims-inc.com/] przy połączeniu przez USB i bluetooth. 
 Aby korzystać z połączenia USB, musisz zainstalować sterowniki USB HIMS w swoim systemie.
 Możesz je pobrać stąd: http://www.himsintl.com/upload/HIMS_USB_Driver_v25.zip
@@ -2252,7 +2276,7 @@ Poniżej znajdują się komendy Papenmeier dla NVDA:
 | Przejdź do pierwszego obiektu podrzędnego | Dn2 |
 | Przejdź do poprzedniego obiektu | Left2 |
 | Przejdź do następnego obiektu | Right2 |
-| Raportuj formatowanie tekstu | Górny rząd klawiszy routingowych |
+| Zgłoś formatowanie tekstu pod komórką brajla | Górny rząd klawiszy routingowych |
 %kc:endInclude
 
 Model Trio posiada 4 dodatkowe klawisze, znajdujące się z przodu klawiatury brajlowskiej.
@@ -2326,7 +2350,7 @@ Urządzenia z EAB:
 | Przejdź do pierwszego obiektu podrzędnego | Dn2 |
 | Przejdź do następnego obiektu | Right2 |
 | Przejdź do poprzedniego obiektu | Left2 |
-| Raportuj formatowanie tekstu | Górny rząd klawiszy routingowych |
+| Zgłoś formatowanie tekstu pod komórką brajla | Górny rząd klawiszy routingowych |
 
 BRAILLEX Tiny:
 || Działanie | Klawisz skrótu |
@@ -2341,7 +2365,7 @@ BRAILLEX Tiny:
 | Przejdź do pierwszego obiektu podrzędnego | R1+Dn |
 | Przejdź do poprzedniego obiektu | R1+Left |
 | Przejdź do następnego obiektu | R1+Right |
-| Raportuj formatowanie tekstu | Reportf |
+| Zgłoś formatowanie tekstu pod komórką brajla | górny rząd routingu |
 | Zgłoś tytuł | L1+Up |
 | Zgłoś pasek stanu | L2+Down |
 
@@ -2350,7 +2374,7 @@ BRAILLEX 2D Screen:
 | Raportuj aktualny znak w punkcie przeglądu | L1 |
 | Aktywuj aktualny obiekt nawigatora | L2 |
 | Przełącz "Brajl związany z..." | R2 |
-| Raportuj formatowanie tekstu | Reportf |
+| Zgłoś formatowanie tekstu pod komórką brajla | górny rząd routingu |
 | Przenieś wyświetlacz brajla do poprzedniej linii | Up |
 | Przewiń wyświetlacz brajla wstecz | Left |
 | Przewiń wyświetlacz brajla w przód | Right |
@@ -2369,6 +2393,8 @@ Następujące modele są obsługiwane:
 - BrailleNote MPower (połączenie szeregowe i bluetooth)
 - BrailleNote Apex (połączenie USB i bluetooth)
 -
+
+Dla informacji o BrailleNote Touch, proszę sprawdzić rozdział [Brailliant serii BI/ BrailleNote Touch HumanWareBrailliant].
 
 Jeśli twoje urządzenie obsługuje więcej niż jeden typ połączenia, podłączając notatnik do NVDA, musisz ustawić port terminala brajlowskiego w opcjach terminala brajla.
 Więcej na ten temat można znaleźć w podręczniku urządzenia.
@@ -2471,7 +2497,8 @@ Informacji na temat rozmieszczenia tych klawiszy, znajdują się w dokumentacji 
 | Przewiń wyświetlacz wstecz | switch1-6Lewo, l1 |
 | Przewiń wyświetlacz do przodu | switch1-6 Prawo, l8 |
 | Przejdź do punktu uwagi | switch1-6Lewo+switch1-6Prawo, l1+l8 |
-| Przywołaj do komórki brajla | routing, doubleRouting|
+| Przywołaj do komórki brajla | routing |
+| Zgłoś formatowanie tekstu pod komórką brajla | podwójny routing |
 | Przejdź do poprzedniej linii w przeglądzie | joystick1Góra |
 | Przejdź do następnej linii w przeglądzie | joystick1Dół |
 | Przejdź do poprzedniego znaku w przeglądzie | joystick1Lewo |
