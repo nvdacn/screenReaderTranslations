@@ -226,7 +226,7 @@ addresses = {
     },
     'zh_CN': {
         'lang':'Simplified Chinese',
-        'email': ['vgjh2005@gmail.com'],
+        'email': ['vgjh2005@gmail.com', 'jiangtiandao901647@gmail.com', 'manchen0528@gmail.com', 'sysking1024@gmail.com', 'dingpengyu06@gmail.com'],
     },
     'zh_HK': {
         'lang': 'Traditional Chinese Hong Kong',
