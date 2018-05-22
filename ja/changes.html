@@ -10,6 +10,87 @@
 </CENTER>
 
 
+<H2>2018.2</H2>
+
+<P>
+このリリースのハイライトは、Kindle for PC でのテーブルへの対応、Humanwear BrailleNote Touch および BI14 点字ディスプレイへの対応、OneCore および SAPI5 音声エンジンへの対応の改善、 Microsoft Outlook 対応の改善などです。
+</P>
+
+<H3>新機能</H3>
+
+<UL>
+<LI>テーブルで結合されたセルの行と列が、音声と点字で報告されるようになりました。(<A HREF="http://github.com/nvaccess/nvda/issues/2642">#2642</A>)
+<LI>Google ドキュメントで点字モードを有効にした場合に、NVDAのテーブルナビゲーションが利用可能になりました。(<A HREF="http://github.com/nvaccess/nvda/issues/7946">#7946</A>)
+<LI>Kindle for PCでテーブルの読み取りやナビゲーションができるようになりました。(<A HREF="http://github.com/nvaccess/nvda/issues/7977">#7977</A>)
+<LI>HumanWare BrailleNote touch および Brailliant BI 14 点字ディスプレイが USB 接続および Bluetoothe 接続で利用可能になりました。 (<A HREF="http://github.com/nvaccess/nvda/issues/6524">#6524</A>)
+<LI>Windows 10 Fall Creators Update 以降において、電卓や Microsoft ストアなどのアプリによる通知を報告できるようになりました。(<A HREF="http://github.com/nvaccess/nvda/issues/7984">#7984</A>)
+<LI>新しい点訳テーブル: リトアニア語8点、ウクライナ語、モンゴル語2級 (<A HREF="http://github.com/nvaccess/nvda/issues/7839">#7839</A>)
+<LI>点字セルの位置のテキストの書式とドキュメント情報を報告するスクリプトが追加されました。 (<A HREF="http://github.com/nvaccess/nvda/issues/7106">#7106</A>)
+<LI>NVDA を更新する場合に、ダウンロードだけをすぐに行い、インストールをあとで行えるようになりました。 (<A HREF="http://github.com/nvaccess/nvda/issues/4263">#4263</A>) 
+<LI>新しい言語: モンゴル語、スイスのドイツ語
+<LI>点字文字入力において control, shift, alt, windows および NVDA キーの割り当てが可能になりました。また、これらの修飾キーと点字文字入力を組み合わせて、例えば control+s などを登録できるようになりました。(<A HREF="http://github.com/nvaccess/nvda/issues/7306">#7306</A>) 
+ <UL>
+ <LI>新しい修飾キーのトグルは、入力ジェスチャーダイアログの「システムキーボードのキー入力エミュレート」からコマンドを選ぶことができます。
+ </UL>
+<LI>Handy Tech Braillino および Modular (旧版ファームウェア) の点字ディスプレイにふたたび対応しました。(<A HREF="http://github.com/nvaccess/nvda/issues/8016">#8016</A>)
+<LI>特定の Handy Tech 機器 (Active Braille および Active Star など) において日付と時刻が5秒よりも多くずれている場合に NVDA によって同期を行うようになりました。 (<A HREF="http://github.com/nvaccess/nvda/issues/8016">#8016</A>)
+<LI>Microsoft Outlook のメッセージリストにおいて、メッセージが返信済みまたは転送済みであることを報告するようになりました。(<A HREF="http://github.com/nvaccess/nvda/issues/6911">#6911</A>)
+<LI>すべての設定プロファイルのトリガーを一時的に無効にする入力ジェスチャーが追加されました。(<A HREF="http://github.com/nvaccess/nvda/issues/4935">#4935</A>)
+</UL>
+
+<H3>変更点</H3>
+
+<UL>
+<LI>アドオンマネージャーで状態の列に「有効」「無効」と表示されるようになりました。以前は「実行中」「保留」などが表示されていました。(<A HREF="http://github.com/nvaccess/nvda/issues/7929">#7929</A>)
+<LI>liblouis 点訳エンジンを 3.5.0 に更新しました。(<A HREF="http://github.com/nvaccess/nvda/issues/7839">#7839</A>)
+<LI>リトアニア語点字テーブルの名前を「リトアニア語6点」変更しました。これは新しい8点のテーブルとの区別を容易にするためです。(<A HREF="http://github.com/nvaccess/nvda/issues/7839">#7839</A>)
+<LI>フランス語（カナダ）1級および2級の点字テーブルが廃止され、フランス語統一6点コンピューター点字および2級点字が使用されるようになりました。(<A HREF="http://github.com/nvaccess/nvda/issues/7839">#7839</A>)
+<LI>Alva BC6, EuroBraille および Papenmeier 点字ディスプレイ第2タッチカーソルボタンで、その場所のテキストの書式とドキュメント情報が報告されるようになりました。(<A HREF="http://github.com/nvaccess/nvda/issues/7106">#7106</A>)
+<LI>縮約点字入力テーブルの使用中に、読み取り専用であれば自動的に非縮約モードに切り替わるようになりました。例えば、キャレットが表示されないコントロールやブラウズモードの場合などです。(<A HREF="http://github.com/nvaccess/nvda/issues/7306">#7306</A>)
+<LI>Outlook カレンダーの予定または時間帯が一日の全体をカバーしている場合に、 NVDA の読み上げが冗長すぎる問題を改善しました。(<A HREF="http://github.com/nvaccess/nvda/issues/7949">#7949</A>)
+<LI>複数のダイアログに分かれていた NVDA の設定を、NVDA メニュー → 設定 → 設定 で開くことができる「NVDA設定ダイアログ」にまとめました。(<A HREF="http://github.com/nvaccess/nvda/issues/577">#577</A>)
+<LI>Windows 10 で NVDA を使用する場合の既定の音声エンジンを eSpeak から OneCore 音声に変更しました。(<A HREF="http://github.com/nvaccess/nvda/issues/8176">#8176</A>)
+</UL>
+
+<H3>バグ修正</H3>
+
+<UL>
+<LI>設定アプリにおけるマイクロソフトアカウントのサインイン画面で、メールアドレス入力後にフォーカス位置のコントローラーを NVDA が読み上げできなくなる問題を修正しました。(<A HREF="http://github.com/nvaccess/nvda/issues/7997">#7997</A>)
+<LI>Microsoft Edge で前のページに戻ったときに NVDA がページを読み上げなくなる問題を修正しました。(<A HREF="http://github.com/nvaccess/nvda/issues/7997">#7997</A>)
+<LI>Windows 10 で PC のロックを解除するときの PIN の入力において、最後の数字を読み上げてしまう問題を修正しました。(<A HREF="http://github.com/nvaccess/nvda/issues/7908">#7908</A>)
+<LI>Chrome と Firefox のブラウズモードで Tab キーや1文字ナビゲーションを使って移動したときに、チェックボックスとラジオボタンのラベルが2重に報告されていた問題を修正しました。(<A HREF="http://github.com/nvaccess/nvda/issues/7960">#7960</A>)
+<LI>aria-current で false という値の場合に true と誤って報告されていた問題を修正しました。(<A HREF="http://github.com/nvaccess/nvda/issues/7892">#7892</A>).
+<LI>Windows OneCore 音声で選択された音声がアンインストールされた場合に、音声エンジンの読み込みに失敗していた問題を修正しました。(<A HREF="http://github.com/nvaccess/nvda/issues/7553">#7553</A>)
+<LI>Windows OneCore 音声での音声の切り替えが早くなりました。(<A HREF="http://github.com/nvaccess/nvda/issues/7999">#7999</A>)
+<LI>複数の点字テーブルで不適切な点字が出力されていた問題を修正しました。例えばデンマーク語8点2級点字における大文字符などです。(<A HREF="http://github.com/nvaccess/nvda/issues/7526">#7526</A>, <A HREF="http://github.com/nvaccess/nvda/issues/7693">#7693</A>)
+<LI>Microsoft Word において NVDA がより多くの種類のビュレットを報告できるようになりました。(<A HREF="http://github.com/nvaccess/nvda/issues/6778">#6778</A>)
+<LI>「書式とドキュメント情報の報告」スクリプトを実行したときに不適切にレビューカーソルが移動してしまい、実行を繰り返すと結果が変化してしまっていた問題を修正しました。 (<A HREF="http://github.com/nvaccess/nvda/issues/7869">#7869</A>)
+<LI>点字入力でサポートされていない場合に縮約点字を許してしまっていた問題を修正しました。例えば、エディットコントロールの外やブラウズモードなど、システムに単語を送信すべきではない場合です。(<A HREF="http://github.com/nvaccess/nvda/issues/7306">#7306</A>)
+<LI>Handy Tech Easy Braille および Braille Wave 点字ディスプレイの接続における安定性を改善しました。(<A HREF="http://github.com/nvaccess/nvda/issues/8016">#8016</A>)
+<LI>Windows 8 およびそれ以降において、Windows+X のクイックリンクメニューを開き、項目を選択するときに「未定義」と読み上げていた問題を修正しました。 (<A HREF="http://github.com/nvaccess/nvda/issues/8137">#8137</A>)
+<LI>Hims 点字ディスプレイで機種依存のジェスチャー割り当てがユーザーガイドに記載されたとおりに機能するようになりました。(<A HREF="http://github.com/nvaccess/nvda/issues/8096">#8096</A>)
+<LI>Firefox や Internet Explorer などが操作できなくなり「未定義」という報告しかしないような場合に、NVDA は COM 登録の問題の修正を試みるようになりました。(<A HREF="http://github.com/nvaccess/nvda/issues/2807">#2807</A>)
+<LI>タスクマネージャーの不具合によってプロセスの詳細情報にアクセスできなくなる問題への対策を行いました。(<A HREF="http://github.com/nvaccess/nvda/issues/8147">#8147</A>)
+<LI>新しい Microsoft SAPI5 音声において、読み上げの最後に無音が入ってしまう問題が修正され、これらの音声を使った操作がより快適になりました。(<A HREF="http://github.com/nvaccess/nvda/issues/8174">#8174</A>)
+<LI>最近のバージョンの Windows で時刻の情報を点字ディスプレイに表示したり1文字ずつ読み上げたりするときに、LTR および RTL の記号を報告しないようになりました。(<A HREF="http://github.com/nvaccess/nvda/issues/5729">#5729</A>)
+<LI>Hims Smart Beetle 点字ディスプレイでスクロールキーの検出が不安定になっていた問題を修正しました。(<A HREF="http://github.com/nvaccess/nvda/issues/6086">#6086</A>)
+<LI>Delphi アプリなどのテキストコントロールにおいて、編集やナビゲーションに関する情報をより適切に取得できるようになりました。(<A HREF="http://github.com/nvaccess/nvda/issues/636">#636</A>, <A HREF="http://github.com/nvaccess/nvda/issues/8102">#8102</A>)
+</UL>
+
+<H3>開発者向けの変更</H3>
+
+<UL>
+<LI>UIAオブジェクトの developer info で UIA パターンのリストが利用可能になりました。(<A HREF="http://github.com/nvaccess/nvda/issues/5712">#5712</A>)
+<LI>アプリモジュールで isGoodUIAWindow メソッドを実装することにより、特定のウィンドウで常に UIA の使用を強制できるようになりました。(<A HREF="http://github.com/nvaccess/nvda/issues/7961">#7961</A>)
+<LI>設定ファイルの braille セクションにある非公式の boolean フラグ "outputPass1Only" を廃止しました。Liblouis の pass 1 only output が廃止されたためです。(<A HREF="http://github.com/nvaccess/nvda/issues/7839">#7839</A>)
+</UL>
+
+<H2>2018.1.1</H2>
+
+<P>
+このリリースでは Windows 10 Redstone 4 (バージョン1803) における OneCore 音声合成エンジンのドライバーの不具合を修正しました。 (<A HREF="http://github.com/nvaccess/nvda/issues/8082">#8082</A>)  
+</P>
+
 <H2>2018.1</H2>
 
 <P>
