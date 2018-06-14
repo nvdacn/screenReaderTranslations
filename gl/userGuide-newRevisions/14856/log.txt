@@ -1,0 +1,48 @@
+commit 30cd6b893f04f52b143b1881b664d66ee9a6293d
+Author: Joseph Lee <joseph.lee22590@gmail.com>
+Date:   Tue Jun 12 23:20:26 2018 -0700
+
+    BrailleNote: support for QT and Apex BT scroll wheel (#6316)
+    
+    * BrailleNote: Support scroll wheel on Apex BT. re #5992
+    
+    * BrailleNote: Support BrailleNote QT basic mode. re #5993
+    
+    * BrailleNote: Various BT and QT commands now work correctly. re #5992.
+    
+    Somehow, forgot to check that Rui used a tuple to specify key assignments. Now utilized properly to assign multiple gestures to a command. Also took this time to add codes for various QT keys so NVDA can properly recognize them.
+    
+    * BrailleNote QT: handle QT input directly from read packet function. re #5992
+    
+    Comment from Jamie Teh (Nv Access): there's no need to call read packet again if we're dealing with QT, so handle this from read packet directly. Thus readPacket returns three things: command, arg (dot mask on BT/command for QT), arg2 (char from QT).
+    
+    * BrailleNote QT: QT key parser refactor.
+    
+    Instead of relying on a dedicated QT key parser, handle parsing directly in readPacket. Also simplifies gesture ID assignment, as the packet will tell the gesture constructor as to what key it is.
+    
+    * BrailleNote QT: comment text change, correct ticket, simplified dictionary key lookup. re #5993
+    
+    A tip from Jamie Teh (NV Access0: use dict.get to simplify the turnary operation. Also, BNQT ticket is 5993, not 5992, and correct comment text.
+    
+    * User guide: cosmetics. re #5992
+    
+    Review from Jamie Teh (NV Access):
+    * QT can emulate a BrailleNote BT, hence clarify this.
+    * Removed redundant kcinclude statement.
+    
+    * BrailleNote QT: use set instead of worrying too much about formatting gesture identifier right. #5993
+    
+    Comment from Jamie Teh (NV Access): use sets instead of turning that into a list just for formatting purposes (and turns out this is unnecessary).
+    
+    * Merge master
+    
+    * Readjust commands
+    
+    * BrailleNote: copyright year update, QT key name changes. Re #5992.
+    
+    Commented by Leonard de Ruijter: rename QT key names.
+    Update copyright years.
+    
+    * BrailleNote: rename scroll wheel constant strings. Re #5992.
+    
+    * Restore executable permission to win32calc
