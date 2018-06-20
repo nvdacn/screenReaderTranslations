@@ -268,7 +268,16 @@ liblouis盲文翻译器更新到3.2.0。 (#6935)
  - 在Firefox和Chrome中，浏览模式表格导航命令现在跳过隐藏的表格单元格。 (#6652,#5655)
 
 
-== 2017.2 ==
+== 开发者更改 ==
+- Timestamps in the log now include milliseconds. (#7163)
+- NVDA must now be built with Visual Studio Community 2015. Visual Studio Express is no longer supported. (#7110)
+ - The Windows 10 Tools and SDK are now also required, which can be enabled when installing Visual Studio.
+ - See the Installed Dependencies section of the readme for additional details.
+- Support for content recognizers such as OCR and image description tools can be easily implemented using the new contentRecog package. (#7361)
+- The Python json package is now included in NVDA binary builds. (#3050)
+
+
+= 2017.2 =
 此版本的亮点包括在Windows 10创作者更新中完全支持音频闪避;修复浏览模式下的几个选择问题，包括全选的问题;Microsoft Edge支持的重大改进;和web支持上的改进，例如标记为当前（使用aria-current）的元素的提示。
 
 == 新特性 ==
@@ -563,9 +572,31 @@ liblouis盲文翻译器更新到3.2.0。 (#6935)
 
 
 = 2015.4 =
+此版本的亮点包括Windows 10中的性能改进;NVDA包含在Windows 8及更高版本的轻松访问中心中; Microsoft Excel的增强功能，包括列表和重命名工作表以及访问受保护工作表中的锁定单元格;并支持在Mozilla Firefox，Google Chrome和Mozilla Thunderbird中编辑富文本。
 
 == 新特性 ==
 - NVDA 如今会出现在 Windows8 或更高版本的系统的轻松访问中心。 (#308)
+- 在Excel中移动单元格时，如果在NVDA的“文档格式设置”对话框中打开了适当的选项，现在会自动报告格式更改。 (#4878)
+- 报告强调选项已添加到NVDA的文档格式设置对话框中。默认情况下，此选项允许NVDA自动报告文档中强调文本的存在。到目前为止，只有浏览模式下的Internet Explorer和其他MSHTML控件才支持em和strong标记。 (#4920)
+- 如果启用了NVDA的“报告编辑器修订”选项，现在会在浏览模式中为Internet Explorer和其他MSHTML控件报告插入和删除的文本。 (#4920)
+- 当在NVDA的Microsoft Word元素列表中查看跟踪更改时，现在显示更多信息，例如格式属性是否已更改。 (#4920)
+- Microsoft Excel：现在可以从NVDA的元素列表（NVDA + f7）列表和重命名工作表。 (#4630, #4414)
+- 现在可以配置是否将符号发音对话框中的实际符号发送到语音合成器（例如，导致暂停或变形变形）。 (#5234)
+- 在Microsoft Excel中，NVDA现在报告单元格上的表单作者设置的任何输入消息。 (#5051)
+- 支持Baum Pronto！当通过蓝牙连接时，V4和VarioUltra盲文显示器。 (#3717)
+- 支持在Mozilla应用程序中编辑富文本，例如在Mozilla Firefox中启用盲文支持的Google Docs以及在Mozilla Thunderbird中编写HTML。 (#1668)
+- 支持在基于Chrome的浏览器（如启用盲文支持的Google文档）中编辑富文本。 (#2634)
+- 这需要Chrome 47或更高版本。
+- 在Microsoft Excel的浏览模式下，您可以导航到受保护工作表中的锁定单元格。 (#4952)
+
+
+== 更改 ==
+- The Report Editor Revisions option in NVDA's Document formatting settings dialog is now turned on by default. (#4920)
+- When moving by character in Microsoft Word with NVDA's Report Editor Revisions option enabled, less information is now reported for track changes, which makes navigation more efficient. To view the extra information, use the Elements List. (#4920)
+- Updated liblouis braille translator to 2.6.4. (#5341)
+- Several symbols (including basic mathematical symbols) have been moved to level some so that they are spoken by default. (#3799)
+- If the synthesizer supports it, speech should now pause for parentheses and the en dash (–). (#3799)
+- When selecting text, the text is reported before the indication of selection instead of after. (#1707)
 
 
 == 错误 修复 ==
@@ -574,6 +605,18 @@ liblouis盲文翻译器更新到3.2.0。 (#6935)
 - 修复 NVDA 退出对话框按钮显示错误。 (#5325)
 - 在 Windows8 或以上的系统， NVDA在登陆后的启动时间变的更加短。 (#308)
  - 如果您启用了该特性，在使用先前版本的 NVDA 时必须先在“常规设置”对话框中停用再启用才能使之生效。
+- UI自动化的性能增强，包括文件资源管理器和任务查看器。 (#5293)
+- 当Mozilla Firefox浏览模式和其他基于Gecko的控件在选择只读ARIA网格控件时，NVDA现在可以正确切换到焦点模式。 (#5118)
+- 当在触摸屏上向左轻扫没有更多的对象时，NVDA现在可以正确报告“没有先前”而不是“没有下一个”。
+- 修复了在输入手势对话框中的多个词语输入过滤器字段时出现的问题。 (#5426)
+- 在某些情况下，当通过USB重新连接到HumanWare Brailliant BI / B系列盲文显示器时，NVDA不再冻结。 (#5406)
+- 在带有连字符的语言中，字符描述现在可以按照大写英文字符的预期工作。 (#5375)
+- 在Windows 10中启动“开始”菜单时，NVDA不应再偶尔冻结。 (#5417)
+- 在Skype for Desktop中，现在报告在先前通知消失之前显示的通知。 (#4841)
+- Skype for Desktop 7.12及更高版本现在可以正确报告通知。 (#5405)
+- NVDA现在可以在某些应用程序（如Jart）中关闭上下文菜单时正确报告焦点。 (#5302)
+- 在Windows 7和更高版本中，Color在某些应用程序（如写字板）中再次被报告。 (#5352)
+- 在Microsoft PowerPoint中进行编辑时，按Enter键即可自动输入文本，如项目符号或编号。 (#5360)
 
 
 = 2015.3 =
