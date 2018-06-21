@@ -90,7 +90,7 @@ addresses = {
     },
     'hi': {
         'lang': 'Hindi',
-        'email': ['Bhavya Shah <bhavya.shah125@gmail.com>', 'dipendra.lists@gmail.com'],
+        'email': ['dipendra.lists@gmail.com'],
     },
     'hr': {
         'lang': 'Croatian',
