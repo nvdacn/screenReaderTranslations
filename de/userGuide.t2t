@@ -832,9 +832,11 @@ Weitere Informationen über den Lesemodus und die Schnellnavigationstasten finde
 %kc:beginInclude
 || Name | Tastenkombination | Beschreibung |
 | Verbleibende Zeit ausgeben | Strg+Umschalt+R | Falls grade ein Titel abgespielt wird, wird die verbleibende Zeit ausgegeben. |
+| verstrichene Zeit ausgeben | strg+Umschalt+e | Gibt die verstrichene Zeit des aktuellen Titels as, sofern ein Titel abgespielt wird. |
+| Länge des Titels ausgeben | strg+Umschalt+t | Gibt die Länge des aktuellen Titels aus, sofern ein Titel abgespielt wird. |
 %kc:endInclude
 
-Hinweis: Der Befehl "Verbleibende Zeit ausgeben" funktioniert nur, wenn die Standard-Einstellungen für die Statuszeile gewählt sind.
+Hinweis: die obigen Tastenkombinationen funktionieren nur, wenn die Standard-Einstellungen für die Statuszeile gewählt sind.
 
 ++ Miranda IM ++[MirandaIM]
 %kc:beginInclude
@@ -971,6 +973,25 @@ Diese Option ist nur in der installierten Version verfügbar!
 ==== Automatisch nach Aktualisierungen suchen ====[GeneralSettingsCheckForUpdates]
 Wenn diese Option aktiviert ist, sucht NVDA automatisch nach Aktualisierungen und informiert sie, wenn eine aktualisierte Version verfügbar ist.
 Sie können auch manuell auf Aktualisierungen prüfen, indem Sie "nach Aktualisierungen suchen " aus dem Hilfe-Menü wählen.
+Um beim Prüfen auf Aktualisierungen von NVDA sicherzustellen, dass Sie auch wirklich die passende Aktualisierung erhalten, ist es notwendig, einige informationen an den Updateserver von NV Access zu senden. Die gilt sowohl für die manuelle als ach für die automatische Prüfung auf Aktualisierungen.
+Die folgenden Informationen werden immer gesendet:
+- aktuelle NVDA-Version
+- Betriebssystemversion
+- Systemarchitektur (32 oder 64 Bit)
+
+
+==== dem NVDA-Projekt gestatten, statistische Informationen zu sammeln ====[GeneralSettingsGatherUsageStats]
+Ist diese option aktiviert, sammelt NV Access zusätzliche Informationen wie die Landessprache, das Land oder die geografische Region. Diese infos werden benutzt, um Satistiken über die Anzahl der NVDA-Nutzer zu erstellen.
+Auch wenn die Ip-Adresse zum Ermitteln des (ungefähren) geografischen Standortes verwendet wird, wird sie niemals protokolliert.
+Wenn die Option aktiviert ist, werden die folgenden Daten zusätzlich gesendet:
+- Eingestellte landessprache in NVDA
+- Art der NVDA-Instanz (portabel Bzw. installiert)
+- Name der verwendeten Sprachausgabe (inkl. Name der Erweiterung, aus der die Sprachausgabe stammt)
+- name der verwendeten Braillezeile (inkl. Name der Erweiterung, aus der der Treiber stammt).
+- aktuelle Ausgabetabelle (sofern Braille benutzt wird)
+
+
+Diese Informationen helfen NV Access bei der zukünftigen Entwicklung von NVDA.
 
 ==== Beim Start von NVDA ausstehende Aktualisierungen melden ====[GeneralSettingsNotifyPendingUpdates]
 Wenn diese Option aktiviert ist, wird NVDA nach dem Start darüber informieren, falls eine Aktualisierung aussteht und Ihnen die Möglichkeit geben, diese zu installieren. 
@@ -2319,7 +2340,6 @@ Dies sind von links nach rechts:
 - Leertaste
 - Nach rechts springen (RT)
 -
-
 Die Taste RT wird momentan noch nicht verwendet.
 Die inneren Tasten sind als Leertasten belegt.
 
