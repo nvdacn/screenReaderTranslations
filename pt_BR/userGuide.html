@@ -2112,10 +2112,20 @@ Para obter mais informações sobre o modo de Navegação e a navegação com ca
 <TD>control+shift+r</TD>
 <TD>Anuncia o tempo restante para a faixa atualmente em execução, caso haja alguma.</TD>
 </TR>
+<TR>
+<TD>Anunciar o tempo decorrido</TD>
+<TD>control+shift+e</TD>
+<TD>Anuncia o tempo decorrido da faixa atualmente em execução, caso haja alguma.</TD>
+</TR>
+<TR>
+<TD>Anunciar o tamanho da faixa</TD>
+<TD>control+shift+t</TD>
+<TD>Anuncia a duração da faixa atualmente em execução, caso haja alguma.</TD>
+</TR>
 </TABLE>
 
 <P>
-Nota: O atalho do anúncio de tempo restante funciona apenas com a seqüência de formatação padrão para a linha de status do foobar.
+Nota: Os atalhos acima funcionam apenas com a sequência [string] de formatação padrão para a linha de status do foobar.
 </P>
 
 <A NAME="MirandaIM"></A>
@@ -2261,7 +2271,7 @@ A maior parte das configurações podem ser realizadas através da utilização 
 Muitas dessas configurações podem ser encontradas no <A HREF="#NVDASettings">diálogo multipágina Opções do NVDA</A>.
 Em todas as caixas de diálogo, pressione o botão OK para concordar com as alterações feitas.
 Para cancelar qualquer alteração, pressione o botão Cancelar ou a tecla Escape.
-Em certos diálogos, você pode pressionar o botão Aplicar para permitir que as configurações entrem em vigor imediatamente sem fechar a  caixa de diálogo.
+Em certos diálogos, você pode pressionar o botão Aplicar para permitir que as configurações entrem em vigor imediatamente sem fechar a caixa de diálogo.
 Algumas opções também podem ser alteradas através da utilização de teclas de atalho, que estão listadas quando relevante nas seções abaixo.
 </P>
 
@@ -2369,7 +2379,36 @@ Essa opção só estará disponível para as cópias instaladas do NVDA.
 
 <P>
 Se habilitado, o NVDA irá procurar automaticamente por versões atualizadas e lhe informará quando uma atualização estiver disponível.
-Você também pode procurar por atualizações manualmente selecionando o item correspondente no submenu ajuda do menu do NVDA.
+Você também pode verificar manualmente se há atualizações selecionando Procurar atualizações em Ajuda no menu do NVDA.
+Quando verificando atualizações manualmente ou automaticamente, é necessário que o NVDA envie algumas informações ao servidor de atualização para receber a atualização correta para o seu sistema.
+As seguintes informações são sempre enviadas:
+</P>
+
+<UL>
+<LI>Versão atual do NVDA
+<LI>Versão do Sistema Operacional
+<LI>Se o Sistema Operacional é 64 ou 32 bit
+</UL>
+
+<A NAME="GeneralSettingsGatherUsageStats"></A>
+<H5>Permitir que o Projeto NVDA colete estatísticas de uso do NVDA</H5>
+
+<P>
+Se isso estiver ativado, a NV Access usará as informações das procuras de atualização para rastrear o número de usuários do NVDA, incluindo informações demográficas específicas, como Sistema operacional e país de origem.
+Note que, embora seu endereço IP seja usado para calcular seu país durante a verificação de atualização, o endereço IP nunca é armazenado.
+Além das informações obrigatórias necessárias para procurar por atualizações, as seguintes informações extras também são enviadas:
+</P>
+
+<UL>
+<LI>Idioma da interface do NVDA
+<LI>Se esta cópia do NVDA é portátil ou instalada
+<LI>Nome do sintetizador de fala atual em uso (incluindo o nome do complemento que vem com o driver)
+<LI>Nome da linha Braille atual em uso (incluindo o nome do complemento que vem com o driver)
+<LI>A tabela de saída Braille atual (se o Braille estiver em uso)
+</UL>
+
+<P>
+Essa informação auxilia imensamente a NV Access a priorizar o desenvolvimento futuro do NVDA.
 </P>
 
 <A NAME="GeneralSettingsNotifyPendingUpdates"></A>
@@ -2396,7 +2435,7 @@ A categoria Configurações de Fala contém as seguintes opções:
 
 <P>
 A primeira opção na categoria Configurações de fala é o botão Alterar... Este botão ativa a caixa de diálogo <A HREF="#SelectSynthesizer">Selecionar Sintetizador</A>, que permite selecionar o sintetizador de fala e o dispositivo de saída ativos.
-Essa caixa de diálogo é aberta na parte superior do diálogo de Opções do NVDA.
+Essa caixa de diálogo é aberta sobrepondo-se ao diálogo de Opções do NVDA.
 Salvar ou descartar as configurações no diálogo Selecionar Sintetizador retornará à caixa de diálogo de Opções do NVDA.
 </P>
 
@@ -2621,7 +2660,7 @@ Se desejar alterar rapidamente as opções de voz sem ir à categoria Fala do di
 <H4>11.1.5. Braille</H4>
 
 <P>
-A categoria Braille no diálogo de Opções do NVDA contém opções que permitem alterar vários aspectos da entrada e saída em braille.
+A categoria Braille no diálogo de Opções do NVDA contém opções que permitem alterar vários aspectos da entrada e saída braille.
 Esta categoria contém as seguintes opções:
 </P>
 
@@ -2630,19 +2669,17 @@ Esta categoria contém as seguintes opções:
 
 <P>
 O botão Alterar... na categoria Braille do diálogo de Opções do NVDA ativa a caixa de diálogo <A HREF="#SelectBrailleDisplay">Selecionar Linha Braille</A>, que permite selecionar a linha braille ativa.
-Esse diálogo é aberto na parte superior da caixa de diálogo de Opções do NVDA.
-Salvar ou descartar as configurações no diálogo Selecionar Linha Braille retornará para o diálogo de Opções do NVDA.
+Essa caixa de diálogo é aberta sobrepondo-se ao diálogo de Opções do NVDA.
+Salvar ou descartar as configurações no diálogo Selecionar Linha Braille retornará para a caixa de diálogo de Opções do NVDA.
 </P>
 
 <A NAME="BrailleSettingsOutputTable"></A>
-<H5>Tabela Para Saída</H5>
+<H5>Tabela para Saída</H5>
 
 <P>
 A opção seguinte que se encontra nesta categoria é uma caixa de combinação referente às tabelas Braille.
 Aqui encontrará diversas para vários idiomas, padrões e graus.
-A tabela escolhida será usada para converter os textos para braille e apresentá-los em sua linha braille.
-</P>
-<P>
+A tabela escolhida será usada para transcrever os textos para braille e apresentá-los em sua linha braille.
 Pode-se mover pela lista de tabelas braille utilizando as Setas.
 </P>
 
@@ -2651,27 +2688,26 @@ Pode-se mover pela lista de tabelas braille utilizando as Setas.
 
 <P>
 Em complemento à opção anterior, a próxima definição que você encontrará consiste numa caixa de combinação contendo as tabelas braille para entrada.
-A tabela escolhida será usada para converter o braille introduzido por meio do teclado braille Perkins de sua linha braille em texto.
-O NVDA atualmente suporta apenas a entrada de braille para computador, pelo que apenas as tabelas de braille para computador de 8 pontos serão mostradas.
+A tabela escolhida será usada para transcrever o braille introduzido por meio do teclado braille estilo Perkins de sua linha braille em texto.
 Pode-se mover pela lista de tabelas braille utilizando as Setas.
 </P>
 <P>
-Note que essa opção só é útil se sua linha braille possui um teclado Perkins e quando o referido recurso é suportado pelo driver da linha braille.
-Caso a entrada de braille não seja suportada por uma linha na qual haja um teclado braille, ser-lhe-á informado na seção <A HREF="#SupportedBrailleDisplays">Linhas Braille Suportadas</A>.
+Note que essa opção só é útil se sua linha braille possui um teclado estilo Perkins e quando o referido recurso é suportado pelo driver da linha braille.
+Caso a entrada não seja suportada por uma linha na qual haja um teclado braille, ser-lhe-á informado na seção <A HREF="#SupportedBrailleDisplays">Linhas Braille Suportadas</A>.
 </P>
 
 <A NAME="BrailleSettingsExpandToComputerBraille"></A>
-<H5>Expandir Para Braille De Computador a Palavra Sobre O Cursor</H5>
+<H5>Expandir para braille de computador à palavra no cursor</H5>
 
 <P>
-Esta opção permite que a palavra que está sob o cursor apareça para o caso específico do Braille de computador não contraído.
+Essa opção permite que a palavra que está sob o cursor apareça em braille informático integral [braille de computador não abreviado/contraído].
 </P>
 
 <A NAME="BrailleSettingsShowCursor"></A>
 <H5>Mostrar Cursor</H5>
 
 <P>
-Esta opção permite que o cursor braille seja ligado e desligado.
+Essa opção permite que o cursor braille seja ligado e desligado.
 Aplica-se ao cursor do sistema e cursor de exploração, mas não ao indicador de seleção.
 </P>
 
@@ -2679,7 +2715,7 @@ Aplica-se ao cursor do sistema e cursor de exploração, mas não ao indicador d
 <H5>Cursor Intermitente</H5>
 
 <P>
-Esta opção permite que o cursor braille intermite.
+Essa opção permite que o cursor braille intermite.
 Se intermitência estiver desligada, o cursor em braille estará constantemente na posição "para cima".
 O indicador de seleção não é afetado por esta opção, é sempre pontos 7 e 8 sem intermitência.
 </P>
@@ -2695,7 +2731,7 @@ Esta opção é um campo numérico que lhe permite alterar a velocidade de inter
 <H5>Formato do Cursor para Foco</H5>
 
 <P>
-Esta opção permite que você escolha a forma (padrão de ponto) do cursor braille quando o braille está vinculado ao foco.
+Essa opção permite que você escolha a forma (padrão de pontos) do cursor braille quando o braille está vinculado ao foco.
 O indicador de seleção não é afetado por esta opção, é sempre pontos 7 e 8 sem intermitência.
 </P>
 
@@ -2703,7 +2739,7 @@ O indicador de seleção não é afetado por esta opção, é sempre pontos 7 e 
 <H5>Formato do Cursor para Exploração</H5>
 
 <P>
-Esta opção permite que você escolha a forma (padrão de ponto) do cursor braille quando o braille está vinculado à exploração.
+Essa opção permite que você escolha a forma (padrão de pontos) do cursor braille quando o braille está vinculado à exploração.
 O indicador de seleção não é afetado por esta opção, é sempre pontos 7 e 8 sem intermitência.
 </P>
 
@@ -2729,7 +2765,7 @@ Esta opção permite que as mensagens NVDA sejam exibidas na linha braille indef
 Tecla: NVDA+control+t
 </P>
 <P>
-Esta opção permite-lhe escolher se a linha Braille seguirá o cursor do sistema, o navegador de objetos / cursor de exploração, ou ambos.
+Essa opção permite-lhe escolher se a linha Braille seguirá o cursor do sistema, o navegador de objetos / cursor de exploração, ou ambos.
 Quando "automaticamente" é selecionado, o NVDA seguirá o foco do sistema e o cursor por padrão.
 Nesse caso, quando o objeto de navegação ou a posição do cursor de exploração forem alterados por meio de uma interação explícita do usuário, o NVDA irá vincular-se à exploração temporariamente, até que o foco ou o cursor se alterem.
 </P>
@@ -2739,21 +2775,21 @@ Nesse caso, quando o objeto de navegação ou a posição do cursor de exploraç
 
 <P>
 Caso seja ativada, o braille será exibido por parágrafos em lugar de linhas.
-Além disso, os comandos de mover para a linha anterior e para a próxima linha irão mover respectivamente por parágrafos.
+Além disso, os comandos de mover para a linha anterior e para a próxima linha se moverão de acordo com o parágrafo.
 Isso significa que você não terá que mover a linha braille ao fim de cada linha, mesmo quando um texto maior for exposto na mesma.
 Isso pode permitir uma leitura mais fluente em textos muito extensos.
-Esta opção está desativada por padrão.
+Essa opção está desativada por padrão.
 </P>
 
 <A NAME="BrailleSettingsWordWrap"></A>
-<H5>Quando possível, não quebrar palavras</H5>
+<H5>Evitar partir palavras quando possível</H5>
 
 <P>
 Se isso estiver ativado, uma palavra que seja muito grande para caber no final da linha braille não será dividida.
 Em vez disso, haverá algum espaço em branco no final da linha.
 Quando você rolar a linha, você poderá ler a palavra inteira.
 Às vezes, isso é chamado de "quebra automática de palavras".
-Observe que, se a palavra for muito grande para caber na linha, a palavra ainda deve ser dividida.
+Observe que, se a palavra for muito grande para caber na linha, a palavra ainda deve ser partida.
 </P>
 <P>
 Se isso estiver desativado, o máximo possível da palavra será exibido, mas o restante será cortado.
@@ -2767,7 +2803,7 @@ Habilitar isso pode permitir uma leitura mais fluente, mas geralmente requer que
 <H5>Apresentação do contexto do foco</H5>
 
 <P>
-Esta opção permite que você escolha quais informações de contexto o NVDA mostrará na linha braille quando um objeto recebe foco.
+Essa opção permite que você escolha quais informações de contexto o NVDA mostrará na linha braille quando um objeto recebe foco.
 Informações de contexto referem-se à hierarquia de objetos que contêm o foco.
 Por exemplo, quando você foca um item de lista, esse item de lista faz parte de uma lista.
 Esta lista pode estar contida por um diálogo, etc.
