@@ -2112,10 +2112,20 @@ Pentru mai multe informații despre Modul navigare și navigarea cu o singură l
 <TD>control+shift+r</TD>
 <TD>Anunță timpul rămas pentru pista redată curent, dacă există.</TD>
 </TR>
+<TR>
+<TD>Anunță timpul scurs</TD>
+<TD>control+shift+e</TD>
+<TD>Anunță timpul scurs pentru pista redată curent, dacă există.</TD>
+</TR>
+<TR>
+<TD>Anunță Lungimea pistei</TD>
+<TD>control+shift+t</TD>
+<TD>Anunță lungimea pistei redate curent, dacă există.</TD>
+</TR>
 </TABLE>
 
 <P>
-Notă: Scurtătura pentru anunțul timpului rămas funcționează doar cu formatarea implicită a șirului de caractere din linia de stare a foobar.
+Notă: Comenzile de mai sus funcționează doar cu formatarea implicită a șirului de caractere din linia de stare a foobar.
 </P>
 
 <A NAME="MirandaIM"></A>
@@ -2369,7 +2379,33 @@ Această opțiune este disponibilă doar pentru copiile instalate ale NVDA.
 <P>
 Dacă opțiunea este activată, NVDA va verifica automat dacă există versiuni mai noi ale programului și va informa când acestea sunt disponibile.
 Puteți, de asemenea, să verificați manual apariția noilor versiuni prin selectarea opțiunii „Verifică actualizări...” din meniul de „Ajutor” al NVDA.
+Când verificați manual sau automat actualizările, este necesar ca NVDA să trimită anumite informații serverului de actualizare pentru a primi actualizarea corectă conform sistemului folosit.
+Următoarele informații sunt trimise actual către server:
 </P>
+
+<UL>
+<LI>Versiunea NVDA actuală
+<LI>Versiunea sistemului de operare
+<LI>Arhitectura sistemului de operare (64 sau 32 de biți).
+</UL>
+
+<H5>Acceptarea trimiterii statisticilor de folosire către NV Access</H5>
+
+<P>
+Dacă acceptați ca, în timpul verificării automate pentru actualizări noi, NVDA să trimită statisticile către NV Access, aceste informații vor fi folosite pentru a descoperi numărul de utilizatori și aspectele tipice precum țara și versiunea  sistemului de operare.
+Adresa de IP nu va fi salvată in nici un caz. Dar notați că adresa de IP va fi folosită temporar pentru a calcula țara in care se folosește NVDA in acel moment.
+In afara informațiilor obligatorii pentru a face posibilă verificarea automată pentru actualizări noi, NVDA va trimite următoarele informații suplimentare:
+</P>
+
+<UL>
+<LI>Limba de interfață
+<LI>Tipul instanței de NVDA (copie portabilă sau versiune instalată)
+<LI>Numele sintetizatorului actual și numele suplimentului de la care provine driverului pentru sintetizator
+<LI>Numele afișajului braille conectat și numele suplimentului de la care provine driverul afișajului
+<LI>Dacă ieșirea braille este activă, se trimite tabelul actual de ieșire braille
+<P></P>
+Aceste informații sunt de un ajutor enorm pentru NV Access pentru a putea prioriza dezvoltarea cititorului de ecran NVDA in viitor.
+</UL>
 
 <A NAME="GeneralSettingsNotifyPendingUpdates"></A>
 <H5>Notifică actualizările în așteptare la pornire</H5>
@@ -5604,6 +5640,12 @@ Următoarele modele sunt suportate:
 Pentru BrailleNote Touch, vă rugăm citiți pasajul <A HREF="HumanWareBrailliant">Brailliant seriile BI/B / BrailleNote Touch</A>.
 </P>
 <P>
+In afară de Braillenote PK, NVDA este compatibil cu tastaturile Braillenote BT și Braillenote Quertz (QT).
+Braillenote QT deocamdată nu poate fi comutat la modul de tastatura PC.
+Puteți introduce puncte Braille cu tastatura Braillenote QT.
+Pentru mai multe detalii vă rugăm să consultați manualul afișajului  braille, mai exact secțiunea ”terminal Braille”.
+</P>
+<P>
 Dacă, după ce conectați BrailleNote la NVDA, dispozitivul dumneavoastră este compatibil cu mai mult de un tip de conexiune, trebuie să stabiliți portul terminalului braille în opțiunile terminalului braille.
 Consultați manualul BrailleNote pentru detalii.
 În NVDA, s-ar putea să fie necesară stabilirea portului în <A HREF="#SelectBrailleDisplay">Dialogul selectării afișajului braille</A>.
@@ -5612,6 +5654,10 @@ Dacă faceți conexiunea folosind unul dintre porturile seriale moștenite (sau 
 </P>
 <P>
 Înainte de conectarea lui BrailleNote Apex, folosindu-i interfața de client USB, trebuie să instalați driverele puse la dispoziție de HumanWare.
+</P>
+<P>
+Cu Braillenote Apex BT puteți introduce comenzi NVDA folosind joysticul de rulare dintre punctele 1 și 4.
+Joysticul este compus din 4 puncte direcționale, un buton central și dintr-o rotiță care se poate  învârti in sensul de ceasornic sau in sens opus.
 </P>
 <P>
 Urmează asocierile de comenzi pentru BrailleNote și NVDA.
@@ -5646,6 +5692,10 @@ Vă rugăm să consultați documentația dispozitivului dumneavoastră BrailleNo
 <TR>
 <TD>Comută braille asociat la</TD>
 <TD>previous+next</TD>
+</TR>
+<TR>
+<TD>Meniul NVDA</TD>
+<TD>spațiu+punct 1 + punct 3 + punct 4 + Punct 5 (spațiu+n)</TD>
 </TR>
 <TR>
 <TD>tasta săgeată sus</TD>
@@ -5700,7 +5750,7 @@ Vă rugăm să consultați documentația dispozitivului dumneavoastră BrailleNo
 <TD>spațiu+punct 7</TD>
 </TR>
 <TR>
-<TD>tast Tab</TD>
+<TD>tasta Tab</TD>
 <TD>spațiu+punct 2+punct 3+punct 4+punct 5 (spațiu+t)</TD>
 </TR>
 <TR>
@@ -5718,6 +5768,128 @@ Vă rugăm să consultați documentația dispozitivului dumneavoastră BrailleNo
 <TR>
 <TD>Comută ajutor pentru intrări</TD>
 <TD>spațiu+punct 2+punct 3+punct 6 (spațiu+ h mic)</TD>
+</TR>
+</TABLE>
+
+<P>
+Urmează comenzi atributate la Braillenote QT când această tastatură nu este în modul de intrare braille:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nume</TH>
+<TH>Tastă</TH>
+</TR>
+<TR>
+<TD>Meniu NvDA</TD>
+<TD>citește+n</TD>
+</TR>
+<TR>
+<TD>săgeată sus</TD>
+<TD>Săgeată sus</TD>
+</TR>
+<TR>
+<TD>Săgeată jos</TD>
+<TD>Săgeată jos</TD>
+</TR>
+<TR>
+<TD>Săgeată stânga</TD>
+<TD>Săgeată stânga</TD>
+</TR>
+<TR>
+<TD>Săgeată dreapta</TD>
+<TD>Săgeată dreapta</TD>
+</TR>
+<TR>
+<TD>Pagină sus</TD>
+<TD>Tasta funcție  î săgeată sus</TD>
+</TR>
+<TR>
+<TD>Pagină jos</TD>
+<TD>Tasta funcție + săgeată jos</TD>
+</TR>
+<TR>
+<TD>Tasta acasă</TD>
+<TD>Tasta funcție + Săgeată stânga</TD>
+</TR>
+<TR>
+<TD>Tasta Sfârșit</TD>
+<TD>Tasta funcție + săgeată dreapta</TD>
+</TR>
+<TR>
+<TD>Control+acasă</TD>
+<TD>citește + t</TD>
+</TR>
+<TR>
+<TD>Control + sfârșit</TD>
+<TD>citește + b</TD>
+</TR>
+<TR>
+<TD>Tasta Enter</TD>
+<TD>enter</TD>
+</TR>
+<TR>
+<TD>Tasta șterge înapoi</TD>
+<TD>backspace</TD>
+</TR>
+<TR>
+<TD>Tasta Tab</TD>
+<TD>tab</TD>
+</TR>
+<TR>
+<TD>Shift+tab</TD>
+<TD>shift+tab</TD>
+</TR>
+<TR>
+<TD>Tasta Windows</TD>
+<TD>citește + w</TD>
+</TR>
+<TR>
+<TD>Tasta Alt</TD>
+<TD>citește + m</TD>
+</TR>
+<TR>
+<TD>Comută ajutor pentru intrări</TD>
+<TD>citește + 1</TD>
+</TR>
+</TABLE>
+
+<P>
+Urmează comenzi pentru joysticul de rulare:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>Nume</TH>
+<TH>Tastă</TH>
+</TR>
+<TR>
+<TD>Săgeată sus</TD>
+<TD>Săgeată sus</TD>
+</TR>
+<TR>
+<TD>Săgeată jos</TD>
+<TD>Săgeată jos</TD>
+</TR>
+<TR>
+<TD>Săgeată stânga</TD>
+<TD>Săgeată stânga</TD>
+</TR>
+<TR>
+<TD>Săgeată dreapta</TD>
+<TD>Săgeată dreapta</TD>
+</TR>
+<TR>
+<TD>Tasta Enter</TD>
+<TD>Butonul central</TD>
+</TR>
+<TR>
+<TD>Tasta Tab</TD>
+<TD>Învârtiți rotița  in sens de ceasornic</TD>
+</TR>
+<TR>
+<TD>Shift+tab</TD>
+<TD>Învârtiți rotița contra sensului de ceasornic</TD>
 </TR>
 </TABLE>
 
