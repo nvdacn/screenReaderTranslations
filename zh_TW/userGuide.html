@@ -3,10 +3,10 @@
 <HEAD>
 <META NAME="generator" CONTENT="http://txt2tags.org">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE>2018.1-dev 用戶指南</TITLE>
+<TITLE>2018.3-dev 用戶指南</TITLE>
 </HEAD><BODY BGCOLOR="white" TEXT="black">
 <CENTER>
-<H2>2018.1-dev 用戶指南</H2>
+<H2>2018.3-dev 用戶指南</H2>
 </CENTER>
 
 
@@ -750,11 +750,11 @@ NVDA 可讓使用者以不同的方式在系統間導航並與之互動，包括
 <H3>5.3. 以系統編輯游標導航</H3>
 
 <P>
-當 <A HREF="#SystemFocus">系統焦點</A> 在一個可導航或可編輯文字的<A HREF="#Objects">物件</A> 上，您可以利用系統游標，也就是一般所說的編輯游標，在文件裡四處移動。
+當 <A HREF="#SystemFocus">系統焦點</A> 在一個可導航或可編輯文字的<A HREF="#Objects">物件</A> 上，您可以利用系統編輯游標，（簡稱編輯游標），在文件裡四處移動。
 </P>
 <P>
-當系統游標位在一個物件上時，您可以按方向鍵、Page Up、Page Down、Home、End等按鍵在文件裡移動。
-若此控制項有支援編輯功能的話，您也可以改變其內的文字。
+當編輯游標位在一個物件上時，您可以按方向鍵、Page Up、Page Down、Home、End等按鍵在文件裡移動。
+若系統有支援此物件編輯功能的話，您也可以改變其內的文字。
 當您逐字元、逐字或字詞、或逐行移動，或者選取文字、取消選取文字時，NVDA都會將其報讀出來。
 </P>
 <P>
@@ -2109,12 +2109,22 @@ Excel工作表可含有表單區。
 <TR>
 <TD>報讀剩餘時間</TD>
 <TD>control+shift+r</TD>
-<TD>報讀目前播放中音軌的剩餘時間。</TD>
+<TD>報讀目前播放中曲目的剩餘時間。</TD>
+</TR>
+<TR>
+<TD>報讀已撥放時間</TD>
+<TD>control+shift+e</TD>
+<TD>如果有的話，讀出目前播放曲目的已撥放時間。</TD>
+</TR>
+<TR>
+<TD>報讀曲目長度</TD>
+<TD>control+shift+t</TD>
+<TD>如果有的話，讀出目前播放曲目的長度。</TD>
 </TR>
 </TABLE>
 
 <P>
-附註: 報讀剩餘時間的快速鍵僅適用於預設格式下，其狀態列上的字串。
+附註: 上述快速鍵方式僅適用於預設格式下，其狀態列上的字串。
 </P>
 
 <A NAME="MirandaIM"></A>
@@ -2369,13 +2379,42 @@ NVDA 將套用您目前電腦系統所使用的語言。
 <P>
 當勾選此核取方塊，NVDA會自動檢查更新版本並通知。
 您也可透過手動來做版本更新檢查，請在NVDA功能表中的「說明」選擇「檢查更新。」
+當手動或自動檢查更新時，NVDA需要將一些訊息發送到更新服務器以便為你的系統接收正確的更新。
+以下資訊每次都會發送: 
+</P>
+
+<UL>
+<LI>當前NVDA版本
+<LI>作業系統版本
+<LI>作業系統是64位元或32位元
+</UL>
+
+<A NAME="GeneralSettingsGatherUsageStats"></A>
+<H5>允許NVDA專案收集NVDA使用情況統計</H5>
+
+<P>
+如果啟用此功能，NV Access 將使用更新檢查中的資訊來追蹤 NVDA 用戶的數量，包括特定的人口統計，如作業系統和國家。
+請注意，雖然你的 IP 地址將用於在更新檢查時得到你的國家，但IP地址永遠不會被保留。
+除了更新所需檢查的強制性資訊之外，還會發送以下額外資訊:
+</P>
+
+<UL>
+<LI>NVDA介面語言
+<LI>此NVDA是可攜式版或安裝版
+<LI>目前正在使用的語音合成器之名稱（包括附加元件的驅動程序之名稱）
+<LI>目前正在使用的點字顯示器之名稱（包括附加元件的驅動程序之名稱）
+<LI>目前正在輸出的點字表（如果使用點字）
+</UL>
+
+<P>
+這些資訊將極大地幫助 NV Access 優先考慮 NVDA 的未來發展。
 </P>
 
 <A NAME="GeneralSettingsNotifyPendingUpdates"></A>
 <H5>是否通知當啟動時有待更新的版本</H5>
 
 <P>
-當勾選此核取方塊，NVDA會在啟動時通知有待更新的版本，提供安裝。
+當勾選此核取方塊，NVDA會在啟動時通知有待更新的版本，以供安裝。
 也可以從「關閉NVDA」對話框（如果有啟用）、「NVDA功能表」或從「說明功能表」中重新勾選核取方塊，來手動安裝有待更新的版本。
 </P>
 
@@ -4061,6 +4100,14 @@ Windows 10 含有新的語音，一般稱之為「OneCore」或「mobile」語�
 <TD>點顯器空白鍵加 二,三,四,五點</TD>
 </TR>
 <TR>
+<TD>alt+shift+tab 鍵</TD>
+<TD>點顯器空白鍵加 一,二,五,六點</TD>
+</TR>
+<TR>
+<TD>windows+tab 鍵</TD>
+<TD>點顯器空白鍵加 二,三,四點</TD>
+</TR>
+<TR>
 <TD>escape 鍵</TD>
 <TD>點顯器空白鍵加 一,五點</TD>
 </TR>
@@ -5639,6 +5686,12 @@ NVDA 支援 BrailleNote notetakers，請參閱網址<A HREF="http://www.humanwar
 關於 BrailleNote Touch，請參閱 <A HREF="HumanWareBrailliant">Brailliant BI 系列 / BrailleNote Touch</A> 章節。
 </P>
 <P>
+除 BrailleNote PK 外，還支持 braille (BT) 和 QWERTY (QT) 鍵盤。
+對於 BrailleNote QT，不支持PC鍵盤模擬。
+您也可以使用QT鍵盤輸入點字。
+有關詳細資訊，請查閱 BrailleNote 手冊指南的點字終端部分。
+</P>
+<P>
 請參閱BrailleNote使用說明以獲得詳細資訊。
 在NVDA中，
 您或需在<A HREF="#SelectBrailleDisplay">選擇點顯器</A>對話框中
@@ -5647,6 +5700,10 @@ NVDA 支援 BrailleNote notetakers，請參閱網址<A HREF="http://www.humanwar
 </P>
 <P>
 在連結BrailleNote Apex的USB客戶端介面之前，你必須安裝HumanWare提供的驅動程式。
+</P>
+<P>
+在 BrailleNote Apex BT 上，你可以使用一和四點之間的滾輪來獲得各種 NVDA 命令。
+輪子由四個方向的點、中心一個d可點擊的按鈕、和一個可順時針或逆時針旋轉的輪子組成。
 </P>
 <P>
 以下為 BrailleNote 在 NVDA 的按鍵配置。
@@ -5677,6 +5734,10 @@ NVDA 支援 BrailleNote notetakers，請參閱網址<A HREF="http://www.humanwar
 <TR>
 <TD>Route to braille cell</TD>
 <TD>routing</TD>
+</TR>
+<TR>
+<TD>NvDA menu</TD>
+<TD>space+dot1+dot3+dot4+dot5 (space+n)</TD>
 </TR>
 <TR>
 <TD>Toggle braille tethered to</TD>
@@ -5753,6 +5814,128 @@ NVDA 支援 BrailleNote notetakers，請參閱網址<A HREF="http://www.humanwar
 <TR>
 <TD>Toggle input help</TD>
 <TD>space+dot2+dot3+dot6 (space+lower h)</TD>
+</TR>
+</TABLE>
+
+<P>
+以下是 BrailleNote QT 不是在點字輸入模式時的指令。
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>NvDA menu</TD>
+<TD>read+n</TD>
+</TR>
+<TR>
+<TD>Up arrow key</TD>
+<TD>upArrow</TD>
+</TR>
+<TR>
+<TD>Down arrow key</TD>
+<TD>downArrow</TD>
+</TR>
+<TR>
+<TD>Left Arrow key</TD>
+<TD>leftArrow|</TD>
+</TR>
+<TR>
+<TD>Right arrow key</TD>
+<TD>rightArrow</TD>
+</TR>
+<TR>
+<TD>Page up key</TD>
+<TD>function+upArrow</TD>
+</TR>
+<TR>
+<TD>Page down key</TD>
+<TD>function+downArrow</TD>
+</TR>
+<TR>
+<TD>Home key</TD>
+<TD>function+leftArrow</TD>
+</TR>
+<TR>
+<TD>End key</TD>
+<TD>function+rightArrow</TD>
+</TR>
+<TR>
+<TD>Control+home keys</TD>
+<TD>read+t</TD>
+</TR>
+<TR>
+<TD>Control+end keys</TD>
+<TD>read+b</TD>
+</TR>
+<TR>
+<TD>Enter key</TD>
+<TD>enter</TD>
+</TR>
+<TR>
+<TD>Backspace key</TD>
+<TD>backspace</TD>
+</TR>
+<TR>
+<TD>Tab key</TD>
+<TD>tab</TD>
+</TR>
+<TR>
+<TD>Shift+tab keys</TD>
+<TD>shift+tab</TD>
+</TR>
+<TR>
+<TD>Windows key</TD>
+<TD>read+w</TD>
+</TR>
+<TR>
+<TD>Alt key</TD>
+<TD>read+m</TD>
+</TR>
+<TR>
+<TD>Toggle input help</TD>
+<TD>read+1</TD>
+</TR>
+</TABLE>
+
+<P>
+以下是滾輪的指令:
+</P>
+
+<TABLE BORDER="1" CELLPADDING="4">
+<TR>
+<TH>名稱</TH>
+<TH>按鍵</TH>
+</TR>
+<TR>
+<TD>Up arrow key</TD>
+<TD>upArrow</TD>
+</TR>
+<TR>
+<TD>Down arrow key</TD>
+<TD>downArrow</TD>
+</TR>
+<TR>
+<TD>Left Arrow key</TD>
+<TD>leftArrow</TD>
+</TR>
+<TR>
+<TD>Right arrow key</TD>
+<TD>rightArrow</TD>
+</TR>
+<TR>
+<TD>Enter key</TD>
+<TD>center button</TD>
+</TR>
+<TR>
+<TD>Tab key</TD>
+<TD>scroll wheel clockwise</TD>
+</TR>
+<TR>
+<TD>Shift+tab keys</TD>
+<TD>scroll wheel counterclockwise</TD>
 </TR>
 </TABLE>
 
